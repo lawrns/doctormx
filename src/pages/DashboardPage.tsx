@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getCurrentUserProfile, getUserMedicalRecords, getUserInsurance, updateUserProfile } from '../lib/api/users';
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { 
@@ -63,19 +64,7 @@ const mockAppointments = [
   }
 ];
 
-// Mock user data
-const mockUser = {
-  name: 'Juan Pérez',
-  email: 'juan.perez@example.com',
-  phone: '+52 55 1234 5678',
-  birthdate: '1985-06-15',
-  gender: 'Masculino',
-  address: 'Calle Reforma 123, Col. Juárez, Ciudad de México',
-  insurance: 'GNP Seguros',
-  policyNumber: '12345678',
-  emergencyContact: 'María Pérez',
-  emergencyPhone: '+52 55 8765 4321'
-};
+// We'll load real user data from Supabase instead of using mock data
 
 function DashboardPage() {
   const { user, signOut } = useAuth();
@@ -85,6 +74,29 @@ function DashboardPage() {
   const [showCancelModal, setShowCancelModal] = useState(false);
   const [cancelReason, setCancelReason] = useState('');
   const [cancelSuccess, setCancelSuccess] = useState(false);
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  // Fetch user profile data when component mounts
+  useEffect(() => {
+    async function loadUserData() {
+      if (!user) return;
+      
+      try {
+        setLoading(true);
+        const profileData = await getCurrentUserProfile();
+        setUserData(profileData);
+      } catch (err) {
+        console.error('Error loading user profile:', err);
+        setError('No se pudo cargar tu perfil de usuario');
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    loadUserData();
+  }, [user]);
 
   const handleSignOut = async () => {
     await signOut();
@@ -160,7 +172,7 @@ function DashboardPage() {
                     {user?.email?.charAt(0).toUpperCase() || 'U'}
                   </div>
                   <div className="ml-4">
-                    <h2 className="text-lg font-semibold text-gray-900">{mockUser.name}</h2>
+                    <h2 className="text-lg font-semibold text-gray-900">{userData?.name || 'Cargando...'}</h2>
                     <p className="text-gray-600 text-sm">{user?.email}</p>
                   </div>
                 </div>
@@ -258,7 +270,7 @@ function DashboardPage() {
                 formatAppointmentTime={formatAppointmentTime}
                 getStatusBadge={getStatusBadge}
               />} />
-              <Route path="profile" element={<ProfileTab user={mockUser} />} />
+              <Route path="profile" element={<ProfileTab user={userData} loading={loading} error={error} />} />
               <Route path="settings" element={<SettingsTab />} />
             </Routes>
           </div>
@@ -587,9 +599,62 @@ function AppointmentsTab({ appointments, onCancelAppointment, cancelSuccess, for
 }
 
 // Profile Tab Component
-function ProfileTab({ user }) {
+function ProfileTab({ user, loading, error }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState(user);
+  const [formData, setFormData] = useState(user || {});
+  const [isSaving, setIsSaving] = useState(false);
+  const [saveError, setSaveError] = useState(null);
+  const [saveSuccess, setSaveSuccess] = useState(false);
+  
+  // Add state for medical records
+  const [medicalRecords, setMedicalRecords] = useState(null);
+  const [medicalLoading, setMedicalLoading] = useState(true);
+  const [medicalError, setMedicalError] = useState(null);
+  
+  // Add state for insurance info
+  const [insuranceInfo, setInsuranceInfo] = useState(null);
+  const [insuranceLoading, setInsuranceLoading] = useState(true);
+  const [insuranceError, setInsuranceError] = useState(null);
+  
+  // Update form data when user data is loaded
+  useEffect(() => {
+    if (user) {
+      setFormData(user);
+    }
+  }, [user]);
+  
+  // Load medical records and insurance info when component mounts
+  useEffect(() => {
+    async function loadMedicalData() {
+      if (!user) return;
+      
+      // Load medical records
+      try {
+        setMedicalLoading(true);
+        const records = await getUserMedicalRecords();
+        setMedicalRecords(records);
+      } catch (err) {
+        console.error('Error loading medical records:', err);
+        setMedicalError('No se pudieron cargar los registros médicos');
+      } finally {
+        setMedicalLoading(false);
+      }
+      
+      // Load insurance info
+      try {
+        setInsuranceLoading(true);
+        const insurance = await getUserInsurance();
+        setInsuranceInfo(insurance);
+      } catch (err) {
+        console.error('Error loading insurance info:', err);
+        setInsuranceError('No se pudo cargar la información del seguro');
+      } finally {
+        setInsuranceLoading(false);
+      }
+    }
+    
+    loadMedicalData();
+  }, [user]);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -599,14 +664,49 @@ function ProfileTab({ user }) {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In a real app, this would be an API call
-    setTimeout(() => {
+    setIsSaving(true);
+    setSaveError(null);
+    setSaveSuccess(false);
+    
+    try {
+      // Make the actual API call to update profile
+      await updateUserProfile(formData);
       setIsEditing(false);
-      // Update user data would happen here
-    }, 1000);
+      setSaveSuccess(true);
+      
+      // Hide success message after 3 seconds
+      setTimeout(() => {
+        setSaveSuccess(false);
+      }, 3000);
+    } catch (err) {
+      console.error('Error updating profile:', err);
+      setSaveError('No se pudo actualizar el perfil');
+    } finally {
+      setIsSaving(false);
+    }
   };
+  
+  // Handle loading and error states
+  if (loading) {
+    return (
+      <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+        <p className="text-gray-600">Cargando perfil...</p>
+      </div>
+    );
+  }
+  
+  if (error || !user) {
+    return (
+      <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+        <p className="text-red-600">{error || 'No se pudo cargar la información del perfil'}</p>
+        <button onClick={() => window.location.reload()} className="btn-primary mt-4">
+          Intentar nuevamente
+        </button>
+      </div>
+    );
+  }
   
   return (
     <div>
@@ -621,6 +721,20 @@ function ProfileTab({ user }) {
           </button>
         )}
       </div>
+      
+      {saveSuccess && (
+        <div className="mb-6 bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-start">
+          <CheckCircle size={20} className="mr-2 flex-shrink-0 mt-0.5" />
+          <span>Tu perfil ha sido actualizado exitosamente.</span>
+        </div>
+      )}
+      
+      {saveError && (
+        <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-start">
+          <AlertCircle size={20} className="mr-2 flex-shrink-0 mt-0.5" />
+          <span>{saveError}</span>
+        </div>
+      )}
       
       <div className="bg-white rounded-lg shadow-sm overflow-hidden">
         {isEditing ? (
@@ -790,8 +904,9 @@ function ProfileTab({ user }) {
               <button
                 type="submit"
                 className="btn-primary"
+                disabled={isSaving}
               >
-                Guardar cambios
+                {isSaving ? 'Guardando...' : 'Guardar cambios'}
               </button>
             </div>
           </form>
@@ -862,32 +977,78 @@ function ProfileTab({ user }) {
             Mantén actualizado tu historial médico para que tus médicos puedan brindarte una mejor atención.
           </p>
           
-          <div className="space-y-4">
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">Alergias</h3>
-              <p className="text-gray-600">No se han registrado alergias</p>
+          {medicalLoading ? (
+            <p className="text-center text-gray-600 py-4">Cargando historial médico...</p>
+          ) : medicalError ? (
+            <div className="text-center text-red-600 py-4">{medicalError}</div>
+          ) : (
+            <div className="space-y-4">
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-medium text-gray-900 mb-2">Alergias</h3>
+                {medicalRecords?.allergies && medicalRecords.allergies.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {medicalRecords.allergies.map((allergy, index) => (
+                      <span key={index} className="bg-red-50 text-red-800 px-2 py-1 rounded-full text-sm">
+                        {typeof allergy === 'string' ? allergy : allergy.name || 'Alergia'}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">No se han registrado alergias</p>
+                )}
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-medium text-gray-900 mb-2">Medicamentos actuales</h3>
+                {medicalRecords?.medications && medicalRecords.medications.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {medicalRecords.medications.map((medication, index) => (
+                      <span key={index} className="bg-blue-50 text-blue-800 px-2 py-1 rounded-full text-sm">
+                        {typeof medication === 'string' ? medication : medication.name || 'Medicamento'}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">No se han registrado medicamentos</p>
+                )}
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-medium text-gray-900 mb-2">Condiciones médicas</h3>
+                {medicalRecords?.conditions && medicalRecords.conditions.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {medicalRecords.conditions.map((condition, index) => (
+                      <span key={index} className="bg-amber-50 text-amber-800 px-2 py-1 rounded-full text-sm">
+                        {typeof condition === 'string' ? condition : condition.name || 'Condición'}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">No se han registrado condiciones médicas</p>
+                )}
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-medium text-gray-900 mb-2">Cirugías previas</h3>
+                {medicalRecords?.surgeries && medicalRecords.surgeries.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {medicalRecords.surgeries.map((surgery, index) => (
+                      <span key={index} className="bg-purple-50 text-purple-800 px-2 py-1 rounded-full text-sm">
+                        {typeof surgery === 'string' ? surgery : surgery.name || 'Cirugía'}
+                      </span>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-gray-600">No se han registrado cirugías</p>
+                )}
+              </div>
             </div>
-            
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">Medicamentos actuales</h3>
-              <p className="text-gray-600">No se han registrado medicamentos</p>
-            </div>
-            
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">Condiciones médicas</h3>
-              <p className="text-gray-600">No se han registrado condiciones médicas</p>
-            </div>
-            
-            <div className="border border-gray-200 rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">Cirugías previas</h3>
-              <p className="text-gray-600">No se han registrado cirugías</p>
-            </div>
-          </div>
+          )}
           
           <div className="mt-6">
-            <button className="btn-primary">
+            <Link to="/dashboard/medical" className="btn-primary">
               Actualizar historial médico
-            </button>
+            </Link>
           </div>
         </div>
       </div>

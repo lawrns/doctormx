@@ -24,6 +24,7 @@ import MedicalBoardPage from './pages/MedicalBoardPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ConnectLandingPage from './pages/connect/ConnectLandingPage';
 import MedicosRegistroConnectPage from './pages/connect/MedicosRegistroConnectPage';
+import UpgradeStatusPage from './pages/UpgradeStatusPage';
 import { useAuth } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminLayout from './components/admin/AdminLayout';
@@ -115,6 +116,7 @@ function App() {
         <Route path="connect" element={<ConnectLandingPage />} />
         <Route path="connect/:referralId" element={<ConnectLandingPage />} />
         <Route path="connect/registro" element={<MedicosRegistroConnectPage />} />
+        <Route path="upgrade-status" element={<UpgradeStatusPage />} />
       </Route>
 
       {/* Admin routes */}
