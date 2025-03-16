@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import { Check, AlertCircle, ChevronRight, Calendar, Users, Star, Shield, CreditCard } from 'lucide-react';
 import ProgressSteps from '../components/ProgressSteps';
 import ConnectBanner from '../components/connect/ConnectBanner';
+import { useAuth } from '../contexts/AuthContext';
+import { useSupabase } from '../contexts/SupabaseContext';
+import { v4 as uuidv4 } from 'uuid';
 
 // Define registration steps
 const registrationSteps = [
@@ -79,6 +82,9 @@ function MedicosRegistroPage() {
   const connectParam = searchParams.get('connect');
   const refParam = searchParams.get('ref');
   const [redirectToConnect, setRedirectToConnect] = useState(false);
+  const { signUp } = useAuth();
+  const { supabase } = useSupabase();
+  const navigate = useNavigate();
   
   useEffect(() => {
     // If this page was opened with connect=true param, redirect to the Connect registration page
@@ -200,10 +206,54 @@ function MedicosRegistroPage() {
     }
   };
   
-  const handleSubmit = () => {
-    // Simulate form submission
-    setRegistrationComplete(true);
-    window.scrollTo(0, 0);
+  const handleSubmit = async () => {
+    try {
+      // 1. Create auth user
+      const { data: authData, error: authError } = await signUp(formData.email, formData.password);
+      
+      if (authError) {
+        throw new Error(authError.message || 'Error al crear usuario');
+      }
+      
+      if (!authData.user) {
+        throw new Error('No se pudo crear el usuario');
+      }
+      
+      // 2. Create doctor record
+      const { error: doctorError } = await supabase
+        .from('doctors')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          specialty: formData.specialty,
+          user_id: authData.user.id,
+          is_premium: formData.selectedPlan !== 'basic',
+          premium_until: formData.selectedPlan !== 'basic' ? 
+            new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString() : null, // 30 days from now
+          bio: '',
+          verification_status: 'pending',
+          joined_via_referral: !!refParam,
+          address: `${formData.address}, ${formData.city}, ${formData.state}, ${formData.zipCode}`,
+          telemedicine_available: formData.offersTelemedicine,
+          in_person_available: true,
+          is_accepting_patients: true,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        });
+      
+      if (doctorError) {
+        throw new Error(doctorError.message || 'Error al crear perfil de doctor');
+      }
+      
+      // Success - registration complete
+      setRegistrationComplete(true);
+      window.scrollTo(0, 0);
+    } catch (error) {
+      console.error('Error during registration:', error);
+      setErrors({
+        submit: error.message || 'Ha ocurrido un error durante el registro. Por favor intenta de nuevo.'
+      });
+    }
   };
   
   const handleSelectPlan = (planId: string) => {
@@ -301,6 +351,13 @@ function MedicosRegistroPage() {
           </div>
           
           <div className="p-6">
+            {/* Error message */}
+            {errors.submit && (
+              <div className="mb-6 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-start">
+                <AlertCircle size={20} className="mr-2 flex-shrink-0 mt-0.5" />
+                <span>{errors.submit}</span>
+              </div>
+            )}
             {/* Step 1: Personal Information */}
             {step === 1 && (
               <div className="animate-fade-in">

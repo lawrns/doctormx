@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useSupabase } from '../contexts/SupabaseContext';
 import { Eye, EyeOff, AlertCircle, CheckCircle } from 'lucide-react';
 
 function RegisterPage() {
@@ -13,6 +14,7 @@ function RegisterPage() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
   const { signUp } = useAuth();
+  const { supabase } = useSupabase();
   const navigate = useNavigate();
 
   const validatePassword = () => {
@@ -39,10 +41,30 @@ function RegisterPage() {
       setError('');
       setLoading(true);
       
-      const { error: signUpError } = await signUp(email, password);
+      // 1. Create auth user
+      const { data: authData, error: signUpError } = await signUp(email, password);
       
       if (signUpError) {
         throw new Error(signUpError.message || 'Error al registrarse');
+      }
+      
+      if (!authData.user) {
+        throw new Error('No se pudo crear el usuario');
+      }
+      
+      // 2. Create patient record
+      const { error: patientError } = await supabase
+        .from('patients')
+        .insert({
+          name,
+          email,
+          user_id: authData.user.id,
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString()
+        });
+        
+      if (patientError) {
+        throw new Error(patientError.message || 'Error al crear perfil de paciente');
       }
       
       // Show success message
