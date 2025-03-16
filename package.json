@@ -33,8 +33,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
-    "build-netlify": "npm i --force && npm i cross-env --save-dev --force && npm i @tanstack/react-query@4.29.7 --force && npm i react-refresh@0.14.0 --force && npm i eslint-webpack-plugin@4.0.1 --force && npm i @pmmmwh/react-refresh-webpack-plugin@0.5.10 --force && cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false craco build || (echo 'Build failed. Detailed error:' && cat /opt/build/repo/node_modules/.cache/craco/*-error.log 2>/dev/null || echo 'No error log found')",
+    "build": "cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -63,9 +62,7 @@
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
-    "@jridgewell/sourcemap-codec": "^1.4.15",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
-    "@rollup/plugin-terser": "^0.4.4",
     "autoprefixer": "^10.4.16",
     "cross-env": "^7.0.3",
     "crypto-browserify": "^3.12.0",
