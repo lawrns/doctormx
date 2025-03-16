@@ -1,29 +1,32 @@
 const path = require('path');
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
-// Updated configuration for modern packages
 module.exports = {
   webpack: {
     plugins: [
       new ESLintWebpackPlugin({
-        // ESLint configuration
-        extensions: ['js', 'jsx', 'ts', 'tsx'],
-        emitWarning: true,
-        // Don't fail the build on ESLint errors
-        failOnError: false,
-        // Only use ESLint to emit warnings, not to fail the build
+        // Modern ESLint configuration
+        extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
         emitError: false,
+        emitWarning: true,
+        failOnError: false,
+        formatter: 'stylish',
+        lintDirtyModulesOnly: true,
+        threads: true
       }),
     ],
     configure: (webpackConfig) => {
-      // Remove ESLintWebpackPlugin if it exists
-      if (webpackConfig.plugins) {
-        webpackConfig.plugins = webpackConfig.plugins.filter(plugin => 
-          plugin && plugin.constructor && plugin.constructor.name !== 'ESLintWebpackPlugin'
-        );
-      }
+      // Add polyfills and fallbacks for browser compatibility
+      webpackConfig.resolve = webpackConfig.resolve || {};
+      webpackConfig.resolve.fallback = {
+        ...webpackConfig.resolve.fallback,
+        path: require.resolve('path-browserify'),
+        fs: false,
+        os: require.resolve('os-browserify/browser'),
+        crypto: require.resolve('crypto-browserify')
+      };
       
-      // Update Terser plugin configuration
+      // Safely configure Terser plugin if it exists
       if (webpackConfig.optimization && webpackConfig.optimization.minimizer) {
         const terserPluginIndex = webpackConfig.optimization.minimizer.findIndex(
           (plugin) => plugin && plugin.constructor && plugin.constructor.name === 'TerserPlugin'
@@ -51,27 +54,20 @@ module.exports = {
         }
       }
       
-      // Add necessary polyfills and fallbacks
-      webpackConfig.resolve = webpackConfig.resolve || {};
-      webpackConfig.resolve.fallback = {
-        ...webpackConfig.resolve.fallback,
-        path: require.resolve('path-browserify'),
-        fs: false,
-        os: require.resolve('os-browserify/browser'),
-        crypto: require.resolve('crypto-browserify')
-      };
-      
       return webpackConfig;
     },
   },
   
-  // Update Babel configuration to use transform plugins instead of proposal plugins
+  // Update Babel configuration to use transform plugins
   babel: {
     loaderOptions: {
       plugins: [
         ['@babel/plugin-transform-class-properties', { loose: true }],
         ['@babel/plugin-transform-private-methods', { loose: true }],
-        ['@babel/plugin-transform-private-property-in-object', { loose: true }]
+        ['@babel/plugin-transform-private-property-in-object', { loose: true }],
+        '@babel/plugin-transform-nullish-coalescing-operator',
+        '@babel/plugin-transform-optional-chaining',
+        '@babel/plugin-transform-numeric-separator'
       ],
     },
   },
