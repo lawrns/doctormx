@@ -7,10 +7,18 @@ module.exports = {
       );
       
       if (terserPluginIndex > -1) {
-        webpackConfig.optimization.minimizer[terserPluginIndex].options.terserOptions = {
-          ...webpackConfig.optimization.minimizer[terserPluginIndex].options.terserOptions,
+        const terserPlugin = webpackConfig.optimization.minimizer[terserPluginIndex];
+        
+        // Initialize options objects if they don't exist
+        if (!terserPlugin.options) terserPlugin.options = {};
+        if (!terserPlugin.options.terserOptions) terserPlugin.options.terserOptions = {};
+        if (!terserPlugin.options.terserOptions.compress) terserPlugin.options.terserOptions.compress = {};
+        
+        // Now safely update the options
+        terserPlugin.options.terserOptions = {
+          ...terserPlugin.options.terserOptions,
           compress: {
-            ...webpackConfig.optimization.minimizer[terserPluginIndex].options.terserOptions.compress,
+            ...terserPlugin.options.terserOptions.compress,
             // Disable console output removal to avoid warnings
             drop_console: false,
           },
