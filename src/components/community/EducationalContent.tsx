@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Heart, FileText, ExternalLink, BookmarkPlus, Bookmark } from 'lucide-react';
+import { getPatientEducationalContent, toggleSaveContent, getEducationalContentByCategory } from '../../lib/api/educationalContent';
 
 // Types
 export interface EducationalContentItem {
@@ -60,29 +61,99 @@ const EducationalContent: React.FC<EducationalContentProps> = ({
   contentItems = [],
   onSaveContent,
   showCategories = true,
-  isLoading = false
+  isLoading: initialLoading = false
 }) => {
-  // Use mock data if no content items are provided
-  const displayItems = contentItems.length > 0 ? contentItems : mockContentItems;
+  // State for content items
+  const [displayItems, setDisplayItems] = useState<EducationalContentItem[]>(contentItems.length > 0 ? contentItems : []);
+  const [isLoading, setIsLoading] = useState<boolean>(initialLoading);
+  const [error, setError] = useState<string | null>(null);
   
-  // Local state for saved content until parent updates
-  const [savedItems, setSavedItems] = useState<Record<string, boolean>>(
-    displayItems.reduce((acc, item) => ({ ...acc, [item.id]: item.saved }), {})
-  );
-  
-  // Categories for filter (if showCategories is true)
-  const categories = [...new Set(displayItems.map(item => item.category))];
+  // State for categories and filtering
+  const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
-  // Filter items by category if a category is selected
-  const filteredItems = selectedCategory
-    ? displayItems.filter(item => item.category === selectedCategory)
-    : displayItems;
+  // Local state for saved content until parent updates
+  const [savedItems, setSavedItems] = useState<Record<string, boolean>>({});
   
-  const handleSaveToggle = (id: string) => {
+  useEffect(() => {
+    if (contentItems.length > 0) {
+      setDisplayItems(contentItems);
+      // Extract unique categories
+      setCategories([...new Set(contentItems.map(item => item.category))]);
+      // Initialize saved status
+      setSavedItems(contentItems.reduce((acc, item) => ({ ...acc, [item.id]: item.saved }), {}));
+    } else {
+      fetchContent();
+    }
+  }, [contentItems]);
+  
+  const fetchContent = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      // Fetch content based on category filter
+      const data = selectedCategory 
+        ? await getEducationalContentByCategory(selectedCategory)
+        : await getPatientEducationalContent();
+        
+      setDisplayItems(data);
+      
+      // Extract unique categories if showing categories
+      if (showCategories) {
+        setCategories([...new Set(data.map(item => item.category))]);
+      }
+      
+      // Initialize saved status
+      setSavedItems(data.reduce((acc, item) => ({ ...acc, [item.id]: item.saved }), {}));
+    } catch (err) {
+      console.error('Error fetching educational content:', err);
+      setError('No se pudo cargar el contenido educativo');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const handleCategorySelect = async (category: string | null) => {
+    setSelectedCategory(category);
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      const data = category 
+        ? await getEducationalContentByCategory(category)
+        : await getPatientEducationalContent();
+        
+      setDisplayItems(data);
+      // Update saved status
+      setSavedItems(data.reduce((acc, item) => ({ ...acc, [item.id]: item.saved }), {}));
+    } catch (err) {
+      console.error('Error fetching educational content by category:', err);
+      setError('No se pudo filtrar el contenido');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const handleSaveToggle = async (id: string) => {
     const newSavedStatus = !savedItems[id];
+    
+    // Optimistically update UI
     setSavedItems(prev => ({ ...prev, [id]: newSavedStatus }));
-    onSaveContent(id, newSavedStatus);
+    
+    try {
+      // Update via API
+      await toggleSaveContent(id, newSavedStatus);
+      
+      // Notify parent component if callback provided
+      if (onSaveContent) {
+        onSaveContent(id, newSavedStatus);
+      }
+    } catch (err) {
+      console.error('Error toggling saved status:', err);
+      // Revert on error
+      setSavedItems(prev => ({ ...prev, [id]: !newSavedStatus }));
+    }
   };
   
   if (isLoading) {
@@ -125,7 +196,7 @@ const EducationalContent: React.FC<EducationalContentProps> = ({
       {showCategories && categories.length > 0 && (
         <div className="flex overflow-x-auto pb-2 mb-4 space-x-2 scrollbar-none">
           <button
-            onClick={() => setSelectedCategory(null)}
+            onClick={() => handleCategorySelect(null)}
             className={`flex-shrink-0 px-4 py-1 rounded-full text-sm font-medium ${
               selectedCategory === null
                 ? 'bg-blue-600 text-white'
@@ -138,7 +209,7 @@ const EducationalContent: React.FC<EducationalContentProps> = ({
           {categories.map(category => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategorySelect(category)}
               className={`flex-shrink-0 px-4 py-1 rounded-full text-sm font-medium ${
                 selectedCategory === category
                   ? 'bg-blue-600 text-white'
@@ -153,7 +224,7 @@ const EducationalContent: React.FC<EducationalContentProps> = ({
       
       {/* Content items */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredItems.map(item => (
+        {displayItems.map(item => (
           <div key={item.id} className="border border-gray-200 rounded-lg overflow-hidden">
             <div className="p-4">
               <div className="flex items-start justify-between">

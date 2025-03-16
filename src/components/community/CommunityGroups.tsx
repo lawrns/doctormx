@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, UserPlus, MessageSquare } from 'lucide-react';
+import { Users, UserPlus, MessageSquare, RefreshCw } from 'lucide-react';
+import { getPatientCommunityGroups, joinCommunityGroup, leaveCommunityGroup } from '../../lib/api/communityGroups';
 
 // Types
 interface CommunityGroup {
@@ -51,10 +52,51 @@ const mockCommunityGroups: CommunityGroup[] = [
 
 const CommunityGroups: React.FC<CommunityGroupsProps> = ({ 
   groups = [], 
-  isLoading = false 
+  isLoading: initialLoading = false 
 }) => {
-  // Use mock data if no groups are provided
-  const displayGroups = groups.length > 0 ? groups : mockCommunityGroups;
+  const [displayGroups, setDisplayGroups] = useState<CommunityGroup[]>(groups);
+  const [isLoading, setIsLoading] = useState<boolean>(initialLoading);
+  const [error, setError] = useState<string | null>(null);
+  
+  useEffect(() => {
+    if (groups.length > 0) {
+      setDisplayGroups(groups);
+    } else {
+      fetchGroups();
+    }
+  }, [groups]);
+  
+  const fetchGroups = async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const data = await getPatientCommunityGroups();
+      setDisplayGroups(data);
+    } catch (err) {
+      console.error('Error fetching community groups:', err);
+      setError('No se pudieron cargar las comunidades');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const handleJoinGroup = async (groupId: string) => {
+    try {
+      // Optimistically update UI
+      setDisplayGroups(prev => prev.map(group => 
+        group.id === groupId ? { ...group, isJoined: true } : group
+      ));
+      
+      // Call API
+      await joinCommunityGroup(groupId);
+    } catch (err) {
+      console.error('Error joining group:', err);
+      // Revert UI change
+      setDisplayGroups(prev => prev.map(group => 
+        group.id === groupId ? { ...group, isJoined: false } : group
+      ));
+    }
+  };
   
   if (isLoading) {
     return (
@@ -71,6 +113,30 @@ const CommunityGroups: React.FC<CommunityGroupsProps> = ({
               <div className="h-4 bg-gray-200 rounded w-1/3"></div>
             </div>
           ))}
+        </div>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold text-gray-900">Mis comunidades</h2>
+          <Link to="/comunidades" className="text-blue-600 text-sm font-medium hover:text-blue-800">
+            Explorar
+          </Link>
+        </div>
+        
+        <div className="text-center py-6">
+          <p className="text-red-500 mb-4">{error}</p>
+          <button 
+            onClick={fetchGroups}
+            className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+          >
+            <RefreshCw size={16} className="mr-1" />
+            Reintentar
+          </button>
         </div>
       </div>
     );
@@ -127,7 +193,14 @@ const CommunityGroups: React.FC<CommunityGroupsProps> = ({
                     Ver discusiones
                   </Link>
                 ) : (
-                  <button className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200">
+                  <button 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleJoinGroup(group.id);
+                    }}
+                    className="inline-flex items-center px-3 py-1 text-xs font-medium rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200"
+                  >
                     <UserPlus size={12} className="mr-1" />
                     Unirse
                   </button>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { User, Phone, Video, MessageSquare, Calendar, ExternalLink } from 'lucide-react';
+import { getPatientCareTeam } from '../../lib/api/careTeam';
 
 // Types
 interface CareTeamMember {
@@ -49,13 +50,19 @@ const MyCareTeam: React.FC<MyCareTeamProps> = ({
   
   useEffect(() => {
     if (fetchData) {
-      setIsLoading(true);
+      const fetchCareTeam = async () => {
+        try {
+          setIsLoading(true);
+          const data = await getPatientCareTeam();
+          setCareTeam(data);
+        } catch (err) {
+          console.error('Error fetching care team:', err);
+        } finally {
+          setIsLoading(false);
+        }
+      };
       
-      // Simulate API fetch
-      setTimeout(() => {
-        setCareTeam(mockCareTeam);
-        setIsLoading(false);
-      }, 1000);
+      fetchCareTeam();
     } else {
       setCareTeam(mockCareTeam);
     }

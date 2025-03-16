@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bell, Heart, Calendar, AlertCircle, ThumbsUp, MessageCircle } from 'lucide-react';
+import { getPatientBroadcasts, markBroadcastAsRead, toggleBroadcastLike } from '../../lib/api/broadcasts';
 
 // Later these will come from an API
 interface ProviderUpdate {
@@ -73,37 +74,73 @@ const ProviderUpdates: React.FC<ProviderUpdatesProps> = ({
   
   useEffect(() => {
     if (fetchData) {
-      // Simulate API fetch
-      setLoading(true);
+      const fetchUpdates = async () => {
+        try {
+          setLoading(true);
+          const data = await getPatientBroadcasts();
+          setUpdates(data);
+        } catch (err) {
+          console.error('Error fetching provider updates:', err);
+        } finally {
+          setLoading(false);
+        }
+      };
       
-      setTimeout(() => {
-        setUpdates(mockUpdates);
-        setLoading(false);
-      }, 1000);
+      fetchUpdates();
     } else {
       setUpdates(mockUpdates);
     }
   }, [fetchData]);
   
-  const toggleLike = (id: string) => {
+  const toggleLike = async (id: string, patientBroadcastId: string) => {
+    // Optimistically update UI
     setUpdates(prev => prev.map(update => 
       update.id === id ? { ...update, liked: !update.liked } : update
     ));
     
-    // In a real app, this would be an API call to update the like status
+    try {
+      // Get the current update
+      const update = updates.find(u => u.id === id);
+      if (update) {
+        // Call API to toggle like status
+        await toggleBroadcastLike(patientBroadcastId, !update.liked);
+      }
+    } catch (err) {
+      console.error('Error toggling like status:', err);
+      // Revert UI change on error
+      setUpdates(prev => prev.map(update => 
+        update.id === id ? { ...update, liked: !update.liked } : update
+      ));
+    }
   };
   
-  const markAsRead = (id: string) => {
-    setUpdates(prev => prev.map(update => 
-      update.id === id ? { ...update, read: true } : update
-    ));
+  const markAsRead = async (id: string, patientBroadcastId: string) => {
+    // Find the update
+    const update = updates.find(u => u.id === id);
     
-    // In a real app, this would be an API call to mark as read
+    // Only proceed if not already read
+    if (update && !update.read) {
+      // Optimistically update UI
+      setUpdates(prev => prev.map(update => 
+        update.id === id ? { ...update, read: true } : update
+      ));
+      
+      try {
+        // Call API to mark as read
+        await markBroadcastAsRead(patientBroadcastId);
+      } catch (err) {
+        console.error('Error marking as read:', err);
+        // Revert UI change on error
+        setUpdates(prev => prev.map(update => 
+          update.id === id ? { ...update, read: false } : update
+        ));
+      }
+    }
   };
   
-  const toggleExpand = (id: string) => {
+  const toggleExpand = (id: string, patientBroadcastId: string) => {
     setExpandedId(expandedId === id ? null : id);
-    markAsRead(id);
+    markAsRead(id, patientBroadcastId);
   };
   
   const formatDate = (dateString: string) => {
@@ -178,7 +215,7 @@ const ProviderUpdates: React.FC<ProviderUpdatesProps> = ({
             >
               <div 
                 className={`p-4 cursor-pointer ${!update.read ? 'bg-blue-50' : ''}`}
-                onClick={() => toggleExpand(update.id)}
+                onClick={() => toggleExpand(update.id, update.patientBroadcastId)}
               >
                 <div className="flex items-start justify-between">
                   <div>
@@ -220,7 +257,7 @@ const ProviderUpdates: React.FC<ProviderUpdatesProps> = ({
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      toggleLike(update.id);
+                      toggleLike(update.id, update.patientBroadcastId);
                     }}
                     className={`flex items-center text-sm ${
                       update.liked ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
