@@ -2,100 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-text: #111827;
+  --color-text-secondary: #4b5563;
+  --color-background: #f9fafb;
+  --color-border: #e5e7eb;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+/* Font size accessibility classes */
+.font-size-normal {
+  font-size: 16px;
+}
 
-  body {
-    @apply bg-background text-foreground;
-  }
+.font-size-large {
+  font-size: 18px;
+}
+
+.font-size-extra-large {
+  font-size: 20px;
+}
+
+/* Contrast accessibility classes */
+.contrast-high {
+  --color-primary: #0000cc;
+  --color-primary-hover: #000099;
+  --color-text: #000000;
+  --color-text-secondary: #000000;
+  --color-background: #ffffff;
+  --color-border: #000000;
+}
+
+/* Cursor accessibility classes */
+.cursor-large * {
+  cursor: pointer !important;
+}
+
+/* Animation accessibility */
+.reduce-animations * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for keyboard users */
+.skip-to-content {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  top: 8px;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+/* Symptom checker custom styles */
+.body-region-highlight {
+  transition: fill 0.2s ease-in-out;
+}
+
+.body-region-highlight:hover {
+  fill: #93c5fd;
+  cursor: pointer;
+}
+
+.body-region-selected {
+  fill: #3b82f6;
+}
+
+.symptom-severity-low {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.symptom-severity-moderate {
+  @apply bg-amber-100 text-amber-800 border-amber-200;
+}
+
+.symptom-severity-high {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+/* Progress bars */
+.progress-bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-bar-fill-primary {
+  background-color: #3b82f6;
+}
+
+.progress-bar-fill-success {
+  background-color: #10b981;
+}
+
+.progress-bar-fill-warning {
+  background-color: #f59e0b;
+}
+
+.progress-bar-fill-danger {
+  background-color: #ef4444;
+}
+
+/* Connect Program Custom Styles */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors shadow-sm;
+}
+
+.btn-outline {
+  @apply bg-white text-blue-600 border border-blue-200 hover:bg-blue-50 font-medium py-3 px-6 rounded-lg transition-colors shadow-sm;
+}
+
+.input-field {
+  @apply w-full rounded-lg border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
