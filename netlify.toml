@@ -13,3 +13,4 @@
   CI = "false"
   NODE_ENV = "production"
   NODE_OPTIONS = "--max-old-space-size=4096"
+  NODE_VERSION = "18.18.0"
