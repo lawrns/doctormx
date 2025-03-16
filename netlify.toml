@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && npm run build:production"
+  command = "npm install --legacy-peer-deps && npm run build:production"
   publish = "dist"
   
 [[redirects]]
