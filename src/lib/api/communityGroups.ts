@@ -1,7 +1,7 @@
 // Community Groups API - Supabase implementation
 
 import { supabase } from '../supabaseClient';
-import { getUserId } from '../auth/utils';
+import { getPatientId, getDoctorId } from '../auth/utils';
 
 // Types
 export interface CommunityGroup {
@@ -18,7 +18,7 @@ export interface CommunityGroup {
 // Get community groups for a patient
 export const getPatientCommunityGroups = async (): Promise<CommunityGroup[]> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     // Get groups the patient is a member of
     const { data: memberships, error: membershipsError } = await supabase
@@ -91,14 +91,14 @@ export const getPatientCommunityGroups = async (): Promise<CommunityGroup[]> => 
 // Join a community group
 export const joinCommunityGroup = async (groupId: string): Promise<void> => {
   try {
-    const userId = await getUserId();
+    const patientId = await getPatientId();
     
     // Check if already a member
     const { data: existing, error: checkError } = await supabase
       .from('community_group_members')
       .select('id')
       .eq('group_id', groupId)
-      .eq('user_id', userId)
+      .eq('user_id', patientId)
       .eq('user_type', 'patient');
       
     if (checkError) throw checkError;
@@ -114,7 +114,7 @@ export const joinCommunityGroup = async (groupId: string): Promise<void> => {
       .insert({
         id: crypto.randomUUID(),
         group_id: groupId,
-        user_id: userId,
+        user_id: patientId,
         user_type: 'patient',
         role: 'member',
         joined_at: new Date().toISOString()
@@ -130,14 +130,14 @@ export const joinCommunityGroup = async (groupId: string): Promise<void> => {
 // Leave a community group
 export const leaveCommunityGroup = async (groupId: string): Promise<void> => {
   try {
-    const userId = await getUserId();
+    const patientId = await getPatientId();
     
     // Leave the group
     const { error } = await supabase
       .from('community_group_members')
       .delete()
       .eq('group_id', groupId)
-      .eq('user_id', userId)
+      .eq('user_id', patientId)
       .eq('user_type', 'patient');
       
     if (error) throw error;
@@ -150,7 +150,7 @@ export const leaveCommunityGroup = async (groupId: string): Promise<void> => {
 // Get all available community groups
 export const getAllCommunityGroups = async (): Promise<CommunityGroup[]> => {
   try {
-    const userId = await getUserId();
+    const patientId = await getPatientId();
     
     // Get all public groups
     const { data: groups, error: groupsError } = await supabase
@@ -184,7 +184,7 @@ export const getAllCommunityGroups = async (): Promise<CommunityGroup[]> => {
     const { data: memberships, error: membershipsError } = await supabase
       .from('community_group_members')
       .select('group_id')
-      .eq('user_id', userId)
+      .eq('user_id', patientId)
       .eq('user_type', 'patient')
       .in('group_id', groups.map(g => g.id));
       

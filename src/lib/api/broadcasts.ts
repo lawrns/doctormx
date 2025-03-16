@@ -1,8 +1,7 @@
 // Broadcasts API using Supabase
 
 import { supabase } from '../supabaseClient';
-import { v4 as uuidv4 } from 'uuid';
-import { getUserId } from '../auth/utils';
+import { getDoctorId, getPatientId } from '../auth/utils';
 
 // Types
 export interface Broadcast {
@@ -17,7 +16,7 @@ export interface Broadcast {
   scheduledFor: string | null;
   createdAt: string;
   updatedAt: string;
-  doctorId: string;
+  doctorId: number;
   analytics: {
     total: number;
     read: number;
@@ -39,19 +38,30 @@ export interface BroadcastCreateParams {
 // Get all broadcasts for the current doctor
 export const getDoctorBroadcasts = async (): Promise<Broadcast[]> => {
   try {
-    const doctorId = await getUserId();
+    const doctorId = await getDoctorId();
     
     const { data, error } = await supabase
       .from('broadcasts')
       .select('*')
-      .eq('doctorId', doctorId)
-      .order('createdAt', { ascending: false });
+      .eq('doctor_id', doctorId)
+      .order('created_at', { ascending: false });
       
     if (error) throw error;
     
     // Transform the data to match our interface
     return data.map(broadcast => ({
-      ...broadcast,
+      id: broadcast.id,
+      title: broadcast.title,
+      content: broadcast.content,
+      broadcastType: broadcast.broadcast_type,
+      isUrgent: broadcast.is_urgent,
+      targetAudience: broadcast.target_audience,
+      category: broadcast.category,
+      publishedAt: broadcast.published_at,
+      scheduledFor: broadcast.scheduled_for,
+      createdAt: broadcast.created_at,
+      updatedAt: broadcast.updated_at,
+      doctorId: broadcast.doctor_id,
       analytics: broadcast.analytics || {
         total: 0,
         read: 0,
@@ -68,17 +78,22 @@ export const getDoctorBroadcasts = async (): Promise<Broadcast[]> => {
 // Create a new broadcast
 export const createBroadcast = async (params: BroadcastCreateParams): Promise<Broadcast> => {
   try {
-    const doctorId = await getUserId();
+    const doctorId = await getDoctorId();
     const now = new Date().toISOString();
     
     const newBroadcast = {
-      id: uuidv4(),
-      ...params,
-      doctorId,
-      publishedAt: params.scheduledFor ? null : now,
-      scheduledFor: params.scheduledFor || null,
-      createdAt: now,
-      updatedAt: now,
+      id: crypto.randomUUID(),
+      title: params.title,
+      content: params.content,
+      broadcast_type: params.broadcastType,
+      is_urgent: params.isUrgent,
+      target_audience: params.targetAudience,
+      category: params.category,
+      doctor_id: doctorId,
+      published_at: params.scheduledFor ? null : now,
+      scheduled_for: params.scheduledFor || null,
+      created_at: now,
+      updated_at: now,
       analytics: {
         total: 0,
         read: 0,
@@ -100,7 +115,22 @@ export const createBroadcast = async (params: BroadcastCreateParams): Promise<Br
       await sendBroadcastToPatients(data.id, params.targetAudience);
     }
     
-    return data;
+    // Transform to match our interface
+    return {
+      id: data.id,
+      title: data.title,
+      content: data.content,
+      broadcastType: data.broadcast_type,
+      isUrgent: data.is_urgent,
+      targetAudience: data.target_audience,
+      category: data.category,
+      publishedAt: data.published_at,
+      scheduledFor: data.scheduled_for,
+      createdAt: data.created_at,
+      updatedAt: data.updated_at,
+      doctorId: data.doctor_id,
+      analytics: data.analytics
+    };
   } catch (error) {
     console.error('Error creating broadcast:', error);
     throw error;
@@ -129,13 +159,13 @@ const sendBroadcastToPatients = async (broadcastId: string, targetAudience: any)
     // that handles the targeting logic and delivery to patients
     
     // For now, we'll simulate this by creating patient_broadcasts records
-    const doctorId = await getUserId();
+    const doctorId = await getDoctorId();
     
     // Get the patients based on the target audience criteria
     let patientsQuery = supabase
       .from('doctor_patient_relationships')
-      .select('patientId')
-      .eq('doctorId', doctorId);
+      .select('patient_id')
+      .eq('doctor_id', doctorId);
       
     // Apply additional filters based on targetAudience
     if (targetAudience.type === 'appointments') {
@@ -154,12 +184,12 @@ const sendBroadcastToPatients = async (broadcastId: string, targetAudience: any)
     
     // Create patient_broadcast records for each patient
     const patientBroadcasts = patients.map(patient => ({
-      id: uuidv4(),
-      broadcastId,
-      patientId: patient.patientId,
+      id: crypto.randomUUID(),
+      broadcast_id: broadcastId,
+      patient_id: patient.patient_id,
       read: false,
       liked: false,
-      createdAt: new Date().toISOString()
+      created_at: new Date().toISOString()
     }));
     
     if (patientBroadcasts.length > 0) {
@@ -191,7 +221,7 @@ const sendBroadcastToPatients = async (broadcastId: string, targetAudience: any)
 // Get broadcasts for a patient
 export const getPatientBroadcasts = async (): Promise<any[]> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     const { data, error } = await supabase
       .from('patient_broadcasts')
@@ -199,25 +229,24 @@ export const getPatientBroadcasts = async (): Promise<any[]> => {
         id,
         read,
         liked,
-        createdAt,
-        broadcasts (
+        created_at,
+        broadcasts:broadcast_id (
           id,
           title,
           content,
-          broadcastType,
-          isUrgent,
+          broadcast_type,
+          is_urgent,
           category,
-          publishedAt,
-          doctors (
+          published_at,
+          doctors:doctor_id (
             id,
-            firstName,
-            lastName,
+            name,
             specialty
           )
         )
       `)
-      .eq('patientId', patientId)
-      .order('createdAt', { ascending: false });
+      .eq('patient_id', patientId)
+      .order('created_at', { ascending: false });
       
     if (error) throw error;
     
@@ -226,11 +255,11 @@ export const getPatientBroadcasts = async (): Promise<any[]> => {
       id: item.broadcasts.id,
       title: item.broadcasts.title,
       content: item.broadcasts.content,
-      type: item.broadcasts.broadcastType,
-      isUrgent: item.broadcasts.isUrgent,
-      providerName: `${item.broadcasts.doctors.firstName} ${item.broadcasts.doctors.lastName}`,
+      type: item.broadcasts.broadcast_type,
+      isUrgent: item.broadcasts.is_urgent,
+      providerName: item.broadcasts.doctors.name,
       providerSpecialty: item.broadcasts.doctors.specialty,
-      publishedAt: item.broadcasts.publishedAt,
+      publishedAt: item.broadcasts.published_at,
       liked: item.liked,
       read: item.read,
       patientBroadcastId: item.id
@@ -251,8 +280,7 @@ export const markBroadcastAsRead = async (patientBroadcastId: string): Promise<v
       
     if (error) throw error;
     
-    // This would trigger a Supabase function to update analytics
-    await updateBroadcastAnalytics(patientBroadcastId);
+    // The update_broadcast_analytics trigger will handle updating the analytics
   } catch (error) {
     console.error('Error marking broadcast as read:', error);
     throw error;
@@ -269,59 +297,9 @@ export const toggleBroadcastLike = async (patientBroadcastId: string, liked: boo
       
     if (error) throw error;
     
-    // This would trigger a Supabase function to update analytics
-    await updateBroadcastAnalytics(patientBroadcastId);
+    // The update_broadcast_analytics trigger will handle updating the analytics
   } catch (error) {
     console.error('Error toggling broadcast like:', error);
-    throw error;
-  }
-};
-
-// Helper function to update broadcast analytics
-const updateBroadcastAnalytics = async (patientBroadcastId: string): Promise<void> => {
-  try {
-    // In a production environment, this would be a database trigger or function
-    // that calculates and updates the broadcast analytics
-    
-    // Get the broadcast ID from the patient broadcast
-    const { data: patientBroadcast, error } = await supabase
-      .from('patient_broadcasts')
-      .select('broadcastId')
-      .eq('id', patientBroadcastId)
-      .single();
-      
-    if (error) throw error;
-    
-    // Get analytics data for this broadcast
-    const { data: stats, error: statsError } = await supabase
-      .from('patient_broadcasts')
-      .select('read, liked')
-      .eq('broadcastId', patientBroadcast.broadcastId);
-      
-    if (statsError) throw statsError;
-    
-    // Calculate new analytics
-    const total = stats.length;
-    const read = stats.filter(item => item.read).length;
-    const likes = stats.filter(item => item.liked).length;
-    const readRate = total > 0 ? (read / total) * 100 : 0;
-    
-    // Update the broadcast analytics
-    const { error: updateError } = await supabase
-      .from('broadcasts')
-      .update({
-        analytics: {
-          total,
-          read,
-          readRate,
-          likes
-        }
-      })
-      .eq('id', patientBroadcast.broadcastId);
-      
-    if (updateError) throw updateError;
-  } catch (error) {
-    console.error('Error updating broadcast analytics:', error);
     throw error;
   }
 };

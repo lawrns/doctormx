@@ -1,11 +1,11 @@
 // Care Team API - Supabase implementation
 
 import { supabase } from '../supabaseClient';
-import { getUserId } from '../auth/utils';
+import { getPatientId } from '../auth/utils';
 
 // Types
 export interface CareTeamMember {
-  id: string;
+  id: number;
   name: string;
   specialty: string;
   imageUrl?: string;
@@ -16,13 +16,13 @@ export interface CareTeamMember {
 // Get the patient's care team
 export const getPatientCareTeam = async (): Promise<CareTeamMember[]> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     // Get doctor IDs that the patient has a relationship with
     const { data: relationships, error: relationshipsError } = await supabase
       .from('doctor_patient_relationships')
-      .select('doctorId')
-      .eq('patientId', patientId)
+      .select('doctor_id')
+      .eq('patient_id', patientId)
       .eq('status', 'active');
       
     if (relationshipsError) throw relationshipsError;
@@ -31,17 +31,16 @@ export const getPatientCareTeam = async (): Promise<CareTeamMember[]> => {
       return [];
     }
     
-    const doctorIds = relationships.map(rel => rel.doctorId);
+    const doctorIds = relationships.map(rel => rel.doctor_id);
     
     // Get doctors' information
     const { data: doctors, error: doctorsError } = await supabase
       .from('doctors')
       .select(`
         id,
-        firstName,
-        lastName,
+        name,
         specialty,
-        profileImageUrl
+        image
       `)
       .in('id', doctorIds);
       
@@ -50,11 +49,11 @@ export const getPatientCareTeam = async (): Promise<CareTeamMember[]> => {
     // Get past appointments with these doctors
     const { data: pastAppointments, error: pastApptsError } = await supabase
       .from('appointments')
-      .select('doctorId, scheduledFor')
-      .eq('patientId', patientId)
-      .in('doctorId', doctorIds)
-      .lt('scheduledFor', new Date().toISOString())
-      .order('scheduledFor', { ascending: false })
+      .select('doctor_id, scheduled_for')
+      .eq('patient_id', patientId)
+      .in('doctor_id', doctorIds)
+      .lt('scheduled_for', new Date().toISOString())
+      .order('scheduled_for', { ascending: false })
       .limit(1);
       
     if (pastApptsError) throw pastApptsError;
@@ -62,27 +61,27 @@ export const getPatientCareTeam = async (): Promise<CareTeamMember[]> => {
     // Get upcoming appointments with these doctors
     const { data: upcomingAppointments, error: upcomingApptsError } = await supabase
       .from('appointments')
-      .select('doctorId, scheduledFor')
-      .eq('patientId', patientId)
-      .in('doctorId', doctorIds)
-      .gt('scheduledFor', new Date().toISOString())
-      .order('scheduledFor', { ascending: true })
+      .select('doctor_id, scheduled_for')
+      .eq('patient_id', patientId)
+      .in('doctor_id', doctorIds)
+      .gt('scheduled_for', new Date().toISOString())
+      .order('scheduled_for', { ascending: true })
       .limit(1);
       
     if (upcomingApptsError) throw upcomingApptsError;
     
     // Build care team with appointment info
     return doctors.map(doctor => {
-      const lastAppt = pastAppointments?.find(appt => appt.doctorId === doctor.id);
-      const nextAppt = upcomingAppointments?.find(appt => appt.doctorId === doctor.id);
+      const lastAppt = pastAppointments?.find(appt => appt.doctor_id === doctor.id);
+      const nextAppt = upcomingAppointments?.find(appt => appt.doctor_id === doctor.id);
       
       return {
         id: doctor.id,
-        name: `${doctor.firstName} ${doctor.lastName}`,
+        name: doctor.name,
         specialty: doctor.specialty,
-        imageUrl: doctor.profileImageUrl,
-        lastAppointment: lastAppt?.scheduledFor,
-        nextAppointment: nextAppt?.scheduledFor
+        imageUrl: doctor.image,
+        lastAppointment: lastAppt?.scheduled_for,
+        nextAppointment: nextAppt?.scheduled_for
       };
     });
   } catch (error) {

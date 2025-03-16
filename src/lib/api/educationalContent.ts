@@ -1,7 +1,7 @@
 // Educational Content API - Supabase implementation
 
 import { supabase } from '../supabaseClient';
-import { getUserId } from '../auth/utils';
+import { getPatientId, getDoctorId } from '../auth/utils';
 
 // Types
 export interface EducationalContentItem {
@@ -19,7 +19,7 @@ export interface EducationalContentItem {
 // Get recommended educational content for a patient
 export const getPatientEducationalContent = async (): Promise<EducationalContentItem[]> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     // Get content recommended by the patient's doctors
     const { data: recommendations, error: recommendationsError } = await supabase
@@ -27,8 +27,7 @@ export const getPatientEducationalContent = async (): Promise<EducationalContent
       .select(`
         content_id,
         doctors:doctor_id (
-          firstName,
-          lastName
+          name
         ),
         educational_content!inner (
           id,
@@ -65,7 +64,7 @@ export const getPatientEducationalContent = async (): Promise<EducationalContent
       category: rec.educational_content.category,
       timeToRead: rec.educational_content.time_to_read,
       imageUrl: rec.educational_content.image_url,
-      recommendedBy: `${rec.doctors.firstName} ${rec.doctors.lastName}`,
+      recommendedBy: rec.doctors.name,
       saved: savedContentIds.has(rec.content_id),
       url: `/contenido/${rec.educational_content.id}`
     }));
@@ -80,7 +79,7 @@ export const getPatientEducationalContent = async (): Promise<EducationalContent
 // Toggle saved status for educational content
 export const toggleSaveContent = async (contentId: string, saved: boolean): Promise<void> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     if (saved) {
       // Save the content
@@ -113,7 +112,7 @@ export const toggleSaveContent = async (contentId: string, saved: boolean): Prom
 // Get educational content by category
 export const getEducationalContentByCategory = async (category?: string): Promise<EducationalContentItem[]> => {
   try {
-    const patientId = await getUserId();
+    const patientId = await getPatientId();
     
     // Build query for educational content
     let query = supabase
@@ -127,8 +126,7 @@ export const getEducationalContentByCategory = async (category?: string): Promis
         image_url,
         author_id,
         doctors:author_id (
-          firstName,
-          lastName
+          name
         )
       `)
       .eq('is_published', true);
@@ -162,7 +160,7 @@ export const getEducationalContentByCategory = async (category?: string): Promis
       category: item.category,
       timeToRead: item.time_to_read,
       imageUrl: item.image_url,
-      recommendedBy: item.doctors ? `${item.doctors.firstName} ${item.doctors.lastName}` : undefined,
+      recommendedBy: item.doctors ? item.doctors.name : undefined,
       saved: savedContentIds.has(item.id),
       url: `/contenido/${item.id}`
     }));
