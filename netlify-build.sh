@@ -27,6 +27,7 @@ npm install ajv-keywords@5.1.0 --save --legacy-peer-deps
 npm install react-refresh@0.14.0 --save --legacy-peer-deps
 npm install eslint-webpack-plugin@4.0.1 --save-dev --legacy-peer-deps
 npm install --save-dev @pmmmwh/react-refresh-webpack-plugin --legacy-peer-deps
+npm install @tanstack/react-query@4.29.7 --save --legacy-peer-deps
 
 echo "🛠️ Setting environment variables..."
 export SKIP_PREFLIGHT_CHECK=true

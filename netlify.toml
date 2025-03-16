@@ -1,5 +1,5 @@
 [build]
-  command = "chmod +x netlify-build.sh && ./netlify-build.sh"
+  command = "npm install --legacy-peer-deps && npm install @tanstack/react-query@4.29.7 --legacy-peer-deps && SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false npm run build"
   publish = "build"
   
 [[redirects]]
