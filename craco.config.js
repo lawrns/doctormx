@@ -1,8 +1,20 @@
 const path = require('path');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 // Updated configuration for modern packages
 module.exports = {
   webpack: {
+    plugins: [
+      new ESLintWebpackPlugin({
+        // ESLint configuration
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        emitWarning: true,
+        // Don't fail the build on ESLint errors
+        failOnError: false,
+        // Only use ESLint to emit warnings, not to fail the build
+        emitError: false,
+      }),
+    ],
     configure: (webpackConfig) => {
       // Remove ESLintWebpackPlugin if it exists
       if (webpackConfig.plugins) {

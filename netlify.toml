@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --no-package-lock && npm run build"
+  command = "npm install --no-package-lock && npm run build:netlify"
   publish = "build"
   
 [[redirects]]
@@ -9,6 +9,6 @@
 
 [build.environment]
   SKIP_PREFLIGHT_CHECK = "true"
-  DISABLE_ESLINT_PLUGIN = "true"
+  DISABLE_ESLINT_PLUGIN = "false"
   CI = "false"
   NODE_OPTIONS = "--max-old-space-size=4096"

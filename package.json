@@ -10,6 +10,7 @@
     "@craco/craco": "^7.1.0",
     "@supabase/supabase-js": "^2.38.4",
     "@tanstack/react-query": "^4.29.7",
+    "@xstate/react": "^4.1.0",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
@@ -29,11 +30,13 @@
     "recharts": "^2.9.2",
     "typescript": "4.9.5",
     "uuid": "^9.0.1",
-    "web-vitals": "^3.5.0"
+    "web-vitals": "^3.5.0",
+    "xstate": "^5.9.1"
   },
   "scripts": {
     "start": "craco start",
     "build": "cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false craco build",
+    "build:netlify": "npm install @xstate/react xstate eslint-webpack-plugin --save && cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true CI=false craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
