@@ -4,6 +4,21 @@
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+console.log('🔍 Checking for Vite...');
+try {
+  // Verify if vite is installed globally or locally
+  execSync('npx vite --version', { stdio: 'inherit' });
+  console.log('✅ Vite is accessible');
+} catch (error) {
+  console.log('⚠️ Vite not found, installing it now...');
+  try {
+    execSync('npm install vite@5.4.14 @vitejs/plugin-react@4.2.1 --no-save', { stdio: 'inherit' });
+    console.log('✅ Vite installed successfully');
+  } catch (installError) {
+    console.error('❌ Failed to install Vite:', installError.message);
+  }
+}
+
 // Create a temporary .env file if environment variables are set in Netlify 
 // but not in a file (this helps Vite pick them up during build)
 if (process.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_ANON_KEY) {
@@ -22,16 +37,6 @@ if (process.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_ANON_KEY) {
   // Write to .env file
   fs.writeFileSync('.env', envContent);
   console.log('✅ Temporary .env file created');
-}
-
-// Ensure Linux-specific Rollup dependencies are installed
-try {
-  console.log('📦 Installing Linux-specific Rollup dependencies...');
-  execSync('npm install --no-save @rollup/rollup-linux-x64-gnu', { stdio: 'inherit' });
-  console.log('✅ Rollup dependencies installed');
-} catch (error) {
-  console.error('❌ Error installing Rollup dependencies:', error.message);
-  // Continue anyway - we don't want to fail the build for this
 }
 
 console.log('🚀 Netlify setup complete, proceeding with build...');

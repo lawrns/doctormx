@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && node netlify.js && npm run build"
+  command = "npm install && node netlify.js && npx vite build"
   publish = "dist"
   
 [[redirects]]

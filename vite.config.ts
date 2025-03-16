@@ -42,6 +42,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    // Explicitly tell Vite what files to build
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
   },
   define: {
     // Add any global constants here
