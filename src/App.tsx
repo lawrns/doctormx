@@ -128,7 +128,13 @@ function App() {
       {/* Admin routes */}
       <Route path="/admin">
         <Route path="login" element={<AdminLoginPage />} />
-        <Route element={<AdminProtectedRoute><AdminLayout /></AdminProtectedRoute>}>
+        <Route element={
+          <AdminAuthProvider>
+            <AdminProtectedRoute>
+              <AdminLayout />
+            </AdminProtectedRoute>
+          </AdminAuthProvider>
+        }>
           <Route path="dashboard" element={<AdminDashboardPage />} />
           <Route path="doctors" element={<DoctorsListPage />} />
           <Route path="doctors/:id" element={<DoctorVerificationPage />} />

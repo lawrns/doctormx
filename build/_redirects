@@ -1,0 +1,23 @@
+# SPA fallback
+/* /index.html 200
+
+# SEO-friendly redirects
+# Old URL structure to new structure
+
+# Doctor profiles
+/doctor/:id /doctores/:specialty/:city/:name 301
+/medicos/:id /doctores/:specialty/:city/:name 301
+
+# Trailing slashes - canonical URLs should NOT have trailing slashes
+/doctores/:specialty/:city/:name/ /doctores/:specialty/:city/:name 301
+/especialidades/:name/ /especialidades/:name 301
+/condiciones/:name/ /condiciones/:name 301
+/articulos/:category/:name/ /articulos/:category/:name 301
+
+# Specialty mapping (examples)
+/cardiologia /especialidades/cardiologia 301
+/dermatologia /especialidades/dermatologia 301
+/pediatria /especialidades/pediatria 301
+
+# Language redirects - default to Spanish
+/en/* /es/:splat 302

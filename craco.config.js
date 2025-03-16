@@ -1,8 +1,24 @@
 const path = require('path');
 
+// We need to handle ESLint plugin specially
+let eslintWebpackPlugin;
+try {
+  // Try to import directly
+  eslintWebpackPlugin = require('eslint-webpack-plugin');
+} catch (e) {
+  console.warn('eslint-webpack-plugin not found, will skip ESLint during build');
+}
+
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
+      // Remove ESLintWebpackPlugin if it exists
+      if (webpackConfig.plugins) {
+        webpackConfig.plugins = webpackConfig.plugins.filter(plugin => 
+          plugin.constructor && plugin.constructor.name !== 'ESLintWebpackPlugin'
+        );
+      }
+      
       // Find terser plugin and update it
       const terserPluginIndex = webpackConfig.optimization.minimizer.findIndex(
         (plugin) => plugin.constructor.name === 'TerserPlugin'

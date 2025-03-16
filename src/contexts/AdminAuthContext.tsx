@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import type { AdminUser, AdminSession } from '../lib/types/admin';
 import { jwtDecode } from 'jwt-decode';
@@ -15,7 +15,7 @@ interface AdminAuthContextType {
 
 const AdminAuthContext = createContext<AdminAuthContextType | undefined>(undefined);
 
-export function AdminAuthProvider() {
+export function AdminAuthProvider({ children }: { children: ReactNode }) {
   const [admin, setAdmin] = useState<AdminUser | null>(null);
   const [session, setSession] = useState<AdminSession | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -117,7 +117,7 @@ export function AdminAuthProvider() {
 
   return (
     <AdminAuthContext.Provider value={value}>
-      <Outlet />
+      {children}
     </AdminAuthContext.Provider>
   );
 }
