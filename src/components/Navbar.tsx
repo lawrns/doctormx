@@ -41,7 +41,7 @@ function Navbar() {
   const dropdownMenus = {
     services: [
       { name: 'Buscar Médicos', path: '/buscar' },
-      { name: 'Evaluación de Síntomas', path: '/sintomas/ai' },
+      { name: 'Evaluación de Síntomas', path: '/sintomas' },
       { name: 'Telemedicina', path: '/telemedicina' },
       { name: 'Medicina Alternativa', path: '/alternativa' }
     ],
@@ -160,7 +160,7 @@ function Navbar() {
           {/* Right section: Doctor IA, language selector, and auth buttons */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
             <Link
-              to="/sintomas/ai"
+              to="/sintomas"
               className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
             >
               <Brain size={18} className="mr-2" />
@@ -255,7 +255,7 @@ function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {/* Doctor IA button for mobile */}
             <Link
-              to="/sintomas/ai"
+              to="/sintomas"
               className="flex items-center justify-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium"
               onClick={toggleMenu}
             >
