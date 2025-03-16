@@ -1,12 +1,7 @@
 [build]
-  command = "npm run build"
+  command = "node build-netlify.js"
   publish = "build"
-
-[build.environment]
-  NODE_VERSION = "18.18.0"
-  NPM_VERSION = "9.8.1"
-
-# Redirects for SPA  
+  
 [[redirects]]
   from = "/*"
   to = "/index.html"
