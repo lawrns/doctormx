@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Calendar, Clock, Video, MapPin, CreditCard, CheckCircle, AlertCircle } from 'lucide-react';
-import { format, addDays } from 'date-fns';
-import { es } from 'date-fns/locale';
+import { format, addDays } from '../utils/dateHelpers';
+import { formatSpanishDate } from '../utils/dateHelpers';
 import ProgressSteps from '../components/ProgressSteps';
 
 // Mock doctor data
@@ -84,7 +84,7 @@ function BookingPage() {
   useEffect(() => {
     if (!doctor) return;
     
-    const dayOfWeek = format(selectedDate, 'EEEE', { locale: es });
+    const dayOfWeek = formatSpanishDate(selectedDate, 'EEEE').toLowerCase();
     const scheduleKey = dayOfWeek.toLowerCase();
     
     if (!doctor.schedule[scheduleKey]) {
@@ -195,7 +195,7 @@ function BookingPage() {
   };
 
   const formatDateForDisplay = (date) => {
-    return format(date, "EEEE d 'de' MMMM", { locale: es });
+    return formatSpanishDate(date, "EEEE d 'de' MMMM");
   };
   
   const handleCardNumberChange = (e) => {
@@ -401,7 +401,7 @@ function BookingPage() {
                       <div className="grid grid-cols-7 gap-2">
                         {next14Days.map((date, index) => {
                           const isSelected = selectedDate.toDateString() === date.toDateString();
-                          const dayName = format(date, 'EEE', { locale: es });
+                          const dayName = formatSpanishDate(date, 'EEE');
                           const dayNumber = format(date, 'd');
                           
                           return (
@@ -416,7 +416,7 @@ function BookingPage() {
                                 ? 'bg-blue-600 text-white' 
                                 : 'bg-white text-gray-700 hover:bg-gray-100'
                               }`}
-                                aria-label={`Seleccionar fecha: ${format(date, 'EEEE d MMMM', { locale: es })}`}
+                                aria-label={`Seleccionar fecha: ${formatSpanishDate(date, 'EEEE d MMMM')}`}
                                 aria-pressed={isSelected}
                               >
                               <span className="text-xs uppercase">{dayName}</span>

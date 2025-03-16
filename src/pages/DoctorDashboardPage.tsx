@@ -1,16 +1,4 @@
-                  <li>
-                    <Link
-                      to="/dashboard/broadcasts"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/broadcasts'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <BellRing size={20} className="mr-3" />
-                      <span>Mensajes</span>
-                    </Link>
-                  </li>import { useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { 

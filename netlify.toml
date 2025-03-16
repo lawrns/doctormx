@@ -1,6 +1,6 @@
 [build]
-  command = "npm i --no-package-lock --force && npm i @xstate/react@4.1.0 xstate@5.9.1 eslint-webpack-plugin@5.0.0 @babel/plugin-transform-class-properties@7.23.3 @babel/plugin-transform-private-methods@7.23.3 @babel/plugin-transform-private-property-in-object@7.23.4 --no-package-lock --force && npm run build"
-  publish = "build"
+  command = "npm install && npm run build"
+  publish = "dist"
   
 [[redirects]]
   from = "/*"
