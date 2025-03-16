@@ -1,4 +1,6 @@
-{
+    "path-browserify": "^1.0.1",
+    "os-browserify": "^0.3.0",
+    "crypto-browserify": "^3.12.0",{
   "name": "doctormx",
   "version": "0.1.0",
   "private": true,
@@ -34,7 +36,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "build:netlify": "SKIP_PREFLIGHT_CHECK=true npm install react-refresh --save-dev && craco build",
+    "build-netlify": "npm i --force && npm i cross-env --save-dev --force && npm i @tanstack/react-query@4.29.7 --force && npm i react-refresh@0.14.0 --force && npm i eslint-webpack-plugin@4.0.1 --force && npm i @pmmmwh/react-refresh-webpack-plugin@0.5.10 --force && cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false craco build || (echo 'Build failed. Detailed error:' && cat /opt/build/repo/node_modules/.cache/craco/*-error.log 2>/dev/null || echo 'No error log found')",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -65,7 +67,11 @@
     "@babel/preset-typescript": "^7.23.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
     "autoprefixer": "^10.4.16",
+    "cross-env": "^7.0.3",
     "eslint-webpack-plugin": "^4.0.1",
+    "path-browserify": "^1.0.1",
+    "os-browserify": "^0.3.0",
+    "crypto-browserify": "^3.12.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.5"
   },

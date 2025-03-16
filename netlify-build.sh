@@ -1,41 +1,38 @@
 #!/bin/bash
-set -euo pipefail
+set -e
 
-echo "🛠️ Setting up build environment..."
+echo "🚀 Starting Netlify build script..."
 
-# First, make sure we have a src/index.js file (Create React App requirement)
-if [ ! -f "./src/index.js" ] && [ -f "./src/index.tsx" ]; then
-  echo "Creating index.js bridge to index.tsx..."
-  echo "// Bridge file to TypeScript entry point\nimport './index.tsx';" > ./src/index.js
-fi
-
-echo "🧹 Cleaning npm cache..."
+# Clean previous build artifacts to ensure a fresh start
+echo "🧹 Cleaning up build artifacts..."
+rm -rf node_modules
+rm -rf build
 npm cache clean --force
 
-echo "🗑️ Removing node_modules..."
-rm -rf node_modules
+# Install dependencies with force to override any conflicts
+echo "📦 Installing dependencies..."
+npm install --force
 
-echo "🧹 Cleaning npm install..."
-npm cache verify
+# Install specific dependencies that might be missing
+echo "🔧 Installing critical dependencies..."
+npm install cross-env path-browserify os-browserify crypto-browserify @tanstack/react-query@4.29.7 react-refresh@0.14.0 eslint-webpack-plugin@4.0.1 @pmmmwh/react-refresh-webpack-plugin@0.5.10 --save-dev --force
 
-echo "🔍 Installing dependencies with legacy peer deps..."
-NODE_ENV=development npm install --legacy-peer-deps
-
-echo "🔄 Installing specific dependencies..."
-npm install ajv@8.12.0 --save --legacy-peer-deps
-npm install ajv-keywords@5.1.0 --save --legacy-peer-deps
-npm install react-refresh@0.14.0 --save --legacy-peer-deps
-npm install eslint-webpack-plugin@4.0.1 --save-dev --legacy-peer-deps
-npm install --save-dev @pmmmwh/react-refresh-webpack-plugin --legacy-peer-deps
-npm install @tanstack/react-query@4.29.7 --save --legacy-peer-deps
-
-echo "🛠️ Setting environment variables..."
+# Set environment variables for build
+echo "🌐 Setting environment variables..."
+export NODE_ENV=production
 export SKIP_PREFLIGHT_CHECK=true
 export DISABLE_ESLINT_PLUGIN=true
 export CI=false
 export NODE_OPTIONS="--max-old-space-size=4096"
 
-echo "📦 Building project..."
-NODE_ENV=production npm run build
+# Run the build
+echo "🏗️ Building project..."
+npx cross-env NODE_ENV=production SKIP_PREFLIGHT_CHECK=true DISABLE_ESLINT_PLUGIN=true CI=false craco build
 
-echo "✅ Build completed!"
+# Check if build succeeded
+if [ -d "build" ]; then
+  echo "✅ Build completed successfully!"
+else
+  echo "❌ Build failed. Directory 'build' not found."
+  exit 1
+fi
