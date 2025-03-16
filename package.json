@@ -30,6 +30,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build:netlify": "SKIP_PREFLIGHT_CHECK=true npm install react-refresh --save-dev && craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
