@@ -9,6 +9,7 @@ import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
+import './env-check';
 
 // Create a client
 const queryClient = new QueryClient({
