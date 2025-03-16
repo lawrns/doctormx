@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 
 // Components
+import SEO from '../components/seo/SEO';
 import DynamicHeroSection from '../components/DynamicHeroSection';
 import EnhancedSpecialtySection from '../components/EnhancedSpecialtySection';
 import SocialProofCloud from '../components/SocialProofCloud';
@@ -66,6 +67,56 @@ const successStories = [
 ];
 
 function HomePage() {
+  // Generate FAQ schema data
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: '¿Cómo puedo encontrar un médico en Doctor.mx?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Puedes buscar médicos por especialidad, ubicación o nombre. También ofrecemos filtros avanzados para ayudarte a encontrar el profesional ideal para tus necesidades.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: '¿Qué es la evaluación de síntomas con IA?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Es un asistente virtual que te ayuda a entender tus síntomas y te guía hacia la atención médica adecuada, proporcionando análisis inteligente y recomendaciones personalizadas.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: '¿Puedo agendar una cita con un médico en línea?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sí, Doctor.mx te permite agendar citas con médicos de forma online, eligiendo la fecha y hora que mejor se adapte a tu horario.'
+        }
+      }
+    ]
+  };
+
+  // Generate organization schema
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Doctor.mx',
+    url: 'https://doctor.mx',
+    logo: 'https://doctor.mx/Doctorlogo.png',
+    sameAs: [
+      'https://www.facebook.com/doctormx',
+      'https://twitter.com/doctormx',
+      'https://www.instagram.com/doctormx/'
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+52-XXX-XXX-XXXX',
+      contactType: 'customer service'
+    }
+  };
   const [activeTab, setActiveTab] = useState<'patient' | 'doctor'>('patient');
   
   const { ref: featuresRef, inView: featuresInView } = useInView({
@@ -85,6 +136,15 @@ function HomePage() {
 
   return (
     <div>
+      <SEO 
+        title="Doctor.mx | Encuentra médicos, agenda citas y consultas por telemedicina" 
+        description="La plataforma líder de salud en México. Encuentra especialistas médicos, agenda citas, accede a telemedicina y evaluación de síntomas con IA."
+        canonical="/"
+        schema={{
+          '@context': 'https://schema.org',
+          '@graph': [organizationSchema, faqSchema]
+        }}
+      />
       {/* Hero Section */}
       <DynamicHeroSection />
 

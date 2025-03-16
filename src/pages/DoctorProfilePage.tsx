@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Star, Calendar, Video, Clock, Award, Languages, Phone, Mail, Globe, ChevronDown, ChevronUp, CheckCircle, Facebook, Twitter, Share2, MessageSquare, Users } from 'lucide-react';
-// Remove react-helmet import and replace with a custom component
-// import { Helmet } from 'react-helmet';
+// Import our SEO component
+import SEO from '../components/seo/SEO';
+import { getDoctorSchema } from '../lib/schemaGenerator';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
 
@@ -165,35 +166,63 @@ function DoctorProfilePage() {
     return date;
   });
 
+  // Generate schema markup for the doctor
+  const schema = doctor ? {
+    '@context': 'https://schema.org',
+    '@type': 'Physician',
+    'name': doctor.name,
+    'image': doctor.image,
+    'description': doctor.about,
+    'medicalSpecialty': doctor.specialty,
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': doctor.address,
+      'addressLocality': doctor.location,
+      'addressRegion': 'México',
+      'addressCountry': 'MX'
+    },
+    'telephone': '+52 55 1234 5678',
+    'email': 'contacto@doctor.mx',
+    'priceRange': `${doctor.price}`,
+    'availableService': doctor.services.map(service => ({
+      '@type': 'MedicalProcedure',
+      'name': service
+    })),
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': doctor.rating,
+      'reviewCount': doctor.reviewCount
+    },
+    'review': doctor.reviews.map(review => ({
+      '@type': 'Review',
+      'author': {
+        '@type': 'Person',
+        'name': review.patient
+      },
+      'datePublished': review.date,
+      'reviewRating': {
+        '@type': 'Rating',
+        'ratingValue': review.rating,
+        'bestRating': '5'
+      },
+      'reviewBody': review.comment
+    }))
+  } : null;
+
   return (
     <div className="bg-gray-50 py-8">
-      {/* Remove Helmet component that was causing the error */}
-      {/* {doctor && (
-        <Helmet>
-          <script type="application/ld+json">
-            {JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Physician",
-              "name": doctor.name,
-              "medicalSpecialty": doctor.specialty,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": doctor.address,
-                "addressLocality": doctor.location,
-                "addressRegion": "México"
-              },
-              "telephone": "+52 55 1234 5678",
-              "email": "contacto@doctor.mx",
-              "priceRange": `${doctor.price}`,
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": doctor.rating,
-                "reviewCount": doctor.reviewCount
-              }
-            })}
-          </script>
-        </Helmet>
-      )} */}
+      {/* Add SEO component */}
+      {doctor && (
+        <SEO
+          title={`${doctor.name} - ${doctor.specialty} en ${doctor.location} | Doctor.mx`}
+          description={`Consulta con ${doctor.name}, especialista en ${doctor.specialty} en ${doctor.location}. Reserva cita online o por telemedicina. ${doctor.about.substring(0, 100)}...`}
+          canonical={`/doctor/${id}`}
+          image={doctor.image}
+          schema={schema}
+          type="profile"
+        />
+      )}
+      {/* SEO component added above */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-8">
           {/* Doctor header */}

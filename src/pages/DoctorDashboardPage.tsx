@@ -1,13 +1,27 @@
-import { useState } from 'react';
+                  <li>
+                    <Link
+                      to="/dashboard/broadcasts"
+                      className={`flex items-center px-4 py-2 rounded-lg ${
+                        location.pathname === '/dashboard/broadcasts'
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <BellRing size={20} className="mr-3" />
+                      <span>Mensajes</span>
+                    </Link>
+                  </li>import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { 
   Calendar, User, Settings, LogOut, 
   Users, BarChart, Zap, AlertCircle, 
   MessageSquare, Clipboard, Star,
-  Shield, CheckCircle, Heart
+  Shield, CheckCircle, Heart, BellRing
 } from 'lucide-react';
 import ReferralLinkGenerator from '../components/connect/ReferralLinkGenerator';
+import BroadcastCreator from '../components/doctor/BroadcastCreator';
+import BroadcastList from '../components/doctor/BroadcastList';
 
 // Mock data for doctor
 const mockDoctorData = {
@@ -152,15 +166,15 @@ function DoctorDashboardPage() {
                   </li>
                   <li>
                     <Link
-                      to="/dashboard/patients"
+                      to="/dashboard/broadcasts"
                       className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/patients'
+                        location.pathname === '/dashboard/broadcasts'
                           ? 'bg-blue-50 text-blue-600'
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      <Users size={20} className="mr-3" />
-                      <span>Pacientes</span>
+                      <BellRing size={20} className="mr-3" />
+                      <span>Mensajes</span>
                     </Link>
                   </li>
                   <li>
@@ -235,6 +249,7 @@ function DoctorDashboardPage() {
               <Route index element={<DashboardTab doctorData={mockDoctorData} />} />
               <Route path="connect" element={<ConnectTab />} />
               <Route path="profile" element={<ProfileTab doctorData={mockDoctorData} />} />
+              <Route path="broadcasts" element={<BroadcastsTab />} />
             </Routes>
           </div>
         </div>
@@ -760,6 +775,33 @@ function ProfileTab({ doctorData }) {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+// Broadcasts Tab Component
+function BroadcastsTab() {
+  const [showCreator, setShowCreator] = useState(false);
+  
+  return (
+    <div>
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-2">Mensajes a Pacientes</h1>
+        <p className="text-gray-600">
+          Mantén informados a tus pacientes con mensajes, consejos de salud y actualizaciones.
+        </p>
+      </div>
+      
+      {showCreator ? (
+        <BroadcastCreator 
+          onSuccess={() => setShowCreator(false)}
+          onCancel={() => setShowCreator(false)}
+        />
+      ) : (
+        <BroadcastList 
+          onCreateNew={() => setShowCreator(true)}
+        />
+      )}
     </div>
   );
 }

@@ -25,6 +25,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import ConnectLandingPage from './pages/connect/ConnectLandingPage';
 import MedicosRegistroConnectPage from './pages/connect/MedicosRegistroConnectPage';
 import UpgradeStatusPage from './pages/UpgradeStatusPage';
+import DoctorBroadcastPage from './pages/DoctorBroadcastPage';
 import { useAuth } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminLayout from './components/admin/AdminLayout';
@@ -107,9 +108,14 @@ function App() {
         <Route path="alternativa" element={<AlternativeMedicinePage />} />
         <Route path="comunidad/preguntas" element={<QACommunityPage />} />
         <Route path="doctor-board" element={<MedicalBoardPage />} />
-        <Route path="doctor-dashboard/*" element={
+        <Route path="doctor-dashboard" element={
           <ProtectedRoute isAllowed={isAuthenticated}>
             <DoctorDashboardPage />
+          </ProtectedRoute>
+        } />
+        <Route path="doctor-dashboard/broadcast" element={
+          <ProtectedRoute isAllowed={isAuthenticated}>
+            <DoctorBroadcastPage />
           </ProtectedRoute>
         } />
         <Route path="acerca" element={<AboutUsPage />} />
