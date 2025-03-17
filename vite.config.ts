@@ -10,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@xstate/react': '/src/shims/xstate-react.js',
     },
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },

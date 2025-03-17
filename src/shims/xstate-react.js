@@ -1,16 +1,16 @@
 /**
- * Simple and clean shim for @xstate/react
+ * Shim for @xstate/react
  */
 
-import React from 'react';
+import * as React from 'react';
 
 /**
  * Basic implementation of useMachine
  * @param {object} machine - The state machine
- * @param {object} options - Options for the machine
+ * @param {object} options - Options for the machine 
  * @returns {array} - [state, send]
  */
-export function useMachine(machine, options = {}) {
+function useMachine(machine, options = {}) {
   const [state, setState] = React.useState(machine.initialState || {
     context: {},
     value: machine.initial || '',
@@ -21,8 +21,6 @@ export function useMachine(machine, options = {}) {
     if (typeof event === 'string') {
       event = { type: event };
     }
-    
-    console.log('Event received:', event);
     
     // Basic handling of events
     if (machine.states && machine.states[state.value] && 
@@ -74,7 +72,7 @@ export function useMachine(machine, options = {}) {
  * @param {object} config - Machine configuration
  * @returns {object} - State machine object
  */
-export function createMachine(config) {
+function createMachine(config) {
   return {
     ...config,
     initialState: {
@@ -85,3 +83,9 @@ export function createMachine(config) {
     }
   };
 }
+
+// Using ES Modules export style to be compatible with the imports
+export {
+  useMachine,
+  createMachine
+};
