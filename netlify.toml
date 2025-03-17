@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && ROLLUP_NATIVE_DISABLE=true npx vite build"
+  command = "npm install --legacy-peer-deps && node build-script.js && ROLLUP_NATIVE_DISABLE=true npx vite build --config vite.config.ts"
   publish = "dist"
   
 [[redirects]]
