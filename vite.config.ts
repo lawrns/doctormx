@@ -10,7 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      '@xstate/react': '/src/shims/xstate-react.js',
+      // Removed the @xstate/react alias to use the actual package
     },
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },
@@ -30,6 +30,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    rollupOptions: {
+      external: ['@xstate/react'],
+    }
   },
   define: {
     'process.env': {}

@@ -10,8 +10,7 @@ module.exports = defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      // Explicit aliases for problematic imports
-      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js'),
+      // Removed explicit alias for @xstate/react to use the actual package
       'date-fns': path.resolve(__dirname, 'node_modules/date-fns'),
       'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale'),
     },
@@ -34,6 +33,9 @@ module.exports = defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+    rollupOptions: {
+      external: ['@xstate/react'],
+    },
     commonjsOptions: {
       include: [/node_modules/],
       extensions: ['.js', '.cjs'],

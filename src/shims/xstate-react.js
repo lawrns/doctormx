@@ -1,8 +1,9 @@
 /**
  * Shim for @xstate/react
+ * This is a proper ES module that exports useMachine and createMachine
  */
 
-import * as React from 'react';
+import React from 'react';
 
 /**
  * Basic implementation of useMachine
@@ -84,8 +85,6 @@ function createMachine(config) {
   };
 }
 
-// Using ES Modules export style to be compatible with the imports
-export {
-  useMachine,
-  createMachine
-};
+// Explicitly export as default and named exports to cover all import styles
+export { useMachine, createMachine };
+export default { useMachine, createMachine };
