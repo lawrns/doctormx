@@ -1,5 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, ChevronLeft, ChevronRight, Users, CreditCard, FileText, Check, AlertCircle } from 'lucide-react';
+// Import each icon individually to prevent issues
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import Clock from 'lucide-react/dist/esm/icons/clock';
+import ChevronLeft from 'lucide-react/dist/esm/icons/chevron-left';
+import ChevronRight from 'lucide-react/dist/esm/icons/chevron-right';
+import Users from 'lucide-react/dist/esm/icons/users';
+import CreditCard from 'lucide-react/dist/esm/icons/credit-card';
+import FileText from 'lucide-react/dist/esm/icons/file-text';
+import Check from 'lucide-react/dist/esm/icons/check';
+import AlertCircle from 'lucide-react/dist/esm/icons/alert-circle';
 import { format, addDays, startOfWeek, addWeeks, isSameDay } from 'date-fns';
 import { es } from 'date-fns/locale';
 
