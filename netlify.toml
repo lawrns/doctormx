@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && node netlify-build.js"
+  command = "npm install --legacy-peer-deps tailwindcss postcss autoprefixer && node netlify-build.js"
   publish = "dist"
   
 [[redirects]]
