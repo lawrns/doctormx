@@ -44,9 +44,17 @@ export default defineConfig({
     sourcemap: true,
     // Explicitly tell Vite what files to build
     rollupOptions: {
-      input: {
-        main: './index.html',
+      output: {
+        manualChunks: undefined,
       },
+      external: [],
+      // Explicitly set to use JS implementation
+      context: 'window',
+      treeshake: {
+        moduleSideEffects: 'no-external',
+        propertyReadSideEffects: false,
+        tryCatchDeoptimization: false
+      }
     },
   },
   define: {

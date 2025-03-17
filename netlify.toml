@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && node netlify.js && npx vite build"
+  command = "npm install --no-optional && node skip-rollup-native.js && ROLLUP_NATIVE_DISABLE=true npx vite build"
   publish = "dist"
   
 [[redirects]]
