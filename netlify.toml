@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps tailwindcss postcss autoprefixer && node netlify-build.js"
+  command = "npm install --legacy-peer-deps tailwindcss postcss autoprefixer @babel/plugin-transform-react-jsx && NODE_OPTIONS='--require=./vite-cjs-fix.js' node netlify-build.js"
   publish = "dist"
   
 [[redirects]]
