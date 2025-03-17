@@ -4,7 +4,10 @@
 // Suppress the Vite CJS API deprecation warning
 process.env.VITE_CJS_IGNORE_WARNING = 'true';
 
-// Register import/export support for CJS modules
-require('@esbuild-kit/cjs-loader');
-
-console.log('Applied Vite CJS API fix for build process');
+try {
+  // Try to register import/export support for CJS modules
+  require('@esbuild-kit/cjs-loader');
+  console.log('Applied Vite CJS API fix for build process');
+} catch (err) {
+  console.log('CJS loader not available - continuing with build');
+}
