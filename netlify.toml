@@ -1,6 +1,7 @@
 [build]
-  command = "npm install && npm install --save-dev @esbuild-kit/cjs-loader && npm run build"
+  command = "chmod +x netlify.sh && ./netlify.sh"
   publish = "dist"
+  ignore_warnings = true
   
 [[redirects]]
   from = "/*"

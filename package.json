@@ -50,7 +50,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "NODE_OPTIONS='--require=./vite-cjs-fix.js' ROLLUP_NATIVE_DISABLE=true vite build",
+    "build": "vite build",
+    "build-simple": "npx vite build",
     "debug-build": "vite build --debug",
     "test": "vitest run"
   },
