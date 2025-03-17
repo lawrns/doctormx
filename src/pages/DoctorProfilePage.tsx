@@ -1,6 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Star, Calendar, Video, Clock, Award, Languages, Phone, Mail, Globe, ChevronDown, ChevronUp, CheckCircle, Facebook, Twitter, Share2, MessageSquare, Users } from 'lucide-react';
+import { 
+  MapPin, 
+  Star, 
+  Calendar, 
+  Video, 
+  Clock, 
+  Award, 
+  Languages, 
+  Phone, 
+  Mail, 
+  Globe, 
+  ChevronDown, 
+  ChevronUp, 
+  CheckCircle, 
+  Facebook, 
+  Twitter, 
+  Share2, 
+  MessageSquare, 
+  Users 
+} from '../components/icons';
+
 // Import our SEO component
 import SEO from '../components/seo/SEO';
 import { getDoctorSchema } from '../lib/schemaGenerator';

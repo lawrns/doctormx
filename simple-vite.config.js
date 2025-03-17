@@ -14,9 +14,9 @@ module.exports = defineConfig({
     alias: {
       '@': path.resolve(__dirname, 'src'),
       // Critical aliases for problematic dependencies
+      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js'),
       'date-fns': path.resolve(__dirname, 'node_modules/date-fns'),
-      'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale'),
-      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js')
+      'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale')
     }
   },
   
@@ -26,18 +26,21 @@ module.exports = defineConfig({
     jsxInject: undefined
   },
   
-  // Pre-bundle date-fns to ensure it's available
+  // Pre-bundle dependencies to ensure they're available
   optimizeDeps: {
     esbuildOptions: {
       loader: {
         '.js': 'jsx'
       }
     },
-    include: ['date-fns']
+    include: ['date-fns', '@xstate/react']
   },
   
   // Basic build configuration
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    commonjsOptions: {
+      transformMixedEsModules: true
+    }
   }
 });

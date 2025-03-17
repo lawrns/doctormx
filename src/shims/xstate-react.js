@@ -1,5 +1,5 @@
 /**
- * Comprehensive shim for @xstate/react
+ * Simple and clean shim for @xstate/react
  */
 
 import React from 'react';
@@ -17,60 +17,56 @@ export function useMachine(machine, options = {}) {
     nextEvents: machine.states ? Object.keys(machine.states) : []
   });
   
-  const service = React.useMemo(() => {
-    return {
-      send: (event) => {
-        if (typeof event === 'string') {
-          event = { type: event };
-        }
-        
-        console.log('Event received:', event);
-        
-        // Basic handling of events
-        if (machine.states && machine.states[state.value] && 
-            machine.states[state.value].on && 
-            machine.states[state.value].on[event.type]) {
-          
-          const target = machine.states[state.value].on[event.type];
-          const nextState = typeof target === 'string' ? target : target.target;
-          
-          if (nextState && machine.states[nextState]) {
-            setState({
-              value: nextState,
-              context: { ...state.context },
-              nextEvents: Object.keys(machine.states[nextState].on || {})
-            });
-            return;
-          }
-        }
-        
-        // Handle services
-        if (options.services && state.nextEvents.includes(event.type)) {
-          const serviceKey = `${event.type}`;
-          if (options.services[serviceKey]) {
-            try {
-              const result = options.services[serviceKey](state.context);
-              if (result && typeof result.then === 'function') {
-                result.then((data) => {
-                  setState({ 
-                    ...state, 
-                    context: { ...state.context, [serviceKey + 'Data']: data } 
-                  });
-                });
-              }
-            } catch (error) {
-              console.error('Service error:', error);
-            }
-          }
-        }
-        
-        // If no transition or service handled it, just update the state
-        setState({ ...state });
+  const send = React.useCallback((event) => {
+    if (typeof event === 'string') {
+      event = { type: event };
+    }
+    
+    console.log('Event received:', event);
+    
+    // Basic handling of events
+    if (machine.states && machine.states[state.value] && 
+        machine.states[state.value].on && 
+        machine.states[state.value].on[event.type]) {
+      
+      const target = machine.states[state.value].on[event.type];
+      const nextState = typeof target === 'string' ? target : target.target;
+      
+      if (nextState && machine.states[nextState]) {
+        setState({
+          value: nextState,
+          context: { ...state.context },
+          nextEvents: Object.keys(machine.states[nextState].on || {})
+        });
+        return;
       }
-    };
-  }, [machine, options, state.value]);
+    }
+    
+    // Handle services
+    if (options.services && state.nextEvents.includes(event.type)) {
+      const serviceKey = `${event.type}`;
+      if (options.services[serviceKey]) {
+        try {
+          const result = options.services[serviceKey](state.context);
+          if (result && typeof result.then === 'function') {
+            result.then((data) => {
+              setState({ 
+                ...state, 
+                context: { ...state.context, [serviceKey + 'Data']: data } 
+              });
+            });
+          }
+        } catch (error) {
+          console.error('Service error:', error);
+        }
+      }
+    }
+    
+    // If no transition or service handled it, just update the state
+    setState({ ...state });
+  }, [machine, options, state]);
   
-  return [state, service.send];
+  return [state, send];
 }
 
 /**
@@ -85,23 +81,7 @@ export function createMachine(config) {
       value: config.initial,
       context: config.context || {},
       nextEvents: config.states && config.states[config.initial] ? 
-                 Object.keys(config.states[config.initial].on || {}) : []
+                Object.keys(config.states[config.initial].on || {}) : []
     }
   };
-}
-
-// Default export for CommonJS compatibility
-export default {
-  useMachine,
-  createMachine
-};
-
-// Make sure CommonJS modules can also import it
-if (typeof module !== 'undefined') {
-  module.exports = {
-    useMachine,
-    createMachine
-  };
-  module.exports.useMachine = useMachine;
-  module.exports.createMachine = createMachine;
 }
