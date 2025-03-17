@@ -37,6 +37,58 @@ if (!fs.existsSync(SHIM_DIR)) {
   console.log('Created shims directory');
 }
 
+// Create date-fns core shim
+const dateFnsShim = `
+/**
+ * Shim for date-fns core functionality
+ */
+
+// Basic format function that covers the use cases in the app
+export function format(date, formatStr, options = {}) {
+  const d = new Date(date);
+  
+  // Basic formatting patterns
+  if (formatStr === 'EEEE') {
+    const days = options.locale?.code === 'es' 
+      ? ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
+      : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[d.getDay()];
+  }
+  
+  if (formatStr === 'EEE') {
+    const days = options.locale?.code === 'es'
+      ? ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb']
+      : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    return days[d.getDay()];
+  }
+  
+  if (formatStr === 'd') {
+    return d.getDate().toString();
+  }
+  
+  if (formatStr === 'dd MMMM yyyy') {
+    const day = d.getDate().toString().padStart(2, '0');
+    const months = options.locale?.code === 'es'
+      ? ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+      : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const month = months[d.getMonth()];
+    const year = d.getFullYear();
+    return \`\${day} \${month} \${year}\`;
+  }
+  
+  // Default format
+  return d.toLocaleDateString();
+}
+
+// Export a default object with required functions
+export default {
+  format
+};
+`;
+
+fs.writeFileSync(path.join(SHIM_DIR, 'date-fns.js'), dateFnsShim);
+console.log('Created date-fns core shim');
+
 // Create date-fns/locale shim
 const dateFnsLocaleShim = `
 // Shim for date-fns/locale
@@ -140,6 +192,25 @@ module.exports = { useMachine };
 
 fs.writeFileSync(path.join(SHIM_DIR, 'xstate-react.js'), xstateReactShim);
 console.log('Created @xstate/react shim');
+
+// Create date-fns directory in node_modules
+const DATE_FNS_DIR = path.join(__dirname, 'node_modules', 'date-fns');
+if (!fs.existsSync(DATE_FNS_DIR)) {
+  fs.mkdirSync(DATE_FNS_DIR, { recursive: true });
+  console.log('Created date-fns directory in node_modules');
+}
+
+// Create index.js in date-fns
+const dateFnsIndex = `
+// Shim for date-fns
+module.exports.format = function format(date, formatStr, options) {
+  const d = new Date(date);
+  return d.toLocaleDateString();
+};
+`;
+
+fs.writeFileSync(path.join(DATE_FNS_DIR, 'index.js'), dateFnsIndex);
+console.log('Created date-fns/index.js in node_modules');
 
 // Create necessary directories in node_modules
 const DATE_FNS_LOCALE_DIR = path.join(__dirname, 'node_modules', 'date-fns', 'locale');

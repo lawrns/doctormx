@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf node_modules && npm install --legacy-peer-deps && node dependency-fixer.js && npm run build"
+  command = "npm install --legacy-peer-deps && node dependency-fixer.js && node fix-react-imports.js && VITE_SKIP_AUTOINJECTION=true npm run build"
   publish = "dist"
   ignore_warnings = true
 

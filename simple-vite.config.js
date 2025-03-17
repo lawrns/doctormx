@@ -1,44 +1,43 @@
 const path = require('path');
-const react = require('@vitejs/plugin-react');
 const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
 
 module.exports = defineConfig({
   plugins: [react({
     jsxRuntime: 'automatic',
+    // Never auto-inject, we'll handle imports in components
     jsxImportSource: undefined
   })],
+  
+  // Add resolve aliases
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      // Explicit aliases for problematic imports
-      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js'),
+      // Critical aliases for problematic dependencies
       'date-fns': path.resolve(__dirname, 'node_modules/date-fns'),
       'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale'),
-    },
-    mainFields: ['module', 'jsnext:main', 'jsnext', 'main'],
+      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js')
+    }
   },
-  // Don't auto-inject React imports
+  
+  // No automatic JSX imports
   esbuild: {
     jsx: 'automatic',
     jsxInject: undefined
   },
+  
+  // Pre-bundle date-fns to ensure it's available
   optimizeDeps: {
     esbuildOptions: {
       loader: {
-        '.js': 'jsx',
-        '.ts': 'tsx'
+        '.js': 'jsx'
       }
     },
     include: ['date-fns']
   },
+  
+  // Basic build configuration
   build: {
-    outDir: 'dist',
-    sourcemap: true,
-    commonjsOptions: {
-      include: [/node_modules/],
-      extensions: ['.js', '.cjs'],
-      strictRequires: true,
-      transformMixedEsModules: true,
-    }
+    outDir: 'dist'
   }
 });
