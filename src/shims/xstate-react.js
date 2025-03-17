@@ -1,19 +1,49 @@
 /**
- * Minimal shim for @xstate/react
+ * Comprehensive shim for @xstate/react
  */
 
 import React from 'react';
 
-// Basic implementation of useMachine
+/**
+ * Basic implementation of useMachine
+ * @param {object} machine - The state machine
+ * @param {object} options - Options for the machine
+ * @returns {array} - [state, send]
+ */
 export function useMachine(machine, options = {}) {
-  const [state, setState] = React.useState(machine.initialState);
+  const [state, setState] = React.useState(machine.initialState || {
+    context: {},
+    value: machine.initial || '',
+    nextEvents: machine.states ? Object.keys(machine.states) : []
+  });
   
   const service = React.useMemo(() => {
-    const service = {
+    return {
       send: (event) => {
         if (typeof event === 'string') {
           event = { type: event };
         }
+        
+        console.log('Event received:', event);
+        
+        // Basic handling of events
+        if (machine.states && machine.states[state.value] && 
+            machine.states[state.value].on && 
+            machine.states[state.value].on[event.type]) {
+          
+          const target = machine.states[state.value].on[event.type];
+          const nextState = typeof target === 'string' ? target : target.target;
+          
+          if (nextState && machine.states[nextState]) {
+            setState({
+              value: nextState,
+              context: { ...state.context },
+              nextEvents: Object.keys(machine.states[nextState].on || {})
+            });
+            return;
+          }
+        }
+        
         // Handle services
         if (options.services && state.nextEvents.includes(event.type)) {
           const serviceKey = `${event.type}`;
@@ -33,12 +63,45 @@ export function useMachine(machine, options = {}) {
             }
           }
         }
+        
+        // If no transition or service handled it, just update the state
         setState({ ...state });
       }
     };
-    
-    return service;
-  }, [machine, options]);
+  }, [machine, options, state.value]);
   
   return [state, service.send];
+}
+
+/**
+ * createMachine shim
+ * @param {object} config - Machine configuration
+ * @returns {object} - State machine object
+ */
+export function createMachine(config) {
+  return {
+    ...config,
+    initialState: {
+      value: config.initial,
+      context: config.context || {},
+      nextEvents: config.states && config.states[config.initial] ? 
+                 Object.keys(config.states[config.initial].on || {}) : []
+    }
+  };
+}
+
+// Default export for CommonJS compatibility
+export default {
+  useMachine,
+  createMachine
+};
+
+// Make sure CommonJS modules can also import it
+if (typeof module !== 'undefined') {
+  module.exports = {
+    useMachine,
+    createMachine
+  };
+  module.exports.useMachine = useMachine;
+  module.exports.createMachine = createMachine;
 }
