@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // Enable class-based dark mode
   theme: {
@@ -45,9 +45,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    // These plugins are commented out until they're installed
-    // require('@tailwindcss/forms'),
-    // require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 };
