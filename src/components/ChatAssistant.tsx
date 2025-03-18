@@ -1,8 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
-import { X, Send, User, Bot, Mic, Paperclip } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useChat } from './ChatContext';
 import ExpandedChatAssistant from './ExpandedChatAssistant';
+import { SocialIcons } from './icons/IconProvider';
+import { X, Send, User } from './icons/IconProvider';
 
 type ChatAssistantProps = {
   onClose: () => void;
@@ -131,7 +132,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
                 }`}>
                   <div className="flex items-center mb-1">
                     {message.sender === 'bot' ? (
-                      <Bot size={16} className="mr-1 text-blue-600" />
+                      <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
                     ) : (
                       <User size={16} className="mr-1 text-white" />
                     )}
@@ -157,7 +158,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Usar micrófono"
             >
-              <Mic size={20} />
+              <SocialIcons.Mic size={20} />
             </motion.button>
             <motion.button 
               className="p-2 rounded-full mr-2 text-gray-500 hover:text-blue-600"
@@ -165,7 +166,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Adjuntar archivo"
             >
-              <Paperclip size={20} />
+              <SocialIcons.Paperclip size={20} />
             </motion.button>
             <input
               type="text"
