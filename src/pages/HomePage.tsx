@@ -281,7 +281,7 @@ function HomePage() {
                 </li>
               </ul>
               <Link
-                to="/sintomas/ai"
+                to="/sintomas/"
                 className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
               >
                 Iniciar evaluación
@@ -462,7 +462,7 @@ function HomePage() {
               Buscar médicos
             </Link>
             <Link 
-              to="/sintomas/ai"
+              to="/sintomas/"
               className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
             >
               Evaluar síntomas
