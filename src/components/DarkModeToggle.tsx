@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { CustomIcons } from './icons/CustomIcons';
 
 const DarkModeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,9 +55,9 @@ const DarkModeToggle = () => {
       title={isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
     >
       {isDarkMode ? (
-        <Sun size={20} className="text-yellow-400" />
+        <CustomIcons.Sun size={20} className="text-yellow-400" />
       ) : (
-        <Moon size={20} className="text-blue-600" />
+        <CustomIcons.Moon size={20} className="text-blue-600" />
       )}
     </button>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, Shield, Info } from 'lucide-react';
+import { CustomIcons } from './icons/CustomIcons';
 
 type AnimatedVerificationBadgeProps = {
   count?: number;
@@ -42,7 +42,7 @@ function AnimatedVerificationBadge({ count = 1250 }: AnimatedVerificationBadgePr
           }}
           className="mr-2 text-blue-600"
         >
-          <CheckCircle size={20} />
+          <CustomIcons.CheckCircle size={20} />
         </motion.div>
         <span className="text-blue-800 font-medium text-sm">
           {displayCount} médicos verificados activos ahora
@@ -57,7 +57,7 @@ function AnimatedVerificationBadge({ count = 1250 }: AnimatedVerificationBadgePr
           className="absolute top-full mt-2 left-0 bg-white p-4 rounded-lg shadow-lg z-10 w-72"
         >
           <div className="flex items-start mb-2">
-            <Shield className="text-blue-600 mr-2 flex-shrink-0 mt-0.5" size={18} />
+            <CustomIcons.Shield className="text-blue-600 mr-2 flex-shrink-0 mt-0.5" size={18} />
             <h3 className="font-medium text-gray-900">Proceso de verificación</h3>
           </div>
           <ul className="space-y-2 text-sm text-gray-600">
@@ -81,7 +81,7 @@ function AnimatedVerificationBadge({ count = 1250 }: AnimatedVerificationBadgePr
             </li>
           </ul>
           <div className="mt-2 pt-2 border-t border-gray-100 flex items-center text-xs text-gray-500">
-            <Info size={12} className="mr-1" />
+            <CustomIcons.Info size={12} className="mr-1" />
             <span>Actualizado en tiempo real</span>
           </div>
         </motion.div>

@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useChat } from './ChatContext';
 import ExpandedChatAssistant from './ExpandedChatAssistant';
-import { SocialIcons } from './icons/IconProvider';
+import { CustomIcons } from './icons/CustomIcons';
 import { X, Send, User } from './icons/IconProvider';
 
 type ChatAssistantProps = {
@@ -132,7 +132,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
                 }`}>
                   <div className="flex items-center mb-1">
                     {message.sender === 'bot' ? (
-                      <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
+                      <CustomIcons.Bot size={16} className="mr-1 text-blue-600" />
                     ) : (
                       <User size={16} className="mr-1 text-white" />
                     )}
@@ -158,7 +158,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Usar micrófono"
             >
-              <SocialIcons.Mic size={20} />
+              <CustomIcons.Mic size={20} />
             </motion.button>
             <motion.button 
               className="p-2 rounded-full mr-2 text-gray-500 hover:text-blue-600"
@@ -166,7 +166,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Adjuntar archivo"
             >
-              <SocialIcons.Paperclip size={20} />
+              <CustomIcons.Paperclip size={20} />
             </motion.button>
             <input
               type="text"

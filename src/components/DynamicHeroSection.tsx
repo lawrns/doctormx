@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Search } from 'lucide-react';
+import { CustomIcons } from './icons/CustomIcons';
 import SpecialtyDropdown from './SpecialtyDropdown';
 import LocationDropdown from './LocationDropdown';
 import AnimatedVerificationBadge from './AnimatedVerificationBadge';
@@ -314,7 +314,7 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <Search size={18} className="mr-2" />
+                  <CustomIcons.Search size={18} className="mr-2" />
                   {abTestVariant === 'A' ? 'Buscar' : 'Encontrar médico'}
                 </motion.button>
               </div>

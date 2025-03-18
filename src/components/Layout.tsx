@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SocialIcons, X, AlertCircle } from './icons/IconProvider';
+import { X } from './icons/IconProvider';
+import { CustomIcons } from './icons/CustomIcons';
 import { useAuth } from '../contexts/AuthContext';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -112,7 +113,7 @@ function Layout() {
           className="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600"
           aria-label="Contactar por WhatsApp"
         >
-          <SocialIcons.MessageSquare size={24} />
+          <CustomIcons.MessageSquare size={24} />
         </a>
         
         {/* Chat Assistant Button */}
@@ -121,7 +122,7 @@ function Layout() {
           className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 flex items-center justify-center"
           aria-label="Abrir asistente de chat"
         >
-          <SocialIcons.MessageCircle size={24} />
+          <CustomIcons.MessageCircle size={24} />
         </button>
         
         {/* Chat Assistant Modal */}
@@ -135,7 +136,7 @@ function Layout() {
           onClick={() => setShowFeedback(true)}
           aria-label="Dar feedback"
         >
-          <SocialIcons.ThumbsUp size={20} />
+          <CustomIcons.ThumbsUp size={20} />
         </button>
         
         {/* Feedback Modal */}
@@ -151,7 +152,7 @@ function Layout() {
                     feedbackType === 'suggestion' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
                   }`}
                 >
-                  <SocialIcons.ThumbsUp className="mr-3 text-blue-500" size={20} />
+                  <CustomIcons.ThumbsUp className="mr-3 text-blue-500" size={20} />
                   Tengo una sugerencia
                 </button>
                 <button
@@ -160,7 +161,7 @@ function Layout() {
                     feedbackType === 'issue' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
                   }`}
                 >
-                  <AlertCircle className="mr-3 text-amber-500" size={20} />
+                  <CustomIcons.AlertCircle className="mr-3 text-amber-500" size={20} />
                   Encontré un problema
                 </button>
                 <button
@@ -169,7 +170,7 @@ function Layout() {
                     feedbackType === 'compliment' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
                   }`}
                 >
-                  <SocialIcons.Smile className="mr-3 text-green-500" size={20} />
+                  <CustomIcons.Smile className="mr-3 text-green-500" size={20} />
                   Me gusta algo específico
                 </button>
               </div>

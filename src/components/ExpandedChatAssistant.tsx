@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SocialIcons } from './icons/IconProvider';
+import { CustomIcons } from './icons/CustomIcons';
 import { X, Send, User, Shield, Calendar, Video, Clock, AlertCircle } from './icons/IconProvider';
 
 type Message = {
@@ -237,7 +237,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                       }`}>
                         <div className="flex items-center mb-1">
                           {message.sender === 'bot' ? (
-                            <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
+                            <CustomIcons.Bot size={16} className="mr-1 text-blue-600" />
                           ) : (
                             <User size={16} className="mr-1 text-white" />
                           )}
