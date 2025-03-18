@@ -26,15 +26,31 @@ const useAdvancedUI = () => {
 
     // If no saved preference, check device capabilities
     const isHighEndDevice = () => {
-      // Simple detection based on memory and screen size
+      // More comprehensive detection based on memory, screen size, and device type
       const hasHighMemory = navigator.deviceMemory ? navigator.deviceMemory >= 4 : true;
       const hasLargeScreen = window.innerWidth >= 1024;
       const isNotMobile = !/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const hasGoodCPU = navigator.hardwareConcurrency ? navigator.hardwareConcurrency >= 4 : true;
       
-      return hasHighMemory && hasLargeScreen && isNotMobile;
+      return hasHighMemory && hasLargeScreen && isNotMobile && hasGoodCPU;
     };
 
     setIsAdvanced(isHighEndDevice());
+    
+    // Add resize listener to handle orientation changes
+    const handleResize = () => {
+      if (window.innerWidth < 768 && isAdvanced) {
+        toggleAdvancedUI(false);
+        // Add a notification for user
+        const notificationTimer = setTimeout(() => {
+          alert('Cambiamos a la interfaz simple para mejorar la experiencia en dispositivos móviles.');
+        }, 500);
+        return () => clearTimeout(notificationTimer);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const toggleAdvancedUI = (value: boolean) => {

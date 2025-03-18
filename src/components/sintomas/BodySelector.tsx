@@ -28,7 +28,7 @@ const BodySelector = ({ onSelectRegion }: BodySelectorProps) => {
 
   // Check if device supports 3D rendering
   useEffect(() => {
-    // Simple detection - in a real app, we would do more thorough detection
+    // More thorough device detection
     const isMobile = window.innerWidth < 768 || 
                      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     const hasLowMemory = navigator.deviceMemory && navigator.deviceMemory < 4;
@@ -37,6 +37,17 @@ const BodySelector = ({ onSelectRegion }: BodySelectorProps) => {
     if (isMobile || hasLowMemory) {
       setUseSimpleView(true);
     }
+
+    // Add resize listener to handle orientation changes
+    const handleResize = () => {
+      const isMobileView = window.innerWidth < 768;
+      if (isMobileView) {
+        setUseSimpleView(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const handleRegionClick = (region: string) => {
@@ -54,7 +65,7 @@ const BodySelector = ({ onSelectRegion }: BodySelectorProps) => {
 
       {useSimpleView ? (
         // Simple 2D view for mobile/low-spec devices
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {VALID_BODY_REGIONS.map((region) => (
             <button
               key={region}
@@ -73,7 +84,7 @@ const BodySelector = ({ onSelectRegion }: BodySelectorProps) => {
         </div>
       ) : (
         // Interactive SVG for desktop/high-spec devices
-        <div className="relative w-full max-w-md mx-auto h-96 mb-6">
+        <div className="relative w-full max-w-md mx-auto h-96 mb-6 px-2 sm:px-0 body-svg-container">
           <svg 
             viewBox="0 0 200 400" 
             className="w-full h-full"
@@ -261,11 +272,30 @@ const BodySelector = ({ onSelectRegion }: BodySelectorProps) => {
 
       <button
         onClick={() => setUseSimpleView(!useSimpleView)}
-        className="text-blue-600 text-sm flex items-center mb-6"
+        className="text-blue-600 text-sm flex items-center mb-6 mt-2"
       >
         <Info size={16} className="mr-1" />
         Cambiar a vista {useSimpleView ? '3D interactiva' : 'simple'}
       </button>
+      
+      {/* Mobile visibility notice */}
+      {!useSimpleView && window.innerWidth < 768 && (
+        <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-4 fixed top-0 left-0 right-0 z-50">
+          <div className="flex items-center justify-between">
+            <div className="ml-3">
+              <p className="text-amber-700 text-sm">
+                Para una mejor experiencia en dispositivos móviles, recomendamos usar la vista simple.
+              </p>
+            </div>
+            <button 
+              onClick={() => setUseSimpleView(true)} 
+              className="bg-amber-500 text-white px-3 py-1 rounded-md text-sm"
+            >
+              Cambiar
+            </button>
+          </div>
+        </div>
+      )}
 
       <div className="text-gray-500 text-sm">
         <p>Instrucciones:</p>

@@ -1,0 +1,138 @@
+/* Mobile-specific styles for doctormx */
+
+/* Prevent text from getting too small on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Add proper touch targets for mobile */
+button, 
+a,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Improve SVG rendering on mobile */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure focus states are visible on mobile touch */
+:focus {
+  outline: 3px solid #4299e1;
+}
+
+/* Prevent zoom on inputs */
+input, 
+select, 
+textarea {
+  font-size: 16px;
+}
+
+/* Mobile-specific overrides for BodySelector */
+@media (max-width: 767px) {
+  /* Improve touch targets on the body selector */
+  .body-region-highlight {
+    stroke-width: 2px;
+  }
+  
+  /* Ensure buttons are big enough to tap */
+  .body-selector-button {
+    padding: 12px 8px;
+  }
+  
+  /* Ensure svg body parts are easier to tap */
+  .body-part-clickable {
+    min-width: 32px;
+    min-height: 32px;
+  }
+  
+  /* Improve visibility for mobile */
+  .mobile-text-lg {
+    font-size: 18px;
+  }
+  
+  /* Avoid small text */
+  .symptom-text {
+    font-size: 16px;
+  }
+  
+  /* Help 2D body be visible */
+  .body-2d-container {
+    overflow-x: hidden;
+    max-width: 100%;
+    padding: 0 4px;
+  }
+  
+  /* Ensure card content is visible */
+  .card-content {
+    padding: 16px 12px;
+  }
+}
+
+/* Fix for disappearing SVG body on mobile */
+.body-svg-container {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  touch-action: none;
+}
+
+/* Improve touch feedback */
+.touch-feedback:active {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: 640px) {
+  .xs-responsive-padding {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .xs-responsive-margin {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  
+  /* Smaller headings on very small screens */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+  }
+  
+  /* No horizontal scroll on mobile */
+  .prevent-overflow {
+    overflow-x: hidden;
+  }
+}
+
+/* Device-specific fixes */
+@media (max-width: 374px) {
+  /* For very small screens like iPhone SE */
+  .xs-screen-adjust {
+    font-size: 14px;
+  }
+  
+  .xs-button-adjust {
+    padding: 8px 12px;
+  }
+}
+
+/* Fix for zooming issues on input focus */
+@media (max-width: 767px) {
+  input, 
+  select, 
+  textarea {
+    font-size: 16px !important;
+  }
+}

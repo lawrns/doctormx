@@ -47,7 +47,7 @@ const SymptomCheckerLayout: React.FC<SymptomCheckerLayoutProps> = ({
         Ir al contenido principal
       </a>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Navigation */}
         <div className="mb-6">
           {showBackButton && (
@@ -68,7 +68,7 @@ const SymptomCheckerLayout: React.FC<SymptomCheckerLayoutProps> = ({
 
         {/* Header */}
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">{title}</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">{title}</h1>
           {description && (
             <p className="text-gray-600 mt-2">
               {description}
@@ -83,13 +83,13 @@ const SymptomCheckerLayout: React.FC<SymptomCheckerLayoutProps> = ({
 
         {/* Disclaimer */}
         {showDisclaimer && (
-          <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8">
+          <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-4 sm:p-6 mb-8">
             <div className="flex">
               <div className="flex-shrink-0">
-                <AlertCircle className="h-6 w-6 text-amber-500" />
+                <AlertCircle className="h-5 w-5 sm:h-6 sm:w-6 text-amber-500" />
               </div>
               <div className="ml-4">
-                <h3 className="text-lg font-medium text-amber-800">Importante</h3>
+                <h3 className="text-base sm:text-lg font-medium text-amber-800">Importante</h3>
                 <div className="mt-2 text-amber-700">
                   <p>{disclaimerText}</p>
                 </div>

@@ -1,0 +1,22 @@
+{
+  "scraper": {
+    "pagesToScrape": 456,
+    "delayMinMs": 500,
+    "delayMaxMs": 1000,
+    "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Mobile/15E148 Safari/604.1"
+  },
+  "phoneFinder": {
+    "limitToProcess": 100,
+    "delayBetweenSearchesMinMs": 1000,
+    "delayBetweenSearchesMaxMs": 3000
+  },
+  "searchQuery": {
+    "template": "{name} dentista {address} teléfono Ciudad de México contacto"
+  },
+  "output": {
+    "dataDir": "./data/scraped",
+    "jsonFile": "dentists-with-phones.json",
+    "excelFile": "dentistas.xlsx",
+    "dedupedExcelFile": "dentistas-deduped.xlsx"
+  }
+}

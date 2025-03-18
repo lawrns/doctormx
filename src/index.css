@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import mobile-specific styles */
+@import './mobile.css';
+
 :root {
   --color-primary: #3b82f6;
   --color-primary-hover: #2563eb;

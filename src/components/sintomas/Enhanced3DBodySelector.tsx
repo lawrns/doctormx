@@ -63,6 +63,7 @@ const Enhanced3DBodySelector = ({ onSelectRegion, initialView = 'front' }: Enhan
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Check if device supports 3D rendering
+  // Check if device supports 3D rendering and handle responsive views
   useEffect(() => {
     // More comprehensive detection
     const checkWebGLSupport = () => {
@@ -88,7 +89,18 @@ const Enhanced3DBodySelector = ({ onSelectRegion, initialView = 'front' }: Enhan
     if (isMobile || hasLowMemory) {
       setSelectedView('front');
     }
-  }, []);
+    
+    // Add resize listener to handle orientation changes
+    const handleResize = () => {
+      const isMobileView = window.innerWidth < 768;
+      if (isMobileView && selectedView === '3d') {
+        setSelectedView('front');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [selectedView]);
 
   const handleRegionClick = (region: string) => {
     onSelectRegion(region);
@@ -528,7 +540,7 @@ const Enhanced3DBodySelector = ({ onSelectRegion, initialView = 'front' }: Enhan
 
       <div className="relative mb-6 h-96 border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
         {/* View controls */}
-        <div className="absolute top-2 right-2 flex space-x-2 z-10 bg-white rounded-lg shadow-sm p-1">
+        <div className="absolute top-2 right-2 flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2 z-10 bg-white rounded-lg shadow-sm p-1">
           <button
             onClick={() => setSelectedView('front')}
             className={`p-2 rounded-md ${selectedView === 'front' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100'}`}
@@ -555,7 +567,7 @@ const Enhanced3DBodySelector = ({ onSelectRegion, initialView = 'front' }: Enhan
         </div>
 
         {/* Zoom and rotation controls */}
-        <div className="absolute bottom-2 right-2 z-10 flex flex-col space-y-2 bg-white rounded-lg shadow-sm p-1">
+        <div className="absolute bottom-2 right-2 z-10 flex flex-col space-y-1 bg-white rounded-lg shadow-sm p-1">
           <button
             onClick={handleZoomIn}
             className="p-2 rounded-md text-gray-600 hover:bg-gray-100"
@@ -622,7 +634,7 @@ const Enhanced3DBodySelector = ({ onSelectRegion, initialView = 'front' }: Enhan
       )}
 
       {/* List of all available body regions for accessibility */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mb-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 mb-4">
         {Object.keys(BODY_REGION_LABELS).map((region) => (
           <button
             key={region}
