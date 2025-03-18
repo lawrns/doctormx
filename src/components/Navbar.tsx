@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Menu, X, User, Search, Calendar, LogOut, 
-  Brain, Leaf, MessageCircle, Video, ChevronDown, Globe
-} from 'lucide-react';
+  Leaf, MessageCircle, Video, ChevronDown, Globe
+} from '../components/icons/IconProvider';
+import { SocialIcons } from '../components/icons/IconProvider';
 import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
@@ -163,7 +164,7 @@ function Navbar() {
               to="/sintomas"
               className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
             >
-              <Brain size={18} className="mr-2" />
+              <SocialIcons.Brain size={18} className="mr-2" />
               Doctor IA
               <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
                 ¡NUEVO!
@@ -259,7 +260,7 @@ function Navbar() {
               className="flex items-center justify-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium"
               onClick={toggleMenu}
             >
-              <Brain size={18} className="mr-2" />
+              <SocialIcons.Brain size={18} className="mr-2" />
               Doctor IA
               <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
                 ¡NUEVO!

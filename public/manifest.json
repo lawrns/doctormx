@@ -1,25 +1,91 @@
 {
+  "name": "Doctor.mx - Salud Digital",
   "short_name": "Doctor.mx",
-  "name": "Doctor.mx Healthcare Platform",
+  "description": "Encuentra médicos, agenda citas y evalúa tus síntomas con IA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "doctormascot.png",
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any maskable"
     },
     {
-      "src": "doctormascot.png",
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [
+    {
+      "src": "/screenshots/screen1.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screen2.png",
+      "sizes": "1080x1920",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Evaluar Síntomas",
+      "short_name": "Síntomas",
+      "description": "Evaluar síntomas con nuestro asistente de IA",
+      "url": "/sintomas/",
+      "icons": [{ "src": "/icons/symptoms.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Buscar Médicos",
+      "short_name": "Buscar",
+      "description": "Encuentra especialistas médicos",
+      "url": "/buscar",
+      "icons": [{ "src": "/icons/search.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "categories": ["health", "medical", "healthcare"]
 }

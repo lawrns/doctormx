@@ -9,6 +9,8 @@ import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
+import PwaWrapper from './pwa/components/PwaWrapper';
+import { initializePwa } from './pwa';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -18,6 +20,11 @@ const queryClient = new QueryClient({
       retry: 1
     }
   }
+});
+
+// Initialize PWA functionality
+initializePwa().catch(error => {
+  console.error('[PWA] Initialization error:', error);
 });
 
 // Remove time-based theming in favor of user preference and system settings via ThemeProvider
@@ -31,7 +38,9 @@ createRoot(document.getElementById('root')!).render(
             <BrowserRouter>
               <ThemeProvider>
                 <QuestionnaireProvider>
-                  <App />
+                  <PwaWrapper>
+                    <App />
+                  </PwaWrapper>
                 </QuestionnaireProvider>
               </ThemeProvider>
             </BrowserRouter>

@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Search, Calendar, Video, Star, Shield, Clock, Users, ArrowRight,
-  Brain, Stethoscope, Leaf, MessageCircle, ChevronRight, Award
+  Stethoscope, Leaf, MessageCircle, ChevronRight, Award
 } from 'lucide-react';
+import { SocialIcons } from '../components/icons/IconProvider';
 
 // Components
 import SEO from '../components/seo/SEO';
@@ -19,7 +20,7 @@ const features = [
   {
     title: "Evaluación de Síntomas con IA",
     description: "Nuestro asistente virtual te guía paso a paso para entender tus síntomas y encontrar la atención adecuada.",
-    icon: Brain,
+    icon: (props) => <SocialIcons.Brain {...props} />,
     color: "blue"
   },
   {
@@ -263,7 +264,7 @@ function HomePage() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                    <Brain size={20} className="text-white" />
+                    <SocialIcons.Brain size={20} className="text-white" />
                   </div>
                   <span>Análisis inteligente de síntomas</span>
                 </li>
@@ -302,7 +303,7 @@ function HomePage() {
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-lg p-4 max-w-xs">
                 <div className="flex items-start">
-                  <Brain size={24} className="text-blue-600 mr-3 flex-shrink-0" />
+                  <SocialIcons.Brain size={24} className="text-blue-600 mr-3 flex-shrink-0" />
                   <p className="text-sm text-gray-600">
                     "Basado en tus síntomas, te recomiendo consultar con un especialista en..."
                   </p>

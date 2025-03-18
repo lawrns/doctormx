@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Mail, Phone, MapPin } from '../icons/IconProvider';
+import { SocialIcons } from '../icons/IconProvider';
 import './styles.css';
 
 function Footer() {
@@ -21,10 +22,10 @@ function Footer() {
                 <Facebook size={20} />
               </a>
               <a href="https://twitter.com" className="social-link">
-                <Twitter size={20} />
+                <SocialIcons.Twitter size={20} />
               </a>
               <a href="https://instagram.com" className="social-link">
-                <Instagram size={20} />
+                <SocialIcons.Instagram size={20} />
               </a>
             </div>
           </div>
@@ -36,7 +37,7 @@ function Footer() {
                 <Link to="/buscar" className="footer-link">Buscar médicos</Link>
               </li>
               <li>
-                <Link to="/sintomas/ai" className="footer-link">Evaluación de Síntomas</Link>
+                <Link to="/sintomas/" className="footer-link">Evaluación de Síntomas</Link>
               </li>
               <li>
                 <Link to="/telemedicina" className="footer-link">Telemedicina</Link>

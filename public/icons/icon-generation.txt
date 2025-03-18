@@ -1,0 +1,34 @@
+App Icon Generation for Doctor.mx PWA
+
+You'll need to create the following icon sizes for the PWA:
+
+1. icon-72x72.png
+2. icon-96x96.png
+3. icon-128x128.png
+4. icon-144x144.png
+5. icon-152x152.png
+6. icon-192x192.png
+7. icon-384x384.png
+8. icon-512x512.png
+
+You should use the Doctor.mx logo to generate these icons. Ensure that:
+- Icons are properly centered
+- Icons maintain proper margins around the logo
+- Icons use the brand colors (#3b82f6 for primary blue)
+- Icons have a transparent background or white background
+
+For the best results, you may want to use a tool like:
+- Real Favicon Generator (https://realfavicongenerator.net/)
+- Sketch, Figma, or Adobe Illustrator for design
+- Adobe Photoshop for export
+
+Each icon should be saved in PNG format with good compression.
+
+Additionally, create:
+- A badge icon (badge-72x72.png) for notifications
+- An Apple touch icon (apple-touch-icon.png, 180x180px)
+- A favicon.ico file (16x16, 32x32)
+
+For Safari on iOS, additional splash screens may be needed in different sizes.
+
+Note: The actual icons are not created by this script - you'll need to design and generate them separately, then place them in the /public/icons directory.
