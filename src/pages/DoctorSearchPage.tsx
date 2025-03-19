@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { Search, MapPin, Star, Calendar, Video, Filter, ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark, Clock } from 'lucide-react';
+import { Search, MapPin, Star, Calendar, Video, Filter, ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark } from 'lucide-react';
 import FilterChips from '../components/FilterChips';
 
 // Mock data for doctors
@@ -882,7 +882,7 @@ function DoctorSearchPage() {
                           </span>
                           
                           <span className="badge badge-gray flex items-center">
-                            <Clock size={12} className="mr-1" />
+                            <span className="mr-1">⏱️</span>
                             Tiempo de espera aprox.: 
                             {parseInt(doctor.id.charAt(doctor.id.length - 1)) % 4 === 0 ? '10 min' :
                              parseInt(doctor.id.charAt(doctor.id.length - 1)) % 4 === 1 ? '20 min' :
