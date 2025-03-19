@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SocialIcons, X, AlertCircle } from './icons/IconProvider';
 import { useAuth } from '../contexts/AuthContext';
-import Navbar from './Navbar';
+import { EnhancedNavbar } from './Navigation';
 import Footer from './Footer';
 import ChatAssistant from './ChatAssistant';
 import { ChatProvider } from './ChatContext';
@@ -87,7 +87,7 @@ function Layout() {
           Ir al contenido principal
         </a>
         
-        <Navbar />
+        <EnhancedNavbar />
         
         {isLoading ? (
           <main className="flex-grow flex items-center justify-center">
