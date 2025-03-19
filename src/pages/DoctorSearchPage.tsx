@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { Search, MapPin, Star, Calendar, Video, Filter, ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark } from 'lucide-react';
+import { Search, MapPin, Star, Calendar, Video, Filter, ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark, Clock } from 'lucide-react';
 import FilterChips from '../components/FilterChips';
 
 // Mock data for doctors
