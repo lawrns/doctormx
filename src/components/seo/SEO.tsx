@@ -1,71 +1,61 @@
-import { Helmet } from 'react-helmet';
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title?: string;
   description?: string;
-  canonical?: string;
-  image?: string;
-  schema?: Record<string, any>;
-  type?: string;
-  noindex?: boolean;
-  alternateLanguages?: {locale: string; url: string}[];
+  canonicalUrl?: string;
+  keywords?: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  twitterCardType?: 'summary' | 'summary_large_image';
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Doctor.mx | Encuentra médicos, comunidades de pacientes y agenda citas en línea',
-  description = 'La plataforma líder de salud en México para encontrar médicos, agendar citas, comunidades de pacientes y consultas por telemedicina',
-  canonical,
-  image = '/Doctorlogo.png',
-  schema,
-  type = 'website',
-  noindex = false,
-  alternateLanguages = []
+  title = 'Doctor.mx - Encuentra médicos especialistas en México',
+  description = 'Conectamos pacientes con los mejores médicos especialistas de México. Agenda citas fácilmente y recibe atención médica de calidad.',
+  canonicalUrl = 'https://doctor.mx',
+  keywords = 'médicos, doctores, especialistas, citas médicas, salud, México, telemedicina',
+  ogType = 'website',
+  ogImage = 'https://doctor.mx/images/doctor-mx-social.jpg',
+  twitterCardType = 'summary_large_image',
 }) => {
-  const siteUrl = 'https://doctor.mx';
-  const url = canonical ? `${siteUrl}${canonical}` : siteUrl;
-  const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+  const siteTitle = 'Doctor.mx';
+  const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 
   return (
     <Helmet>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
+      <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
-      {noindex && <meta name="robots" content="noindex,nofollow" />}
+      <meta name="keywords" content={keywords} />
+      <link rel="canonical" href={canonicalUrl} />
 
-      {/* Open Graph Tags */}
-      <meta property="og:type" content={type} />
-      <meta property="og:title" content={title} />
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={imageUrl} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="Doctor.mx" />
       <meta property="og:locale" content="es_MX" />
-      
-      {/* Alternate language tags */}
-      {alternateLanguages.map((lang) => (
-        <link 
-          key={lang.locale} 
-          rel="alternate" 
-          hreflang={lang.locale} 
-          href={lang.url} 
-        />
-      ))}
-      <link rel="alternate" hreflang="es-mx" href={url} />
-      <link rel="alternate" hreflang="x-default" href={url} />
 
-      {/* Twitter Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content={twitterCardType} />
+      <meta name="twitter:site" content="@doctormx" />
+      <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image" content={ogImage} />
 
-      {/* JSON-LD Structured Data */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
-      )}
+      {/* Additional Meta Tags */}
+      <meta name="theme-color" content="#3b82f6" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content="Doctor.mx" />
+      <meta name="application-name" content="Doctor.mx" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-TileColor" content="#3b82f6" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
     </Helmet>
   );
 };
