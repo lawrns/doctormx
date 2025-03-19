@@ -1,5 +1,17 @@
-// Bridge file to redirect CRA build to the Vite entry point
-import './main.tsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import './index.css';
+import router from './EnhancedRouteConfig';
+import { AuthProvider } from './contexts/AuthContext';
 
-// This file exists to satisfy create-react-app's build process
-// The actual entry point of the application is main.tsx
+// For TailwindCSS to work correctly
+import './mobile.css';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
+  </React.StrictMode>
+);
