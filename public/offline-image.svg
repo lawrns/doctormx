@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#f3f4f6" />
+  
+  <!-- Dashed border -->
+  <rect x="20" y="20" width="472" height="472" fill="none" stroke="#9ca3af" stroke-width="4" stroke-dasharray="10" />
+  
+  <!-- Offline icon -->
+  <circle cx="256" cy="200" r="80" fill="#e5e7eb" />
+  <path d="M216 200 L296 200 M236 170 L276 170 M236 230 L276 230" 
+        stroke="#9ca3af" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Offline text -->
+  <text x="256" y="340" font-family="Arial, sans-serif" font-size="24" font-weight="bold" 
+        text-anchor="middle" fill="#4b5563">Imagen no disponible</text>
+  <text x="256" y="370" font-family="Arial, sans-serif" font-size="18" 
+        text-anchor="middle" fill="#6b7280">Sin conexión a Internet</text>
+</svg>

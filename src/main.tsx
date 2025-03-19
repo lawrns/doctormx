@@ -23,8 +23,12 @@ const queryClient = new QueryClient({
 });
 
 // Initialize PWA functionality
-initializePwa().catch(error => {
-  console.error('[PWA] Initialization error:', error);
+// We need to ensure this runs after the app has been mounted 
+// to avoid issues with service worker registration timing
+window.addEventListener('load', () => {
+  initializePwa().catch(error => {
+    console.error('[PWA] Initialization error:', error);
+  });
 });
 
 // Remove time-based theming in favor of user preference and system settings via ThemeProvider

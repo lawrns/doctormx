@@ -3,6 +3,7 @@
  */
 
 import { registerServiceWorker } from './registerSW';
+import './vite-pwa.d.ts'; // Import PWA type definitions
 import { setupOfflineSync, setupCacheCleanup } from './utils/networkInterceptor';
 
 export { PwaProvider, usePwa } from './PwaContext';
