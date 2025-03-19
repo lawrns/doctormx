@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SocialIcons, X, AlertCircle } from './icons/IconProvider';
+import { SocialIcons } from './icons/IconProvider';
 import { useAuth } from '../contexts/AuthContext';
-import EnhancedNavbar from './EnhancedNavbar';
-import Footer from './Footer';
+import EnhancedNavbar from './navigation/EnhancedNavbar';
+import Footer from './navigation/Footer';
 import ChatAssistant from './ChatAssistant';
 import { ChatProvider } from './ChatContext';
 import { Modal, SubscriptionModal } from './modal';
@@ -108,7 +108,7 @@ function EnhancedLayout() {
           className="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
           aria-label="Contactar por WhatsApp"
         >
-          <SocialIcons.MessageSquare size={24} />
+          <span>💬</span>
         </a>
         
         {/* Chat Assistant Button */}
@@ -117,7 +117,7 @@ function EnhancedLayout() {
           className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 flex items-center justify-center"
           aria-label={showChatAssistant ? "Cerrar asistente de chat" : "Abrir asistente de chat"}
         >
-          <SocialIcons.MessageCircle size={24} />
+          <span>💬</span>
         </button>
         
         {/* Chat Assistant Modal */}
@@ -131,7 +131,7 @@ function EnhancedLayout() {
           onClick={() => setShowFeedback(true)}
           aria-label="Dar feedback"
         >
-          <SocialIcons.ThumbsUp size={20} />
+          <span>👍</span>
         </button>
         
         {/* Feedback Modal */}
@@ -148,7 +148,7 @@ function EnhancedLayout() {
                 feedbackType === 'suggestion' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
               }`}
             >
-              <SocialIcons.ThumbsUp className="mr-3 text-blue-500" size={20} />
+              <span className="mr-3 text-blue-500">👍</span>
               Tengo una sugerencia
             </button>
             <button
@@ -157,7 +157,7 @@ function EnhancedLayout() {
                 feedbackType === 'issue' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
               }`}
             >
-              <AlertCircle className="mr-3 text-amber-500" size={20} />
+              <span className="mr-3 text-amber-500">⚠️</span>
               Encontré un problema
             </button>
             <button
@@ -166,7 +166,7 @@ function EnhancedLayout() {
                 feedbackType === 'compliment' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
               }`}
             >
-              <SocialIcons.Smile className="mr-3 text-green-500" size={20} />
+              <span className="mr-3 text-green-500">😊</span>
               Me gusta algo específico
             </button>
           </div>
