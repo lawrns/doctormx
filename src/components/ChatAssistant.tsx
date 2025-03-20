@@ -1,151 +1,209 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useChat } from './ChatContext';
+import ExpandedChatAssistant from './ExpandedChatAssistant';
+import { SocialIcons } from './icons/IconProvider';
+import { X, Send, User } from './icons/IconProvider';
 
-interface ChatAssistantProps {
+type ChatAssistantProps = {
   onClose: () => void;
-}
+};
 
-const ChatAssistant: React.FC<ChatAssistantProps> = ({ onClose }) => {
-  const { messages, addMessage, clearMessages, isTyping } = useChat();
-  const [inputValue, setInputValue] = useState('');
+function ChatAssistant({ onClose }: ChatAssistantProps) {
+  const { messages, addMessage, isExpanded, setIsExpanded } = useChat();
+  const [input, setInput] = useState('');
+  const [isRecording, setIsRecording] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
-  // Scroll to bottom on new messages
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, isTyping]);
-  
-  const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+  
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.chat-container') && !target.closest('button')) {
+        onClose();
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+  
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    
+    document.addEventListener('keydown', handleEscKey);
+    return () => {
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [onClose]);
+
+  const handleSendMessage = () => {
+    if (input.trim() === '') return;
+    
+    addMessage({
+      text: input,
+      sender: 'user'
+    });
+    
+    setInput('');
+    
+    setTimeout(() => {
+      addMessage({
+        text: 'Para brindarte una mejor atención, ¿te gustaría acceder a nuestro asistente completo?',
+        sender: 'bot'
+      });
+    }, 1000);
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (inputValue.trim()) {
-      addMessage(inputValue, 'user');
-      setInputValue('');
+  const toggleVoiceRecording = () => {
+    setIsRecording(!isRecording);
+    
+    if (!isRecording) {
+      setTimeout(() => {
+        setInput('Me gustaría hablar con un médico');
+        setIsRecording(false);
+      }, 2000);
     }
   };
-  
-  // Format timestamp to display time
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  };
-  
+
+  if (isExpanded) {
+    return <ExpandedChatAssistant onClose={onClose} />;
+  }
+
   return (
-    <div className="fixed bottom-20 right-6 w-80 md:w-96 h-96 bg-white rounded-lg shadow-xl overflow-hidden z-50 flex flex-col border border-gray-200">
-      {/* Header */}
-      <div className="bg-blue-600 text-white px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center mr-2">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-            </svg>
-          </div>
-          <div>
-            <h3 className="font-semibold">Asistente Doctor.mx</h3>
-            <p className="text-xs text-blue-100">¿En qué podemos ayudarte?</p>
+    <AnimatePresence>
+      <motion.div 
+        initial={{ opacity: 0, y: 20, scale: 0.95 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 20, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="fixed bottom-20 right-6 w-80 sm:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col chat-container"
+      >
+        {/* Header */}
+        <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-blue-600 text-white rounded-t-lg">
+          <h3 className="font-semibold">Asistente Doctor.mx</h3>
+          <div className="flex items-center space-x-2">
+            <motion.button 
+              onClick={() => setIsExpanded(true)}
+              className="text-white hover:text-gray-200 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Expandir asistente"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-2V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+              </svg>
+            </motion.button>
+            <motion.button 
+              onClick={onClose}
+              className="text-white hover:text-gray-200 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Cerrar asistente"
+            >
+              <X size={20} />
+            </motion.button>
           </div>
         </div>
-        <div className="flex space-x-2">
-          <button 
-            onClick={clearMessages}
-            className="text-white hover:text-blue-200 transition-colors"
-            aria-label="Borrar conversación"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-            </svg>
-          </button>
-          <button 
-            onClick={onClose}
-            className="text-white hover:text-blue-200 transition-colors"
-            aria-label="Cerrar chat"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-      </div>
-      
-      {/* Messages area */}
-      <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
-        {messages.length === 0 ? (
-          <div className="h-full flex flex-col items-center justify-center text-center text-gray-500">
-            <svg className="w-16 h-16 mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-            </svg>
-            <p className="text-sm">No hay mensajes aún.</p>
-            <p className="text-xs mt-1">Haz una pregunta para comenzar la conversación.</p>
-          </div>
-        ) : (
-          <>
+        
+        {/* Messages */}
+        <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
+          <motion.div layout className="space-y-4">
             {messages.map((message) => (
-              <div
+              <motion.div
                 key={message.id}
-                className={`mb-3 flex ${
-                  message.sender === 'user' ? 'justify-end' : 'justify-start'
-                }`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div
-                  className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                    message.sender === 'user'
-                      ? 'bg-blue-600 text-white rounded-br-none'
-                      : 'bg-white text-gray-800 rounded-bl-none border border-gray-200'
-                  }`}
-                >
-                  <p className="text-sm">{message.text}</p>
-                  <p
-                    className={`text-xs mt-1 text-right ${
-                      message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
-                    }`}
-                  >
-                    {formatTime(message.timestamp)}
-                  </p>
-                </div>
-              </div>
-            ))}
-            
-            {isTyping && (
-              <div className="mb-3 flex justify-start">
-                <div className="max-w-[80%] rounded-lg px-4 py-2 bg-white text-gray-800 rounded-bl-none border border-gray-200">
-                  <div className="flex space-x-1">
-                    <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse"></div>
-                    <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                    <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                <div className={`max-w-[80%] p-3 rounded-lg ${
+                  message.sender === 'user' 
+                    ? 'bg-blue-600 text-white rounded-tr-none' 
+                    : 'bg-white text-gray-800 shadow-sm rounded-tl-none'
+                }`}>
+                  <div className="flex items-center mb-1">
+                    {message.sender === 'bot' ? (
+                      <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
+                    ) : (
+                      <User size={16} className="mr-1 text-white" />
+                    )}
+                    <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
+                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </span>
                   </div>
+                  <p>{message.text}</p>
                 </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </>
-        )}
-      </div>
-      
-      {/* Input area */}
-      <form onSubmit={handleSubmit} className="border-t p-2">
-        <div className="flex">
-          <input
-            type="text"
-            className="flex-1 border border-gray-300 rounded-l-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
-            placeholder="Escribe un mensaje..."
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-          <button
-            type="submit"
-            className="bg-blue-600 text-white rounded-r-md px-3 py-2 hover:bg-blue-700 transition-colors"
-            disabled={!inputValue.trim()}
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-          </button>
+              </motion.div>
+            ))}
+          </motion.div>
+          <div ref={messagesEndRef} />
         </div>
-      </form>
-    </div>
+        
+        {/* Input */}
+        <div className="p-3 border-t border-gray-200 bg-white rounded-b-lg">
+          <div className="flex items-center">
+            <motion.button 
+              className={`p-2 rounded-full mr-2 ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
+              onClick={toggleVoiceRecording}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Usar micrófono"
+            >
+              <SocialIcons.Mic size={20} />
+            </motion.button>
+            <motion.button 
+              className="p-2 rounded-full mr-2 text-gray-500 hover:text-blue-600"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Adjuntar archivo"
+            >
+              <SocialIcons.Paperclip size={20} />
+            </motion.button>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+              placeholder="Escribe tu mensaje..."
+              className="flex-1 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <motion.button 
+              onClick={handleSendMessage}
+              disabled={input.trim() === ''}
+              className={`p-2 ml-2 rounded-full ${
+                input.trim() === '' 
+                  ? 'text-gray-400 cursor-not-allowed' 
+                  : 'text-blue-600 hover:bg-blue-50'
+              }`}
+              whileHover={input.trim() !== '' ? { scale: 1.1 } : {}}
+              whileTap={input.trim() !== '' ? { scale: 0.9 } : {}}
+              aria-label="Enviar mensaje"
+            >
+              <Send size={20} />
+            </motion.button>
+          </div>
+          {isRecording && (
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-2 text-center text-sm text-red-600"
+            >
+              <span className="inline-block animate-pulse">●</span> Escuchando... Habla ahora
+            </motion.div>
+          )}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
-};
+}
 
 export default ChatAssistant;

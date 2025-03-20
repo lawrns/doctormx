@@ -1,106 +1,101 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight } from './icons/IconProvider';
+import { Link } from 'react-router-dom';
+import { ChevronRight } from './icons';
+import { generateBreadcrumbSchema } from '../lib/schemaGenerators';
+import { Helmet } from 'react-helmet';
 
-// Define route mappings for breadcrumb display
-const routeMapping: Record<string, string> = {
-  // Main sections
-  'buscar': 'Buscar Médicos',
-  'doctor': 'Perfil del Doctor',
-  'sintomas': 'Evaluación de Síntomas',
-  'telemedicina': 'Telemedicina',
-  'alternativa': 'Medicina Alternativa',
-  'comunidad': 'Comunidad',
-  'preguntas': 'Preguntas y Respuestas',
-  'doctor-board': 'Junta Médica',
-  'blog': 'Blog de Salud',
-  'acerca': 'Acerca de Nosotros',
-  'medicos': 'Para Médicos',
-  'planes': 'Planes',
-  'contacto': 'Contacto',
-  'ayuda': 'Ayuda',
-  'login': 'Iniciar Sesión',
-  'registro': 'Registrarse',
-  'dashboard': 'Mi Cuenta',
-  
-  // Add other routes as needed
-};
-
-interface BreadcrumbsProps {
-  customPaths?: {
-    [key: string]: string;
-  };
-  className?: string;
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+  isActive?: boolean;
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ customPaths = {}, className = '' }) => {
-  const location = useLocation();
-  
-  // Skip rendering on home page
-  if (location.pathname === '/') {
-    return null;
-  }
-  
-  // Split the path into segments and remove empty segments
-  const pathSegments = location.pathname.split('/').filter(Boolean);
-  
-  // Handle case with no segments
-  if (pathSegments.length === 0) {
-    return null;
-  }
-  
-  // Combine route mapping with custom paths
-  const combinedMapping = { ...routeMapping, ...customPaths };
-  
-  // Build breadcrumb items
-  const breadcrumbItems = [
-    // Always include home
-    { 
-      path: '/', 
-      label: 'Inicio' 
-    },
-    
-    // Add path segments
-    ...pathSegments.map((segment, index) => {
-      // Build the accumulated path up to this segment
-      const path = '/' + pathSegments.slice(0, index + 1).join('/');
-      
-      // Get the label from mapping or use the segment itself (capitalized)
-      let label = combinedMapping[segment] || segment.charAt(0).toUpperCase() + segment.slice(1);
-      
-      return { path, label };
-    })
-  ];
+interface BreadcrumbsProps {
+  /**
+   * Array of breadcrumb items to display
+   */
+  items: BreadcrumbItem[];
+  /**
+   * Optional class name for additional styling
+   */
+  className?: string;
+  /**
+   * Whether to add schema data to the page head
+   * @default true
+   */
+  addSchema?: boolean;
+}
+
+/**
+ * Enhanced breadcrumb component that also inserts schema.org BreadcrumbList data
+ * for improved SEO and structured data
+ */
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
+  items,
+  className = '',
+  addSchema = true
+}) => {
+  // Always include home as the first item if not already present
+  const breadcrumbItems = items[0]?.url === '/' 
+    ? items 
+    : [{ name: 'Inicio', url: '/' }, ...items];
+
+  // Generate schema.org BreadcrumbList for search engines and structured data
+  const breadcrumbSchema = addSchema ? generateBreadcrumbSchema(
+    breadcrumbItems.map(item => ({
+      name: item.name,
+      url: item.url
+    }))
+  ) : null;
 
   return (
-    <nav className={`text-sm py-3 ${className}`} aria-label="Breadcrumb">
-      <ol className="flex items-center space-x-1">
-        {breadcrumbItems.map((item, index) => {
-          const isLast = index === breadcrumbItems.length - 1;
-          
-          return (
-            <li key={item.path} className="flex items-center">
-              {index > 0 && (
-                <ChevronRight size={14} className="mx-1 text-gray-400" aria-hidden="true" />
-              )}
-              
-              {isLast ? (
-                <span className="text-gray-600 font-medium" aria-current="page">
-                  {item.label}
-                </span>
-              ) : (
-                <Link 
-                  to={item.path} 
-                  className="text-blue-600 hover:text-blue-800 transition-colors"
-                >
-                  {item.label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
+    <>
+      {/* Add schema.org data if enabled */}
+      {addSchema && (
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify(breadcrumbSchema)}
+          </script>
+        </Helmet>
+      )}
+
+      {/* Visible breadcrumb navigation */}
+      <nav className={`flex ${className}`} aria-label="Breadcrumb">
+        <ol className="flex flex-wrap items-center text-sm">
+          {breadcrumbItems.map((item, index) => {
+            const isLast = index === breadcrumbItems.length - 1;
+
+            return (
+              <li key={item.url} className="flex items-center">
+                {index > 0 && (
+                  <ChevronRight 
+                    size={16} 
+                    className="mx-2 text-gray-400 flex-shrink-0" 
+                    aria-hidden="true" 
+                  />
+                )}
+                
+                {isLast || item.isActive ? (
+                  <span 
+                    className="font-medium text-gray-700" 
+                    aria-current="page"
+                  >
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    to={item.url}
+                    className="text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      </nav>
+    </>
   );
 };
 

@@ -1,114 +1,82 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal, { ModalProps } from './Modal';
 
-interface SubscriptionModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSubscribe: (email: string) => void;
-  title?: string;
-  description?: string;
-  imageUrl?: string;
+interface SubscriptionModalProps extends Omit<ModalProps, 'children' | 'title'> {
+  onSubscribe?: (email: string) => void;
 }
 
 const SubscriptionModal: React.FC<SubscriptionModalProps> = ({
   isOpen,
   onClose,
   onSubscribe,
-  title = '¡No te vayas todavía!',
-  description = 'Recibe recomendaciones personalizadas de médicos especialistas y promociones exclusivas.',
-  imageUrl = '/images/subscription-doctor.jpg',
+  ...props
 }) => {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
-  
-  const validateEmail = (email: string) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
-  };
-  
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email.trim()) {
-      setError('Por favor ingresa tu correo electrónico');
+    if (!email) {
+      setError('Por favor, ingresa tu correo electrónico');
       return;
     }
     
-    if (!validateEmail(email)) {
-      setError('Por favor ingresa un correo electrónico válido');
-      return;
-    }
-    
+    setIsSubmitting(true);
     setError('');
-    onSubscribe(email);
-    setEmail('');
-    onClose();
+    
+    try {
+      // Call the subscription handler
+      onSubscribe?.(email);
+      
+      // Close the modal after successful subscription
+      onClose();
+    } catch (err) {
+      setError('Hubo un error al suscribirte. Por favor, intenta de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-  
+
   return (
-    <Modal
-      isOpen={isOpen}
-      onClose={onClose}
-      size="md"
-      closeOnClickOutside={false}
+    <Modal 
+      isOpen={isOpen} 
+      onClose={onClose} 
+      title="No te pierdas a los mejores médicos"
+      {...props}
     >
-      <div className="flex flex-col md:flex-row items-center">
-        {imageUrl && (
-          <div className="md:w-2/5 mb-4 md:mb-0 md:mr-6">
-            <img
-              src={imageUrl}
-              alt="Subscripción"
-              className="rounded-lg w-full h-auto object-cover"
+      <div className="py-2">
+        <p className="mb-4 text-gray-600">
+          Déjanos tu correo y recíbelo en tu bandeja de entrada cuando se unan nuevos especialistas.
+        </p>
+        
+        <form onSubmit={handleSubmit}>
+          {error && (
+            <div className="mb-4 p-2 bg-red-50 text-red-600 text-sm rounded">
+              {error}
+            </div>
+          )}
+          
+          <div className="mb-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Tu correo electrónico"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
-        )}
-        
-        <div className={imageUrl ? 'md:w-3/5' : 'w-full'}>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">
-            {title}
-          </h3>
           
-          <p className="text-gray-600 mb-4">
-            {description}
-          </p>
-          
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Correo electrónico
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="tu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {error && (
-                <p className="mt-1 text-sm text-red-600">
-                  {error}
-                </p>
-              )}
-            </div>
-            
-            <div className="flex flex-col sm:flex-row sm:justify-end space-y-2 sm:space-y-0 sm:space-x-3">
-              <button
-                type="button"
-                className="py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                onClick={onClose}
-              >
-                No gracias
-              </button>
-              <button
-                type="submit"
-                className="py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                Suscribirme
-              </button>
-            </div>
-          </form>
-        </div>
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? 'Enviando...' : 'Recibir notificaciones'}
+          </button>
+        </form>
       </div>
     </Modal>
   );

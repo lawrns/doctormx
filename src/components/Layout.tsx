@@ -1,18 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SocialIcons } from './icons/IconProvider';
+import { SocialIcons, X, AlertCircle } from './icons/IconProvider';
 import { useAuth } from '../contexts/AuthContext';
-import EnhancedNavbar from './navigation/EnhancedNavbar';
-import Footer from './navigation/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import ChatAssistant from './ChatAssistant';
 import { ChatProvider } from './ChatContext';
-import { Modal, SubscriptionModal } from './modal';
-import { Button, Input } from './ui';
 
-function EnhancedLayout() {
+function Layout() {
   const [showChatAssistant, setShowChatAssistant] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showExitPopup, setShowExitPopup] = useState(false);
+  const [email, setEmail] = useState('');
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackType, setFeedbackType] = useState('');
   const [feedbackText, setFeedbackText] = useState('');
@@ -42,14 +41,19 @@ function EnhancedLayout() {
     return () => document.removeEventListener('mouseleave', handleMouseLeave);
   }, [isAuthenticated]);
   
-  const handleEmailSubmit = (email) => {
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    
     // In a production app, this would send the email to backend
     console.log('Exit intent email captured:', email);
     
     // Store in localStorage for demo purposes
     localStorage.setItem('capturedEmail', email);
     
-    // Close popup and show success message
+    // Close popup
+    setShowExitPopup(false);
+    
+    // Show success message
     alert('¡Gracias por registrarte! Te enviaremos información sobre los mejores doctores.');
   };
   
@@ -79,11 +83,11 @@ function EnhancedLayout() {
   return (
     <ChatProvider>
       <div className="flex flex-col min-h-screen">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-white text-blue-600 p-4 z-50">
+        <a href="#main-content" className="skip-to-content">
           Ir al contenido principal
         </a>
         
-        <EnhancedNavbar />
+        <Navbar />
         
         {isLoading ? (
           <main className="flex-grow flex items-center justify-center">
@@ -105,19 +109,19 @@ function EnhancedLayout() {
           href="https://wa.me/5215512345678?text=Hola,%20tengo%20una%20pregunta%20sobre%20Doctor.mx"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
+          className="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600"
           aria-label="Contactar por WhatsApp"
         >
-          <span>💬</span>
+          <SocialIcons.MessageSquare size={24} />
         </a>
         
         {/* Chat Assistant Button */}
         <button 
           onClick={() => setShowChatAssistant(!showChatAssistant)}
           className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 flex items-center justify-center"
-          aria-label={showChatAssistant ? "Cerrar asistente de chat" : "Abrir asistente de chat"}
+          aria-label="Abrir asistente de chat"
         >
-          <span>💬</span>
+          <SocialIcons.MessageCircle size={24} />
         </button>
         
         {/* Chat Assistant Modal */}
@@ -127,87 +131,117 @@ function EnhancedLayout() {
         
         {/* Feedback Button */}
         <button
-          className="fixed bottom-6 left-24 z-40 bg-white shadow-md border border-gray-200 text-gray-700 p-2 rounded-full hover:bg-gray-50 transition-colors"
+          className="fixed bottom-6 left-24 z-40 bg-white shadow-md border border-gray-200 text-gray-700 p-2 rounded-full hover:bg-gray-50"
           onClick={() => setShowFeedback(true)}
           aria-label="Dar feedback"
         >
-          <span>👍</span>
+          <SocialIcons.ThumbsUp size={20} />
         </button>
         
         {/* Feedback Modal */}
-        <Modal
-          isOpen={showFeedback}
-          onClose={() => setShowFeedback(false)}
-          title="Ayúdanos a mejorar"
-          size="md"
-        >
-          <div className="space-y-4 mb-4">
-            <button
-              onClick={() => setFeedbackType('suggestion')}
-              className={`w-full p-3 border rounded-lg text-left flex items-center ${
-                feedbackType === 'suggestion' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-              }`}
-            >
-              <span className="mr-3 text-blue-500">👍</span>
-              Tengo una sugerencia
-            </button>
-            <button
-              onClick={() => setFeedbackType('issue')}
-              className={`w-full p-3 border rounded-lg text-left flex items-center ${
-                feedbackType === 'issue' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-              }`}
-            >
-              <span className="mr-3 text-amber-500">⚠️</span>
-              Encontré un problema
-            </button>
-            <button
-              onClick={() => setFeedbackType('compliment')}
-              className={`w-full p-3 border rounded-lg text-left flex items-center ${
-                feedbackType === 'compliment' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
-              }`}
-            >
-              <span className="mr-3 text-green-500">😊</span>
-              Me gusta algo específico
-            </button>
+        {showFeedback && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Ayúdanos a mejorar</h3>
+              
+              <div className="space-y-4 mb-4">
+                <button
+                  onClick={() => setFeedbackType('suggestion')}
+                  className={`w-full p-3 border rounded-lg text-left flex items-center ${
+                    feedbackType === 'suggestion' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                  }`}
+                >
+                  <SocialIcons.ThumbsUp className="mr-3 text-blue-500" size={20} />
+                  Tengo una sugerencia
+                </button>
+                <button
+                  onClick={() => setFeedbackType('issue')}
+                  className={`w-full p-3 border rounded-lg text-left flex items-center ${
+                    feedbackType === 'issue' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                  }`}
+                >
+                  <AlertCircle className="mr-3 text-amber-500" size={20} />
+                  Encontré un problema
+                </button>
+                <button
+                  onClick={() => setFeedbackType('compliment')}
+                  className={`w-full p-3 border rounded-lg text-left flex items-center ${
+                    feedbackType === 'compliment' ? 'border-blue-500 bg-blue-50' : 'border-gray-300'
+                  }`}
+                >
+                  <SocialIcons.Smile className="mr-3 text-green-500" size={20} />
+                  Me gusta algo específico
+                </button>
+              </div>
+              
+              {feedbackType && (
+                <textarea
+                  value={feedbackText}
+                  onChange={(e) => setFeedbackText(e.target.value)}
+                  placeholder="Cuéntanos más..."
+                  className="w-full p-3 border border-gray-300 rounded-lg h-32"
+                />
+              )}
+              
+              <div className="flex justify-end mt-4 space-x-3">
+                <button
+                  onClick={() => setShowFeedback(false)}
+                  className="px-4 py-2 border border-gray-300 rounded-lg"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={submitFeedback}
+                  disabled={!feedbackType || !feedbackText.trim()}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg disabled:opacity-50"
+                >
+                  Enviar feedback
+                </button>
+              </div>
+            </div>
           </div>
-          
-          {feedbackType && (
-            <Input
-              value={feedbackText}
-              onChange={(e) => setFeedbackText(e.target.value)}
-              placeholder="Cuéntanos más..."
-              fullWidth
-              as="textarea"
-              className="h-32 resize-none"
-            />
-          )}
-          
-          <div className="flex justify-end mt-4 space-x-3">
-            <Button
-              onClick={() => setShowFeedback(false)}
-              variant="outline"
-            >
-              Cancelar
-            </Button>
-            <Button
-              onClick={submitFeedback}
-              variant="primary"
-              disabled={!feedbackType || !feedbackText.trim()}
-            >
-              Enviar feedback
-            </Button>
-          </div>
-        </Modal>
+        )}
         
-        {/* Exit Intent Popup using SubscriptionModal */}
-        <SubscriptionModal
-          isOpen={showExitPopup}
-          onClose={() => setShowExitPopup(false)}
-          onSubscribe={handleEmailSubmit}
-        />
+        {/* Exit Intent Popup */}
+        {showExitPopup && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                No te pierdas a los mejores médicos
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Déjanos tu correo y recíbelo en tu bandeja de entrada cuando se unan nuevos especialistas.
+              </p>
+              
+              <form onSubmit={handleEmailSubmit}>
+                <input 
+                  type="email" 
+                  placeholder="Tu correo electrónico" 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <button 
+                  type="submit" 
+                  className="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-lg"
+                >
+                  Recibir notificaciones
+                </button>
+              </form>
+              
+              <button 
+                onClick={() => setShowExitPopup(false)}
+                className="absolute top-3 right-3 text-gray-400 hover:text-gray-500"
+              >
+                <X size={20} />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </ChatProvider>
   );
 }
 
-export default EnhancedLayout;
+export default Layout;

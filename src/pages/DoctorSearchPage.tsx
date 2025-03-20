@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
-import { 
-  Search, MapPin, Star, Calendar, Video, Filter, 
-  ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark, 
-  Map, List
-} from '../components/icons/IconProvider';
+import { Search, MapPin, Star, Calendar, Video, Filter, ChevronDown, ChevronUp, X, Shield, Check, Users, Bookmark } from 'lucide-react';
 import FilterChips from '../components/FilterChips';
-import SearchMap from '../components/search/SearchMap';
-import Breadcrumbs from '../components/Breadcrumbs';
-import { Button, Input, Select, Checkbox } from '../components/ui';
-import { Modal, SubscriptionModal } from '../components/modal';
 
 // Mock data for doctors
 const mockDoctors = [
@@ -206,7 +198,7 @@ const languages = [
   { value: 'aleman', label: 'Alemán' }
 ];
 
-function EnhancedDoctorSearchPage() {
+function DoctorSearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [doctors, setDoctors] = useState(mockDoctors);
   const [filteredDoctors, setFilteredDoctors] = useState(mockDoctors);
@@ -216,13 +208,9 @@ function EnhancedDoctorSearchPage() {
   const [showFilters, setShowFilters] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [activeFilters, setActiveFilters] = useState<Array<{id: string, label: string, value: string}>>([]);
-  const [sortOption, setSortOption] = useState(searchParams.get('orden') || 'relevance');
-  const [insurance, setInsurance] = useState(searchParams.get('seguro') || '');
-  const [language, setLanguage] = useState(searchParams.get('idioma') || '');
-  const [viewMode, setViewMode] = useState<'list' | 'map'>(searchParams.get('vista') === 'mapa' ? 'map' : 'list');
-  const [showMobileMap, setShowMobileMap] = useState(false);
-  const [selectedDoctor, setSelectedDoctor] = useState<string | null>(null);
-  const [showSubscriptionModal, setShowSubscriptionModal] = useState(false);
+  const [sortOption, setSortOption] = useState('relevance');
+  const [insurance, setInsurance] = useState('');
+  const [language, setLanguage] = useState('');
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
   const [filters, setFilters] = useState({
@@ -230,7 +218,7 @@ function EnhancedDoctorSearchPage() {
     telemedicine: searchParams.get('telemedicina') === 'true',
     minRating: Number(searchParams.get('calificacion')) || 0,
     maxPrice: Number(searchParams.get('precio_max')) || 5000,
-    onlyPremium: searchParams.get('premium') === 'true'
+    onlyPremium: false
   });
 
   // Simulate loading state with announced status for screen readers
@@ -246,20 +234,6 @@ function EnhancedDoctorSearchPage() {
         announcer.textContent = 'Resultados de búsqueda cargados';
       }
     }, 800);
-    
-    // Show subscription modal after 5 seconds if user hasn't seen it before
-    const hasSeenModal = localStorage.getItem('hasSeenSubscriptionModal');
-    if (!hasSeenModal) {
-      const modalTimer = setTimeout(() => {
-        setShowSubscriptionModal(true);
-        localStorage.setItem('hasSeenSubscriptionModal', 'true');
-      }, 5000);
-      
-      return () => {
-        clearTimeout(timer);
-        clearTimeout(modalTimer);
-      };
-    }
     
     return () => clearTimeout(timer);
   }, []);
@@ -400,50 +374,21 @@ function EnhancedDoctorSearchPage() {
     setActiveFilters(newActiveFilters);
     
     // Update URL params
-    const params = new URLSearchParams(searchParams);
-    
-    // Core filters
+    const params = new URLSearchParams();
     if (specialty) params.set('especialidad', specialty);
-    else params.delete('especialidad');
-    
     if (location) params.set('ubicacion', location);
-    else params.delete('ubicacion');
-    
     if (searchTerm) params.set('busqueda', searchTerm);
-    else params.delete('busqueda');
-    
-    // Additional filters
     if (insurance) params.set('seguro', insurance);
-    else params.delete('seguro');
-    
     if (language) params.set('idioma', language);
-    else params.delete('idioma');
-    
     if (filters.availableToday) params.set('disponible', 'true');
-    else params.delete('disponible');
-    
     if (filters.telemedicine) params.set('telemedicina', 'true');
-    else params.delete('telemedicina');
-    
     if (filters.minRating > 0) params.set('calificacion', filters.minRating.toString());
-    else params.delete('calificacion');
-    
     if (filters.maxPrice < 5000) params.set('precio_max', filters.maxPrice.toString());
-    else params.delete('precio_max');
-    
-    if (filters.onlyPremium) params.set('premium', 'true');
-    else params.delete('premium');
-    
-    // Sort and view preferences
     if (sortOption !== 'relevance') params.set('orden', sortOption);
-    else params.delete('orden');
-    
-    if (viewMode === 'map') params.set('vista', 'mapa');
-    else params.delete('vista');
     
     setSearchParams(params, { replace: true });
     
-  }, [doctors, specialty, location, searchTerm, insurance, language, filters, sortOption, viewMode, searchParams, setSearchParams]);
+  }, [doctors, specialty, location, searchTerm, insurance, language, filters, sortOption, setSearchParams]);
 
   // Initialize from URL params
   useEffect(() => {
@@ -456,9 +401,7 @@ function EnhancedDoctorSearchPage() {
     const telemedicina = searchParams.get('telemedicina') === 'true';
     const calificacion = Number(searchParams.get('calificacion')) || 0;
     const precio_max = Number(searchParams.get('precio_max')) || 5000;
-    const premium = searchParams.get('premium') === 'true';
     const orden = searchParams.get('orden') || 'relevance';
-    const vista = searchParams.get('vista');
     
     if (especialidad) setSpecialty(especialidad);
     if (ubicacion) setLocation(ubicacion);
@@ -466,18 +409,17 @@ function EnhancedDoctorSearchPage() {
     if (seguro) setInsurance(seguro);
     if (idioma) setLanguage(idioma);
     if (orden) setSortOption(orden);
-    if (vista === 'mapa') setViewMode('map');
     
     setFilters({
       availableToday: disponible,
       telemedicine: telemedicina,
       minRating: calificacion,
       maxPrice: precio_max,
-      onlyPremium: premium
+      onlyPremium: false
     });
     
     // Show filters section if any advanced filter is active
-    if (disponible || telemedicina || calificacion > 0 || precio_max < 5000 || seguro || idioma || premium) {
+    if (disponible || telemedicina || calificacion > 0 || precio_max < 5000 || seguro || idioma) {
       setShowFilters(true);
     }
   }, [searchParams]);
@@ -531,7 +473,7 @@ function EnhancedDoctorSearchPage() {
   };
   
   // Function to show toast notifications
-  const displayToast = (message: string) => {
+  const displayToast = (message) => {
     setToastMessage(message);
     setShowToast(true);
     
@@ -541,78 +483,76 @@ function EnhancedDoctorSearchPage() {
     }, 3000);
   };
 
-  // Function to handle subscription
-  const handleSubscribe = (email: string) => {
-    // In a real app, this would call an API
-    console.log(`Subscribing email: ${email}`);
-    displayToast('Te has suscrito correctamente');
-  };
-
-  // Handle doctor selection from map
-  const handleDoctorSelect = (doctorId: string) => {
-    setSelectedDoctor(doctorId);
-    
-    // Scroll to the doctor card if in desktop view with both map and list
-    if (viewMode === 'map' && window.innerWidth >= 768) {
-      const doctorCard = document.getElementById(`doctor-${doctorId}`);
-      if (doctorCard) {
-        doctorCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-  };
-
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Breadcrumbs */}
-        <Breadcrumbs className="mb-4" />
-        
+    <div className="bg-gray-50 min-h-screen py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search and filter section */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-6">Buscar médicos</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="md:col-span-2">
-              <Input
-                id="search"
-                label="Buscar por nombre o especialidad"
-                placeholder="Ej. Dr. García o Cardiología"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                leftIcon={<Search size={18} className="text-gray-400" />}
-                fullWidth
-                aria-describedby="search-description"
-              />
-              <span id="search-description" className="sr-only">Busque médicos por nombre, especialidad o enfermedad</span>
+              <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">
+                Buscar por nombre o especialidad
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search size={18} className="text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  id="search"
+                  className="input-field pl-10"
+                  placeholder="Ej. Dr. García o Cardiología"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  aria-label="Buscar por nombre o especialidad"
+                  aria-describedby="search-description"
+                />
+                <span id="search-description" className="sr-only">Busque médicos por nombre, especialidad o enfermedad</span>
+              </div>
             </div>
             
             <div>
-              <Select
+              <label htmlFor="specialty" className="block text-sm font-medium text-gray-700 mb-1">
+                Especialidad
+              </label>
+              <select
                 id="specialty"
-                label="Especialidad"
-                options={specialties}
+                className="input-field"
                 value={specialty}
                 onChange={(e) => setSpecialty(e.target.value)}
                 aria-label="Filtrar por especialidad"
-                fullWidth
-              />
+              >
+                {specialties.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
             </div>
             
             <div>
-              <Select
+              <label htmlFor="location" className="block text-sm font-medium text-gray-700 mb-1">
+                Ubicación
+              </label>
+              <select
                 id="location"
-                label="Ubicación"
-                options={locations}
+                className="input-field"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 aria-label="Filtrar por ubicación"
-                leftIcon={<MapPin size={18} className="text-gray-400" />}
-                fullWidth
-              />
+              >
+                {locations.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           
-          <div className="mt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0">
+          <div className="mt-4 flex justify-between items-center">
             <button 
               onClick={() => setShowFilters(!showFilters)}
               className="flex items-center text-blue-600 font-medium"
@@ -624,129 +564,133 @@ function EnhancedDoctorSearchPage() {
               {showFilters ? <ChevronUp size={18} className="ml-1" /> : <ChevronDown size={18} className="ml-1" />}
             </button>
             
-            <div className="flex items-center gap-4">
-              <div>
-                <Select
-                  id="sort"
-                  options={[
-                    { value: 'relevance', label: 'Relevancia' },
-                    { value: 'rating', label: 'Calificación' },
-                    { value: 'price_asc', label: 'Precio: menor a mayor' },
-                    { value: 'price_desc', label: 'Precio: mayor a menor' }
-                  ]}
-                  value={sortOption}
-                  onChange={(e) => setSortOption(e.target.value)}
-                  label="Ordenar por"
-                />
-              </div>
-              
-              {/* View mode toggle */}
-              <div className="hidden md:flex items-center bg-gray-100 rounded-lg p-1">
-                <button
-                  className={`p-2 rounded-md ${viewMode === 'list' ? 'bg-white shadow-sm' : ''}`}
-                  onClick={() => setViewMode('list')}
-                  aria-label="Ver como lista"
-                  aria-pressed={viewMode === 'list'}
-                >
-                  <List size={20} className="text-gray-700" />
-                </button>
-                <button
-                  className={`p-2 rounded-md ${viewMode === 'map' ? 'bg-white shadow-sm' : ''}`}
-                  onClick={() => setViewMode('map')}
-                  aria-label="Ver como mapa"
-                  aria-pressed={viewMode === 'map'}
-                >
-                  <Map size={20} className="text-gray-700" />
-                </button>
-              </div>
+            <div>
+              <label htmlFor="sort" className="text-sm font-medium text-gray-700 mr-2">
+                Ordenar por:
+              </label>
+              <select
+                id="sort"
+                className="input-field inline-block w-auto"
+                value={sortOption}
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option value="relevance">Relevancia</option>
+                <option value="rating">Calificación</option>
+                <option value="price_asc">Precio: menor a mayor</option>
+                <option value="price_desc">Precio: mayor a menor</option>
+              </select>
             </div>
           </div>
           
           {showFilters && (
-            <div id="advanced-filters" className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
+            <div id="advanced-filters" className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in">
               <div>
-                <Select
+                <label htmlFor="insurance" className="block text-sm font-medium text-gray-700 mb-1">
+                  Seguro médico
+                </label>
+                <select
                   id="insurance"
-                  label="Seguro médico"
-                  options={insurances}
+                  className="input-field"
                   value={insurance}
                   onChange={(e) => setInsurance(e.target.value)}
-                  fullWidth
-                />
+                >
+                  {insurances.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
               
               <div>
-                <Select
+                <label htmlFor="language" className="block text-sm font-medium text-gray-700 mb-1">
+                  Idioma
+                </label>
+                <select
                   id="language"
-                  label="Idioma"
-                  options={languages}
+                  className="input-field"
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  fullWidth
-                />
+                >
+                  {languages.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
               
-              <div className="flex flex-col justify-end gap-3">
-                <Checkbox
-                  id="available-today"
-                  label="Disponible hoy"
-                  checked={filters.availableToday}
-                  onChange={(e) => handleFilterChange('availableToday', e.target.checked)}
-                  aria-label="Mostrar solo médicos disponibles hoy"
-                />
-                
-                <Checkbox
-                  id="telemedicine"
-                  label="Ofrece telemedicina"
-                  checked={filters.telemedicine}
-                  onChange={(e) => handleFilterChange('telemedicine', e.target.checked)}
-                  aria-label="Mostrar solo médicos que ofrecen telemedicina"
-                />
+              <div className="flex flex-col justify-end">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="h-4 w-4 text-blue-600 rounded"
+                    checked={filters.availableToday}
+                    onChange={(e) => handleFilterChange('availableToday', e.target.checked)}
+                    aria-label="Mostrar solo médicos disponibles hoy"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">Disponible hoy</span>
+                </label>
               </div>
               
-              <div className="flex flex-col justify-start gap-3">
-                <Checkbox
-                  id="only-premium"
-                  label="Solo perfiles premium"
-                  checked={filters.onlyPremium}
-                  onChange={(e) => handleFilterChange('onlyPremium', e.target.checked)}
-                  aria-label="Mostrar solo perfiles premium"
-                />
+              <div className="flex flex-col justify-end">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="h-4 w-4 text-blue-600 rounded"
+                    checked={filters.telemedicine}
+                    onChange={(e) => handleFilterChange('telemedicine', e.target.checked)}
+                    aria-label="Mostrar solo médicos que ofrecen telemedicina"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">Ofrece telemedicina</span>
+                </label>
               </div>
               
               <div>
-                <Select
-                  id="min-rating"
-                  label="Calificación mínima"
-                  options={[
-                    { value: '0', label: 'Cualquier calificación' },
-                    { value: '3', label: '3 estrellas o más' },
-                    { value: '4', label: '4 estrellas o más' },
-                    { value: '4.5', label: '4.5 estrellas o más' }
-                  ]}
-                  value={filters.minRating.toString()}
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Calificación mínima
+                </label>
+                <select
+                  className="input-field"
+                  value={filters.minRating}
                   onChange={(e) => handleFilterChange('minRating', Number(e.target.value))}
                   aria-label="Filtrar por calificación mínima"
-                  fullWidth
-                />
+                >
+                  <option value="0">Cualquier calificación</option>
+                  <option value="3">3 estrellas o más</option>
+                  <option value="4">4 estrellas o más</option>
+                  <option value="4.5">4.5 estrellas o más</option>
+                </select>
               </div>
               
               <div>
-                <Select
-                  id="max-price"
-                  label="Precio máximo"
-                  options={[
-                    { value: '5000', label: 'Cualquier precio' },
-                    { value: '800', label: '$800 o menos' },
-                    { value: '1000', label: '$1,000 o menos' },
-                    { value: '1500', label: '$1,500 o menos' },
-                    { value: '2000', label: '$2,000 o menos' }
-                  ]}
-                  value={filters.maxPrice.toString()}
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Precio máximo
+                </label>
+                <select
+                  className="input-field"
+                  value={filters.maxPrice}
                   onChange={(e) => handleFilterChange('maxPrice', Number(e.target.value))}
                   aria-label="Filtrar por precio máximo"
-                  fullWidth
-                />
+                >
+                  <option value="5000">Cualquier precio</option>
+                  <option value="800">$800 o menos</option>
+                  <option value="1000">$1,000 o menos</option>
+                  <option value="1500">$1,500 o menos</option>
+                </select>
+              </div>
+              
+              <div className="flex flex-col justify-end">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="h-4 w-4 text-blue-600 rounded"
+                    checked={filters.onlyPremium}
+                    onChange={(e) => handleFilterChange('onlyPremium', e.target.checked)}
+                    aria-label="Mostrar solo perfiles premium"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">Solo perfiles premium</span>
+                </label>
               </div>
             </div>
           )}
@@ -775,328 +719,293 @@ function EnhancedDoctorSearchPage() {
         
         {/* Quick filter chips */}
         <div className="flex flex-wrap gap-2 mb-4">
-          <Button 
-            size="sm"
-            variant={filters.availableToday ? 'primary' : 'outline'}
-            onClick={() => handleFilterChange('availableToday', !filters.availableToday)}
-            rounded
+          <button 
+            onClick={() => handleFilterChange('availableToday', true)}
+            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200"
           >
             Disponible hoy
-          </Button>
-          <Button 
-            size="sm"
-            variant={filters.telemedicine ? 'primary' : 'outline'}
-            onClick={() => handleFilterChange('telemedicine', !filters.telemedicine)}
-            rounded
+          </button>
+          <button 
+            onClick={() => handleFilterChange('telemedicine', true)}
+            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200"
           >
             Telemedicina
-          </Button>
-          <Button 
-            size="sm"
-            variant={filters.maxPrice === 1000 ? 'primary' : 'outline'}
-            onClick={() => handleFilterChange('maxPrice', filters.maxPrice === 1000 ? 5000 : 1000)}
-            rounded
+          </button>
+          <button 
+            onClick={() => handleFilterChange('maxPrice', 1000)}
+            className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200"
           >
             Menos de $1,000
-          </Button>
-          
-          {/* Mobile map toggle */}
-          <Button 
-            size="sm"
-            variant={showMobileMap ? 'primary' : 'outline'}
-            onClick={() => setShowMobileMap(!showMobileMap)}
-            rounded
-            className="md:hidden ml-auto"
-            icon={showMobileMap ? <List size={16} /> : <Map size={16} />}
-          >
-            {showMobileMap ? 'Ver lista' : 'Ver mapa'}
-          </Button>
+          </button>
         </div>
 
         {/* Results section */}
-        <div className="mb-6 flex justify-between items-end">
-          <div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
-              {filteredDoctors.length} {filteredDoctors.length === 1 ? 'médico encontrado' : 'médicos encontrados'}
-            </h2>
-            <p className="text-gray-600">
-              {specialty && specialties.find(s => s.value === specialty)?.label}
-              {specialty && location && ' en '}
-              {location && locations.find(l => l.value === location)?.label}
-            </p>
-          </div>
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold text-gray-900 mb-2">
+            {filteredDoctors.length} {filteredDoctors.length === 1 ? 'médico encontrado' : 'médicos encontrados'}
+          </h2>
+          <p className="text-gray-600">
+            {specialty && specialties.find(s => s.value === specialty)?.label}
+            {specialty && location && ' en '}
+            {location && locations.find(l => l.value === location)?.label}
+          </p>
         </div>
         
         {/* Screen reader announcer */}
-        <div id="sr-announcer" className="sr-only" aria-live="polite" aria-atomic="true"></div>
-        
-        {/* Mobile map view (hidden on desktop) */}
-        {showMobileMap && (
-          <div className="md:hidden h-[70vh] mb-6 bg-white rounded-lg shadow-sm overflow-hidden">
-            <SearchMap 
-              doctors={filteredDoctors}
-              selectedDoctor={selectedDoctor}
-              onDoctorSelect={handleDoctorSelect}
-              onClose={() => setShowMobileMap(false)}
-            />
+      <div id="sr-announcer" className="sr-only" aria-live="polite" aria-atomic="true"></div>
+      
+      {/* Doctor list */}
+        {isLoading ? (
+          // Skeleton loading state
+          <div className="space-y-6 animate-pulse">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden p-6">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
+                    <div className="w-32 h-32 rounded-full bg-gray-200"></div>
+                  </div>
+                  <div className="md:w-2/4 md:pl-6">
+                    <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
+                    <div className="h-4 bg-gray-200 rounded w-1/2 mb-3"></div>
+                    <div className="h-4 bg-gray-200 rounded w-1/4 mb-3"></div>
+                    <div className="h-4 bg-gray-200 rounded w-2/3 mb-3"></div>
+                    <div className="flex flex-wrap gap-2">
+                      <div className="h-6 bg-gray-200 rounded w-24"></div>
+                      <div className="h-6 bg-gray-200 rounded w-24"></div>
+                    </div>
+                  </div>
+                  <div className="md:w-1/4 mt-4 md:mt-0">
+                    <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
+                    <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
+                    <div className="h-10 bg-gray-200 rounded w-full mb-2"></div>
+                    <div className="h-10 bg-gray-200 rounded w-full"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {filteredDoctors.length > 0 ? (
+              filteredDoctors.map(doctor => (
+                <div key={doctor.id} className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                  <div className="p-6">
+                    <div className="flex flex-col md:flex-row">
+                      <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
+                        <div className="relative">
+                          <img 
+                            src={doctor.image} 
+                            alt={doctor.name} 
+                            className="w-32 h-32 rounded-full object-cover"
+                            loading="lazy"
+                            width="128"
+                            height="128"
+                            fetchpriority="high"
+                            onError={(e) => {
+                              e.currentTarget.src = '/public/doctor-placeholder.png';
+                              e.currentTarget.onerror = null;
+                            }}
+                          />
+                          {doctor.isPremium && (
+                            <div className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                              Premium
+                            </div>
+                          )}
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const savedDoctors = JSON.parse(localStorage.getItem('savedDoctors') || '[]');
+                              if (!savedDoctors.includes(doctor.id)) {
+                                savedDoctors.push(doctor.id);
+                                localStorage.setItem('savedDoctors', JSON.stringify(savedDoctors));
+                                displayToast('Médico guardado en favoritos');
+                              } else {
+                                displayToast('Médico ya está en favoritos');
+                              }
+                            }}
+                            className="absolute top-2 right-2 p-1 bg-white rounded-full shadow-sm"
+                            aria-label="Guardar médico"
+                          >
+                            <Bookmark size={16} className="text-gray-500 hover:text-blue-600" />
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div className="md:w-2/4 md:pl-6">
+                        <h3 className="text-xl font-bold text-gray-900">{doctor.name}</h3>
+                        <p className="text-blue-600 font-medium">{doctor.specialty}</p>
+                        
+                        <div className="flex items-center mt-2">
+                          <div className="flex text-yellow-400">
+                            {[...Array(5)].map((_, i) => (
+                              <Star 
+                                key={i} 
+                                size={16} 
+                                fill={i < Math.floor(doctor.rating) ? "currentColor" : "none"}
+                                className={i < Math.floor(doctor.rating) ? "" : "text-gray-300"}
+                              />
+                            ))}
+                          </div>
+                          <span className="ml-2 text-gray-600">{doctor.rating}</span>
+                          <span className="ml-1 text-gray-500">({doctor.reviewCount} opiniones)</span>
+                        </div>
+                        
+                        <div className="mt-3 flex items-start">
+                          <MapPin size={16} className="text-gray-500 mt-0.5 mr-1 flex-shrink-0" />
+                          <span className="text-gray-600">{doctor.address}</span>
+                        </div>
+                        
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {doctor.availableToday && (
+                            <span className="badge badge-green">
+                              <Calendar size={12} className="mr-1" />
+                              Disponible hoy
+                            </span>
+                          )}
+                          
+                          {doctor.availableToday && (
+                            <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium inline-flex items-center">
+                              <Calendar size={12} className="mr-1" />
+                              Primera cita disponible: Hoy 15:00
+                            </div>
+                          )}
+                          
+                          {doctor.telemedicine && (
+                            <span className="badge badge-blue">
+                              <Video size={12} className="mr-1" />
+                              Telemedicina
+                            </span>
+                          )}
+                          
+                          <span className="badge badge-gray">
+                            {doctor.experience} años de experiencia
+                          </span>
+                          
+                          <span className="badge badge-gray flex items-center">
+                            <span className="mr-1">⏱️</span>
+                            Tiempo de espera aprox.: 
+                            {parseInt(doctor.id.charAt(doctor.id.length - 1)) % 4 === 0 ? '10 min' :
+                             parseInt(doctor.id.charAt(doctor.id.length - 1)) % 4 === 1 ? '20 min' :
+                             parseInt(doctor.id.charAt(doctor.id.length - 1)) % 4 === 2 ? '30 min' :
+                             '1 hora'}
+                          </span>
+                          
+                          {doctor.availableToday && (
+                            <div className="w-full mt-2 px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium inline-flex items-center">
+                              <Calendar size={12} className="mr-1" />
+                              Primera cita disponible: Hoy 15:00
+                            </div>
+                          )}
+                        </div>
+                        
+                        <div className="mt-3">
+                          <p className="text-sm text-gray-600">
+                            <span className="font-medium">Seguros:</span> {doctor.insurances.join(', ')}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            <span className="font-medium">Idiomas:</span> {doctor.languages.join(', ')}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="md:w-1/4 mt-4 md:mt-0 flex flex-col items-center md:items-end justify-between">
+                        <div className="text-right">
+                          <p className="text-gray-500 text-sm">Precio de consulta</p>
+                          <p className="text-2xl font-bold text-gray-900">${doctor.price}</p>
+                        </div>
+                        
+                        <div className="mt-4 w-full md:w-auto">
+                          <Link 
+                            to={`/reservar/${doctor.id}`}
+                            className="block w-full text-center bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg mb-2"
+                          >
+                            Consultar disponibilidad
+                          </Link>
+                          <Link 
+                            to={`/doctor/${doctor.id}`}
+                            className="block w-full text-center btn-outline mb-2"
+                          >
+                            Ver perfil
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mb-4">
+                    <Search size={24} />
+                  </div>
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No se encontraron resultados</h3>
+                  <p className="text-gray-600 mb-4">No se encontraron médicos que coincidan con tu búsqueda.</p>
+                  <button 
+                    onClick={handleClearAllFilters}
+                    className="btn-primary"
+                  >
+                    Limpiar filtros
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         )}
         
-        {/* Desktop split view or list view */}
-        <div className={`${viewMode === 'map' ? 'flex flex-col md:flex-row md:h-[calc(100vh-400px)] min-h-[600px] gap-6' : ''}`}>
-          {/* Results list */}
-          <div className={`${viewMode === 'map' ? 'md:w-1/2 md:overflow-y-auto pr-2' : ''} ${showMobileMap ? 'md:block hidden' : ''}`}>
-            {isLoading ? (
-              // Skeleton loading state
-              <div className="space-y-6 animate-pulse">
-                {[...Array(3)].map((_, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden p-6">
-                    <div className="flex flex-col md:flex-row">
-                      <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                        <div className="w-32 h-32 rounded-full bg-gray-200"></div>
-                      </div>
-                      <div className="md:w-2/4 md:pl-6">
-                        <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
-                        <div className="h-4 bg-gray-200 rounded w-1/2 mb-3"></div>
-                        <div className="h-4 bg-gray-200 rounded w-1/4 mb-3"></div>
-                        <div className="h-4 bg-gray-200 rounded w-2/3 mb-3"></div>
-                        <div className="flex flex-wrap gap-2">
-                          <div className="h-6 bg-gray-200 rounded w-24"></div>
-                          <div className="h-6 bg-gray-200 rounded w-24"></div>
-                        </div>
-                      </div>
-                      <div className="md:w-1/4 mt-4 md:mt-0">
-                        <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                        <div className="h-8 bg-gray-200 rounded w-3/4 mb-4"></div>
-                        <div className="h-10 bg-gray-200 rounded w-full mb-2"></div>
-                        <div className="h-10 bg-gray-200 rounded w-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-6">
-                {filteredDoctors.length > 0 ? (
-                  filteredDoctors.map(doctor => (
-                    <div 
-                      key={doctor.id} 
-                      id={`doctor-${doctor.id}`}
-                      className={`bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow ${selectedDoctor === doctor.id ? 'ring-2 ring-green-500' : ''}`}
-                      onClick={() => handleDoctorSelect(doctor.id)}
-                    >
-                      <div className="p-6">
-                        <div className="flex flex-col md:flex-row">
-                          <div className="md:w-1/4 flex justify-center mb-4 md:mb-0">
-                            <div className="relative">
-                              <img 
-                                src={doctor.image} 
-                                alt={doctor.name} 
-                                className="w-32 h-32 rounded-full object-cover"
-                                loading="lazy"
-                                width="128"
-                                height="128"
-                                onError={(e) => {
-                                  e.currentTarget.src = '/public/doctor-placeholder.png';
-                                  e.currentTarget.onerror = null;
-                                }}
-                              />
-                              {doctor.isPremium && (
-                                <div className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                                  Premium
-                                </div>
-                              )}
-                              <button 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  const savedDoctors = JSON.parse(localStorage.getItem('savedDoctors') || '[]');
-                                  if (!savedDoctors.includes(doctor.id)) {
-                                    savedDoctors.push(doctor.id);
-                                    localStorage.setItem('savedDoctors', JSON.stringify(savedDoctors));
-                                    displayToast('Médico guardado en favoritos');
-                                  } else {
-                                    displayToast('Médico ya está en favoritos');
-                                  }
-                                }}
-                                className="absolute top-0 right-0 p-1 bg-white rounded-full shadow-sm"
-                                aria-label="Guardar médico"
-                              >
-                                <Bookmark size={16} className="text-gray-500 hover:text-blue-600" />
-                              </button>
-                            </div>
-                          </div>
-                          
-                          <div className="md:w-2/4 md:pl-6">
-                            <h3 className="text-xl font-bold text-gray-900">{doctor.name}</h3>
-                            <p className="text-blue-600 font-medium">{doctor.specialty}</p>
-                            
-                            <div className="flex items-center mt-2">
-                              <div className="flex text-yellow-400">
-                                {[...Array(5)].map((_, i) => (
-                                  <Star 
-                                    key={i} 
-                                    size={16} 
-                                    fill={i < Math.floor(doctor.rating) ? "currentColor" : "none"}
-                                    className={i < Math.floor(doctor.rating) ? "" : "text-gray-300"}
-                                  />
-                                ))}
-                              </div>
-                              <span className="ml-2 text-gray-600">{doctor.rating}</span>
-                              <span className="ml-1 text-gray-500">({doctor.reviewCount} opiniones)</span>
-                            </div>
-                            
-                            <div className="mt-3 flex items-start">
-                              <MapPin size={16} className="text-gray-500 mt-0.5 mr-1 flex-shrink-0" />
-                              <span className="text-gray-600">{doctor.address}</span>
-                            </div>
-                            
-                            <div className="mt-3 flex flex-wrap gap-2">
-                              {doctor.availableToday && (
-                                <div className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium inline-flex items-center">
-                                  <Calendar size={12} className="mr-1" />
-                                  Disponible hoy
-                                </div>
-                              )}
-                              
-                              {doctor.telemedicine && (
-                                <div className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium inline-flex items-center">
-                                  <Video size={12} className="mr-1" />
-                                  Telemedicina
-                                </div>
-                              )}
-                              
-                              <div className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium inline-flex items-center">
-                                {doctor.experience} años de experiencia
-                              </div>
-                            </div>
-                            
-                            <div className="mt-3">
-                              <p className="text-sm text-gray-600">
-                                <span className="font-medium">Seguros:</span> {doctor.insurances.join(', ')}
-                              </p>
-                              <p className="text-sm text-gray-600">
-                                <span className="font-medium">Idiomas:</span> {doctor.languages.join(', ')}
-                              </p>
-                            </div>
-                          </div>
-                          
-                          <div className="md:w-1/4 mt-4 md:mt-0 flex flex-col items-center md:items-end justify-between">
-                            <div className="text-right">
-                              <p className="text-gray-500 text-sm">Precio de consulta</p>
-                              <p className="text-2xl font-bold text-gray-900">${doctor.price}</p>
-                            </div>
-                            
-                            <div className="mt-4 w-full md:w-auto">
-                              <Button
-                                as="link"
-                                to={`/reservar/${doctor.id}`}
-                                variant="primary"
-                                fullWidth
-                                className="mb-2"
-                              >
-                                Consultar disponibilidad
-                              </Button>
-                              <Button
-                                as="link"
-                                to={`/doctor/${doctor.id}`}
-                                variant="outline"
-                                fullWidth
-                                className="mb-2"
-                              >
-                                Ver perfil
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-                    <div className="flex flex-col items-center">
-                      <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mb-4">
-                        <Search size={24} />
-                      </div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-2">No se encontraron resultados</h3>
-                      <p className="text-gray-600 mb-4">No se encontraron médicos que coincidan con tu búsqueda.</p>
-                      <Button 
-                        onClick={handleClearAllFilters}
-                        variant="primary"
-                      >
-                        Limpiar filtros
-                      </Button>
-                    </div>
-                  </div>
-                )}
-              </div>
-            )}
-            
-            {/* Pagination - would be implemented with real API */}
-            {filteredDoctors.length > 0 && !isLoading && (
-              <div className="mt-8 flex justify-center">
-                <nav className="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                  <a
-                    href="#"
-                    className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-                  >
-                    <span className="sr-only">Anterior</span>
-                    <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                  <a
-                    href="#"
-                    aria-current="page"
-                    className="z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                  >
-                    1
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                  >
-                    2
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                  >
-                    3
-                  </a>
-                  <span className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
-                    ...
-                  </span>
-                  <a
-                    href="#"
-                    className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
-                  >
-                    8
-                  </a>
-                  <a
-                    href="#"
-                    className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
-                  >
-                    <span className="sr-only">Siguiente</span>
-                    <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                </nav>
-              </div>
-            )}
+        {/* Pagination - would be implemented with real API */}
+        {filteredDoctors.length > 0 && !isLoading && (
+          <div className="mt-8 flex justify-center">
+            <nav className="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+              <a
+                href="#"
+                className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              >
+                <span className="sr-only">Anterior</span>
+                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-current="page"
+                className="z-10 bg-blue-50 border-blue-500 text-blue-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+              >
+                1
+              </a>
+              <a
+                href="#"
+                className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+              >
+                2
+              </a>
+              <a
+                href="#"
+                className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+              >
+                3
+              </a>
+              <span className="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                ...
+              </span>
+              <a
+                href="#"
+                className="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+              >
+                8
+              </a>
+              <a
+                href="#"
+                className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+              >
+                <span className="sr-only">Siguiente</span>
+                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </a>
+            </nav>
           </div>
-          
-          {/* Map view (only visible on desktop) */}
-          {viewMode === 'map' && (
-            <div className="hidden md:block md:w-1/2 bg-white rounded-lg shadow-sm overflow-hidden">
-              <SearchMap 
-                doctors={filteredDoctors}
-                selectedDoctor={selectedDoctor}
-                onDoctorSelect={handleDoctorSelect}
-              />
-            </div>
-          )}
-        </div>
+        )}
       </div>
 
       {/* Toast Notification */}
@@ -1108,16 +1017,8 @@ function EnhancedDoctorSearchPage() {
           {toastMessage}
         </div>
       )}
-      
-      {/* Subscription Modal */}
-      <SubscriptionModal
-        isOpen={showSubscriptionModal}
-        onClose={() => setShowSubscriptionModal(false)}
-        onSubscribe={handleSubscribe}
-        size="md"
-      />
     </div>
   );
 }
 
-export default EnhancedDoctorSearchPage;
+export default DoctorSearchPage;

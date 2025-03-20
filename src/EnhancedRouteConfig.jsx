@@ -1,51 +1,130 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-import { useAuth } from './contexts/AuthContext';
-import Layout from './components/layout/Layout';
+import { createBrowserRouter } from 'react-router-dom';
+import EnhancedLayout from './components/EnhancedLayout';
+import EnhancedHomePage from './pages/EnhancedHomePage';
+import EnhancedDoctorSearchPage from './pages/EnhancedDoctorSearchPage';
+import EnhancedDoctorProfilePage from './pages/EnhancedDoctorProfilePage';
+import EnhancedBookingPage from './pages/EnhancedBookingPage';
 
-// Import pages
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import DoctorSearch from './pages/DoctorSearch';
-import DoctorProfile from './pages/DoctorProfile';
-import Appointment from './pages/Appointment';
-import UserProfile from './pages/UserProfile';
-import NotFound from './pages/NotFound';
+// Import original pages for routes we haven't enhanced yet
+import SymptomCheckerPage from './pages/SymptomCheckerPage';
+import AISymptomCheckerPage from './pages/AISymptomCheckerPage';
+import AlternativeMedicinePage from './pages/AlternativeMedicinePage';
+import TelemedicinaPage from './pages/TelemedicinaPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage';
+import NotFoundPage from './pages/NotFoundPage';
+import AboutUsPage from './pages/AboutUsPage';
+import ContactoPage from './pages/ContactoPage';
+import AyudaPage from './pages/AyudaPage';
+import MedicosPlanes from './pages/MedicosPlanes';
+import MedicosRegistroPage from './pages/MedicosRegistroPage';
+import PrivacidadPage from './pages/PrivacidadPage';
+import TerminosPage from './pages/TerminosPage';
+import QACommunityPage from './pages/QACommunityPage';
+import MedicalBoardPage from './pages/MedicalBoardPage';
+import EspecialidadesPage from './pages/EspecialidadesPage';
 
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
-  
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
-  
-  return children;
-};
+/**
+ * Enhanced Route Configuration for Doctor.mx
+ * This configuration uses our improved UI/UX components
+ * while maintaining compatibility with existing pages.
+ */
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <EnhancedLayout />,
+    children: [
+      {
+        index: true,
+        element: <EnhancedHomePage />,
+      },
+      {
+        path: 'buscar',
+        element: <EnhancedDoctorSearchPage />,
+      },
+      {
+        path: 'doctor/:id',
+        element: <EnhancedDoctorProfilePage />,
+      },
+      {
+        path: 'reservar/:id',
+        element: <EnhancedBookingPage />,
+      },
+      {
+        path: 'sintomas',
+        element: <SymptomCheckerPage />,
+      },
+      {
+        path: 'sintomas/ai',
+        element: <AISymptomCheckerPage />,
+      },
+      {
+        path: 'alternativa',
+        element: <AlternativeMedicinePage />,
+      },
+      {
+        path: 'telemedicina',
+        element: <TelemedicinaPage />,
+      },
+      {
+        path: 'login',
+        element: <LoginPage />,
+      },
+      {
+        path: 'registro',
+        element: <RegisterPage />,
+      },
+      {
+        path: 'dashboard',
+        element: <DashboardPage />,
+      },
+      {
+        path: 'acerca',
+        element: <AboutUsPage />,
+      },
+      {
+        path: 'contacto',
+        element: <ContactoPage />,
+      },
+      {
+        path: 'ayuda',
+        element: <AyudaPage />,
+      },
+      {
+        path: 'medicos/planes',
+        element: <MedicosPlanes />,
+      },
+      {
+        path: 'medicos/registro',
+        element: <MedicosRegistroPage />,
+      },
+      {
+        path: 'privacidad',
+        element: <PrivacidadPage />,
+      },
+      {
+        path: 'terminos',
+        element: <TerminosPage />,
+      },
+      {
+        path: 'comunidad/preguntas',
+        element: <QACommunityPage />,
+      },
+      {
+        path: 'doctor-board',
+        element: <MedicalBoardPage />,
+      },
+      {
+        path: 'especialidades',
+        element: <EspecialidadesPage />,
+      },
+      {
+        path: '*',
+        element: <NotFoundPage />,
+      },
+    ],
+  },
+]);
 
-const RouterConfig = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="search" element={<DoctorSearch />} />
-        <Route path="doctor/:id" element={<DoctorProfile />} />
-        <Route path="appointment" element={
-          <ProtectedRoute>
-            <Appointment />
-          </ProtectedRoute>
-        } />
-        <Route path="profile" element={
-          <ProtectedRoute>
-            <UserProfile />
-          </ProtectedRoute>
-        } />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
-  );
-};
-
-export default RouterConfig;
+export default router;

@@ -1,154 +1,90 @@
 import React, { forwardRef } from 'react';
 
-interface InputProps {
-  id?: string;
-  name?: string;
-  type?: string;
-  placeholder?: string;
-  value?: string | number;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onBlur?: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  onFocus?: (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  error?: string;
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  helperText?: string;
+  error?: string;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   fullWidth?: boolean;
-  disabled?: boolean;
-  required?: boolean;
-  autoComplete?: string;
-  className?: string;
-  icon?: React.ReactNode;
-  iconPosition?: 'left' | 'right';
-  as?: 'input' | 'textarea';
-  rows?: number;
-  maxLength?: number;
-  min?: number;
-  max?: number;
+  containerClassName?: string;
 }
 
-const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
-  (
-    {
-      id,
-      name,
-      type = 'text',
-      placeholder,
-      value,
-      onChange,
-      onBlur,
-      onFocus,
-      error,
-      label,
-      fullWidth = false,
-      disabled = false,
-      required = false,
-      autoComplete,
-      className = '',
-      icon,
-      iconPosition = 'left',
-      as = 'input',
-      rows = 3,
-      maxLength,
-      min,
-      max,
-      ...rest
-    },
-    ref
-  ) => {
-    // Base classes
-    const baseClasses =
-      'block border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm';
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ 
+    label, 
+    helperText, 
+    error, 
+    leftIcon, 
+    rightIcon, 
+    className = '', 
+    fullWidth = false, 
+    containerClassName = '',
+    id,
+    ...rest 
+  }, ref) => {
+    // Generate a unique ID if none is provided
+    const inputId = id || `input-${Math.random().toString(36).substr(2, 9)}`;
     
-    // Width classes
-    const widthClasses = fullWidth ? 'w-full' : '';
-    
-    // Error classes
-    const errorClasses = error ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : '';
-    
-    // Disabled classes
-    const disabledClasses = disabled ? 'bg-gray-100 text-gray-500 cursor-not-allowed' : '';
-    
-    // Icon padding classes
-    const iconPaddingClasses = icon
-      ? iconPosition === 'left'
-        ? 'pl-10'
-        : 'pr-10'
-      : '';
-    
-    // Combine all classes
-    const inputClasses = `${baseClasses} ${widthClasses} ${errorClasses} ${disabledClasses} ${iconPaddingClasses} ${className}`;
-    
-    // Input ID
-    const inputId = id || name;
-    
-    const renderInput = () => {
-      const commonProps = {
-        id: inputId,
-        name,
-        placeholder,
-        value,
-        disabled,
-        required,
-        autoComplete,
-        onChange,
-        onBlur,
-        onFocus,
-        className: inputClasses,
-        maxLength,
-        ...rest,
-      };
-      
-      if (as === 'textarea') {
-        return (
-          <textarea
-            ref={ref as React.Ref<HTMLTextAreaElement>}
-            rows={rows}
-            {...commonProps}
-          />
-        );
-      }
-      
-      return (
-        <input
-          ref={ref as React.Ref<HTMLInputElement>}
-          type={type}
-          min={min}
-          max={max}
-          {...commonProps}
-        />
-      );
-    };
-    
+    // Base input styles
+    const inputStyles = `
+      block
+      px-4
+      py-2
+      bg-white
+      border
+      rounded-lg
+      focus:outline-none
+      focus:ring-2
+      transition-colors
+      ${error ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 focus:border-blue-500 focus:ring-blue-500'}
+      ${leftIcon ? 'pl-10' : ''}
+      ${rightIcon ? 'pr-10' : ''}
+      ${fullWidth ? 'w-full' : 'w-auto'}
+      ${error ? 'placeholder-red-300' : 'placeholder-gray-400'}
+      ${className}
+    `.trim();
+
     return (
-      <div className={fullWidth ? 'w-full' : ''}>
+      <div className={`${fullWidth ? 'w-full' : ''} ${containerClassName}`}>
         {label && (
-          <label
-            htmlFor={inputId}
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
+          <label htmlFor={inputId} className="block mb-1.5 text-sm font-medium text-gray-700">
             {label}
-            {required && <span className="text-red-500 ml-1">*</span>}
           </label>
         )}
         
         <div className="relative">
-          {icon && iconPosition === 'left' && (
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-500">
-              {icon}
+          {leftIcon && (
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              {leftIcon}
             </div>
           )}
           
-          {renderInput()}
+          <input
+            ref={ref}
+            id={inputId}
+            className={inputStyles}
+            aria-invalid={!!error}
+            aria-describedby={error ? `${inputId}-error` : helperText ? `${inputId}-helper` : undefined}
+            {...rest}
+          />
           
-          {icon && iconPosition === 'right' && (
-            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-500">
-              {icon}
+          {rightIcon && (
+            <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+              {rightIcon}
             </div>
           )}
         </div>
         
         {error && (
-          <p className="mt-1 text-sm text-red-600" id={`${inputId}-error`}>
+          <p id={`${inputId}-error`} className="mt-1.5 text-sm text-red-500">
             {error}
+          </p>
+        )}
+        
+        {helperText && !error && (
+          <p id={`${inputId}-helper`} className="mt-1.5 text-sm text-gray-500">
+            {helperText}
           </p>
         )}
       </div>
