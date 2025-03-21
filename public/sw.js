@@ -2,8 +2,16 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
 // Use workbox CDN to avoid ES module issues
+workbox.core.setCacheNameDetails({
+  prefix: 'doctormx',
+  suffix: 'v2', // Increment this when making major changes
+  precache: 'precache',
+  runtime: 'runtime'
+});
+
+// Force update of old caches
+workbox.core.skipWaiting();
 workbox.core.clientsClaim();
-self.skipWaiting();
 workbox.precaching.cleanupOutdatedCaches();
 
 // Precache all files in the __WB_MANIFEST
@@ -302,6 +310,30 @@ self.addEventListener('notificationclick', (event) => {
 // Listen for messages from the client (for update handling)
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
+    // Clear caches before skipping waiting to ensure a clean update
+    clearAllCaches().then(() => {
+      self.skipWaiting();
+    });
   }
 });
+
+// Function to clear all caches during update
+async function clearAllCaches() {
+  try {
+    const cacheNames = await caches.keys();
+    // Only clear our app's caches
+    const doctorMxCaches = cacheNames.filter(name => name.includes('doctormx'));
+    
+    console.log('[Service Worker] Clearing caches for update:', doctorMxCaches);
+    
+    // Delete all our app caches
+    await Promise.all(
+      doctorMxCaches.map(cacheName => caches.delete(cacheName))
+    );
+    
+    return true;
+  } catch (error) {
+    console.error('[Service Worker] Error clearing caches:', error);
+    return false;
+  }
+}

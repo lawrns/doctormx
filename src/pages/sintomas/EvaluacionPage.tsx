@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { QuestionnaireProvider } from '../../contexts/QuestionnaireContext';
+import { QuestionnaireProvider } from '../../contexts/QuestionnaireContextLazy';
 import BodySelector from '../../components/sintomas/BodySelector';
 import Enhanced3DBodySelector from '../../components/sintomas/Enhanced3DBodySelector';
 import AIConversationForm from '../../components/sintomas/AIConversationForm';

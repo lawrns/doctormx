@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +14,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
-      // Removed the @xstate/react alias to use the actual package
+      // Explicitly alias @xstate/react to the node_modules path
+      '@xstate/react': path.resolve(__dirname, 'node_modules/@xstate/react/dist/esm/index.js'),
+      'xstate': path.resolve(__dirname, 'node_modules/xstate/dist/esm/index.js')
     },
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },
@@ -28,16 +31,15 @@ export default defineConfig({
         '.js': 'jsx',
         '.ts': 'tsx'
       }
-    }
+    },
+    exclude: ['src/machines/questionnaireMachine.ts']
   },
   build: {
     outDir: 'dist',
     sourcemap: true,
-    rollupOptions: {
-      external: ['@xstate/react', 'localforage'],
-      output: {
-        manualChunks: undefined
-      }
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true
     },
     // Ensure these files get copied to the build directory
     assetsInlineLimit: 0,

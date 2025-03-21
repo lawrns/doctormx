@@ -4,6 +4,7 @@ import OfflineIndicator from './OfflineIndicator';
 import InstallBanner from './InstallBanner/index';
 import InstallButtonBar from './InstallButtonBar';
 import UpdateNotification from './UpdateNotification';
+import PwaResetButton from './PwaResetButton';
 
 interface PwaWrapperProps {
   children: React.ReactNode;
@@ -24,6 +25,9 @@ const PwaWrapper: React.FC<PwaWrapperProps> = ({ children }) => {
       <UpdateNotification />
       <InstallBanner />
       <InstallButtonBar />
+      
+      {/* Debug tools (only in development) */}
+      {process.env.NODE_ENV === 'development' && <PwaResetButton />}
     </PwaProvider>
   );
 };

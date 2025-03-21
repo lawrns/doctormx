@@ -1,8 +1,15 @@
-import { createContext, useContext, useCallback, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useCallback, useState, useEffect, ReactNode, Suspense } from 'react';
 import { useMachine } from '../shims/xstate-react-shim';
 
+// Import the lazy machine factory instead of the direct machine
+import { 
+  getQuestionnaireMachine, 
+  type QuestionnaireContext as Context, 
+  type BodyRegion, 
+  type Symptom,
+  initialContext
+} from '../machines/questionnaireMachineLazy';
 
-import { questionnaireMachine, type QuestionnaireContext as Context, type BodyRegion, type Symptom } from '../machines/questionnaireMachine';
 import { getSymptomsByRegion, getSymptomQuestions } from '../lib/api/symptoms';
 
 type QuestionnaireProviderProps = {
@@ -19,6 +26,7 @@ type QuestionnaireContextValue = {
   progress: number;
   currentSymptom: Symptom | null;
   currentBodyRegion: BodyRegion | null;
+  initialized: boolean;
   // Core functions
   selectBodyRegion: (region: BodyRegion) => void;
   selectSymptom: (symptom: Symptom) => void;
@@ -35,10 +43,36 @@ type QuestionnaireContextValue = {
   saveQuestionnaire: (userId?: string) => Promise<any>;
 };
 
-const QuestionnaireContext = createContext<QuestionnaireContextValue | null>(null);
+// Create a placeholder context for when the machine is not yet initialized
+const placeholderContext: QuestionnaireContextValue = {
+  state: { matches: () => false },
+  context: initialContext,
+  isLoading: true,
+  error: null,
+  answers: {},
+  progress: 0,
+  currentSymptom: null,
+  currentBodyRegion: null,
+  initialized: false,
+  selectBodyRegion: () => {},
+  selectSymptom: () => {},
+  answerQuestion: () => {},
+  previousQuestion: () => {},
+  nextQuestion: () => {},
+  reset: () => {},
+  calculateProgress: () => 0,
+  getQuestionByIndex: () => null,
+  getSeverityLevel: () => 'low',
+  getUrgencyLevel: () => 'routine',
+  getAnalysisData: () => null,
+  saveQuestionnaire: async () => ({ success: false, error: 'Not initialized' })
+};
 
-export function QuestionnaireProvider({ children }: QuestionnaireProviderProps) {
-  const [state, send] = useMachine(questionnaireMachine, {
+const QuestionnaireContext = createContext<QuestionnaireContextValue>(placeholderContext);
+
+// Inner provider that uses the machine after it's loaded
+function InnerQuestionnaireProvider({ children, machine }: { children: ReactNode, machine: any }) {
+  const [state, send] = useMachine(machine, {
     services: {
       loadSymptoms: async (context: Context) => {
         if (!context.bodyRegion) throw new Error('No body region selected');
@@ -343,6 +377,7 @@ export function QuestionnaireProvider({ children }: QuestionnaireProviderProps) 
     progress,
     currentSymptom: state.context.selectedSymptom,
     currentBodyRegion: state.context.bodyRegion,
+    initialized: true,
     selectBodyRegion,
     selectSymptom,
     answerQuestion,
@@ -362,6 +397,79 @@ export function QuestionnaireProvider({ children }: QuestionnaireProviderProps) 
       {children}
     </QuestionnaireContext.Provider>
   );
+}
+
+  // Loading wrapper component
+function LoadingProvider({ children }: { children: ReactNode }) {
+  return (
+    <QuestionnaireContext.Provider value={placeholderContext}>
+      <div className="p-6 bg-white rounded-lg shadow-sm">
+        <div className="flex flex-col items-center justify-center py-8">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600 mb-4"></div>
+          <p className="text-gray-600">Cargando cuestionario de síntomas...</p>
+        </div>
+      </div>
+      {children}
+    </QuestionnaireContext.Provider>
+  );
+}
+
+// Outer provider that handles loading the machine
+export function QuestionnaireProvider({ children }: QuestionnaireProviderProps) {
+  const [machine, setMachine] = useState<any>(null);
+  const [error, setError] = useState<Error | null>(null);
+
+  // Load the machine when the component mounts
+  useEffect(() => {
+    let mounted = true;
+    
+    async function loadMachine() {
+      try {
+        console.log('[QuestionnaireProvider] Loading questionnaire machine...');
+        const loadedMachine = await getQuestionnaireMachine();
+        
+        if (mounted) {
+          console.log('[QuestionnaireProvider] Machine loaded successfully');
+          setMachine(loadedMachine);
+        }
+      } catch (err) {
+        console.error('[QuestionnaireProvider] Error loading machine:', err);
+        if (mounted) {
+          setError(err instanceof Error ? err : new Error(String(err)));
+        }
+      }
+    }
+    
+    loadMachine();
+    
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  // Handle errors
+  if (error) {
+    return (
+      <QuestionnaireContext.Provider value={{
+        ...placeholderContext,
+        error: error.message
+      }}>
+        <div style={{ padding: '20px', color: 'red' }}>
+          <h3>Error loading questionnaire</h3>
+          <p>{error.message}</p>
+        </div>
+        {children}
+      </QuestionnaireContext.Provider>
+    );
+  }
+
+  // Show loading state if machine isn't ready
+  if (!machine) {
+    return <LoadingProvider>{children}</LoadingProvider>;
+  }
+
+  // Machine is loaded, render the inner provider
+  return <InnerQuestionnaireProvider machine={machine}>{children}</InnerQuestionnaireProvider>;
 }
 
 export function useQuestionnaireContext() {

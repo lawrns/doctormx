@@ -14,6 +14,27 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Doctor.mx" />
   
+  <!-- External dependencies loaded via UMD/IIFE modules -->
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/xstate@4.38.2/dist/xstate.js"></script>
+  <!-- XState/React doesn't have a UMD build, so we'll use a different approach for that -->
+  
+  <!-- Module resolution helper -->
+  <script type="importmap">
+    {
+      "imports": {
+        "@xstate/react": "/vendor/xstate-react.js",
+        "xstate": "/vendor/xstate.js",
+        "react": "/vendor/react.js",
+        "react-dom": "/vendor/react-dom.js"
+      }
+    }
+  </script>
+  
+  <!-- Bootstrap dependencies -->
+  <script type="module" src="/vendor/bootstrap.js"></script>
+  
   <!-- Apple touch icons -->
   <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />

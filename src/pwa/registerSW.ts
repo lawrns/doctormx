@@ -82,96 +82,160 @@ export const registerServiceWorker = async (): Promise<void> => {
 
 
 
-/**
- * Shows a notification to the user that a new version is available
- * @param updateFn Function to call when update button is clicked
- */
-const showUpdateNotification = (updateFn?: () => void): void => {
-  // Create notification element
-  const notification = document.createElement('div');
-  notification.className = 'pwa-update-notification';
-  notification.innerHTML = `
-    <div class="pwa-update-content">
-      <p>¡Nueva versión disponible!</p>
-      <button id="pwa-update-button">Actualizar</button>
-      <button id="pwa-update-dismiss">Después</button>
-    </div>
-  `;
-  
-  // Add styles
-  const style = document.createElement('style');
-  style.textContent = `
-    .pwa-update-notification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #3b82f6;
-      color: white;
-      padding: 16px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      z-index: 9999;
-      animation: slideIn 0.3s ease-out;
-    }
+  // Show update notification
+  const showUpdateNotification = (updateFn?: () => void): void => {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'pwa-update-notification';
+    notification.innerHTML = `
+      <div class="pwa-update-content">
+        <p>¡Nueva versión disponible!</p>
+        <button id="pwa-update-button">Actualizar</button>
+        <button id="pwa-update-dismiss">Después</button>
+      </div>
+    `;
     
-    .pwa-update-content {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    .pwa-update-content p {
-      margin: 0;
-    }
-    
-    #pwa-update-button {
-      background-color: white;
-      color: #3b82f6;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    
-    #pwa-update-dismiss {
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.8);
-      cursor: pointer;
-      padding: 8px;
-    }
-    
-    @keyframes slideIn {
-      from { transform: translateY(100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-  `;
-  
-  document.head.appendChild(style);
-  document.body.appendChild(notification);
-  
-  // Add event listeners
-  document.getElementById('pwa-update-button')?.addEventListener('click', () => {
-    // If an update function was provided, use it
-    if (updateFn) {
-      updateFn();
-    } else {
-      // Fallback to the old approach
-      if (window.__SW_REGISTRATION?.waiting) {
-        // Send message to the waiting service worker to skip waiting
-        window.__SW_REGISTRATION.waiting.postMessage({ type: 'SKIP_WAITING' });
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .pwa-update-notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #3b82f6;
+        color: white;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 9999;
+        animation: slideIn 0.3s ease-out;
       }
-      window.location.reload();
+      
+      .pwa-update-content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      
+      .pwa-update-content p {
+        margin: 0;
+      }
+      
+      #pwa-update-button {
+        background-color: white;
+        color: #3b82f6;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      
+      #pwa-update-dismiss {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        padding: 8px;
+      }
+      
+      @keyframes slideIn {
+        from { transform: translateY(100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+    `;
+    
+    document.head.appendChild(style);
+    document.body.appendChild(notification);
+    
+    // Store references to remove them later
+    const updateButton = document.getElementById('pwa-update-button');
+    const dismissButton = document.getElementById('pwa-update-dismiss');
+    
+    // Add event listeners
+    if (updateButton) {
+      updateButton.addEventListener('click', () => {
+        // First, remove the notification to prevent UI issues during reload
+        notification.remove();
+        style.remove();
+        
+        // Optionally, show a loading indicator
+        const loadingIndicator = document.createElement('div');
+        loadingIndicator.className = 'pwa-loading-indicator';
+        loadingIndicator.innerHTML = `
+          <div class="loading-spinner"></div>
+          <p>Actualizando...</p>
+        `;
+        
+        const loadingStyle = document.createElement('style');
+        loadingStyle.textContent = `
+          .pwa-loading-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+          }
+          
+          .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          }
+          
+          .pwa-loading-indicator p {
+            margin-top: 16px;
+            font-size: 16px;
+            color: #333;
+          }
+          
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `;
+        
+        document.head.appendChild(loadingStyle);
+        document.body.appendChild(loadingIndicator);
+        
+        // Small delay before processing the update to ensure UI updates first
+        setTimeout(() => {
+          // If an update function was provided, use it
+          if (updateFn) {
+            updateFn();
+          } else {
+            // Fallback to the old approach
+            if (window.__SW_REGISTRATION?.waiting) {
+              // Send message to the waiting service worker to skip waiting
+              window.__SW_REGISTRATION.waiting.postMessage({ type: 'SKIP_WAITING' });
+            }
+            
+            // Force a clean reload after a short delay
+            setTimeout(() => {
+              window.location.reload();
+            }, 500);
+          }
+        }, 100);
+      });
     }
-  });
-  
-  document.getElementById('pwa-update-dismiss')?.addEventListener('click', () => {
-    // Remove the notification
-    notification.remove();
-    style.remove();
-  });
-};
+    
+    if (dismissButton) {
+      dismissButton.addEventListener('click', () => {
+        // Remove the notification
+        notification.remove();
+        style.remove();
+      });
+    }
+  };
 
 /**
  * Check if the app is being used in standalone mode (installed)

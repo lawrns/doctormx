@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useQuestionnaireContext } from '../../contexts/QuestionnaireContext';
+import { useQuestionnaireContext } from '../../contexts/QuestionnaireContextLazy';
 import { ArrowLeft, ArrowRight, Loader2, AlertCircle, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Symptom, SymptomQuestion } from '../../lib/api/symptoms';
-import { VALID_BODY_REGIONS } from '../../machines/questionnaireMachine';
+import { VALID_BODY_REGIONS } from '../../machines/questionnaireMachineLazy';
 
 const BODY_REGION_LABELS: Record<string, string> = {
   head: 'Cabeza',
@@ -140,8 +140,19 @@ const QuestionnaireFlow = ({ bodyRegion, onComplete }: QuestionnaireFlowProps) =
   const [symptoms, setSymptoms] = useState<Partial<Symptom>[]>([]);
   const [progress, setProgress] = useState(0);
 
-  // In a real application, this would use the context
-  // const { state, context, selectSymptom, answerQuestion } = useQuestionnaireContext();
+  // Get context with null safety
+  const context = useQuestionnaireContext();
+  const { initialized } = context;
+
+  // If context isn't initialized yet, show a temporary loader
+  if (!initialized) {
+    return (
+      <div className="flex flex-col items-center justify-center p-8">
+        <Loader2 size={40} className="animate-spin text-blue-600 mb-4" />
+        <p className="text-gray-600">Inicializando cuestionario...</p>
+      </div>
+    );
+  }
 
   useEffect(() => {
     // Load symptoms for the selected body region
