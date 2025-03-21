@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import InstallPWA from './InstallPWA';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Menu, X, User, Search, Calendar, LogOut, 
@@ -160,16 +161,20 @@ function Navbar() {
 
           {/* Right section: Doctor IA, language selector, and auth buttons */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            <Link
-              to="/sintomas"
-              className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
-            >
-              <SocialIcons.Brain size={18} className="mr-2" />
-              Doctor IA
-              <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
-                ¡NUEVO!
-              </span>
-            </Link>
+            <div className="flex items-center space-x-2">
+              <Link
+                to="/sintomas"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+              >
+                <SocialIcons.Brain size={18} className="mr-2" />
+                Doctor IA
+                <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
+                  ¡NUEVO!
+                </span>
+              </Link>
+              
+              <InstallPWA />
+            </div>
             
             {/* Language selector */}
             <div className="relative ml-4">
@@ -255,17 +260,23 @@ function Navbar() {
         <div className="lg:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {/* Doctor IA button for mobile */}
-            <Link
-              to="/sintomas"
-              className="flex items-center justify-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium"
-              onClick={toggleMenu}
-            >
-              <SocialIcons.Brain size={18} className="mr-2" />
-              Doctor IA
-              <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
-                ¡NUEVO!
-              </span>
-            </Link>
+            <div className="flex flex-col space-y-2">
+              <Link
+                to="/sintomas"
+                className="flex items-center justify-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium"
+                onClick={toggleMenu}
+              >
+                <SocialIcons.Brain size={18} className="mr-2" />
+                Doctor IA
+                <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
+                  ¡NUEVO!
+                </span>
+              </Link>
+              
+              <div className="flex justify-center">
+                <InstallPWA />
+              </div>
+            </div>
 
             {/* Services Section */}
             <div className="py-2">

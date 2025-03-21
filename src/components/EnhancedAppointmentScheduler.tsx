@@ -1,3 +1,4 @@
+import { ChevronLeft, ChevronRight, Calendar, FileText, FileText, Calendar, FileText, Check, Users } from 'lucide-react';
 import { useState, useEffect } from 'react';
 // Import each icon individually to prevent issues
 import Calendar from 'lucide-react/dist/esm/icons/calendar';

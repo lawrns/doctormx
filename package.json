@@ -7,7 +7,11 @@
     "start": "vite",
     "build": "vite build --log-level error",
     "preview": "vite preview",
-    "generate-icons": "node src/scripts/generate-icons.js"
+    "generate-icons": "node src/scripts/generate-icons.js",
+    "generate-splash-screens": "node src/scripts/generate-splash-screens.js",
+    "check-icons": "node scripts/check-icons.js",
+    "fix-icons": "node scripts/check-icons.js --fix",
+    "deploy-pwa": "bash deploy-pwa.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.38.4",
@@ -21,6 +25,7 @@
     "framer-motion": "10.16.4",
     "html2canvas": "1.4.1",
     "jspdf": "2.5.1",
+    "localforage": "^1.10.0",
     "lucide-react": "0.288.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -44,6 +49,8 @@
     "sharp": "^0.33.5",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2",
-    "vite": "^4.5.9"
+    "vite": "^4.5.9",
+    "vite-plugin-pwa": "^0.19.0",
+    "workbox-window": "^7.0.0"
   }
 }

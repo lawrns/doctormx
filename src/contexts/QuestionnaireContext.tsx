@@ -1,25 +1,13 @@
 import { createContext, useContext, useCallback, useState, useEffect, ReactNode } from 'react';
-// Try to import from the package directly, but use a runtime workaround if it fails
-let useMachine: any;
-try {
-  // First try to directly import it
-  const xstateReact = require('@xstate/react');
-  useMachine = xstateReact.useMachine;
-  
-  // If that doesn't work, fall back to our shim
-  if (!useMachine) {
-    const xstateShim = require('../shims/xstate-react');
-    useMachine = xstateShim.useMachine;
-  }
-} catch (error) {
-  console.error('Error importing useMachine:', error);
-  // Define a simple fallback implementation
-  useMachine = function(machine: any, options: any = {}) {
-    const [state, setState] = useState(machine.initialState || { context: {}, value: '' });
-    const send = useCallback(() => {}, []);
-    return [state, send];
-  };
-}
+// Use ESM imports for modern bundlers
+import { useMachine as xstateUseMachine } from '@xstate/react';
+
+// Define a fallback implementation if the import fails
+const useMachine = xstateUseMachine || function(machine: any, options: any = {}) {
+  const [state, setState] = useState(machine.initialState || { context: {}, value: '' });
+  const send = useCallback(() => {}, []);
+  return [state, send];
+};
 
 import { questionnaireMachine, type QuestionnaireContext as Context, type BodyRegion, type Symptom } from '../machines/questionnaireMachine';
 import { getSymptomsByRegion, getSymptomQuestions } from '../lib/api/symptoms';

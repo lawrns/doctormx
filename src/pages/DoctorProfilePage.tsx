@@ -1,5 +1,7 @@
+import { Calendar as CalendarIcon, Video as VideoIcon, Users as UsersIcon, MessageSquare as MessageSquareIcon, Share2 as Share2Icon, Phone as PhoneIcon, Mail as MailIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import DoctorActionButtonsSimple from '../components/doctor/DoctorActionButtonsSimple';
 import { 
   MapPin, 
   Star, 
@@ -330,14 +332,14 @@ function DoctorProfilePage() {
                 <div className="mt-4 flex flex-wrap gap-2">
                   {doctor.availableToday && (
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                      <Calendar size={14} className="mr-1" />
+                      <CalendarIcon size={14} className="mr-1" />
                       Disponible hoy
                     </span>
                   )}
                   
                   {doctor.telemedicine && (
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                      <Video size={14} className="mr-1" />
+                      <VideoIcon size={14} className="mr-1" />
                       Telemedicina
                     </span>
                   )}
@@ -361,19 +363,26 @@ function DoctorProfilePage() {
                 
                 {parseInt(doctor.id) % 3 === 0 && (
                   <div className="text-sm mt-2 flex items-center justify-center md:justify-end">
-                    <Users size={14} className="text-amber-500 mr-1" />
+                    <UsersIcon size={14} className="text-amber-500 mr-1" />
                     <span className="text-amber-600 font-medium">
                       Alta demanda para este médico
                     </span>
                   </div>
                 )}
                 
-                <Link 
-                  to={`/reservar/${doctor.id}`}
-                  className="mt-4 btn-primary w-full md:w-auto text-center"
-                >
-                  Agendar cita
-                </Link>
+                <div className="mt-4 space-y-3">
+                  <Link 
+                    to={`/reservar/${doctor.id}`}
+                    className="btn-primary w-full md:w-auto text-center block"
+                  >
+                    Agendar cita
+                  </Link>
+                  
+                  <DoctorActionButtonsSimple 
+                    doctorId={doctor.id} 
+                    supportsTelehealth={doctor.telemedicine}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -552,7 +561,7 @@ function DoctorProfilePage() {
                     className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center hover:bg-green-200"
                     aria-label="Compartir en WhatsApp"
                   >
-                    <MessageSquare size={20} />
+                    <MessageSquareIcon size={20} />
                   </button>
                   <button
                     onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`)} 
@@ -576,7 +585,7 @@ function DoctorProfilePage() {
                     className="w-10 h-10 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center hover:bg-gray-200"
                     aria-label="Copiar enlace"
                   >
-                    <Share2 size={20} />
+                    <Share2Icon size={20} />
                   </button>
                 </div>
               </section>
@@ -592,11 +601,11 @@ function DoctorProfilePage() {
                     <span className="text-gray-600">{doctor.address}</span>
                   </li>
                   <li className="flex items-center">
-                    <Phone size={18} className="text-blue-600 mr-2 flex-shrink-0" />
+                    <PhoneIcon size={18} className="text-blue-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-600">+52 55 1234 5678</span>
                   </li>
                   <li className="flex items-center">
-                    <Mail size={18} className="text-blue-600 mr-2 flex-shrink-0" />
+                    <MailIcon size={18} className="text-blue-600 mr-2 flex-shrink-0" />
                     <span className="text-gray-600">contacto@doctor.mx</span>
                   </li>
                   <li className="flex items-center">

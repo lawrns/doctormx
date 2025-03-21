@@ -1,9 +1,10 @@
+import { X as XIcon, User as UserIcon } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useChat } from './ChatContext';
 import ExpandedChatAssistant from './ExpandedChatAssistant';
 import { SocialIcons } from './icons/IconProvider';
-import { X, Send, User } from './icons/IconProvider';
+import { Send } from './icons/IconProvider';
 
 type ChatAssistantProps = {
   onClose: () => void;
@@ -110,7 +111,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Cerrar asistente"
             >
-              <X size={20} />
+              <XIcon size={20} />
             </motion.button>
           </div>
         </div>
@@ -134,7 +135,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
                     {message.sender === 'bot' ? (
                       <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
                     ) : (
-                      <User size={16} className="mr-1 text-white" />
+                      <UserIcon size={16} className="mr-1 text-white" />
                     )}
                     <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}

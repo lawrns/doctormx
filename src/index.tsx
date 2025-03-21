@@ -9,7 +9,8 @@ import { AuthProvider } from './contexts/AuthContext';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import ErrorBoundary from './components/ErrorBoundary';
+import ToastProvider from './contexts/ToastContext';
+import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import './env-check';
 
 // Create a client
@@ -28,20 +29,22 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
+    <SimpleErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <SupabaseProvider>
           <AuthProvider>
             <BrowserRouter>
               <ThemeProvider>
-                <QuestionnaireProvider>
-                  <App />
-                </QuestionnaireProvider>
+                <ToastProvider>
+                  <QuestionnaireProvider>
+                    <App />
+                  </QuestionnaireProvider>
+                </ToastProvider>
               </ThemeProvider>
             </BrowserRouter>
           </AuthProvider>
         </SupabaseProvider>
       </QueryClientProvider>
-    </ErrorBoundary>
+    </SimpleErrorBoundary>
   </React.StrictMode>
 );

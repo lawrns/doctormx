@@ -1,3 +1,4 @@
+import { Search, Video, User, X, User } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Search, HelpCircle, ChevronDown, ChevronUp, MessageCircle, Phone, Mail, FileText, AlertCircle } from 'lucide-react';
+import { AlertCircle, Calendar as CalendarIcon, ChevronDown, ChevronUp, FileText, HelpCircle, Mail, MessageCircle, Phone, Search, User as UserIcon, Video as VideoIcon, Shield } from 'lucide-react';
 
 // FAQ categories
 const faqCategories = [
@@ -26,7 +26,7 @@ const faqCategories = [
   {
     id: 'appointments',
     name: 'Citas médicas',
-    icon: <Calendar size={20} className="text-blue-600" />,
+    icon: <CalendarIcon size={20} className="text-blue-600" />,
     questions: [
       {
         question: '¿Cómo puedo agendar una cita?',
@@ -45,7 +45,7 @@ const faqCategories = [
   {
     id: 'telemedicine',
     name: 'Telemedicina',
-    icon: <Video size={20} className="text-blue-600" />,
+    icon: <VideoIcon size={20} className="text-blue-600" />,
     questions: [
       {
         question: '¿Cómo funciona una consulta por telemedicina?',
@@ -102,7 +102,7 @@ const faqCategories = [
   {
     id: 'account',
     name: 'Cuenta y perfil',
-    icon: <User size={20} className="text-blue-600" />,
+    icon: <UserIcon size={20} className="text-blue-600" />,
     questions: [
       {
         question: '¿Cómo puedo actualizar mi información personal?',
@@ -142,48 +142,6 @@ function Stethoscope(props) {
   );
 }
 
-function Calendar(props) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={props.className}
-    >
-      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-      <line x1="16" x2="16" y1="2" y2="6" />
-      <line x1="8" x2="8" y1="2" y2="6" />
-      <line x1="3" x2="21" y1="10" y2="10" />
-    </svg>
-  );
-}
-
-function Video(props) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={props.className}
-    >
-      <path d="m22 8-6 4 6 4V8Z" />
-      <rect width="14" height="12" x="2" y="6" rx="2" ry="2" />
-    </svg>
-  );
-}
-
 function CreditCard(props) {
   return (
     <svg
@@ -200,26 +158,6 @@ function CreditCard(props) {
     >
       <rect width="20" height="14" x="2" y="5" rx="2" />
       <line x1="2" x2="22" y1="10" y2="10" />
-    </svg>
-  );
-}
-
-function User(props) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={props.size || 24}
-      height={props.size || 24}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={props.className}
-    >
-      <circle cx="12" cy="8" r="5" />
-      <path d="M20 21a8 8 0 1 0-16 0" />
     </svg>
   );
 }
@@ -505,7 +443,7 @@ function AyudaPage() {
                       to="/telemedicina"
                       className="flex items-start p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                     >
-                      <Video size={24} className="text-blue-600 mr-3 flex-shrink-0" />
+                      <VideoIcon size={24} className="text-blue-600 mr-3 flex-shrink-0" />
                       <div>
                         <h3 className="font-medium text-gray-900">Guía de telemedicina</h3>
                         <p className="text-sm text-gray-600 mt-1">

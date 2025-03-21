@@ -1,6 +1,12 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import Layout from './components/Layout';
+import DoctorRoutes from './routes/DoctorRoutes';
+
+// Lazy loaded components
+const HealthPage = lazy(() => import('./pages/HealthPage'));
+const ConnectHealthPage = lazy(() => import('./pages/ConnectHealthPage'));
+const DoctorSettingsPage = lazy(() => import('./pages/DoctorSettingsPage'));
 import HomePage from './pages/HomePage';
 import DoctorSearchPage from './pages/DoctorSearchPage';
 import DoctorProfilePage from './pages/DoctorProfilePage';
@@ -12,6 +18,7 @@ import PatientCommunityDashboard from './pages/PatientCommunityDashboard';
 import NotFoundPage from './pages/NotFoundPage';
 import EspecialidadesPage from './pages/EspecialidadesPage';
 import TelemedicinaPage from './pages/TelemedicinaPage';
+import SimpleTeleconsultationPage from './pages/SimpleTeleconsultationPage';
 import MedicosRegistroPage from './pages/MedicosRegistroPage';
 import MedicosPlanes from './pages/MedicosPlanes';
 import ContactoPage from './pages/ContactoPage';
@@ -24,7 +31,7 @@ import MedicalBoardPage from './pages/MedicalBoardPage';
 import AboutUsPage from './pages/AboutUsPage';
 import ConnectLandingPage from './pages/connect/ConnectLandingPage';
 import MedicosRegistroConnectPage from './pages/connect/MedicosRegistroConnectPage';
-import UpgradeStatusPage from './pages/UpgradeStatusPage';
+import SimpleUpgradeStatusPage from './pages/SimpleUpgradeStatusPage';
 import DoctorBroadcastPage from './pages/DoctorBroadcastPage';
 import { useAuth } from './contexts/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -47,7 +54,9 @@ import ResultadosPage from './pages/sintomas/ResultadosPage';
 import analyticsService from './services/AnalyticsService';
 
 function App() {
-  const { isAuthenticated, user } = useAuth();
+  // Use the actual authentication state from context
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
   const location = useLocation();
 
   // Scroll to top on route change
@@ -63,11 +72,11 @@ function App() {
 
   // Set user ID in analytics if authenticated
   useEffect(() => {
-    if (isAuthenticated && user?.id) {
+    if (isAuthenticated) {
       // In a real implementation, we would set the user ID in analytics
       // analyticsService.setUserId(user.id);
     }
-  }, [isAuthenticated, user]);
+  }, [isAuthenticated]);
 
   return (
     <Routes>
@@ -91,6 +100,7 @@ function App() {
         } />
         <Route path="especialidades" element={<EspecialidadesPage />} />
         <Route path="telemedicina" element={<TelemedicinaPage />} />
+        <Route path="telemedicina/consulta/:meetingId" element={<SimpleTeleconsultationPage />} />
         <Route path="medicos/registro" element={<MedicosRegistroPage />} />
         <Route path="medicos/planes" element={<MedicosPlanes />} />
         <Route path="contacto" element={<ContactoPage />} />
@@ -108,13 +118,21 @@ function App() {
         <Route path="alternativa" element={<AlternativeMedicinePage />} />
         <Route path="comunidad/preguntas" element={<QACommunityPage />} />
         <Route path="doctor-board" element={<MedicalBoardPage />} />
-        <Route path="doctor-dashboard" element={
-          <ProtectedRoute isAllowed={isAuthenticated}>
-            <DoctorDashboardPage />
+        {/* Doctor Dashboard Routes */}
+        <Route path="doctor-dashboard/*" element={
+          <ProtectedRoute isAllowed={isAuthenticated} requireDoctor={true}>
+            <DoctorRoutes />
+          </ProtectedRoute>
+        } />
+        <Route path="doctor/:doctorId/settings" element={
+          <ProtectedRoute isAllowed={isAuthenticated} requireDoctor={true}>
+            <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div></div>}>
+              <DoctorSettingsPage />
+            </Suspense>
           </ProtectedRoute>
         } />
         <Route path="doctor-dashboard/broadcast" element={
-          <ProtectedRoute isAllowed={isAuthenticated}>
+          <ProtectedRoute isAllowed={isAuthenticated} requireDoctor={true}>
             <DoctorBroadcastPage />
           </ProtectedRoute>
         } />
@@ -122,7 +140,21 @@ function App() {
         <Route path="connect" element={<ConnectLandingPage />} />
         <Route path="connect/:referralId" element={<ConnectLandingPage />} />
         <Route path="connect/registro" element={<MedicosRegistroConnectPage />} />
-        <Route path="upgrade-status" element={<UpgradeStatusPage />} />
+        <Route path="upgrade-status" element={<SimpleUpgradeStatusPage />} />
+        <Route path="health" element={
+          <ProtectedRoute isAllowed={isAuthenticated}>
+            <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div></div>}>
+              <HealthPage />
+            </Suspense>
+          </ProtectedRoute>
+        } />
+        <Route path="connect-health" element={
+          <ProtectedRoute isAllowed={isAuthenticated}>
+            <Suspense fallback={<div className="flex justify-center items-center min-h-screen"><div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div></div>}>
+              <ConnectHealthPage />
+            </Suspense>
+          </ProtectedRoute>
+        } />
       </Route>
 
       {/* Admin routes */}

@@ -1,3 +1,4 @@
+import { User as UserIcon } from 'lucide-react';
 import { useState } from 'react';
 import { SocialIcons } from './icons/IconProvider';
 import { X, Send, User, Shield, Calendar, Video, Clock, AlertCircle } from './icons/IconProvider';
@@ -239,7 +240,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                           {message.sender === 'bot' ? (
                             <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
                           ) : (
-                            <User size={16} className="mr-1 text-white" />
+                            <UserIcon size={16} className="mr-1 text-white" />
                           )}
                           <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
                             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}

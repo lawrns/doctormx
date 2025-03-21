@@ -220,7 +220,7 @@ function MedicosRegistroPage() {
       }
       
       // 2. Create doctor record
-      const { error: doctorError } = await supabase
+      const { data: doctorData, error: doctorError } = await supabase
         .from('doctors')
         .insert({
           name: formData.name,
@@ -238,11 +238,38 @@ function MedicosRegistroPage() {
           in_person_available: true,
           is_accepting_patients: true,
           created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString()
-        });
+          updated_at: new Date().toISOString(),
+          // Add feature flags for better UI control
+          feature_flags: {
+            doctoraliaSync: {
+              enabled: formData.selectedPlan !== 'basic'
+            },
+            customDomain: {
+              enabled: formData.selectedPlan !== 'basic'
+            }
+          },
+          // Set doctor's role explicitly
+          role: 'doctor',
+          subscription_plan: formData.selectedPlan
+        })
+        .select('id')
+        .single();
       
       if (doctorError) {
         throw new Error(doctorError.message || 'Error al crear perfil de doctor');
+      }
+      
+      // 3. Set user metadata to indicate doctor role
+      const { error: metadataError } = await supabase.auth.updateUser({
+        data: { 
+          role: 'doctor',
+          doctor_id: doctorData?.id
+        }
+      });
+      
+      if (metadataError) {
+        console.error('Error setting user metadata:', metadataError);
+        // Continue anyway - the doctor record has been created
       }
       
       // Success - registration complete

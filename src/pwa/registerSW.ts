@@ -10,54 +10,83 @@ interface Window {
 
 // Service worker registration
 export const registerServiceWorker = async (): Promise<void> => {
-  if ('serviceWorker' in navigator) {
+  if (!('serviceWorker' in navigator)) {
+    console.log('[PWA] Service workers are not supported in this browser');
+    return;
+  }
+  
+  try {
+    // Check if the service worker file exists
     try {
-      // Register the service worker directly
-      const registration = await navigator.serviceWorker.register('/sw.js', {
-        scope: '/'
-      });
-      
-      if (registration.installing) {
-        console.log('[ServiceWorker] Installing');
-      } else if (registration.waiting) {
-        console.log('[ServiceWorker] Installed - waiting to activate');
-      } else if (registration.active) {
-        console.log('[ServiceWorker] Active');
+      const response = await fetch('/sw.js');
+      if (!response.ok) {
+        console.warn('[PWA] Service worker file not found, PWA functionality will be limited.');
+        return;
       }
-      
-      // Handle service worker updates
-      registration.addEventListener('updatefound', () => {
-        const newWorker = registration.installing;
-        if (newWorker) {
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // New service worker available, show update notification to user
-              showUpdateNotification();
-            }
-          });
-        }
-      });
-      
-      // Check for updates on page load
-      if (registration.waiting && navigator.serviceWorker.controller) {
-        showUpdateNotification();
-      }
-      
-      // Store registration for later use
-      window.__SW_REGISTRATION = registration;
-      
     } catch (error) {
-      console.error('[ServiceWorker] Registration failed:', error);
+      console.warn('[PWA] Could not verify service worker file:', error);
+      // Continue anyway, the registration will fail if the file really doesn't exist
     }
-  } else {
-    console.log('[ServiceWorker] Service workers are not supported in this browser');
+    
+    // Register the service worker
+    const registration = await navigator.serviceWorker.register('/sw.js', {
+      scope: '/'
+    });
+    
+    console.log('[PWA] Service worker registration successful with scope:', registration.scope);
+    
+    // Check the current state
+    if (registration.installing) {
+      console.log('[PWA] Service Worker installing');
+    } else if (registration.waiting) {
+      console.log('[PWA] Service Worker installed - waiting to activate');
+      
+      // If there's a waiting worker, it means there's an update available
+      if (navigator.serviceWorker.controller) {
+        showUpdateNotification(() => {
+          if (registration.waiting) {
+            registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+          }
+          window.location.reload();
+        });
+      }
+    } else if (registration.active) {
+      console.log('[PWA] Service Worker active');
+    }
+    
+    // Handle service worker updates
+    registration.addEventListener('updatefound', () => {
+      const newWorker = registration.installing;
+      if (newWorker) {
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New service worker available, show update notification
+            showUpdateNotification(() => {
+              if (registration.waiting) {
+                registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+              }
+              window.location.reload();
+            });
+          }
+        });
+      }
+    });
+    
+    // Store registration for later use
+    window.__SW_REGISTRATION = registration;
+    
+  } catch (error) {
+    console.error('[PWA] Service worker registration failed:', error);
   }
 };
 
+
+
 /**
  * Shows a notification to the user that a new version is available
+ * @param updateFn Function to call when update button is clicked
  */
-const showUpdateNotification = (): void => {
+const showUpdateNotification = (updateFn?: () => void): void => {
   // Create notification element
   const notification = document.createElement('div');
   notification.className = 'pwa-update-notification';
@@ -124,12 +153,17 @@ const showUpdateNotification = (): void => {
   
   // Add event listeners
   document.getElementById('pwa-update-button')?.addEventListener('click', () => {
-    // Force refresh to get new service worker
-    if (window.__SW_REGISTRATION?.waiting) {
-      // Send message to the waiting service worker to skip waiting
-      window.__SW_REGISTRATION.waiting.postMessage({ type: 'SKIP_WAITING' });
+    // If an update function was provided, use it
+    if (updateFn) {
+      updateFn();
+    } else {
+      // Fallback to the old approach
+      if (window.__SW_REGISTRATION?.waiting) {
+        // Send message to the waiting service worker to skip waiting
+        window.__SW_REGISTRATION.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+      window.location.reload();
     }
-    window.location.reload();
   });
   
   document.getElementById('pwa-update-dismiss')?.addEventListener('click', () => {

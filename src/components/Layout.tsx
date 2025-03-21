@@ -1,3 +1,4 @@
+import { X as XIcon } from 'lucide-react';
 import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SocialIcons, X, AlertCircle } from './icons/IconProvider';
@@ -234,7 +235,7 @@ function Layout() {
                 onClick={() => setShowExitPopup(false)}
                 className="absolute top-3 right-3 text-gray-400 hover:text-gray-500"
               >
-                <X size={20} />
+                <XIcon size={20} />
               </button>
             </div>
           </div>

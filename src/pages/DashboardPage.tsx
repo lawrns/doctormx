@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { 
   Calendar, Clock, User, Settings, LogOut, 
   ChevronRight, MapPin, Video, AlertCircle, CheckCircle, X,
-  Users, Heart
+  Users, Heart, Activity
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { es } from 'date-fns/locale';
@@ -191,6 +191,19 @@ function DashboardPage() {
                     >
                       <Calendar size={20} className="mr-3" />
                       <span>Mis citas</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/health"
+                      className={`flex items-center px-4 py-2 rounded-lg ${
+                        location.pathname === '/health'
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      <Activity size={20} className="mr-3" />
+                      <span>Mi Salud</span>
                     </Link>
                   </li>
                   <li>

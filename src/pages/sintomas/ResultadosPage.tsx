@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-// Import icons individually to prevent 'Clock is not defined' error
-import AlertCircle from 'lucide-react/dist/esm/icons/alert-circle';
-import Calendar from 'lucide-react/dist/esm/icons/calendar';
-import Video from 'lucide-react/dist/esm/icons/video';
-import Download from 'lucide-react/dist/esm/icons/download';
-import Share2 from 'lucide-react/dist/esm/icons/share-2';
-import ArrowLeft from 'lucide-react/dist/esm/icons/arrow-left';
-import InfoIcon from 'lucide-react/dist/esm/icons/info';
-import Stethoscope from 'lucide-react/dist/esm/icons/stethoscope';
+// Import icons from lucide-react library
+import { 
+  AlertCircle, 
+  Calendar, 
+  Video, 
+  Download, 
+  Share2, 
+  ArrowLeft, 
+  Info as InfoIcon, 
+  Stethoscope 
+} from 'lucide-react';
+
 import BreadcrumbNav from '../../components/sintomas/BreadcrumbNav';
 import ResultsCard from '../../components/sintomas/ResultsCard';
 import SpecialistRecommendations from '../../components/sintomas/SpecialistRecommendations';

@@ -1,8 +1,15 @@
-// PWA type definitions for Doctor.mx
-// Used to define extended window properties
+/// <reference types="vite-plugin-pwa/client" />
 
-// Define the window interface extension for service worker registration
-interface Window {
-  __SW_REGISTRATION?: ServiceWorkerRegistration;
-  gtag?: (event: string, action: string, params?: any) => void;
+declare module 'virtual:pwa-register' {
+  export interface RegisterSWOptions {
+    immediate?: boolean;
+    onNeedRefresh?: () => void;
+    onOfflineReady?: () => void;
+    onRegistered?: (registration: ServiceWorkerRegistration | undefined) => void;
+    onRegisterError?: (error: any) => void;
+  }
+
+  export function registerSW(
+    options?: RegisterSWOptions
+  ): (reloadPage?: boolean) => Promise<void>;
 }

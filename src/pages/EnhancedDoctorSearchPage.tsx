@@ -1,3 +1,4 @@
+import { Search, Filter, Users, Calendar, Video, Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { 

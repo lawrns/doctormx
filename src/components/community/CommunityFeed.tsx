@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  MessageCircle, Heart, Calendar, AlertCircle, ThumbsUp, 
-  ChevronDown, BookOpen, FileText, Star, User, X, 
-  CheckCircle, Clock, BarChart2
-} from 'lucide-react';
+import { AlertCircle, BarChart2, BookOpen, Calendar, CheckCircle, ChevronDown, Clock, FileText, Heart, MessageCircle, Star, ThumbsUp, User, Users, X } from 'lucide-react';
 
 // Types for community feed items
 interface Author {

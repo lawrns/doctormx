@@ -90,6 +90,80 @@
   animation: fade-in 0.3s ease-in-out;
 }
 
+@keyframes slide-in-right {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.3s ease-out;
+}
+
+@keyframes slide-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.3s ease-out;
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Animation Utilities */
+.animate-in {
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-50 {
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+}
+
+.slide-in-from-right-50 {
+  animation-name: slide-in-right;
+  animation-duration: 0.5s;
+}
+
+.slide-in-from-left-50 {
+  animation-name: slide-in-left;
+  animation-duration: 0.5s;
+}
+
+.slide-in-from-bottom-50 {
+  animation-name: slide-in-up;
+  animation-duration: 0.5s;
+}
+
+.duration-300 {
+  animation-duration: 0.3s;
+}
+
+.duration-500 {
+  animation-duration: 0.5s;
+}
+
+.duration-700 {
+  animation-duration: 0.7s;
+}
+
 /* Symptom checker custom styles */
 .body-region-highlight {
   transition: fill 0.2s ease-in-out;

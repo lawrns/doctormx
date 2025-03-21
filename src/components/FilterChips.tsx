@@ -1,5 +1,6 @@
+import { X } from 'lucide-react';
 import React from 'react';
-import { X } from './icons/IconProvider';
+// Removed duplicate import: import { X } from './icons/IconProvider';
 
 interface FilterChip {
   id: string;

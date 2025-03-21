@@ -1,0 +1,314 @@
+/* Custom UI elements for DoctorMX */
+
+/* Base styling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFAF5;
+  color: #44403C;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #10526A;
+}
+
+/* Custom Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+  background-color: #FFFAF5;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1A8AB0;
+  box-shadow: 0 0 0 3px rgba(26, 138, 176, 0.15);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #B7B0A9;
+}
+
+/* Custom Radio Buttons */
+input[type="radio"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #1A8AB0;
+  border-radius: 50%;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+}
+
+input[type="radio"]:checked {
+  border-color: #1A8AB0;
+  background-color: #FFFFFF;
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #1A8AB0;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+input[type="radio"]:hover:not(:checked) {
+  border-color: #156E8D;
+}
+
+/* Custom Checkboxes */
+input[type="checkbox"] {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #1A8AB0;
+  border-radius: 6px;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #1A8AB0;
+  background-color: #1A8AB0;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 6px;
+  height: 12px;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  margin-top: -2px;
+}
+
+input[type="checkbox"]:hover:not(:checked) {
+  border-color: #156E8D;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1A8AB0;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #156E8D;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #F26E50;
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #c25840;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #1A8AB0;
+  color: #1A8AB0;
+}
+
+.btn-outline:hover {
+  background-color: rgba(26, 138, 176, 0.1);
+}
+
+/* Cards and Containers */
+.card {
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.medication-card {
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border-left: 4px solid #1A8AB0;
+  transition: all 0.3s ease;
+}
+
+.medication-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.medication-header {
+  background-color: rgba(26, 138, 176, 0.1);
+  border-bottom: 1px solid rgba(26, 138, 176, 0.2);
+  padding: 0.75rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #10526A;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.medication-body {
+  padding: 1rem;
+}
+
+.medication-field {
+  margin-bottom: 1rem;
+}
+
+.medication-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #57534E;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Micro-interactions */
+.button-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-effect::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: a5px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.button-effect:hover::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Improved Spacing */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background-color: #1A8AB0;
+  border-radius: 2px;
+}
+
+/* Responsive Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

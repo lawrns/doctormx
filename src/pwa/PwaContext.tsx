@@ -1,20 +1,30 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { InstallPrompt, isInStandaloneMode } from './registerSW';
+import { isInStandaloneMode } from './registerSW';
 import { syncOfflineRequests } from './utils/networkInterceptor';
 
 interface PwaContextProps {
   isOnline: boolean;
-  isStandalone: boolean;
-  canInstall: boolean;
-  installPrompt: InstallPrompt | null;
-  promptInstall: () => Promise<boolean>;
+  isInstalled: boolean;
+  isInstallable: boolean;
+  deferredPrompt: any;
+  showInstallPrompt: () => Promise<boolean>;
   offlineReady: boolean;
   hasPendingUploads: boolean;
   syncPendingUploads: () => Promise<{ success: number; failed: number; remaining: number }>;
   lastSyncResult: { success: number; failed: number; remaining: number } | null;
 }
 
-const PwaContext = createContext<PwaContextProps | undefined>(undefined);
+const PwaContext = createContext<PwaContextProps>({
+  isOnline: true,
+  isInstalled: false,
+  isInstallable: false,
+  deferredPrompt: null,
+  showInstallPrompt: async () => false,
+  offlineReady: false,
+  hasPendingUploads: false,
+  syncPendingUploads: async () => ({ success: 0, failed: 0, remaining: 0 }),
+  lastSyncResult: null
+});
 
 interface PwaProviderProps {
   children: ReactNode;
@@ -22,29 +32,63 @@ interface PwaProviderProps {
 
 export const PwaProvider: React.FC<PwaProviderProps> = ({ children }) => {
   const [isOnline, setIsOnline] = useState<boolean>(navigator.onLine);
-  const [isStandalone, setIsStandalone] = useState<boolean>(isInStandaloneMode());
-  const [installPrompt, setInstallPrompt] = useState<InstallPrompt | null>(null);
+  const [isInstalled, setIsInstalled] = useState<boolean>(isInStandaloneMode());
+  const [isInstallable, setIsInstallable] = useState<boolean>(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [offlineReady, setOfflineReady] = useState<boolean>(false);
   const [hasPendingUploads, setHasPendingUploads] = useState<boolean>(false);
   const [lastSyncResult, setLastSyncResult] = useState<{ success: number; failed: number; remaining: number } | null>(null);
 
-  // Initialize install prompt handler
+  // Check if app is already installed and handle installation capability
   useEffect(() => {
-    const prompt = new InstallPrompt();
-    setInstallPrompt(prompt);
+    // Check if already installed
+    setIsInstalled(isInStandaloneMode());
 
-    // Check if PWA is already installed
-    setIsStandalone(isInStandaloneMode());
-    
-    // Match media query for standalone mode
-    const mediaQuery = window.matchMedia('(display-mode: standalone)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsStandalone(e.matches);
+    // Listen for display mode changes (e.g., user installs PWA while using it)
+    const mediaQueryList = window.matchMedia('(display-mode: standalone)');
+    const handleDisplayModeChange = (e: MediaQueryListEvent) => {
+      setIsInstalled(e.matches);
     };
     
-    mediaQuery.addEventListener('change', handleChange);
+    if ('addEventListener' in mediaQueryList) {
+      mediaQueryList.addEventListener('change', handleDisplayModeChange);
+    } else {
+      // Fallback for older browsers
+      (mediaQueryList as any).addListener(handleDisplayModeChange);
+    }
+
+    // Check install capability
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the default browser prompt
+      e.preventDefault();
+      // Store the event for later use
+      setDeferredPrompt(e);
+      setIsInstallable(true);
+      
+      console.log('[PWA] App is installable');
+    });
+
+    // Track installation
+    window.addEventListener('appinstalled', () => {
+      setIsInstalled(true);
+      setIsInstallable(false);
+      setDeferredPrompt(null);
+      
+      // Track installation in analytics if available
+      if ('gtag' in window) {
+        (window as any).gtag('event', 'pwa_installed');
+      }
+      
+      console.log('[PWA] App was installed');
+    });
+
     return () => {
-      mediaQuery.removeEventListener('change', handleChange);
+      if ('removeEventListener' in mediaQueryList) {
+        mediaQueryList.removeEventListener('change', handleDisplayModeChange);
+      } else {
+        // Fallback for older browsers
+        (mediaQueryList as any).removeListener(handleDisplayModeChange);
+      }
     };
   }, []);
 
@@ -96,58 +140,65 @@ export const PwaProvider: React.FC<PwaProviderProps> = ({ children }) => {
       // This will be replaced with a proper call once we have a complete implementation
       const pendingSubmissions = await import('./utils/offlineDb').then(
         module => module.formDataDb.getPendingSubmissions()
-      );
-      setHasPendingUploads(pendingSubmissions.length > 0);
+      ).catch(() => []);
+      
+      if (pendingSubmissions) {
+        setHasPendingUploads(pendingSubmissions.length > 0);
+      }
     } catch (error) {
       console.error('[PWA] Error checking pending uploads:', error);
     }
   };
 
   // Prompt the user to install the PWA
-  const promptInstall = async (): Promise<boolean> => {
-    if (!installPrompt || !installPrompt.isPromptAvailable()) {
+  const showInstallPrompt = async (): Promise<boolean> => {
+    if (!deferredPrompt) {
       return false;
     }
+
+    // Show the prompt
+    deferredPrompt.prompt();
+
+    // Wait for the user to respond to the prompt
+    const choiceResult = await deferredPrompt.userChoice;
     
-    const accepted = await installPrompt.showPrompt();
-    return accepted;
+    // Clear the saved prompt
+    setDeferredPrompt(null);
+    setIsInstallable(false);
+
+    return choiceResult.outcome === 'accepted';
   };
 
   // Sync pending uploads
   const syncPendingUploads = async () => {
-    const result = await syncOfflineRequests();
-    setLastSyncResult(result);
-    setHasPendingUploads(result.remaining > 0);
-    return result;
-  };
-
-  // Context value
-  const contextValue: PwaContextProps = {
-    isOnline,
-    isStandalone,
-    canInstall: installPrompt?.isPromptAvailable() || false,
-    installPrompt,
-    promptInstall,
-    offlineReady,
-    hasPendingUploads,
-    syncPendingUploads,
-    lastSyncResult
+    try {
+      const result = await syncOfflineRequests();
+      setLastSyncResult(result);
+      setHasPendingUploads(result.remaining > 0);
+      return result;
+    } catch (error) {
+      console.error('[PWA] Error syncing pending uploads:', error);
+      return { success: 0, failed: 0, remaining: 0 };
+    }
   };
 
   return (
-    <PwaContext.Provider value={contextValue}>
+    <PwaContext.Provider value={{
+      isOnline,
+      isInstalled,
+      isInstallable,
+      deferredPrompt,
+      showInstallPrompt,
+      offlineReady,
+      hasPendingUploads,
+      syncPendingUploads,
+      lastSyncResult
+    }}>
       {children}
     </PwaContext.Provider>
   );
 };
 
-// Custom hook to use the PWA context
-export const usePwa = (): PwaContextProps => {
-  const context = useContext(PwaContext);
-  
-  if (context === undefined) {
-    throw new Error('usePwa must be used within a PwaProvider');
-  }
-  
-  return context;
-};
+export const usePwa = () => useContext(PwaContext);
+
+export default PwaContext;

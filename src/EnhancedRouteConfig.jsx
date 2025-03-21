@@ -4,6 +4,7 @@ import EnhancedHomePage from './pages/EnhancedHomePage';
 import EnhancedDoctorSearchPage from './pages/EnhancedDoctorSearchPage';
 import EnhancedDoctorProfilePage from './pages/EnhancedDoctorProfilePage';
 import EnhancedBookingPage from './pages/EnhancedBookingPage';
+import DoctorSettingsPage from './pages/DoctorSettingsPage';
 
 // Import original pages for routes we haven't enhanced yet
 import SymptomCheckerPage from './pages/SymptomCheckerPage';
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <DashboardPage />,
+      },
+      {
+        path: 'doctor/:doctorId/settings',
+        element: <DoctorSettingsPage />,
       },
       {
         path: 'acerca',

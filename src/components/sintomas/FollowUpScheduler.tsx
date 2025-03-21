@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Clock, MapPin, Video, Filter, Search, ChevronDown, ChevronRight, Star, CheckCircle, X, User } from 'lucide-react';
+import { Calendar, CheckCircle, ChevronDown, ChevronRight, Clock, Filter, Info, MapPin, Search, Star, User, Video, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import analyticsService from '../../services/AnalyticsService';
 

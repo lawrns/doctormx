@@ -10,6 +10,9 @@ import {
 import ReferralLinkGenerator from '../components/connect/ReferralLinkGenerator';
 import BroadcastCreator from '../components/doctor/BroadcastCreator';
 import BroadcastList from '../components/doctor/BroadcastList';
+import SessionGuard from '../components/auth/SessionGuard';
+import SafeButton from '../components/ui/SafeButton';
+import AuthDebugger from '../components/auth/AuthDebugger';
 
 // Mock data for doctor
 const mockDoctorData = {
@@ -60,12 +63,12 @@ const mockDoctorData = {
 };
 
 function DoctorDashboardPage() {
-  const { user, signOut } = useAuth();
+  const { user, logout, doctorId, isDoctor } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   
   const handleSignOut = async () => {
-    await signOut();
+    await logout();
     navigate('/');
   };
 
@@ -95,154 +98,173 @@ function DoctorDashboardPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="p-6 border-b border-gray-200">
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
-                    {user?.email?.charAt(0).toUpperCase() || 'D'}
-                  </div>
-                  <div className="ml-4">
-                    <h2 className="text-lg font-semibold text-gray-900">{mockDoctorData.name}</h2>
-                    <p className="text-gray-600 text-sm">{mockDoctorData.specialty}</p>
-                  </div>
-                </div>
-                {mockDoctorData.premium && (
-                  <div className="mt-4 bg-blue-50 rounded-md p-3 flex items-start">
-                    <Shield className="text-blue-600 w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
-                    <div>
-                      <p className="text-sm font-medium text-blue-900">Premium activo</p>
-                      <p className="text-xs text-blue-700">
-                        {remainingPremiumDays()} días restantes
-                      </p>
+    <SessionGuard>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            {/* Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div className="p-6 border-b border-gray-200">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl">
+                      {user?.email?.charAt(0).toUpperCase() || 'D'}
+                    </div>
+                    <div className="ml-4">
+                      <h2 className="text-lg font-semibold text-gray-900">{mockDoctorData.name}</h2>
+                      <p className="text-gray-600 text-sm">{mockDoctorData.specialty}</p>
                     </div>
                   </div>
-                )}
+                  {mockDoctorData.premium && (
+                    <div className="mt-4 bg-blue-50 rounded-md p-3 flex items-start">
+                      <Shield className="text-blue-600 w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-medium text-blue-900">Premium activo</p>
+                        <p className="text-xs text-blue-700">
+                          {remainingPremiumDays()} días restantes
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                
+                <nav className="p-4">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        to="/dashboard"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <BarChart size={20} className="mr-3" />
+                        <span>Panel principal</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/dashboard/appointments"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard/appointments'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <Calendar size={20} className="mr-3" />
+                        <span>Citas</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/dashboard/broadcasts"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard/broadcasts'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <BellRing size={20} className="mr-3" />
+                        <span>Mensajes</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/dashboard/connect"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard/connect'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <Zap size={20} className="mr-3" />
+                        <span>Doctor.mx Connect</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/dashboard/profile"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard/profile'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <User size={20} className="mr-3" />
+                        <span>Perfil</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/dashboard/settings"
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname === '/dashboard/settings'
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <Settings size={20} className="mr-3" />
+                        <span>Configuración</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to={`/doctor/${doctorId || user?.id || '1'}/settings`}
+                        className={`flex items-center px-4 py-2 rounded-lg ${
+                          location.pathname.includes('/doctor/') && location.pathname.includes('/settings')
+                            ? 'bg-blue-50 text-blue-600'
+                            : 'text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        <Zap size={20} className="mr-3" />
+                        <span>Configuración Avanzada</span>
+                        <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800">Nuevo</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <SafeButton
+                        onSafeClick={handleSignOut}
+                        className="w-full flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-50"
+                      >
+                        <LogOut size={20} className="mr-3" />
+                        <span>Cerrar sesión</span>
+                      </SafeButton>
+                    </li>
+                  </ul>
+                </nav>
               </div>
               
-              <nav className="p-4">
-                <ul className="space-y-2">
-                  <li>
-                    <Link
-                      to="/dashboard"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <BarChart size={20} className="mr-3" />
-                      <span>Panel principal</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/dashboard/appointments"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/appointments'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <Calendar size={20} className="mr-3" />
-                      <span>Citas</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/dashboard/broadcasts"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/broadcasts'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <BellRing size={20} className="mr-3" />
-                      <span>Mensajes</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/dashboard/connect"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/connect'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <Zap size={20} className="mr-3" />
-                      <span>Doctor.mx Connect</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/dashboard/profile"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/profile'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <User size={20} className="mr-3" />
-                      <span>Perfil</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/dashboard/settings"
-                      className={`flex items-center px-4 py-2 rounded-lg ${
-                        location.pathname === '/dashboard/settings'
-                          ? 'bg-blue-50 text-blue-600'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`}
-                    >
-                      <Settings size={20} className="mr-3" />
-                      <span>Configuración</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <button
-                      onClick={handleSignOut}
-                      className="w-full flex items-center px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-50"
-                    >
-                      <LogOut size={20} className="mr-3" />
-                      <span>Cerrar sesión</span>
-                    </button>
-                  </li>
-                </ul>
-              </nav>
+              <div className="mt-6 bg-blue-600 rounded-lg shadow-sm p-6 text-white">
+                <h3 className="font-semibold text-lg mb-2">Soporte prioritario</h3>
+                <p className="text-blue-100 mb-4">
+                  Como miembro Premium, tienes acceso a soporte prioritario.
+                </p>
+                <Link
+                  to="/contacto"
+                  className="inline-block w-full py-2 px-4 bg-white text-blue-600 font-medium rounded-lg text-center hover:bg-blue-50 transition-colors"
+                >
+                  Contactar soporte
+                </Link>
+              </div>
             </div>
             
-            <div className="mt-6 bg-blue-600 rounded-lg shadow-sm p-6 text-white">
-              <h3 className="font-semibold text-lg mb-2">Soporte prioritario</h3>
-              <p className="text-blue-100 mb-4">
-                Como miembro Premium, tienes acceso a soporte prioritario.
-              </p>
-              <Link
-                to="/contacto"
-                className="inline-block w-full py-2 px-4 bg-white text-blue-600 font-medium rounded-lg text-center hover:bg-blue-50 transition-colors"
-              >
-                Contactar soporte
-              </Link>
+            {/* Main content */}
+            <div className="lg:col-span-3">
+              <Routes>
+                <Route index element={<DashboardTab doctorData={mockDoctorData} />} />
+                <Route path="connect" element={<ConnectTab />} />
+                <Route path="profile" element={<ProfileTab doctorData={mockDoctorData} />} />
+                <Route path="broadcasts" element={<BroadcastsTab />} />
+              </Routes>
             </div>
           </div>
-          
-          {/* Main content */}
-          <div className="lg:col-span-3">
-            <Routes>
-              <Route index element={<DashboardTab doctorData={mockDoctorData} />} />
-              <Route path="connect" element={<ConnectTab />} />
-              <Route path="profile" element={<ProfileTab doctorData={mockDoctorData} />} />
-              <Route path="broadcasts" element={<BroadcastsTab />} />
-            </Routes>
-          </div>
         </div>
+        
+        {/* Auth debugger - only visible in development */}
+        <AuthDebugger />
       </div>
-    </div>
+    </SessionGuard>
   );
 }
 
@@ -404,9 +426,9 @@ function DashboardTab({ doctorData }) {
           <p className="text-gray-600 text-sm mb-4">
             Configura tus horarios de disponibilidad para citas.
           </p>
-          <button className="btn-outline w-full">
+          <SafeButton className="btn-outline w-full">
             Administrar horarios
-          </button>
+          </SafeButton>
         </div>
         
         <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
@@ -417,9 +439,9 @@ function DashboardTab({ doctorData }) {
           <p className="text-gray-600 text-sm mb-4">
             Accede a los registros médicos de tus pacientes.
           </p>
-          <button className="btn-outline w-full">
+          <SafeButton className="btn-outline w-full">
             Ver registros
-          </button>
+          </SafeButton>
         </div>
         
         <div className="bg-white rounded-lg shadow-sm p-6 flex flex-col items-center text-center">
@@ -509,12 +531,12 @@ function ProfileTab({ doctorData }) {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold text-gray-900">Mi perfil</h1>
         {!isEditing && (
-          <button 
-            onClick={() => setIsEditing(true)}
+          <SafeButton 
+            onSafeClick={() => setIsEditing(true)}
             className="btn-outline"
           >
             Editar perfil
-          </button>
+          </SafeButton>
         )}
       </div>
       
@@ -548,9 +570,9 @@ function ProfileTab({ doctorData }) {
                     )}
                   </div>
                   
-                  <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+                  <SafeButton className="text-blue-600 hover:text-blue-800 text-sm font-medium">
                     Cambiar foto
-                  </button>
+                  </SafeButton>
                 </div>
               </div>
               
@@ -650,19 +672,19 @@ function ProfileTab({ doctorData }) {
                     </div>
                     
                     <div className="mt-6 flex justify-end space-x-3">
-                      <button
+                      <SafeButton
                         type="button"
                         onClick={() => setIsEditing(false)}
                         className="btn-outline"
                       >
                         Cancelar
-                      </button>
-                      <button
+                      </SafeButton>
+                      <SafeButton
                         type="submit"
                         className="btn-primary"
                       >
                         Guardar cambios
-                      </button>
+                      </SafeButton>
                     </div>
                   </form>
                 ) : (
@@ -728,9 +750,9 @@ function ProfileTab({ doctorData }) {
             </div>
             
             <div className="mt-6">
-              <button className="text-blue-600 hover:text-blue-800 font-medium">
+              <SafeButton className="text-blue-600 hover:text-blue-800 font-medium">
                 Añadir educación
-              </button>
+              </SafeButton>
             </div>
           </div>
         </div>
@@ -756,9 +778,9 @@ function ProfileTab({ doctorData }) {
             </div>
             
             <div className="mt-6">
-              <button className="text-blue-600 hover:text-blue-800 font-medium">
+              <SafeButton className="text-blue-600 hover:text-blue-800 font-medium">
                 Añadir certificación
-              </button>
+              </SafeButton>
             </div>
           </div>
         </div>

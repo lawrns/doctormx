@@ -1,3 +1,4 @@
+import { Video, ChevronLeft, ChevronRight, Calendar, Video, Info } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { format, addDays, startOfWeek, addWeeks, isSameDay } from 'date-fns';

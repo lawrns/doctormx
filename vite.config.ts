@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -33,8 +34,14 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      external: ['@xstate/react'],
-    }
+      external: ['@xstate/react', 'localforage'],
+      output: {
+        manualChunks: undefined
+      }
+    },
+    // Ensure these files get copied to the build directory
+    assetsInlineLimit: 0,
+    copyPublicDir: true
   },
   define: {
     'process.env': {}

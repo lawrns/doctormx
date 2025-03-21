@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { WifiOff, Save, Check, AlertCircle, FileText } from 'lucide-react';
+import { AlertCircle, Check, FileText, Info, Save, WifiOff } from 'lucide-react';
 import { symptomDb, SymptomEntry } from '../utils/offlineDb';
 import { usePwa } from '../PwaContext';
 

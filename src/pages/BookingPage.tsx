@@ -1,10 +1,9 @@
+import { Calendar, Video } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 // Import icons individually to prevent 'Clock is not defined' error
-import Calendar from 'lucide-react/dist/esm/icons/calendar';
 import Clock from 'lucide-react/dist/esm/icons/clock';
-import Video from 'lucide-react/dist/esm/icons/video';
 import MapPin from 'lucide-react/dist/esm/icons/map-pin';
 import CreditCard from 'lucide-react/dist/esm/icons/credit-card';
 import CheckCircle from 'lucide-react/dist/esm/icons/check-circle';

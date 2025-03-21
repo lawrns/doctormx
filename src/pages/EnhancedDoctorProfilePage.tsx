@@ -1,3 +1,4 @@
+import { Camera, Info, Calendar, Video, Share2, Users, Phone, Mail, MessageSquare, Mail, Share2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 

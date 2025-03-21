@@ -39,7 +39,11 @@ module.exports = {
       animation: {
         'fade-in': 'fadeIn 0.3s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-in-out',
+        'slide-right': 'slideRight 0.3s ease-in-out',
+        'slide-left': 'slideLeft 0.3s ease-in-out',
+        'scale-in': 'scaleIn 0.3s ease-in-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
       },
       keyframes: {
         fadeIn: {
@@ -50,8 +54,68 @@ module.exports = {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        slideRight: {
+          '0%': { transform: 'translateX(-10px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideLeft: {
+          '0%': { transform: 'translateX(10px)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Add animation utilities plugin
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.animate-in': {
+          animationFillMode: 'both',
+          animationTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        },
+        '.fade-in': {
+          animationName: 'fadeIn',
+        },
+        '.fade-in-50': {
+          animationName: 'fadeIn',
+          animationDuration: '0.5s',
+        },
+        '.slide-in-from-top': {
+          animationName: 'slideUp',
+          transform: 'translateY(-10px)',
+        },
+        '.slide-in-from-bottom': {
+          animationName: 'slideUp',
+          transform: 'translateY(10px)',
+        },
+        '.slide-in-from-left': {
+          animationName: 'slideRight',
+          transform: 'translateX(-10px)',
+        },
+        '.slide-in-from-right': {
+          animationName: 'slideLeft',
+          transform: 'translateX(10px)',
+        },
+        '.scale-in-95': {
+          animationName: 'scaleIn',
+          transform: 'scale(0.95)',
+        },
+        '.duration-300': {
+          animationDuration: '300ms',
+        },
+        '.duration-500': {
+          animationDuration: '500ms',
+        },
+        '.duration-700': {
+          animationDuration: '700ms',
+        },
+      };
+      
+      addUtilities(newUtilities);
+    },
+  ],
 };

@@ -36,9 +36,17 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 border-gray-300 
                 rounded 
                 focus:ring-blue-500
+                focus:ring-offset-0
+                appearance-auto
                 ${error ? 'border-red-500' : ''}
                 ${className}
               `}
+              style={{
+                // Ensure consistent appearance
+                WebkitAppearance: 'checkbox',
+                MozAppearance: 'checkbox',
+                appearance: 'checkbox'
+              }}
               aria-invalid={!!error}
               aria-describedby={error ? `${checkboxId}-error` : helperText ? `${checkboxId}-helper` : undefined}
               {...rest}
@@ -57,13 +65,13 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
         </div>
         
         {error && (
-          <p id={`${checkboxId}-error`} className="mt-1.5 text-sm text-red-500 ml-6">
+          <p id={`${checkboxId}-error`} className="mt-1 text-sm text-red-500 ml-6">
             {error}
           </p>
         )}
         
         {helperText && !error && (
-          <p id={`${checkboxId}-helper`} className="mt-1.5 text-sm text-gray-500 ml-6">
+          <p id={`${checkboxId}-helper`} className="mt-1 text-sm text-gray-500 ml-6">
             {helperText}
           </p>
         )}

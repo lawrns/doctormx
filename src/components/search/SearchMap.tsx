@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, X, ZoomIn, ZoomOut } from '../../components/icons/IconProvider';
 
