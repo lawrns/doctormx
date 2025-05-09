@@ -9,6 +9,9 @@ import DoctorSettingsPage from './pages/DoctorSettingsPage';
 // Import original pages for routes we haven't enhanced yet
 import SymptomCheckerPage from './pages/SymptomCheckerPage';
 import AISymptomCheckerPage from './pages/AISymptomCheckerPage';
+import AIDoctorPage from './pages/AIDoctorPage';
+import AIAnalysisResultsPage from './pages/AIAnalysisResultsPage';
+import AIImageAnalysisPage from './pages/AIImageAnalysisPage';
 import AlternativeMedicinePage from './pages/AlternativeMedicinePage';
 import TelemedicinaPage from './pages/TelemedicinaPage';
 import LoginPage from './pages/LoginPage';
@@ -59,6 +62,18 @@ const router = createBrowserRouter([
       {
         path: 'sintomas/ai',
         element: <AISymptomCheckerPage />,
+      },
+      {
+        path: 'ai-doctor',
+        element: <AIDoctorPage />,
+      },
+      {
+        path: 'ai-doctor/analysis/:sessionId',
+        element: <AIAnalysisResultsPage />,
+      },
+      {
+        path: 'ai-doctor/image-analysis',
+        element: <AIImageAnalysisPage />,
       },
       {
         path: 'alternativa',
