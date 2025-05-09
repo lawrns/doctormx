@@ -9,9 +9,11 @@ import DoctorSettingsPage from './pages/DoctorSettingsPage';
 // Import original pages for routes we haven't enhanced yet
 import SymptomCheckerPage from './pages/SymptomCheckerPage';
 import AISymptomCheckerPage from './pages/AISymptomCheckerPage';
-import AIDoctorPage from './pages/AIDoctorPage';
-import AIAnalysisResultsPage from './pages/AIAnalysisResultsPage';
-import AIImageAnalysisPage from './pages/AIImageAnalysisPage';
+import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
+import AIAnalysisResultsPage from './features/ai-analysis/pages/AIAnalysisResultsPage';
+import AIImageAnalysisPage from './features/ai-image-analysis/pages/AIImageAnalysisPage';
+import AIPharmaciesPage from './features/ai-doctor/pages/AIPharmaciesPage';
+import AIProvidersPage from './features/ai-doctor/pages/AIProvidersPage';
 import AlternativeMedicinePage from './pages/AlternativeMedicinePage';
 import TelemedicinaPage from './pages/TelemedicinaPage';
 import LoginPage from './pages/LoginPage';
@@ -74,6 +76,14 @@ const router = createBrowserRouter([
       {
         path: 'ai-doctor/image-analysis',
         element: <AIImageAnalysisPage />,
+      },
+      {
+        path: 'ai-doctor/pharmacies/:medications?',
+        element: <AIPharmaciesPage />,
+      },
+      {
+        path: 'ai-doctor/providers/:specialty?',
+        element: <AIProvidersPage />,
       },
       {
         path: 'alternativa',

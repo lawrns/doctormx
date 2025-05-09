@@ -201,58 +201,91 @@ function HomePage() {
       </section>
 
       {/* AI Doctor Section */}
-      <section ref={aiRef} className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section ref={aiRef} className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={aiInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+          <div className="mb-12 text-center">
+            <motion.h2 
+              className="text-3xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: -20 }}
+              animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Doctor IA</h2>
-              <p className="text-xl text-blue-100 mb-8">
-                Nuestro asistente médico inteligente te ayuda a entender tus síntomas, analizar imágenes médicas y te conecta con especialistas.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                    <SocialIcons.Brain size={20} className="text-white" />
-                  </div>
-                  <span>Análisis inteligente de síntomas</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                    <svg className="text-white w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <span>Evaluación de imágenes médicas</span>
-                </li>
-                <li className="flex items-center">
-                  <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3">
-                    <Stethoscope size={20} className="text-white" />
-                  </div>
-                  <span>Recomendaciones personalizadas</span>
-                </li>
-              </ul>
-              <Link
-                to="/ai-doctor"
-                className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
-              >
-                Consultar ahora
-                <ChevronRight size={20} className="ml-2" />
-              </Link>
+              Doctor IA
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: -10 }}
+              animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -10 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Consulta con nuestro asistente médico impulsado por inteligencia artificial avanzada. 
+              Describe tus síntomas, sube imágenes o usa tu voz para recibir orientación médica personalizada.
+            </motion.p>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <EmbeddedAIDoctor className="max-w-4xl mx-auto shadow-xl rounded-xl overflow-hidden" />
+          </motion.div>
+          
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <motion.div 
+              className="bg-white p-5 rounded-lg shadow-sm flex items-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <SocialIcons.Brain size={20} className="text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Análisis inteligente</h3>
+                <p className="text-sm text-gray-600">Evaluación precisa de tus síntomas con IA avanzada</p>
+              </div>
             </motion.div>
             
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={aiInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="relative"
+            <motion.div 
+              className="bg-white p-5 rounded-lg shadow-sm flex items-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <EmbeddedAIDoctor className="shadow-xl" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <Image size={20} className="text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Análisis de imágenes</h3>
+                <p className="text-sm text-gray-600">Sube fotos para una evaluación visual de tus condiciones</p>
+              </div>
             </motion.div>
+            
+            <motion.div 
+              className="bg-white p-5 rounded-lg shadow-sm flex items-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+            >
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <MapPin size={20} className="text-blue-600" />
+              </div>
+              <div>
+                <h3 className="font-medium text-gray-900">Conexión local</h3>
+                <p className="text-sm text-gray-600">Encuentra farmacias y especialistas cercanos a tu ubicación</p>
+              </div>
+            </motion.div>
+          </div>
+          
+          <div className="mt-10 text-center">
+            <Link
+              to="/ai-doctor"
+              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+            >
+              Consultar ahora
+              <ChevronRight size={20} className="ml-2" />
+            </Link>
           </div>
         </div>
       </section>

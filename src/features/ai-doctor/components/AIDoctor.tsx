@@ -20,6 +20,7 @@ type Message = {
   };
   suggestedSpecialty?: string;
   suggestedConditions?: string[];
+  suggestedMedications?: string[];
   followUpQuestions?: string[];
   nearbyProviders?: any[];
 };
@@ -29,7 +30,7 @@ type AIDoctorProps = {
   isEmbedded?: boolean;
 };
 
-type Tab = 'chat' | 'analysis' | 'providers' | 'prescriptions' | 'appointments';
+type Tab = 'chat' | 'analysis' | 'providers' | 'prescriptions' | 'appointments' | 'pharmacies';
 
 function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('chat');
@@ -50,6 +51,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
   const [appointments, setAppointments] = useState<any[]>([]);
   const [prescriptions, setPrescriptions] = useState<any[]>([]);
+  const [pharmacies, setPharmacies] = useState<any[]>([]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -258,6 +260,33 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   };
   
+  const findPharmacies = async (medications: string[]) => {
+    if (!location) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            setLocation({
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude
+            });
+          }
+        );
+      }
+      
+      alert('Necesitamos tu ubicación para buscar farmacias cercanas.');
+      return;
+    }
+    
+    try {
+      const pharmacyList = await AIService.getPharmacyRecommendations(medications, location);
+      setPharmacies(pharmacyList);
+      setActiveTab('pharmacies');
+    } catch (error) {
+      console.error('Error finding pharmacies:', error);
+      alert('No se pudieron encontrar farmacias cercanas. Por favor, intenta nuevamente.');
+    }
+  };
+  
   const getSeverityColor = () => {
     if (severityLevel < 30) return 'bg-green-500';
     if (severityLevel < 60) return 'bg-yellow-500';
@@ -335,6 +364,20 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   >
                     <MapPin size={14} className="mr-1" />
                     Buscar especialistas en {message.suggestedSpecialty}
+                  </button>
+                </div>
+              )}
+              
+              {message.suggestedConditions && message.suggestedConditions.length > 0 && (
+                <div className="mt-2">
+                  <button
+                    onClick={() => findPharmacies(['paracetamol', 'ibuprofeno'])} 
+                    className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 transition-colors flex items-center"
+                  >
+                    <svg className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    Buscar en farmacias
                   </button>
                 </div>
               )}
@@ -611,6 +654,80 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
             )}
           </div>
         );
+        
+      case 'pharmacies':
+        return (
+          <div className="p-6">
+            <h3 className="text-xl font-semibold mb-4">Farmacias Cercanas</h3>
+            
+            {pharmacies.length > 0 ? (
+              <div className="space-y-4">
+                {pharmacies.map((pharmacy, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                    <div className="flex items-start">
+                      <div className="w-16 h-16 bg-green-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="flex items-center">
+                          <h4 className="font-medium text-lg">{pharmacy.name || `Farmacia ${index + 1}`}</h4>
+                          {pharmacy.isSponsored && (
+                            <span className="ml-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-0.5 rounded-full">
+                              Patrocinado
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm text-gray-600 mt-1">{pharmacy.address || 'Dirección de la farmacia'}</p>
+                        <p className="text-sm text-gray-600">
+                          {pharmacy.distance ? `${(pharmacy.distance / 1000).toFixed(1)} km de distancia` : 'Distancia no disponible'}
+                        </p>
+                        
+                        {pharmacy.available_medications && pharmacy.available_medications.length > 0 && (
+                          <div className="mt-2">
+                            <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
+                            <div className="flex flex-wrap gap-1 mt-1">
+                              {pharmacy.available_medications.slice(0, 3).map((med, idx) => (
+                                <span key={idx} className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
+                                  {med}
+                                </span>
+                              ))}
+                              {pharmacy.available_medications.length > 3 && (
+                                <span className="text-xs text-gray-500">+{pharmacy.available_medications.length - 3} más</span>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                        
+                        <div className="mt-3 flex space-x-2">
+                          <a 
+                            href={`https://maps.google.com/?q=${pharmacy.address}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-sm bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 transition-colors flex items-center"
+                          >
+                            <MapPin size={14} className="mr-1" />
+                            Cómo llegar
+                          </a>
+                          <button className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                            Llamar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-10">
+                <p className="text-gray-500">
+                  No hay farmacias disponibles. Usa el chat para recibir recomendaciones de medicamentos y encontrar farmacias cercanas.
+                </p>
+              </div>
+            )}
+          </div>
+        );
     }
   };
 
@@ -738,6 +855,23 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   Mis Recetas
                 </button>
               </li>
+              <li>
+                <button 
+                  className={`w-full text-left px-4 py-3 rounded-lg ${
+                    activeTab === 'pharmacies' 
+                      ? 'bg-green-100 text-green-700 font-medium' 
+                      : 'text-gray-700 hover:bg-gray-100'
+                  }`}
+                  onClick={() => setActiveTab('pharmacies')}
+                >
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    Farmacias Cercanas
+                  </div>
+                </button>
+              </li>
             </ul>
           </nav>
           
@@ -762,6 +896,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 {activeTab === 'providers' && 'Proveedores Cercanos'}
                 {activeTab === 'appointments' && 'Mis Citas'}
                 {activeTab === 'prescriptions' && 'Mis Recetas'}
+                {activeTab === 'pharmacies' && 'Farmacias Cercanas'}
               </h2>
             </div>
           </div>
