@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
+import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle, Clock, ThermometerIcon, Activity, Pill, ArrowLeft } from 'lucide-react';
 import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
 import EncryptionService from '../../../services/security/EncryptionService';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
+const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
 
 type Message = {
   id: string;
@@ -25,6 +27,13 @@ type Message = {
   suggestedMedications?: string[];
   followUpQuestions?: string[];
   nearbyProviders?: any[];
+  interactiveOptions?: {
+    type: 'symptom_category' | 'symptom_duration' | 'symptom_severity' | 'yes_no' | 'follow_up_preference';
+    options: string[];
+    questionId: string;
+  };
+  nextQuestionId?: string;
+  previousQuestionId?: string;
 };
 
 type AIDoctorProps = {
@@ -45,7 +54,12 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       id: '1', 
       text: '¡Hola! Soy el Doctor IA de Doctor.mx. ¿En qué puedo ayudarte hoy?',
       sender: 'bot',
-      timestamp: new Date()
+      timestamp: new Date(),
+      interactiveOptions: {
+        type: 'symptom_category',
+        options: ['Dolor', 'Fiebre', 'Digestivo', 'Respiratorio', 'Piel', 'Otro'],
+        questionId: 'initial'
+      }
     }
   ]);
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
@@ -54,6 +68,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [appointments, setAppointments] = useState<any[]>([]);
   const [prescriptions] = useState<any[]>([]);
   const [pharmacies, setPharmacies] = useState<any[]>([]);
+  const [currentQuestionId, setCurrentQuestionId] = useState<string>('initial');
+  const [questionHistory, setQuestionHistory] = useState<string[]>(['initial']);
   
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -98,12 +114,25 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     setInput('');
     setIsProcessing(true);
     
+    if (questionHistory.length > 0) {
+      setQuestionHistory(prev => [...prev, 'custom_input']);
+      setCurrentQuestionId('custom_input');
+    }
+    
     try {
+      const doctorInstructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
+      const imageAnalysisEnabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY) !== 'false';
+      
+      console.log(`Current question ID: ${currentQuestionId}`);
+      console.log(`Question history: ${questionHistory.join(' -> ')}`);
+      
       const queryOptions: AIQueryOptions = {
         userMessage: input,
         userHistory: messages.map(m => m.text),
         severity: severityLevel,
-        location: location || undefined
+        location: location || undefined,
+        usePremiumModel: imageAnalysisEnabled || input.length > 100 || input.includes('imagen') || input.includes('photo'),
+        customInstructions: doctorInstructions || undefined
       };
       
       const response = await AIService.processQuery(queryOptions);
@@ -112,7 +141,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         setSeverityLevel(response.severity);
       }
       
-      const botMessage: Message = {
+      const lowerInput = input.toLowerCase();
+      let botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: response.text,
         sender: 'bot',
@@ -121,8 +151,25 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         isEmergency: response.isEmergency,
         suggestedSpecialty: response.suggestedSpecialty,
         suggestedConditions: response.suggestedConditions,
+        suggestedMedications: response.suggestedMedications,
         followUpQuestions: response.followUpQuestions
       };
+      
+      if (lowerInput.includes('dolor') && !botMessage.interactiveOptions) {
+        botMessage.interactiveOptions = {
+          type: 'symptom_severity',
+          options: ['Leve', 'Moderada', 'Severa'],
+          questionId: 'severity_pain_text'
+        };
+        setCurrentQuestionId('severity_pain_text');
+      } else if ((lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) && !botMessage.interactiveOptions) {
+        botMessage.interactiveOptions = {
+          type: 'symptom_duration',
+          options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
+          questionId: 'duration_fever_text'
+        };
+        setCurrentQuestionId('duration_fever_text');
+      }
       
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
@@ -306,6 +353,116 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     return 'Emergencia';
   };
 
+  const handleOptionSelect = (option: string, questionId: string) => {
+    const userMessageId = Date.now().toString();
+    const newUserMessage: Message = { 
+      id: userMessageId,
+      text: option,
+      sender: 'user',
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, newUserMessage]);
+    setIsProcessing(true);
+    
+    setQuestionHistory(prev => [...prev, questionId]);
+    
+    setTimeout(() => {
+      let nextQuestion: Message = {
+        id: (Date.now() + 1).toString(),
+        text: '',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      
+      if (questionId === 'initial') {
+        if (option === 'Dolor') {
+          nextQuestion.text = '¿Cuánto tiempo has tenido este dolor?';
+          nextQuestion.interactiveOptions = {
+            type: 'symptom_duration',
+            options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
+            questionId: 'duration_pain'
+          };
+          setCurrentQuestionId('duration_pain');
+        } else if (option === 'Fiebre') {
+          nextQuestion.text = '¿Cuánto tiempo has tenido fiebre?';
+          nextQuestion.interactiveOptions = {
+            type: 'symptom_duration',
+            options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
+            questionId: 'duration_fever'
+          };
+          setCurrentQuestionId('duration_fever');
+        } else if (option === 'Digestivo') {
+          nextQuestion.text = '¿Qué síntomas digestivos estás experimentando?';
+          nextQuestion.interactiveOptions = {
+            type: 'symptom_category',
+            options: ['Náuseas', 'Vómitos', 'Diarrea', 'Estreñimiento', 'Dolor abdominal', 'Otro'],
+            questionId: 'digestive_symptoms'
+          };
+          setCurrentQuestionId('digestive_symptoms');
+        } else {
+          nextQuestion.text = `Cuéntame más sobre tus síntomas de ${option.toLowerCase()}. ¿Cuándo comenzaron?`;
+          nextQuestion.followUpQuestions = [
+            'Comenzaron hace unos días',
+            'Comenzaron hoy',
+            'Los tengo desde hace semanas'
+          ];
+        }
+      } else if (questionId.startsWith('duration_')) {
+        const symptomType = questionId.split('_')[1];
+        nextQuestion.text = `¿Cómo calificarías la intensidad de tu ${symptomType === 'pain' ? 'dolor' : 'fiebre'}?`;
+        nextQuestion.interactiveOptions = {
+          type: 'symptom_severity',
+          options: ['Leve', 'Moderada', 'Severa'],
+          questionId: `severity_${symptomType}`
+        };
+        setCurrentQuestionId(`severity_${symptomType}`);
+      } else if (questionId.startsWith('severity_')) {
+        const symptomType = questionId.split('_')[1];
+        if (symptomType === 'pain') {
+          nextQuestion.text = '¿En qué parte del cuerpo sientes el dolor?';
+          nextQuestion.followUpQuestions = [
+            'Cabeza',
+            'Pecho',
+            'Abdomen',
+            'Espalda',
+            'Extremidades'
+          ];
+        } else if (symptomType === 'fever') {
+          nextQuestion.text = '¿Has tomado tu temperatura? ¿Qué otros síntomas acompañan la fiebre?';
+          nextQuestion.followUpQuestions = [
+            'Tengo escalofríos',
+            'Tengo dolor de cabeza',
+            'Tengo dolor muscular',
+            'Tengo tos o congestión'
+          ];
+        }
+        
+        if (option === 'Moderada' || option === 'Severa') {
+          if (symptomType === 'pain') {
+            nextQuestion.suggestedMedications = ['paracetamol', 'ibuprofeno'];
+          } else if (symptomType === 'fever') {
+            nextQuestion.suggestedMedications = ['paracetamol'];
+          }
+        }
+      }
+      
+      setMessages(prev => [...prev, nextQuestion]);
+      setIsProcessing(false);
+    }, 1000);
+  };
+  
+  const handleGoBack = () => {
+    if (questionHistory.length > 1) {
+      const newHistory = [...questionHistory];
+      newHistory.pop();
+      setQuestionHistory(newHistory);
+      setCurrentQuestionId(newHistory[newHistory.length - 1]);
+      
+      setMessages(prev => prev.slice(0, -2));
+    }
+  };
+
   const MessageComponent = ({ message }: { message: Message }) => {
     return (
       <motion.div
@@ -369,6 +526,56 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 </div>
               )}
               
+              {/* Interactive Options Buttons */}
+              {message.interactiveOptions && (
+                <div className="mt-3">
+                  <div className="flex flex-wrap gap-2">
+                    {message.interactiveOptions.options.map((option, index) => (
+                      <motion.button
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => handleOptionSelect(option, message.interactiveOptions!.questionId)}
+                        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                          message.interactiveOptions!.type === 'symptom_category' 
+                            ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
+                            : message.interactiveOptions!.type === 'symptom_duration'
+                              ? 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+                              : message.interactiveOptions!.type === 'symptom_severity'
+                                ? 'bg-orange-100 text-orange-800 hover:bg-orange-200'
+                                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                        }`}
+                      >
+                        {message.interactiveOptions!.type === 'symptom_category' && (
+                          <>{option === 'Dolor' ? <Activity size={14} className="inline mr-1" /> :
+                             option === 'Fiebre' ? <ThermometerIcon size={14} className="inline mr-1" /> :
+                             option === 'Digestivo' ? <svg className="inline mr-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                             </svg> :
+                             <></>
+                          }</>
+                        )}
+                        {message.interactiveOptions!.type === 'symptom_duration' && (
+                          <Clock size={14} className="inline mr-1" />
+                        )}
+                        {option}
+                      </motion.button>
+                    ))}
+                  </div>
+                  
+                  {/* Go back button */}
+                  {questionHistory.length > 1 && message.sender === 'bot' && (
+                    <button
+                      onClick={handleGoBack}
+                      className="mt-2 text-xs text-gray-500 flex items-center hover:text-gray-700"
+                    >
+                      <ArrowLeft size={12} className="mr-1" />
+                      Volver a la pregunta anterior
+                    </button>
+                  )}
+                </div>
+              )}
+              
               {message.suggestedSpecialty && (
                 <div className="mt-2">
                   <button
@@ -381,7 +588,19 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 </div>
               )}
               
-              {message.suggestedConditions && message.suggestedConditions.length > 0 && (
+              {message.suggestedMedications && message.suggestedMedications.length > 0 && (
+                <div className="mt-2">
+                  <button
+                    onClick={() => findPharmacies(message.suggestedMedications!)} 
+                    className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 transition-colors flex items-center"
+                  >
+                    <Pill size={14} className="mr-1" />
+                    Buscar medicamentos recomendados
+                  </button>
+                </div>
+              )}
+              
+              {message.suggestedConditions && message.suggestedConditions.length > 0 && !message.suggestedMedications && (
                 <div className="mt-2">
                   <button
                     onClick={() => findPharmacies(['paracetamol', 'ibuprofeno'])} 
@@ -402,6 +621,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       key={index}
                       onClick={() => {
                         setInput(question);
+                        setTimeout(() => handleSendMessage(), 100);
                       }}
                       className="block w-full text-left text-sm bg-gray-50 hover:bg-gray-100 p-2 rounded-md transition-colors"
                     >

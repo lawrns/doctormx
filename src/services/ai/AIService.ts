@@ -27,6 +27,7 @@ export interface AIResponse {
   isEmergency?: boolean;
   suggestedSpecialty?: string;
   suggestedConditions?: string[];
+  suggestedMedications?: string[];
   followUpQuestions?: string[];
   imageAnalysis?: {
     findings: string;
@@ -41,6 +42,7 @@ export interface AIQueryOptions {
   imageUrl?: string;
   severity?: number;
   usePremiumModel?: boolean;
+  customInstructions?: string;
   location?: {
     latitude: number;
     longitude: number;
@@ -412,7 +414,7 @@ class AIService {
           ? 'gpt-4' 
           : 'gpt-3.5-turbo';
         
-        let systemMessage = this.getDoctorInstructions();
+        let systemMessage = data.customInstructions || this.getDoctorInstructions();
         
         if (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled()) {
           systemMessage = `${systemMessage}\n\nAhora estás analizando una imagen médica. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica. Sé detallado y preciso en tu análisis.`;
@@ -424,6 +426,7 @@ class AIService {
         ];
         
         console.log(`Using model: ${model} for request`);
+        console.log(`Using custom instructions: ${data.customInstructions ? 'Yes' : 'No'}`);
         
         const response = await openai.chat.completions.create({
           model,
