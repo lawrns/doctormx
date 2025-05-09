@@ -64,12 +64,15 @@ class AIService {
         medicalContext,
         userProfile: options.userProfile,
         severity: options.severity,
+        location: options.location // Pass location for provider recommendations
       };
       
       const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
       const response = await this.makeAPIRequest(endpoint, requestData);
       
-      return this.enhanceResponse(response, options);
+      const enhancedResponse = await this.enhanceResponse(response, options);
+      
+      return enhancedResponse;
     } catch (error) {
       console.error('Error processing AI query:', error);
       return {
@@ -192,6 +195,53 @@ class AIService {
     }
   }
   
+  /**
+   * Get pharmacy recommendations with sponsored options
+   */
+  async getPharmacyRecommendations(
+    medications: string[], 
+    location?: { latitude: number; longitude: number }
+  ): Promise<any[]> {
+    try {
+      const { data: sponsoredPharmacies, error: sponsoredError } = await this.supabase
+        .from('pharmacies')
+        .select('*')
+        .eq('is_sponsored', true)
+        .in('available_medications', medications)
+        .order('sponsorship_level', { ascending: false });
+        
+      if (sponsoredError) throw sponsoredError;
+      
+      let nearbyPharmacies: any[] = [];
+      if (location) {
+        const { data, error } = await this.supabase
+          .from('pharmacies')
+          .select('*')
+          .eq('is_sponsored', false)
+          .in('available_medications', medications)
+          .order('distance', { ascending: true })
+          .limit(5);
+          
+        if (!error) {
+          nearbyPharmacies = data || [];
+        }
+      }
+      
+      return [
+        ...(sponsoredPharmacies || []).map(pharmacy => ({
+          ...pharmacy,
+          isSponsored: true
+        })),
+        ...nearbyPharmacies.map(pharmacy => ({
+          ...pharmacy,
+          isSponsored: false
+        }))
+      ];
+    } catch (error) {
+      console.error('Error getting pharmacy recommendations:', error);
+      return [];
+    }
+  }
   
   private shouldUsePremiumModel(options: AIQueryOptions): boolean {
     if (options.usePremiumModel) return true;
@@ -282,8 +332,20 @@ class AIService {
     };
   }
   
-  private enhanceResponse(response: any, options: AIQueryOptions): AIResponse {
+  private async enhanceResponse(response: any, options: AIQueryOptions): Promise<AIResponse> {
     if (options.location && response.suggestedSpecialty) {
+      try {
+        const nearbyProviders = await this.findNearbyProviders(
+          response.suggestedSpecialty, 
+          options.location
+        );
+        
+        if (nearbyProviders && nearbyProviders.length > 0) {
+          response.nearbyProviders = nearbyProviders.slice(0, 3); // Limit to top 3
+        }
+      } catch (error) {
+        console.error('Error finding nearby providers:', error);
+      }
     }
     
     return response;
