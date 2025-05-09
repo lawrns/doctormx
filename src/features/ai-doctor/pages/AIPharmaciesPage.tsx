@@ -147,7 +147,7 @@ function AIPharmaciesPage() {
 
   return (
     <div 
-      className="max-w-4xl mx-auto px-4 py-6 md:py-8"
+      className="max-w-4xl mx-auto px-4 py-6 md:py-8 pb-20"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -470,6 +470,27 @@ function AIPharmaciesPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      
+      {/* Floating cart button for mobile */}
+      {cart.length > 0 && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="fixed bottom-6 right-6 z-50"
+        >
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="bg-blue-600 text-white flex items-center px-4 py-3 rounded-full shadow-lg"
+            style={{ 
+              backgroundColor: pharmacies[0]?.primaryColor || '#3b82f6'
+            }}
+          >
+            <ShoppingCart size={20} className="mr-2" />
+            <span className="font-medium">{cart.reduce((total, item) => total + item.quantity, 0)}</span>
+            <span className="ml-2 hidden sm:inline">Ver carrito</span>
+          </button>
+        </motion.div>
+      )}
     </div>
   );
 }
