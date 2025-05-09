@@ -14,6 +14,7 @@ import AIAnalysisResultsPage from './features/ai-analysis/pages/AIAnalysisResult
 import AIImageAnalysisPage from './features/ai-image-analysis/pages/AIImageAnalysisPage';
 import AIPharmaciesPage from './features/ai-doctor/pages/AIPharmaciesPage';
 import AIProvidersPage from './features/ai-doctor/pages/AIProvidersPage';
+import APIKeyConfigPage from './pages/settings/APIKeyConfigPage';
 import AlternativeMedicinePage from './pages/AlternativeMedicinePage';
 import TelemedicinaPage from './pages/TelemedicinaPage';
 import LoginPage from './pages/LoginPage';
@@ -84,6 +85,10 @@ const router = createBrowserRouter([
       {
         path: 'ai-doctor/providers/:specialty?',
         element: <AIProvidersPage />,
+      },
+      {
+        path: 'settings/api',
+        element: <APIKeyConfigPage />,
       },
       {
         path: 'alternativa',
