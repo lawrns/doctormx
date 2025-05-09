@@ -114,12 +114,48 @@ function AIPharmaciesPage() {
     fetchPharmacies();
   }, [medications]);
 
+  const handleSwipe = (direction: 'left' | 'right') => {
+    if (direction === 'right' && viewMode === 'detail') {
+      setViewMode('list');
+    } else if (direction === 'left' && viewMode === 'list' && pharmacies.length > 0) {
+      viewPharmacyDetails(pharmacies[0]);
+    }
+  };
+  
+  const [touchStart, setTouchStart] = React.useState<number | null>(null);
+  
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+  
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        handleSwipe('left');
+      } else {
+        handleSwipe('right');
+      }
+    }
+    
+    setTouchStart(null);
+  };
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div 
+      className="max-w-4xl mx-auto px-4 py-6 md:py-8"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <div className="sticky top-0 z-10 bg-white pb-2 mb-4">
         <button 
           onClick={() => viewMode === 'detail' ? setViewMode('list') : navigate(-1)} 
-          className="flex items-center text-blue-600 mb-3"
+          className="flex items-center text-blue-600 mb-3 py-2"
+          aria-label={viewMode === 'detail' ? 'Volver a la lista' : 'Volver'}
         >
           <ChevronLeft size={20} />
           <span>{viewMode === 'detail' ? 'Volver a la lista' : 'Volver'}</span>
@@ -150,18 +186,39 @@ function AIPharmaciesPage() {
               </span>
             </div>
           </div>
-          <div className="mt-2 flex gap-2">
-            <button 
-              onClick={() => setCart([])} 
-              className="text-sm text-red-600 hover:text-red-800"
-            >
-              Vaciar
-            </button>
-            <button 
-              className="ml-auto bg-blue-600 text-white px-4 py-1 rounded-md text-sm hover:bg-blue-700"
-            >
-              Finalizar compra
-            </button>
+          <div className="mt-2 flex flex-col gap-2">
+            <div className="flex flex-wrap gap-2 mb-2">
+              {cart.map((item, idx) => (
+                <div key={idx} className="flex items-center bg-gray-100 rounded-full px-2 py-1">
+                  <span className="text-xs mr-1">{item.name}</span>
+                  <div className="flex items-center">
+                    <button 
+                      onClick={() => removeFromCart(item.id)}
+                      className="text-red-600 hover:text-red-800 p-1"
+                      aria-label="Eliminar"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                      </svg>
+                    </button>
+                    <span className="text-xs mx-1">{item.quantity}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <button 
+                onClick={() => setCart([])} 
+                className="text-sm text-red-600 hover:text-red-800"
+              >
+                Vaciar
+              </button>
+              <button 
+                className="ml-auto bg-blue-600 text-white px-4 py-1 rounded-md text-sm hover:bg-blue-700"
+              >
+                Finalizar compra
+              </button>
+            </div>
           </div>
         </motion.div>
       )}
