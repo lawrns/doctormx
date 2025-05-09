@@ -1,4 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
+import OpenAI from 'openai';
+
+const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+
+const getOpenAIInstance = (): OpenAI | null => {
+  try {
+    const apiKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
+    if (!apiKey) {
+      console.warn('No OpenAI API key found in local storage');
+      return null;
+    }
+    return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
+  } catch (error) {
+    console.error('Error creating OpenAI instance:', error);
+    return null;
+  }
+};
 
 export interface AIResponse {
   text: string;
@@ -361,11 +378,119 @@ class AIService {
   }
   
   private async makeAPIRequest(endpoint: string, data: any): Promise<any> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.simulateAIResponse(endpoint, data));
-      }, 1000);
-    });
+    const openai = getOpenAIInstance();
+    
+    if (openai) {
+      try {
+        console.log('Using OpenAI API for request');
+        
+        const model = endpoint === this.premiumModelEndpoint 
+          ? 'gpt-4' 
+          : 'gpt-3.5-turbo';
+        
+        let systemMessage = "Eres un asistente médico AI. Proporciona información médica precisa pero siempre aclara que no sustituyes a un médico real.";
+        
+        if (endpoint === this.imageAnalysisEndpoint) {
+          systemMessage = "Eres un asistente médico especializado en análisis de imágenes. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica.";
+        }
+        
+        const messages = [
+          { role: "system", content: systemMessage },
+          { role: "user", content: this.formatUserMessage(data) }
+        ];
+        
+        const response = await openai.chat.completions.create({
+          model,
+          messages: messages as any,
+          temperature: 0.7,
+        });
+        
+        const aiResponse = response.choices[0]?.message?.content || "Lo siento, no pude procesar tu consulta.";
+        return this.parseAIResponse(aiResponse, data);
+      } catch (error) {
+        console.error('Error calling OpenAI API:', error);
+        console.log('Falling back to mock response');
+        return this.simulateAIResponse(endpoint, data);
+      }
+    } else {
+      console.log('No OpenAI API key found, using mock response');
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(this.simulateAIResponse(endpoint, data));
+        }, 1000);
+      });
+    }
+  }
+  
+  private formatUserMessage(data: any): string {
+    if (data.message) {
+      let message = `Consulta médica: ${data.message}`;
+      
+      if (data.history && data.history.length > 0) {
+        message += `\n\nHistorial previo: ${data.history.join(' | ')}`;
+      }
+      
+      if (data.userProfile) {
+        message += `\n\nPerfil del usuario: ${JSON.stringify(data.userProfile)}`;
+      }
+      
+      return message;
+    } else if (data.imageUrl) {
+      return `Analiza esta imagen médica: ${data.imageUrl}${data.symptoms ? `\nSíntomas reportados: ${data.symptoms}` : ''}`;
+    }
+    
+    return JSON.stringify(data);
+  }
+  
+  private parseAIResponse(aiResponse: string, data: any): any {
+    return {
+      text: aiResponse,
+      severity: data.severity || this.estimateSeverity(aiResponse),
+      suggestedSpecialty: this.extractSpecialty(aiResponse),
+      suggestedConditions: this.extractConditions(aiResponse),
+      followUpQuestions: this.generateFollowUpQuestions(aiResponse),
+    };
+  }
+  
+  private estimateSeverity(text: string): number {
+    const emergencyTerms = ['emergencia', 'urgente', 'inmediatamente', 'grave', 'peligro'];
+    const moderateTerms = ['consultar', 'médico', 'atención', 'tratamiento'];
+    
+    let severity = 10; // Default low severity
+    
+    if (emergencyTerms.some(term => text.toLowerCase().includes(term))) {
+      severity = 80;
+    } else if (moderateTerms.some(term => text.toLowerCase().includes(term))) {
+      severity = 40;
+    }
+    
+    return severity;
+  }
+  
+  private extractSpecialty(text: string): string | undefined {
+    const specialties = [
+      'Cardiología', 'Dermatología', 'Gastroenterología', 'Neurología', 
+      'Oftalmología', 'Ortopedia', 'Pediatría', 'Psiquiatría'
+    ];
+    
+    for (const specialty of specialties) {
+      if (text.includes(specialty)) {
+        return specialty;
+      }
+    }
+    
+    return undefined;
+  }
+  
+  private extractConditions(_text: string): string[] {
+    return [];
+  }
+  
+  private generateFollowUpQuestions(_text: string): string[] {
+    return [
+      '¿Cuándo comenzaron los síntomas?',
+      '¿Hay algo que empeore o mejore los síntomas?'
+    ];
   }
   
   private simulateAIResponse(endpoint: string, data: any): any {
