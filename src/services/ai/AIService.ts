@@ -45,7 +45,6 @@ export interface AIQueryOptions {
 
 class AIService {
   private supabase;
-  private apiEndpoint = import.meta.env.VITE_AI_API_ENDPOINT || '';
   private standardModelEndpoint = '/api/v1/standard-model';
   private premiumModelEndpoint = '/api/v1/premium-model';
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
@@ -131,6 +130,8 @@ class AIService {
    */
   async findNearbyProviders(specialty: string, location: { latitude: number; longitude: number }): Promise<any[]> {
     try {
+      console.log(`Finding providers near: ${location.latitude}, ${location.longitude}`);
+      
       const { data, error } = await this.supabase
         .from('doctors')
         .select('*')
