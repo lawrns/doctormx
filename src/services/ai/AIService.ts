@@ -2,6 +2,10 @@ import { createClient } from '@supabase/supabase-js';
 import OpenAI from 'openai';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
+const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
+
+const DEFAULT_DOCTOR_INSTRUCTIONS = `Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.`;
 
 const getOpenAIInstance = (): OpenAI | null => {
   try {
@@ -103,16 +107,25 @@ class AIService {
    */
   async analyzeImage(imageUrl: string, symptoms?: string): Promise<AIResponse> {
     try {
+      if (!this.isImageAnalysisEnabled()) {
+        return {
+          text: 'El análisis de imágenes está desactivado. Por favor, actívalo en la configuración o describe tus síntomas en texto.',
+        };
+      }
+      
+      console.log('Analyzing image with GPT-4:', imageUrl);
+      
       const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
         imageUrl,
         symptoms,
+        usePremiumModel: true, // Force premium model for image analysis
       });
       
       return {
-        text: response.analysis,
+        text: response.analysis || response.text,
         imageAnalysis: {
-          findings: response.findings,
-          confidence: response.confidence,
+          findings: response.findings || 'Análisis detallado no disponible',
+          confidence: response.confidence || 0.75,
         },
         severity: response.severity,
         suggestedSpecialty: response.suggestedSpecialty,
@@ -335,7 +348,16 @@ class AIService {
   private shouldUsePremiumModel(options: AIQueryOptions): boolean {
     if (options.usePremiumModel) return true;
     
-    if (options.imageUrl) return true;
+    if (options.imageUrl) {
+      const imageAnalysisEnabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+      if (imageAnalysisEnabled === null || imageAnalysisEnabled === 'true') {
+        console.log('Using premium model for image analysis');
+        return true;
+      } else {
+        console.log('Image analysis is disabled, not using premium model');
+        return false;
+      }
+    }
     
     if (options.severity && options.severity > 50) return true;
     
@@ -385,20 +407,23 @@ class AIService {
       try {
         console.log('Using OpenAI API for request');
         
-        const model = endpoint === this.premiumModelEndpoint 
+        const model = endpoint === this.premiumModelEndpoint || 
+                     (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled())
           ? 'gpt-4' 
           : 'gpt-3.5-turbo';
         
-        let systemMessage = "Eres un asistente médico AI. Proporciona información médica precisa pero siempre aclara que no sustituyes a un médico real.";
+        let systemMessage = this.getDoctorInstructions();
         
-        if (endpoint === this.imageAnalysisEndpoint) {
-          systemMessage = "Eres un asistente médico especializado en análisis de imágenes. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica.";
+        if (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled()) {
+          systemMessage = `${systemMessage}\n\nAhora estás analizando una imagen médica. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica. Sé detallado y preciso en tu análisis.`;
         }
         
         const messages = [
           { role: "system", content: systemMessage },
           { role: "user", content: this.formatUserMessage(data) }
         ];
+        
+        console.log(`Using model: ${model} for request`);
         
         const response = await openai.chat.completions.create({
           model,
@@ -420,6 +445,28 @@ class AIService {
           resolve(this.simulateAIResponse(endpoint, data));
         }, 1000);
       });
+    }
+  }
+  
+  private getDoctorInstructions(): string {
+    try {
+      const instructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
+      if (instructions) {
+        return instructions;
+      }
+    } catch (error) {
+      console.error('Error retrieving doctor instructions:', error);
+    }
+    return DEFAULT_DOCTOR_INSTRUCTIONS;
+  }
+  
+  private isImageAnalysisEnabled(): boolean {
+    try {
+      const enabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+      return enabled === null || enabled === 'true';
+    } catch (error) {
+      console.error('Error checking if image analysis is enabled:', error);
+      return true; // Default to enabled
     }
   }
   

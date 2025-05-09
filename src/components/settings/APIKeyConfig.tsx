@@ -1,19 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import { Save, Key, Eye, EyeOff } from 'lucide-react';
+import { Save, Key, Eye, EyeOff, MessageSquare, Image } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
+const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
+
+const DEFAULT_DOCTOR_INSTRUCTIONS = `Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.
+
+Instrucciones:
+1. Saluda al paciente de manera cálida y profesional
+2. Escucha atentamente sus síntomas y haz preguntas de seguimiento
+3. Proporciona información médica basada en evidencia
+4. Muestra empatía y comprensión hacia sus preocupaciones
+5. Recomienda cuándo es necesario buscar atención médica profesional
+6. Aclara que no eres un médico real y que tus consejos no sustituyen la atención médica profesional
+
+Recuerda mantener un tono compasivo pero profesional en todo momento.`;
 
 const APIKeyConfig: React.FC = () => {
   const [apiKey, setApiKey] = useState('');
   const [isKeyVisible, setIsKeyVisible] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [doctorInstructions, setDoctorInstructions] = useState(DEFAULT_DOCTOR_INSTRUCTIONS);
+  const [imageAnalysisEnabled, setImageAnalysisEnabled] = useState(true);
 
   useEffect(() => {
     const savedKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
     if (savedKey) {
       setApiKey(savedKey);
+    }
+    
+    const savedInstructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
+    if (savedInstructions) {
+      setDoctorInstructions(savedInstructions);
+    }
+    
+    const imageAnalysisEnabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+    if (imageAnalysisEnabled !== null) {
+      setImageAnalysisEnabled(imageAnalysisEnabled === 'true');
     }
   }, []);
 
@@ -21,6 +47,9 @@ const APIKeyConfig: React.FC = () => {
     setIsSaving(true);
     setTimeout(() => {
       localStorage.setItem(OPENAI_KEY_STORAGE_KEY, apiKey);
+      localStorage.setItem(DOCTOR_INSTRUCTIONS_KEY, doctorInstructions);
+      localStorage.setItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY, imageAnalysisEnabled.toString());
+      
       setIsSaving(false);
       setIsSuccess(true);
       setTimeout(() => setIsSuccess(false), 3000);
@@ -38,6 +67,7 @@ const APIKeyConfig: React.FC = () => {
         Configuración de API
       </h2>
       
+      {/* API Key Input */}
       <div className="mb-6">
         <label className="block text-sm font-medium text-gray-700 mb-2">
           OpenAI API Key
@@ -63,6 +93,65 @@ const APIKeyConfig: React.FC = () => {
         </p>
       </div>
       
+      {/* Doctor Instructions */}
+      <motion.div 
+        className="mb-6"
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        transition={{ delay: 0.2 }}
+      >
+        <div className="flex items-center mb-2">
+          <MessageSquare size={18} className="mr-2 text-blue-600" />
+          <label className="block text-sm font-medium text-gray-700">
+            Instrucciones para el Doctor IA
+          </label>
+        </div>
+        
+        <textarea
+          value={doctorInstructions}
+          onChange={(e) => setDoctorInstructions(e.target.value)}
+          placeholder="Define el carácter y comportamiento del Doctor IA..."
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-48 resize-none font-mono text-sm"
+        />
+        <p className="text-xs text-gray-500 mt-1">
+          Personaliza cómo el Doctor IA se comunica contigo. Define su carácter, tono, y qué puede o no puede decir.
+        </p>
+      </motion.div>
+      
+      {/* Image Analysis Toggle */}
+      <motion.div 
+        className="mb-6"
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="flex items-center mb-2">
+          <Image size={18} className="mr-2 text-blue-600" />
+          <label className="block text-sm font-medium text-gray-700">
+            Análisis de Imágenes
+          </label>
+        </div>
+        
+        <div className="flex items-center">
+          <label className="inline-flex items-center cursor-pointer">
+            <input 
+              type="checkbox" 
+              checked={imageAnalysisEnabled}
+              onChange={(e) => setImageAnalysisEnabled(e.target.checked)}
+              className="sr-only peer"
+            />
+            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            <span className="ms-3 text-sm font-medium text-gray-700">
+              {imageAnalysisEnabled ? 'Habilitado' : 'Deshabilitado'}
+            </span>
+          </label>
+        </div>
+        <p className="text-xs text-gray-500 mt-1">
+          Cuando está habilitado, el Doctor IA utilizará GPT-4 para analizar imágenes médicas que subas.
+        </p>
+      </motion.div>
+      
+      {/* Save Button */}
       <div className="flex justify-end">
         <motion.button
           whileHover={{ scale: 1.05 }}
@@ -91,6 +180,7 @@ const APIKeyConfig: React.FC = () => {
         </motion.button>
       </div>
       
+      {/* Help Section */}
       <div className="mt-6 p-4 bg-blue-50 rounded-lg">
         <h3 className="text-sm font-medium text-blue-800 mb-2">¿Cómo obtener una API key de OpenAI?</h3>
         <ol className="text-xs text-blue-700 list-decimal pl-4 space-y-1">
