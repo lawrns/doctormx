@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, X, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
-import AIService, { AIResponse, AIQueryOptions } from '../../../core/services/ai/AIService';
-import EncryptionService from '../../../core/services/security/EncryptionService';
-import { useChat } from '../../../core/hooks/useChat';
+import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
+import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
+import EncryptionService from '../../../services/security/EncryptionService';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 
@@ -53,13 +52,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
   const [appointments, setAppointments] = useState<any[]>([]);
-  const [prescriptions, setPrescriptions] = useState<any[]>([]);
+  const [prescriptions] = useState<any[]>([]);
   const [pharmacies, setPharmacies] = useState<any[]>([]);
-  
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.3 } }
-  };
   
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -68,8 +62,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const chatContext = useChat();
   
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -618,7 +610,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     
                     {appointments.length > 0 ? (
                       <div className="space-y-4">
-                        {appointments.map((appointment, index) => (
+                        {appointments.map((_, index) => (
                           <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                             <div className="flex justify-between items-start">
                               <div>
@@ -658,7 +650,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     
                     {prescriptions.length > 0 ? (
                       <div className="space-y-4">
-                        {prescriptions.map((prescription, index) => (
+                        {prescriptions.map((_, index) => (
                           <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                             <div className="flex justify-between items-start">
                               <div>
@@ -727,7 +719,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                                   <div className="mt-2">
                                     <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
                                     <div className="flex flex-wrap gap-1 mt-1">
-                                      {pharmacy.available_medications.slice(0, 3).map((med, idx) => (
+                                      {pharmacy.available_medications.slice(0, 3).map((med: string, idx: number) => (
                                         <span key={idx} className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
                                           {med}
                                         </span>
