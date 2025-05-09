@@ -203,46 +203,117 @@ class AIService {
     location?: { latitude: number; longitude: number }
   ): Promise<any[]> {
     try {
-      const { data: sponsoredPharmacies, error: sponsoredError } = await this.supabase
-        .from('pharmacies')
-        .select('*')
-        .eq('is_sponsored', true)
-        .in('available_medications', medications)
-        .order('sponsorship_level', { ascending: false });
-        
-      if (sponsoredError) throw sponsoredError;
+      await new Promise(resolve => setTimeout(resolve, 800));
       
-      let nearbyPharmacies: any[] = [];
+      const pharmacies = [
+        {
+          id: 'pharm-001',
+          ...this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO,
+          address: 'Av. Universidad 1000, Col. Santa Cruz Atoyac, 03310, CDMX',
+          phone: '+52 55 1234 5678',
+          distance: 1200, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+        },
+        {
+          id: 'pharm-002',
+          ...this.PHARMACY_BRANDS.FARMACIA_SIMILARES,
+          address: 'Insurgentes Sur 1480, Col. Actipan, 03230, CDMX',
+          phone: '+52 55 9876 5432',
+          distance: 1800, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+        },
+        {
+          id: 'pharm-003',
+          name: 'Farmacia del Ahorro',
+          logo: '/logos/farmacia-del-ahorro.png',
+          primaryColor: '#00529b',
+          secondaryColor: '#e30613',
+          isSponsored: true,
+          sponsorshipLevel: 2,
+          address: 'Av. Revolución 1425, Col. Campestre, 01040, CDMX',
+          phone: '+52 55 5543 2109',
+          distance: 2500, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+          website: 'https://www.farmaciasdeahorro.com.mx/',
+        },
+        {
+          id: 'pharm-004',
+          name: 'Farmacia Local',
+          logo: '/logos/farmacia-local.png',
+          primaryColor: '#2c7d32',
+          secondaryColor: '#ffffff',
+          isSponsored: false,
+          address: 'Calle Durango 208, Col. Roma Norte, 06700, CDMX',
+          phone: '+52 55 1234 9876',
+          distance: 950, // meters
+          available_medications: ['Paracetamol', 'Ibuprofeno'],
+          products: [
+            { id: 'fl-001', name: 'Paracetamol', brand: 'Genérico', price: 30.00, dosage: '500mg', quantity: 20, prescription: false },
+            { id: 'fl-002', name: 'Ibuprofeno', brand: 'Genérico', price: 40.00, dosage: '400mg', quantity: 30, prescription: false },
+          ],
+        },
+      ];
+      
       if (location) {
-        const { data, error } = await this.supabase
-          .from('pharmacies')
-          .select('*')
-          .eq('is_sponsored', false)
-          .in('available_medications', medications)
-          .order('distance', { ascending: true })
-          .limit(5);
-          
-        if (!error) {
-          nearbyPharmacies = data || [];
-        }
+        pharmacies.sort((a, b) => {
+          if (a.isSponsored && !b.isSponsored) return -1;
+          if (!a.isSponsored && b.isSponsored) return 1;
+          return a.distance - b.distance;
+        });
       }
       
-      return [
-        ...(sponsoredPharmacies || []).map(pharmacy => ({
-          ...pharmacy,
-          isSponsored: true
-        })),
-        ...nearbyPharmacies.map(pharmacy => ({
-          ...pharmacy,
-          isSponsored: false
-        }))
-      ];
+      return pharmacies;
     } catch (error) {
       console.error('Error getting pharmacy recommendations:', error);
       return [];
     }
   }
   
+  private PHARMACY_BRANDS = {
+    FARMACIA_DEL_AHORRO: {
+      name: 'Farmacia del Ahorro',
+      logo: '/logos/farmacia-del-ahorro.png',
+      primaryColor: '#00529b',
+      secondaryColor: '#e30613',
+      isSponsored: true,
+      sponsorshipLevel: 2,
+      website: 'https://www.farmaciasdeahorro.com.mx/',
+      products: [
+        { id: 'fda-001', name: 'Paracetamol', brand: 'Similares', price: 35.50, dosage: '500mg', quantity: 20, prescription: false },
+        { id: 'fda-002', name: 'Ibuprofeno', brand: 'Genérico GI', price: 42.80, dosage: '400mg', quantity: 30, prescription: false },
+        { id: 'fda-003', name: 'Amoxicilina', brand: 'Amsa', price: 120.50, dosage: '500mg', quantity: 15, prescription: true },
+        { id: 'fda-004', name: 'Loratadina', brand: 'Schering-Plough', price: 85.00, dosage: '10mg', quantity: 10, prescription: false },
+        { id: 'fda-005', name: 'Omeprazol', brand: 'Genérico GI', price: 65.30, dosage: '20mg', quantity: 14, prescription: false },
+      ],
+    },
+    FARMACIA_SIMILARES: {
+      name: 'Farmacias Similares',
+      logo: '/logos/farmacia-similares.png',
+      primaryColor: '#004a87',
+      secondaryColor: '#ffce00',
+      isSponsored: true,
+      sponsorshipLevel: 1,
+      website: 'https://www.farmaciasdesimilares.com/',
+      products: [
+        { id: 'fs-001', name: 'Paracetamol', brand: 'Similares', price: 32.00, dosage: '500mg', quantity: 20, prescription: false },
+        { id: 'fs-002', name: 'Ibuprofeno', brand: 'Similares', price: 38.50, dosage: '400mg', quantity: 30, prescription: false },
+        { id: 'fs-003', name: 'Loratadina', brand: 'Similares', price: 65.90, dosage: '10mg', quantity: 10, prescription: false },
+      ],
+    },
+  };
+
   private shouldUsePremiumModel(options: AIQueryOptions): boolean {
     if (options.usePremiumModel) return true;
     
