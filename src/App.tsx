@@ -7,6 +7,7 @@ const AIHomePage = React.lazy(() => import('./pages/AIHomePage'));
 const AIDoctorPage = React.lazy(() => import('./features/ai-doctor/pages/AIDoctorPage'));
 const AIAnalysisResultsPage = React.lazy(() => import('./features/ai-analysis/pages/AIAnalysisResultsPage'));
 const AIImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/pages/AIImageAnalysisPage'));
+const APIKeyConfigPage = React.lazy(() => import('./pages/settings/APIKeyConfigPage'));
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         <Route path="/" element={<AILayout />}>
           <Route index element={<AIHomePage />} />
           <Route path="doctor" element={<AIDoctorPage />} />
+          <Route path="ai-doctor" element={<AIDoctorPage />} />
           <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
           <Route path="image-analysis" element={<AIImageAnalysisPage />} />
+          <Route path="settings/api" element={<APIKeyConfigPage />} />
         </Route>
       </Routes>
     </Suspense>
