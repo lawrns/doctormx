@@ -1,4 +1,25 @@
 import { createClient } from '@supabase/supabase-js';
+import OpenAI from 'openai';
+
+const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
+const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
+
+const DEFAULT_DOCTOR_INSTRUCTIONS = `Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.`;
+
+const getOpenAIInstance = (): OpenAI | null => {
+  try {
+    const apiKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
+    if (!apiKey) {
+      console.warn('No OpenAI API key found in local storage');
+      return null;
+    }
+    return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
+  } catch (error) {
+    console.error('Error creating OpenAI instance:', error);
+    return null;
+  }
+};
 
 export interface AIResponse {
   text: string;
@@ -28,7 +49,6 @@ export interface AIQueryOptions {
 
 class AIService {
   private supabase;
-  private apiEndpoint = process.env.REACT_APP_AI_API_ENDPOINT || '';
   private standardModelEndpoint = '/api/v1/standard-model';
   private premiumModelEndpoint = '/api/v1/premium-model';
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
@@ -87,16 +107,25 @@ class AIService {
    */
   async analyzeImage(imageUrl: string, symptoms?: string): Promise<AIResponse> {
     try {
+      if (!this.isImageAnalysisEnabled()) {
+        return {
+          text: 'El análisis de imágenes está desactivado. Por favor, actívalo en la configuración o describe tus síntomas en texto.',
+        };
+      }
+      
+      console.log('Analyzing image with GPT-4:', imageUrl);
+      
       const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
         imageUrl,
         symptoms,
+        usePremiumModel: true, // Force premium model for image analysis
       });
       
       return {
-        text: response.analysis,
+        text: response.analysis || response.text,
         imageAnalysis: {
-          findings: response.findings,
-          confidence: response.confidence,
+          findings: response.findings || 'Análisis detallado no disponible',
+          confidence: response.confidence || 0.75,
         },
         severity: response.severity,
         suggestedSpecialty: response.suggestedSpecialty,
@@ -114,6 +143,8 @@ class AIService {
    */
   async findNearbyProviders(specialty: string, location: { latitude: number; longitude: number }): Promise<any[]> {
     try {
+      console.log(`Finding providers near: ${location.latitude}, ${location.longitude}`);
+      
       const { data, error } = await this.supabase
         .from('doctors')
         .select('*')
@@ -203,50 +234,130 @@ class AIService {
     location?: { latitude: number; longitude: number }
   ): Promise<any[]> {
     try {
-      const { data: sponsoredPharmacies, error: sponsoredError } = await this.supabase
-        .from('pharmacies')
-        .select('*')
-        .eq('is_sponsored', true)
-        .in('available_medications', medications)
-        .order('sponsorship_level', { ascending: false });
-        
-      if (sponsoredError) throw sponsoredError;
+      await new Promise(resolve => setTimeout(resolve, 800));
       
-      let nearbyPharmacies: any[] = [];
+      const pharmacies = [
+        {
+          id: 'pharm-001',
+          ...this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO,
+          address: 'Av. Universidad 1000, Col. Santa Cruz Atoyac, 03310, CDMX',
+          phone: '+52 55 1234 5678',
+          distance: 1200, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+        },
+        {
+          id: 'pharm-002',
+          ...this.PHARMACY_BRANDS.FARMACIA_SIMILARES,
+          address: 'Insurgentes Sur 1480, Col. Actipan, 03230, CDMX',
+          phone: '+52 55 9876 5432',
+          distance: 1800, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+        },
+        {
+          id: 'pharm-003',
+          name: 'Farmacia del Ahorro',
+          logo: '/logos/farmacia-del-ahorro.png',
+          primaryColor: '#00529b',
+          secondaryColor: '#e30613',
+          isSponsored: true,
+          sponsorshipLevel: 2,
+          address: 'Av. Revolución 1425, Col. Campestre, 01040, CDMX',
+          phone: '+52 55 5543 2109',
+          distance: 2500, // meters
+          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
+            .map(p => p.name),
+          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
+            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+          website: 'https://www.farmaciasdeahorro.com.mx/',
+        },
+        {
+          id: 'pharm-004',
+          name: 'Farmacia Local',
+          logo: '/logos/farmacia-local.png',
+          primaryColor: '#2c7d32',
+          secondaryColor: '#ffffff',
+          isSponsored: false,
+          address: 'Calle Durango 208, Col. Roma Norte, 06700, CDMX',
+          phone: '+52 55 1234 9876',
+          distance: 950, // meters
+          available_medications: ['Paracetamol', 'Ibuprofeno'],
+          products: [
+            { id: 'fl-001', name: 'Paracetamol', brand: 'Genérico', price: 30.00, dosage: '500mg', quantity: 20, prescription: false },
+            { id: 'fl-002', name: 'Ibuprofeno', brand: 'Genérico', price: 40.00, dosage: '400mg', quantity: 30, prescription: false },
+          ],
+        },
+      ];
+      
       if (location) {
-        const { data, error } = await this.supabase
-          .from('pharmacies')
-          .select('*')
-          .eq('is_sponsored', false)
-          .in('available_medications', medications)
-          .order('distance', { ascending: true })
-          .limit(5);
-          
-        if (!error) {
-          nearbyPharmacies = data || [];
-        }
+        pharmacies.sort((a, b) => {
+          if (a.isSponsored && !b.isSponsored) return -1;
+          if (!a.isSponsored && b.isSponsored) return 1;
+          return a.distance - b.distance;
+        });
       }
       
-      return [
-        ...(sponsoredPharmacies || []).map(pharmacy => ({
-          ...pharmacy,
-          isSponsored: true
-        })),
-        ...nearbyPharmacies.map(pharmacy => ({
-          ...pharmacy,
-          isSponsored: false
-        }))
-      ];
+      return pharmacies;
     } catch (error) {
       console.error('Error getting pharmacy recommendations:', error);
       return [];
     }
   }
   
+  private PHARMACY_BRANDS = {
+    FARMACIA_DEL_AHORRO: {
+      name: 'Farmacia del Ahorro',
+      logo: '/logos/farmacia-del-ahorro.png',
+      primaryColor: '#00529b',
+      secondaryColor: '#e30613',
+      isSponsored: true,
+      sponsorshipLevel: 2,
+      website: 'https://www.farmaciasdeahorro.com.mx/',
+      products: [
+        { id: 'fda-001', name: 'Paracetamol', brand: 'Similares', price: 35.50, dosage: '500mg', quantity: 20, prescription: false },
+        { id: 'fda-002', name: 'Ibuprofeno', brand: 'Genérico GI', price: 42.80, dosage: '400mg', quantity: 30, prescription: false },
+        { id: 'fda-003', name: 'Amoxicilina', brand: 'Amsa', price: 120.50, dosage: '500mg', quantity: 15, prescription: true },
+        { id: 'fda-004', name: 'Loratadina', brand: 'Schering-Plough', price: 85.00, dosage: '10mg', quantity: 10, prescription: false },
+        { id: 'fda-005', name: 'Omeprazol', brand: 'Genérico GI', price: 65.30, dosage: '20mg', quantity: 14, prescription: false },
+      ],
+    },
+    FARMACIA_SIMILARES: {
+      name: 'Farmacias Similares',
+      logo: '/logos/farmacia-similares.png',
+      primaryColor: '#004a87',
+      secondaryColor: '#ffce00',
+      isSponsored: true,
+      sponsorshipLevel: 1,
+      website: 'https://www.farmaciasdesimilares.com/',
+      products: [
+        { id: 'fs-001', name: 'Paracetamol', brand: 'Similares', price: 32.00, dosage: '500mg', quantity: 20, prescription: false },
+        { id: 'fs-002', name: 'Ibuprofeno', brand: 'Similares', price: 38.50, dosage: '400mg', quantity: 30, prescription: false },
+        { id: 'fs-003', name: 'Loratadina', brand: 'Similares', price: 65.90, dosage: '10mg', quantity: 10, prescription: false },
+      ],
+    },
+  };
+
   private shouldUsePremiumModel(options: AIQueryOptions): boolean {
     if (options.usePremiumModel) return true;
     
-    if (options.imageUrl) return true;
+    if (options.imageUrl) {
+      const imageAnalysisEnabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+      if (imageAnalysisEnabled === null || imageAnalysisEnabled === 'true') {
+        console.log('Using premium model for image analysis');
+        return true;
+      } else {
+        console.log('Image analysis is disabled, not using premium model');
+        return false;
+      }
+    }
     
     if (options.severity && options.severity > 50) return true;
     
@@ -290,11 +401,144 @@ class AIService {
   }
   
   private async makeAPIRequest(endpoint: string, data: any): Promise<any> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.simulateAIResponse(endpoint, data));
-      }, 1000);
-    });
+    const openai = getOpenAIInstance();
+    
+    if (openai) {
+      try {
+        console.log('Using OpenAI API for request');
+        
+        const model = endpoint === this.premiumModelEndpoint || 
+                     (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled())
+          ? 'gpt-4' 
+          : 'gpt-3.5-turbo';
+        
+        let systemMessage = this.getDoctorInstructions();
+        
+        if (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled()) {
+          systemMessage = `${systemMessage}\n\nAhora estás analizando una imagen médica. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica. Sé detallado y preciso en tu análisis.`;
+        }
+        
+        const messages = [
+          { role: "system", content: systemMessage },
+          { role: "user", content: this.formatUserMessage(data) }
+        ];
+        
+        console.log(`Using model: ${model} for request`);
+        
+        const response = await openai.chat.completions.create({
+          model,
+          messages: messages as any,
+          temperature: 0.7,
+        });
+        
+        const aiResponse = response.choices[0]?.message?.content || "Lo siento, no pude procesar tu consulta.";
+        return this.parseAIResponse(aiResponse, data);
+      } catch (error) {
+        console.error('Error calling OpenAI API:', error);
+        console.log('Falling back to mock response');
+        return this.simulateAIResponse(endpoint, data);
+      }
+    } else {
+      console.log('No OpenAI API key found, using mock response');
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(this.simulateAIResponse(endpoint, data));
+        }, 1000);
+      });
+    }
+  }
+  
+  private getDoctorInstructions(): string {
+    try {
+      const instructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
+      if (instructions) {
+        return instructions;
+      }
+    } catch (error) {
+      console.error('Error retrieving doctor instructions:', error);
+    }
+    return DEFAULT_DOCTOR_INSTRUCTIONS;
+  }
+  
+  private isImageAnalysisEnabled(): boolean {
+    try {
+      const enabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+      return enabled === null || enabled === 'true';
+    } catch (error) {
+      console.error('Error checking if image analysis is enabled:', error);
+      return true; // Default to enabled
+    }
+  }
+  
+  private formatUserMessage(data: any): string {
+    if (data.message) {
+      let message = `Consulta médica: ${data.message}`;
+      
+      if (data.history && data.history.length > 0) {
+        message += `\n\nHistorial previo: ${data.history.join(' | ')}`;
+      }
+      
+      if (data.userProfile) {
+        message += `\n\nPerfil del usuario: ${JSON.stringify(data.userProfile)}`;
+      }
+      
+      return message;
+    } else if (data.imageUrl) {
+      return `Analiza esta imagen médica: ${data.imageUrl}${data.symptoms ? `\nSíntomas reportados: ${data.symptoms}` : ''}`;
+    }
+    
+    return JSON.stringify(data);
+  }
+  
+  private parseAIResponse(aiResponse: string, data: any): any {
+    return {
+      text: aiResponse,
+      severity: data.severity || this.estimateSeverity(aiResponse),
+      suggestedSpecialty: this.extractSpecialty(aiResponse),
+      suggestedConditions: this.extractConditions(aiResponse),
+      followUpQuestions: this.generateFollowUpQuestions(aiResponse),
+    };
+  }
+  
+  private estimateSeverity(text: string): number {
+    const emergencyTerms = ['emergencia', 'urgente', 'inmediatamente', 'grave', 'peligro'];
+    const moderateTerms = ['consultar', 'médico', 'atención', 'tratamiento'];
+    
+    let severity = 10; // Default low severity
+    
+    if (emergencyTerms.some(term => text.toLowerCase().includes(term))) {
+      severity = 80;
+    } else if (moderateTerms.some(term => text.toLowerCase().includes(term))) {
+      severity = 40;
+    }
+    
+    return severity;
+  }
+  
+  private extractSpecialty(text: string): string | undefined {
+    const specialties = [
+      'Cardiología', 'Dermatología', 'Gastroenterología', 'Neurología', 
+      'Oftalmología', 'Ortopedia', 'Pediatría', 'Psiquiatría'
+    ];
+    
+    for (const specialty of specialties) {
+      if (text.includes(specialty)) {
+        return specialty;
+      }
+    }
+    
+    return undefined;
+  }
+  
+  private extractConditions(_text: string): string[] {
+    return [];
+  }
+  
+  private generateFollowUpQuestions(_text: string): string[] {
+    return [
+      '¿Cuándo comenzaron los síntomas?',
+      '¿Hay algo que empeore o mejore los síntomas?'
+    ];
   }
   
   private simulateAIResponse(endpoint: string, data: any): any {

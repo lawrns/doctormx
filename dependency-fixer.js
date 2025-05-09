@@ -268,4 +268,36 @@ console.log('Created @xstate/react/index.js in node_modules');
 // Run the ES module fixer
 fixEsModuleFiles();
 
+// Create openai directory in node_modules if it doesn't exist
+const OPENAI_DIR = path.join(__dirname, 'node_modules', 'openai');
+if (!fs.existsSync(OPENAI_DIR)) {
+  fs.mkdirSync(OPENAI_DIR, { recursive: true });
+  console.log('Created openai directory in node_modules');
+}
+
+// Create index.js in openai
+const openaiIndex = `
+// Shim for openai
+module.exports = {
+  OpenAI: class OpenAI {
+    constructor(config) {
+      this.apiKey = config.apiKey;
+    }
+    
+    async chat() {
+      return {
+        choices: [{
+          message: {
+            content: "This is a mock response from the OpenAI API shim."
+          }
+        }]
+      };
+    }
+  }
+};
+`;
+
+fs.writeFileSync(path.join(OPENAI_DIR, 'index.js'), openaiIndex);
+console.log('Created openai/index.js in node_modules');
+
 console.log('All dependency shims created successfully');

@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Send, Image, Mic, X, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
-import AIService, { AIResponse, AIQueryOptions } from '../../../core/services/ai/AIService';
-import EncryptionService from '../../../core/services/security/EncryptionService';
-import { useChat } from '../../../core/hooks/useChat';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
+import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
+import EncryptionService from '../../../services/security/EncryptionService';
+
+const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 
 type Message = {
   id: string;
@@ -50,13 +52,16 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
   const [appointments, setAppointments] = useState<any[]>([]);
-  const [prescriptions, setPrescriptions] = useState<any[]>([]);
+  const [prescriptions] = useState<any[]>([]);
   const [pharmacies, setPharmacies] = useState<any[]>([]);
+  
+  const messageVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+  };
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const chatContext = useChat();
   
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -303,14 +308,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
 
   const MessageComponent = ({ message }: { message: Message }) => {
     return (
-      <div className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-        <div className={`rounded-lg px-4 py-2 max-w-md ${
-          message.sender === 'user' 
-            ? 'bg-blue-600 text-white' 
-            : message.isEmergency
-              ? 'bg-red-100 text-red-800 border border-red-200'
-              : 'bg-gray-100 text-gray-800'
-        }`}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={messageVariants}
+        className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+      >
+        <motion.div 
+          whileHover={{ scale: 1.01 }}
+          className={`rounded-lg px-4 py-2 max-w-md ${
+            message.sender === 'user' 
+              ? 'bg-blue-600 text-white' 
+              : message.isEmergency
+                ? 'bg-red-100 text-red-800 border border-red-200'
+                : 'bg-gray-100 text-gray-800'
+          }`}
+        >
           <div className="flex items-center mb-1">
             {message.sender === 'bot' ? (
               <Stethoscope size={16} className="mr-1 text-blue-600" />
@@ -399,336 +412,361 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
               )}
             </>
           )}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     );
   };
 
   const renderTabContent = () => {
-    switch (activeTab) {
-      case 'chat':
-        return (
-          <div className="flex flex-col h-full">
-            {/* Chat messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {messages.map((message) => (
-                <MessageComponent key={message.id} message={message} />
-              ))}
-              <div ref={messagesEndRef} />
-            </div>
-            
-            {/* Input area */}
-            <div className="p-4 border-t border-gray-200">
-              <div className="flex space-x-2">
-                <button 
-                  onClick={handleMicClick}
-                  className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
-                  aria-label="Usar micrófono"
-                >
-                  <Mic size={20} />
-                </button>
-                <button 
-                  onClick={() => fileInputRef.current?.click()}
-                  className={`p-2 rounded-full ${isUploading ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600'}`}
-                  aria-label="Subir imagen"
-                >
-                  <Image size={20} />
-                </button>
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  onChange={handleImageUpload}
-                  accept="image/*"
-                  className="hidden"
-                />
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  placeholder="Describe tus síntomas o haz una pregunta..."
-                  className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  disabled={isProcessing}
-                />
-                <button 
-                  onClick={handleSendMessage}
-                  disabled={(!input.trim() && !isUploading) || isProcessing}
-                  className={`p-2 rounded-full ${
-                    (!input.trim() && !isUploading) || isProcessing
-                      ? 'text-gray-400 cursor-not-allowed' 
-                      : 'text-blue-600 hover:bg-blue-50'
-                  }`}
-                  aria-label="Enviar mensaje"
-                >
-                  <Send size={20} />
-                </button>
-              </div>
-              {isRecording && (
-                <div className="mt-2 text-center text-sm text-red-600">
-                  <span className="inline-block animate-pulse">●</span> Escuchando... Habla ahora
-                </div>
-              )}
-              {isProcessing && (
-                <div className="mt-2 text-center text-sm text-blue-600">
-                  <span className="inline-block">⟳</span> Procesando tu consulta...
-                </div>
-              )}
-            </div>
-          </div>
-        );
-        
-      case 'analysis':
-        return (
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Análisis de Síntomas</h3>
-            
-            {messages.filter(m => m.suggestedConditions && m.suggestedConditions.length > 0).length > 0 ? (
-              <div className="space-y-6">
-                {messages
-                  .filter(m => m.suggestedConditions && m.suggestedConditions.length > 0)
-                  .map((message, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
-                      <h4 className="font-medium text-gray-900 mb-2">Posibles condiciones:</h4>
-                      <ul className="space-y-2">
-                        {message.suggestedConditions!.map((condition, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2 mt-0.5">
-                              {idx + 1}
-                            </span>
-                            <div>
-                              <p className="font-medium">{condition}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      {message.suggestedSpecialty && (
-                        <div className="mt-4">
-                          <p className="text-sm text-gray-600">Especialidad recomendada:</p>
-                          <p className="font-medium text-blue-700">{message.suggestedSpecialty}</p>
-                          <button
-                            onClick={() => findProviders(message.suggestedSpecialty!)}
-                            className="mt-2 text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
-                          >
-                            <MapPin size={14} className="mr-1" />
-                            Buscar especialistas cercanos
-                          </button>
+    return (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -10 }}
+          transition={{ duration: 0.3 }}
+          className="h-full"
+        >
+          {(() => {
+            switch (activeTab) {
+              case 'chat':
+                return (
+                  <div className="flex flex-col h-full">
+                    {/* Chat messages */}
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                      {messages.map((message) => (
+                        <MessageComponent key={message.id} message={message} />
+                      ))}
+                      <div ref={messagesEndRef} />
+                    </div>
+                    
+                    {/* Input area */}
+                    <div className="p-4 border-t border-gray-200">
+                      <div className="flex space-x-2">
+                        <button 
+                          onClick={handleMicClick}
+                          className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
+                          aria-label="Usar micrófono"
+                        >
+                          <Mic size={20} />
+                        </button>
+                        <button 
+                          onClick={() => fileInputRef.current?.click()}
+                          className={`p-2 rounded-full ${isUploading ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600'}`}
+                          aria-label="Subir imagen"
+                        >
+                          <Image size={20} />
+                        </button>
+                        <input
+                          type="file"
+                          ref={fileInputRef}
+                          onChange={handleImageUpload}
+                          accept="image/*"
+                          className="hidden"
+                        />
+                        <input
+                          type="text"
+                          value={input}
+                          onChange={(e) => setInput(e.target.value)}
+                          onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                          placeholder="Describe tus síntomas o haz una pregunta..."
+                          className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          disabled={isProcessing}
+                        />
+                        <button 
+                          onClick={handleSendMessage}
+                          disabled={(!input.trim() && !isUploading) || isProcessing}
+                          className={`p-2 rounded-full ${
+                            (!input.trim() && !isUploading) || isProcessing
+                              ? 'text-gray-400 cursor-not-allowed' 
+                              : 'text-blue-600 hover:bg-blue-50'
+                          }`}
+                          aria-label="Enviar mensaje"
+                        >
+                          <Send size={20} />
+                        </button>
+                      </div>
+                      {isRecording && (
+                        <div className="mt-2 text-center text-sm text-red-600">
+                          <span className="inline-block animate-pulse">●</span> Escuchando... Habla ahora
+                        </div>
+                      )}
+                      {isProcessing && (
+                        <div className="mt-2 text-center text-sm text-blue-600">
+                          <span className="inline-block">⟳</span> Procesando tu consulta...
+                        </div>
+                      )}
+                      {!localStorage.getItem(OPENAI_KEY_STORAGE_KEY) && (
+                        <div className="mt-2 text-center">
+                          <Link to="/settings/api" className="text-xs text-blue-600 hover:underline">
+                            Configurar API key para mejorar las respuestas
+                          </Link>
                         </div>
                       )}
                     </div>
-                  ))}
-              </div>
-            ) : (
-              <div className="text-center py-10">
-                <p className="text-gray-500">
-                  Aún no hay análisis disponibles. Describe tus síntomas en el chat para recibir un análisis.
-                </p>
-              </div>
-            )}
-          </div>
-        );
-        
-      case 'providers':
-        return (
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Proveedores de Salud Cercanos</h3>
-            
-            {selectedProviders.length > 0 ? (
-              <div className="space-y-4">
-                {selectedProviders.map((provider, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
-                    <div className="flex items-start">
-                      <div className="w-16 h-16 bg-gray-200 rounded-full mr-4 flex-shrink-0"></div>
-                      <div>
-                        <h4 className="font-medium text-lg">{provider.name || `Dr. Ejemplo ${index + 1}`}</h4>
-                        <p className="text-blue-700">{provider.specialty || 'Especialidad'}</p>
-                        <p className="text-sm text-gray-600 mt-1">{provider.address || 'Dirección del consultorio'}</p>
-                        <div className="mt-3 flex space-x-2">
-                          <button
-                            onClick={() => scheduleAppointment(provider.id || `provider-${index}`)}
-                            className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
-                          >
-                            <Calendar size={14} className="mr-1" />
-                            Agendar cita
-                          </button>
-                          <button
-                            className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-200 transition-colors"
-                          >
-                            Ver perfil
-                          </button>
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-10">
-                <p className="text-gray-500">
-                  No hay proveedores seleccionados. Usa el chat para recibir recomendaciones de especialistas.
-                </p>
-              </div>
-            )}
-          </div>
-        );
-        
-      case 'appointments':
-        return (
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Mis Citas</h3>
-            
-            {appointments.length > 0 ? (
-              <div className="space-y-4">
-                {appointments.map((appointment, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <p className="text-sm text-gray-500">Próxima cita</p>
-                        <h4 className="font-medium text-lg">Dr. Ejemplo</h4>
-                        <p className="text-blue-700">Consulta general</p>
-                        <p className="text-sm text-gray-600 mt-1">
-                          {new Date().toLocaleDateString()} - 10:00 AM
-                        </p>
-                      </div>
-                      <div className="flex space-x-2">
-                        <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors">
-                          Modificar
-                        </button>
-                        <button className="text-sm bg-red-100 text-red-700 px-3 py-1 rounded-md hover:bg-red-200 transition-colors">
-                          Cancelar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-10">
-                <p className="text-gray-500">
-                  No tienes citas programadas. Usa el chat para recibir recomendaciones y agendar una cita.
-                </p>
-              </div>
-            )}
-          </div>
-        );
-        
-      case 'prescriptions':
-        return (
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Mis Recetas</h3>
-            
-            {prescriptions.length > 0 ? (
-              <div className="space-y-4">
-                {prescriptions.map((prescription, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h4 className="font-medium text-lg">Receta #{index + 1}</h4>
-                        <p className="text-sm text-gray-600 mt-1">
-                          Emitida: {new Date().toLocaleDateString()}
-                        </p>
-                        <div className="mt-2">
-                          <p className="font-medium">Medicamentos:</p>
-                          <ul className="text-sm text-gray-700 mt-1 space-y-1">
-                            <li>• Medicamento de ejemplo 1</li>
-                            <li>• Medicamento de ejemplo 2</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="flex space-x-2">
-                        <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors flex items-center">
-                          <FileText size={14} className="mr-1" />
-                          Descargar
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-10">
-                <p className="text-gray-500">
-                  No tienes recetas digitales. Las recetas aparecerán aquí después de tus consultas médicas.
-                </p>
-              </div>
-            )}
-          </div>
-        );
-        
-      case 'pharmacies':
-        return (
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Farmacias Cercanas</h3>
-            
-            {pharmacies.length > 0 ? (
-              <div className="space-y-4">
-                {pharmacies.map((pharmacy, index) => (
-                  <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
-                    <div className="flex items-start">
-                      <div className="w-16 h-16 bg-green-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
-                        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className="flex items-center">
-                          <h4 className="font-medium text-lg">{pharmacy.name || `Farmacia ${index + 1}`}</h4>
-                          {pharmacy.isSponsored && (
-                            <span className="ml-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-0.5 rounded-full">
-                              Patrocinado
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-sm text-gray-600 mt-1">{pharmacy.address || 'Dirección de la farmacia'}</p>
-                        <p className="text-sm text-gray-600">
-                          {pharmacy.distance ? `${(pharmacy.distance / 1000).toFixed(1)} km de distancia` : 'Distancia no disponible'}
-                        </p>
-                        
-                        {pharmacy.available_medications && pharmacy.available_medications.length > 0 && (
-                          <div className="mt-2">
-                            <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
-                            <div className="flex flex-wrap gap-1 mt-1">
-                              {pharmacy.available_medications.slice(0, 3).map((med, idx) => (
-                                <span key={idx} className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
-                                  {med}
-                                </span>
-                              ))}
-                              {pharmacy.available_medications.length > 3 && (
-                                <span className="text-xs text-gray-500">+{pharmacy.available_medications.length - 3} más</span>
+                );
+                
+              case 'analysis':
+                return (
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Análisis de Síntomas</h3>
+                    
+                    {messages.filter(m => m.suggestedConditions && m.suggestedConditions.length > 0).length > 0 ? (
+                      <div className="space-y-6">
+                        {messages
+                          .filter(m => m.suggestedConditions && m.suggestedConditions.length > 0)
+                          .map((message, index) => (
+                            <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                              <h4 className="font-medium text-gray-900 mb-2">Posibles condiciones:</h4>
+                              <ul className="space-y-2">
+                                {message.suggestedConditions!.map((condition, idx) => (
+                                  <li key={idx} className="flex items-start">
+                                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2 mt-0.5">
+                                      {idx + 1}
+                                    </span>
+                                    <div>
+                                      <p className="font-medium">{condition}</p>
+                                    </div>
+                                  </li>
+                                ))}
+                              </ul>
+                              
+                              {message.suggestedSpecialty && (
+                                <div className="mt-4">
+                                  <p className="text-sm text-gray-600">Especialidad recomendada:</p>
+                                  <p className="font-medium text-blue-700">{message.suggestedSpecialty}</p>
+                                  <button
+                                    onClick={() => findProviders(message.suggestedSpecialty!)}
+                                    className="mt-2 text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
+                                  >
+                                    <MapPin size={14} className="mr-1" />
+                                    Buscar especialistas cercanos
+                                  </button>
+                                </div>
                               )}
                             </div>
-                          </div>
-                        )}
-                        
-                        <div className="mt-3 flex space-x-2">
-                          <a 
-                            href={`https://maps.google.com/?q=${pharmacy.address}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-sm bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 transition-colors flex items-center"
-                          >
-                            <MapPin size={14} className="mr-1" />
-                            Cómo llegar
-                          </a>
-                          <button className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
-                            Llamar
-                          </button>
-                        </div>
+                          ))}
                       </div>
-                    </div>
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-gray-500">
+                          Aún no hay análisis disponibles. Describe tus síntomas en el chat para recibir un análisis.
+                        </p>
+                      </div>
+                    )}
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-10">
-                <p className="text-gray-500">
-                  No hay farmacias disponibles. Usa el chat para recibir recomendaciones de medicamentos y encontrar farmacias cercanas.
-                </p>
-              </div>
-            )}
-          </div>
-        );
-    }
+                );
+                
+              case 'providers':
+                return (
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Proveedores de Salud Cercanos</h3>
+                    
+                    {selectedProviders.length > 0 ? (
+                      <div className="space-y-4">
+                        {selectedProviders.map((provider, index) => (
+                          <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                            <div className="flex items-start">
+                              <div className="w-16 h-16 bg-gray-200 rounded-full mr-4 flex-shrink-0"></div>
+                              <div>
+                                <h4 className="font-medium text-lg">{provider.name || `Dr. Ejemplo ${index + 1}`}</h4>
+                                <p className="text-blue-700">{provider.specialty || 'Especialidad'}</p>
+                                <p className="text-sm text-gray-600 mt-1">{provider.address || 'Dirección del consultorio'}</p>
+                                <div className="mt-3 flex space-x-2">
+                                  <button
+                                    onClick={() => scheduleAppointment(provider.id || `provider-${index}`)}
+                                    className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
+                                  >
+                                    <Calendar size={14} className="mr-1" />
+                                    Agendar cita
+                                  </button>
+                                  <button
+                                    className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-200 transition-colors"
+                                  >
+                                    Ver perfil
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-gray-500">
+                          No hay proveedores seleccionados. Usa el chat para recibir recomendaciones de especialistas.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+                
+              case 'appointments':
+                return (
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Mis Citas</h3>
+                    
+                    {appointments.length > 0 ? (
+                      <div className="space-y-4">
+                        {appointments.map((_, index) => (
+                          <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                            <div className="flex justify-between items-start">
+                              <div>
+                                <p className="text-sm text-gray-500">Próxima cita</p>
+                                <h4 className="font-medium text-lg">Dr. Ejemplo</h4>
+                                <p className="text-blue-700">Consulta general</p>
+                                <p className="text-sm text-gray-600 mt-1">
+                                  {new Date().toLocaleDateString()} - 10:00 AM
+                                </p>
+                              </div>
+                              <div className="flex space-x-2">
+                                <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors">
+                                  Modificar
+                                </button>
+                                <button className="text-sm bg-red-100 text-red-700 px-3 py-1 rounded-md hover:bg-red-200 transition-colors">
+                                  Cancelar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-gray-500">
+                          No tienes citas programadas. Usa el chat para recibir recomendaciones y agendar una cita.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+                
+              case 'prescriptions':
+                return (
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Mis Recetas</h3>
+                    
+                    {prescriptions.length > 0 ? (
+                      <div className="space-y-4">
+                        {prescriptions.map((_, index) => (
+                          <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                            <div className="flex justify-between items-start">
+                              <div>
+                                <h4 className="font-medium text-lg">Receta #{index + 1}</h4>
+                                <p className="text-sm text-gray-600 mt-1">
+                                  Emitida: {new Date().toLocaleDateString()}
+                                </p>
+                                <div className="mt-2">
+                                  <p className="font-medium">Medicamentos:</p>
+                                  <ul className="text-sm text-gray-700 mt-1 space-y-1">
+                                    <li>• Medicamento de ejemplo 1</li>
+                                    <li>• Medicamento de ejemplo 2</li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div className="flex space-x-2">
+                                <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors flex items-center">
+                                  <FileText size={14} className="mr-1" />
+                                  Descargar
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-gray-500">
+                          No tienes recetas digitales. Las recetas aparecerán aquí después de tus consultas médicas.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+                
+              case 'pharmacies':
+                return (
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold mb-4">Farmacias Cercanas</h3>
+                    
+                    {pharmacies.length > 0 ? (
+                      <div className="space-y-4">
+                        {pharmacies.map((pharmacy, index) => (
+                          <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                            <div className="flex items-start">
+                              <div className="w-16 h-16 bg-green-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
+                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                              </div>
+                              <div>
+                                <div className="flex items-center">
+                                  <h4 className="font-medium text-lg">{pharmacy.name || `Farmacia ${index + 1}`}</h4>
+                                  {pharmacy.isSponsored && (
+                                    <span className="ml-2 bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-0.5 rounded-full">
+                                      Patrocinado
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-sm text-gray-600 mt-1">{pharmacy.address || 'Dirección de la farmacia'}</p>
+                                <p className="text-sm text-gray-600">
+                                  {pharmacy.distance ? `${(pharmacy.distance / 1000).toFixed(1)} km de distancia` : 'Distancia no disponible'}
+                                </p>
+                                
+                                {pharmacy.available_medications && pharmacy.available_medications.length > 0 && (
+                                  <div className="mt-2">
+                                    <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
+                                    <div className="flex flex-wrap gap-1 mt-1">
+                                      {pharmacy.available_medications.slice(0, 3).map((med: string, idx: number) => (
+                                        <span key={idx} className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
+                                          {med}
+                                        </span>
+                                      ))}
+                                      {pharmacy.available_medications.length > 3 && (
+                                        <span className="text-xs text-gray-500">+{pharmacy.available_medications.length - 3} más</span>
+                                      )}
+                                    </div>
+                                  </div>
+                                )}
+                                
+                                <div className="mt-3 flex space-x-2">
+                                  <a 
+                                    href={`https://maps.google.com/?q=${pharmacy.address}`} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-sm bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 transition-colors flex items-center"
+                                  >
+                                    <MapPin size={14} className="mr-1" />
+                                    Cómo llegar
+                                  </a>
+                                  <button className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-md hover:bg-gray-200 transition-colors">
+                                    Llamar
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-10">
+                        <p className="text-gray-500">
+                          No hay farmacias disponibles. Usa el chat para recibir recomendaciones de medicamentos y encontrar farmacias cercanas.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                );
+                
+              default:
+                return null;
+            }
+          })()}
+        </motion.div>
+      </AnimatePresence>
+    );
   };
 
   if (isEmbedded) {
