@@ -23,25 +23,37 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
   }
   
   return (
-    <div className={`bg-white rounded-xl shadow-lg overflow-hidden ${className}`}>
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`bg-white rounded-xl shadow-lg overflow-hidden ${className}`}
+    >
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-5 text-white">
+      <motion.div 
+        className="bg-gradient-to-r from-blue-600 to-blue-700 p-5 text-white"
+        whileHover={{ backgroundPosition: '100% 0%' }}
+        transition={{ duration: 1.5 }}
+        style={{ backgroundSize: '200% 100%' }}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Stethoscope className="mr-2" size={24} />
             <h3 className="text-xl font-bold">Doctor IA</h3>
           </div>
-          <Link 
-            to="/ai-doctor"
-            className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors"
-          >
-            Abrir
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link 
+              to="/ai-doctor"
+              className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium hover:bg-blue-50 transition-colors"
+            >
+              Abrir
+            </Link>
+          </motion.div>
         </div>
         <p className="mt-2 text-blue-100">
           Consulta médica inteligente con análisis de síntomas y recomendaciones personalizadas
         </p>
-      </div>
+      </motion.div>
       
       {/* Content */}
       <div className="p-5">
@@ -109,22 +121,29 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
       </div>
       
       {/* Footer */}
-      <div className="bg-gray-50 p-4 border-t border-gray-100">
+      <motion.div 
+        className="bg-gray-50 p-4 border-t border-gray-100"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+      >
         <div className="flex justify-between items-center">
           <p className="text-xs text-gray-500">
             Recuerda: Esta herramienta no sustituye la atención médica profesional.
           </p>
           {isExpanded && (
-            <button
+            <motion.button
               onClick={() => setShowFullAIDoctor(true)}
               className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Ver experiencia completa
-            </button>
+            </motion.button>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
