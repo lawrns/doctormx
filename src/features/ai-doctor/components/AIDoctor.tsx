@@ -1,9 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, X, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
 import AIService, { AIResponse, AIQueryOptions } from '../../../core/services/ai/AIService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import { useChat } from '../../../core/hooks/useChat';
+
+const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 
 type Message = {
   id: string;
@@ -500,6 +503,13 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       {isProcessing && (
                         <div className="mt-2 text-center text-sm text-blue-600">
                           <span className="inline-block">⟳</span> Procesando tu consulta...
+                        </div>
+                      )}
+                      {!localStorage.getItem(OPENAI_KEY_STORAGE_KEY) && (
+                        <div className="mt-2 text-center">
+                          <Link to="/settings/api" className="text-xs text-blue-600 hover:underline">
+                            Configurar API key para mejorar las respuestas
+                          </Link>
                         </div>
                       )}
                     </div>
