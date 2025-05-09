@@ -34,10 +34,18 @@ class AIService {
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
 
   constructor() {
-    this.supabase = createClient(
-      'https://oxlbametpfubwnrmrbsv.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA'
-    );
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+    
+    if (!supabaseUrl) {
+      console.error('VITE_SUPABASE_URL is not set. Please check your environment variables.');
+    }
+    
+    if (!supabaseAnonKey) {
+      console.error('VITE_SUPABASE_ANON_KEY is not set. Please check your environment variables.');
+    }
+    
+    this.supabase = createClient(supabaseUrl, supabaseAnonKey);
   }
 
   /**
