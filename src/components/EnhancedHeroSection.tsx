@@ -222,7 +222,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
   return (
     <section 
       ref={heroRef}
-      className="bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white py-16 md:py-24 relative overflow-hidden"
+      className="bg-gradient-to-r from-primary-blue to-primary-blue-dark text-white py-16 md:py-24 relative overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Decorative elements */}
@@ -300,8 +300,8 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
               className="mb-6 flex flex-wrap gap-2"
             >
               {['Médicos verificados', 'Agenda inmediata', 'Telemedicina 24/7'].map((feature, index) => (
-                <div key={index} className="flex items-center bg-[#008c6c] bg-opacity-50 rounded-full px-3 py-1">
-                  <Check size={16} className="text-[#e6f7f3] mr-1" />
+                <div key={index} className="flex items-center bg-primary-blue-dark bg-opacity-50 rounded-full px-3 py-1">
+                  <Check size={16} className="text-blue-50 mr-1" />
                   <span className="text-sm text-white">{feature}</span>
                 </div>
               ))}
@@ -438,13 +438,13 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                   variant="primary"
                   fullWidth
                   icon={<Search size={18} />}
-                  className="bg-[#00af87] hover:bg-[#008c6c] text-white"
+                  className="bg-primary-blue hover:bg-primary-blue-dark text-white"
                 >
                   {abTestVariant === 'A' ? 'Buscar médicos' : 'Encontrar médico'}
                 </Button>
                 
                 <div className="text-center pt-2">
-                  <Link to="/sintomas" className="text-sm text-[#00af87] hover:text-[#008c6c] hover:underline flex items-center justify-center">
+                  <Link to="/sintomas" className="text-sm text-primary-blue hover:text-primary-blue-dark hover:underline flex items-center justify-center">
                     ¿No sabes qué especialista necesitas? Evalúa tus síntomas
                     <ChevronRight size={16} className="ml-1" />
                   </Link>
@@ -460,7 +460,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#008c6c] opacity-20 rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-blue-dark opacity-20 rounded-lg"></div>
               
               {/* Main featured doctor card */}
               <motion.div 
@@ -480,7 +480,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                       <h3 className="font-bold text-gray-900 mb-1">
                         {featuredDoctors[currentDoctorIndex].name}
                       </h3>
-                      <p className="text-[#00af87] font-medium text-sm">
+                      <p className="text-primary-blue font-medium text-sm">
                         {featuredDoctors[currentDoctorIndex].specialty}
                       </p>
                       <div className="flex items-center mt-1">
@@ -514,7 +514,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                 
                 <div className="w-full bg-gray-200 h-1">
                   <motion.div 
-                    className="bg-[#00af87] h-1"
+                    className="bg-primary-blue h-1"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ 
@@ -527,7 +527,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
               </motion.div>
               
               {/* Doctor features list */}
-              <div className="mt-6 bg-[#00af87] bg-opacity-30 backdrop-blur-sm rounded-lg p-4">
+              <div className="mt-6 bg-primary-blue bg-opacity-30 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-semibold text-white mb-3">Por qué elegir Doctor.mx:</h3>
                 <ul className="space-y-2">
                   {[

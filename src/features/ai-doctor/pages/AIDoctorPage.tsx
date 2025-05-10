@@ -14,7 +14,7 @@ function AIDoctorPage() {
         className="absolute top-4 right-4 md:top-8 md:right-8 z-50 hidden md:flex items-center"
       >
         <div className="bg-white p-2 rounded-full shadow-lg">
-          <User size={40} className="text-[#00af87]" />
+          <User size={40} className="text-primary-blue" />
         </div>
       </motion.div>
       <SEO 

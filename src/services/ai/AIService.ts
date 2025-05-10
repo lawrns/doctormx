@@ -610,12 +610,65 @@ class AIService {
   
   private simulateAIResponse(endpoint: string, data: any): any {
     if (endpoint === this.imageAnalysisEndpoint) {
+      const analysisTypes = [
+        {
+          type: 'dermatological',
+          analysis: 'He analizado la imagen y observo una posible condición dermatológica. Los patrones visibles sugieren una dermatitis o reacción alérgica. La distribución y características de la lesión son consistentes con una dermatitis de contacto, aunque no se puede descartar otras condiciones como eccema o psoriasis leve. Recomendaría consultar con un dermatólogo para confirmar el diagnóstico y recibir tratamiento adecuado.',
+          findings: 'Patrón irregular con áreas de inflamación, enrojecimiento localizado, posible descamación leve en los bordes de la lesión',
+          confidence: 0.85,
+          severity: 40,
+          suggestedSpecialty: 'Dermatología',
+          suggestedConditions: ['Dermatitis de contacto', 'Eccema', 'Reacción alérgica cutánea', 'Psoriasis leve'],
+          followUpQuestions: [
+            '¿Desde cuándo presenta estos síntomas?',
+            '¿Ha estado en contacto con alguna sustancia nueva (detergentes, cosméticos, plantas)?',
+            '¿Siente picazón o ardor en la zona afectada?',
+            '¿Ha intentado algún tratamiento tópico?'
+          ]
+        },
+        {
+          type: 'orthopedic',
+          analysis: 'Basado en la imagen proporcionada, observo posibles signos de inflamación articular. La imagen sugiere una posible tendinitis o bursitis, aunque sería necesario realizar estudios adicionales para descartar otras condiciones como artritis. Recomiendo consultar con un especialista en traumatología para una evaluación completa y tratamiento adecuado.',
+          findings: 'Inflamación visible en la articulación, posible acumulación de líquido, coloración rojiza en la zona afectada',
+          confidence: 0.78,
+          severity: 35,
+          suggestedSpecialty: 'Traumatología',
+          suggestedConditions: ['Tendinitis', 'Bursitis', 'Artritis', 'Esguince leve'],
+          followUpQuestions: [
+            '¿Ha sufrido algún traumatismo reciente?',
+            '¿Siente dolor al mover la articulación?',
+            '¿El dolor empeora con el movimiento o con el reposo?',
+            '¿Ha notado limitación en el rango de movimiento?'
+          ]
+        },
+        {
+          type: 'ophthalmological',
+          analysis: 'La imagen muestra posibles signos de irritación ocular. Las características visibles sugieren una conjuntivitis, aunque también podría tratarse de una alergia ocular o un ojo seco. Es importante consultar con un oftalmólogo para un diagnóstico preciso y tratamiento adecuado, especialmente si presenta síntomas como visión borrosa o dolor intenso.',
+          findings: 'Enrojecimiento de la conjuntiva, posible secreción leve, inflamación palpebral',
+          confidence: 0.82,
+          severity: 30,
+          suggestedSpecialty: 'Oftalmología',
+          suggestedConditions: ['Conjuntivitis', 'Alergia ocular', 'Síndrome de ojo seco', 'Blefaritis'],
+          followUpQuestions: [
+            '¿Siente ardor o picazón en los ojos?',
+            '¿Ha notado secreción o lagrimeo excesivo?',
+            '¿Tiene sensibilidad a la luz?',
+            '¿Usa lentes de contacto o ha estado expuesto a algún irritante?'
+          ]
+        }
+      ];
+      
+      const selectedAnalysis = analysisTypes[0]; // Default to dermatological for consistency
+      
       return {
-        analysis: 'La imagen muestra posibles signos de una erupción cutánea. Recomiendo consultar con un dermatólogo.',
-        findings: 'Erupción cutánea con patrones irregulares',
-        confidence: 0.78,
-        severity: 40,
-        suggestedSpecialty: 'Dermatología'
+        analysis: selectedAnalysis.analysis,
+        text: selectedAnalysis.analysis,
+        findings: selectedAnalysis.findings,
+        confidence: selectedAnalysis.confidence,
+        severity: selectedAnalysis.severity,
+        suggestedSpecialty: selectedAnalysis.suggestedSpecialty,
+        suggestedConditions: selectedAnalysis.suggestedConditions,
+        followUpQuestions: selectedAnalysis.followUpQuestions
       };
     }
     

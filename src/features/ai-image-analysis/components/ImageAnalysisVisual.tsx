@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Check, AlertCircle } from 'lucide-react';
+import { Search, Check } from 'lucide-react';
 
 interface ImageAnalysisVisualProps {
   imageSrc: string;
@@ -226,8 +226,8 @@ const ImageAnalysisVisual: React.FC<ImageAnalysisVisualProps> = ({
               {['surface', 'medium', 'deep'].map((level, idx) => (
                 <motion.div 
                   key={level}
-                  className={`w-2 h-2 rounded-full ${idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : idx <= (analysisStage === 'identifying' ? 1 : 0)) ? 'bg-blue-600' : 'bg-gray-300'}`}
-                  animate={{ scale: idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : idx <= (analysisStage === 'identifying' ? 1 : 0)) ? [1, 1.2, 1] : 1 }}
+                  className={`w-2 h-2 rounded-full ${idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : analysisStage === 'identifying' ? 1 : 0) ? 'bg-blue-600' : 'bg-gray-300'}`}
+                  animate={{ scale: idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : analysisStage === 'identifying' ? 1 : 0) ? [1, 1.2, 1] : 1 }}
                   transition={{ repeat: Infinity, duration: 1.5 }}
                 />
               ))}
