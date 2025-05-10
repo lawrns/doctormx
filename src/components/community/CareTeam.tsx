@@ -158,7 +158,7 @@ const CareTeam: React.FC<CareTeamProps> = ({
                     alt={provider.name} 
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      e.currentTarget.src = '/public/doctor-placeholder.png';
+                      e.currentTarget.src = '/images/doctor-placeholder.png';
                     }}
                   />
                 </div>
@@ -291,7 +291,7 @@ const CareTeam: React.FC<CareTeamProps> = ({
                         alt={provider.name} 
                         className="w-12 h-12 rounded-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = '/public/doctor-placeholder.png';
+                          e.currentTarget.src = '/images/doctor-placeholder.png';
                         }}
                       />
                     </div>

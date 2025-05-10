@@ -100,7 +100,7 @@ const sampleFeedItems: FeedItem[] = [
       id: 'admin1',
       name: 'Equipo Doctor.mx',
       role: 'admin',
-      avatar: '/public/Doctorlogo.png'
+      avatar: '/images/Doctorlogo.png'
     },
     createdAt: '2025-05-22T14:00:00',
     likes: 35,
@@ -299,7 +299,7 @@ const CommunityFeed: React.FC<CommunityFeedProps> = ({
               alt={item.author.name} 
               className="w-full h-full object-cover"
               onError={(e) => {
-                e.currentTarget.src = '/public/doctor-placeholder.png';
+                e.currentTarget.src = '/images/doctor-placeholder.png';
               }}
             />
           </div>

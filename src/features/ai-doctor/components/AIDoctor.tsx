@@ -8,6 +8,7 @@ import AIThinking from './AIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
 import ProductRecommendation from './ProductRecommendation';
 import ImageAnalysisVisual from '../../ai-image-analysis/components/ImageAnalysisVisual';
+import ConfidenceVisualizer from './ConfidenceVisualizer';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -70,6 +71,12 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(!isMobileView);
   const [imageAnalysisStage, setImageAnalysisStage] = useState<'initial' | 'scanning' | 'identifying' | 'comparing' | 'concluding' | null>(null);
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
+  const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
+  const [confidenceLevel, setConfidenceLevel] = useState(0);
+  const [medicalReferences, setMedicalReferences] = useState<string[]>([
+    'Base de datos médica', 'Estudios clínicos', 'Literatura médica', 
+    'Atlas de dermatología', 'Investigaciones recientes'
+  ]);
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
@@ -298,13 +305,33 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       
       setImageAnalysisStage('initial');
       
+      setTimeout(() => {
+        setConfidenceStatus('considering');
+        setConfidenceLevel(10);
+      }, 100);
+      
       setTimeout(() => setImageAnalysisStage('scanning'), 500);
+      
+      setTimeout(() => {
+        setConfidenceLevel(35);
+      }, 2000);
+      
       setTimeout(() => setImageAnalysisStage('identifying'), 3000);
+      
+      setTimeout(() => {
+        setConfidenceLevel(60);
+      }, 4000);
+      
       setTimeout(() => setImageAnalysisStage('comparing'), 5500);
       
       const response = await AIService.analyzeImage(imageUrl);
       
       setImageAnalysisStage('concluding');
+      
+      setTimeout(() => {
+        setConfidenceStatus('confident');
+        setConfidenceLevel(95);
+      }, 6000);
       
       setTimeout(() => {
         setImageAnalysisStage(null);
@@ -867,6 +894,15 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                             imageSrc={currentAnalysisImage} 
                             analysisStage={imageAnalysisStage} 
                           />
+                          
+                          {/* Confidence Visualizer */}
+                          <div className="mt-4">
+                            <ConfidenceVisualizer 
+                              confidence={confidenceLevel}
+                              status={confidenceStatus}
+                              references={medicalReferences}
+                            />
+                          </div>
                         </div>
                       </motion.div>
                     )}
@@ -978,6 +1014,29 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Análisis de Síntomas</h3>
+                    
+                    {/* Show current analysis visualizations if active */}
+                    {currentAnalysisImage && imageAnalysisStage && (
+                      <div className="space-y-4 mb-6">
+                        <div className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
+                          <h4 className="font-medium text-gray-900 mb-2">Análisis en progreso:</h4>
+                          <div className="mb-4">
+                            <ImageAnalysisVisual 
+                              imageSrc={currentAnalysisImage} 
+                              analysisStage={imageAnalysisStage}
+                            />
+                          </div>
+                          
+                          <div className="mt-4">
+                            <ConfidenceVisualizer 
+                              confidence={confidenceLevel}
+                              status={confidenceStatus}
+                              references={medicalReferences}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     
                     {messages.filter(m => m.suggestedConditions && m.suggestedConditions.length > 0).length > 0 ? (
                       <div className="space-y-6">

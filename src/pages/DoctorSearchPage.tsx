@@ -802,7 +802,7 @@ function DoctorSearchPage() {
                             height="128"
                             fetchpriority="high"
                             onError={(e) => {
-                              e.currentTarget.src = '/public/doctor-placeholder.png';
+                              e.currentTarget.src = '/images/doctor-placeholder.png';
                               e.currentTarget.onerror = null;
                             }}
                           />

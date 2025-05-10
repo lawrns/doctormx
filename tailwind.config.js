@@ -27,6 +27,9 @@ module.exports = {
           900: '#312e81',
           950: '#1e1b4b',
         },
+        'primary-blue': '#2962FF',
+        'primary-blue-light': '#5B86FF',
+        'primary-blue-dark': '#1641B5',
         // Dark mode specific colors
         dark: {
           bg: '#121212',
