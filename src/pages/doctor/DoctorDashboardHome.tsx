@@ -1,3 +1,4 @@
+// Doctor Dashboard Home with blue color scheme and Doctor Connect Promo
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';

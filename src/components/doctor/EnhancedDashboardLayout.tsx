@@ -1,3 +1,4 @@
+// Enhanced Dashboard Layout with blue color scheme and Mexico flag
 import React, { ReactNode, useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';

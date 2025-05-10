@@ -1,3 +1,4 @@
+// Doctor Connect Promo component for subscription service (500 MXN pesos/month)
 import React from 'react';
 import { Heart, Award, Check } from 'lucide-react';
 
