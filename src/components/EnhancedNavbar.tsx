@@ -1,8 +1,7 @@
-import { Search, Video, User, X, User } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { 
-  Menu, X, User, Search, Calendar, LogOut, 
+  Menu, X, User, Search, LogOut, 
   Leaf, MessageCircle, Video, ChevronDown, Globe
 } from './icons/IconProvider';
 import { SocialIcons } from './icons/IconProvider';

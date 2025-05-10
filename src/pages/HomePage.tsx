@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
-  Search, Calendar, Video, Star, Shield, Clock, Users, ArrowRight,
-  Stethoscope, Leaf, MessageCircle, ChevronRight, Award, Image
+  Video, Star, Shield, Users, MapPin,
+  Leaf, ChevronRight, Image
 } from 'lucide-react';
 import { SocialIcons } from '../components/icons/IconProvider';
 import EmbeddedAIDoctor from '../components/ai/EmbeddedAIDoctor';
@@ -22,20 +22,20 @@ const features = [
   {
     title: "Evaluación de Síntomas con IA",
     description: "Nuestro asistente virtual te guía paso a paso para entender tus síntomas y encontrar la atención adecuada.",
-    icon: (props) => <SocialIcons.Brain {...props} />,
-    color: "blue"
+    icon: (props: React.SVGProps<SVGSVGElement>) => <SocialIcons.Brain {...props} />,
+    color: "teal"
   },
   {
     title: "Directorio Médico Verificado",
     description: "Miles de profesionales de la salud certificados y verificados para tu tranquilidad.",
     icon: Shield,
-    color: "green"
+    color: "teal"
   },
   {
     title: "Telemedicina 24/7",
     description: "Consultas médicas en línea desde la comodidad de tu hogar, cuando lo necesites.",
     icon: Video,
-    color: "purple"
+    color: "teal"
   },
   {
     title: "Medicina Alternativa",
@@ -111,7 +111,7 @@ function HomePage() {
                 onClick={() => setActiveTab('patient')}
                 className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
                   activeTab === 'patient'
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-[#00af87] text-white'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
                 whileHover={{ scale: activeTab !== 'patient' ? 1.05 : 1 }}
@@ -124,7 +124,7 @@ function HomePage() {
                 onClick={() => setActiveTab('doctor')}
                 className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
                   activeTab === 'doctor'
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-[#00af87] text-white'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
                 whileHover={{ scale: activeTab !== 'doctor' ? 1.05 : 1 }}
@@ -187,10 +187,12 @@ function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow"
+                whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
+                className="bg-white rounded-xl shadow-sm p-6 transition-all relative overflow-hidden"
               >
-                <div className={`w-12 h-12 rounded-lg bg-${feature.color}-100 flex items-center justify-center mb-4`}>
-                  <feature.icon className={`text-${feature.color}-600`} size={24} />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00af87] to-[#008c6c]"></div>
+                <div className="w-12 h-12 rounded-lg bg-[#e6f7f3] flex items-center justify-center mb-4">
+                  <feature.icon className="text-[#00af87]" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -201,7 +203,7 @@ function HomePage() {
       </section>
 
       {/* AI Doctor Section */}
-      <section ref={aiRef} className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section ref={aiRef} className="py-16 bg-gradient-to-br from-[#e6f7f3] to-[#ccefe7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <motion.h2 
@@ -227,6 +229,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative"
           >
             <EmbeddedAIDoctor className="max-w-4xl mx-auto shadow-xl rounded-xl overflow-hidden" />
           </motion.div>
@@ -237,9 +240,10 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <SocialIcons.Brain size={20} className="text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
+                <SocialIcons.Brain size={20} className="text-[#00af87]" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Análisis inteligente</h3>
@@ -252,9 +256,10 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <Image size={20} className="text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
+                <Image size={20} className="text-[#00af87]" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Análisis de imágenes</h3>
@@ -267,9 +272,10 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
-                <MapPin size={20} className="text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
+                <MapPin size={20} className="text-[#00af87]" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Conexión local</h3>
@@ -281,7 +287,7 @@ function HomePage() {
           <div className="mt-10 text-center">
             <Link
               to="/ai-doctor"
-              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+              className="inline-flex items-center px-8 py-3 bg-[#00af87] text-white font-medium rounded-lg hover:bg-[#008c6c] transition-colors shadow-md"
             >
               Consultar ahora
               <ChevronRight size={20} className="ml-2" />
@@ -295,27 +301,45 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Cómo funciona</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-blue-600">1</span>
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-[#00af87]">1</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Busca especialistas</h3>
               <p className="text-gray-600">Encuentra al médico ideal por especialidad, ubicación y disponibilidad</p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-blue-600">2</span>
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-[#00af87]">2</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Agenda tu cita</h3>
               <p className="text-gray-600">Selecciona la fecha y hora que mejor se adapte a tu horario</p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-blue-600">3</span>
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-[#00af87]">3</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Recibe atención médica</h3>
               <p className="text-gray-600">Asiste a tu consulta presencial o conéctate vía telemedicina</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -408,11 +432,11 @@ function HomePage() {
                     <p className="text-sm text-gray-600">{story.specialty}</p>
                     <div className="flex mt-4 space-x-6">
                       <div>
-                        <p className="text-2xl font-bold text-blue-600">{story.metrics.patients}</p>
+                        <p className="text-2xl font-bold text-[#00af87]">{story.metrics.patients}</p>
                         <p className="text-sm text-gray-600">Pacientes nuevos</p>
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-blue-600">{story.metrics.satisfaction}</p>
+                        <p className="text-2xl font-bold text-[#00af87]">{story.metrics.satisfaction}</p>
                         <p className="text-sm text-gray-600">Satisfacción</p>
                       </div>
                     </div>
@@ -425,26 +449,43 @@ function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Comienza a cuidar tu salud hoy mismo</h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-blue-100">
+          <motion.h2 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl font-bold mb-4"
+          >
+            Comienza a cuidar tu salud hoy mismo
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: -10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-xl mb-8 max-w-3xl mx-auto text-white opacity-90"
+          >
             Únete a miles de pacientes que ya encontraron al profesional de salud ideal para sus necesidades.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
+          >
             <Link 
               to="/buscar"
-              className="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+              className="px-6 py-3 bg-white text-[#00af87] font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
             >
               Buscar médicos
             </Link>
             <Link 
               to="/sintomas/"
-              className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-[#006951] transition-colors shadow-md"
             >
               Evaluar síntomas
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
