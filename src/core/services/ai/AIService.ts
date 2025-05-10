@@ -249,16 +249,86 @@ class AIService {
   
   private simulateAIResponse(endpoint: string, data: any): any {
     if (endpoint === this.imageAnalysisEndpoint) {
-      return {
-        analysis: 'La imagen muestra posibles signos de una erupción cutánea. Recomiendo consultar con un dermatólogo.',
-        findings: 'Erupción cutánea con patrones irregulares',
-        confidence: 0.78,
-        severity: 40,
-        suggestedSpecialty: 'Dermatología'
-      };
+      const imageData = data.imageUrl || '';
+      const symptoms = data.symptoms || '';
+      
+      const imageHash = this.hashString(imageData);
+      
+      const analysisOptions = [
+        {
+          analysis: 'La imagen muestra posibles signos de una erupción cutánea. Recomiendo consultar con un dermatólogo.',
+          findings: 'Erupción cutánea con patrones irregulares',
+          confidence: 0.78,
+          severity: 40,
+          suggestedSpecialty: 'Dermatología'
+        },
+        {
+          analysis: 'La imagen sugiere una posible inflamación articular. Podría ser indicativo de artritis u otra condición reumatológica.',
+          findings: 'Inflamación articular con posible enrojecimiento',
+          confidence: 0.82,
+          severity: 35,
+          suggestedSpecialty: 'Reumatología'
+        },
+        {
+          analysis: 'La imagen muestra lo que parece ser una lesión ocular. Recomiendo una evaluación oftalmológica urgente.',
+          findings: 'Posible lesión corneal o conjuntivitis',
+          confidence: 0.91,
+          severity: 65,
+          suggestedSpecialty: 'Oftalmología'
+        },
+        {
+          analysis: 'La imagen muestra una posible infección de la piel. Podría ser una celulitis o foliculitis.',
+          findings: 'Área inflamada con posibles signos de infección',
+          confidence: 0.75,
+          severity: 50,
+          suggestedSpecialty: 'Infectología'
+        },
+        {
+          analysis: 'La imagen sugiere una posible reacción alérgica. Observe si hay otros síntomas como dificultad para respirar.',
+          findings: 'Erupción con patrón consistente con reacción alérgica',
+          confidence: 0.88,
+          severity: 45,
+          suggestedSpecialty: 'Alergología'
+        }
+      ];
+      
+      if (symptoms) {
+        if (symptoms.toLowerCase().includes('picazón') || symptoms.toLowerCase().includes('comezón')) {
+          return {
+            analysis: 'Basado en la imagen y los síntomas de picazón, es probable que esté experimentando una reacción alérgica o dermatitis.',
+            findings: 'Erupción cutánea con signos de rascado, consistente con prurito',
+            confidence: 0.85,
+            severity: 30,
+            suggestedSpecialty: 'Dermatología'
+          };
+        }
+        
+        if (symptoms.toLowerCase().includes('dolor') || symptoms.toLowerCase().includes('ardor')) {
+          return {
+            analysis: 'La combinación de la imagen y los síntomas de dolor sugieren una posible infección o inflamación aguda.',
+            findings: 'Área inflamada con signos de dolor, posible infección',
+            confidence: 0.79,
+            severity: 55,
+            suggestedSpecialty: 'Medicina Interna'
+          };
+        }
+        
+        if (symptoms.toLowerCase().includes('fiebre')) {
+          return {
+            analysis: 'La imagen junto con el síntoma de fiebre sugiere un proceso infeccioso que requiere atención médica pronto.',
+            findings: 'Signos de infección con compromiso sistémico',
+            confidence: 0.87,
+            severity: 60,
+            suggestedSpecialty: 'Infectología'
+          };
+        }
+      }
+      
+      const responseIndex = imageHash % analysisOptions.length;
+      return analysisOptions[responseIndex];
     }
     
-    if (data.message.includes('dolor de cabeza')) {
+    if (data.message && data.message.includes('dolor de cabeza')) {
       return {
         text: 'Basado en tus síntomas, podrías estar experimentando una migraña o cefalea tensional. ¿Con qué frecuencia ocurre este dolor de cabeza?',
         severity: 30,
@@ -299,6 +369,24 @@ class AIService {
         med.ingredients.includes(allergy)
       )
     );
+  }
+  
+  /**
+   * Simple string hashing function to generate deterministic but different responses
+   * @param str String to hash
+   * @returns A numeric hash value
+   */
+  private hashString(str: string): number {
+    let hash = 0;
+    if (str.length === 0) return hash;
+    
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash; // Convert to 32bit integer
+    }
+    
+    return Math.abs(hash);
   }
 }
 
