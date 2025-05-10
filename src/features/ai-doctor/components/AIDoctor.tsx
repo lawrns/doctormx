@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle, Clock, ThermometerIcon, Activity, Pill, ArrowLeft, Menu, X } from 'lucide-react';
+import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
 import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
 import EncryptionService from '../../../services/security/EncryptionService';
 import AIThinking from './AIThinking';
@@ -28,18 +28,6 @@ type Message = {
   };
   isEmergency?: boolean;
   severity?: number;
-  suggestedSpecialty?: string;
-  suggestedConditions?: string[];
-  suggestedMedications?: string[];
-  followUpQuestions?: string[];
-  severity?: number;
-  isEmergency?: boolean;
-  containsImage?: boolean;
-  imageUrl?: string;
-  imageAnalysis?: {
-    findings: string;
-    confidence: number;
-  };
   suggestedSpecialty?: string;
   suggestedConditions?: string[];
   suggestedMedications?: string[];
@@ -73,10 +61,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
   const [confidenceLevel, setConfidenceLevel] = useState(0);
-  const [medicalReferences, setMedicalReferences] = useState<string[]>([
+  const medicalReferences = [
     'Base de datos médica', 'Estudios clínicos', 'Literatura médica', 
     'Atlas de dermatología', 'Investigaciones recientes'
-  ]);
+  ];
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
@@ -350,7 +338,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           imageAnalysis: response.imageAnalysis,
           suggestedSpecialty: response.suggestedSpecialty,
           suggestedConditions: response.suggestedConditions || ['Dermatitis', 'Alergia cutánea', 'Infección leve'],
-          followUpQuestions: [
+          followUpQuestions: response.followUpQuestions || [
             '¿Desde cuándo tiene estos síntomas?',
             '¿Ha notado algún cambio en los últimos días?',
             '¿Ha usado algún medicamento para esto?'
@@ -701,7 +689,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   };
   
   const getSeverityColor = () => {
-    if (severityLevel < 30) return 'bg-green-500';
+    if (severityLevel < 30) return 'bg-primary-blue';
     if (severityLevel < 60) return 'bg-yellow-500';
     if (severityLevel < 80) return 'bg-orange-500';
     return 'bg-red-500';
@@ -1272,7 +1260,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                                     href={`https://maps.google.com/?q=${pharmacy.address}`} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="text-sm bg-green-600 text-white px-3 py-1 rounded-md hover:bg-green-700 transition-colors flex items-center"
+                                    className="text-sm bg-primary-blue text-white px-3 py-1 rounded-md hover:bg-primary-blue-dark transition-colors flex items-center"
                                   >
                                     <MapPin size={14} className="mr-1" />
                                     Cómo llegar
@@ -1319,7 +1307,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-[#00af87] to-[#008c6c] p-4 text-white shadow-md">
+      <header className="bg-gradient-to-r from-primary-blue to-primary-blue-dark p-4 text-white shadow-md">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold">Doctor.mx</h1>
@@ -1331,7 +1319,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           {onClose && (
             <button 
               onClick={onClose}
-              className="bg-white text-[#00af87] px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
+              className="bg-white text-primary-blue px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
             >
               Cerrar
             </button>
@@ -1366,7 +1354,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           className={`${isMobileView ? 'fixed inset-y-0 left-0 z-40' : 'w-64'} 
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
             bg-gray-50 border-r border-gray-200 flex flex-col transition-transform duration-300 ease-in-out`}>
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-[#e6f7f3] to-white">
+          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-blue-50 to-white">
             <h2 className="font-bold text-lg text-gray-800">Doctor IA</h2>
             <p className="text-sm text-gray-600">Asistente médico inteligente</p>
             
@@ -1391,7 +1379,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'chat' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('chat')}
@@ -1403,7 +1391,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'analysis' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('analysis')}
@@ -1415,7 +1403,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'providers' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('providers')}
@@ -1427,7 +1415,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'appointments' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('appointments')}
@@ -1439,7 +1427,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'prescriptions' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
@@ -1451,7 +1439,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'pharmacies' 
-                      ? 'bg-green-100 text-green-700 font-medium' 
+                      ? 'bg-blue-50 text-primary-blue font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('pharmacies')}
@@ -1468,10 +1456,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           </nav>
           
           <div className="p-4 border-t border-gray-200">
-            <div className="bg-[#e6f7f3] rounded-lg p-3">
-              <h3 className="text-sm font-medium text-[#00af87] mb-2">Plan Premium</h3>
-              <p className="text-xs text-[#008c6c] mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-[#00af87] hover:bg-[#008c6c] text-white text-sm py-2 px-3 rounded-lg">
+            <div className="bg-blue-50 rounded-lg p-3">
+              <h3 className="text-sm font-medium text-primary-blue mb-2">Plan Premium</h3>
+              <p className="text-xs text-primary-blue-dark mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
+              <button className="w-full bg-primary-blue hover:bg-primary-blue-dark text-white text-sm py-2 px-3 rounded-lg">
                 Actualizar ahora
               </button>
             </div>

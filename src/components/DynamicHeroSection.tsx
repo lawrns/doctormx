@@ -155,9 +155,9 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
     const gradientStyle = `
       radial-gradient(
         circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%,
-        rgba(0, 175, 135, 0.9) 0%,
-        rgba(0, 140, 108, 1) 50%,
-        rgba(0, 105, 81, 1) 100%
+        rgba(41, 98, 255, 0.9) 0%,
+        rgba(22, 65, 181, 1) 50%,
+        rgba(13, 41, 122, 1) 100%
       )
     `;
     
@@ -167,7 +167,7 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
   return (
     <section 
       ref={heroRef}
-      className="bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white py-16 relative overflow-hidden"
+      className="bg-gradient-to-r from-primary-blue to-primary-blue-dark text-white py-16 relative overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Decorative elements */}
@@ -321,7 +321,7 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
                 
                 <motion.button 
                   onClick={handleSearch}
-                  className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-[#00af87] text-white font-medium rounded-md hover:bg-[#008c6c] transition-colors shadow-md"
+                  className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-primary-blue text-white font-medium rounded-md hover:bg-primary-blue-dark transition-colors shadow-md"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

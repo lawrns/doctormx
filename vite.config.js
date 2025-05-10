@@ -42,5 +42,7 @@ module.exports = defineConfig({
       strictRequires: true,
       transformMixedEsModules: true,
     }
-  }
+  },
+  publicDir: 'public',
+  base: '/'
 });
