@@ -702,14 +702,14 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         onClick={() => handleOptionSelect(option, message.interactiveOptions!.questionId)}
                         className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all ${
                           message.interactiveOptions!.type === 'symptom_category' 
-                            ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
+                            ? 'bg-blue-100 text-blue-600 hover:bg-blue-200 border border-blue-200'
                             : message.interactiveOptions!.type === 'symptom_duration'
-                              ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
+                              ? 'bg-blue-100 text-blue-600 hover:bg-blue-200 border border-blue-200'
                               : message.interactiveOptions!.type === 'symptom_severity'
-                                ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
+                                ? 'bg-blue-600 text-white hover:bg-blue-700'
                                 : message.interactiveOptions!.type === 'yes_no' && option.includes('Ver medicamentos')
-                                  ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
-                                  : 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
+                                  ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                  : 'bg-blue-100 text-blue-600 hover:bg-blue-200 border border-blue-200'
                         }`}
                       >
                         {message.interactiveOptions!.type === 'symptom_category' && (
@@ -735,7 +735,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       whileHover={{ x: -2 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={handleGoBack}
-                      className="mt-2 text-xs text-[#00af87] flex items-center hover:text-[#008c6c] transition-colors"
+                      className="mt-2 text-xs text-blue-600 flex items-center hover:text-blue-700 transition-colors"
                     >
                       <ArrowLeft size={12} className="mr-1" />
                       Volver a la pregunta anterior
@@ -750,7 +750,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => findProviders(message.suggestedSpecialty!)}
-                    className="text-sm bg-[#e6f7f3] text-[#00af87] px-4 py-2 rounded-lg hover:bg-[#ccefe7] transition-all flex items-center shadow-sm border border-[#ccefe7]"
+                    className="text-sm bg-blue-100 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-200 transition-all flex items-center shadow-sm border border-blue-200"
                   >
                     <MapPin size={14} className="mr-1" />
                     Buscar especialistas en {message.suggestedSpecialty}
@@ -764,7 +764,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => findPharmacies(message.suggestedMedications!)} 
-                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
+                    className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all flex items-center shadow-sm"
                   >
                     <Pill size={14} className="mr-1" />
                     Buscar medicamentos recomendados
@@ -778,7 +778,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => findPharmacies(['paracetamol', 'ibuprofeno'])} 
-                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
+                    className="text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all flex items-center shadow-sm"
                   >
                     <svg className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -1177,7 +1177,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
-      <header className="bg-gradient-to-r from-[#00af87] to-[#008c6c] p-4 text-white shadow-md">
+      <header className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 text-white shadow-md">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold">Doctor.mx</h1>
@@ -1189,7 +1189,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           {onClose && (
             <button 
               onClick={onClose}
-              className="bg-white text-[#00af87] px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
+              className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
             >
               Cerrar
             </button>
@@ -1249,7 +1249,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'chat' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-100 text-blue-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('chat')}
@@ -1261,7 +1261,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'analysis' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-100 text-blue-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('analysis')}
@@ -1273,7 +1273,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'providers' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-100 text-blue-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('providers')}
@@ -1285,7 +1285,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'appointments' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-100 text-blue-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('appointments')}
@@ -1297,7 +1297,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'prescriptions' 
-                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
+                      ? 'bg-blue-100 text-blue-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
@@ -1326,10 +1326,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           </nav>
           
           <div className="p-4 border-t border-gray-200">
-            <div className="bg-[#e6f7f3] rounded-lg p-3">
-              <h3 className="text-sm font-medium text-[#00af87] mb-2">Plan Premium</h3>
-              <p className="text-xs text-[#008c6c] mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-[#00af87] hover:bg-[#008c6c] text-white text-sm py-2 px-3 rounded-lg">
+            <div className="bg-blue-100 rounded-lg p-3">
+              <h3 className="text-sm font-medium text-blue-600 mb-2">Plan Premium</h3>
+              <p className="text-xs text-blue-700 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded-lg">
                 Actualizar ahora
               </button>
             </div>
