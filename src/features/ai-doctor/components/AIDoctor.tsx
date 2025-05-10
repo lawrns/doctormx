@@ -4,6 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle, Clock, ThermometerIcon, Activity, Pill, ArrowLeft, Menu, X } from 'lucide-react';
 import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
 import EncryptionService from '../../../services/security/EncryptionService';
+import AIThinking from './AIThinking';
+import EnhancedChatBubble from './EnhancedChatBubble';
+import ProductRecommendation from './ProductRecommendation';
+import ImageAnalysisVisual from '../../ai-image-analysis/components/ImageAnalysisVisual';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -14,6 +18,19 @@ type Message = {
   text: string;
   sender: 'user' | 'bot';
   timestamp: Date;
+  imageUrl?: string;
+  audioUrl?: string;
+  containsImage?: boolean;
+  imageAnalysis?: {
+    findings: string;
+    confidence: number;
+  };
+  isEmergency?: boolean;
+  severity?: number;
+  suggestedSpecialty?: string;
+  suggestedConditions?: string[];
+  suggestedMedications?: string[];
+  followUpQuestions?: string[];
   severity?: number;
   isEmergency?: boolean;
   containsImage?: boolean;
@@ -51,6 +68,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [severityLevel, setSeverityLevel] = useState(10);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
   const [isSidebarOpen, setIsSidebarOpen] = useState(!isMobileView);
+  const [imageAnalysisStage, setImageAnalysisStage] = useState<'initial' | 'scanning' | 'identifying' | 'comparing' | 'concluding' | null>(null);
+  const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
@@ -70,6 +89,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [appointments, setAppointments] = useState<any[]>([]);
   const [prescriptions] = useState<any[]>([]);
   const [pharmacies, setPharmacies] = useState<any[]>([]);
+  const [products, setProducts] = useState<any[]>([]);
+  const [pharmacyData, setPharmacyData] = useState<Record<string, any>>({});
   const [currentQuestionId, setCurrentQuestionId] = useState<string>('initial');
   const [questionHistory, setQuestionHistory] = useState<string[]>(['initial']);
   
@@ -263,6 +284,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       const scrubbedFile = await EncryptionService.scrubImageMetadata(file);
       
       const imageUrl = URL.createObjectURL(scrubbedFile);
+      setCurrentAnalysisImage(imageUrl);
       
       const imageMessageId = Date.now().toString();
       setMessages(prev => [...prev, {
@@ -274,23 +296,46 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         imageUrl
       }]);
       
+      setImageAnalysisStage('initial');
+      
+      setTimeout(() => setImageAnalysisStage('scanning'), 500);
+      setTimeout(() => setImageAnalysisStage('identifying'), 3000);
+      setTimeout(() => setImageAnalysisStage('comparing'), 5500);
+      
       const response = await AIService.analyzeImage(imageUrl);
       
-      if (response.severity) {
-        setSeverityLevel(response.severity);
-      }
+      setImageAnalysisStage('concluding');
       
-      setMessages(prev => [...prev, {
-        id: (Date.now() + 1).toString(),
-        text: response.text,
-        sender: 'bot',
-        timestamp: new Date(),
-        severity: response.severity,
-        imageAnalysis: response.imageAnalysis,
-        suggestedSpecialty: response.suggestedSpecialty
-      }]);
+      setTimeout(() => {
+        setImageAnalysisStage(null);
+        setCurrentAnalysisImage(null);
+        
+        if (response.severity) {
+          setSeverityLevel(response.severity);
+        }
+        
+        setMessages(prev => [...prev, {
+          id: (Date.now() + 1).toString(),
+          text: response.text,
+          sender: 'bot',
+          timestamp: new Date(),
+          severity: response.severity,
+          imageAnalysis: response.imageAnalysis,
+          suggestedSpecialty: response.suggestedSpecialty,
+          suggestedConditions: response.suggestedConditions || ['Dermatitis', 'Alergia cutánea', 'Infección leve'],
+          followUpQuestions: [
+            '¿Desde cuándo tiene estos síntomas?',
+            '¿Ha notado algún cambio en los últimos días?',
+            '¿Ha usado algún medicamento para esto?'
+          ]
+        }]);
+      }, 7500);
+      
     } catch (error) {
       console.error('Error uploading image:', error);
+      
+      setImageAnalysisStage(null);
+      setCurrentAnalysisImage(null);
       
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
@@ -319,7 +364,9 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
     
     try {
+      setIsProcessing(true);
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      setIsProcessing(false);
       
       const recorder = new MediaRecorder(stream);
       setMediaRecorder(recorder);
@@ -335,34 +382,80 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       recorder.onstop = async () => {
         const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
         
-        setInput('He grabado un mensaje de voz sobre mis síntomas');
+        const audioUrl = URL.createObjectURL(audioBlob);
         
         const userMessageId = Date.now().toString();
         const newUserMessage: Message = { 
           id: userMessageId,
           text: 'He grabado un mensaje de voz sobre mis síntomas.',
           sender: 'user',
-          timestamp: new Date()
+          timestamp: new Date(),
+          audioUrl: audioUrl
         };
         
         setMessages(prev => [...prev, newUserMessage]);
         
+        setIsProcessing(true);
+        
+        try {
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          const symptomOptions = [
+            'dolor de cabeza', 'fiebre', 'tos', 'dolor de garganta', 
+            'congestión nasal', 'dolor abdominal', 'náuseas'
+          ];
+          const randomSymptom = symptomOptions[Math.floor(Math.random() * symptomOptions.length)];
+          
+          const botResponse: Message = {
+            id: Date.now().toString(),
+            text: `He analizado tu mensaje de voz. Parece que mencionas ${randomSymptom}. ¿Puedes confirmar si esto es correcto y proporcionarme más detalles sobre cuándo comenzaron estos síntomas?`,
+            sender: 'bot',
+            timestamp: new Date(),
+            interactiveOptions: {
+              type: 'yes_no',
+              options: ['Sí, es correcto', 'No, es otro síntoma'],
+              questionId: 'audio_confirmation'
+            },
+            followUpQuestions: [
+              '¿Cuándo comenzaron los síntomas?',
+              '¿Has tomado algún medicamento?',
+              '¿Tienes alguna condición médica preexistente?'
+            ]
+          };
+          
+          setMessages(prev => [...prev, botResponse]);
+        } catch (error) {
+          console.error('Error processing audio:', error);
+          
+          setMessages(prev => [...prev, {
+            id: Date.now().toString(),
+            text: 'Lo siento, hubo un problema al procesar tu mensaje de voz. ¿Podrías intentar escribir tus síntomas?',
+            sender: 'bot',
+            timestamp: new Date()
+          }]);
+        } finally {
+          setIsProcessing(false);
+        }
+        
         stream.getTracks().forEach(track => track.stop());
+        
+        setTimeout(() => URL.revokeObjectURL(audioUrl), 60000);
       };
       
       recorder.start();
       setIsRecording(true);
       
       setTimeout(() => {
-        if (recorder.state === 'recording') {
+        if (recorder && recorder.state === 'recording') {
           recorder.stop();
           setIsRecording(false);
         }
-      }, 10000);
+      }, 15000);
     } catch (error) {
       console.error('Error accessing microphone:', error);
       alert('No se pudo acceder al micrófono. Por favor, verifica los permisos del navegador.');
       setIsRecording(false);
+      setIsProcessing(false);
     }
   };
   
@@ -515,24 +608,68 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   };
   
   const showGenericPharmacies = (medications: string[] = []) => {
-    const genericPharmacies = [
+    const sampleProducts = [
       {
-        name: 'Farmacia del Ahorro',
-        address: 'Múltiples sucursales en México',
-        distance: null,
-        medications: medications,
-        logo: 'https://www.farmaciasdelahorro.com.mx/static/version1714504312/frontend/FDA/fda/es_MX/images/logo.svg'
+        id: '1',
+        name: 'Paracetamol 500mg',
+        description: 'Analgésico y antipirético para aliviar el dolor y reducir la fiebre.',
+        price: '$85.00 MXN',
+        image: 'https://www.farmaciasdelahorro.com.mx/wcsstore/FASA/images/productos/large/300810_l.jpg',
+        sponsored: true,
+        pharmacyId: 'fda',
+        availableAt: ['fda', 'similares']
       },
       {
-        name: 'Farmacias Similares',
-        address: 'Múltiples sucursales en México',
-        distance: null,
-        medications: medications,
-        logo: 'https://www.farmaciasdesimilares.com/static/media/logo-similares.a7e1b5f3.svg'
+        id: '2',
+        name: 'Ibuprofeno 400mg',
+        description: 'Antiinflamatorio no esteroideo (AINE) para reducir el dolor y la inflamación.',
+        price: '$120.00 MXN',
+        image: 'https://www.farmaciasdelahorro.com.mx/wcsstore/FASA/images/productos/large/302016_l.jpg',
+        sponsored: false,
+        pharmacyId: 'similares',
+        availableAt: ['similares', 'fda']
+      },
+      {
+        id: '3',
+        name: 'Loratadina 10mg',
+        description: 'Antihistamínico para aliviar los síntomas de alergias como congestión nasal y estornudos.',
+        price: '$95.00 MXN',
+        image: 'https://www.farmaciasdelahorro.com.mx/wcsstore/FASA/images/productos/large/302810_l.jpg',
+        sponsored: false,
+        pharmacyId: 'fda',
+        availableAt: ['fda']
       }
     ];
     
-    setPharmacies(genericPharmacies);
+    const pharmacyData = {
+      'fda': {
+        id: 'fda',
+        name: 'Farmacia del Ahorro',
+        address: 'Múltiples sucursales en México',
+        distance: '1.2 km',
+        logo: 'https://www.farmaciasdelahorro.com.mx/static/version1714504312/frontend/FDA/fda/es_MX/images/logo.svg'
+      },
+      'similares': {
+        id: 'similares',
+        name: 'Farmacias Similares',
+        address: 'Múltiples sucursales en México',
+        distance: '0.8 km',
+        logo: 'https://www.farmaciasdesimilares.com/static/media/logo-similares.a7e1b5f3.svg'
+      }
+    };
+    
+    setProducts(sampleProducts);
+    setPharmacyData(pharmacyData);
+    
+    const recommendationMessage: Message = {
+      id: Date.now().toString(),
+      sender: 'bot',
+      text: 'He encontrado algunos medicamentos que podrían ayudarte. Puedes verlos en la pestaña de Farmacias.',
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, recommendationMessage]);
+    
     setActiveTab('pharmacies');
   };
   
@@ -678,185 +815,17 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
 
   const MessageComponent = ({ message }: { message: Message }) => {
     return (
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={messageVariants}
-        className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-      >
-        <motion.div 
-          whileHover={{ scale: 1.01 }}
-          className={`rounded-lg px-4 py-2 max-w-md ${
-            message.sender === 'user' 
-              ? 'bg-blue-600 text-white' 
-              : message.isEmergency
-                ? 'bg-red-100 text-red-800 border border-red-200'
-                : 'bg-gray-100 text-gray-800'
-          }`}
-        >
-          <div className="flex items-center mb-1">
-            {message.sender === 'bot' ? (
-              <Stethoscope size={16} className="mr-1 text-blue-600" />
-            ) : (
-              <div className="w-4 h-4 rounded-full bg-white mr-1 flex items-center justify-center">
-                <span className="text-blue-600 text-xs">U</span>
-              </div>
-            )}
-            <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
-              {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            </span>
-          </div>
-          
-          {message.isEmergency ? (
-            <div>
-              <div className="flex items-center mb-2">
-                <AlertCircle size={16} className="text-red-600 mr-1" />
-                <span className="font-bold">Emergencia Médica</span>
-              </div>
-              <p>{message.text}</p>
-            </div>
-          ) : (
-            <>
-              <p>{message.text}</p>
-              
-              {message.containsImage && message.imageUrl && (
-                <div className="mt-2">
-                  <img 
-                    src={message.imageUrl} 
-                    alt="Imagen médica" 
-                    className="rounded-md max-h-48 max-w-full"
-                  />
-                </div>
-              )}
-              
-              {message.imageAnalysis && (
-                <div className="mt-2 p-2 bg-blue-50 rounded-md text-sm">
-                  <p className="font-medium text-blue-800">Análisis de imagen:</p>
-                  <p>{message.imageAnalysis.findings}</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    Confianza: {Math.round(message.imageAnalysis.confidence * 100)}%
-                  </p>
-                </div>
-              )}
-              
-              {/* Interactive Options Buttons */}
-              {message.interactiveOptions && (
-                <div className="mt-3">
-                  <div className="flex flex-wrap gap-2">
-                    {message.interactiveOptions.options.map((option, index) => (
-                      <motion.button
-                        key={index}
-                        whileHover={{ scale: 1.05, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => handleOptionSelect(option, message.interactiveOptions!.questionId)}
-                        className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all ${
-                          message.interactiveOptions!.type === 'symptom_category' 
-                            ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
-                            : message.interactiveOptions!.type === 'symptom_duration'
-                              ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
-                              : message.interactiveOptions!.type === 'symptom_severity'
-                                ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
-                                : message.interactiveOptions!.type === 'yes_no' && option.includes('Ver medicamentos')
-                                  ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
-                                  : 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
-                        }`}
-                      >
-                        {message.interactiveOptions!.type === 'symptom_category' && (
-                          <>{option === 'Dolor' ? <Activity size={14} className="inline mr-1" /> :
-                             option === 'Fiebre' ? <ThermometerIcon size={14} className="inline mr-1" /> :
-                             option === 'Digestivo' ? <svg className="inline mr-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                             </svg> :
-                             <></>
-                          }</>
-                        )}
-                        {message.interactiveOptions!.type === 'symptom_duration' && (
-                          <Clock size={14} className="inline mr-1" />
-                        )}
-                        {option}
-                      </motion.button>
-                    ))}
-                  </div>
-                  
-                  {/* Go back button */}
-                  {questionHistory.length > 1 && message.sender === 'bot' && (
-                    <motion.button
-                      whileHover={{ x: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={handleGoBack}
-                      className="mt-2 text-xs text-[#00af87] flex items-center hover:text-[#008c6c] transition-colors"
-                    >
-                      <ArrowLeft size={12} className="mr-1" />
-                      Volver a la pregunta anterior
-                    </motion.button>
-                  )}
-                </div>
-              )}
-              
-              {message.suggestedSpecialty && (
-                <div className="mt-2">
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => findProviders(message.suggestedSpecialty!)}
-                    className="text-sm bg-[#e6f7f3] text-[#00af87] px-4 py-2 rounded-lg hover:bg-[#ccefe7] transition-all flex items-center shadow-sm border border-[#ccefe7]"
-                  >
-                    <MapPin size={14} className="mr-1" />
-                    Buscar especialistas en {message.suggestedSpecialty}
-                  </motion.button>
-                </div>
-              )}
-              
-              {message.suggestedMedications && message.suggestedMedications.length > 0 && (
-                <div className="mt-2">
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => findPharmacies(message.suggestedMedications!)} 
-                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
-                  >
-                    <Pill size={14} className="mr-1" />
-                    Buscar medicamentos recomendados
-                  </motion.button>
-                </div>
-              )}
-              
-              {message.suggestedConditions && message.suggestedConditions.length > 0 && !message.suggestedMedications && (
-                <div className="mt-2">
-                  <motion.button
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => findPharmacies(['paracetamol', 'ibuprofeno'])} 
-                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
-                  >
-                    <svg className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    Buscar en farmacias
-                  </motion.button>
-                </div>
-              )}
-              
-              {message.followUpQuestions && message.followUpQuestions.length > 0 && (
-                <div className="mt-3 space-y-2">
-                  {message.followUpQuestions.map((question, index) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        setInput(question);
-                        setTimeout(() => handleSendMessage(), 100);
-                      }}
-                      className="block w-full text-left text-sm bg-gray-50 hover:bg-gray-100 p-2 rounded-md transition-colors"
-                    >
-                      {question}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
-        </motion.div>
-      </motion.div>
+      <EnhancedChatBubble
+        message={message}
+        onOptionSelect={(option, questionId) => handleOptionSelect(option, questionId)}
+        interactiveOptions={message.interactiveOptions}
+        onFollowUpClick={(question) => {
+          setInput(question);
+          setTimeout(() => handleSendMessage(), 100);
+        }}
+        onGoBack={handleGoBack}
+        showGoBack={questionHistory.length > 1 && message.sender === 'bot'}
+      />
     );
   };
 
@@ -884,23 +853,49 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       <div ref={messagesEndRef} />
                     </div>
                     
+                    {/* Image Analysis Visualization */}
+                    {imageAnalysisStage && currentAnalysisImage && (
+                      <motion.div 
+                        className="px-4 pb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                      >
+                        <div className="bg-white rounded-lg shadow-md p-4 border border-blue-100">
+                          <h3 className="text-lg font-medium text-gray-800 mb-3">Análisis de Imagen</h3>
+                          <ImageAnalysisVisual 
+                            imageSrc={currentAnalysisImage} 
+                            analysisStage={imageAnalysisStage} 
+                          />
+                        </div>
+                      </motion.div>
+                    )}
+                    
                     {/* Input area */}
                     <div className="p-4 border-t border-gray-200">
                       <div className="flex space-x-2">
-                        <button 
+                        <motion.button 
                           onClick={handleMicClick}
                           className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
                           aria-label="Usar micrófono"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          animate={isRecording ? {
+                            scale: [1, 1.2, 1],
+                            transition: { repeat: Infinity, duration: 1.5 }
+                          } : {}}
                         >
                           <Mic size={20} />
-                        </button>
-                        <button 
+                        </motion.button>
+                        <motion.button 
                           onClick={() => fileInputRef.current?.click()}
                           className={`p-2 rounded-full ${isUploading ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600'}`}
                           aria-label="Subir imagen"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          whileTap={{ scale: 0.9 }}
                         >
                           <Image size={20} />
-                        </button>
+                        </motion.button>
                         <input
                           type="file"
                           ref={fileInputRef}
@@ -908,16 +903,38 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           accept="image/*"
                           className="hidden"
                         />
-                        <input
-                          type="text"
-                          value={input}
-                          onChange={(e) => setInput(e.target.value)}
-                          onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                          placeholder="Describe tus síntomas o haz una pregunta..."
-                          className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                          disabled={isProcessing}
-                        />
-                        <button 
+                        <motion.div 
+                          className="flex-1 relative"
+                          initial={{ opacity: 1 }}
+                          animate={{ 
+                            boxShadow: input.length > 0 ? "0 2px 8px rgba(59, 130, 246, 0.15)" : "none"
+                          }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <motion.input
+                            type="text"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                            placeholder="Describe tus síntomas o haz una pregunta..."
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            disabled={isProcessing}
+                            animate={{ 
+                              borderColor: input.length > 0 ? "rgba(59, 130, 246, 0.5)" : "rgba(209, 213, 219, 1)"
+                            }}
+                          />
+                          {input.length > 0 && (
+                            <motion.div 
+                              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-blue-500"
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 0.7, y: 0 }}
+                              exit={{ opacity: 0, y: 10 }}
+                            >
+                              {input.length} caracteres
+                            </motion.div>
+                          )}
+                        </motion.div>
+                        <motion.button 
                           onClick={handleSendMessage}
                           disabled={(!input.trim() && !isUploading) || isProcessing}
                           className={`p-2 rounded-full ${
@@ -926,9 +943,15 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                               : 'text-blue-600 hover:bg-blue-50'
                           }`}
                           aria-label="Enviar mensaje"
+                          whileHover={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
+                          whileTap={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 0.9 }}
+                          animate={(!input.trim() && !isUploading) || isProcessing ? {} : {
+                            boxShadow: ["0 0 0 rgba(59, 130, 246, 0)", "0 0 8px rgba(59, 130, 246, 0.5)", "0 0 0 rgba(59, 130, 246, 0)"]
+                          }}
+                          transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
                         >
                           <Send size={20} />
-                        </button>
+                        </motion.button>
                       </div>
                       {isRecording && (
                         <div className="mt-2 text-center text-sm text-red-600">
@@ -936,8 +959,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         </div>
                       )}
                       {isProcessing && (
-                        <div className="mt-2 text-center text-sm text-blue-600">
-                          <span className="inline-block">⟳</span> Procesando tu consulta...
+                        <div className="mt-4 flex justify-center">
+                          <AIThinking message="Analizando su consulta..." />
                         </div>
                       )}
                       {!localStorage.getItem(OPENAI_KEY_STORAGE_KEY) && (
@@ -1132,15 +1155,26 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
               case 'pharmacies':
                 return (
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-4">Farmacias Cercanas</h3>
+                    <h3 className="text-xl font-semibold mb-4">Farmacias y Medicamentos</h3>
                     
-                    {pharmacies.length > 0 ? (
+                    {products.length > 0 ? (
+                      <ProductRecommendation 
+                        products={products}
+                        pharmacies={pharmacyData}
+                        onPharmacyClick={(pharmacyId) => {
+                          console.log('Pharmacy clicked:', pharmacyId);
+                        }}
+                        onProductClick={(productId) => {
+                          console.log('Product clicked:', productId);
+                        }}
+                      />
+                    ) : pharmacies.length > 0 ? (
                       <div className="space-y-4">
                         {pharmacies.map((pharmacy, index) => (
                           <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                             <div className="flex items-start">
-                              <div className="w-16 h-16 bg-green-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
-                                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <div className="w-16 h-16 bg-blue-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
+                                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                               </div>
