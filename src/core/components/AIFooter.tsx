@@ -10,7 +10,16 @@ function AIFooter() {
             <p className="text-gray-600 text-sm">
               © {new Date().getFullYear()} DoctorAI. Todos los derechos reservados.
             </p>
+            
+            {/* Official Seal */}
+            <div className="mt-4 text-center border-2 border-blue-600 rounded-lg p-4 bg-blue-50 max-w-sm">
+              <h4 className="text-blue-600 font-bold text-sm mb-1">Sello Oficial</h4>
+              <p className="text-gray-600 text-xs mb-1">Orgullosamente respaldado por nuestro patrocinador oficial de seguros:</p>
+              <p className="text-gray-800 font-semibold text-sm mb-1">Daniel Faudeo &amp; Co</p>
+              <p className="text-gray-500 italic text-xs">Centro de Chihuahua</p>
+            </div>
           </div>
+          
           <div className="flex space-x-6">
             <Link to="/privacy" className="text-sm text-gray-600 hover:text-blue-600">
               Privacidad
