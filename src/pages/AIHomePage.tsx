@@ -1,4 +1,4 @@
-import React from 'react';
+// React is used implicitly for JSX transformation
 import { Link } from 'react-router-dom';
 import { Brain, Image, MessageSquare, Shield, Activity, Clock } from 'lucide-react';
 import SEO from '../core/components/SEO';
@@ -36,6 +36,12 @@ function AIHomePage() {
                   className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 shadow-md"
                 >
                   Consultar ahora
+                </Link>
+                <Link
+                  to="/doctor-dashboard"
+                  className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-900 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10 shadow-md"
+                >
+                  Panel de Doctor
                 </Link>
                 <Link
                   to="/image-analysis"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { AuthProvider } from '../contexts/AuthContext';
 import DoctorDashboardPage from '../pages/doctor/DoctorDashboardHome';
 import AppointmentsPage from '../pages/doctor/AppointmentsPage';
 import BrandingSettingsPage from '../pages/doctor/BrandingSettingsPage';
@@ -15,6 +16,7 @@ import WaitingRoomPage from '../pages/doctor/WaitingRoomPage';
 
 const DoctorRoutes: React.FC = () => {
   return (
+    <AuthProvider>
     <Routes>
       {/* Root dashboard path redirects to nested dashboard */}
       <Route index element={<DoctorDashboardPage />} />
@@ -60,6 +62,7 @@ const DoctorRoutes: React.FC = () => {
       {/* Fallback for any other routes */}
       <Route path="*" element={<Navigate to="/doctor-dashboard" replace />} />
     </Routes>
+    </AuthProvider>
   );
 };
 

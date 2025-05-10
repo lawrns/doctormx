@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import DashboardLayout from '../../components/doctor/EnhancedDashboardLayout';
+import DashboardLayout from '../../components/doctor/DashboardLayout';
 import DoctorConnectPromo from '../../components/doctor/DoctorConnectPromo';
 import { 
-  Card, 
   Button, 
   Badge
 } from '../../components/ui';
@@ -69,7 +68,19 @@ interface DashboardStats {
 }
 
 const DoctorDashboardHome: React.FC = () => {
-  const { doctorId, doctorName } = useAuth();
+  // Add error handling for authentication context
+  let doctorId = "";
+  let doctorName = "";
+  
+  try {
+    const auth = useAuth();
+    doctorId = auth.doctorId || "";
+    doctorName = auth.doctorName || "";
+  } catch (error) {
+    console.error("Auth context error:", error);
+    // Authentication error - we'll continue with empty values
+  }
+  
   const navigate = useNavigate();
   
   const [loading, setLoading] = useState(true);
@@ -289,14 +300,7 @@ const DoctorDashboardHome: React.FC = () => {
     return `Hace ${diffDays} días`;
   };
   
-  // Format currency
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('es-MX', {
-      style: 'currency',
-      currency: 'MXN',
-      maximumFractionDigits: 0
-    }).format(amount);
-  };
+  // Note: We're using direct toLocaleString() in the JSX for currency formatting
   
   // Get notification icon
   const getNotificationIcon = (type: string) => {
@@ -343,7 +347,7 @@ const DoctorDashboardHome: React.FC = () => {
   };
   
   return (
-    <DashboardLayout loading={loading}>
+    <DashboardLayout title="Panel de Control de Doctor" loading={loading}>
       {stats && (
         <>
           <div className="mb-6">

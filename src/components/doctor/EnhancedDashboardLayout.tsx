@@ -125,11 +125,9 @@ const EnhancedDashboardLayout: React.FC<DashboardLayoutProps> = ({
         {/* Sidebar header */}
         <div className="flex items-center justify-between h-14 sm:h-16 px-4 border-b border-blue-200 bg-blue-100">
           <Link to="/doctor-dashboard" className="flex items-center">
-            <img 
-              src="/images/Doctorlogo.png" 
-              alt="Doctor MX Logo" 
-              className="h-10 w-auto"
-            />
+            <div style={{backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '5px'}}>
+              TESTING CHANGE - THIS SHOULD BE VISIBLE
+            </div>
             <div className="flex items-center ml-2">
               <span className="text-2xl font-bold text-blue-900">Doctor MX</span>
               <span className="ml-1 text-lg" title="Mexico">🇲🇽</span>
