@@ -197,6 +197,45 @@ const ImageAnalysisVisual: React.FC<ImageAnalysisVisualProps> = ({
         )}
       </AnimatePresence>
       
+      {/* Region of interest highlighting with animated borders */}
+      <AnimatePresence>
+        {analysisStage === 'identifying' && (
+          <motion.div 
+            className="region-highlight absolute left-1/4 top-1/4 w-1/2 h-1/2 border-4 border-yellow-400 z-25 rounded-lg"
+            initial={{ opacity: 0, scale: 1.2 }}
+            animate={{ 
+              opacity: [0, 0.8, 0.8, 0],
+              scale: [1.2, 1, 1, 0.9],
+              borderColor: ['#facc15', '#2962FF', '#2962FF', '#facc15']
+            }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              repeatDelay: 1
+            }}
+          />
+        )}
+      </AnimatePresence>
+      
+      {/* Processing depth indicator */}
+      <div className="processing-depth absolute bottom-2 left-2 z-40">
+        {analysisStage !== 'initial' && (
+          <motion.div className="bg-white rounded-full px-2 py-1 text-xs shadow flex items-center space-x-1">
+            <span>Profundidad:</span>
+            <div className="flex space-x-1">
+              {['surface', 'medium', 'deep'].map((level, idx) => (
+                <motion.div 
+                  key={level}
+                  className={`w-2 h-2 rounded-full ${idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : idx <= (analysisStage === 'identifying' ? 1 : 0)) ? 'bg-blue-600' : 'bg-gray-300'}`}
+                  animate={{ scale: idx <= (analysisStage === 'comparing' || analysisStage === 'concluding' ? 2 : idx <= (analysisStage === 'identifying' ? 1 : 0)) ? [1, 1.2, 1] : 1 }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                />
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </div>
+      
       {/* Status indicator */}
       <div className="status-indicator absolute bottom-2 right-2 z-40">
         <div className="bg-white rounded-full px-3 py-1 text-xs font-medium shadow-md flex items-center">

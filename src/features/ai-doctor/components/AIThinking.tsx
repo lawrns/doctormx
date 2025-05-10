@@ -75,6 +75,54 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
       >
         {message}
       </motion.div>
+      
+      {/* Symptom cards that highlight as they're being processed */}
+      <div className="symptom-cards mt-4 flex flex-wrap justify-center gap-2">
+        {['Fiebre', 'Dolor', 'Tos', 'Erupción', 'Mareo'].map((symptom, i) => (
+          <motion.div
+            key={symptom}
+            className="bg-white rounded-md px-3 py-1 text-sm shadow-sm border border-blue-100"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ 
+              opacity: [0, 1, 0],
+              y: [10, 0, -10],
+              scale: [0.95, 1, 0.95]
+            }}
+            transition={{
+              delay: i * 0.8,
+              duration: 4,
+              repeat: Infinity,
+              repeatDelay: Math.random() * 5 + 5
+            }}
+          >
+            {symptom}
+          </motion.div>
+        ))}
+      </div>
+      
+      {/* Medical terms that briefly appear and fade as the AI "considers" different possibilities */}
+      <div className="medical-terms absolute top-0 left-0 w-full h-full pointer-events-none">
+        {['Diagnóstico', 'Patología', 'Sintomatología', 'Etiología', 'Tratamiento'].map((term, i) => (
+          <motion.div
+            key={term}
+            className="absolute text-blue-400/30 text-xs font-mono"
+            style={{
+              left: `${10 + Math.random() * 80}%`,
+              top: `${10 + Math.random() * 80}%`,
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: [0, 0.7, 0] }}
+            transition={{
+              delay: i * 1.2 + 2,
+              duration: 3,
+              repeat: Infinity,
+              repeatDelay: Math.random() * 10 + 5
+            }}
+          >
+            {term}
+          </motion.div>
+        ))}
+      </div>
     </motion.div>
   );
 };

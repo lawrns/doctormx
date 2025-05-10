@@ -1,10 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import EnhancedLayout from './components/EnhancedLayout';
 import EnhancedHomePage from './pages/EnhancedHomePage';
 import EnhancedDoctorSearchPage from './pages/EnhancedDoctorSearchPage';
 import EnhancedDoctorProfilePage from './pages/EnhancedDoctorProfilePage';
 import EnhancedBookingPage from './pages/EnhancedBookingPage';
 import DoctorSettingsPage from './pages/DoctorSettingsPage';
+import ConnectLandingPage from './pages/ConnectLandingPage';
 
 // Import original pages for routes we haven't enhanced yet
 import SymptomCheckerPage from './pages/SymptomCheckerPage';
@@ -148,7 +149,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'connect',
+        element: <ConnectLandingPage />,
+      },
+      {
+        path: 'connect/dashboard',
         element: <MedicalBoardPage />,
+      },
+      {
+        path: 'doctor-dashboard',
+        element: <Navigate to="/connect" replace />,
+      },
+      {
+        path: 'doctor-dashboard/*',
+        element: <Navigate to="/connect/*" replace />,
       },
       {
         path: 'especialidades',
