@@ -155,9 +155,9 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
     const gradientStyle = `
       radial-gradient(
         circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%,
-        rgba(37, 99, 235, 0.9) 0%,
-        rgba(29, 78, 216, 1) 50%,
-        rgba(30, 64, 175, 1) 100%
+        rgba(0, 175, 135, 0.9) 0%,
+        rgba(0, 140, 108, 1) 50%,
+        rgba(0, 105, 81, 1) 100%
       )
     `;
     
@@ -167,7 +167,7 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
   return (
     <section 
       ref={heroRef}
-      className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 relative overflow-hidden"
+      className="bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white py-16 relative overflow-hidden"
       onMouseMove={handleMouseMove}
     >
       {/* Decorative elements */}
@@ -212,18 +212,29 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div>
-            <motion.h1 
-              className="text-4xl md:text-5xl font-bold mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              {abTestVariant === 'A' ? (
-                'Encuentra al médico ideal para ti'
-              ) : (
-                'Atención médica de calidad al alcance de un clic'
-              )}
-            </motion.h1>
+            <motion.div className="flex items-center mb-4">
+              <motion.h1 
+                className="text-4xl md:text-5xl font-bold"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {abTestVariant === 'A' ? (
+                  'Encuentra al médico ideal para ti'
+                ) : (
+                  'Atención médica de calidad al alcance de un clic'
+                )}
+              </motion.h1>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="ml-4 flex items-center bg-white/10 rounded-full px-2 py-1"
+              >
+                <img src="/mexico-flag.png" alt="Mexico" className="h-5 w-auto mr-1" />
+                <span className="text-xs font-medium">Hecho en México</span>
+              </motion.div>
+            </motion.div>
             
             <motion.p 
               className="text-xl mb-4"
@@ -310,7 +321,7 @@ function DynamicHeroSection({ userPreferences }: DynamicHeroSectionProps = {}) {
                 
                 <motion.button 
                   onClick={handleSearch}
-                  className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
+                  className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-[#00af87] text-white font-medium rounded-md hover:bg-[#008c6c] transition-colors shadow-md"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >

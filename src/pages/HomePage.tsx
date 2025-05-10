@@ -142,7 +142,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
             <div className="flex items-center text-gray-600">
-              <Users className="h-5 w-5 text-blue-600 mr-2" />
+              <Users className="h-5 w-5 text-[#00af87] mr-2" />
               <span className="text-sm">
                 <strong className="text-gray-900">2,500+ pacientes</strong> han reservado citas este mes
               </span>
@@ -348,7 +348,7 @@ function HomePage() {
       <EnhancedSpecialtySection />
 
       {/* Alternative Medicine Section */}
-      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
+      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -356,29 +356,48 @@ function HomePage() {
               animate={alternativeInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold mb-6">Medicina Alternativa</h2>
-              <p className="text-xl text-teal-100 mb-8">
+              <div className="flex items-center mb-6">
+                <h2 className="text-3xl font-bold">Medicina Alternativa</h2>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={alternativeInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="ml-4 flex items-center bg-white/10 rounded-full px-2 py-1"
+                >
+                  <img src="/mexico-flag.png" alt="Mexico" className="h-5 w-auto mr-1" />
+                  <span className="text-xs font-medium">Hecho en México</span>
+                </motion.div>
+              </div>
+              <p className="text-xl text-white opacity-90 mb-8">
                 Descubre un enfoque integral para tu salud con profesionales certificados en medicina alternativa y complementaria.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Leaf size={24} className="text-teal-300 mb-2" />
+                <motion.div 
+                  className="bg-white/10 backdrop-blur-sm rounded-lg p-4"
+                  whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                >
+                  <Leaf size={24} className="text-white mb-2" />
                   <h3 className="font-medium mb-1">Acupuntura</h3>
-                  <p className="text-sm text-teal-100">Técnicas milenarias para tu bienestar</p>
-                </div>
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Leaf size={24} className="text-teal-300 mb-2" />
+                  <p className="text-sm text-white opacity-90">Técnicas milenarias para tu bienestar</p>
+                </motion.div>
+                <motion.div 
+                  className="bg-white/10 backdrop-blur-sm rounded-lg p-4"
+                  whileHover={{ y: -5, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
+                >
+                  <Leaf size={24} className="text-white mb-2" />
                   <h3 className="font-medium mb-1">Homeopatía</h3>
-                  <p className="text-sm text-teal-100">Tratamientos naturales personalizados</p>
-                </div>
+                  <p className="text-sm text-white opacity-90">Tratamientos naturales personalizados</p>
+                </motion.div>
               </div>
-              <Link
-                to="/alternativa"
-                className="inline-flex items-center px-6 py-3 bg-white text-teal-600 font-medium rounded-lg hover:bg-teal-50 transition-colors"
-              >
-                Explorar terapias
-                <ChevronRight size={20} className="ml-2" />
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/alternativa"
+                  className="inline-flex items-center px-6 py-3 bg-white text-[#00af87] font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
+                >
+                  Explorar terapias
+                  <ChevronRight size={20} className="ml-2" />
+                </Link>
+              </motion.div>
             </motion.div>
             
             <motion.div
