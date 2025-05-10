@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle, Clock, ThermometerIcon, Activity, Pill, ArrowLeft } from 'lucide-react';
+import { Send, Image, Mic, MapPin, Calendar, Stethoscope, FileText, AlertCircle, Clock, ThermometerIcon, Activity, Pill, ArrowLeft, Menu, X } from 'lucide-react';
 import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
 import EncryptionService from '../../../services/security/EncryptionService';
 
@@ -49,6 +49,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [severityLevel, setSeverityLevel] = useState(10);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(!isMobileView);
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
@@ -99,8 +101,50 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   }, []);
   
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobileView(mobile);
+      if (!isSidebarOpen && !mobile) setIsSidebarOpen(true);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isSidebarOpen]);
+  
   const handleSendMessage = async () => {
     if (!input.trim() && !isUploading) return;
+    
+    if (input.trim().toLowerCase().includes('medicamento') || 
+        input.trim().toLowerCase().includes('farmacia') ||
+        input.trim().toLowerCase().includes('medicina')) {
+      const lastMessageWithMedications = [...messages].reverse().find(m => 
+        m.suggestedMedications && m.suggestedMedications.length > 0
+      );
+      
+      if (lastMessageWithMedications?.suggestedMedications) {
+        const userMessageId = Date.now().toString();
+        const newUserMessage: Message = { 
+          id: userMessageId,
+          text: input,
+          sender: 'user',
+          timestamp: new Date()
+        };
+        
+        setMessages(prev => [...prev, newUserMessage]);
+        setInput('');
+        
+        const responseMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: 'Buscando farmacias con medicamentos recomendados para ti...',
+          sender: 'bot',
+          timestamp: new Date()
+        };
+        
+        setMessages(prev => [...prev, responseMessage]);
+        findPharmacies(lastMessageWithMedications.suggestedMedications);
+        return;
+      }
+    }
     
     const userMessageId = Date.now().toString();
     const newUserMessage: Message = { 
@@ -169,6 +213,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           questionId: 'duration_fever_text'
         };
         setCurrentQuestionId('duration_fever_text');
+      }
+      
+      if (botMessage.suggestedConditions && botMessage.suggestedConditions.length > 0) {
+        if (!botMessage.interactiveOptions) {
+          botMessage.interactiveOptions = {
+            type: 'yes_no',
+            options: ['Ver medicamentos recomendados', 'No, gracias'],
+            questionId: 'pharmacy_recommendation'
+          };
+          setCurrentQuestionId('pharmacy_recommendation');
+        } else {
+          if (!botMessage.followUpQuestions) {
+            botMessage.followUpQuestions = [];
+          }
+          botMessage.followUpQuestions.push('Ver medicamentos recomendados');
+        }
       }
       
       setMessages(prev => [...prev, botMessage]);
@@ -312,20 +372,79 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   };
   
-  const findPharmacies = async (medications: string[]) => {
+  const findPharmacies = async (medications: string[] = []) => {
     if (!location) {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            setLocation({
-              latitude: position.coords.latitude,
-              longitude: position.coords.longitude
-            });
-          }
-        );
-      }
+      const newMessage: Message = {
+        id: Date.now().toString(),
+        sender: 'bot',
+        text: '¿Me permites acceder a tu ubicación para encontrar farmacias cercanas? Esto nos ayudará a mostrarte opciones más relevantes en tu área.',
+        timestamp: new Date(),
+        interactiveOptions: {
+          type: 'yes_no',
+          options: ['Permitir', 'No permitir'],
+          questionId: 'location_permission'
+        }
+      };
+      setMessages(prev => [...prev, newMessage]);
       
-      alert('Necesitamos tu ubicación para buscar farmacias cercanas.');
+      const handleLocationPermission = (option: string) => {
+        if (option === 'Permitir') {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              setLocation({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+              });
+              
+              const confirmMessage: Message = {
+                id: Date.now().toString(),
+                sender: 'bot',
+                text: 'Gracias por compartir tu ubicación. Buscando farmacias cercanas...',
+                timestamp: new Date()
+              };
+              setMessages(prev => [...prev, confirmMessage]);
+              
+              setTimeout(() => findPharmacies(medications), 1000);
+            },
+            (error) => {
+              console.error('Geolocation error:', error);
+              
+              const errorMessage: Message = {
+                id: Date.now().toString(),
+                sender: 'bot',
+                text: 'No fue posible acceder a tu ubicación. Te mostraré farmacias generales sin personalización por ubicación.',
+                timestamp: new Date()
+              };
+              setMessages(prev => [...prev, errorMessage]);
+              
+              showGenericPharmacies(medications);
+            }
+          );
+        } else {
+          const denyMessage: Message = {
+            id: Date.now().toString(),
+            sender: 'bot',
+            text: 'Entiendo. Te mostraré farmacias generales sin personalización por ubicación.',
+            timestamp: new Date()
+          };
+          setMessages(prev => [...prev, denyMessage]);
+          
+          showGenericPharmacies(medications);
+        }
+      };
+      
+      const handleNextInteraction = (e: Event) => {
+        const target = e.target as HTMLElement;
+        if (target.hasAttribute('data-option')) {
+          const option = target.getAttribute('data-option');
+          if (option === 'Permitir' || option === 'No permitir') {
+            handleLocationPermission(option);
+            document.removeEventListener('click', handleNextInteraction);
+          }
+        }
+      };
+      
+      document.addEventListener('click', handleNextInteraction);
       return;
     }
     
@@ -335,8 +454,37 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       setActiveTab('pharmacies');
     } catch (error) {
       console.error('Error finding pharmacies:', error);
-      alert('No se pudieron encontrar farmacias cercanas. Por favor, intenta nuevamente.');
+      
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        sender: 'bot',
+        text: 'No se pudieron encontrar farmacias cercanas. Por favor, intenta nuevamente.',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
     }
+  };
+  
+  const showGenericPharmacies = (medications: string[] = []) => {
+    const genericPharmacies = [
+      {
+        name: 'Farmacia del Ahorro',
+        address: 'Múltiples sucursales en México',
+        distance: null,
+        medications: medications,
+        logo: 'https://www.farmaciasdelahorro.com.mx/static/version1714504312/frontend/FDA/fda/es_MX/images/logo.svg'
+      },
+      {
+        name: 'Farmacias Similares',
+        address: 'Múltiples sucursales en México',
+        distance: null,
+        medications: medications,
+        logo: 'https://www.farmaciasdesimilares.com/static/media/logo-similares.a7e1b5f3.svg'
+      }
+    ];
+    
+    setPharmacies(genericPharmacies);
+    setActiveTab('pharmacies');
   };
   
   const getSeverityColor = () => {
@@ -364,6 +512,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     
     setMessages(prev => [...prev, newUserMessage]);
     setIsProcessing(true);
+    
+    if (questionId === 'pharmacy_recommendation' && option === 'Ver medicamentos recomendados') {
+      const lastMessageWithMedications = [...messages].reverse().find(m => 
+        m.suggestedMedications && m.suggestedMedications.length > 0
+      );
+      
+      if (lastMessageWithMedications?.suggestedMedications) {
+        findPharmacies(lastMessageWithMedications.suggestedMedications);
+        setIsProcessing(false);
+        return;
+      }
+      
+      findPharmacies([]);
+      setIsProcessing(false);
+      return;
+    }
     
     setQuestionHistory(prev => [...prev, questionId]);
     
@@ -533,17 +697,19 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     {message.interactiveOptions.options.map((option, index) => (
                       <motion.button
                         key={index}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleOptionSelect(option, message.interactiveOptions!.questionId)}
-                        className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                        className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all ${
                           message.interactiveOptions!.type === 'symptom_category' 
-                            ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
+                            ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
                             : message.interactiveOptions!.type === 'symptom_duration'
-                              ? 'bg-purple-100 text-purple-800 hover:bg-purple-200'
+                              ? 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
                               : message.interactiveOptions!.type === 'symptom_severity'
-                                ? 'bg-orange-100 text-orange-800 hover:bg-orange-200'
-                                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                                ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
+                                : message.interactiveOptions!.type === 'yes_no' && option.includes('Ver medicamentos')
+                                  ? 'bg-[#00af87] text-white hover:bg-[#008c6c]'
+                                  : 'bg-[#e6f7f3] text-[#00af87] hover:bg-[#ccefe7] border border-[#ccefe7]'
                         }`}
                       >
                         {message.interactiveOptions!.type === 'symptom_category' && (
@@ -565,52 +731,60 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   
                   {/* Go back button */}
                   {questionHistory.length > 1 && message.sender === 'bot' && (
-                    <button
+                    <motion.button
+                      whileHover={{ x: -2 }}
+                      whileTap={{ scale: 0.95 }}
                       onClick={handleGoBack}
-                      className="mt-2 text-xs text-gray-500 flex items-center hover:text-gray-700"
+                      className="mt-2 text-xs text-[#00af87] flex items-center hover:text-[#008c6c] transition-colors"
                     >
                       <ArrowLeft size={12} className="mr-1" />
                       Volver a la pregunta anterior
-                    </button>
+                    </motion.button>
                   )}
                 </div>
               )}
               
               {message.suggestedSpecialty && (
                 <div className="mt-2">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={() => findProviders(message.suggestedSpecialty!)}
-                    className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors flex items-center"
+                    className="text-sm bg-[#e6f7f3] text-[#00af87] px-4 py-2 rounded-lg hover:bg-[#ccefe7] transition-all flex items-center shadow-sm border border-[#ccefe7]"
                   >
                     <MapPin size={14} className="mr-1" />
                     Buscar especialistas en {message.suggestedSpecialty}
-                  </button>
+                  </motion.button>
                 </div>
               )}
               
               {message.suggestedMedications && message.suggestedMedications.length > 0 && (
                 <div className="mt-2">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={() => findPharmacies(message.suggestedMedications!)} 
-                    className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 transition-colors flex items-center"
+                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
                   >
                     <Pill size={14} className="mr-1" />
                     Buscar medicamentos recomendados
-                  </button>
+                  </motion.button>
                 </div>
               )}
               
               {message.suggestedConditions && message.suggestedConditions.length > 0 && !message.suggestedMedications && (
                 <div className="mt-2">
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     onClick={() => findPharmacies(['paracetamol', 'ibuprofeno'])} 
-                    className="text-sm bg-green-100 text-green-700 px-3 py-1 rounded-full hover:bg-green-200 transition-colors flex items-center"
+                    className="text-sm bg-[#00af87] text-white px-4 py-2 rounded-lg hover:bg-[#008c6c] transition-all flex items-center shadow-sm"
                   >
                     <svg className="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                     </svg>
                     Buscar en farmacias
-                  </button>
+                  </motion.button>
                 </div>
               )}
               
@@ -1003,15 +1177,19 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 p-4 text-white shadow-md">
+      <header className="bg-gradient-to-r from-[#00af87] to-[#008c6c] p-4 text-white shadow-md">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold">Doctor.mx</h1>
+            <div className="flex items-center ml-4">
+              <img src="/mexico-flag.png" alt="Mexico" className="h-4 w-auto mr-1" />
+              <span className="text-xs font-medium">Hecho en México</span>
+            </div>
           </div>
           {onClose && (
             <button 
               onClick={onClose}
-              className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium"
+              className="bg-white text-[#00af87] px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
             >
               Cerrar
             </button>
@@ -1030,9 +1208,23 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       
       {/* Main content */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar */}
-        <aside className="w-64 bg-gray-50 border-r border-gray-200 flex flex-col">
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-blue-50 to-white">
+        {/* Sidebar toggle for mobile */}
+        {isMobileView && (
+          <button 
+            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            className="fixed top-20 left-2 z-50 bg-blue-600 text-white p-2 rounded-full shadow-lg"
+            aria-label={isSidebarOpen ? "Cerrar menú" : "Abrir menú"}
+          >
+            {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
+        
+        {/* Sidebar with responsive classes */}
+        <aside 
+          className={`${isMobileView ? 'fixed inset-y-0 left-0 z-40' : 'w-64'} 
+            ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+            bg-gray-50 border-r border-gray-200 flex flex-col transition-transform duration-300 ease-in-out`}>
+          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-[#e6f7f3] to-white">
             <h2 className="font-bold text-lg text-gray-800">Doctor IA</h2>
             <p className="text-sm text-gray-600">Asistente médico inteligente</p>
             
@@ -1057,7 +1249,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'chat' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('chat')}
@@ -1069,7 +1261,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'analysis' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('analysis')}
@@ -1081,7 +1273,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'providers' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('providers')}
@@ -1093,7 +1285,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'appointments' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('appointments')}
@@ -1105,7 +1297,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'prescriptions' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-[#e6f7f3] text-[#00af87] font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
@@ -1134,10 +1326,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           </nav>
           
           <div className="p-4 border-t border-gray-200">
-            <div className="bg-blue-50 rounded-lg p-3">
-              <h3 className="text-sm font-medium text-blue-800 mb-2">Plan Premium</h3>
-              <p className="text-xs text-blue-600 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded-lg">
+            <div className="bg-[#e6f7f3] rounded-lg p-3">
+              <h3 className="text-sm font-medium text-[#00af87] mb-2">Plan Premium</h3>
+              <p className="text-xs text-[#008c6c] mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
+              <button className="w-full bg-[#00af87] hover:bg-[#008c6c] text-white text-sm py-2 px-3 rounded-lg">
                 Actualizar ahora
               </button>
             </div>
@@ -1145,7 +1337,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         </aside>
         
         {/* Main content area */}
-        <main className="flex-1 flex flex-col bg-white">
+        <main className={`flex-1 flex flex-col bg-white ${isMobileView && isSidebarOpen ? 'opacity-50' : 'opacity-100'} transition-opacity duration-300`}>
           <div className="px-6 py-4 border-b border-gray-200 bg-white z-10">
             <div className="flex justify-between items-center">
               <h2 className="text-xl font-semibold text-gray-800">
@@ -1163,6 +1355,14 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
             {renderTabContent()}
           </div>
         </main>
+        {/* Overlay to close sidebar on mobile */}
+        {isMobileView && isSidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-30"
+            onClick={() => setIsSidebarOpen(false)}
+            aria-label="Close menu"
+          ></div>
+        )}
       </div>
       
       {/* Trust badges footer */}
