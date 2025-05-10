@@ -5,7 +5,7 @@ export const colors = {
     200: '#bfdbfe',
     300: '#93c5fd',
     400: '#60a5fa',
-    500: '#3b82f6', // Main blue
+    500: '#2962FF', // Main blue
     600: '#2563eb',
     700: '#1d4ed8',
     800: '#1e40af',
@@ -39,7 +39,7 @@ export const colors = {
     red: '#ef4444',
     yellow: '#f59e0b',
     green: '#10b981',
-    blue: '#3b82f6',
+    blue: '#2962FF',
     purple: '#8b5cf6',
   },
   mexico: {

@@ -147,7 +147,7 @@ const router = createBrowserRouter([
         element: <QACommunityPage />,
       },
       {
-        path: 'doctor-board',
+        path: 'connect',
         element: <MedicalBoardPage />,
       },
       {

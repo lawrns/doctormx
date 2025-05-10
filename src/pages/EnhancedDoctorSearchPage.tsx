@@ -898,7 +898,7 @@ function EnhancedDoctorSearchPage() {
                                 width="128"
                                 height="128"
                                 onError={(e) => {
-                                  e.currentTarget.src = '/public/doctor-placeholder.png';
+                                  e.currentTarget.src = '/images/doctor-placeholder.png';
                                   e.currentTarget.onerror = null;
                                 }}
                               />
