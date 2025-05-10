@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import OpenAI from 'openai';
+import medicationDatabase from '../../data/medications';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -167,14 +168,26 @@ class AIService {
    */
   async getMedicationRecommendations(condition: string, userProfile: any): Promise<any[]> {
     try {
-      const { data, error } = await this.supabase
-        .from('medications')
-        .select('*')
-        .eq('condition', condition);
-        
-      if (error) throw error;
+      const matchingCategories = medicationDatabase.filter(category => 
+        category.conditions.some(cond => 
+          cond.toLowerCase().includes(condition.toLowerCase()) || 
+          condition.toLowerCase().includes(cond.toLowerCase())
+        )
+      );
       
-      return this.filterMedicationsForUser(data, userProfile);
+      if (matchingCategories.length === 0) {
+        console.log(`No medications found for condition: ${condition}`);
+        return [];
+      }
+      
+      const allMedications = matchingCategories.flatMap(category => 
+        category.medications.map(med => ({
+          ...med,
+          category: category.category
+        }))
+      );
+      
+      return this.filterMedicationsForUser(allMedications, userProfile);
     } catch (error) {
       console.error('Error getting medication recommendations:', error);
       return [];
@@ -238,48 +251,79 @@ class AIService {
     try {
       await new Promise(resolve => setTimeout(resolve, 800));
       
+      const matchingMedications = medicationDatabase.flatMap(category => 
+        category.medications.filter(med => 
+          medications.some(requestedMed => 
+            med.name_es.toLowerCase().includes(requestedMed.toLowerCase()) || 
+            med.name_en.toLowerCase().includes(requestedMed.toLowerCase()) ||
+            med.brand_examples.some(brand => brand.toLowerCase().includes(requestedMed.toLowerCase()))
+          )
+        )
+      );
+      
+      const filterProductsByMedications = (products: any[], meds: string[]) => {
+        return products.filter(p => 
+          meds.some(m => 
+            p.name.toLowerCase().includes(m.toLowerCase()) || 
+            (p.medication && (
+              p.medication.name_es.toLowerCase().includes(m.toLowerCase()) || 
+              p.medication.name_en.toLowerCase().includes(m.toLowerCase())
+            ))
+          )
+        );
+      };
+      
       const pharmacies = [
         {
           id: 'pharm-001',
           ...this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO,
           address: 'Av. Universidad 1000, Col. Santa Cruz Atoyac, 03310, CDMX',
           phone: '+52 55 1234 5678',
-          distance: 1200, // meters
-          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
-            .map(p => p.name),
-          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+          distance: location ? 1200 : undefined, // meters
+          available_medications: matchingMedications
+            .filter(med => med.pharmacy_availability && med.pharmacy_availability.farmacia_del_ahorro)
+            .map(med => med.name_es),
+          products: filterProductsByMedications(
+            this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products,
+            medications
+          ),
+          hours: 'Abierto 24/7',
+          rating: 4.7,
+          description: 'Farmacia del Ahorro ofrece precios accesibles y una amplia variedad de medicamentos genéricos y de marca.'
         },
         {
           id: 'pharm-002',
           ...this.PHARMACY_BRANDS.FARMACIA_SIMILARES,
           address: 'Insurgentes Sur 1480, Col. Actipan, 03230, CDMX',
           phone: '+52 55 9876 5432',
-          distance: 1800, // meters
-          available_medications: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
-            .map(p => p.name),
-          products: this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
+          distance: location ? 1800 : undefined, // meters
+          available_medications: matchingMedications
+            .filter(med => med.pharmacy_availability && med.pharmacy_availability.farmacia_similares)
+            .map(med => med.name_es),
+          products: filterProductsByMedications(
+            this.PHARMACY_BRANDS.FARMACIA_SIMILARES.products,
+            medications
+          ),
+          hours: '8:00 AM - 10:00 PM',
+          rating: 4.5,
+          description: 'Farmacia Similares es conocida por sus medicamentos genéricos a precios bajos y su compromiso con la salud accesible.'
         },
         {
           id: 'pharm-003',
-          name: 'Farmacia del Ahorro',
-          logo: '/logos/farmacia-del-ahorro.png',
-          primaryColor: '#00529b',
-          secondaryColor: '#e30613',
-          isSponsored: true,
-          sponsorshipLevel: 2,
+          ...this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO,
           address: 'Av. Revolución 1425, Col. Campestre, 01040, CDMX',
           phone: '+52 55 5543 2109',
-          distance: 2500, // meters
-          available_medications: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase())))
-            .map(p => p.name),
-          products: this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products
-            .filter(p => medications.some(m => p.name.toLowerCase().includes(m.toLowerCase()))),
-          website: 'https://www.farmaciasdeahorro.com.mx/',
+          distance: location ? 2500 : undefined, // meters
+          available_medications: matchingMedications
+            .filter(med => med.pharmacy_availability && med.pharmacy_availability.farmacia_del_ahorro)
+            .map(med => med.name_es),
+          products: filterProductsByMedications(
+            this.PHARMACY_BRANDS.FARMACIA_DEL_AHORRO.products,
+            medications
+          ),
+          hours: '7:00 AM - 11:00 PM',
+          rating: 4.6,
+          description: 'Farmacia del Ahorro ofrece precios accesibles y una amplia variedad de medicamentos genéricos y de marca.'
         },
         {
           id: 'pharm-004',
@@ -290,12 +334,15 @@ class AIService {
           isSponsored: false,
           address: 'Calle Durango 208, Col. Roma Norte, 06700, CDMX',
           phone: '+52 55 1234 9876',
-          distance: 950, // meters
-          available_medications: ['Paracetamol', 'Ibuprofeno'],
-          products: [
-            { id: 'fl-001', name: 'Paracetamol', brand: 'Genérico', price: 30.00, dosage: '500mg', quantity: 20, prescription: false },
-            { id: 'fl-002', name: 'Ibuprofeno', brand: 'Genérico', price: 40.00, dosage: '400mg', quantity: 30, prescription: false },
-          ],
+          distance: location ? 950 : undefined, // meters
+          available_medications: matchingMedications
+            .filter((_, i) => i % 2 === 0)
+            .map(med => med.name_es),
+          products: this.generateLocalPharmacyProducts(matchingMedications.filter((_, i) => i % 2 === 0)),
+          hours: '9:00 AM - 9:00 PM',
+          rating: 4.3,
+          description: 'Farmacia Local ofrece atención personalizada y productos de calidad para el cuidado de la salud.',
+          ethicalDisclaimer: 'Las recomendaciones de medicamentos son solo para referencia. Siempre consulte a un profesional de la salud antes de tomar cualquier medicamento.'
         },
       ];
       
@@ -303,7 +350,14 @@ class AIService {
         pharmacies.sort((a, b) => {
           if (a.isSponsored && !b.isSponsored) return -1;
           if (!a.isSponsored && b.isSponsored) return 1;
-          return a.distance - b.distance;
+          
+          return (a.distance || Infinity) - (b.distance || Infinity);
+        });
+      } else {
+        pharmacies.sort((a, b) => {
+          if (a.isSponsored && !b.isSponsored) return -1;
+          if (!a.isSponsored && b.isSponsored) return 1;
+          return 0;
         });
       }
       
@@ -323,13 +377,8 @@ class AIService {
       isSponsored: true,
       sponsorshipLevel: 2,
       website: 'https://www.farmaciasdeahorro.com.mx/',
-      products: [
-        { id: 'fda-001', name: 'Paracetamol', brand: 'Similares', price: 35.50, dosage: '500mg', quantity: 20, prescription: false },
-        { id: 'fda-002', name: 'Ibuprofeno', brand: 'Genérico GI', price: 42.80, dosage: '400mg', quantity: 30, prescription: false },
-        { id: 'fda-003', name: 'Amoxicilina', brand: 'Amsa', price: 120.50, dosage: '500mg', quantity: 15, prescription: true },
-        { id: 'fda-004', name: 'Loratadina', brand: 'Schering-Plough', price: 85.00, dosage: '10mg', quantity: 10, prescription: false },
-        { id: 'fda-005', name: 'Omeprazol', brand: 'Genérico GI', price: 65.30, dosage: '20mg', quantity: 14, prescription: false },
-      ],
+      ethicalDisclaimer: 'Las recomendaciones de medicamentos son solo para referencia. Siempre consulte a un profesional de la salud antes de tomar cualquier medicamento.',
+      products: this.generateProductsFromDatabase('Farmacia del Ahorro'),
     },
     FARMACIA_SIMILARES: {
       name: 'Farmacias Similares',
@@ -339,11 +388,8 @@ class AIService {
       isSponsored: true,
       sponsorshipLevel: 1,
       website: 'https://www.farmaciasdesimilares.com/',
-      products: [
-        { id: 'fs-001', name: 'Paracetamol', brand: 'Similares', price: 32.00, dosage: '500mg', quantity: 20, prescription: false },
-        { id: 'fs-002', name: 'Ibuprofeno', brand: 'Similares', price: 38.50, dosage: '400mg', quantity: 30, prescription: false },
-        { id: 'fs-003', name: 'Loratadina', brand: 'Similares', price: 65.90, dosage: '10mg', quantity: 10, prescription: false },
-      ],
+      ethicalDisclaimer: 'Las recomendaciones de medicamentos son solo para referencia. Siempre consulte a un profesional de la salud antes de tomar cualquier medicamento.',
+      products: this.generateProductsFromDatabase('Farmacia Similares'),
     },
   };
 
@@ -493,12 +539,26 @@ class AIService {
     return JSON.stringify(data);
   }
   
-  private parseAIResponse(aiResponse: string, data: any): any {
+  private async parseAIResponse(aiResponse: string, data: any): Promise<any> {
+    const suggestedConditions = this.extractConditions(aiResponse);
+    let suggestedMedications: string[] = [];
+    
+    // If we have conditions, try to get medication recommendations
+    if (suggestedConditions && suggestedConditions.length > 0) {
+      try {
+        const medications = await this.getMedicationRecommendations(suggestedConditions[0], data.userProfile);
+        suggestedMedications = medications.map(med => `${med.name_es} (${med.name_en})`);
+      } catch (error) {
+        console.error('Error getting medication recommendations:', error);
+      }
+    }
+    
     return {
       text: aiResponse,
       severity: data.severity || this.estimateSeverity(aiResponse),
       suggestedSpecialty: this.extractSpecialty(aiResponse),
-      suggestedConditions: this.extractConditions(aiResponse),
+      suggestedConditions,
+      suggestedMedications,
       followUpQuestions: this.generateFollowUpQuestions(aiResponse),
     };
   }
@@ -533,8 +593,12 @@ class AIService {
     return undefined;
   }
   
-  private extractConditions(_text: string): string[] {
-    return [];
+  private extractConditions(text: string): string[] {
+    const conditionsByCategory = medicationDatabase.map(category => category.conditions).flat();
+    
+    return conditionsByCategory.filter(condition => 
+      text.toLowerCase().includes(condition.toLowerCase())
+    );
   }
   
   private generateFollowUpQuestions(_text: string): string[] {
@@ -598,16 +662,62 @@ class AIService {
     return response;
   }
   
+  private generateProductsFromDatabase(pharmacyName: string): any[] {
+    return medicationDatabase.flatMap(category => 
+      category.medications
+        .filter(med => {
+          if (pharmacyName === 'Farmacia del Ahorro') {
+            return med.pharmacy_availability?.farmacia_del_ahorro;
+          } else if (pharmacyName === 'Farmacia Similares') {
+            return med.pharmacy_availability?.farmacia_similares;
+          }
+          return true;
+        })
+        .map((med, index) => ({
+          id: `${pharmacyName.toLowerCase().replace(/\s+/g, '-')}-${index}`,
+          name: med.name_es,
+          brand: med.brand_examples[0],
+          price: med.price_range ? 
+            Math.floor(Math.random() * (med.price_range.max - med.price_range.min)) + med.price_range.min : 
+            Math.floor(Math.random() * 100) + 50,
+          dosage: med.typical_dosage.split(' ')[0],
+          quantity: `${Math.floor(Math.random() * 20) + 10} ${med.dosage_forms[0]}`,
+          prescription: false,
+          medication: med // Store the full medication object for reference
+        }))
+    );
+  }
+  
+  private generateLocalPharmacyProducts(medications: any[]): any[] {
+    return medications.map((med, index) => ({
+      id: `fl-${index.toString().padStart(3, '0')}`,
+      name: med.name_es,
+      brand: 'Genérico',
+      price: med.price_range ? 
+        Math.floor(med.price_range.min * 0.9) : // Local pharmacy has lower prices
+        Math.floor(Math.random() * 80) + 30,
+      dosage: med.typical_dosage.split(' ')[0],
+      quantity: `${Math.floor(Math.random() * 20) + 10} ${med.dosage_forms[0]}`,
+      prescription: false,
+      medication: med
+    }));
+  }
+  
   private filterMedicationsForUser(medications: any[], userProfile: any): any[] {
     if (!userProfile || !medications) return medications || [];
     
-    const userAllergies = userProfile.allergies || [];
+    const userAllergies = userProfile?.allergies || [];
     
-    return medications.filter(med => 
-      !userAllergies.some((allergy: string) => 
-        med.ingredients.includes(allergy)
-      )
-    );
+    return medications.filter(med => {
+      if (userAllergies.length > 0 && med.contraindications) {
+        return !userAllergies.some((allergy: string) => 
+          med.contraindications.some((contra: string) => 
+            contra.toLowerCase().includes(allergy.toLowerCase())
+          )
+        );
+      }
+      return true;
+    });
   }
 }
 

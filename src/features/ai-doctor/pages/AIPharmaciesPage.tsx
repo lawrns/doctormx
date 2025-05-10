@@ -361,6 +361,21 @@ function AIPharmaciesPage() {
                 </p>
               </motion.div>
             )}
+            
+            {/* Ethical Disclaimer */}
+            {pharmacies.length > 0 && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mt-6 p-4 bg-blue-50 border border-blue-100 rounded-lg"
+              >
+                <h3 className="text-sm font-medium text-blue-800 mb-2">Información importante</h3>
+                <p className="text-xs text-blue-700">
+                  Las recomendaciones de medicamentos son solo para referencia. Siempre consulte a un profesional de la salud antes de tomar cualquier medicamento.
+                </p>
+              </motion.div>
+            )}
           </motion.div>
         ) : (
           <motion.div 
@@ -419,7 +434,12 @@ function AIPharmaciesPage() {
                         <div>
                           <h4 className="font-medium">{product.name}</h4>
                           <p className="text-sm text-gray-600">{product.brand} • {product.dosage}</p>
-                          <p className="text-sm text-gray-600">{product.quantity} unidades</p>
+                          <p className="text-sm text-gray-600">{product.quantity}</p>
+                          {product.medication && (
+                            <p className="text-xs text-blue-600 mt-1">
+                              {product.medication.typical_dosage}
+                            </p>
+                          )}
                         </div>
                         <div className="flex flex-col items-end">
                           <p className="font-bold text-lg">${product.price.toFixed(2)}</p>
