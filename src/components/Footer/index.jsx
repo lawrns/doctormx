@@ -104,6 +104,16 @@ function Footer() {
           <p className="copyright">
             © {new Date().getFullYear()} Doctor.mx – Tu salud en un solo lugar
           </p>
+          
+          <div className="official-seal">
+            <div className="seal-content">
+              <h4 className="seal-title">Sello Oficial</h4>
+              <p className="seal-text">Orgullosamente respaldado por nuestro patrocinador oficial de seguros:</p>
+              <p className="seal-sponsor">Daniel Faudeo &amp; Co</p>
+              <p className="seal-location">Centro de Chihuahua</p>
+            </div>
+          </div>
+          
           <div className="legal-links">
             <Link to="/terminos" className="legal-link">
               Términos y condiciones

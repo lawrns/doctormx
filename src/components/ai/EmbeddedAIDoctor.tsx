@@ -31,7 +31,7 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
     >
       {/* Header */}
       <motion.div 
-        className="bg-gradient-to-r from-[#00af87] to-[#008c6c] p-5 text-white"
+        className="bg-gradient-to-r from-blue-600 to-blue-700 p-5 text-white"
         whileHover={{ backgroundPosition: '100% 0%' }}
         transition={{ duration: 1.5 }}
         style={{ backgroundSize: '200% 100%' }}
@@ -48,7 +48,7 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link 
               to="/ai-doctor"
-              className="bg-white text-[#00af87] px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors"
+              className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors"
             >
               Abrir
             </Link>
@@ -70,12 +70,12 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
             <div className="space-y-4">
               {[
                 { 
-                  icon: <Stethoscope className="text-[#00af87]" size={20} />, 
+                  icon: <Stethoscope className="text-blue-600" size={20} />, 
                   title: "Análisis de Síntomas", 
                   description: "Describe tus síntomas y recibe un análisis médico instantáneo con posibles condiciones y recomendaciones." 
                 },
                 { 
-                  icon: <svg className="text-[#00af87] w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  icon: <svg className="text-blue-600 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>, 
@@ -83,7 +83,7 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
                   description: "Sube imágenes de condiciones visibles como erupciones cutáneas para un análisis visual avanzado." 
                 },
                 { 
-                  icon: <svg className="text-[#00af87] w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  icon: <svg className="text-blue-600 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>, 
@@ -100,8 +100,8 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
                   className="flex items-start"
                 >
                   <motion.div 
-                    className="bg-[#e6f7f3] rounded-full p-2 mr-3"
-                    whileHover={{ backgroundColor: "#ccefe7" }}
+                    className="bg-blue-100 rounded-full p-2 mr-3"
+                    whileHover={{ backgroundColor: "#dbeafe" }}
                   >
                     {feature.icon}
                   </motion.div>
@@ -118,7 +118,7 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
             <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setIsExpanded(true)}
-                className="bg-[#00af87] hover:bg-[#008c6c] text-white px-4 py-2 rounded-lg flex items-center transition-colors shadow-md"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center transition-colors shadow-md"
               >
                 Probar ahora
                 <ArrowRight size={16} className="ml-2" />
@@ -142,7 +142,7 @@ const EmbeddedAIDoctor: React.FC<EmbeddedAIDoctorProps> = ({ className = '' }) =
           {isExpanded && (
             <motion.button
               onClick={() => setShowFullAIDoctor(true)}
-              className="text-[#00af87] hover:text-[#008c6c] text-sm font-medium"
+              className="text-blue-600 hover:text-blue-700 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

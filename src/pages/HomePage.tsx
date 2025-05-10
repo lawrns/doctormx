@@ -111,7 +111,7 @@ function HomePage() {
                 onClick={() => setActiveTab('patient')}
                 className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
                   activeTab === 'patient'
-                    ? 'bg-[#00af87] text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
                 whileHover={{ scale: activeTab !== 'patient' ? 1.05 : 1 }}
@@ -124,7 +124,7 @@ function HomePage() {
                 onClick={() => setActiveTab('doctor')}
                 className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
                   activeTab === 'doctor'
-                    ? 'bg-[#00af87] text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 }`}
                 whileHover={{ scale: activeTab !== 'doctor' ? 1.05 : 1 }}
@@ -142,7 +142,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="bg-white rounded-lg shadow-sm p-4 mb-6">
             <div className="flex items-center text-gray-600">
-              <Users className="h-5 w-5 text-[#00af87] mr-2" />
+              <Users className="h-5 w-5 text-blue-600 mr-2" />
               <span className="text-sm">
                 <strong className="text-gray-900">2,500+ pacientes</strong> han reservado citas este mes
               </span>
@@ -190,9 +190,9 @@ function HomePage() {
                 whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
                 className="bg-white rounded-xl shadow-sm p-6 transition-all relative overflow-hidden"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00af87] to-[#008c6c]"></div>
-                <div className="w-12 h-12 rounded-lg bg-[#e6f7f3] flex items-center justify-center mb-4">
-                  <feature.icon className="text-[#00af87]" size={24} />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-700"></div>
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                  <feature.icon className="text-blue-600" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -203,7 +203,7 @@ function HomePage() {
       </section>
 
       {/* AI Doctor Section */}
-      <section ref={aiRef} className="py-16 bg-gradient-to-br from-[#e6f7f3] to-[#ccefe7]">
+      <section ref={aiRef} className="py-16 bg-gradient-to-br from-blue-100 to-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
             <motion.h2 
@@ -242,8 +242,8 @@ function HomePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
-                <SocialIcons.Brain size={20} className="text-[#00af87]" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <SocialIcons.Brain size={20} className="text-blue-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Análisis inteligente</h3>
@@ -258,8 +258,8 @@ function HomePage() {
               transition={{ duration: 0.5, delay: 0.4 }}
               whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
-                <Image size={20} className="text-[#00af87]" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <Image size={20} className="text-blue-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Análisis de imágenes</h3>
@@ -274,8 +274,8 @@ function HomePage() {
               transition={{ duration: 0.5, delay: 0.5 }}
               whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
             >
-              <div className="w-10 h-10 rounded-full bg-[#e6f7f3] flex items-center justify-center mr-3 flex-shrink-0">
-                <MapPin size={20} className="text-[#00af87]" />
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
+                <MapPin size={20} className="text-blue-600" />
               </div>
               <div>
                 <h3 className="font-medium text-gray-900">Conexión local</h3>
@@ -287,7 +287,7 @@ function HomePage() {
           <div className="mt-10 text-center">
             <Link
               to="/ai-doctor"
-              className="inline-flex items-center px-8 py-3 bg-[#00af87] text-white font-medium rounded-lg hover:bg-[#008c6c] transition-colors shadow-md"
+              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-md"
             >
               Consultar ahora
               <ChevronRight size={20} className="ml-2" />
@@ -308,8 +308,8 @@ function HomePage() {
               transition={{ duration: 0.5 }}
               whileHover={{ y: -5 }}
             >
-              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-[#00af87]">1</span>
+              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-blue-600">1</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Busca especialistas</h3>
               <p className="text-gray-600">Encuentra al médico ideal por especialidad, ubicación y disponibilidad</p>
@@ -321,8 +321,8 @@ function HomePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-[#00af87]">2</span>
+              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-blue-600">2</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Agenda tu cita</h3>
               <p className="text-gray-600">Selecciona la fecha y hora que mejor se adapte a tu horario</p>
@@ -334,8 +334,8 @@ function HomePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               whileHover={{ y: -5 }}
             >
-              <div className="mx-auto h-12 w-12 rounded-full bg-[#e6f7f3] flex items-center justify-center mb-4">
-                <span className="text-xl font-bold text-[#00af87]">3</span>
+              <div className="mx-auto h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                <span className="text-xl font-bold text-blue-600">3</span>
               </div>
               <h3 className="text-xl font-medium mb-2">Recibe atención médica</h3>
               <p className="text-gray-600">Asiste a tu consulta presencial o conéctate vía telemedicina</p>

@@ -572,7 +572,7 @@ function EnhancedHomePage() {
       </div>
 
       {/* Alternative Medicine Section */}
-      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
+      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -581,27 +581,27 @@ function EnhancedHomePage() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-3xl font-bold mb-6">Medicina Alternativa</h2>
-              <p className="text-xl text-teal-100 mb-8">
+              <p className="text-xl text-blue-100 mb-8">
                 Descubre un enfoque integral para tu salud con profesionales certificados en medicina alternativa y complementaria.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Heart size={24} className="text-teal-300 mb-2" />
+                <div className="bg-blue-700 rounded-lg p-4">
+                  <Heart size={24} className="text-blue-300 mb-2" />
                   <h3 className="font-medium mb-1">Acupuntura</h3>
-                  <p className="text-sm text-teal-100">Técnicas milenarias para tu bienestar</p>
+                  <p className="text-sm text-blue-100">Técnicas milenarias para tu bienestar</p>
                 </div>
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Heart size={24} className="text-teal-300 mb-2" />
+                <div className="bg-blue-700 rounded-lg p-4">
+                  <Heart size={24} className="text-blue-300 mb-2" />
                   <h3 className="font-medium mb-1">Homeopatía</h3>
-                  <p className="text-sm text-teal-100">Tratamientos naturales personalizados</p>
+                  <p className="text-sm text-blue-100">Tratamientos naturales personalizados</p>
                 </div>
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Heart size={24} className="text-teal-300 mb-2" />
+                <div className="bg-blue-700 rounded-lg p-4">
+                  <Heart size={24} className="text-blue-300 mb-2" />
                   <h3 className="font-medium mb-1">Nutrición</h3>
-                  <p className="text-sm text-teal-100">Planes alimenticios integrales</p>
+                  <p className="text-sm text-blue-100">Planes alimenticios integrales</p>
                 </div>
-                <div className="bg-teal-700 rounded-lg p-4">
-                  <Heart size={24} className="text-teal-300 mb-2" />
+                <div className="bg-blue-700 rounded-lg p-4">
+                  <Heart size={24} className="text-blue-300 mb-2" />
                   <h3 className="font-medium mb-1">Quiropráctico</h3>
                   <p className="text-sm text-teal-100">Alineación y bienestar corporal</p>
                 </div>
