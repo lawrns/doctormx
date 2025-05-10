@@ -23,25 +23,25 @@ const features = [
     title: "Evaluación de Síntomas con IA",
     description: "Nuestro asistente virtual te guía paso a paso para entender tus síntomas y encontrar la atención adecuada.",
     icon: (props: React.SVGProps<SVGSVGElement>) => <SocialIcons.Brain {...props} />,
-    color: "teal"
+    color: "blue"
   },
   {
     title: "Directorio Médico Verificado",
     description: "Miles de profesionales de la salud certificados y verificados para tu tranquilidad.",
     icon: Shield,
-    color: "teal"
+    color: "blue"
   },
   {
     title: "Telemedicina 24/7",
     description: "Consultas médicas en línea desde la comodidad de tu hogar, cuando lo necesites.",
     icon: Video,
-    color: "teal"
+    color: "blue"
   },
   {
     title: "Medicina Alternativa",
     description: "Accede a profesionales de medicina alternativa y complementaria certificados.",
     icon: Leaf,
-    color: "teal"
+    color: "blue"
   }
 ];
 
@@ -187,7 +187,7 @@ function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
+                whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.1)' }}
                 className="bg-white rounded-xl shadow-sm p-6 transition-all relative overflow-hidden"
               >
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-700"></div>
@@ -240,7 +240,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.1)' }}
             >
               <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <SocialIcons.Brain size={20} className="text-blue-600" />
@@ -256,7 +256,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.1)' }}
             >
               <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <Image size={20} className="text-blue-600" />
@@ -272,7 +272,7 @@ function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={aiInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 175, 135, 0.1)' }}
+              whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.1)' }}
             >
               <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
                 <MapPin size={20} className="text-blue-600" />
@@ -348,7 +348,7 @@ function HomePage() {
       <EnhancedSpecialtySection />
 
       {/* Alternative Medicine Section */}
-      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white">
+      <section ref={alternativeRef} className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -392,7 +392,7 @@ function HomePage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   to="/alternativa"
-                  className="inline-flex items-center px-6 py-3 bg-white text-[#00af87] font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
+                  className="inline-flex items-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
                 >
                   Explorar terapias
                   <ChevronRight size={20} className="ml-2" />
@@ -451,11 +451,11 @@ function HomePage() {
                     <p className="text-sm text-gray-600">{story.specialty}</p>
                     <div className="flex mt-4 space-x-6">
                       <div>
-                        <p className="text-2xl font-bold text-[#00af87]">{story.metrics.patients}</p>
+                        <p className="text-2xl font-bold text-blue-600">{story.metrics.patients}</p>
                         <p className="text-sm text-gray-600">Pacientes nuevos</p>
                       </div>
                       <div>
-                        <p className="text-2xl font-bold text-[#00af87]">{story.metrics.satisfaction}</p>
+                        <p className="text-2xl font-bold text-blue-600">{story.metrics.satisfaction}</p>
                         <p className="text-sm text-gray-600">Satisfacción</p>
                       </div>
                     </div>
@@ -468,7 +468,7 @@ function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#00af87] to-[#008c6c] text-white">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
@@ -494,13 +494,13 @@ function HomePage() {
           >
             <Link 
               to="/buscar"
-              className="px-6 py-3 bg-white text-[#00af87] font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
+              className="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
             >
               Buscar médicos
             </Link>
             <Link 
               to="/sintomas/"
-              className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-[#006951] transition-colors shadow-md"
+              className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-blue-800 transition-colors shadow-md"
             >
               Evaluar síntomas
             </Link>
