@@ -306,14 +306,63 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   };
   
-  const handleMicClick = () => {
-    setIsRecording(!isRecording);
-    
-    if (!isRecording) {
-      setTimeout(() => {
-        setInput('Tengo dolor de cabeza y un poco de fiebre');
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
+  
+  const handleMicClick = async () => {
+    if (isRecording) {
+      if (mediaRecorder) {
+        mediaRecorder.stop();
         setIsRecording(false);
-      }, 2000);
+      }
+      return;
+    }
+    
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      
+      const recorder = new MediaRecorder(stream);
+      setMediaRecorder(recorder);
+      
+      setAudioChunks([]);
+      
+      recorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          setAudioChunks((chunks) => [...chunks, event.data]);
+        }
+      };
+      
+      recorder.onstop = async () => {
+        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+        
+        setInput('He grabado un mensaje de voz sobre mis síntomas');
+        
+        const userMessageId = Date.now().toString();
+        const newUserMessage: Message = { 
+          id: userMessageId,
+          text: 'He grabado un mensaje de voz sobre mis síntomas.',
+          sender: 'user',
+          timestamp: new Date()
+        };
+        
+        setMessages(prev => [...prev, newUserMessage]);
+        
+        stream.getTracks().forEach(track => track.stop());
+      };
+      
+      recorder.start();
+      setIsRecording(true);
+      
+      setTimeout(() => {
+        if (recorder.state === 'recording') {
+          recorder.stop();
+          setIsRecording(false);
+        }
+      }, 10000);
+    } catch (error) {
+      console.error('Error accessing microphone:', error);
+      alert('No se pudo acceder al micrófono. Por favor, verifica los permisos del navegador.');
+      setIsRecording(false);
     }
   };
   
