@@ -927,15 +927,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           accept="image/*"
                           className="hidden"
                         />
-                        <motion.div 
-                          className="flex-1 relative"
-                          initial={{ opacity: 1 }}
-                          animate={{ 
-                            boxShadow: input.length > 0 ? "0 2px 8px rgba(59, 130, 246, 0.15)" : "none"
-                          }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <motion.input
+                        <div className="flex-1 relative">
+                          <input
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
@@ -943,21 +936,13 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                             placeholder="Describe tus síntomas o haz una pregunta..."
                             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                             disabled={isProcessing}
-                            animate={{ 
-                              borderColor: input.length > 0 ? "rgba(59, 130, 246, 0.5)" : "rgba(209, 213, 219, 1)"
-                            }}
                           />
                           {input.length > 0 && (
-                            <motion.div 
-                              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-blue-500"
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ opacity: 0.7, y: 0 }}
-                              exit={{ opacity: 0, y: 10 }}
-                            >
+                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-blue-500 opacity-70">
                               {input.length} caracteres
-                            </motion.div>
+                            </div>
                           )}
-                        </motion.div>
+                        </div>
                         <motion.button 
                           onClick={handleSendMessage}
                           disabled={(!input.trim() && !isUploading) || isProcessing}
@@ -969,10 +954,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           aria-label="Enviar mensaje"
                           whileHover={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
                           whileTap={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 0.9 }}
-                          animate={(!input.trim() && !isUploading) || isProcessing ? {} : {
-                            boxShadow: ["0 0 0 rgba(59, 130, 246, 0)", "0 0 8px rgba(59, 130, 246, 0.5)", "0 0 0 rgba(59, 130, 246, 0)"]
-                          }}
-                          transition={{ boxShadow: { duration: 2, repeat: Infinity } }}
+
                         >
                           <Send size={20} />
                         </motion.button>

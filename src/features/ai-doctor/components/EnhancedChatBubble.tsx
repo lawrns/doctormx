@@ -40,23 +40,14 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
   onGoBack,
   showGoBack
 }) => {
+  // Simplified variants without hover effects or shadows
   const bubbleVariants = {
-    hidden: { opacity: 0, y: 20, scale: 0.95 },
+    hidden: { opacity: 0 },
     visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1,
+      opacity: 1,
       transition: { 
-        type: "spring", 
-        stiffness: 500, 
-        damping: 30,
-        mass: 1
+        duration: 0.3
       } 
-    },
-    hover: { 
-      scale: 1.01,
-      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-      transition: { duration: 0.2 }
     }
   };
 
@@ -69,11 +60,10 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
       initial="hidden"
       animate="visible"
       variants={bubbleVariants}
-      whileHover="hover"
       className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
     >
       <div 
-        className={`rounded-2xl px-4 py-3 max-w-md shadow-sm ${
+        className={`rounded-2xl px-4 py-3 max-w-md ${
           message.sender === 'user' 
             ? 'bg-blue-600 text-white rounded-br-none' 
             : message.isEmergency
