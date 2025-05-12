@@ -102,7 +102,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
     let variant = 'A';
     
     // If user has previous searches, show the more direct search variant
-    if (userPreferences?.recentSearches?.length > 0) {
+    if (userPreferences && userPreferences.recentSearches && userPreferences.recentSearches.length > 0) {
       variant = 'A';  // Search-focused variant
       
       // Pre-fill search with most recent search if available
@@ -146,7 +146,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
   }, []);
   
   // Handle specialty select
-  const handleSpecialtySelect = (specialty) => {
+  const handleSpecialtySelect = (specialty: { id: string; name: string; icon?: string }) => {
     setSelectedSpecialty(specialty.id);
     setSpecialtySearch(specialty.name);
     setShowSpecialtyDropdown(false);
@@ -324,8 +324,8 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                       setShowSpecialtyDropdown(true);
                     }}
                     onFocus={() => setShowSpecialtyDropdown(true)}
-                    leftIcon={<Search size={18} className="text-gray-400" />}
-                    fullWidth
+                    icon={<Search size={18} className="text-gray-400" />}
+                    className="w-full"
                     aria-label="Buscar especialidad o médico"
                   />
                   
@@ -357,7 +357,7 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                 </div>
                 
                 {/* Recent searches suggestions - only shows if user has search history */}
-                {userPreferences?.recentSearches?.length > 0 && !specialtySearch && !showSpecialtyDropdown && (
+                {userPreferences && userPreferences.recentSearches && userPreferences.recentSearches.length > 0 && !specialtySearch && !showSpecialtyDropdown && (
                   <div className="flex flex-wrap gap-1 -mt-2 mb-2">
                     <span className="text-xs text-gray-500">Búsquedas recientes:</span>
                     {userPreferences.recentSearches.slice(0, 3).map((search, index) => (
@@ -398,8 +398,8 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                       setShowLocationDropdown(true);
                     }}
                     onFocus={() => setShowLocationDropdown(true)}
-                    leftIcon={<MapPin size={18} className="text-gray-400" />}
-                    fullWidth
+                    icon={<MapPin size={18} className="text-gray-400" />}
+                    className="w-full"
                     aria-label="Seleccionar ubicación"
                   />
                   
@@ -501,14 +501,12 @@ function EnhancedHeroSection({ userPreferences }: EnhancedHeroSectionProps = {})
                       <p className="text-xs text-gray-500">Consulta desde</p>
                       <p className="text-xl font-bold text-gray-900">${featuredDoctors[currentDoctorIndex].price}</p>
                     </div>
-                    <Button 
-                      as="link"
+                    <Link 
                       to={`/doctor/${featuredDoctors[currentDoctorIndex].id}`}
-                      variant="outline"
-                      size="sm"
+                      className="inline-flex items-center justify-center px-3 py-1.5 text-xs font-medium rounded-md bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 hover:border-primary-500 hover:text-primary-600 transition-all duration-300 ease-in-out"
                     >
                       Ver perfil
-                    </Button>
+                    </Link>
                   </div>
                 </div>
                 

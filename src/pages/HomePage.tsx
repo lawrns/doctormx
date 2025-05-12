@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { SocialIcons } from '../components/icons/IconProvider';
 import EmbeddedAIDoctor from '../components/ai/EmbeddedAIDoctor';
+import FeatureCard from '../components/ui/FeatureCard';
+import CallToAction from '../components/ui/CallToAction';
 
 // Components
 import SEO from '../components/seo/SEO';
@@ -22,20 +24,20 @@ const features = [
   {
     title: "Evaluación de Síntomas con IA",
     description: "Nuestro asistente virtual te guía paso a paso para entender tus síntomas y encontrar la atención adecuada.",
-    icon: (props: React.SVGProps<SVGSVGElement>) => <SocialIcons.Brain {...props} />,
-    color: "blue"
+    icon: SocialIcons.Brain,
+    color: "primary"
   },
   {
     title: "Directorio Médico Verificado",
     description: "Miles de profesionales de la salud certificados y verificados para tu tranquilidad.",
     icon: Shield,
-    color: "blue"
+    color: "secondary"
   },
   {
     title: "Telemedicina 24/7",
     description: "Consultas médicas en línea desde la comodidad de tu hogar, cuando lo necesites.",
     icon: Video,
-    color: "blue"
+    color: "accent"
   },
   {
     title: "Medicina Alternativa",
@@ -182,21 +184,14 @@ function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
-              <motion.div
+              <FeatureCard
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.1)' }}
-                className="bg-white rounded-xl shadow-sm p-6 transition-all relative overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-700"></div>
-                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
-                  <feature.icon className="text-blue-600" size={24} />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+                color={feature.color}
+                delay={index * 0.1}
+              />
             ))}
           </div>
         </div>
@@ -404,9 +399,10 @@ function HomePage() {
               initial={{ opacity: 0, x: 20 }}
               animate={alternativeInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                src="/images/alternative-medicine.jpg"
                 alt="Alternative Medicine"
                 className="rounded-lg shadow-xl"
               />
@@ -468,45 +464,17 @@ function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl font-bold mb-4"
-          >
-            Comienza a cuidar tu salud hoy mismo
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl mb-8 max-w-3xl mx-auto text-white opacity-90"
-          >
-            Únete a miles de pacientes que ya encontraron al profesional de salud ideal para sus necesidades.
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4"
-          >
-            <Link 
-              to="/buscar"
-              className="px-6 py-3 bg-white text-blue-600 font-medium rounded-lg hover:bg-gray-50 transition-colors shadow-md"
-            >
-              Buscar médicos
-            </Link>
-            <Link 
-              to="/sintomas/"
-              className="px-6 py-3 bg-transparent border border-white text-white font-medium rounded-lg hover:bg-blue-800 transition-colors shadow-md"
-            >
-              Evaluar síntomas
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CallToAction
+        title="Comienza a cuidar tu salud hoy mismo"
+        description="Únete a miles de pacientes que ya encontraron al profesional de salud ideal para sus necesidades."
+        primaryButtonText="Buscar médicos"
+        primaryButtonLink="/buscar"
+        secondaryButtonText="Evaluar síntomas"
+        secondaryButtonLink="/sintomas/"
+        background="gradient"
+        align="center"
+        className="py-16"
+      />
     </div>
   );
 }
