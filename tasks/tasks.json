@@ -1,0 +1,771 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Setup Microservices Architecture on Kubernetes",
+      "description": "Establish the foundational cloud infrastructure using Kubernetes on GCP US-Central region with MX-QRO failover as specified in the PRD.",
+      "details": "1. Create Kubernetes clusters in both GCP US-Central and MX-QRO regions\n2. Configure auto-scaling and load balancing between regions\n3. Set up CI/CD pipelines for microservices deployment\n4. Implement AES-256 encryption for all data at rest\n5. Configure segregated database environments (Clinical, Analytics, Logs)\n6. Establish network policies and security groups\n7. Set up monitoring and alerting with Prometheus and Grafana\n8. Implement disaster recovery procedures with automated failover\n\nTechnical specifications:\n- Use Terraform for infrastructure as code\n- Implement Istio for service mesh\n- Configure Vault for secrets management\n- Set up GitOps workflow with ArgoCD",
+      "testStrategy": "1. Perform load testing to ensure the infrastructure can handle projected 1 million users per month\n2. Test failover scenarios between US-Central and MX-QRO regions\n3. Conduct security penetration testing\n4. Verify encryption implementation for all data stores\n5. Test backup and restore procedures\n6. Validate cluster auto-scaling under various load conditions",
+      "priority": "high",
+      "dependencies": [],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "1.1",
+          "title": "Provision Kubernetes Clusters with Terraform",
+          "description": "Create Terraform modules for provisioning GKE clusters in US-Central and MX-QRO regions with proper networking, node pools, and security configurations.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "1.2",
+          "title": "Implement Multi-region Load Balancing",
+          "description": "Configure global load balancing between US-Central and MX-QRO regions with automatic failover capabilities and latency-based routing.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "1.3",
+          "title": "Setup Service Mesh with Istio",
+          "description": "Deploy and configure Istio service mesh for traffic management, security, and observability across the microservices architecture.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "1.4",
+          "title": "Implement Secrets Management with Vault",
+          "description": "Deploy HashiCorp Vault for secrets management with proper authentication, authorization, and rotation policies across environments.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "1.5",
+          "title": "Configure Segregated Database Environments",
+          "description": "Set up isolated database environments for Clinical, Analytics, and Logs data with appropriate access controls and encryption.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "1.6",
+          "title": "Implement CI/CD with ArgoCD",
+          "description": "Establish GitOps-based CI/CD pipelines using ArgoCD for automated deployment of microservices across environments.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "1.7",
+          "title": "Deploy Monitoring Stack",
+          "description": "Set up comprehensive monitoring and alerting using Prometheus, Grafana, and Alertmanager with appropriate dashboards and escalation policies.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "1.8",
+          "title": "Implement Disaster Recovery Procedures",
+          "description": "Develop and implement automated disaster recovery procedures including backup strategies, restore testing, and regional failover mechanisms.",
+          "status": "pending",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Develop GraphQL API Orchestration Layer",
+      "description": "Create a GraphQL API layer to orchestrate communication between microservices and provide a unified interface for frontend applications.",
+      "details": "1. Design GraphQL schema that covers all required data entities and operations\n2. Implement resolvers for each entity type\n3. Create data loaders to optimize database queries\n4. Implement authentication and authorization middleware\n5. Set up rate limiting and caching strategies\n6. Create subscription endpoints for real-time updates\n7. Document API using GraphQL introspection\n\nCode structure:\n```typescript\n// Schema definition example\nconst typeDefs = gql`\n  type User {\n    id: ID!\n    name: String!\n    medicalHistory: [MedicalRecord!]\n    activePrescriptions: [Prescription!]\n    chronicConditions: [ChronicCondition!]\n  }\n  \n  type MedicalRecord { ... }\n  type Prescription { ... }\n  \n  type Query {\n    getUser(id: ID!): User\n    searchProviders(location: GeoPoint!, specialty: String): [Provider!]\n  }\n  \n  type Mutation {\n    scheduleConsultation(userId: ID!, providerId: ID!, time: DateTime!): Consultation\n    createPrescription(consultation: ID!, medications: [MedicationInput!]!): Prescription\n  }\n`;\n```",
+      "testStrategy": "1. Write unit tests for all resolvers and data loaders\n2. Implement integration tests for API endpoints\n3. Perform GraphQL query complexity analysis\n4. Test authentication and authorization flows\n5. Conduct performance testing with realistic query patterns\n6. Validate error handling and response formats",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "2.1",
+          "title": "Design Comprehensive GraphQL Schema",
+          "description": "Create a comprehensive GraphQL schema that models all system entities including users, medical records, providers, consultations, and prescriptions.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "2.2",
+          "title": "Implement Entity Resolvers",
+          "description": "Develop resolvers for all entity types with proper error handling, field-level permissions, and integration with microservices.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "2.3",
+          "title": "Create Optimized Data Loaders",
+          "description": "Implement data loaders with batching and caching capabilities to optimize database queries and prevent N+1 query problems.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "2.4",
+          "title": "Implement Authentication and Authorization",
+          "description": "Develop middleware for authentication token validation and authorization checks at both operation and field levels.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "2.5",
+          "title": "Set Up Rate Limiting and Caching",
+          "description": "Implement rate limiting based on user roles and operation complexity, and configure caching strategies for query results.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "2.6",
+          "title": "Create Real-time Subscription Endpoints",
+          "description": "Develop GraphQL subscription endpoints for real-time updates such as consultation status changes and new messages.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Implement FHIR Gateway for Healthcare Interoperability",
+      "description": "Develop a FHIR-compliant gateway to enable interoperability with EHRs, laboratories, pharmacies, and wearable devices as specified in the strategic objectives.",
+      "details": "1. Implement FHIR R4 resource models and APIs\n2. Create adapters for different healthcare systems (EHRs, labs, pharmacies)\n3. Develop transformation services between internal data models and FHIR\n4. Implement secure authentication mechanisms for external systems\n5. Create audit logging for all FHIR transactions\n6. Support bulk data operations for population health management\n\nImplementation approach:\n- Use HAPI FHIR Java library for core FHIR functionality\n- Implement custom adapters for Mexican healthcare systems\n- Create validation services for FHIR resources\n- Develop caching strategies for frequently accessed resources\n- Implement terminology services for code system mapping\n\nExample adapter pattern:\n```java\npublic class LabResultAdapter implements FhirAdapter<LabResult, DiagnosticReport> {\n    @Override\n    public DiagnosticReport toFhir(LabResult labResult) {\n        DiagnosticReport report = new DiagnosticReport();\n        // Transform lab result to FHIR DiagnosticReport\n        return report;\n    }\n    \n    @Override\n    public LabResult fromFhir(DiagnosticReport diagnosticReport) {\n        LabResult result = new LabResult();\n        // Transform FHIR DiagnosticReport to internal model\n        return result;\n    }\n}\n```",
+      "testStrategy": "1. Validate FHIR resource conformance against official schemas\n2. Test integration with sample EHR systems common in Mexico\n3. Perform interoperability testing with lab and pharmacy systems\n4. Validate data transformation accuracy between internal and FHIR models\n5. Test bulk data operations with realistic datasets\n6. Verify security controls and access restrictions",
+      "priority": "high",
+      "dependencies": [
+        2
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "3.1",
+          "title": "Implement FHIR R4 Resource Models",
+          "description": "Create FHIR R4 compliant resource models for patients, observations, medications, diagnostic reports, and other key healthcare data types.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "3.2",
+          "title": "Develop EHR System Adapters",
+          "description": "Create adapters for major EHR systems used in Mexico, implementing bidirectional data translation between proprietary formats and FHIR.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "3.3",
+          "title": "Implement Laboratory Integration",
+          "description": "Develop integration with laboratory systems for ordering tests and receiving results using FHIR DiagnosticReport and Observation resources.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "3.4",
+          "title": "Create Pharmacy Integration",
+          "description": "Build integration with pharmacy systems for e-prescriptions using FHIR MedicationRequest and MedicationDispense resources.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "3.5",
+          "title": "Implement Wearable Device Integration",
+          "description": "Develop adapters for common wearable devices to capture health metrics using FHIR Device and Observation resources.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "3.6",
+          "title": "Create FHIR Transaction Audit System",
+          "description": "Implement comprehensive audit logging for all FHIR transactions with immutable records for regulatory compliance.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "3.7",
+          "title": "Develop Bulk Data Operations",
+          "description": "Implement FHIR Bulk Data Access API for efficient population health management and analytics operations.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Develop Multimodal AI Consultation Engine",
+      "description": "Create the core AI consultation engine that combines Spanish LLM, vision capabilities, and fine-tuned tabular models with 2M anonymized Mexican health records.",
+      "details": "1. Fine-tune a Spanish language medical LLM using Mexican health data\n2. Integrate vision models for analyzing medical images and photos\n3. Develop tabular models for structured clinical data analysis\n4. Implement Bayesian reasoning with expert-reinforced decision trees\n5. Create model ensemble architecture for diagnostic recommendations\n6. Develop confidence scoring system for recommendations\n7. Implement explainability mechanisms at B1 reading level\n\nAI Architecture:\n- Base LLM: Adapted from state-of-the-art Spanish language model\n- Vision component: Fine-tuned medical image classification models\n- Tabular component: Gradient boosting models for structured data\n- Ensemble method: Weighted voting with uncertainty quantification\n- Explainability: LIME and SHAP for feature importance visualization\n\nExample inference pipeline:\n```python\ndef generate_consultation_response(patient_input, images=None, medical_history=None):\n    # Process text input through medical LLM\n    text_features = medical_llm.extract_features(patient_input)\n    \n    # Process images if provided\n    image_features = None\n    if images:\n        image_features = vision_model.analyze(images)\n    \n    # Process structured medical history\n    history_features = None\n    if medical_history:\n        history_features = tabular_model.process(medical_history)\n    \n    # Combine features through ensemble\n    diagnosis, confidence = ensemble_model.predict(\n        text_features, image_features, history_features\n    )\n    \n    # Generate explanation at appropriate reading level\n    explanation = explainability_engine.generate(diagnosis, confidence, reading_level=\"B1\")\n    \n    return {\n        \"diagnosis\": diagnosis,\n        \"confidence\": confidence,\n        \"explanation\": explanation,\n        \"sources\": get_relevant_sources(diagnosis)\n    }\n```",
+      "testStrategy": "1. Evaluate diagnostic accuracy against gold standard datasets\n2. Measure diagnostic concordance with human physicians (target ≥93%)\n3. Test with diverse patient demographics representative of Mexican population\n4. Evaluate performance on indigenous language inputs\n5. Assess explainability quality through user studies\n6. Conduct bias and fairness audits across different demographic groups\n7. Perform regular clinical validation with medical experts",
+      "priority": "high",
+      "dependencies": [
+        2
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "4.1",
+          "title": "Fine-tune Spanish Medical LLM",
+          "description": "Fine-tune a state-of-the-art Spanish language model with medical knowledge using 2M anonymized Mexican health records.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.2",
+          "title": "Develop Medical Vision Models",
+          "description": "Train and integrate specialized vision models for analyzing medical images, photos of symptoms, and visual biomarkers.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.3",
+          "title": "Implement Tabular Data Models",
+          "description": "Create gradient boosting models for analyzing structured medical data including lab results, vital signs, and medical history.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.4",
+          "title": "Develop Bayesian Reasoning Engine",
+          "description": "Implement a Bayesian reasoning system with expert-reinforced decision trees for diagnostic probability calculation.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.5",
+          "title": "Create Model Ensemble Architecture",
+          "description": "Build an ensemble architecture that combines outputs from text, vision, and tabular models with appropriate weighting strategies.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.6",
+          "title": "Implement Confidence Scoring System",
+          "description": "Develop a system to quantify and communicate diagnostic confidence levels based on available information and model certainty.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "4.7",
+          "title": "Create Explainability Engine",
+          "description": "Implement an explainability engine that generates B1 reading level explanations of diagnostic reasoning with LIME and SHAP visualizations.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "4.8",
+          "title": "Develop Clinical Validation Framework",
+          "description": "Create a framework for ongoing clinical validation of the AI system's diagnostic accuracy against expert physician evaluations.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "4.9",
+          "title": "Implement Indigenous Language Support",
+          "description": "Extend the AI consultation engine to support the 5 prioritized indigenous languages mentioned in the PRD.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Implement Security and Compliance Framework",
+      "description": "Develop comprehensive security and compliance systems including granular consent management, immutable auditing, and certification-ready controls for COFEPRIS, ISO 27001, and INAI.",
+      "details": "1. Implement OpenID Connect + UMA 2.0 for granular consent management\n2. Set up Hyperledger Fabric for immutable audit logging\n3. Develop comprehensive access control system with role-based permissions\n4. Create data classification and handling policies\n5. Implement encryption for data in transit and at rest\n6. Develop privacy controls compliant with Mexican regulations\n7. Create security monitoring and incident response procedures\n\nSecurity architecture:\n- Authentication: OpenID Connect with multi-factor authentication\n- Authorization: UMA 2.0 for consent management\n- Audit: Hyperledger Fabric for immutable logs\n- Encryption: AES-256 for data at rest, TLS 1.3 for data in transit\n- Key management: HSM-backed key storage\n\nConsent management example:\n```typescript\ninterface ConsentRecord {\n  userId: string;\n  resourceType: string; // e.g., 'medicalHistory', 'prescription'\n  accessorId: string; // Who is granted access\n  accessorType: 'provider' | 'pharmacy' | 'laboratory' | 'insurance';\n  purpose: string;\n  expirationDate: Date;\n  dataMinimization: string[]; // Specific fields allowed\n  auditTrail: AuditEvent[];\n}\n\nclass ConsentManager {\n  async grantConsent(consent: ConsentRecord): Promise<string> {\n    // Store consent record\n    // Generate UMA permission ticket\n    // Record to blockchain\n    return permissionTicket;\n  }\n  \n  async validateAccess(ticket: string, requestedResource: string): Promise<boolean> {\n    // Validate permission ticket\n    // Check expiration and scope\n    // Record access attempt to blockchain\n    return isValid;\n  }\n}\n```",
+      "testStrategy": "1. Conduct regular penetration testing as specified in PRD\n2. Perform security code reviews\n3. Test consent management workflows with various scenarios\n4. Validate audit log immutability and completeness\n5. Conduct privacy impact assessments\n6. Test compliance with COFEPRIS, ISO 27001, and INAI requirements\n7. Simulate security incidents and test response procedures\n8. Verify data minimization and purpose limitation controls",
+      "priority": "high",
+      "dependencies": [
+        1
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "5.1",
+          "title": "Implement OpenID Connect Authentication",
+          "description": "Set up OpenID Connect authentication system with multi-factor authentication support for all user types.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "5.2",
+          "title": "Develop UMA 2.0 Consent Management",
+          "description": "Implement User-Managed Access 2.0 for granular, patient-controlled consent management of medical data access.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "5.3",
+          "title": "Set Up Hyperledger Fabric for Audit Logging",
+          "description": "Deploy Hyperledger Fabric blockchain for immutable audit logging of all security-relevant events and data access.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "5.4",
+          "title": "Implement Data Encryption Framework",
+          "description": "Create a comprehensive encryption framework using AES-256 for data at rest and TLS 1.3 for data in transit with HSM-backed key management.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "5.5",
+          "title": "Develop Role-Based Access Control System",
+          "description": "Implement a fine-grained role-based access control system with contextual permissions for different user types and resources.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "5.6",
+          "title": "Create Privacy Controls for Mexican Regulations",
+          "description": "Implement privacy controls specifically designed to comply with Mexican regulations including INAI requirements.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "5.7",
+          "title": "Develop Security Monitoring System",
+          "description": "Set up comprehensive security monitoring with threat detection, alerting, and automated response capabilities.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "5.8",
+          "title": "Create Certification Documentation Framework",
+          "description": "Develop the documentation and control framework necessary for COFEPRIS, ISO 27001, and INAI certifications.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Develop Multichannel Conversation Interface",
+      "description": "Create a multichannel conversation interface supporting text, voice, WhatsApp, and USSD with context-sensitive design and multiple language support.",
+      "details": "1. Implement core conversation engine with state management\n2. Integrate with WhatsApp Business API\n3. Develop USSD interface for data-free mode\n4. Create voice recognition and synthesis components\n5. Implement language detection and switching\n6. Develop context-sensitive UI adapters for different channels\n7. Create accessibility features including high contrast mode\n\nChannel integration approach:\n- Text: Web and mobile native interfaces\n- Voice: WebRTC for web, native APIs for mobile\n- WhatsApp: Official Business API integration\n- USSD: Partnership with Mexican telecom providers\n\nLanguage support:\n- Spanish (MX) as primary language\n- Border English for northern regions\n- 5 indigenous languages as specified in PRD\n\nExample conversation state management:\n```typescript\nclass ConversationManager {\n  private conversations = new Map<string, Conversation>();\n  \n  async handleMessage(userId: string, message: Message, channel: Channel): Promise<Response> {\n    let conversation = this.conversations.get(userId) || this.createNewConversation(userId);\n    \n    // Update conversation context\n    conversation.addMessage(message);\n    \n    // Determine language if not already set\n    if (!conversation.language) {\n      conversation.language = await this.languageDetector.detect(message.text);\n    }\n    \n    // Process message through AI engine\n    const aiResponse = await this.aiEngine.process({\n      message: message.text,\n      context: conversation.context,\n      language: conversation.language,\n      channel: channel\n    });\n    \n    // Format response based on channel capabilities\n    const formattedResponse = this.channelAdapter.format(aiResponse, channel);\n    \n    // Update conversation state\n    conversation.updateContext(aiResponse);\n    this.conversations.set(userId, conversation);\n    \n    return formattedResponse;\n  }\n}\n```",
+      "testStrategy": "1. Test conversation flows across all supported channels\n2. Validate language detection and translation accuracy\n3. Test accessibility features with target user groups\n4. Perform usability testing with representatives from each user segment\n5. Validate conversation context preservation across sessions\n6. Test offline capabilities and synchronization\n7. Measure response times across different network conditions",
+      "priority": "medium",
+      "dependencies": [
+        2,
+        4
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "6.1",
+          "title": "Develop Core Conversation Engine",
+          "description": "Build the core conversation engine with state management, context tracking, and integration with the AI consultation system.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "6.2",
+          "title": "Implement WhatsApp Integration",
+          "description": "Integrate with WhatsApp Business API to enable conversation flows through WhatsApp messaging.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "6.3",
+          "title": "Create USSD Interface",
+          "description": "Develop a USSD interface for data-free mode operation in partnership with Mexican telecom providers.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "6.4",
+          "title": "Implement Voice Interface",
+          "description": "Create voice recognition and synthesis components using WebRTC for web and native APIs for mobile platforms.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "6.5",
+          "title": "Develop Language Support System",
+          "description": "Implement language detection and switching capabilities for Spanish, Border English, and 5 indigenous languages.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "6.6",
+          "title": "Create Context-Sensitive UI Adapters",
+          "description": "Develop UI adapters that optimize the conversation interface based on channel capabilities and user context.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "6.7",
+          "title": "Implement Accessibility Features",
+          "description": "Create accessibility features including high contrast mode, screen reader support, and simplified interfaces for low digital literacy.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Implement E-Prescription and Payment System",
+      "description": "Develop the e-prescription system with digital signature validation and integrate with pharmacy networks and payment processors.",
+      "details": "1. Create e-prescription data model compliant with Mexican regulations\n2. Implement digital signature system for medical professionals\n3. Develop integration with top 5 pharmacy chains as specified in PRD\n4. Create payment processing system with multiple providers\n5. Implement prescription validation and verification workflows\n6. Develop prescription tracking and reminder system\n\nE-prescription features:\n- Digital signatures using FIEL (Mexican advanced electronic signature)\n- Barcode/QR code generation for pharmacy scanning\n- Medication interaction checking\n- Generic substitution recommendations\n- Integration with pharmacy inventory systems\n\nPayment integration:\n- Credit/debit card processing\n- Mobile payment methods (CoDi, Mercado Pago)\n- Subscription billing for chronic patients\n\nExample e-prescription workflow:\n```typescript\nclass PrescriptionService {\n  async createPrescription(consultationId: string, doctorId: string, medications: Medication[]): Promise<Prescription> {\n    // Validate doctor credentials and permissions\n    const doctor = await this.doctorRepository.findById(doctorId);\n    if (!doctor.canPrescribe) {\n      throw new Error('Doctor not authorized to prescribe');\n    }\n    \n    // Check medication interactions\n    const interactions = await this.medicationService.checkInteractions(medications);\n    if (interactions.severity === 'high') {\n      throw new Error(`Dangerous medication interaction: ${interactions.description}`);\n    }\n    \n    // Create prescription record\n    const prescription = new Prescription({\n      consultationId,\n      doctorId,\n      medications,\n      issuedAt: new Date(),\n      expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days validity\n      status: 'active'\n    });\n    \n    // Generate digital signature\n    prescription.signature = await this.signatureService.sign(prescription, doctor.digitalCertificate);\n    \n    // Generate unique verification code\n    prescription.verificationCode = this.generateVerificationCode();\n    \n    // Store in database\n    await this.prescriptionRepository.save(prescription);\n    \n    // Notify available pharmacies\n    await this.pharmacyNotificationService.notifyNearbyPharmacies(prescription);\n    \n    return prescription;\n  }\n}\n```",
+      "testStrategy": "1. Validate e-prescription compliance with Mexican regulations\n2. Test integration with each pharmacy chain's systems\n3. Verify digital signature validation process\n4. Test payment processing with various payment methods\n5. Validate prescription tracking and notification system\n6. Test medication interaction detection\n7. Perform end-to-end testing of the prescription fulfillment process",
+      "priority": "medium",
+      "dependencies": [
+        3,
+        5
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "7.1",
+          "title": "Create E-Prescription Data Model",
+          "description": "Develop a comprehensive e-prescription data model compliant with Mexican healthcare regulations and standards.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "7.2",
+          "title": "Implement Digital Signature System",
+          "description": "Create a digital signature system using FIEL (Mexican advanced electronic signature) for medical professionals.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "7.3",
+          "title": "Develop Pharmacy Chain Integration",
+          "description": "Build integration with the top 5 pharmacy chains in Mexico (Simi, del Ahorro, Guadalajara, etc.) as specified in the PRD.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "7.4",
+          "title": "Implement Payment Processing System",
+          "description": "Create a payment processing system supporting credit/debit cards, mobile payments (CoDi, Mercado Pago), and subscription billing.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "7.5",
+          "title": "Create Medication Interaction Checker",
+          "description": "Develop a medication interaction checking system to identify potential conflicts between prescribed medications.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "7.6",
+          "title": "Implement Prescription Verification Workflow",
+          "description": "Create workflows for prescription validation and verification at pharmacies using barcodes/QR codes.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "7.7",
+          "title": "Develop Prescription Tracking System",
+          "description": "Build a system for tracking prescriptions and sending reminders for medication adherence and refills.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Develop Chronic Disease Management Modules",
+      "description": "Create specialized modules for managing chronic conditions including diabetes, hypertension, mental health, and maternal/child health with wearable device integration.",
+      "details": "1. Develop disease-specific data models and monitoring parameters\n2. Implement integration with common wearable devices and monitors\n3. Create personalized care plan generation system\n4. Develop trend analysis and alert mechanisms\n5. Implement medication adherence tracking\n6. Create educational content delivery system\n7. Develop progress visualization dashboards\n\nDisease-specific modules:\n- Diabetes: Glucose monitoring, insulin management, dietary tracking\n- Hypertension: Blood pressure monitoring, medication management\n- Mental Health: Mood tracking, intervention recommendations\n- Maternal/Child: Pregnancy tracking, developmental milestones\n\nDevice integration:\n- Glucometers (via Bluetooth/NFC)\n- Blood pressure monitors\n- Fitness trackers and smartwatches\n- Smart scales\n\nExample chronic disease monitoring:\n```typescript\nclass DiabetesMonitoringService {\n  async processGlucoseReading(userId: string, reading: GlucoseReading): Promise<MonitoringResponse> {\n    // Store the new reading\n    await this.readingRepository.save(userId, reading);\n    \n    // Get patient's care plan and thresholds\n    const carePlan = await this.carePlanRepository.getCurrentPlan(userId);\n    \n    // Analyze the reading against thresholds\n    const analysis = this.analyzeReading(reading, carePlan.thresholds);\n    \n    // Generate appropriate response based on analysis\n    if (analysis.requiresAttention) {\n      // Create alert for healthcare provider\n      await this.alertService.createAlert({\n        userId,\n        type: 'glucose',\n        severity: analysis.severity,\n        reading: reading.value,\n        timestamp: reading.timestamp\n      });\n      \n      // Determine if immediate intervention is needed\n      if (analysis.severity === 'high') {\n        await this.interventionService.scheduleUrgentConsultation(userId);\n      }\n    }\n    \n    // Update trends and predictions\n    const trends = await this.trendAnalysisService.updateTrends(userId, 'glucose');\n    \n    return {\n      feedback: this.generateFeedback(analysis, trends),\n      recommendations: this.generateRecommendations(analysis, carePlan),\n      requiresAction: analysis.requiresAttention,\n      nextScheduledReading: this.calculateNextReadingTime(carePlan, analysis)\n    };\n  }\n}\n```",
+      "testStrategy": "1. Test integration with various wearable devices and monitors\n2. Validate data collection and analysis accuracy\n3. Test alert generation and escalation workflows\n4. Verify medication adherence tracking functionality\n5. Test care plan generation and adjustment algorithms\n6. Perform usability testing with chronic disease patients\n7. Validate educational content delivery and effectiveness",
+      "priority": "medium",
+      "dependencies": [
+        3,
+        4
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "8.1",
+          "title": "Develop Diabetes Management Module",
+          "description": "Create a comprehensive diabetes management module with glucose monitoring, insulin management, and dietary tracking capabilities.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "8.2",
+          "title": "Implement Hypertension Management Module",
+          "description": "Build a hypertension management module with blood pressure monitoring and medication management capabilities.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "8.3",
+          "title": "Create Mental Health Module",
+          "description": "Develop a mental health module with mood tracking, intervention recommendations, and crisis support features.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "8.4",
+          "title": "Implement Maternal/Child Health Module",
+          "description": "Build a maternal and child health module with pregnancy tracking and developmental milestone monitoring.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "8.5",
+          "title": "Develop Wearable Device Integration",
+          "description": "Create integration with common wearable devices including glucometers, blood pressure monitors, and fitness trackers.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "8.6",
+          "title": "Implement Care Plan Generation System",
+          "description": "Develop a system for generating personalized care plans based on patient data, condition, and best practices.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "8.7",
+          "title": "Create Health Trend Analysis Engine",
+          "description": "Build an engine for analyzing health data trends and generating alerts for concerning patterns.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Implement Teleconsultation System",
+      "description": "Develop a comprehensive teleconsultation system that allows scheduling, conducting, and following up on virtual consultations with healthcare providers.",
+      "details": "1. Create provider directory and search functionality\n2. Develop scheduling system with availability management\n3. Implement secure video consultation platform\n4. Create medical history sharing and review system\n5. Develop consultation notes and documentation tools\n6. Implement follow-up scheduling and reminders\n7. Create rating and feedback system for providers\n\nTeleconsultation features:\n- Multi-participant video sessions (patient, doctor, specialists)\n- Screen sharing for test results and imaging\n- Secure messaging before and after consultation\n- Recording capabilities with patient consent\n- Fallback to audio-only mode for low bandwidth\n\nProvider management:\n- Credential verification system\n- Availability calendar management\n- Specialization and expertise tagging\n- Performance metrics tracking\n\nExample scheduling implementation:\n```typescript\nclass ConsultationScheduler {\n  async findAvailableSlots(specialtyId: string, locationPreference: GeoPoint, dateRange: DateRange): Promise<AvailabilitySlot[]> {\n    // Find providers matching criteria\n    const providers = await this.providerRepository.findBySpecialty(specialtyId, locationPreference);\n    \n    // Get availability for each provider in date range\n    const availabilityMap = new Map<string, AvailabilitySlot[]>();\n    for (const provider of providers) {\n      const availability = await this.availabilityService.getProviderAvailability(provider.id, dateRange);\n      availabilityMap.set(provider.id, availability);\n    }\n    \n    // Sort and filter slots based on provider rating and availability\n    return this.rankAndFilterSlots(availabilityMap, providers);\n  }\n  \n  async scheduleConsultation(userId: string, providerId: string, slotId: string): Promise<Consultation> {\n    // Lock the slot to prevent double booking\n    await this.availabilityService.lockSlot(slotId);\n    \n    try {\n      // Verify slot is still available\n      const slot = await this.availabilityService.getSlot(slotId);\n      if (!slot.isAvailable) {\n        throw new Error('Slot is no longer available');\n      }\n      \n      // Create consultation record\n      const consultation = new Consultation({\n        userId,\n        providerId,\n        scheduledTime: slot.startTime,\n        duration: slot.duration,\n        status: 'scheduled',\n        consultationType: 'video'\n      });\n      \n      // Save consultation and update availability\n      await this.consultationRepository.save(consultation);\n      await this.availabilityService.markSlotBooked(slotId, consultation.id);\n      \n      // Send notifications\n      await this.notificationService.notifyConsultationScheduled(consultation);\n      \n      return consultation;\n    } catch (error) {\n      // Release the lock if anything fails\n      await this.availabilityService.unlockSlot(slotId);\n      throw error;\n    }\n  }\n}\n```",
+      "testStrategy": "1. Test provider search and filtering functionality\n2. Validate scheduling system with concurrent booking attempts\n3. Test video consultation quality across different network conditions\n4. Verify medical history sharing permissions and access controls\n5. Test consultation documentation and note-taking tools\n6. Validate follow-up scheduling and reminder system\n7. Test rating and feedback collection process",
+      "priority": "medium",
+      "dependencies": [
+        2,
+        6
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "9.1",
+          "title": "Develop Provider Directory",
+          "description": "Create a comprehensive provider directory with search functionality, credential verification, and specialization tagging.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "9.2",
+          "title": "Implement Appointment Scheduling System",
+          "description": "Build a scheduling system with availability management, booking workflows, and concurrent booking protection.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "9.3",
+          "title": "Create Secure Video Consultation Platform",
+          "description": "Develop a secure video consultation platform with multi-participant support, screen sharing, and low-bandwidth fallback modes.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "9.4",
+          "title": "Implement Medical History Sharing",
+          "description": "Create a system for controlled sharing of relevant medical history during teleconsultations with proper consent management.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "9.5",
+          "title": "Develop Consultation Documentation Tools",
+          "description": "Build documentation tools for providers to record consultation notes, diagnoses, and treatment plans.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "9.6",
+          "title": "Create Follow-up System",
+          "description": "Implement follow-up scheduling and reminder functionality for ongoing care management.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "9.7",
+          "title": "Implement Provider Rating System",
+          "description": "Develop a system for collecting and displaying patient ratings and feedback for healthcare providers.",
+          "status": "pending",
+          "priority": "low"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Develop Smart Emergency Services",
+      "description": "Implement emergency detection and response system that can identify warning signs and activate emergency services including 911 and Red Cross Network.",
+      "details": "1. Develop emergency condition detection algorithms\n2. Create geolocation-based emergency service routing\n3. Implement integration with 911 and Red Cross Network\n4. Develop emergency contact notification system\n5. Create emergency medical information sharing mechanism\n6. Implement post-emergency follow-up protocols\n\nEmergency detection features:\n- Keyword and phrase detection in user inputs\n- Vital sign anomaly detection from connected devices\n- Fall detection from wearable devices\n- User-initiated emergency signals\n\nEmergency response workflow:\n- Immediate triage through AI to determine severity\n- Automatic location determination\n- Routing to appropriate emergency service\n- Sharing of relevant medical information\n\nExample emergency detection implementation:\n```typescript\nclass EmergencyDetectionService {\n  async analyzeUserInput(userId: string, input: string): Promise<EmergencyAssessment> {\n    // Get user's medical history and risk factors\n    const userProfile = await this.userProfileService.getProfile(userId);\n    \n    // Check for emergency keywords and phrases\n    const keywordMatch = this.emergencyKeywordDetector.analyze(input, userProfile.language);\n    \n    // Get recent vital signs if available\n    const recentVitals = await this.vitalSignsRepository.getRecent(userId, { minutes: 30 });\n    \n    // Perform comprehensive emergency assessment\n    const assessment = this.emergencyAssessor.evaluate({\n      textInput: input,\n      keywordMatch,\n      userProfile,\n      vitalSigns: recentVitals\n    });\n    \n    // If emergency detected, initiate response\n    if (assessment.isEmergency) {\n      await this.initiateEmergencyResponse(userId, assessment);\n    }\n    \n    return assessment;\n  }\n  \n  private async initiateEmergencyResponse(userId: string, assessment: EmergencyAssessment): Promise<void> {\n    // Get user's current location\n    const location = await this.locationService.getUserLocation(userId);\n    \n    // Determine appropriate emergency service based on location and condition\n    const emergencyService = this.emergencyServiceRouter.determineService(location, assessment.condition);\n    \n    // Prepare medical information package for emergency responders\n    const medicalPackage = await this.emergencyInfoGenerator.generatePackage(userId);\n    \n    // Contact emergency service\n    await this.emergencyConnector.notifyService(emergencyService, {\n      userId,\n      location,\n      assessment,\n      medicalPackage\n    });\n    \n    // Notify emergency contacts\n    await this.notificationService.notifyEmergencyContacts(userId, assessment);\n    \n    // Log emergency event\n    await this.emergencyLogger.logEmergency(userId, assessment, emergencyService);\n  }\n}\n```",
+      "testStrategy": "1. Test emergency condition detection accuracy\n2. Validate geolocation accuracy for emergency routing\n3. Test integration with emergency services through simulated scenarios\n4. Verify emergency contact notification system\n5. Test medical information sharing mechanisms\n6. Validate post-emergency follow-up protocols\n7. Conduct end-to-end testing with emergency service partners",
+      "priority": "high",
+      "dependencies": [
+        4,
+        6
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "10.1",
+          "title": "Develop Emergency Detection Algorithms",
+          "description": "Create algorithms for detecting emergency conditions from user inputs, vital signs, and wearable device data.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "10.2",
+          "title": "Implement Geolocation Service",
+          "description": "Build a precise geolocation system for determining user location and routing to appropriate emergency services.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "10.3",
+          "title": "Create 911 Integration",
+          "description": "Develop integration with Mexico's emergency services (911) for automated emergency reporting.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "10.4",
+          "title": "Implement Red Cross Network Integration",
+          "description": "Build integration with the Red Cross Network for medical emergencies requiring ambulance services.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "10.5",
+          "title": "Develop Emergency Contact System",
+          "description": "Create a system for notifying designated emergency contacts when emergency services are activated.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "10.6",
+          "title": "Implement Medical Information Sharing",
+          "description": "Build a mechanism for securely sharing relevant medical information with emergency responders.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "10.7",
+          "title": "Create Post-Emergency Protocols",
+          "description": "Develop follow-up protocols for after emergency situations including documentation and care continuity.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Implement Clinical Performance Metrics Dashboard",
+      "description": "Develop a comprehensive analytics system to track and visualize clinical performance metrics including diagnostic concordance and patient outcomes.",
+      "details": "1. Define key performance indicators (KPIs) for clinical performance\n2. Implement data collection and aggregation pipeline\n3. Develop statistical analysis models for diagnostic concordance\n4. Create visualization components for different metrics\n5. Implement role-based dashboard access\n6. Develop reporting and export functionality\n7. Create alert system for performance anomalies\n\nKey metrics to track:\n- Diagnostic concordance (target ≥93%)\n- Time to diagnosis\n- Patient outcome tracking\n- Provider performance metrics\n- Regional health trends\n- User engagement and retention\n\nDashboard components:\n- Executive summary view\n- Clinical performance detail view\n- Provider performance comparison\n- Population health trends\n- Operational metrics\n\nExample metrics implementation:\n```typescript\nclass ClinicalMetricsService {\n  async calculateDiagnosticConcordance(timeRange: DateRange, filters: MetricFilters = {}): Promise<ConcordanceResult> {\n    // Fetch AI diagnoses and corresponding physician diagnoses\n    const diagnosisPairs = await this.diagnosisRepository.getPairedDiagnoses(timeRange, filters);\n    \n    // Calculate overall concordance rate\n    const concordantCount = diagnosisPairs.filter(pair => this.isDiagnosisConcordant(pair.aiDiagnosis, pair.physicianDiagnosis)).length;\n    const concordanceRate = concordantCount / diagnosisPairs.length;\n    \n    // Calculate concordance by condition category\n    const concordanceByCategory = this.calculateCategoryBreakdown(diagnosisPairs);\n    \n    // Calculate concordance trends over time\n    const concordanceTrend = this.calculateTimeTrend(diagnosisPairs, timeRange);\n    \n    // Identify areas for improvement\n    const improvementAreas = this.identifyImprovementAreas(diagnosisPairs);\n    \n    return {\n      overallConcordanceRate: concordanceRate,\n      targetMet: concordanceRate >= 0.93, // 93% target from PRD\n      concordanceByCategory,\n      concordanceTrend,\n      improvementAreas,\n      sampleSize: diagnosisPairs.length,\n      timeRange\n    };\n  }\n  \n  private isDiagnosisConcordant(aiDiagnosis: Diagnosis, physicianDiagnosis: Diagnosis): boolean {\n    // Check if diagnoses match exactly\n    if (aiDiagnosis.code === physicianDiagnosis.code) {\n      return true;\n    }\n    \n    // Check if diagnoses are in same diagnostic family\n    if (this.taxonomyService.areDiagnosesRelated(aiDiagnosis.code, physicianDiagnosis.code)) {\n      return true;\n    }\n    \n    // Check if AI diagnosis was in physician's differential diagnosis list\n    if (physicianDiagnosis.differentialDiagnoses?.includes(aiDiagnosis.code)) {\n      return true;\n    }\n    \n    return false;\n  }\n}\n```",
+      "testStrategy": "1. Validate metric calculations against manually verified datasets\n2. Test dashboard performance with large data volumes\n3. Verify data aggregation accuracy across different time periods\n4. Test role-based access controls for different user types\n5. Validate report generation and export functionality\n6. Test alert generation for performance anomalies\n7. Conduct usability testing with clinical and administrative users",
+      "priority": "medium",
+      "dependencies": [
+        4,
+        9
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "11.1",
+          "title": "Define Clinical Performance KPIs",
+          "description": "Define key performance indicators for clinical performance including diagnostic concordance, time to diagnosis, and patient outcomes.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "11.2",
+          "title": "Implement Data Collection Pipeline",
+          "description": "Create a data collection and aggregation pipeline that gathers metrics from various system components.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "11.3",
+          "title": "Develop Diagnostic Concordance Models",
+          "description": "Build statistical analysis models for measuring diagnostic concordance between AI and human physicians.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "11.4",
+          "title": "Create Visualization Components",
+          "description": "Develop visualization components for different metrics including charts, graphs, and summary displays.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "11.5",
+          "title": "Implement Role-Based Dashboard Access",
+          "description": "Create role-based access controls for the metrics dashboard with appropriate views for different user types.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "11.6",
+          "title": "Develop Reporting Functionality",
+          "description": "Build reporting and export functionality for generating periodic and ad-hoc clinical performance reports.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Develop Subscription and Payment Models",
+      "description": "Implement the mixed business model (B2C + B2B + B2G) with subscription plans, commissions, and technology licensing as outlined in the strategic objectives.",
+      "details": "1. Design subscription plan structures for different user segments\n2. Implement recurring billing system with multiple payment methods\n3. Develop commission tracking for provider and pharmacy referrals\n4. Create B2B licensing model and contract management\n5. Implement B2G program management and billing\n6. Develop analytics for revenue tracking and forecasting\n7. Create discount and promotion management system\n\nSubscription models:\n- Consumer plans (Basic, Premium, Family)\n- Provider plans (Solo, Clinic, Hospital)\n- Corporate plans (SME, Enterprise)\n- Government programs (Municipal, State)\n\nRevenue streams:\n- Direct subscriptions\n- Per-consultation fees\n- Pharmacy and lab referral commissions\n- Technology licensing fees\n- Data analytics services (anonymized)\n\nExample subscription implementation:\n```typescript\nclass SubscriptionService {\n  async createSubscription(userId: string, planId: string, paymentMethod: PaymentMethod): Promise<Subscription> {\n    // Get plan details\n    const plan = await this.planRepository.findById(planId);\n    if (!plan.isActive) {\n      throw new Error('Selected plan is not currently available');\n    }\n    \n    // Check if user already has an active subscription\n    const existingSubscription = await this.subscriptionRepository.findActiveByUserId(userId);\n    if (existingSubscription) {\n      // Handle upgrade/downgrade/crossgrade logic\n      return this.changeSubscription(existingSubscription.id, planId);\n    }\n    \n    // Create payment method with payment processor\n    const paymentToken = await this.paymentProcessor.registerPaymentMethod(userId, paymentMethod);\n    \n    // Calculate prorated amount if applicable\n    const amount = this.calculateInitialPayment(plan);\n    \n    // Process initial payment\n    const paymentResult = await this.paymentProcessor.processPayment({\n      userId,\n      paymentToken,\n      amount,\n      description: `Initial payment for ${plan.name} subscription`\n    });\n    \n    if (!paymentResult.success) {\n      throw new Error(`Payment failed: ${paymentResult.errorMessage}`);\n    }\n    \n    // Create subscription record\n    const subscription = new Subscription({\n      userId,\n      planId,\n      status: 'active',\n      startDate: new Date(),\n      currentPeriodEnd: this.calculatePeriodEnd(plan.billingInterval),\n      paymentMethodId: paymentToken,\n      lastPaymentDate: new Date(),\n      lastPaymentAmount: amount\n    });\n    \n    // Save subscription\n    await this.subscriptionRepository.save(subscription);\n    \n    // Update user permissions based on plan\n    await this.permissionService.updateUserPermissions(userId, plan.permissions);\n    \n    // Send confirmation\n    await this.notificationService.sendSubscriptionConfirmation(subscription);\n    \n    return subscription;\n  }\n}\n```",
+      "testStrategy": "1. Test subscription creation, modification, and cancellation flows\n2. Validate billing accuracy for different subscription plans\n3. Test payment processing with various payment methods\n4. Verify commission calculation and distribution\n5. Test B2B licensing contract management\n6. Validate revenue analytics and reporting\n7. Test discount and promotion application logic\n8. Perform end-to-end testing of the entire subscription lifecycle",
+      "priority": "medium",
+      "dependencies": [
+        7
+      ],
+      "status": "pending",
+      "subtasks": [
+        {
+          "id": "12.1",
+          "title": "Design Consumer Subscription Plans",
+          "description": "Create subscription plan structures for consumer segments (Basic, Premium, Family) with appropriate features and pricing.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "12.2",
+          "title": "Develop Provider Subscription Plans",
+          "description": "Design subscription plans for healthcare providers (Solo, Clinic, Hospital) with appropriate features and pricing.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "12.3",
+          "title": "Create B2B and B2G Licensing Models",
+          "description": "Develop licensing models for B2B (corporate) and B2G (government) segments with contract management capabilities.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "12.4",
+          "title": "Implement Recurring Billing System",
+          "description": "Build a recurring billing system supporting multiple payment methods and subscription life cycle management.",
+          "status": "pending",
+          "priority": "high"
+        },
+        {
+          "id": "12.5",
+          "title": "Develop Commission Tracking",
+          "description": "Create a system for tracking and distributing commissions for provider and pharmacy referrals.",
+          "status": "pending",
+          "priority": "medium"
+        },
+        {
+          "id": "12.6",
+          "title": "Implement Revenue Analytics",
+          "description": "Build analytics dashboards for revenue tracking, forecasting, and business model optimization.",
+          "status": "pending",
+          "priority": "medium"
+        }
+      ]
+    }
+  ]
+}
