@@ -7,8 +7,8 @@ import './index.css';
 import App from './App';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 
-// Create and export the Supabase client
-import './lib/supabaseClient';
+// Import Supabase client but don't re-initialize it
+// The client is already exported from supabaseClient.ts
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

@@ -1,10 +1,6 @@
 // Do not import context hooks directly in a service
-import { createClient } from '@supabase/supabase-js';
-
-// Create a Supabase client
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL || 'https://your-project-url.supabase.co';
-const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY || 'your-anon-key';
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Import the centralized Supabase client
+import { supabase } from '../lib/supabase';
 
 // Consultation types
 export interface ConsultationRequest {

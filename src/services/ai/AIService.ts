@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../../lib/supabase';
 import OpenAI from 'openai';
 import medicationDatabase from '../../data/medications';
 
@@ -57,18 +57,8 @@ class AIService {
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
 
   constructor() {
-    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-    
-    if (!supabaseUrl) {
-      console.error('VITE_SUPABASE_URL is not set. Please check your environment variables.');
-    }
-    
-    if (!supabaseAnonKey) {
-      console.error('VITE_SUPABASE_ANON_KEY is not set. Please check your environment variables.');
-    }
-    
-    this.supabase = createClient(supabaseUrl, supabaseAnonKey);
+    // Use the centralized Supabase client instead of creating a new one
+    this.supabase = supabase;
   }
 
   /**

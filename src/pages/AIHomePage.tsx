@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { Brain, Image, MessageSquare, Shield, Activity, Clock, ChevronRight } from 'lucide-react';
 import SEO from '../core/components/SEO';
+// Import components with explicit type checking
 import FeatureCard from '../components/ui/FeatureCard';
 import CallToAction from '../components/ui/CallToAction';
+// Import styles as JS objects, not as React components
 import { animations } from '../styles/animations';
-import { typography } from '../styles/typography';
 
 function AIHomePage() {
   const controls = useAnimation();
@@ -146,7 +147,7 @@ function AIHomePage() {
               }}
             >
               <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mb-2">
-                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2 md:mb-0" style={typography.textStyles.h1}>
+                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2 md:mb-0">
                   Tu asistente médico <span className="text-white opacity-80">inteligente</span>
                 </h1>
                 <motion.div 
@@ -160,11 +161,10 @@ function AIHomePage() {
                 </motion.div>
               </div>
               <motion.p 
-                className="mt-6 text-xl text-white opacity-90"
+                className="mt-6 text-xl text-white opacity-90 text-lg md:text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
-                style={typography.textStyles.bodyLarge}
               >
                 Consulta con nuestro Doctor IA para obtener orientación médica personalizada, análisis de síntomas y recomendaciones basadas en la última tecnología de inteligencia artificial.
               </motion.p>
@@ -290,10 +290,10 @@ function AIHomePage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl" style={typography.textStyles.h2}>
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
               Inteligencia artificial al servicio de tu salud
             </h2>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto" style={typography.textStyles.bodyLarge}>
+            <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
               Nuestro sistema utiliza tecnología avanzada para brindarte la mejor orientación médica posible.
             </p>
           </motion.div>
