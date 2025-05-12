@@ -6,7 +6,7 @@ export interface FeatureCardProps {
   title: string;
   description: string;
   icon: React.FC<any> | LucideIcon;
-  color?: string;
+  color?: 'primary' | 'secondary' | 'accent' | 'blue';
   delay?: number;
   className?: string;
 }
