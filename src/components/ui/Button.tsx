@@ -22,28 +22,28 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  // Base classes
-  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md focus:outline-none transition duration-150 ease-in-out';
+  // Base classes with improved focus states and transitions
+  const baseClasses = 'inline-flex items-center justify-center font-medium rounded-md focus:outline-none transition-all duration-300 ease-in-out relative overflow-hidden';
   
-  // Size classes
-  const sizeClasses = {
+  // Size classes with improved spacing and typography
+  const sizeClasses: Record<string, string> = {
     sm: 'px-3 py-1.5 text-xs',
     md: 'px-4 py-2 text-sm',
     lg: 'px-6 py-3 text-base',
   };
   
-  // Variant classes
-  const variantClasses = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-blue-500',
-    secondary: 'bg-gray-200 hover:bg-gray-300 text-gray-800 focus:ring-2 focus:ring-offset-2 focus:ring-gray-500',
-    outline: 'bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500',
-    ghost: 'bg-transparent hover:bg-gray-100 text-gray-700',
-    link: 'bg-transparent text-blue-600 hover:underline hover:bg-transparent p-0 h-auto',
-    danger: 'bg-red-600 hover:bg-red-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-red-500',
+  // Variant classes with enhanced visual states and animations
+  const variantClasses: Record<string, string> = {
+    primary: 'bg-primary-500 hover:bg-primary-600 active:bg-primary-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 shadow-sm hover:shadow transform hover:-translate-y-0.5 active:translate-y-0',
+    secondary: 'bg-secondary-500 hover:bg-secondary-600 active:bg-secondary-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500 shadow-sm hover:shadow transform hover:-translate-y-0.5 active:translate-y-0',
+    outline: 'bg-white border border-gray-300 hover:bg-gray-50 text-gray-700 focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 hover:border-primary-500 hover:text-primary-600',
+    ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 hover:text-primary-600',
+    link: 'bg-transparent text-primary-500 hover:text-primary-600 hover:underline hover:bg-transparent p-0 h-auto focus:ring-0',
+    danger: 'bg-feedback-error hover:bg-red-600 active:bg-red-700 text-white focus:ring-2 focus:ring-offset-2 focus:ring-red-500 shadow-sm hover:shadow transform hover:-translate-y-0.5 active:translate-y-0',
   };
   
-  // Disabled classes
-  const disabledClasses = 'opacity-50 cursor-not-allowed';
+  // Disabled classes with improved visual feedback
+  const disabledClasses = 'opacity-60 cursor-not-allowed transform-none shadow-none';
   
   // Width classes
   const widthClasses = fullWidth ? 'w-full' : '';
@@ -75,6 +75,9 @@ const Button: React.FC<ButtonProps> = ({
       {children}
       
       {!loading && iconPosition === 'right' && icon && <span className="ml-2">{icon}</span>}
+      
+      {/* Add subtle ripple effect on click */}
+      <span className="absolute inset-0 pointer-events-none bg-white opacity-0 group-active:opacity-20 rounded-md transform scale-0 group-active:scale-100 transition-all duration-300"></span>
     </button>
   );
 };
