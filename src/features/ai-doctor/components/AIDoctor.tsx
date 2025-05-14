@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
-import AIService, { AIQueryOptions } from '../../../services/ai/AIService';
+import AIService, { AIQueryOptions, StreamingAIResponse, StreamingResponseHandler } from '../../../services/ai/AIService';
 import EncryptionService from '../../../services/security/EncryptionService';
 import AIThinking from './AIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
@@ -40,6 +40,8 @@ type Message = {
   };
   nextQuestionId?: string;
   previousQuestionId?: string;
+  isStreaming?: boolean;
+  isComplete?: boolean;
 };
 
 type AIDoctorProps = {
@@ -186,68 +188,120 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       console.log(`Current question ID: ${currentQuestionId}`);
       console.log(`Question history: ${questionHistory.join(' -> ')}`);
       
+      // Create a streaming response handler
+      const botMessageId = (Date.now() + 1).toString();
+      
+      // Initialize empty streaming message
+      const initialStreamingMessage: Message = {
+        id: botMessageId,
+        text: '',
+        sender: 'bot',
+        timestamp: new Date(),
+        isStreaming: true,
+        isComplete: false
+      };
+      
+      // Add initial message to messages state
+      setMessages(prev => [...prev, initialStreamingMessage]);
+      
+      // Create streaming handler
+      const streamingHandler: StreamingResponseHandler = (streamResponse: StreamingAIResponse) => {
+        // Update message with streaming content
+        setMessages(prev => {
+          const updatedMessages = [...prev];
+          const messageIndex = updatedMessages.findIndex(m => m.id === botMessageId);
+          
+          if (messageIndex !== -1) {
+            updatedMessages[messageIndex] = {
+              ...updatedMessages[messageIndex],
+              text: streamResponse.text,
+              severity: streamResponse.severity,
+              isEmergency: streamResponse.isEmergency,
+              suggestedSpecialty: streamResponse.suggestedSpecialty,
+              suggestedConditions: streamResponse.suggestedConditions,
+              suggestedMedications: streamResponse.suggestedMedications,
+              followUpQuestions: streamResponse.followUpQuestions,
+              isStreaming: streamResponse.isStreaming,
+              isComplete: streamResponse.isComplete
+            };
+          }
+          
+          return updatedMessages;
+        });
+        
+        // Update severity if provided
+        if (streamResponse.severity) {
+          setSeverityLevel(streamResponse.severity);
+        }
+        
+        // When streaming is complete, set processing to false
+        if (streamResponse.isComplete) {
+          setIsProcessing(false);
+          
+          // Add interactive options based on input content
+          setMessages(prev => {
+            const updatedMessages = [...prev];
+            const messageIndex = updatedMessages.findIndex(m => m.id === botMessageId);
+            
+            if (messageIndex !== -1) {
+              const lowerInput = input.toLowerCase();
+              const currentMessage = updatedMessages[messageIndex];
+              
+              // Add interactive options based on user input
+              if (lowerInput.includes('dolor') && !currentMessage.interactiveOptions) {
+                currentMessage.interactiveOptions = {
+                  type: 'symptom_severity',
+                  options: ['Leve', 'Moderada', 'Severa'],
+                  questionId: 'severity_pain_text'
+                };
+                setCurrentQuestionId('severity_pain_text');
+              } else if ((lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) && !currentMessage.interactiveOptions) {
+                currentMessage.interactiveOptions = {
+                  type: 'symptom_duration',
+                  options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
+                  questionId: 'duration_fever_text'
+                };
+                setCurrentQuestionId('duration_fever_text');
+              }
+              
+              // Add pharmacy recommendation option if conditions are suggested
+              if (currentMessage.suggestedConditions && currentMessage.suggestedConditions.length > 0) {
+                if (!currentMessage.interactiveOptions) {
+                  currentMessage.interactiveOptions = {
+                    type: 'yes_no',
+                    options: ['Ver medicamentos recomendados', 'No, gracias'],
+                    questionId: 'pharmacy_recommendation'
+                  };
+                  setCurrentQuestionId('pharmacy_recommendation');
+                } else {
+                  if (!currentMessage.followUpQuestions) {
+                    currentMessage.followUpQuestions = [];
+                  }
+                  currentMessage.followUpQuestions.push('Ver medicamentos recomendados');
+                }
+              }
+            }
+            
+            return updatedMessages;
+          });
+        }
+      };
+      
+      // Configure AI query with streaming enabled
       const queryOptions: AIQueryOptions = {
         userMessage: input,
         userHistory: messages.map(m => m.text),
         severity: severityLevel,
         location: location || undefined,
         usePremiumModel: imageAnalysisEnabled || input.length > 100 || input.includes('imagen') || input.includes('photo'),
-        customInstructions: doctorInstructions || undefined
+        customInstructions: doctorInstructions || undefined,
+        stream: true,
+        onStreamingResponse: streamingHandler
       };
       
-      const response = await AIService.processQuery(queryOptions);
+      // Process query with streaming
+      await AIService.processQuery(queryOptions);
       
-      if (response.severity) {
-        setSeverityLevel(response.severity);
-      }
-      
-      const lowerInput = input.toLowerCase();
-      let botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: response.text,
-        sender: 'bot',
-        timestamp: new Date(),
-        severity: response.severity,
-        isEmergency: response.isEmergency,
-        suggestedSpecialty: response.suggestedSpecialty,
-        suggestedConditions: response.suggestedConditions,
-        suggestedMedications: response.suggestedMedications,
-        followUpQuestions: response.followUpQuestions
-      };
-      
-      if (lowerInput.includes('dolor') && !botMessage.interactiveOptions) {
-        botMessage.interactiveOptions = {
-          type: 'symptom_severity',
-          options: ['Leve', 'Moderada', 'Severa'],
-          questionId: 'severity_pain_text'
-        };
-        setCurrentQuestionId('severity_pain_text');
-      } else if ((lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) && !botMessage.interactiveOptions) {
-        botMessage.interactiveOptions = {
-          type: 'symptom_duration',
-          options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
-          questionId: 'duration_fever_text'
-        };
-        setCurrentQuestionId('duration_fever_text');
-      }
-      
-      if (botMessage.suggestedConditions && botMessage.suggestedConditions.length > 0) {
-        if (!botMessage.interactiveOptions) {
-          botMessage.interactiveOptions = {
-            type: 'yes_no',
-            options: ['Ver medicamentos recomendados', 'No, gracias'],
-            questionId: 'pharmacy_recommendation'
-          };
-          setCurrentQuestionId('pharmacy_recommendation');
-        } else {
-          if (!botMessage.followUpQuestions) {
-            botMessage.followUpQuestions = [];
-          }
-          botMessage.followUpQuestions.push('Ver medicamentos recomendados');
-        }
-      }
-      
-      setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Error processing message:', error);
       
@@ -257,7 +311,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         sender: 'bot',
         timestamp: new Date()
       }]);
-    } finally {
+      
       setIsProcessing(false);
     }
   };

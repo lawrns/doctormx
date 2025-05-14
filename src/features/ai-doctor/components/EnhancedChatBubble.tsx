@@ -20,6 +20,8 @@ interface EnhancedChatBubbleProps {
     suggestedConditions?: string[];
     suggestedMedications?: string[];
     followUpQuestions?: string[];
+    isStreaming?: boolean;
+    isComplete?: boolean;
   };
   onOptionSelect?: (option: string, questionId: string) => void;
   interactiveOptions?: {
@@ -115,7 +117,53 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
           </div>
         ) : (
           <>
-            <p className="leading-relaxed">{message.text}</p>
+            {message.isStreaming ? (
+              <>
+                {message.text === '' ? (
+                  <div className="leading-relaxed flex items-center">
+                    <motion.span 
+                      className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-1"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.2, repeatDelay: 0.2 }}
+                    />
+                    <motion.span 
+                      className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-1"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.2, delay: 0.2, repeatDelay: 0.2 }}
+                    />
+                    <motion.span 
+                      className="inline-block w-2 h-2 bg-blue-600 rounded-full"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.2, delay: 0.4, repeatDelay: 0.2 }}
+                    />
+                    <span className="ml-2 text-sm text-gray-600">Doctor.mx está escribiendo...</span>
+                  </div>
+                ) : (
+                  <div>
+                    <p className="leading-relaxed">{message.text}</p>
+                    <div className="mt-2 flex items-center">
+                      <motion.span 
+                        className="inline-block w-1.5 h-1.5 bg-blue-600 rounded-full mr-0.5"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                        transition={{ repeat: Infinity, duration: 1.2, repeatDelay: 0.2 }}
+                      />
+                      <motion.span 
+                        className="inline-block w-1.5 h-1.5 bg-blue-600 rounded-full mr-0.5"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                        transition={{ repeat: Infinity, duration: 1.2, delay: 0.2, repeatDelay: 0.2 }}
+                      />
+                      <motion.span 
+                        className="inline-block w-1.5 h-1.5 bg-blue-600 rounded-full"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.7, 1, 0.7] }}
+                        transition={{ repeat: Infinity, duration: 1.2, delay: 0.4, repeatDelay: 0.2 }}
+                      />
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <p className="leading-relaxed">{message.text}</p>
+            )}
             
             {message.containsImage && message.imageUrl && (
               <motion.div 

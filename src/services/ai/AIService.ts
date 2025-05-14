@@ -2,20 +2,89 @@ import { supabase } from '../../lib/supabase';
 import OpenAI from 'openai';
 import medicationDatabase from '../../data/medications';
 
-const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
+const OPENAI_KEY = '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';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
 const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
 
 const DEFAULT_DOCTOR_INSTRUCTIONS = `Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.`;
 
+/**
+ * Retry configuration
+ */
+const DEFAULT_RETRY_CONFIG = {
+  maxRetries: 3,
+  initialDelay: 500, // ms
+  maxDelay: 10000, // ms
+  backoffFactor: 2, // exponential backoff
+  retryableStatusCodes: [408, 429, 500, 502, 503, 504],
+  retryableNetworkErrors: ['ETIMEDOUT', 'ECONNRESET', 'EADDRINUSE', 'ECONNREFUSED', 'EPIPE', 'ENOTFOUND', 'ENETUNREACH', 'EAI_AGAIN'],
+  shouldRetry: (error: any) => {
+    // Retry on network errors
+    if (error.message && DEFAULT_RETRY_CONFIG.retryableNetworkErrors.some(netErr => error.message.includes(netErr))) {
+      return true;
+    }
+    
+    // Retry on specific HTTP status codes
+    if (error.status && DEFAULT_RETRY_CONFIG.retryableStatusCodes.includes(error.status)) {
+      return true;
+    }
+    
+    // Retry on rate limiting from OpenAI (specific error types)
+    if (error.type === 'rate_limit_exceeded' || error.type === 'server_error' || error.type === 'timeout') {
+      return true;
+    }
+    
+    return false;
+  }
+};
+
+/**
+ * A utility function for retrying operations with exponential backoff
+ * @param operation The async function to retry
+ * @param config Optional retry configuration
+ * @returns Promise with the operation result
+ */
+const withRetry = async <T>(
+  operation: () => Promise<T>, 
+  config = DEFAULT_RETRY_CONFIG
+): Promise<T> => {
+  let retries = 0;
+  let lastError: any;
+  
+  while (retries <= config.maxRetries) {
+    try {
+      return await operation();
+    } catch (error: any) {
+      lastError = error;
+      
+      // Check if we should retry this error
+      if (!config.shouldRetry(error) || retries >= config.maxRetries) {
+        console.error(`Error not retryable or max retries reached: ${error.message}`);
+        break;
+      }
+      
+      // Calculate backoff delay with jitter
+      const delay = Math.min(
+        config.maxDelay,
+        config.initialDelay * Math.pow(config.backoffFactor, retries) * (0.8 + 0.4 * Math.random())
+      );
+      
+      console.warn(`Retry attempt ${retries + 1}/${config.maxRetries} for operation after ${delay}ms: ${error.message}`);
+      
+      // Wait before retrying
+      await new Promise(resolve => setTimeout(resolve, delay));
+      retries++;
+    }
+  }
+  
+  // If we got here, all retries failed
+  throw lastError;
+};
+
+// Use the hardcoded key instead of localstorage retrieval
 const getOpenAIInstance = (): OpenAI | null => {
   try {
-    const apiKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
-    if (!apiKey) {
-      console.warn('No OpenAI API key found in local storage');
-      return null;
-    }
-    return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
+    return new OpenAI({ apiKey: OPENAI_KEY, dangerouslyAllowBrowser: true });
   } catch (error) {
     console.error('Error creating OpenAI instance:', error);
     return null;
@@ -36,6 +105,13 @@ export interface AIResponse {
   };
 }
 
+export interface StreamingAIResponse extends AIResponse {
+  isStreaming: boolean;
+  isComplete: boolean;
+}
+
+export type StreamingResponseHandler = (response: StreamingAIResponse) => void;
+
 export interface AIQueryOptions {
   userMessage: string;
   userHistory?: string[];
@@ -48,6 +124,8 @@ export interface AIQueryOptions {
     latitude: number;
     longitude: number;
   };
+  stream?: boolean;
+  onStreamingResponse?: StreamingResponseHandler;
 }
 
 class AIService {
@@ -66,32 +144,148 @@ class AIService {
    * Uses a tiered approach: GPT-3.5-Turbo for triage, GPT-4 for complex cases
    */
   async processQuery(options: AIQueryOptions): Promise<AIResponse> {
+    // If streaming is requested, use the streaming version
+    if (options.stream && options.onStreamingResponse) {
+      return this.processQueryWithStreaming(options);
+    }
+    
     const needsPremiumModel = this.shouldUsePremiumModel(options);
     
     try {
-      const medicalContext = await this.getMedicalKnowledge(options.userMessage);
-      
-      const requestData = {
-        message: options.userMessage,
-        history: options.userHistory || [],
-        medicalContext,
-        userProfile: options.userProfile,
-        severity: options.severity,
-        location: options.location // Pass location for provider recommendations
-      };
-      
-      const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
-      const response = await this.makeAPIRequest(endpoint, requestData);
-      
-      const enhancedResponse = await this.enhanceResponse(response, options);
-      
-      return enhancedResponse;
+      // Use retry mechanism for the entire operation
+      return await withRetry(async () => {
+        const medicalContext = await this.getMedicalKnowledge(options.userMessage);
+        
+        const requestData = {
+          message: options.userMessage,
+          history: options.userHistory || [],
+          medicalContext,
+          userProfile: options.userProfile,
+          severity: options.severity,
+          location: options.location // Pass location for provider recommendations
+        };
+        
+        const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
+        const response = await this.makeAPIRequest(endpoint, requestData);
+        
+        const enhancedResponse = await this.enhanceResponse(response, options);
+        
+        return enhancedResponse;
+      });
     } catch (error) {
-      console.error('Error processing AI query:', error);
+      console.error('Error processing AI query after all retries:', error);
       return {
         text: 'Lo siento, estoy experimentando dificultades técnicas. Por favor, intenta nuevamente en unos momentos.',
         severity: options.severity,
       };
+    }
+  }
+  
+  /**
+   * Process a user query with streaming response
+   * This provides a real-time typing effect as the AI generates the response
+   */
+  async processQueryWithStreaming(options: AIQueryOptions): Promise<AIResponse> {
+    if (!options.onStreamingResponse) {
+      throw new Error('Stream handler is required for streaming responses');
+    }
+    
+    const needsPremiumModel = this.shouldUsePremiumModel(options);
+    const handler = options.onStreamingResponse;
+    
+    try {
+      // Get medical context outside the retry loop to avoid duplicate calls
+      const medicalContext = await this.getMedicalKnowledge(options.userMessage);
+      
+      // Use retry mechanism for the streaming operation
+      return await withRetry(async () => {
+        const openai = getOpenAIInstance();
+        if (!openai) {
+          throw new Error('OpenAI instance not available');
+        }
+        
+        const model = needsPremiumModel ? 'gpt-4' : 'gpt-3.5-turbo';
+        let systemMessage = options.customInstructions || this.getDoctorInstructions();
+        
+        const messages = [
+          { role: "system", content: systemMessage },
+          { role: "user", content: this.formatUserMessage({
+            message: options.userMessage,
+            history: options.userHistory || [],
+            medicalContext,
+            userProfile: options.userProfile,
+            severity: options.severity,
+            location: options.location
+          })}
+        ];
+        
+        let fullResponse = '';
+        
+        // Initial response with empty text
+        const initialResponse: StreamingAIResponse = {
+          text: '',
+          severity: options.severity || 10,
+          isStreaming: true,
+          isComplete: false
+        };
+        handler(initialResponse);
+        
+        // Call OpenAI with streaming enabled
+        const stream = await openai.chat.completions.create({
+          model,
+          messages: messages as any,
+          temperature: 0.7,
+          stream: true,
+        });
+        
+        // Process each chunk of the stream
+        for await (const chunk of stream) {
+          const content = chunk.choices[0]?.delta?.content || '';
+          if (content) {
+            fullResponse += content;
+            
+            // Update with current response text
+            const updatedResponse: StreamingAIResponse = {
+              text: fullResponse,
+              severity: options.severity || this.estimateSeverity(fullResponse),
+              isStreaming: true,
+              isComplete: false
+            };
+            handler(updatedResponse);
+          }
+        }
+        
+        // Create enhanced response once streaming is complete
+        const response = {
+          text: fullResponse,
+          severity: options.severity,
+        };
+        
+        const enhancedResponse = await this.enhanceResponse(response, options);
+        
+        // Send final response with isComplete flag
+        const finalResponse: StreamingAIResponse = {
+          ...enhancedResponse,
+          isStreaming: false,
+          isComplete: true
+        };
+        handler(finalResponse);
+        
+        return enhancedResponse;
+      });
+    } catch (error) {
+      console.error('Error processing streaming AI query after all retries:', error);
+      
+      // Notify handler of the error
+      const errorResponse: StreamingAIResponse = {
+        text: 'Lo siento, estoy experimentando dificultades técnicas. Por favor, intenta nuevamente en unos momentos.',
+        severity: options.severity,
+        isStreaming: false,
+        isComplete: true
+      };
+      handler(errorResponse);
+      
+      return errorResponse;
     }
   }
   
@@ -108,26 +302,114 @@ class AIService {
       
       console.log('Analyzing image with GPT-4:', imageUrl);
       
-      const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
-        imageUrl,
-        symptoms,
-        usePremiumModel: true, // Force premium model for image analysis
+      // Use retry mechanism
+      return await withRetry(async () => {
+        const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
+          imageUrl,
+          symptoms,
+          usePremiumModel: true, // Force premium model for image analysis
+        });
+        
+        return {
+          text: response.analysis || response.text,
+          imageAnalysis: {
+            findings: response.findings || 'Análisis detallado no disponible',
+            confidence: response.confidence || 0.75,
+          },
+          severity: response.severity,
+          suggestedSpecialty: response.suggestedSpecialty,
+        };
       });
-      
-      return {
-        text: response.analysis || response.text,
-        imageAnalysis: {
-          findings: response.findings || 'Análisis detallado no disponible',
-          confidence: response.confidence || 0.75,
-        },
-        severity: response.severity,
-        suggestedSpecialty: response.suggestedSpecialty,
-      };
     } catch (error) {
-      console.error('Error analyzing image:', error);
+      console.error('Error analyzing image after all retries:', error);
       return {
         text: 'No se pudo analizar la imagen. Por favor, intenta con otra imagen o describe tus síntomas.',
       };
+    }
+  }
+
+  /**
+   * Generate smart replies based on conversation context
+   * @param conversationContext The context of the conversation
+   * @returns Array of suggested replies
+   */
+  public async generateSmartReplies(conversationContext: string): Promise<string[]> {
+    try {
+      const openai = getOpenAIInstance();
+      if (!openai) {
+        console.warn('OpenAI instance not available for smart replies');
+        return ['Tell me more', 'Thank you', 'Next question'];
+      }
+
+      // Use retry mechanism
+      return await withRetry(async () => {
+        const completion = await openai.chat.completions.create({
+          messages: [
+            { 
+              role: 'system', 
+              content: 'Generate 3 brief, helpful response options that a user might select as a quick reply. Make them concise (2-5 words each) and varied in tone and content. Return them as a JSON array of strings.' 
+            },
+            { role: 'user', content: conversationContext }
+          ],
+          model: 'gpt-3.5-turbo-json-mode',
+          response_format: { type: "json_object" },
+        });
+
+        const response = completion.choices[0]?.message?.content || '{"replies": []}';
+        const parsedResponse = JSON.parse(response);
+        return parsedResponse.replies || [];
+      });
+    } catch (error) {
+      console.error('Error generating smart replies after all retries:', error);
+      return ['Tell me more', 'Thank you', 'Next question'];
+    }
+  }
+
+  /**
+   * Analyze symptoms using OpenAI for triage
+   * @param symptoms Description of symptoms
+   * @returns Analysis results with potential conditions and recommendations
+   */
+  public async analyzeSymptoms(symptoms: string): Promise<any> {
+    try {
+      const openai = getOpenAIInstance();
+      if (!openai) {
+        console.warn('OpenAI instance not available for symptom analysis');
+        return this.simulateSymptomAnalysis(symptoms);
+      }
+
+      // Use retry mechanism
+      return await withRetry(async () => {
+        const prompt = `
+          You are a medical assistant. Analyze the following symptoms and provide: 
+          1. Potential conditions (with confidence levels)
+          2. Recommended specialists
+          3. Urgency level (low, medium, high, emergency)
+          4. Next steps for the patient
+          
+          Symptoms: ${symptoms}
+          
+          Format your response as a valid JSON object with the following structure:
+          {
+            "potentialConditions": [{"condition": string, "confidence": number}],
+            "recommendedSpecialists": string[],
+            "urgency": string,
+            "nextSteps": string[]
+          }
+        `;
+
+        const completion = await openai.chat.completions.create({
+          messages: [{ role: 'user', content: prompt }],
+          model: 'gpt-3.5-turbo-json-mode',
+          response_format: { type: "json_object" },
+        });
+
+        const response = completion.choices[0]?.message?.content || '{}';
+        return JSON.parse(response);
+      });
+    } catch (error) {
+      console.error('Error analyzing symptoms after all retries:', error);
+      return this.simulateSymptomAnalysis(symptoms);
     }
   }
   
@@ -138,17 +420,20 @@ class AIService {
     try {
       console.log(`Finding providers near: ${location.latitude}, ${location.longitude}`);
       
-      const { data, error } = await this.supabase
-        .from('doctors')
-        .select('*')
-        .eq('specialty', specialty)
-        .order('distance', { ascending: true });
+      // Use retry mechanism
+      return await withRetry(async () => {
+        const { data, error } = await this.supabase
+          .from('doctors')
+          .select('*')
+          .eq('specialty', specialty)
+          .order('distance', { ascending: true });
+          
+        if (error) throw error;
         
-      if (error) throw error;
-      
-      return data || [];
+        return data || [];
+      });
     } catch (error) {
-      console.error('Error finding nearby providers:', error);
+      console.error('Error finding nearby providers after all retries:', error);
       return [];
     }
   }
@@ -464,21 +749,58 @@ class AIService {
         console.log(`Using model: ${model} for request`);
         console.log(`Using custom instructions: ${data.customInstructions ? 'Yes' : 'No'}`);
         
-        const response = await openai.chat.completions.create({
-          model,
-          messages: messages as any,
-          temperature: 0.7,
-        });
+        // Implement timeout for the OpenAI API call
+        const timeoutMs = 30000; // 30 seconds
+        
+        // Create a promise that resolves with the API response or rejects after timeout
+        const apiCallWithTimeout = Promise.race([
+          openai.chat.completions.create({
+            model,
+            messages: messages as any,
+            temperature: 0.7,
+          }),
+          new Promise<never>((_, reject) => {
+            setTimeout(() => reject(new Error(`API request timed out after ${timeoutMs}ms`)), timeoutMs);
+          })
+        ]);
+        
+        const response = await apiCallWithTimeout as OpenAI.Chat.Completions.ChatCompletion;
+        
+        // Check if the response is valid
+        if (!response || !response.choices || response.choices.length === 0) {
+          throw new Error('Invalid response from OpenAI API');
+        }
         
         const aiResponse = response.choices[0]?.message?.content || "Lo siento, no pude procesar tu consulta.";
         return this.parseAIResponse(aiResponse, data);
-      } catch (error) {
-        console.error('Error calling OpenAI API:', error);
-        console.log('Falling back to mock response');
-        return this.simulateAIResponse(endpoint, data);
+      } catch (error: any) {
+        // Structure the error in a way that our retry mechanism can understand
+        const enhancedError: any = error;
+        
+        // Add OpenAI specific error information
+        if (error.response) {
+          enhancedError.status = error.response.status;
+          enhancedError.type = error.response.data?.error?.type;
+          
+          // Log detailed error information
+          console.error('OpenAI API error details:', {
+            status: error.response.status,
+            statusText: error.response.statusText,
+            errorType: error.response.data?.error?.type,
+            errorMessage: error.response.data?.error?.message
+          });
+        }
+        
+        // Check if it's a timeout error
+        if (error.message && error.message.includes('timed out')) {
+          enhancedError.type = 'timeout';
+        }
+        
+        // Rethrow the enhanced error for the retry mechanism to handle
+        throw enhancedError;
       }
     } else {
-      console.log('No OpenAI API key found, using mock response');
+      console.log('OpenAI API key not working, using mock response');
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve(this.simulateAIResponse(endpoint, data));
@@ -682,6 +1004,74 @@ class AIService {
       followUpQuestions: [
         '¿Cuándo comenzaron los síntomas?',
         '¿Hay algo que empeore o mejore los síntomas?'
+      ]
+    };
+  }
+
+  private simulateSymptomAnalysis(symptoms: string): any {
+    // Simple mock analysis for common symptoms
+    if (symptoms.toLowerCase().includes('dolor de cabeza')) {
+      return {
+        potentialConditions: [
+          { condition: "Migraña", confidence: 0.75 },
+          { condition: "Cefalea tensional", confidence: 0.65 },
+          { condition: "Sinusitis", confidence: 0.40 }
+        ],
+        recommendedSpecialists: ["Neurólogo", "Médico general"],
+        urgency: "medium",
+        nextSteps: [
+          "Tomar analgésicos de venta libre como paracetamol",
+          "Descansar en un lugar oscuro y tranquilo",
+          "Mantener un registro de frecuencia e intensidad",
+          "Consultar a un médico si es recurrente"
+        ]
+      };
+    } else if (symptoms.toLowerCase().includes('dolor de estómago') || symptoms.toLowerCase().includes('náusea')) {
+      return {
+        potentialConditions: [
+          { condition: "Gastritis", confidence: 0.70 },
+          { condition: "Indigestión", confidence: 0.65 },
+          { condition: "Síndrome de intestino irritable", confidence: 0.45 }
+        ],
+        recommendedSpecialists: ["Gastroenterólogo", "Médico general"],
+        urgency: "low",
+        nextSteps: [
+          "Evitar alimentos irritantes y picantes",
+          "Mantenerse hidratado",
+          "Considerar antiácidos de venta libre",
+          "Consultar a un médico si persiste más de 48 horas"
+        ]
+      };
+    } else if (symptoms.toLowerCase().includes('fiebre')) {
+      return {
+        potentialConditions: [
+          { condition: "Infección viral", confidence: 0.80 },
+          { condition: "Infección bacteriana", confidence: 0.60 },
+          { condition: "Gripe", confidence: 0.70 }
+        ],
+        recommendedSpecialists: ["Médico general", "Infectólogo"],
+        urgency: "medium",
+        nextSteps: [
+          "Descansar y mantenerse hidratado",
+          "Tomar paracetamol para bajar la fiebre",
+          "Monitorear la temperatura regularmente",
+          "Buscar atención médica si supera los 39°C o persiste más de 3 días"
+        ]
+      };
+    }
+    
+    // Default response for other symptoms
+    return {
+      potentialConditions: [
+        { condition: "Condición no identificada", confidence: 0.40 }
+      ],
+      recommendedSpecialists: ["Médico general"],
+      urgency: "low",
+      nextSteps: [
+        "Monitorear los síntomas",
+        "Descansar adecuadamente",
+        "Mantener una buena hidratación",
+        "Consultar a un médico para una evaluación presencial"
       ]
     };
   }
