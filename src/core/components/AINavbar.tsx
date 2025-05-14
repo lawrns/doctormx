@@ -1,13 +1,11 @@
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Image, Activity, Stethoscope } from 'lucide-react';
+import { Brain, Image, Stethoscope } from 'lucide-react';
 import Button from '../../components/ui/Button';
 
 function AINavbar() {
   const location = useLocation();
   
   const navItems = [
-    { path: '/sintomas', label: 'Checador de Síntomas', icon: Activity },
     { path: '/doctor', label: 'Consulta Virtual', icon: Stethoscope },
     { path: '/doctores', label: 'Encontrar Especialista', icon: Brain },
     { path: '/image-analysis', label: 'Análisis de Imágenes', icon: Image },
@@ -48,13 +46,13 @@ function AINavbar() {
           </div>
           
           <div>
-            <Link to="/sintomas">
+            <Link to="/doctor">
               <Button 
                 size="sm"
                 variant="outline"
                 className="font-semibold text-white border-white hover:bg-brand-jade-600"
               >
-                Comenzar
+                Comenzar consulta
               </Button>
             </Link>
           </div>

@@ -94,15 +94,15 @@ function AIImageAnalysisPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-brand-jade-50 to-white">
       <SEO 
-        title="Análisis de Imágenes Médicas | DoctorAI"
+        title="Análisis de Imágenes Médicas | DoctorMX"
         description="Sube imágenes médicas para recibir un análisis preliminar basado en inteligencia artificial."
         keywords="análisis de imágenes médicas, IA médica, diagnóstico por imagen"
       />
       
       {/* Hero section with gradient background */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden">
+      <div className="bg-gradient-to-r from-brand-jade-600 to-brand-jade-800 relative overflow-hidden">
         {/* Grid pattern overlay */}
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@ function AIImageAnalysisPage() {
         
         {/* Enhanced Animated Gradient Orbs with multi-layered effect */}
         <motion.div 
-          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-blue-500 filter blur-3xl opacity-20"
+          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-brand-jade-500 filter blur-3xl opacity-20"
           animate={{
             x: [0, 30, 0],
             y: [0, -30, 0],
@@ -131,7 +131,7 @@ function AIImageAnalysisPage() {
         />
         
         <motion.div 
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-400 filter blur-3xl opacity-20"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-jade-400 filter blur-3xl opacity-20"
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
@@ -146,7 +146,7 @@ function AIImageAnalysisPage() {
         
         {/* Additional smaller orbs for layered effect */}
         <motion.div 
-          className="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-blue-400 filter blur-2xl opacity-15"
+          className="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-brand-jade-400 filter blur-2xl opacity-15"
           animate={{
             x: [0, 50, 0],
             y: [0, -20, 0],
@@ -160,7 +160,7 @@ function AIImageAnalysisPage() {
         />
         
         <motion.div 
-          className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-blue-300 filter blur-2xl opacity-15"
+          className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-brand-jade-300 filter blur-2xl opacity-15"
           animate={{
             x: [0, -30, 0],
             y: [0, 30, 0],
@@ -180,7 +180,7 @@ function AIImageAnalysisPage() {
             transition={{ duration: 0.5 }}
             className="mb-6"
           >
-            <Link to="/" className="text-white hover:text-blue-100 flex items-center transition-colors">
+            <Link to="/" className="text-white hover:text-brand-jade-100 flex items-center transition-colors">
               <ArrowLeft size={16} className="mr-1" />
               Volver al inicio
             </Link>

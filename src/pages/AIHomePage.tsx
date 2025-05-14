@@ -51,8 +51,8 @@ function AIHomePage() {
                   Obtén orientación médica confiable al momento<br />
                   con nuestra plataforma impulsada por IA.
                 </p>
-                <Link to="/sintomas">
-                  <Button variant="primary" size="lg">Comenzar evaluación gratuita</Button>
+                <Link to="/doctor">
+                  <Button variant="primary" size="lg">Comenzar consulta virtual</Button>
                 </Link>
               </div>
               
