@@ -1,4 +1,4 @@
-import React from 'react';
+// Using JSX without needing to import React since React 17+
 import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
@@ -37,7 +37,7 @@ function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+      <meta property="og:image" content={ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`} />
       <meta property="og:locale" content="es_ES" />
       
       {/* Twitter Card */}

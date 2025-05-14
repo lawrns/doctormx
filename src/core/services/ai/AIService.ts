@@ -1,4 +1,4 @@
-import { supabase } from '../../../lib/supabase';
+import { supabase } from '../../../lib/supabaseClient';
 
 export interface AIResponse {
   text: string;
@@ -28,7 +28,8 @@ export interface AIQueryOptions {
 
 class AIService {
   private supabase;
-  private apiEndpoint = process.env.REACT_APP_AI_API_ENDPOINT || '';
+  // This endpoint is currently unused but may be needed in the future
+  // private apiEndpoint = import.meta.env.VITE_REACT_APP_AI_API_ENDPOINT || '';
   private standardModelEndpoint = '/api/v1/standard-model';
   private premiumModelEndpoint = '/api/v1/premium-model';
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
@@ -74,24 +75,36 @@ class AIService {
    */
   async analyzeImage(imageUrl: string, symptoms?: string): Promise<AIResponse> {
     try {
+      console.log('Analyzing image with symptoms:', symptoms);
+      
+      // For demo purposes, we'll use a simulated API response
+      // In production, this would call an actual AI image analysis API
       const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
         imageUrl,
         symptoms,
       });
       
+      console.log('Image analysis response:', response);
+      
       return {
         text: response.analysis,
         imageAnalysis: {
-          findings: response.findings,
-          confidence: response.confidence,
+          findings: response.findings || 'No se encontraron hallazgos específicos',
+          confidence: response.confidence || 0.5,
         },
-        severity: response.severity,
-        suggestedSpecialty: response.suggestedSpecialty,
+        severity: response.severity || 30,
+        suggestedSpecialty: response.suggestedSpecialty || 'Medicina General',
+        suggestedConditions: response.suggestedConditions || [],
       };
     } catch (error) {
       console.error('Error analyzing image:', error);
       return {
         text: 'No se pudo analizar la imagen. Por favor, intenta con otra imagen o describe tus síntomas.',
+        imageAnalysis: {
+          findings: 'Error en el análisis',
+          confidence: 0,
+        },
+        severity: 0,
       };
     }
   }

@@ -1,0 +1,473 @@
+{
+  "northStar": "DoctorMX will be the leading AI healthcare platform in Mexico, bridging the healthcare accessibility gap through intelligent diagnostic assistance, telemedicine integration, and seamless connections to local healthcare providers.",
+  "codingRules": [
+    "Component-First Design: Build self-contained, reusable components with clear interfaces",
+    "Feature-Based Organization: Code organized by domain features, not technical concerns",
+    "Clean Separation: UI, business logic, and data access clearly separated",
+    "TypeScript Everywhere: Use strong typing for all code to prevent runtime errors",
+    "Testing First: Write tests before implementing features",
+    "Accessibility Built-in: All components meet WCAG 2.1 AA standards"
+  ],
+  "phases": [
+    {
+      "id": "phase-1",
+      "name": "MVP Core Foundation",
+      "description": "Establish a functional patient-focused application with basic AI diagnosis capabilities",
+      "durationWeeks": 4,
+      "tasks": [
+        {
+          "id": "mvp-1",
+          "title": "Fix UI/UX Rendering Issues",
+          "description": "Resolve React error #31 and other rendering issues to stabilize the application",
+          "details": "1. Identify and fix component export issues in the codebase\n2. Resolve chat interface animation and shadow issues\n3. Fix image analysis component rendering\n4. Ensure responsive design works on all target devices\n5. Update styling to match brand guidelines",
+          "testStrategy": "1. Create UI smoke tests to verify components render correctly\n2. Test on multiple screen sizes and devices\n3. Verify animations and transitions are smooth and purposeful\n4. Confirm all accessibility requirements are met",
+          "priority": "critical",
+          "dependencies": [],
+          "status": "in-progress",
+          "complexity": 7,
+          "milestones": [
+            "All component export issues resolved",
+            "Chat interface rendering stabilized",
+            "Image analysis component fully functional",
+            "UI passes all accessibility tests"
+          ],
+          "subtasks": [
+            {
+              "id": "mvp-1.1",
+              "title": "Fix Component Export Issues",
+              "description": "Resolve React error #31 by fixing improper component exports in SkeletonLoader.tsx and icon files",
+              "status": "in-progress",
+              "priority": "critical"
+            },
+            {
+              "id": "mvp-1.2",
+              "title": "Stabilize Chat Interface",
+              "description": "Fix animations, shadows, and vibration issues in the chat interface to improve user experience",
+              "status": "in-progress",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-1.3",
+              "title": "Fix Image Analysis Component",
+              "description": "Ensure image analysis component properly validates input and displays results correctly",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-1.4", 
+              "title": "Implement Responsive Design Fixes",
+              "description": "Address responsive design issues on mobile and tablet devices",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        },
+        {
+          "id": "mvp-2",
+          "title": "Implement Real AI Integration",
+          "description": "Replace mock AI service with real OpenAI integration",
+          "details": "1. Create OpenAI API client with proper error handling\n2. Implement medical prompt engineering for accurate results\n3. Add image analysis with GPT-4 Vision capabilities\n4. Implement proper validation and filtering of non-medical content\n5. Add fallback mechanism for when API is unavailable\n6. Ensure secure handling of sensitive medical data",
+          "testStrategy": "1. Test API response handling including error cases\n2. Verify prompt effectiveness with medical test cases\n3. Test image validation with medical and non-medical images\n4. Measure response times and implement appropriate loading indicators",
+          "priority": "high",
+          "dependencies": ["mvp-1"],
+          "status": "pending",
+          "complexity": 8,
+          "milestones": [
+            "OpenAI API integration completed",
+            "Medical prompt engineering validated",
+            "Image classification working correctly",
+            "Fallback mechanisms implemented and tested"
+          ],
+          "subtasks": [
+            {
+              "id": "mvp-2.1",
+              "title": "Create OpenAI API Client",
+              "description": "Develop a robust OpenAI API client with proper error handling and retry logic",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-2.2",
+              "title": "Implement Medical Prompt Engineering",
+              "description": "Develop effective prompts for medical diagnosis that maximize accuracy",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-2.3",
+              "title": "Add GPT-4 Vision Integration",
+              "description": "Implement image analysis using GPT-4 Vision API with non-medical image filtering",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-2.4",
+              "title": "Create Fallback Mechanisms",
+              "description": "Implement fallback strategies for when the API is unavailable or returns errors",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        },
+        {
+          "id": "mvp-3",
+          "title": "Develop Core Patient Experience",
+          "description": "Create key patient-facing features including medical history collection and symptom reporting",
+          "details": "1. Design and implement user onboarding flow\n2. Create medical history collection forms\n3. Develop symptom reporting interface with guided questions\n4. Implement secure user authentication\n5. Design history viewing and management interface\n6. Create user profile management",
+          "testStrategy": "1. Conduct usability testing with representative users\n2. Verify form validation and error handling\n3. Test authentication flows including account recovery\n4. Validate data persistence and retrieval",
+          "priority": "high",
+          "dependencies": ["mvp-1"],
+          "status": "pending",
+          "complexity": 8,
+          "milestones": [
+            "User onboarding flow completed",
+            "Medical history collection implemented",
+            "Symptom reporting interface functional",
+            "User profile management completed"
+          ],
+          "subtasks": [
+            {
+              "id": "mvp-3.1",
+              "title": "Design Onboarding Flow",
+              "description": "Create intuitive onboarding experience for new users",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-3.2",
+              "title": "Implement Medical History Collection",
+              "description": "Develop forms for collecting relevant medical history from patients",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-3.3",
+              "title": "Create Symptom Reporting Interface",
+              "description": "Build guided symptom reporting interface with dynamic follow-up questions",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "mvp-3.4",
+              "title": "Implement User Authentication",
+              "description": "Set up secure authentication with Supabase including account recovery",
+              "status": "pending",
+              "priority": "high"
+            }
+          ]
+        },
+        {
+          "id": "mvp-4",
+          "title": "Create Static Provider Directory",
+          "description": "Develop a basic provider directory to support referrals from AI diagnostics",
+          "details": "1. Design provider data model\n2. Create static provider database with Mexican healthcare providers\n3. Implement search and filtering functionality\n4. Design provider profile pages\n5. Add specialty mapping to AI recommendations",
+          "testStrategy": "1. Verify search functionality with various queries\n2. Test filter combinations\n3. Validate provider profile information display\n4. Test integration with AI recommendation engine",
+          "priority": "medium",
+          "dependencies": ["mvp-1"],
+          "status": "pending",
+          "complexity": 6,
+          "milestones": [
+            "Provider data model defined",
+            "Search and filtering implemented",
+            "Provider profiles designed",
+            "Integration with AI recommendations completed"
+          ],
+          "subtasks": [
+            {
+              "id": "mvp-4.1",
+              "title": "Design Provider Data Model",
+              "description": "Create comprehensive data model for healthcare providers",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "mvp-4.2",
+              "title": "Implement Provider Search",
+              "description": "Develop search functionality with filters for specialty, location, and availability",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "mvp-4.3",
+              "title": "Create Provider Profiles",
+              "description": "Design and implement provider profile pages with relevant information",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "mvp-4.4",
+              "title": "Integrate with AI Recommendations",
+              "description": "Connect AI diagnosis to appropriate provider recommendations",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "name": "Integration & Growth",
+      "description": "Connect the platform to real healthcare providers and enhance AI capabilities",
+      "durationWeeks": 8,
+      "tasks": [
+        {
+          "id": "growth-1",
+          "title": "Develop Provider Dashboard",
+          "description": "Create a comprehensive dashboard for healthcare providers",
+          "details": "1. Design provider registration and verification flow\n2. Implement dashboard with patient management\n3. Create appointment scheduling interface\n4. Develop secure messaging system\n5. Implement document sharing functionality",
+          "testStrategy": "1. Test provider registration and verification\n2. Validate appointment scheduling logic\n3. Test message encryption and delivery\n4. Verify document security measures",
+          "priority": "high",
+          "dependencies": ["mvp-4"],
+          "status": "pending",
+          "complexity": 9,
+          "milestones": [
+            "Provider registration flow completed",
+            "Dashboard interface implemented",
+            "Appointment scheduling functioning",
+            "Secure messaging system completed"
+          ],
+          "subtasks": [
+            {
+              "id": "growth-1.1",
+              "title": "Create Provider Registration",
+              "description": "Implement registration and verification process for healthcare providers",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-1.2",
+              "title": "Develop Provider Dashboard",
+              "description": "Create comprehensive dashboard interface for patient management",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-1.3",
+              "title": "Implement Appointment Scheduling",
+              "description": "Build appointment scheduling system with availability management",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-1.4",
+              "title": "Create Secure Messaging System",
+              "description": "Develop end-to-end encrypted messaging between patients and providers",
+              "status": "pending",
+              "priority": "high"
+            }
+          ]
+        },
+        {
+          "id": "growth-2",
+          "title": "Enhance AI Capabilities",
+          "description": "Improve the AI capabilities with specialized models for Mexican healthcare",
+          "details": "1. Fine-tune AI models with Mexican healthcare data\n2. Implement more sophisticated triage logic\n3. Add voice interaction capabilities\n4. Improve medical image analysis accuracy\n5. Enhance localization for Mexican Spanish dialects",
+          "testStrategy": "1. Measure diagnostic accuracy improvements\n2. Test voice recognition with various accents\n3. Evaluate image analysis with diverse medical images\n4. Validate localization with native speakers",
+          "priority": "high",
+          "dependencies": ["mvp-2"],
+          "status": "pending",
+          "complexity": 9,
+          "milestones": [
+            "AI models fine-tuned for Mexican healthcare",
+            "Triage logic enhancements implemented",
+            "Voice interaction capabilities added",
+            "Localization improvements completed"
+          ],
+          "subtasks": [
+            {
+              "id": "growth-2.1",
+              "title": "Fine-tune AI Models",
+              "description": "Improve AI models with Mexican healthcare data and context",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-2.2",
+              "title": "Enhance Triage Logic",
+              "description": "Implement more sophisticated triage algorithms for patient routing",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-2.3",
+              "title": "Add Voice Interaction",
+              "description": "Implement voice recognition and response for accessibility",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "growth-2.4",
+              "title": "Improve Localization",
+              "description": "Enhance language models for Mexican Spanish dialects and medical terminology",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        },
+        {
+          "id": "growth-3",
+          "title": "Implement Secure Patient Records",
+          "description": "Create comprehensive patient record system with strong privacy controls",
+          "details": "1. Design secure PHI storage architecture\n2. Implement encrypted patient records\n3. Create record sharing functionality\n4. Develop patient history visualization\n5. Implement granular privacy controls",
+          "testStrategy": "1. Conduct security audit of PHI storage\n2. Test encryption implementation\n3. Verify access controls function correctly\n4. Validate compliance with privacy regulations",
+          "priority": "high",
+          "dependencies": ["mvp-3"],
+          "status": "pending",
+          "complexity": 10,
+          "milestones": [
+            "Secure PHI storage implemented",
+            "Patient records encryption completed",
+            "Record sharing functionality working",
+            "Privacy controls validated"
+          ],
+          "subtasks": [
+            {
+              "id": "growth-3.1",
+              "title": "Design PHI Storage Architecture",
+              "description": "Create secure architecture for protected health information storage",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-3.2",
+              "title": "Implement Encrypted Records",
+              "description": "Develop encrypted patient records with appropriate access controls",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-3.3",
+              "title": "Create Record Sharing",
+              "description": "Build secure record sharing functionality with consent management",
+              "status": "pending",
+              "priority": "high"
+            },
+            {
+              "id": "growth-3.4",
+              "title": "Develop History Visualization",
+              "description": "Create interactive visualizations for patient medical history",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        },
+        {
+          "id": "growth-4",
+          "title": "Optimize Mobile Experience",
+          "description": "Enhance application for mobile users with progressive web app capabilities",
+          "details": "1. Implement PWA features\n2. Optimize for low-bandwidth conditions\n3. Add offline functionality\n4. Improve touch interactions\n5. Implement native app-like features",
+          "testStrategy": "1. Test offline capabilities\n2. Measure performance on slow connections\n3. Validate touch interactions on various devices\n4. Test installation and updates",
+          "priority": "medium",
+          "dependencies": ["mvp-1"],
+          "status": "pending",
+          "complexity": 7,
+          "milestones": [
+            "PWA features implemented",
+            "Low-bandwidth optimizations completed",
+            "Offline functionality working",
+            "Touch interactions improved"
+          ],
+          "subtasks": [
+            {
+              "id": "growth-4.1",
+              "title": "Implement PWA Features",
+              "description": "Add manifest, service workers, and installation capabilities",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "growth-4.2",
+              "title": "Optimize for Low Bandwidth",
+              "description": "Implement progressive loading and image optimization",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "growth-4.3",
+              "title": "Add Offline Functionality",
+              "description": "Create offline capabilities for critical features",
+              "status": "pending",
+              "priority": "medium"
+            },
+            {
+              "id": "growth-4.4",
+              "title": "Improve Touch Interactions",
+              "description": "Enhance UI elements for touch-first interaction",
+              "status": "pending",
+              "priority": "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "name": "Ecosystem Development",
+      "description": "Create a comprehensive healthcare ecosystem with multiple service integrations",
+      "durationWeeks": 12,
+      "tasks": [
+        {
+          "id": "ecosystem-1",
+          "title": "Implement Pharmacy Integration",
+          "description": "Connect the platform with pharmacy networks for medication management",
+          "status": "pending",
+          "complexity": 8,
+          "priority": "high",
+          "dependencies": ["growth-3"],
+          "milestones": [
+            "Pharmacy network integration completed",
+            "E-prescription system implemented",
+            "Medication reminder system working",
+            "Medication delivery integration completed"
+          ]
+        },
+        {
+          "id": "ecosystem-2",
+          "title": "Develop Insurance Connectivity",
+          "description": "Integrate with Mexican insurance providers for coverage verification and claims",
+          "status": "pending",
+          "complexity": 9,
+          "priority": "high",
+          "dependencies": ["growth-3"],
+          "milestones": [
+            "Insurance provider integration completed",
+            "Coverage verification system working",
+            "Claims submission process implemented",
+            "Insurance directory completed"
+          ]
+        },
+        {
+          "id": "ecosystem-3",
+          "title": "Create Telehealth Platform",
+          "description": "Build comprehensive video consultation capabilities",
+          "status": "pending",
+          "complexity": 10,
+          "priority": "high",
+          "dependencies": ["growth-1"],
+          "milestones": [
+            "Video consultation system implemented",
+            "Virtual waiting room completed",
+            "Screen sharing capabilities added",
+            "Medical annotation tools developed"
+          ]
+        },
+        {
+          "id": "ecosystem-4",
+          "title": "Build Analytics Dashboard",
+          "description": "Create analytics capabilities for providers, patients, and administrators",
+          "status": "pending",
+          "complexity": 8,
+          "priority": "medium",
+          "dependencies": ["growth-2", "growth-3"],
+          "milestones": [
+            "Provider analytics dashboard completed",
+            "Patient health trends visualization implemented",
+            "Administrative metrics dashboard created",
+            "Population health analytics functioning"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,8 @@ import FeatureCard from '../components/ui/FeatureCard';
 import CallToAction from '../components/ui/CallToAction';
 // Import styles as JS objects, not as React components
 import { animations } from '../styles/animations';
+// Import typography styles
+import { typography } from '../styles/typography';
 
 function AIHomePage() {
   const controls = useAnimation();
@@ -101,12 +103,13 @@ function AIHomePage() {
           </svg>
         </div>
         
-        {/* Animated Gradient Orbs */}
+        {/* Enhanced Animated Gradient Orbs with multi-layered effect */}
         <motion.div 
           className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary-500 filter blur-3xl opacity-20"
           animate={{
             x: [0, 30, 0],
             y: [0, -30, 0],
+            scale: [1, 1.1, 1],
           }}
           transition={{
             duration: 8,
@@ -120,9 +123,39 @@ function AIHomePage() {
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
+            scale: [1, 1.15, 1],
           }}
           transition={{
             duration: 10,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        
+        {/* Additional smaller orbs for layered effect */}
+        <motion.div 
+          className="absolute top-1/3 right-1/3 w-32 h-32 rounded-full bg-blue-400 filter blur-2xl opacity-15"
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -20, 0],
+            opacity: [0.15, 0.2, 0.15]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        />
+        
+        <motion.div 
+          className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-accent-500 filter blur-2xl opacity-15"
+          animate={{
+            x: [0, -30, 0],
+            y: [0, 30, 0],
+            opacity: [0.15, 0.25, 0.15]
+          }}
+          transition={{
+            duration: 15,
             repeat: Infinity,
             repeatType: "reverse"
           }}
@@ -147,21 +180,36 @@ function AIHomePage() {
               }}
             >
               <div className="flex flex-col md:flex-row items-center justify-center md:justify-start mb-2">
-                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2 md:mb-0">
-                  Tu asistente médico <span className="text-white opacity-80">inteligente</span>
-                </h1>
+                <motion.h1 
+                  className="text-4xl md:text-5xl font-bold text-white leading-tight mb-2 md:mb-0" 
+                  style={typography.textStyles.h1}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, ease: animations.easing.easeOut }}
+                >
+                  Tu asistente médico{' '}
+                  <motion.span 
+                    className="text-white opacity-90 bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.7 }}
+                  >
+                    inteligente
+                  </motion.span>
+                </motion.h1>
                 <motion.div 
-                  className="md:ml-4 flex items-center bg-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm border border-white/20"
+                  className="md:ml-4 flex items-center bg-white/10 rounded-full px-3 py-1.5 backdrop-blur-sm border border-white/20 shadow-lg"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.3 }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(255,255,255,0.3)' }}
                 >
                   <img src="/mexico-flag.png" alt="Mexico" className="h-5 w-auto mr-2" />
                   <span className="text-xs font-medium text-white">Hecho en México</span>
                 </motion.div>
               </div>
               <motion.p 
-                className="mt-6 text-xl text-white opacity-90 text-lg md:text-xl"
+                className="mt-6 text-white opacity-90 text-lg md:text-xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.6 }}
@@ -174,32 +222,61 @@ function AIHomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                <Link
-                  to="/doctor"
-                  className="group px-8 py-3 border border-transparent text-base font-medium rounded-lg text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Consultar ahora
-                  <motion.span 
-                    className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                    initial={{ x: -5 }}
-                    animate={{ x: 0 }}
-                    transition={{ duration: 0.3 }}
+                  <Link
+                    to="/doctor"
+                    className="group px-8 py-3 border border-transparent text-base font-medium rounded-lg text-primary-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center relative overflow-hidden"
                   >
-                    <ChevronRight size={18} />
-                  </motion.span>
-                </Link>
-                <Link
-                  to="/doctor-dashboard"
-                  className="px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary-800/40 hover:bg-primary-800/60 backdrop-blur-sm md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300"
+                    <motion.span
+                      className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-100 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ zIndex: 0 }}
+                    />
+                    <span className="relative z-10">Consultar ahora</span>
+                    <motion.span 
+                      className="ml-2 relative z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+                      initial={{ x: -5 }}
+                      animate={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronRight size={18} />
+                    </motion.span>
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Panel de Doctor
-                </Link>
-                <Link
-                  to="/image-analysis"
-                  className="px-8 py-3 border border-white/30 text-base font-medium rounded-lg text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300"
+                  <Link
+                    to="/doctor-dashboard"
+                    className="group px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary-800/40 hover:bg-primary-800/60 backdrop-blur-sm md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden flex items-center justify-center"
+                  >
+                    <motion.span
+                      className="absolute inset-0 w-0 group-hover:w-full h-full bg-gradient-to-r from-primary-700/30 to-primary-800/30 transition-all duration-500"
+                      style={{ zIndex: 0 }}
+                    />
+                    <span className="relative z-10">Panel de Doctor</span>
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Análisis de imágenes
-                </Link>
+                  <Link
+                    to="/image-analysis"
+                    className="group px-8 py-3 border border-white/30 text-base font-medium rounded-lg text-white hover:bg-white/10 md:py-4 md:text-lg md:px-10 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center relative overflow-hidden"
+                  >
+                    <motion.span
+                      className="absolute inset-0 w-0 group-hover:w-full h-full bg-white/5 transition-all duration-500"
+                      style={{ zIndex: 0 }}
+                    />
+                    <span className="relative z-10">Análisis de imágenes</span>
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
             <motion.div 
@@ -290,7 +367,7 @@ function AIHomePage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl" style={typography.textStyles.h2}>
               Inteligencia artificial al servicio de tu salud
             </h2>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">

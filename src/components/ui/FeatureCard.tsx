@@ -54,7 +54,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     >
       <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${selectedColor.gradient}`}></div>
       <div className={`w-12 h-12 rounded-lg ${selectedColor.iconBg} flex items-center justify-center mb-4`}>
-        {typeof Icon === 'function' ? <Icon className={selectedColor.iconColor} size={24} /> : Icon}
+        {React.isValidElement(Icon) ? Icon : <Icon className={selectedColor.iconColor} size={24} />}
       </div>
       <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>

@@ -112,9 +112,4 @@ export const SearchResultsSkeleton: React.FC<{ count?: number }> = ({ count = 3 
   );
 };
 
-export default {
-  Skeleton,
-  DoctorCardSkeleton,
-  ProfileSkeleton,
-  SearchResultsSkeleton,
-};
+export default Skeleton;

@@ -84,43 +84,5 @@ export {
   Filter
 };
 
-// Export default map of all icons for dynamic usage
-export default {
-  MapPin,
-  Star,
-  Calendar,
-  Video,
-  Clock,
-  Award,
-  Languages,
-  Phone,
-  Mail,
-  Globe,
-  ChevronDown,
-  ChevronUp,
-  CheckCircle,
-  Facebook,
-  Twitter,
-  Share2,
-  MessageSquare,
-  Users,
-  Search,
-  Menu,
-  X,
-  User,
-  Heart,
-  Home,
-  Settings,
-  LogOut,
-  AlertCircle,
-  Info,
-  HelpCircle,
-  FileText,
-  Download,
-  Upload,
-  Plus,
-  Minus,
-  ArrowLeft,
-  ArrowRight,
-  Filter
-};
+// Export MapPin as the default icon for dynamic usage
+export default MapPin;
