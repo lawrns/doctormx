@@ -16,8 +16,6 @@ function AIHomePage() {
     "Entiendo. ¿Podrías decirme si has tomado algún medicamento y si tienes otros síntomas como dolor de garganta o tos?"
   ];
   
-  // Animation effect data
-  
   // Animation effect for messages
   useEffect(() => {
     const messageInterval = setInterval(() => {
