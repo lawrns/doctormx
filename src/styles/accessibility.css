@@ -1,0 +1,37 @@
+/* Accessibility-focused CSS */
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Allow opacity animations for improved user experience */
+  .allow-opacity-animation {
+    transition: opacity 0.3s ease-in-out !important;
+  }
+}
+
+/* Improved focus styles */
+:focus-visible {
+  outline: 2px solid #2563eb !important;
+  outline-offset: 2px;
+}
+
+/* Provide visible focus states that maintain brand identity */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-brand-jade-500 focus:ring-offset-2;
+}
+
+/* Improved contrast for specific text/background combinations */
+.high-contrast {
+  @apply text-brand-charcoal;
+}
+
+/* For buttons and interactive elements that need proper sizing */
+.min-hit-area {
+  min-width: 44px;
+  min-height: 44px;
+}
