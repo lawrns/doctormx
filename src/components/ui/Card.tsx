@@ -1,95 +1,129 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
-import { motion, MotionProps } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  children?: ReactNode;
-  variant?: 'default' | 'outlined' | 'elevated' | 'feature' | 'interactive';
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: 'default' | 'outline' | 'elevated' | 'feature';
+  color?: 'default' | 'primary' | 'secondary';
+  withHover?: boolean;
+  animate?: boolean;
   padding?: 'none' | 'sm' | 'md' | 'lg';
-  animated?: boolean;
-  animationDelay?: number;
-  interactive?: boolean;
+  children: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({
-  children,
-  className = '',
+export const Card: React.FC<CardProps> = ({
   variant = 'default',
+  color = 'default',
+  withHover = false,
+  animate = false,
   padding = 'md',
-  animated = false,
-  animationDelay = 0,
-  interactive = false,
+  className = '',
+  children,
   ...props
 }) => {
-  // Base classes with card-container for targeting
-  const baseClasses = 'rounded-lg overflow-hidden card-container';
-  
-  // Variant classes with enhanced visual hierarchy
-  const variantClasses: Record<string, string> = {
-    default: 'bg-white shadow',
-    outlined: 'bg-white border border-gray-200',
-    elevated: 'bg-white shadow-lg',
-    feature: 'bg-white shadow-md border border-gray-100 hover:shadow-lg hover:border-primary-100 transition-all duration-300',
-    interactive: 'bg-white shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 cursor-pointer'
+  const baseStyles = 'rounded-lg transition-all duration-200';
+
+  const variantStyles = {
+    default: 'bg-white border border-gray-200',
+    outline: 'bg-white border-2',
+    elevated: 'bg-white shadow-md',
+    feature: 'bg-white shadow-card',
   };
-  
-  // Padding classes with responsive adjustments
-  const paddingClasses: Record<string, string> = {
-    none: '',
-    sm: 'p-2 sm:p-3',
-    md: 'p-3 sm:p-4 md:p-5',
-    lg: 'p-4 sm:p-5 md:p-6',
+
+  const colorStyles = {
+    default: 'border-gray-200',
+    primary: 'border-brand-jade-500',
+    secondary: 'border-brand-sun-500',
   };
-  
-  const interactiveClasses = interactive 
-    ? 'transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer' 
+
+  const paddingStyles = {
+    none: 'p-0',
+    sm: 'p-3',
+    md: 'p-5',
+    lg: 'p-8',
+  };
+
+  const hoverStyles = withHover
+    ? 'hover:shadow-card-hover hover:-translate-y-1'
     : '';
-  
-  const combinedClasses = `
-    ${baseClasses}
-    ${variantClasses[variant]}
-    ${paddingClasses[padding]}
-    ${interactiveClasses}
-    ${className}
-  `;
-  
-  const cardAnimations = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: animationDelay,
-        ease: [0.4, 0, 0.2, 1]
-      }
-    }
-  };
-  
-  if (animated) {
-    const { 
-      onAnimationStart, onDragStart, onDragEnd, onDrag, 
-      ...htmlProps 
-    } = props;
-    
-    const motionProps: MotionProps = {
-      initial: "hidden",
-      animate: "visible",
-      variants: cardAnimations
-    };
-    
-    return (
-      <motion.div 
-        className={combinedClasses}
-        {...motionProps}
-        {...htmlProps}
-      >
-        {children}
-      </motion.div>
-    );
-  }
-  
+
+  const cardStyles = `${baseStyles} ${variantStyles[variant]} ${
+    variant === 'outline' ? colorStyles[color] : ''
+  } ${paddingStyles[padding]} ${hoverStyles} ${className}`;
+
+  return animate ? (
+    <motion.div
+      className={cardStyles}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+      whileHover={withHover ? { y: -5, boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)' } : {}}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  ) : (
+    <div className={cardStyles} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
   return (
-    <div className={combinedClasses} {...props}>
+    <div className={`mb-3 ${className}`} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export const CardTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
+  return (
+    <h3 className={`text-xl font-heading font-bold text-brand-charcoal ${className}`} {...props}>
+      {children}
+    </h3>
+  );
+};
+
+export const CardDescription: React.FC<React.HTMLAttributes<HTMLParagraphElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
+  return (
+    <p className={`text-sm text-gray-600 ${className}`} {...props}>
+      {children}
+    </p>
+  );
+};
+
+export const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
+  return (
+    <div className={`${className}`} {...props}>
+      {children}
+    </div>
+  );
+};
+
+export const CardFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  className = '',
+  children,
+  ...props
+}) => {
+  return (
+    <div className={`mt-4 flex items-center ${className}`} {...props}>
       {children}
     </div>
   );

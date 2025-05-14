@@ -1,13 +1,4 @@
-export { default as Button } from './Button';
-export { default as Card } from './Card';
-export { default as CardHeader } from './CardHeader';
-export { default as CardTitle } from './CardTitle';
-export { default as CardDescription } from './CardDescription';
-export { default as CardContent } from './CardContent';
-export { default as CardFooter } from './CardFooter';
-export { default as Input } from './Input';
-export { default as Textarea } from './Textarea';
-export { default as Switch } from './Switch';
-export { default as Badge } from './Badge';
-export { Alert, AlertTitle, AlertDescription } from './Alert';
-export { Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs';
+// UI Component exports
+export { Button } from './Button';
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './Card';
+export { Container } from './Container';
