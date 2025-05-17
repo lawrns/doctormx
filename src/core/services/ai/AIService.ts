@@ -1,4 +1,4 @@
-import { supabase } from '../../../lib/supabaseClient';
+import { supabase } from '../../../lib/supabase';
 
 export interface AIResponse {
   text: string;
@@ -243,117 +243,19 @@ class AIService {
   }
   
   private async makeAPIRequest(endpoint: string, data: any): Promise<any> {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.simulateAIResponse(endpoint, data));
-      }, 1000);
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
     });
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(errorText || response.statusText);
+    }
+    return response.json();
   }
   
-  private simulateAIResponse(endpoint: string, data: any): any {
-    if (endpoint === this.imageAnalysisEndpoint) {
-      const imageData = data.imageUrl || '';
-      const symptoms = data.symptoms || '';
-      
-      const imageHash = this.hashString(imageData);
-      
-      const analysisOptions = [
-        {
-          analysis: 'La imagen muestra posibles signos de una erupción cutánea. Recomiendo consultar con un dermatólogo.',
-          findings: 'Erupción cutánea con patrones irregulares',
-          confidence: 0.78,
-          severity: 40,
-          suggestedSpecialty: 'Dermatología'
-        },
-        {
-          analysis: 'La imagen sugiere una posible inflamación articular. Podría ser indicativo de artritis u otra condición reumatológica.',
-          findings: 'Inflamación articular con posible enrojecimiento',
-          confidence: 0.82,
-          severity: 35,
-          suggestedSpecialty: 'Reumatología'
-        },
-        {
-          analysis: 'La imagen muestra lo que parece ser una lesión ocular. Recomiendo una evaluación oftalmológica urgente.',
-          findings: 'Posible lesión corneal o conjuntivitis',
-          confidence: 0.91,
-          severity: 65,
-          suggestedSpecialty: 'Oftalmología'
-        },
-        {
-          analysis: 'La imagen muestra una posible infección de la piel. Podría ser una celulitis o foliculitis.',
-          findings: 'Área inflamada con posibles signos de infección',
-          confidence: 0.75,
-          severity: 50,
-          suggestedSpecialty: 'Infectología'
-        },
-        {
-          analysis: 'La imagen sugiere una posible reacción alérgica. Observe si hay otros síntomas como dificultad para respirar.',
-          findings: 'Erupción con patrón consistente con reacción alérgica',
-          confidence: 0.88,
-          severity: 45,
-          suggestedSpecialty: 'Alergología'
-        }
-      ];
-      
-      if (symptoms) {
-        if (symptoms.toLowerCase().includes('picazón') || symptoms.toLowerCase().includes('comezón')) {
-          return {
-            analysis: 'Basado en la imagen y los síntomas de picazón, es probable que esté experimentando una reacción alérgica o dermatitis.',
-            findings: 'Erupción cutánea con signos de rascado, consistente con prurito',
-            confidence: 0.85,
-            severity: 30,
-            suggestedSpecialty: 'Dermatología'
-          };
-        }
-        
-        if (symptoms.toLowerCase().includes('dolor') || symptoms.toLowerCase().includes('ardor')) {
-          return {
-            analysis: 'La combinación de la imagen y los síntomas de dolor sugieren una posible infección o inflamación aguda.',
-            findings: 'Área inflamada con signos de dolor, posible infección',
-            confidence: 0.79,
-            severity: 55,
-            suggestedSpecialty: 'Medicina Interna'
-          };
-        }
-        
-        if (symptoms.toLowerCase().includes('fiebre')) {
-          return {
-            analysis: 'La imagen junto con el síntoma de fiebre sugiere un proceso infeccioso que requiere atención médica pronto.',
-            findings: 'Signos de infección con compromiso sistémico',
-            confidence: 0.87,
-            severity: 60,
-            suggestedSpecialty: 'Infectología'
-          };
-        }
-      }
-      
-      const responseIndex = imageHash % analysisOptions.length;
-      return analysisOptions[responseIndex];
-    }
-    
-    if (data.message && data.message.includes('dolor de cabeza')) {
-      return {
-        text: 'Basado en tus síntomas, podrías estar experimentando una migraña o cefalea tensional. ¿Con qué frecuencia ocurre este dolor de cabeza?',
-        severity: 30,
-        suggestedSpecialty: 'Neurología',
-        suggestedConditions: ['Migraña', 'Cefalea tensional'],
-        followUpQuestions: [
-          '¿El dolor es pulsátil o constante?',
-          '¿Tienes sensibilidad a la luz o sonido?',
-          '¿Has experimentado náuseas?'
-        ]
-      };
-    }
-    
-    return {
-      text: 'Gracias por compartir esta información. Para entender mejor tu situación, ¿podrías proporcionarme más detalles sobre tus síntomas?',
-      severity: 10,
-      followUpQuestions: [
-        '¿Cuándo comenzaron los síntomas?',
-        '¿Hay algo que empeore o mejore los síntomas?'
-      ]
-    };
-  }
+  private enhanceResponse(response: any, options: AIQueryOptions): AIResponse {
   
   private enhanceResponse(response: any, options: AIQueryOptions): AIResponse {
     if (options.location && response.suggestedSpecialty) {
@@ -379,18 +281,6 @@ class AIService {
    * @param str String to hash
    * @returns A numeric hash value
    */
-  private hashString(str: string): number {
-    let hash = 0;
-    if (str.length === 0) return hash;
-    
-    for (let i = 0; i < str.length; i++) {
-      const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
-      hash = hash & hash; // Convert to 32bit integer
-    }
-    
-    return Math.abs(hash);
-  }
 }
 
 export default new AIService();

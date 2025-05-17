@@ -6,15 +6,18 @@ import AIService from '../../../core/services/ai/AIService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import SEO from '../../../core/components/SEO';
 import { typography } from '../../../styles/typography';
+import { useSupabase } from '../../../contexts/SupabaseContext';
 
 function AIImageAnalysisPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageUrl, setSelectedImageUrl] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<any | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [symptoms, setSymptoms] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { supabase } = useSupabase();
   
   // Animation variants for staggered animations
   const containerVariants = {
@@ -55,9 +58,9 @@ function AIImageAnalysisPage() {
     
     try {
       const scrubbedFile = await EncryptionService.scrubImageMetadata(file);
-      
-      const imageUrl = URL.createObjectURL(scrubbedFile);
-      setSelectedImage(imageUrl);
+      const previewUrl = URL.createObjectURL(scrubbedFile);
+      setSelectedImageUrl(previewUrl);
+      setSelectedFile(scrubbedFile);
     } catch (error) {
       console.error('Error processing image:', error);
       setError('Hubo un error al procesar la imagen. Por favor, intenta nuevamente.');
@@ -67,30 +70,42 @@ function AIImageAnalysisPage() {
   };
   
   const handleAnalyzeImage = async () => {
-    if (!selectedImage) return;
-    
+    if (!selectedFile) return;
+
     setIsAnalyzing(true);
     setError(null);
-    
+
     try {
-      const result = await AIService.analyzeImage(selectedImage, symptoms);
+      // Upload image to Supabase storage
+      const fileExt = selectedFile.name.split('.').pop() || 'png';
+      const fileName = `${crypto.randomUUID()}.${fileExt}`;
+      setIsUploading(true);
+      const { data: uploadData, error: uploadError } = await supabase
+        .storage
+        .from('medical-images')
+        .upload(fileName, selectedFile, { cacheControl: '3600', upsert: false });
+      if (uploadError || !uploadData) throw uploadError || new Error('Upload failed');
+      const { publicUrl } = supabase.storage.from('medical-images').getPublicUrl(uploadData.path);
+      setIsUploading(false);
+      // Analyze via AIService
+      const result = await AIService.analyzeImage(publicUrl, symptoms);
       setAnalysisResult(result);
-    } catch (error) {
-      console.error('Error analyzing image:', error);
-      setError('Hubo un error al analizar la imagen. Por favor, intenta nuevamente.');
+    } catch (err: any) {
+      console.error('Error analyzing image:', err);
+      setError(err.message || 'Hubo un error al analizar la imagen. Por favor, intenta nuevamente.');
     } finally {
       setIsAnalyzing(false);
+      setIsUploading(false);
     }
   };
   
   const handleReset = () => {
-    setSelectedImage(null);
+    setSelectedImageUrl(null);
+    setSelectedFile(null);
     setAnalysisResult(null);
     setSymptoms('');
     setError(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
-    }
+    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   return (

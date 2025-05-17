@@ -2,7 +2,8 @@ import { supabase } from '../../lib/supabase';
 import OpenAI from 'openai';
 import medicationDatabase from '../../data/medications';
 
-const OPENAI_KEY = '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';
+// LocalStorage key for user-provided OpenAI API key
+const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
 const DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY = 'doctor_image_analysis_enabled';
 
@@ -44,47 +45,47 @@ const DEFAULT_RETRY_CONFIG = {
  * @param config Optional retry configuration
  * @returns Promise with the operation result
  */
-const withRetry = async <T>(
-  operation: () => Promise<T>, 
+async function withRetry<T>(
+  operation: () => Promise<T>,
   config = DEFAULT_RETRY_CONFIG
-): Promise<T> => {
+): Promise<T> {
   let retries = 0;
   let lastError: any;
-  
+
   while (retries <= config.maxRetries) {
     try {
       return await operation();
     } catch (error: any) {
       lastError = error;
-      
-      // Check if we should retry this error
+
       if (!config.shouldRetry(error) || retries >= config.maxRetries) {
         console.error(`Error not retryable or max retries reached: ${error.message}`);
         break;
       }
-      
-      // Calculate backoff delay with jitter
+
       const delay = Math.min(
         config.maxDelay,
         config.initialDelay * Math.pow(config.backoffFactor, retries) * (0.8 + 0.4 * Math.random())
       );
-      
+
       console.warn(`Retry attempt ${retries + 1}/${config.maxRetries} for operation after ${delay}ms: ${error.message}`);
-      
-      // Wait before retrying
+
       await new Promise(resolve => setTimeout(resolve, delay));
       retries++;
     }
   }
-  
-  // If we got here, all retries failed
-  throw lastError;
-};
 
-// Use the hardcoded key instead of localstorage retrieval
+  throw lastError;
+}
+
 const getOpenAIInstance = (): OpenAI | null => {
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY || localStorage.getItem(OPENAI_KEY_STORAGE_KEY) || '';
+  if (!apiKey) {
+    console.error('OpenAI API key not found. Set VITE_OPENAI_API_KEY or configure it in Settings.');
+    return null;
+  }
   try {
-    return new OpenAI({ apiKey: OPENAI_KEY, dangerouslyAllowBrowser: true });
+    return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
   } catch (error) {
     console.error('Error creating OpenAI instance:', error);
     return null;

@@ -79,10 +79,15 @@ npm install
 yarn install
 ```
 
-3. Create a `.env` file in the root directory with your Supabase credentials
+3. Create a `.env` file in the root directory with your environment variables:
 ```
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_OPENAI_API_KEY=your_openai_api_key
+# (Optional) Override default doctor instructions:
+# VITE_DOCTOR_INSTRUCTIONS=Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.
+# (Optional) Enable or disable image analysis:
+# VITE_DOCTOR_IMAGE_ANALYSIS_ENABLED=true
 ```
 
 4. Start the development server
@@ -93,6 +98,25 @@ yarn dev
 ```
 
 5. Open `http://localhost:5173` in your browser
+
+### Supabase Storage Setup
+
+- In your Supabase dashboard, create a new **Storage** bucket named `medical-images` (or update the bucket name in your code).
+- Set the bucket's permissions to **public** so that uploaded images can be accessed by the AI analysis function.
+
+## Netlify Deployment & Functions
+
+This project is pre-configured to deploy on Netlify, with serverless functions to proxy OpenAI API calls securely.
+
+- Ensure you set the following environment variables in your Netlify dashboard:
+  - `OPENAI_API_KEY` (server-side) for calling OpenAI from Functions
+  - `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_OPENAI_API_KEY`, etc.
+
+Local development of functions can be done with the Netlify CLI:
+```bash
+npm install -g netlify-cli
+netlify dev
+```
 
 ## Technology Stack
 

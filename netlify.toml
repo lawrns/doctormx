@@ -1,7 +1,13 @@
 [build]
   command = "npm install --legacy-peer-deps && node dependency-fixer.js && node fix-react-imports.js && VITE_SKIP_AUTOINJECTION=true npm run build"
   publish = "dist"
+  functions = "netlify/functions"
   ignore_warnings = true
+
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
 
 [[redirects]]
   from = "/*"
