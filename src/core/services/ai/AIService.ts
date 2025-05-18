@@ -243,26 +243,50 @@ class AIService {
   }
   
   private async makeAPIRequest(endpoint: string, data: any): Promise<any> {
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    });
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(errorText || response.statusText);
+    try {
+      console.log(`Making API request to ${endpoint}`);
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`API request failed with status ${response.status}: ${errorText}`);
+        throw new Error(errorText || response.statusText);
+      }
+
+      const responseData = await response.json();
+      console.log(`API response received successfully from ${endpoint}`);
+      return responseData;
+    } catch (error) {
+      console.error(`Error in makeAPIRequest to ${endpoint}:`, error);
+      
+      // Provide a fallback response for development
+      if (endpoint.includes('standard-model') || endpoint.includes('premium-model')) {
+        return { 
+          text: "Lo siento, estoy experimentando dificultades técnicas para conectarme a los servidores. Por favor, intenta nuevamente en unos momentos."
+        };
+      } else if (endpoint.includes('image-analysis')) {
+        return {
+          analysis: "No fue posible analizar la imagen debido a problemas de conexión con el servicio de análisis de imágenes.",
+          confidence: 0
+        };
+      }
+      
+      throw error;
     }
-    return response.json();
   }
-  
-  private enhanceResponse(response: any, options: AIQueryOptions): AIResponse {
   
   private enhanceResponse(response: any, options: AIQueryOptions): AIResponse {
     if (options.location && response.suggestedSpecialty) {
+      // Here you can add logic to enhance the response with location-specific information
     }
     
     return response;
-  }
+  };
   
   private filterMedicationsForUser(medications: any[], userProfile: any): any[] {
     if (!userProfile || !medications) return medications || [];
