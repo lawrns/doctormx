@@ -1,4 +1,13 @@
-import React, { useState, useRef, useEffect } from 'react';
+// ======================================================
+// IMPORTANT: THIS IS THE CANONICAL VERSION
+// This is the current active implementation of AIDoctor.
+// There's a deprecated version at:
+// /src/components/ai/AIDoctor.tsx
+// which just re-exports this component.
+// Please make all changes to this file.
+// ======================================================
+
+import React, { useState, useRef, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
@@ -278,6 +287,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     currentMessage.followUpQuestions = [];
                   }
                   currentMessage.followUpQuestions.push('Ver medicamentos recomendados');
+                }
+              }
+              // Add doctor referral option if high severity or emergency
+              if ((currentMessage.severity || 0) >= 70 || currentMessage.isEmergency) {
+                if (!currentMessage.interactiveOptions) {
+                  currentMessage.interactiveOptions = {
+                    type: 'yes_no',
+                    options: ['Consultar con médico local', 'No, gracias'],
+                    questionId: 'doctor_referral'
+                  };
+                  setCurrentQuestionId('doctor_referral');
+                } else {
+                  if (!currentMessage.followUpQuestions) {
+                    currentMessage.followUpQuestions = [];
+                  }
+                  currentMessage.followUpQuestions.push('Consultar con médico local');
                 }
               }
             }
@@ -743,7 +768,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   };
   
   const getSeverityColor = () => {
-    if (severityLevel < 30) return 'bg-primary-blue';
+    if (severityLevel < 30) return 'bg-brand-jade-500';
     if (severityLevel < 60) return 'bg-yellow-500';
     if (severityLevel < 80) return 'bg-orange-500';
     return 'bg-red-500';
@@ -772,14 +797,24 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       const lastMessageWithMedications = [...messages].reverse().find(m => 
         m.suggestedMedications && m.suggestedMedications.length > 0
       );
-      
+
       if (lastMessageWithMedications?.suggestedMedications) {
         findPharmacies(lastMessageWithMedications.suggestedMedications);
         setIsProcessing(false);
         return;
       }
-      
+
       findPharmacies([]);
+      setIsProcessing(false);
+      return;
+    }
+    if (questionId === 'doctor_referral') {
+      if (option === 'Consultar con médico local') {
+        const lastMsg = [...messages].reverse().find(m => m.suggestedSpecialty);
+        if (lastMsg?.suggestedSpecialty) {
+          findProviders(lastMsg.suggestedSpecialty);
+        }
+      }
       setIsProcessing(false);
       return;
     }
@@ -882,7 +917,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   };
 
-  const MessageComponent = ({ message }: { message: Message }) => {
+  const MessageComponent = memo(({ message }: { message: Message }) => {
     return (
       <EnhancedChatBubble
         message={message}
@@ -896,7 +931,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         showGoBack={questionHistory.length > 1 && message.sender === 'bot'}
       />
     );
-  };
+  });
 
   const renderTabContent = () => {
     return (
@@ -915,11 +950,13 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 return (
                   <div className="flex flex-col h-full">
                     {/* Chat messages */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                      {messages.map((message) => (
-                        <MessageComponent key={message.id} message={message} />
-                      ))}
-                      <div ref={messagesEndRef} />
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-container" style={{ overscrollBehavior: 'none', contain: 'size layout' }}>
+                      <div className="chat-messages-wrapper" style={{ transform: 'translateZ(0)', willChange: 'transform', minHeight: '100%', contain: 'content', isolation: 'isolate' }}>
+                        {messages.map((message) => (
+                          <MessageComponent key={message.id} message={message} />
+                        ))}
+                        <div ref={messagesEndRef} />
+                      </div>
                     </div>
                     
                     {/* Image Analysis Visualization */}
@@ -930,7 +967,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                       >
-                        <div className="bg-white rounded-lg shadow-md p-4 border border-blue-100">
+                        <div className="bg-white rounded-lg shadow-md p-4 border border-brand-jade-100">
                           <h3 className="text-lg font-medium text-gray-800 mb-3">Análisis de Imagen</h3>
                           <ImageAnalysisVisual 
                             imageSrc={currentAnalysisImage} 
@@ -950,30 +987,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     )}
                     
                     {/* Input area */}
-                    <div className="p-4 border-t border-gray-200">
+                    <div className="p-4 border-t border-gray-200 input-container" style={{ position: 'relative', zIndex: 2, transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '80px' }}>
                       <div className="flex space-x-2">
-                        <motion.button 
+                        <button 
                           onClick={handleMicClick}
-                          className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
+                          className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
                           aria-label="Usar micrófono"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          animate={isRecording ? {
-                            scale: [1, 1.2, 1],
-                            transition: { repeat: Infinity, duration: 1.5 }
-                          } : {}}
                         >
                           <Mic size={20} />
-                        </motion.button>
-                        <motion.button 
+                        </button>
+                        <button 
                           onClick={() => fileInputRef.current?.click()}
-                          className={`p-2 rounded-full ${isUploading ? 'text-blue-600' : 'text-gray-500 hover:text-blue-600'}`}
+                          className={`p-2 rounded-full ${isUploading ? 'text-brand-jade-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
                           aria-label="Subir imagen"
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                          whileTap={{ scale: 0.9 }}
                         >
                           <Image size={20} />
-                        </motion.button>
+                        </button>
                         <input
                           type="file"
                           ref={fileInputRef}
@@ -981,51 +1010,57 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           accept="image/*"
                           className="hidden"
                         />
-                        <div className="flex-1 relative">
+                        <div className="flex-1 relative" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout style', minHeight: '44px' }}>
                           <input
                             type="text"
                             value={input}
-                            onChange={(e) => setInput(e.target.value)}
+                            onChange={(e) => {
+                              // Use a stable function reference to prevent re-renders
+                              const newValue = e.target.value;
+                              setInput(newValue);
+                            }}
                             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                             placeholder="Describe tus síntomas o haz una pregunta..."
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-jade-500 chat-input"
                             disabled={isProcessing}
+                            style={{ height: '44px', minHeight: '44px' }}
                           />
                           {input.length > 0 && (
-                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-blue-500 opacity-70">
+                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-brand-jade-500 opacity-70" style={{ pointerEvents: 'none' }}>
                               {input.length} caracteres
                             </div>
                           )}
                         </div>
-                        <motion.button 
+                        <button 
                           onClick={handleSendMessage}
                           disabled={(!input.trim() && !isUploading) || isProcessing}
                           className={`p-2 rounded-full ${
                             (!input.trim() && !isUploading) || isProcessing
                               ? 'text-gray-400 cursor-not-allowed' 
-                              : 'text-blue-600 hover:bg-blue-50'
+                              : 'text-brand-jade-600 hover:bg-brand-jade-50'
                           }`}
                           aria-label="Enviar mensaje"
-                          whileHover={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 1.1, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
-                          whileTap={(!input.trim() && !isUploading) || isProcessing ? {} : { scale: 0.9 }}
-
                         >
                           <Send size={20} />
-                        </motion.button>
+                        </button>
                       </div>
-                      {isRecording && (
-                        <div className="mt-2 text-center text-sm text-red-600">
-                          <span className="inline-block animate-pulse">●</span> Escuchando... Habla ahora
-                        </div>
-                      )}
-                      {isProcessing && (
-                        <div className="mt-4 flex justify-center">
-                          <AIThinking message="Analizando su consulta..." />
-                        </div>
-                      )}
+                      
+                      {/* Stable containers for status indicators */}
+                      <div className="status-indicators-container" style={{ height: isRecording || isProcessing ? 'auto' : '0', overflow: 'hidden', transition: 'height 0.3s ease' }}>
+                        {isRecording && (
+                          <div className="mt-2 text-center text-sm text-red-600" style={{ transform: 'translateZ(0)' }}>
+                            <span className="inline-block">●</span> Escuchando... Habla ahora
+                          </div>
+                        )}
+                        {isProcessing && (
+                          <div className="mt-4 flex justify-center" style={{ transform: 'translateZ(0)', contain: 'content' }}>
+                            <AIThinking message="Analizando su consulta..." />
+                          </div>
+                        )}
+                      </div>
                       {!localStorage.getItem(OPENAI_KEY_STORAGE_KEY) && (
                         <div className="mt-2 text-center">
-                          <Link to="/settings/api" className="text-xs text-blue-600 hover:underline">
+                          <Link to="/settings/api" className="text-xs text-brand-jade-600 hover:underline">
                             Configurar API key para mejorar las respuestas
                           </Link>
                         </div>
@@ -1072,7 +1107,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                               <ul className="space-y-2">
                                 {message.suggestedConditions!.map((condition, idx) => (
                                   <li key={idx} className="flex items-start">
-                                    <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2 mt-0.5">
+                                    <span className="bg-brand-jade-100 text-brand-jade-800 text-xs font-medium px-2 py-0.5 rounded-full mr-2 mt-0.5">
                                       {idx + 1}
                                     </span>
                                     <div>
@@ -1085,10 +1120,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                               {message.suggestedSpecialty && (
                                 <div className="mt-4">
                                   <p className="text-sm text-gray-600">Especialidad recomendada:</p>
-                                  <p className="font-medium text-blue-700">{message.suggestedSpecialty}</p>
+                                  <p className="font-medium text-brand-jade-700">{message.suggestedSpecialty}</p>
                                   <button
                                     onClick={() => findProviders(message.suggestedSpecialty!)}
-                                    className="mt-2 text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
+                                    className="mt-2 text-sm bg-brand-jade-600 text-white px-3 py-1 rounded-md hover:bg-brand-jade-700 transition-colors flex items-center"
                                   >
                                     <MapPin size={14} className="mr-1" />
                                     Buscar especialistas cercanos
@@ -1121,12 +1156,12 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                               <div className="w-16 h-16 bg-gray-200 rounded-full mr-4 flex-shrink-0"></div>
                               <div>
                                 <h4 className="font-medium text-lg">{provider.name || `Dr. Ejemplo ${index + 1}`}</h4>
-                                <p className="text-blue-700">{provider.specialty || 'Especialidad'}</p>
+                                <p className="text-brand-jade-700">{provider.specialty || 'Especialidad'}</p>
                                 <p className="text-sm text-gray-600 mt-1">{provider.address || 'Dirección del consultorio'}</p>
                                 <div className="mt-3 flex space-x-2">
                                   <button
                                     onClick={() => scheduleAppointment(provider.id || `provider-${index}`)}
-                                    className="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors flex items-center"
+                                    className="text-sm bg-brand-jade-600 text-white px-3 py-1 rounded-md hover:bg-brand-jade-700 transition-colors flex items-center"
                                   >
                                     <Calendar size={14} className="mr-1" />
                                     Agendar cita
@@ -1165,13 +1200,13 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                               <div>
                                 <p className="text-sm text-gray-500">Próxima cita</p>
                                 <h4 className="font-medium text-lg">Dr. Ejemplo</h4>
-                                <p className="text-blue-700">Consulta general</p>
+                                <p className="text-brand-jade-700">Consulta general</p>
                                 <p className="text-sm text-gray-600 mt-1">
                                   {new Date().toLocaleDateString()} - 10:00 AM
                                 </p>
                               </div>
                               <div className="flex space-x-2">
-                                <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors">
+                                <button className="text-sm bg-brand-jade-100 text-brand-jade-700 px-3 py-1 rounded-md hover:bg-brand-jade-200 transition-colors">
                                   Modificar
                                 </button>
                                 <button className="text-sm bg-red-100 text-red-700 px-3 py-1 rounded-md hover:bg-red-200 transition-colors">
@@ -1216,7 +1251,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                                 </div>
                               </div>
                               <div className="flex space-x-2">
-                                <button className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-md hover:bg-blue-200 transition-colors flex items-center">
+                                <button className="text-sm bg-brand-jade-100 text-brand-jade-700 px-3 py-1 rounded-md hover:bg-brand-jade-200 transition-colors flex items-center">
                                   <FileText size={14} className="mr-1" />
                                   Descargar
                                 </button>
@@ -1256,8 +1291,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         {pharmacies.map((pharmacy, index) => (
                           <div key={index} className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                             <div className="flex items-start">
-                              <div className="w-16 h-16 bg-blue-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
-                                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <div className="w-16 h-16 bg-brand-jade-100 rounded-full mr-4 flex-shrink-0 flex items-center justify-center">
+                                <svg className="w-8 h-8 text-brand-jade-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                               </div>
@@ -1280,7 +1315,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                                     <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
                                     <div className="flex flex-wrap gap-1 mt-1">
                                       {pharmacy.available_medications.slice(0, 3).map((med: string, idx: number) => (
-                                        <span key={idx} className="bg-blue-50 text-blue-700 text-xs px-2 py-0.5 rounded-full">
+                                        <span key={idx} className="bg-brand-jade-50 text-brand-jade-700 text-xs px-2 py-0.5 rounded-full">
                                           {med}
                                         </span>
                                       ))}
@@ -1296,7 +1331,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                                     href={`https://maps.google.com/?q=${pharmacy.address}`} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="text-sm bg-primary-blue text-white px-3 py-1 rounded-md hover:bg-primary-blue-dark transition-colors flex items-center"
+                                    className="text-sm bg-brand-jade-600 text-white px-3 py-1 rounded-md hover:bg-brand-jade-700 transition-colors flex items-center"
                                   >
                                     <MapPin size={14} className="mr-1" />
                                     Cómo llegar
@@ -1332,7 +1367,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   if (isEmbedded) {
     return (
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="bg-blue-600 p-4 text-white">
+        <div className="bg-brand-jade-600 p-4 text-white">
           <h3 className="font-semibold text-lg">Doctor IA</h3>
         </div>
         {renderTabContent()}
@@ -1341,28 +1376,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-white z-50 flex flex-col">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-primary-blue to-primary-blue-dark p-4 text-white shadow-md">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <h1 className="text-2xl font-bold">Doctor.mx</h1>
-            <div className="flex items-center ml-4">
-              <img src="/mexico-flag.png" alt="Mexico" className="h-4 w-auto mr-1" />
-              <span className="text-xs font-medium">Hecho en México</span>
-            </div>
-          </div>
-          {onClose && (
-            <button 
-              onClick={onClose}
-              className="bg-white text-primary-blue px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50"
-            >
-              Cerrar
-            </button>
-          )}
-        </div>
-      </header>
-      
+    <div className="fixed inset-0 bg-white z-50 flex flex-col mt-16"> {/* Added mt-16 to account for fixed navbar */}
       {/* Alert banner */}
       <div className="bg-yellow-50 border-b border-yellow-100 px-4 py-2">
         <div className="flex items-center text-yellow-800">
@@ -1378,7 +1392,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         {isMobileView && (
           <button 
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="fixed top-20 left-2 z-50 bg-blue-600 text-white p-2 rounded-full shadow-lg"
+            className="fixed top-20 left-2 z-50 bg-brand-jade-600 text-white p-2 rounded-full shadow-lg"
             aria-label={isSidebarOpen ? "Cerrar menú" : "Abrir menú"}
           >
             {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
@@ -1390,7 +1404,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           className={`${isMobileView ? 'fixed inset-y-0 left-0 z-40' : 'w-64'} 
             ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
             bg-gray-50 border-r border-gray-200 flex flex-col transition-transform duration-300 ease-in-out`}>
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-blue-50 to-white">
+          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-brand-jade-50 to-white">
             <h2 className="font-bold text-lg text-gray-800">Doctor IA</h2>
             <p className="text-sm text-gray-600">Asistente médico inteligente</p>
             
@@ -1415,7 +1429,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'chat' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('chat')}
@@ -1427,7 +1441,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'analysis' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('analysis')}
@@ -1439,7 +1453,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'providers' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('providers')}
@@ -1451,7 +1465,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'appointments' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('appointments')}
@@ -1463,7 +1477,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'prescriptions' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
@@ -1475,7 +1489,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'pharmacies' 
-                      ? 'bg-blue-50 text-primary-blue font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('pharmacies')}
@@ -1492,10 +1506,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           </nav>
           
           <div className="p-4 border-t border-gray-200">
-            <div className="bg-blue-50 rounded-lg p-3">
-              <h3 className="text-sm font-medium text-primary-blue mb-2">Plan Premium</h3>
-              <p className="text-xs text-primary-blue-dark mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-primary-blue hover:bg-primary-blue-dark text-white text-sm py-2 px-3 rounded-lg">
+            <div className="bg-brand-jade-50 rounded-lg p-3">
+              <h3 className="text-sm font-medium text-brand-jade-800 mb-2">Plan Premium</h3>
+              <p className="text-xs text-brand-jade-600 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
+              <button className="w-full bg-brand-jade-500 hover:bg-brand-jade-600 text-white text-sm py-2 px-3 rounded-lg transition-colors">
                 Actualizar ahora
               </button>
             </div>

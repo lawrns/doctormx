@@ -1,0 +1,216 @@
+/* Chat UI fixes */
+
+/* Prevent layout shifts in chat container during typing */
+.overflow-y-auto {
+  contain: layout;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Fix for chat bubble text shaking */
+.leading-relaxed.whitespace-pre-wrap {
+  min-height: 1.5em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  transform: translateZ(0);
+  will-change: transform;
+  contain: content;
+}
+
+/* Prevent layout shifts in chat input and buttons */
+.p-4.border-t.border-gray-200.input-container {
+  position: relative;
+  z-index: 2;
+  transition: none !important;
+  height: auto;
+  min-height: 72px;
+  transform: translateZ(0);
+  contain: layout;
+}
+
+/* Ensure chat messages don't cause container to shift */
+.chat-messages-container {
+  contain: layout;
+  position: relative;
+  transform: translateZ(0);
+}
+
+/* Fix for input field to prevent height changes */
+.chat-input {
+  height: 44px !important;
+  min-height: 44px !important;
+  transition: none !important;
+  resize: none !important;
+  overflow: hidden !important;
+  transform: translateZ(0);
+}
+
+/* Stabilize parent container */
+.flex-1.overflow-y-auto {
+  contain: content;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+/* Prevent animation layout shifts */
+.ai-thinking-container {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: content;
+}
+
+/* Stabilize button animations */
+motion-button {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Ensure stable height for typing indicator dots */
+.animate-pulse {
+  animation: none !important; /* Temporarily disable pulse animation */
+  transform: translateZ(0);
+}
+
+@keyframes customPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateZ(0) scale(1.05);
+  }
+}
+
+/* Prevent scrollbar jumps */
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+/* Force hardware acceleration for smoother animations */
+.flex-col.h-full,
+.motion-div {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+  contain: strict;
+}
+
+/* Additional fix for AIDoctor component */
+.chat-messages-wrapper {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: content;
+  isolation: isolate;
+}
+
+/* Fix container sizing to prevent reflow */
+.max-w-md {
+  box-sizing: border-box;
+  contain: content;
+}
+
+/* Fix edge cases for specific components */
+.border-t.border-gray-200 {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+/* Prevent parent container shifting when chat length changes */
+.space-y-4 {
+  contain: content;
+}
+
+/* Ensure chat message width is stable */
+.rounded-2xl {
+  /* Allow bubbles to respect Tailwind max-width utilities */
+  width: auto !important;
+  min-width: 40px;
+  max-width: none !important;
+  transform: translateZ(0);
+}
+
+/* Disable all transitions in chat components to prevent layout shifts */
+.chat-messages-container *,
+.input-container * {
+  transition: none !important;
+  animation-duration: 0s !important;
+}
+
+/* Override any motion animations */
+.ai-thinking-container * {
+  animation-duration: 0.5s !important;
+  animation-timing-function: linear !important;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 767px) {
+  /* Even more aggressive hardware acceleration for mobile */
+  .chat-messages-container,
+  .chat-messages-wrapper,
+  .input-container,
+  .flex-col.h-full {
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    perspective: 1000 !important;
+    transform-style: preserve-3d !important;
+    contain: strict;
+  }
+  
+  /* Prevent mobile height shifts */
+  body, html {
+    height: 100%;
+    height: -webkit-fill-available;
+    overscroll-behavior-y: none;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Improve performance for mobile chat animations */
+  .animate-pulse,
+  .ai-thinking-container * {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+  
+  /* Ensure stable widths on mobile */
+  .chat-input {
+    width: 100% !important;
+    resize: none !important;
+  }
+  
+  /* Fix for message bubbles on small screens */
+  .leading-relaxed.whitespace-pre-wrap {
+    max-width: calc(100vw - 80px);
+    contain: content;
+  }
+}
+
+/* Specific fixes for the doctor page */
+.status-indicators-container {
+  transition: none !important;
+  contain: layout;
+  transform: translateZ(0);
+}
+
+/* Override default blue utilities to Jade for AI Doctor environment */
+.bg-blue-50 { @apply bg-brand-jade-50 !important; }
+.bg-blue-100 { @apply bg-brand-jade-100 !important; }
+.bg-blue-200 { @apply bg-brand-jade-200 !important; }
+.bg-blue-400 { @apply bg-brand-jade-400 !important; }
+.bg-blue-600 { @apply bg-brand-jade-600 !important; }
+.text-blue-600 { @apply text-brand-jade-600 !important; }
+.text-blue-700 { @apply text-brand-jade-700 !important; }
+.border-blue-100 { @apply border-brand-jade-100 !important; }
+.hover\:bg-blue-50:hover { @apply bg-brand-jade-50 !important; }
+.hover\:bg-blue-100:hover { @apply bg-brand-jade-100 !important; }
+.hover\:bg-blue-200:hover { @apply bg-brand-jade-200 !important; }
+.hover\:bg-blue-700:hover { @apply bg-brand-jade-700 !important; }
+.hover\:text-blue-600:hover { @apply text-brand-jade-600 !important; }
+.focus\:ring-blue-500:focus { @apply ring-brand-jade-500 !important; }
