@@ -6,21 +6,32 @@ const { createClient } = require('@supabase/supabase-js');
 console.log('Standard model function loading...');
 
 // Environment variables for Supabase and OpenAI
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrbsv.supabase.co';
+const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
 
 // Hardcoded OpenAI API key as fallback - ENSURE THIS IS THE CORRECT KEY FORMAT
 const HARDCODED_KEY = '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';
 const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
 
-// Log key information for debugging (mask most of it)
-console.log(`Using OpenAI key: ${openaiKey.substring(0, 10)}...${openaiKey.substring(openaiKey.length - 5)}`);
+// Log all environment for debugging
+console.log('Function environment:', {
+  supabaseUrl: supabaseUrl ? `${supabaseUrl.substring(0, 10)}...` : 'undefined',
+  supabaseAnonKey: supabaseAnonKey ? `${supabaseAnonKey.substring(0, 10)}...` : 'undefined',
+  openaiKey: openaiKey ? `${openaiKey.substring(0, 10)}...` : 'undefined'
+});
 
 const defaultInstructions = process.env.VITE_DOCTOR_INSTRUCTIONS ||
   'Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.';
 
-// Initialize Supabase client (if needed for future enhancements)
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Initialize Supabase client with hardcoded fallbacks
+let supabase;
+try {
+  supabase = createClient(supabaseUrl, supabaseAnonKey);
+  console.log('Supabase client initialized successfully');
+} catch (error) {
+  console.error('Failed to initialize Supabase client:', error);
+  // Continue without Supabase - the function doesn't actually use it
+}
 
 exports.handler = async function(event) {
   // Add CORS headers for development/testing
