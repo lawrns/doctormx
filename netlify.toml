@@ -4,6 +4,26 @@
   functions = "netlify/functions"
   ignore_warnings = true
 
+# Specific API redirects for clearer routing
+[[redirects]]
+  from = "/api/v1/standard-model"
+  to = "/.netlify/functions/standard-model"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/v1/premium-model"
+  to = "/.netlify/functions/premium-model"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/v1/image-analysis"
+  to = "/.netlify/functions/image-analysis"
+  status = 200
+  force = true
+
+# Fallback for other API routes
 [[redirects]]
   from = "/api/v1/*"
   to = "/.netlify/functions/:splat"
