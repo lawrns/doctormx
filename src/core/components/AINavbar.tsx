@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Image, Stethoscope } from 'lucide-react';
+import { Brain, Image, Stethoscope, Calendar } from 'lucide-react';
 import Button from '../../components/ui/Button';
 
 function AINavbar() {
@@ -7,8 +7,7 @@ function AINavbar() {
   
   const navItems = [
     { path: '/doctor', label: 'Consulta Virtual', icon: Stethoscope },
-    { path: '/doctores', label: 'Encontrar Especialista', icon: Brain },
-    { path: '/image-analysis', label: 'Análisis de Imágenes', icon: Image },
+    { path: '/buscar', label: 'Encontrar Especialista', icon: Brain },
   ];
   
   return (

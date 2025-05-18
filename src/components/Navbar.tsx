@@ -24,7 +24,7 @@ function Navbar() {
     }
   }, []);
   
-  const changeLanguage = (lang) => {
+  const changeLanguage = (lang: string) => {
     setLanguage(lang);
     localStorage.setItem('preferredLanguage', lang);
     setShowLangMenu(false);
@@ -68,14 +68,27 @@ function Navbar() {
           <div className="flex items-center space-x-8">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img src="/Doctorlogo.png" alt="Doctor.mx Logo" className="h-8 w-auto" />
-              <span className="text-blue-600 font-bold text-xl ml-2">Doctor.mx</span>
+              <span className="text-brand-jade-600 font-bold text-xl ml-2">Doctor.mx</span>
             </Link>
 
             <div className="hidden lg:flex lg:items-center lg:space-x-6">
+              {/* Primary nav links */}
+              <Link
+                to="/doctor"
+                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
+              >
+                Consulta Virtual
+              </Link>
+              <Link
+                to="/buscar"
+                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
+              >
+                Encontrar Especialista
+              </Link>
               {/* Main navigation items */}
               <div className="relative group">
                 <button
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                   onMouseEnter={() => setIsDropdownOpen('services')}
                   onMouseLeave={() => setIsDropdownOpen('')}
                 >
@@ -92,7 +105,7 @@ function Navbar() {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-jade-600 transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -103,7 +116,7 @@ function Navbar() {
 
               <div className="relative group">
                 <button
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                   onMouseEnter={() => setIsDropdownOpen('community')}
                   onMouseLeave={() => setIsDropdownOpen('')}
                 >
@@ -120,7 +133,7 @@ function Navbar() {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-jade-600 transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -131,7 +144,7 @@ function Navbar() {
 
               <div className="relative group">
                 <button
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                   onMouseEnter={() => setIsDropdownOpen('about')}
                   onMouseLeave={() => setIsDropdownOpen('')}
                 >
@@ -148,7 +161,7 @@ function Navbar() {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand-jade-600 transition-colors"
                       >
                         {item.name}
                       </Link>
@@ -157,6 +170,24 @@ function Navbar() {
                 )}
               </div>
             </div>
+
+            {/* Quick Links */}
+            <div className="py-2 border-t border-gray-200">
+              <Link
+                to="/doctor"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Consulta Virtual
+              </Link>
+              <Link
+                to="/buscar"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Encontrar Especialista
+              </Link>
+            </div>
           </div>
 
           {/* Right section: Doctor IA, language selector, and auth buttons */}
@@ -164,11 +195,11 @@ function Navbar() {
             <div className="flex items-center space-x-2">
               <Link
                 to="/sintomas"
-                className="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+                className="inline-flex items-center px-4 py-2 rounded-lg bg-brand-jade-600 text-white font-medium hover:bg-brand-jade-700 transition-colors"
               >
                 <SocialIcons.Brain size={18} className="mr-2" />
                 Doctor IA
-                <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
+                <span className="ml-2 text-xs bg-white text-brand-jade-600 px-1.5 py-0.5 rounded-full font-bold">
                   ¡NUEVO!
                 </span>
               </Link>
@@ -191,13 +222,13 @@ function Navbar() {
               {showLangMenu && (
                 <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-10">
                   <button 
-                    className={`w-full text-left px-4 py-2 text-sm ${language === 'es' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:bg-gray-100'}`}
+                    className={`w-full text-left px-4 py-2 text-sm ${language === 'es' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:bg-gray-100'}`}
                     onClick={() => changeLanguage('es')}
                   >
                     Español (México)
                   </button>
                   <button 
-                    className={`w-full text-left px-4 py-2 text-sm ${language === 'en' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:bg-gray-100'}`}
+                    className={`w-full text-left px-4 py-2 text-sm ${language === 'en' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:bg-gray-100'}`}
                     onClick={() => changeLanguage('en')}
                   >
                     English
@@ -210,14 +241,14 @@ function Navbar() {
               <div className="flex items-center space-x-4">
                 <Link 
                   to="/dashboard" 
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                 >
                   <User size={18} className="mr-2" />
                   Mi cuenta
                 </Link>
                 <button 
                   onClick={handleSignOut}
-                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                 >
                   <LogOut size={18} className="mr-2" />
                   Salir
@@ -227,13 +258,13 @@ function Navbar() {
               <div className="flex items-center space-x-3">
                 <Link 
                   to="/login"
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
                 >
                   Iniciar sesión
                 </Link>
                 <Link 
                   to="/registro"
-                  className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 text-sm font-medium text-white bg-brand-jade-600 rounded-lg hover:bg-brand-jade-700 transition-colors"
                 >
                   Registrarse
                 </Link>
@@ -245,7 +276,7 @@ function Navbar() {
           <div className="flex lg:hidden">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-jade-600 hover:bg-gray-100 transition-colors"
               aria-expanded={isMenuOpen}
               aria-label="Toggle menu"
             >
@@ -263,12 +294,12 @@ function Navbar() {
             <div className="flex flex-col space-y-2">
               <Link
                 to="/sintomas"
-                className="flex items-center justify-center px-4 py-2 rounded-lg bg-blue-600 text-white font-medium"
+                className="flex items-center justify-center px-4 py-2 rounded-lg bg-brand-jade-600 text-white font-medium hover:bg-brand-jade-700 transition-colors"
                 onClick={toggleMenu}
               >
                 <SocialIcons.Brain size={18} className="mr-2" />
                 Doctor IA
-                <span className="ml-2 text-xs bg-white text-blue-600 px-1.5 py-0.5 rounded-full font-bold">
+                <span className="ml-2 text-xs bg-white text-brand-jade-600 px-1.5 py-0.5 rounded-full font-bold">
                   ¡NUEVO!
                 </span>
               </Link>
@@ -287,7 +318,7 @@ function Navbar() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                   onClick={toggleMenu}
                 >
                   {item.name}
@@ -304,7 +335,7 @@ function Navbar() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                   onClick={toggleMenu}
                 >
                   {item.name}
@@ -321,7 +352,7 @@ function Navbar() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                   onClick={toggleMenu}
                 >
                   {item.name}
@@ -336,13 +367,13 @@ function Navbar() {
               </div>
               <button
                 onClick={() => changeLanguage('es')}
-                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium ${language === 'es' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}
+                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium ${language === 'es' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50'}`}
               >
                 Español (México)
               </button>
               <button
                 onClick={() => changeLanguage('en')}
-                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium ${language === 'en' ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}
+                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium ${language === 'en' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50'}`}
               >
                 English
               </button>
@@ -354,7 +385,7 @@ function Navbar() {
                 <div className="space-y-1">
                   <Link
                     to="/dashboard"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                     onClick={toggleMenu}
                   >
                     <div className="flex items-center">
@@ -367,7 +398,7 @@ function Navbar() {
                       handleSignOut();
                       toggleMenu();
                     }}
-                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                   >
                     <div className="flex items-center">
                       <LogOut size={18} className="mr-2" />
@@ -379,14 +410,14 @@ function Navbar() {
                 <div className="px-3 space-y-2">
                   <Link
                     to="/login"
-                    className="block w-full px-4 py-2 text-center text-gray-700 hover:text-blue-600 font-medium border border-gray-300 rounded-lg hover:border-blue-600 transition-colors"
+                    className="block w-full px-4 py-2 text-center text-gray-700 hover:text-brand-jade-600 font-medium border border-gray-300 rounded-lg hover:border-brand-jade-600 transition-colors"
                     onClick={toggleMenu}
                   >
                     Iniciar sesión
                   </Link>
                   <Link
                     to="/registro"
-                    className="block w-full px-4 py-2 text-center text-white bg-blue-600 font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                    className="block w-full px-4 py-2 text-center text-white bg-brand-jade-600 font-medium rounded-lg hover:bg-brand-jade-700 transition-colors"
                     onClick={toggleMenu}
                   >
                     Registrarse

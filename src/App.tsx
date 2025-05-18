@@ -10,7 +10,6 @@ const AIAnalysisResultsPage = React.lazy(() => import('./features/ai-analysis/pa
 const AIImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/pages/AIImageAnalysisPage'));
 const APIKeyConfigPage = React.lazy(() => import('./pages/settings/APIKeyConfigPage'));
 const ConnectLandingPage = React.lazy(() => import('./pages/ConnectLandingPage'));
-const LabTestingPage = React.lazy(() => import('./pages/LabTestingPage'));
 
 // Import doctor dashboard components without lazy loading to avoid auth context issues
 import DoctorRoutes from './routes/DoctorRoutes';
@@ -26,7 +25,6 @@ function App() {
           <Route path="doctor-dashboard/*" element={<Navigate to="/connect" replace />} />
           <Route path="connect" element={<ConnectLandingPage />} />
           <Route path="connect/*" element={<DoctorRoutes />} />
-          <Route path="lab-testing" element={<LabTestingPage />} />
           <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
           <Route path="image-analysis" element={<AIImageAnalysisPage />} />
           <Route path="settings/api" element={<APIKeyConfigPage />} />
