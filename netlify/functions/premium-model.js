@@ -145,11 +145,47 @@ exports.handler = async function(event) {
       console.log('Sending request to OpenAI with model: gpt-4');
       console.log('Messages count:', messages.length);
       
-      response = await openai.chat.completions.create({
-        model: 'gpt-4',
-        messages: messages,
-        temperature: 0.7
-      });
+      // Check if OpenAI client has the expected structure
+      if (!openai || !openai.chat || !openai.chat.completions || typeof openai.chat.completions.create !== 'function') {
+        console.error('OpenAI client missing expected properties:', JSON.stringify(Object.keys(openai || {})));
+        
+        // Try alternative API patterns based on OpenAI SDK version
+        if (openai && typeof openai.createChatCompletion === 'function') {
+          // Old v3 SDK pattern
+          console.log('Attempting with legacy createChatCompletion method');
+          const legacyResponse = await openai.createChatCompletion({
+            model: 'gpt-4',
+            messages: messages,
+            temperature: 0.7
+          });
+          response = {
+            choices: [{ message: { content: legacyResponse.choices[0].message.content } }]
+          };
+        } else if (openai && typeof openai.completions === 'object' && typeof openai.completions.create === 'function') {
+          // Alternative structure check
+          console.log('Attempting with direct completions.create method');
+          const alternativeResponse = await openai.completions.create({
+            model: 'gpt-4',
+            prompt: userMessage,
+            temperature: 0.7,
+            max_tokens: 500
+          });
+          response = {
+            choices: [{ message: { content: alternativeResponse.choices[0].text } }]
+          };
+        } else {
+          throw new Error('OpenAI client is missing required methods. Available keys: ' + 
+            JSON.stringify(Object.keys(openai || {})));
+        }
+      } else {
+        // Standard pattern that should work with current SDK
+        console.log('Using standard chat.completions.create method');
+        response = await openai.chat.completions.create({
+          model: 'gpt-4',
+          messages: messages,
+          temperature: 0.7
+        });
+      }
     } catch (newApiError) {
       // If the new SDK approach fails, try legacy approach
       console.error('Error with new OpenAI SDK:', newApiError);
