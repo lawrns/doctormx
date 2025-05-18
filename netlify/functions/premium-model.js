@@ -5,7 +5,8 @@ const { createClient } = require('@supabase/supabase-js');
 // Environment variables for Supabase and OpenAI
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
-const openaiKey = process.env.OPENAI_API_KEY;
+// Hardcoded OpenAI API key as fallback
+const openaiKey = process.env.OPENAI_API_KEY || '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';
 const defaultInstructions = process.env.VITE_DOCTOR_INSTRUCTIONS ||
   'Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.';
 

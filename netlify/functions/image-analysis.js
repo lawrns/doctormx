@@ -1,8 +1,8 @@
 const OpenAIpkg = require('openai');
 const OpenAI = OpenAIpkg.default || OpenAIpkg;
 
-// Environment variable for OpenAI API key
-const openaiKey = process.env.OPENAI_API_KEY;
+// Environment variable for OpenAI API key with hardcoded fallback
+const openaiKey = process.env.OPENAI_API_KEY || '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';
 
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') {
