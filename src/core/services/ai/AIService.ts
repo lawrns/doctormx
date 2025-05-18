@@ -408,12 +408,25 @@ class AIService {
     try {
       console.log(`Making API request to ${endpoint}`);
 
-      const response = await fetch(endpoint, {
+      // Add troubleshooting info to see what's happening
+      console.log(`API URL: ${window.location.origin}${endpoint}`);
+      console.log(`Request data:`, JSON.stringify(data).substring(0, 200) + '...');
+
+      // Ensure we're using the full URL with origin
+      const fullUrl = endpoint.startsWith('http') ? endpoint : `${window.location.origin}${endpoint}`;
+      
+      const response = await fetch(fullUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(data),
+        credentials: 'same-origin' // Include cookies in the request
       });
 
+      console.log(`Response status: ${response.status}`);
+      
       if (!response.ok) {
         const errorText = await response.text();
         console.error(`API request failed with status ${response.status}: ${errorText}`);
@@ -426,10 +439,13 @@ class AIService {
     } catch (error) {
       console.error(`Error in makeAPIRequest to ${endpoint}:`, error);
       
+      // Since this is likely a deployment issue, provide a helpful message
+      console.log("This could be a CORS, network, or deployment issue. Check the browser console for more details.");
+      
       // Provide a fallback response for development
       if (endpoint.includes('standard-model') || endpoint.includes('premium-model')) {
         return { 
-          text: "Lo siento, estoy experimentando dificultades técnicas para conectarme a los servidores. Por favor, intenta nuevamente en unos momentos."
+          text: "Lo siento, estoy experimentando dificultades técnicas para conectarme a los servidores. Por favor, intenta nuevamente en unos momentos. El equipo técnico está trabajando para resolver este problema."
         };
       } else if (endpoint.includes('image-analysis')) {
         return {
