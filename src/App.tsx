@@ -29,6 +29,7 @@ function App() {
           <Route path="connect" element={<ConnectLandingPage />} />
           <Route path="connect/*" element={<DoctorRoutes />} />
           <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
+          <Route path="analisis-imagenes" element={<AIImageAnalysisPage />} />
           <Route path="image-analysis" element={<AIImageAnalysisPage />} />
           <Route path="settings/api" element={<APIKeyConfigPage />} />
           <Route path="settings/ai-character" element={<AICharacterSettingsPage />} />
