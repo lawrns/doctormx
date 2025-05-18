@@ -4,6 +4,13 @@
   functions = "netlify/functions"
   ignore_warnings = true
 
+[build.environment]
+  NODE_FETCH_TIMEOUT = "30000"
+
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["openai"]
+
 # Specific API redirects for clearer routing
 [[redirects]]
   from = "/api/v1/standard-model"
