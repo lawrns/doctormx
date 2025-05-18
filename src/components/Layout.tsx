@@ -110,7 +110,7 @@ function Layout() {
           href="https://wa.me/5215512345678?text=Hola,%20tengo%20una%20pregunta%20sobre%20Doctor.mx"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 left-6 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600"
+          className="fixed bottom-6 left-6 z-50 bg-brand-jade-500 text-white p-3 rounded-full shadow-lg hover:bg-brand-jade-600"
           aria-label="Contactar por WhatsApp"
         >
           <SocialIcons.MessageSquare size={24} />
@@ -119,7 +119,7 @@ function Layout() {
         {/* Chat Assistant Button */}
         <button 
           onClick={() => setShowChatAssistant(!showChatAssistant)}
-          className="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50 flex items-center justify-center"
+          className="fixed bottom-6 right-6 bg-brand-jade-600 text-white p-4 rounded-full shadow-lg hover:bg-brand-jade-700 transition-colors z-50 flex items-center justify-center"
           aria-label="Abrir asistente de chat"
         >
           <SocialIcons.MessageCircle size={24} />

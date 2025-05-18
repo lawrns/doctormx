@@ -1,28 +1,17 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Send, Image, Mic, X, MapPin, Calendar, Stethoscope, FileText, AlertCircle } from 'lucide-react';
-import AIService, { AIResponse, AIQueryOptions } from '../../services/ai/AIService';
-import EncryptionService from '../../services/security/EncryptionService';
-import { useChat } from '../ChatContext';
+// ======================================================
+// IMPORTANT: THIS FILE IS DEPRECATED
+// This version of AIDoctor is no longer in use.
+// The canonical version is in:
+// /src/features/ai-doctor/components/AIDoctor.tsx
+// Please make all changes to that file instead.
+// This file only exists for backward compatibility.
+// ======================================================
 
-type Message = {
-  id: string;
-  text: string;
-  sender: 'user' | 'bot';
-  timestamp: Date;
-  severity?: number;
-  isEmergency?: boolean;
-  containsImage?: boolean;
-  imageUrl?: string;
-  imageAnalysis?: {
-    findings: string;
-    confidence: number;
-  };
-  suggestedSpecialty?: string;
-  suggestedConditions?: string[];
-  followUpQuestions?: string[];
-  nearbyProviders?: any[];
-};
+import React from 'react';
+import AIDoctor from '../../features/ai-doctor/components/AIDoctor';
+
+// Re-export the canonical version from features
+export default AIDoctor;
 
 type AIDoctorProps = {
   onClose?: () => void;
@@ -91,43 +80,79 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     setInput('');
     setIsProcessing(true);
     
+    // Create a bot message placeholder with streaming indicators
+    const botMessageId = (Date.now() + 1).toString();
+    const initialBotMessage: Message = {
+      id: botMessageId,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isStreaming: true,
+      isComplete: false
+    };
+    
+    setMessages(prev => [...prev, initialBotMessage]);
+    
     try {
+      // Define the streaming response handler
+      const streamingHandler: StreamingResponseHandler = (streamResponse: StreamingAIResponse) => {
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === botMessageId 
+              ? { 
+                  ...msg, 
+                  text: streamResponse.text,
+                  severity: streamResponse.severity,
+                  isEmergency: streamResponse.isEmergency,
+                  suggestedSpecialty: streamResponse.suggestedSpecialty,
+                  suggestedConditions: streamResponse.suggestedConditions,
+                  followUpQuestions: streamResponse.followUpQuestions,
+                  isStreaming: streamResponse.isStreaming,
+                  isComplete: streamResponse.isComplete
+                } 
+              : msg
+          )
+        );
+        
+        if (streamResponse.severity) {
+          setSeverityLevel(streamResponse.severity);
+        }
+        
+        // If streaming is completed, mark processing as finished
+        if (streamResponse.isComplete) {
+          setIsProcessing(false);
+        }
+      };
+      
       const queryOptions: AIQueryOptions = {
         userMessage: input,
         userHistory: messages.map(m => m.text),
         severity: severityLevel,
-        location: location || undefined
+        location: location || undefined,
+        stream: true, // Enable streaming
+        onStreamingResponse: streamingHandler // Pass the streaming handler
       };
       
-      const response = await AIService.processQuery(queryOptions);
+      // Use streaming version which will update via the handler
+      await AIService.processQuery(queryOptions);
       
-      if (response.severity) {
-        setSeverityLevel(response.severity);
-      }
-      
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: response.text,
-        sender: 'bot',
-        timestamp: new Date(),
-        severity: response.severity,
-        isEmergency: response.isEmergency,
-        suggestedSpecialty: response.suggestedSpecialty,
-        suggestedConditions: response.suggestedConditions,
-        followUpQuestions: response.followUpQuestions
-      };
-      
-      setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Error processing message:', error);
       
-      setMessages(prev => [...prev, {
-        id: (Date.now() + 1).toString(),
-        text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
-        sender: 'bot',
-        timestamp: new Date()
-      }]);
-    } finally {
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                id: botMessageId,
+                text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
+                sender: 'bot',
+                timestamp: new Date(),
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
       setIsProcessing(false);
     }
   };
@@ -160,21 +185,71 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         imageUrl
       }]);
       
-      const response = await AIService.analyzeImage(imageUrl);
-      
-      if (response.severity) {
-        setSeverityLevel(response.severity);
-      }
-      
-      setMessages(prev => [...prev, {
-        id: (Date.now() + 1).toString(),
-        text: response.text,
+      // Create a bot message placeholder with streaming indicators
+      const botMessageId = (Date.now() + 1).toString();
+      const initialBotMessage: Message = {
+        id: botMessageId,
+        text: 'Analizando imagen...',
         sender: 'bot',
         timestamp: new Date(),
-        severity: response.severity,
-        imageAnalysis: response.imageAnalysis,
-        suggestedSpecialty: response.suggestedSpecialty
-      }]);
+        isStreaming: true,
+        isComplete: false
+      };
+      
+      setMessages(prev => [...prev, initialBotMessage]);
+      
+      // Define the streaming response handler for image analysis
+      const streamingHandler: StreamingResponseHandler = (streamResponse: StreamingAIResponse) => {
+        setMessages(prev => 
+          prev.map(msg => 
+            msg.id === botMessageId 
+              ? { 
+                  ...msg, 
+                  text: streamResponse.text || msg.text,
+                  severity: streamResponse.severity,
+                  imageAnalysis: streamResponse.imageAnalysis,
+                  suggestedSpecialty: streamResponse.suggestedSpecialty,
+                  isStreaming: streamResponse.isStreaming,
+                  isComplete: streamResponse.isComplete
+                } 
+              : msg
+          )
+        );
+        
+        if (streamResponse.severity) {
+          setSeverityLevel(streamResponse.severity);
+        }
+        
+        // If streaming is completed, mark uploading as finished
+        if (streamResponse.isComplete) {
+          setIsUploading(false);
+          if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+          }
+        }
+      };
+      
+      // For image analysis, let's adapt our AIService.analyzeImage call
+      // Since the analyzeImage doesn't directly support streaming,
+      // we'll simulate the streaming effect
+      
+      // Start with initial analysis status
+      streamingHandler({
+        text: "Analizando imagen... Detectando características visuales...",
+        isStreaming: true,
+        isComplete: false
+      });
+      
+      // Get the actual response
+      const response = await AIService.analyzeImage(imageUrl);
+      
+      // Use the full response for the final update
+      streamingHandler({
+        ...response,
+        isStreaming: false,
+        isComplete: true
+      });
+      
     } catch (error) {
       console.error('Error uploading image:', error);
       
@@ -182,9 +257,11 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         id: (Date.now() + 1).toString(),
         text: 'Lo siento, hubo un error al procesar tu imagen. Por favor, intenta nuevamente.',
         sender: 'bot',
-        timestamp: new Date()
+        timestamp: new Date(),
+        isStreaming: false,
+        isComplete: true
       }]);
-    } finally {
+      
       setIsUploading(false);
       if (fileInputRef.current) {
         fileInputRef.current.value = '';
@@ -259,7 +336,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   };
   
   const getSeverityColor = () => {
-    if (severityLevel < 30) return 'bg-green-500';
+    if (severityLevel < 30) return 'bg-brand-jade-500';
     if (severityLevel < 60) return 'bg-yellow-500';
     if (severityLevel < 80) return 'bg-orange-500';
     return 'bg-red-500';
@@ -272,92 +349,22 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     return 'Emergencia';
   };
 
+  // Enhanced message component that uses the EnhancedChatBubble
   const MessageComponent = ({ message }: { message: Message }) => {
     return (
-      <div className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-        <div className={`rounded-lg px-4 py-2 max-w-md ${
-          message.sender === 'user' 
-            ? 'bg-blue-600 text-white' 
-            : message.isEmergency
-              ? 'bg-red-100 text-red-800 border border-red-200'
-              : 'bg-gray-100 text-gray-800'
-        }`}>
-          <div className="flex items-center mb-1">
-            {message.sender === 'bot' ? (
-              <Stethoscope size={16} className="mr-1 text-blue-600" />
-            ) : (
-              <div className="w-4 h-4 rounded-full bg-white mr-1 flex items-center justify-center">
-                <span className="text-blue-600 text-xs">U</span>
-              </div>
-            )}
-            <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
-              {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-            </span>
-          </div>
-          
-          {message.isEmergency ? (
-            <div>
-              <div className="flex items-center mb-2">
-                <AlertCircle size={16} className="text-red-600 mr-1" />
-                <span className="font-bold">Emergencia Médica</span>
-              </div>
-              <p>{message.text}</p>
-            </div>
-          ) : (
-            <>
-              <p>{message.text}</p>
-              
-              {message.containsImage && message.imageUrl && (
-                <div className="mt-2">
-                  <img 
-                    src={message.imageUrl} 
-                    alt="Imagen médica" 
-                    className="rounded-md max-h-48 max-w-full"
-                  />
-                </div>
-              )}
-              
-              {message.imageAnalysis && (
-                <div className="mt-2 p-2 bg-blue-50 rounded-md text-sm">
-                  <p className="font-medium text-blue-800">Análisis de imagen:</p>
-                  <p>{message.imageAnalysis.findings}</p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    Confianza: {Math.round(message.imageAnalysis.confidence * 100)}%
-                  </p>
-                </div>
-              )}
-              
-              {message.suggestedSpecialty && (
-                <div className="mt-2">
-                  <button
-                    onClick={() => findProviders(message.suggestedSpecialty!)}
-                    className="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-200 transition-colors flex items-center"
-                  >
-                    <MapPin size={14} className="mr-1" />
-                    Buscar especialistas en {message.suggestedSpecialty}
-                  </button>
-                </div>
-              )}
-              
-              {message.followUpQuestions && message.followUpQuestions.length > 0 && (
-                <div className="mt-3 space-y-2">
-                  {message.followUpQuestions.map((question, index) => (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        setInput(question);
-                      }}
-                      className="block w-full text-left text-sm bg-gray-50 hover:bg-gray-100 p-2 rounded-md transition-colors"
-                    >
-                      {question}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
-        </div>
-      </div>
+      <EnhancedChatBubble
+        message={message}
+        onFollowUpClick={(question) => {
+          setInput(question);
+        }}
+        onOptionSelect={(option, questionId) => {
+          console.log(`Selected option: ${option} for question ${questionId}`);
+          setInput(option);
+        }}
+        onFindProviders={(specialty) => {
+          findProviders(specialty);
+        }}
+      />
     );
   };
 
@@ -404,7 +411,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                   placeholder="Describe tus síntomas o haz una pregunta..."
-                  className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-jade-500"
                   disabled={isProcessing}
                 />
                 <button 
@@ -413,7 +420,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   className={`p-2 rounded-full ${
                     (!input.trim() && !isUploading) || isProcessing
                       ? 'text-gray-400 cursor-not-allowed' 
-                      : 'text-blue-600 hover:bg-blue-50'
+                      : 'text-brand-jade-600 hover:bg-brand-jade-50'
                   }`}
                   aria-label="Enviar mensaje"
                 >
@@ -426,7 +433,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 </div>
               )}
               {isProcessing && (
-                <div className="mt-2 text-center text-sm text-blue-600">
+                <div className="mt-2 text-center text-sm text-brand-jade-600">
                   <span className="inline-block">⟳</span> Procesando tu consulta...
                 </div>
               )}
@@ -628,7 +635,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   return (
     <div className="fixed inset-0 bg-white z-50 flex flex-col">
       {/* Header */}
-      <header className="bg-blue-600 p-4 text-white shadow-md">
+      <header className="bg-gradient-to-r from-brand-jade-500 to-brand-jade-600 p-4 text-white shadow-md">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold">Doctor.mx</h1>
@@ -636,7 +643,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           {onClose && (
             <button 
               onClick={onClose}
-              className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-medium"
+              className="bg-white text-brand-jade-500 px-3 py-1 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors"
             >
               Cerrar
             </button>
@@ -657,7 +664,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       <div className="flex flex-1 overflow-hidden">
         {/* Sidebar */}
         <aside className="w-64 bg-gray-50 border-r border-gray-200 flex flex-col">
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-blue-50 to-white">
+          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-brand-jade-50 to-white">
             <h2 className="font-bold text-lg text-gray-800">Doctor IA</h2>
             <p className="text-sm text-gray-600">Asistente médico inteligente</p>
             
@@ -682,7 +689,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'chat' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('chat')}
@@ -694,7 +701,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'analysis' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('analysis')}
@@ -706,7 +713,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'providers' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('providers')}
@@ -718,7 +725,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'appointments' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('appointments')}
@@ -730,7 +737,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                 <button 
                   className={`w-full text-left px-4 py-3 rounded-lg ${
                     activeTab === 'prescriptions' 
-                      ? 'bg-blue-100 text-blue-700 font-medium' 
+                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
                       : 'text-gray-700 hover:bg-gray-100'
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
@@ -742,10 +749,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           </nav>
           
           <div className="p-4 border-t border-gray-200">
-            <div className="bg-blue-50 rounded-lg p-3">
-              <h3 className="text-sm font-medium text-blue-800 mb-2">Plan Premium</h3>
-              <p className="text-xs text-blue-600 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm py-2 px-3 rounded-lg">
+            <div className="bg-brand-jade-50 rounded-lg p-3">
+              <h3 className="text-sm font-medium text-brand-jade-800 mb-2">Plan Premium</h3>
+              <p className="text-xs text-brand-jade-600 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
+              <button className="w-full bg-brand-jade-500 hover:bg-brand-jade-600 text-white text-sm py-2 px-3 rounded-lg transition-colors">
                 Actualizar ahora
               </button>
             </div>

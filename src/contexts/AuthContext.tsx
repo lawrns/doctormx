@@ -12,6 +12,8 @@ interface AuthContextType {
   loginWithGoogle: () => Promise<{ success: boolean; error?: string }>;
   register: (email: string, password: string, name: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
+  signOut: () => Promise<void>;
+  isAuthenticated: boolean;
   forgotPassword: (email: string) => Promise<{ success: boolean; error?: string }>;
   resetPassword: (newPassword: string) => Promise<{ success: boolean; error?: string }>;
   updateProfile: (data: any) => Promise<{ success: boolean; error?: string }>;
@@ -396,6 +398,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const value = {
     user,
     loading,
+    isAuthenticated: !!user,
+    signOut: logout,
     doctorId: doctorProfile?.id || null,
     doctorName: doctorProfile?.name || null,
     doctorSpecialty: doctorProfile?.specialty || null,

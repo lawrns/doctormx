@@ -87,10 +87,10 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 20, scale: 0.95 }}
         transition={{ duration: 0.2 }}
-        className="fixed bottom-20 right-6 w-80 sm:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col chat-container"
+        className="fixed bottom-20 right-6 w-[90vw] sm:w-96 h-96 bg-white rounded-lg shadow-xl z-50 flex flex-col chat-container"
       >
         {/* Header */}
-        <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-blue-600 text-white rounded-t-lg">
+        <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-brand-jade-600 text-white rounded-t-lg">
           <h3 className="font-semibold">Asistente Doctor.mx</h3>
           <div className="flex items-center space-x-2">
             <motion.button 
@@ -118,7 +118,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
         
         {/* Messages */}
         <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
-          <motion.div layout className="space-y-4">
+          <motion.div className="space-y-4">
             {messages.map((message) => (
               <motion.div
                 key={message.id}
@@ -126,18 +126,18 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
                 animate={{ opacity: 1, y: 0 }}
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`max-w-[80%] p-3 rounded-lg ${
+                <div className={`max-w-[90%] sm:max-w-[80%] p-3 rounded-lg ${
                   message.sender === 'user' 
-                    ? 'bg-blue-600 text-white rounded-tr-none' 
+                    ? 'bg-brand-jade-600 text-white rounded-tr-none' 
                     : 'bg-white text-gray-800 shadow-sm rounded-tl-none'
                 }`}>
                   <div className="flex items-center mb-1">
                     {message.sender === 'bot' ? (
-                      <SocialIcons.Bot size={16} className="mr-1 text-blue-600" />
+                      <SocialIcons.Bot size={16} className="mr-1 text-brand-jade-600" />
                     ) : (
                       <UserIcon size={16} className="mr-1 text-white" />
                     )}
-                    <span className={`text-xs ${message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'}`}>
+                    <span className={`text-xs ${message.sender === 'user' ? 'text-brand-jade-100' : 'text-gray-500'}`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
         <div className="p-3 border-t border-gray-200 bg-white rounded-b-lg">
           <div className="flex items-center">
             <motion.button 
-              className={`p-2 rounded-full mr-2 ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-blue-600'}`}
+              className={`p-2 rounded-full mr-2 ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
               onClick={toggleVoiceRecording}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -162,7 +162,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               <SocialIcons.Mic size={20} />
             </motion.button>
             <motion.button 
-              className="p-2 rounded-full mr-2 text-gray-500 hover:text-blue-600"
+              className="p-2 rounded-full mr-2 text-gray-500 hover:text-brand-jade-600"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Adjuntar archivo"
@@ -175,7 +175,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
               placeholder="Escribe tu mensaje..."
-              className="flex-1 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="flex-1 py-2 px-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-jade-500 focus:border-transparent"
             />
             <motion.button 
               onClick={handleSendMessage}
@@ -183,7 +183,7 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
               className={`p-2 ml-2 rounded-full ${
                 input.trim() === '' 
                   ? 'text-gray-400 cursor-not-allowed' 
-                  : 'text-blue-600 hover:bg-blue-50'
+                  : 'text-brand-jade-600 hover:bg-brand-jade-50'
               }`}
               whileHover={input.trim() !== '' ? { scale: 1.1 } : {}}
               whileTap={input.trim() !== '' ? { scale: 0.9 } : {}}

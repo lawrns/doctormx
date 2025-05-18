@@ -11,8 +11,8 @@ import React, { useState, useRef, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
-import AIService, { AIQueryOptions, StreamingAIResponse, StreamingResponseHandler } from '../../../services/ai/AIService';
-import EncryptionService from '../../../services/security/EncryptionService';
+import AIService, { AIQueryOptions, AICharacterProfile, StreamingAIResponse, StreamingResponseHandler } from '../../../core/services/ai/AIService';
+import EncryptionService from '../../../core/services/security/EncryptionService';
 import AIThinking from './AIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
 import ProductRecommendation from './ProductRecommendation';
@@ -321,7 +321,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         usePremiumModel: imageAnalysisEnabled || input.length > 100 || input.includes('imagen') || input.includes('photo'),
         customInstructions: doctorInstructions || undefined,
         stream: true,
-        onStreamingResponse: streamingHandler
+        onStreamingResponse: streamingHandler,
+        characterProfile: AIService.getCharacterProfile() // Use the character profile from AIService
       };
       
       // Process query with streaming

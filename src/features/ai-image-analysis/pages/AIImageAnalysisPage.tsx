@@ -339,7 +339,7 @@ function AIImageAnalysisPage() {
             </motion.div>
           )}
           
-          {!selectedImage && !analysisResult && (
+          {!selectedImageUrl && !analysisResult && (
             <motion.div 
               variants={itemVariants}
               whileHover={{ scale: isUploading ? 1 : 1.01, boxShadow: isUploading ? 'none' : '0 4px 12px rgba(0,0,0,0.05)' }}
@@ -370,14 +370,14 @@ function AIImageAnalysisPage() {
             </motion.div>
           )}
           
-          {selectedImage && !analysisResult && (
+          {selectedImageUrl && !analysisResult && (
             <>
               <motion.div 
                 className="rounded-lg p-6 mb-6 border border-gray-200 bg-gray-50"
                 variants={itemVariants}
               >
                 <img 
-                  src={selectedImage} 
+                  src={selectedImageUrl} 
                   alt="Imagen para análisis" 
                   className="max-h-64 mx-auto rounded-lg"
                 />
@@ -452,7 +452,7 @@ function AIImageAnalysisPage() {
                 <div>
                   <h3 className="text-lg font-medium text-gray-900 mb-2">Imagen analizada</h3>
                   <img 
-                    src={selectedImage!} 
+                    src={selectedImageUrl!} 
                     alt="Imagen analizada" 
                     className="rounded-lg max-h-64 border border-gray-200"
                   />

@@ -10,7 +10,7 @@ const ConnectLandingPage: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-primary-blue-dark to-primary-blue py-16 px-4 sm:px-6 lg:px-8 text-white">
+      <div className="bg-gradient-to-r from-brand-jade-700 to-brand-jade-500 py-16 px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ const ConnectLandingPage: React.FC = () => {
               >
                 <Link
                   to="/connect/register"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary-blue bg-white hover:bg-gray-50 shadow-lg"
+                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-brand-jade-600 bg-white hover:bg-gray-50 shadow-lg"
                 >
                   Únase ahora
                   <ArrowRight className="ml-2 -mr-1 h-5 w-5" />
@@ -58,8 +58,8 @@ const ConnectLandingPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-white p-6 rounded-lg shadow-md"
           >
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <Users className="h-6 w-6 text-primary-blue" />
+              <div className="w-12 h-12 bg-brand-jade-100 rounded-full flex items-center justify-center mb-4">
+              <Users className="h-6 w-6 text-brand-jade-500" />
             </div>
             <h3 className="text-xl font-medium text-gray-900 mb-2">Pacientes calificados</h3>
             <p className="text-gray-600">
@@ -73,8 +73,8 @@ const ConnectLandingPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white p-6 rounded-lg shadow-md"
           >
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <Calendar className="h-6 w-6 text-primary-blue" />
+              <div className="w-12 h-12 bg-brand-jade-100 rounded-full flex items-center justify-center mb-4">
+              <Calendar className="h-6 w-6 text-brand-jade-500" />
             </div>
             <h3 className="text-xl font-medium text-gray-900 mb-2">Optimización de agenda</h3>
             <p className="text-gray-600">
@@ -88,8 +88,8 @@ const ConnectLandingPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white p-6 rounded-lg shadow-md"
           >
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <DollarSign className="h-6 w-6 text-primary-blue" />
+              <div className="w-12 h-12 bg-brand-jade-100 rounded-full flex items-center justify-center mb-4">
+              <DollarSign className="h-6 w-6 text-brand-jade-500" />
             </div>
             <h3 className="text-xl font-medium text-gray-900 mb-2">Ingresos adicionales</h3>
             <p className="text-gray-600">
@@ -174,7 +174,7 @@ const ConnectLandingPage: React.FC = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              <div className="absolute -left-4 -top-4 w-12 h-12 bg-primary-blue rounded-full flex items-center justify-center text-white font-bold">
+              <div className="absolute -left-4 -top-4 w-12 h-12 bg-brand-jade-500 rounded-full flex items-center justify-center text-white font-bold">
                 {item.step}
               </div>
               <div className="bg-white p-6 pt-10 rounded-lg shadow-md">
@@ -187,10 +187,10 @@ const ConnectLandingPage: React.FC = () => {
       </div>
 
       {/* CTA */}
-      <div className="bg-primary-blue py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-brand-jade-600 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white">Comience hoy mismo</h2>
-          <p className="mt-4 text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="mt-4 text-xl text-brand-jade-100 max-w-3xl mx-auto">
             Únase a la red de médicos de Doctor.mx y comience a recibir pacientes calificados.
           </p>
           <div className="mt-8">
@@ -200,7 +200,7 @@ const ConnectLandingPage: React.FC = () => {
             >
               <Link
                 to="/connect/register"
-                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-primary-blue bg-white hover:bg-gray-50 shadow-lg"
+                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-brand-jade-600 bg-white hover:bg-gray-50 shadow-lg"
               >
                 Registrarse ahora
                 <ArrowRight className="ml-2 -mr-1 h-5 w-5" />

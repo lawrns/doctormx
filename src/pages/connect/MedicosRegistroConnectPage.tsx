@@ -4,7 +4,6 @@ import { Check, AlertCircle, ChevronRight, Calendar, Users, Star, Shield, Credit
 import { motion } from 'framer-motion';
 import ProgressSteps from '../../components/ProgressSteps';
 import { useSupabase } from '../../contexts/SupabaseContext';
-import DirectRegistrationHelper from './DirectRegistrationHelper';
 
 // Define registration steps
 const registrationSteps = [
@@ -986,27 +985,16 @@ function MedicosRegistroConnectPage() {
                 </div>
                 
                 {errors.submit && (
-                  <>
-                    <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                      <div className="flex">
-                        <div className="flex-shrink-0">
-                          <AlertCircle className="h-5 w-5 text-red-500" />
-                        </div>
-                        <div className="ml-3">
-                          <p className="text-sm text-red-700">{errors.submit}</p>
-                        </div>
+                  <div className="mt-4 bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                    <div className="flex">
+                      <div className="flex-shrink-0">
+                        <AlertCircle className="h-5 w-5 text-red-500" />
+                      </div>
+                      <div className="ml-3">
+                        <p className="text-sm text-red-700">{errors.submit}</p>
                       </div>
                     </div>
-                    
-                    <DirectRegistrationHelper 
-                      formData={formData} 
-                      onSuccess={() => {
-                        setRegistrationComplete(true);
-                        window.scrollTo(0, 0);
-                      }}
-                      onError={(error) => console.error('Alternative registration failed:', error)}
-                    />
-                  </>
+                  </div>
                 )}
               </div>
             )}

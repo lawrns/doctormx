@@ -40,7 +40,7 @@ const InstallPWA: React.FC = () => {
     <>
       <button
         onClick={handleInstallClick}
-        className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+        className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-brand-jade-600 text-white hover:bg-brand-jade-700 transition-colors"
       >
         <Download size={18} />
         <span>{isIOS ? 'Instalar app' : 'Instalar aplicación'}</span>
@@ -53,19 +53,19 @@ const InstallPWA: React.FC = () => {
             
             <ol className="space-y-4 text-gray-600 mb-6">
               <li className="flex items-start">
-                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">1</span>
+                <span className="bg-brand-jade-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">1</span>
                 <span>Toca el botón <strong>Compartir</strong> en la barra del navegador (ícono con una flecha hacia arriba)</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">2</span>
+                <span className="bg-brand-jade-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">2</span>
                 <span>Desplázate hacia abajo y toca <strong>Agregar a la pantalla de inicio</strong></span>
               </li>
               <li className="flex items-start">
-                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">3</span>
+                <span className="bg-brand-jade-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">3</span>
                 <span>Toca <strong>Agregar</strong> en la esquina superior derecha</span>
               </li>
               <li className="flex items-start">
-                <span className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">4</span>
+                <span className="bg-brand-jade-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">4</span>
                 <span>¡Doctor.mx ahora está instalado en tu dispositivo!</span>
               </li>
             </ol>
@@ -73,7 +73,7 @@ const InstallPWA: React.FC = () => {
             <div className="flex justify-center">
               <button
                 onClick={() => setShowInstructions(false)}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-brand-jade-600 text-white rounded-lg hover:bg-brand-jade-700 transition-colors"
               >
                 Entendido
               </button>

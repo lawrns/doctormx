@@ -4,8 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ChatProvider } from './core/hooks/useChat';
 import './index.css';
+import './styles/chat-fixes.css'; // Import custom CSS fixes for chat UI
 import App from './App';
 import { SupabaseProvider } from './contexts/SupabaseContext';
+import { AuthProvider } from './contexts/AuthContext';
 
 // Import Supabase client but don't re-initialize it
 // The client is already exported from supabaseClient.ts
@@ -15,9 +17,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <HelmetProvider>
         <SupabaseProvider>
-          <ChatProvider>
-            <App />
-          </ChatProvider>
+          <AuthProvider>
+            <ChatProvider>
+              <App />
+            </ChatProvider>
+          </AuthProvider>
         </SupabaseProvider>
       </HelmetProvider>
     </BrowserRouter>

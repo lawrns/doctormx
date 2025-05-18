@@ -13,6 +13,14 @@ export interface AIResponse {
   };
 }
 
+export interface StreamingAIResponse extends AIResponse {
+  isStreaming: boolean;
+  isComplete: boolean;
+  suggestedMedications?: string[];
+}
+
+export type StreamingResponseHandler = (response: StreamingAIResponse) => void;
+
 export interface AIQueryOptions {
   userMessage: string;
   userHistory?: string[];
@@ -24,6 +32,18 @@ export interface AIQueryOptions {
     latitude: number;
     longitude: number;
   };
+  characterProfile?: AICharacterProfile;
+  customInstructions?: string;
+  stream?: boolean;
+  onStreamingResponse?: StreamingResponseHandler;
+}
+
+export interface AICharacterProfile {
+  name: string;
+  personality: string;
+  specialization: string;
+  tone: string;
+  style: string;
 }
 
 class AIService {
@@ -33,10 +53,72 @@ class AIService {
   private standardModelEndpoint = '/api/v1/standard-model';
   private premiumModelEndpoint = '/api/v1/premium-model';
   private imageAnalysisEndpoint = '/api/v1/image-analysis';
+  
+  private defaultCharacterProfile: AICharacterProfile = {
+    name: 'Dr. IA',
+    personality: 'Amable, atento, empático y profesional',
+    specialization: 'Medicina General',
+    tone: 'Formal y tranquilizador',
+    style: 'Claro y directo'
+  };
+  
+  private currentCharacterProfile: AICharacterProfile;
 
   constructor() {
     // Use the centralized Supabase client instead of creating a new one
     this.supabase = supabase;
+    
+    // Initialize character profile with default values
+    this.currentCharacterProfile = {...this.defaultCharacterProfile};
+    
+    // Try to load saved profile from localStorage
+    this.loadCharacterProfile();
+  }
+  
+  /**
+   * Get current AI character profile
+   */
+  getCharacterProfile(): AICharacterProfile {
+    return this.currentCharacterProfile;
+  }
+  
+  /**
+   * Set AI character profile and save to localStorage
+   */
+  setCharacterProfile(profile: Partial<AICharacterProfile>): AICharacterProfile {
+    this.currentCharacterProfile = {
+      ...this.currentCharacterProfile,
+      ...profile
+    };
+    
+    // Save to localStorage
+    localStorage.setItem('ai_character_profile', JSON.stringify(this.currentCharacterProfile));
+    
+    return this.currentCharacterProfile;
+  }
+  
+  /**
+   * Reset character profile to default
+   */
+  resetCharacterProfile(): AICharacterProfile {
+    this.currentCharacterProfile = {...this.defaultCharacterProfile};
+    localStorage.setItem('ai_character_profile', JSON.stringify(this.currentCharacterProfile));
+    return this.currentCharacterProfile;
+  }
+  
+  /**
+   * Load character profile from localStorage
+   */
+  private loadCharacterProfile(): void {
+    try {
+      const savedProfile = localStorage.getItem('ai_character_profile');
+      if (savedProfile) {
+        this.currentCharacterProfile = JSON.parse(savedProfile);
+      }
+    } catch (error) {
+      console.error('Error loading character profile from localStorage:', error);
+      this.currentCharacterProfile = {...this.defaultCharacterProfile};
+    }
   }
 
   /**
@@ -55,12 +137,80 @@ class AIService {
         medicalContext,
         userProfile: options.userProfile,
         severity: options.severity,
+        characterProfile: options.characterProfile || this.currentCharacterProfile,
+        customInstructions: options.customInstructions
       };
       
       const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
-      const response = await this.makeAPIRequest(endpoint, requestData);
       
-      return this.enhanceResponse(response, options);
+      // Handle streaming response if requested
+      if (options.stream && options.onStreamingResponse) {
+        console.log('Starting streaming response');
+        
+        // Initial streaming response
+        let fullResponse = '';
+        let responseObject: StreamingAIResponse = {
+          text: '',
+          isStreaming: true,
+          isComplete: false
+        };
+        
+        // Simulate streaming for demo purposes
+        // In a real implementation, this would connect to a streaming API endpoint
+        const processPart = (text: string, isLast: boolean) => {
+          fullResponse += text;
+          
+          responseObject = {
+            ...responseObject,
+            text: fullResponse,
+            isStreaming: !isLast,
+            isComplete: isLast
+          };
+          
+          // If this is the last part, add additional metadata
+          if (isLast) {
+            responseObject.severity = options.severity || Math.floor(Math.random() * 100);
+            responseObject.isEmergency = responseObject.severity > 80;
+            
+            if (options.userMessage.toLowerCase().includes('dolor')) {
+              responseObject.suggestedSpecialty = 'Medicina General';
+              responseObject.suggestedConditions = ['Cefalea', 'Migraña', 'Tensión muscular'];
+              responseObject.followUpQuestions = [
+                '¿El dolor se intensifica con alguna actividad específica?',
+                '¿Has tomado algún medicamento para aliviar el dolor?',
+                '¿Tienes otros síntomas además del dolor?'
+              ];
+            }
+          }
+          
+          options.onStreamingResponse(responseObject);
+        };
+        
+        // Call the API once to get the complete response
+        const response = await this.makeAPIRequest(endpoint, requestData);
+        
+        // Then simulate streaming by breaking it into chunks
+        // For a real implementation, we would use a proper streaming API
+        const fullText = response.text;
+        const chunks = this.breakTextIntoChunks(fullText);
+        
+        // Process chunks with slight delays to simulate streaming
+        for (let i = 0; i < chunks.length; i++) {
+          const isLast = i === chunks.length - 1;
+          processPart(chunks[i], isLast);
+          
+          if (!isLast) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+          }
+        }
+        
+        // Return the complete response at the end
+        return this.enhanceResponse(response, options);
+      } else {
+        // Normal, non-streaming response
+        const response = await this.makeAPIRequest(endpoint, requestData);
+        return this.enhanceResponse(response, options);
+      }
     } catch (error) {
       console.error('Error processing AI query:', error);
       return {
@@ -68,6 +218,18 @@ class AIService {
         severity: options.severity,
       };
     }
+  }
+  
+  // Helper method to break text into chunks for simulating streaming
+  private breakTextIntoChunks(text: string, chunkSize: number = 10): string[] {
+    const words = text.split(' ');
+    const chunks: string[] = [];
+    
+    for (let i = 0; i < words.length; i += chunkSize) {
+      chunks.push(words.slice(i, i + chunkSize).join(' ') + ' ');
+    }
+    
+    return chunks;
   }
   
   /**

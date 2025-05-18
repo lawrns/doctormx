@@ -92,12 +92,20 @@ VITE_OPENAI_API_KEY=your_openai_api_key
 
 4. Start the development server
 ```
+# To run only the frontend (no serverless functions; AI Doctor features disabled):
 npm run dev
 # or
 yarn dev
 ```
 
-5. Open `http://localhost:5173` in your browser
+To run the full app (with serverless functions for `/api/v1/*` routes):
+Install the Netlify CLI if you haven't already:
+```
+npm install -g netlify-cli
+netlify dev
+```
+
+5. Open the URL shown in the Netlify CLI output (usually `http://localhost:8888`) in your browser
 
 ### Supabase Storage Setup
 
@@ -111,12 +119,6 @@ This project is pre-configured to deploy on Netlify, with serverless functions t
 - Ensure you set the following environment variables in your Netlify dashboard:
   - `OPENAI_API_KEY` (server-side) for calling OpenAI from Functions
   - `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_OPENAI_API_KEY`, etc.
-
-Local development of functions can be done with the Netlify CLI:
-```bash
-npm install -g netlify-cli
-netlify dev
-```
 
 ## Technology Stack
 

@@ -32,13 +32,13 @@ export const Button: React.FC<ButtonProps> = ({
     lg: 'h-12 px-6 text-lg',
   };
 
-  // Variant styles
+  // Variant styles - Updated to ensure contrast
   const variantStyles = {
     primary: 'bg-brand-jade-500 text-white hover:bg-brand-jade-600 focus:ring-brand-jade-500',
     secondary: 'bg-brand-sun-500 text-brand-charcoal hover:bg-brand-sun-600 focus:ring-brand-sun-500',
-    outline: 'border-2 border-brand-jade-500 text-brand-jade-500 hover:bg-brand-jade-50 focus:ring-brand-jade-500',
-    ghost: 'bg-transparent hover:bg-gray-100 text-brand-charcoal hover:text-brand-jade-500 focus:ring-gray-500',
-    link: 'bg-transparent text-brand-sky-600 hover:text-brand-sky-700 hover:underline focus:ring-brand-sky-500 p-0 h-auto',
+    outline: 'bg-brand-jade-50 border-2 border-brand-jade-500 text-brand-jade-500 hover:bg-brand-jade-100 focus:ring-brand-jade-500',
+    ghost: 'bg-white/90 hover:bg-gray-100 text-brand-charcoal hover:text-brand-jade-500 focus:ring-gray-500',
+    link: 'bg-white/90 text-brand-sky-600 hover:text-brand-sky-700 hover:underline focus:ring-brand-sky-500 p-0 h-auto',
   };
 
   // Width style

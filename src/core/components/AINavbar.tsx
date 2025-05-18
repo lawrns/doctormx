@@ -8,6 +8,7 @@ function AINavbar() {
   const navItems = [
     { path: '/doctor', label: 'Consulta Virtual', icon: Stethoscope },
     { path: '/buscar', label: 'Encontrar Especialista', icon: Brain },
+    { path: '/lab-testing', label: 'Exámenes a Domicilio', icon: Calendar },
   ];
   
   return (

@@ -9,7 +9,7 @@ interface AIThinkingProps {
 const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus síntomas...' }) => {
   return (
     <motion.div 
-      className="ai-thinking-container flex flex-col items-center p-4 bg-blue-50 rounded-lg"
+      className="ai-thinking-container flex flex-col items-center p-4 bg-brand-jade-50 rounded-lg"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -28,7 +28,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
       >
         <div className="relative w-16 h-16 flex items-center justify-center">
           <motion.div 
-            className="absolute inset-0 bg-blue-200 rounded-full"
+            className="absolute inset-0 bg-brand-jade-200 rounded-full"
             animate={{ 
               scale: [1, 1.5, 1],
               opacity: [0.3, 0.1, 0.3] 
@@ -39,7 +39,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
               ease: "easeInOut" 
             }}
           />
-          <Brain size={32} className="text-blue-600 z-10" />
+          <Brain size={32} className="text-brand-jade-600 z-10" />
         </div>
       </motion.div>
       
@@ -47,7 +47,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
         {[...Array(12)].map((_, i) => (
           <motion.div 
             key={i}
-            className="neural-path absolute h-0.5 bg-blue-400"
+            className="neural-path absolute h-0.5 bg-brand-jade-400"
             style={{
               top: `${Math.floor(i / 4) * 10 + 5}px`,
               left: '25%',
@@ -69,7 +69,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
       </div>
       
       <motion.div 
-        className="thinking-label mt-4 text-blue-700 font-medium"
+        className="thinking-label mt-4 text-brand-jade-700 font-medium"
         animate={{ opacity: [0.6, 1, 0.6] }}
         transition={{ repeat: Infinity, duration: 2 }}
       >
@@ -81,7 +81,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
         {['Fiebre', 'Dolor', 'Tos', 'Erupción', 'Mareo'].map((symptom, i) => (
           <motion.div
             key={symptom}
-            className="bg-white rounded-md px-3 py-1 text-sm shadow-sm border border-blue-100"
+            className="bg-white rounded-md px-3 py-1 text-sm shadow-sm border border-brand-jade-100"
             initial={{ opacity: 0, y: 10 }}
             animate={{ 
               opacity: [0, 1, 0],
@@ -105,7 +105,7 @@ const AIThinking: React.FC<AIThinkingProps> = ({ message = 'Analizando sus sínt
         {['Diagnóstico', 'Patología', 'Sintomatología', 'Etiología', 'Tratamiento'].map((term, i) => (
           <motion.div
             key={term}
-            className="absolute text-blue-400/30 text-xs font-mono"
+            className="absolute text-brand-jade-400/30 text-xs font-mono"
             style={{
               left: `${10 + Math.random() * 80}%`,
               top: `${10 + Math.random() * 80}%`,

@@ -7,6 +7,7 @@
     "start": "vite",
     "build": "vite build --log-level error",
     "preview": "vite preview",
+    "netlify": "netlify dev",
     "generate-icons": "node src/scripts/generate-icons.js",
     "generate-splash-screens": "node src/scripts/generate-splash-screens.js",
     "check-icons": "node scripts/check-icons.js",

@@ -80,10 +80,16 @@ function Navbar() {
                 Consulta Virtual
               </Link>
               <Link
-                to="/buscar"
+                to="/lab-testing"
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
               >
-                Encontrar Especialista
+                Exámenes a Domicilio
+              </Link>
+              <Link
+                to="/image-analysis"
+                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-jade-600 transition-colors"
+              >
+                Análisis de Imágenes
               </Link>
               {/* Main navigation items */}
               <div className="relative group">
@@ -181,11 +187,18 @@ function Navbar() {
                 Consulta Virtual
               </Link>
               <Link
-                to="/buscar"
+                to="/lab-testing"
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
                 onClick={toggleMenu}
               >
-                Encontrar Especialista
+                Exámenes a Domicilio
+              </Link>
+              <Link
+                to="/image-analysis"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Análisis de Imágenes
               </Link>
             </div>
           </div>

@@ -13,13 +13,13 @@ function AIFooter() {
           </div>
           
           <div className="flex space-x-6">
-            <Link to="/privacy" className="text-sm text-gray-600 hover:text-blue-600">
+            <Link to="/privacy" className="text-sm text-gray-600 hover:text-brand-jade-600">
               Privacidad
             </Link>
-            <Link to="/terms" className="text-sm text-gray-600 hover:text-blue-600">
+            <Link to="/terms" className="text-sm text-gray-600 hover:text-brand-jade-600">
               Términos
             </Link>
-            <Link to="/about" className="text-sm text-gray-600 hover:text-blue-600">
+            <Link to="/about" className="text-sm text-gray-600 hover:text-brand-jade-600">
               Acerca de
             </Link>
           </div>
