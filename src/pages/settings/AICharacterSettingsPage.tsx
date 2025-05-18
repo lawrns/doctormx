@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Robot, Shield, Save, RotateCcw, CheckCircle, AlertCircle, Lock } from 'lucide-react';
+import { Brain, Shield, Save, RotateCcw, CheckCircle, AlertCircle, Lock } from 'lucide-react';
 import AIService, { AICharacterProfile } from '../../core/services/ai/AIService';
 import Container from '../../components/ui/Container';
 import Section from '../../components/ui/Section';
@@ -211,7 +211,7 @@ const AICharacterSettingsPage: React.FC = () => {
           <div className="p-6">
             <motion.div variants={itemVariants} className="mb-6">
               <div className="flex items-center mb-4">
-                <Robot className="h-5 w-5 text-brand-jade-600 mr-2" />
+                <Brain className="h-5 w-5 text-brand-jade-600 mr-2" />
                 <h3 className="text-lg font-medium text-gray-800">Personalidad y Comportamiento</h3>
               </div>
 
