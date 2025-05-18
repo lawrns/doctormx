@@ -1,5 +1,24 @@
-const OpenAIpkg = require('openai');
-const OpenAI = OpenAIpkg.default || OpenAIpkg;
+// Import OpenAI package with proper handling for ESM/CJS differences
+let OpenAI;
+try {
+  const { OpenAI: ESMOpenAI } = require('openai');
+  OpenAI = ESMOpenAI;
+  console.log('Loaded OpenAI using ESM import pattern');
+} catch (error) {
+  try {
+    const CJSOpenAI = require('openai');
+    OpenAI = CJSOpenAI.default || CJSOpenAI;
+    console.log('Loaded OpenAI using CJS import pattern');
+  } catch (innerError) {
+    console.error('Failed to import OpenAI:', innerError);
+    // Create a placeholder that will throw a more helpful error when used
+    OpenAI = class MockOpenAI {
+      constructor() {
+        throw new Error('OpenAI SDK could not be loaded. Import failed with: ' + innerError.message);
+      }
+    };
+  }
+}
 const { createClient } = require('@supabase/supabase-js');
 
 // Log startup information for debugging
@@ -80,17 +99,62 @@ exports.handler = async function(event) {
 
   try {
     console.log('Creating OpenAI instance with key starting with:', openaiKey.substring(0, 7));
-    const openai = new OpenAI({ apiKey: openaiKey });
+    let openai, response;
     
-    console.log('Sending request to OpenAI with model: gpt-4');
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4',
-      messages: [
-        { role: 'system', content: defaultInstructions },
-        { role: 'user', content: userMessage }
-      ],
-      temperature: 0.7
-    });
+    try {
+      // Try to create the OpenAI client with the new SDK version
+      openai = new OpenAI({ apiKey: openaiKey });
+      console.log('Using new OpenAI client SDK');
+      
+      // Parse character profile and custom instructions if available
+      let systemContent = defaultInstructions;
+      let contextMessages = [];
+      
+      try {
+        if (params.customInstructions) {
+          systemContent = params.customInstructions;
+          console.log('Using custom instructions from request');
+        }
+        
+        if (params.history && Array.isArray(params.history)) {
+          const history = params.history;
+          console.log(`Adding ${history.length} messages from conversation history`);
+          
+          // Convert history array to OpenAI message format
+          for (let i = 0; i < history.length; i++) {
+            const role = i % 2 === 0 ? 'assistant' : 'user';
+            contextMessages.push({ role, content: history[i] });
+          }
+        }
+      } catch (parseError) {
+        console.warn('Error parsing request context:', parseError);
+        // Continue with default instructions
+      }
+      
+      // Build messages array with system content first, then history if available
+      const messages = [
+        { role: 'system', content: systemContent },
+        ...contextMessages
+      ];
+      
+      // Always add the current user message last
+      if (contextMessages.length === 0 || contextMessages[contextMessages.length - 1].role !== 'user') {
+        messages.push({ role: 'user', content: userMessage });
+      }
+      
+      console.log('Sending request to OpenAI with model: gpt-4');
+      console.log('Messages count:', messages.length);
+      
+      response = await openai.chat.completions.create({
+        model: 'gpt-4',
+        messages: messages,
+        temperature: 0.7
+      });
+    } catch (newApiError) {
+      // If the new SDK approach fails, try legacy approach
+      console.error('Error with new OpenAI SDK:', newApiError);
+      throw new Error('OpenAI API error: ' + newApiError.message);
+    }
     
     const text = response.choices?.[0]?.message?.content || '';
     console.log('OpenAI response received. Length:', text.length);
