@@ -1,9 +1,10 @@
-import { User as UserIcon } from 'lucide-react';
+import { User as UserIcon, ShoppingCart as ShoppingCartIcon } from 'lucide-react';
 import { useState } from 'react';
 import { SocialIcons } from './icons/IconProvider';
 import { X, Send, User, Shield, Calendar, Video, Clock, AlertCircle } from './icons/IconProvider';
 // Import the correct useChat hook
 import { useChat } from '../core/hooks/useChat';
+import PharmacyMiniCart, { PharmacyProduct } from './PharmacyMiniCart';
 
 type ExpandedChatAssistantProps = {
   onClose: () => void;
@@ -13,6 +14,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
   const [activeTab, setActiveTab] = useState('symptomChecker');
   // Use the centralized chat context from core hooks
   const { messages, addMessage, severityLevel, setSeverityLevel } = useChat();
+  const [showCart, setShowCart] = useState(false);
   const [input, setInput] = useState('');
 
   const handleSend = () => {
@@ -21,6 +23,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
     // Add user message with the correct method signature
     addMessage(input, 'user');
     setInput('');
+    if (showCart) setShowCart(false);
     
     // Check for emergency keywords
     if (input.toLowerCase().includes('dolor en el pecho') || 
@@ -238,7 +241,24 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                 
                 {/* Input area */}
                 <div className="p-4 border-t border-gray-200">
-                  <div className="flex space-x-2">
+                  {/* Pharmacy mini-cart */}
+                  {showCart && (
+                    <PharmacyMiniCart
+                      onAdd={(product: PharmacyProduct) => {
+                        addMessage(`Agregué ${product.name} al carrito`, 'user');
+                      }}
+                      onCheckout={() => addMessage('Iniciando proceso de pago...', 'user')}
+                    />
+                  )}
+                  <div className="flex space-x-2 items-center">
+                    {/* Toggle pharmacy cart */}
+                    <button
+                      onClick={() => setShowCart(prev => !prev)}
+                      className="p-2 text-gray-500 hover:text-gray-700"
+                      aria-label="Mostrar farmacia"
+                    >
+                      <ShoppingCartIcon size={20} />
+                    </button>
                     <input
                       type="text"
                       value={input}
