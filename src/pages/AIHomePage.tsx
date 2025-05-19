@@ -39,20 +39,18 @@ function AIHomePage() {
       
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-brand-jade-50 to-white py-16">
+        <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-12 gap-6 items-center">
               {/* Left column - Text content */}
               <div className="md:col-span-5">
-                <h1 className="text-5xl md:text-6xl font-extrabold text-brand-night mb-6">
-                  Tu salud, al instante
+                <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                  Orientación de salud <span className="text-teal-600">instantánea</span>, gratis, desde casa
                 </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  Obtén orientación médica confiable al momento<br />
-                  con nuestra plataforma impulsada por IA.
-                </p>
-                <Link to="/doctor">
-                  <Button variant="primary" size="lg">Comenzar consulta virtual</Button>
+                <Link to="/wizard/step-1">
+                  <Button variant="primary" size="lg" className="bg-coral-500 hover:bg-coral-600 text-white">
+                    Iniciar evaluación
+                  </Button>
                 </Link>
               </div>
               
