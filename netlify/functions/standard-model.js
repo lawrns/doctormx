@@ -1,24 +1,6 @@
-// Import OpenAI package with proper handling for ESM/CJS differences
-let OpenAI;
-try {
-  const { OpenAI: ESMOpenAI } = require('openai');
-  OpenAI = ESMOpenAI;
-  console.log('Loaded OpenAI using ESM import pattern');
-} catch (error) {
-  try {
-    const CJSOpenAI = require('openai');
-    OpenAI = CJSOpenAI.default || CJSOpenAI;
-    console.log('Loaded OpenAI using CJS import pattern');
-  } catch (innerError) {
-    console.error('Failed to import OpenAI:', innerError);
-    // Create a placeholder that will throw a more helpful error when used
-    OpenAI = class MockOpenAI {
-      constructor() {
-        throw new Error('OpenAI SDK could not be loaded. Import failed with: ' + innerError.message);
-      }
-    };
-  }
-}
+// Import OpenAI package - using default import which is correct for the latest SDK
+const OpenAI = require('openai');
+console.log('Loaded OpenAI SDK');
 const { createClient } = require('@supabase/supabase-js');
 
 // Log startup information for debugging
@@ -99,12 +81,12 @@ exports.handler = async function(event) {
 
   try {
     console.log('Creating OpenAI instance with key starting with:', openaiKey.substring(0, 7));
-    let openai, response;
+    let response;
     
     try {
-      // Try to create the OpenAI client with the new SDK version
-      openai = new OpenAI({ apiKey: openaiKey });
-      console.log('Using new OpenAI client SDK');
+      // Create the OpenAI client - note the "new" keyword is crucial
+      const openai = new OpenAI({ apiKey: openaiKey });
+      console.log('Using OpenAI client SDK');
       
       // Parse character profile and custom instructions if available
       let systemContent = defaultInstructions;
@@ -145,47 +127,13 @@ exports.handler = async function(event) {
       console.log('Sending request to OpenAI with model: gpt-3.5-turbo');
       console.log('Messages count:', messages.length);
       
-      // Check if OpenAI client has the expected structure
-      if (!openai || !openai.chat || !openai.chat.completions || typeof openai.chat.completions.create !== 'function') {
-        console.error('OpenAI client missing expected properties:', JSON.stringify(Object.keys(openai || {})));
-        
-        // Try alternative API patterns based on OpenAI SDK version
-        if (openai && typeof openai.createChatCompletion === 'function') {
-          // Old v3 SDK pattern
-          console.log('Attempting with legacy createChatCompletion method');
-          const legacyResponse = await openai.createChatCompletion({
-            model: 'gpt-3.5-turbo',
-            messages: messages,
-            temperature: 0.7
-          });
-          response = {
-            choices: [{ message: { content: legacyResponse.choices[0].message.content } }]
-          };
-        } else if (openai && typeof openai.completions === 'object' && typeof openai.completions.create === 'function') {
-          // Alternative structure check
-          console.log('Attempting with direct completions.create method');
-          const alternativeResponse = await openai.completions.create({
-            model: 'text-davinci-003', // Fallback for older API
-            prompt: userMessage,
-            temperature: 0.7,
-            max_tokens: 500
-          });
-          response = {
-            choices: [{ message: { content: alternativeResponse.choices[0].text } }]
-          };
-        } else {
-          throw new Error('OpenAI client is missing required methods. Available keys: ' + 
-            JSON.stringify(Object.keys(openai || {})));
-        }
-      } else {
-        // Standard pattern that should work with current SDK
-        console.log('Using standard chat.completions.create method');
-        response = await openai.chat.completions.create({
-          model: 'gpt-3.5-turbo',
-          messages: messages,
-          temperature: 0.7
-        });
-      }
+      // Use the standard method from the latest OpenAI SDK
+      console.log('Using chat.completions.create method');
+      response = await openai.chat.completions.create({
+        model: 'gpt-3.5-turbo',
+        messages: messages,
+        temperature: 0.7
+      });
     } catch (newApiError) {
       // If the new SDK approach fails, try legacy approach
       console.error('Error with new OpenAI SDK:', newApiError);

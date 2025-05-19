@@ -1,5 +1,5 @@
-const OpenAIpkg = require('openai');
-const OpenAI = OpenAIpkg.default || OpenAIpkg;
+// Import OpenAI package - using default import which is correct for the latest SDK
+const OpenAI = require('openai');
 
 // Log startup information for debugging
 console.log('Image analysis function loading...');
