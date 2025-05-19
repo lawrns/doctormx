@@ -2,15 +2,8 @@ import { User as UserIcon } from 'lucide-react';
 import { useState } from 'react';
 import { SocialIcons } from './icons/IconProvider';
 import { X, Send, User, Shield, Calendar, Video, Clock, AlertCircle } from './icons/IconProvider';
-
-type Message = {
-  id: string;
-  text: string;
-  sender: 'user' | 'bot';
-  timestamp: Date;
-  severity?: number;
-  isEmergency?: boolean;
-};
+// Import the correct useChat hook
+import { useChat } from '../core/hooks/useChat';
 
 type ExpandedChatAssistantProps = {
   onClose: () => void;
@@ -18,28 +11,15 @@ type ExpandedChatAssistantProps = {
 
 function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
   const [activeTab, setActiveTab] = useState('symptomChecker');
-  const [messages, setMessages] = useState<Message[]>([
-    { 
-      id: '1', 
-      text: '¡Hola! Soy tu asistente virtual de Doctor.mx. ¿En qué puedo ayudarte hoy?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ]);
+  // Use the centralized chat context from core hooks
+  const { messages, addMessage, severityLevel, setSeverityLevel } = useChat();
   const [input, setInput] = useState('');
-  const [severityLevel, setSeverityLevel] = useState(10);
 
   const handleSend = () => {
     if (!input.trim()) return;
     
-    // Add user message
-    const newMessages = [...messages, { 
-      id: Date.now().toString(),
-      text: input,
-      sender: 'user',
-      timestamp: new Date()
-    }];
-    setMessages(newMessages);
+    // Add user message with the correct method signature
+    addMessage(input, 'user');
     setInput('');
     
     // Check for emergency keywords
@@ -48,13 +28,11 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
       setSeverityLevel(90);
       
       setTimeout(() => {
-        setMessages([...newMessages, { 
-          id: (Date.now() + 1).toString(),
-          text: '🚨 Detecto síntomas que podrían indicar una emergencia médica. Necesitas atención inmediata.',
-          sender: 'bot',
-          timestamp: new Date(),
-          isEmergency: true
-        }]);
+        // Add bot message with the correct method signature
+        addMessage(
+          '🚨 Detecto síntomas que podrían indicar una emergencia médica. Necesitas atención inmediata.',
+          'bot'
+        );
       }, 1000);
       return;
     }
@@ -76,12 +54,8 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
         responseText = 'La fiebre puede ser síntoma de varias condiciones. ¿Qué temperatura has registrado y desde cuándo la tienes?';
       }
       
-      setMessages([...newMessages, { 
-        id: (Date.now() + 1).toString(),
-        text: responseText,
-        sender: 'bot',
-        timestamp: new Date()
-      }]);
+      // Add bot message with the correct method signature
+      addMessage(responseText, 'bot');
     }, 1000);
   };
 
@@ -232,7 +206,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                       <div className={`rounded-lg px-4 py-2 max-w-md ${
                         message.sender === 'user' 
                           ? 'bg-blue-600 text-white' 
-                          : message.isEmergency
+                          : message.text.includes('🚨') // Simple check for emergency messages
                             ? 'bg-red-100 text-red-800 border border-red-200'
                             : 'bg-gray-100 text-gray-800'
                       }`}>
@@ -246,7 +220,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </span>
                         </div>
-                        {message.isEmergency ? (
+                        {message.text.includes('🚨') ? (
                           <div>
                             <div className="flex items-center mb-2">
                               <AlertCircle size={16} className="text-red-600 mr-1" />
@@ -340,7 +314,7 @@ function ExpandedChatAssistant({ onClose }: ExpandedChatAssistantProps) {
                             Cancelar
                           </button>
                           <button 
-                            type="submit" 
+                            type="button" 
                             className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg"
                           >
                             Guardar

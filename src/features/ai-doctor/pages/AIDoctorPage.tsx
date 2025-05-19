@@ -9,6 +9,7 @@
 
 import AIDoctor from '../components/AIDoctor';
 import SEO from '../../../core/components/SEO';
+import ClientOnly from '../../../components/ClientOnly';
 
 function AIDoctorPage() {
   return (
@@ -19,7 +20,10 @@ function AIDoctorPage() {
         canonical="/doctor"
         keywords="doctor ia, asistente médico, análisis de síntomas, análisis de imágenes médicas, inteligencia artificial médica, consulta médica online"
       />
-      <AIDoctor />
+      {/* Wrap AIDoctor with ClientOnly to prevent hydration mismatches */}
+      <ClientOnly>
+        <AIDoctor />
+      </ClientOnly>
     </>
   );
 }

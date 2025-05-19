@@ -4,6 +4,7 @@ import AINavbar from './AINavbar';
 import AIFooter from './AIFooter';
 import ChatAssistant from '../../components/ChatAssistant';
 import { SocialIcons } from '../../components/icons/IconProvider';
+import ClientOnly from '../../components/ClientOnly';
 
 function AILayout() {
   const [showChatAssistant, setShowChatAssistant] = useState(false);
@@ -24,10 +25,13 @@ function AILayout() {
       >
         <SocialIcons.MessageCircle size={24} />
       </button>
-      {/* Chat Assistant Modal */}
-      {showChatAssistant && (
-        <ChatAssistant onClose={() => setShowChatAssistant(false)} />
-      )}
+      
+      {/* Chat Assistant Modal - Wrapped in ClientOnly to prevent hydration mismatch */}
+      <ClientOnly>
+        {showChatAssistant && (
+          <ChatAssistant onClose={() => setShowChatAssistant(false)} />
+        )}
+      </ClientOnly>
     </div>
   );
 }

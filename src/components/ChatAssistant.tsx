@@ -1,7 +1,8 @@
 import { X as XIcon, User as UserIcon } from 'lucide-react';
 import { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useChat } from './ChatContext';
+// Import the correct useChat hook from core/hooks instead of local ChatContext
+import { useChat } from '../core/hooks/useChat';
 import ExpandedChatAssistant from './ExpandedChatAssistant';
 import { SocialIcons } from './icons/IconProvider';
 import { Send } from './icons/IconProvider';
@@ -11,6 +12,7 @@ type ChatAssistantProps = {
 };
 
 function ChatAssistant({ onClose }: ChatAssistantProps) {
+  // Use the correct useChat hook with compatible methods
   const { messages, addMessage, isExpanded, setIsExpanded } = useChat();
   const [input, setInput] = useState('');
   const [isRecording, setIsRecording] = useState(false);
@@ -50,18 +52,17 @@ function ChatAssistant({ onClose }: ChatAssistantProps) {
   const handleSendMessage = () => {
     if (input.trim() === '') return;
     
-    addMessage({
-      text: input,
-      sender: 'user'
-    });
+    // Use the correct method signature for addMessage from useChat hook
+    // It expects (text, sender, imageUrl?) parameters instead of an object
+    addMessage(input, 'user');
     
     setInput('');
     
     setTimeout(() => {
-      addMessage({
-        text: 'Para brindarte una mejor atención, ¿te gustaría acceder a nuestro asistente completo?',
-        sender: 'bot'
-      });
+      addMessage(
+        'Para brindarte una mejor atención, ¿te gustaría acceder a nuestro asistente completo?',
+        'bot'
+      );
     }, 1000);
   };
   
