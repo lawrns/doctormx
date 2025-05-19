@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ChatProvider } from './core/hooks/useChat';
 import './index.css';
+import './mobile.css'; // Import mobile-specific styles
 import './styles/chat-fixes.css'; // Import custom CSS fixes for chat UI
 import App from './App';
 import { SupabaseProvider } from './contexts/SupabaseContext';
