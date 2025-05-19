@@ -158,3 +158,54 @@
  
 ## Phase 9: Expansion & Scale
 - Prepare hub-and-spoke model for rural coverage and corporate wellness subscription packages.
+  
+## Phase 10: Chat-First Redesign & Partner Integrations
+
+Building on our AI-Doctor and Telemedicine foundation, Phase 10 delivers a cohesive chat-first UX and revenue-driving modules:
+
+1. First-Look Experience
+   - Replace dark landing with medical-grade Hero (white/light background, teal & coral accents)
+   - One-line promise (“Orientación de salud instantánea, gratis, desde casa”) + primary CTA “Iniciar evaluación”
+2. Guided On-Ramp Wizard
+   - 3-step wizard: Age & Sex → Symptom or Photo → Disclaimer
+   - Persist state in WizardContext; on completion deep-link into chat
+3. Conversational Core
+   - Single full-screen chat canvas with Framer Motion typing indicators
+   - SmartCard component for inline Lab, Pharmacy, and Doctor referral cards
+4. At-Home Lab Module
+   - Inline Lab availability SmartCard via `/api/lab-availability` Function
+   - Deep-link to WhatsApp or in-app calendar picker
+5. Pharmacy Marketplace Mini-Cart
+   - Swipeable carousel of meds (thumbnail, price, % off)
+   - Delivery vs. pickup toggles; affiliate checkout via Netlify Function
+6. Doctor Referral Flow
+   - SmartCard surfaces “Videollamada ahora” & “Agendar presencial”
+   - Integrate Video booking widget & map pins; schedule via `/api/schedule-appointment`
+7. Trust & Compliance Ribbon
+   - Persistent disclaimer ribbon + “Cómo protegemos tus datos” link/modal
+   - COFEPRIS & INAI logos in footer
+8. Sponsorship Real Estate
+   - “Patrocinado por” band on relevant cards; leaderboard slot in blog sidebar
+9. Growth Hooks
+   - Floating “Invitar por WhatsApp” button with share message + personal code
+   - Unlock “Consulta gratis” badge after 3 referrals
+10. Content & SEO Blog
+    - /blog with Markdown FAQ articles targeting top 50 conditions
+    - Internal links to Symptom Checker and chat flow
+11. Dashboard & History (“Mi Salud”)
+    - Timeline of past chats, lab result PDFs, refill reminders
+12. Accessibility & Performance
+    - Font-scaling toggle, high-contrast mode, lazy-load assets
+    - Lighthouse score ≥ 90 mobile
+
+### Net-New Feature Modules (MVP+)
+- AI-Image Uploader (derm & wound triage)
+- At-Home Lab Scheduling with WhatsApp deep-link
+- Pharmacy Cart & Checkout (affiliate/PAAS integration)
+- Doctor Booking Widget (video & in-person)
+- Referral & Rewards Engine (WhatsApp focus)
+- Personal Health Timeline + Secure File Vault
+- Bilingual Toggle (ES/EN)
+- Push-Notification Reminders
+- Analytics & Partner Dashboard
+- Regulatory Safe-Mode flag (disclaimer + 911 escalation)

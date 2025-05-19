@@ -145,6 +145,57 @@ back online
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
+## 2.1 Site-Level Feature Roadmap
+
+Building on the proposed upgrades above, here is a detailed 12-point UX & feature roadmap:
+
+1. First-Look Experience
+   - Bright, medical-grade Hero (white/light background; teal & coral accents)
+   - One-line promise + primary CTA “Iniciar evaluación”
+2. Guided On-Ramp Wizard
+   - 3-step wizard (Age & Sex → Symptom or Photo → Disclaimer)
+   - Persist using WizardContext; deep-link to /doctor chat
+3. Conversational Core
+   - Full-screen chat canvas with Framer Motion typing indicators
+   - SmartCard component for inline Lab, Pharmacy, and Doctor referrals
+4. At-Home Lab Module
+   - Inline Lab availability SmartCard via `/api/lab-availability`
+   - Deep-link to WhatsApp or in-app calendar picker
+5. Pharmacy Marketplace Mini-Cart
+   - Swipeable medication carousel (thumbnail, price, % off)
+   - Delivery vs pickup toggles; affiliate checkout via Netlify Function
+6. Doctor Referral Flow
+   - SmartCard with “Videollamada ahora” & “Agendar presencial”
+   - Video booking widget & map pins; schedule via `/api/schedule-appointment`
+7. Trust & Compliance Ribbon
+   - Persistent disclaimer ribbon & “Cómo protegemos tus datos” modal
+   - COFEPRIS & INAI logos in the footer
+8. Sponsorship Real Estate
+   - “Patrocinado por” band on relevant cards; leaderboard slot in blog sidebar
+9. Growth Hooks
+   - Floating “Invitar por WhatsApp” button with share message & personal code
+   - Unlock “Consulta gratis” badge after 3 referrals
+10. Content & SEO Blog
+    - /blog with Markdown FAQ articles for top 50 conditions
+    - Internal links to symptom checker and chat flow
+11. Dashboard & History (“Mi Salud”)
+    - Timeline of interactions, lab result PDFs, refill reminders
+12. Accessibility & Performance
+    - Font-scaling toggle, high-contrast mode, lazy-loading assets
+    - Lighthouse score ≥ 90 on mobile
+
+### Net-New Feature Modules (MVP+)
+- AI-Image Uploader (derm & wound triage)
+- At-Home Lab Scheduling with WhatsApp deep-link
+- Pharmacy Cart & Checkout (affiliate/PAAS integration)
+- Doctor Booking Widget (video & in-person)
+- Referral & Rewards Engine (WhatsApp focus)
+- Personal Health Timeline + Secure File Vault
+- Bilingual Toggle (ES/EN)
+- Push-Notification Reminders
+- Analytics & Partner Dashboard
+- Regulatory Safe-Mode flag (disclaimer + 911 escalation)
+
 ## 3. End-state infrastructure blueprint
 
 Below is a detailed logical architecture diagram (text/ASCII), followed by component-level callouts.

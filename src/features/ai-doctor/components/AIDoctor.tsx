@@ -1059,13 +1059,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           </div>
                         )}
                       </div>
-                      {!localStorage.getItem(OPENAI_KEY_STORAGE_KEY) && (
-                        <div className="mt-2 text-center">
-                          <Link to="/settings/api" className="text-xs text-brand-jade-600 hover:underline">
-                            Configurar API key para mejorar las respuestas
-                          </Link>
-                        </div>
-                      )}
+{/* API key configuration is handled by Netlify functions now */}
                     </div>
                   </div>
                 );

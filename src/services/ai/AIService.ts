@@ -79,11 +79,41 @@ async function withRetry<T>(
 }
 
 const getOpenAIInstance = (): OpenAI | null => {
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY || localStorage.getItem(OPENAI_KEY_STORAGE_KEY) || '';
+  // Check if we're in a browser environment - only use window/localStorage in browser
+  const isBrowser = typeof window !== 'undefined' && window.localStorage;
+  
+  // In browser, use Netlify API endpoints instead of direct OpenAI calls
+  if (isBrowser) {
+    // We're in the browser, return a mock OpenAI instance
+    // All API calls should be proxied through the Netlify functions which have their own key
+    console.log('Running in browser: using Netlify APIs for OpenAI calls');
+    
+    // We'll store the API key in localStorage for user customization settings only,
+    // but actual API calls will be made through our backend Netlify functions
+    const userConfiguredKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
+    const hasUserKey = !!userConfiguredKey;
+    
+    if (hasUserKey) {
+      console.log('User has configured an API key in settings (will be used for UI customization only)');
+    } else {
+      console.log('No user-configured API key found. Using Netlify functions with their server-side keys.');
+    }
+    
+    // Always return a valid OpenAI instance with a placeholder key
+    // This instance will never be used directly - see makeAPIRequest method
+    return new OpenAI({ 
+      apiKey: 'placeholder-key-netlify-functions-will-be-used', 
+      dangerouslyAllowBrowser: true 
+    });
+  }
+  
+  // Server-side code path (should never run in this app)
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY || '';
   if (!apiKey) {
-    console.error('OpenAI API key not found. Set VITE_OPENAI_API_KEY or configure it in Settings.');
+    console.error('OpenAI API key not found. Set VITE_OPENAI_API_KEY.');
     return null;
   }
+  
   try {
     return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
   } catch (error) {
@@ -198,82 +228,171 @@ class AIService {
       // Get medical context outside the retry loop to avoid duplicate calls
       const medicalContext = await this.getMedicalKnowledge(options.userMessage);
       
-      // Use retry mechanism for the streaming operation
-      return await withRetry(async () => {
-        const openai = getOpenAIInstance();
-        if (!openai) {
-          throw new Error('OpenAI instance not available');
-        }
-        
-        const model = needsPremiumModel ? 'gpt-4' : 'gpt-3.5-turbo';
-        let systemMessage = options.customInstructions || this.getDoctorInstructions();
-        
-        const messages = [
-          { role: "system", content: systemMessage },
-          { role: "user", content: this.formatUserMessage({
+      // Check if we're in a browser environment
+      const isBrowser = typeof window !== 'undefined';
+      
+      // Initial response with empty text
+      const initialResponse: StreamingAIResponse = {
+        text: '',
+        severity: options.severity || 10,
+        isStreaming: true,
+        isComplete: false
+      };
+      handler(initialResponse);
+      
+      if (isBrowser) {
+        // In browser environments, simulate streaming by making regular API request
+        // and periodically updating the handler (actual streaming with fetch is complex)
+        try {
+          console.log('Browser environment: simulating streaming with regular API call');
+          
+          // Prepare the endpoint based on model needed
+          const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
+          
+          // Create the request data
+          const requestData = {
             message: options.userMessage,
             history: options.userHistory || [],
             medicalContext,
             userProfile: options.userProfile,
             severity: options.severity,
-            location: options.location
-          })}
-        ];
-        
-        let fullResponse = '';
-        
-        // Initial response with empty text
-        const initialResponse: StreamingAIResponse = {
-          text: '',
-          severity: options.severity || 10,
-          isStreaming: true,
-          isComplete: false
-        };
-        handler(initialResponse);
-        
-        // Call OpenAI with streaming enabled
-        const stream = await openai.chat.completions.create({
-          model,
-          messages: messages as any,
-          temperature: 0.7,
-          stream: true,
-        });
-        
-        // Process each chunk of the stream
-        for await (const chunk of stream) {
-          const content = chunk.choices[0]?.delta?.content || '';
-          if (content) {
-            fullResponse += content;
+            location: options.location,
+            customInstructions: options.customInstructions
+          };
+          
+          // Show user a "thinking" message every second to simulate streaming
+          let fullResponse = "";
+          let dots = 1;
+          const thinkingInterval = setInterval(() => {
+            // Create a thinking message that visually updates
+            const thinkingText = "Analizando" + ".".repeat(dots);
+            dots = (dots % 4) + 1; // Cycle from 1-4 dots
             
-            // Update with current response text
-            const updatedResponse: StreamingAIResponse = {
-              text: fullResponse,
-              severity: options.severity || this.estimateSeverity(fullResponse),
+            // Update handler with thinking message
+            handler({
+              text: fullResponse || thinkingText,
+              severity: options.severity || 10,
               isStreaming: true,
               isComplete: false
-            };
-            handler(updatedResponse);
+            });
+          }, 1000);
+          
+          // Make the actual API request to our Netlify function
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData),
+          });
+          
+          // Clear the thinking indicator
+          clearInterval(thinkingInterval);
+          
+          if (!response.ok) {
+            // Handle non-200 responses
+            const errorData = await response.json().catch(() => ({}));
+            console.error(`API error (${response.status}):`, errorData);
+            
+            throw new Error(
+              errorData.error || 
+              errorData.message || 
+              `API request failed with status ${response.status}`
+            );
           }
+          
+          const responseData = await response.json();
+          fullResponse = responseData.text || responseData.analysis || "";
+          
+          // Create enhanced response once request is complete
+          const enhancedResponse = await this.enhanceResponse({
+            text: fullResponse,
+            severity: options.severity,
+          }, options);
+          
+          // Send final response with isComplete flag
+          const finalResponse: StreamingAIResponse = {
+            ...enhancedResponse,
+            isStreaming: false,
+            isComplete: true
+          };
+          handler(finalResponse);
+          
+          return enhancedResponse;
+        } catch (error) {
+          console.error('Error in simulated streaming process:', error);
+          throw error; // Re-throw to be caught by the outer catch
         }
-        
-        // Create enhanced response once streaming is complete
-        const response = {
-          text: fullResponse,
-          severity: options.severity,
-        };
-        
-        const enhancedResponse = await this.enhanceResponse(response, options);
-        
-        // Send final response with isComplete flag
-        const finalResponse: StreamingAIResponse = {
-          ...enhancedResponse,
-          isStreaming: false,
-          isComplete: true
-        };
-        handler(finalResponse);
-        
-        return enhancedResponse;
-      });
+      } else {
+        // Server-side streaming code path (unlikely to be used in this app)
+        // Use retry mechanism for the streaming operation
+        return await withRetry(async () => {
+          const openai = getOpenAIInstance();
+          if (!openai) {
+            throw new Error('OpenAI instance not available');
+          }
+          
+          const model = needsPremiumModel ? 'gpt-4' : 'gpt-3.5-turbo';
+          let systemMessage = options.customInstructions || this.getDoctorInstructions();
+          
+          const messages = [
+            { role: "system", content: systemMessage },
+            { role: "user", content: this.formatUserMessage({
+              message: options.userMessage,
+              history: options.userHistory || [],
+              medicalContext,
+              userProfile: options.userProfile,
+              severity: options.severity,
+              location: options.location
+            })}
+          ];
+          
+          let fullResponse = '';
+          
+          // Call OpenAI with streaming enabled
+          const stream = await openai.chat.completions.create({
+            model,
+            messages: messages as any,
+            temperature: 0.7,
+            stream: true,
+          });
+          
+          // Process each chunk of the stream
+          for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || '';
+            if (content) {
+              fullResponse += content;
+              
+              // Update with current response text
+              const updatedResponse: StreamingAIResponse = {
+                text: fullResponse,
+                severity: options.severity || this.estimateSeverity(fullResponse),
+                isStreaming: true,
+                isComplete: false
+              };
+              handler(updatedResponse);
+            }
+          }
+          
+          // Create enhanced response once streaming is complete
+          const response = {
+            text: fullResponse,
+            severity: options.severity,
+          };
+          
+          const enhancedResponse = await this.enhanceResponse(response, options);
+          
+          // Send final response with isComplete flag
+          const finalResponse: StreamingAIResponse = {
+            ...enhancedResponse,
+            isStreaming: false,
+            isComplete: true
+          };
+          handler(finalResponse);
+          
+          return enhancedResponse;
+        });
+      }
     } catch (error) {
       console.error('Error processing streaming AI query after all retries:', error);
       
@@ -295,15 +414,16 @@ class AIService {
    */
   async analyzeImage(imageUrl: string, symptoms?: string): Promise<AIResponse> {
     try {
+      // Check if image analysis is enabled in user settings
       if (!this.isImageAnalysisEnabled()) {
         return {
           text: 'El análisis de imágenes está desactivado. Por favor, actívalo en la configuración o describe tus síntomas en texto.',
         };
       }
       
-      console.log('Analyzing image with GPT-4:', imageUrl);
+      console.log('Analyzing image:', imageUrl.substring(0, 30) + '...');
       
-      // Use retry mechanism
+      // Use retry mechanism with the makeAPIRequest (which handles the browser vs server environments)
       return await withRetry(async () => {
         const response = await this.makeAPIRequest(this.imageAnalysisEndpoint, {
           imageUrl,
@@ -725,72 +845,57 @@ class AIService {
   }
   
   private async makeAPIRequest(endpoint: string, data: any): Promise<any> {
-    const openai = getOpenAIInstance();
+    // Check if we're in a browser environment
+    const isBrowser = typeof window !== 'undefined';
     
-    if (openai) {
+    if (isBrowser) {
+      // In the browser, always use the Netlify serverless functions
+      console.log(`Using Netlify serverless function endpoint: ${endpoint}`);
+      
       try {
-        console.log('Using OpenAI API for request');
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
         
-        const model = endpoint === this.premiumModelEndpoint || 
-                     (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled())
-          ? 'gpt-4' 
-          : 'gpt-3.5-turbo';
-        
-        let systemMessage = data.customInstructions || this.getDoctorInstructions();
-        
-        if (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled()) {
-          systemMessage = `${systemMessage}\n\nAhora estás analizando una imagen médica. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica. Sé detallado y preciso en tu análisis.`;
+        if (!response.ok) {
+          // Handle non-200 responses
+          const errorData = await response.json().catch(() => ({}));
+          console.error(`API error (${response.status}):`, errorData);
+          
+          throw new Error(
+            errorData.error || 
+            errorData.message || 
+            `API request failed with status ${response.status}`
+          );
         }
         
-        const messages = [
-          { role: "system", content: systemMessage },
-          { role: "user", content: this.formatUserMessage(data) }
-        ];
+        const responseData = await response.json();
+        console.log('API response received:', responseData.success ? 'Success' : 'Failed');
         
-        console.log(`Using model: ${model} for request`);
-        console.log(`Using custom instructions: ${data.customInstructions ? 'Yes' : 'No'}`);
-        
-        // Implement timeout for the OpenAI API call
-        const timeoutMs = 30000; // 30 seconds
-        
-        // Create a promise that resolves with the API response or rejects after timeout
-        const apiCallWithTimeout = Promise.race([
-          openai.chat.completions.create({
-            model,
-            messages: messages as any,
-            temperature: 0.7,
-          }),
-          new Promise<never>((_, reject) => {
-            setTimeout(() => reject(new Error(`API request timed out after ${timeoutMs}ms`)), timeoutMs);
-          })
-        ]);
-        
-        const response = await apiCallWithTimeout as OpenAI.Chat.Completions.ChatCompletion;
-        
-        // Check if the response is valid
-        if (!response || !response.choices || response.choices.length === 0) {
-          throw new Error('Invalid response from OpenAI API');
+        // If there's a text field, use that for the response parsing
+        if (responseData.text) {
+          return this.parseAIResponse(responseData.text, data);
         }
         
-        const aiResponse = response.choices[0]?.message?.content || "Lo siento, no pude procesar tu consulta.";
-        return this.parseAIResponse(aiResponse, data);
+        // Otherwise, try to use the analysis field (for image analysis)
+        if (responseData.analysis) {
+          return {
+            text: responseData.analysis,
+            ...responseData
+          };
+        }
+        
+        // If neither field exists, return the raw response
+        return responseData;
       } catch (error: any) {
+        console.error('Error making API request to Netlify function:', error);
+        
         // Structure the error in a way that our retry mechanism can understand
         const enhancedError: any = error;
-        
-        // Add OpenAI specific error information
-        if (error.response) {
-          enhancedError.status = error.response.status;
-          enhancedError.type = error.response.data?.error?.type;
-          
-          // Log detailed error information
-          console.error('OpenAI API error details:', {
-            status: error.response.status,
-            statusText: error.response.statusText,
-            errorType: error.response.data?.error?.type,
-            errorMessage: error.response.data?.error?.message
-          });
-        }
         
         // Check if it's a timeout error
         if (error.message && error.message.includes('timed out')) {
@@ -801,35 +906,125 @@ class AIService {
         throw enhancedError;
       }
     } else {
-      console.log('OpenAI API key not working, using mock response');
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(this.simulateAIResponse(endpoint, data));
-        }, 1000);
-      });
+      // Server-side code path (unlikely to be used in this app)
+      const openai = getOpenAIInstance();
+      
+      if (openai) {
+        try {
+          console.log('Using OpenAI API for request');
+          
+          const model = endpoint === this.premiumModelEndpoint || 
+                       (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled())
+            ? 'gpt-4' 
+            : 'gpt-3.5-turbo';
+          
+          let systemMessage = data.customInstructions || this.getDoctorInstructions();
+          
+          if (endpoint === this.imageAnalysisEndpoint && this.isImageAnalysisEnabled()) {
+            systemMessage = `${systemMessage}\n\nAhora estás analizando una imagen médica. Analiza la imagen proporcionada y describe lo que observas desde una perspectiva médica. Sé detallado y preciso en tu análisis.`;
+          }
+          
+          const messages = [
+            { role: "system", content: systemMessage },
+            { role: "user", content: this.formatUserMessage(data) }
+          ];
+          
+          console.log(`Using model: ${model} for request`);
+          console.log(`Using custom instructions: ${data.customInstructions ? 'Yes' : 'No'}`);
+          
+          // Implement timeout for the OpenAI API call
+          const timeoutMs = 30000; // 30 seconds
+          
+          // Create a promise that resolves with the API response or rejects after timeout
+          const apiCallWithTimeout = Promise.race([
+            openai.chat.completions.create({
+              model,
+              messages: messages as any,
+              temperature: 0.7,
+            }),
+            new Promise<never>((_, reject) => {
+              setTimeout(() => reject(new Error(`API request timed out after ${timeoutMs}ms`)), timeoutMs);
+            })
+          ]);
+          
+          const response = await apiCallWithTimeout as OpenAI.Chat.Completions.ChatCompletion;
+          
+          // Check if the response is valid
+          if (!response || !response.choices || response.choices.length === 0) {
+            throw new Error('Invalid response from OpenAI API');
+          }
+          
+          const aiResponse = response.choices[0]?.message?.content || "Lo siento, no pude procesar tu consulta.";
+          return this.parseAIResponse(aiResponse, data);
+        } catch (error: any) {
+          // Structure the error in a way that our retry mechanism can understand
+          const enhancedError: any = error;
+          
+          // Add OpenAI specific error information
+          if (error.response) {
+            enhancedError.status = error.response.status;
+            enhancedError.type = error.response.data?.error?.type;
+            
+            // Log detailed error information
+            console.error('OpenAI API error details:', {
+              status: error.response.status,
+              statusText: error.response.statusText,
+              errorType: error.response.data?.error?.type,
+              errorMessage: error.response.data?.error?.message
+            });
+          }
+          
+          // Check if it's a timeout error
+          if (error.message && error.message.includes('timed out')) {
+            enhancedError.type = 'timeout';
+          }
+          
+          // Rethrow the enhanced error for the retry mechanism to handle
+          throw enhancedError;
+        }
+      } else {
+        console.log('OpenAI API key not working, using mock response');
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(this.simulateAIResponse(endpoint, data));
+          }, 1000);
+        });
+      }
     }
   }
   
   private getDoctorInstructions(): string {
-    try {
-      const instructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
-      if (instructions) {
-        return instructions;
+    // Check if we're in a browser environment
+    const isBrowser = typeof window !== 'undefined' && window.localStorage;
+    
+    if (isBrowser) {
+      try {
+        const instructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
+        if (instructions) {
+          return instructions;
+        }
+      } catch (error) {
+        console.error('Error retrieving doctor instructions from localStorage:', error);
       }
-    } catch (error) {
-      console.error('Error retrieving doctor instructions:', error);
     }
+    
     return DEFAULT_DOCTOR_INSTRUCTIONS;
   }
   
   private isImageAnalysisEnabled(): boolean {
-    try {
-      const enabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
-      return enabled === null || enabled === 'true';
-    } catch (error) {
-      console.error('Error checking if image analysis is enabled:', error);
-      return true; // Default to enabled
+    // Check if we're in a browser environment
+    const isBrowser = typeof window !== 'undefined' && window.localStorage;
+    
+    if (isBrowser) {
+      try {
+        const enabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY);
+        return enabled === null || enabled === 'true';
+      } catch (error) {
+        console.error('Error checking if image analysis is enabled in localStorage:', error);
+      }
     }
+    
+    return true; // Default to enabled
   }
   
   private formatUserMessage(data: any): string {
@@ -1080,6 +1275,7 @@ class AIService {
   private async enhanceResponse(response: any, options: AIQueryOptions): Promise<AIResponse> {
     if (options.location && response.suggestedSpecialty) {
       try {
+        // Enhance with nearby providers if location available
         const nearbyProviders = await this.findNearbyProviders(
           response.suggestedSpecialty, 
           options.location
@@ -1090,10 +1286,28 @@ class AIService {
         }
       } catch (error) {
         console.error('Error finding nearby providers:', error);
+        // Continue without providers
       }
     }
     
-    return response;
+    // If suggestions aren't included but we have text that might contain condition info
+    if (!response.suggestedConditions && response.text) {
+      // Try to extract conditions from the text
+      response.suggestedConditions = this.extractConditions(response.text);
+    }
+    
+    // Ensure our response has all expected fields
+    return {
+      text: response.text || "",
+      severity: response.severity || options.severity || 10,
+      isEmergency: response.isEmergency || false,
+      suggestedSpecialty: response.suggestedSpecialty,
+      suggestedConditions: response.suggestedConditions || [],
+      suggestedMedications: response.suggestedMedications || [],
+      followUpQuestions: response.followUpQuestions || this.generateFollowUpQuestions(response.text || ""),
+      nearbyProviders: response.nearbyProviders || [],
+      ...response // Include any other properties from the original response
+    };
   }
   
   private generateProductsFromDatabase(pharmacyName: string): any[] {
