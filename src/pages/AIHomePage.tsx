@@ -33,7 +33,6 @@ function AIHomePage() {
             <div className="grid md:grid-cols-12 gap-6 items-center">
               {/* Left column - Text content */}
               <div className="md:col-span-5">
-                <p className="text-lg text-coral-500 mb-2 font-bold">Hola, Dios TodoPoderoso!</p>
                 <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
                   Orientación de salud <span className="text-teal-600">instantánea</span>, gratis, desde casa
                 </h1>
