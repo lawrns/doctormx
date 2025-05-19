@@ -123,8 +123,19 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         },
         (error) => {
           console.log('Error getting location:', error);
+          // Set Mexico City center as default coordinates
+          setLocation({
+            latitude: 19.4326,
+            longitude: -99.1332
+          });
         }
       );
+    } else {
+      // Set Mexico City center as default coordinates if geolocation is not supported
+      setLocation({
+        latitude: 19.4326,
+        longitude: -99.1332
+      });
     }
   }, []);
   
@@ -556,23 +567,40 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   
   const findProviders = async (specialty: string) => {
     if (!location) {
+      // Default to Mexico City center coordinates if location is not available
+      const defaultLocation = {
+        latitude: 19.4326,
+        longitude: -99.1332
+      };
+      
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
-            setLocation({
+            const userLocation = {
               latitude: position.coords.latitude,
               longitude: position.coords.longitude
-            });
+            };
+            setLocation(userLocation);
+            fetchProviders(specialty, userLocation);
+          },
+          (error) => {
+            console.log('Error getting location:', error);
+            setLocation(defaultLocation);
+            fetchProviders(specialty, defaultLocation);
           }
         );
+      } else {
+        setLocation(defaultLocation);
+        fetchProviders(specialty, defaultLocation);
       }
-      
-      alert('Necesitamos tu ubicación para buscar proveedores cercanos.');
-      return;
+    } else {
+      fetchProviders(specialty, location);
     }
-    
+  };
+  
+  const fetchProviders = async (specialty: string, loc: { latitude: number; longitude: number }) => {
     try {
-      const providers = await AIService.findNearbyProviders(specialty, location);
+      const providers = await AIService.findNearbyProviders(specialty, loc);
       setSelectedProviders(providers);
       setActiveTab('providers');
     } catch (error) {

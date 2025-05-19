@@ -880,14 +880,26 @@ class AIService {
       
       if (medicalTerms.length === 0) return {};
       
-      const { data, error } = await this.supabase
-        .from('medical_knowledge')
-        .select('*')
-        .in('term', medicalTerms);
-        
-      if (error) throw error;
+      // Use a different approach - search for each term individually with ilike
+      let results = [];
       
-      return data || {};
+      for (const term of medicalTerms) {
+        const { data, error } = await this.supabase
+          .from('medical_knowledge')
+          .select('*')
+          .ilike('terms', `%${term}%`);
+          
+        if (error) {
+          console.error(`Error retrieving medical knowledge for term '${term}':`, error);
+          continue;
+        }
+        
+        if (data && data.length > 0) {
+          results = [...results, ...data];
+        }
+      }
+      
+      return results || {};
     } catch (error) {
       console.error('Error retrieving medical knowledge:', error);
       return {};
