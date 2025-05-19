@@ -43,6 +43,20 @@ function hydrationSafePlugin() {
             }
           })();
         </script>
+        
+        <script>
+          // Module loading error handler
+          window.addEventListener('error', function(event) {
+            if (event.message && event.message.includes('Failed to fetch dynamically imported module')) {
+              console.warn('Module loading error detected. Attempting to recover...');
+              // Reload the page if it's a dynamic import error
+              if (sessionStorage.getItem('moduleLoadAttempt') !== 'true') {
+                sessionStorage.setItem('moduleLoadAttempt', 'true');
+                location.reload();
+              }
+            }
+          });
+        </script>
       `;
       
       // Add the script to the head

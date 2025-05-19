@@ -1,12 +1,16 @@
 const path = require('path');
 const react = require('@vitejs/plugin-react');
 const { defineConfig } = require('vite');
+const hydrationSafePlugin = require('./vite-hydration-plugin');
 
 module.exports = defineConfig({
-  plugins: [react({
-    jsxRuntime: 'automatic',
-    jsxImportSource: undefined
-  })],
+  plugins: [
+    react({
+      jsxRuntime: 'automatic',
+      jsxImportSource: undefined
+    }),
+    hydrationSafePlugin(),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -34,12 +38,18 @@ module.exports = defineConfig({
     outDir: 'dist',
     sourcemap: true,
     rollupOptions: {
-      external: ['@xstate/react'],
+      output: {
+        manualChunks: undefined,
+        format: 'es',
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
     },
     commonjsOptions: {
       include: [/node_modules/],
       extensions: ['.js', '.cjs'],
-      strictRequires: true,
+      strictRequires: false,
       transformMixedEsModules: true,
     }
   },
