@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Activity, Clock, MessageSquare, ChevronRight } from 'lucide-react';
+import { Shield, Activity, Clock, MessageSquare, ChevronRight, Flask, ShoppingCart, Video, Lock } from 'lucide-react';
 import SEO from '../core/components/SEO';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
@@ -181,6 +181,166 @@ function AIHomePage() {
             </div>
           </div>
         </section>
+        
+        {/* Cómo Funciona Section */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Cómo Funciona</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-12 h-12 bg-teal-500 text-white rounded-full mb-4 mx-auto">1</div>
+                <h3 className="text-xl font-semibold mb-2">Describe tus síntomas o sube foto</h3>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-12 h-12 bg-teal-500 text-white rounded-full mb-4 mx-auto">2</div>
+                <h3 className="text-xl font-semibold mb-2">Recibe evaluación preliminar</h3>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-12 h-12 bg-teal-500 text-white rounded-full mb-4 mx-auto">3</div>
+                <h3 className="text-xl font-semibold mb-2">Accede a laboratorios, farmacias o médicos</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonios Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Lo que dicen nuestros usuarios</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <p className="text-gray-700 italic mb-4">“Me salvó un fin de semana que creí tenía apendicitis.”</p>
+                <p className="font-semibold">Ana G.</p>
+              </div>
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <p className="text-gray-700 italic mb-4">“La guía en video me ayudó a entender mi examen de laboratorio.”</p>
+                <p className="font-semibold">Luis M.</p>
+              </div>
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <p className="text-gray-700 italic mb-4">“Rápido y confiable, lo recomendaría a mis amigos.”</p>
+                <p className="font-semibold">María R.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Beneficios Section */}
+        <section className="bg-teal-600 py-16 text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <p className="text-4xl font-bold">15,000+</p>
+                <p>Consultas atendidas</p>
+              </div>
+              <div>
+                <p className="text-4xl font-bold">98%</p>
+                <p>Satisfacción</p>
+              </div>
+              <div>
+                <p className="text-4xl font-bold">4.9</p>
+                <p>Estrellas</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sneak-Peek Features Section */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Nuestras Funciones</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-10 h-10 bg-coral-500 text-white rounded-full mb-4 mx-auto">
+                  <Flask className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Laboratorios a domicilio</h3>
+                <p className="text-gray-600">Solicita exámenes clínicos desde tu casa.</p>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-10 h-10 bg-coral-500 text-white rounded-full mb-4 mx-auto">
+                  <ShoppingCart className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Carrito de farmacia</h3>
+                <p className="text-gray-600">Compra y recibe tus medicamentos en casa.</p>
+              </div>
+              <div className="p-6 bg-white rounded-lg shadow">
+                <div className="flex items-center justify-center w-10 h-10 bg-coral-500 text-white rounded-full mb-4 mx-auto">
+                  <Video className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">Videoconsulta con médico</h3>
+                <p className="text-gray-600">Habla en vivo con un profesional de la salud.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Recursos Destacados Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Recursos Destacados</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Link to="/blog/guia-dolor-de-cabeza" className="p-6 bg-gray-50 rounded-lg shadow hover:bg-gray-100">
+                <h3 className="text-xl font-semibold mb-2">¿Dolor de cabeza? Lee nuestra guía rápida</h3>
+                <p className="text-gray-600 text-sm">Síntomas, causas y recomendaciones.</p>
+              </Link>
+              <Link to="/blog/fiebre-causas" className="p-6 bg-gray-50 rounded-lg shadow hover:bg-gray-100">
+                <h3 className="text-xl font-semibold mb-2">Fiebre: causas y tratamientos</h3>
+                <p className="text-gray-600 text-sm">Aprende cómo manejar la fiebre.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Seguridad Section */}
+        <section className="bg-gray-50 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center gap-8">
+            <img src="/logos/cofepris.svg" alt="COFEPRIS" className="h-12" />
+            <img src="/logos/inai.svg" alt="INAI" className="h-12" />
+            <div className="flex items-center gap-2">
+              <Lock className="w-6 h-6 text-gray-700" />
+              <p className="text-gray-700 text-sm">Cifrado AES-256 y privacidad garantizada</p>
+            </div>
+            <button onClick={() => alert('Política de privacidad')} className="text-teal-600 underline text-sm">Cómo protegemos tus datos</button>
+          </div>
+        </section>
+
+        {/* PWA Install Section */}
+        <section className="bg-white py-16 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-900">Lleva doctor.mx en tu teléfono</h2>
+            <p className="text-gray-600 mb-6">Instala nuestra PWA y accede con un solo toque.</p>
+            <button onClick={() => alert('Instalar PWA')} className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded">Agregar a pantalla inicio</button>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Preguntas Frecuentes</h2>
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <details className="bg-white p-4 rounded-lg shadow">
+                <summary className="font-semibold cursor-pointer">¿Es gratis?</summary>
+                <p className="mt-2 text-gray-600">Sí, el servicio de orientación preliminar es completamente gratuito.</p>
+              </details>
+              <details className="bg-white p-4 rounded-lg shadow">
+                <summary className="font-semibold cursor-pointer">¿Necesito cuenta?</summary>
+                <p className="mt-2 text-gray-600">Puedes consultar sin registro, pero crear una cuenta te guarda historial.</p>
+              </details>
+              <details className="bg-white p-4 rounded-lg shadow">
+                <summary className="font-semibold cursor-pointer">¿Es un diagnóstico real?</summary>
+                <p className="mt-2 text-gray-600">Ofrecemos orientación preliminar, no sustituye la consulta médica profesional.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer CTA */}
+        <div className="bg-coral-500 text-white py-6 text-center">
+          <p className="mb-4">¿Listo para comenzar tu evaluación?</p>
+          <Link to="/wizard/step-1">
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-coral-500">Iniciar evaluación</Button>
+          </Link>
+        </div>
       </main>
       
       <SEO 
