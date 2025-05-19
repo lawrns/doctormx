@@ -17,6 +17,8 @@ const LabTestingPage = React.lazy(() => import('./pages/LabTestingPage'));
 const Step1Page = React.lazy(() => import('./pages/wizard/Step1Page'));
 const Step2Page = React.lazy(() => import('./pages/wizard/Step2Page'));
 const Step3Page = React.lazy(() => import('./pages/wizard/Step3Page'));
+// Wizard layout for animated onboarding
+const WizardLayout = React.lazy(() => import('./pages/wizard/WizardLayout'));
 
 // Import doctor dashboard components without lazy loading to avoid auth context issues
 import DoctorRoutes from './routes/DoctorRoutes';
@@ -40,9 +42,12 @@ function App() {
           <Route path="lab-testing" element={<LabTestingLandingPage />} />
           <Route path="lab-testing/app" element={<LabTestingPage />} />
           {/* Onboarding Wizard */}
-          <Route path="wizard/step-1" element={<Step1Page />} />
-          <Route path="wizard/step-2" element={<Step2Page />} />
-          <Route path="wizard/step-3" element={<Step3Page />} />
+          <Route path="wizard" element={<WizardLayout />}>
+            <Route index element={<Navigate to="step-1" replace />} />
+            <Route path="step-1" element={<Step1Page />} />
+            <Route path="step-2" element={<Step2Page />} />
+            <Route path="step-3" element={<Step3Page />} />
+          </Route>
         </Route>
       </Routes>
     </Suspense>
