@@ -1,29 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Activity, Clock, MessageSquare, ChevronRight, Flask, ShoppingCart, Video, Lock, Star } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { MessageSquare, ChevronRight, Clock, Shield, Activity, Star, ShoppingCart, Video, Lock } from 'lucide-react';
 import SEO from '../core/components/SEO';
-import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
+
+// Chat messages for the animation
+const MESSAGES = [
+  "¿Cómo puedo ayudarte hoy?",
+  "Tengo dolor de cabeza y fiebre desde ayer.",
+  "Entiendo. ¿Podrías decirme si has tomado algún medicamento?"
+];
 
 function AIHomePage() {
   const [currentMessage, setCurrentMessage] = useState(0);
   
-  // Chat messages for the animation
-  const messages = [
-    "¿Cómo puedo ayudarte hoy?",
-    "Tengo dolor de cabeza y fiebre desde ayer.",
-    "Entiendo. ¿Podrías decirme si has tomado algún medicamento y si tienes otros síntomas como dolor de garganta o tos?"
-  ];
-  
-  // Animation effect for messages
+  // Simple message rotation effect
   useEffect(() => {
-    const messageInterval = setInterval(() => {
-      setCurrentMessage((prev) => (prev + 1) % messages.length);
+    const timer = setInterval(() => {
+      setCurrentMessage((prev) => (prev + 1) % MESSAGES.length);
     }, 5000);
-    
-    return () => clearInterval(messageInterval);
-  }, [messages.length]);
+    return () => clearInterval(timer);
+  }, []);
   
   // Partners shown in the design
   const partners = [
@@ -71,26 +69,19 @@ function AIHomePage() {
                   </div>
                   
                   <div className="space-y-3">
-                    <AnimatePresence mode="wait">
-                      {messages.map((message, index) => (
-                        (index === currentMessage) && (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.3 }}
-                            className={`${
-                              index % 2 === 0 
-                                ? "bg-brand-jade-100 text-brand-charcoal rounded-tl-sm rounded-tr-2xl rounded-br-2xl rounded-bl-2xl ml-0 mr-8" 
-                                : "bg-gray-100 text-brand-charcoal rounded-tl-2xl rounded-tr-sm rounded-br-2xl rounded-bl-2xl ml-8 mr-0"
-                            } p-3 text-sm`}
-                          >
-                            {message}
-                          </motion.div>
-                        )
-                      ))}
-                    </AnimatePresence>
+                    <motion.div
+                      key={currentMessage}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      className={`${
+                        currentMessage % 2 === 0 
+                          ? "bg-brand-jade-100 text-brand-charcoal rounded-tl-sm rounded-tr-2xl rounded-br-2xl rounded-bl-2xl ml-0 mr-8" 
+                          : "bg-gray-100 text-brand-charcoal rounded-tl-2xl rounded-tr-sm rounded-br-2xl rounded-bl-2xl ml-8 mr-0"
+                      } p-3 text-sm`}
+                    >
+                      {MESSAGES[currentMessage]}
+                    </motion.div>
                     
                     <div className="flex items-center bg-gray-100 rounded-full p-2 mt-3">
                       <input 
@@ -165,6 +156,99 @@ function AIHomePage() {
         
 
         
+        {/* Sponsors Section */}
+        <section className="bg-gray-50 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-xl font-semibold text-gray-700 mb-4">Patrocinado por</h2>
+            <div className="flex items-center justify-center space-x-8 overflow-x-auto">
+              {partners.map(p => (
+                <img key={p.id} src={p.logo} alt={p.name} className="h-12 object-contain" />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trustpilot Reviews Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Lo que opinan de nosotros</h2>
+            <div className="flex justify-center mb-4 space-x-1">
+              {[1,2,3,4,5].map(i => <Star key={i} className="text-teal-500 w-6 h-6" />)}
+            </div>
+            <p className="text-lg text-gray-700 mb-4">4.9 sobre 5 en Trustpilot</p>
+            <a href="https://www.trustpilot.com/review/doctor.mx" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline">
+              Leer más reseñas
+            </a>
+          </div>
+        </section>
+
+        {/* Metrics Section */}
+        <section className="bg-gray-50 py-16 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <p className="text-4xl font-bold text-gray-900">15,000+</p>
+              <p className="text-gray-600">Consultas atendidas</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-gray-900">98%</p>
+              <p className="text-gray-600">Satisfacción</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-gray-900">4.9</p>
+              <p className="text-gray-600">Estrellas</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Feature Callouts Section */}
+        <section className="bg-white py-16">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Nuestras Funciones</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <Activity className="text-coral-500 w-8 h-8 mb-4 mx-auto" />
+                <h3 className="font-semibold text-lg mb-2">Laboratorios a domicilio</h3>
+                <p className="text-gray-600">Solicita exámenes clínicos desde tu casa.</p>
+              </div>
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <ShoppingCart className="text-coral-500 w-8 h-8 mb-4 mx-auto" />
+                <h3 className="font-semibold text-lg mb-2">Farmacia en 1 clic</h3>
+                <p className="text-gray-600">Compra y recibe tus medicamentos en casa.</p>
+              </div>
+              <div className="p-6 bg-gray-50 rounded-lg shadow">
+                <Video className="text-coral-500 w-8 h-8 mb-4 mx-auto" />
+                <h3 className="font-semibold text-lg mb-2">Videoconsulta ahora</h3>
+                <p className="text-gray-600">Habla en vivo con un profesional.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security Ribbon */}
+        <section className="bg-gray-50 py-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center gap-8">
+            <img src="/partners/axa.svg" alt="AXA" className="h-10 object-contain" />
+            <img src="/placeholders/image-placeholder.svg" alt="INAI" className="h-10 object-contain" />
+            <div className="flex items-center gap-2 text-gray-700">
+              <Lock className="w-5 h-5" />
+              <span>Cifrado AES-256 y privacidad garantizada</span>
+            </div>
+            <button onClick={() => window.alert('Política de privacidad')} className="text-teal-600 underline text-sm">
+              Cómo protegemos tus datos
+            </button>
+          </div>
+        </section>
+
+        {/* Footer CTA */}
+        <div className="bg-coral-500 text-white py-6 text-center">
+          <p className="mb-4 font-semibold">¿Listo para comenzar tu evaluación?</p>
+          <Link to="/wizard/step-1">
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-coral-500">
+              Iniciar evaluación
+            </Button>
+          </Link>
+        </div>
+
         {/* Partners Section */}
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
