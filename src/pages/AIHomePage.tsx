@@ -23,15 +23,6 @@ function AIHomePage() {
     return () => clearInterval(timer);
   }, []);
   
-  // Partners shown in the design
-  const partners = [
-    { id: 1, name: 'AXA', logo: '/placeholders/image-placeholder.svg' },
-    { id: 2, name: 'GNP', logo: '/placeholders/image-placeholder.svg' },
-    { id: 3, name: 'delAhorro', logo: '/placeholders/image-placeholder.svg' },
-    { id: 4, name: 'Guadalajara', logo: '/placeholders/image-placeholder.svg' },
-    { id: 5, name: 'Benavides', logo: '/placeholders/image-placeholder.svg' },
-  ];
-  
   return (
     <>
       
@@ -42,11 +33,12 @@ function AIHomePage() {
             <div className="grid md:grid-cols-12 gap-6 items-center">
               {/* Left column - Text content */}
               <div className="md:col-span-5">
-                <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
                   Orientación de salud <span className="text-teal-600">instantánea</span>, gratis, desde casa
                 </h1>
                 <Link to="/wizard/step-1">
-                  <Button variant="primary" size="lg" className="bg-coral-500 hover:bg-coral-600 text-white">
+                  {/* Primary CTA button: using default primary variant for correct styling */}
+                  <Button variant="primary" size="lg">
                     Iniciar evaluación
                   </Button>
                 </Link>
@@ -156,17 +148,6 @@ function AIHomePage() {
         
 
         
-        {/* Sponsors Section */}
-        <section className="bg-gray-50 py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-xl font-semibold text-gray-700 mb-4">Patrocinado por</h2>
-            <div className="flex items-center justify-center space-x-8 overflow-x-auto">
-              {partners.map(p => (
-                <img key={p.id} src={p.logo} alt={p.name} className="h-12 object-contain" />
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Trustpilot Reviews Section */}
         <section className="bg-white py-16">
@@ -240,31 +221,16 @@ function AIHomePage() {
         </section>
 
         {/* Footer CTA */}
-        <div className="bg-coral-500 text-white py-6 text-center">
+        <div className="bg-brand-jade-600 text-white py-6 text-center">
           <p className="mb-4 font-semibold">¿Listo para comenzar tu evaluación?</p>
           <Link to="/wizard/step-1">
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-coral-500">
+            {/* Use primary variant for clear contrast */}
+            <Button variant="primary" size="md">
               Iniciar evaluación
             </Button>
           </Link>
         </div>
 
-        {/* Partners Section */}
-        <section className="py-10 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 className="text-xl font-semibold text-gray-700 mb-6">Aliado con</h3>
-            <div className="flex flex-wrap justify-start items-center gap-12">
-              {partners.map((partner) => (
-                <div key={partner.id} className="transition-opacity">
-                  {/* Using text as a fallback since we don't have the actual logo images */}
-                  <div className="h-10 bg-gray-100 px-4 flex items-center justify-center rounded">
-                    <span className="font-semibold text-gray-700">{partner.name}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       
       <SEO 

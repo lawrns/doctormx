@@ -177,30 +177,6 @@ function Navbar() {
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="py-2 border-t border-gray-200">
-              <Link
-                to="/doctor"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
-                onClick={toggleMenu}
-              >
-                Consulta Virtual
-              </Link>
-              <Link
-                to="/lab-testing"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
-                onClick={toggleMenu}
-              >
-                Exámenes a Domicilio
-              </Link>
-              <Link
-                to="/image-analysis"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
-                onClick={toggleMenu}
-              >
-                Análisis de Imágenes
-              </Link>
-            </div>
           </div>
 
           {/* Right section: Doctor IA, language selector, and auth buttons */}
@@ -322,6 +298,34 @@ function Navbar() {
               </div>
             </div>
 
+            {/* Quick Links Section */}
+            <div className="py-2">
+              <div className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                Acceso Rápido
+              </div>
+              <Link
+                to="/doctor"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Consulta Virtual
+              </Link>
+              <Link
+                to="/lab-testing"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Exámenes a Domicilio
+              </Link>
+              <Link
+                to="/image-analysis"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-brand-jade-600 hover:bg-gray-50"
+                onClick={toggleMenu}
+              >
+                Análisis de Imágenes
+              </Link>
+            </div>
+            
             {/* Services Section */}
             <div className="py-2">
               <div className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">

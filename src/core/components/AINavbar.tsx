@@ -47,10 +47,11 @@ function AINavbar() {
           
           <div>
             <Link to="/doctor">
-              <Button 
+              {/* Navbar CTA: transparent outline with white text on jade header */}
+              <Button
                 size="sm"
                 variant="outline"
-                className="font-semibold text-white border-white hover:bg-brand-jade-600"
+                className="font-semibold text-white border-white bg-transparent hover:bg-white/20"
               >
                 Comenzar consulta
               </Button>
