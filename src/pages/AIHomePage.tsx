@@ -146,8 +146,17 @@ function AIHomePage() {
           </div>
         </section>
         
-
-        
+        {/* Sponsors Section */}
+        <section className="bg-white py-8 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+              <img src="/images/axa.png" alt="AXA" className="h-12 object-contain" />
+              <img src="/images/fargdl.png" alt="Farmacias Guadalajara" className="h-12 object-contain" />
+              <img src="/images/farmahor.png" alt="Farma Ahorro" className="h-12 object-contain" />
+              <img src="/images/telcel.svg" alt="Telcel" className="h-12 object-contain" />
+            </div>
+          </div>
+        </section>
 
         {/* Trustpilot Reviews Section */}
         <section className="bg-white py-16">
@@ -208,8 +217,6 @@ function AIHomePage() {
         {/* Security Ribbon */}
         <section className="bg-gray-50 py-4">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center items-center gap-8">
-            <img src="/partners/axa.svg" alt="AXA" className="h-10 object-contain" />
-            <img src="/placeholders/image-placeholder.svg" alt="INAI" className="h-10 object-contain" />
             <div className="flex items-center gap-2 text-gray-700">
               <Lock className="w-5 h-5" />
               <span>Cifrado AES-256 y privacidad garantizada</span>
