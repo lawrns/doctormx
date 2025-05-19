@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Activity, Clock, MessageSquare, ChevronRight } from 'lucide-react';
+import { Shield, Activity, Clock, MessageSquare, ChevronRight, Flask, ShoppingCart, Video, Lock, Star } from 'lucide-react';
 import SEO from '../core/components/SEO';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
