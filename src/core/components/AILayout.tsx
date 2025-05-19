@@ -7,10 +7,12 @@ import { SocialIcons } from '../../components/icons/IconProvider';
 import ClientOnly from '../../components/ClientOnly';
 // Wizard context for onboarding
 import { WizardProvider } from '../../contexts/WizardContext';
+import { useChat } from '../hooks/useChat';
 
 function AILayout() {
   const [showChatAssistant, setShowChatAssistant] = useState(false);
 
+  const { isExpanded, setIsExpanded } = useChat();
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <AINavbar />
@@ -31,10 +33,15 @@ function AILayout() {
         <SocialIcons.MessageCircle size={24} />
       </button>
       
-      {/* Chat Assistant Modal - Wrapped in ClientOnly to prevent hydration mismatch */}
+      {/* Chat Assistant Modal - open when toggled or via context expansion */}
       <ClientOnly>
-        {showChatAssistant && (
-          <ChatAssistant onClose={() => setShowChatAssistant(false)} />
+        {(showChatAssistant || isExpanded) && (
+          <ChatAssistant
+            onClose={() => {
+              setShowChatAssistant(false);
+              setIsExpanded(false);
+            }}
+          />
         )}
       </ClientOnly>
     </div>
