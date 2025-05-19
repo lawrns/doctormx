@@ -8,6 +8,7 @@ import './styles/chat-fixes.css'; // Import custom CSS fixes for chat UI
 import App from './App';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { AuthProvider } from './contexts/AuthContext';
+import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 
 // Import Supabase client but don't re-initialize it
 // The client is already exported from supabaseClient.ts
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <SupabaseProvider>
           <AuthProvider>
             <ChatProvider>
-              <App />
+              <SimpleErrorBoundary>
+                <App />
+              </SimpleErrorBoundary>
             </ChatProvider>
           </AuthProvider>
         </SupabaseProvider>
