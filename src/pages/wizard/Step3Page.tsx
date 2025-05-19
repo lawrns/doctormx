@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWizard } from '../../contexts/WizardContext';
+import { useChat } from '../../core/hooks/useChat';
 
 const Step3Page: React.FC = () => {
   const navigate = useNavigate();
-  const { wizardData, setAcceptedDisclaimer, resetWizard, isComplete } = useWizard();
+  const { wizardData, setAcceptedDisclaimer, resetWizard } = useWizard();
+  const { clearMessages, addMessage, setIsExpanded } = useChat();
   const [accepted, setAccepted] = useState<boolean>(wizardData.acceptedDisclaimer ?? false);
 
   const handleFinish = () => {
     if (!accepted) return;
     setAcceptedDisclaimer(accepted);
-    // TODO: Optionally process wizardData
+    // Seed chat with initial user summary and open chat
+    clearMessages();
+    const { age, sex, symptom } = wizardData;
+    const summary = `Tengo ${age} años, sexo ${sex}. Mis síntomas: ${symptom}.`;
+    addMessage(summary, 'user');
+    setIsExpanded(true);
+    // Reset wizard state
     resetWizard();
-    // Redirect to chat home or main page
-    navigate('/');
+    // After onboarding, navigate to the AI chat page
+    navigate('/ai-doctor');
   };
 
   return (

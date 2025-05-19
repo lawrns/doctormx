@@ -1,3 +1,5 @@
+// This is a fixed version of AIService.ts with browser-safe API key handling
+
 import { supabase } from '../../lib/supabase';
 import OpenAI from 'openai';
 import medicationDatabase from '../../data/medications';
@@ -79,13 +81,47 @@ async function withRetry<T>(
 }
 
 const getOpenAIInstance = (): OpenAI | null => {
-  // Always use the environment-provided OpenAI key
-  const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+  // Check if we're in a browser environment - only use window/localStorage in browser
+  const isBrowser = typeof window !== 'undefined' && window.localStorage;
+  
+  // In browser, use Netlify API endpoints instead of direct OpenAI calls
+  if (isBrowser) {
+    // We're in the browser, return a mock OpenAI instance
+    // All API calls should be proxied through the Netlify functions which have their own key
+    console.log('Running in browser: using Netlify APIs for OpenAI calls');
+    
+    // We'll store the API key in localStorage for user customization settings only,
+    // but actual API calls will be made through our backend Netlify functions
+    const userConfiguredKey = localStorage.getItem(OPENAI_KEY_STORAGE_KEY);
+    const hasUserKey = !!userConfiguredKey;
+    
+    if (hasUserKey) {
+      console.log('User has configured an API key in settings (will be used for UI customization only)');
+    } else {
+      console.log('No user-configured API key found. Using Netlify functions with their server-side keys.');
+    }
+    
+    // Always return a valid OpenAI instance with a placeholder key
+    // This instance will never be used directly - see makeAPIRequest method
+    return new OpenAI({ 
+      apiKey: 'placeholder-key-netlify-functions-will-be-used', 
+      dangerouslyAllowBrowser: true 
+    });
+  }
+  
+  // Server-side code path (should never run in this app)
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY || '';
   if (!apiKey) {
     console.error('OpenAI API key not found. Set VITE_OPENAI_API_KEY.');
     return null;
   }
-  return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
+  
+  try {
+    return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
+  } catch (error) {
+    console.error('Error creating OpenAI instance:', error);
+    return null;
+  }
 };
 
 export interface AIResponse {
@@ -815,13 +851,11 @@ class AIService {
     const isBrowser = typeof window !== 'undefined';
     
     if (isBrowser) {
-      // In the browser, call the Netlify serverless function path directly
-      const apiUrl = endpoint.startsWith('/api/v1/')
-        ? endpoint.replace(/^\/api\/v1\/(.+)$/, '/.netlify/functions/$1')
-        : endpoint;
-      console.log(`Calling serverless function URL: ${apiUrl}`);
+      // In the browser, always use the Netlify serverless functions
+      console.log(`Using Netlify serverless function endpoint: ${endpoint}`);
+      
       try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

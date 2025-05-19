@@ -21,7 +21,8 @@ function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
       <Routes>
-        <Route path="/" element={<AILayout />}>
+        {/* Use a wildcard on the root layout route so nested routes (e.g., wizard) render correctly */}
+        <Route path="/*" element={<AILayout />}>  
           <Route index element={<AIHomePage />} />
           <Route path="doctor" element={<AIDoctorPage />} />
           <Route path="ai-doctor" element={<AIDoctorPage />} />

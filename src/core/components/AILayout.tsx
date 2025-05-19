@@ -27,37 +27,36 @@ function AILayout() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       <AINavbar />
-      <main className="flex-grow">
-        {/* Wizard context for onboarding steps */}
-        <WizardProvider>
+      {/* Wizard context for onboarding steps wraps main content, footer, chat, and wizard modal */}
+      <WizardProvider>
+        <main className="flex-grow">
           {/* Show home page as background when in wizard */}
           {isWizard ? <AIHomePage /> : <Outlet />}
-        </WizardProvider>
-      </main>
-      <AIFooter />
+        </main>
+        <AIFooter />
 
-      {/* Chat Assistant Button */}
-      <button
-        onClick={() => setShowChatAssistant(!showChatAssistant)}
-        className="fixed bottom-6 right-6 bg-brand-jade-600 text-white p-4 rounded-full shadow-lg hover:bg-brand-jade-700 transition-colors z-50 flex items-center justify-center"
-        aria-label="Abrir asistente de chat"
-      >
-        <SocialIcons.MessageCircle size={24} />
-      </button>
-      
-      {/* Chat Assistant Modal - open when toggled or via context expansion */}
-      <ClientOnly>
-        {(showChatAssistant || isExpanded) && (
-          <ChatAssistant
-            onClose={() => {
-              setShowChatAssistant(false);
-              setIsExpanded(false);
-            }}
-          />
-        )}
-      </ClientOnly>
-      {/* Onboarding Wizard Modal */}
-      <Routes>
+        {/* Chat Assistant Button */}
+        <button
+          onClick={() => setShowChatAssistant(!showChatAssistant)}
+          className="fixed bottom-6 right-6 bg-brand-jade-600 text-white p-4 rounded-full shadow-lg hover:bg-brand-jade-700 transition-colors z-50 flex items-center justify-center"
+          aria-label="Abrir asistente de chat"
+        >
+          <SocialIcons.MessageCircle size={24} />
+        </button>
+        
+        {/* Chat Assistant Modal - open when toggled or via context expansion */}
+        <ClientOnly>
+          {(showChatAssistant || isExpanded) && (
+            <ChatAssistant
+              onClose={() => {
+                setShowChatAssistant(false);
+                setIsExpanded(false);
+              }}
+            />
+          )}
+        </ClientOnly>
+        {/* Onboarding Wizard Modal */}
+        <Routes>
         <Route
           path="wizard"
           element={
@@ -100,6 +99,7 @@ function AILayout() {
           <Route path="step-3" element={<Step3Page />} />
         </Route>
       </Routes>
+      </WizardProvider>
     </div>
   );
 }
