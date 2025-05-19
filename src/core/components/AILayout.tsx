@@ -5,6 +5,8 @@ import AIFooter from './AIFooter';
 import ChatAssistant from '../../components/ChatAssistant';
 import { SocialIcons } from '../../components/icons/IconProvider';
 import ClientOnly from '../../components/ClientOnly';
+// Wizard context for onboarding
+import { WizardProvider } from '../../contexts/WizardContext';
 
 function AILayout() {
   const [showChatAssistant, setShowChatAssistant] = useState(false);
@@ -13,7 +15,10 @@ function AILayout() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <AINavbar />
       <main className="flex-grow">
-        <Outlet />
+        {/* Wizard context for onboarding steps */}
+        <WizardProvider>
+          <Outlet />
+        </WizardProvider>
       </main>
       <AIFooter />
 
