@@ -192,7 +192,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     
     try {
       const doctorInstructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
-      const imageAnalysisEnabled = localStorage.getItem(DOCTOR_IMAGE_ANALYSIS_ENABLED_KEY) !== 'false';
       
       console.log(`Current question ID: ${currentQuestionId}`);
       console.log(`Question history: ${questionHistory.join(' -> ')}`);
@@ -318,7 +317,8 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         userHistory: messages.map(m => m.text),
         severity: severityLevel,
         location: location || undefined,
-        usePremiumModel: imageAnalysisEnabled || input.length > 100 || input.includes('imagen') || input.includes('photo'),
+        // Use premium model only for longer inputs or when mentioning images
+        usePremiumModel: input.length > 100 || input.toLowerCase().includes('imagen') || input.toLowerCase().includes('photo'),
         customInstructions: doctorInstructions || undefined,
         stream: true,
         onStreamingResponse: streamingHandler,
