@@ -1,6 +1,8 @@
-// Import OpenAI package - using default import which is correct for the latest SDK
+// Import OpenAI package with correct default import
 const OpenAI = require('openai');
 console.log('Loaded OpenAI SDK');
+console.log('typeof OpenAI:', typeof OpenAI); // Should log "function" if imported correctly
+console.log('OpenAI constructor keys:', Object.keys(OpenAI));
 const { createClient } = require('@supabase/supabase-js');
 
 // Log startup information for debugging
@@ -85,7 +87,18 @@ exports.handler = async function(event) {
     
     try {
       // Create the OpenAI client - note the "new" keyword is crucial
-      const openai = new OpenAI({ apiKey: openaiKey });
+      let openai;
+      if (typeof OpenAI !== 'function') {
+        console.error('ERROR: OpenAI is not a constructor function. Type:', typeof OpenAI);
+        console.error('OpenAI keys:', Object.keys(OpenAI));
+        // Try to recover by using OpenAI.default if available
+        const Constructor = OpenAI.default || OpenAI;
+        console.log('Using fallback constructor:', typeof Constructor);
+        openai = new Constructor({ apiKey: openaiKey });
+      } else {
+        console.log('OpenAI is a constructor, creating instance');
+        openai = new OpenAI({ apiKey: openaiKey });
+      }
       console.log('Using OpenAI client SDK');
       
       // Parse character profile and custom instructions if available

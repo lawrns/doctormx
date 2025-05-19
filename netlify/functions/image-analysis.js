@@ -1,5 +1,8 @@
-// Import OpenAI package - using default import which is correct for the latest SDK
+// Import OpenAI package with correct default import
 const OpenAI = require('openai');
+console.log('Loaded OpenAI SDK');
+console.log('typeof OpenAI:', typeof OpenAI); // Should log "function" if imported correctly
+console.log('OpenAI constructor keys:', Object.keys(OpenAI));
 
 // Log startup information for debugging
 console.log('Image analysis function loading...');
@@ -55,7 +58,18 @@ exports.handler = async function(event) {
     console.log("Symptoms:", symptoms || 'None provided');
     
     let completion;
-    const openai = new OpenAI({ apiKey: openaiKey });
+    let openai;
+    if (typeof OpenAI !== 'function') {
+      console.error('ERROR: OpenAI is not a constructor function. Type:', typeof OpenAI);
+      console.error('OpenAI keys:', Object.keys(OpenAI));
+      // Try to recover by using OpenAI.default if available
+      const Constructor = OpenAI.default || OpenAI;
+      console.log('Using fallback constructor:', typeof Constructor);
+      openai = new Constructor({ apiKey: openaiKey });
+    } else {
+      console.log('OpenAI is a constructor, creating instance');
+      openai = new OpenAI({ apiKey: openaiKey });
+    }
     
     try {
       console.log("Creating OpenAI client for vision model");
