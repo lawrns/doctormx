@@ -7,11 +7,11 @@ const path = require('path');
 
 console.log('🔧 Setting up simplified build environment...');
 
-// Install ALL necessary dependencies explicitly
-console.log('📦 Installing core dependencies with Tailwind CSS and Babel...');
+// Make sure all necessary dependencies are installed
+console.log('📦 Verifying core dependencies with Tailwind CSS and Babel...');
 try {
-  // Install React, Vite, AND Tailwind CSS dependencies
-  execSync('npm install --no-save vite@latest @vitejs/plugin-react@latest tailwindcss@latest postcss@latest autoprefixer@latest @babel/plugin-transform-react-jsx @esbuild-kit/cjs-loader react react-dom', {
+  // Install React, Vite, AND Tailwind CSS dependencies explicitly with fixed versions
+  execSync('npm install --no-save vite@4.5.1 @vitejs/plugin-react@4.1.0 tailwindcss@3.3.3 postcss@8.4.31 autoprefixer@10.4.16 @babel/plugin-transform-react-jsx @babel/preset-env @babel/preset-react @babel/preset-typescript @esbuild-kit/cjs-loader react react-dom', {
     stdio: 'inherit'
   });
   console.log('✅ All dependencies installed');
