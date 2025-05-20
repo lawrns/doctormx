@@ -132,6 +132,15 @@ exports.handler = async function(event) {
       
       // Use the standard method from the latest OpenAI SDK
       console.log('Using chat.completions.create method');
+      console.log('Using API key starting with:', openaiKey.substring(0, 10));
+      console.log('OpenAI client type:', typeof openai, 'with chat property:', typeof openai.chat);
+      
+      // Debug the environment variables
+      console.log('Environment variables:');
+      console.log('NODE_ENV:', process.env.NODE_ENV);
+      console.log('OPENAI_API_KEY set:', process.env.OPENAI_API_KEY ? 'Yes' : 'No');
+      console.log('VITE_OPENAI_API_KEY set:', process.env.VITE_OPENAI_API_KEY ? 'Yes' : 'No');
+      
       response = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         messages: messages,
