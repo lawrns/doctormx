@@ -14,52 +14,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Doctor.mx" />
   
-  <!-- External dependencies loaded via UMD/IIFE modules -->
-  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/xstate@4.38.2/dist/xstate.js"></script>
-  <!-- XState/React doesn't have a UMD build, so we'll use a different approach for that -->
-  
-  <!-- Module resolution helper -->
-  <script type="importmap">
-    {
-      "imports": {
-        "@xstate/react": "/vendor/xstate-react.js",
-        "xstate": "/vendor/xstate.js",
-        "react": "/vendor/react.js",
-        "react-dom": "/vendor/react-dom.js"
-      }
-    }
-  </script>
-  
-  <!-- Bootstrap dependencies -->
-  <script type="module" src="/vendor/bootstrap.js"></script>
-  
   <!-- Apple touch icons -->
   <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
   <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-152x152.png" />
   
-  <!-- iOS splash screens -->
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-2048x2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-2732x2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-1668x2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-2224x1668.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-1536x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-2048x1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-828x1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-1242x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-750x1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="/splash/apple-splash-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
+  <link rel="icon" type="image/png" href="/favicon.ico" />
   
-  <title>Doctor.mx</title>
-  <meta name="description" content="Doctor.mx - Encuentra médicos especialistas en México y agenda tu cita online." />
+  <title>Doctor.mx - Asistente Médico IA</title>
+  <meta name="description" content="Doctor.mx - Asistente médico de IA para ayuda con consultas de salud" />
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <script type="module" src="/src/index.tsx"></script>
 </body>
 </html>

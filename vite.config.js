@@ -1,58 +1,37 @@
-const path = require('path');
-const react = require('@vitejs/plugin-react');
-const { defineConfig } = require('vite');
-const hydrationSafePlugin = require('./vite-hydration-plugin');
+// Simple Vite configuration for DoctorMX
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-module.exports = defineConfig({
+// https://vitejs.dev/config/
+export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: 'automatic',
-      jsxImportSource: undefined
-    }),
-    hydrationSafePlugin(),
+      jsxRuntime: 'automatic'
+    })
   ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      // Removed explicit alias for @xstate/react to use the actual package
-      'date-fns': path.resolve(__dirname, 'node_modules/date-fns'),
-      'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale'),
-    },
-    mainFields: ['module', 'jsnext:main', 'jsnext', 'main'],
-  },
-  // Don't auto-inject React imports
-  esbuild: {
-    jsx: 'automatic',
-    jsxInject: undefined
-  },
-  optimizeDeps: {
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-        '.ts': 'tsx'
-      }
-    },
-    include: ['date-fns']
+    }
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: false,
+    minify: 'terser',
     rollupOptions: {
       output: {
-        manualChunks: undefined,
-        format: 'es',
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) return 'vendor-react';
+            if (id.includes('supabase')) return 'vendor-supabase';
+            return 'vendor';
+          }
+        }
       }
-    },
-    commonjsOptions: {
-      include: [/node_modules/],
-      extensions: ['.js', '.cjs'],
-      strictRequires: false,
-      transformMixedEsModules: true,
     }
   },
-  publicDir: 'public',
-  base: '/'
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom']
+  }
 });
