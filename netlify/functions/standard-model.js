@@ -50,6 +50,15 @@ const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1N
 const HARDCODED_KEY = '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';
 const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
 
+// Detailed API key debugging
+console.log('API KEY DEBUGGING:');
+console.log('OPENAI_API_KEY environment variable exists:', process.env.OPENAI_API_KEY ? 'YES' : 'NO');
+console.log('OPENAI_API_KEY environment variable length:', process.env.OPENAI_API_KEY ? process.env.OPENAI_API_KEY.length : 0);
+console.log('OPENAI_API_KEY environment variable format check:', process.env.OPENAI_API_KEY ? `Starts with: ${process.env.OPENAI_API_KEY.substring(0, 7)}, ends with: ${process.env.OPENAI_API_KEY.substring(process.env.OPENAI_API_KEY.length - 5)}` : 'N/A');
+console.log('Using hardcoded fallback key:', process.env.OPENAI_API_KEY ? 'NO' : 'YES');
+console.log('Final API key being used (first 10 chars):', openaiKey.substring(0, 10));
+console.log('Final API key format validation:', openaiKey.startsWith('sk-') ? 'VALID PREFIX' : 'INVALID PREFIX');
+
 // Log all environment for debugging
 console.log('Function environment:', {
   supabaseUrl: supabaseUrl ? `${supabaseUrl.substring(0, 10)}...` : 'undefined',
@@ -130,10 +139,23 @@ exports.handler = async function(event) {
       let openai;
       try {
         // With destructured import, OpenAI should always be a constructor function
+        console.log('API KEY FORMAT CHECK BEFORE INSTANTIATION:');
+        console.log('Key prefix:', openaiKey.substring(0, 7));
+        console.log('Key length:', openaiKey.length);
+        console.log('Key format valid:', openaiKey.startsWith('sk-') ? 'YES' : 'NO');
+        console.log('Key appears to be SK Proj:', openaiKey.startsWith('sk-proj-') ? 'YES' : 'NO');
+        
         openai = new OpenAI({ apiKey: openaiKey });
         console.log('Successfully instantiated OpenAI client');
       } catch (clientError) {
-        console.error('Error creating OpenAI client:', clientError);
+        console.error('ERROR CREATING OPENAI CLIENT:', clientError);
+        console.error('Error name:', clientError.name);
+        console.error('Error code:', clientError.code);
+        console.error('Error type:', clientError.type);
+        console.error('Error status:', clientError.status);
+        console.error('Full error message:', clientError.message);
+        console.error('Error stack trace:', clientError.stack);
+        
         // Create a simple stub instead
         openai = {
           chat: {
@@ -142,7 +164,7 @@ exports.handler = async function(event) {
                 choices: [
                   {
                     message: {
-                      content: `Error creating OpenAI client: ${clientError.message}. This is a fallback response.`
+                      content: `Error creating OpenAI client: ${clientError.message}. This is a fallback response. API Key format issues may be the cause.`
                     }
                   }
                 ]

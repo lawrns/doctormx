@@ -1,7 +1,42 @@
 // Import OpenAI package with destructuring to get the OpenAI class
-const { OpenAI } = require('openai');
-console.log('Loaded OpenAI SDK');
-console.log('typeof OpenAI:', typeof OpenAI); // Should log "function" if imported correctly
+console.log('Loading OpenAI SDK in premium-model function...');
+// First log what's in the require cache for 'openai'
+console.log('require.cache for openai:', Object.keys(require.cache).filter(key => key.includes('openai')));
+
+// Try different import methods to see which works
+let OpenAIDefault, OpenAIClass;
+try {
+  // Method 1: Import with destructuring
+  const { OpenAI } = require('openai');
+  OpenAIClass = OpenAI;
+  console.log('Loaded OpenAI SDK with destructuring. typeof OpenAI:', typeof OpenAIClass);
+} catch (err1) {
+  console.error('Error loading with destructuring:', err1.message);
+  
+  try {
+    // Method 2: Import default export
+    OpenAIDefault = require('openai');
+    console.log('Loaded OpenAI SDK as default. typeof:', typeof OpenAIDefault);
+    console.log('OpenAIDefault keys:', Object.keys(OpenAIDefault));
+    
+    if (typeof OpenAIDefault === 'object' && OpenAIDefault.OpenAI) {
+      OpenAIClass = OpenAIDefault.OpenAI;
+      console.log('Using OpenAIDefault.OpenAI, typeof:', typeof OpenAIClass);
+    } else if (typeof OpenAIDefault === 'function') {
+      OpenAIClass = OpenAIDefault;
+      console.log('Using OpenAIDefault directly as constructor');
+    }
+  } catch (err2) {
+    console.error('Error loading as default:', err2.message);
+  }
+}
+
+// Check what we ended up with
+console.log('Final OpenAI class type:', typeof OpenAIClass);
+console.log('Is OpenAI a constructor?', typeof OpenAIClass === 'function');
+
+// Use the correct import approach based on what worked
+const { OpenAI } = typeof OpenAIClass !== 'undefined' ? { OpenAI: OpenAIClass } : require('openai');
 const { createClient } = require('@supabase/supabase-js');
 
 // Log startup information for debugging
@@ -14,6 +49,15 @@ const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1N
 // Hardcoded OpenAI API key as fallback - ENSURE THIS IS THE CORRECT KEY FORMAT
 const HARDCODED_KEY = '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';
 const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
+
+// Detailed API key debugging
+console.log('API KEY DEBUGGING (premium model):');
+console.log('OPENAI_API_KEY environment variable exists:', process.env.OPENAI_API_KEY ? 'YES' : 'NO');
+console.log('OPENAI_API_KEY environment variable length:', process.env.OPENAI_API_KEY ? process.env.OPENAI_API_KEY.length : 0);
+console.log('OPENAI_API_KEY environment variable format check:', process.env.OPENAI_API_KEY ? `Starts with: ${process.env.OPENAI_API_KEY.substring(0, 7)}, ends with: ${process.env.OPENAI_API_KEY.substring(process.env.OPENAI_API_KEY.length - 5)}` : 'N/A');
+console.log('Using hardcoded fallback key:', process.env.OPENAI_API_KEY ? 'NO' : 'YES');
+console.log('Final API key being used (first 10 chars):', openaiKey.substring(0, 10));
+console.log('Final API key format validation:', openaiKey.startsWith('sk-') ? 'VALID PREFIX' : 'INVALID PREFIX');
 
 // Log all environment for debugging
 console.log('Function environment:', {
@@ -87,8 +131,33 @@ exports.handler = async function(event) {
     try {
       // Create the OpenAI client - note the "new" keyword is crucial
       console.log('Creating OpenAI instance with key');
-      // With destructured import, OpenAI should always be a constructor function
-      const openai = new OpenAI({ apiKey: openaiKey });
+      
+      // Check what we ended up with before trying to use it
+      console.log('Is OpenAI a class that can be instantiated?', typeof OpenAI);
+      
+      // Add explicit error handling around client creation
+      let openai;
+      try {
+        // With destructured import, OpenAI should always be a constructor function
+        console.log('API KEY FORMAT CHECK BEFORE INSTANTIATION (premium model):');
+        console.log('Key prefix:', openaiKey.substring(0, 7));
+        console.log('Key length:', openaiKey.length);
+        console.log('Key format valid:', openaiKey.startsWith('sk-') ? 'YES' : 'NO');
+        console.log('Key appears to be SK Proj:', openaiKey.startsWith('sk-proj-') ? 'YES' : 'NO');
+        
+        openai = new OpenAI({ apiKey: openaiKey });
+        console.log('Successfully instantiated OpenAI client');
+      } catch (clientError) {
+        console.error('ERROR CREATING OPENAI CLIENT (premium model):', clientError);
+        console.error('Error name:', clientError.name);
+        console.error('Error code:', clientError.code);
+        console.error('Error type:', clientError.type);
+        console.error('Error status:', clientError.status);
+        console.error('Full error message:', clientError.message);
+        console.error('Error stack trace:', clientError.stack);
+        
+        throw new Error('Failed to initialize OpenAI client: ' + clientError.message);
+      }
       console.log('Using OpenAI client SDK');
       
       // Parse character profile and custom instructions if available
