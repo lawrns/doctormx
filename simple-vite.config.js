@@ -4,6 +4,7 @@ const { defineConfig } = require('vite');
 // This simplified config is used when the main config fails
 // It doesn't require any plugins and uses just essential options
 module.exports = defineConfig({
+  // Using built-in JSX support in Vite, no plugin needed
   esbuild: {
     jsxInject: "import React from 'react'",
     jsxFactory: 'React.createElement',
@@ -21,6 +22,9 @@ module.exports = defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     }
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'framer-motion', '@supabase/supabase-js']
   },
   publicDir: 'public',
   base: '/'
