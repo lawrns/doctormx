@@ -5,27 +5,18 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build --log-level error",
+    "build": "vite build --log-level info --config simple-vite.config.js",
     "preview": "vite preview",
-    "netlify": "netlify dev",
-    "generate-icons": "node src/scripts/generate-icons.js",
-    "generate-splash-screens": "node src/scripts/generate-splash-screens.js",
-    "check-icons": "node scripts/check-icons.js",
-    "fix-icons": "node scripts/check-icons.js --fix",
-    "deploy-pwa": "bash deploy-pwa.sh"
+    "netlify": "netlify dev"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.38.4",
     "@tanstack/react-query": "5.28.4",
     "@xstate/react": "3.2.2",
     "axios": "^1.8.3",
-    "cheerio": "^1.0.0-rc.12",
     "date-fns": "2.30.0",
     "dompurify": "3.0.5",
     "framer-motion": "^10.16.4",
-    "html2canvas": "1.4.1",
-    "jspdf": "2.5.1",
-    "localforage": "^1.10.0",
     "lucide-react": "0.288.0",
     "openai": "^4.100.0",
     "react": "^18.2.0",
@@ -33,28 +24,17 @@
     "react-helmet-async": "^1.3.0",
     "react-intersection-observer": "9.5.2",
     "react-router-dom": "^6.16.0",
-    "recharts": "2.8.0",
     "uuid": "9.0.1",
-    "xlsx": "^0.18.5",
-    "xstate": "4.38.2",
-    "zod": "^3.23.8"
+    "xstate": "4.38.2"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.35",
-    "@types/dotenv": "^6.1.1",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
     "@types/react-router-dom": "^5.3.3",
-    "@vitejs/plugin-react": "4.1.0",
     "autoprefixer": "10.4.16",
-    "dotenv": "^16.5.0",
     "postcss": "8.4.31",
-    "sharp": "^0.33.5",
     "tailwindcss": "3.3.3",
-    "tsx": "^4.19.4",
     "typescript": "^5.2.2",
-    "vite": "^4.5.9",
-    "vite-plugin-pwa": "^0.19.0",
-    "workbox-window": "^7.0.0"
+    "vite": "^4.5.9"
   }
 }
