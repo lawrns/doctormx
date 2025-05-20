@@ -1,15 +1,10 @@
-// Simple Vite configuration for DoctorMX
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+// Use CommonJS require syntax for better compatibility with Netlify
+const { defineConfig } = require('vite');
+const react = require('@vitejs/plugin-react');
+const path = require('path');
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    react({
-      jsxRuntime: 'automatic'
-    })
-  ],
+module.exports = defineConfig({
+  plugins: [react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -18,20 +13,21 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('react')) return 'vendor-react';
-            if (id.includes('supabase')) return 'vendor-supabase';
-            return 'vendor';
-          }
-        }
-      }
+    minify: true,
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true
     }
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom']
+    include: [
+      'react', 
+      'react-dom', 
+      'react-router-dom',
+      '@tanstack/react-query',
+      '@supabase/supabase-js',
+      'xstate',
+      '@xstate/react'
+    ]
   }
 });
