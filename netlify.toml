@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm install vite@4.5.1 @vitejs/plugin-react@4.1.0 --save-dev && npx vite build --config simple-vite.config.js"
+  command = "node build.js"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
