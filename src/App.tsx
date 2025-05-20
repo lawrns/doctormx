@@ -1,7 +1,9 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AILayout from './core/components/AILayout';
 import SplashScreen from './core/components/SplashScreen';
+import { PwaWrapper } from './pwa/components/PwaWrapper';
+import { initializePwa } from './pwa';
 
 const AIHomePage = React.lazy(() => import('./pages/AIHomePage'));
 // This is importing the canonical version of AIDoctorPage
@@ -18,27 +20,37 @@ const LabTestingPage = React.lazy(() => import('./pages/LabTestingPage'));
 import DoctorRoutes from './routes/DoctorRoutes';
 
 function App() {
+  // Initialize PWA functionality
+  useEffect(() => {
+    // Initialize PWA when the app loads
+    initializePwa().catch(error => {
+      console.error('[PWA] Initialization error:', error);
+    });
+  }, []);
+
   return (
-    <Suspense fallback={<SplashScreen />}>
-      <Routes>
-        {/* Use a wildcard on the root layout route so nested routes (e.g., wizard) render correctly */}
-        <Route path="/*" element={<AILayout />}>  
-          <Route index element={<AIHomePage />} />
-          <Route path="doctor" element={<AIDoctorPage />} />
-          <Route path="ai-doctor" element={<AIDoctorPage />} />
-          <Route path="doctor-dashboard/*" element={<Navigate to="/connect" replace />} />
-          <Route path="connect" element={<ConnectLandingPage />} />
-          <Route path="connect/*" element={<DoctorRoutes />} />
-          <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
-          <Route path="analisis-imagenes" element={<AIImageAnalysisPage />} />
-          <Route path="image-analysis" element={<AIImageAnalysisPage />} />
-          <Route path="settings/api" element={<APIKeyConfigPage />} />
-          <Route path="settings/ai-character" element={<AICharacterSettingsPage />} />
-          <Route path="lab-testing" element={<LabTestingLandingPage />} />
-          <Route path="lab-testing/app" element={<LabTestingPage />} />
-        </Route>
-      </Routes>
-    </Suspense>
+    <PwaWrapper>
+      <Suspense fallback={<SplashScreen />}>
+        <Routes>
+          {/* Use a wildcard on the root layout route so nested routes (e.g., wizard) render correctly */}
+          <Route path="/*" element={<AILayout />}>  
+            <Route index element={<AIHomePage />} />
+            <Route path="doctor" element={<AIDoctorPage />} />
+            <Route path="ai-doctor" element={<AIDoctorPage />} />
+            <Route path="doctor-dashboard/*" element={<Navigate to="/connect" replace />} />
+            <Route path="connect" element={<ConnectLandingPage />} />
+            <Route path="connect/*" element={<DoctorRoutes />} />
+            <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
+            <Route path="analisis-imagenes" element={<AIImageAnalysisPage />} />
+            <Route path="image-analysis" element={<AIImageAnalysisPage />} />
+            <Route path="settings/api" element={<APIKeyConfigPage />} />
+            <Route path="settings/ai-character" element={<AICharacterSettingsPage />} />
+            <Route path="lab-testing" element={<LabTestingLandingPage />} />
+            <Route path="lab-testing/app" element={<LabTestingPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </PwaWrapper>
   );
 }
 
