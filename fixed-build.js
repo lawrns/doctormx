@@ -12,25 +12,15 @@ function handleError(error, message) {
 }
 
 try {
-  // Step 1: Install Vite and critical dependencies
-  console.log('📦 Installing Vite and critical dependencies...');
-  try {
-    execSync('npm install --no-save vite@4.5.0 @vitejs/plugin-react@4.1.0 tailwindcss@3.3.3 postcss@8.4.31 autoprefixer@10.4.16', { 
-      stdio: 'inherit' 
-    });
-    console.log('✅ Successfully installed Vite and critical dependencies');
-  } catch (installError) {
-    handleError(installError, 'Failed to install Vite dependencies');
-  }
+  // No need for additional npm installs - we rely on the ones from netlify.toml
+  console.log('📦 Using pre-installed dependencies...');
   
-  // Step 2: Install project dependencies
-  console.log('📦 Installing project dependencies...');
+  // Verify Vite is available
   try {
-    execSync('npm install --legacy-peer-deps', { stdio: 'inherit' });
-    console.log('✅ Project dependencies installed');
-  } catch (dependencyError) {
-    console.warn('⚠️ Full dependency installation had issues, continuing anyway');
-    // Continue anyway - core dependencies might be installed
+    require.resolve('vite');
+    console.log('✅ Vite is available');
+  } catch (error) {
+    console.warn('⚠️ Vite module not found in standard location, will try using npx');
   }
 
   // Step 3: Rename App.jsx to prevent it from being used
