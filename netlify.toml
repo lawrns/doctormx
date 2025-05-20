@@ -1,5 +1,5 @@
 [build]
-  command = "node netlify-build.js"
+  command = "npm run build"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
