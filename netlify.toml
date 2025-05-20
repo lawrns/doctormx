@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && node dependency-fixer.js && node fix-react-imports.js && VITE_SKIP_AUTOINJECTION=true npm run build"
+  command = "npm install --legacy-peer-deps && npm install vite@4.5.1 @vitejs/plugin-react@4.1.0 --no-save && node dependency-fixer.js && node fix-react-imports.js && VITE_SKIP_AUTOINJECTION=true npx vite build --log-level info"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
