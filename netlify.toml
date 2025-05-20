@@ -1,10 +1,11 @@
 [build]
-  command = "node build.js"
+  command = "node netlify-build.js"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
 
 [build.environment]
+  NODE_VERSION = "16"
   NODE_FETCH_TIMEOUT = "30000"
   NODE_ENV = "production"
   VITE_SUPABASE_URL = "https://oxlbametpfubwnrmrbsv.supabase.co"
