@@ -1,7 +1,42 @@
 // Import OpenAI package with destructuring to get the OpenAI class
-const { OpenAI } = require('openai');
-console.log('Loaded OpenAI SDK');
-console.log('typeof OpenAI:', typeof OpenAI); // Should log "function" if imported correctly
+console.log('Loading OpenAI SDK...');
+// First log what's in the require cache for 'openai'
+console.log('require.cache for openai:', Object.keys(require.cache).filter(key => key.includes('openai')));
+
+// Try different import methods to see which works
+let OpenAIDefault, OpenAIClass;
+try {
+  // Method 1: Import with destructuring
+  const { OpenAI } = require('openai');
+  OpenAIClass = OpenAI;
+  console.log('Loaded OpenAI SDK with destructuring. typeof OpenAI:', typeof OpenAIClass);
+} catch (err1) {
+  console.error('Error loading with destructuring:', err1.message);
+  
+  try {
+    // Method 2: Import default export
+    OpenAIDefault = require('openai');
+    console.log('Loaded OpenAI SDK as default. typeof:', typeof OpenAIDefault);
+    console.log('OpenAIDefault keys:', Object.keys(OpenAIDefault));
+    
+    if (typeof OpenAIDefault === 'object' && OpenAIDefault.OpenAI) {
+      OpenAIClass = OpenAIDefault.OpenAI;
+      console.log('Using OpenAIDefault.OpenAI, typeof:', typeof OpenAIClass);
+    } else if (typeof OpenAIDefault === 'function') {
+      OpenAIClass = OpenAIDefault;
+      console.log('Using OpenAIDefault directly as constructor');
+    }
+  } catch (err2) {
+    console.error('Error loading as default:', err2.message);
+  }
+}
+
+// Check what we ended up with
+console.log('Final OpenAI class type:', typeof OpenAIClass);
+console.log('Is OpenAI a constructor?', typeof OpenAIClass === 'function');
+
+// Use the correct import approach based on what worked
+const { OpenAI } = typeof OpenAIClass !== 'undefined' ? { OpenAI: OpenAIClass } : require('openai');
 const { createClient } = require('@supabase/supabase-js');
 
 // Log startup information for debugging
@@ -87,8 +122,35 @@ exports.handler = async function(event) {
     try {
       // Create the OpenAI client - note the "new" keyword is crucial
       console.log('Creating OpenAI instance with key');
-      // With destructured import, OpenAI should always be a constructor function
-      const openai = new OpenAI({ apiKey: openaiKey });
+      
+      // Check what we ended up with before trying to use it
+      console.log('Is OpenAI a class that can be instantiated?', typeof OpenAI);
+      
+      // Add explicit error handling around client creation
+      let openai;
+      try {
+        // With destructured import, OpenAI should always be a constructor function
+        openai = new OpenAI({ apiKey: openaiKey });
+        console.log('Successfully instantiated OpenAI client');
+      } catch (clientError) {
+        console.error('Error creating OpenAI client:', clientError);
+        // Create a simple stub instead
+        openai = {
+          chat: {
+            completions: {
+              create: async () => ({
+                choices: [
+                  {
+                    message: {
+                      content: `Error creating OpenAI client: ${clientError.message}. This is a fallback response.`
+                    }
+                  }
+                ]
+              })
+            }
+          }
+        };
+      }
       console.log('Using OpenAI client SDK');
       
       // Parse character profile and custom instructions if available
@@ -133,19 +195,61 @@ exports.handler = async function(event) {
       // Use the standard method from the latest OpenAI SDK
       console.log('Using chat.completions.create method');
       console.log('Using API key starting with:', openaiKey.substring(0, 10));
-      console.log('OpenAI client type:', typeof openai, 'with chat property:', typeof openai.chat);
+      console.log('OpenAI client type:', typeof openai);
+      console.log('OpenAI client properties:', Object.keys(openai || {}));
+      console.log('OpenAI client has chat prop:', openai && 'chat' in openai);
+      
+      if (openai.chat) {
+        console.log('OpenAI client chat type:', typeof openai.chat);
+        console.log('OpenAI client chat properties:', Object.keys(openai.chat || {}));
+        console.log('OpenAI client has completions:', openai.chat && 'completions' in openai.chat);
+        
+        if (openai.chat.completions) {
+          console.log('OpenAI client completions type:', typeof openai.chat.completions);
+          console.log('OpenAI client completions properties:', Object.keys(openai.chat.completions || {}));
+          console.log('OpenAI client has create method:', openai.chat.completions && 'create' in openai.chat.completions);
+        }
+      }
       
       // Debug the environment variables
       console.log('Environment variables:');
       console.log('NODE_ENV:', process.env.NODE_ENV);
-      console.log('OPENAI_API_KEY set:', process.env.OPENAI_API_KEY ? 'Yes' : 'No');
+      console.log('OPENAI_API_KEY (masked):', process.env.OPENAI_API_KEY ? 
+        `${process.env.OPENAI_API_KEY.substring(0, 10)}...${process.env.OPENAI_API_KEY.substring(process.env.OPENAI_API_KEY.length - 5)}` : 'Not set');
       console.log('VITE_OPENAI_API_KEY set:', process.env.VITE_OPENAI_API_KEY ? 'Yes' : 'No');
       
-      response = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo',
-        messages: messages,
-        temperature: 0.7
-      });
+      // Print all environment variables (except sensitive ones)
+      console.log('All environment variables (names only):');
+      console.log(Object.keys(process.env).filter(key => !key.toLowerCase().includes('key') && !key.toLowerCase().includes('secret')));
+      
+      // Check if we'd need to use a different approach
+      if (openai && typeof openai.chat?.completions?.create !== 'function') {
+        console.log('ERROR: openai.chat.completions.create is not a function!');
+        console.log('Falling back to direct mock response');
+        
+        response = {
+          choices: [{
+            message: {
+              content: `This is an emergency fallback response. Your OpenAI client appears broken.
+              
+              Debug info:
+              OpenAI client type: ${typeof openai}
+              Has chat: ${openai && 'chat' in openai}
+              Has chat.completions: ${openai && openai.chat && 'completions' in openai.chat}
+              Has create method: ${openai && openai.chat && openai.chat.completions && 'create' in openai.chat.completions}
+              API key set: ${process.env.OPENAI_API_KEY ? 'Yes' : 'No'}
+              `
+            }
+          }]
+        };
+      } else {
+        // Normal flow - use the proper API client
+        response = await openai.chat.completions.create({
+          model: 'gpt-3.5-turbo',
+          messages: messages,
+          temperature: 0.7
+        });
+      }
     } catch (newApiError) {
       // If the new SDK approach fails, try legacy approach
       console.error('Error with new OpenAI SDK:', newApiError);
