@@ -4,6 +4,18 @@ const fs = require('fs');
 const path = require('path');
 
 console.log('🚀 Starting DoctorMX fixed build script...');
+console.log('🔍 IMPORTANT DEBUG INFO: This should build the FULL AI DOCTOR site with Dr. Simeon');
+console.log('🔍 Build running in directory:', process.cwd());
+console.log('🔍 Node version:', process.version);
+console.log('🔍 Available entry files:');
+
+// List typescript and javascript files in src directory
+try {
+  const files = require('fs').readdirSync('./src');
+  console.log('   Files in src/:', files.filter(f => f.endsWith('.tsx') || f.endsWith('.jsx') || f.endsWith('.js')));
+} catch (err) {
+  console.log('   Error listing files:', err.message);
+}
 
 // Function to handle errors
 function handleError(error, message) {
@@ -118,7 +130,28 @@ module.exports = defineConfig({
 
   // Step 5: Run build with the fixed config
   console.log('🏗️ Building application with fixed config...');
+  
+  // Check to see if typescript files exist before we start the build
+  console.log('🔍 Verifying key files before build:');
+  [
+    'src/App.tsx',
+    'src/index.tsx',
+    'src/features/ai-doctor/pages/AIDoctorPage.tsx',
+    'src/core/components/AILayout.tsx'
+  ].forEach(file => {
+    if (fs.existsSync(file)) {
+      console.log(`   ✅ Found ${file}`);
+    } else {
+      console.log(`   ❌ Missing ${file}`);
+    }
+  });
+  
   try {
+    // Set environment variables to help with debugging
+    process.env.DEBUG = 'vite:*';
+    process.env.VITE_DEBUG = 'true';
+    
+    console.log('🔧 Running build with enhanced logging...');
     execSync('npx vite build --config vite.fixed.config.js', { 
       stdio: 'inherit',
       env: {
@@ -127,6 +160,20 @@ module.exports = defineConfig({
       }
     });
     console.log('✅ Build completed successfully!');
+    
+    // Verify the build output
+    console.log('🔍 Verifying build output:');
+    if (fs.existsSync('dist/index.html')) {
+      console.log('   ✅ Found dist/index.html');
+      const indexContent = fs.readFileSync('dist/index.html', 'utf8');
+      if (indexContent.includes('Dr. Simeon') || indexContent.includes('DoctorMX')) {
+        console.log('   ✅ Build contains DoctorMX branding');
+      } else {
+        console.log('   ⚠️ Build might be missing DoctorMX branding');
+      }
+    } else {
+      console.log('   ❌ Missing dist/index.html');
+    }
     
     // Restore original files
     if (fs.existsSync('src/App.jsx.bak')) {
