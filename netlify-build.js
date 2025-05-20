@@ -12,9 +12,9 @@ try {
     throw new Error('package.json not found - aborting build');
   }
   
-  // Install dependencies globally to ensure they are available to the build process
-  console.log('📦 Installing critical dependencies globally in Netlify environment...');
-  execSync('npm install -g vite@4.5.0 @vitejs/plugin-react@4.1.0', { 
+  // Install dependencies directly to ensure they are available for the build
+  console.log('📦 Installing critical dependencies for Netlify build...');
+  execSync('npm install --no-save vite@4.5.0 @vitejs/plugin-react@4.1.0 tailwindcss@3.3.3 postcss@8.4.31 autoprefixer@10.4.16', { 
     stdio: 'inherit' 
   });
   
@@ -93,10 +93,28 @@ module.exports = {
     // Method 2: Try with minimal config
     try {
       console.log('Method 2: Building with minimal config...');
+      
+      // Temporarily rename postcss.config.cjs to avoid loading it
+      if (fs.existsSync('postcss.config.cjs')) {
+        fs.renameSync('postcss.config.cjs', 'postcss.config.cjs.bak');
+        fs.writeFileSync('postcss.config.cjs', 'module.exports = { plugins: {} };');
+      }
+      
       execSync('NODE_ENV=production npx vite --config vite.minimal.js build', { stdio: 'inherit' });
+      
+      // Restore original postcss config
+      if (fs.existsSync('postcss.config.cjs.bak')) {
+        fs.renameSync('postcss.config.cjs.bak', 'postcss.config.cjs');
+      }
+      
       console.log('✅ Build completed successfully with minimal config!');
       process.exit(0);
     } catch (error) {
+      // Restore original postcss config if it exists
+      if (fs.existsSync('postcss.config.cjs.bak')) {
+        fs.renameSync('postcss.config.cjs.bak', 'postcss.config.cjs');
+      }
+      
       console.log('⚠️ Method 2 failed:', error.message);
       
       // Method 3: Use vite-node to bypass config loading entirely
