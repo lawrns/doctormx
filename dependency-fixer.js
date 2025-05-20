@@ -277,27 +277,40 @@ if (!fs.existsSync(OPENAI_DIR)) {
 
 // Create index.js in openai
 const openaiIndex = `
-// Shim for openai that mimics the basic API surface used in the functions
+// Shim for openai that exports OpenAI as both default and named export
 class OpenAI {
   constructor(config) {
     this.apiKey = config.apiKey;
-    // Provide the chat.completions.create interface
     this.chat = {
       completions: {
-        create: async () => ({
-          choices: [
-            {
+        create: async (params) => {
+          console.log('Mock OpenAI API called with params:', JSON.stringify(params));
+          if (params.stream) {
+            // Return an async generator for stream mode
+            return (async function* () {
+              yield {
+                choices: [{
+                  delta: {
+                    content: "This is a mock response from the OpenAI API shim."
+                  }
+                }]
+              };
+            })();
+          }
+          return {
+            choices: [{
               message: {
                 content: "This is a mock response from the OpenAI API shim."
               }
-            }
-          ]
-        })
+            }]
+          };
+        }
       }
     };
   }
 }
 
+// Export both as default and as named export to support both import styles
 module.exports = OpenAI;
 module.exports.OpenAI = OpenAI;
 module.exports.default = OpenAI;
