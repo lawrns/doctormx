@@ -1,46 +1,23 @@
-const path = require('path');
+// Extra simplified Vite config for Netlify builds - fallback option
 const { defineConfig } = require('vite');
 const react = require('@vitejs/plugin-react');
 
+// This simplified config is used when the main config fails
+// Only includes the bare minimum needed for a build to complete
 module.exports = defineConfig({
-  plugins: [react({
-    jsxRuntime: 'automatic',
-    // Never auto-inject, we'll handle imports in components
-    jsxImportSource: undefined
-  })],
-  
-  // Add resolve aliases
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      // Critical aliases for problematic dependencies
-      '@xstate/react': path.resolve(__dirname, 'src/shims/xstate-react.js'),
-      'date-fns': path.resolve(__dirname, 'node_modules/date-fns'),
-      'date-fns/locale': path.resolve(__dirname, 'node_modules/date-fns/locale')
-    }
-  },
-  
-  // No automatic JSX imports
-  esbuild: {
-    jsx: 'automatic',
-    jsxInject: undefined
-  },
-  
-  // Pre-bundle dependencies to ensure they're available
-  optimizeDeps: {
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx'
-      }
-    },
-    include: ['date-fns', '@xstate/react']
-  },
-  
-  // Basic build configuration
+  plugins: [react()],
   build: {
     outDir: 'dist',
-    commonjsOptions: {
-      transformMixedEsModules: true
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
+      }
     }
-  }
+  },
+  publicDir: 'public',
+  base: '/'
 });
