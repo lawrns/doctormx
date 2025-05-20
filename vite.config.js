@@ -1,9 +1,8 @@
-// Use CommonJS require syntax for better compatibility with Netlify
-const { defineConfig } = require('vite');
-const react = require('@vitejs/plugin-react');
-const path = require('path');
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
@@ -12,8 +11,13 @@ module.exports = defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false,
     minify: true,
+    sourcemap: false,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      }
+    },
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true

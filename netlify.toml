@@ -1,5 +1,5 @@
 [build]
-  command = "npm install --legacy-peer-deps && node fixed-build.js || node build-netlify.js || node fallback-build.js"
+  command = "npm install --legacy-peer-deps && node simple-build.js"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
