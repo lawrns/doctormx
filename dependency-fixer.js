@@ -277,24 +277,30 @@ if (!fs.existsSync(OPENAI_DIR)) {
 
 // Create index.js in openai
 const openaiIndex = `
-// Shim for openai
-module.exports = {
-  OpenAI: class OpenAI {
-    constructor(config) {
-      this.apiKey = config.apiKey;
-    }
-    
-    async chat() {
-      return {
-        choices: [{
-          message: {
-            content: "This is a mock response from the OpenAI API shim."
-          }
-        }]
-      };
-    }
+// Shim for openai that mimics the basic API surface used in the functions
+class OpenAI {
+  constructor(config) {
+    this.apiKey = config.apiKey;
+    // Provide the chat.completions.create interface
+    this.chat = {
+      completions: {
+        create: async () => ({
+          choices: [
+            {
+              message: {
+                content: "This is a mock response from the OpenAI API shim."
+              }
+            }
+          ]
+        })
+      }
+    };
   }
-};
+}
+
+module.exports = OpenAI;
+module.exports.OpenAI = OpenAI;
+module.exports.default = OpenAI;
 `;
 
 fs.writeFileSync(path.join(OPENAI_DIR, 'index.js'), openaiIndex);
