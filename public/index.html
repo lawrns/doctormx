@@ -59,16 +59,48 @@
     -->
   </body>
 
-  <!-- PWA functionality is handled by vite-plugin-pwa and registerSW.ts -->
-  <!-- The service worker registration is handled programmatically by the app -->
+  <!-- Register service worker for PWA functionality -->
   <script>
-    // This small helper checks if the app is being opened in standalone mode
-    if (
-      window.matchMedia('(display-mode: standalone)').matches || 
-      (window.navigator.standalone === true)
-    ) {
-      // Add a class to the body for standalone mode-specific styling
-      document.body.classList.add('pwa-standalone');
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          })
+          .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+      });
+
+      // Add listener for beforeinstallprompt to customize the install experience
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        // Store the event so it can be triggered later
+        deferredPrompt = e;
+        // Update UI to notify the user they can install the PWA
+        // For example, show an install button
+        document.dispatchEvent(new CustomEvent('pwaInstallable'));
+      });
+
+      // Example function to show install prompt when user clicks an install button
+      window.showInstallPrompt = function() {
+        if (deferredPrompt) {
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            // Clear the deferredPrompt variable
+            deferredPrompt = null;
+          });
+        }
+      };
     }
   </script>
 </html>
