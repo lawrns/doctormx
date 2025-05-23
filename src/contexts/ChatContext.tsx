@@ -54,7 +54,9 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const closeChat = () => setIsOpen(false);
+  const closeChat = () => {
+    setIsOpen(false);
+  };
 
   const setMetadata = (newMetadata: ChatMetadata) => {
     setMetadataState(prev => ({ ...prev, ...newMetadata }));

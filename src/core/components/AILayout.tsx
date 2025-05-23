@@ -5,13 +5,10 @@ import AIFooter from './AIFooter';
 import ChatAssistant from '../../components/ChatAssistant';
 import { SocialIcons } from '../../components/icons/IconProvider';
 import ClientOnly from '../../components/ClientOnly';
-import { useChat } from '../hooks/useChat';
 
 function AILayout() {
   const [showChatAssistant, setShowChatAssistant] = useState(false);
   const location = useLocation();
-
-  const { isExpanded, setIsExpanded } = useChat();
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden">
@@ -39,13 +36,12 @@ function AILayout() {
           <SocialIcons.MessageCircle size={20} />
         </button>
         
-        {/* Chat Assistant Modal - open when toggled or via context expansion */}
+        {/* Chat Assistant Modal - open when toggled */}
         <ClientOnly>
-          {(showChatAssistant || isExpanded) && (
+          {showChatAssistant && (
             <ChatAssistant
               onClose={() => {
                 setShowChatAssistant(false);
-                setIsExpanded(false);
               }}
             />
           )}

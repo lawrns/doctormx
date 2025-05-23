@@ -13,7 +13,8 @@ import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
-import { ChatProvider } from './core/hooks/useChat';
+import { ChatProvider } from './contexts/ChatContext';
+import ChatContainer from './components/ChatContainer';
 import './env-check';
 
 // Create a client
@@ -44,6 +45,7 @@ root.render(
                     <QuestionnaireProvider>
                       <ChatProvider>
                         <App />
+                        <ChatContainer />
                       </ChatProvider>
                     </QuestionnaireProvider>
                   </ToastProvider>
