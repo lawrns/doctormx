@@ -15,6 +15,13 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  // Do nothing - let the browser handle all requests normally
+  // Explicitly let browser handle manifest and favicon requests normally
+  if (event.request.url.includes('manifest.json') || 
+      event.request.url.includes('favicon.ico') ||
+      event.request.url.includes('%PUBLIC_URL%')) {
+    return; // Let browser handle these normally
+  }
+  
+  // Do nothing for all other requests - let the browser handle them normally
   return;
 });
