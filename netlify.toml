@@ -9,24 +9,30 @@
   NPM_FLAGS = "--legacy-peer-deps"
   VITE_SUPABASE_URL = "https://oxlbametpfubwnrmrbsv.supabase.co"
   VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA"
-  OPENAI_API_KEY = "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"
+  OPENAI_API_KEY = "sk-proj-aPtW3umSSJjY10Frt9JF5zdMnAd8iIl98C5Ry8MCE0aaJWaHNVeYCqw7JEujCMJwwdDJY57xEQT3BlbkFJRLTyXBAPC3OEt7_BLAvhCk9xUqcxH4NZ_sbWe-iNzd1klPBnMG88hOqcxH4NZ_sbWe-iNzd1klPBnMG88hOqoGEaX6-k91r6kV7sxUA"
   # Build optimization variables
   FORCE_COLOR = "1"
   CI = "true"
   NETLIFY = "true"
   VITE_ENTRY = "/src/index.tsx"
+  # Force production context
+  CONTEXT = "production"
 
-# Production deploy context
+# EXPLICIT: Production deploy context for main branch
 [context.production]
   publish = "dist"
   command = "npm ci && npm run build"
+  
+[context.production.environment]
+  NODE_ENV = "production"
+  CONTEXT = "production"
 
-# Deploy preview context  
+# Deploy preview context for pull requests
 [context.deploy-preview]
   publish = "dist"
   command = "npm ci && npm run build"
 
-# Branch deploy context
+# Branch deploy context - should not be used for main
 [context.branch-deploy]
   publish = "dist"
   command = "npm ci && npm run build"
