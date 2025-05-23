@@ -1,4 +1,8 @@
-// Service Worker for Doctor.mx
+// Service Worker for Doctor.mx - TEMPORARILY DISABLED
+// This fixes HTTP2 protocol errors and caching issues
+console.log('[ServiceWorker] Service worker disabled for debugging');
+return;
+
 const CACHE_NAME = 'doctormx-v1';
 const urlsToCache = [
   '/',
