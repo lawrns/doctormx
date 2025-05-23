@@ -11,9 +11,11 @@ import React, { useState, useRef, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
-import AIService, { AIQueryOptions, AICharacterProfile, StreamingAIResponse, StreamingResponseHandler } from '../../../core/services/ai/AIService';
+import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse, EnhancedStreamingResponseHandler } from '../../../core/services/ai/EnhancedAIService';
+import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge/MexicanMedicalKnowledgeService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import AIThinking from './AIThinking';
+import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
 import ProductRecommendation from './ProductRecommendation';
 import ImageAnalysisVisual from '../../ai-image-analysis/components/ImageAnalysisVisual';
@@ -51,14 +53,19 @@ type Message = {
   previousQuestionId?: string;
   isStreaming?: boolean;
   isComplete?: boolean;
-};
-
-type AIDoctorProps = {
-  onClose?: () => void;
-  isEmbedded?: boolean;
+  // Enhanced AI fields
+  emotionalState?: any;
+  personalityApplied?: boolean;
+  thinkingStages?: string[];
+  culturalFactors?: string[];
 };
 
 type Tab = 'chat' | 'analysis' | 'providers' | 'prescriptions' | 'appointments' | 'pharmacies';
+
+interface AIDoctorProps {
+  onClose?: () => void;
+  isEmbedded?: boolean;
+}
 
 function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('chat');
@@ -72,16 +79,29 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
   const [confidenceLevel, setConfidenceLevel] = useState(0);
+  
+  // Enhanced AI thinking states
+  const [isThinking, setIsThinking] = useState(false);
+  const [thinkingStages, setThinkingStages] = useState<string[]>([]);
+  const [currentThinkingStage, setCurrentThinkingStage] = useState(0);
+  const [thinkingComplexity, setThinkingComplexity] = useState<'simple' | 'medium' | 'complex'>('simple');
+  
+  // Session management
+  const [sessionId] = useState(`session_${Date.now()}`);
+  
   const medicalReferences = [
     'Base de datos médica', 'Estudios clínicos', 'Literatura médica', 
     'Atlas de dermatología', 'Investigaciones recientes'
   ];
+  
+  // Initialize with enhanced Mexican greeting
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
-      text: '¡Hola! Soy el Doctor IA de Doctor.mx. ¿En qué puedo ayudarte hoy?',
+      text: enhancedAIService.generatePersonalizedGreeting(),
       sender: 'bot',
       timestamp: new Date(),
+      personalityApplied: true,
       interactiveOptions: {
         type: 'symptom_category',
         options: ['Dolor', 'Fiebre', 'Digestivo', 'Respiratorio', 'Piel', 'Otro'],
@@ -89,6 +109,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       }
     }
   ]);
+  
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
@@ -98,7 +119,11 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [products, setProducts] = useState<any[]>([]);
   const [pharmacyData, setPharmacyData] = useState<Record<string, any>>({});
   const [currentQuestionId, setCurrentQuestionId] = useState<string>('initial');
-  const [questionHistory, setQuestionHistory] = useState<string[]>(['initial']);
+  const [questionHistory, setQuestionHistory] = useState<Array<{
+    questionId: string;
+    question: string;
+    answer: string;
+  }>>([]);
   
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -107,11 +132,40 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
-  
+
+  // Initialize Mexican medical knowledge base on component mount
+  useEffect(() => {
+    const initializeKnowledge = async () => {
+      try {
+        await mexicanMedicalKnowledgeService.initializeMexicanMedicalKnowledge();
+        console.log('🇲🇽 Mexican medical knowledge base initialized');
+      } catch (error) {
+        console.error('Error initializing Mexican medical knowledge:', error);
+      }
+    };
+    
+    initializeKnowledge();
+  }, []);
+
+  // Handle window resize for mobile view
+  useEffect(() => {
+    const handleResize = () => {
+      const newIsMobile = window.innerWidth < 768;
+      setIsMobileView(newIsMobile);
+      if (!newIsMobile) {
+        setIsSidebarOpen(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Get user location
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -122,67 +176,14 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           });
         },
         (error) => {
-          console.log('Error getting location:', error);
-          // Set Mexico City center as default coordinates
-          setLocation({
-            latitude: 19.4326,
-            longitude: -99.1332
-          });
+          console.log('Location access denied:', error);
         }
       );
-    } else {
-      // Set Mexico City center as default coordinates if geolocation is not supported
-      setLocation({
-        latitude: 19.4326,
-        longitude: -99.1332
-      });
     }
   }, []);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      const mobile = window.innerWidth < 768;
-      setIsMobileView(mobile);
-      if (!isSidebarOpen && !mobile) setIsSidebarOpen(true);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isSidebarOpen]);
-  
+
   const handleSendMessage = async () => {
     if (!input.trim() && !isUploading) return;
-    
-    if (input.trim().toLowerCase().includes('medicamento') || 
-        input.trim().toLowerCase().includes('farmacia') ||
-        input.trim().toLowerCase().includes('medicina')) {
-      const lastMessageWithMedications = [...messages].reverse().find(m => 
-        m.suggestedMedications && m.suggestedMedications.length > 0
-      );
-      
-      if (lastMessageWithMedications?.suggestedMedications) {
-        const userMessageId = Date.now().toString();
-        const newUserMessage: Message = { 
-          id: userMessageId,
-          text: input,
-          sender: 'user',
-          timestamp: new Date()
-        };
-        
-        setMessages(prev => [...prev, newUserMessage]);
-        setInput('');
-        
-        const responseMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          text: 'Buscando farmacias con medicamentos recomendados para ti...',
-          sender: 'bot',
-          timestamp: new Date()
-        };
-        
-        setMessages(prev => [...prev, responseMessage]);
-        findPharmacies(lastMessageWithMedications.suggestedMedications);
-        return;
-      }
-    }
     
     const userMessageId = Date.now().toString();
     const newUserMessage: Message = { 
@@ -193,38 +194,50 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     };
     
     setMessages(prev => [...prev, newUserMessage]);
+    const userInput = input;
     setInput('');
     setIsProcessing(true);
+    setIsThinking(true);
+
+    // Create a bot message placeholder with enhanced streaming indicators
+    const botMessageId = (Date.now() + 1).toString();
+    const initialBotMessage: Message = {
+      id: botMessageId,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isStreaming: true,
+      isComplete: false
+    };
     
-    if (questionHistory.length > 0) {
-      setQuestionHistory(prev => [...prev, 'custom_input']);
-      setCurrentQuestionId('custom_input');
-    }
-    
+    setMessages(prev => [...prev, initialBotMessage]);
+
     try {
-      const doctorInstructions = localStorage.getItem(DOCTOR_INSTRUCTIONS_KEY);
-      
-      console.log(`Current question ID: ${currentQuestionId}`);
-      console.log(`Question history: ${questionHistory.join(' -> ')}`);
-      
-      // Create a streaming response handler
-      const botMessageId = (Date.now() + 1).toString();
-      
-      // Initialize empty streaming message
-      const initialStreamingMessage: Message = {
-        id: botMessageId,
-        text: '',
-        sender: 'bot',
-        timestamp: new Date(),
-        isStreaming: true,
-        isComplete: false
-      };
-      
-      // Add initial message to messages state
-      setMessages(prev => [...prev, initialStreamingMessage]);
-      
-      // Create streaming handler
-      const streamingHandler: StreamingResponseHandler = (streamResponse: StreamingAIResponse) => {
+      // Determine conversation complexity for thinking indicators
+      const complexity = userInput.length > 100 ? 'complex' : 
+                        userInput.includes('dolor') || userInput.includes('síntoma') ? 'medium' : 'simple';
+      setThinkingComplexity(complexity);
+
+      // Enhanced streaming response handler with thinking indicators
+      const streamingHandler: EnhancedStreamingResponseHandler = (streamResponse: EnhancedStreamingAIResponse) => {
+        // If we get thinking stages, show them
+        if (streamResponse.thinkingStages && streamResponse.thinkingStages.length > 0) {
+          setThinkingStages(streamResponse.thinkingStages);
+          setCurrentThinkingStage(0);
+          
+          // Progress through thinking stages
+          streamResponse.thinkingStages.forEach((stage, index) => {
+            setTimeout(() => {
+              setCurrentThinkingStage(index);
+            }, index * 1000);
+          });
+          
+          // Stop thinking when stages complete
+          setTimeout(() => {
+            setIsThinking(false);
+          }, streamResponse.thinkingStages.length * 1000);
+        }
+        
         // Update message with streaming content
         setMessages(prev => {
           const updatedMessages = [...prev];
@@ -241,7 +254,12 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
               suggestedMedications: streamResponse.suggestedMedications,
               followUpQuestions: streamResponse.followUpQuestions,
               isStreaming: streamResponse.isStreaming,
-              isComplete: streamResponse.isComplete
+              isComplete: streamResponse.isComplete,
+              // Enhanced fields
+              emotionalState: streamResponse.emotionalState,
+              personalityApplied: streamResponse.personalityApplied,
+              thinkingStages: streamResponse.thinkingStages,
+              culturalFactors: streamResponse.culturalFactors
             };
           }
           
@@ -253,103 +271,65 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           setSeverityLevel(streamResponse.severity);
         }
         
-        // When streaming is complete, set processing to false
+        // If streaming is completed, handle additional features
         if (streamResponse.isComplete) {
           setIsProcessing(false);
+          setIsThinking(false);
           
-          // Add interactive options based on input content
-          setMessages(prev => {
-            const updatedMessages = [...prev];
-            const messageIndex = updatedMessages.findIndex(m => m.id === botMessageId);
-            
-            if (messageIndex !== -1) {
-              const lowerInput = input.toLowerCase();
-              const currentMessage = updatedMessages[messageIndex];
-              
-              // Add interactive options based on user input
-              if (lowerInput.includes('dolor') && !currentMessage.interactiveOptions) {
-                currentMessage.interactiveOptions = {
-                  type: 'symptom_severity',
-                  options: ['Leve', 'Moderada', 'Severa'],
-                  questionId: 'severity_pain_text'
-                };
-                setCurrentQuestionId('severity_pain_text');
-              } else if ((lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) && !currentMessage.interactiveOptions) {
-                currentMessage.interactiveOptions = {
-                  type: 'symptom_duration',
-                  options: ['Menos de 24 horas', '1-3 días', '1-2 semanas', 'Más tiempo'],
-                  questionId: 'duration_fever_text'
-                };
-                setCurrentQuestionId('duration_fever_text');
-              }
-              
-              // Add pharmacy recommendation option if conditions are suggested
-              if (currentMessage.suggestedConditions && currentMessage.suggestedConditions.length > 0) {
-                if (!currentMessage.interactiveOptions) {
-                  currentMessage.interactiveOptions = {
-                    type: 'yes_no',
-                    options: ['Ver medicamentos recomendados', 'No, gracias'],
-                    questionId: 'pharmacy_recommendation'
-                  };
-                  setCurrentQuestionId('pharmacy_recommendation');
-                } else {
-                  if (!currentMessage.followUpQuestions) {
-                    currentMessage.followUpQuestions = [];
-                  }
-                  currentMessage.followUpQuestions.push('Ver medicamentos recomendados');
-                }
-              }
-              // Add doctor referral option if high severity or emergency
-              if ((currentMessage.severity || 0) >= 70 || currentMessage.isEmergency) {
-                if (!currentMessage.interactiveOptions) {
-                  currentMessage.interactiveOptions = {
-                    type: 'yes_no',
-                    options: ['Consultar con médico local', 'No, gracias'],
-                    questionId: 'doctor_referral'
-                  };
-                  setCurrentQuestionId('doctor_referral');
-                } else {
-                  if (!currentMessage.followUpQuestions) {
-                    currentMessage.followUpQuestions = [];
-                  }
-                  currentMessage.followUpQuestions.push('Consultar con médico local');
-                }
-              }
-            }
-            
-            return updatedMessages;
-          });
+          // Auto-find providers if specialty is suggested
+          if (streamResponse.suggestedSpecialty && location) {
+            setTimeout(() => {
+              findProviders(streamResponse.suggestedSpecialty!);
+            }, 1000);
+          }
+          
+          // Show pharmacy recommendations if medications are suggested
+          if (streamResponse.suggestedMedications && streamResponse.suggestedMedications.length > 0) {
+            setTimeout(() => {
+              showGenericPharmacies(streamResponse.suggestedMedications!);
+            }, 2000);
+          }
         }
       };
-      
-      // Configure AI query with streaming enabled
-      const queryOptions: AIQueryOptions = {
-        userMessage: input,
+
+      const queryOptions: EnhancedAIQueryOptions = {
+        userMessage: userInput,
         userHistory: messages.map(m => m.text),
         severity: severityLevel,
         location: location || undefined,
-        // Use premium model only for longer inputs or when mentioning images
-        usePremiumModel: input.length > 100 || input.toLowerCase().includes('imagen') || input.toLowerCase().includes('photo'),
-        customInstructions: doctorInstructions || undefined,
-        stream: true,
-        onStreamingResponse: streamingHandler,
-        characterProfile: AIService.getCharacterProfile() // Use the character profile from AIService
+        sessionId: sessionId,
+        enablePersonality: true,
+        showThinking: true,
+        thinkingComplexity: complexity,
+        culturalContext: {
+          familyDynamics: 'family-oriented', // Default Mexican context
+          religiousConsiderations: false,
+          economicContext: 'medium'
+        }
       };
       
-      // Process query with streaming
-      await AIService.processQuery(queryOptions);
+      // Use enhanced AI service with Mexican personality streaming
+      await enhancedAIService.processEnhancedStreamingQuery(queryOptions, streamingHandler);
       
     } catch (error) {
       console.error('Error processing message:', error);
       
-      setMessages(prev => [...prev, {
-        id: (Date.now() + 1).toString(),
-        text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
-        sender: 'bot',
-        timestamp: new Date()
-      }]);
-      
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                id: botMessageId,
+                text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
+                sender: 'bot',
+                timestamp: new Date(),
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
       setIsProcessing(false);
+      setIsThinking(false);
     }
   };
   
@@ -403,7 +383,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       
       setTimeout(() => setImageAnalysisStage('comparing'), 5500);
       
-      const response = await AIService.analyzeImage(imageUrl);
+      const response = await enhancedAIService.analyzeImage(imageUrl);
       
       setImageAnalysisStage('concluding');
       
@@ -600,7 +580,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   
   const fetchProviders = async (specialty: string, loc: { latitude: number; longitude: number }) => {
     try {
-      const providers = await AIService.findNearbyProviders(specialty, loc);
+      const providers = await enhancedAIService.findNearbyProviders(specialty, loc);
       setSelectedProviders(providers);
       setActiveTab('providers');
     } catch (error) {
@@ -614,7 +594,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
       
-      const appointment = await AIService.scheduleAppointment(
+      const appointment = await enhancedAIService.scheduleAppointment(
         providerId,
         tomorrow.toISOString().split('T')[0],
         '10:00',
@@ -714,7 +694,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
     
     try {
-      const pharmacyList = await AIService.getPharmacyRecommendations(medications, location);
+      const pharmacyList = await enhancedAIService.getPharmacyRecommendations(medications, location);
       setPharmacies(pharmacyList);
       setActiveTab('pharmacies');
     } catch (error) {
@@ -848,7 +828,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       return;
     }
     
-    setQuestionHistory(prev => [...prev, questionId]);
+    setQuestionHistory(prev => [...prev, { questionId, question: questionId, answer: option }]);
     
     setTimeout(() => {
       let nextQuestion: Message = {
@@ -940,7 +920,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
       const newHistory = [...questionHistory];
       newHistory.pop();
       setQuestionHistory(newHistory);
-      setCurrentQuestionId(newHistory[newHistory.length - 1]);
+      setCurrentQuestionId(newHistory[newHistory.length - 1].questionId);
       
       setMessages(prev => prev.slice(0, -2));
     }
@@ -984,6 +964,18 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
                         ))}
+                        
+                        {/* Enhanced AI Thinking Component */}
+                        {isThinking && thinkingStages.length > 0 && (
+                          <EnhancedAIThinking
+                            stages={thinkingStages}
+                            currentStage={currentThinkingStage}
+                            isActive={isThinking}
+                            complexity={thinkingComplexity}
+                            mexicanContext={true}
+                          />
+                        )}
+                        
                         <div ref={messagesEndRef} />
                       </div>
                     </div>
@@ -1087,7 +1079,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                           </div>
                         )}
                       </div>
-{/* API key configuration is handled by Netlify functions now */}
                     </div>
                   </div>
                 );
