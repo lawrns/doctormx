@@ -9,6 +9,7 @@ import {
 import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
 import { useTheme } from '../contexts/ThemeContext';
+import { useChat } from '../contexts/ChatContext';
 
 // Enhanced chat messages for the animation
 const ENHANCED_MESSAGES = [
@@ -69,6 +70,7 @@ function AIHomePage() {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isThinking, setIsThinking] = useState(false);
   const { theme } = useTheme();
+  const { openChat } = useChat();
   
   // Enhanced message rotation with thinking animation
   useEffect(() => {
@@ -154,17 +156,16 @@ function AIHomePage() {
                   transition={{ delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <Link to="/wizard/step-1" className="block w-full sm:w-auto">
-                    <Button 
-                      variant="primary" 
-                      size="lg"
-                      className="w-full sm:w-auto bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                    >
-                      <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Iniciar consulta gratuita
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
+                  <button 
+                    onClick={() => {
+                      openChat();
+                    }}
+                    className="w-full sm:w-auto bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex items-center justify-center"
+                  >
+                    <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                    Iniciar consulta gratuita
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </button>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center">
                       <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
@@ -498,17 +499,16 @@ function AIHomePage() {
             </p>
             
             <div className="space-y-4">
-              <Link to="/wizard/step-1">
-                <Button 
-                  variant="primary" 
-                  size="lg"
-                  className="bg-white text-teal-600 hover:bg-gray-100 px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                >
-                  <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                  Comenzar consulta gratuita
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+              <button 
+                onClick={() => {
+                  openChat();
+                }}
+                className="bg-white text-teal-600 hover:bg-gray-100 px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex items-center justify-center"
+              >
+                <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                Comenzar consulta gratuita
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </button>
               
               <p className="text-teal-100 text-sm">
                 Sin compromisos • Sin tarjeta de crédito • Respuesta inmediata

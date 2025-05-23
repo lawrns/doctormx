@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { ChatProvider } from './core/hooks/useChat';
+import { ChatProvider } from './contexts/ChatContext';
 import './index.css';
 import './mobile.css'; // Import mobile-specific styles
 import './styles/chat-fixes.css'; // Import custom CSS fixes for chat UI
 import App from './App';
+import ChatContainer from './components/ChatContainer';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { AuthProvider } from './contexts/AuthContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <ChatProvider>
               <SimpleErrorBoundary>
                 <App />
+                <ChatContainer />
               </SimpleErrorBoundary>
             </ChatProvider>
           </AuthProvider>
