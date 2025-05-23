@@ -188,11 +188,16 @@ class AIService {
         
         // Call the API once to get the complete response
         const response = await this.makeAPIRequest(endpoint, requestData);
+        console.log('Full API response structure:', response);
+        
+        // Extract the text properly - handle both direct text and nested text property
+        const fullText = response.text || response.message || response.content || 'No response text available';
+        console.log('Extracted text for streaming:', fullText.substring(0, 100) + '...');
         
         // Then simulate streaming by breaking it into chunks
         // For a real implementation, we would use a proper streaming API
-        const fullText = response.text;
         const chunks = this.breakTextIntoChunks(fullText);
+        console.log(`Breaking response into ${chunks.length} chunks for streaming simulation`);
         
         // Process chunks with slight delays to simulate streaming
         for (let i = 0; i < chunks.length; i++) {
@@ -446,54 +451,15 @@ class AIService {
       }
 
       const responseData = await response.json();
-      console.log(`API response received successfully from ${endpoint}`);
+      console.log(`API response received successfully from ${endpoint}:`, responseData);
+      
+      // Make sure we return the actual response data without modification
       return responseData;
     } catch (error) {
       console.error(`Error in makeAPIRequest to ${endpoint}:`, error);
       
-      // Since this is likely a deployment issue, provide a helpful message
-      console.log("This could be a CORS, network, or deployment issue. Check the browser console for more details.");
-      
-      // Try to see if the error response includes fallbackText from the serverless function
-      try {
-        if (error.message.includes('fetch failed') || error.message.includes('Failed to fetch')) {
-          // Create a static example response for testing purposes
-          console.warn('Creating static example response for testing purposes');
-          
-          if (endpoint.includes('standard-model') || endpoint.includes('premium-model')) {
-            return { 
-              text: "Hola, soy el Dr. IA. Estoy aquí para ayudarte con cualquier consulta médica que tengas. ¿En qué puedo asistirte hoy? Por favor, cuéntame sobre tus síntomas o preocupaciones de salud.",
-              model: "gpt-4-example-offline",
-              success: true
-            };
-          } else if (endpoint.includes('image-analysis')) {
-            return {
-              analysis: "Esta parece ser una imagen dermatológica que muestra una erupción leve. Basado en lo que puedo observar, podría tratarse de una dermatitis de contacto o una reacción alérgica leve. Recomendaría consultar con un dermatólogo para un diagnóstico preciso.",
-              findings: "Enrojecimiento localizado con patrón irregular, posible inflamación leve",
-              confidence: 0.85,
-              model: "gpt-4-vision-example-offline",
-              success: true
-            };
-          }
-        }
-      } catch (parseError) {
-        console.error('Error parsing fallback text:', parseError);
-      }
-      
-      // Default fallback responses if nothing else works
-      if (endpoint.includes('standard-model') || endpoint.includes('premium-model')) {
-        return { 
-          text: "Lo siento, estoy experimentando dificultades técnicas para conectarme a los servidores. Por favor, intenta nuevamente en unos momentos. Si el problema persiste, contacta a soporte técnico.",
-          success: false
-        };
-      } else if (endpoint.includes('image-analysis')) {
-        return {
-          analysis: "No fue posible analizar la imagen debido a problemas de conexión con el servicio de análisis de imágenes.",
-          confidence: 0,
-          success: false
-        };
-      }
-      
+      // Only throw the error - don't create fallback responses here
+      // Let the calling function handle the error appropriately
       throw error;
     }
   }

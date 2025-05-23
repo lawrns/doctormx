@@ -305,9 +305,9 @@ function AIHomePage() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.4 }}
-                    className="absolute -bottom-4 -left-4 bg-blue-100 rounded-full p-3 shadow-lg"
+                    className="absolute -bottom-4 -left-4 bg-teal-100 rounded-full p-3 shadow-lg"
                   >
-                    <Clock className="w-6 h-6 text-blue-600" />
+                    <Clock className="w-6 h-6 text-teal-600" />
                   </motion.div>
                 </div>
               </div>
@@ -422,38 +422,46 @@ function AIHomePage() {
               <h2 className="text-3xl font-bold mb-4">
                 Servicios médicos completos
               </h2>
-              <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-                Desde consultas virtuales hasta laboratorios a domicilio
+              <p className="text-xl text-teal-100 max-w-2xl mx-auto">
+                Servicios médicos integrales diseñados para tu bienestar
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hover:bg-white/20 transition-all group">
-                <Activity className="w-12 h-12 text-blue-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-semibold mb-4">Laboratorios a domicilio</h3>
-                <p className="text-blue-100 mb-4">Solicita exámenes clínicos desde tu casa con resultados rápidos y confiables.</p>
-                <div className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full">
-                  Próximamente
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
+              >
+                <Activity className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-2xl font-bold text-white mb-4">Análisis Clínicos</h3>
+                <p className="text-teal-100 mb-4">Solicita exámenes clínicos desde tu casa con resultados rápidos y confiables.</p>
+                <Link to="/lab-testing" className="inline-flex items-center text-white hover:text-teal-200 transition">
+                  <span>Solicitar ahora</span>
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </motion.div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hover:bg-white/20 transition-all group">
-                <ShoppingCart className="w-12 h-12 text-blue-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-semibold mb-4">Farmacia en 1 clic</h3>
-                <p className="text-blue-100 mb-4">Compra y recibe tus medicamentos recetados directamente en casa.</p>
-                <div className="inline-block bg-white/20 text-white text-sm px-3 py-1 rounded-full">
-                  Próximamente
-                </div>
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
+              >
+                <ShoppingCart className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-2xl font-bold text-white mb-4">Farmacia Digital</h3>
+                <p className="text-teal-100 mb-4">Compra y recibe tus medicamentos recetados directamente en casa.</p>
+                <Link to="/farmacia" className="inline-flex items-center text-white hover:text-teal-200 transition">
+                  <span>Explorar farmacia</span>
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </motion.div>
               
-              <div className="bg-white/10 backdrop-blur-sm p-8 rounded-xl hover:bg-white/20 transition-all group">
-                <Video className="w-12 h-12 text-blue-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-semibold mb-4">Videoconsulta premium</h3>
-                <p className="text-blue-100 mb-4">Habla en vivo con médicos especialistas certificados en México.</p>
-                <div className="inline-block bg-green-400 text-green-900 text-sm px-3 py-1 rounded-full font-medium">
-                  Premium
-                </div>
-              </div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
+              >
+                <Video className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="text-2xl font-bold text-white mb-4">Teleconsulta</h3>
+                <p className="text-teal-100 mb-4">Habla en vivo con médicos especialistas certificados en México.</p>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -505,7 +513,7 @@ function AIHomePage() {
             <h2 className="text-4xl font-bold mb-6">
               ¿Listo para tu primera consulta con Dr. Simeon?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-teal-100 mb-8">
               Únete a miles de mexicanos que ya confían en nuestra plataforma médica inteligente.
             </p>
             
@@ -522,10 +530,38 @@ function AIHomePage() {
                 </Button>
               </Link>
               
-              <p className="text-blue-100 text-sm">
+              <p className="text-teal-100 text-sm">
                 Sin compromisos • Sin tarjeta de crédito • Respuesta inmediata
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="bg-gradient-to-br from-teal-600 to-blue-700 text-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                Suscríbete a nuestro boletín
+              </h2>
+              <p className="text-xl text-teal-100 max-w-2xl mx-auto">
+                Recibe actualizaciones sobre nuevas funciones y consejos de salud
+              </p>
+            </div>
+            
+            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Tu correo electrónico"
+                className="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm text-white placeholder-white/60 border border-white/30 focus:border-white/50 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-white text-teal-600 rounded-lg font-medium hover:bg-white/90 transition"
+              >
+                Suscribirse
+              </button>
+            </form>
           </div>
         </section>
 
