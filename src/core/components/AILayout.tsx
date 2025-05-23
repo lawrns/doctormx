@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Outlet, useLocation, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import AINavbar from './AINavbar';
 import AIFooter from './AIFooter';
@@ -10,7 +10,7 @@ import ClientOnly from '../../components/ClientOnly';
 import { WizardProvider } from '../../contexts/WizardContext';
 import { useChat } from '../hooks/useChat';
 // Page components and wizard layout
-import AIHomePage from '../../pages/AIHomePage';
+const AIHomePage = React.lazy(() => import('../../pages/AIHomePage'));
 import WizardLayout from '../../pages/wizard/WizardLayout';
 import Step1Page from '../../pages/wizard/Step1Page';
 import Step2Page from '../../pages/wizard/Step2Page';
@@ -38,7 +38,13 @@ function AILayout() {
           <main className="flex-1 overflow-auto bg-white">
             <div className="min-h-full">
               {/* Show home page as background when in wizard */}
-              {isWizard ? <AIHomePage /> : <Outlet />}
+              {isWizard ? (
+                <Suspense fallback={<div className="flex items-center justify-center h-full">Cargando...</div>}>
+                  <AIHomePage />
+                </Suspense>
+              ) : (
+                <Outlet />
+              )}
             </div>
           </main>
           
