@@ -95,6 +95,14 @@ const getOpenAIInstance = (): OpenAI | null => {
   }
   
   console.log("Creating OpenAI instance with key: ", apiKey.substring(0, 10) + "...");
+  
+  // In production, prevent direct OpenAI API calls to avoid CORS and security issues
+  // The deployment environment should use Netlify functions instead
+  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    console.warn('Production environment detected - direct OpenAI API calls disabled for security. Using Netlify functions.');
+    return null;
+  }
+  
   return new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 };
 
@@ -187,7 +195,34 @@ class AIService {
         // Use direct OpenAI API call
         const openai = getOpenAIInstance();
         if (!openai) {
-          throw new Error('OpenAI instance not available');
+          console.log('OpenAI instance not available (likely production environment). Using Netlify functions.');
+          
+          // Fallback to Netlify functions for production deployment
+          const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
+          const requestData = {
+            message: options.userMessage,
+            history: options.userHistory || [],
+            medicalContext,
+            userProfile: options.userProfile,
+            severity: options.severity,
+            location: options.location,
+            customInstructions: options.customInstructions || this.getDoctorInstructions()
+          };
+          
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(requestData),
+          });
+          
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          
+          const data = await response.json();
+          return data;
         }
         
         const model = needsPremiumModel ? 'gpt-4' : 'gpt-3.5-turbo';
@@ -282,7 +317,10 @@ class AIService {
       // Use direct OpenAI API streaming
       const openai = getOpenAIInstance();
       if (!openai) {
-        throw new Error('OpenAI instance not available');
+        console.log('OpenAI instance not available (likely production environment). Falling back to Netlify functions.');
+        
+        // Fallback to Netlify functions for production deployment
+        return await this.fallbackToNetlifyFunctions(options, medicalContext);
       }
       
       // Use retry mechanism for the streaming operation
@@ -377,9 +415,9 @@ class AIService {
         }
       });
     } catch (error) {
-      console.error('Error processing streaming AI query after all retries:', error);
+      console.error('Error processing AI query after all retries:', error);
       
-      // Notify handler of the error
+      // Final fallback with streaming error handling
       const errorResponse: StreamingAIResponse = {
         text: 'Lo siento, estoy experimentando dificultades técnicas. Por favor, intenta nuevamente en unos momentos.',
         severity: options.severity,
@@ -388,7 +426,80 @@ class AIService {
       };
       options.onStreamingResponse(errorResponse);
       
-      return errorResponse;
+      return {
+        text: errorResponse.text,
+        severity: options.severity,
+      };
+    }
+  }
+  
+  /**
+   * Fallback method to use Netlify functions when direct OpenAI API is not available (production)
+   */
+  private async fallbackToNetlifyFunctions(options: AIQueryOptions, medicalContext: any): Promise<AIResponse> {
+    const needsPremiumModel = this.shouldUsePremiumModel(options);
+    const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
+    
+    const requestData = {
+      message: options.userMessage,
+      history: options.userHistory || [],
+      medicalContext,
+      userProfile: options.userProfile,
+      severity: options.severity,
+      location: options.location,
+      customInstructions: options.customInstructions || this.getDoctorInstructions()
+    };
+    
+    // Simulate streaming with Netlify function response
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestData),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      // Simulate streaming by breaking the response into chunks
+      if (options.onStreamingResponse && data.text) {
+        const words = data.text.split(' ');
+        const chunkSize = Math.max(1, Math.floor(words.length / 10)); // Break into ~10 chunks
+        
+        let currentText = '';
+        
+        for (let i = 0; i < words.length; i += chunkSize) {
+          const chunk = words.slice(i, i + chunkSize).join(' ');
+          currentText += (i > 0 ? ' ' : '') + chunk;
+          
+          const isLast = i + chunkSize >= words.length;
+          
+          const streamResponse: StreamingAIResponse = {
+            ...data,
+            text: currentText,
+            isStreaming: !isLast,
+            isComplete: isLast
+          };
+          
+          options.onStreamingResponse(streamResponse);
+          
+          // Add a small delay to simulate real streaming
+          if (!isLast) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+          }
+        }
+      }
+      
+      return data;
+      
+    } catch (error) {
+      console.error('Netlify function fallback failed:', error);
+      throw error;
     }
   }
   
