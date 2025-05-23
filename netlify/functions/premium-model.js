@@ -46,9 +46,9 @@ console.log('Premium model function loading...');
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrbsv.supabase.co';
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
 
-// Hardcoded OpenAI API key as fallback - ENSURE THIS IS THE CORRECT KEY FORMAT
-const HARDCODED_KEY = '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';
-const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
+// Environment variable for OpenAI API key with proper fallback
+const FALLBACK_KEY = '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';
+const openaiKey = process.env.OPENAI_API_KEY || FALLBACK_KEY;
 
 // Detailed API key debugging
 console.log('API KEY DEBUGGING (premium model):');

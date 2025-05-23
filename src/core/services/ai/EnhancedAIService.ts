@@ -1,5 +1,5 @@
 import { MexicanDoctorPersonalityService, EmotionalState, ConversationContext } from './MexicanDoctorPersonalityService';
-import AIService, { AIQueryOptions, AIResponse, StreamingAIResponse } from './AIService';
+import AIService, { AIQueryOptions, AIResponse, StreamingAIResponse, AIAnswerOption } from './AIService';
 
 export interface EnhancedAIQueryOptions extends AIQueryOptions {
   enablePersonality?: boolean;
@@ -14,6 +14,7 @@ export interface EnhancedStreamingAIResponse extends AIResponse {
   personalityApplied?: boolean;
   thinkingStages?: string[];
   culturalFactors?: string[];
+  answerOptions?: AIAnswerOption[];
   isStreaming: boolean;
   isComplete: boolean;
   suggestedMedications?: string[];
@@ -24,6 +25,7 @@ export interface EnhancedAIResponse extends AIResponse {
   personalityApplied?: boolean;
   thinkingStages?: string[];
   culturalFactors?: string[];
+  answerOptions?: AIAnswerOption[];
 }
 
 export type EnhancedStreamingResponseHandler = (response: EnhancedStreamingAIResponse) => void;
@@ -103,7 +105,8 @@ export class EnhancedAIService {
         emotionalState: isDevelopment ? undefined : emotionalState,
         personalityApplied: isDevelopment ? false : (options.enablePersonality !== false),
         thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
-        culturalFactors: isDevelopment ? undefined : emotionalState?.culturalFactors
+        culturalFactors: isDevelopment ? undefined : emotionalState?.culturalFactors,
+        answerOptions: baseResponse.answerOptions
       };
 
       console.log(`Enhanced AI processing completed in ${Date.now() - startTime}ms`);
@@ -119,7 +122,8 @@ export class EnhancedAIService {
         emotionalState,
         personalityApplied: false,
         thinkingStages: undefined,
-        culturalFactors: undefined
+        culturalFactors: undefined,
+        answerOptions: undefined
       };
     }
   }
@@ -160,7 +164,8 @@ export class EnhancedAIService {
             emotionalState,
             personalityApplied: false,
             thinkingStages,
-            culturalFactors: emotionalState?.culturalFactors
+            culturalFactors: emotionalState?.culturalFactors,
+            answerOptions: undefined // Not available during thinking stages
           });
           
           await new Promise(resolve => setTimeout(resolve, thinking.duration / thinking.stages.length));
@@ -191,6 +196,7 @@ export class EnhancedAIService {
             personalityApplied: isDevelopment ? false : (options.enablePersonality !== false),
             thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
             culturalFactors: isDevelopment ? undefined : emotionalState?.culturalFactors,
+            answerOptions: baseResponse.answerOptions,
             isStreaming: baseResponse.isStreaming,
             isComplete: baseResponse.isComplete,
             suggestedMedications: baseResponse.suggestedMedications
@@ -221,7 +227,8 @@ export class EnhancedAIService {
             emotionalState: undefined,
             personalityApplied: false,
             thinkingStages: undefined,
-            culturalFactors: undefined
+            culturalFactors: undefined,
+            answerOptions: undefined
           });
         }
       };
@@ -237,7 +244,8 @@ export class EnhancedAIService {
           emotionalState: undefined,
           personalityApplied: false,
           thinkingStages: undefined,
-          culturalFactors: undefined
+          culturalFactors: undefined,
+          answerOptions: undefined
         });
       }, 30000); // 30 second timeout
 
@@ -265,7 +273,8 @@ export class EnhancedAIService {
           emotionalState: undefined,
           personalityApplied: false,
           thinkingStages: undefined,
-          culturalFactors: undefined
+          culturalFactors: undefined,
+          answerOptions: undefined
         });
       }
 
@@ -281,7 +290,8 @@ export class EnhancedAIService {
         emotionalState: undefined,
         personalityApplied: false,
         thinkingStages: undefined,
-        culturalFactors: undefined
+        culturalFactors: undefined,
+        answerOptions: undefined
       });
     }
   }

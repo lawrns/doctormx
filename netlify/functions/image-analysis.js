@@ -6,12 +6,16 @@ console.log('typeof OpenAI:', typeof OpenAI); // Should log "function" if import
 // Log startup information for debugging
 console.log('Image analysis function loading...');
 
-// Environment variable for OpenAI API key with hardcoded fallback
-const HARDCODED_KEY = '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';
-const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
+// Environment variable for OpenAI API key - use the same key from .env
+const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
 
-// Log key information for debugging (mask most of it)
-console.log(`Using OpenAI key: ${openaiKey.substring(0, 10)}...${openaiKey.substring(openaiKey.length - 5)}`);
+if (!openaiKey) {
+  console.error('❌ No OpenAI API key found in environment variables');
+  console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('OPENAI')));
+} else {
+  // Log key information for debugging (mask most of it)
+  console.log(`✅ Using OpenAI key: ${openaiKey.substring(0, 10)}...${openaiKey.substring(openaiKey.length - 5)}`);
+}
 
 exports.handler = async function(event) {
   // Add CORS headers for development/testing
@@ -48,6 +52,20 @@ exports.handler = async function(event) {
         statusCode: 400, 
         headers,
         body: JSON.stringify({ error: 'Missing imageUrl' }) 
+      };
+    }
+    
+    // Check if we have a valid API key
+    if (!openaiKey) {
+      console.error('❌ No OpenAI API key available for image analysis');
+      return { 
+        statusCode: 500, 
+        headers,
+        body: JSON.stringify({ 
+          error: 'OpenAI API key not configured',
+          success: false,
+          fallbackText: "No fue posible analizar la imagen. La clave API no está configurada."
+        }) 
       };
     }
     

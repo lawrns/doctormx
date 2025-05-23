@@ -1,3 +1,191 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design Brief Optimizations */
+@layer base {
+  /* Responsive typography scale */
+  html { 
+    font-size: 100%; /* 1rem = 16px */
+  }
+  
+  @media (max-width: 1279px) {
+    html { 
+      font-size: 94%; /* tablets */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    html { 
+      font-size: 88%; /* phones */
+    }
+  }
+  
+  /* Prose typography */
+  .prose p { 
+    line-height: 1.45; 
+    max-width: 58ch; 
+  }
+  
+  /* Touch target accessibility */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@layer components {
+  /* Chat bubble optimizations */
+  .bubble {
+    @apply px-4 py-5 pb-3.5 max-w-prose;
+  }
+  
+  /* Quick reply component styles */
+  .chat-option {
+    @apply flex items-center justify-between w-full h-12 px-3 rounded-lg;
+    @apply transition-all duration-200 min-h-11 touch-manipulation;
+    @apply hover:shadow-subtle focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2;
+  }
+  
+  .chat-option--idle {
+    @apply bg-mint-10 border border-transparent text-emerald-900;
+    @apply hover:bg-mint-20 hover:border-emerald-500/30;
+  }
+  
+  .chat-option--hover {
+    @apply bg-mint-20 border border-emerald-500/30;
+  }
+  
+  .chat-option--selected {
+    @apply bg-emerald-500 border-0 text-white;
+  }
+  
+  .chat-option--disabled {
+    @apply bg-gray-50 border border-gray-200 text-gray-400;
+  }
+  
+  .chat-option--free-text {
+    @apply bg-gray-50 border border-gray-200 text-gray-700;
+    @apply hover:bg-gray-100 hover:border-gray-300;
+  }
+  
+  /* Sidebar navigation optimizations */
+  .sidebar-nav {
+    @apply grid grid-rows-[repeat(auto-fit,minmax(40px,1fr))] gap-1;
+  }
+  
+  .sidebar-nav-item {
+    @apply flex items-center gap-2 px-3 py-2 rounded-lg text-sm h-10;
+    @apply transition-all duration-200 opacity-75 hover:opacity-100;
+  }
+  
+  .sidebar-nav-item--active {
+    @apply bg-brand-jade-50 text-brand-jade-600 font-medium opacity-100;
+  }
+  
+  .sidebar-nav-item--inactive {
+    @apply text-gray-700 hover:bg-gray-100;
+  }
+}
+
+@layer utilities {
+  /* Typography utilities */
+  .text-readable {
+    font-size: 1rem;
+    line-height: 1.45;
+    max-width: 58ch;
+  }
+  
+  .text-readable-tablet {
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+  
+  .text-readable-mobile {
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-teal-gradient {
+    background: linear-gradient(90deg, #0BA3C7 0%, #12866C 100%);
+  }
+  
+  /* Animation utilities */
+  .animate-ring-pulse {
+    animation: ring-pulse 1.4s ease-out infinite;
+  }
+  
+  @keyframes ring-pulse {
+    0% { 
+      box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.7); 
+    }
+    70% { 
+      box-shadow: 0 0 0 10px rgba(52, 199, 89, 0); 
+    }
+    100% { 
+      box-shadow: 0 0 0 0 rgba(52, 199, 89, 0); 
+    }
+  }
+  
+  /* Touch manipulation for mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  /* Safe area insets for iOS */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Subtle shadows */
+  .shadow-subtle {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* Mobile landscape orientation optimizations */
+@media (max-height: 575px) and (orientation: landscape) {
+  .mobile-landscape-hide {
+    @apply hidden;
+  }
+  
+  .mobile-landscape-compress {
+    @apply py-1 px-2;
+  }
+}
+
+/* Print styles for medical records */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .chat-bubble {
+    break-inside: avoid;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+  }
+}

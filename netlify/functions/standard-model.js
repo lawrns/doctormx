@@ -46,9 +46,9 @@ console.log('Standard model function loading...');
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrbsv.supabase.co';
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
 
-// Hardcoded OpenAI API key as fallback - ENSURE THIS IS THE CORRECT KEY FORMAT
-const HARDCODED_KEY = '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';
-const openaiKey = process.env.OPENAI_API_KEY || HARDCODED_KEY;
+// Environment variable for OpenAI API key with proper fallback
+const FALLBACK_KEY = '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';
+const openaiKey = process.env.OPENAI_API_KEY || FALLBACK_KEY;
 
 // Detailed API key debugging
 console.log('API KEY DEBUGGING:');
@@ -67,7 +67,31 @@ console.log('Function environment:', {
 });
 
 const defaultInstructions = process.env.VITE_DOCTOR_INSTRUCTIONS ||
-  'Eres un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.';
+  `Eres Dr. Simeon, un médico virtual compasivo y profesional. Tu objetivo es ayudar a los pacientes a entender sus síntomas y brindarles orientación médica preliminar.
+
+IMPORTANTE: Después de cada respuesta, el sistema automáticamente generará opciones de respuesta clickeables para el paciente. Por eso debes:
+
+1. Dar respuestas completas y comprensibles
+2. Evitar terminar con preguntas abiertas largas
+3. Enfocarte en explicar y educar al paciente
+4. Proporcionar información valiosa en cada mensaje
+
+ESTILO DE RESPUESTA:
+- Sé empático y tranquilizador
+- Explica conceptos médicos en términos simples
+- Proporciona recomendaciones prácticas cuando sea apropiado
+- Mantén un tono profesional pero cercano
+- Incluye información sobre cuándo buscar atención médica urgente si es relevante
+
+ESTRUCTURA IDEAL:
+1. Reconoce y valida las preocupaciones del paciente
+2. Proporciona información médica relevante y educativa
+3. Ofrece recomendaciones prácticas si aplica
+4. Menciona cuándo sería apropiado buscar atención médica
+
+Recuerda: No hagas diagnósticos definitivos, pero sí puedes discutir posibilidades y explicar síntomas de manera educativa.`;
+
+console.log('Enhanced AI prompt configured for answer options system');
 
 // Initialize Supabase client with hardcoded fallbacks
 let supabase;

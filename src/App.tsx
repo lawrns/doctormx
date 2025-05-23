@@ -1,34 +1,41 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AILayout from './core/components/AILayout';
+import DoctorLayout from './core/components/DoctorLayout';
 import SplashScreen from './core/components/SplashScreen';
 
 const AIHomePage = React.lazy(() => import('./pages/AIHomePage'));
-// This is importing the canonical version of AIDoctorPage
 const AIDoctorPage = React.lazy(() => import('./features/ai-doctor/pages/AIDoctorPage'));
-const AIAnalysisResultsPage = React.lazy(() => import('./features/ai-analysis/pages/AIAnalysisResultsPage'));
-const AIImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/pages/AIImageAnalysisPage'));
-const APIKeyConfigPage = React.lazy(() => import('./pages/settings/APIKeyConfigPage'));
-const AICharacterSettingsPage = React.lazy(() => import('./pages/settings/AICharacterSettingsPage'));
-const LabTestingLandingPage = React.lazy(() => import('./pages/LabTestingLandingPage'));
-const LabTestingPage = React.lazy(() => import('./pages/LabTestingPage'));
+const AnalysisPage = React.lazy(() => import('./features/ai-analysis/AnalysisPage'));
+const DoctorsPage = React.lazy(() => import('./features/doctors/DoctorsPage'));
+const AppointmentsPage = React.lazy(() => import('./features/appointments/AppointmentsPage'));
+const PrescriptionsPage = React.lazy(() => import('./features/prescriptions/PrescriptionsPage'));
+const PharmaciesPage = React.lazy(() => import('./features/pharmacies/PharmaciesPage'));
+const ImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/ImageAnalysisPage'));
+const LabTestingPage = React.lazy(() => import('./features/lab-testing/LabTestingPage'));
 
 function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
       <Routes>
-        {/* AI Doctor Platform Routes */}
-        <Route path="/*" element={<AILayout />}>  
+        {/* Main AI Layout Routes - no sidebar */}
+        <Route path="/*" element={<AILayout />}>
           <Route index element={<AIHomePage />} />
-          <Route path="doctor" element={<AIDoctorPage />} />
-          <Route path="ai-doctor" element={<AIDoctorPage />} />
-          <Route path="analysis/:sessionId" element={<AIAnalysisResultsPage />} />
-          <Route path="analisis-imagenes" element={<AIImageAnalysisPage />} />
-          <Route path="image-analysis" element={<AIImageAnalysisPage />} />
-          <Route path="settings/api" element={<APIKeyConfigPage />} />
-          <Route path="settings/ai-character" element={<AICharacterSettingsPage />} />
-          <Route path="lab-testing" element={<LabTestingLandingPage />} />
-          <Route path="lab-testing/app" element={<LabTestingPage />} />
+          <Route path="image-analysis" element={<ImageAnalysisPage />} />
+          <Route path="lab-testing" element={<LabTestingPage />} />
+        </Route>
+        
+        {/* Doctor/Medical Professional Routes - with sidebar */}
+        <Route path="/doctor" element={<DoctorLayout />}>
+          <Route index element={<AIDoctorPage />} />
+        </Route>
+        
+        <Route path="/medical/*" element={<DoctorLayout />}>
+          <Route path="analysis" element={<AnalysisPage />} />
+          <Route path="doctors" element={<DoctorsPage />} />
+          <Route path="appointments" element={<AppointmentsPage />} />
+          <Route path="prescriptions" element={<PrescriptionsPage />} />
+          <Route path="pharmacies" element={<PharmaciesPage />} />
         </Route>
       </Routes>
     </Suspense>

@@ -121,40 +121,20 @@ function AIHomePage() {
                 >
                   <div className="flex items-center">
                     <div className="flex -space-x-2">
-                      <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1594824541406-27717d7e3b59?w=40&h=40&fit=crop&crop=face" 
-                          alt="Usuario satisfecho"
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-sm">
+                        MC
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=40&h=40&fit=crop&crop=face" 
-                          alt="Usuario satisfecho"
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-semibold text-sm">
+                        AR
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=40&h=40&fit=crop&crop=face" 
-                          alt="Usuario satisfecho"
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-sm">
+                        LS
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=40&h=40&fit=crop&crop=face" 
-                          alt="Usuario satisfecho"
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-semibold text-sm">
+                        JM
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white overflow-hidden">
-                        <img 
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" 
-                          alt="Usuario satisfecho"
-                          className="w-full h-full object-cover"
-                        />
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-semibold text-sm">
+                        SP
                       </div>
                     </div>
                     <span className="ml-3 text-gray-600">+25,000 consultas realizadas</span>

@@ -10,7 +10,7 @@
   NPM_FLAGS = "--legacy-peer-deps"
   VITE_SUPABASE_URL = "https://oxlbametpfubwnrmrbsv.supabase.co"
   VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA"
-  OPENAI_API_KEY = "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"
+  OPENAI_API_KEY = "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"
   # Build optimization variables
   FORCE_COLOR = "1"
   CI = "true"
@@ -21,7 +21,14 @@
   node_bundler = "esbuild"
   external_node_modules = ["openai"]
 
-# Specific API redirects for clearer routing
+# Development configuration
+[dev]
+  command = "vite"
+  port = 8888
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Specific API redirects for cleaner routing
 [[redirects]]
   from = "/api/v1/standard-model"
   to = "/.netlify/functions/standard-model"

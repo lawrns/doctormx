@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
+    "dev": "netlify dev",
+    "start": "netlify dev",
     "build": "vite build",
     "build:complex": "node unified-build.js",
-    "preview": "vite preview",
-    "netlify": "netlify dev"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.38.4",

@@ -14,6 +14,7 @@ import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X, MessageSquare, A
 import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse, EnhancedStreamingResponseHandler } from '../../../core/services/ai/EnhancedAIService';
 import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge/MexicanMedicalKnowledgeService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
+import { AIAnswerOption } from '../../../core/services/ai/AIService';
 import AIThinking from './AIThinking';
 import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
@@ -43,6 +44,7 @@ type Message = {
   suggestedConditions?: string[];
   suggestedMedications?: string[];
   followUpQuestions?: string[];
+  answerOptions?: AIAnswerOption[];
   nearbyProviders?: any[];
   interactiveOptions?: {
     type: 'symptom_category' | 'symptom_duration' | 'symptom_severity' | 'yes_no' | 'follow_up_preference';
@@ -73,8 +75,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   const [isRecording, setIsRecording] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [severityLevel, setSeverityLevel] = useState(10);
-  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(!isMobileView);
   const [imageAnalysisStage, setImageAnalysisStage] = useState<'initial' | 'scanning' | 'identifying' | 'comparing' | 'concluding' | null>(null);
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
@@ -150,20 +150,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     
   //   initializeKnowledge();
   // }, []);
-
-  // Handle window resize for mobile view
-  useEffect(() => {
-    const handleResize = () => {
-      const newIsMobile = window.innerWidth < 768;
-      setIsMobileView(newIsMobile);
-      if (!newIsMobile) {
-        setIsSidebarOpen(true);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   // Get user location
   useEffect(() => {
@@ -253,6 +239,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
               suggestedConditions: streamResponse.suggestedConditions,
               suggestedMedications: streamResponse.suggestedMedications,
               followUpQuestions: streamResponse.followUpQuestions,
+              answerOptions: streamResponse.answerOptions,
               isStreaming: streamResponse.isStreaming,
               isComplete: streamResponse.isComplete,
               // Enhanced fields
@@ -926,6 +913,26 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     }
   };
 
+  const handleAnswerOptionClick = (answerOption: AIAnswerOption) => {
+    // Handle special case for free text input
+    if (answerOption.value === 'OPEN_TEXT_INPUT') {
+      // Just focus the input field and let user type freely
+      const inputElement = document.querySelector('.chat-input') as HTMLInputElement;
+      if (inputElement) {
+        inputElement.focus();
+      }
+      return;
+    }
+    
+    // For other options, set the value as input and send automatically
+    setInput(answerOption.value);
+    
+    // Send the message after a short delay to allow input to update
+    setTimeout(() => {
+      handleSendMessage();
+    }, 100);
+  };
+
   const MessageComponent = memo(({ message }: { message: Message }) => {
     return (
       <EnhancedChatBubble
@@ -937,6 +944,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
           setTimeout(() => handleSendMessage(), 100);
         }}
         onGoBack={handleGoBack}
+        onAnswerOptionClick={handleAnswerOptionClick}
         showGoBack={questionHistory.length > 1 && message.sender === 'bot'}
       />
     );
@@ -957,37 +965,55 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
             switch (activeTab) {
               case 'chat':
                 return (
-                  <div className="flex flex-col h-full">
-                    {/* Dr. Simeon's Face Header */}
-                    <div className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-gray-200 px-4 py-3">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-200 shadow-lg">
-                          <img 
-                            src="/images/simeon.png" 
-                            alt="Dr. Simeon" 
-                            className="w-full h-full object-cover"
-                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                              // Fallback to a placeholder if image fails to load
-                              const target = e.currentTarget;
-                              target.style.display = 'none';
-                              if (target.parentElement) {
-                                target.parentElement.innerHTML = '<div class="w-full h-full bg-teal-100 flex items-center justify-center"><svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>';
-                              }
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900">Dr. Simeon</h3>
-                          <div className="flex items-center text-sm text-green-600">
-                            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                            En línea • IA Médica Mexicana
-                          </div>
+                  <div className="flex flex-col h-full relative">
+                    {/* Three Main Action Buttons */}
+                    {messages.length <= 1 && (
+                      <div className="p-4 border-b border-gray-100">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                          <Link 
+                            to="/ai-doctor"
+                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-brand-jade-50 to-brand-jade-100 rounded-lg border border-brand-jade-200 hover:from-brand-jade-100 hover:to-brand-jade-200 transition-all duration-200"
+                          >
+                            <div className="w-12 h-12 bg-brand-jade-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                              <MessageSquare className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-gray-900">AI Doctor</h3>
+                              <p className="text-sm text-gray-600">Chat médico inteligente</p>
+                            </div>
+                          </Link>
+                          
+                          <Link 
+                            to="/image-analysis"
+                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200 hover:from-blue-100 hover:to-blue-200 transition-all duration-200"
+                          >
+                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                              <Image className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-gray-900">Análisis de Imágenes</h3>
+                              <p className="text-sm text-gray-600">Análisis visual con IA</p>
+                            </div>
+                          </Link>
+                          
+                          <Link 
+                            to="/lab-testing"
+                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border border-purple-200 hover:from-purple-100 hover:to-purple-200 transition-all duration-200"
+                          >
+                            <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                              <Activity className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-gray-900">Lab Testing</h3>
+                              <p className="text-sm text-gray-600">Pruebas de laboratorio</p>
+                            </div>
+                          </Link>
                         </div>
                       </div>
-                    </div>
+                    )}
                     
-                    {/* Chat messages */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-container" style={{ overscrollBehavior: 'none', contain: 'size layout' }}>
+                    {/* Chat messages - with bottom padding to account for fixed input */}
+                    <div className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-container pb-32" style={{ overscrollBehavior: 'none', contain: 'size layout' }}>
                       <div className="chat-messages-wrapper" style={{ transform: 'translateZ(0)', willChange: 'transform', minHeight: '100%', contain: 'content', isolation: 'isolate' }}>
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
@@ -1011,12 +1037,12 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                     {/* Image Analysis Visualization */}
                     {imageAnalysisStage && currentAnalysisImage && (
                       <motion.div 
-                        className="px-4 pb-4"
+                        className="px-4 pb-4 fixed bottom-32 left-0 right-0 z-10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                       >
-                        <div className="bg-white rounded-lg shadow-md p-4 border border-brand-jade-100">
+                        <div className="bg-white rounded-lg shadow-md p-4 border border-brand-jade-100 mx-4">
                           <h3 className="text-lg font-medium text-gray-800 mb-3">Análisis de Imagen</h3>
                           <ImageAnalysisVisual 
                             imageSrc={currentAnalysisImage} 
@@ -1035,9 +1061,9 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       </motion.div>
                     )}
                     
-                    {/* Input area */}
-                    <div className="p-4 border-t border-gray-200 input-container" style={{ position: 'relative', zIndex: 2, transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '80px' }}>
-                      <div className="flex space-x-2">
+                    {/* Sticky Input area at bottom of viewport */}
+                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '80px' }}>
+                      <div className="flex space-x-2 max-w-screen-xl mx-auto">
                         <button 
                           onClick={handleMicClick}
                           className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
@@ -1095,10 +1121,15 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                       </div>
                       
                       {/* Stable containers for status indicators */}
-                      <div className="status-indicators-container" style={{ height: isRecording || isProcessing ? 'auto' : '0', overflow: 'hidden', transition: 'height 0.3s ease' }}>
+                      <div className="status-indicators-container max-w-screen-xl mx-auto" style={{ height: isRecording || isProcessing ? 'auto' : '0', overflow: 'hidden', transition: 'height 0.3s ease' }}>
                         {isRecording && (
                           <div className="mt-2 text-center text-sm text-red-600" style={{ transform: 'translateZ(0)' }}>
                             <span className="inline-block">●</span> Escuchando... Habla ahora
+                          </div>
+                        )}
+                        {isProcessing && (
+                          <div className="mt-2 text-center text-sm text-brand-jade-600" style={{ transform: 'translateZ(0)' }}>
+                            <span className="inline-block">⟳</span> Procesando tu consulta...
                           </div>
                         )}
                       </div>
@@ -1404,7 +1435,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   if (isEmbedded) {
     return (
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <div className="bg-brand-jade-600 p-4 text-white">
+        <div className="bg-teal-gradient p-4 text-white">
           <h3 className="font-semibold text-lg">Doctor IA</h3>
         </div>
         {renderTabContent()}
@@ -1412,209 +1443,40 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     );
   }
 
+  // Main layout that works within DoctorLayout (not full-screen)
   return (
-    <div className="fixed inset-0 bg-white z-50 flex flex-col mt-16"> {/* Added mt-16 to account for fixed navbar */}
-      {/* Alert banner */}
-      <div className="bg-yellow-50 border-b border-yellow-100 px-4 py-2">
-        <div className="flex items-center text-yellow-800">
-          <p className="text-sm font-medium">
-            Recuerda: Esta herramienta no sustituye la atención médica profesional.
-          </p>
-        </div>
+    <div className="h-full min-h-screen flex flex-col bg-white">      
+      {/* Tab navigation for desktop */}
+      <div className="border-b border-gray-200 bg-white px-6">
+        <nav className="flex space-x-8">
+          {[
+            { id: 'chat', icon: MessageSquare, label: 'Chat Médico' },
+            { id: 'analysis', icon: Activity, label: 'Análisis' },
+            { id: 'providers', icon: Users, label: 'Doctores' },
+            { id: 'appointments', icon: Calendar, label: 'Citas' },
+            { id: 'prescriptions', icon: Pill, label: 'Recetas' },
+            { id: 'pharmacies', icon: ShoppingBag, label: 'Farmacias' },
+          ].map(({ id, icon: Icon, label }) => (
+            <button
+              key={id}
+              onClick={() => setActiveTab(id as Tab)}
+              className={`flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
+                activeTab === id 
+                  ? 'border-brand-jade-500 text-brand-jade-600' 
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              <Icon size={16} />
+              <span>{label}</span>
+            </button>
+          ))}
+        </nav>
       </div>
       
-      {/* Main content */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Sidebar toggle for mobile */}
-        {isMobileView && (
-          <button 
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="fixed top-20 left-2 z-50 bg-brand-jade-600 text-white p-2 rounded-full shadow-lg"
-            aria-label={isSidebarOpen ? "Cerrar menú" : "Abrir menú"}
-          >
-            {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        )}
-        
-        {/* Sidebar with responsive classes */}
-        <aside 
-          className={`${isMobileView ? 'fixed inset-y-0 left-0 z-40' : 'w-64'} 
-            ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-            bg-gray-50 border-r border-gray-200 flex flex-col transition-transform duration-300 ease-in-out`}>
-          <div className="p-4 border-b border-gray-200 bg-gradient-to-b from-brand-jade-50 to-white">
-            <h2 className="font-bold text-lg text-gray-800">Doctor IA</h2>
-            <p className="text-sm text-gray-600">Asistente médico inteligente</p>
-            
-            {/* Severity meter */}
-            <div className="mt-3">
-              <div className="flex justify-between text-xs text-gray-600 mb-1">
-                <span>Nivel de atención</span>
-                <span className="font-medium">{getSeverityText()}</span>
-              </div>
-              <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                <div 
-                  className={`h-full ${getSeverityColor()}`} 
-                  style={{ width: `${severityLevel}%` }}
-                ></div>
-              </div>
-            </div>
-          </div>
-          
-          <nav className="flex-1 overflow-y-auto p-4">
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'chat' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('chat')}
-                >
-                  <div className="flex items-center">
-                    <MessageSquare className="w-5 h-5 mr-2" />
-                    Consulta Médica
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'analysis' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('analysis')}
-                >
-                  <div className="flex items-center">
-                    <Activity className="w-5 h-5 mr-2" />
-                    Análisis de Síntomas
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'providers' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('providers')}
-                >
-                  <div className="flex items-center">
-                    <Users className="w-5 h-5 mr-2" />
-                    Proveedores Cercanos
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'appointments' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('appointments')}
-                >
-                  <div className="flex items-center">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Mis Citas
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'prescriptions' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('prescriptions')}
-                >
-                  <div className="flex items-center">
-                    <Pill className="w-5 h-5 mr-2" />
-                    Mis Recetas
-                  </div>
-                </button>
-              </li>
-              <li>
-                <button 
-                  className={`w-full text-left px-4 py-3 rounded-lg ${
-                    activeTab === 'pharmacies' 
-                      ? 'bg-brand-jade-50 text-brand-jade-600 font-medium' 
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                  onClick={() => setActiveTab('pharmacies')}
-                >
-                  <div className="flex items-center">
-                    <ShoppingBag className="w-5 h-5 mr-2" />
-                    Farmacias Cercanas
-                  </div>
-                </button>
-              </li>
-            </ul>
-          </nav>
-          
-          <div className="p-4 border-t border-gray-200">
-            <div className="bg-brand-jade-50 rounded-lg p-3">
-              <h3 className="text-sm font-medium text-brand-jade-800 mb-2">Plan Premium</h3>
-              <p className="text-xs text-brand-jade-600 mb-3">Accede a diagnósticos avanzados y consultas ilimitadas</p>
-              <button className="w-full bg-brand-jade-500 hover:bg-brand-jade-600 text-white text-sm py-2 px-3 rounded-lg transition-colors">
-                Actualizar ahora
-              </button>
-            </div>
-          </div>
-        </aside>
-        
-        {/* Main content area */}
-        <main className={`flex-1 flex flex-col bg-white ${isMobileView && isSidebarOpen ? 'opacity-50' : 'opacity-100'} transition-opacity duration-300`}>
-          <div className="px-6 py-4 border-b border-gray-200 bg-white z-10">
-            <div className="flex justify-between items-center">
-              <h2 className="text-xl font-semibold text-gray-800">
-                {activeTab === 'chat' && 'Consulta Médica'}
-                {activeTab === 'analysis' && 'Análisis de Síntomas'}
-                {activeTab === 'providers' && 'Proveedores Cercanos'}
-                {activeTab === 'appointments' && 'Mis Citas'}
-                {activeTab === 'prescriptions' && 'Mis Recetas'}
-                {activeTab === 'pharmacies' && 'Farmacias Cercanas'}
-              </h2>
-            </div>
-          </div>
-          
-          <div className="flex-1 overflow-hidden">
-            {renderTabContent()}
-          </div>
-        </main>
-        {/* Overlay to close sidebar on mobile */}
-        {isMobileView && isSidebarOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-30"
-            onClick={() => setIsSidebarOpen(false)}
-            aria-label="Close menu"
-          ></div>
-        )}
+      {/* Main content area */}
+      <div className="flex-1 overflow-hidden">
+        {renderTabContent()}
       </div>
-      
-      {/* Trust badges footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 p-4">
-        <div className="flex justify-center space-x-8 mb-3">
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-600">Certificado por</div>
-            <div className="font-bold text-gray-800">COFEPRIS</div>
-          </div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-600">Encriptación</div>
-            <div className="font-bold text-gray-800">End-to-End</div>
-          </div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-600">Protegido con</div>
-            <div className="font-bold text-gray-800">SSL 256-bit</div>
-          </div>
-        </div>
-        <p className="text-center text-xs text-gray-500">
-          © 2023 Doctor.mx - Todos los derechos reservados
-        </p>
-      </footer>
     </div>
   );
 }

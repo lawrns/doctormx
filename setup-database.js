@@ -1,7 +1,7 @@
 // DoctorMX Database Setup Script
 // Run this with: node setup-database.js
 
-import { createClient } from '@supabase/supabase-js';
+const { createClient } = require('@supabase/supabase-js');
 
 // Supabase credentials
 const supabaseUrl = 'https://oxlbametpfubwnrmrbsv.supabase.co';
@@ -14,32 +14,24 @@ async function setupDatabase() {
   console.log('🚀 Setting up DoctorMX database...');
 
   try {
-    // Create medical_knowledge table
-    console.log('📋 Creating medical_knowledge table...');
-    const { error: medicalKnowledgeError } = await supabase.rpc('exec_sql', {
-      sql: `
-        CREATE TABLE IF NOT EXISTS public.medical_knowledge (
-          id SERIAL PRIMARY KEY,
-          terms TEXT NOT NULL,
-          description TEXT,
-          symptoms TEXT[],
-          treatments TEXT[],
-          severity_level INTEGER DEFAULT 1 CHECK (severity_level >= 1 AND severity_level <= 10),
-          specialty VARCHAR(100),
-          created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-          updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-        );
-      `
-    });
+    // Test basic connection first
+    console.log('🔍 Testing basic connection...');
+    const { data: connectionTest, error: connectionError } = await supabase
+      .from('_non_existent_table_test_')
+      .select('*')
+      .limit(1);
 
-    if (medicalKnowledgeError) {
-      console.error('❌ Error creating medical_knowledge table:', medicalKnowledgeError);
+    // We expect this to fail, but it should fail with a "relation does not exist" error
+    // If we get a different error, there might be an authentication issue
+    if (connectionError && !connectionError.message.includes('does not exist')) {
+      console.error('❌ Connection test failed. Possible authentication issue:', connectionError);
+      throw connectionError;
     } else {
-      console.log('✅ medical_knowledge table created successfully');
+      console.log('✅ Basic connection successful');
     }
 
-    // Insert sample medical knowledge data
-    console.log('📚 Inserting sample medical knowledge data...');
+    // Insert sample medical knowledge data directly (table might already exist)
+    console.log('📚 Attempting to insert sample medical knowledge data...');
     const { error: insertError } = await supabase
       .from('medical_knowledge')
       .upsert([
@@ -82,20 +74,32 @@ async function setupDatabase() {
       });
 
     if (insertError) {
-      console.error('❌ Error inserting medical knowledge data:', insertError);
+      if (insertError.message?.includes('does not exist')) {
+        console.log('ℹ️  medical_knowledge table does not exist yet.');
+        console.log('📋 Please run the SQL script manually in your Supabase dashboard:');
+        console.log('👉 Go to: https://supabase.com/dashboard/project/oxlbametpfubwnrmrbsv/sql');
+        console.log('👉 Copy and paste the contents of database-setup.sql');
+        console.log('👉 Run the SQL script to create all tables');
+        console.log('👉 Then run this setup script again');
+        return;
+      } else {
+        console.error('❌ Error inserting medical knowledge data:', insertError);
+        throw insertError;
+      }
     } else {
-      console.log('✅ Sample medical knowledge data inserted successfully');
+      console.log('✅ Sample medical knowledge data inserted/updated successfully');
     }
 
-    // Test the connection
-    console.log('🔍 Testing database connection...');
+    // Test the final connection
+    console.log('🔍 Testing final database connection...');
     const { data, error: testError } = await supabase
       .from('medical_knowledge')
       .select('count(*)')
       .single();
 
     if (testError) {
-      console.error('❌ Error testing database connection:', testError);
+      console.error('❌ Error in final test:', testError);
+      throw testError;
     } else {
       console.log(`✅ Database connection successful! Found ${data.count} medical knowledge entries`);
     }
@@ -108,49 +112,39 @@ async function setupDatabase() {
 
   } catch (error) {
     console.error('💥 Fatal error during database setup:', error);
+    console.log('\n🆘 Fallback Instructions:');
+    console.log('Since automatic setup failed, please follow these manual steps:');
+    console.log('1. Go to: https://supabase.com/dashboard/project/oxlbametpfubwnrmrbsv/sql');
+    console.log('2. Copy the entire contents of database-setup.sql');
+    console.log('3. Paste and run it in the SQL Editor');
+    console.log('4. Verify tables are created in the Table Editor');
     process.exit(1);
   }
 }
 
 // Alternative: Direct table creation (if RPC doesn't work)
 async function createTablesDirectly() {
-  console.log('🔧 Creating tables using direct SQL commands...');
+  console.log('🔧 Attempting direct table operations...');
   
-  // This approach uses individual operations instead of RPC
-  const tables = [
-    {
-      name: 'medical_knowledge',
-      data: [
-        {
-          terms: 'dolor, dolor de cabeza, cefalea, migraña',
-          description: 'Dolor de cabeza común causado por tensión, estrés o fatiga',
-          symptoms: ['dolor punzante', 'presión en la cabeza', 'sensibilidad a la luz'],
-          treatments: ['descanso', 'hidratación', 'analgésicos de venta libre'],
-          severity_level: 3,
-          specialty: 'Medicina General'
-        }
-      ]
+  try {
+    // Test if we can at least query existing tables
+    const { data, error } = await supabase
+      .from('medical_knowledge')
+      .select('count(*)')
+      .limit(1);
+      
+    if (error) {
+      console.log(`ℹ️  Table medical_knowledge might not exist yet. This is expected for first-time setup.`);
+      console.log('📋 Please run the SQL script in your Supabase dashboard:');
+      console.log('👉 Go to https://supabase.com/dashboard/project/oxlbametpfubwnrmrbsv/sql');
+      console.log('👉 Copy and paste the contents of database-setup.sql');
+      console.log('👉 Run the SQL script to create all tables');
+    } else {
+      console.log(`✅ Table medical_knowledge exists with ${data[0]?.count || 0} entries`);
     }
-  ];
-
-  for (const table of tables) {
-    try {
-      const { error } = await supabase
-        .from(table.name)
-        .upsert(table.data, { onConflict: 'terms', ignoreDuplicates: true });
-        
-      if (error) {
-        console.log(`ℹ️  Table ${table.name} might not exist yet. This is expected for first-time setup.`);
-        console.log('📋 Please run the SQL script in your Supabase dashboard:');
-        console.log('👉 Go to https://supabase.com/dashboard/project/oxlbametpfubwnrmrbsv/sql');
-        console.log('👉 Copy and paste the contents of database-setup.sql');
-        console.log('👉 Run the SQL script to create all tables');
-      } else {
-        console.log(`✅ Table ${table.name} configured successfully`);
-      }
-    } catch (err) {
-      console.log(`ℹ️  Could not access table ${table.name}. Please run the SQL setup script manually.`);
-    }
+  } catch (err) {
+    console.log(`ℹ️  Could not access database. Please run the SQL setup script manually.`);
+    console.log('Error details:', err.message);
   }
 }
 

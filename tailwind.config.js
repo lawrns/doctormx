@@ -41,6 +41,20 @@ module.exports = {
           800: "#FF6F00",
           900: "#FF5722"
         },
+        // New optimization colors
+        teal: { 
+          50: '#E6F7F6', 
+          500: '#12866C', 
+          600: '#0BA3C7' 
+        },
+        mint: { 
+          10: '#E6FAEC', 
+          20: '#D6F5E1' 
+        },
+        emerald: { 
+          500: '#34C759',
+          900: '#08683F' 
+        },
         "brand-charcoal": "#263238", // base text
         "brand-night": "#0D1A24", // dark theme background
       },
@@ -70,6 +84,7 @@ module.exports = {
         'slide-right': 'slideRight 0.5s ease-in-out',
         'bounce-light': 'bounce 1s infinite ease-in-out alternate',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'ring-pulse': 'ring-pulse 1.4s ease-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -92,21 +107,35 @@ module.exports = {
           '0%': { transform: 'translateX(-20px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        'ring-pulse': {
+          '0%': { boxShadow: '0 0 0 0 rgba(52, 199, 89, 0.7)' },
+          '70%': { boxShadow: '0 0 0 10px rgba(52, 199, 89, 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(52, 199, 89, 0)' },
+        },
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(to bottom right, var(--tw-gradient-from), var(--tw-gradient-to))',
         'cta-gradient': 'linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))',
+        'teal-gradient': 'linear-gradient(90deg, #0BA3C7 0%, #12866C 100%)',
       },
       boxShadow: {
         'brand': '0 4px 14px 0 rgba(38, 166, 154, 0.2)',
         'brand-hover': '0 6px 20px 0 rgba(38, 166, 154, 0.3)',
         'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'subtle': '0 2px 6px rgba(0, 0, 0, 0.06)',
+      },
+      maxWidth: {
+        prose: '58ch',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
       },
     },
     screens: {
       'xs': '475px',
-      'sm': '640px',
+      'sm': '576px',  // Updated to match optimization brief
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
@@ -114,7 +143,22 @@ module.exports = {
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    function ({ addUtilities, addBase }) {
+      // Typography scale implementation
+      addBase({
+        'html': { fontSize: '100%' }, // 1rem = 16px default
+        '@media (max-width: 1279px)': {
+          'html': { fontSize: '94%' },  // tablets
+        },
+        '@media (max-width: 767px)': {
+          'html': { fontSize: '88%' },  // phones
+        },
+        '.prose p': { 
+          lineHeight: '1.45', 
+          maxWidth: '58ch' 
+        },
+      })
+      
       const newUtilities = {
         '.text-brand-gradient': {
           background: 'linear-gradient(to right, #26A69A, #0284C7)',
@@ -129,6 +173,22 @@ module.exports = {
         },
         '.bg-cta-gradient': {
           background: 'linear-gradient(to right, #26A69A, #0284C7)',
+        },
+        '.bg-teal-gradient': {
+          background: 'linear-gradient(90deg, #0BA3C7 0%, #12866C 100%)',
+        },
+        '.text-readable': {
+          fontSize: '1rem',
+          lineHeight: '1.45',
+          maxWidth: '58ch',
+        },
+        '.text-readable-tablet': {
+          fontSize: '0.94rem',
+          lineHeight: '1.5',
+        },
+        '.text-readable-mobile': {
+          fontSize: '0.88rem',
+          lineHeight: '1.45',
         },
       }
       addUtilities(newUtilities)

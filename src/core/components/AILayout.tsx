@@ -24,82 +24,94 @@ function AILayout() {
   const navigate = useNavigate();
 
   const { isExpanded, setIsExpanded } = useChat();
-  return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <AINavbar />
-      {/* Wizard context for onboarding steps wraps main content, footer, chat, and wizard modal */}
-      <WizardProvider>
-        <main className="flex-grow">
-          {/* Show home page as background when in wizard */}
-          {isWizard ? <AIHomePage /> : <Outlet />}
-        </main>
-        <AIFooter />
 
-        {/* Chat Assistant Button */}
-        <button
-          onClick={() => setShowChatAssistant(!showChatAssistant)}
-          className="fixed bottom-6 right-6 bg-brand-jade-600 text-white p-4 rounded-full shadow-lg hover:bg-brand-jade-700 transition-colors z-50 flex items-center justify-center"
-          aria-label="Abrir asistente de chat"
-        >
-          <SocialIcons.MessageCircle size={24} />
-        </button>
+  return (
+    <div className="flex h-screen bg-gray-50 overflow-hidden">
+      {/* Main content area - full width without sidebar */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Top Navigation */}
+        <AINavbar />
         
-        {/* Chat Assistant Modal - open when toggled or via context expansion */}
-        <ClientOnly>
-          {(showChatAssistant || isExpanded) && (
-            <ChatAssistant
-              onClose={() => {
-                setShowChatAssistant(false);
-                setIsExpanded(false);
-              }}
-            />
-          )}
-        </ClientOnly>
-        {/* Onboarding Wizard Modal */}
-        <Routes>
-        <Route
-          path="wizard"
-          element={
-            <ClientOnly>
-              <AnimatePresence initial={false} mode="wait">
-                <motion.div
-                  key="overlay"
-                  className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    key="modal"
-                    className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-auto overflow-auto relative"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.9, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {/* Close button */}
-                    <button
-                      onClick={() => navigate('/')}
-                      className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
-                      aria-label="Cerrar onboarding"
+        {/* Wizard context for onboarding steps wraps main content, footer, chat, and wizard modal */}
+        <WizardProvider>
+          {/* Main content with improved density */}
+          <main className="flex-1 overflow-auto bg-white">
+            <div className="min-h-full">
+              {/* Show home page as background when in wizard */}
+              {isWizard ? <AIHomePage /> : <Outlet />}
+            </div>
+          </main>
+          
+          {/* Footer - more compact */}
+          <AIFooter />
+
+          {/* Chat Assistant Button - repositioned for full-width layout */}
+          <button
+            onClick={() => setShowChatAssistant(!showChatAssistant)}
+            className="fixed bottom-6 right-6 bg-brand-jade-600 text-white p-3 rounded-full shadow-lg hover:bg-brand-jade-700 transition-colors z-50 flex items-center justify-center"
+            aria-label="Abrir asistente de chat"
+          >
+            <SocialIcons.MessageCircle size={20} />
+          </button>
+          
+          {/* Chat Assistant Modal - open when toggled or via context expansion */}
+          <ClientOnly>
+            {(showChatAssistant || isExpanded) && (
+              <ChatAssistant
+                onClose={() => {
+                  setShowChatAssistant(false);
+                  setIsExpanded(false);
+                }}
+              />
+            )}
+          </ClientOnly>
+          
+          {/* Onboarding Wizard Modal */}
+          <Routes>
+            <Route
+              path="wizard"
+              element={
+                <ClientOnly>
+                  <AnimatePresence initial={false} mode="wait">
+                    <motion.div
+                      key="overlay"
+                      className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <XIcon size={24} />
-                    </button>
-                    <WizardLayout />
-                  </motion.div>
-                </motion.div>
-              </AnimatePresence>
-            </ClientOnly>
-          }
-        >
-          <Route index element={<Navigate to="step-1" replace />} />
-          <Route path="step-1" element={<Step1Page />} />
-          <Route path="step-2" element={<Step2Page />} />
-          <Route path="step-3" element={<Step3Page />} />
-        </Route>
-      </Routes>
-      </WizardProvider>
+                      <motion.div
+                        key="modal"
+                        className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-auto overflow-auto relative"
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Close button */}
+                        <button
+                          onClick={() => navigate('/')}
+                          className="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+                          aria-label="Cerrar onboarding"
+                        >
+                          <XIcon size={24} />
+                        </button>
+                        <WizardLayout />
+                      </motion.div>
+                    </motion.div>
+                  </AnimatePresence>
+                </ClientOnly>
+              }
+            >
+              <Route index element={<Navigate to="step-1" replace />} />
+              <Route path="step-1" element={<Step1Page />} />
+              <Route path="step-2" element={<Step2Page />} />
+              <Route path="step-3" element={<Step3Page />} />
+            </Route>
+          </Routes>
+        </WizardProvider>
+      </div>
     </div>
   );
 }

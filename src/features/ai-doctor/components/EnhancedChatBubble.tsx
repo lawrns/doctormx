@@ -1,5 +1,12 @@
 import React from 'react';
-import { Stethoscope, AlertCircle, Info, Check } from 'lucide-react';
+import { Stethoscope, AlertCircle, Info, Check, ChevronRight } from 'lucide-react';
+
+interface AIAnswerOption {
+  id: string;
+  text: string;
+  value: string;
+  category?: string;
+}
 
 interface EnhancedChatBubbleProps {
   message: {
@@ -19,6 +26,7 @@ interface EnhancedChatBubbleProps {
     suggestedConditions?: string[];
     suggestedMedications?: string[];
     followUpQuestions?: string[];
+    answerOptions?: AIAnswerOption[];
     isStreaming?: boolean;
     isComplete?: boolean;
   };
@@ -29,6 +37,7 @@ interface EnhancedChatBubbleProps {
     questionId: string;
   };
   onFollowUpClick?: (question: string) => void;
+  onAnswerOptionClick?: (answerOption: AIAnswerOption) => void;
   onGoBack?: () => void;
   showGoBack?: boolean;
   onFindProviders?: (specialty: string) => void;
@@ -39,6 +48,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
   onOptionSelect,
   interactiveOptions,
   onFollowUpClick,
+  onAnswerOptionClick,
   onGoBack,
   showGoBack,
   onFindProviders
@@ -52,12 +62,12 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
       className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'} mb-4`}
     >
       <div
-        className={`rounded-2xl px-4 py-3 max-w-[95%] sm:max-w-[90%] md:max-w-[60%] ${
+        className={`rounded-2xl px-4 py-5 pb-3.5 max-w-[95%] sm:max-w-[90%] md:max-w-prose ${
           message.sender === 'user' 
             ? 'bg-brand-jade-600 text-white rounded-br-none' 
             : message.isEmergency
               ? 'bg-red-50 text-red-800 border border-red-200 rounded-bl-none'
-              : 'bg-white border border-gray-100 text-gray-800 rounded-bl-none'
+              : 'bg-white border border-gray-100 text-gray-800 rounded-bl-none shadow-subtle'
         }`}
         style={{ transform: 'translateZ(0)', contain: 'content' }}
       >
@@ -76,7 +86,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               <span className="text-brand-jade-600 text-xs font-medium">U</span>
             </div>
           )}
-          <span className={`text-xs ${message.sender === 'user' ? 'text-brand-jade-100' : 'text-gray-500'}`}>
+          <span className={`text-xs font-medium opacity-65 ${message.sender === 'user' ? 'text-brand-jade-100' : 'text-gray-500'}`}>
             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </span>
         </div>
@@ -87,7 +97,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               <AlertCircle size={16} className="text-red-600 mr-1" />
               <span className="font-bold">Emergencia Médica</span>
             </div>
-            <p>{message.text}</p>
+            <p className="prose text-readable md:text-readable-tablet sm:text-readable-mobile">{message.text}</p>
           </div>
         ) : (
           <>
@@ -102,7 +112,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                   </div>
                 ) : (
                   <div>
-                    <p className="leading-relaxed whitespace-pre-wrap" style={{ transform: 'translateZ(0)', minHeight: '1.5em', contain: 'content', width: '100%' }}>{message.text}</p>
+                    <p className="prose text-readable md:text-readable-tablet sm:text-readable-mobile leading-relaxed whitespace-pre-wrap" style={{ transform: 'translateZ(0)', minHeight: '1.5em', contain: 'content', width: '100%' }}>{message.text}</p>
                     <div className="mt-2 flex items-center h-1.5" style={{ transform: 'translateZ(0)', contain: 'content' }}>
                       <span className="inline-block w-1.5 h-1.5 bg-brand-jade-600 rounded-full mr-0.5" />
                       <span className="inline-block w-1.5 h-1.5 bg-brand-jade-600 rounded-full mr-0.5" />
@@ -112,7 +122,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                 )}
               </>
             ) : (
-              <p className="leading-relaxed whitespace-pre-wrap" style={{ transform: 'translateZ(0)', minHeight: '1.5em', contain: 'content', width: '100%' }}>{message.text}</p>
+              <p className="prose text-readable md:text-readable-tablet sm:text-readable-mobile leading-relaxed whitespace-pre-wrap" style={{ transform: 'translateZ(0)', minHeight: '1.5em', contain: 'content', width: '100%' }}>{message.text}</p>
             )}
             
             {message.containsImage && message.imageUrl && (
@@ -148,7 +158,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               </div>
             )}
             
-            {/* Interactive Options Buttons */}
+            {/* Interactive Options Buttons - Legacy support */}
             {interactiveOptions && (
               <div className="mt-3">
                 <div className="flex flex-wrap gap-2">
@@ -158,15 +168,15 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                       onClick={() => onOptionSelect && onOptionSelect(option, interactiveOptions.questionId)}
                       className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm ${
                         interactiveOptions.type === 'symptom_category' 
-                          ? 'bg-brand-jade-50 text-brand-jade-600 hover:bg-brand-jade-100 border border-brand-jade-100'
+                          ? 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
                           : interactiveOptions.type === 'symptom_duration'
-                            ? 'bg-brand-jade-50 text-brand-jade-600 hover:bg-brand-jade-100 border border-brand-jade-100'
+                            ? 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
                             : interactiveOptions.type === 'symptom_severity'
-                              ? 'bg-brand-jade-600 text-white hover:bg-brand-jade-700'
+                              ? 'bg-emerald-500 text-white hover:bg-emerald-600'
                               : interactiveOptions.type === 'yes_no' && option.includes('Ver medicamentos')
-                                ? 'bg-brand-jade-600 text-white hover:bg-brand-jade-700'
-                                : 'bg-brand-jade-50 text-brand-jade-600 hover:bg-brand-jade-100 border border-brand-jade-100'
-                      }`}
+                                ? 'bg-emerald-500 text-white hover:bg-emerald-600'
+                                : 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
+                      } transition-colors`}
                     >
                       {option}
                     </button>
@@ -202,10 +212,52 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               </div>
             )}
             
+            {/* Optimized Answer Options - Following Design Brief */}
+            {message.answerOptions && message.answerOptions.length > 0 && (
+              <div className="mt-4" style={{ width: 'calc(100% - 32px)', margin: '16px 16px 0 16px' }}>
+                <p className="text-sm font-medium text-gray-700 mb-3">Selecciona una opción:</p>
+                <div className="space-y-2">
+                  {message.answerOptions.map((option, index) => {
+                    // Determine if this should be pre-selected (first timing option)
+                    const isPreSelected = index === 0 && option.category === 'timing' && option.text.includes('Comenzó hoy');
+                    
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => onAnswerOptionClick && onAnswerOptionClick(option)}
+                        className={`
+                          flex items-center justify-between w-full h-12 px-3 rounded-lg
+                          transition-all duration-200 min-h-11 touch-manipulation
+                          ${option.id === 'free_text' 
+                            ? 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300'
+                            : option.category === 'intensity' || option.category === 'pain_type'
+                              ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                              : option.category === 'timing'
+                                ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                : option.category === 'medication'
+                                  ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                  : option.category === 'chest_pain'
+                                    ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                    : 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                          }
+                          ${isPreSelected ? 'animate-ring-pulse' : ''}
+                          hover:shadow-subtle focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                        `}
+                        data-state="idle"
+                      >
+                        <span className="text-sm font-medium truncate">{option.text}</span>
+                        <ChevronRight className="shrink-0 w-4 h-4 text-emerald-500" />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+            
             {message.suggestedConditions && message.suggestedConditions.length > 0 && (
-              <div className="mt-3 p-2 bg-brand-jade-50 rounded-md">
-                <p className="text-sm font-medium text-brand-jade-700 mb-1">Posibles condiciones:</p>
-                <div className="flex flex-wrap gap-1">
+              <div className="mt-3 p-3 bg-brand-jade-50 rounded-md">
+                <p className="text-sm font-medium text-brand-jade-700 mb-2">Posibles condiciones:</p>
+                <div className="flex flex-wrap gap-2">
                   {message.suggestedConditions.map((condition, idx) => (
                     <span 
                       key={idx}
@@ -218,12 +270,12 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                 </div>
                 
                 {message.suggestedSpecialty && (
-                  <div className="mt-2">
+                  <div className="mt-3">
                     <button
                       onClick={() => onFindProviders && onFindProviders(message.suggestedSpecialty!)}
-                      className="text-sm bg-brand-jade-100 text-brand-jade-700 px-3 py-1 rounded-full hover:bg-brand-jade-200 flex items-center border border-brand-jade-200"
+                      className="text-sm bg-teal-gradient text-white px-4 py-2 rounded-lg hover:opacity-90 flex items-center border-0 shadow-subtle transition-all duration-200"
                     >
-                      <svg className="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
