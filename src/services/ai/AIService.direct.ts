@@ -146,9 +146,9 @@ export interface AIQueryOptions {
 class AIService {
   private supabase;
   private knowledgeBaseService = knowledgeBaseService;
-  private standardModelEndpoint = '/api/v1/standard-model';
-  private premiumModelEndpoint = '/api/v1/premium-model';
-  private imageAnalysisEndpoint = '/api/v1/image-analysis';
+  private standardModelEndpoint = '/.netlify/functions/standard-model';
+  private premiumModelEndpoint = '/.netlify/functions/premium-model';
+  private imageAnalysisEndpoint = '/.netlify/functions/image-analysis';
 
   constructor() {
     // Use the centralized Supabase client instead of creating a new one
@@ -440,6 +440,8 @@ class AIService {
     const needsPremiumModel = this.shouldUsePremiumModel(options);
     const endpoint = needsPremiumModel ? this.premiumModelEndpoint : this.standardModelEndpoint;
     
+    console.log(`Attempting Netlify function call to: ${endpoint}`);
+    
     const requestData = {
       message: options.userMessage,
       history: options.userHistory || [],
@@ -450,8 +452,17 @@ class AIService {
       customInstructions: options.customInstructions || this.getDoctorInstructions()
     };
     
+    console.log('Request data:', { 
+      message: requestData.message?.substring(0, 100) + '...', 
+      historyLength: requestData.history.length,
+      hasProfile: !!requestData.userProfile,
+      severity: requestData.severity
+    });
+    
     // Simulate streaming with Netlify function response
     try {
+      console.log('Making fetch request to Netlify function...');
+      
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -460,14 +471,25 @@ class AIService {
         body: JSON.stringify(requestData),
       });
       
+      console.log('Received response status:', response.status);
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()));
+      
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error('Netlify function error response:', errorText);
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
       }
       
       const data = await response.json();
+      console.log('Netlify function response received:', {
+        hasText: !!data.text,
+        textLength: data.text?.length || 0,
+        severity: data.severity
+      });
       
       // Simulate streaming by breaking the response into chunks
       if (options.onStreamingResponse && data.text) {
+        console.log('Starting simulated streaming...');
         const words = data.text.split(' ');
         const chunkSize = Math.max(1, Math.floor(words.length / 10)); // Break into ~10 chunks
         
@@ -493,12 +515,30 @@ class AIService {
             await new Promise(resolve => setTimeout(resolve, 100));
           }
         }
+        console.log('Simulated streaming completed');
       }
       
       return data;
       
     } catch (error) {
       console.error('Netlify function fallback failed:', error);
+      console.error('Error details:', {
+        name: error.name,
+        message: error.message,
+        stack: error.stack
+      });
+      
+      // If the Netlify function fails, provide a helpful error message through streaming
+      if (options.onStreamingResponse) {
+        const errorResponse: StreamingAIResponse = {
+          text: `Lo siento, estoy experimentando dificultades técnicas en este momento. Error: ${error.message}. Por favor, intenta nuevamente en unos momentos.`,
+          severity: options.severity || 10,
+          isStreaming: false,
+          isComplete: true
+        };
+        options.onStreamingResponse(errorResponse);
+      }
+      
       throw error;
     }
   }
