@@ -50,9 +50,9 @@ class AIService {
   private supabase;
   // This endpoint is currently unused but may be needed in the future
   // private apiEndpoint = import.meta.env.VITE_REACT_APP_AI_API_ENDPOINT || '';
-  private standardModelEndpoint = '/api/v1/standard-model';
-  private premiumModelEndpoint = '/api/v1/premium-model';
-  private imageAnalysisEndpoint = '/api/v1/image-analysis';
+  private standardModelEndpoint = '/.netlify/functions/standard-model';
+  private premiumModelEndpoint = '/.netlify/functions/premium-model';
+  private imageAnalysisEndpoint = '/.netlify/functions/image-analysis';
   
   private defaultCharacterProfile: AICharacterProfile = {
     name: 'Dr. IA',
