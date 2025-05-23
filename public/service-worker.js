@@ -58,17 +58,34 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Skip requests that might cause HTTP2 protocol errors
+  if (event.request.url.includes('chrome-extension://') ||
+      event.request.url.includes('moz-extension://') ||
+      event.request.url.includes('localhost:5173') ||
+      event.request.url.includes('localhost:5174')) {
+    return;
+  }
+
   // For API requests, use network first, then cache
   if (event.request.url.includes('/api/')) {
     event.respondWith(
-      fetch(event.request)
+      Promise.race([
+        fetch(event.request, {
+          signal: AbortSignal.timeout(10000) // 10 second timeout
+        }),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Request timeout')), 10000)
+        )
+      ])
         .then(response => {
           // Clone the response to store in cache and return
-          let responseToCache = response.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
+          if (response.ok) {
+            let responseToCache = response.clone();
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              });
+          }
           return response;
         })
         .catch(() => {
@@ -82,14 +99,23 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        return response || fetch(event.request)
+        return response || Promise.race([
+          fetch(event.request, {
+            signal: AbortSignal.timeout(10000)
+          }),
+          new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Request timeout')), 10000)
+          )
+        ])
           .then(fetchResponse => {
             // Clone and store non-API responses in cache
-            let responseToCache = fetchResponse.clone();
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
+            if (fetchResponse.ok) {
+              let responseToCache = fetchResponse.clone();
+              caches.open(CACHE_NAME)
+                .then(cache => {
+                  cache.put(event.request, responseToCache);
+                });
+            }
             return fetchResponse;
           });
       })
@@ -98,7 +124,11 @@ self.addEventListener('fetch', event => {
         
         // For HTML navigations, return the offline page
         if (event.request.mode === 'navigate') {
-          return caches.match('/offline.html');
+          return caches.match('/offline.html').then(response => {
+            return response || new Response('<html><body><h1>Offline</h1><p>Please check your connection.</p></body></html>', {
+              headers: { 'Content-Type': 'text/html' }
+            });
+          });
         }
         
         return new Response('Network error happened', {
