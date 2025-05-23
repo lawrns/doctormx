@@ -2,7 +2,6 @@
   command = "npm ci && npm run build"
   publish = "dist"
   functions = "netlify/functions"
-  ignore_warnings = true
 
 [build.environment]
   NODE_VERSION = "20.12.2"
@@ -16,6 +15,21 @@
   CI = "true"
   NETLIFY = "true"
   VITE_ENTRY = "/src/index.tsx"
+
+# Production deploy context
+[context.production]
+  publish = "dist"
+  command = "npm ci && npm run build"
+
+# Deploy preview context  
+[context.deploy-preview]
+  publish = "dist"
+  command = "npm ci && npm run build"
+
+# Branch deploy context
+[context.branch-deploy]
+  publish = "dist"
+  command = "npm ci && npm run build"
 
 [functions]
   node_bundler = "esbuild"
