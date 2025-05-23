@@ -5,21 +5,17 @@ import path from 'path';
 // Unified configuration combining best elements from all config files
 export default defineConfig({
   plugins: [
-    react({ include: [/\.jsx$/, /\.js$/, /\.tsx$/, /\.ts$/] })
+    react()
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      // Explicitly alias problematic modules that might cause resolution issues
-      '@xstate/react': path.resolve(__dirname, 'node_modules/@xstate/react/dist/esm/index.js'),
-      'xstate': path.resolve(__dirname, 'node_modules/xstate/dist/esm/index.js')
+      '@': path.resolve(__dirname, 'src')
     },
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },
   esbuild: {
-    loader: 'jsx',
-    include: /\.jsx?$|\.tsx?$/,
-    exclude: [],
+    target: 'esnext',
+    jsx: 'automatic'
   },
   build: {
     outDir: 'dist',
@@ -45,15 +41,8 @@ export default defineConfig({
       'react-router-dom',
       '@tanstack/react-query',
       '@supabase/supabase-js',
-      'xstate',
-      '@xstate/react'
-    ],
-    esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-        '.ts': 'tsx'
-      }
-    },
+      'recharts'
+    ]
   },
   define: {
     'process.env': {}

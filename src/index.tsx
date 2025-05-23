@@ -9,7 +9,6 @@ import './mobile.css'; // Import mobile-specific styles
 import { AuthProvider } from './contexts/AuthContext';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
-import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import './env-check';
@@ -24,9 +23,10 @@ const queryClient = new QueryClient({
   }
 });
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find the root element');
+
+const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
@@ -35,13 +35,11 @@ root.render(
         <SupabaseProvider>
           <AuthProvider>
             <BrowserRouter>
-              <ThemeProvider>
-                <ToastProvider>
-                  <QuestionnaireProvider>
-                    <App />
-                  </QuestionnaireProvider>
-                </ToastProvider>
-              </ThemeProvider>
+              <ToastProvider>
+                <QuestionnaireProvider>
+                  <App />
+                </QuestionnaireProvider>
+              </ToastProvider>
             </BrowserRouter>
           </AuthProvider>
         </SupabaseProvider>
