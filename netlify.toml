@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && node unified-build.js"
+  command = "npm install && npm run build:simple"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
