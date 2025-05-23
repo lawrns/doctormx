@@ -163,64 +163,115 @@ export class EnhancedAIService {
         }
       }
 
-      // Create wrapper for base streaming handler
+      // Create wrapper for base streaming handler with timeout protection
       const baseStreamHandler = (baseResponse: StreamingAIResponse) => {
-        let enhancedText = baseResponse.text;
-        
-        // Apply personality enhancement to streaming text
-        if (options.enablePersonality !== false && emotionalState && baseResponse.text) {
-          enhancedText = this.personalityService.generatePersonalizedResponse(
-            baseResponse.text,
-            emotionalState,
-            options.culturalContext || {}
-          );
-        }
-
-        const enhancedStreamResponse: EnhancedStreamingAIResponse = {
-          ...baseResponse,
-          text: enhancedText,
-          emotionalState,
-          personalityApplied: options.enablePersonality !== false,
-          thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
-          culturalFactors: emotionalState?.culturalFactors,
-          isStreaming: baseResponse.isStreaming,
-          isComplete: baseResponse.isComplete,
-          suggestedMedications: baseResponse.suggestedMedications
-        };
-
-        streamHandler(enhancedStreamResponse);
-
-        // Store conversation history when complete
-        if (baseResponse.isComplete) {
-          const sessionId = options.sessionId || 'default';
-          const history = this.conversationHistory.get(sessionId) || [];
-          history.push(options.userMessage, enhancedText);
+        try {
+          let enhancedText = baseResponse.text;
           
-          if (history.length > 20) {
-            history.splice(0, history.length - 20);
+          // Apply personality enhancement to streaming text
+          if (options.enablePersonality !== false && emotionalState && baseResponse.text) {
+            enhancedText = this.personalityService.generatePersonalizedResponse(
+              baseResponse.text,
+              emotionalState,
+              options.culturalContext || {}
+            );
           }
-          this.conversationHistory.set(sessionId, history);
+
+          const enhancedStreamResponse: EnhancedStreamingAIResponse = {
+            ...baseResponse,
+            text: enhancedText,
+            emotionalState,
+            personalityApplied: options.enablePersonality !== false,
+            thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
+            culturalFactors: emotionalState?.culturalFactors,
+            isStreaming: baseResponse.isStreaming,
+            isComplete: baseResponse.isComplete,
+            suggestedMedications: baseResponse.suggestedMedications
+          };
+
+          streamHandler(enhancedStreamResponse);
+
+          // Store conversation history when complete
+          if (baseResponse.isComplete) {
+            const sessionId = options.sessionId || 'default';
+            const history = this.conversationHistory.get(sessionId) || [];
+            history.push(options.userMessage, enhancedText);
+            
+            if (history.length > 20) {
+              history.splice(0, history.length - 20);
+            }
+            this.conversationHistory.set(sessionId, history);
+          }
+        } catch (handlerError) {
+          console.error('Error in enhanced stream handler:', handlerError);
+          
+          // Send error response if handler fails
+          streamHandler({
+            text: 'Lo siento, hubo un error al procesar la respuesta. Por favor, intenta nuevamente.',
+            severity: 10,
+            isStreaming: false,
+            isComplete: true,
+            emotionalState,
+            personalityApplied: false,
+            thinkingStages: undefined,
+            culturalFactors: undefined
+          });
         }
       };
 
-      // Use base AI service with enhanced options
+      // Set up timeout protection
+      const timeoutId = setTimeout(() => {
+        console.error('AI service timeout - sending fallback response');
+        streamHandler({
+          text: 'Lo siento, la respuesta está tardando más de lo esperado. Por favor, intenta nuevamente.',
+          severity: 10,
+          isStreaming: false,
+          isComplete: true,
+          emotionalState,
+          personalityApplied: false,
+          thinkingStages: undefined,
+          culturalFactors: undefined
+        });
+      }, 30000); // 30 second timeout
+
+      // Call base AI service with enhanced options
       const enhancedOptions = {
         ...options,
-        customInstructions: options.customInstructions || this.getDoctorInstructions(),
-        onStreamingResponse: baseStreamHandler
+        stream: true,
+        onStreamingResponse: baseStreamHandler,
+        customInstructions: options.customInstructions || this.getDoctorInstructions()
       };
 
-      await this.baseAIService.processQuery(enhancedOptions);
+      try {
+        await this.baseAIService.processQuery(enhancedOptions);
+        clearTimeout(timeoutId);
+      } catch (serviceError) {
+        clearTimeout(timeoutId);
+        console.error('Error in base AI service:', serviceError);
+        
+        // Send fallback response
+        streamHandler({
+          text: 'Lo siento, no pude procesar tu consulta en este momento. Por favor, verifica tu conexión e intenta nuevamente.',
+          severity: 10,
+          isStreaming: false,
+          isComplete: true,
+          emotionalState,
+          personalityApplied: false,
+          thinkingStages: undefined,
+          culturalFactors: undefined
+        });
+      }
 
     } catch (error) {
       console.error('Error in enhanced streaming query:', error);
       
+      // Final fallback response
       streamHandler({
-        text: 'Lo siento, estoy experimentando dificultades técnicas. Por favor, intenta nuevamente en unos momentos.',
+        text: 'Lo siento, hubo un error inesperado. Por favor, recarga la página e intenta nuevamente.',
         severity: 10,
         isStreaming: false,
         isComplete: true,
-        emotionalState,
+        emotionalState: undefined,
         personalityApplied: false,
         thinkingStages: undefined,
         culturalFactors: undefined

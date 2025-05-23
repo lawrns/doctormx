@@ -147,70 +147,95 @@ class AIService {
       if (options.stream && options.onStreamingResponse) {
         console.log('Starting streaming response');
         
-        // Initial streaming response
-        let fullResponse = '';
-        let responseObject: StreamingAIResponse = {
+        try {
+          // Call the API once to get the complete response
+          const response = await this.makeAPIRequest(endpoint, requestData);
+          console.log('Full API response structure:', response);
+          
+          // Extract the text properly - handle both direct text and nested text property
+          const fullText = response.text || response.message || response.content || 'No se pudo obtener una respuesta. Por favor, intenta nuevamente.';
+          console.log('Extracted text for streaming:', fullText.substring(0, 100) + '...');
+          
+          // Then simulate streaming by breaking it into chunks
+          // For a real implementation, we would use a proper streaming API
+          const chunks = this.breakTextIntoChunks(fullText);
+          console.log(`Breaking response into ${chunks.length} chunks for streaming simulation`);
+          
+          // Initial streaming response
+          let fullResponse = '';
+          let responseObject: StreamingAIResponse = {
+            text: '',
+            isStreaming: true,
+            isComplete: false
+          };
+          
+          const processPart = (text: string, isLast: boolean) => {
+            fullResponse += text;
+            
+            responseObject = {
+              ...responseObject,
+              text: fullResponse,
+              isStreaming: !isLast,
+              isComplete: isLast
+            };
+            
+            // If this is the last part, add additional metadata
+            if (isLast) {
+              responseObject.severity = response.severity || options.severity || Math.floor(Math.random() * 100);
+              responseObject.isEmergency = (responseObject.severity || 0) > 80;
+              
+              if (options.userMessage.toLowerCase().includes('dolor')) {
+                responseObject.suggestedSpecialty = 'Medicina General';
+                responseObject.suggestedConditions = ['Cefalea', 'Migraña', 'Tensión muscular'];
+                responseObject.followUpQuestions = [
+                  '¿El dolor se intensifica con alguna actividad específica?',
+                  '¿Has tomado algún medicamento para aliviar el dolor?',
+                  '¿Tienes otros síntomas además del dolor?'
+                ];
+              }
+            }
+            
+            try {
+              if (options.onStreamingResponse) {
+                options.onStreamingResponse(responseObject);
+              }
+            } catch (handlerError) {
+              console.error('Error in streaming response handler:', handlerError);
+            }
+          };
+          
+          // Simulate streaming with chunks
+          for (let i = 0; i < chunks.length; i++) {
+            const isLast = i === chunks.length - 1;
+            setTimeout(() => {
+              processPart(chunks[i], isLast);
+            }, i * 200); // 200ms delay between chunks
+          }
+          
+        } catch (apiError) {
+          console.error('Error in streaming API request:', apiError);
+          
+          // Send error response through streaming handler
+          const errorResponse: StreamingAIResponse = {
+            text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, verifica tu conexión e intenta nuevamente.',
+            isStreaming: false,
+            isComplete: true,
+            severity: 10,
+            isEmergency: false
+          };
+          
+          try {
+            options.onStreamingResponse(errorResponse);
+          } catch (handlerError) {
+            console.error('Error in error response handler:', handlerError);
+          }
+        }
+        
+        return {
           text: '',
           isStreaming: true,
           isComplete: false
         };
-        
-        // Simulate streaming for demo purposes
-        // In a real implementation, this would connect to a streaming API endpoint
-        const processPart = (text: string, isLast: boolean) => {
-          fullResponse += text;
-          
-          responseObject = {
-            ...responseObject,
-            text: fullResponse,
-            isStreaming: !isLast,
-            isComplete: isLast
-          };
-          
-          // If this is the last part, add additional metadata
-          if (isLast) {
-            responseObject.severity = options.severity || Math.floor(Math.random() * 100);
-            responseObject.isEmergency = responseObject.severity > 80;
-            
-            if (options.userMessage.toLowerCase().includes('dolor')) {
-              responseObject.suggestedSpecialty = 'Medicina General';
-              responseObject.suggestedConditions = ['Cefalea', 'Migraña', 'Tensión muscular'];
-              responseObject.followUpQuestions = [
-                '¿El dolor se intensifica con alguna actividad específica?',
-                '¿Has tomado algún medicamento para aliviar el dolor?',
-                '¿Tienes otros síntomas además del dolor?'
-              ];
-            }
-          }
-          
-          options.onStreamingResponse(responseObject);
-        };
-        
-        // Call the API once to get the complete response
-        const response = await this.makeAPIRequest(endpoint, requestData);
-        console.log('Full API response structure:', response);
-        
-        // Extract the text properly - handle both direct text and nested text property
-        const fullText = response.text || response.message || response.content || 'No response text available';
-        console.log('Extracted text for streaming:', fullText.substring(0, 100) + '...');
-        
-        // Then simulate streaming by breaking it into chunks
-        // For a real implementation, we would use a proper streaming API
-        const chunks = this.breakTextIntoChunks(fullText);
-        console.log(`Breaking response into ${chunks.length} chunks for streaming simulation`);
-        
-        // Process chunks with slight delays to simulate streaming
-        for (let i = 0; i < chunks.length; i++) {
-          const isLast = i === chunks.length - 1;
-          processPart(chunks[i], isLast);
-          
-          if (!isLast) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-          }
-        }
-        
-        // Return the complete response at the end
-        return this.enhanceResponse(response, options);
       } else {
         // Normal, non-streaming response
         const response = await this.makeAPIRequest(endpoint, requestData);
