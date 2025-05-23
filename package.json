@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "node unified-build.js",
-    "build:simple": "vite build",
+    "build": "vite build",
+    "build:complex": "node unified-build.js",
     "preview": "vite preview",
     "netlify": "netlify dev"
   },

@@ -1,5 +1,5 @@
 [build]
-  command = "npm ci && node unified-build.js"
+  command = "npm ci && npm run build"
   publish = "dist"
   functions = "netlify/functions"
   ignore_warnings = true
@@ -17,10 +17,10 @@
   FORCE_COLOR = "1"
   CI = "true"
   NETLIFY = "true"
-  # Debug variables
-  DEBUG = "vite:*"
-  VITE_FORCE_OPTIMIZE = "true"
-  VITE_DEBUG = "true"
+  # Disable problematic debug variables that can cause build failures
+  # DEBUG = "vite:*"
+  # VITE_FORCE_OPTIMIZE = "true" 
+  # VITE_DEBUG = "true"
   VITE_ENTRY = "/src/index.tsx"
 
 [functions]
@@ -52,6 +52,7 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+# CRITICAL: SPA redirect rule - MUST be last
 [[redirects]]
   from = "/*"
   to = "/index.html"

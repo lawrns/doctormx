@@ -4,7 +4,7 @@
 /api/v1/image-analysis /.netlify/functions/image-analysis 200
 /api/v1/* /.netlify/functions/:splat 200
 
-# SPA fallback
+# SPA fallback - CRITICAL for React Router
 /* /index.html 200
 
 # SEO-friendly redirects
