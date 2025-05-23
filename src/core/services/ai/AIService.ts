@@ -414,7 +414,7 @@ class AIService {
       if (medicalTerms.length === 0) return {};
       
       // Use a different approach - search for each term individually with ilike
-      let results = [];
+      let results: any[] = [];
       
       for (const term of medicalTerms) {
         const { data, error } = await this.supabase
@@ -424,6 +424,11 @@ class AIService {
           
         if (error) {
           console.error(`Error retrieving medical knowledge for term '${term}':`, error);
+          // Only skip on the first error if we're in development and table doesn't exist
+          if (import.meta.env.DEV && error.message?.includes('does not exist')) {
+            console.log('Development mode - medical_knowledge table not found, skipping database queries');
+            return {};
+          }
           continue;
         }
         

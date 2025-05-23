@@ -74,7 +74,11 @@ export class EnhancedAIService {
 
       // Step 4: Apply personality enhancement if enabled
       let enhancedText = baseResponse.text;
-      if (options.enablePersonality !== false && emotionalState) {
+      
+      // Skip personality enhancement in development mode for cleaner mock responses
+      const isDevelopment = import.meta.env.DEV || window.location.hostname === 'localhost';
+      
+      if (options.enablePersonality !== false && emotionalState && !isDevelopment) {
         enhancedText = this.personalityService.generatePersonalizedResponse(
           baseResponse.text,
           emotionalState,
@@ -96,10 +100,10 @@ export class EnhancedAIService {
       const enhancedResponse: EnhancedAIResponse = {
         ...baseResponse,
         text: enhancedText,
-        emotionalState,
-        personalityApplied: options.enablePersonality !== false,
+        emotionalState: isDevelopment ? undefined : emotionalState,
+        personalityApplied: isDevelopment ? false : (options.enablePersonality !== false),
         thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
-        culturalFactors: emotionalState?.culturalFactors
+        culturalFactors: isDevelopment ? undefined : emotionalState?.culturalFactors
       };
 
       console.log(`Enhanced AI processing completed in ${Date.now() - startTime}ms`);
@@ -168,8 +172,11 @@ export class EnhancedAIService {
         try {
           let enhancedText = baseResponse.text;
           
-          // Apply personality enhancement to streaming text
-          if (options.enablePersonality !== false && emotionalState && baseResponse.text) {
+          // Skip personality enhancement in development mode for cleaner mock responses
+          const isDevelopment = import.meta.env.DEV || window.location.hostname === 'localhost';
+          
+          // Apply personality enhancement to streaming text only in production
+          if (options.enablePersonality !== false && emotionalState && baseResponse.text && !isDevelopment) {
             enhancedText = this.personalityService.generatePersonalizedResponse(
               baseResponse.text,
               emotionalState,
@@ -180,10 +187,10 @@ export class EnhancedAIService {
           const enhancedStreamResponse: EnhancedStreamingAIResponse = {
             ...baseResponse,
             text: enhancedText,
-            emotionalState,
-            personalityApplied: options.enablePersonality !== false,
+            emotionalState: isDevelopment ? undefined : emotionalState,
+            personalityApplied: isDevelopment ? false : (options.enablePersonality !== false),
             thinkingStages: thinkingStages.length > 0 ? thinkingStages : undefined,
-            culturalFactors: emotionalState?.culturalFactors,
+            culturalFactors: isDevelopment ? undefined : emotionalState?.culturalFactors,
             isStreaming: baseResponse.isStreaming,
             isComplete: baseResponse.isComplete,
             suggestedMedications: baseResponse.suggestedMedications
