@@ -205,13 +205,13 @@ export class EnhancedAIService {
         } catch (handlerError) {
           console.error('Error in enhanced stream handler:', handlerError);
           
-          // Send error response if handler fails
+          // Send clean error response if handler fails - no personality mixing
           streamHandler({
             text: 'Lo siento, hubo un error al procesar la respuesta. Por favor, intenta nuevamente.',
             severity: 10,
             isStreaming: false,
             isComplete: true,
-            emotionalState,
+            emotionalState: undefined,
             personalityApplied: false,
             thinkingStages: undefined,
             culturalFactors: undefined
@@ -227,7 +227,7 @@ export class EnhancedAIService {
           severity: 10,
           isStreaming: false,
           isComplete: true,
-          emotionalState,
+          emotionalState: undefined,
           personalityApplied: false,
           thinkingStages: undefined,
           culturalFactors: undefined
@@ -255,7 +255,7 @@ export class EnhancedAIService {
           severity: 10,
           isStreaming: false,
           isComplete: true,
-          emotionalState,
+          emotionalState: undefined,
           personalityApplied: false,
           thinkingStages: undefined,
           culturalFactors: undefined

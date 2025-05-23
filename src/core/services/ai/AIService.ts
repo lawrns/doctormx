@@ -215,7 +215,7 @@ class AIService {
         } catch (apiError) {
           console.error('Error in streaming API request:', apiError);
           
-          // Send error response through streaming handler
+          // Send clean error response through streaming handler without personality mixing
           const errorResponse: StreamingAIResponse = {
             text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, verifica tu conexión e intenta nuevamente.',
             isStreaming: false,
@@ -225,7 +225,9 @@ class AIService {
           };
           
           try {
-            options.onStreamingResponse(errorResponse);
+            if (options.onStreamingResponse) {
+              options.onStreamingResponse(errorResponse);
+            }
           } catch (handlerError) {
             console.error('Error in error response handler:', handlerError);
           }
@@ -453,6 +455,72 @@ class AIService {
       // Add troubleshooting info to see what's happening
       console.log(`API URL: ${window.location.origin}${endpoint}`);
       console.log(`Request data:`, JSON.stringify(data).substring(0, 200) + '...');
+
+      // Check if we're in development mode and provide mock responses
+      const isDevelopment = import.meta.env.DEV || window.location.hostname === 'localhost';
+      
+      if (isDevelopment && endpoint.includes('/.netlify/functions/')) {
+        console.log('Development mode detected - using mock AI response');
+        
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+        
+        // Generate mock response based on user message
+        const userMessage = data.message?.toLowerCase() || '';
+        let mockResponse = '';
+        
+        if (userMessage.includes('dolor') || userMessage.includes('duele')) {
+          mockResponse = `Entiendo que estás experimentando dolor. Es importante evaluar varios factores: ¿Desde cuándo tienes este dolor? ¿Es constante o intermitente? ¿Hay algo que lo empeore o lo mejore? 
+          
+El dolor puede tener muchas causas diferentes, desde tensión muscular hasta inflamación. Te recomiendo que mantengas un registro de cuándo aparece el dolor y qué actividades realizas.
+
+Si el dolor es muy intenso o persiste por más de unos días, sería recomendable que consultes con un médico presencialmente para una evaluación más detallada.`;
+        } else if (userMessage.includes('fiebre')) {
+          mockResponse = `La fiebre es un síntoma importante que indica que tu cuerpo está luchando contra algo. ¿Qué temperatura tienes? ¿Desde cuándo tienes fiebre?
+
+Algunas recomendaciones generales:
+- Mantente hidratado bebiendo mucha agua
+- Descansa lo suficiente
+- Si la fiebre es alta (más de 38.5°C) o persiste más de 3 días, busca atención médica
+
+¿Tienes otros síntomas acompañando la fiebre como dolor de garganta, tos o malestar general?`;
+        } else if (userMessage.includes('ojos') || userMessage.includes('verde')) {
+          mockResponse = `Los ojos verdes son un rasgo genético hermoso. El color de ojos está determinado por la cantidad y distribución de melanina en el iris.
+
+¿Hay algo específico sobre tus ojos que te preocupe? Por ejemplo:
+- Cambios en la visión
+- Irritación o enrojecimiento
+- Dolor ocular
+- Secreción
+
+Si tienes algún síntoma visual, es importante que consultes con un oftalmólogo para una evaluación adecuada.`;
+        } else {
+          mockResponse = `Gracias por tu consulta. Como médico virtual, estoy aquí para ayudarte con información general sobre salud.
+
+Para brindarte la mejor asistencia, me gustaría conocer más detalles sobre tu consulta:
+- ¿Qué síntomas específicos estás experimentando?
+- ¿Desde cuándo los tienes?
+- ¿Hay algo que los mejore o los empeore?
+
+Recuerda que esta consulta virtual no reemplaza una evaluación médica presencial, especialmente para síntomas serios o urgentes.`;
+        }
+
+        const mockApiResponse = {
+          text: mockResponse,
+          severity: userMessage.includes('dolor fuerte') || userMessage.includes('muy malo') ? 70 : 30,
+          isEmergency: false,
+          suggestedSpecialty: userMessage.includes('ojos') ? 'Oftalmología' : 'Medicina General',
+          suggestedConditions: userMessage.includes('dolor') ? ['Cefalea tensional', 'Migraña'] : [],
+          followUpQuestions: [
+            '¿Puedes describir mejor cómo te sientes?',
+            '¿Has notado algún cambio en los últimos días?',
+            '¿Tienes algún antecedente médico relevante?'
+          ]
+        };
+
+        console.log('Mock AI response generated:', mockApiResponse);
+        return mockApiResponse;
+      }
 
       // Ensure we're using the full URL with origin
       const fullUrl = endpoint.startsWith('http') ? endpoint : `${window.location.origin}${endpoint}`;
