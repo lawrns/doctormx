@@ -11,6 +11,7 @@ import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import ToastProvider from './contexts/ToastContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
+import { ChatProvider } from './core/hooks/useChat';
 import './env-check';
 
 // Create a client
@@ -37,7 +38,9 @@ root.render(
             <BrowserRouter>
               <ToastProvider>
                 <QuestionnaireProvider>
-                  <App />
+                  <ChatProvider>
+                    <App />
+                  </ChatProvider>
                 </QuestionnaireProvider>
               </ToastProvider>
             </BrowserRouter>
