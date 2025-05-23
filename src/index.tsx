@@ -3,12 +3,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './index.css';
 import './mobile.css'; // Import mobile-specific styles
 import { AuthProvider } from './contexts/AuthContext';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import { ChatProvider } from './core/hooks/useChat';
@@ -32,21 +34,25 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <SimpleErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <SupabaseProvider>
-          <AuthProvider>
-            <BrowserRouter>
-              <ToastProvider>
-                <QuestionnaireProvider>
-                  <ChatProvider>
-                    <App />
-                  </ChatProvider>
-                </QuestionnaireProvider>
-              </ToastProvider>
-            </BrowserRouter>
-          </AuthProvider>
-        </SupabaseProvider>
-      </QueryClientProvider>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <SupabaseProvider>
+              <AuthProvider>
+                <BrowserRouter>
+                  <ToastProvider>
+                    <QuestionnaireProvider>
+                      <ChatProvider>
+                        <App />
+                      </ChatProvider>
+                    </QuestionnaireProvider>
+                  </ToastProvider>
+                </BrowserRouter>
+              </AuthProvider>
+            </SupabaseProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
     </SimpleErrorBoundary>
   </React.StrictMode>
 );

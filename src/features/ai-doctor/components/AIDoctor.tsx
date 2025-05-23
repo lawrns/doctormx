@@ -10,7 +10,7 @@
 import React, { useState, useRef, useEffect, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X } from 'lucide-react';
+import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X, MessageSquare, Activity, Users, Pill, ShoppingBag } from 'lucide-react';
 import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse, EnhancedStreamingResponseHandler } from '../../../core/services/ai/EnhancedAIService';
 import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge/MexicanMedicalKnowledgeService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
@@ -137,19 +137,19 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Initialize Mexican medical knowledge base on component mount
-  useEffect(() => {
-    const initializeKnowledge = async () => {
-      try {
-        await mexicanMedicalKnowledgeService.initializeMexicanMedicalKnowledge();
-        console.log('🇲🇽 Mexican medical knowledge base initialized');
-      } catch (error) {
-        console.error('Error initializing Mexican medical knowledge:', error);
-      }
-    };
+  // Initialize Mexican medical knowledge base on component mount - temporarily disabled
+  // useEffect(() => {
+  //   const initializeKnowledge = async () => {
+  //     try {
+  //       await mexicanMedicalKnowledgeService.initializeMexicanMedicalKnowledge();
+  //       console.log('🇲🇽 Mexican medical knowledge base initialized');
+  //     } catch (error) {
+  //       console.error('Error initializing Mexican medical knowledge:', error);
+  //     }
+  //   };
     
-    initializeKnowledge();
-  }, []);
+  //   initializeKnowledge();
+  // }, []);
 
   // Handle window resize for mobile view
   useEffect(() => {
@@ -958,6 +958,34 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
               case 'chat':
                 return (
                   <div className="flex flex-col h-full">
+                    {/* Dr. Simeon's Face Header */}
+                    <div className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-gray-200 px-4 py-3">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-200 shadow-lg">
+                          <img 
+                            src="/images/simeon.png" 
+                            alt="Dr. Simeon" 
+                            className="w-full h-full object-cover"
+                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                              // Fallback to a placeholder if image fails to load
+                              const target = e.currentTarget;
+                              target.style.display = 'none';
+                              if (target.parentElement) {
+                                target.parentElement.innerHTML = '<div class="w-full h-full bg-teal-100 flex items-center justify-center"><svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>';
+                              }
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900">Dr. Simeon</h3>
+                          <div className="flex items-center text-sm text-green-600">
+                            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                            En línea • IA Médica Mexicana
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
                     {/* Chat messages */}
                     <div className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-container" style={{ overscrollBehavior: 'none', contain: 'size layout' }}>
                       <div className="chat-messages-wrapper" style={{ transform: 'translateZ(0)', willChange: 'transform', minHeight: '100%', contain: 'content', isolation: 'isolate' }}>
@@ -1071,11 +1099,6 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                         {isRecording && (
                           <div className="mt-2 text-center text-sm text-red-600" style={{ transform: 'translateZ(0)' }}>
                             <span className="inline-block">●</span> Escuchando... Habla ahora
-                          </div>
-                        )}
-                        {isProcessing && (
-                          <div className="mt-4 flex justify-center" style={{ transform: 'translateZ(0)', contain: 'content' }}>
-                            <AIThinking message="Analizando su consulta..." />
                           </div>
                         )}
                       </div>
@@ -1448,7 +1471,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   }`}
                   onClick={() => setActiveTab('chat')}
                 >
-                  Consulta Médica
+                  <div className="flex items-center">
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    Consulta Médica
+                  </div>
                 </button>
               </li>
               <li>
@@ -1460,7 +1486,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   }`}
                   onClick={() => setActiveTab('analysis')}
                 >
-                  Análisis de Síntomas
+                  <div className="flex items-center">
+                    <Activity className="w-5 h-5 mr-2" />
+                    Análisis de Síntomas
+                  </div>
                 </button>
               </li>
               <li>
@@ -1472,7 +1501,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   }`}
                   onClick={() => setActiveTab('providers')}
                 >
-                  Proveedores Cercanos
+                  <div className="flex items-center">
+                    <Users className="w-5 h-5 mr-2" />
+                    Proveedores Cercanos
+                  </div>
                 </button>
               </li>
               <li>
@@ -1484,7 +1516,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   }`}
                   onClick={() => setActiveTab('appointments')}
                 >
-                  Mis Citas
+                  <div className="flex items-center">
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Mis Citas
+                  </div>
                 </button>
               </li>
               <li>
@@ -1496,7 +1531,10 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   }`}
                   onClick={() => setActiveTab('prescriptions')}
                 >
-                  Mis Recetas
+                  <div className="flex items-center">
+                    <Pill className="w-5 h-5 mr-2" />
+                    Mis Recetas
+                  </div>
                 </button>
               </li>
               <li>
@@ -1509,9 +1547,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
                   onClick={() => setActiveTab('pharmacies')}
                 >
                   <div className="flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
+                    <ShoppingBag className="w-5 h-5 mr-2" />
                     Farmacias Cercanas
                   </div>
                 </button>

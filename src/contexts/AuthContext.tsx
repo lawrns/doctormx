@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect, useRef, ReactNode } from 'react';
-import { supabase, checkAndFixAuthState } from '../lib/supabase';
+import { supabase } from '../lib/supabaseClient';
 
 interface AuthContextType {
   user: any | null;
@@ -37,7 +37,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         return true;
       }
       
-      return await checkAndFixAuthState();
+      // Simple session check using getSession
+      const { data: { session }, error } = await supabase.auth.getSession();
+      
+      if (error) {
+        console.error('[Auth] Session verification error:', error);
+        return false;
+      }
+      
+      return !!session;
     } catch (error) {
       console.error('[Auth] Session verification error:', error);
       return false;
@@ -380,7 +388,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       // In a real implementation, we would update the doctor_profiles table
       
       // Update local state
-      setDoctorProfile(prev => ({
+      setDoctorProfile((prev: any) => ({
         ...prev,
         ...data
       }));
