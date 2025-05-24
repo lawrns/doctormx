@@ -1,17 +1,24 @@
-import React, { useState, Suspense } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import React, { Suspense, useState } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import AINavbar from './AINavbar';
 import AIFooter from './AIFooter';
-import ChatAssistant from '../../components/ChatAssistant';
-import { SocialIcons } from '../../components/icons/IconProvider';
-import ClientOnly from '../../components/ClientOnly';
+import { ChevronRight, MessageSquare } from 'lucide-react';
 
 function AILayout() {
-  const [showChatAssistant, setShowChatAssistant] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const [stickyInput, setStickyInput] = useState('');
 
   // Don't show footer on doctor chat page
-  const isDoctosChatPage = location.pathname === '/doctor';
+  const isDoctorChatPage = location.pathname === '/doctor';
+
+  const handleStickySubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (stickyInput.trim()) {
+      // Navigate to doctor page with the initial message
+      navigate('/doctor', { state: { initialMessage: stickyInput.trim() } });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -27,15 +34,54 @@ function AILayout() {
           </div>
         </main>
         
+        {/* Sticky Chat Input - positioned above footer and WhatsApp button */}
+        {!isDoctorChatPage && (
+          <div className="sticky bottom-0 z-30 bg-white border-t border-gray-200 shadow-lg">
+            <div className="max-w-4xl mx-auto px-4 py-4">
+              <form onSubmit={handleStickySubmit} className="flex items-center gap-3">
+                <div className="flex items-center flex-1 bg-gray-50 border border-gray-300 rounded-xl p-3 focus-within:ring-2 focus-within:ring-[#006D77] focus-within:border-transparent">
+                  <MessageSquare className="w-5 h-5 text-[#006D77] mr-3" />
+                  <input
+                    type="text"
+                    value={stickyInput}
+                    onChange={(e) => setStickyInput(e.target.value)}
+                    placeholder="Describe tus síntomas o pregunta médica..."
+                    className="bg-transparent border-none text-gray-700 placeholder-gray-500 flex-grow focus:outline-none"
+                    aria-label="Campo de entrada para consulta médica"
+                  />
+                  <button
+                    type="submit"
+                    disabled={!stickyInput.trim()}
+                    className="w-10 h-10 rounded-lg bg-[#006D77] flex items-center justify-center hover:bg-[#005B66] transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ml-2"
+                    aria-label="Iniciar consulta"
+                  >
+                    <ChevronRight size={16} className="text-white" />
+                  </button>
+                </div>
+              </form>
+              <div className="flex items-center justify-center mt-2 space-x-6">
+                <div className="flex items-center text-xs text-[#006D77]">
+                  <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
+                  🔒 Datos cifrados
+                </div>
+                <div className="flex items-center text-xs text-[#006D77]">
+                  <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
+                  ✅ NOM-004-SSA3
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        
         {/* Footer - redesigned (hidden on doctor chat page) */}
-        {!isDoctosChatPage && <AIFooter />}
+        {!isDoctorChatPage && <AIFooter />}
 
-        {/* WhatsApp Button - floating at bottom-right */}
+        {/* WhatsApp Button - floating at bottom-right, positioned above sticky chat */}
         <a
           href="https://wa.me/526144792338"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-20 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 flex items-center justify-center group"
+          className={`fixed ${!isDoctorChatPage ? 'bottom-24' : 'bottom-6'} right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 flex items-center justify-center group`}
           aria-label="Contactar por WhatsApp"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -45,26 +91,6 @@ function AILayout() {
             ¡Contáctanos!
           </span>
         </a>
-
-        {/* Chat Assistant Button - repositioned to avoid WhatsApp conflict */}
-        <button
-          onClick={() => setShowChatAssistant(!showChatAssistant)}
-          className="fixed bottom-6 right-6 bg-[#006D77] text-white p-3 rounded-full shadow-lg hover:bg-[#005B66] transition-all duration-200 hover:scale-[1.05] z-50 flex items-center justify-center"
-          aria-label="Abrir asistente de chat"
-        >
-          <SocialIcons.MessageCircle size={20} />
-        </button>
-        
-        {/* Chat Assistant Modal - open when toggled */}
-        <ClientOnly>
-          {showChatAssistant && (
-            <ChatAssistant
-              onClose={() => {
-                setShowChatAssistant(false);
-              }}
-            />
-          )}
-        </ClientOnly>
       </div>
     </div>
   );

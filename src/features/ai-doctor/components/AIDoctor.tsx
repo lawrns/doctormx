@@ -134,42 +134,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const initialMessageSentRef = useRef(false);
+  const shouldScrollRef = useRef(false);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
-
-  // Handle initial message from homepage
-  useEffect(() => {
-    if (initialMessage && initialMessage.trim() && !initialMessageSentRef.current) {
-      initialMessageSentRef.current = true;
-      
-      // Send the initial message after a small delay
-      const timer = setTimeout(() => {
-        setInput(initialMessage);
-        // Trigger the send after setting input
-        setTimeout(() => {
-          handleSendMessage();
-        }, 100);
-      }, 1000);
-
-      return () => clearTimeout(timer);
+    if (shouldScrollRef.current) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+      shouldScrollRef.current = false;
     }
-  }, [initialMessage]);
-
-  // Initialize Mexican medical knowledge base on component mount - temporarily disabled
-  // useEffect(() => {
-  //   const initializeKnowledge = async () => {
-  //     try {
-  //       await mexicanMedicalKnowledgeService.initializeMexicanMedicalKnowledge();
-  //       console.log('🇲🇽 Mexican medical knowledge base initialized');
-  //     } catch (error) {
-  //       console.error('Error initializing Mexican medical knowledge:', error);
-  //     }
-  //   };
-    
-  //   initializeKnowledge();
-  // }, []);
+  }, [messages]);
 
   // Get user location
   useEffect(() => {
@@ -188,8 +160,10 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     }
   }, []);
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = useCallback(async () => {
     if (!input.trim() && !isUploading) return;
+    
+    shouldScrollRef.current = true; // Enable scrolling for user interactions
     
     const userMessageId = Date.now().toString();
     const newUserMessage: Message = { 
@@ -338,8 +312,41 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       setIsProcessing(false);
       setIsThinking(false);
     }
-  };
-  
+  }, [input, isUploading, messages, severityLevel, location, sessionId]);
+
+  // Handle initial message from homepage
+  useEffect(() => {
+    if (initialMessage && initialMessage.trim() && !initialMessageSentRef.current) {
+      initialMessageSentRef.current = true;
+      
+      // Send the initial message after a small delay
+      const timer = setTimeout(() => {
+        setInput(initialMessage);
+        // Trigger the send after setting input
+        setTimeout(() => {
+          shouldScrollRef.current = true; // Enable scrolling for this interaction
+          handleSendMessage();
+        }, 100);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [initialMessage]);
+
+  // Initialize Mexican medical knowledge base on component mount - temporarily disabled
+  // useEffect(() => {
+  //   const initializeKnowledge = async () => {
+  //     try {
+  //       await mexicanMedicalKnowledgeService.initializeMexicanMedicalKnowledge();
+  //       console.log('🇲🇽 Mexican medical knowledge base initialized');
+  //     } catch (error) {
+  //       console.error('Error initializing Mexican medical knowledge:', error);
+  //     }
+  //   };
+    
+  //   initializeKnowledge();
+  // }, []);
+
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || files.length === 0) return;
@@ -948,6 +955,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setInput(answerOption.value);
     
     // Send the message after a short delay to allow input to update
+    shouldScrollRef.current = true; // Enable scrolling for answer option interactions
     setTimeout(() => {
       handleSendMessage();
     }, 100);
@@ -961,6 +969,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         interactiveOptions={message.interactiveOptions}
         onFollowUpClick={(question) => {
           setInput(question);
+          shouldScrollRef.current = true; // Enable scrolling for follow-up interactions
           setTimeout(() => handleSendMessage(), 100);
         }}
         onGoBack={handleGoBack}

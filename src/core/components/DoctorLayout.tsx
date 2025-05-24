@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import AINavbar from './AINavbar';
 import AISidebar from './AISidebar';
-import AIFooter from './AIFooter';
-import ChatAssistant from '../../components/ChatAssistant';
-import { SocialIcons } from '../../components/icons/IconProvider';
-import ClientOnly from '../../components/ClientOnly';
 
 function DoctorLayout() {
-  const [showChatAssistant, setShowChatAssistant] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const handleSidebarToggle = () => {
@@ -41,15 +36,12 @@ function DoctorLayout() {
         </main>
       </div>
 
-      {/* Footer */}
-      <AIFooter />
-
       {/* WhatsApp Button - floating at bottom-right */}
       <a
         href="https://wa.me/526144792338"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-20 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 flex items-center justify-center group"
+        className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-40 flex items-center justify-center group"
         aria-label="Contactar por WhatsApp"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -59,37 +51,6 @@ function DoctorLayout() {
           ¡Contáctanos!
         </span>
       </a>
-
-      {/* Chat Assistant */}
-      <ClientOnly>
-        {showChatAssistant && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg w-full max-w-2xl h-96 flex flex-col">
-              <div className="flex items-center justify-between p-4 border-b">
-                <h3 className="font-semibold">Asistente Virtual</h3>
-                <button
-                  onClick={() => setShowChatAssistant(false)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  ✕
-                </button>
-              </div>
-              <div className="flex-1 p-4">
-                <ChatAssistant onClose={() => setShowChatAssistant(false)} />
-              </div>
-            </div>
-          </div>
-        )}
-      </ClientOnly>
-
-      {/* Chat Assistant Button - repositioned to avoid WhatsApp conflict */}
-      <button
-        onClick={() => setShowChatAssistant(!showChatAssistant)}
-        className="fixed bottom-6 right-6 bg-[#006D77] text-white p-3 rounded-full shadow-lg hover:bg-[#005B66] transition-all duration-200 hover:scale-[1.05] z-50 flex items-center justify-center"
-        aria-label="Abrir asistente de chat"
-      >
-        <SocialIcons.MessageCircle size={20} />
-      </button>
     </div>
   );
 }

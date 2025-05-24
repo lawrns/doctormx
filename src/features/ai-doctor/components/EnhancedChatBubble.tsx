@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stethoscope, AlertCircle, Info, Check, ChevronRight } from 'lucide-react';
+import { Stethoscope, AlertCircle, Info, Check, ChevronRight, Pill, MapPin } from 'lucide-react';
 
 interface AIAnswerOption {
   id: string;
@@ -64,7 +64,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
       <div
         className={`rounded-2xl px-4 py-5 pb-3.5 max-w-[95%] sm:max-w-[90%] md:max-w-prose ${
           message.sender === 'user' 
-            ? 'bg-brand-jade-600 text-white rounded-br-none' 
+            ? 'bg-[#006D77] text-white rounded-br-none' 
             : message.isEmergency
               ? 'bg-red-50 text-red-800 border border-red-200 rounded-bl-none'
               : 'bg-white border border-gray-100 text-gray-800 rounded-bl-none shadow-subtle'
@@ -77,16 +77,16 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               <img 
                 src="/images/simeon.png" 
                 alt="Dr. Simeon" 
-                className="w-6 h-6 rounded-full border border-brand-jade-200 shadow-sm object-cover"
+                className="w-6 h-6 rounded-full border border-[#D0F0EF] shadow-sm object-cover"
               />
               <span className="ml-1 text-xs font-medium text-gray-700">Dr. Simeon</span>
             </div>
           ) : (
-            <div className="w-5 h-5 rounded-full bg-brand-jade-100 mr-1 flex items-center justify-center">
-              <span className="text-brand-jade-600 text-xs font-medium">U</span>
+            <div className="w-5 h-5 rounded-full bg-[#D0F0EF] mr-1 flex items-center justify-center">
+              <span className="text-[#006D77] text-xs font-medium">U</span>
             </div>
           )}
-          <span className={`text-xs font-medium opacity-65 ${message.sender === 'user' ? 'text-brand-jade-100' : 'text-gray-500'}`}>
+          <span className={`text-xs font-medium opacity-65 ${message.sender === 'user' ? 'text-white/80' : 'text-gray-500'}`}>
             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </span>
         </div>
@@ -105,18 +105,18 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
               <>
                 {message.text === '' ? (
                   <div className="leading-relaxed flex items-center">
-                    <span className="inline-block w-2 h-2 bg-brand-jade-600 rounded-full mr-1" />
-                    <span className="inline-block w-2 h-2 bg-brand-jade-600 rounded-full mr-1" />
-                    <span className="inline-block w-2 h-2 bg-brand-jade-600 rounded-full" />
+                    <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-1" />
+                    <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-1" />
+                    <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full" />
                     <span className="ml-2 text-sm text-gray-600">Doctor.mx está escribiendo...</span>
                   </div>
                 ) : (
                   <div>
                     <p className="prose text-readable md:text-readable-tablet sm:text-readable-mobile leading-relaxed whitespace-pre-wrap" style={{ transform: 'translateZ(0)', minHeight: '1.5em', contain: 'content', width: '100%' }}>{message.text}</p>
                     <div className="mt-2 flex items-center h-1.5" style={{ transform: 'translateZ(0)', contain: 'content' }}>
-                      <span className="inline-block w-1.5 h-1.5 bg-brand-jade-600 rounded-full mr-0.5" />
-                      <span className="inline-block w-1.5 h-1.5 bg-brand-jade-600 rounded-full mr-0.5" />
-                      <span className="inline-block w-1.5 h-1.5 bg-brand-jade-600 rounded-full" />
+                      <span className="inline-block w-1.5 h-1.5 bg-[#006D77] rounded-full mr-0.5" />
+                      <span className="inline-block w-1.5 h-1.5 bg-[#006D77] rounded-full mr-0.5" />
+                      <span className="inline-block w-1.5 h-1.5 bg-[#006D77] rounded-full" />
                     </div>
                   </div>
                 )}
@@ -136,8 +136,8 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
             )}
             
             {message.imageAnalysis && (
-              <div className="mt-3 p-3 bg-brand-jade-50 rounded-md text-sm">
-                <p className="font-medium text-brand-jade-800 mb-1">Análisis de imagen:</p>
+              <div className="mt-3 p-3 bg-[#D0F0EF] rounded-md text-sm">
+                <p className="font-medium text-[#006D77] mb-1">Análisis de imagen:</p>
                 <p className="text-gray-700">{message.imageAnalysis.findings}</p>
                 <div className="mt-2">
                   <div className="flex justify-between text-xs text-gray-600 mb-1">
@@ -146,12 +146,12 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                   </div>
                   <div className="h-1.5 w-full bg-gray-200 rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-brand-jade-600" 
+                      className="h-full bg-[#006D77]" 
                       style={{ width: `${confidence}%` }}
                     />
                   </div>
                 </div>
-                <div className="mt-2 flex items-center text-xs text-brand-jade-700">
+                <div className="mt-2 flex items-center text-xs text-[#006D77]">
                   <Info size={12} className="mr-1" />
                   <span>Basado en patrones médicos reconocidos</span>
                 </div>
@@ -168,14 +168,14 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                       onClick={() => onOptionSelect && onOptionSelect(option, interactiveOptions.questionId)}
                       className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm ${
                         interactiveOptions.type === 'symptom_category' 
-                          ? 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
+                          ? 'bg-[#D0F0EF] text-[#006D77] hover:bg-[#D0F0EF] border border-transparent hover:border-[#006D77]/20'
                           : interactiveOptions.type === 'symptom_duration'
-                            ? 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
+                            ? 'bg-[#D0F0EF] text-[#006D77] hover:bg-[#D0F0EF] border border-transparent hover:border-[#006D77]/20'
                             : interactiveOptions.type === 'symptom_severity'
-                              ? 'bg-emerald-500 text-white hover:bg-emerald-600'
+                              ? 'bg-[#006D77] text-white hover:bg-[#006D77]'
                               : interactiveOptions.type === 'yes_no' && option.includes('Ver medicamentos')
-                                ? 'bg-emerald-500 text-white hover:bg-emerald-600'
-                                : 'bg-mint-10 text-emerald-900 hover:bg-mint-20 border border-transparent hover:border-emerald-500/20'
+                                ? 'bg-[#006D77] text-white hover:bg-[#006D77]'
+                                : 'bg-[#D0F0EF] text-[#006D77] hover:bg-[#D0F0EF] border border-transparent hover:border-[#006D77]/20'
                       } transition-colors`}
                     >
                       {option}
@@ -187,7 +187,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                 {showGoBack && (
                   <button
                     onClick={onGoBack}
-                    className="mt-2 text-xs text-brand-jade-600 flex items-center hover:text-brand-jade-700"
+                    className="mt-2 text-xs text-[#006D77] flex items-center hover:text-[#006D77]"
                   >
                     <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -204,7 +204,7 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                   <button
                     key={index}
                     onClick={() => onFollowUpClick && onFollowUpClick(question)}
-                    className="block w-full text-left text-sm bg-gray-50 hover:bg-brand-jade-50 p-2 rounded-md"
+                    className="block w-full text-left text-sm bg-gray-50 hover:bg-[#D0F0EF] p-2 rounded-md"
                   >
                     {question}
                   </button>
@@ -231,22 +231,22 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                           ${option.id === 'free_text' 
                             ? 'bg-gray-50 border border-gray-200 text-gray-700 hover:bg-gray-100 hover:border-gray-300'
                             : option.category === 'intensity' || option.category === 'pain_type'
-                              ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                              ? 'bg-[#D0F0EF] border border-transparent text-[#006D77] hover:bg-[#D0F0EF] hover:border-[#006D77]/30'
                               : option.category === 'timing'
-                                ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                ? 'bg-[#D0F0EF] border border-transparent text-[#006D77] hover:bg-[#D0F0EF] hover:border-[#006D77]/30'
                                 : option.category === 'medication'
-                                  ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                  ? 'bg-[#D0F0EF] border border-transparent text-[#006D77] hover:bg-[#D0F0EF] hover:border-[#006D77]/30'
                                   : option.category === 'chest_pain'
-                                    ? 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
-                                    : 'bg-mint-10 border border-transparent text-emerald-900 hover:bg-mint-20 hover:border-emerald-500/30'
+                                    ? 'bg-[#D0F0EF] border border-transparent text-[#006D77] hover:bg-[#D0F0EF] hover:border-[#006D77]/30'
+                                    : 'bg-[#D0F0EF] border border-transparent text-[#006D77] hover:bg-[#D0F0EF] hover:border-[#006D77]/30'
                           }
                           ${isPreSelected ? 'animate-ring-pulse' : ''}
-                          hover:shadow-subtle focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2
+                          hover:shadow-subtle focus:outline-none focus:ring-2 focus:ring-[#006D77] focus:ring-offset-2
                         `}
                         data-state="idle"
                       >
                         <span className="text-sm font-medium truncate">{option.text}</span>
-                        <ChevronRight className="shrink-0 w-4 h-4 text-emerald-500" />
+                        <ChevronRight className="shrink-0 w-4 h-4 text-[#006D77]" />
                       </button>
                     );
                   })}
@@ -255,15 +255,15 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
             )}
             
             {message.suggestedConditions && message.suggestedConditions.length > 0 && (
-              <div className="mt-3 p-3 bg-brand-jade-50 rounded-md">
-                <p className="text-sm font-medium text-brand-jade-700 mb-2">Posibles condiciones:</p>
+              <div className="mt-3 p-3 bg-[#D0F0EF] rounded-md">
+                <p className="text-sm font-medium text-[#006D77] mb-2">Posibles condiciones:</p>
                 <div className="flex flex-wrap gap-2">
                   {message.suggestedConditions.map((condition, idx) => (
                     <span 
                       key={idx}
-                      className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white text-brand-jade-800 border border-brand-jade-100"
+                      className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white text-[#006D77] border border-[#D0F0EF]"
                     >
-                      <Check size={10} className="mr-1 text-brand-jade-600" />
+                      <Check size={10} className="mr-1 text-[#006D77]" />
                       {condition}
                     </span>
                   ))}
@@ -283,6 +283,30 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                     </button>
                   </div>
                 )}
+              </div>
+            )}
+            
+            {message.suggestedMedications && message.suggestedMedications.length > 0 && (
+              <div className="mt-3 p-3 bg-[#D0F0EF] rounded-md">
+                <p className="text-sm font-medium text-[#006D77] mb-2">Medicamentos sugeridos:</p>
+                <div className="flex flex-wrap gap-2">
+                  {message.suggestedMedications.map((medication, idx) => (
+                    <span 
+                      key={idx}
+                      className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-white text-[#006D77] border border-[#D0F0EF]"
+                    >
+                      <Pill size={10} className="mr-1 text-[#006D77]" />
+                      {medication}
+                    </span>
+                  ))}
+                </div>
+                <button 
+                  onClick={() => onFindProviders && onFindProviders('farmacia')}
+                  className="mt-2 text-sm bg-[#006D77] text-white px-3 py-1 rounded-md hover:bg-[#005B66] transition-colors flex items-center"
+                >
+                  <MapPin size={12} className="mr-1" />
+                  Encontrar farmacias cercanas
+                </button>
               </div>
             )}
           </>

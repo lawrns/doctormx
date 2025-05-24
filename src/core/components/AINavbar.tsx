@@ -35,7 +35,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
   
   return (
     <header className="bg-[#006D77] shadow-sm sticky top-0 z-40 h-16">
-      <div className="flex items-center justify-between h-full px-4">
+      <div className="flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Left section: Logo and brand name */}
         <div className="flex items-center gap-4">
           {/* Sidebar toggle - only show if sidebar functionality is provided */}
