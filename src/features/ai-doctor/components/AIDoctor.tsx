@@ -7,7 +7,7 @@
 // Please make all changes to this file.
 // ======================================================
 
-import React, { useState, useRef, useEffect, memo } from 'react';
+import React, { useState, useRef, useEffect, memo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X, MessageSquare, Activity, Users, Pill, ShoppingBag } from 'lucide-react';
@@ -133,6 +133,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const initialMessageSentRef = useRef(false);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -140,13 +141,19 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   // Handle initial message from homepage
   useEffect(() => {
-    if (initialMessage && initialMessage.trim()) {
-      // Set the input and automatically send it
-      setInput(initialMessage);
-      // Small delay to ensure the component is fully rendered
-      setTimeout(() => {
-        handleSendMessage();
-      }, 500);
+    if (initialMessage && initialMessage.trim() && !initialMessageSentRef.current) {
+      initialMessageSentRef.current = true;
+      
+      // Send the initial message after a small delay
+      const timer = setTimeout(() => {
+        setInput(initialMessage);
+        // Trigger the send after setting input
+        setTimeout(() => {
+          handleSendMessage();
+        }, 100);
+      }, 1000);
+
+      return () => clearTimeout(timer);
     }
   }, [initialMessage]);
 
