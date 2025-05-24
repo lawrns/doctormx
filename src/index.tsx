@@ -12,19 +12,18 @@ import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
+import { DoctorAuthProvider } from './contexts/DoctorAuthContext';
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
-import { ChatProvider } from './contexts/ChatContext';
-import ChatContainer from './components/ChatContainer';
 import './env-check';
 
 // Create a client
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      refetchOnWindowFocus: false,
-      retry: 1
-    }
-  }
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      retry: 1,
+    },
+  },
 });
 
 const rootElement = document.getElementById('root');
@@ -40,16 +39,15 @@ root.render(
           <ThemeProvider>
             <SupabaseProvider>
               <AuthProvider>
-                <BrowserRouter>
-                  <ToastProvider>
-                    <QuestionnaireProvider>
-                      <ChatProvider>
+                <DoctorAuthProvider>
+                  <BrowserRouter>
+                    <ToastProvider>
+                      <QuestionnaireProvider>
                         <App />
-                        <ChatContainer />
-                      </ChatProvider>
-                    </QuestionnaireProvider>
-                  </ToastProvider>
-                </BrowserRouter>
+                      </QuestionnaireProvider>
+                    </ToastProvider>
+                  </BrowserRouter>
+                </DoctorAuthProvider>
               </AuthProvider>
             </SupabaseProvider>
           </ThemeProvider>

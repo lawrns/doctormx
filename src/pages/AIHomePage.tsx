@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   MessageSquare, ChevronRight, Clock, Shield, Activity, Star, 
@@ -9,7 +9,6 @@ import {
 import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
 import { useTheme } from '../contexts/ThemeContext';
-import { useChat } from '../contexts/ChatContext';
 
 // Enhanced chat messages for the animation
 const ENHANCED_MESSAGES = [
@@ -69,8 +68,9 @@ const ENHANCED_FEATURES = [
 function AIHomePage() {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isThinking, setIsThinking] = useState(false);
+  const [chatInput, setChatInput] = useState('');
   const { theme } = useTheme();
-  const { openChat } = useChat();
+  const navigate = useNavigate();
   
   // Enhanced message rotation with thinking animation
   useEffect(() => {
@@ -83,10 +83,22 @@ function AIHomePage() {
     }, 4000);
     return () => clearInterval(timer);
   }, []);
+
+  const handleChatSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (chatInput.trim()) {
+      // Navigate to doctor page with the initial message
+      navigate('/doctor', { state: { initialMessage: chatInput.trim() } });
+    }
+  };
+
+  const handleChatInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setChatInput(e.target.value);
+  };
   
   return (
     <>
-      <main className="bg-gradient-to-br from-teal-50 via-white to-blue-50 min-h-screen">
+      <main className="bg-gradient-to-br from-[#D0F0EF] via-white to-slate-50 min-h-screen">
         {/* Enhanced Hero Section */}
         <section className="relative py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,9 +109,9 @@ function AIHomePage() {
                   <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                    className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight"
                   >
-                    <span className="text-teal-600">Dr. Simeon</span>
+                    <span className="text-[#006D77]">Dr. Simeon</span>
                     <br />
                     Tu médico mexicano inteligente
                   </motion.h1>
@@ -107,14 +119,14 @@ function AIHomePage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-xl text-gray-600 leading-relaxed max-w-lg"
+                    className="text-lg leading-7 text-neutral-700 max-w-lg"
                   >
                     Consulta médica personalizada con inteligencia artificial. 
                     Diseñado específicamente para mexicanos, por mexicanos.
                   </motion.p>
                 </div>
                 
-                {/* Enhanced Trust Indicators */}
+                {/* Enhanced Trust Indicators with improved layout */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -123,23 +135,29 @@ function AIHomePage() {
                 >
                   <div className="flex items-center">
                     <div className="flex -space-x-2">
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#006D77] to-[#005B66] flex items-center justify-center text-white font-semibold text-sm">
                         MC
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#007B8A] to-[#006D77] flex items-center justify-center text-white font-semibold text-sm">
                         AR
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#006D77] to-[#007B8A] flex items-center justify-center text-white font-semibold text-sm">
                         LS
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#005B66] to-[#006D77] flex items-center justify-center text-white font-semibold text-sm">
                         JM
                       </div>
-                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-white font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#007B8A] to-[#005B66] flex items-center justify-center text-white font-semibold text-sm">
                         SP
                       </div>
                     </div>
-                    <span className="ml-3 text-gray-600">+25,000 consultas realizadas</span>
+                    <div className="ml-3">
+                      <span className="text-gray-600">+25,000 consultas realizadas</span>
+                      <div className="flex items-center mt-1 space-x-3">
+                        <span className="text-xs text-gray-500 uppercase tracking-wider font-medium whitespace-nowrap">🔒 Datos cifrados</span>
+                        <span className="text-xs text-gray-500 uppercase tracking-wider font-medium whitespace-nowrap">✅ NOM-004-SSA3</span>
+                      </div>
+                    </div>
                   </div>
                   <div className="flex items-center">
                     <div className="flex text-yellow-400">
@@ -149,35 +167,34 @@ function AIHomePage() {
                   </div>
                 </motion.div>
                 
-                {/* Enhanced CTA Section */}
+                {/* Enhanced CTA Section with micro-interactions */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <button 
-                    onClick={() => {
-                      openChat();
-                    }}
-                    className="w-full sm:w-auto bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white px-8 py-4 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex items-center justify-center"
+                  <Link 
+                    to="/doctor"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                    aria-label="Iniciar consulta médica gratuita"
                   >
                     <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                    Iniciar consulta gratuita
+                    Iniciar consulta gratuita →
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
-                      Primeras 5 consultas gratis
+                      <CheckCircle className="w-4 h-4 text-[#006D77] mr-1" />
+                      <span className="text-xs uppercase tracking-wider">Primeras 5 consultas gratis</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
-                      Sin tarjeta de crédito
+                      <CheckCircle className="w-4 h-4 text-[#006D77] mr-1" />
+                      <span className="text-xs uppercase tracking-wider">Sin tarjeta de crédito</span>
                     </div>
                     <div className="flex items-center">
-                      <CheckCircle className="w-4 h-4 text-green-500 mr-1" />
-                      Respuesta inmediata
+                      <CheckCircle className="w-4 h-4 text-[#006D77] mr-1" />
+                      <span className="text-xs uppercase tracking-wider">Respuesta inmediata</span>
                     </div>
                   </div>
                 </motion.div>
@@ -186,26 +203,25 @@ function AIHomePage() {
               {/* Enhanced Right Column - 6 cols */}
               <div className="lg:col-span-6">
                 <div className="relative">
-                  {/* Enhanced Chat Interface Preview */}
+                  {/* Luxury Enhanced Chat Interface Preview */}
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 }}
-                    className="bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto relative overflow-hidden"
+                    className="bg-white rounded-2xl shadow-xl max-w-lg mx-auto relative overflow-hidden border border-gray-200 p-6"
                   >
-                    {/* Chat Header */}
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-200 shadow-lg">
+                    {/* Professional Chat Header */}
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow-lg">
                         <img 
                           src="/images/simeon.png" 
-                          alt="Dr. Simeon" 
+                          alt="Dr. Simeon - IA Médica Mexicana" 
                           className="w-full h-full object-cover"
                           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-                            // Fallback to stethoscope icon if image fails to load
                             const target = e.currentTarget;
                             target.style.display = 'none';
                             if (target.parentElement) {
-                              target.parentElement.innerHTML = '<div class="w-full h-full bg-teal-100 flex items-center justify-center"><svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg></div>';
+                              target.parentElement.innerHTML = '<div class="w-full h-full bg-[#D0F0EF] flex items-center justify-center"><svg class="w-6 h-6 text-[#006D77]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg></div>';
                             }
                           }}
                         />
@@ -213,18 +229,26 @@ function AIHomePage() {
                       <div>
                         <p className="font-semibold text-gray-900">Dr. Simeon</p>
                         <div className="flex items-center">
-                          <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                          <p className="text-xs text-green-600 font-medium">En línea • IA Médica Mexicana</p>
+                          <motion.span 
+                            className="w-2 h-2 bg-[#006D77] rounded-full mr-2"
+                            animate={{ opacity: [1, 0.5, 1] }}
+                            transition={{ repeat: Infinity, duration: 2 }}
+                          ></motion.span>
+                          <p className="text-sm text-[#006D77]">En línea • IA Médica Mexicana</p>
                         </div>
                       </div>
                       {isThinking && (
-                        <div className="ml-auto">
-                          <Brain className="w-6 h-6 text-teal-500 animate-pulse" />
-                        </div>
+                        <motion.div 
+                          className="ml-auto"
+                          animate={{ rotate: 360 }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                        >
+                          <Brain className="w-6 h-6 text-[#006D77]" />
+                        </motion.div>
                       )}
                     </div>
                     
-                    {/* Enhanced Chat Messages */}
+                    {/* Enhanced Chat Messages with improved styling */}
                     <div className="space-y-4 max-h-64 overflow-hidden">
                       <motion.div
                         key={currentMessage}
@@ -233,62 +257,84 @@ function AIHomePage() {
                         transition={{ duration: 0.5 }}
                         className={`${
                           ENHANCED_MESSAGES[currentMessage]?.sender === 'bot'
-                            ? "bg-gradient-to-br from-teal-50 to-blue-50 text-gray-900 rounded-bl-sm rounded-tr-2xl rounded-br-2xl rounded-tl-2xl mr-8" 
-                            : "bg-gradient-to-br from-blue-600 to-teal-600 text-white rounded-br-sm rounded-tl-2xl rounded-bl-2xl rounded-tr-2xl ml-8"
+                            ? "bg-[#006D77]/10 text-[#006D77] rounded-bl-sm rounded-tr-2xl rounded-br-2xl rounded-tl-2xl mr-8 border border-[#006D77]/20" 
+                            : "bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white rounded-br-sm rounded-tl-2xl rounded-bl-2xl rounded-tr-2xl ml-8"
                         } p-4 text-sm leading-relaxed shadow-sm`}
                       >
                         {ENHANCED_MESSAGES[currentMessage]?.text}
                         
-                        {/* Confidence indicator for bot messages */}
+                        {/* Enhanced Confidence indicator */}
                         {ENHANCED_MESSAGES[currentMessage]?.sender === 'bot' && ENHANCED_MESSAGES[currentMessage]?.confidence && (
-                          <div className="pt-3 mt-3 border-t border-teal-100">
+                          <div className="pt-3 mt-3 border-t border-[#006D77]/20">
                             <div className="flex items-center justify-between text-xs">
-                              <span className="text-teal-600 font-medium">Confianza:</span>
+                              <span className="text-[#006D77] font-medium uppercase tracking-wider">Confianza:</span>
                               <div className="flex items-center">
                                 <div className="w-16 h-1 bg-gray-200 rounded-full mr-2">
-                                  <div 
-                                    className="h-full bg-teal-500 rounded-full transition-all duration-1000"
-                                    style={{ width: `${ENHANCED_MESSAGES[currentMessage]?.confidence}%` }}
-                                  ></div>
+                                  <motion.div 
+                                    className="h-full bg-[#006D77] rounded-full"
+                                    initial={{ width: 0 }}
+                                    animate={{ width: `${ENHANCED_MESSAGES[currentMessage]?.confidence}%` }}
+                                    transition={{ duration: 1, delay: 0.5 }}
+                                  ></motion.div>
                                 </div>
-                                <span className="text-teal-700 font-bold">{ENHANCED_MESSAGES[currentMessage]?.confidence}%</span>
+                                <span className="text-[#006D77] font-bold">{ENHANCED_MESSAGES[currentMessage]?.confidence}%</span>
                               </div>
                             </div>
                           </div>
                         )}
                       </motion.div>
+                      
+                      {/* Typing indicator */}
+                      {isThinking && (
+                        <motion.div 
+                          className="bg-gray-50 rounded-lg p-3 mr-8"
+                          animate={{ opacity: [0.5, 1, 0.5] }} 
+                          transition={{ repeat: Infinity, duration: 1.2 }}
+                        >
+                          <span className="text-sm text-gray-400">Dr. Simeon está escribiendo…</span>
+                        </motion.div>
+                      )}
                     </div>
                     
-                    {/* Enhanced Input Preview */}
-                    <div className="mt-6 flex items-center bg-gray-50 rounded-xl p-3">
-                      <input 
-                        type="text" 
-                        placeholder="Describe tus síntomas aquí..." 
-                        className="bg-transparent border-none text-gray-700 placeholder-gray-500 flex-grow focus:outline-none text-sm"
-                        disabled
-                      />
-                      <button className="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center hover:bg-teal-700 transition-colors">
-                        <ChevronRight size={16} className="text-white" />
-                      </button>
-                    </div>
+                    {/* Enhanced Input Preview - NOW FUNCTIONAL */}
+                    <form onSubmit={handleChatSubmit} className="mt-6">
+                      <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg p-3 focus-within:ring-2 focus-within:ring-[#006D77] focus-within:border-transparent">
+                        <input 
+                          type="text" 
+                          value={chatInput}
+                          onChange={handleChatInputChange}
+                          placeholder="Describe tus síntomas aquí…" 
+                          className="bg-transparent border-none text-gray-700 placeholder-gray-500 flex-grow focus:outline-none text-sm"
+                          aria-label="Campo de entrada para síntomas"
+                        />
+                        <button 
+                          type="submit"
+                          disabled={!chatInput.trim()}
+                          className="w-8 h-8 rounded-lg bg-[#006D77] flex items-center justify-center hover:bg-[#005B66] transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                          aria-label="Enviar mensaje"
+                        >
+                          <ChevronRight size={16} className="text-white" />
+                        </button>
+                      </div>
+                    </form>
                   </motion.div>
                   
-                  {/* Floating Trust Elements */}
+                  {/* Professional Floating Trust Elements */}
                   <motion.div 
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.2 }}
-                    className="absolute -top-4 -right-4 bg-green-100 rounded-full p-3 shadow-lg"
+                    className="absolute -top-4 -right-4 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-[#006D77]/20"
                   >
-                    <Shield className="w-6 h-6 text-green-600" />
+                    <Shield className="w-6 h-6 text-[#006D77]" />
                   </motion.div>
                   <motion.div 
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.4 }}
-                    className="absolute -bottom-4 -left-4 bg-teal-100 rounded-full p-3 shadow-lg"
+                    className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg border border-[#006D77]/20"
                   >
-                    <Clock className="w-6 h-6 text-teal-600" />
+                    <Clock className="w-6 h-6 text-[#006D77]" />
                   </motion.div>
                 </div>
               </div>
@@ -300,10 +346,10 @@ function AIHomePage() {
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
                 Confianza respaldada por resultados
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
                 Miles de mexicanos ya confían en Dr. Simeon para sus consultas médicas
               </p>
             </div>
@@ -315,13 +361,13 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
+                  className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
                 >
-                  <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <metric.icon className="w-6 h-6 text-teal-600" />
+                  <div className="w-12 h-12 bg-[#D0F0EF] rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <metric.icon className="w-6 h-6 text-[#006D77]" />
                   </div>
                   <p className="text-3xl font-bold text-gray-900 mb-2">{metric.number}</p>
-                  <p className="text-gray-600">{metric.label}</p>
+                  <p className="text-gray-600 text-xs uppercase tracking-wider">{metric.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -329,13 +375,13 @@ function AIHomePage() {
         </section>
 
         {/* Enhanced Features Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
                 ¿Por qué elegir Dr. Simeon?
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
                 Diseñado específicamente para las necesidades de salud mexicanas
               </p>
             </div>
@@ -347,21 +393,21 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group border border-gray-100"
                 >
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-teal-100 to-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                      <feature.icon className="w-8 h-8 text-teal-600" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#D0F0EF] to-[#006D77]/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <feature.icon className="w-8 h-8 text-[#006D77]" />
                     </div>
                     <div className="mb-2">
-                      <span className="inline-block bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full font-medium mb-3">
+                      <span className="inline-block bg-[#D0F0EF] text-[#006D77] text-xs px-3 py-1 rounded-full font-medium mb-3 uppercase tracking-wider">
                         {feature.highlight}
                       </span>
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-neutral-700 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -375,74 +421,23 @@ function AIHomePage() {
         <section className="bg-white py-12 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <p className="text-gray-500 text-sm font-medium uppercase tracking-wider">
+              <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">
                 Respaldado por partners de confianza
               </p>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-teal-50 hover:to-blue-50 hover:text-teal-700 transition-all">
+              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 AXA Seguros
               </div>
-              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-teal-50 hover:to-blue-50 hover:text-teal-700 transition-all">
+              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 Farmacias Guadalajara
               </div>
-              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-teal-50 hover:to-blue-50 hover:text-teal-700 transition-all">
+              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 Farma Ahorro
               </div>
-              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-teal-50 hover:to-blue-50 hover:text-teal-700 transition-all">
+              <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 Telcel Health
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Enhanced Services Preview Section */}
-        <section className="bg-gradient-to-br from-teal-600 to-blue-700 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">
-                Servicios médicos completos
-              </h2>
-              <p className="text-xl text-teal-100 max-w-2xl mx-auto">
-                Servicios médicos integrales diseñados para tu bienestar
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
-              >
-                <Activity className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold text-white mb-4">Análisis Clínicos</h3>
-                <p className="text-teal-100 mb-4">Solicita exámenes clínicos desde tu casa con resultados rápidos y confiables.</p>
-                <Link to="/lab-testing" className="inline-flex items-center text-white hover:text-teal-200 transition">
-                  <span>Solicitar ahora</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
-              >
-                <ShoppingCart className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold text-white mb-4">Farmacia Digital</h3>
-                <p className="text-teal-100 mb-4">Compra y recibe tus medicamentos recetados directamente en casa.</p>
-                <Link to="/farmacia" className="inline-flex items-center text-white hover:text-teal-200 transition">
-                  <span>Explorar farmacia</span>
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </motion.div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-white/10 rounded-2xl p-8 text-center group hover:bg-white/20 transition-all backdrop-blur-sm"
-              >
-                <Video className="w-12 h-12 text-teal-200 mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-2xl font-bold text-white mb-4">Teleconsulta</h3>
-                <p className="text-teal-100 mb-4">Habla en vivo con médicos especialistas certificados en México.</p>
-              </motion.div>
             </div>
           </div>
         </section>
@@ -452,32 +447,32 @@ function AIHomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">
+                <h2 className="text-3xl font-extrabold mb-6 tracking-tight">
                   Tu privacidad es nuestra prioridad
                 </h2>
-                <p className="text-gray-300 text-lg mb-8">
+                <p className="text-gray-300 text-lg leading-7 mb-8">
                   Utilizamos los más altos estándares de seguridad para proteger tu información médica personal.
                 </p>
                 
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <Lock className="w-6 h-6 text-green-400 mr-3" />
+                    <Lock className="w-6 h-6 text-[#006D77] mr-3" />
                     <span>Cifrado AES-256 de grado militar</span>
                   </div>
                   <div className="flex items-center">
-                    <Shield className="w-6 h-6 text-green-400 mr-3" />
+                    <Shield className="w-6 h-6 text-[#006D77] mr-3" />
                     <span>Cumplimiento total con GDPR y leyes mexicanas</span>
                   </div>
                   <div className="flex items-center">
-                    <Award className="w-6 h-6 text-green-400 mr-3" />
+                    <Award className="w-6 h-6 text-[#006D77] mr-3" />
                     <span>Certificación ISO 27001 en proceso</span>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl border border-gray-700">
                 <div className="text-center">
-                  <Shield className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                  <Shield className="w-16 h-16 text-[#006D77] mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-4">100% Confidencial</h3>
                   <p className="text-gray-300">
                     Tus datos médicos nunca se comparten sin tu consentimiento explícito.
@@ -489,59 +484,30 @@ function AIHomePage() {
         </section>
 
         {/* Enhanced Final CTA */}
-        <section className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-16">
+        <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-extrabold mb-6 tracking-tight">
               ¿Listo para tu primera consulta con Dr. Simeon?
             </h2>
-            <p className="text-xl text-teal-100 mb-8">
+            <p className="text-xl text-[#D0F0EF] mb-8">
               Únete a miles de mexicanos que ya confían en nuestra plataforma médica inteligente.
             </p>
             
             <div className="space-y-4">
-              <button 
-                onClick={() => {
-                  openChat();
-                }}
-                className="bg-white text-teal-600 hover:bg-gray-100 px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group inline-flex items-center justify-center"
+              <Link 
+                to="/doctor"
+                className="bg-white text-[#006D77] hover:bg-gray-100 px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                aria-label="Comenzar consulta médica gratuita"
               >
                 <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
                 Comenzar consulta gratuita
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
               
-              <p className="text-teal-100 text-sm">
+              <p className="text-[#D0F0EF] text-sm">
                 Sin compromisos • Sin tarjeta de crédito • Respuesta inmediata
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
-        <section className="bg-gradient-to-br from-teal-600 to-blue-700 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">
-                Suscríbete a nuestro boletín
-              </h2>
-              <p className="text-xl text-teal-100 max-w-2xl mx-auto">
-                Recibe actualizaciones sobre nuevas funciones y consejos de salud
-              </p>
-            </div>
-            
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Tu correo electrónico"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm text-white placeholder-white/60 border border-white/30 focus:border-white/50 focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-white text-teal-600 rounded-lg font-medium hover:bg-white/90 transition"
-              >
-                Suscribirse
-              </button>
-            </form>
           </div>
         </section>
 

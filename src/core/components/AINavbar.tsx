@@ -34,7 +34,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
   };
   
   return (
-    <header className="bg-gradient-to-r from-brand-jade-600 to-brand-jade-500 shadow-sm sticky top-0 z-40 h-16">
+    <header className="bg-[#006D77] shadow-sm sticky top-0 z-40 h-16">
       <div className="flex items-center justify-between h-full px-4">
         {/* Left section: Logo and brand name */}
         <div className="flex items-center gap-4">
@@ -52,7 +52,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
           {/* Logo and brand name in top-left */}
           <Link to="/" className="flex items-center gap-3">
             <img src="/Doctorlogo.png" alt="DoctorMX" className="h-8 w-auto" />
-            <span className="text-lg font-bold text-white">DoctorMX</span>
+            <span className="text-lg font-bold text-white tracking-tight">DoctorMX</span>
           </Link>
         </div>
         
@@ -71,6 +71,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
                     ? 'bg-white/20 text-white'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`}
+                aria-label={item.label}
               >
                 <Icon size={16} />
                 <span className="hidden xl:block">{item.label}</span>
@@ -83,7 +84,10 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
         <div className="flex items-center gap-3">
           {/* Notifications */}
           {isAuthenticated && (
-            <button className="relative p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+            <button 
+              className="relative p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              aria-label="Notificaciones"
+            >
               <Bell size={18} />
               <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
             </button>
@@ -94,21 +98,25 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
             <button
               onClick={() => setShowLangMenu(!showLangMenu)}
               className="flex items-center px-2 py-1 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              aria-label="Cambiar idioma"
+              aria-expanded={showLangMenu}
             >
               <Globe size={16} className="mr-1" />
-              {language === 'es' ? 'ES' : 'EN'}
+              <span className="text-xs uppercase tracking-wider">
+                {language === 'es' ? 'ES' : 'EN'}
+              </span>
             </button>
             
             {showLangMenu && (
               <div className="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200">
                 <button 
-                  className={`w-full text-left px-4 py-2 text-sm ${language === 'es' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:bg-gray-100'}`}
+                  className={`w-full text-left px-4 py-2 text-sm ${language === 'es' ? 'text-[#006D77] bg-[#D0F0EF]' : 'text-gray-700 hover:bg-gray-100'}`}
                   onClick={() => changeLanguage('es')}
                 >
                   Español (México)
                 </button>
                 <button 
-                  className={`w-full text-left px-4 py-2 text-sm ${language === 'en' ? 'text-brand-jade-600 bg-brand-jade-50' : 'text-gray-700 hover:bg-gray-100'}`}
+                  className={`w-full text-left px-4 py-2 text-sm ${language === 'en' ? 'text-[#006D77] bg-[#D0F0EF]' : 'text-gray-700 hover:bg-gray-100'}`}
                   onClick={() => changeLanguage('en')}
                 >
                   English (US)
@@ -128,12 +136,6 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
                 <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Mi Perfil
                 </Link>
-                <Link to="/appointments" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Mis Citas
-                </Link>
-                <Link to="/prescriptions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  Mis Recetas
-                </Link>
                 <Link to="/medical-history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   Historial Médico
                 </Link>
@@ -150,12 +152,12 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
           ) : (
             <div className="flex items-center gap-2">
               <Link to="/login">
-                <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10 bg-transparent">
+                <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200">
                   Iniciar Sesión
-                </Button>
+                </button>
               </Link>
               <Link to="/register">
-                <Button size="sm" className="bg-white text-brand-jade-600 hover:bg-gray-50">
+                <Button size="sm" className="bg-white text-[#006D77] hover:bg-gray-50 transition-transform duration-200 hover:scale-[1.02]">
                   Registrarse
                 </Button>
               </Link>
@@ -167,4 +169,4 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
   );
 }
 
-export default AINavbar;
+export default AINavbar; 

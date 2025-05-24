@@ -7,12 +7,9 @@ import SplashScreen from './core/components/SplashScreen';
 const AIHomePage = React.lazy(() => import('./pages/AIHomePage'));
 const AIDoctorPage = React.lazy(() => import('./features/ai-doctor/pages/AIDoctorPage'));
 const AnalysisPage = React.lazy(() => import('./features/ai-analysis/AnalysisPage'));
-const DoctorsPage = React.lazy(() => import('./features/doctors/DoctorsPage'));
-const AppointmentsPage = React.lazy(() => import('./features/appointments/AppointmentsPage'));
-const PrescriptionsPage = React.lazy(() => import('./features/prescriptions/PrescriptionsPage'));
-const PharmaciesPage = React.lazy(() => import('./features/pharmacies/PharmaciesPage'));
 const ImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/ImageAnalysisPage'));
 const LabTestingPage = React.lazy(() => import('./features/lab-testing/LabTestingPage'));
+const DoctorConnectPage = React.lazy(() => import('./pages/DoctorConnectPage'));
 
 function App() {
   return (
@@ -23,6 +20,7 @@ function App() {
           <Route index element={<AIHomePage />} />
           <Route path="image-analysis" element={<ImageAnalysisPage />} />
           <Route path="lab-testing" element={<LabTestingPage />} />
+          <Route path="connect" element={<DoctorConnectPage />} />
         </Route>
         
         {/* Doctor/Medical Professional Routes - with sidebar */}
@@ -32,10 +30,6 @@ function App() {
         
         <Route path="/medical/*" element={<DoctorLayout />}>
           <Route path="analysis" element={<AnalysisPage />} />
-          <Route path="doctors" element={<DoctorsPage />} />
-          <Route path="appointments" element={<AppointmentsPage />} />
-          <Route path="prescriptions" element={<PrescriptionsPage />} />
-          <Route path="pharmacies" element={<PharmaciesPage />} />
         </Route>
       </Routes>
     </Suspense>
