@@ -7,11 +7,15 @@
 // Please make all changes to this file.
 // ======================================================
 
+import { useLocation } from 'react-router-dom';
 import AIDoctor from '../components/AIDoctor';
 import SEO from '../../../core/components/SEO';
 import ClientOnly from '../../../components/ClientOnly';
 
 function AIDoctorPage() {
+  const location = useLocation();
+  const initialMessage = location.state?.initialMessage;
+
   return (
     <>
       <SEO
@@ -22,7 +26,7 @@ function AIDoctorPage() {
       />
       {/* Wrap AIDoctor with ClientOnly to prevent hydration mismatches */}
       <ClientOnly>
-        <AIDoctor />
+        <AIDoctor initialMessage={initialMessage} />
       </ClientOnly>
     </>
   );

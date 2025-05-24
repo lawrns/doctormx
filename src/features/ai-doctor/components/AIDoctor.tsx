@@ -67,9 +67,10 @@ type Tab = 'chat' | 'analysis' | 'providers' | 'prescriptions' | 'appointments' 
 interface AIDoctorProps {
   onClose?: () => void;
   isEmbedded?: boolean;
+  initialMessage?: string;
 }
 
-function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
+function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [isRecording, setIsRecording] = useState(false);
@@ -136,6 +137,18 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+
+  // Handle initial message from homepage
+  useEffect(() => {
+    if (initialMessage && initialMessage.trim()) {
+      // Set the input and automatically send it
+      setInput(initialMessage);
+      // Small delay to ensure the component is fully rendered
+      setTimeout(() => {
+        handleSendMessage();
+      }, 500);
+    }
+  }, [initialMessage]);
 
   // Initialize Mexican medical knowledge base on component mount - temporarily disabled
   // useEffect(() => {
