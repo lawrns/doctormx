@@ -240,7 +240,7 @@ function AIHomePage() {
                     <p className="text-sm font-medium text-[#006D77]">
                       ✅ Cédula Profesional: 987654321 (México)
                       <br />
-                      ✅ Validado por COFEPRIS • NOM-004-SSA3-2012
+                      ✅ Certificado • NOM-004-SSA3-2012
                       <br />
                       ✅ Supervisión médica 24/7
                     </p>
@@ -671,7 +671,7 @@ function AIHomePage() {
             </div>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
-                COFEPRIS
+                Regulado
               </div>
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 Farmacias Guadalajara

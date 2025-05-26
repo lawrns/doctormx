@@ -389,7 +389,7 @@ const LabTestingPage: React.FC = () => {
             <div className="mt-6 flex justify-center space-x-8">
               <div className="flex items-center text-green-600">
                 <Shield className="w-5 h-5 mr-2" />
-                <span className="text-sm font-medium">Certificado COFEPRIS</span>
+                <span className="text-sm font-medium">Certificado</span>
               </div>
               <div className="flex items-center text-blue-600">
                 <Star className="w-5 h-5 mr-2" />

@@ -250,7 +250,7 @@ const DoctorConnectPage: React.FC = () => {
     {
       icon: Shield,
       title: "Soporte legal completo",
-      description: "Plataforma certificada por COFEPRIS con respaldo legal y seguro de responsabilidad civil."
+      description: "Plataforma certificada con respaldo legal y seguro de responsabilidad civil."
     },
     {
       icon: Award,

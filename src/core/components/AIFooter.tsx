@@ -133,7 +133,7 @@ function AIFooter() {
                 © {new Date().getFullYear()} DoctorMX. Todos los derechos reservados.
               </p>
               <p className="text-gray-500 text-xs mt-1">
-                Plataforma médica certificada por COFEPRIS
+                Plataforma médica certificada
               </p>
             </div>
             

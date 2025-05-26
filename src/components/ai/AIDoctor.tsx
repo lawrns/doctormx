@@ -784,7 +784,7 @@ function AIDoctor({ onClose, isEmbedded = false }: AIDoctorProps) {
         <div className="flex justify-center space-x-8 mb-3">
           <div className="text-center">
             <div className="text-sm font-medium text-gray-600">Certificado por</div>
-            <div className="font-bold text-gray-800">COFEPRIS</div>
+            <div className="font-bold text-gray-800">Certificado</div>
           </div>
           <div className="text-center">
             <div className="text-sm font-medium text-gray-600">Encriptación</div>

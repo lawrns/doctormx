@@ -208,7 +208,7 @@ const LabTestingPage = () => {
             <div>
               <h3 className="font-medium text-blue-800 mb-1">Integración con Sistema de Salud Mexicano</h3>
               <p className="text-blue-700 text-sm">
-                Conectado con IMSS, ISSSTE y más de 500 laboratorios certificados por COFEPRIS en todo México.
+                Conectado con IMSS, ISSSTE y más de 500 laboratorios certificados en todo México.
                 Tus resultados se sincronizan automáticamente con tu expediente médico digital.
               </p>
             </div>

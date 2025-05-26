@@ -28,7 +28,7 @@ const AIImageAnalysisPage = () => {
     'Base de datos IMSS',
     'Literatura médica internacional',
     'Estudios clínicos recientes',
-    'Guías COFEPRIS'
+    'Guías médicas oficiales'
   ];
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
