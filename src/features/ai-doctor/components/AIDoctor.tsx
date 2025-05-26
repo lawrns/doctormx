@@ -74,11 +74,6 @@ interface AIDoctorProps {
 
 function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  
-  // Use mobile version on small screens
-  if (isMobile && !isEmbedded) {
-    return <AIDoctorMobile initialMessage={initialMessage} onBack={onClose} />;
-  }
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [inputHeight, setInputHeight] = useState('auto');
@@ -155,6 +150,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     question: string;
     answer: string;
   }>>([]);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
   
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -165,6 +162,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const fileInputRef = useRef<HTMLInputElement>(null);
   const initialMessageSentRef = useRef(false);
   const shouldScrollRef = useRef(false);
+  
+  // Use mobile version on small screens - after all hooks
+  if (isMobile && !isEmbedded) {
+    return <AIDoctorMobile initialMessage={initialMessage} onBack={onClose} />;
+  }
 
   useEffect(() => {
     if (shouldScrollRef.current) {
@@ -480,9 +482,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       }
     }
   };
-  
-  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
-  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
   
   const handleMicClick = async () => {
     if (isRecording) {
