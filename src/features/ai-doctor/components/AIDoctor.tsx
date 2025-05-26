@@ -10,7 +10,7 @@
 import React, { useState, useRef, useEffect, memo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X, MessageSquare, Activity, Users, Pill, ShoppingBag } from 'lucide-react';
+import { Send, Image, Mic, MapPin, Calendar, FileText, Menu, X, MessageSquare, Activity, Users, Pill, ShoppingBag, User, Heart, Phone } from 'lucide-react';
 import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse, EnhancedStreamingResponseHandler } from '../../../core/services/ai/EnhancedAIService';
 import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge/MexicanMedicalKnowledgeService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
@@ -73,6 +73,7 @@ interface AIDoctorProps {
 function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
+  const [inputHeight, setInputHeight] = useState('auto');
   const [isRecording, setIsRecording] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [severityLevel, setSeverityLevel] = useState(10);
@@ -95,17 +96,38 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     'Atlas de dermatología', 'Investigaciones recientes'
   ];
   
+  // Mexican family context and quick symptoms
+  const [familyMember, setFamilyMember] = useState<string>('myself');
+  const [showFamilySetup, setShowFamilySetup] = useState(false);
+  
+  const MEXICAN_FAMILY_OPTIONS = [
+    { value: 'myself', label: 'Para mí' },
+    { value: 'spouse', label: 'Para mi esposo/a' },
+    { value: 'child', label: 'Para mi hijo/a' },
+    { value: 'parent', label: 'Para mis padres' },
+    { value: 'family', label: 'Para otro familiar' }
+  ];
+  
+  const MEXICAN_QUICK_SYMPTOMS = [
+    { text: 'Tengo diabetes y necesito orientación', icon: '🩺' },
+    { text: 'Dolor de cabeza fuerte', icon: '🤕' },
+    { text: 'Fiebre y malestar general', icon: '🌡️' },
+    { text: 'Presión arterial alta', icon: '❤️' },
+    { text: 'Dolor de estómago', icon: '😷' },
+    { text: 'Problemas respiratorios', icon: '🤧' }
+  ];
+  
   // Initialize with enhanced Mexican greeting
   const [messages, setMessages] = useState<Message[]>([
     { 
       id: '1', 
-      text: enhancedAIService.generatePersonalizedGreeting(),
+      text: '¡Hola! Soy Dr. Simeon, tu médico mexicano inteligente. ¿Para quién es la consulta de hoy? Estoy aquí para ayudarte con cualquier problema de salud de tu familia.',
       sender: 'bot',
       timestamp: new Date(),
       personalityApplied: true,
       interactiveOptions: {
         type: 'symptom_category',
-        options: ['Dolor', 'Fiebre', 'Digestivo', 'Respiratorio', 'Piel', 'Otro'],
+        options: ['Para mí', 'Para mi familia', 'Emergencia', 'Consulta general'],
         questionId: 'initial'
       }
     }
@@ -1090,63 +1112,145 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       </motion.div>
                     )}
                     
-                    {/* Sticky Input area at bottom of viewport */}
-                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '80px' }}>
-                      <div className="flex space-x-2 max-w-screen-xl mx-auto">
-                        <button 
-                          onClick={handleMicClick}
-                          className={`p-2 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
-                          aria-label="Usar micrófono"
-                        >
-                          <Mic size={20} />
-                        </button>
-                        <button 
-                          onClick={() => fileInputRef.current?.click()}
-                          className={`p-2 rounded-full ${isUploading ? 'text-brand-jade-600' : 'text-gray-500 hover:text-brand-jade-600'}`}
-                          aria-label="Subir imagen"
-                        >
-                          <Image size={20} />
-                        </button>
-                        <input
-                          type="file"
-                          ref={fileInputRef}
-                          onChange={handleImageUpload}
-                          accept="image/*"
-                          className="hidden"
-                        />
-                        <div className="flex-1 relative" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout style', minHeight: '44px' }}>
-                          <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => {
-                              // Use a stable function reference to prevent re-renders
-                              const newValue = e.target.value;
-                              setInput(newValue);
-                            }}
-                            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                            placeholder="Describe tus síntomas o haz una pregunta..."
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-brand-jade-500 chat-input"
-                            disabled={isProcessing}
-                            style={{ height: '44px', minHeight: '44px' }}
-                          />
-                          {input.length > 0 && (
-                            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 text-xs text-brand-jade-500 opacity-70" style={{ pointerEvents: 'none' }}>
-                              {input.length} caracteres
-                            </div>
-                          )}
+                    {/* Family Member Selector */}
+                    {showFamilySetup && (
+                      <div className="bg-[#D0F0EF] border border-[#006D77] rounded-lg p-4 mb-4">
+                        <h4 className="font-medium text-[#006D77] mb-3">¿Para quién es la consulta?</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {MEXICAN_FAMILY_OPTIONS.map((option) => (
+                            <button
+                              key={option.value}
+                              onClick={() => {
+                                setFamilyMember(option.value);
+                                setShowFamilySetup(false);
+                              }}
+                              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                                familyMember === option.value
+                                  ? 'bg-[#006D77] text-white'
+                                  : 'bg-white text-[#006D77] hover:bg-[#006D77]/10'
+                              }`}
+                            >
+                              {option.label}
+                            </button>
+                          ))}
                         </div>
-                        <button 
-                          onClick={handleSendMessage}
-                          disabled={(!input.trim() && !isUploading) || isProcessing}
-                          className={`p-2 rounded-full ${
-                            (!input.trim() && !isUploading) || isProcessing
-                              ? 'text-gray-400 cursor-not-allowed' 
-                              : 'text-brand-jade-600 hover:bg-brand-jade-50'
-                          }`}
-                          aria-label="Enviar mensaje"
+                      </div>
+                    )}
+                    
+                    {/* Quick Mexican Symptoms */}
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
+                        <button
+                          onClick={() => setShowFamilySetup(!showFamilySetup)}
+                          className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
                         >
-                          <Send size={20} />
+                          <User className="w-4 h-4 mr-1" />
+                          {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
                         </button>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
+                          <button
+                            key={index}
+                            onClick={() => {
+                              const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
+                              setInput(symptom.text + familyContext);
+                              setTimeout(() => handleSendMessage(), 100);
+                            }}
+                            className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2 text-sm transition-all flex items-center space-x-2"
+                          >
+                            <span>{symptom.icon}</span>
+                            <span className="text-[#006D77]">{symptom.text}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Enhanced Input area at bottom of viewport */}
+                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '120px' }}>
+                      <div className="max-w-screen-xl mx-auto">
+                        {/* Emergency Contact Bar */}
+                        <div className="flex items-center justify-center mb-3 text-sm">
+                          <div className="bg-red-50 border border-red-200 rounded-lg px-3 py-1 flex items-center">
+                            <Phone className="w-4 h-4 text-red-600 mr-2" />
+                            <span className="text-red-700 font-medium">Emergencia: 911 • Cruz Roja: 065</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex space-x-2">
+                          <button 
+                            onClick={handleMicClick}
+                            className={`p-3 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
+                            aria-label="Usar micrófono"
+                          >
+                            <Mic size={20} />
+                          </button>
+                          <button 
+                            onClick={() => fileInputRef.current?.click()}
+                            className={`p-3 rounded-full ${isUploading ? 'text-[#006D77] bg-[#D0F0EF]' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
+                            aria-label="Subir imagen"
+                          >
+                            <Image size={20} />
+                          </button>
+                          <a
+                            href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica%20urgente"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 rounded-full text-[#25D366] hover:bg-green-50"
+                            aria-label="WhatsApp directo"
+                          >
+                            <Phone size={20} />
+                          </a>
+                          <input
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleImageUpload}
+                            accept="image/*"
+                            className="hidden"
+                          />
+                          <div className="flex-1 relative" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout style', minHeight: '56px' }}>
+                            <textarea
+                              value={input}
+                              onChange={(e) => {
+                                const newValue = e.target.value;
+                                setInput(newValue);
+                                // Auto-resize textarea
+                                const target = e.target as HTMLTextAreaElement;
+                                target.style.height = 'auto';
+                                target.style.height = Math.min(target.scrollHeight, 120) + 'px';
+                              }}
+                              onKeyPress={(e) => {
+                                if (e.key === 'Enter' && !e.shiftKey) {
+                                  e.preventDefault();
+                                  handleSendMessage();
+                                }
+                              }}
+                              placeholder="Cuéntame qué te duele o preocupa... (Presiona Enter para enviar, Shift+Enter para nueva línea)"
+                              className="w-full border-2 border-[#006D77]/30 focus:border-[#006D77] rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#006D77]/20 chat-input resize-none"
+                              disabled={isProcessing}
+                              style={{ minHeight: '56px', maxHeight: '120px' }}
+                              rows={1}
+                            />
+                            {input.length > 0 && (
+                              <div className="absolute right-3 bottom-2 text-xs text-[#006D77] opacity-70" style={{ pointerEvents: 'none' }}>
+                                {input.length} caracteres
+                              </div>
+                            )}
+                          </div>
+                          <button 
+                            onClick={handleSendMessage}
+                            disabled={(!input.trim() && !isUploading) || isProcessing}
+                            className={`p-3 rounded-full transition-all ${
+                              (!input.trim() && !isUploading) || isProcessing
+                                ? 'text-gray-400 cursor-not-allowed bg-gray-100' 
+                                : 'text-white bg-[#006D77] hover:bg-[#005B66] shadow-md hover:shadow-lg'
+                            }`}
+                            aria-label="Enviar mensaje"
+                          >
+                            <Send size={20} />
+                          </button>
+                        </div>
                       </div>
                       
                       {/* Stable containers for status indicators */}

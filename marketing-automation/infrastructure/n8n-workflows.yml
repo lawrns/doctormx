@@ -1,0 +1,487 @@
+# DoctorMX Marketing Automation - n8n Workflows Configuration
+
+## Docker Compose Setup
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=${N8N_WEBHOOK_URL}
+      - EXECUTIONS_PROCESS=main
+      - EXECUTIONS_MODE=regular
+      - N8N_METRICS=true
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./workflows:/home/node/.n8n/workflows
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_DB=n8n
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:6-alpine
+    restart: always
+    volumes:
+      - redis_data:/data
+
+volumes:
+  n8n_data:
+  postgres_data:
+  redis_data:
+```
+
+## Environment Variables
+```bash
+# .env
+N8N_PASSWORD=your_secure_password
+N8N_HOST=automation.doctormx.com
+N8N_WEBHOOK_URL=https://automation.doctormx.com
+POSTGRES_PASSWORD=your_postgres_password
+
+# DoctorMX Integration
+DOCTORMX_API_URL=https://doctormx.netlify.app
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_key
+SUPABASE_SERVICE_KEY=your_service_key
+
+# WhatsApp Business API
+WHATSAPP_ACCESS_TOKEN=your_whatsapp_token
+WHATSAPP_PHONE_ID=your_phone_id
+WHATSAPP_VERIFY_TOKEN=your_verify_token
+
+# Email Service (SendGrid)
+SENDGRID_API_KEY=your_sendgrid_key
+SENDGRID_FROM_EMAIL=dr.simeon@doctormx.com
+
+# Social Media APIs
+TWITTER_API_KEY=your_twitter_key
+TWITTER_API_SECRET=your_twitter_secret
+TWITTER_ACCESS_TOKEN=your_twitter_access_token
+TWITTER_ACCESS_SECRET=your_twitter_access_secret
+
+REDDIT_CLIENT_ID=your_reddit_client_id
+REDDIT_CLIENT_SECRET=your_reddit_secret
+REDDIT_USERNAME=doctormx_bot
+REDDIT_PASSWORD=your_reddit_password
+
+# Analytics
+GOOGLE_ANALYTICS_ID=GA4-XXXXX
+FACEBOOK_PIXEL_ID=your_pixel_id
+```
+
+## Core Workflow 1: User Registration & Onboarding
+```json
+{
+  "name": "User Registration Onboarding",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/user-registered",
+        "responseMode": "responseNode"
+      },
+      "name": "Webhook - User Registered",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract user data\nconst userData = items[0].json;\nconst userId = userData.user_id;\nconst email = userData.email;\nconst phone = userData.phone;\nconst source = userData.registration_source;\n\n// Calculate user score based on registration completeness\nlet userScore = 0;\nif (email) userScore += 25;\nif (phone) userScore += 25;\nif (userData.utm_data?.utm_source) userScore += 15;\nif (userData.utm_data?.utm_campaign) userScore += 10;\n\n// Determine onboarding path\nlet onboardingType = 'basic';\nif (userScore >= 60) onboardingType = 'premium';\nelse if (userScore >= 40) onboardingType = 'standard';\n\nreturn [{\n  json: {\n    ...userData,\n    user_score: userScore,\n    onboarding_type: onboardingType,\n    welcome_delay: onboardingType === 'premium' ? 0 : 300 // 5 min delay for basic\n  }\n}];"
+      },
+      "name": "Calculate User Score",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.phone}}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "name": "Has Phone Number",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "url": "/.netlify/functions/whatsapp-webhook",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\n  \"phone\": \"{{$json.phone}}\",\n  \"message_type\": \"welcome\",\n  \"user_data\": {\n    \"name\": \"{{$json.name || 'Usuario'}}\",\n    \"onboarding_type\": \"{{$json.onboarding_type}}\"\n  }\n}"
+      },
+      "name": "Send WhatsApp Welcome",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "url": "/.netlify/functions/email-send",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"to\": \"{{$json.email}}\",\n  \"template_id\": \"welcome_{{$json.onboarding_type}}\",\n  \"dynamic_template_data\": {\n    \"user_name\": \"{{$json.name || 'Usuario'}}\",\n    \"registration_source\": \"{{$json.registration_source}}\",\n    \"onboarding_type\": \"{{$json.onboarding_type}}\"\n  }\n}"
+      },
+      "name": "Send Welcome Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 400]
+    },
+    {
+      "parameters": {
+        "amount": "{{$json.welcome_delay}}",
+        "unit": "seconds"
+      },
+      "name": "Welcome Delay",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "user_onboarding",
+        "columns": "user_id, onboarding_type, user_score, started_at, status",
+        "additionalFields": {
+          "upsert": true
+        }
+      },
+      "name": "Log Onboarding Start",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [1250, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - User Registered": {
+      "main": [[{"node": "Calculate User Score", "type": "main", "index": 0}]]
+    },
+    "Calculate User Score": {
+      "main": [[{"node": "Has Phone Number", "type": "main", "index": 0}]]
+    },
+    "Has Phone Number": {
+      "main": [
+        [{"node": "Send WhatsApp Welcome", "type": "main", "index": 0}],
+        [{"node": "Send Welcome Email", "type": "main", "index": 0}]
+      ]
+    },
+    "Send WhatsApp Welcome": {
+      "main": [[{"node": "Welcome Delay", "type": "main", "index": 0}]]
+    },
+    "Send Welcome Email": {
+      "main": [[{"node": "Welcome Delay", "type": "main", "index": 0}]]
+    },
+    "Welcome Delay": {
+      "main": [[{"node": "Log Onboarding Start", "type": "main", "index": 0}]]
+    }
+  }
+}
+```
+
+## Core Workflow 2: Consultation Completion Follow-up
+```json
+{
+  "name": "Consultation Completion Automation",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/consultation-complete",
+        "responseMode": "responseNode"
+      },
+      "name": "Webhook - Consultation Complete",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Analyze consultation data\nconst consultation = items[0].json;\nconst userId = consultation.user_id;\nconst severity = consultation.severity || 0;\nconst hasEmergency = consultation.is_emergency;\nconst completionRate = consultation.completion_rate;\nconst featuresUsed = consultation.features_used || [];\n\n// Calculate engagement score\nlet engagementScore = 0;\nengagementScore += completionRate * 30;\nengagementScore += featuresUsed.length * 5;\nif (featuresUsed.includes('image_analysis')) engagementScore += 15;\nif (featuresUsed.includes('voice_message')) engagementScore += 10;\nif (consultation.duration > 300) engagementScore += 10; // 5+ minutes\n\n// Determine follow-up strategy\nlet followUpType = 'standard';\nif (hasEmergency) followUpType = 'emergency';\nelse if (severity >= 7) followUpType = 'high_severity';\nelse if (engagementScore >= 70) followUpType = 'high_engagement';\nelse if (engagementScore < 30) followUpType = 'low_engagement';\n\n// Set follow-up timing\nconst followUpDelays = {\n  emergency: 0,\n  high_severity: 1800, // 30 minutes\n  high_engagement: 3600, // 1 hour\n  standard: 7200, // 2 hours\n  low_engagement: 86400 // 24 hours\n};\n\nreturn [{\n  json: {\n    ...consultation,\n    engagement_score: engagementScore,\n    follow_up_type: followUpType,\n    follow_up_delay: followUpDelays[followUpType]\n  }\n}];"
+      },
+      "name": "Analyze Consultation",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.follow_up_type}}",
+              "value2": "emergency"
+            }
+          ]
+        }
+      },
+      "name": "Is Emergency",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "url": "/.netlify/functions/whatsapp-webhook",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"phone\": \"{{$json.user_phone}}\",\n  \"message_type\": \"emergency_follow_up\",\n  \"content\": {\n    \"severity\": {{$json.severity}},\n    \"recommendations\": \"{{$json.recommendations}}\"\n  }\n}"
+      },
+      "name": "Emergency WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 150]
+    },
+    {
+      "parameters": {
+        "amount": "{{$json.follow_up_delay}}",
+        "unit": "seconds"
+      },
+      "name": "Follow-up Delay",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [850, 350]
+    },
+    {
+      "parameters": {
+        "url": "/.netlify/functions/email-send",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"to\": \"{{$json.user_email}}\",\n  \"template_id\": \"consultation_follow_up_{{$json.follow_up_type}}\",\n  \"dynamic_template_data\": {\n    \"consultation_id\": \"{{$json.consultation_id}}\",\n    \"severity\": {{$json.severity}},\n    \"recommendations\": \"{{$json.recommendations}}\",\n    \"next_steps\": \"{{$json.next_steps}}\"\n  }\n}"
+      },
+      "name": "Send Follow-up Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [1050, 350]
+    }
+  ]
+}
+```
+
+## Core Workflow 3: WhatsApp Business Automation
+```json
+{
+  "name": "WhatsApp Business Automation",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/whatsapp-incoming",
+        "responseMode": "responseNode"
+      },
+      "name": "WhatsApp Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse WhatsApp webhook data\nconst webhook = items[0].json;\nconst messages = webhook.entry?.[0]?.changes?.[0]?.value?.messages || [];\nconst contacts = webhook.entry?.[0]?.changes?.[0]?.value?.contacts || [];\n\nif (messages.length === 0) {\n  return [];\n}\n\nconst message = messages[0];\nconst contact = contacts[0];\n\nconst messageData = {\n  message_id: message.id,\n  from: message.from,\n  timestamp: message.timestamp,\n  type: message.type,\n  text: message.text?.body || '',\n  contact_name: contact?.profile?.name || '',\n  wa_id: contact?.wa_id\n};\n\n// Simple intent detection\nlet intent = 'general';\nconst text = messageData.text.toLowerCase();\n\nif (text.includes('dolor') || text.includes('síntoma')) intent = 'symptoms';\nelse if (text.includes('cita') || text.includes('doctor')) intent = 'appointment';\nelse if (text.includes('medicina') || text.includes('medicamento')) intent = 'medication';\nelse if (text.includes('emergencia') || text.includes('urgente')) intent = 'emergency';\nelse if (text.includes('hola') || text.includes('ayuda')) intent = 'greeting';\n\nreturn [{\n  json: {\n    ...messageData,\n    intent: intent\n  }\n}];"
+      },
+      "name": "Parse WhatsApp Message",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.intent}}",
+              "value2": "emergency"
+            }
+          ]
+        }
+      },
+      "name": "Check Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://graph.facebook.com/v18.0/{{$env.WHATSAPP_PHONE_ID}}/messages",
+        "requestMethod": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$env.WHATSAPP_ACCESS_TOKEN}}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"messaging_product\": \"whatsapp\",\n  \"to\": \"{{$json.from}}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"body\": \"🚨 Entiendo que tienes una emergencia. Te estoy conectando con Dr. Simeon inmediatamente. Mientras tanto, si es una emergencia médica real, por favor llama al 911.\"\n  }\n}"
+      },
+      "name": "Emergency Response",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 150]
+    },
+    {
+      "parameters": {
+        "url": "{{$env.DOCTORMX_API_URL}}/.netlify/functions/ai-consultation",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"message\": \"{{$json.text}}\",\n  \"user_phone\": \"{{$json.from}}\",\n  \"platform\": \"whatsapp\",\n  \"intent\": \"{{$json.intent}}\"\n}"
+      },
+      "name": "Forward to AI Doctor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 350]
+    }
+  ]
+}
+```
+
+## Deployment Script
+```bash
+#!/bin/bash
+# deploy-automation.sh
+
+echo "🚀 Deploying DoctorMX Marketing Automation Infrastructure..."
+
+# Create directories
+mkdir -p marketing-automation/{workflows,configs,scripts}
+
+# Set up environment
+cp .env.example .env
+echo "📝 Please configure your .env file with actual API keys"
+
+# Deploy n8n with Docker
+docker-compose up -d
+
+# Wait for services to be ready
+echo "⏳ Waiting for services to initialize..."
+sleep 30
+
+# Import workflows
+echo "📥 Importing n8n workflows..."
+for workflow in workflows/*.json; do
+  curl -X POST http://localhost:5678/rest/workflows/import \
+    -H "Content-Type: application/json" \
+    -d "@$workflow" \
+    --user admin:${N8N_PASSWORD}
+done
+
+# Configure webhooks
+echo "🔗 Configuring webhooks..."
+curl -X POST ${DOCTORMX_API_URL}/.netlify/functions/configure-webhooks \
+  -H "Content-Type: application/json" \
+  -d '{
+    "n8n_webhook_url": "'${N8N_WEBHOOK_URL}'",
+    "endpoints": [
+      "/user-registered",
+      "/consultation-complete", 
+      "/whatsapp-incoming"
+    ]
+  }'
+
+echo "✅ Deployment complete!"
+echo "🎯 n8n Dashboard: http://localhost:5678"
+echo "📊 Monitor workflows and configure additional automations"
+```
+
+## Monitoring & Alerting Configuration
+```json
+{
+  "name": "System Monitoring",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "value": 5
+            }
+          ]
+        }
+      },
+      "name": "Monitor Every 5 Minutes",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "system_health",
+        "returnAll": true
+      },
+      "name": "Check System Health",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json.error_rate}}",
+              "operation": "larger",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "name": "High Error Rate",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "url": "/.netlify/functions/alert-slack",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "bodyParametersJson": "{\n  \"alert_type\": \"high_error_rate\",\n  \"error_rate\": {{$json.error_rate}},\n  \"timestamp\": \"{{$json.timestamp}}\"\n}"
+      },
+      "name": "Send Alert",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [850, 300]
+    }
+  ]
+}
+```
+
+This infrastructure provides the foundation for all DoctorMX marketing automation, with scalable webhooks, comprehensive user journey tracking, and real-time response capabilities optimized for the Mexican healthcare market. 

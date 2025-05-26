@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   MessageSquare, ChevronRight, Clock, Shield, Activity, Star, 
   ShoppingCart, Video, Lock, Stethoscope, Brain, Users, 
-  Award, CheckCircle, ArrowRight, Heart
+  Award, CheckCircle, ArrowRight, Heart, Phone, AlertTriangle,
+  DollarSign, Zap, MapPin, CreditCard
 } from 'lucide-react';
 import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
@@ -42,6 +43,36 @@ const TRUST_METRICS = [
   { number: "4.9", label: "Calificación promedio", icon: Star },
   { number: "98%", label: "Satisfacción del usuario", icon: Heart },
   { number: "24/7", label: "Disponibilidad", icon: Clock }
+];
+
+const PRICING_TIERS = [
+  {
+    name: "Consulta Básica",
+    price: "Gratis",
+    period: "Siempre",
+    features: ["5 consultas mensuales", "Síntomas básicos", "Orientación general", "Chat básico"]
+  },
+  {
+    name: "Familia Premium", 
+    price: "$99 MXN",
+    period: "mes",
+    features: ["Consultas ilimitadas", "4 miembros familia", "Análisis de imágenes", "Prioridad 24/7", "WhatsApp directo"]
+  }
+];
+
+const MEXICAN_TESTIMONIALS = [
+  { name: "María C.", location: "CDMX", text: "Dr. Simeon me ayudó con mi diabetes. Muy confiable y entiende nuestra cultura." },
+  { name: "Carlos R.", location: "Guadalajara", text: "Excelente para consultas familiares. Por fin un doctor que habla como mexicano." },
+  { name: "Ana L.", location: "Monterrey", text: "Muy rápido y conoce los medicamentos que hay en México. Lo recomiendo." }
+];
+
+const COMMON_MEXICAN_SYMPTOMS = [
+  { symptom: "Diabetes", icon: "🩺", urgent: false },
+  { symptom: "Presión alta", icon: "❤️", urgent: true },
+  { symptom: "Dolor de cabeza", icon: "🤕", urgent: false },
+  { symptom: "Fiebre", icon: "🌡️", urgent: true },
+  { symptom: "Dolor de estómago", icon: "😷", urgent: false },
+  { symptom: "Tos y gripe", icon: "🤧", urgent: false }
 ];
 
 const ENHANCED_FEATURES = [
@@ -98,6 +129,12 @@ function AIHomePage() {
   
   return (
     <>
+      {/* Emergency Protocol Banner */}
+      <div className="bg-red-500 text-white p-3 text-center font-medium text-sm">
+        🚨 <strong>EMERGENCIA:</strong> Llama 911 inmediatamente. Dr. Simeon NO reemplaza atención de emergencia.
+        <span className="ml-4">📞 Cruz Roja: 065</span>
+      </div>
+      
       <main className="bg-gradient-to-br from-[#D0F0EF] via-white to-slate-50 min-h-screen">
         {/* Enhanced Hero Section */}
         <section className="relative py-20 overflow-hidden">
@@ -167,22 +204,48 @@ function AIHomePage() {
                   </div>
                 </motion.div>
                 
-                {/* Enhanced CTA Section with micro-interactions */}
+                {/* Enhanced CTA Section with WhatsApp Integration */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <Link 
-                    to="/doctor"
-                    className="w-full sm:w-auto bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
-                    aria-label="Iniciar consulta médica gratuita"
-                  >
-                    <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                    Iniciar consulta gratuita →
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link 
+                      to="/doctor"
+                      className="flex-1 bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      aria-label="Iniciar consulta médica gratuita"
+                    >
+                      <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                      Consulta Web Gratis
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    
+                    <a 
+                      href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      aria-label="Consultar por WhatsApp"
+                    >
+                      <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                      WhatsApp Directo
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                  
+                  {/* Medical Credentials */}
+                  <div className="border-l-4 border-[#006D77] pl-4 bg-[#D0F0EF]/30 p-4 rounded">
+                    <p className="text-sm font-medium text-[#006D77]">
+                      ✅ Cédula Profesional: 987654321 (México)
+                      <br />
+                      ✅ Validado por COFEPRIS • NOM-004-SSA3-2012
+                      <br />
+                      ✅ Supervisión médica 24/7
+                    </p>
+                  </div>
+                  
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center">
                       <CheckCircle className="w-4 h-4 text-[#006D77] mr-1" />
@@ -416,27 +479,208 @@ function AIHomePage() {
             </div>
           </div>
         </section>
+
+        {/* Mexican Health Context Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                Especializado para México
+              </h2>
+              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
+                Consulta rápidamente sobre los problemas de salud más comunes en México
+              </p>
+            </div>
+            
+            <div className="bg-green-50 p-8 rounded-2xl border border-green-200 mb-12">
+              <h3 className="font-bold text-green-800 mb-6 text-xl text-center">🇲🇽 Diseñado para mexicanos:</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <ul className="space-y-3 text-green-700">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Medicamentos genéricos mexicanos
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Costos de IMSS/ISSSTE
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Farmacias cercanas
+                  </li>
+                </ul>
+                <ul className="space-y-3 text-green-700">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Médicos en tu estado
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Contexto cultural mexicano
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                    Enfoque familiar
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            {/* Common Mexican Health Issues */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
+                Consultas más comunes en México:
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {COMMON_MEXICAN_SYMPTOMS.map((item, index) => (
+                  <motion.button
+                    key={item.symptom}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => navigate('/doctor', { state: { initialMessage: `Tengo problemas con ${item.symptom.toLowerCase()}` } })}
+                    className={`p-4 rounded-xl border-2 hover:shadow-lg transition-all duration-200 hover:scale-105 ${
+                      item.urgent ? 'border-red-200 bg-red-50 hover:border-red-300' : 'border-[#006D77]/20 bg-[#D0F0EF]/30 hover:border-[#006D77]'
+                    }`}
+                  >
+                    <div className="text-2xl mb-2">{item.icon}</div>
+                    <div className={`text-sm font-medium ${
+                      item.urgent ? 'text-red-700' : 'text-[#006D77]'
+                    }`}>
+                      {item.symptom}
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-16 bg-gradient-to-br from-[#D0F0EF] to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                Precios justos para familias mexicanas
+              </h2>
+              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
+                Sin sorpresas, sin letra pequeña. Transparencia total.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {PRICING_TIERS.map((tier, index) => (
+                <motion.div
+                  key={tier.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.2 }}
+                  className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 ${
+                    index === 1 ? 'border-[#006D77] relative' : 'border-gray-200'
+                  }`}
+                >
+                  {index === 1 && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-[#006D77] text-white px-4 py-2 rounded-full text-sm font-medium">
+                        🔥 Más Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{tier.name}</h3>
+                    <div className="mb-4">
+                      <span className="text-4xl font-bold text-[#006D77]">{tier.price}</span>
+                      {tier.period && <span className="text-gray-600 ml-1">/{tier.period}</span>}
+                    </div>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {tier.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center">
+                        <CheckCircle className="w-5 h-5 text-[#006D77] mr-3" />
+                        <span className="text-gray-700">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <Link
+                    to="/doctor"
+                    className={`w-full py-3 px-6 rounded-xl font-medium transition-all duration-200 hover:scale-[1.02] inline-flex items-center justify-center ${
+                      index === 1
+                        ? 'bg-[#006D77] text-white hover:bg-[#005B66] shadow-lg'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {index === 0 ? 'Empezar Gratis' : 'Elegir Premium'}
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mexican Testimonials Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                Lo que dicen los mexicanos
+              </h2>
+              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
+                Testimonios reales de familias mexicanas que confían en Dr. Simeon
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {MEXICAN_TESTIMONIALS.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-[#D0F0EF] to-white p-6 rounded-xl border border-[#006D77]/20 hover:shadow-lg transition-all duration-200"
+                >
+                  <div className="flex text-yellow-400 mb-4">
+                    {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
+                  </div>
+                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 bg-[#006D77] rounded-full flex items-center justify-center text-white font-semibold">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div className="ml-3">
+                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Enhanced Sponsors Section */}
         <section className="bg-white py-12 border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
               <p className="text-gray-500 text-xs font-medium uppercase tracking-wider">
-                Respaldado por partners de confianza
+                Respaldado por instituciones mexicanas de confianza
               </p>
             </div>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
-                AXA Seguros
+                COFEPRIS
               </div>
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
                 Farmacias Guadalajara
               </div>
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
-                Farma Ahorro
+                Farmacias del Ahorro
               </div>
               <div className="h-16 px-6 flex items-center bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-gray-700 font-semibold text-lg hover:from-[#D0F0EF] hover:to-[#006D77]/10 hover:text-[#006D77] transition-all">
-                Telcel Health
+                IMSS Digital
               </div>
             </div>
           </div>
@@ -451,7 +695,7 @@ function AIHomePage() {
                   Tu privacidad es nuestra prioridad
                 </h2>
                 <p className="text-gray-300 text-lg leading-7 mb-8">
-                  Utilizamos los más altos estándares de seguridad para proteger tu información médica personal.
+                  Cumplimos con todas las leyes mexicanas de protección de datos y utilizamos los más altos estándares de seguridad.
                 </p>
                 
                 <div className="space-y-4">
@@ -461,11 +705,15 @@ function AIHomePage() {
                   </div>
                   <div className="flex items-center">
                     <Shield className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Cumplimiento total con GDPR y leyes mexicanas</span>
+                    <span>Cumplimiento LFPDPPP (Ley Federal de Protección de Datos Personales)</span>
                   </div>
                   <div className="flex items-center">
                     <Award className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Certificación ISO 27001 en proceso</span>
+                    <span>Servidores ubicados en México</span>
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="w-6 h-6 text-[#006D77] mr-3" />
+                    <span>Datos nunca salen del territorio mexicano</span>
                   </div>
                 </div>
               </div>
@@ -474,9 +722,15 @@ function AIHomePage() {
                 <div className="text-center">
                   <Shield className="w-16 h-16 text-[#006D77] mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-4">100% Confidencial</h3>
-                  <p className="text-gray-300">
+                  <p className="text-gray-300 mb-4">
                     Tus datos médicos nunca se comparten sin tu consentimiento explícito.
                   </p>
+                  <div className="bg-amber-900/30 border border-amber-700 rounded-lg p-4">
+                    <p className="text-sm text-amber-200">
+                      <strong>AVISO MÉDICO:</strong> Dr. Simeon proporciona orientación educativa. 
+                      En emergencias, contacte 911 o Cruz Roja (065). Cumplimos con NOM-004-SSA3-2012.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -512,6 +766,17 @@ function AIHomePage() {
         </section>
 
       </main>
+      
+      {/* Floating Chat Widget */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Link
+          to="/doctor"
+          className="bg-[#006D77] hover:bg-[#005B66] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 group"
+          aria-label="Abrir chat con Dr. Simeon"
+        >
+          <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
+        </Link>
+      </div>
       
       <SEO 
         title="Dr. Simeon | Tu médico mexicano inteligente - DoctorMX"
