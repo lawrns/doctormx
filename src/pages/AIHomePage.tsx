@@ -767,17 +767,6 @@ function AIHomePage() {
 
       </main>
       
-      {/* Floating Chat Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Link
-          to="/doctor"
-          className="bg-[#006D77] hover:bg-[#005B66] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 group"
-          aria-label="Abrir chat con Dr. Simeon"
-        >
-          <MessageSquare className="w-6 h-6 group-hover:scale-110 transition-transform" />
-        </Link>
-      </div>
-      
       <SEO 
         title="Dr. Simeon | Tu médico mexicano inteligente - DoctorMX"
         description="Consulta médica personalizada con IA diseñada para mexicanos. Obtén orientación médica confiable las 24 horas con Dr. Simeon, tu asistente médico inteligente."
