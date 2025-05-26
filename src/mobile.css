@@ -441,6 +441,16 @@ html, body, #root {
     padding-top: 4rem; /* Account for mobile header */
   }
   
+  /* WhatsApp-style scrollbar hide */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
   .mobile-chat-header {
     @apply bg-white/90 backdrop-blur-sm border-b border-gray-200 p-4 flex items-center space-x-3;
   }

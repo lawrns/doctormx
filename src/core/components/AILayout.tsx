@@ -37,36 +37,36 @@ function AILayout() {
         {/* Sticky Chat Input - positioned above footer and WhatsApp button */}
         {!isDoctorChatPage && (
           <div className="sticky bottom-0 z-30 bg-white border-t border-gray-200 shadow-lg">
-            <div className="max-w-4xl mx-auto px-4 py-4">
-              <form onSubmit={handleStickySubmit} className="flex items-center gap-3">
-                <div className="flex items-center flex-1 bg-gray-50 border border-gray-300 rounded-xl p-3 focus-within:ring-2 focus-within:ring-[#006D77] focus-within:border-transparent">
-                  <MessageSquare className="w-5 h-5 text-[#006D77] mr-3" />
+            <div className="max-w-4xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
+              <form onSubmit={handleStickySubmit} className="flex items-center gap-2 sm:gap-3">
+                <div className="flex items-center flex-1 bg-gray-50 border border-gray-300 rounded-xl p-2 sm:p-3 focus-within:ring-2 focus-within:ring-[#006D77] focus-within:border-transparent">
+                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-[#006D77] mr-2 sm:mr-3 flex-shrink-0" />
                   <input
                     type="text"
                     value={stickyInput}
                     onChange={(e) => setStickyInput(e.target.value)}
-                    placeholder="Describe tus síntomas o pregunta médica..."
-                    className="bg-transparent border-none text-gray-700 placeholder-gray-500 flex-grow focus:outline-none"
+                    placeholder="Describe tus síntomas..."
+                    className="bg-transparent border-none text-gray-700 placeholder-gray-500 flex-grow focus:outline-none text-sm sm:text-base"
                     aria-label="Campo de entrada para consulta médica"
                   />
                   <button
                     type="submit"
                     disabled={!stickyInput.trim()}
-                    className="w-10 h-10 rounded-lg bg-[#006D77] flex items-center justify-center hover:bg-[#005B66] transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ml-2"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#006D77] flex items-center justify-center hover:bg-[#005B66] transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ml-2"
                     aria-label="Iniciar consulta"
                   >
                     <ChevronRight size={16} className="text-white" />
                   </button>
                 </div>
               </form>
-              <div className="flex items-center justify-center mt-2 space-x-6">
+              <div className="flex items-center justify-center mt-2 space-x-4 sm:space-x-6">
                 <div className="flex items-center text-xs text-[#006D77]">
-                  <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
-                  🔒 Datos cifrados
+                  <span className="hidden sm:inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
+                  🔒 <span className="hidden sm:inline">Datos</span> cifrados
                 </div>
                 <div className="flex items-center text-xs text-[#006D77]">
-                  <span className="inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
-                  ✅ NOM-004-SSA3
+                  <span className="hidden sm:inline-block w-2 h-2 bg-[#006D77] rounded-full mr-2"></span>
+                  ✅ <span className="hidden sm:inline">NOM-004-</span>SSA3
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@ function AILayout() {
           href="https://wa.me/526144792338"
           target="_blank"
           rel="noopener noreferrer"
-          className={`fixed ${!isDoctorChatPage ? 'bottom-24' : 'bottom-6'} right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 flex items-center justify-center group`}
+          className={`fixed ${!isDoctorChatPage ? 'bottom-20 sm:bottom-24' : 'bottom-4 sm:bottom-6'} right-4 sm:right-6 bg-[#25D366] text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-50 flex items-center justify-center group`}
           aria-label="Contactar por WhatsApp"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

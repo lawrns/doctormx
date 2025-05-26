@@ -135,9 +135,9 @@ function AIHomePage() {
         <span className="ml-4">📞 Cruz Roja: 065</span>
       </div>
       
-      <main className="bg-gradient-to-br from-[#D0F0EF] via-white to-slate-50 min-h-screen">
+      <main className="bg-gradient-to-br from-[#D0F0EF] via-white to-slate-50 min-h-screen overflow-x-hidden">
         {/* Enhanced Hero Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-12 md:py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               {/* Enhanced Left Column - 6 cols */}
@@ -146,7 +146,7 @@ function AIHomePage() {
                   <motion.h1 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight"
+                    className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight"
                   >
                     <span className="text-[#006D77]">Dr. Simeon</span>
                     <br />
@@ -212,9 +212,10 @@ function AIHomePage() {
                   className="space-y-4"
                 >
                   <div className="flex flex-col sm:flex-row gap-3">
+                    {/* Mobile-optimized buttons */}
                     <Link 
                       to="/doctor"
-                      className="flex-1 bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      className="flex-1 bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
                       aria-label="Iniciar consulta médica gratuita"
                     >
                       <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
@@ -226,7 +227,7 @@ function AIHomePage() {
                       href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white px-6 py-3 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
                       aria-label="Consultar por WhatsApp"
                     >
                       <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
@@ -236,7 +237,7 @@ function AIHomePage() {
                   </div>
                   
                   {/* Medical Credentials */}
-                  <div className="border-l-4 border-[#006D77] pl-4 bg-[#D0F0EF]/30 p-4 rounded">
+                  <div className="border-l-4 border-[#006D77] pl-4 bg-[#D0F0EF]/30 p-3 sm:p-4 rounded">
                     <p className="text-sm font-medium text-[#006D77]">
                       ✅ Cédula Profesional: 987654321 (México)
                       <br />
@@ -264,14 +265,14 @@ function AIHomePage() {
               </div>
               
               {/* Enhanced Right Column - 6 cols */}
-              <div className="lg:col-span-6">
+              <div className="lg:col-span-6 mt-8 lg:mt-0">
                 <div className="relative">
                   {/* Luxury Enhanced Chat Interface Preview */}
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8 }}
-                    className="bg-white rounded-2xl shadow-xl max-w-lg mx-auto relative overflow-hidden border border-gray-200 p-6"
+                    className="bg-white rounded-2xl shadow-xl max-w-lg mx-auto relative overflow-hidden border border-gray-200 p-4 sm:p-6"
                   >
                     {/* Professional Chat Header */}
                     <div className="flex items-center gap-4 mb-4">
@@ -417,14 +418,14 @@ function AIHomePage() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {TRUST_METRICS.map((metric, index) => (
                 <motion.div
                   key={metric.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                  className="text-center p-4 sm:p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100"
                 >
                   <div className="w-12 h-12 bg-[#D0F0EF] rounded-lg flex items-center justify-center mx-auto mb-4">
                     <metric.icon className="w-6 h-6 text-[#006D77]" />
@@ -456,7 +457,7 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group border border-gray-100"
+                  className="bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group border border-gray-100"
                 >
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-[#D0F0EF] to-[#006D77]/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -494,7 +495,7 @@ function AIHomePage() {
             
             <div className="bg-green-50 p-8 rounded-2xl border border-green-200 mb-12">
               <h3 className="font-bold text-green-800 mb-6 text-xl text-center">🇲🇽 Diseñado para mexicanos:</h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <ul className="space-y-3 text-green-700">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
@@ -531,7 +532,7 @@ function AIHomePage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
                 Consultas más comunes en México:
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-4">
                 {COMMON_MEXICAN_SYMPTOMS.map((item, index) => (
                   <motion.button
                     key={item.symptom}
@@ -568,14 +569,14 @@ function AIHomePage() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
               {PRICING_TIERS.map((tier, index) => (
                 <motion.div
                   key={tier.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.2 }}
-                  className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 ${
+                  className={`bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 ${
                     index === 1 ? 'border-[#006D77] relative' : 'border-gray-200'
                   }`}
                 >
@@ -640,7 +641,7 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-[#D0F0EF] to-white p-6 rounded-xl border border-[#006D77]/20 hover:shadow-lg transition-all duration-200"
+                  className="bg-gradient-to-br from-[#D0F0EF] to-white p-4 sm:p-6 rounded-xl border border-[#006D77]/20 hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex text-yellow-400 mb-4">
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
@@ -689,7 +690,7 @@ function AIHomePage() {
         {/* Enhanced Security & Privacy Section */}
         <section className="bg-gray-900 text-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-extrabold mb-6 tracking-tight">
                   Tu privacidad es nuestra prioridad

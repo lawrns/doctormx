@@ -34,8 +34,8 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
   };
   
   return (
-    <header className="bg-[#006D77] shadow-sm sticky top-0 z-40 h-16">
-      <div className="flex items-center justify-between h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <header className="bg-[#006D77] shadow-sm sticky top-0 z-40 h-14 sm:h-16">
+      <div className="flex items-center justify-between h-full px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Left section: Logo and brand name */}
         <div className="flex items-center gap-4">
           {/* Sidebar toggle - only show if sidebar functionality is provided */}
@@ -50,9 +50,9 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
           )}
           
           {/* Logo and brand name in top-left */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src="/Doctorlogo.png" alt="DoctorMX" className="h-8 w-auto" />
-            <span className="text-lg font-bold text-white tracking-tight">DoctorMX</span>
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <img src="/Doctorlogo.png" alt="DoctorMX" className="h-7 sm:h-8 w-auto" />
+            <span className="text-base sm:text-lg font-bold text-white tracking-tight hidden xs:block">DoctorMX</span>
           </Link>
         </div>
         
@@ -93,8 +93,8 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
             </button>
           )}
           
-          {/* Language selector */}
-          <div className="relative">
+          {/* Language selector - hidden on mobile */}
+          <div className="relative hidden sm:block">
             <button
               onClick={() => setShowLangMenu(!showLangMenu)}
               className="flex items-center px-2 py-1 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
@@ -151,14 +151,15 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
             </div>
           ) : (
             <div className="flex items-center gap-2">
-              <Link to="/login">
+              <Link to="/login" className="hidden sm:block">
                 <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200">
                   Iniciar Sesión
                 </button>
               </Link>
               <Link to="/register">
-                <Button size="sm" className="bg-white text-[#006D77] hover:bg-gray-50 transition-transform duration-200 hover:scale-[1.02]">
-                  Registrarse
+                <Button size="sm" className="bg-white text-[#006D77] hover:bg-gray-50 transition-transform duration-200 hover:scale-[1.02] text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+                  <span className="hidden sm:inline">Registrarse</span>
+                  <span className="sm:hidden">Entrar</span>
                 </Button>
               </Link>
             </div>

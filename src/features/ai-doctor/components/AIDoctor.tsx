@@ -21,6 +21,8 @@ import EnhancedChatBubble from './EnhancedChatBubble';
 import ProductRecommendation from './ProductRecommendation';
 import ImageAnalysisVisual from '../../ai-image-analysis/components/ImageAnalysisVisual';
 import ConfidenceVisualizer from './ConfidenceVisualizer';
+import AIDoctorMobile from './AIDoctorMobile';
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -71,6 +73,12 @@ interface AIDoctorProps {
 }
 
 function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  
+  // Use mobile version on small screens
+  if (isMobile && !isEmbedded) {
+    return <AIDoctorMobile initialMessage={initialMessage} onBack={onClose} />;
+  }
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [inputHeight, setInputHeight] = useState('auto');

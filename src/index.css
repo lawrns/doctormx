@@ -269,6 +269,34 @@
     height: 90vh !important;
     border-radius: 16px 16px 0 0;
   }
+  
+  /* Prevent iOS zoom on input focus */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Better mobile typography */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    .hover\:scale-105:hover {
+      transform: none;
+    }
+    
+    .hover\:shadow-xl:hover {
+      box-shadow: var(--tw-shadow);
+    }
+  }
+  
+  /* Mobile-optimized spacing */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 /* Safe area handling for iOS */
