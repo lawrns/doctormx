@@ -163,10 +163,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const initialMessageSentRef = useRef(false);
   const shouldScrollRef = useRef(false);
   
-  // Use mobile version on small screens - after all hooks
-  if (isMobile && !isEmbedded) {
-    return <AIDoctorMobile initialMessage={initialMessage} onBack={onClose} />;
-  }
+  // Mobile version will be conditionally rendered in the JSX
 
   useEffect(() => {
     if (shouldScrollRef.current) {
@@ -1581,6 +1578,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         {renderTabContent()}
       </div>
     );
+  }
+
+  // Conditionally render mobile or desktop version
+  if (isMobile && !isEmbedded) {
+    return <AIDoctorMobile initialMessage={initialMessage} onBack={onClose} />;
   }
 
   // Main layout that works within DoctorLayout (not full-screen)
