@@ -212,44 +212,93 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
     const botMessageId = (Date.now() + 1).toString();
 
     try {
-      // Use clinical conversation manager if enabled
+      // SIMPLIFIED CLINICAL MODE - Direct implementation
       if (useClinicalMode) {
-        console.log('🩺 Using clinical conversation manager for:', userInput);
-        const conversationHistory = messages.map(m => m.text);
-        const clinicalResult = ClinicalConversationManager.processMessage(
-          sessionId,
-          userInput,
-          conversationHistory
-        );
-        console.log('🩺 Clinical result:', clinicalResult);
+        console.log('🩺 Using SIMPLIFIED clinical mode for:', userInput);
 
-        setClinicalResponse(clinicalResult);
+        let clinicalResponse = '';
+        let confidence = 0.3;
+        let isEmergency = false;
 
-        // Show diagnostic display for medical conversations
-        if (clinicalResult.type !== 'emergency' && clinicalResult.confidence > 0.1) {
-          setShowDiagnosticDisplay(true);
+        const lowerInput = userInput.toLowerCase();
+
+        // Emergency detection
+        if (lowerInput.includes('no puedo respirar') ||
+            lowerInput.includes('dolor de pecho intenso') ||
+            lowerInput.includes('perdí el conocimiento')) {
+          clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
+          isEmergency = true;
+          confidence = 1.0;
         }
+        // Chest pain - EMERGENCY
+        else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
+          clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
+          confidence = 0.9;
+          isEmergency = true;
+        }
+        // Headache
+        else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
+          clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
+          confidence = 0.4;
+        }
+        // Abdominal pain
+        else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
+          clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
+          confidence = 0.4;
+        }
+        // Fever
+        else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
+          clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
+          confidence = 0.4;
+        }
+        // Generic symptom
+        else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
+          clinicalResponse = `Entiendo que tiene ${userInput.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
+          confidence = 0.3;
+        }
+        // Follow-up responses
+        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
+          confidence = 0.7;
+          clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
+        }
+        else if (lowerInput.includes('no')) {
+          confidence = 0.6;
+          clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
+        }
+        // Default clinical response
+        else {
+          clinicalResponse = 'Por favor, descríbame específicamente qué síntoma o molestia lo trae hoy. Sea lo más específico posible.';
+          confidence = 0.1;
+        }
+
+        console.log('🩺 Clinical response generated:', clinicalResponse);
 
         stopTyping();
         setMessages(prev => [...prev, {
           id: botMessageId,
-          text: clinicalResult.text,
+          text: clinicalResponse,
           sender: 'bot',
           timestamp: new Date(),
           isStreaming: false,
           isComplete: true,
           status: 'delivered',
-          severity: clinicalResult.confidence * 10,
-          isEmergency: clinicalResult.type === 'emergency',
-          followUpQuestions: clinicalResult.nextQuestion ? [clinicalResult.nextQuestion] : undefined
+          severity: confidence * 10,
+          isEmergency: isEmergency,
+          followUpQuestions: isEmergency ? [] : ['Sí', 'No', 'Prefiero escribir mi respuesta']
         }]);
 
         setIsProcessing(false);
+        setShowQuickReplies(true);
+        setShowDiagnosticDisplay(true);
 
-        // Show quick replies for next question
-        if (clinicalResult.nextQuestion && !clinicalResult.shouldDiagnose) {
-          setShowQuickReplies(true);
-        }
+        // Set clinical response for display
+        setClinicalResponse({
+          text: clinicalResponse,
+          type: isEmergency ? 'emergency' : 'question',
+          confidence: confidence,
+          shouldDiagnose: confidence > 0.8,
+          clinicalReasoning: `Confianza: ${Math.round(confidence * 100)}% - Modo clínico simplificado`
+        });
 
         return;
       }
