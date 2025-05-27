@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Clinical Conversation Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .chat-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #dcf8c6;
+            margin-left: auto;
+            text-align: right;
+        }
+        .bot-message {
+            background: #f1f1f1;
+            margin-right: auto;
+        }
+        .clinical-info {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        .input-area {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            background: #075e54;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #064e45;
+        }
+        .debug-info {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .test-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .test-button {
+            padding: 8px 16px;
+            background: #17a2b8;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .test-button:hover {
+            background: #138496;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>🩺 Direct Clinical Conversation Test</h2>
+        <p>This tests the clinical conversation manager directly without the React component.</p>
+        
+        <div class="debug-info">
+            <strong>Debug Info:</strong>
+            <div id="debug-output">Ready to test...</div>
+        </div>
+
+        <div id="chat-messages">
+            <div class="message bot-message">
+                Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?
+            </div>
+        </div>
+
+        <div class="test-buttons">
+            <button class="test-button" onclick="testMessage('Dolor de cabeza fuerte')">Dolor de cabeza fuerte</button>
+            <button class="test-button" onclick="testMessage('Me duele el estómago')">Me duele el estómago</button>
+            <button class="test-button" onclick="testMessage('Tengo fiebre')">Tengo fiebre</button>
+            <button class="test-button" onclick="testMessage('No puedo respirar')">No puedo respirar (Emergency)</button>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Escriba su síntoma..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Mock Clinical Conversation Manager
+        class MockClinicalConversationManager {
+            static conversations = new Map();
+            
+            static processMessage(sessionId, userMessage, conversationHistory = []) {
+                console.log('🩺 Processing message:', userMessage);
+                
+                const state = this.getOrCreateState(sessionId);
+                const message = userMessage.trim().toLowerCase();
+                
+                // Emergency detection
+                if (this.isEmergency(message)) {
+                    return this.handleEmergency(message);
+                }
+                
+                // Route based on phase
+                switch (state.phase) {
+                    case 'greeting':
+                        return this.handleGreeting(sessionId, userMessage, state);
+                    case 'chief_complaint':
+                        return this.handleChiefComplaint(sessionId, userMessage, state);
+                    case 'history_taking':
+                        return this.handleHistoryTaking(sessionId, userMessage, state);
+                    default:
+                        return this.handleGreeting(sessionId, userMessage, state);
+                }
+            }
+            
+            static handleGreeting(sessionId, message, state) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (this.containsSymptom(lowerMessage)) {
+                    state.phase = 'chief_complaint';
+                    return this.handleChiefComplaint(sessionId, message, state);
+                }
+                
+                state.phase = 'chief_complaint';
+                return {
+                    text: 'Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?',
+                    type: 'question',
+                    confidence: 0.1,
+                    shouldDiagnose: false,
+                    clinicalReasoning: 'Estableciendo motivo de consulta principal'
+                };
+            }
+            
+            static handleChiefComplaint(sessionId, message, state) {
+                const chiefComplaint = this.extractChiefComplaint(message);
+                
+                if (!chiefComplaint) {
+                    return {
+                        text: 'Por favor, descríbame específicamente qué síntoma o molestia lo trae hoy.',
+                        type: 'clarification',
+                        confidence: 0.1,
+                        shouldDiagnose: false,
+                        clinicalReasoning: 'Necesito clarificar el motivo de consulta'
+                    };
+                }
+                
+                state.hasChiefComplaint = true;
+                state.phase = 'history_taking';
+                
+                // Get first question based on complaint
+                const firstQuestion = this.getFirstQuestion(chiefComplaint);
+                
+                return {
+                    text: `Entiendo que tiene ${chiefComplaint}. ${firstQuestion}`,
+                    type: 'question',
+                    confidence: 0.25,
+                    nextQuestion: firstQuestion,
+                    shouldDiagnose: false,
+                    clinicalReasoning: `Iniciando interrogatorio dirigido para ${chiefComplaint}`
+                };
+            }
+            
+            static handleHistoryTaking(sessionId, message, state) {
+                state.questionCount++;
+                
+                // Simulate confidence building
+                const confidence = Math.min(0.85, 0.25 + (state.questionCount * 0.2));
+                
+                if (confidence >= 0.82 || state.questionCount >= 4) {
+                    state.phase = 'diagnosis';
+                    return this.generateDiagnosis(confidence);
+                }
+                
+                const nextQuestion = this.getNextQuestion(state.questionCount);
+                return {
+                    text: `${nextQuestion}\n\n*Confianza diagnóstica: ${Math.round(confidence * 100)}% - Continuando interrogatorio*`,
+                    type: 'question',
+                    confidence: confidence,
+                    nextQuestion: nextQuestion,
+                    shouldDiagnose: false,
+                    clinicalReasoning: `Pregunta ${state.questionCount} - Construyendo confianza diagnóstica`
+                };
+            }
+            
+            static generateDiagnosis(confidence) {
+                return {
+                    text: `**IMPRESIÓN DIAGNÓSTICA** (Confianza: ${Math.round(confidence * 100)}%)\n\n**Diagnóstico principal:** Cefalea tensional\n\n**RECOMENDACIONES:**\n• Aplicar técnicas de relajación y manejo del estrés\n• Paracetamol 500mg cada 6-8 horas si es necesario\n• Descanso en ambiente tranquilo`,
+                    type: 'diagnosis',
+                    confidence: confidence,
+                    shouldDiagnose: true,
+                    clinicalReasoning: `Diagnóstico basado en ${Math.round(confidence * 100)}% de confianza`
+                };
+            }
+            
+            static handleEmergency(message) {
+                return {
+                    text: '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911. Los síntomas que describe requieren atención médica inmediata.',
+                    type: 'emergency',
+                    confidence: 1.0,
+                    shouldDiagnose: true,
+                    clinicalReasoning: 'Síntomas de alarma detectados - requiere atención inmediata'
+                };
+            }
+            
+            static isEmergency(message) {
+                const emergencyKeywords = [
+                    'no puedo respirar', 'dolor de pecho intenso', 'perdí el conocimiento',
+                    'sangrado abundante', 'convulsiones'
+                ];
+                return emergencyKeywords.some(keyword => message.includes(keyword));
+            }
+            
+            static containsSymptom(message) {
+                const symptomKeywords = [
+                    'dolor', 'duele', 'molestia', 'fiebre', 'temperatura', 'tos', 'náusea',
+                    'vómito', 'diarrea', 'mareo', 'cansancio'
+                ];
+                return symptomKeywords.some(keyword => message.includes(keyword));
+            }
+            
+            static extractChiefComplaint(message) {
+                const lowerMessage = message.toLowerCase();
+                const patterns = [
+                    /tengo (.*?)(?:\.|$)/,
+                    /me duele (.*?)(?:\.|$)/,
+                    /dolor (?:de|en) (.*?)(?:\.|$)/,
+                    /(.*?) me duele/
+                ];
+                
+                for (const pattern of patterns) {
+                    const match = lowerMessage.match(pattern);
+                    if (match && match[1]) {
+                        return match[1].trim();
+                    }
+                }
+                
+                if (this.containsSymptom(lowerMessage)) {
+                    return message.trim();
+                }
+                
+                return null;
+            }
+            
+            static getFirstQuestion(complaint) {
+                if (complaint.includes('cabeza')) {
+                    return '¿El dolor es como una banda apretada alrededor de la cabeza?';
+                } else if (complaint.includes('estómago') || complaint.includes('abdomen')) {
+                    return '¿El dolor está en la parte alta del abdomen?';
+                } else if (complaint.includes('fiebre')) {
+                    return '¿La fiebre es menor a 39°C?';
+                } else {
+                    return '¿Desde cuándo tiene este síntoma?';
+                }
+            }
+            
+            static getNextQuestion(questionCount) {
+                const questions = [
+                    '¿Empeora con el estrés o la tensión?',
+                    '¿Dura varias horas?',
+                    '¿Ha tomado algún medicamento?',
+                    '¿Tiene otros síntomas asociados?'
+                ];
+                return questions[questionCount - 1] || '¿Algo más que deba saber?';
+            }
+            
+            static getOrCreateState(sessionId) {
+                if (!this.conversations.has(sessionId)) {
+                    this.conversations.set(sessionId, {
+                        phase: 'greeting',
+                        questionCount: 0,
+                        hasChiefComplaint: false
+                    });
+                }
+                return this.conversations.get(sessionId);
+            }
+        }
+        
+        // UI Functions
+        function addMessage(text, isUser = false, clinicalInfo = null) {
+            const messagesDiv = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.innerHTML = text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            messagesDiv.appendChild(messageDiv);
+            
+            if (clinicalInfo) {
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'clinical-info';
+                infoDiv.innerHTML = `
+                    <strong>Información clínica:</strong><br>
+                    Confianza: ${Math.round(clinicalInfo.confidence * 100)}%<br>
+                    Tipo: ${clinicalInfo.type}<br>
+                    Razonamiento: ${clinicalInfo.clinicalReasoning}
+                `;
+                messagesDiv.appendChild(infoDiv);
+            }
+            
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+        
+        function updateDebug(info) {
+            document.getElementById('debug-output').innerHTML = info;
+        }
+        
+        function testMessage(message) {
+            document.getElementById('user-input').value = message;
+            sendMessage();
+        }
+        
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            addMessage(message, true);
+            input.value = '';
+            
+            // Process with clinical manager
+            try {
+                const result = MockClinicalConversationManager.processMessage('test-session', message);
+                
+                updateDebug(`
+                    Mensaje procesado: "${message}"<br>
+                    Tipo de respuesta: ${result.type}<br>
+                    Confianza: ${Math.round(result.confidence * 100)}%<br>
+                    ¿Debe diagnosticar?: ${result.shouldDiagnose ? 'Sí' : 'No'}
+                `);
+                
+                // Add bot response
+                setTimeout(() => {
+                    addMessage(result.text, false, result);
+                }, 500);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                updateDebug(`Error: ${error.message}`);
+                addMessage('Error procesando mensaje: ' + error.message, false);
+            }
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        // Initialize
+        updateDebug('Sistema listo. Pruebe enviando "Dolor de cabeza fuerte"');
+    </script>
+</body>
+</html>
