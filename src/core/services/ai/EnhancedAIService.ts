@@ -46,7 +46,28 @@ export class EnhancedAIService {
   private baseAIService = AIService; // Use composition instead of inheritance
 
   constructor() {
-    this.personalityService = new MexicanDoctorPersonalityService();
+    try {
+      this.personalityService = new MexicanDoctorPersonalityService();
+    } catch (error) {
+      console.error('Error initializing MexicanDoctorPersonalityService:', error);
+      // Create a fallback service if initialization fails
+      this.personalityService = {
+        analyzeEmotionalState: async () => ({
+          primary: 'anxiety' as const,
+          intensity: 0.5,
+          confidence: 0.5,
+          culturalFactors: [],
+          recommendedTone: 'professional' as const
+        }),
+        generatePersonalizedResponse: (text: string) => text,
+        generateMexicanMedicalGreeting: () => "¡Hola! Soy el Dr. Simeon. ¿En qué le puedo ayudar?",
+        generateThinkingIndicators: () => ({
+          stages: ['Analizando...', 'Preparando respuesta...'],
+          duration: 2000
+        }),
+        generateMexicanFollowUpQuestions: () => ['¿Puede contarme más detalles?']
+      } as any;
+    }
   }
 
   /**
@@ -69,12 +90,21 @@ export class EnhancedAIService {
       // Step 2: Show thinking indicators if enabled
       let thinkingStages: string[] = [];
       if (options.showThinking !== false && options.onStreamingResponse) {
-        const complexity = options.thinkingComplexity || this.determineComplexity(options.userMessage);
-        const thinking = this.personalityService.generateThinkingIndicators(complexity);
-        thinkingStages = thinking.stages;
+        try {
+          const complexity = options.thinkingComplexity || this.determineComplexity(options.userMessage);
+          const thinking = this.personalityService.generateThinkingIndicators(complexity);
+          
+          // Add null/undefined check for thinking and stages
+          if (thinking && thinking.stages && Array.isArray(thinking.stages)) {
+            thinkingStages = thinking.stages;
 
-        // Show thinking stages with natural delays
-        await this.displayThinkingStages(thinking, options.onStreamingResponse);
+            // Show thinking stages with natural delays
+            await this.displayThinkingStages(thinking, options.onStreamingResponse);
+          }
+        } catch (thinkingError) {
+          console.error('Error generating thinking indicators:', thinkingError);
+          // Continue without thinking indicators
+        }
       }
 
       // Step 3: Get base AI response using enhanced instructions
@@ -162,25 +192,34 @@ export class EnhancedAIService {
 
       // Show thinking indicators if enabled
       if (options.showThinking !== false) {
-        const complexity = options.thinkingComplexity || this.determineComplexity(options.userMessage);
-        const thinking = this.personalityService.generateThinkingIndicators(complexity);
-        thinkingStages = thinking.stages;
-
-        // Show thinking stages
-        for (let i = 0; i < thinking.stages.length; i++) {
-          streamHandler({
-            text: thinking.stages[i],
-            severity: 10,
-            isStreaming: true,
-            isComplete: false,
-            emotionalState,
-            personalityApplied: false,
-            thinkingStages,
-            culturalFactors: emotionalState?.culturalFactors,
-            answerOptions: undefined // Not available during thinking stages
-          });
+        try {
+          const complexity = options.thinkingComplexity || this.determineComplexity(options.userMessage);
+          const thinking = this.personalityService.generateThinkingIndicators(complexity);
           
-          await new Promise(resolve => setTimeout(resolve, thinking.duration / thinking.stages.length));
+          // Add null/undefined check for thinking and stages
+          if (thinking && thinking.stages && Array.isArray(thinking.stages)) {
+            thinkingStages = thinking.stages;
+
+            // Show thinking stages
+            for (let i = 0; i < thinking.stages.length; i++) {
+              streamHandler({
+                text: thinking.stages[i],
+                severity: 10,
+                isStreaming: true,
+                isComplete: false,
+                emotionalState,
+                personalityApplied: false,
+                thinkingStages,
+                culturalFactors: emotionalState?.culturalFactors,
+                answerOptions: undefined // Not available during thinking stages
+              });
+              
+              await new Promise(resolve => setTimeout(resolve, thinking.duration / thinking.stages.length));
+            }
+          }
+        } catch (thinkingError) {
+          console.error('Error generating thinking indicators in streaming:', thinkingError);
+          // Continue without thinking indicators
         }
       }
 
@@ -406,20 +445,29 @@ export class EnhancedAIService {
     thinking: { stages: string[]; duration: number },
     streamHandler: (response: StreamingAIResponse) => void
   ): Promise<void> {
-    const stageDelay = thinking.duration / thinking.stages.length;
+    // Add null/undefined checks
+    if (!thinking || !thinking.stages || !Array.isArray(thinking.stages) || thinking.stages.length === 0) {
+      console.warn('Invalid thinking stages provided to displayThinkingStages');
+      return;
+    }
+
+    const stageDelay = (thinking.duration || 3000) / thinking.stages.length;
 
     for (let i = 0; i < thinking.stages.length; i++) {
       const stage = thinking.stages[i];
       
-      streamHandler({
-        text: stage,
-        severity: 10,
-        isStreaming: true,
-        isComplete: false
-      });
+      // Additional check for stage content
+      if (stage && typeof stage === 'string') {
+        streamHandler({
+          text: stage,
+          severity: 10,
+          isStreaming: true,
+          isComplete: false
+        });
 
-      // Natural delay between thinking stages
-      await new Promise(resolve => setTimeout(resolve, stageDelay));
+        // Natural delay between thinking stages
+        await new Promise(resolve => setTimeout(resolve, stageDelay));
+      }
     }
 
     // Brief pause before actual response

@@ -305,3 +305,57 @@
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
+
+/* Doctor Layout Styles */
+.doctor-layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.doctor-layout-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar wrapper styles */
+.sidebar-wrapper {
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  height: 100%;
+  background: white;
+}
+
+/* Desktop sidebar */
+@media (min-width: 1024px) {
+  .sidebar-wrapper {
+    width: 16rem;
+    flex-shrink: 0;
+    border-right: 1px solid #e5e7eb;
+  }
+  
+  .sidebar-wrapper.collapsed {
+    width: 0;
+    overflow: hidden;
+  }
+}
+
+/* Mobile sidebar */
+@media (max-width: 1023px) {
+  .sidebar-wrapper {
+    position: fixed;
+    top: 3.5rem; /* Below navbar */
+    left: 0;
+    bottom: 0;
+    width: 16rem;
+    transform: translateX(-100%);
+    z-index: 45; /* Above backdrop but below navbar */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-wrapper.open {
+    transform: translateX(0);
+  }
+}
