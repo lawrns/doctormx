@@ -15,6 +15,7 @@ import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse,
 import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge/MexicanMedicalKnowledgeService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
+import { ConversationFlowService } from '../services/ConversationFlowService';
 import AIThinking from './AIThinking';
 import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
@@ -222,9 +223,41 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
+      // Check if this is a simple greeting or conversation
+      const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
+      const shouldSkipAI = ConversationFlowService.shouldSkipAIProcessing(userInput);
+      const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
+      
+      // Handle simple responses immediately without AI processing
+      if (shouldSkipAI) {
+        const simpleResponse = ConversationFlowService.generateSimpleResponse(conversationAnalysis.type, userInput);
+        if (simpleResponse) {
+          setIsThinking(false);
+          setMessages(prev => 
+            prev.map(msg => 
+              msg.id === botMessageId 
+                ? {
+                    ...msg,
+                    text: simpleResponse,
+                    isStreaming: false,
+                    isComplete: true
+                  } 
+                : msg
+            )
+          );
+          setIsProcessing(false);
+          return;
+        }
+      }
+      
+      // Only show thinking animation for medical concerns
+      if (!needsThinking) {
+        setIsThinking(false);
+      }
+      
       // Determine conversation complexity for thinking indicators
-      const complexity = userInput.length > 100 ? 'complex' : 
-                        userInput.includes('dolor') || userInput.includes('síntoma') ? 'medium' : 'simple';
+      const complexity = conversationAnalysis.complexity === 'detailed' ? 'complex' : 
+                        conversationAnalysis.complexity === 'moderate' ? 'medium' : 'simple';
       setThinkingComplexity(complexity);
 
       // Enhanced streaming response handler with thinking indicators
@@ -302,6 +335,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
       };
 
+      // Get conversation context hints
+      const contextHints = ConversationFlowService.getContextHints(messages);
+      
       const queryOptions: EnhancedAIQueryOptions = {
         userMessage: userInput,
         userHistory: messages.map(m => m.text),
@@ -309,13 +345,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         location: location || undefined,
         sessionId: sessionId,
         enablePersonality: true,
-        showThinking: true,
+        showThinking: needsThinking,
         thinkingComplexity: complexity,
         culturalContext: {
           familyDynamics: 'family-oriented', // Default Mexican context
           religiousConsiderations: false,
           economicContext: 'medium'
-        }
+        },
+        customInstructions: `${contextHints} Be concise and natural. For greetings, respond briefly and warmly. Avoid repetitive phrases about family care unless specifically relevant.`
       };
       
       // Use enhanced AI service with Mexican personality streaming
