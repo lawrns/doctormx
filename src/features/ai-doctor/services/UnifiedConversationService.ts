@@ -144,11 +144,12 @@ export class UnifiedConversationService {
     const enhancedPrompt = this.buildUnifiedPrompt(context, analysis);
     
     // Call AI service with special instructions
-    const aiResponse = await enhancedAIService.processQuery({
+    const aiResponse = await enhancedAIService.processEnhancedQuery({
       userMessage: enhancedPrompt,
       userHistory: context.conversationHistory.map(m => m.text),
       sessionId: context.sessionId,
-      stream: false
+      stream: false,
+      showThinking: false // We handle our own UI feedback
     });
     
     // Parse the unified response
