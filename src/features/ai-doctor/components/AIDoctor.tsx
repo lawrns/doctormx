@@ -17,6 +17,7 @@ import EncryptionService from '../../../core/services/security/EncryptionService
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
 import { ConversationFlowService } from '../services/ConversationFlowService';
 import { getSpeechRecognitionService, SpeechRecognitionService } from '../services/SpeechRecognitionService';
+import { ContextOptimizationService } from '../services/ContextOptimizationService';
 import AIThinking from './AIThinking';
 import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
@@ -334,24 +335,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
       };
 
-      // Get conversation context hints
+      // Optimize context window
+      const contextWindow = ContextOptimizationService.optimizeContextWindow(messages);
+      const stage = contextWindow.metadata.stage;
+      
+      // Determine if we should show animations based on stage
+      const shouldShowAnim = ContextOptimizationService.shouldShowAnimations(
+        messages.length,
+        conversationAnalysis.type
+      );
+      
+      // Get optimized instructions
+      const systemInstructions = ContextOptimizationService.getSystemInstructions(stage);
       const contextHints = ConversationFlowService.getContextHints(messages);
       
       const queryOptions: EnhancedAIQueryOptions = {
         userMessage: userInput,
-        userHistory: messages.map(m => m.text),
+        userHistory: contextWindow.messages, // Use optimized context window
         severity: severityLevel,
         location: location || undefined,
         sessionId: sessionId,
-        enablePersonality: true,
-        showThinking: needsThinking,
+        enablePersonality: stage !== 'discovery', // Minimal personality in discovery
+        showThinking: shouldShowAnim && needsThinking,
         thinkingComplexity: complexity,
         culturalContext: {
-          familyDynamics: 'family-oriented', // Default Mexican context
+          familyDynamics: 'family-oriented',
           religiousConsiderations: false,
           economicContext: 'medium'
         },
-        customInstructions: `${contextHints} Be concise and natural. For greetings, respond briefly and warmly. Avoid repetitive phrases about family care unless specifically relevant.`
+        customInstructions: systemInstructions
       };
       
       // Use enhanced AI service with Mexican personality streaming
@@ -1057,9 +1069,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       </div>
                     )}
                     
-                    {/* Chat messages - with bottom padding to account for fixed input */}
-                    <div className="chat-messages-container p-4 space-y-4">
-                      <div className="chat-messages-wrapper">
+                    {/* Chat messages - with proper bottom padding to account for fixed input */}
+                    <div className="chat-messages-container flex-1 overflow-y-auto" style={{ paddingBottom: '200px' }}>
+                      <div className="p-4 space-y-4">
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
                         ))}

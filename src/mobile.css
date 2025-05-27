@@ -441,6 +441,14 @@ html, body, #root {
     padding-top: 4rem; /* Account for mobile header */
   }
   
+  /* AI Doctor Mobile Container */
+  .ai-doctor-mobile-container {
+    @apply fixed inset-0 flex flex-col bg-gray-100;
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow: hidden;
+  }
+  
   /* WhatsApp-style scrollbar hide */
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -470,6 +478,9 @@ html, body, #root {
   .mobile-chat-messages {
     @apply flex-1 overflow-y-auto p-4 space-y-4;
     scroll-behavior: smooth;
+    /* Ensure last message is visible above input area */
+    padding-bottom: 120px !important;
+    scroll-padding-bottom: 120px;
   }
   
   .mobile-chat-message {
@@ -498,6 +509,12 @@ html, body, #root {
   
   .mobile-chat-input-container {
     @apply bg-white border-t border-gray-200 p-4;
+  }
+  
+  .mobile-chat-input-area {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-50;
+    /* Ensure it stays at bottom with proper height */
+    min-height: 80px;
   }
   
   .mobile-chat-input-wrapper {

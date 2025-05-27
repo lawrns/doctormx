@@ -1,5 +1,15 @@
 /* Chat UI fixes */
 
+/* Chat messages container with proper scroll padding */
+.chat-messages-container {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  /* Ensure last message is visible above input area */
+  scroll-padding-bottom: 200px;
+}
+
 /* Prevent layout shifts in chat container during typing */
 .overflow-y-auto {
   contain: layout;
