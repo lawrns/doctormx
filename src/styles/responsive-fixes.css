@@ -1,0 +1,312 @@
+/* Comprehensive Responsive Fixes for DoctorMX */
+
+/* 1. Fix Register Button Visibility */
+.register-button-fix {
+  background-color: white !important;
+  color: #006D77 !important;
+  border: 2px solid white !important;
+  font-weight: 600 !important;
+}
+
+.register-button-fix:hover {
+  background-color: #f9fafb !important;
+  transform: scale(1.02);
+}
+
+/* Navigation fixes */
+header[class*="bg-[#006D77]"] a[href="/register"] button {
+  background-color: white !important;
+  color: #006D77 !important;
+  border: 2px solid white !important;
+  font-weight: 600 !important;
+  padding: 0.375rem 1rem !important;
+}
+
+header[class*="bg-[#006D77]"] a[href="/register"] button:hover {
+  background-color: #f9fafb !important;
+  border-color: #f9fafb !important;
+}
+
+/* 2. Sidebar Responsive Fixes */
+.sidebar-wrapper {
+  transition: transform 0.3s ease-in-out;
+  z-index: 40;
+}
+
+/* Desktop sidebar */
+@media (min-width: 1024px) {
+  .sidebar-wrapper {
+    position: relative;
+    width: 16rem;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-wrapper.collapsed {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  main.flex-1 {
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  .sidebar-collapsed main.flex-1 {
+    margin-left: 0;
+  }
+}
+
+/* Mobile sidebar */
+@media (max-width: 1023px) {
+  .sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 16rem;
+    transform: translateX(-100%);
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-wrapper.open {
+    transform: translateX(0);
+  }
+  
+  /* Main content doesn't shift on mobile */
+  main.flex-1 {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+/* 3. Chat Area Background Fixes */
+.chat-messages-container {
+  background-color: #f9fafb;
+  background-image: none !important;
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Remove strange background from mobile chat */
+.ai-doctor-mobile-container .mobile-chat-messages {
+  background-color: #f0f2f5;
+  background-image: none !important;
+}
+
+/* Fix chat input area positioning */
+.chat-input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 30;
+}
+
+/* Adjust for sidebar on desktop */
+@media (min-width: 1024px) {
+  .chat-input-area {
+    left: 16rem; /* Account for sidebar */
+  }
+  
+  .sidebar-collapsed .chat-input-area {
+    left: 0;
+  }
+}
+
+/* 4. Mobile-First Responsive Layout */
+.doctor-layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.doctor-layout-content {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+/* 5. Breakpoint-specific fixes */
+
+/* Tablet fixes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Ensure proper spacing */
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  /* Fix button sizes */
+  button {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Mobile fixes */
+@media (max-width: 767px) {
+  /* Fix viewport height on mobile */
+  .ai-doctor-container,
+  .ai-doctor-mobile-container {
+    height: 100vh;
+    height: -webkit-fill-available;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Fix chat messages area */
+  .chat-messages-container,
+  .mobile-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 100px;
+  }
+  
+  /* Fix input area on mobile */
+  .chat-input-area,
+  .mobile-chat-input-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+  
+  /* Hide desktop elements on mobile */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  /* Show mobile elements */
+  .mobile-only {
+    display: block !important;
+  }
+}
+
+/* 6. Fix transitions during resize */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition-property: none !important;
+  }
+  
+  .sidebar-wrapper,
+  main.flex-1,
+  .chat-input-area {
+    transition-property: transform, margin-left, left !important;
+    transition-duration: 0.3s !important;
+    transition-timing-function: ease-in-out !important;
+  }
+}
+
+/* 7. Ensure proper z-index stacking */
+.z-index-fix {
+  /* Modals and overlays */
+  --z-modal-overlay: 100;
+  --z-modal: 110;
+  
+  /* Navigation and sidebar */
+  --z-navbar: 40;
+  --z-sidebar-backdrop: 40;
+  --z-sidebar: 45;
+  
+  /* Chat interface */
+  --z-chat-input: 30;
+  --z-quick-replies: 25;
+  
+  /* Floating elements */
+  --z-whatsapp: 50;
+  --z-notifications: 60;
+}
+
+.modal-overlay { z-index: var(--z-modal-overlay) !important; }
+.modal { z-index: var(--z-modal) !important; }
+.navbar { z-index: var(--z-navbar) !important; }
+.sidebar-backdrop { z-index: var(--z-sidebar-backdrop) !important; }
+.sidebar { z-index: var(--z-sidebar) !important; }
+.chat-input-area { z-index: var(--z-chat-input) !important; }
+.whatsapp-button { z-index: var(--z-whatsapp) !important; }
+
+/* 8. Fix alignment issues */
+.flex-container-fix {
+  display: flex;
+  align-items: stretch;
+  min-height: 0; /* Fix Firefox flexbox issue */
+}
+
+/* 9. Ensure text remains readable */
+@media (max-width: 767px) {
+  html {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100% !important;
+  }
+  
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}
+
+/* 10. Fix specific component issues */
+
+/* Fix tab navigation on desktop */
+.tab-navigation {
+  position: sticky;
+  top: 64px; /* Height of navbar */
+  background: white;
+  z-index: 20;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Fix message bubbles */
+.chat-bubble {
+  max-width: 85%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .chat-bubble {
+    max-width: 70%;
+  }
+}
+
+/* Fix quick reply buttons */
+.quick-reply-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem;
+  scrollbar-width: none;
+}
+
+.quick-reply-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 11. Performance optimizations */
+@media (max-width: 767px) {
+  /* Disable expensive animations on mobile */
+  .animate-pulse {
+    animation: none !important;
+  }
+  
+  /* Use GPU acceleration for smooth scrolling */
+  .chat-messages-container,
+  .mobile-chat-messages {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}

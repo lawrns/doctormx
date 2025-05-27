@@ -157,7 +157,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
                 </button>
               </Link>
               <Link to="/register">
-                <Button size="sm" className="bg-white text-[#006D77] hover:bg-gray-50 transition-transform duration-200 hover:scale-[1.02] text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+                <Button size="sm" className="register-button-fix transition-transform duration-200 hover:scale-[1.02] text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                   <span className="hidden sm:inline">Registrarse</span>
                   <span className="sm:hidden">Entrar</span>
                 </Button>

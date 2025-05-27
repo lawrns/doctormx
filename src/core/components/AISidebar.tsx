@@ -99,14 +99,7 @@ const AISidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       )}
       
       {/* Sidebar - positioned within content area, not full height */}
-      <div className={`
-        ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'} 
-        transition-transform duration-300 ease-in-out
-        w-80 bg-white border-r border-gray-200 
-        min-h-0 flex-shrink-0 overflow-y-auto z-50
-        lg:relative lg:translate-x-0 lg:z-auto
-        fixed lg:static top-0 left-0
-      `}>
+      <div className="w-full h-full bg-white border-r border-gray-200 overflow-y-auto">
         {/* Mobile header with close button */}
         <div className="flex items-center justify-between p-3 border-b border-gray-200 lg:hidden">
           <h2 className="font-medium text-gray-900">Menú</h2>

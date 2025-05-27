@@ -15,7 +15,7 @@ function DoctorLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="doctor-layout-container">
       {/* Navigation */}
       <AINavbar 
         onSidebarToggle={handleSidebarToggle}
@@ -23,12 +23,14 @@ function DoctorLayout() {
       />
       
       {/* Main content area with sidebar */}
-      <div className="flex-1 flex">
+      <div className={`doctor-layout-content ${!isSidebarOpen ? 'sidebar-collapsed' : ''}`}>
         {/* Sidebar */}
-        <AISidebar 
-          isOpen={isSidebarOpen} 
-          onClose={closeSidebar}
-        />
+        <div className={`sidebar-wrapper ${isSidebarOpen ? 'open' : 'collapsed'}`}>
+          <AISidebar 
+            isOpen={isSidebarOpen} 
+            onClose={closeSidebar}
+          />
+        </div>
         
         {/* Main content */}
         <main className="flex-1 overflow-hidden">

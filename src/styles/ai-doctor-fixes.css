@@ -1,0 +1,144 @@
+/* AI Doctor Chat Interface Fixes */
+
+/* Fix for desktop chat container */
+.ai-doctor-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+}
+
+/* Fix chat messages area */
+.chat-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 180px; /* Space for fixed input */
+}
+
+/* Fix input area positioning */
+.chat-input-area {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  /* Fix mobile viewport height */
+  .ai-doctor-mobile-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: #E5DDD5;
+  }
+  
+  /* Fix mobile chat messages area */
+  .mobile-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1rem;
+  }
+  
+  /* Fix mobile input area */
+  .mobile-chat-input-area {
+    position: relative;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    padding: 0.5rem;
+  }
+  
+  /* Prevent layout shifts during typing */
+  .chat-bubble {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Fix textarea resizing */
+  .chat-textarea {
+    resize: none !important;
+    overflow: hidden !important;
+    min-height: 40px;
+    max-height: 120px;
+  }
+}
+
+/* Fix for preventing multiple Supabase instances */
+.supabase-auth-ui_ui-container {
+  isolation: isolate;
+}
+
+/* Ensure proper z-index stacking */
+.modal-overlay {
+  z-index: 50;
+}
+
+.dropdown-menu {
+  z-index: 40;
+}
+
+.fixed-header {
+  z-index: 30;
+}
+
+.chat-input-area,
+.mobile-chat-input-area {
+  z-index: 20;
+}
+
+/* Performance optimizations */
+.chat-messages-wrapper {
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+/* Smooth animations without layout shifts */
+.animate-thinking {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Fix for tab navigation on desktop */
+.tab-navigation {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Ensure messages don't get cut off */
+.message-content {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix for quick reply buttons */
+.quick-reply-container {
+  padding: 0.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quick-reply-button {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+}

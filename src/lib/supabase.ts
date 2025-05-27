@@ -7,8 +7,23 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1N
 // Global variable to store the Supabase instance
 let supabaseInstance: SupabaseClient | null = null;
 
+// Check if we're in a browser environment
+const isBrowser = typeof window !== 'undefined';
+
 // Enhanced singleton with debug logging and error handling
 export const getSupabaseClient = () => {
+  // Return existing instance if available
+  if (supabaseInstance) {
+    return supabaseInstance;
+  }
+
+  // Check for existing instance on window object (for multiple module loads)
+  if (isBrowser && (window as any).__supabaseInstance) {
+    supabaseInstance = (window as any).__supabaseInstance;
+    return supabaseInstance;
+  }
+
+  // Create new instance only if none exists
   if (!supabaseInstance) {
     console.log('[Auth] Creating new Supabase client instance');
     try {
@@ -20,6 +35,11 @@ export const getSupabaseClient = () => {
           debug: import.meta.env.DEV, // Enable debug only in development
         }
       });
+      
+      // Store on window object to prevent multiple instances
+      if (isBrowser) {
+        (window as any).__supabaseInstance = supabaseInstance;
+      }
     } catch (error) {
       console.error('[Auth] Error creating Supabase client:', error);
       // Create a fallback instance with minimal functionality

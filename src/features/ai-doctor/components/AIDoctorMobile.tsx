@@ -409,7 +409,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   };
 
   return (
-    <div className="fixed inset-0 bg-[#E5DDD5] flex flex-col">
+    <div className="ai-doctor-mobile-container">
       {/* WhatsApp-style Header */}
       <div className="bg-[#075E54] text-white p-3 flex items-center justify-between shadow-md">
         <div className="flex items-center space-x-3">
@@ -452,7 +452,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 overflow-y-auto px-3 py-2" style={{ backgroundImage: 'url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAASElEQVQYlWNgYGD4TyRm+E8kJkj9Z2BgYGAiVtHowtGFoyEYkliJNRhZI7IGbHJEKcQmh28hLnXYwn60HUMVI2vEZgDBQAcAAP//cRgZLwAAAABJRU5ErkJggg==")' }}>
+      <div className="mobile-chat-messages px-3 py-2">
         <div className="max-w-lg mx-auto">
           {messages.map((message, index) => (
             <div key={message.id}>
@@ -584,7 +584,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       )}
 
       {/* Input Area */}
-      <div className="bg-white border-t border-gray-200 p-2">
+      <div className="mobile-chat-input-area">
         <div className="flex items-end space-x-2 max-w-lg mx-auto">
           {/* Attachment Menu */}
           <AnimatePresence>

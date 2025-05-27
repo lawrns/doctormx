@@ -7,6 +7,9 @@ import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './index.css';
 import './mobile.css'; // Import mobile-specific styles
+import './styles/chat-fixes.css';
+import './styles/ai-doctor-fixes.css';
+import './styles/responsive-fixes.css';
 import { AuthProvider } from './contexts/AuthContext';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';

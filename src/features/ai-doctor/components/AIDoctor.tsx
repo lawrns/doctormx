@@ -1068,8 +1068,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                     
                     {/* Chat messages - with bottom padding to account for fixed input */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4 chat-messages-container pb-32" style={{ overscrollBehavior: 'none', contain: 'size layout' }}>
-                      <div className="chat-messages-wrapper" style={{ transform: 'translateZ(0)', willChange: 'transform', minHeight: '100%', contain: 'content', isolation: 'isolate' }}>
+                    <div className="chat-messages-container p-4 space-y-4">
+                      <div className="chat-messages-wrapper">
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
                         ))}
@@ -1172,7 +1172,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     </div>
 
                     {/* Enhanced Input area at bottom of viewport */}
-                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout', minHeight: '120px' }}>
+                    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20">
                       <div className="max-w-screen-xl mx-auto">
                         {/* Emergency Contact Bar */}
                         <div className="flex items-center justify-center mb-3 text-sm">
@@ -1213,7 +1213,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                             accept="image/*"
                             className="hidden"
                           />
-                          <div className="flex-1 relative" style={{ transform: 'translateZ(0)', willChange: 'transform', contain: 'layout style', minHeight: '56px' }}>
+                          <div className="flex-1 relative">
                             <textarea
                               value={input}
                               onChange={(e) => {
@@ -1231,7 +1231,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                 }
                               }}
                               placeholder="Cuéntame qué te duele o preocupa... (Presiona Enter para enviar, Shift+Enter para nueva línea)"
-                              className="w-full border-2 border-[#006D77]/30 focus:border-[#006D77] rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#006D77]/20 chat-input resize-none"
+                              className="chat-textarea w-full border-2 border-[#006D77]/30 focus:border-[#006D77] rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-[#006D77]/20"
                               disabled={isProcessing}
                               style={{ minHeight: '56px', maxHeight: '120px' }}
                               rows={1}
@@ -1587,7 +1587,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   // Main layout that works within DoctorLayout (not full-screen)
   return (
-    <div className="h-full min-h-screen flex flex-col bg-white">      
+    <div className="h-full flex flex-col bg-white relative">      
       {/* Tab navigation for desktop */}
       <div className="border-b border-gray-200 bg-white px-6">
         <nav className="flex space-x-8">
