@@ -77,6 +77,9 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   // Use the new typing indicator hook
   const { isTyping, startTyping, stopTyping } = useTypingIndicator();
   
+  // Add isThinking state for AI processing
+  const [isThinking, setIsThinking] = useState(false);
+  
   // Session management
   const [sessionId] = useState(`session_${Date.now()}`);
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
@@ -296,7 +299,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
         sessionId: sessionId,
         enablePersonality: true,
         showThinking: needsThinking,
-        thinkingComplexity: complexity,
+        thinkingComplexity: 3, // Default complexity level
         culturalContext: {
           familyDynamics: 'family-oriented',
           religiousConsiderations: false,
