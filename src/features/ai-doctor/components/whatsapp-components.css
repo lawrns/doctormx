@@ -1,0 +1,166 @@
+/* WhatsApp-style Quick Reply Buttons */
+.quick-replies-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: #f0f2f5;
+  border-top: 1px solid #e4e6eb;
+  margin-top: auto;
+}
+
+.quick-reply-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e4e6eb;
+  color: #1c1e21;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.quick-reply-button:hover {
+  background-color: #f8f9fa;
+  border-color: #4A90E2;
+  color: #4A90E2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-reply-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Simple Typing Bubble */
+.typing-bubble-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #e3f2fd;
+  border-radius: 18px;
+  margin: 8px 0;
+  max-width: 80px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #90a4ae;
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .quick-replies-container {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+  
+  .quick-reply-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .typing-bubble-container {
+    padding: 10px 14px;
+    max-width: 70px;
+  }
+  
+  .typing-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .quick-replies-container {
+    background-color: #1c1e21;
+    border-top-color: #3a3b3c;
+  }
+  
+  .quick-reply-button {
+    background-color: #3a3b3c;
+    border-color: #3a3b3c;
+    color: #e4e6eb;
+  }
+  
+  .quick-reply-button:hover {
+    background-color: #4a4b4c;
+    border-color: #5AA3E8;
+    color: #5AA3E8;
+  }
+  
+  .typing-bubble-container {
+    background-color: #3a3b3c;
+  }
+  
+  .typing-dot {
+    background-color: #65676b;
+  }
+}
+
+/* Integration with existing chat */
+.chat-messages-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Space for quick replies */
+}
+
+/* Ensure quick replies stay at bottom */
+.quick-replies-wrapper {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: inherit;
+  z-index: 10;
+}

@@ -1,0 +1,50 @@
+/* WhatsApp-style quick reply buttons */
+.quick-reply-button {
+  @apply bg-white border-2 border-[#075E54] text-[#075E54] 
+         px-4 py-2 rounded-full text-sm font-medium
+         whitespace-nowrap flex-shrink-0
+         hover:bg-[#075E54] hover:text-white
+         transition-all duration-200
+         active:scale-95;
+}
+
+/* Hide scrollbar for quick replies */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-specific quick reply sizing */
+@media (max-width: 640px) {
+  .quick-reply-button {
+    @apply text-xs px-3 py-1.5;
+  }
+}
+
+/* Typing bubble animation */
+.typing-dot {
+  animation: typing-pulse 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}

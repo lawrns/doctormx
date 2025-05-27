@@ -10,8 +10,12 @@ import EncryptionService from '../../../core/services/security/EncryptionService
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
 import { ConversationFlowService } from '../services/ConversationFlowService';
 import { getSpeechRecognitionService, SpeechRecognitionService } from '../services/SpeechRecognitionService';
-import EnhancedAIThinking from './EnhancedAIThinking';
-import EnhancedChatBubble from './EnhancedChatBubble';
+import { WhatsAppQuickReplies, generateQuickReplies, generatePsychologicalReplies } from './WhatsAppQuickReplies';
+import { SimpleTypingBubble, useTypingIndicator, calculateTypingDelay } from './SimpleTypingBubble';
+import { PsychologicalResponseTemplates } from '../services/PsychologicalResponseTemplates';
+import { ConversationIntelligence } from '../services/ConversationIntelligence';
+import { DiagnosticService } from '../services/DiagnosticService';
+import './styles/whatsapp-components.css';
 
 type Message = {
   id: string;
@@ -68,13 +72,10 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const [isUploading, setIsUploading] = useState(false);
   const [showAttachMenu, setShowAttachMenu] = useState(false);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
-  const [isTyping, setIsTyping] = useState(false);
+  const [conversationStage, setConversationStage] = useState<'greeting' | 'symptom' | 'severity' | 'treatment' | 'followup'>('greeting');
   
-  // Enhanced AI thinking states
-  const [isThinking, setIsThinking] = useState(false);
-  const [thinkingStages, setThinkingStages] = useState<string[]>([]);
-  const [currentThinkingStage, setCurrentThinkingStage] = useState(0);
-  const [thinkingComplexity, setThinkingComplexity] = useState<'simple' | 'medium' | 'complex'>('simple');
+  // Use the new typing indicator hook
+  const { isTyping, startTyping, stopTyping } = useTypingIndicator();
   
   // Session management
   const [sessionId] = useState(`session_${Date.now()}`);
@@ -98,6 +99,30 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const initialMessageSentRef = useRef(false);
+  
+  // Generate contextual quick replies based on conversation
+  const generateContextualQuickReplies = () => {
+    const lastMessage = messages[messages.length - 1];
+    
+    // Check for psychological needs
+    const psychNeed = PsychologicalResponseTemplates.detectPsychologicalNeed(
+      lastMessage?.text || ''
+    );
+    
+    if (psychNeed.detected && psychNeed.confidence > 0.5) {
+      return generatePsychologicalReplies({
+        condition: psychNeed.condition || 'ansiedad',
+        severity: psychNeed.severity
+      });
+    }
+    
+    // Generate based on conversation stage
+    return generateQuickReplies({
+      stage: conversationStage,
+      lastMessage: lastMessage?.text,
+      hasImage: lastMessage?.containsImage
+    });
+  };
 
   // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
@@ -142,7 +167,9 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
     setInput('');
     setShowQuickReplies(false);
     setIsProcessing(true);
-    setIsTyping(true);
+    
+    // Start typing indicator with natural delay
+    startTyping();
     
     // Auto-resize textarea back to original
     if (textareaRef.current) {
@@ -184,7 +211,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       if (shouldSkipAI) {
         const simpleResponse = ConversationFlowService.generateSimpleResponse(conversationAnalysis.type, userInput);
         if (simpleResponse) {
-          setIsTyping(false);
+          stopTyping();
           setMessages(prev => [...prev, {
             id: botMessageId,
             text: simpleResponse,
@@ -199,38 +226,18 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
         }
       }
       
-      // Only show thinking animation for medical concerns
-      if (!needsThinking) {
-        setIsThinking(false);
+      // Update conversation stage based on analysis
+      if (conversationAnalysis.type === 'greeting') {
+        setConversationStage('greeting');
+      } else if (userInput.toLowerCase().includes('dolor') || userInput.toLowerCase().includes('síntoma')) {
+        setConversationStage('symptom');
       }
-      
-      // Determine conversation complexity
-      const complexity = conversationAnalysis.complexity === 'detailed' ? 'complex' : 
-                        conversationAnalysis.complexity === 'moderate' ? 'medium' : 'simple';
-      setThinkingComplexity(complexity);
 
       // Enhanced streaming response handler
       const streamingHandler: EnhancedStreamingResponseHandler = (streamResponse: EnhancedStreamingAIResponse) => {
-        setIsTyping(false);
+        stopTyping();
         
-        // Handle thinking stages
-        if (streamResponse.thinkingStages && streamResponse.thinkingStages.length > 0) {
-          setThinkingStages(streamResponse.thinkingStages);
-          setCurrentThinkingStage(0);
-          setIsThinking(true);
-          
-          // Progress through thinking stages
-          streamResponse.thinkingStages.forEach((stage, index) => {
-            setTimeout(() => {
-              setCurrentThinkingStage(index);
-            }, index * 1000);
-          });
-          
-          // Stop thinking when stages complete
-          setTimeout(() => {
-            setIsThinking(false);
-          }, streamResponse.thinkingStages.length * 1000);
-        }
+        // Simple response handling - no complex animations
         
         // Update or create message with streaming content
         setMessages(prev => {
@@ -302,7 +309,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       
     } catch (error) {
       console.error('Error processing message:', error);
-      setIsTyping(false);
+      stopTyping();
       
       setMessages(prev => [...prev, {
         id: botMessageId,
@@ -348,12 +355,12 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       }]);
       
       // Simulate image analysis
-      setIsTyping(true);
+      startTyping();
       
       setTimeout(async () => {
         const response = await enhancedAIService.analyzeImage(imageUrl);
         
-        setIsTyping(false);
+        stopTyping();
         setMessages(prev => [...prev, {
           id: (Date.now() + 1).toString(),
           text: response.text,
@@ -374,7 +381,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       
     } catch (error) {
       console.error('Error uploading image:', error);
-      setIsTyping(false);
+      stopTyping();
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) {
@@ -607,70 +614,19 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             </div>
           ))}
           
-          {/* AI Thinking Indicator */}
-          {isThinking && thinkingStages.length > 0 && (
-            <div className="mb-2">
-              <EnhancedAIThinking
-                stages={thinkingStages}
-                currentStage={currentThinkingStage}
-                isActive={isThinking}
-                complexity={thinkingComplexity}
-                mexicanContext={true}
-              />
-            </div>
-          )}
-          
-          {/* Typing indicator */}
-          {isTyping && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="flex justify-start mb-2"
-            >
-              <div className="bg-white rounded-lg px-4 py-3 shadow-sm">
-                <div className="flex space-x-1">
-                  <motion.div
-                    animate={{ opacity: [0.4, 1, 0.4] }}
-                    transition={{ repeat: Infinity, duration: 1.4 }}
-                    className="w-2 h-2 bg-gray-400 rounded-full"
-                  />
-                  <motion.div
-                    animate={{ opacity: [0.4, 1, 0.4] }}
-                    transition={{ repeat: Infinity, duration: 1.4, delay: 0.2 }}
-                    className="w-2 h-2 bg-gray-400 rounded-full"
-                  />
-                  <motion.div
-                    animate={{ opacity: [0.4, 1, 0.4] }}
-                    transition={{ repeat: Infinity, duration: 1.4, delay: 0.4 }}
-                    className="w-2 h-2 bg-gray-400 rounded-full"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          )}
+          {/* Simple Typing Indicator - No complex animations */}
+          <SimpleTypingBubble isTyping={isTyping} userName="Dr. Simeon" />
           
           <div ref={messagesEndRef} />
         </div>
       </div>
 
-      {/* Quick Replies */}
-      {showQuickReplies && messages.length > 0 && (
-        <div className="px-3 pb-2">
-          <div className="flex overflow-x-auto space-x-2 scrollbar-hide">
-            {(messages[messages.length - 1].followUpQuestions || MEXICAN_QUICK_SYMPTOMS.map(s => s.text))
-              .slice(0, 4)
-              .map((question, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleQuickReply(question)}
-                  className="bg-white border border-[#075E54] text-[#075E54] px-4 py-2 rounded-full text-sm whitespace-nowrap flex-shrink-0"
-                >
-                  {question}
-                </button>
-              ))}
-          </div>
-        </div>
-      )}
+      {/* Enhanced Quick Replies */}
+      <WhatsAppQuickReplies
+        replies={generateContextualQuickReplies()}
+        onReplyClick={(reply) => handleQuickReply(reply.text)}
+        visible={showQuickReplies && messages.length > 0}
+      />
 
       {/* Input Area */}
       <div className="mobile-chat-input-area">

@@ -2,6 +2,14 @@ import { MexicanDoctorPersonalityService, EmotionalState, ConversationContext } 
 import AIService, { AIQueryOptions, AIResponse, StreamingAIResponse, AIAnswerOption } from './AIService';
 import { ResponseQualityService } from '../../../features/ai-doctor/services/ResponseQualityService';
 import { MedicalResponseTemplates } from '../../../features/ai-doctor/services/MedicalResponseTemplates';
+import { DiagnosticService } from '../../../features/ai-doctor/services/DiagnosticService';
+import { ResponseProcessingService } from '../../../features/ai-doctor/services/ResponseProcessingService';
+import { PsychologicalResponseTemplates } from '../../../features/ai-doctor/services/PsychologicalResponseTemplates';
+import { CompassionateResponseService } from '../../../features/ai-doctor/services/CompassionateResponseService';
+import { ConversationIntelligence } from '../../../features/ai-doctor/services/ConversationIntelligence';
+import { ResponseVarietyService } from '../../../features/ai-doctor/services/ResponseVarietyService';
+import { HolisticHealthService } from '../../../features/ai-doctor/services/HolisticHealthService';
+import { CulturalPsychologyService } from '../../../features/ai-doctor/services/CulturalPsychologyService';
 
 export interface EnhancedAIQueryOptions extends AIQueryOptions {
   enablePersonality?: boolean;
@@ -186,17 +194,90 @@ export class EnhancedAIService {
           
           // Check response quality when complete
           if (baseResponse.isComplete && enhancedText && !isDevelopment) {
-            const qualityScore = ResponseQualityService.evaluateResponse(enhancedText);
+            // Step 1: Process for repetition
+            const processed = ResponseProcessingService.processResponse(enhancedText, options.sessionId);
+            enhancedText = processed.text;
             
-            // If quality is too low, enhance with medical template
+            // Step 2: Analyze conversation intelligence
+            const analysis = ConversationIntelligence.analyzeUserMessage(
+              options.sessionId || 'default',
+              options.userMessage,
+              Date.now().toString()
+            );
+            
+            // Step 3: Check for psychological needs
+            const psychNeed = PsychologicalResponseTemplates.detectPsychologicalNeed(options.userMessage);
+            if (psychNeed.detected && psychNeed.confidence > 0.5) {
+              const template = PsychologicalResponseTemplates.getTemplate(
+                psychNeed.condition || 'ansiedad',
+                psychNeed.severity
+              );
+              if (template) {
+                const psychResponse = PsychologicalResponseTemplates.generateResponse(template);
+                enhancedText = psychResponse;
+              }
+            }
+            
+            // Step 4: Apply quality enhancement
+            const qualityScore = ResponseQualityService.evaluateResponse(enhancedText);
             if (qualityScore.totalScore < 7) {
-              // Try to detect the main symptom from the conversation
               const symptom = this.detectMainSymptom(options.userMessage);
               if (symptom) {
                 enhancedText = ResponseQualityService.enhanceResponse(
                   enhancedText,
                   symptom,
                   baseResponse.severity || 5
+                );
+              }
+            }
+            
+            // Step 5: Make compassionate
+            const compassionate = CompassionateResponseService.makeCompassionate(enhancedText, {
+              emotionalState: analysis.emotion,
+              previousMessages: this.conversationHistory.get(options.sessionId || 'default'),
+              severity: baseResponse.severity,
+              isPsychological: psychNeed.detected
+            });
+            enhancedText = compassionate.text;
+            
+            // Step 6: Add variety
+            const messageCount = this.conversationHistory.get(options.sessionId || 'default')?.length || 0;
+            const varied = ResponseVarietyService.addVariety(enhancedText, {
+              messageCount: Math.floor(messageCount / 2),
+              userMood: analysis.emotion,
+              previousResponses: this.conversationHistory.get(options.sessionId || 'default')?.slice(-3)
+            });
+            enhancedText = varied.text;
+            
+            // Step 7: Check for holistic needs
+            const symptoms = [this.detectMainSymptom(options.userMessage)].filter(s => s !== 'general');
+            if (symptoms.length > 0 || psychNeed.detected) {
+              const holisticAssessment = HolisticHealthService.assessHolistically(
+                symptoms,
+                this.conversationHistory.get(options.sessionId || 'default') || [],
+                analysis.emotion
+              );
+              
+              if (holisticAssessment.connections.length > 0) {
+                const holisticResponse = HolisticHealthService.generateHolisticResponse(holisticAssessment);
+                enhancedText += '\n\n' + holisticResponse;
+              }
+            }
+            
+            // Step 8: Apply cultural psychology if needed
+            if (psychNeed.detected) {
+              const culturalContext = CulturalPsychologyService.assessCulturalContext(
+                this.conversationHistory.get(options.sessionId || 'default') || []
+              );
+              const culturalSupport = CulturalPsychologyService.generateCulturallyAdaptedSupport(
+                culturalContext,
+                psychNeed.condition || 'ansiedad'
+              );
+              
+              if (culturalSupport.considerations.length > 0) {
+                enhancedText = CulturalPsychologyService.generateCulturalResponse(
+                  culturalSupport,
+                  enhancedText
                 );
               }
             }
