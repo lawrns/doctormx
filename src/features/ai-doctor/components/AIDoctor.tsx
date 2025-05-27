@@ -88,25 +88,25 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
   const [confidenceLevel, setConfidenceLevel] = useState(0);
-  
+
   // Enhanced AI thinking states
   const [isThinking, setIsThinking] = useState(false);
   const [thinkingStages, setThinkingStages] = useState<string[]>([]);
   const [currentThinkingStage, setCurrentThinkingStage] = useState(0);
   const [thinkingComplexity, setThinkingComplexity] = useState<'simple' | 'medium' | 'complex'>('simple');
-  
+
   // Session management
   const [sessionId] = useState(`session_${Date.now()}`);
-  
+
   const medicalReferences = [
-    'Base de datos médica', 'Estudios clínicos', 'Literatura médica', 
+    'Base de datos médica', 'Estudios clínicos', 'Literatura médica',
     'Atlas de dermatología', 'Investigaciones recientes'
   ];
-  
+
   // Mexican family context and quick symptoms
   const [familyMember, setFamilyMember] = useState<string>('myself');
   const [showFamilySetup, setShowFamilySetup] = useState(false);
-  
+
   const MEXICAN_FAMILY_OPTIONS = [
     { value: 'myself', label: 'Para mí' },
     { value: 'spouse', label: 'Para mi esposo/a' },
@@ -114,7 +114,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     { value: 'parent', label: 'Para mis padres' },
     { value: 'family', label: 'Para otro familiar' }
   ];
-  
+
   const MEXICAN_QUICK_SYMPTOMS = [
     { text: 'Tengo diabetes y necesito orientación', icon: '🩺' },
     { text: 'Dolor de cabeza fuerte', icon: '🤕' },
@@ -123,11 +123,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     { text: 'Dolor de estómago', icon: '😷' },
     { text: 'Problemas respiratorios', icon: '🤧' }
   ];
-  
+
   // Initialize with enhanced Mexican greeting
   const [messages, setMessages] = useState<Message[]>([
-    { 
-      id: '1', 
+    {
+      id: '1',
       text: '¡Hola! Soy Dr. Simeon, tu médico mexicano inteligente. ¿Para quién es la consulta de hoy? Estoy aquí para ayudarte con cualquier problema de salud de tu familia.',
       sender: 'bot',
       timestamp: new Date(),
@@ -139,7 +139,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       }
     }
   ]);
-  
+
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
@@ -154,17 +154,17 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     question: string;
     answer: string;
   }>>([]);
-  
+
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
   };
-  
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const initialMessageSentRef = useRef(false);
   const shouldScrollRef = useRef(false);
-  
+
   // Mobile version will be conditionally rendered in the JSX
 
   useEffect(() => {
@@ -193,17 +193,17 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   const handleSendMessage = useCallback(async () => {
     if (!input.trim() && !isUploading) return;
-    
+
     shouldScrollRef.current = true; // Enable scrolling for user interactions
-    
+
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = { 
+    const newUserMessage: Message = {
       id: userMessageId,
       text: input,
       sender: 'user',
       timestamp: new Date()
     };
-    
+
     setMessages(prev => [...prev, newUserMessage]);
     const userInput = input;
     setInput('');
@@ -220,25 +220,115 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       isStreaming: true,
       isComplete: false
     };
-    
+
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
+      // CLINICAL MODE - Direct implementation for desktop
+      console.log('🩺 Desktop AIDoctor - Processing message:', userInput);
+
+      let clinicalResponse = '';
+      let confidence = 0.3;
+      let isEmergency = false;
+      let useClinicalMode = true; // Force clinical mode for desktop
+
+      if (useClinicalMode) {
+        console.log('🩺 Using CLINICAL MODE for desktop:', userInput);
+
+        const lowerInput = userInput.toLowerCase();
+
+        // Emergency detection
+        if (lowerInput.includes('no puedo respirar') ||
+            lowerInput.includes('dolor de pecho intenso') ||
+            lowerInput.includes('perdí el conocimiento')) {
+          clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
+          isEmergency = true;
+          confidence = 1.0;
+        }
+        // Chest pain - EMERGENCY
+        else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
+          clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
+          confidence = 0.9;
+          isEmergency = true;
+        }
+        // Headache
+        else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
+          clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
+          confidence = 0.4;
+        }
+        // Abdominal pain
+        else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
+          clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
+          confidence = 0.4;
+        }
+        // Fever
+        else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
+          clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
+          confidence = 0.4;
+        }
+        // Generic symptom
+        else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
+          clinicalResponse = `Entiendo que tiene ${userInput.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
+          confidence = 0.3;
+        }
+        // Follow-up responses
+        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
+          confidence = 0.7;
+          clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
+        }
+        else if (lowerInput.includes('no')) {
+          confidence = 0.6;
+          clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
+        }
+        // Default clinical response
+        else {
+          clinicalResponse = 'Por favor, descríbame específicamente qué síntoma o molestia lo trae hoy. Sea lo más específico posible.';
+          confidence = 0.1;
+        }
+
+        console.log('🩺 Clinical response generated:', clinicalResponse);
+
+        // Update message with clinical response
+        setIsThinking(false);
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === botMessageId
+              ? {
+                  ...msg,
+                  text: clinicalResponse,
+                  answerOptions: isEmergency ? [] : [
+                    { text: 'Sí', value: 'yes' },
+                    { text: 'No', value: 'no' },
+                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                  ],
+                  severity: confidence * 10,
+                  isEmergency: isEmergency,
+                  isStreaming: false,
+                  isComplete: true
+                }
+              : msg
+          )
+        );
+
+        setIsProcessing(false);
+        return;
+      }
+
       // Use unified conversation service for better context tracking
       const unifiedResponse = await unifiedConversationService.processMessage(
         sessionId,
         userInput
       );
-      
+
       // Check if this needs thinking animation
       const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
       const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
-      
+
       // Update message with unified response
       setIsThinking(false);
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === botMessageId 
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === botMessageId
             ? {
                 ...msg,
                 text: unifiedResponse.text,
@@ -250,38 +340,38 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 suggestedMedications: unifiedResponse.suggestedMedications,
                 isStreaming: false,
                 isComplete: true
-              } 
+              }
             : msg
         )
       );
-      
+
       // Update severity if provided
       if (unifiedResponse.severity) {
         setSeverityLevel(unifiedResponse.severity);
       }
-      
+
       // Handle any follow-up actions
       if (unifiedResponse.suggestedSpecialty && location) {
         setTimeout(() => {
           findProviders(unifiedResponse.suggestedSpecialty!);
         }, 1000);
       }
-      
+
       if (unifiedResponse.suggestedMedications && unifiedResponse.suggestedMedications.length > 0) {
         setTimeout(() => {
           showGenericPharmacies(unifiedResponse.suggestedMedications!);
         }, 2000);
       }
-      
+
       setIsProcessing(false);
       return;
-      
+
     } catch (error) {
       console.error('Error processing message:', error);
-      
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === botMessageId 
+
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === botMessageId
             ? {
                 id: botMessageId,
                 text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
@@ -289,7 +379,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 timestamp: new Date(),
                 isStreaming: false,
                 isComplete: true
-              } 
+              }
             : msg
         )
       );
@@ -302,7 +392,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   useEffect(() => {
     if (initialMessage && initialMessage.trim() && !initialMessageSentRef.current) {
       initialMessageSentRef.current = true;
-      
+
       // Send the initial message after a small delay
       const timer = setTimeout(() => {
         setInput(initialMessage);
@@ -327,29 +417,29 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   //       console.error('Error initializing Mexican medical knowledge:', error);
   //     }
   //   };
-    
+
   //   initializeKnowledge();
   // }, []);
 
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || files.length === 0) return;
-    
+
     const file = files[0];
-    
+
     if (!file.type.startsWith('image/')) {
       alert('Por favor, sube únicamente archivos de imagen.');
       return;
     }
-    
+
     setIsUploading(true);
-    
+
     try {
       const scrubbedFile = await EncryptionService.scrubImageMetadata(file);
-      
+
       const imageUrl = URL.createObjectURL(scrubbedFile);
       setCurrentAnalysisImage(imageUrl);
-      
+
       const imageMessageId = Date.now().toString();
       setMessages(prev => [...prev, {
         id: imageMessageId,
@@ -359,45 +449,45 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         containsImage: true,
         imageUrl
       }]);
-      
+
       setImageAnalysisStage('initial');
-      
+
       setTimeout(() => {
         setConfidenceStatus('considering');
         setConfidenceLevel(10);
       }, 100);
-      
+
       setTimeout(() => setImageAnalysisStage('scanning'), 500);
-      
+
       setTimeout(() => {
         setConfidenceLevel(35);
       }, 2000);
-      
+
       setTimeout(() => setImageAnalysisStage('identifying'), 3000);
-      
+
       setTimeout(() => {
         setConfidenceLevel(60);
       }, 4000);
-      
+
       setTimeout(() => setImageAnalysisStage('comparing'), 5500);
-      
+
       const response = await enhancedAIService.analyzeImage(imageUrl);
-      
+
       setImageAnalysisStage('concluding');
-      
+
       setTimeout(() => {
         setConfidenceStatus('confident');
         setConfidenceLevel(95);
       }, 6000);
-      
+
       setTimeout(() => {
         setImageAnalysisStage(null);
         setCurrentAnalysisImage(null);
-        
+
         if (response.severity) {
           setSeverityLevel(response.severity);
         }
-        
+
         setMessages(prev => [...prev, {
           id: (Date.now() + 1).toString(),
           text: response.text,
@@ -414,13 +504,13 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           ]
         }]);
       }, 7500);
-      
+
     } catch (error) {
       console.error('Error uploading image:', error);
-      
+
       setImageAnalysisStage(null);
       setCurrentAnalysisImage(null);
-      
+
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         text: 'Lo siento, hubo un error al procesar tu imagen. Por favor, intenta nuevamente.',
@@ -434,22 +524,22 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       }
     }
   };
-  
+
   const handleMicClick = async () => {
     // Check if speech recognition is supported
     if (!SpeechRecognitionService.isSupported()) {
       alert('Tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Safari.');
       return;
     }
-    
+
     const speechService = getSpeechRecognitionService();
-    
+
     if (isRecording) {
       speechService.stop();
       setIsRecording(false);
       return;
     }
-    
+
     try {
       // Set up callbacks
       speechService.onResult((transcript, isFinal) => {
@@ -465,35 +555,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           setInput(transcript);
         }
       });
-      
+
       speechService.onError((error) => {
         console.error('Speech recognition error:', error);
         alert(error);
         setIsRecording(false);
       });
-      
+
       speechService.onStatusChange((listening) => {
         setIsRecording(listening);
       });
-      
+
       // Start listening
       await speechService.start();
       setIsRecording(true);
-      
+
       // Auto-stop after 30 seconds
       setTimeout(() => {
         if (speechService.getIsListening()) {
           speechService.stop();
         }
       }, 30000);
-      
+
     } catch (error) {
       console.error('Error starting speech recognition:', error);
       alert('No se pudo iniciar el reconocimiento de voz. Por favor, verifica los permisos del micrófono.');
       setIsRecording(false);
     }
   };
-  
+
   const findProviders = async (specialty: string) => {
     if (!location) {
       // Default to Mexico City center coordinates if location is not available
@@ -501,7 +591,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         latitude: 19.4326,
         longitude: -99.1332
       };
-      
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -526,7 +616,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       fetchProviders(specialty, location);
     }
   };
-  
+
   const fetchProviders = async (specialty: string, loc: { latitude: number; longitude: number }) => {
     try {
       const providers = await enhancedAIService.findNearbyProviders(specialty, loc);
@@ -537,35 +627,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       alert('No se pudieron encontrar proveedores cercanos. Por favor, intenta nuevamente.');
     }
   };
-  
+
   const scheduleAppointment = async (providerId: string) => {
     try {
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
-      
+
       const appointment = await enhancedAIService.scheduleAppointment(
         providerId,
         tomorrow.toISOString().split('T')[0],
         '10:00',
         'Consulta general'
       );
-      
+
       setAppointments(prev => [...prev, appointment]);
-      
+
       setMessages(prev => [...prev, {
         id: Date.now().toString(),
         text: 'He programado una cita para ti mañana a las 10:00 AM.',
         sender: 'bot',
         timestamp: new Date()
       }]);
-      
+
       setActiveTab('appointments');
     } catch (error) {
       console.error('Error scheduling appointment:', error);
       alert('No se pudo programar la cita. Por favor, intenta nuevamente.');
     }
   };
-  
+
   const findPharmacies = async (medications: string[] = []) => {
     if (!location) {
       const newMessage: Message = {
@@ -580,7 +670,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
       };
       setMessages(prev => [...prev, newMessage]);
-      
+
       const handleLocationPermission = (option: string) => {
         if (option === 'Permitir') {
           navigator.geolocation.getCurrentPosition(
@@ -589,7 +679,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude
               });
-              
+
               const confirmMessage: Message = {
                 id: Date.now().toString(),
                 sender: 'bot',
@@ -597,12 +687,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 timestamp: new Date()
               };
               setMessages(prev => [...prev, confirmMessage]);
-              
+
               setTimeout(() => findPharmacies(medications), 1000);
             },
             (error) => {
               console.error('Geolocation error:', error);
-              
+
               const errorMessage: Message = {
                 id: Date.now().toString(),
                 sender: 'bot',
@@ -610,7 +700,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 timestamp: new Date()
               };
               setMessages(prev => [...prev, errorMessage]);
-              
+
               showGenericPharmacies(medications);
             }
           );
@@ -622,11 +712,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             timestamp: new Date()
           };
           setMessages(prev => [...prev, denyMessage]);
-          
+
           showGenericPharmacies(medications);
         }
       };
-      
+
       const handleNextInteraction = (e: Event) => {
         const target = e.target as HTMLElement;
         if (target.hasAttribute('data-option')) {
@@ -637,18 +727,18 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           }
         }
       };
-      
+
       document.addEventListener('click', handleNextInteraction);
       return;
     }
-    
+
     try {
       const pharmacyList = await enhancedAIService.getPharmacyRecommendations(medications, location);
       setPharmacies(pharmacyList);
       setActiveTab('pharmacies');
     } catch (error) {
       console.error('Error finding pharmacies:', error);
-      
+
       const errorMessage: Message = {
         id: Date.now().toString(),
         sender: 'bot',
@@ -658,7 +748,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       setMessages(prev => [...prev, errorMessage]);
     }
   };
-  
+
   const showGenericPharmacies = (medications: string[] = []) => {
     const sampleProducts = [
       {
@@ -692,7 +782,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         availableAt: ['fda']
       }
     ];
-    
+
     const pharmacyData = {
       'fda': {
         id: 'fda',
@@ -709,29 +799,29 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         logo: 'https://www.farmaciasdesimilares.com/static/media/logo-similares.a7e1b5f3.svg'
       }
     };
-    
+
     setProducts(sampleProducts);
     setPharmacyData(pharmacyData);
-    
+
     const recommendationMessage: Message = {
       id: Date.now().toString(),
       sender: 'bot',
       text: 'He encontrado algunos medicamentos que podrían ayudarte. Puedes verlos en la pestaña de Farmacias.',
       timestamp: new Date()
     };
-    
+
     setMessages(prev => [...prev, recommendationMessage]);
-    
+
     setActiveTab('pharmacies');
   };
-  
+
   const getSeverityColor = () => {
     if (severityLevel < 30) return 'bg-brand-jade-500';
     if (severityLevel < 60) return 'bg-yellow-500';
     if (severityLevel < 80) return 'bg-orange-500';
     return 'bg-red-500';
   };
-  
+
   const getSeverityText = () => {
     if (severityLevel < 30) return 'Bajo riesgo';
     if (severityLevel < 60) return 'Atención recomendada';
@@ -741,18 +831,18 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   const handleOptionSelect = (option: string, questionId: string) => {
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = { 
+    const newUserMessage: Message = {
       id: userMessageId,
       text: option,
       sender: 'user',
       timestamp: new Date()
     };
-    
+
     setMessages(prev => [...prev, newUserMessage]);
     setIsProcessing(true);
-    
+
     if (questionId === 'pharmacy_recommendation' && option === 'Ver medicamentos recomendados') {
-      const lastMessageWithMedications = [...messages].reverse().find(m => 
+      const lastMessageWithMedications = [...messages].reverse().find(m =>
         m.suggestedMedications && m.suggestedMedications.length > 0
       );
 
@@ -776,9 +866,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       setIsProcessing(false);
       return;
     }
-    
+
     setQuestionHistory(prev => [...prev, { questionId, question: questionId, answer: option }]);
-    
+
     setTimeout(() => {
       let nextQuestion: Message = {
         id: (Date.now() + 1).toString(),
@@ -786,7 +876,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         sender: 'bot',
         timestamp: new Date()
       };
-      
+
       if (questionId === 'initial') {
         if (option === 'Dolor') {
           nextQuestion.text = '¿Cuánto tiempo has tenido este dolor?';
@@ -849,7 +939,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             'Tengo tos o congestión'
           ];
         }
-        
+
         if (option === 'Moderada' || option === 'Severa') {
           if (symptomType === 'pain') {
             nextQuestion.suggestedMedications = ['paracetamol', 'ibuprofeno'];
@@ -858,19 +948,19 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           }
         }
       }
-      
+
       setMessages(prev => [...prev, nextQuestion]);
       setIsProcessing(false);
     }, 1000);
   };
-  
+
   const handleGoBack = () => {
     if (questionHistory.length > 1) {
       const newHistory = [...questionHistory];
       newHistory.pop();
       setQuestionHistory(newHistory);
       setCurrentQuestionId(newHistory[newHistory.length - 1].questionId);
-      
+
       setMessages(prev => prev.slice(0, -2));
     }
   };
@@ -885,21 +975,21 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       }
       return;
     }
-    
+
     // Process through unified service with selected option
     shouldScrollRef.current = true;
     setIsProcessing(true);
-    
+
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = { 
+    const newUserMessage: Message = {
       id: userMessageId,
       text: answerOption.text, // Use the display text
       sender: 'user',
       timestamp: new Date()
     };
-    
+
     setMessages(prev => [...prev, newUserMessage]);
-    
+
     // Create bot message placeholder
     const botMessageId = (Date.now() + 1).toString();
     const initialBotMessage: Message = {
@@ -910,9 +1000,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       isStreaming: true,
       isComplete: false
     };
-    
+
     setMessages(prev => [...prev, initialBotMessage]);
-    
+
     try {
       // Process with unified service, passing the selected option
       const unifiedResponse = await unifiedConversationService.processMessage(
@@ -920,11 +1010,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         answerOption.text,
         answerOption.value
       );
-      
+
       // Update bot message with response
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === botMessageId 
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === botMessageId
             ? {
                 ...msg,
                 text: unifiedResponse.text,
@@ -936,23 +1026,23 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 suggestedMedications: unifiedResponse.suggestedMedications,
                 isStreaming: false,
                 isComplete: true
-              } 
+              }
             : msg
         )
       );
-      
+
       setIsProcessing(false);
     } catch (error) {
       console.error('Error processing answer option:', error);
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === botMessageId 
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === botMessageId
             ? {
                 ...msg,
                 text: 'Lo siento, hubo un error al procesar tu respuesta. Por favor, intenta de nuevo.',
                 isStreaming: false,
                 isComplete: true
-              } 
+              }
             : msg
         )
       );
@@ -1000,7 +1090,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
                         ))}
-                        
+
                         {/* Enhanced AI Thinking Component */}
                         {isThinking && thinkingStages.length > 0 && (
                           <EnhancedAIThinking
@@ -1011,14 +1101,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                             mexicanContext={true}
                           />
                         )}
-                        
+
                         <div ref={messagesEndRef} />
                       </div>
                     </div>
-                    
+
                     {/* Image Analysis Visualization */}
                     {imageAnalysisStage && currentAnalysisImage && (
-                      <motion.div 
+                      <motion.div
                         className="px-4 pb-4 fixed bottom-32 left-0 right-0 z-10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -1026,14 +1116,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       >
                         <div className="bg-white rounded-lg shadow-md p-4 border border-brand-jade-100 mx-4">
                           <h3 className="text-lg font-medium text-gray-800 mb-3">Análisis de Imagen</h3>
-                          <ImageAnalysisVisual 
-                            imageSrc={currentAnalysisImage} 
-                            analysisStage={imageAnalysisStage} 
+                          <ImageAnalysisVisual
+                            imageSrc={currentAnalysisImage}
+                            analysisStage={imageAnalysisStage}
                           />
-                          
+
                           {/* Confidence Visualizer */}
                           <div className="mt-4">
-                            <ConfidenceVisualizer 
+                            <ConfidenceVisualizer
                               confidence={confidenceLevel}
                               status={confidenceStatus}
                               references={medicalReferences}
@@ -1042,7 +1132,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </motion.div>
                     )}
-                    
+
                     {/* Family Member Selector */}
                     {showFamilySetup && (
                       <div className="bg-[#D0F0EF] border border-[#006D77] rounded-lg p-4 mb-4">
@@ -1067,7 +1157,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Quick Mexican Symptoms */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-3">
@@ -1108,9 +1198,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                             <span className="text-red-700 font-medium">Emergencia: 911 • Cruz Roja: 065</span>
                           </div>
                         </div>
-                        
+
                         <div className="flex space-x-2">
-                          <button 
+                          <button
                             onClick={handleMicClick}
                             className={`p-3 rounded-full transition-all ${isRecording ? 'bg-red-100 text-red-600 animate-pulse' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
                             aria-label={isRecording ? "Detener grabación" : "Usar micrófono"}
@@ -1118,7 +1208,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           >
                             <Mic size={20} />
                           </button>
-                          <button 
+                          <button
                             onClick={() => fileInputRef.current?.click()}
                             className={`p-3 rounded-full ${isUploading ? 'text-[#006D77] bg-[#D0F0EF]' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
                             aria-label="Subir imagen"
@@ -1170,12 +1260,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                               </div>
                             )}
                           </div>
-                          <button 
+                          <button
                             onClick={handleSendMessage}
                             disabled={(!input.trim() && !isUploading) || isProcessing}
                             className={`p-3 rounded-full transition-all ${
                               (!input.trim() && !isUploading) || isProcessing
-                                ? 'text-gray-400 cursor-not-allowed bg-gray-100' 
+                                ? 'text-gray-400 cursor-not-allowed bg-gray-100'
                                 : 'text-white bg-[#006D77] hover:bg-[#005B66] shadow-md hover:shadow-lg'
                             }`}
                             aria-label="Enviar mensaje"
@@ -1184,7 +1274,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           </button>
                         </div>
                       </div>
-                      
+
                       {/* Stable containers for status indicators */}
                       <div className="status-indicators-container max-w-screen-xl mx-auto" style={{ height: isRecording || isProcessing ? 'auto' : '0', overflow: 'hidden', transition: 'height 0.3s ease' }}>
                         {isRecording && (
@@ -1201,26 +1291,26 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     </div>
                   </div>
                 );
-                
+
               case 'analysis':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Análisis de Síntomas</h3>
-                    
+
                     {/* Show current analysis visualizations if active */}
                     {currentAnalysisImage && imageAnalysisStage && (
                       <div className="space-y-4 mb-6">
                         <div className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                           <h4 className="font-medium text-gray-900 mb-2">Análisis en progreso:</h4>
                           <div className="mb-4">
-                            <ImageAnalysisVisual 
-                              imageSrc={currentAnalysisImage} 
+                            <ImageAnalysisVisual
+                              imageSrc={currentAnalysisImage}
                               analysisStage={imageAnalysisStage}
                             />
                           </div>
-                          
+
                           <div className="mt-4">
-                            <ConfidenceVisualizer 
+                            <ConfidenceVisualizer
                               confidence={confidenceLevel}
                               status={confidenceStatus}
                               references={medicalReferences}
@@ -1229,7 +1319,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </div>
                     )}
-                    
+
                     {messages.filter(m => m.suggestedConditions && m.suggestedConditions.length > 0).length > 0 ? (
                       <div className="space-y-6">
                         {messages
@@ -1249,7 +1339,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                   </li>
                                 ))}
                               </ul>
-                              
+
                               {message.suggestedSpecialty && (
                                 <div className="mt-4">
                                   <p className="text-sm text-gray-600">Especialidad recomendada:</p>
@@ -1275,12 +1365,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-                
+
               case 'providers':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Proveedores de Salud Cercanos</h3>
-                    
+
                     {selectedProviders.length > 0 ? (
                       <div className="space-y-4">
                         {selectedProviders.map((provider, index) => (
@@ -1319,12 +1409,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-                
+
               case 'appointments':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Mis Citas</h3>
-                    
+
                     {appointments.length > 0 ? (
                       <div className="space-y-4">
                         {appointments.map((_, index) => (
@@ -1359,12 +1449,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-                
+
               case 'prescriptions':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Mis Recetas</h3>
-                    
+
                     {prescriptions.length > 0 ? (
                       <div className="space-y-4">
                         {prescriptions.map((_, index) => (
@@ -1402,14 +1492,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-                
+
               case 'pharmacies':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Farmacias y Medicamentos</h3>
-                    
+
                     {products.length > 0 ? (
-                      <ProductRecommendation 
+                      <ProductRecommendation
                         products={products}
                         pharmacies={pharmacyData}
                         onPharmacyClick={(pharmacyId) => {
@@ -1442,7 +1532,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                 <p className="text-sm text-gray-600">
                                   {pharmacy.distance ? `${(pharmacy.distance / 1000).toFixed(1)} km de distancia` : 'Distancia no disponible'}
                                 </p>
-                                
+
                                 {pharmacy.available_medications && pharmacy.available_medications.length > 0 && (
                                   <div className="mt-2">
                                     <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
@@ -1458,11 +1548,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                     </div>
                                   </div>
                                 )}
-                                
+
                                 <div className="mt-3 flex space-x-2">
-                                  <a 
-                                    href={`https://maps.google.com/?q=${pharmacy.address}`} 
-                                    target="_blank" 
+                                  <a
+                                    href={`https://maps.google.com/?q=${pharmacy.address}`}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-sm bg-brand-jade-600 text-white px-3 py-1 rounded-md hover:bg-brand-jade-700 transition-colors flex items-center"
                                   >
@@ -1487,7 +1577,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-                
+
               default:
                 return null;
             }
@@ -1515,7 +1605,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   // Main layout that works within DoctorLayout (not full-screen)
   return (
-    <div className="h-full flex flex-col bg-white relative">      
+    <div className="h-full flex flex-col bg-white relative">
       {/* Tab navigation for desktop */}
       <div className="border-b border-gray-200 bg-white px-6">
         <nav className="flex space-x-8">
@@ -1531,8 +1621,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
               key={id}
               onClick={() => setActiveTab(id as Tab)}
               className={`flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
-                activeTab === id 
-                  ? 'border-brand-jade-500 text-brand-jade-600' 
+                activeTab === id
+                  ? 'border-brand-jade-500 text-brand-jade-600'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -1542,7 +1632,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           ))}
         </nav>
       </div>
-      
+
       {/* Main content area */}
       <div className="flex-1 overflow-hidden">
         {renderTabContent()}
