@@ -11,6 +11,11 @@ const ImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/
 const LabTestingPage = React.lazy(() => import('./features/lab-testing/LabTestingPage'));
 const DoctorConnectPage = React.lazy(() => import('./pages/DoctorConnectPage'));
 
+// Auth pages
+const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));
+const RegisterPage = React.lazy(() => import('./pages/auth/RegisterPage'));
+const ResetPasswordPage = React.lazy(() => import('./pages/auth/ResetPasswordPage'));
+
 function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
@@ -22,6 +27,11 @@ function App() {
           <Route path="lab-testing" element={<LabTestingPage />} />
           <Route path="connect" element={<DoctorConnectPage />} />
         </Route>
+        
+        {/* Auth Routes - no layout */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/auth/reset-password" element={<ResetPasswordPage />} />
         
         {/* Doctor/Medical Professional Routes - with sidebar */}
         <Route path="/doctor" element={<DoctorLayout />}>
