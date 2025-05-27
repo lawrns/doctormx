@@ -1023,52 +1023,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
               case 'chat':
                 return (
                   <div className="flex flex-col h-full relative">
-                    {/* Three Main Action Buttons */}
-                    {messages.length <= 1 && (
-                      <div className="p-4 border-b border-gray-100">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                          <Link 
-                            to="/ai-doctor"
-                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-brand-jade-50 to-brand-jade-100 rounded-lg border border-brand-jade-200 hover:from-brand-jade-100 hover:to-brand-jade-200 transition-all duration-200"
-                          >
-                            <div className="w-12 h-12 bg-brand-jade-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <MessageSquare className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-gray-900">AI Doctor</h3>
-                              <p className="text-sm text-gray-600">Chat médico inteligente</p>
-                            </div>
-                          </Link>
-                          
-                          <Link 
-                            to="/image-analysis"
-                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200 hover:from-blue-100 hover:to-blue-200 transition-all duration-200"
-                          >
-                            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <Image className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-gray-900">Análisis de Imágenes</h3>
-                              <p className="text-sm text-gray-600">Análisis visual con IA</p>
-                            </div>
-                          </Link>
-                          
-                          <Link 
-                            to="/lab-testing"
-                            className="group flex items-center space-x-3 p-4 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg border border-purple-200 hover:from-purple-100 hover:to-purple-200 transition-all duration-200"
-                          >
-                            <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                              <Activity className="w-6 h-6 text-white" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-gray-900">Lab Testing</h3>
-                              <p className="text-sm text-gray-600">Pruebas de laboratorio</p>
-                            </div>
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                    
                     {/* Chat messages - with proper bottom padding to account for fixed input */}
                     <div className="chat-messages-container flex-1 overflow-y-auto" style={{ paddingBottom: '200px' }}>
                       <div className="p-4 space-y-4">
