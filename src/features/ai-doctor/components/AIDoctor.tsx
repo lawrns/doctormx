@@ -1229,10 +1229,108 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
                             <button
                               key={index}
-                              onClick={() => {
+                              onClick={async () => {
                                 const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
-                                setInput(symptom.text + familyContext);
-                                setTimeout(() => handleSendMessage(), 100);
+                                const messageText = symptom.text + familyContext;
+
+                                // Directly send the message without setting input
+                                const userMessageId = Date.now().toString();
+                                const newUserMessage = {
+                                  id: userMessageId,
+                                  text: messageText,
+                                  sender: 'user' as const,
+                                  timestamp: new Date(),
+                                  status: 'sent' as const
+                                };
+
+                                setMessages(prev => [...prev, newUserMessage]);
+                                setIsProcessing(true);
+
+                                // Process with clinical mode
+                                const botMessageId = (Date.now() + 1).toString();
+                                const initialBotMessage = {
+                                  id: botMessageId,
+                                  text: '',
+                                  sender: 'bot' as const,
+                                  timestamp: new Date(),
+                                  isStreaming: true,
+                                  isComplete: false,
+                                  status: 'delivered' as const
+                                };
+
+                                setMessages(prev => [...prev, initialBotMessage]);
+
+                                // Use clinical mode logic
+                                let clinicalResponse = '';
+                                let confidence = 0.3;
+                                let isEmergency = false;
+
+                                const lowerInput = messageText.toLowerCase();
+
+                                // Emergency detection
+                                if (lowerInput.includes('no puedo respirar') ||
+                                    lowerInput.includes('dolor de pecho intenso') ||
+                                    lowerInput.includes('perdí el conocimiento')) {
+                                  clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
+                                  isEmergency = true;
+                                  confidence = 1.0;
+                                }
+                                // Chest pain - EMERGENCY
+                                else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
+                                  clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
+                                  confidence = 0.9;
+                                  isEmergency = true;
+                                }
+                                // Headache
+                                else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
+                                  clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
+                                  confidence = 0.4;
+                                }
+                                // Abdominal pain
+                                else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
+                                  clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
+                                  confidence = 0.4;
+                                }
+                                // Fever
+                                else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
+                                  clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
+                                  confidence = 0.4;
+                                }
+                                // Generic symptom
+                                else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
+                                  clinicalResponse = `Entiendo que tiene ${messageText.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
+                                  confidence = 0.3;
+                                }
+                                // Default clinical response
+                                else {
+                                  clinicalResponse = `Entiendo que ${messageText.toLowerCase()}. ¿Puede proporcionar más detalles sobre este síntoma?`;
+                                  confidence = 0.3;
+                                }
+
+                                console.log('🩺 Quick symptom clinical response:', clinicalResponse);
+
+                                // Update message with clinical response
+                                setMessages(prev =>
+                                  prev.map(msg =>
+                                    msg.id === botMessageId
+                                      ? {
+                                          ...msg,
+                                          text: clinicalResponse,
+                                          answerOptions: isEmergency ? [] : [
+                                            { text: 'Sí', value: 'yes' },
+                                            { text: 'No', value: 'no' },
+                                            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                          ],
+                                          severity: confidence * 10,
+                                          isEmergency: isEmergency,
+                                          isStreaming: false,
+                                          isComplete: true
+                                        }
+                                      : msg
+                                  )
+                                );
+
+                                setIsProcessing(false);
                               }}
                               className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2.5 text-sm transition-all flex items-center justify-center space-x-2 min-h-[44px] shadow-sm hover:shadow-md"
                             >
@@ -1271,15 +1369,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           >
                             <Image size={20} />
                           </button>
-                          <a
-                            href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica%20urgente"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-3 rounded-full text-[#25D366] hover:bg-green-50"
-                            aria-label="WhatsApp directo"
-                          >
-                            <Phone size={20} />
-                          </a>
                           <input
                             type="file"
                             ref={fileInputRef}
