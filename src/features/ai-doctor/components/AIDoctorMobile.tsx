@@ -76,10 +76,13 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const [conversationStage, setConversationStage] = useState<'greeting' | 'symptom' | 'severity' | 'treatment' | 'followup'>('greeting');
 
-  // Clinical conversation state
+  // Clinical conversation state - FORCE CLINICAL MODE
   const [useClinicalMode, setUseClinicalMode] = useState(true); // Enable clinical mode by default
   const [clinicalResponse, setClinicalResponse] = useState<ClinicalResponse | null>(null);
   const [showDiagnosticDisplay, setShowDiagnosticDisplay] = useState(false);
+
+  // Debug clinical mode
+  console.log('🩺 Component loaded - Clinical mode:', useClinicalMode);
 
   // Use the new typing indicator hook
   const { isTyping, startTyping, stopTyping } = useTypingIndicator();
@@ -163,6 +166,8 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const handleSendMessage = useCallback(async () => {
     if (!input.trim() && !isUploading) return;
 
+    console.log('🩺 handleSendMessage called - Clinical mode:', useClinicalMode, 'Input:', input);
+
     const userMessageId = Date.now().toString();
     const newUserMessage: Message = {
       id: userMessageId,
@@ -212,8 +217,9 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
     const botMessageId = (Date.now() + 1).toString();
 
     try {
-      // SIMPLIFIED CLINICAL MODE - Direct implementation
-      if (useClinicalMode) {
+      // SIMPLIFIED CLINICAL MODE - Direct implementation - FORCE TRUE
+      console.log('🩺 About to check clinical mode - useClinicalMode:', useClinicalMode);
+      if (true || useClinicalMode) { // FORCE CLINICAL MODE
         console.log('🩺 Using SIMPLIFIED clinical mode for:', userInput);
 
         let clinicalResponse = '';
