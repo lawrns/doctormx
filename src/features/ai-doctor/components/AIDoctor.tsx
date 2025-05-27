@@ -26,6 +26,7 @@ import ImageAnalysisVisual from '../../ai-image-analysis/components/ImageAnalysi
 import ConfidenceVisualizer from './ConfidenceVisualizer';
 import AIDoctorMobile from './AIDoctorMobile';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
+import { unifiedConversationService } from '../services/UnifiedConversationService';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -223,32 +224,57 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
-      // Check if this is a simple greeting or conversation
+      // Use unified conversation service for better context tracking
+      const unifiedResponse = await unifiedConversationService.processMessage(
+        sessionId,
+        userInput
+      );
+      
+      // Check if this needs thinking animation
       const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
-      const shouldSkipAI = ConversationFlowService.shouldSkipAIProcessing(userInput);
       const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
       
-      // Handle simple responses immediately without AI processing
-      if (shouldSkipAI) {
-        const simpleResponse = ConversationFlowService.generateSimpleResponse(conversationAnalysis.type, userInput);
-        if (simpleResponse) {
-          setIsThinking(false);
-          setMessages(prev => 
-            prev.map(msg => 
-              msg.id === botMessageId 
-                ? {
-                    ...msg,
-                    text: simpleResponse,
-                    isStreaming: false,
-                    isComplete: true
-                  } 
-                : msg
-            )
-          );
-          setIsProcessing(false);
-          return;
-        }
+      // Update message with unified response
+      setIsThinking(false);
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                ...msg,
+                text: unifiedResponse.text,
+                answerOptions: unifiedResponse.answerOptions,
+                severity: unifiedResponse.severity,
+                isEmergency: unifiedResponse.isEmergency,
+                suggestedSpecialty: unifiedResponse.suggestedSpecialty,
+                suggestedConditions: unifiedResponse.suggestedConditions,
+                suggestedMedications: unifiedResponse.suggestedMedications,
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
+      
+      // Update severity if provided
+      if (unifiedResponse.severity) {
+        setSeverityLevel(unifiedResponse.severity);
       }
+      
+      // Handle any follow-up actions
+      if (unifiedResponse.suggestedSpecialty && location) {
+        setTimeout(() => {
+          findProviders(unifiedResponse.suggestedSpecialty!);
+        }, 1000);
+      }
+      
+      if (unifiedResponse.suggestedMedications && unifiedResponse.suggestedMedications.length > 0) {
+        setTimeout(() => {
+          showGenericPharmacies(unifiedResponse.suggestedMedications!);
+        }, 2000);
+      }
+      
+      setIsProcessing(false);
+      return;
       
       // Only show thinking animation for medical concerns
       if (!needsThinking) {
@@ -968,9 +994,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     }
   };
 
-  const handleAnswerOptionClick = (answerOption: AIAnswerOption) => {
+  const handleAnswerOptionClick = async (answerOption: AIAnswerOption) => {
     // Handle special case for free text input
-    if (answerOption.value === 'OPEN_TEXT_INPUT') {
+    if (answerOption.value === 'free_text' || answerOption.value === 'OPEN_TEXT_INPUT') {
       // Just focus the input field and let user type freely
       const inputElement = document.querySelector('.chat-input') as HTMLInputElement;
       if (inputElement) {
@@ -979,14 +1005,78 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       return;
     }
     
-    // For other options, set the value as input and send automatically
-    setInput(answerOption.value);
+    // Process through unified service with selected option
+    shouldScrollRef.current = true;
+    setIsProcessing(true);
     
-    // Send the message after a short delay to allow input to update
-    shouldScrollRef.current = true; // Enable scrolling for answer option interactions
-    setTimeout(() => {
-      handleSendMessage();
-    }, 100);
+    const userMessageId = Date.now().toString();
+    const newUserMessage: Message = { 
+      id: userMessageId,
+      text: answerOption.text, // Use the display text
+      sender: 'user',
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, newUserMessage]);
+    
+    // Create bot message placeholder
+    const botMessageId = (Date.now() + 1).toString();
+    const initialBotMessage: Message = {
+      id: botMessageId,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isStreaming: true,
+      isComplete: false
+    };
+    
+    setMessages(prev => [...prev, initialBotMessage]);
+    
+    try {
+      // Process with unified service, passing the selected option
+      const unifiedResponse = await unifiedConversationService.processMessage(
+        sessionId,
+        answerOption.text,
+        answerOption.value
+      );
+      
+      // Update bot message with response
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                ...msg,
+                text: unifiedResponse.text,
+                answerOptions: unifiedResponse.answerOptions,
+                severity: unifiedResponse.severity,
+                isEmergency: unifiedResponse.isEmergency,
+                suggestedSpecialty: unifiedResponse.suggestedSpecialty,
+                suggestedConditions: unifiedResponse.suggestedConditions,
+                suggestedMedications: unifiedResponse.suggestedMedications,
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
+      
+      setIsProcessing(false);
+    } catch (error) {
+      console.error('Error processing answer option:', error);
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                ...msg,
+                text: 'Lo siento, hubo un error al procesar tu respuesta. Por favor, intenta de nuevo.',
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
+      setIsProcessing(false);
+    }
   };
 
   const MessageComponent = memo(({ message }: { message: Message }) => {
