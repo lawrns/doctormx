@@ -16,6 +16,7 @@ import { mexicanMedicalKnowledgeService } from '../../../core/services/knowledge
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
 import { ConversationFlowService } from '../services/ConversationFlowService';
+import { getSpeechRecognitionService, SpeechRecognitionService } from '../services/SpeechRecognitionService';
 import AIThinking from './AIThinking';
 import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
@@ -151,8 +152,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     question: string;
     answer: string;
   }>>([]);
-  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
-  const [audioChunks, setAudioChunks] = useState<Blob[]>([]);
   
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -518,107 +517,61 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   };
   
   const handleMicClick = async () => {
+    // Check if speech recognition is supported
+    if (!SpeechRecognitionService.isSupported()) {
+      alert('Tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Safari.');
+      return;
+    }
+    
+    const speechService = getSpeechRecognitionService();
+    
     if (isRecording) {
-      if (mediaRecorder) {
-        mediaRecorder.stop();
-        setIsRecording(false);
-      }
+      speechService.stop();
+      setIsRecording(false);
       return;
     }
     
     try {
-      setIsProcessing(true);
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      setIsProcessing(false);
-      
-      const recorder = new MediaRecorder(stream);
-      setMediaRecorder(recorder);
-      
-      setAudioChunks([]);
-      
-      recorder.ondataavailable = (event) => {
-        if (event.data.size > 0) {
-          setAudioChunks((chunks) => [...chunks, event.data]);
+      // Set up callbacks
+      speechService.onResult((transcript, isFinal) => {
+        if (isFinal) {
+          // Set the transcribed text in the input field
+          setInput(transcript);
+          // Automatically send the message
+          setTimeout(() => {
+            handleSendMessage();
+          }, 500);
+        } else {
+          // Show interim results in the input field
+          setInput(transcript);
         }
-      };
+      });
       
-      recorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-        
-        const audioUrl = URL.createObjectURL(audioBlob);
-        
-        const userMessageId = Date.now().toString();
-        const newUserMessage: Message = { 
-          id: userMessageId,
-          text: 'He grabado un mensaje de voz sobre mis síntomas.',
-          sender: 'user',
-          timestamp: new Date(),
-          audioUrl: audioUrl
-        };
-        
-        setMessages(prev => [...prev, newUserMessage]);
-        
-        setIsProcessing(true);
-        
-        try {
-          await new Promise(resolve => setTimeout(resolve, 2000));
-          
-          const symptomOptions = [
-            'dolor de cabeza', 'fiebre', 'tos', 'dolor de garganta', 
-            'congestión nasal', 'dolor abdominal', 'náuseas'
-          ];
-          const randomSymptom = symptomOptions[Math.floor(Math.random() * symptomOptions.length)];
-          
-          const botResponse: Message = {
-            id: Date.now().toString(),
-            text: `He analizado tu mensaje de voz. Parece que mencionas ${randomSymptom}. ¿Puedes confirmar si esto es correcto y proporcionarme más detalles sobre cuándo comenzaron estos síntomas?`,
-            sender: 'bot',
-            timestamp: new Date(),
-            interactiveOptions: {
-              type: 'yes_no',
-              options: ['Sí, es correcto', 'No, es otro síntoma'],
-              questionId: 'audio_confirmation'
-            },
-            followUpQuestions: [
-              '¿Cuándo comenzaron los síntomas?',
-              '¿Has tomado algún medicamento?',
-              '¿Tienes alguna condición médica preexistente?'
-            ]
-          };
-          
-          setMessages(prev => [...prev, botResponse]);
-        } catch (error) {
-          console.error('Error processing audio:', error);
-          
-          setMessages(prev => [...prev, {
-            id: Date.now().toString(),
-            text: 'Lo siento, hubo un problema al procesar tu mensaje de voz. ¿Podrías intentar escribir tus síntomas?',
-            sender: 'bot',
-            timestamp: new Date()
-          }]);
-        } finally {
-          setIsProcessing(false);
-        }
-        
-        stream.getTracks().forEach(track => track.stop());
-        
-        setTimeout(() => URL.revokeObjectURL(audioUrl), 60000);
-      };
+      speechService.onError((error) => {
+        console.error('Speech recognition error:', error);
+        alert(error);
+        setIsRecording(false);
+      });
       
-      recorder.start();
+      speechService.onStatusChange((listening) => {
+        setIsRecording(listening);
+      });
+      
+      // Start listening
+      await speechService.start();
       setIsRecording(true);
       
+      // Auto-stop after 30 seconds
       setTimeout(() => {
-        if (recorder && recorder.state === 'recording') {
-          recorder.stop();
-          setIsRecording(false);
+        if (speechService.getIsListening()) {
+          speechService.stop();
         }
-      }, 15000);
+      }, 30000);
+      
     } catch (error) {
-      console.error('Error accessing microphone:', error);
-      alert('No se pudo acceder al micrófono. Por favor, verifica los permisos del navegador.');
+      console.error('Error starting speech recognition:', error);
+      alert('No se pudo iniciar el reconocimiento de voz. Por favor, verifica los permisos del micrófono.');
       setIsRecording(false);
-      setIsProcessing(false);
     }
   };
   
@@ -1222,8 +1175,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         <div className="flex space-x-2">
                           <button 
                             onClick={handleMicClick}
-                            className={`p-3 rounded-full ${isRecording ? 'bg-red-100 text-red-600' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
-                            aria-label="Usar micrófono"
+                            className={`p-3 rounded-full transition-all ${isRecording ? 'bg-red-100 text-red-600 animate-pulse' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
+                            aria-label={isRecording ? "Detener grabación" : "Usar micrófono"}
+                            title={isRecording ? "Grabando... Haz clic para detener" : "Grabar mensaje de voz"}
                           >
                             <Mic size={20} />
                           </button>

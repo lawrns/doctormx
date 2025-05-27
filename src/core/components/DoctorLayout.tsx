@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import AINavbar from './AINavbar';
 import AISidebar from './AISidebar';
 
 function DoctorLayout() {
+  const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  
+  // Auto-collapse sidebar on mobile and when visiting /doctor route
+  useEffect(() => {
+    const isMobile = window.innerWidth < 1024;
+    const isDoctorRoute = location.pathname === '/doctor';
+    
+    if (isMobile || isDoctorRoute) {
+      setIsSidebarOpen(false);
+    }
+  }, [location.pathname]);
 
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -38,12 +49,12 @@ function DoctorLayout() {
         </main>
       </div>
 
-      {/* WhatsApp Button - floating at bottom-right */}
+      {/* WhatsApp Button - floating at bottom-right (hidden on mobile) */}
       <a
         href="https://wa.me/526144792338"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-40 flex items-center justify-center group"
+        className="hidden lg:flex fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#20BA5A] transition-colors z-40 items-center justify-center group"
         aria-label="Contactar por WhatsApp"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

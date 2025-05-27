@@ -9,6 +9,7 @@ import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse,
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
 import { ConversationFlowService } from '../services/ConversationFlowService';
+import { getSpeechRecognitionService, SpeechRecognitionService } from '../services/SpeechRecognitionService';
 import EnhancedAIThinking from './EnhancedAIThinking';
 import EnhancedChatBubble from './EnhancedChatBubble';
 
@@ -387,9 +388,63 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
     setTimeout(() => handleSendMessage(), 100);
   };
 
-  const handleVoiceNote = () => {
-    // Implement voice recording
-    alert('Grabación de voz próximamente');
+  const handleVoiceNote = async () => {
+    // Check if speech recognition is supported
+    if (!SpeechRecognitionService.isSupported()) {
+      alert('Tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Safari.');
+      return;
+    }
+    
+    const speechService = getSpeechRecognitionService();
+    
+    if (isRecording) {
+      speechService.stop();
+      setIsRecording(false);
+      return;
+    }
+    
+    try {
+      // Set up callbacks
+      speechService.onResult((transcript, isFinal) => {
+        if (isFinal) {
+          // Set the transcribed text in the input field
+          setInput(transcript);
+          // Automatically send the message
+          setTimeout(() => {
+            handleSendMessage();
+          }, 500);
+        } else {
+          // Show interim results in the input field
+          setInput(transcript);
+        }
+      });
+      
+      speechService.onError((error) => {
+        console.error('Speech recognition error:', error);
+        alert(error);
+        setIsRecording(false);
+      });
+      
+      speechService.onStatusChange((listening) => {
+        setIsRecording(listening);
+      });
+      
+      // Start listening
+      await speechService.start();
+      setIsRecording(true);
+      
+      // Auto-stop after 30 seconds
+      setTimeout(() => {
+        if (speechService.getIsListening()) {
+          speechService.stop();
+        }
+      }, 30000);
+      
+    } catch (error) {
+      console.error('Error starting speech recognition:', error);
+      alert('No se pudo iniciar el reconocimiento de voz. Por favor, verifica los permisos del micrófono.');
+      setIsRecording(false);
+    }
   };
 
   const handleVideoCall = () => {
@@ -713,9 +768,9 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
           ) : (
             <button
               onClick={handleVoiceNote}
-              className="p-2"
+              className={`p-2 ${isRecording ? 'text-red-600 animate-pulse' : ''}`}
             >
-              <Mic className="w-6 h-6 text-gray-600" />
+              <Mic className={`w-6 h-6 ${isRecording ? 'text-red-600' : 'text-gray-600'}`} />
             </button>
           )}
         </div>
