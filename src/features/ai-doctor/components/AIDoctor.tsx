@@ -968,10 +968,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const handleAnswerOptionClick = async (answerOption: AIAnswerOption) => {
     // Handle special case for free text input
     if (answerOption.value === 'free_text' || answerOption.value === 'OPEN_TEXT_INPUT') {
-      // Just focus the input field and let user type freely
-      const inputElement = document.querySelector('.chat-input') as HTMLInputElement;
-      if (inputElement) {
-        inputElement.focus();
+      // Focus the textarea and let user type freely
+      const textareaElement = document.querySelector('.chat-textarea') as HTMLTextAreaElement;
+      if (textareaElement) {
+        textareaElement.focus();
+        textareaElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
       return;
     }
@@ -1004,6 +1005,59 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
+      // CLINICAL MODE for button clicks - same logic as handleSendMessage
+      let clinicalResponse = '';
+      let confidence = 0.3;
+      let isEmergency = false;
+      let useClinicalMode = true; // Force clinical mode for desktop
+
+      if (useClinicalMode) {
+        console.log('🩺 Using CLINICAL MODE for button click:', answerOption.text);
+
+        const lowerInput = answerOption.text.toLowerCase();
+
+        // Follow-up responses
+        if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
+          confidence = 0.7;
+          clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
+        }
+        else if (lowerInput.includes('no')) {
+          confidence = 0.6;
+          clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
+        }
+        // Default clinical response for other button clicks
+        else {
+          confidence = 0.5;
+          clinicalResponse = `Entiendo que ${answerOption.text.toLowerCase()}. ¿Puede proporcionar más detalles sobre este síntoma?`;
+        }
+
+        console.log('🩺 Clinical response for button click:', clinicalResponse);
+
+        // Update message with clinical response
+        setMessages(prev =>
+          prev.map(msg =>
+            msg.id === botMessageId
+              ? {
+                  ...msg,
+                  text: clinicalResponse,
+                  answerOptions: [
+                    { text: 'Sí', value: 'yes' },
+                    { text: 'No', value: 'no' },
+                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                  ],
+                  severity: confidence * 10,
+                  isEmergency: false,
+                  isStreaming: false,
+                  isComplete: true
+                }
+              : msg
+          )
+        );
+
+        setIsProcessing(false);
+        return;
+      }
+
       // Process with unified service, passing the selected option
       const unifiedResponse = await unifiedConversationService.processMessage(
         sessionId,
@@ -1158,33 +1212,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       </div>
                     )}
 
-                    {/* Quick Mexican Symptoms */}
-                    <div className="mb-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
-                        <button
-                          onClick={() => setShowFamilySetup(!showFamilySetup)}
-                          className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
-                        >
-                          <User className="w-4 h-4 mr-1" />
-                          {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
-                        </button>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
+                    {/* Quick Mexican Symptoms - Better styled */}
+                    <div className="px-4 mb-4">
+                      <div className="max-w-4xl mx-auto">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
                           <button
-                            key={index}
-                            onClick={() => {
-                              const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
-                              setInput(symptom.text + familyContext);
-                              setTimeout(() => handleSendMessage(), 100);
-                            }}
-                            className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2 text-sm transition-all flex items-center space-x-2"
+                            onClick={() => setShowFamilySetup(!showFamilySetup)}
+                            className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
                           >
-                            <span>{symptom.icon}</span>
-                            <span className="text-[#006D77]">{symptom.text}</span>
+                            <User className="w-4 h-4 mr-1" />
+                            {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
                           </button>
-                        ))}
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                          {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
+                            <button
+                              key={index}
+                              onClick={() => {
+                                const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
+                                setInput(symptom.text + familyContext);
+                                setTimeout(() => handleSendMessage(), 100);
+                              }}
+                              className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2.5 text-sm transition-all flex items-center justify-center space-x-2 min-h-[44px] shadow-sm hover:shadow-md"
+                            >
+                              <span className="text-lg">{symptom.icon}</span>
+                              <span className="text-[#006D77] font-medium text-center leading-tight">{symptom.text}</span>
+                            </button>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
