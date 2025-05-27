@@ -251,9 +251,15 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           confidence = 0.9;
           isEmergency = true;
         }
+        // Helper function to clean user input for response
+        const cleanUserInput = (input: string) => {
+          return input.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
+        };
+
         // Headache
         else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-          clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
+          const cleanedInput = cleanUserInput(userInput);
+          clinicalResponse = `Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?`;
           confidence = 0.4;
         }
         // Abdominal pain
@@ -268,7 +274,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
         // Generic symptom
         else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
-          clinicalResponse = `Entiendo que tiene ${userInput.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
+          const cleanedInput = cleanUserInput(userInput);
+          clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Desde cuándo tiene este síntoma?`;
           confidence = 0.3;
         }
         // Follow-up responses
@@ -288,6 +295,52 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
         console.log('🩺 Clinical response generated:', clinicalResponse);
 
+        // Generate contextually appropriate answer options
+        let answerOptions: Array<{ text: string; value: string }> = [];
+
+        if (isEmergency) {
+          answerOptions = [];
+        } else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
+          answerOptions = [
+            { text: 'Banda apretada', value: 'tension_headache' },
+            { text: 'Pulsátil/latidos', value: 'migraine_headache' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        } else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen'))) {
+          answerOptions = [
+            { text: 'Parte alta del abdomen', value: 'upper_abdomen' },
+            { text: 'Parte baja del abdomen', value: 'lower_abdomen' },
+            { text: 'Empeora al comer', value: 'worse_eating' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        } else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) {
+          answerOptions = [
+            { text: 'Menos de 39°C', value: 'low_fever' },
+            { text: 'Más de 39°C', value: 'high_fever' },
+            { text: 'Con tos o dolor de garganta', value: 'respiratory_symptoms' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        } else if (lowerInput.includes('dolor') || lowerInput.includes('duele')) {
+          answerOptions = [
+            { text: 'Hoy', value: 'today' },
+            { text: 'Hace unos días', value: 'few_days' },
+            { text: 'Hace una semana o más', value: 'week_plus' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        } else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('no')) {
+          answerOptions = [
+            { text: 'Sí, tengo otros síntomas', value: 'has_other_symptoms' },
+            { text: 'No, solo eso', value: 'no_other_symptoms' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        } else {
+          answerOptions = [
+            { text: 'Sí', value: 'yes' },
+            { text: 'No', value: 'no' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+
         // Update message with clinical response
         setIsThinking(false);
         setMessages(prev =>
@@ -296,11 +349,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
               ? {
                   ...msg,
                   text: clinicalResponse,
-                  answerOptions: isEmergency ? [] : [
-                    { text: 'Sí', value: 'yes' },
-                    { text: 'No', value: 'no' },
-                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                  ],
+                  answerOptions: answerOptions,
                   severity: confidence * 10,
                   isEmergency: isEmergency,
                   isStreaming: false,
@@ -311,6 +360,15 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         );
 
         setIsProcessing(false);
+
+        // Auto-scroll to latest message
+        setTimeout(() => {
+          const chatContainer = document.querySelector('.chat-messages-container');
+          if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+          }
+        }, 100);
+
         return;
       }
 
@@ -1015,20 +1073,85 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         console.log('🩺 Using CLINICAL MODE for button click:', answerOption.text);
 
         const lowerInput = answerOption.text.toLowerCase();
+        let nextAnswerOptions: Array<{ text: string; value: string }> = [];
 
-        // Follow-up responses
-        if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
+        // Contextual responses based on button value
+        if (answerOption.value === 'tension_headache') {
+          confidence = 0.8;
+          clinicalResponse = 'Esto sugiere cefalea tensional. ¿El dolor empeora con el estrés o la tensión?';
+          nextAnswerOptions = [
+            { text: 'Sí, empeora con estrés', value: 'stress_related' },
+            { text: 'No, es constante', value: 'constant_pain' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'migraine_headache') {
+          confidence = 0.8;
+          clinicalResponse = 'Esto sugiere migraña. ¿Se acompaña de náuseas o sensibilidad a la luz?';
+          nextAnswerOptions = [
+            { text: 'Sí, con náuseas', value: 'with_nausea' },
+            { text: 'Sí, sensibilidad a la luz', value: 'light_sensitivity' },
+            { text: 'Ambos síntomas', value: 'both_symptoms' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'upper_abdomen' || answerOption.value === 'worse_eating') {
+          confidence = 0.7;
+          clinicalResponse = 'Esto puede indicar gastritis o úlcera. ¿Ha tenido acidez o ardor estomacal?';
+          nextAnswerOptions = [
+            { text: 'Sí, mucha acidez', value: 'high_acidity' },
+            { text: 'Un poco de acidez', value: 'mild_acidity' },
+            { text: 'No, sin acidez', value: 'no_acidity' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'high_fever') {
+          confidence = 0.9;
+          clinicalResponse = 'Fiebre alta requiere atención. ¿Tiene dificultad para respirar o dolor de pecho?';
+          nextAnswerOptions = [
+            { text: 'Sí, dificultad respiratoria', value: 'breathing_difficulty' },
+            { text: 'Sí, dolor de pecho', value: 'chest_pain' },
+            { text: 'No, solo fiebre alta', value: 'fever_only' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'today' || answerOption.value === 'few_days') {
+          confidence = 0.6;
+          clinicalResponse = 'Síntoma reciente. ¿Cómo describiría la intensidad del dolor del 1 al 10?';
+          nextAnswerOptions = [
+            { text: 'Leve (1-3)', value: 'mild_pain' },
+            { text: 'Moderado (4-6)', value: 'moderate_pain' },
+            { text: 'Intenso (7-10)', value: 'severe_pain' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
           confidence = 0.7;
           clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
+          nextAnswerOptions = [
+            { text: 'Sí, tengo otros síntomas', value: 'has_other_symptoms' },
+            { text: 'No, solo eso', value: 'no_other_symptoms' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
         }
         else if (lowerInput.includes('no')) {
           confidence = 0.6;
           clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
+          nextAnswerOptions = [
+            { text: 'Sí, he tomado medicamentos', value: 'took_medication' },
+            { text: 'No, no he tomado nada', value: 'no_medication' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
         }
         // Default clinical response for other button clicks
         else {
           confidence = 0.5;
-          clinicalResponse = `Entiendo que ${answerOption.text.toLowerCase()}. ¿Puede proporcionar más detalles sobre este síntoma?`;
+          clinicalResponse = `Entiendo. ¿Puede proporcionar más detalles sobre este síntoma?`;
+          nextAnswerOptions = [
+            { text: 'Sí', value: 'yes' },
+            { text: 'No', value: 'no' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
         }
 
         console.log('🩺 Clinical response for button click:', clinicalResponse);
@@ -1040,11 +1163,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
               ? {
                   ...msg,
                   text: clinicalResponse,
-                  answerOptions: [
-                    { text: 'Sí', value: 'yes' },
-                    { text: 'No', value: 'no' },
-                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                  ],
+                  answerOptions: nextAnswerOptions,
                   severity: confidence * 10,
                   isEmergency: false,
                   isStreaming: false,
@@ -1055,6 +1174,15 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         );
 
         setIsProcessing(false);
+
+        // Auto-scroll to latest message
+        setTimeout(() => {
+          const chatContainer = document.querySelector('.chat-messages-container');
+          if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+          }
+        }, 100);
+
         return;
       }
 
@@ -1298,16 +1426,58 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                 }
                                 // Generic symptom
                                 else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
-                                  clinicalResponse = `Entiendo que tiene ${messageText.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
+                                  const cleanedInput = messageText.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
+                                  clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Desde cuándo tiene este síntoma?`;
                                   confidence = 0.3;
                                 }
                                 // Default clinical response
                                 else {
-                                  clinicalResponse = `Entiendo que ${messageText.toLowerCase()}. ¿Puede proporcionar más detalles sobre este síntoma?`;
+                                  const cleanedInput = messageText.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
+                                  clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Puede proporcionar más detalles sobre este síntoma?`;
                                   confidence = 0.3;
                                 }
 
                                 console.log('🩺 Quick symptom clinical response:', clinicalResponse);
+
+                                // Generate contextually appropriate answer options for quick symptoms
+                                let quickAnswerOptions: Array<{ text: string; value: string }> = [];
+
+                                if (isEmergency) {
+                                  quickAnswerOptions = [];
+                                } else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
+                                  quickAnswerOptions = [
+                                    { text: 'Banda apretada', value: 'tension_headache' },
+                                    { text: 'Pulsátil/latidos', value: 'migraine_headache' },
+                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                  ];
+                                } else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen'))) {
+                                  quickAnswerOptions = [
+                                    { text: 'Parte alta del abdomen', value: 'upper_abdomen' },
+                                    { text: 'Parte baja del abdomen', value: 'lower_abdomen' },
+                                    { text: 'Empeora al comer', value: 'worse_eating' },
+                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                  ];
+                                } else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) {
+                                  quickAnswerOptions = [
+                                    { text: 'Menos de 39°C', value: 'low_fever' },
+                                    { text: 'Más de 39°C', value: 'high_fever' },
+                                    { text: 'Con tos o dolor de garganta', value: 'respiratory_symptoms' },
+                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                  ];
+                                } else if (lowerInput.includes('dolor') || lowerInput.includes('duele')) {
+                                  quickAnswerOptions = [
+                                    { text: 'Hoy', value: 'today' },
+                                    { text: 'Hace unos días', value: 'few_days' },
+                                    { text: 'Hace una semana o más', value: 'week_plus' },
+                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                  ];
+                                } else {
+                                  quickAnswerOptions = [
+                                    { text: 'Sí', value: 'yes' },
+                                    { text: 'No', value: 'no' },
+                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+                                  ];
+                                }
 
                                 // Update message with clinical response
                                 setMessages(prev =>
@@ -1316,11 +1486,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                       ? {
                                           ...msg,
                                           text: clinicalResponse,
-                                          answerOptions: isEmergency ? [] : [
-                                            { text: 'Sí', value: 'yes' },
-                                            { text: 'No', value: 'no' },
-                                            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                          ],
+                                          answerOptions: quickAnswerOptions,
                                           severity: confidence * 10,
                                           isEmergency: isEmergency,
                                           isStreaming: false,
@@ -1331,6 +1497,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                 );
 
                                 setIsProcessing(false);
+
+                                // Auto-scroll to latest message
+                                setTimeout(() => {
+                                  const chatContainer = document.querySelector('.chat-messages-container');
+                                  if (chatContainer) {
+                                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                                  }
+                                }, 100);
                               }}
                               className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2.5 text-sm transition-all flex items-center justify-center space-x-2 min-h-[44px] shadow-sm hover:shadow-md"
                             >
