@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, memo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   Send, Image, Mic, ArrowLeft, MoreVertical, Phone, Video,
   Paperclip, Camera, MapPin, X, Check, CheckCheck
 } from 'lucide-react';
@@ -15,6 +15,8 @@ import { SimpleTypingBubble, useTypingIndicator, calculateTypingDelay } from './
 import { PsychologicalResponseTemplates } from '../services/PsychologicalResponseTemplates';
 import { ConversationIntelligence } from '../services/ConversationIntelligence';
 import { DiagnosticService } from '../services/DiagnosticService';
+import { ClinicalConversationManager, ClinicalResponse } from '../services/ClinicalConversationManager';
+import DiagnosticConfidenceDisplay from './DiagnosticConfidenceDisplay';
 import './styles/whatsapp-components.css';
 
 type Message = {
@@ -73,52 +75,61 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const [showAttachMenu, setShowAttachMenu] = useState(false);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const [conversationStage, setConversationStage] = useState<'greeting' | 'symptom' | 'severity' | 'treatment' | 'followup'>('greeting');
-  
+
+  // Clinical conversation state
+  const [useClinicalMode, setUseClinicalMode] = useState(true); // Enable clinical mode by default
+  const [clinicalResponse, setClinicalResponse] = useState<ClinicalResponse | null>(null);
+  const [showDiagnosticDisplay, setShowDiagnosticDisplay] = useState(false);
+
   // Use the new typing indicator hook
   const { isTyping, startTyping, stopTyping } = useTypingIndicator();
-  
+
   // Add isThinking state for AI processing
   const [isThinking, setIsThinking] = useState(false);
-  
+
   // Session management
   const [sessionId] = useState(`session_${Date.now()}`);
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  
-  // Initialize with WhatsApp-style greeting
+
+  // Initialize with clinical greeting
   const [messages, setMessages] = useState<Message[]>([
-    { 
-      id: '1', 
-      text: '¡Hola! Soy Dr. Simeon 👨‍⚕️\n\nTu médico mexicano inteligente disponible 24/7. ¿Cómo puedo ayudarte hoy?',
+    {
+      id: '1',
+      text: useClinicalMode
+        ? 'Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?'
+        : '¡Hola! Soy Dr. Simeon 👨‍⚕️\n\nTu médico mexicano inteligente disponible 24/7. ¿Cómo puedo ayudarte hoy?',
       sender: 'bot',
       timestamp: new Date(Date.now() - 60000), // 1 minute ago
-      personalityApplied: true,
+      personalityApplied: !useClinicalMode,
       status: 'read',
-      followUpQuestions: ['Tengo síntomas', 'Necesito un médico', 'Consulta general', 'Emergencia']
+      followUpQuestions: useClinicalMode
+        ? ['Dolor de cabeza', 'Dolor abdominal', 'Fiebre', 'Tos', 'Otro síntoma']
+        : ['Tengo síntomas', 'Necesito un médico', 'Consulta general', 'Emergencia']
     }
   ]);
-  
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const initialMessageSentRef = useRef(false);
-  
+
   // Generate contextual quick replies based on conversation
   const generateContextualQuickReplies = () => {
     const lastMessage = messages[messages.length - 1];
-    
+
     // Check for psychological needs
     const psychNeed = PsychologicalResponseTemplates.detectPsychologicalNeed(
       lastMessage?.text || ''
     );
-    
+
     if (psychNeed.detected && psychNeed.confidence > 0.5) {
       return generatePsychologicalReplies({
         condition: psychNeed.condition || 'ansiedad',
         severity: psychNeed.severity
       });
     }
-    
+
     // Generate based on conversation stage
     return generateQuickReplies({
       stage: conversationStage,
@@ -155,25 +166,25 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
 
   const handleSendMessage = useCallback(async () => {
     if (!input.trim() && !isUploading) return;
-    
+
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = { 
+    const newUserMessage: Message = {
       id: userMessageId,
       text: input,
       sender: 'user',
       timestamp: new Date(),
       status: 'sent'
     };
-    
+
     setMessages(prev => [...prev, newUserMessage]);
     const userInput = input;
     setInput('');
     setShowQuickReplies(false);
     setIsProcessing(true);
-    
+
     // Start typing indicator with natural delay
     startTyping();
-    
+
     // Auto-resize textarea back to original
     if (textareaRef.current) {
       textareaRef.current.style.height = '40px';
@@ -181,10 +192,10 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
 
     // Update message status to delivered
     setTimeout(() => {
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === userMessageId 
-            ? { ...msg, status: 'delivered' } 
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === userMessageId
+            ? { ...msg, status: 'delivered' }
             : msg
         )
       );
@@ -192,10 +203,10 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
 
     // Update message status to read
     setTimeout(() => {
-      setMessages(prev => 
-        prev.map(msg => 
-          msg.id === userMessageId 
-            ? { ...msg, status: 'read' } 
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === userMessageId
+            ? { ...msg, status: 'read' }
             : msg
         )
       );
@@ -203,13 +214,53 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
 
     // Create a bot message placeholder
     const botMessageId = (Date.now() + 1).toString();
-    
+
     try {
-      // Check if this is a simple greeting or conversation
+      // Use clinical conversation manager if enabled
+      if (useClinicalMode) {
+        const conversationHistory = messages.map(m => m.text);
+        const clinicalResult = ClinicalConversationManager.processMessage(
+          sessionId,
+          userInput,
+          conversationHistory
+        );
+
+        setClinicalResponse(clinicalResult);
+
+        // Show diagnostic display for medical conversations
+        if (clinicalResult.type !== 'emergency' && clinicalResult.confidence > 0.1) {
+          setShowDiagnosticDisplay(true);
+        }
+
+        stopTyping();
+        setMessages(prev => [...prev, {
+          id: botMessageId,
+          text: clinicalResult.text,
+          sender: 'bot',
+          timestamp: new Date(),
+          isStreaming: false,
+          isComplete: true,
+          status: 'delivered',
+          severity: clinicalResult.confidence * 10,
+          isEmergency: clinicalResult.type === 'emergency',
+          followUpQuestions: clinicalResult.nextQuestion ? [clinicalResult.nextQuestion] : undefined
+        }]);
+
+        setIsProcessing(false);
+
+        // Show quick replies for next question
+        if (clinicalResult.nextQuestion && !clinicalResult.shouldDiagnose) {
+          setShowQuickReplies(true);
+        }
+
+        return;
+      }
+
+      // Fallback to original conversation flow
       const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
       const shouldSkipAI = ConversationFlowService.shouldSkipAIProcessing(userInput);
       const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
-      
+
       // Handle simple responses immediately without AI processing
       if (shouldSkipAI) {
         const simpleResponse = ConversationFlowService.generateSimpleResponse(conversationAnalysis.type, userInput);
@@ -228,7 +279,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
           return;
         }
       }
-      
+
       // Update conversation stage based on analysis
       if (conversationAnalysis.type === 'greeting') {
         setConversationStage('greeting');
@@ -239,13 +290,13 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       // Enhanced streaming response handler
       const streamingHandler: EnhancedStreamingResponseHandler = (streamResponse: EnhancedStreamingAIResponse) => {
         stopTyping();
-        
+
         // Simple response handling - no complex animations
-        
+
         // Update or create message with streaming content
         setMessages(prev => {
           const existingIndex = prev.findIndex(m => m.id === botMessageId);
-          
+
           const updatedMessage: Message = {
             id: botMessageId,
             text: streamResponse.text,
@@ -266,7 +317,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             culturalFactors: streamResponse.culturalFactors,
             status: 'delivered'
           };
-          
+
           if (existingIndex !== -1) {
             const updatedMessages = [...prev];
             updatedMessages[existingIndex] = updatedMessage;
@@ -275,12 +326,12 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             return [...prev, updatedMessage];
           }
         });
-        
+
         // If streaming is completed
         if (streamResponse.isComplete) {
           setIsProcessing(false);
           setIsThinking(false);
-          
+
           // Show quick replies if there are follow-up questions
           if (streamResponse.followUpQuestions && streamResponse.followUpQuestions.length > 0) {
             setShowQuickReplies(true);
@@ -290,7 +341,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
 
       // Get conversation context hints
       const contextHints = ConversationFlowService.getContextHints(messages);
-      
+
       const queryOptions: EnhancedAIQueryOptions = {
         userMessage: userInput,
         userHistory: messages.map(m => m.text),
@@ -307,13 +358,13 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
         },
         customInstructions: `${contextHints} Be concise and natural. For greetings, respond briefly and warmly. Avoid repetitive phrases about family care unless specifically relevant.`
       };
-      
+
       await enhancedAIService.processEnhancedStreamingQuery(queryOptions, streamingHandler);
-      
+
     } catch (error) {
       console.error('Error processing message:', error);
       stopTyping();
-      
+
       setMessages(prev => [...prev, {
         id: botMessageId,
         text: 'Lo siento, hubo un error. Por favor intenta de nuevo.',
@@ -331,21 +382,21 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || files.length === 0) return;
-    
+
     const file = files[0];
     setShowAttachMenu(false);
-    
+
     if (!file.type.startsWith('image/')) {
       alert('Por favor, sube únicamente archivos de imagen.');
       return;
     }
-    
+
     setIsUploading(true);
-    
+
     try {
       const scrubbedFile = await EncryptionService.scrubImageMetadata(file);
       const imageUrl = URL.createObjectURL(scrubbedFile);
-      
+
       const imageMessageId = Date.now().toString();
       setMessages(prev => [...prev, {
         id: imageMessageId,
@@ -356,13 +407,13 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
         imageUrl,
         status: 'sent'
       }]);
-      
+
       // Simulate image analysis
       startTyping();
-      
+
       setTimeout(async () => {
         const response = await enhancedAIService.analyzeImage(imageUrl);
-        
+
         stopTyping();
         setMessages(prev => [...prev, {
           id: (Date.now() + 1).toString(),
@@ -378,10 +429,10 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
           ],
           status: 'delivered'
         }]);
-        
+
         setShowQuickReplies(true);
       }, 2000);
-      
+
     } catch (error) {
       console.error('Error uploading image:', error);
       stopTyping();
@@ -404,15 +455,15 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       alert('Tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Safari.');
       return;
     }
-    
+
     const speechService = getSpeechRecognitionService();
-    
+
     if (isRecording) {
       speechService.stop();
       setIsRecording(false);
       return;
     }
-    
+
     try {
       // Set up callbacks
       speechService.onResult((transcript, isFinal) => {
@@ -428,28 +479,28 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
           setInput(transcript);
         }
       });
-      
+
       speechService.onError((error) => {
         console.error('Speech recognition error:', error);
         alert(error);
         setIsRecording(false);
       });
-      
+
       speechService.onStatusChange((listening) => {
         setIsRecording(listening);
       });
-      
+
       // Start listening
       await speechService.start();
       setIsRecording(true);
-      
+
       // Auto-stop after 30 seconds
       setTimeout(() => {
         if (speechService.getIsListening()) {
           speechService.stop();
         }
       }, 30000);
-      
+
     } catch (error) {
       console.error('Error starting speech recognition:', error);
       alert('No se pudo iniciar el reconocimiento de voz. Por favor, verifica los permisos del micrófono.');
@@ -468,7 +519,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   // Auto-resize textarea
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
-    
+
     // Auto-resize
     const textarea = e.target;
     textarea.style.height = '40px';
@@ -488,16 +539,16 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   }, [initialMessage]);
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('es-MX', { 
-      hour: 'numeric', 
+    return date.toLocaleTimeString('es-MX', {
+      hour: 'numeric',
       minute: '2-digit',
-      hour12: true 
+      hour12: true
     });
   };
 
   const MessageStatus = ({ status }: { status?: string }) => {
     if (!status || status === 'sending') return null;
-    
+
     return (
       <span className="ml-1">
         {status === 'sent' && <Check className="w-3 h-3 text-gray-400 inline" />}
@@ -516,8 +567,8 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             <ArrowLeft className="w-6 h-6" />
           </button>
           <div className="w-10 h-10 bg-gray-300 rounded-full overflow-hidden">
-            <img 
-              src="/images/simeon.png" 
+            <img
+              src="/images/simeon.png"
               alt="Dr. Simeon"
               className="w-full h-full object-cover"
               onError={(e) => {
@@ -559,15 +610,15 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
               {index === 0 || new Date(messages[index - 1].timestamp).toDateString() !== new Date(message.timestamp).toDateString() && (
                 <div className="text-center my-2">
                   <span className="bg-[#DCF8C6] text-gray-700 text-xs px-3 py-1 rounded-full">
-                    {new Date(message.timestamp).toLocaleDateString('es-MX', { 
-                      weekday: 'long', 
-                      day: 'numeric', 
-                      month: 'long' 
+                    {new Date(message.timestamp).toLocaleDateString('es-MX', {
+                      weekday: 'long',
+                      day: 'numeric',
+                      month: 'long'
                     })}
                   </span>
                 </div>
               )}
-              
+
               {/* Message bubble */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -575,26 +626,26 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
                 className={`flex mb-2 ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div className={`max-w-[80%] ${
-                  message.sender === 'user' 
-                    ? 'bg-[#DCF8C6]' 
+                  message.sender === 'user'
+                    ? 'bg-[#DCF8C6]'
                     : 'bg-white'
                 } rounded-lg shadow-sm relative`}>
                   {/* Message triangle */}
                   <div className={`absolute top-0 ${
-                    message.sender === 'user' 
-                      ? 'right-0 -mr-2 border-l-[#DCF8C6]' 
+                    message.sender === 'user'
+                      ? 'right-0 -mr-2 border-l-[#DCF8C6]'
                       : 'left-0 -ml-2 border-r-white'
                   } w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ${
-                    message.sender === 'user' 
-                      ? 'border-l-[10px]' 
+                    message.sender === 'user'
+                      ? 'border-l-[10px]'
                       : 'border-r-[10px]'
                   }`}></div>
-                  
+
                   <div className="p-3">
                     {message.containsImage && message.imageUrl ? (
-                      <img 
-                        src={message.imageUrl} 
-                        alt="Uploaded" 
+                      <img
+                        src={message.imageUrl}
+                        alt="Uploaded"
                         className="rounded-lg max-w-full mb-2"
                       />
                     ) : (
@@ -602,7 +653,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
                         {message.text}
                       </p>
                     )}
-                    
+
                     <div className="flex items-center justify-end mt-1 space-x-1">
                       <span className="text-xs text-gray-500">
                         {formatTime(message.timestamp)}
@@ -616,10 +667,10 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
               </motion.div>
             </div>
           ))}
-          
+
           {/* Simple Typing Indicator - No complex animations */}
           <SimpleTypingBubble isTyping={isTyping} userName="Dr. Simeon" />
-          
+
           <div ref={messagesEndRef} />
         </div>
       </div>
@@ -630,6 +681,22 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
         onReplyClick={(reply) => handleQuickReply(reply.text)}
         visible={showQuickReplies && messages.length > 0}
       />
+
+      {/* Diagnostic Confidence Display */}
+      {showDiagnosticDisplay && clinicalResponse && useClinicalMode && (
+        <div className="px-3 pb-2">
+          <div className="max-w-lg mx-auto">
+            <DiagnosticConfidenceDisplay
+              confidence={clinicalResponse.confidence}
+              phase={ClinicalConversationManager.getState(sessionId)?.phase || 'greeting'}
+              questionCount={ClinicalConversationManager.getState(sessionId)?.questionCount || 0}
+              primaryHypothesis={clinicalResponse.diagnosticSummary?.primaryDiagnosis}
+              clinicalReasoning={clinicalResponse.clinicalReasoning}
+              shouldDiagnose={clinicalResponse.shouldDiagnose}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Input Area */}
       <div className="mobile-chat-input-area">
@@ -678,7 +745,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
               </motion.div>
             )}
           </AnimatePresence>
-          
+
           <button
             onClick={() => setShowAttachMenu(!showAttachMenu)}
             className="p-2"
@@ -689,7 +756,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
               <Paperclip className="w-6 h-6 text-gray-600" />
             )}
           </button>
-          
+
           <input
             type="file"
             ref={fileInputRef}
@@ -697,7 +764,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             accept="image/*"
             className="hidden"
           />
-          
+
           <div className="flex-1 bg-gray-100 rounded-full flex items-end">
             <textarea
               ref={textareaRef}
@@ -715,7 +782,7 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
               rows={1}
             />
           </div>
-          
+
           {input.trim() ? (
             <button
               onClick={handleSendMessage}
