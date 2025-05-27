@@ -92,20 +92,16 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Initialize with clinical greeting
+  // Initialize with clinical greeting - always use clinical mode
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: useClinicalMode
-        ? 'Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?'
-        : '¡Hola! Soy Dr. Simeon 👨‍⚕️\n\nTu médico mexicano inteligente disponible 24/7. ¿Cómo puedo ayudarte hoy?',
+      text: 'Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?',
       sender: 'bot',
       timestamp: new Date(Date.now() - 60000), // 1 minute ago
-      personalityApplied: !useClinicalMode,
+      personalityApplied: false,
       status: 'read',
-      followUpQuestions: useClinicalMode
-        ? ['Dolor de cabeza', 'Dolor abdominal', 'Fiebre', 'Tos', 'Otro síntoma']
-        : ['Tengo síntomas', 'Necesito un médico', 'Consulta general', 'Emergencia']
+      followUpQuestions: ['Dolor de cabeza', 'Dolor abdominal', 'Fiebre', 'Tos', 'Otro síntoma']
     }
   ]);
 
@@ -218,12 +214,14 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
     try {
       // Use clinical conversation manager if enabled
       if (useClinicalMode) {
+        console.log('🩺 Using clinical conversation manager for:', userInput);
         const conversationHistory = messages.map(m => m.text);
         const clinicalResult = ClinicalConversationManager.processMessage(
           sessionId,
           userInput,
           conversationHistory
         );
+        console.log('🩺 Clinical result:', clinicalResult);
 
         setClinicalResponse(clinicalResult);
 
@@ -582,7 +580,14 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
             />
           </div>
           <div className="flex-1">
-            <h1 className="font-semibold text-base">Dr. Simeon</h1>
+            <h1 className="font-semibold text-base">
+              Dr. Simeon
+              {useClinicalMode && (
+                <span className="ml-2 text-xs bg-green-500 text-white px-2 py-0.5 rounded-full">
+                  Modo Clínico
+                </span>
+              )}
+            </h1>
             <p className="text-xs opacity-90">
               {isTyping ? 'escribiendo...' : 'en línea'}
             </p>
