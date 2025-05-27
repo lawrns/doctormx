@@ -145,85 +145,34 @@ export class MexicanDoctorPersonalityService {
   }
 
   private getEmotionalPreambles(state: EmotionalState): string {
-    switch (state.primary) {
-      case 'pain':
-        return "Entiendo que estás sintiendo molestias.";
-      case 'fear':
-      case 'anxiety':
-        return "Es completamente normal sentirse preocupado por la salud.";
-      case 'sadness':
-        return "Noto que esto te está afectando mucho.";
-      case 'anger':
-        return "Comprendo tu frustración con esta situación.";
-      default:
-        return "Te agradezco que confíes en mí para ayudarte.";
-    }
+    // Return empty string - we don't want generic emotional preambles
+    // The AI should focus on medical content instead
+    return "";
   }
 
   private getCulturalAdjustments(context: Partial<ConversationContext>, state: EmotionalState): string {
     const adjustments: string[] = [];
 
-    if (context.familyDynamics === 'family-oriented') {
-      adjustments.push("Es importante que también involucres a tu familia en este proceso.");
-    }
-
-    if (context.religiousConsiderations) {
-      adjustments.push("Mantén la fe y la esperanza durante tu recuperación.");
-    }
-
+    // Only add specific, actionable cultural adjustments
     if (context.economicContext === 'low') {
-      adjustments.push("Buscaremos las opciones más accesibles para tu tratamiento.");
+      adjustments.push("Opciones económicas: Genéricos en Farmacias Similares, atención IMSS gratuita con cita.");
     }
 
     if (context.culturalBackground === 'rural') {
-      adjustments.push("Entiendo las particularidades de tu entorno y las tomaremos en cuenta.");
+      adjustments.push("Si no hay especialista cerca, el centro de salud puede referirte al hospital regional.");
     }
 
     return adjustments.join(' ');
   }
 
   private getMexicanMedicalExpressions(state: EmotionalState): string {
-    const expressions = [
-      "Estamos aquí para cuidarte como familia.",
-      "Tu bienestar es nuestra prioridad principal.",
-      "Vamos a resolver esto paso a paso, con paciencia.",
-      "No estás solo en este proceso de sanación.",
-      "Confía en que encontraremos la mejor solución para ti."
-    ];
-
-    // Select based on emotional state
-    switch (state.primary) {
-      case 'fear':
-      case 'anxiety':
-        return expressions[0];
-      case 'pain':
-        return expressions[1];
-      case 'sadness':
-        return expressions[3];
-      default:
-        return expressions[Math.floor(Math.random() * expressions.length)];
-    }
+    // Return empty - we want medical content, not generic expressions
+    return "";
   }
 
   private ensureMexicanMedicalTone(response: string, state: EmotionalState): string {
-    // Add Mexican medical courtesy forms
-    if (!response.includes('estimado') && !response.includes('querido') && state.intensity > 0.6) {
-      response = response.replace(/^/, 'Estimado paciente, ');
-    }
-
-    // Ensure appropriate closings
-    const closings = [
-      "Quedo a tus órdenes para cualquier duda.",
-      "Estoy aquí para apoyarte en lo que necesites.",
-      "No dudes en consultarme sobre cualquier inquietud.",
-      "Tu salud es muy importante para nosotros.",
-      "Mantente en contacto y cuídate mucho."
-    ];
-
-    if (!response.includes('órdenes') && !response.includes('apoyarte') && !response.includes('cuídate')) {
-      response += ` ${closings[Math.floor(Math.random() * closings.length)]}`;
-    }
-
+    // Don't add generic greetings or closings
+    // The response should focus on medical content
     return response;
   }
 

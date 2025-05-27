@@ -1,5 +1,7 @@
 import { MexicanDoctorPersonalityService, EmotionalState, ConversationContext } from './MexicanDoctorPersonalityService';
 import AIService, { AIQueryOptions, AIResponse, StreamingAIResponse, AIAnswerOption } from './AIService';
+import { ResponseQualityService } from '../../../features/ai-doctor/services/ResponseQualityService';
+import { MedicalResponseTemplates } from '../../../features/ai-doctor/services/MedicalResponseTemplates';
 
 export interface EnhancedAIQueryOptions extends AIQueryOptions {
   enablePersonality?: boolean;
@@ -182,10 +184,28 @@ export class EnhancedAIService {
           // Skip personality enhancement in development mode for cleaner mock responses
           const isDevelopment = import.meta.env.DEV || window.location.hostname === 'localhost';
           
+          // Check response quality when complete
+          if (baseResponse.isComplete && enhancedText && !isDevelopment) {
+            const qualityScore = ResponseQualityService.evaluateResponse(enhancedText);
+            
+            // If quality is too low, enhance with medical template
+            if (qualityScore.totalScore < 7) {
+              // Try to detect the main symptom from the conversation
+              const symptom = this.detectMainSymptom(options.userMessage);
+              if (symptom) {
+                enhancedText = ResponseQualityService.enhanceResponse(
+                  enhancedText,
+                  symptom,
+                  baseResponse.severity || 5
+                );
+              }
+            }
+          }
+          
           // Apply personality enhancement to streaming text only in production
           if (options.enablePersonality !== false && emotionalState && baseResponse.text && !isDevelopment) {
             enhancedText = this.personalityService.generatePersonalizedResponse(
-              baseResponse.text,
+              enhancedText,
               emotionalState,
               options.culturalContext || {}
             );
@@ -458,30 +478,81 @@ export class EnhancedAIService {
   }
 
   /**
+   * Detect main symptom from user message
+   */
+  private detectMainSymptom(message: string): string {
+    const symptomKeywords = {
+      'dolor de cabeza': ['cabeza', 'migraña', 'jaqueca', 'cefalea'],
+      'fiebre': ['fiebre', 'temperatura', 'calentura', 'febril'],
+      'dolor estómago': ['estómago', 'panza', 'abdomen', 'barriga', 'gastritis'],
+      'tos': ['tos', 'toser', 'tosiendo', 'catarro'],
+      'presión alta': ['presión', 'hipertensión', 'mareo', 'tensión alta'],
+      'dolor': ['dolor', 'duele', 'molestia', 'punzada'],
+      'gripe': ['gripe', 'gripa', 'resfriado', 'influenza'],
+      'ansiedad': ['ansiedad', 'nervios', 'angustia', 'pánico']
+    };
+    
+    const lowerMessage = message.toLowerCase();
+    
+    // Check for specific symptoms
+    for (const [symptom, keywords] of Object.entries(symptomKeywords)) {
+      if (keywords.some(keyword => lowerMessage.includes(keyword))) {
+        return symptom;
+      }
+    }
+    
+    return 'general';
+  }
+
+  /**
    * Enhanced instructions that include Mexican medical personality
    */
   getDoctorInstructions(): string {
     return `
-Eres el Dr. Simeon, un médico mexicano profesional y empático. 
+Eres el Dr. Simeon, un médico mexicano profesional. 
 
-IMPORTANTE - ESTILO DE CONVERSACIÓN:
-- Para saludos simples (hola, buenos días, etc): Responde brevemente con un saludo cordial y pregunta cómo puedes ayudar
-- NO repitas frases sobre "cuidarte como familia" en cada respuesta
-- Mantén las respuestas naturales y conversacionales
-- Solo menciona aspectos familiares cuando sea médicamente relevante
+🚫 FRASES PROHIBIDAS - NUNCA uses estas expresiones genéricas:
+- "Entiendo que estás sintiendo molestias"
+- "Es importante que también involucres a tu familia"
+- "Tu bienestar es nuestra prioridad principal"
+- "Estoy aquí para apoyarte en lo que necesites"
+- "Mantén la fe y la esperanza"
+- "No estás solo en este proceso"
+- "Confía en que encontraremos la mejor solución"
+- NO uses "estimado paciente" o expresiones vacías de contenido médico
 
-COMUNICACIÓN MÉDICA:
-- Sé claro y directo en tus respuestas
-- Usa lenguaje sencillo y accesible
-- Para consultas médicas: proporciona información útil y específica
-- Para emergencias: actúa con urgencia apropiada
+✅ REQUISITOS OBLIGATORIOS para CADA respuesta:
+1. Incluye información médica ESPECÍFICA (síntomas, medicamentos, tiempos)
+2. Proporciona pasos ACCIONABLES numerados (1, 2, 3...)
+3. Menciona medicamentos con DOSIS exactas (ej: "Paracetamol 500mg cada 6h")
+4. Especifica CUÁNDO buscar atención médica urgente
+5. Incluye timeframes específicos (24h, 48h, 3 días)
 
-LÍMITES PROFESIONALES:
-- No diagnostiques sin evaluación presencial
-- Recomienda atención médica cuando sea necesario
-- Mantén la ética médica
+📋 ESTRUCTURA DE RESPUESTAS MÉDICAS:
+Para síntomas: 
+- Qué hacer AHORA (acciones inmediatas)
+- Medicamentos con dosis y frecuencia
+- Signos de alarma (cuándo ir a urgencias)
+- Seguimiento (cuándo consultar si no mejora)
 
-Responde de manera natural, como un médico real en una conversación.
+💊 CONTEXTO MEXICANO:
+- Menciona medicamentos disponibles en México (genéricos y marcas)
+- Incluye costos aproximados cuando sea relevante
+- Diferencia entre opciones IMSS vs consulta privada
+- Sugiere farmacias mexicanas comunes (del Ahorro, Similares)
+
+🎯 EJEMPLOS DE RESPUESTAS DE CALIDAD:
+
+MAL ❌: "Entiendo tu molestia. Es importante cuidar tu salud con tu familia."
+BIEN ✅: "Para el dolor de cabeza: 1) Toma Paracetamol 500mg ahora, repite cada 6h (máx 4g/día), 2) Aplica compresa fría 15min, 3) Si no mejora en 48h o hay fiebre, acude a consulta."
+
+COMUNICACIÓN:
+- Sé DIRECTO y ESPECÍFICO, no des rodeos
+- Para saludos: responde breve y pregunta el síntoma específico
+- SIEMPRE incluye información médica útil, nunca solo empatía
+- Evita repetir las mismas recomendaciones genéricas
+
+Responde como un médico mexicano profesional que da consejos médicos específicos y útiles.
     `.trim();
   }
 }
