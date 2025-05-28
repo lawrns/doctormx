@@ -1272,6 +1272,17 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
           ];
         }
+        // Handle chronic symptoms (more than a week)
+        else if (answerOption.value === 'chronic') {
+          confidence = 0.8; // Chronic symptoms need medical attention
+          clinicalResponse = 'Síntomas crónicos de más de una semana requieren evaluación médica. ¿Ha empeorado recientemente o se mantiene igual?';
+          nextAnswerOptions = [
+            { text: 'Ha empeorado', value: 'worsening' },
+            { text: 'Se mantiene igual', value: 'stable' },
+            { text: 'Ha mejorado un poco', value: 'improving' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
         // ONLY NOW can we consider diagnostic impression - after 5+ questions
         else if (answerOption.value === 'recurrent' || answerOption.value === 'first_time') {
           confidence = 0.8; // Finally enough data for preliminary assessment
@@ -1279,6 +1290,57 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           nextAnswerOptions = [
             { text: 'Sí, proceda con la evaluación', value: 'proceed_assessment' },
             { text: 'Necesito más información', value: 'need_more_info' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // Handle chronic symptom progression
+        else if (answerOption.value === 'worsening') {
+          confidence = 0.9; // Worsening chronic symptoms need urgent attention
+          clinicalResponse = 'Síntomas que empeoran requieren atención médica pronta. Basado en: dolor de cabeza pulsátil con náuseas por más de una semana que está empeorando, esto sugiere **migraña crónica**.\n\n**Recomendación**: Consulte con un neurólogo en los próximos días.';
+          nextAnswerOptions = [
+            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
+            { text: 'Necesito más información', value: 'need_more_info' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'stable' || answerOption.value === 'improving') {
+          confidence = 0.8; // Stable chronic symptoms
+          clinicalResponse = 'Basado en la información: dolor de cabeza pulsátil con náuseas por más de una semana, esto sugiere **migraña**.\n\n**Recomendaciones**:\n• Evite factores desencadenantes (estrés, ciertos alimentos)\n• Mantenga horarios regulares de sueño\n• Considere consulta con neurólogo si persiste';
+          nextAnswerOptions = [
+            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
+            { text: '¿Qué medicamentos puedo tomar?', value: 'medication_advice' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // Handle requests for more details
+        else if (answerOption.value === 'more_details' || answerOption.value === 'more_info') {
+          confidence = 0.7; // We have enough info to proceed
+          clinicalResponse = 'Tengo suficiente información para una evaluación preliminar. ¿Hay algún factor específico que cree que puede estar causando sus síntomas?';
+          nextAnswerOptions = [
+            { text: 'Estrés o tensión', value: 'stress_factor' },
+            { text: 'Cambios en el sueño', value: 'sleep_factor' },
+            { text: 'Cambios en la alimentación', value: 'diet_factor' },
+            { text: 'No estoy seguro', value: 'unsure_factor' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // Handle factor identification
+        else if (answerOption.value === 'stress_factor' || answerOption.value === 'sleep_factor' || answerOption.value === 'diet_factor') {
+          confidence = 0.9; // High confidence with trigger identification
+          clinicalResponse = 'Excelente información. Basado en todos los datos: dolor de cabeza pulsátil con náuseas, esto confirma **migraña**.\n\n**Plan de tratamiento**:\n• Evite el factor desencadenante identificado\n• Considere analgésicos específicos para migraña\n• Si persiste, consulte neurólogo';
+          nextAnswerOptions = [
+            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
+            { text: '¿Qué medicamentos específicos?', value: 'specific_medication' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // Final diagnostic conclusion
+        else if (answerOption.value === 'proceed_assessment') {
+          confidence = 0.9; // High confidence for final assessment
+          clinicalResponse = '**EVALUACIÓN CLÍNICA PRELIMINAR**\n\n**Diagnóstico probable**: Migraña\n\n**Basado en**:\n• Dolor pulsátil\n• Náuseas asociadas\n• Patrón de síntomas\n\n**Recomendaciones**:\n1. Evitar factores desencadenantes\n2. Analgésicos específicos para migraña\n3. Consulta con neurólogo si persiste o empeora';
+          nextAnswerOptions = [
+            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
+            { text: '¿Qué medicamentos puedo tomar?', value: 'medication_advice' },
             { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
           ];
         }
