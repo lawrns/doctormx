@@ -106,6 +106,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   // Mexican family context and quick symptoms
   const [familyMember, setFamilyMember] = useState<string>('myself');
   const [showFamilySetup, setShowFamilySetup] = useState(false);
+  const [conversationStarted, setConversationStarted] = useState(false);
 
   const MEXICAN_FAMILY_OPTIONS = [
     { value: 'myself', label: 'Para mí' },
@@ -209,6 +210,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setInput('');
     setIsProcessing(true);
     setIsThinking(true);
+
+    // Mark conversation as started after first user message
+    if (!conversationStarted) {
+      setConversationStarted(true);
+    }
 
     // Create a bot message placeholder with enhanced streaming indicators
     const botMessageId = (Date.now() + 1).toString();
@@ -916,6 +922,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, newUserMessage]);
     setIsProcessing(true);
 
+    // Mark conversation as started
+    if (!conversationStarted) {
+      setConversationStarted(true);
+    }
+
     if (questionId === 'pharmacy_recommendation' && option === 'Ver medicamentos recomendados') {
       const lastMessageWithMedications = [...messages].reverse().find(m =>
         m.suggestedMedications && m.suggestedMedications.length > 0
@@ -977,12 +988,43 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             questionId: 'digestive_symptoms'
           };
           setCurrentQuestionId('digestive_symptoms');
-        } else {
-          nextQuestion.text = `Cuéntame más sobre tus síntomas de ${option.toLowerCase()}. ¿Cuándo comenzaron?`;
+        } else if (option === 'Para mí') {
+          nextQuestion.text = 'Perfecto, vamos a hablar de tu salud. ¿Qué síntoma o molestia te trae hoy?';
           nextQuestion.followUpQuestions = [
-            'Comenzaron hace unos días',
-            'Comenzaron hoy',
-            'Los tengo desde hace semanas'
+            'Tengo dolor de cabeza',
+            'Tengo fiebre',
+            'Tengo dolor de estómago',
+            'Tengo otro síntoma'
+          ];
+        } else if (option === 'Para mi familia') {
+          nextQuestion.text = 'Entiendo, es para un familiar. ¿Qué síntoma o molestia presenta la persona?';
+          nextQuestion.followUpQuestions = [
+            'Tiene dolor de cabeza',
+            'Tiene fiebre',
+            'Tiene dolor de estómago',
+            'Tiene otro síntoma'
+          ];
+        } else if (option === 'Emergencia') {
+          nextQuestion.text = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nSi es una emergencia real, llame al 911 inmediatamente.\n\n¿Cuál es la situación de emergencia?';
+          nextQuestion.followUpQuestions = [
+            'Dificultad para respirar',
+            'Dolor de pecho intenso',
+            'Pérdida de conocimiento',
+            'Sangrado abundante'
+          ];
+        } else if (option === 'Consulta general') {
+          nextQuestion.text = 'Perfecto, estoy aquí para ayudarte. ¿Qué te gustaría consultar hoy?';
+          nextQuestion.followUpQuestions = [
+            'Tengo una pregunta sobre medicamentos',
+            'Quiero información sobre síntomas',
+            'Necesito orientación médica general'
+          ];
+        } else {
+          nextQuestion.text = 'Por favor, cuéntame más detalles sobre lo que te preocupa. ¿Cuándo comenzó?';
+          nextQuestion.followUpQuestions = [
+            'Comenzó hace unos días',
+            'Comenzó hoy',
+            'Lo tengo desde hace semanas'
           ];
         }
       } else if (questionId.startsWith('duration_')) {
@@ -1065,6 +1107,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     };
 
     setMessages(prev => [...prev, newUserMessage]);
+
+    // Mark conversation as started
+    if (!conversationStarted) {
+      setConversationStarted(true);
+    }
 
     // Create bot message placeholder
     const botMessageId = (Date.now() + 1).toString();
@@ -1448,19 +1495,20 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       </div>
                     )}
 
-                    {/* Quick Mexican Symptoms - Better styled */}
-                    <div className="px-4 mb-4">
-                      <div className="max-w-4xl mx-auto">
-                        <div className="flex items-center justify-between mb-3">
-                          <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
-                          <button
-                            onClick={() => setShowFamilySetup(!showFamilySetup)}
-                            className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
-                          >
-                            <User className="w-4 h-4 mr-1" />
-                            {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
-                          </button>
-                        </div>
+                    {/* Quick Mexican Symptoms - Only show before conversation starts */}
+                    {!conversationStarted && (
+                      <div className="px-4 mb-4">
+                        <div className="max-w-4xl mx-auto">
+                          <div className="flex items-center justify-between mb-3">
+                            <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
+                            <button
+                              onClick={() => setShowFamilySetup(!showFamilySetup)}
+                              className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
+                            >
+                              <User className="w-4 h-4 mr-1" />
+                              {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
+                            </button>
+                          </div>
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                           {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
                             <button
@@ -1481,6 +1529,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
                                 setMessages(prev => [...prev, newUserMessage]);
                                 setIsProcessing(true);
+
+                                // Mark conversation as started
+                                if (!conversationStarted) {
+                                  setConversationStarted(true);
+                                }
 
                                 // Process with clinical mode
                                 const botMessageId = (Date.now() + 1).toString();
@@ -1623,6 +1676,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </div>
                     </div>
+                    )}
 
                     {/* Enhanced Input area at bottom of viewport */}
                     <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20">
