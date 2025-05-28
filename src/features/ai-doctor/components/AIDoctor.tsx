@@ -242,19 +242,28 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
         const lowerInput = userInput.toLowerCase();
 
-        // Emergency detection
-        if (lowerInput.includes('no puedo respirar') ||
-            lowerInput.includes('dolor de pecho intenso') ||
-            lowerInput.includes('perdí el conocimiento')) {
-          clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
+        // EMERGENCY TRIAGE SYSTEM - Immediate life-threatening symptoms
+        const emergencyKeywords = [
+          'no puedo respirar', 'dificultad para respirar', 'me ahogo',
+          'dolor de pecho intenso', 'dolor muy fuerte en el pecho',
+          'perdí el conocimiento', 'me desmayé', 'convulsiones',
+          'sangrado abundante', 'hemorragia', 'vómito con sangre',
+          'dolor como elefante', 'como si me aplastaran', 'dolor insoportable',
+          'mareo intenso', 'visión borrosa súbita', 'no siento el brazo'
+        ];
+
+        const hasEmergencySymptoms = emergencyKeywords.some(keyword => lowerInput.includes(keyword));
+
+        if (hasEmergencySymptoms) {
+          clinicalResponse = '🚨 **EMERGENCIA MÉDICA INMEDIATA** 🚨\n\n**LLAME AL 911 AHORA MISMO**\n\nLos síntomas que describe requieren atención médica de emergencia inmediata. No espere, no conduzca usted mismo.\n\n**Acciones inmediatas:**\n• Llame al 911 o vaya al hospital más cercano\n• Si está solo, pida ayuda a alguien\n• Manténgase calmado y en posición cómoda\n\n**Esta consulta virtual NO puede reemplazar la atención de emergencia.**';
           isEmergency = true;
           confidence = 1.0;
         }
-        // Chest pain - EMERGENCY
+        // Chest pain - Requires emergency assessment protocol
         else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-          clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
-          confidence = 0.9;
-          isEmergency = true;
+          clinicalResponse = '🚨 **EVALUACIÓN DE EMERGENCIA REQUERIDA** 🚨\n\nEl dolor de pecho puede ser una emergencia médica. Necesito evaluar la gravedad inmediatamente.\n\n**¿Cuánto tiempo lleva con este dolor?**';
+          confidence = 0.1; // Very low confidence - need more data
+          isEmergency = false; // Will escalate based on answers
         }
         // Headache
         else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
@@ -299,7 +308,15 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         let answerOptions: Array<{ text: string; value: string }> = [];
 
         if (isEmergency) {
-          answerOptions = [];
+          answerOptions = []; // No options for true emergencies - immediate action required
+        } else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
+          // Emergency assessment protocol for chest pain
+          answerOptions = [
+            { text: 'Menos de 30 minutos', value: 'chest_pain_recent' },
+            { text: 'Entre 30 minutos y 2 horas', value: 'chest_pain_moderate' },
+            { text: 'Más de 2 horas', value: 'chest_pain_prolonged' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
         } else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
           answerOptions = [
             { text: 'Banda apretada', value: 'tension_headache' },
@@ -1075,10 +1092,56 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         const lowerInput = answerOption.text.toLowerCase();
         let nextAnswerOptions: Array<{ text: string; value: string }> = [];
 
-        // Contextual responses based on button value
-        if (answerOption.value === 'tension_headache') {
-          confidence = 0.8;
-          clinicalResponse = 'Esto sugiere cefalea tensional. ¿El dolor empeora con el estrés o la tensión?';
+        // EMERGENCY ASSESSMENT PROTOCOL - Chest pain requires multiple critical questions
+        if (answerOption.value === 'chest_pain_recent' || answerOption.value === 'chest_pain_moderate') {
+          confidence = 0.1; // Still very low - need more critical data
+          clinicalResponse = '🚨 **EVALUACIÓN CRÍTICA CONTINÚA** 🚨\n\nTiempo de dolor registrado. Ahora necesito evaluar la intensidad.\n\n**En una escala del 1 al 10, ¿qué tan intenso es el dolor? (10 = el peor dolor imaginable)**';
+          nextAnswerOptions = [
+            { text: 'Leve (1-3)', value: 'chest_pain_mild' },
+            { text: 'Moderado (4-6)', value: 'chest_pain_moderate_intensity' },
+            { text: 'Severo (7-8)', value: 'chest_pain_severe' },
+            { text: 'Extremo (9-10)', value: 'chest_pain_extreme' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'chest_pain_prolonged') {
+          confidence = 0.2;
+          clinicalResponse = '⚠️ **DOLOR PROLONGADO REQUIERE EVALUACIÓN** ⚠️\n\nDolor de pecho por más de 2 horas requiere atención médica. ¿El dolor se irradia a otras partes del cuerpo?';
+          nextAnswerOptions = [
+            { text: 'Sí, al brazo izquierdo', value: 'radiation_arm' },
+            { text: 'Sí, a la mandíbula/cuello', value: 'radiation_jaw' },
+            { text: 'Sí, a la espalda', value: 'radiation_back' },
+            { text: 'No se irradia', value: 'no_radiation' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'chest_pain_extreme' || answerOption.value === 'chest_pain_severe') {
+          confidence = 1.0; // High confidence this is emergency
+          clinicalResponse = '🚨 **EMERGENCIA MÉDICA CONFIRMADA** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nDolor de pecho severo (7-10) requiere atención de emergencia inmediata. NO espere, NO conduzca usted mismo.\n\n**Vaya al hospital MÁS CERCANO AHORA.**';
+          isEmergency = true;
+          nextAnswerOptions = [];
+        }
+        else if (answerOption.value === 'radiation_arm' || answerOption.value === 'radiation_jaw') {
+          confidence = 1.0; // Classic heart attack symptoms
+          clinicalResponse = '🚨 **SÍNTOMAS DE INFARTO - EMERGENCIA** 🚨\n\n**LLAME AL 911 AHORA MISMO**\n\nDolor que se irradia al brazo o mandíbula son síntomas clásicos de infarto. Requiere atención inmediata.\n\n**NO ESPERE - VAYA AL HOSPITAL AHORA.**';
+          isEmergency = true;
+          nextAnswerOptions = [];
+        }
+        else if (answerOption.value === 'chest_pain_mild' || answerOption.value === 'chest_pain_moderate_intensity') {
+          confidence = 0.3; // Still need more questions
+          clinicalResponse = 'Dolor registrado. Necesito más información para evaluar. ¿Tiene dificultad para respirar, sudoración o náuseas?';
+          nextAnswerOptions = [
+            { text: 'Sí, dificultad para respirar', value: 'breathing_difficulty' },
+            { text: 'Sí, sudoración', value: 'sweating' },
+            { text: 'Sí, náuseas', value: 'nausea' },
+            { text: 'No, ninguno de esos', value: 'no_associated_symptoms' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // Non-emergency conditions - can proceed with normal diagnostic flow
+        else if (answerOption.value === 'tension_headache') {
+          confidence = 0.4; // Still need more questions before diagnosis
+          clinicalResponse = 'Características de cefalea tensional registradas. ¿El dolor empeora con el estrés o la tensión?';
           nextAnswerOptions = [
             { text: 'Sí, empeora con estrés', value: 'stress_related' },
             { text: 'No, es constante', value: 'constant_pain' },
@@ -1086,8 +1149,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           ];
         }
         else if (answerOption.value === 'migraine_headache') {
-          confidence = 0.8;
-          clinicalResponse = 'Esto sugiere migraña. ¿Se acompaña de náuseas o sensibilidad a la luz?';
+          confidence = 0.4; // Still need more questions before diagnosis
+          clinicalResponse = 'Características de migraña registradas. ¿Se acompaña de náuseas o sensibilidad a la luz?';
           nextAnswerOptions = [
             { text: 'Sí, con náuseas', value: 'with_nausea' },
             { text: 'Sí, sensibilidad a la luz', value: 'light_sensitivity' },
@@ -1125,18 +1188,64 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
           ];
         }
-        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
-          confidence = 0.7;
-          clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
+        // EMERGENCY ESCALATION - Any breathing difficulty, sweating with chest pain = EMERGENCY
+        else if (answerOption.value === 'breathing_difficulty' || answerOption.value === 'sweating') {
+          confidence = 1.0; // Emergency confirmed
+          clinicalResponse = '🚨 **EMERGENCIA MÉDICA CONFIRMADA** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nDolor de pecho con dificultad respiratoria o sudoración son síntomas de emergencia cardíaca.\n\n**NO ESPERE - VAYA AL HOSPITAL AHORA.**';
+          isEmergency = true;
+          nextAnswerOptions = [];
+        }
+        else if (answerOption.value === 'no_associated_symptoms') {
+          confidence = 0.5; // Still need more questions - not ready for diagnosis
+          clinicalResponse = 'Entiendo. Necesito más información. ¿El dolor empeora con la actividad física o mejora con el reposo?';
           nextAnswerOptions = [
-            { text: 'Sí, tengo otros síntomas', value: 'has_other_symptoms' },
-            { text: 'No, solo eso', value: 'no_other_symptoms' },
+            { text: 'Empeora con actividad', value: 'worse_activity' },
+            { text: 'Mejora con reposo', value: 'better_rest' },
+            { text: 'No cambia', value: 'no_change' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // DIAGNOSTIC THRESHOLD - Require minimum 5 questions before any diagnosis consideration
+        else if (answerOption.value === 'stress_related' || answerOption.value === 'with_nausea') {
+          confidence = 0.6; // Still not enough for diagnosis - need more data
+          clinicalResponse = 'Información registrada. Necesito más detalles antes de cualquier evaluación. ¿Desde cuándo tiene estos síntomas?';
+          nextAnswerOptions = [
+            { text: 'Menos de 24 horas', value: 'recent_onset' },
+            { text: '1-3 días', value: 'few_days' },
+            { text: 'Más de una semana', value: 'chronic' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (answerOption.value === 'recent_onset' || answerOption.value === 'few_days') {
+          confidence = 0.7; // Getting closer but still need more
+          clinicalResponse = 'Duración registrada. Una pregunta más: ¿Ha tenido episodios similares antes?';
+          nextAnswerOptions = [
+            { text: 'Sí, episodios similares', value: 'recurrent' },
+            { text: 'No, primera vez', value: 'first_time' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        // ONLY NOW can we consider diagnostic impression - after 5+ questions
+        else if (answerOption.value === 'recurrent' || answerOption.value === 'first_time') {
+          confidence = 0.8; // Finally enough data for preliminary assessment
+          clinicalResponse = 'Basado en la información recopilada en múltiples preguntas, puedo ofrecer una **impresión clínica preliminar**. ¿Desea que proceda con la evaluación?';
+          nextAnswerOptions = [
+            { text: 'Sí, proceda con la evaluación', value: 'proceed_assessment' },
+            { text: 'Necesito más información', value: 'need_more_info' },
+            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
+          ];
+        }
+        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
+          confidence = 0.4; // Much lower threshold - need more questions
+          clinicalResponse = 'Información registrada. Necesito hacer más preguntas antes de cualquier evaluación. ¿Puede describir más detalles?';
+          nextAnswerOptions = [
+            { text: 'Sí, puedo dar más detalles', value: 'more_details' },
             { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
           ];
         }
         else if (lowerInput.includes('no')) {
-          confidence = 0.6;
-          clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
+          confidence = 0.4; // Much lower threshold
+          clinicalResponse = 'Entendido. Necesito más información para una evaluación adecuada. ¿Ha tomado algún medicamento?';
           nextAnswerOptions = [
             { text: 'Sí, he tomado medicamentos', value: 'took_medication' },
             { text: 'No, no he tomado nada', value: 'no_medication' },
@@ -1145,11 +1254,10 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
         // Default clinical response for other button clicks
         else {
-          confidence = 0.5;
-          clinicalResponse = `Entiendo. ¿Puede proporcionar más detalles sobre este síntoma?`;
+          confidence = 0.3; // Lower default confidence
+          clinicalResponse = `Información registrada. Necesito más detalles para una evaluación médica adecuada. ¿Puede proporcionar más información?`;
           nextAnswerOptions = [
-            { text: 'Sí', value: 'yes' },
-            { text: 'No', value: 'no' },
+            { text: 'Sí, puedo dar más información', value: 'more_info' },
             { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
           ];
         }
