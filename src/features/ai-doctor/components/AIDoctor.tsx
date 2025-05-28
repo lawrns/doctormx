@@ -235,6 +235,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       if (useClinicalMode) {
         console.log('🩺 Using CLINICAL MODE for desktop:', userInput);
 
+        // Helper function to clean user input for response
+        const cleanUserInput = (input: string) => {
+          return input.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
+        };
+
         const lowerInput = userInput.toLowerCase();
 
         // Emergency detection
@@ -251,11 +256,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           confidence = 0.9;
           isEmergency = true;
         }
-        // Helper function to clean user input for response
-        const cleanUserInput = (input: string) => {
-          return input.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
-        };
-
         // Headache
         else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
           const cleanedInput = cleanUserInput(userInput);
