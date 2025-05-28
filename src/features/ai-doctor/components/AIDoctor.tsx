@@ -27,6 +27,7 @@ import ConfidenceVisualizer from './ConfidenceVisualizer';
 import AIDoctorMobile from './AIDoctorMobile';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 import { unifiedConversationService } from '../services/UnifiedConversationService';
+import { BrainIntegrationService, PatientContext } from '../services/BrainIntegrationService';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -230,194 +231,55 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
-      // CLINICAL MODE - Direct implementation for desktop
-      console.log('🩺 Desktop AIDoctor - Processing message:', userInput);
+      // BRAIN INTEGRATION - Use enhanced intelligence modules
+      console.log('🧠 Desktop AIDoctor - Using Brain Integration Service:', userInput);
 
-      let clinicalResponse = '';
-      let confidence = 0.3;
-      let isEmergency = false;
-      let useClinicalMode = true; // Force clinical mode for desktop
+      // Build patient context
+      const patientContext: PatientContext = {
+        familyMember: familyMember !== 'myself' ? familyMember : undefined,
+        previousResponses: questionHistory.map(q => ({ question: q.question, answer: q.answer }))
+      };
 
-      if (useClinicalMode) {
-        console.log('🩺 Using CLINICAL MODE for desktop:', userInput);
+      // Process with brain intelligence
+      const brainAssessment = await BrainIntegrationService.processInput(
+        userInput,
+        patientContext,
+        questionHistory.map(q => ({ question: q.question, answer: q.answer }))
+      );
 
-        // Helper function to clean user input for response
-        const cleanUserInput = (input: string) => {
-          return input.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
-        };
+      console.log('🧠 Brain assessment result:', brainAssessment);
 
-        const lowerInput = userInput.toLowerCase();
+      // Update message with brain assessment results
+      setIsThinking(false);
+      setMessages(prev =>
+        prev.map(msg =>
+          msg.id === botMessageId
+            ? {
+                ...msg,
+                text: brainAssessment.response,
+                answerOptions: brainAssessment.answerOptions,
+                severity: brainAssessment.severity,
+                isEmergency: brainAssessment.isEmergency,
+                suggestedConditions: brainAssessment.diagnosis ? [brainAssessment.diagnosis] : undefined,
+                suggestedSpecialty: brainAssessment.specialistReferral,
+                isStreaming: false,
+                isComplete: true
+              }
+            : msg
+        )
+      );
 
-        // EMERGENCY TRIAGE SYSTEM - ENHANCED with critical additions
-        const emergencyKeywords = [
-          // Respiratory emergencies
-          'no puedo respirar', 'dificultad para respirar', 'me ahogo',
-          'no me llega el aire', 'respiración muy rápida', 'jadeo', 'silbido al respirar',
+      setIsProcessing(false);
 
-          // Cardiac emergencies
-          'dolor de pecho intenso', 'dolor muy fuerte en el pecho',
-          'dolor como elefante', 'como si me aplastaran', 'dolor insoportable',
-          'opresión torácica', 'dolor al brazo izquierdo', 'dolor a la mandíbula',
-          'sudoración profusa', 'presión fuerte en el pecho',
-
-          // Neurological emergencies - STROKE FAST signs
-          'perdí el conocimiento', 'me desmayé', 'convulsiones',
-          'no siento el brazo', 'visión borrosa súbita', 'no puedo hablar bien',
-          'cara desviada', 'hablo raro', 'no puedo sonreír', 'hormigueo',
-          'entumecimiento', 'debilidad súbita', 'confusión súbita',
-
-          // Anaphylaxis - CRITICAL ADDITION
-          'hinchado', 'ronchas', 'comezón en garganta', 'lengua hinchada',
-          'labios hinchados', 'dificultad para tragar',
-
-          // Bleeding emergencies
-          'sangrado abundante', 'hemorragia', 'vómito con sangre',
-          'sangre en el vómito', 'heces negras', 'sangrado que no para',
-
-          // Pediatric red flags - CRITICAL ADDITION
-          'no moja pañal', 'fontanela hundida', 'llanto inconsolable',
-          'fiebre en bebé menor de 3 meses', 'convulsiones en niño',
-
-          // Severe pain descriptors
-          'mareo intenso', 'dolor nivel 10', 'peor dolor de mi vida'
-        ];
-
-        const hasEmergencySymptoms = emergencyKeywords.some(keyword => lowerInput.includes(keyword));
-
-        if (hasEmergencySymptoms) {
-          clinicalResponse = '🚨 **EMERGENCIA MÉDICA INMEDIATA** 🚨\n\n**LLAME AL 911 AHORA MISMO**\n\nLos síntomas que describe requieren atención médica de emergencia inmediata. No espere, no conduzca usted mismo.\n\n**Acciones inmediatas:**\n• Llame al 911 o vaya al hospital más cercano\n• Si está solo, pida ayuda a alguien\n• Manténgase calmado y en posición cómoda\n\n**Esta consulta virtual NO puede reemplazar la atención de emergencia.**';
-          isEmergency = true;
-          confidence = 1.0;
+      // Auto-scroll to latest message
+      setTimeout(() => {
+        const chatContainer = document.querySelector('.chat-messages-container');
+        if (chatContainer) {
+          chatContainer.scrollTop = chatContainer.scrollHeight;
         }
-        // Chest pain - CRITICAL FIX: Immediate emergency response
-        else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-          clinicalResponse = '🚨 **EMERGENCIA CARDÍACA POTENCIAL** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nEl dolor de pecho puede ser un infarto al miocardio. No espere - cada minuto cuenta.\n\n**Acciones inmediatas:**\n• Llame al 911 AHORA\n• Siéntese o recuéstese\n• Si tiene aspirina y no es alérgico, mastique 1 tableta\n• NO conduzca usted mismo';
-          confidence = 1.0; // CRITICAL FIX: High confidence for immediate action
-          isEmergency = true; // CRITICAL FIX: Mark as emergency immediately
-        }
-        // Headache
-        else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-          const cleanedInput = cleanUserInput(userInput);
-          clinicalResponse = `Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?`;
-          confidence = 0.4;
-        }
-        // Abdominal pain
-        else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
-          clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
-          confidence = 0.4;
-        }
-        // Fever
-        else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
-          clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
-          confidence = 0.4;
-        }
-        // Generic symptom
-        else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
-          const cleanedInput = cleanUserInput(userInput);
-          clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Desde cuándo tiene este síntoma?`;
-          confidence = 0.3;
-        }
-        // Follow-up responses
-        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
-          confidence = 0.7;
-          clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
-        }
-        else if (lowerInput.includes('no')) {
-          confidence = 0.6;
-          clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
-        }
-        // Default clinical response
-        else {
-          clinicalResponse = 'Por favor, descríbame específicamente qué síntoma o molestia lo trae hoy. Sea lo más específico posible.';
-          confidence = 0.1;
-        }
+      }, 100);
 
-        console.log('🩺 Clinical response generated:', clinicalResponse);
-
-        // Generate contextually appropriate answer options
-        let answerOptions: Array<{ text: string; value: string }> = [];
-
-        if (isEmergency) {
-          answerOptions = []; // No options for true emergencies - immediate action required
-        } else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-          // Emergency assessment protocol for chest pain
-          answerOptions = [
-            { text: 'Menos de 30 minutos', value: 'chest_pain_recent' },
-            { text: 'Entre 30 minutos y 2 horas', value: 'chest_pain_moderate' },
-            { text: 'Más de 2 horas', value: 'chest_pain_prolonged' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-          answerOptions = [
-            { text: 'Banda apretada', value: 'tension_headache' },
-            { text: 'Pulsátil/latidos', value: 'migraine_headache' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen'))) {
-          answerOptions = [
-            { text: 'Parte alta del abdomen', value: 'upper_abdomen' },
-            { text: 'Parte baja del abdomen', value: 'lower_abdomen' },
-            { text: 'Empeora al comer', value: 'worse_eating' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) {
-          answerOptions = [
-            { text: 'Menos de 39°C', value: 'low_fever' },
-            { text: 'Más de 39°C', value: 'high_fever' },
-            { text: 'Con tos o dolor de garganta', value: 'respiratory_symptoms' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else if (lowerInput.includes('dolor') || lowerInput.includes('duele')) {
-          answerOptions = [
-            { text: 'Hoy', value: 'today' },
-            { text: 'Hace unos días', value: 'few_days' },
-            { text: 'Hace una semana o más', value: 'week_plus' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('no')) {
-          answerOptions = [
-            { text: 'Sí, tengo otros síntomas', value: 'has_other_symptoms' },
-            { text: 'No, solo eso', value: 'no_other_symptoms' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else {
-          answerOptions = [
-            { text: 'Sí', value: 'yes' },
-            { text: 'No', value: 'no' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-
-        // Update message with clinical response
-        setIsThinking(false);
-        setMessages(prev =>
-          prev.map(msg =>
-            msg.id === botMessageId
-              ? {
-                  ...msg,
-                  text: clinicalResponse,
-                  answerOptions: answerOptions,
-                  severity: confidence * 10,
-                  isEmergency: isEmergency,
-                  isStreaming: false,
-                  isComplete: true
-                }
-              : msg
-          )
-        );
-
-        setIsProcessing(false);
-
-        // Auto-scroll to latest message
-        setTimeout(() => {
-          const chatContainer = document.querySelector('.chat-messages-container');
-          if (chatContainer) {
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-          }
-        }, 100);
-
-        return;
-      }
+      return;
 
       // Use unified conversation service for better context tracking
       const unifiedResponse = await unifiedConversationService.processMessage(
