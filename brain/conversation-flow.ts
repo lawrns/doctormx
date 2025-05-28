@@ -1,22 +1,22 @@
 /**
  * CONVERSATION FLOW MANAGEMENT
- * 
+ *
  * This file contains the conversation state management, question progression logic,
  * confidence scoring systems, and response generation algorithms for the AI doctor.
- * 
+ *
  * MEDICAL INTELLIGENCE:
  * - Progressive questioning algorithms that build diagnostic confidence
  * - Context-aware response generation based on medical protocols
  * - State management for multi-turn clinical conversations
  * - Answer option generation that matches specific medical questions
  * - Conversation branching logic for different medical pathways
- * 
+ *
  * INTEGRATION:
  * - Manages conversation state across all clinical interactions
  * - Integrates with clinical logic for medical decision making
  * - Connects to emergency protocols for safety escalation
  * - Interfaces with Mexican medical context for cultural appropriateness
- * 
+ *
  * KEY ALGORITHMS:
  * - Progressive confidence building through structured questioning
  * - Context-sensitive answer option generation
@@ -99,20 +99,96 @@ export class ConversationStateManager {
 
   private calculateProgressiveConfidence(): number {
     const baseConfidence = 0.1;
-    const questionBonus = Math.min(0.6, this.state.questionCount * 0.1);
+
+    // HIGH PRIORITY: Weight questions by information gain
+    const informationGainBonus = this.calculateInformationGain();
     const qualityBonus = this.assessResponseQuality();
-    
-    return Math.min(0.9, baseConfidence + questionBonus + qualityBonus);
+    const consistencyPenalty = this.assessResponseConsistency();
+
+    return Math.min(1.0, baseConfidence + informationGainBonus + qualityBonus - consistencyPenalty);
+  }
+
+  private calculateInformationGain(): number {
+    // Weight questions by their diagnostic value
+    const responses = this.state.responses;
+    let totalGain = 0;
+
+    responses.forEach(response => {
+      // High-value questions get more weight
+      if (this.isHighValueQuestion(response.question)) {
+        totalGain += 0.15; // High information gain
+      } else if (this.isMediumValueQuestion(response.question)) {
+        totalGain += 0.10; // Medium information gain
+      } else {
+        totalGain += 0.05; // Low information gain
+      }
+    });
+
+    return Math.min(0.6, totalGain);
+  }
+
+  private isHighValueQuestion(question: string): boolean {
+    const highValueIndicators = [
+      'intensidad', 'dolor', 'tiempo', 'duración', 'síntomas',
+      'empeora', 'mejora', 'radiación', 'asociado'
+    ];
+    return highValueIndicators.some(indicator =>
+      question.toLowerCase().includes(indicator)
+    );
+  }
+
+  private isMediumValueQuestion(question: string): boolean {
+    const mediumValueIndicators = [
+      'cuándo', 'dónde', 'cómo', 'frecuencia', 'episodios'
+    ];
+    return mediumValueIndicators.some(indicator =>
+      question.toLowerCase().includes(indicator)
+    );
   }
 
   private assessResponseQuality(): number {
     // Assess the quality of responses for confidence calculation
     const recentResponses = this.state.responses.slice(-3);
-    const specificAnswers = recentResponses.filter(r => 
+    const specificAnswers = recentResponses.filter(r =>
       r.answerType === 'button' && r.answer !== 'Prefiero escribir mi respuesta'
     );
-    
+
     return specificAnswers.length * 0.05; // Bonus for specific answers
+  }
+
+  private assessResponseConsistency(): number {
+    // HIGH PRIORITY: Penalize contradictory answers
+    const responses = this.state.responses;
+    let inconsistencyPenalty = 0;
+
+    // Check for contradictions in pain intensity
+    const painResponses = responses.filter(r =>
+      r.question.toLowerCase().includes('intensidad') ||
+      r.question.toLowerCase().includes('dolor')
+    );
+
+    if (painResponses.length >= 2) {
+      const hasContradiction = this.detectPainContradiction(painResponses);
+      if (hasContradiction) {
+        inconsistencyPenalty += 0.2;
+      }
+    }
+
+    return inconsistencyPenalty;
+  }
+
+  private detectPainContradiction(painResponses: ConversationResponse[]): boolean {
+    // Simple contradiction detection for pain intensity
+    const severePain = painResponses.some(r =>
+      r.answer.toLowerCase().includes('intenso') ||
+      r.answer.toLowerCase().includes('severo')
+    );
+    const mildPain = painResponses.some(r =>
+      r.answer.toLowerCase().includes('leve') ||
+      r.answer.toLowerCase().includes('poco')
+    );
+
+    return severePain && mildPain; // Contradiction detected
   }
 
   canProvideDiagnosis(): boolean {
@@ -129,9 +205,9 @@ export class ConversationStateManager {
  * Manages the logical flow of medical questions
  */
 export class QuestionProgressionEngine {
-  
+
   static readonly QUESTION_FLOWS: Record<string, QuestionFlow[]> = {
-    
+
     // HEADACHE PROGRESSION
     headache: [
       {
@@ -241,8 +317,8 @@ export class QuestionProgressionEngine {
   };
 
   static getNextQuestion(
-    symptomType: string, 
-    currentQuestionId: string, 
+    symptomType: string,
+    currentQuestionId: string,
     answer: string
   ): QuestionFlow | null {
     const flow = this.QUESTION_FLOWS[symptomType];
@@ -267,13 +343,13 @@ export class QuestionProgressionEngine {
  * Generates contextually appropriate medical responses
  */
 export class ResponseGenerator {
-  
+
   static generateResponse(
     state: ConversationState,
     questionFlow: QuestionFlow,
     answer: string
   ): string {
-    
+
     // Emergency responses
     if (QuestionProgressionEngine.shouldEscalate(questionFlow, answer)) {
       return this.generateEmergencyResponse(answer);
@@ -300,11 +376,11 @@ export class ResponseGenerator {
 
   private static generateDiagnosticResponse(state: ConversationState): string {
     const symptomType = state.primarySymptom;
-    
+
     if (symptomType === 'headache') {
       return this.generateHeadacheDiagnosis(state);
     }
-    
+
     return 'Basado en la información recopilada, puedo ofrecer una evaluación preliminar.';
   }
 
@@ -342,7 +418,7 @@ export class ResponseGenerator {
  * Creates contextually appropriate answer buttons
  */
 export class AnswerOptionGenerator {
-  
+
   static generateOptions(questionType: string, context: MedicalContext): AnswerOption[] {
     const optionSets = {
       headache_type: [
@@ -350,21 +426,21 @@ export class AnswerOptionGenerator {
         { text: 'Pulsátil/latidos', value: 'migraine_headache', nextAction: 'continue' as const },
         { text: 'Prefiero escribir mi respuesta', value: 'free_text', nextAction: 'continue' as const }
       ],
-      
+
       pain_intensity: [
         { text: 'Leve (1-3)', value: 'mild_pain', nextAction: 'continue' as const },
         { text: 'Moderado (4-6)', value: 'moderate_pain', nextAction: 'continue' as const },
         { text: 'Intenso (7-10)', value: 'severe_pain', nextAction: 'escalate' as const },
         { text: 'Prefiero escribir mi respuesta', value: 'free_text', nextAction: 'continue' as const }
       ],
-      
+
       duration: [
         { text: 'Hoy', value: 'today', nextAction: 'continue' as const },
         { text: 'Hace unos días', value: 'few_days', nextAction: 'continue' as const },
         { text: 'Hace una semana o más', value: 'week_plus', nextAction: 'continue' as const },
         { text: 'Prefiero escribir mi respuesta', value: 'free_text', nextAction: 'continue' as const }
       ],
-      
+
       yes_no: [
         { text: 'Sí', value: 'yes', nextAction: 'continue' as const },
         { text: 'No', value: 'no', nextAction: 'continue' as const },
@@ -380,7 +456,7 @@ export class AnswerOptionGenerator {
     if (context.patientType === 'family') {
       return options.map(option => ({
         ...option,
-        text: option.text.replace(/^(Sí|No)/, match => 
+        text: option.text.replace(/^(Sí|No)/, match =>
           match === 'Sí' ? 'Sí, la persona' : 'No, la persona no'
         )
       }));

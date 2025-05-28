@@ -248,14 +248,38 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
         const lowerInput = userInput.toLowerCase();
 
-        // EMERGENCY TRIAGE SYSTEM - Immediate life-threatening symptoms
+        // EMERGENCY TRIAGE SYSTEM - ENHANCED with critical additions
         const emergencyKeywords = [
+          // Respiratory emergencies
           'no puedo respirar', 'dificultad para respirar', 'me ahogo',
+          'no me llega el aire', 'respiración muy rápida', 'jadeo', 'silbido al respirar',
+
+          // Cardiac emergencies
           'dolor de pecho intenso', 'dolor muy fuerte en el pecho',
-          'perdí el conocimiento', 'me desmayé', 'convulsiones',
-          'sangrado abundante', 'hemorragia', 'vómito con sangre',
           'dolor como elefante', 'como si me aplastaran', 'dolor insoportable',
-          'mareo intenso', 'visión borrosa súbita', 'no siento el brazo'
+          'opresión torácica', 'dolor al brazo izquierdo', 'dolor a la mandíbula',
+          'sudoración profusa', 'presión fuerte en el pecho',
+
+          // Neurological emergencies - STROKE FAST signs
+          'perdí el conocimiento', 'me desmayé', 'convulsiones',
+          'no siento el brazo', 'visión borrosa súbita', 'no puedo hablar bien',
+          'cara desviada', 'hablo raro', 'no puedo sonreír', 'hormigueo',
+          'entumecimiento', 'debilidad súbita', 'confusión súbita',
+
+          // Anaphylaxis - CRITICAL ADDITION
+          'hinchado', 'ronchas', 'comezón en garganta', 'lengua hinchada',
+          'labios hinchados', 'dificultad para tragar',
+
+          // Bleeding emergencies
+          'sangrado abundante', 'hemorragia', 'vómito con sangre',
+          'sangre en el vómito', 'heces negras', 'sangrado que no para',
+
+          // Pediatric red flags - CRITICAL ADDITION
+          'no moja pañal', 'fontanela hundida', 'llanto inconsolable',
+          'fiebre en bebé menor de 3 meses', 'convulsiones en niño',
+
+          // Severe pain descriptors
+          'mareo intenso', 'dolor nivel 10', 'peor dolor de mi vida'
         ];
 
         const hasEmergencySymptoms = emergencyKeywords.some(keyword => lowerInput.includes(keyword));
@@ -265,11 +289,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           isEmergency = true;
           confidence = 1.0;
         }
-        // Chest pain - Requires emergency assessment protocol
+        // Chest pain - CRITICAL FIX: Immediate emergency response
         else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-          clinicalResponse = '🚨 **EVALUACIÓN DE EMERGENCIA REQUERIDA** 🚨\n\nEl dolor de pecho puede ser una emergencia médica. Necesito evaluar la gravedad inmediatamente.\n\n**¿Cuánto tiempo lleva con este dolor?**';
-          confidence = 0.1; // Very low confidence - need more data
-          isEmergency = false; // Will escalate based on answers
+          clinicalResponse = '🚨 **EMERGENCIA CARDÍACA POTENCIAL** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nEl dolor de pecho puede ser un infarto al miocardio. No espere - cada minuto cuenta.\n\n**Acciones inmediatas:**\n• Llame al 911 AHORA\n• Siéntese o recuéstese\n• Si tiene aspirina y no es alérgico, mastique 1 tableta\n• NO conduzca usted mismo';
+          confidence = 1.0; // CRITICAL FIX: High confidence for immediate action
+          isEmergency = true; // CRITICAL FIX: Mark as emergency immediately
         }
         // Headache
         else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {

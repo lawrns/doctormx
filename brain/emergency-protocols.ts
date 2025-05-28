@@ -1,23 +1,23 @@
 /**
  * EMERGENCY PROTOCOLS CORE
- * 
+ *
  * This file contains all emergency detection, triage, and escalation protocols
  * for the AI doctor system. It implements life-saving safety measures and
  * immediate response algorithms for critical medical situations.
- * 
+ *
  * MEDICAL INTELLIGENCE:
  * - Comprehensive emergency keyword detection system
  * - Multi-level triage protocols with escalation triggers
  * - Chest pain emergency assessment algorithms
  * - Critical symptom combination detection
  * - Immediate 911 escalation protocols
- * 
+ *
  * INTEGRATION:
  * - Primary safety layer for all clinical conversations
  * - Overrides normal diagnostic flow for emergencies
  * - Integrates with clinical logic for severity assessment
  * - Connects to Mexican emergency services context
- * 
+ *
  * KEY ALGORITHMS:
  * - Pattern matching for emergency symptom descriptions
  * - Progressive chest pain assessment with automatic escalation
@@ -46,28 +46,45 @@ export interface ChestPainProtocol {
  * Comprehensive pattern matching for life-threatening symptoms
  */
 export class EmergencyDetection {
-  
+
   // IMMEDIATE 911 KEYWORDS - Life-threatening symptoms
   private static readonly IMMEDIATE_EMERGENCY_KEYWORDS = [
     // Respiratory emergencies
     'no puedo respirar', 'dificultad para respirar', 'me ahogo',
     'no me llega el aire', 'me falta el aire completamente',
-    
+    'respiración muy rápida', 'jadeo', 'silbido al respirar',
+
     // Cardiac emergencies
     'dolor de pecho intenso', 'dolor muy fuerte en el pecho',
     'dolor como elefante', 'como si me aplastaran el pecho',
     'dolor insoportable en el pecho', 'presión fuerte en el pecho',
-    
-    // Neurological emergencies
+    'opresión torácica', 'latidos muy fuertes', 'dolor que se extiende',
+    'dolor al brazo izquierdo', 'dolor a la mandíbula', 'sudoración profusa',
+
+    // Neurological emergencies - STROKE FAST signs
     'perdí el conocimiento', 'me desmayé', 'convulsiones',
     'no siento el brazo', 'no puedo mover el brazo',
     'visión borrosa súbita', 'no puedo hablar bien',
     'mareo intenso con vómito', 'dolor de cabeza explosivo',
-    
+    'cara desviada', 'hablo raro', 'no puedo sonreír',
+    'hormigueo', 'entumecimiento', 'debilidad súbita',
+    'confusión súbita', 'pérdida de equilibrio',
+
+    // Anaphylaxis - CRITICAL ADDITION
+    'hinchado', 'ronchas', 'comezón en garganta',
+    'lengua hinchada', 'labios hinchados', 'urticaria generalizada',
+    'dificultad para tragar', 'sensación de muerte inminente',
+
     // Bleeding emergencies
     'sangrado abundante', 'hemorragia', 'vómito con sangre',
     'sangre en el vómito', 'sangrado que no para',
-    
+    'heces negras', 'sangre en las heces',
+
+    // Pediatric red flags - CRITICAL ADDITION
+    'no moja pañal', 'fontanela hundida', 'llanto inconsolable',
+    'fiebre en bebé menor de 3 meses', 'convulsiones en niño',
+    'dificultad para despertar', 'rigidez de cuello en niño',
+
     // Severe pain descriptors
     'dolor insoportable', 'peor dolor de mi vida',
     'dolor que me hace gritar', 'dolor nivel 10'
@@ -82,14 +99,35 @@ export class EmergencyDetection {
     'dolor abdominal severo', 'dolor que empeora rápidamente'
   ];
 
-  static assessEmergencyLevel(input: string): EmergencyAssessment {
+  static assessEmergencyLevel(input: string, context?: { age?: number; isPregnant?: boolean }): EmergencyAssessment {
     const lowerInput = input.toLowerCase();
-    
+
+    // CRITICAL: Pregnancy & Pediatric Emergency Guardrails
+    if (context?.isPregnant && (lowerInput.includes('dolor abdominal') || lowerInput.includes('sangrado'))) {
+      return {
+        isEmergency: true,
+        severity: 'IMMEDIATE',
+        action: 'CALL_911',
+        message: '🚨 EMERGENCIA OBSTÉTRICA 🚨\n\nDolor abdominal o sangrado en embarazo requiere atención inmediata.\n\n**LLAME AL 911 AHORA**',
+        escalationTriggers: ['pregnancy_abdominal_pain_bleeding']
+      };
+    }
+
+    if (context?.age && context.age < 0.25 && lowerInput.includes('fiebre')) { // < 3 months
+      return {
+        isEmergency: true,
+        severity: 'IMMEDIATE',
+        action: 'CALL_911',
+        message: '🚨 EMERGENCIA PEDIÁTRICA 🚨\n\nFiebre en bebé menor de 3 meses es emergencia médica.\n\n**LLAME AL 911 AHORA**',
+        escalationTriggers: ['infant_fever_under_3_months']
+      };
+    }
+
     // Check for immediate emergencies first
-    const immediateMatch = this.IMMEDIATE_EMERGENCY_KEYWORDS.find(keyword => 
+    const immediateMatch = this.IMMEDIATE_EMERGENCY_KEYWORDS.find(keyword =>
       lowerInput.includes(keyword)
     );
-    
+
     if (immediateMatch) {
       return {
         isEmergency: true,
@@ -101,10 +139,10 @@ export class EmergencyDetection {
     }
 
     // Check for urgent situations
-    const urgentMatch = this.URGENT_KEYWORDS.find(keyword => 
+    const urgentMatch = this.URGENT_KEYWORDS.find(keyword =>
       lowerInput.includes(keyword)
     );
-    
+
     if (urgentMatch) {
       return {
         isEmergency: true,
@@ -169,10 +207,10 @@ Sus síntomas requieren evaluación médica inmediata en un servicio de urgencia
  * Specialized assessment for cardiac emergencies
  */
 export class ChestPainProtocol {
-  
+
   static assessChestPain(timeframe: string, intensity: number, symptoms: string[]): EmergencyAssessment {
     const riskFactors = this.calculateRiskFactors(timeframe, intensity, symptoms);
-    
+
     if (riskFactors.riskLevel === 'HIGH') {
       return {
         isEmergency: true,
@@ -182,7 +220,7 @@ export class ChestPainProtocol {
         escalationTriggers: riskFactors.triggers
       };
     }
-    
+
     if (riskFactors.riskLevel === 'MODERATE') {
       return {
         isEmergency: true,
@@ -192,7 +230,7 @@ export class ChestPainProtocol {
         escalationTriggers: riskFactors.triggers
       };
     }
-    
+
     return {
       isEmergency: false,
       severity: 'ROUTINE',
@@ -278,7 +316,7 @@ Su dolor de pecho requiere evaluación médica inmediata para descartar problema
  * Localized emergency response information
  */
 export class MexicanEmergencyServices {
-  
+
   static readonly EMERGENCY_NUMBERS = {
     general: '911',
     redCross: '065',
@@ -317,14 +355,14 @@ export class MexicanEmergencyServices {
  * Manages when to escalate from assessment to emergency action
  */
 export class EscalationManager {
-  
+
   static shouldEscalateToEmergency(
-    symptoms: string[], 
-    duration: string, 
+    symptoms: string[],
+    duration: string,
     severity: number,
     associatedSymptoms: string[]
   ): boolean {
-    
+
     // Immediate escalation triggers
     const immediateEscalation = [
       severity >= 8,
@@ -338,14 +376,14 @@ export class EscalationManager {
   }
 
   static getEscalationReason(
-    symptoms: string[], 
+    symptoms: string[],
     severity: number,
     associatedSymptoms: string[]
   ): string {
     if (severity >= 8) return 'Severe pain intensity requires immediate attention';
     if (associatedSymptoms.includes('breathing_difficulty')) return 'Breathing difficulty is a medical emergency';
     if (associatedSymptoms.includes('chest_pain')) return 'Chest pain requires emergency cardiac evaluation';
-    
+
     return 'Multiple risk factors present requiring immediate medical attention';
   }
 }

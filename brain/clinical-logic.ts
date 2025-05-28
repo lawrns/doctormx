@@ -1,23 +1,23 @@
 /**
  * CLINICAL LOGIC CORE
- * 
+ *
  * This file contains the main clinical reasoning algorithms and diagnostic logic
  * for the AI doctor system. It implements medical decision trees, symptom analysis,
  * and clinical assessment protocols.
- * 
+ *
  * MEDICAL INTELLIGENCE:
  * - Emergency triage protocols with immediate escalation triggers
  * - Symptom-based diagnostic pathways for common conditions
  * - Confidence scoring system for medical assessments
  * - Progressive questioning algorithms for thorough evaluation
  * - Safety-first approach with conservative diagnostic thresholds
- * 
+ *
  * INTEGRATION:
  * - Used by AIDoctor component for all clinical conversations
  * - Interfaces with emergency protocols for safety escalation
  * - Connects to Mexican medical context for culturally appropriate care
  * - Feeds into conversation flow management for question progression
- * 
+ *
  * KEY ALGORITHMS:
  * - Emergency detection with keyword matching and severity assessment
  * - Multi-step diagnostic evaluation requiring 5-7 questions minimum
@@ -82,7 +82,7 @@ export class DiagnosticEngine {
    */
   analyzeSymptom(input: string): ClinicalAssessment {
     const lowerInput = input.toLowerCase();
-    
+
     // Emergency check first
     if (EmergencyTriageSystem.assessEmergency(input)) {
       return {
@@ -135,13 +135,18 @@ export class DiagnosticEngine {
   }
 
   private handleChestPain(): ClinicalAssessment {
+    // CRITICAL FIX: Immediate emergency response for chest pain
     return {
-      confidence: 0.1,
-      isEmergency: false,
-      severity: 8,
-      recommendations: ['Emergency assessment required'],
-      nextQuestions: ['¿Cuánto tiempo lleva con este dolor?'],
-      diagnosis: 'Chest pain - requires emergency evaluation'
+      confidence: 1.0, // High confidence for emergency action
+      isEmergency: true, // CRITICAL: Mark as emergency immediately
+      severity: 10,
+      recommendations: [
+        '🚨 EMERGENCIA CARDÍACA POTENCIAL 🚨',
+        'LLAME AL 911 INMEDIATAMENTE',
+        'El dolor de pecho puede ser un infarto - no espere'
+      ],
+      nextQuestions: [], // No questions - immediate action required
+      diagnosis: 'Chest pain - EMERGENCY: Call 911 immediately'
     };
   }
 
@@ -198,7 +203,7 @@ export class DiagnosticEngine {
    */
   processFollowUp(response: string, context: string): ClinicalAssessment {
     this.questionCount++;
-    
+
     // Minimum 5 questions required before diagnosis
     if (this.questionCount < 5) {
       return this.continueAssessment(response, context);
@@ -211,7 +216,7 @@ export class DiagnosticEngine {
   private continueAssessment(response: string, context: string): ClinicalAssessment {
     // Progressive confidence building
     this.confidence = Math.min(0.7, this.confidence + 0.1);
-    
+
     return {
       confidence: this.confidence,
       isEmergency: false,
@@ -223,7 +228,7 @@ export class DiagnosticEngine {
 
   private generateDiagnosis(response: string, context: string): ClinicalAssessment {
     this.confidence = 0.8; // High enough for preliminary diagnosis
-    
+
     return {
       confidence: this.confidence,
       isEmergency: false,
@@ -242,10 +247,13 @@ export class DiagnosticEngine {
 export class ConfidenceManager {
   private static readonly MIN_QUESTIONS_FOR_DIAGNOSIS = 5;
   private static readonly DIAGNOSIS_THRESHOLD = 0.8;
-  private static readonly EMERGENCY_THRESHOLD = 0.9;
+  private static readonly EMERGENCY_THRESHOLD = 0.85; // CRITICAL FIX: Lower from 0.9 to 0.85
 
-  static canProvideDiagnosis(questionCount: number, confidence: number): boolean {
-    return questionCount >= this.MIN_QUESTIONS_FOR_DIAGNOSIS && 
+  static canProvideDiagnosis(questionCount: number, confidence: number, isEmergency: boolean = false): boolean {
+    // CRITICAL FIX: Bypass question minimum for emergencies
+    if (isEmergency) return true;
+
+    return questionCount >= this.MIN_QUESTIONS_FOR_DIAGNOSIS &&
            confidence >= this.DIAGNOSIS_THRESHOLD;
   }
 
@@ -255,6 +263,6 @@ export class ConfidenceManager {
 
   static calculateProgressiveConfidence(questionCount: number, baseConfidence: number): number {
     const progressBonus = Math.min(0.3, questionCount * 0.05);
-    return Math.min(0.9, baseConfidence + progressBonus);
+    return Math.min(1.0, baseConfidence + progressBonus); // CRITICAL FIX: Raise ceiling to 1.0
   }
 }

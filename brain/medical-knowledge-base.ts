@@ -1,22 +1,22 @@
 /**
  * MEDICAL KNOWLEDGE BASE
- * 
+ *
  * This file contains the core medical knowledge, condition databases, symptom mappings,
  * treatment recommendations, and clinical guidelines for the AI doctor system.
- * 
+ *
  * MEDICAL INTELLIGENCE:
  * - Comprehensive symptom-to-condition mapping database
  * - Evidence-based treatment recommendations and clinical guidelines
  * - Differential diagnosis algorithms for common conditions
  * - Medication recommendations with safety considerations
  * - Specialist referral criteria and timing guidelines
- * 
+ *
  * INTEGRATION:
  * - Provides medical knowledge for diagnostic engine
  * - Supports clinical reasoning with evidence-based data
  * - Integrates with Mexican medical practices and terminology
  * - Feeds treatment recommendations to conversation flow
- * 
+ *
  * KEY ALGORITHMS:
  * - Symptom clustering for differential diagnosis
  * - Severity-based treatment escalation protocols
@@ -57,9 +57,9 @@ export interface SymptomMapping {
  * Comprehensive medical conditions with symptoms and treatments
  */
 export class ConditionDatabase {
-  
+
   static readonly CONDITIONS: Record<string, MedicalCondition> = {
-    
+
     // HEADACHE CONDITIONS
     migraine: {
       name: 'Migraine',
@@ -185,24 +185,121 @@ export class ConditionDatabase {
         'symptoms worsen after improvement', 'persistent fever >3 days'
       ],
       differentialDiagnosis: ['strep throat', 'sinusitis', 'allergic rhinitis']
+    },
+
+    // MEXICAN ENDEMIC DISEASES - HIGH PRIORITY ADDITION
+    dengue: {
+      name: 'Dengue Fever',
+      spanishName: 'Dengue',
+      symptoms: [
+        'high fever', 'severe headache', 'eye pain', 'muscle aches',
+        'joint pain', 'rash', 'nausea', 'vomiting'
+      ],
+      severity: 'severe',
+      commonCauses: ['Aedes aegypti mosquito bite', 'viral infection'],
+      treatments: [
+        {
+          type: 'medication',
+          description: 'Supportive care, paracetamol (NO aspirin)',
+          spanishDescription: 'Cuidados de apoyo, paracetamol (NO aspirina)',
+          urgency: 'urgent',
+          contraindications: ['aspirin', 'NSAIDs']
+        },
+        {
+          type: 'lifestyle',
+          description: 'Rest, fluids, monitor for warning signs',
+          spanishDescription: 'Reposo, líquidos, vigilar signos de alarma',
+          urgency: 'urgent'
+        }
+      ],
+      specialistReferral: 'Infectólogo',
+      redFlags: [
+        'severe abdominal pain', 'persistent vomiting', 'bleeding',
+        'difficulty breathing', 'plasma leakage signs'
+      ],
+      differentialDiagnosis: ['chikungunya', 'zika', 'malaria', 'typhoid']
+    },
+
+    chikungunya: {
+      name: 'Chikungunya',
+      spanishName: 'Chikungunya',
+      symptoms: [
+        'sudden onset fever', 'severe joint pain', 'muscle pain',
+        'headache', 'nausea', 'fatigue', 'rash'
+      ],
+      severity: 'moderate',
+      commonCauses: ['Aedes aegypti mosquito bite', 'viral infection'],
+      treatments: [
+        {
+          type: 'medication',
+          description: 'Pain relievers, anti-inflammatory drugs',
+          spanishDescription: 'Analgésicos, antiinflamatorios',
+          urgency: 'routine'
+        }
+      ],
+      redFlags: ['severe joint pain lasting months', 'neurological symptoms'],
+      differentialDiagnosis: ['dengue', 'zika', 'rheumatoid arthritis']
+    },
+
+    zika: {
+      name: 'Zika Virus',
+      spanishName: 'Virus Zika',
+      symptoms: [
+        'mild fever', 'rash', 'joint pain', 'conjunctivitis',
+        'muscle pain', 'headache'
+      ],
+      severity: 'mild',
+      commonCauses: ['Aedes aegypti mosquito bite', 'sexual transmission'],
+      treatments: [
+        {
+          type: 'medication',
+          description: 'Symptomatic treatment, paracetamol',
+          spanishDescription: 'Tratamiento sintomático, paracetamol',
+          urgency: 'routine'
+        }
+      ],
+      redFlags: ['pregnancy (microcephaly risk)', 'neurological complications'],
+      differentialDiagnosis: ['dengue', 'chikungunya']
+    },
+
+    chagas: {
+      name: 'Chagas Disease',
+      spanishName: 'Enfermedad de Chagas',
+      symptoms: [
+        'fever', 'fatigue', 'body aches', 'headache',
+        'rash', 'loss of appetite', 'swollen eyelid'
+      ],
+      severity: 'severe',
+      commonCauses: ['Triatomine bug bite', 'blood transfusion', 'organ transplant'],
+      treatments: [
+        {
+          type: 'medication',
+          description: 'Antiparasitic drugs (benznidazole, nifurtimox)',
+          spanishDescription: 'Medicamentos antiparasitarios (benznidazol, nifurtimox)',
+          urgency: 'urgent'
+        }
+      ],
+      specialistReferral: 'Infectólogo',
+      redFlags: ['heart problems', 'digestive complications'],
+      differentialDiagnosis: ['malaria', 'typhoid', 'viral syndrome']
     }
   };
 
   static getConditionBySymptoms(symptoms: string[]): MedicalCondition[] {
     const matches: MedicalCondition[] = [];
-    
+
     Object.values(this.CONDITIONS).forEach(condition => {
-      const matchCount = symptoms.filter(symptom => 
-        condition.symptoms.some(condSymptom => 
+      const matchCount = symptoms.filter(symptom =>
+        condition.symptoms.some(condSymptom =>
           condSymptom.toLowerCase().includes(symptom.toLowerCase())
         )
       ).length;
-      
+
       if (matchCount >= 2) { // Require at least 2 matching symptoms
         matches.push(condition);
       }
     });
-    
+
     return matches.sort((a, b) => {
       // Sort by severity (emergency first, then severe, etc.)
       const severityOrder = { emergency: 4, severe: 3, moderate: 2, mild: 1 };
@@ -216,9 +313,9 @@ export class ConditionDatabase {
  * Maps Spanish symptoms to medical conditions
  */
 export class SymptomMapper {
-  
+
   static readonly SYMPTOM_MAPPINGS: Record<string, SymptomMapping> = {
-    
+
     headache: {
       symptom: 'headache',
       spanishTerms: [
@@ -280,31 +377,65 @@ export class SymptomMapper {
       symptom: 'fever',
       spanishTerms: [
         'fiebre', 'calentura', 'temperatura alta',
-        'tengo temperatura', 'me siento caliente'
+        'tengo temperatura', 'me siento caliente',
+        // ENHANCED: Add more Mexican variants
+        'destemplanza', 'escalofríos', 'sudoración',
+        'me arde la frente', 'tengo calor'
       ],
-      associatedConditions: ['infection', 'flu', 'pneumonia'],
+      associatedConditions: [
+        'infection', 'flu', 'pneumonia',
+        // HIGH PRIORITY: Add endemic diseases
+        'dengue', 'chikungunya', 'zika', 'chagas'
+      ],
       emergencyFlags: [
         'very high fever >39°C', 'with severe headache',
-        'with difficulty breathing', 'with rash', 'with confusion'
+        'with difficulty breathing', 'with rash', 'with confusion',
+        // CRITICAL: Add pediatric and endemic flags
+        'fever in infant <3 months', 'fever with joint pain and rash',
+        'fever with severe eye pain', 'fever with bleeding'
       ],
       commonQuestions: [
         '¿Qué temperatura tiene?',
         '¿Desde cuándo tiene fiebre?',
         '¿Tiene otros síntomas?',
-        '¿Ha tomado algún medicamento?'
+        '¿Ha tomado algún medicamento?',
+        // ENHANCED: Add endemic disease screening
+        '¿Ha tenido picaduras de mosquito recientemente?',
+        '¿Tiene dolor en las articulaciones?'
+      ]
+    },
+
+    // HIGH PRIORITY: Add vector-borne disease symptoms
+    vectorBorneSymptoms: {
+      symptom: 'vector-borne disease symptoms',
+      spanishTerms: [
+        'picadura de mosquito', 'sarpullido', 'dolor articular',
+        'dolor en los ojos', 'dolor muscular intenso',
+        'sangrado de encías', 'moretones'
+      ],
+      associatedConditions: ['dengue', 'chikungunya', 'zika', 'chagas'],
+      emergencyFlags: [
+        'bleeding', 'severe abdominal pain', 'persistent vomiting',
+        'difficulty breathing', 'plasma leakage'
+      ],
+      commonQuestions: [
+        '¿Cuándo comenzaron los síntomas?',
+        '¿Ha viajado recientemente?',
+        '¿Ha tenido picaduras de mosquito?',
+        '¿Tiene sangrado en alguna parte?'
       ]
     }
   };
 
   static findSymptomMapping(input: string): SymptomMapping | null {
     const lowerInput = input.toLowerCase();
-    
+
     for (const mapping of Object.values(this.SYMPTOM_MAPPINGS)) {
       if (mapping.spanishTerms.some(term => lowerInput.includes(term))) {
         return mapping;
       }
     }
-    
+
     return null;
   }
 
@@ -319,10 +450,10 @@ export class SymptomMapper {
  * Provides evidence-based treatment suggestions
  */
 export class TreatmentEngine {
-  
+
   static getRecommendations(
-    condition: string, 
-    severity: string, 
+    condition: string,
+    severity: string,
     patientAge?: number
   ): Treatment[] {
     const medicalCondition = ConditionDatabase.CONDITIONS[condition];
@@ -337,7 +468,7 @@ export class TreatmentEngine {
 
     // Age-specific considerations
     if (patientAge && patientAge < 18) {
-      treatments = treatments.filter(t => 
+      treatments = treatments.filter(t =>
         !t.contraindications?.includes('pediatric')
       );
     }
@@ -346,15 +477,15 @@ export class TreatmentEngine {
   }
 
   static requiresSpecialistReferral(
-    condition: string, 
+    condition: string,
     severity: string,
     duration: string
   ): boolean {
     const medicalCondition = ConditionDatabase.CONDITIONS[condition];
-    
+
     return !!(
       medicalCondition?.specialistReferral && (
-        severity === 'severe' || 
+        severity === 'severe' ||
         duration === 'chronic' ||
         severity === 'emergency'
       )
@@ -367,7 +498,7 @@ export class TreatmentEngine {
  * Localized medical terms and cultural context
  */
 export class MexicanMedicalTerms {
-  
+
   static readonly COMMON_TERMS = {
     // Pain descriptors
     'dolor': 'pain',
@@ -375,14 +506,14 @@ export class MexicanMedicalTerms {
     'ardor': 'burning',
     'punzada': 'stabbing pain',
     'latido': 'throbbing',
-    
+
     // Body parts
     'pecho': 'chest',
     'estómago': 'stomach',
     'barriga': 'belly',
     'cabeza': 'head',
     'garganta': 'throat',
-    
+
     // Symptoms
     'calentura': 'fever',
     'mareo': 'dizziness',
