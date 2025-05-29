@@ -28,8 +28,8 @@ function AILayout() {
       {/* Main content area - full width without sidebar */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Main content with improved density */}
-        <main className="flex-1 overflow-auto bg-white">
-          <div className="min-h-full">
+        <main className="flex-1 bg-white">
+          <div className="h-full">
             <Outlet />
           </div>
         </main>
