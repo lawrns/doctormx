@@ -10,7 +10,7 @@ import AIHomePage from './pages/AIHomePage';
 import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
 import AnalysisPage from './features/ai-analysis/AnalysisPage';
 import ImageAnalysisPage from './features/ai-image-analysis/ImageAnalysisPage';
-// const LabTestingPage = React.lazy(() => import('./features/lab-testing/LabTestingPage'));
+import LabTestingPage from './pages/LabTestingPageSimple';
 import DoctorConnectPage from './pages/DoctorConnectPage';
 
 // Auth pages
@@ -48,6 +48,7 @@ function App() {
           <Route index element={<AIHomePage />} />
           <Route path="doctor" element={<AIDoctorPage />} />
           <Route path="image-analysis" element={<ImageAnalysisPage />} />
+          <Route path="lab-testing" element={<LabTestingPage />} />
           <Route path="connect" element={<DoctorConnectPage />} />
         </Route>
 
