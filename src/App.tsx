@@ -7,7 +7,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 // Import directly instead of lazy loading to test
 import AIHomePage from './pages/AIHomePage';
-import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
+import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPageSimple';
 import AnalysisPage from './features/ai-analysis/AnalysisPage';
 import ImageAnalysisPage from './features/ai-image-analysis/ImageAnalysisPage';
 import LabTestingPage from './pages/LabTestingPageSimple';
