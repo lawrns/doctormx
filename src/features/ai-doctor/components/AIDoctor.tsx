@@ -27,11 +27,6 @@ import ConfidenceVisualizer from './ConfidenceVisualizer';
 import AIDoctorMobile from './AIDoctorMobile';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 import { unifiedConversationService } from '../services/UnifiedConversationService';
-import { BrainIntegrationService, PatientContext } from '../services/BrainIntegrationService';
-import { useConversation } from '../../../contexts/ConversationContext';
-import { anonymousConsultationTracker } from '../../../services/AnonymousConsultationTracker';
-import ConversionPrompt from '../../../components/ConversionPrompt';
-import { useAuth } from '../../../contexts/AuthContext';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -83,11 +78,6 @@ interface AIDoctorProps {
 
 function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const { state: conversationState, addMessage, updateMessage, setConversationStarted, setFamilyMember, setLocation } = useConversation();
-  const { isAuthenticated } = useAuth();
-  const [showConversionPrompt, setShowConversionPrompt] = useState(false);
-  const [consultationLimit, setConsultationLimit] = useState(anonymousConsultationTracker.getUsageData());
-
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [inputHeight, setInputHeight] = useState('auto');
@@ -98,22 +88,25 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const [currentAnalysisImage, setCurrentAnalysisImage] = useState<string | null>(null);
   const [confidenceStatus, setConfidenceStatus] = useState<'considering' | 'confident' | 'uncertain'>('considering');
   const [confidenceLevel, setConfidenceLevel] = useState(0);
-
+  
   // Enhanced AI thinking states
   const [isThinking, setIsThinking] = useState(false);
   const [thinkingStages, setThinkingStages] = useState<string[]>([]);
   const [currentThinkingStage, setCurrentThinkingStage] = useState(0);
   const [thinkingComplexity, setThinkingComplexity] = useState<'simple' | 'medium' | 'complex'>('simple');
-
+  
+  // Session management
+  const [sessionId] = useState(`session_${Date.now()}`);
+  
   const medicalReferences = [
-    'Base de datos médica', 'Estudios clínicos', 'Literatura médica',
+    'Base de datos médica', 'Estudios clínicos', 'Literatura médica', 
     'Atlas de dermatología', 'Investigaciones recientes'
   ];
-
-  // Use conversation context state
-  const { messages, sessionId, familyMember, conversationStarted, location } = conversationState;
+  
+  // Mexican family context and quick symptoms
+  const [familyMember, setFamilyMember] = useState<string>('myself');
   const [showFamilySetup, setShowFamilySetup] = useState(false);
-
+  
   const MEXICAN_FAMILY_OPTIONS = [
     { value: 'myself', label: 'Para mí' },
     { value: 'spouse', label: 'Para mi esposo/a' },
@@ -121,7 +114,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     { value: 'parent', label: 'Para mis padres' },
     { value: 'family', label: 'Para otro familiar' }
   ];
-
+  
   const MEXICAN_QUICK_SYMPTOMS = [
     { text: 'Tengo diabetes y necesito orientación', icon: '🩺' },
     { text: 'Dolor de cabeza fuerte', icon: '🤕' },
@@ -130,7 +123,24 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     { text: 'Dolor de estómago', icon: '😷' },
     { text: 'Problemas respiratorios', icon: '🤧' }
   ];
-
+  
+  // Initialize with enhanced Mexican greeting
+  const [messages, setMessages] = useState<Message[]>([
+    { 
+      id: '1', 
+      text: '¡Hola! Soy Dr. Simeon, tu médico mexicano inteligente. ¿Para quién es la consulta de hoy? Estoy aquí para ayudarte con cualquier problema de salud de tu familia.',
+      sender: 'bot',
+      timestamp: new Date(),
+      personalityApplied: true,
+      interactiveOptions: {
+        type: 'symptom_category',
+        options: ['Para mí', 'Para mi familia', 'Emergencia', 'Consulta general'],
+        questionId: 'initial'
+      }
+    }
+  ]);
+  
+  const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
   const [appointments, setAppointments] = useState<any[]>([]);
@@ -144,17 +154,17 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     question: string;
     answer: string;
   }>>([]);
-
+  
   const messageVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } }
   };
-
+  
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const initialMessageSentRef = useRef(false);
   const shouldScrollRef = useRef(false);
-
+  
   // Mobile version will be conditionally rendered in the JSX
 
   useEffect(() => {
@@ -183,180 +193,116 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   const handleSendMessage = useCallback(async () => {
     if (!input.trim() && !isUploading) return;
-
+    
     shouldScrollRef.current = true; // Enable scrolling for user interactions
-
+    
     const userMessageId = Date.now().toString();
-    const newUserMessage = {
+    const newUserMessage: Message = { 
       id: userMessageId,
       text: input,
-      sender: 'user' as const,
+      sender: 'user',
       timestamp: new Date()
     };
-
-    // Use addMessage from context
-    addMessage({
-      text: input,
-      sender: 'user'
-    });
-
+    
+    setMessages(prev => [...prev, newUserMessage]);
     const userInput = input;
     setInput('');
     setIsProcessing(true);
     setIsThinking(true);
 
-    // Mark conversation as started after first user message
-    if (!conversationStarted) {
-      setConversationStarted(true);
-
-      // Track consultation for anonymous users
-      if (!isAuthenticated) {
-        const canStart = anonymousConsultationTracker.canStartConsultation();
-        if (!canStart) {
-          // Show hard conversion prompt
-          setShowConversionPrompt(true);
-          setIsProcessing(false);
-          setIsThinking(false);
-          return;
-        }
-
-        // Track the consultation
-        anonymousConsultationTracker.trackConsultation(sessionId);
-        setConsultationLimit(anonymousConsultationTracker.getUsageData());
-
-        // Check if we should show a conversion prompt
-        const prompt = anonymousConsultationTracker.getConversionPrompt();
-        if (prompt?.show && prompt.type !== 'hard') {
-          // Show prompt after a delay so user sees the response first
-          setTimeout(() => {
-            setShowConversionPrompt(true);
-          }, 3000);
-        }
-      }
-    }
-
-    // Create a bot message placeholder
+    // Create a bot message placeholder with enhanced streaming indicators
     const botMessageId = (Date.now() + 1).toString();
+    const initialBotMessage: Message = {
+      id: botMessageId,
+      text: '',
+      sender: 'bot',
+      timestamp: new Date(),
+      isStreaming: true,
+      isComplete: false
+    };
+    
+    setMessages(prev => [...prev, initialBotMessage]);
 
     try {
-      // SIMPLIFIED CLINICAL MODE - Same as mobile version that works
-      console.log('🩺 Desktop AIDoctor - Using simplified clinical mode for:', userInput);
-
-      let clinicalResponse = '';
-      let confidence = 0.3;
-      let isEmergency = false;
-
-      const lowerInput = userInput.toLowerCase();
-
-      // Emergency detection
-      if (lowerInput.includes('no puedo respirar') ||
-          lowerInput.includes('dolor de pecho intenso') ||
-          lowerInput.includes('perdí el conocimiento')) {
-        clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
-        isEmergency = true;
-        confidence = 1.0;
-      }
-      // Chest pain - EMERGENCY
-      else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-        clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
-        confidence = 0.9;
-        isEmergency = true;
-      }
-      // Headache
-      else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-        clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
-        confidence = 0.4;
-      }
-      // Abdominal pain
-      else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
-        clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
-        confidence = 0.4;
-      }
-      // Fever
-      else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
-        clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
-        confidence = 0.4;
-      }
-      // Generic symptom
-      else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
-        clinicalResponse = `Entiendo que tiene ${userInput.toLowerCase()}. ¿Desde cuándo tiene este síntoma y cómo describiría la intensidad del 1 al 10?`;
-        confidence = 0.3;
-      }
-      // Follow-up responses
-      else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
-        confidence = 0.7;
-        clinicalResponse = 'Basado en sus síntomas, tengo una impresión diagnóstica. ¿Tiene algún otro síntoma que deba conocer?';
-      }
-      else if (lowerInput.includes('no')) {
-        confidence = 0.6;
-        clinicalResponse = 'Entiendo. ¿Ha tomado algún medicamento para aliviar los síntomas?';
-      }
-      // Default clinical response
-      else {
-        clinicalResponse = 'Por favor, descríbame específicamente qué síntoma o molestia lo trae hoy. Sea lo más específico posible.';
-        confidence = 0.1;
-      }
-
-      console.log('🩺 Desktop clinical response generated:', clinicalResponse);
-
-      // Generate answer options
-      let answerOptions: Array<{ text: string; value: string }> = [];
-      if (!isEmergency) {
-        if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-          answerOptions = [
-            { text: 'Banda apretada', value: 'tension_headache' },
-            { text: 'Pulsátil/latidos', value: 'migraine_headache' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        } else {
-          answerOptions = [
-            { text: 'Sí', value: 'yes' },
-            { text: 'No', value: 'no' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-      }
-
+      // Use unified conversation service for better context tracking
+      const unifiedResponse = await unifiedConversationService.processMessage(
+        sessionId,
+        userInput
+      );
+      
+      // Check if this needs thinking animation
+      const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
+      const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
+      
+      // Update message with unified response
       setIsThinking(false);
-      addMessage({
-        text: clinicalResponse,
-        sender: 'bot',
-        answerOptions: answerOptions,
-        severity: confidence * 10,
-        isEmergency: isEmergency,
-        isStreaming: false,
-        isComplete: true
-      });
-
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                ...msg,
+                text: unifiedResponse.text,
+                answerOptions: unifiedResponse.answerOptions,
+                severity: unifiedResponse.severity,
+                isEmergency: unifiedResponse.isEmergency,
+                suggestedSpecialty: unifiedResponse.suggestedSpecialty,
+                suggestedConditions: unifiedResponse.suggestedConditions,
+                suggestedMedications: unifiedResponse.suggestedMedications,
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
+      
+      // Update severity if provided
+      if (unifiedResponse.severity) {
+        setSeverityLevel(unifiedResponse.severity);
+      }
+      
+      // Handle any follow-up actions
+      if (unifiedResponse.suggestedSpecialty && location) {
+        setTimeout(() => {
+          findProviders(unifiedResponse.suggestedSpecialty!);
+        }, 1000);
+      }
+      
+      if (unifiedResponse.suggestedMedications && unifiedResponse.suggestedMedications.length > 0) {
+        setTimeout(() => {
+          showGenericPharmacies(unifiedResponse.suggestedMedications!);
+        }, 2000);
+      }
+      
       setIsProcessing(false);
-
-      // Auto-scroll to latest message
-      setTimeout(() => {
-        const chatContainer = document.querySelector('.chat-messages-container');
-        if (chatContainer) {
-          chatContainer.scrollTop = chatContainer.scrollHeight;
-        }
-      }, 100);
-
+      return;
+      
     } catch (error) {
       console.error('Error processing message:', error);
-
-      addMessage({
-        text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
-        sender: 'bot',
-        isStreaming: false,
-        isComplete: true
-      });
+      
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
+            ? {
+                id: botMessageId,
+                text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
+                sender: 'bot',
+                timestamp: new Date(),
+                isStreaming: false,
+                isComplete: true
+              } 
+            : msg
+        )
+      );
       setIsProcessing(false);
       setIsThinking(false);
     }
-  }, [input, isUploading, conversationState, severityLevel, location, sessionId, familyMember, questionHistory, conversationStarted, isAuthenticated, addMessage, updateMessage, setConversationStarted]);
+  }, [input, isUploading, messages, severityLevel, location, sessionId]);
 
   // Handle initial message from homepage
   useEffect(() => {
     if (initialMessage && initialMessage.trim() && !initialMessageSentRef.current) {
       initialMessageSentRef.current = true;
-
+      
       // Send the initial message after a small delay
       const timer = setTimeout(() => {
         setInput(initialMessage);
@@ -381,74 +327,77 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   //       console.error('Error initializing Mexican medical knowledge:', error);
   //     }
   //   };
-
+    
   //   initializeKnowledge();
   // }, []);
 
   const handleImageUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (!files || files.length === 0) return;
-
+    
     const file = files[0];
-
+    
     if (!file.type.startsWith('image/')) {
       alert('Por favor, sube únicamente archivos de imagen.');
       return;
     }
-
+    
     setIsUploading(true);
-
+    
     try {
       const scrubbedFile = await EncryptionService.scrubImageMetadata(file);
-
+      
       const imageUrl = URL.createObjectURL(scrubbedFile);
       setCurrentAnalysisImage(imageUrl);
-
-      addMessage({
+      
+      const imageMessageId = Date.now().toString();
+      setMessages(prev => [...prev, {
+        id: imageMessageId,
         text: 'He subido una imagen para análisis médico.',
         sender: 'user',
+        timestamp: new Date(),
         containsImage: true,
         imageUrl
-      });
-
+      }]);
+      
       setImageAnalysisStage('initial');
-
+      
       setTimeout(() => {
         setConfidenceStatus('considering');
         setConfidenceLevel(10);
       }, 100);
-
+      
       setTimeout(() => setImageAnalysisStage('scanning'), 500);
-
+      
       setTimeout(() => {
         setConfidenceLevel(35);
       }, 2000);
-
+      
       setTimeout(() => setImageAnalysisStage('identifying'), 3000);
-
+      
       setTimeout(() => {
         setConfidenceLevel(60);
       }, 4000);
-
+      
       setTimeout(() => setImageAnalysisStage('comparing'), 5500);
-
+      
       const response = await enhancedAIService.analyzeImage(imageUrl);
-
+      
       setImageAnalysisStage('concluding');
-
+      
       setTimeout(() => {
         setConfidenceStatus('confident');
         setConfidenceLevel(95);
       }, 6000);
-
+      
       setTimeout(() => {
         setImageAnalysisStage(null);
         setCurrentAnalysisImage(null);
-
+        
         if (response.severity) {
           setSeverityLevel(response.severity);
         }
-
+        
         setMessages(prev => [...prev, {
           id: (Date.now() + 1).toString(),
           text: response.text,
@@ -465,13 +414,13 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           ]
         }]);
       }, 7500);
-
+      
     } catch (error) {
       console.error('Error uploading image:', error);
-
+      
       setImageAnalysisStage(null);
       setCurrentAnalysisImage(null);
-
+      
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         text: 'Lo siento, hubo un error al procesar tu imagen. Por favor, intenta nuevamente.',
@@ -485,22 +434,22 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       }
     }
   };
-
+  
   const handleMicClick = async () => {
     // Check if speech recognition is supported
     if (!SpeechRecognitionService.isSupported()) {
       alert('Tu navegador no soporta reconocimiento de voz. Por favor, usa Chrome, Edge o Safari.');
       return;
     }
-
+    
     const speechService = getSpeechRecognitionService();
-
+    
     if (isRecording) {
       speechService.stop();
       setIsRecording(false);
       return;
     }
-
+    
     try {
       // Set up callbacks
       speechService.onResult((transcript, isFinal) => {
@@ -516,35 +465,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           setInput(transcript);
         }
       });
-
+      
       speechService.onError((error) => {
         console.error('Speech recognition error:', error);
         alert(error);
         setIsRecording(false);
       });
-
+      
       speechService.onStatusChange((listening) => {
         setIsRecording(listening);
       });
-
+      
       // Start listening
       await speechService.start();
       setIsRecording(true);
-
+      
       // Auto-stop after 30 seconds
       setTimeout(() => {
         if (speechService.getIsListening()) {
           speechService.stop();
         }
       }, 30000);
-
+      
     } catch (error) {
       console.error('Error starting speech recognition:', error);
       alert('No se pudo iniciar el reconocimiento de voz. Por favor, verifica los permisos del micrófono.');
       setIsRecording(false);
     }
   };
-
+  
   const findProviders = async (specialty: string) => {
     if (!location) {
       // Default to Mexico City center coordinates if location is not available
@@ -552,7 +501,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         latitude: 19.4326,
         longitude: -99.1332
       };
-
+      
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -577,7 +526,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       fetchProviders(specialty, location);
     }
   };
-
+  
   const fetchProviders = async (specialty: string, loc: { latitude: number; longitude: number }) => {
     try {
       const providers = await enhancedAIService.findNearbyProviders(specialty, loc);
@@ -588,35 +537,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       alert('No se pudieron encontrar proveedores cercanos. Por favor, intenta nuevamente.');
     }
   };
-
+  
   const scheduleAppointment = async (providerId: string) => {
     try {
       const tomorrow = new Date();
       tomorrow.setDate(tomorrow.getDate() + 1);
-
+      
       const appointment = await enhancedAIService.scheduleAppointment(
         providerId,
         tomorrow.toISOString().split('T')[0],
         '10:00',
         'Consulta general'
       );
-
+      
       setAppointments(prev => [...prev, appointment]);
-
+      
       setMessages(prev => [...prev, {
         id: Date.now().toString(),
         text: 'He programado una cita para ti mañana a las 10:00 AM.',
         sender: 'bot',
         timestamp: new Date()
       }]);
-
+      
       setActiveTab('appointments');
     } catch (error) {
       console.error('Error scheduling appointment:', error);
       alert('No se pudo programar la cita. Por favor, intenta nuevamente.');
     }
   };
-
+  
   const findPharmacies = async (medications: string[] = []) => {
     if (!location) {
       const newMessage: Message = {
@@ -631,7 +580,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
       };
       setMessages(prev => [...prev, newMessage]);
-
+      
       const handleLocationPermission = (option: string) => {
         if (option === 'Permitir') {
           navigator.geolocation.getCurrentPosition(
@@ -640,7 +589,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude
               });
-
+              
               const confirmMessage: Message = {
                 id: Date.now().toString(),
                 sender: 'bot',
@@ -648,12 +597,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 timestamp: new Date()
               };
               setMessages(prev => [...prev, confirmMessage]);
-
+              
               setTimeout(() => findPharmacies(medications), 1000);
             },
             (error) => {
               console.error('Geolocation error:', error);
-
+              
               const errorMessage: Message = {
                 id: Date.now().toString(),
                 sender: 'bot',
@@ -661,7 +610,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 timestamp: new Date()
               };
               setMessages(prev => [...prev, errorMessage]);
-
+              
               showGenericPharmacies(medications);
             }
           );
@@ -673,11 +622,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             timestamp: new Date()
           };
           setMessages(prev => [...prev, denyMessage]);
-
+          
           showGenericPharmacies(medications);
         }
       };
-
+      
       const handleNextInteraction = (e: Event) => {
         const target = e.target as HTMLElement;
         if (target.hasAttribute('data-option')) {
@@ -688,18 +637,18 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           }
         }
       };
-
+      
       document.addEventListener('click', handleNextInteraction);
       return;
     }
-
+    
     try {
       const pharmacyList = await enhancedAIService.getPharmacyRecommendations(medications, location);
       setPharmacies(pharmacyList);
       setActiveTab('pharmacies');
     } catch (error) {
       console.error('Error finding pharmacies:', error);
-
+      
       const errorMessage: Message = {
         id: Date.now().toString(),
         sender: 'bot',
@@ -709,7 +658,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       setMessages(prev => [...prev, errorMessage]);
     }
   };
-
+  
   const showGenericPharmacies = (medications: string[] = []) => {
     const sampleProducts = [
       {
@@ -743,7 +692,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         availableAt: ['fda']
       }
     ];
-
+    
     const pharmacyData = {
       'fda': {
         id: 'fda',
@@ -760,29 +709,29 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         logo: 'https://www.farmaciasdesimilares.com/static/media/logo-similares.a7e1b5f3.svg'
       }
     };
-
+    
     setProducts(sampleProducts);
     setPharmacyData(pharmacyData);
-
+    
     const recommendationMessage: Message = {
       id: Date.now().toString(),
       sender: 'bot',
       text: 'He encontrado algunos medicamentos que podrían ayudarte. Puedes verlos en la pestaña de Farmacias.',
       timestamp: new Date()
     };
-
-    addMessage(recommendationMessage);
-
+    
+    setMessages(prev => [...prev, recommendationMessage]);
+    
     setActiveTab('pharmacies');
   };
-
+  
   const getSeverityColor = () => {
     if (severityLevel < 30) return 'bg-brand-jade-500';
     if (severityLevel < 60) return 'bg-yellow-500';
     if (severityLevel < 80) return 'bg-orange-500';
     return 'bg-red-500';
   };
-
+  
   const getSeverityText = () => {
     if (severityLevel < 30) return 'Bajo riesgo';
     if (severityLevel < 60) return 'Atención recomendada';
@@ -792,23 +741,18 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   const handleOptionSelect = (option: string, questionId: string) => {
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = {
+    const newUserMessage: Message = { 
       id: userMessageId,
       text: option,
       sender: 'user',
       timestamp: new Date()
     };
-
+    
     setMessages(prev => [...prev, newUserMessage]);
     setIsProcessing(true);
-
-    // Mark conversation as started
-    if (!conversationStarted) {
-      setConversationStarted(true);
-    }
-
+    
     if (questionId === 'pharmacy_recommendation' && option === 'Ver medicamentos recomendados') {
-      const lastMessageWithMedications = [...messages].reverse().find(m =>
+      const lastMessageWithMedications = [...messages].reverse().find(m => 
         m.suggestedMedications && m.suggestedMedications.length > 0
       );
 
@@ -832,9 +776,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       setIsProcessing(false);
       return;
     }
-
+    
     setQuestionHistory(prev => [...prev, { questionId, question: questionId, answer: option }]);
-
+    
     setTimeout(() => {
       let nextQuestion: Message = {
         id: (Date.now() + 1).toString(),
@@ -842,7 +786,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         sender: 'bot',
         timestamp: new Date()
       };
-
+      
       if (questionId === 'initial') {
         if (option === 'Dolor') {
           nextQuestion.text = '¿Cuánto tiempo has tenido este dolor?';
@@ -868,43 +812,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             questionId: 'digestive_symptoms'
           };
           setCurrentQuestionId('digestive_symptoms');
-        } else if (option === 'Para mí') {
-          nextQuestion.text = 'Perfecto, vamos a hablar de tu salud. ¿Qué síntoma o molestia te trae hoy?';
-          nextQuestion.followUpQuestions = [
-            'Tengo dolor de cabeza',
-            'Tengo fiebre',
-            'Tengo dolor de estómago',
-            'Tengo otro síntoma'
-          ];
-        } else if (option === 'Para mi familia') {
-          nextQuestion.text = 'Entiendo, es para un familiar. ¿Qué síntoma o molestia presenta la persona?';
-          nextQuestion.followUpQuestions = [
-            'Tiene dolor de cabeza',
-            'Tiene fiebre',
-            'Tiene dolor de estómago',
-            'Tiene otro síntoma'
-          ];
-        } else if (option === 'Emergencia') {
-          nextQuestion.text = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nSi es una emergencia real, llame al 911 inmediatamente.\n\n¿Cuál es la situación de emergencia?';
-          nextQuestion.followUpQuestions = [
-            'Dificultad para respirar',
-            'Dolor de pecho intenso',
-            'Pérdida de conocimiento',
-            'Sangrado abundante'
-          ];
-        } else if (option === 'Consulta general') {
-          nextQuestion.text = 'Perfecto, estoy aquí para ayudarte. ¿Qué te gustaría consultar hoy?';
-          nextQuestion.followUpQuestions = [
-            'Tengo una pregunta sobre medicamentos',
-            'Quiero información sobre síntomas',
-            'Necesito orientación médica general'
-          ];
         } else {
-          nextQuestion.text = 'Por favor, cuéntame más detalles sobre lo que te preocupa. ¿Cuándo comenzó?';
+          nextQuestion.text = `Cuéntame más sobre tus síntomas de ${option.toLowerCase()}. ¿Cuándo comenzaron?`;
           nextQuestion.followUpQuestions = [
-            'Comenzó hace unos días',
-            'Comenzó hoy',
-            'Lo tengo desde hace semanas'
+            'Comenzaron hace unos días',
+            'Comenzaron hoy',
+            'Los tengo desde hace semanas'
           ];
         }
       } else if (questionId.startsWith('duration_')) {
@@ -936,7 +849,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
             'Tengo tos o congestión'
           ];
         }
-
+        
         if (option === 'Moderada' || option === 'Severa') {
           if (symptomType === 'pain') {
             nextQuestion.suggestedMedications = ['paracetamol', 'ibuprofeno'];
@@ -945,19 +858,19 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           }
         }
       }
-
+      
       setMessages(prev => [...prev, nextQuestion]);
       setIsProcessing(false);
     }, 1000);
   };
-
+  
   const handleGoBack = () => {
     if (questionHistory.length > 1) {
       const newHistory = [...questionHistory];
       newHistory.pop();
       setQuestionHistory(newHistory);
       setCurrentQuestionId(newHistory[newHistory.length - 1].questionId);
-
+      
       setMessages(prev => prev.slice(0, -2));
     }
   };
@@ -965,34 +878,28 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const handleAnswerOptionClick = async (answerOption: AIAnswerOption) => {
     // Handle special case for free text input
     if (answerOption.value === 'free_text' || answerOption.value === 'OPEN_TEXT_INPUT') {
-      // Focus the textarea and let user type freely
-      const textareaElement = document.querySelector('.chat-textarea') as HTMLTextAreaElement;
-      if (textareaElement) {
-        textareaElement.focus();
-        textareaElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Just focus the input field and let user type freely
+      const inputElement = document.querySelector('.chat-input') as HTMLInputElement;
+      if (inputElement) {
+        inputElement.focus();
       }
       return;
     }
-
+    
     // Process through unified service with selected option
     shouldScrollRef.current = true;
     setIsProcessing(true);
-
+    
     const userMessageId = Date.now().toString();
-    const newUserMessage: Message = {
+    const newUserMessage: Message = { 
       id: userMessageId,
       text: answerOption.text, // Use the display text
       sender: 'user',
       timestamp: new Date()
     };
-
+    
     setMessages(prev => [...prev, newUserMessage]);
-
-    // Mark conversation as started
-    if (!conversationStarted) {
-      setConversationStarted(true);
-    }
-
+    
     // Create bot message placeholder
     const botMessageId = (Date.now() + 1).toString();
     const initialBotMessage: Message = {
@@ -1003,297 +910,21 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       isStreaming: true,
       isComplete: false
     };
-
+    
     setMessages(prev => [...prev, initialBotMessage]);
-
+    
     try {
-      // CLINICAL MODE for button clicks - same logic as handleSendMessage
-      let clinicalResponse = '';
-      let confidence = 0.3;
-      let isEmergency = false;
-      let useClinicalMode = true; // Force clinical mode for desktop
-
-      if (useClinicalMode) {
-        console.log('🩺 Using CLINICAL MODE for button click:', answerOption.text);
-
-        const lowerInput = answerOption.text.toLowerCase();
-        let nextAnswerOptions: Array<{ text: string; value: string }> = [];
-
-        // EMERGENCY ASSESSMENT PROTOCOL - Chest pain requires multiple critical questions
-        if (answerOption.value === 'chest_pain_recent' || answerOption.value === 'chest_pain_moderate') {
-          confidence = 0.1; // Still very low - need more critical data
-          clinicalResponse = '🚨 **EVALUACIÓN CRÍTICA CONTINÚA** 🚨\n\nTiempo de dolor registrado. Ahora necesito evaluar la intensidad.\n\n**En una escala del 1 al 10, ¿qué tan intenso es el dolor? (10 = el peor dolor imaginable)**';
-          nextAnswerOptions = [
-            { text: 'Leve (1-3)', value: 'chest_pain_mild' },
-            { text: 'Moderado (4-6)', value: 'chest_pain_moderate_intensity' },
-            { text: 'Severo (7-8)', value: 'chest_pain_severe' },
-            { text: 'Extremo (9-10)', value: 'chest_pain_extreme' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'chest_pain_prolonged') {
-          confidence = 0.2;
-          clinicalResponse = '⚠️ **DOLOR PROLONGADO REQUIERE EVALUACIÓN** ⚠️\n\nDolor de pecho por más de 2 horas requiere atención médica. ¿El dolor se irradia a otras partes del cuerpo?';
-          nextAnswerOptions = [
-            { text: 'Sí, al brazo izquierdo', value: 'radiation_arm' },
-            { text: 'Sí, a la mandíbula/cuello', value: 'radiation_jaw' },
-            { text: 'Sí, a la espalda', value: 'radiation_back' },
-            { text: 'No se irradia', value: 'no_radiation' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'chest_pain_extreme' || answerOption.value === 'chest_pain_severe') {
-          confidence = 1.0; // High confidence this is emergency
-          clinicalResponse = '🚨 **EMERGENCIA MÉDICA CONFIRMADA** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nDolor de pecho severo (7-10) requiere atención de emergencia inmediata. NO espere, NO conduzca usted mismo.\n\n**Vaya al hospital MÁS CERCANO AHORA.**';
-          isEmergency = true;
-          nextAnswerOptions = [];
-        }
-        else if (answerOption.value === 'radiation_arm' || answerOption.value === 'radiation_jaw') {
-          confidence = 1.0; // Classic heart attack symptoms
-          clinicalResponse = '🚨 **SÍNTOMAS DE INFARTO - EMERGENCIA** 🚨\n\n**LLAME AL 911 AHORA MISMO**\n\nDolor que se irradia al brazo o mandíbula son síntomas clásicos de infarto. Requiere atención inmediata.\n\n**NO ESPERE - VAYA AL HOSPITAL AHORA.**';
-          isEmergency = true;
-          nextAnswerOptions = [];
-        }
-        else if (answerOption.value === 'chest_pain_mild' || answerOption.value === 'chest_pain_moderate_intensity') {
-          confidence = 0.3; // Still need more questions
-          clinicalResponse = 'Dolor registrado. Necesito más información para evaluar. ¿Tiene dificultad para respirar, sudoración o náuseas?';
-          nextAnswerOptions = [
-            { text: 'Sí, dificultad para respirar', value: 'breathing_difficulty' },
-            { text: 'Sí, sudoración', value: 'sweating' },
-            { text: 'Sí, náuseas', value: 'nausea' },
-            { text: 'No, ninguno de esos', value: 'no_associated_symptoms' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Non-emergency conditions - can proceed with normal diagnostic flow
-        else if (answerOption.value === 'tension_headache') {
-          confidence = 0.4; // Still need more questions before diagnosis
-          clinicalResponse = 'Características de cefalea tensional registradas. ¿El dolor empeora con el estrés o la tensión?';
-          nextAnswerOptions = [
-            { text: 'Sí, empeora con estrés', value: 'stress_related' },
-            { text: 'No, es constante', value: 'constant_pain' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'migraine_headache') {
-          confidence = 0.4; // Still need more questions before diagnosis
-          clinicalResponse = 'Características de migraña registradas. ¿Se acompaña de náuseas o sensibilidad a la luz?';
-          nextAnswerOptions = [
-            { text: 'Sí, con náuseas', value: 'with_nausea' },
-            { text: 'Sí, sensibilidad a la luz', value: 'light_sensitivity' },
-            { text: 'Ambos síntomas', value: 'both_symptoms' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'upper_abdomen' || answerOption.value === 'worse_eating') {
-          confidence = 0.7;
-          clinicalResponse = 'Esto puede indicar gastritis o úlcera. ¿Ha tenido acidez o ardor estomacal?';
-          nextAnswerOptions = [
-            { text: 'Sí, mucha acidez', value: 'high_acidity' },
-            { text: 'Un poco de acidez', value: 'mild_acidity' },
-            { text: 'No, sin acidez', value: 'no_acidity' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'high_fever') {
-          confidence = 0.9;
-          clinicalResponse = 'Fiebre alta requiere atención. ¿Tiene dificultad para respirar o dolor de pecho?';
-          nextAnswerOptions = [
-            { text: 'Sí, dificultad respiratoria', value: 'breathing_difficulty' },
-            { text: 'Sí, dolor de pecho', value: 'chest_pain' },
-            { text: 'No, solo fiebre alta', value: 'fever_only' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'today' || answerOption.value === 'few_days') {
-          confidence = 0.6;
-          clinicalResponse = 'Síntoma reciente. ¿Cómo describiría la intensidad del dolor del 1 al 10?';
-          nextAnswerOptions = [
-            { text: 'Leve (1-3)', value: 'mild_pain' },
-            { text: 'Moderado (4-6)', value: 'moderate_pain' },
-            { text: 'Intenso (7-10)', value: 'severe_pain' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // EMERGENCY ESCALATION - Any breathing difficulty, sweating with chest pain = EMERGENCY
-        else if (answerOption.value === 'breathing_difficulty' || answerOption.value === 'sweating') {
-          confidence = 1.0; // Emergency confirmed
-          clinicalResponse = '🚨 **EMERGENCIA MÉDICA CONFIRMADA** 🚨\n\n**LLAME AL 911 INMEDIATAMENTE**\n\nDolor de pecho con dificultad respiratoria o sudoración son síntomas de emergencia cardíaca.\n\n**NO ESPERE - VAYA AL HOSPITAL AHORA.**';
-          isEmergency = true;
-          nextAnswerOptions = [];
-        }
-        else if (answerOption.value === 'no_associated_symptoms') {
-          confidence = 0.5; // Still need more questions - not ready for diagnosis
-          clinicalResponse = 'Entiendo. Necesito más información. ¿El dolor empeora con la actividad física o mejora con el reposo?';
-          nextAnswerOptions = [
-            { text: 'Empeora con actividad', value: 'worse_activity' },
-            { text: 'Mejora con reposo', value: 'better_rest' },
-            { text: 'No cambia', value: 'no_change' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // DIAGNOSTIC THRESHOLD - Require minimum 5 questions before any diagnosis consideration
-        else if (answerOption.value === 'stress_related' || answerOption.value === 'with_nausea') {
-          confidence = 0.6; // Still not enough for diagnosis - need more data
-          clinicalResponse = 'Información registrada. Necesito más detalles antes de cualquier evaluación. ¿Desde cuándo tiene estos síntomas?';
-          nextAnswerOptions = [
-            { text: 'Menos de 24 horas', value: 'recent_onset' },
-            { text: '1-3 días', value: 'few_days' },
-            { text: 'Más de una semana', value: 'chronic' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'recent_onset' || answerOption.value === 'few_days') {
-          confidence = 0.7; // Getting closer but still need more
-          clinicalResponse = 'Duración registrada. Una pregunta más: ¿Ha tenido episodios similares antes?';
-          nextAnswerOptions = [
-            { text: 'Sí, episodios similares', value: 'recurrent' },
-            { text: 'No, primera vez', value: 'first_time' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Handle chronic symptoms (more than a week)
-        else if (answerOption.value === 'chronic') {
-          confidence = 0.8; // Chronic symptoms need medical attention
-          clinicalResponse = 'Síntomas crónicos de más de una semana requieren evaluación médica. ¿Ha empeorado recientemente o se mantiene igual?';
-          nextAnswerOptions = [
-            { text: 'Ha empeorado', value: 'worsening' },
-            { text: 'Se mantiene igual', value: 'stable' },
-            { text: 'Ha mejorado un poco', value: 'improving' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // ONLY NOW can we consider diagnostic impression - after 5+ questions
-        else if (answerOption.value === 'recurrent' || answerOption.value === 'first_time') {
-          confidence = 0.8; // Finally enough data for preliminary assessment
-          clinicalResponse = 'Basado en la información recopilada en múltiples preguntas, puedo ofrecer una **impresión clínica preliminar**. ¿Desea que proceda con la evaluación?';
-          nextAnswerOptions = [
-            { text: 'Sí, proceda con la evaluación', value: 'proceed_assessment' },
-            { text: 'Necesito más información', value: 'need_more_info' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Handle chronic symptom progression
-        else if (answerOption.value === 'worsening') {
-          confidence = 0.9; // Worsening chronic symptoms need urgent attention
-          clinicalResponse = 'Síntomas que empeoran requieren atención médica pronta. Basado en: dolor de cabeza pulsátil con náuseas por más de una semana que está empeorando, esto sugiere **migraña crónica**.\n\n**Recomendación**: Consulte con un neurólogo en los próximos días.';
-          nextAnswerOptions = [
-            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
-            { text: 'Necesito más información', value: 'need_more_info' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (answerOption.value === 'stable' || answerOption.value === 'improving') {
-          confidence = 0.8; // Stable chronic symptoms
-          clinicalResponse = 'Basado en la información: dolor de cabeza pulsátil con náuseas por más de una semana, esto sugiere **migraña**.\n\n**Recomendaciones**:\n• Evite factores desencadenantes (estrés, ciertos alimentos)\n• Mantenga horarios regulares de sueño\n• Considere consulta con neurólogo si persiste';
-          nextAnswerOptions = [
-            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
-            { text: '¿Qué medicamentos puedo tomar?', value: 'medication_advice' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Handle requests for more details
-        else if (answerOption.value === 'more_details' || answerOption.value === 'more_info') {
-          confidence = 0.7; // We have enough info to proceed
-          clinicalResponse = 'Tengo suficiente información para una evaluación preliminar. ¿Hay algún factor específico que cree que puede estar causando sus síntomas?';
-          nextAnswerOptions = [
-            { text: 'Estrés o tensión', value: 'stress_factor' },
-            { text: 'Cambios en el sueño', value: 'sleep_factor' },
-            { text: 'Cambios en la alimentación', value: 'diet_factor' },
-            { text: 'No estoy seguro', value: 'unsure_factor' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Handle factor identification
-        else if (answerOption.value === 'stress_factor' || answerOption.value === 'sleep_factor' || answerOption.value === 'diet_factor') {
-          confidence = 0.9; // High confidence with trigger identification
-          clinicalResponse = 'Excelente información. Basado en todos los datos: dolor de cabeza pulsátil con náuseas, esto confirma **migraña**.\n\n**Plan de tratamiento**:\n• Evite el factor desencadenante identificado\n• Considere analgésicos específicos para migraña\n• Si persiste, consulte neurólogo';
-          nextAnswerOptions = [
-            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
-            { text: '¿Qué medicamentos específicos?', value: 'specific_medication' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Final diagnostic conclusion
-        else if (answerOption.value === 'proceed_assessment') {
-          confidence = 0.9; // High confidence for final assessment
-          clinicalResponse = '**EVALUACIÓN CLÍNICA PRELIMINAR**\n\n**Diagnóstico probable**: Migraña\n\n**Basado en**:\n• Dolor pulsátil\n• Náuseas asociadas\n• Patrón de síntomas\n\n**Recomendaciones**:\n1. Evitar factores desencadenantes\n2. Analgésicos específicos para migraña\n3. Consulta con neurólogo si persiste o empeora';
-          nextAnswerOptions = [
-            { text: 'Buscar neurólogo cercano', value: 'find_neurologist' },
-            { text: '¿Qué medicamentos puedo tomar?', value: 'medication_advice' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (lowerInput.includes('sí') || lowerInput.includes('si') || lowerInput.includes('yes')) {
-          confidence = 0.4; // Much lower threshold - need more questions
-          clinicalResponse = 'Información registrada. Necesito hacer más preguntas antes de cualquier evaluación. ¿Puede describir más detalles?';
-          nextAnswerOptions = [
-            { text: 'Sí, puedo dar más detalles', value: 'more_details' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        else if (lowerInput.includes('no')) {
-          confidence = 0.4; // Much lower threshold
-          clinicalResponse = 'Entendido. Necesito más información para una evaluación adecuada. ¿Ha tomado algún medicamento?';
-          nextAnswerOptions = [
-            { text: 'Sí, he tomado medicamentos', value: 'took_medication' },
-            { text: 'No, no he tomado nada', value: 'no_medication' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-        // Default clinical response for other button clicks
-        else {
-          confidence = 0.3; // Lower default confidence
-          clinicalResponse = `Información registrada. Necesito más detalles para una evaluación médica adecuada. ¿Puede proporcionar más información?`;
-          nextAnswerOptions = [
-            { text: 'Sí, puedo dar más información', value: 'more_info' },
-            { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-          ];
-        }
-
-        console.log('🩺 Clinical response for button click:', clinicalResponse);
-
-        // Update message with clinical response
-        setMessages(prev =>
-          prev.map(msg =>
-            msg.id === botMessageId
-              ? {
-                  ...msg,
-                  text: clinicalResponse,
-                  answerOptions: nextAnswerOptions,
-                  severity: confidence * 10,
-                  isEmergency: false,
-                  isStreaming: false,
-                  isComplete: true
-                }
-              : msg
-          )
-        );
-
-        setIsProcessing(false);
-
-        // Auto-scroll to latest message
-        setTimeout(() => {
-          const chatContainer = document.querySelector('.chat-messages-container');
-          if (chatContainer) {
-            chatContainer.scrollTop = chatContainer.scrollHeight;
-          }
-        }, 100);
-
-        return;
-      }
-
       // Process with unified service, passing the selected option
       const unifiedResponse = await unifiedConversationService.processMessage(
         sessionId,
         answerOption.text,
         answerOption.value
       );
-
+      
       // Update bot message with response
-      setMessages(prev =>
-        prev.map(msg =>
-          msg.id === botMessageId
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
             ? {
                 ...msg,
                 text: unifiedResponse.text,
@@ -1305,23 +936,23 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 suggestedMedications: unifiedResponse.suggestedMedications,
                 isStreaming: false,
                 isComplete: true
-              }
+              } 
             : msg
         )
       );
-
+      
       setIsProcessing(false);
     } catch (error) {
       console.error('Error processing answer option:', error);
-      setMessages(prev =>
-        prev.map(msg =>
-          msg.id === botMessageId
+      setMessages(prev => 
+        prev.map(msg => 
+          msg.id === botMessageId 
             ? {
                 ...msg,
                 text: 'Lo siento, hubo un error al procesar tu respuesta. Por favor, intenta de nuevo.',
                 isStreaming: false,
                 isComplete: true
-              }
+              } 
             : msg
         )
       );
@@ -1369,7 +1000,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         {messages.map((message) => (
                           <MessageComponent key={message.id} message={message} />
                         ))}
-
+                        
                         {/* Enhanced AI Thinking Component */}
                         {isThinking && thinkingStages.length > 0 && (
                           <EnhancedAIThinking
@@ -1380,14 +1011,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                             mexicanContext={true}
                           />
                         )}
-
+                        
                         <div ref={messagesEndRef} />
                       </div>
                     </div>
-
+                    
                     {/* Image Analysis Visualization */}
                     {imageAnalysisStage && currentAnalysisImage && (
-                      <motion.div
+                      <motion.div 
                         className="px-4 pb-4 fixed bottom-32 left-0 right-0 z-10"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -1395,14 +1026,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                       >
                         <div className="bg-white rounded-lg shadow-md p-4 border border-brand-jade-100 mx-4">
                           <h3 className="text-lg font-medium text-gray-800 mb-3">Análisis de Imagen</h3>
-                          <ImageAnalysisVisual
-                            imageSrc={currentAnalysisImage}
-                            analysisStage={imageAnalysisStage}
+                          <ImageAnalysisVisual 
+                            imageSrc={currentAnalysisImage} 
+                            analysisStage={imageAnalysisStage} 
                           />
-
+                          
                           {/* Confidence Visualizer */}
                           <div className="mt-4">
-                            <ConfidenceVisualizer
+                            <ConfidenceVisualizer 
                               confidence={confidenceLevel}
                               status={confidenceStatus}
                               references={medicalReferences}
@@ -1411,7 +1042,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </motion.div>
                     )}
-
+                    
                     {/* Family Member Selector */}
                     {showFamilySetup && (
                       <div className="bg-[#D0F0EF] border border-[#006D77] rounded-lg p-4 mb-4">
@@ -1436,189 +1067,36 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </div>
                     )}
-
-                    {/* Quick Mexican Symptoms - Only show before conversation starts */}
-                    {!conversationStarted && (
-                      <div className="px-4 mb-4">
-                        <div className="max-w-4xl mx-auto">
-                          <div className="flex items-center justify-between mb-3">
-                            <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
-                            <button
-                              onClick={() => setShowFamilySetup(!showFamilySetup)}
-                              className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
-                            >
-                              <User className="w-4 h-4 mr-1" />
-                              {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
-                            </button>
-                          </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                          {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
-                            <button
-                              key={index}
-                              onClick={async () => {
-                                const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
-                                const messageText = symptom.text + familyContext;
-
-                                // Directly send the message without setting input
-                                const userMessageId = Date.now().toString();
-                                const newUserMessage = {
-                                  id: userMessageId,
-                                  text: messageText,
-                                  sender: 'user' as const,
-                                  timestamp: new Date(),
-                                  status: 'sent' as const
-                                };
-
-                                setMessages(prev => [...prev, newUserMessage]);
-                                setIsProcessing(true);
-
-                                // Mark conversation as started
-                                if (!conversationStarted) {
-                                  setConversationStarted(true);
-                                }
-
-                                // Process with clinical mode
-                                const botMessageId = (Date.now() + 1).toString();
-                                const initialBotMessage = {
-                                  id: botMessageId,
-                                  text: '',
-                                  sender: 'bot' as const,
-                                  timestamp: new Date(),
-                                  isStreaming: true,
-                                  isComplete: false,
-                                  status: 'delivered' as const
-                                };
-
-                                setMessages(prev => [...prev, initialBotMessage]);
-
-                                // Use clinical mode logic
-                                let clinicalResponse = '';
-                                let confidence = 0.3;
-                                let isEmergency = false;
-
-                                const lowerInput = messageText.toLowerCase();
-
-                                // Emergency detection
-                                if (lowerInput.includes('no puedo respirar') ||
-                                    lowerInput.includes('dolor de pecho intenso') ||
-                                    lowerInput.includes('perdí el conocimiento')) {
-                                  clinicalResponse = '🚨 **EMERGENCIA MÉDICA** 🚨\n\nPor favor, acuda inmediatamente al servicio de urgencias más cercano o llame al 911.';
-                                  isEmergency = true;
-                                  confidence = 1.0;
-                                }
-                                // Chest pain - EMERGENCY
-                                else if (lowerInput.includes('dolor') && (lowerInput.includes('pecho') || lowerInput.includes('corazón'))) {
-                                  clinicalResponse = '🚨 **POSIBLE EMERGENCIA** 🚨\n\n¿El dolor de pecho es intenso o se acompaña de dificultad para respirar, sudoración o náuseas?\n\nSi es así, acuda inmediatamente a urgencias. Si no, ¿puede describir el tipo de dolor?';
-                                  confidence = 0.9;
-                                  isEmergency = true;
-                                }
-                                // Headache
-                                else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-                                  clinicalResponse = 'Entiendo que tiene dolor de cabeza. ¿El dolor es como una banda apretada alrededor de la cabeza o es pulsátil como latidos?';
-                                  confidence = 0.4;
-                                }
-                                // Abdominal pain
-                                else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen') || lowerInput.includes('barriga'))) {
-                                  clinicalResponse = 'Entiendo que tiene dolor abdominal. ¿El dolor está en la parte alta del abdomen y empeora cuando come?';
-                                  confidence = 0.4;
-                                }
-                                // Fever
-                                else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura') || lowerInput.includes('calentura')) {
-                                  clinicalResponse = 'Entiendo que tiene fiebre. ¿La temperatura es menor a 39°C y tiene síntomas como tos o dolor de garganta?';
-                                  confidence = 0.4;
-                                }
-                                // Generic symptom
-                                else if (lowerInput.includes('dolor') || lowerInput.includes('duele') || lowerInput.includes('molestia')) {
-                                  const cleanedInput = messageText.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
-                                  clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Desde cuándo tiene este síntoma?`;
-                                  confidence = 0.3;
-                                }
-                                // Default clinical response
-                                else {
-                                  const cleanedInput = messageText.replace(/^(tengo|me duele|dolor de|dolor en)/i, '').trim();
-                                  clinicalResponse = `Entiendo que tiene ${cleanedInput}. ¿Puede proporcionar más detalles sobre este síntoma?`;
-                                  confidence = 0.3;
-                                }
-
-                                console.log('🩺 Quick symptom clinical response:', clinicalResponse);
-
-                                // Generate contextually appropriate answer options for quick symptoms
-                                let quickAnswerOptions: Array<{ text: string; value: string }> = [];
-
-                                if (isEmergency) {
-                                  quickAnswerOptions = [];
-                                } else if (lowerInput.includes('dolor') && lowerInput.includes('cabeza')) {
-                                  quickAnswerOptions = [
-                                    { text: 'Banda apretada', value: 'tension_headache' },
-                                    { text: 'Pulsátil/latidos', value: 'migraine_headache' },
-                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                  ];
-                                } else if (lowerInput.includes('dolor') && (lowerInput.includes('estómago') || lowerInput.includes('abdomen'))) {
-                                  quickAnswerOptions = [
-                                    { text: 'Parte alta del abdomen', value: 'upper_abdomen' },
-                                    { text: 'Parte baja del abdomen', value: 'lower_abdomen' },
-                                    { text: 'Empeora al comer', value: 'worse_eating' },
-                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                  ];
-                                } else if (lowerInput.includes('fiebre') || lowerInput.includes('temperatura')) {
-                                  quickAnswerOptions = [
-                                    { text: 'Menos de 39°C', value: 'low_fever' },
-                                    { text: 'Más de 39°C', value: 'high_fever' },
-                                    { text: 'Con tos o dolor de garganta', value: 'respiratory_symptoms' },
-                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                  ];
-                                } else if (lowerInput.includes('dolor') || lowerInput.includes('duele')) {
-                                  quickAnswerOptions = [
-                                    { text: 'Hoy', value: 'today' },
-                                    { text: 'Hace unos días', value: 'few_days' },
-                                    { text: 'Hace una semana o más', value: 'week_plus' },
-                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                  ];
-                                } else {
-                                  quickAnswerOptions = [
-                                    { text: 'Sí', value: 'yes' },
-                                    { text: 'No', value: 'no' },
-                                    { text: 'Prefiero escribir mi respuesta', value: 'free_text' }
-                                  ];
-                                }
-
-                                // Update message with clinical response
-                                setMessages(prev =>
-                                  prev.map(msg =>
-                                    msg.id === botMessageId
-                                      ? {
-                                          ...msg,
-                                          text: clinicalResponse,
-                                          answerOptions: quickAnswerOptions,
-                                          severity: confidence * 10,
-                                          isEmergency: isEmergency,
-                                          isStreaming: false,
-                                          isComplete: true
-                                        }
-                                      : msg
-                                  )
-                                );
-
-                                setIsProcessing(false);
-
-                                // Auto-scroll to latest message
-                                setTimeout(() => {
-                                  const chatContainer = document.querySelector('.chat-messages-container');
-                                  if (chatContainer) {
-                                    chatContainer.scrollTop = chatContainer.scrollHeight;
-                                  }
-                                }, 100);
-                              }}
-                              className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2.5 text-sm transition-all flex items-center justify-center space-x-2 min-h-[44px] shadow-sm hover:shadow-md"
-                            >
-                              <span className="text-lg">{symptom.icon}</span>
-                              <span className="text-[#006D77] font-medium text-center leading-tight">{symptom.text}</span>
-                            </button>
-                          ))}
-                        </div>
+                    
+                    {/* Quick Mexican Symptoms */}
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <h4 className="font-medium text-gray-700 text-sm">Consultas rápidas:</h4>
+                        <button
+                          onClick={() => setShowFamilySetup(!showFamilySetup)}
+                          className="text-[#006D77] text-sm font-medium flex items-center hover:underline"
+                        >
+                          <User className="w-4 h-4 mr-1" />
+                          {familyMember === 'myself' ? 'Para mí' : MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label}
+                        </button>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {MEXICAN_QUICK_SYMPTOMS.map((symptom, index) => (
+                          <button
+                            key={index}
+                            onClick={() => {
+                              const familyContext = familyMember === 'myself' ? '' : ` (${MEXICAN_FAMILY_OPTIONS.find(o => o.value === familyMember)?.label})`;
+                              setInput(symptom.text + familyContext);
+                              setTimeout(() => handleSendMessage(), 100);
+                            }}
+                            className="bg-white border border-[#006D77]/30 hover:border-[#006D77] hover:bg-[#D0F0EF]/30 rounded-lg px-3 py-2 text-sm transition-all flex items-center space-x-2"
+                          >
+                            <span>{symptom.icon}</span>
+                            <span className="text-[#006D77]">{symptom.text}</span>
+                          </button>
+                        ))}
                       </div>
                     </div>
-                    )}
 
                     {/* Enhanced Input area at bottom of viewport */}
                     <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg z-20">
@@ -1630,9 +1108,9 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                             <span className="text-red-700 font-medium">Emergencia: 911 • Cruz Roja: 065</span>
                           </div>
                         </div>
-
+                        
                         <div className="flex space-x-2">
-                          <button
+                          <button 
                             onClick={handleMicClick}
                             className={`p-3 rounded-full transition-all ${isRecording ? 'bg-red-100 text-red-600 animate-pulse' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
                             aria-label={isRecording ? "Detener grabación" : "Usar micrófono"}
@@ -1640,13 +1118,22 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           >
                             <Mic size={20} />
                           </button>
-                          <button
+                          <button 
                             onClick={() => fileInputRef.current?.click()}
                             className={`p-3 rounded-full ${isUploading ? 'text-[#006D77] bg-[#D0F0EF]' : 'text-gray-500 hover:text-[#006D77] hover:bg-[#D0F0EF]'}`}
                             aria-label="Subir imagen"
                           >
                             <Image size={20} />
                           </button>
+                          <a
+                            href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica%20urgente"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-3 rounded-full text-[#25D366] hover:bg-green-50"
+                            aria-label="WhatsApp directo"
+                          >
+                            <Phone size={20} />
+                          </a>
                           <input
                             type="file"
                             ref={fileInputRef}
@@ -1683,12 +1170,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                               </div>
                             )}
                           </div>
-                          <button
+                          <button 
                             onClick={handleSendMessage}
                             disabled={(!input.trim() && !isUploading) || isProcessing}
                             className={`p-3 rounded-full transition-all ${
                               (!input.trim() && !isUploading) || isProcessing
-                                ? 'text-gray-400 cursor-not-allowed bg-gray-100'
+                                ? 'text-gray-400 cursor-not-allowed bg-gray-100' 
                                 : 'text-white bg-[#006D77] hover:bg-[#005B66] shadow-md hover:shadow-lg'
                             }`}
                             aria-label="Enviar mensaje"
@@ -1697,7 +1184,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                           </button>
                         </div>
                       </div>
-
+                      
                       {/* Stable containers for status indicators */}
                       <div className="status-indicators-container max-w-screen-xl mx-auto" style={{ height: isRecording || isProcessing ? 'auto' : '0', overflow: 'hidden', transition: 'height 0.3s ease' }}>
                         {isRecording && (
@@ -1714,26 +1201,26 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     </div>
                   </div>
                 );
-
+                
               case 'analysis':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Análisis de Síntomas</h3>
-
+                    
                     {/* Show current analysis visualizations if active */}
                     {currentAnalysisImage && imageAnalysisStage && (
                       <div className="space-y-4 mb-6">
                         <div className="bg-white rounded-lg shadow-sm p-4 border border-gray-200">
                           <h4 className="font-medium text-gray-900 mb-2">Análisis en progreso:</h4>
                           <div className="mb-4">
-                            <ImageAnalysisVisual
-                              imageSrc={currentAnalysisImage}
+                            <ImageAnalysisVisual 
+                              imageSrc={currentAnalysisImage} 
                               analysisStage={imageAnalysisStage}
                             />
                           </div>
-
+                          
                           <div className="mt-4">
-                            <ConfidenceVisualizer
+                            <ConfidenceVisualizer 
                               confidence={confidenceLevel}
                               status={confidenceStatus}
                               references={medicalReferences}
@@ -1742,7 +1229,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                         </div>
                       </div>
                     )}
-
+                    
                     {messages.filter(m => m.suggestedConditions && m.suggestedConditions.length > 0).length > 0 ? (
                       <div className="space-y-6">
                         {messages
@@ -1762,7 +1249,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                   </li>
                                 ))}
                               </ul>
-
+                              
                               {message.suggestedSpecialty && (
                                 <div className="mt-4">
                                   <p className="text-sm text-gray-600">Especialidad recomendada:</p>
@@ -1788,12 +1275,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-
+                
               case 'providers':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Proveedores de Salud Cercanos</h3>
-
+                    
                     {selectedProviders.length > 0 ? (
                       <div className="space-y-4">
                         {selectedProviders.map((provider, index) => (
@@ -1832,12 +1319,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-
+                
               case 'appointments':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Mis Citas</h3>
-
+                    
                     {appointments.length > 0 ? (
                       <div className="space-y-4">
                         {appointments.map((_, index) => (
@@ -1872,12 +1359,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-
+                
               case 'prescriptions':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Mis Recetas</h3>
-
+                    
                     {prescriptions.length > 0 ? (
                       <div className="space-y-4">
                         {prescriptions.map((_, index) => (
@@ -1915,14 +1402,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-
+                
               case 'pharmacies':
                 return (
                   <div className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Farmacias y Medicamentos</h3>
-
+                    
                     {products.length > 0 ? (
-                      <ProductRecommendation
+                      <ProductRecommendation 
                         products={products}
                         pharmacies={pharmacyData}
                         onPharmacyClick={(pharmacyId) => {
@@ -1955,7 +1442,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                 <p className="text-sm text-gray-600">
                                   {pharmacy.distance ? `${(pharmacy.distance / 1000).toFixed(1)} km de distancia` : 'Distancia no disponible'}
                                 </p>
-
+                                
                                 {pharmacy.available_medications && pharmacy.available_medications.length > 0 && (
                                   <div className="mt-2">
                                     <p className="text-sm font-medium text-gray-700">Medicamentos disponibles:</p>
@@ -1971,11 +1458,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                                     </div>
                                   </div>
                                 )}
-
+                                
                                 <div className="mt-3 flex space-x-2">
-                                  <a
-                                    href={`https://maps.google.com/?q=${pharmacy.address}`}
-                                    target="_blank"
+                                  <a 
+                                    href={`https://maps.google.com/?q=${pharmacy.address}`} 
+                                    target="_blank" 
                                     rel="noopener noreferrer"
                                     className="text-sm bg-brand-jade-600 text-white px-3 py-1 rounded-md hover:bg-brand-jade-700 transition-colors flex items-center"
                                   >
@@ -2000,7 +1487,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                     )}
                   </div>
                 );
-
+                
               default:
                 return null;
             }
@@ -2028,36 +1515,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
   // Main layout that works within DoctorLayout (not full-screen)
   return (
-    <div className="h-full flex flex-col bg-white relative">
-      {/* Consultation limit indicator for anonymous users */}
-      {!isAuthenticated && (
-        <div className="bg-gradient-to-r from-[#D0F0EF] to-[#E6F7F5] px-6 py-2 border-b border-[#B8E6E2]">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <span className="text-sm font-medium text-[#006D77]">
-                Consultas gratuitas: {consultationLimit.remaining} de {consultationLimit.total}
-              </span>
-              <div className="flex space-x-1">
-                {Array.from({ length: consultationLimit.total }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-full ${
-                      i < consultationLimit.used ? 'bg-[#006D77]' : 'bg-gray-300'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-            <Link
-              to="/register"
-              className="text-sm font-medium text-[#006D77] hover:text-[#005B66] transition-colors"
-            >
-              Crear cuenta para más consultas →
-            </Link>
-          </div>
-        </div>
-      )}
-
+    <div className="h-full flex flex-col bg-white relative">      
       {/* Tab navigation for desktop */}
       <div className="border-b border-gray-200 bg-white px-6">
         <nav className="flex space-x-8">
@@ -2073,8 +1531,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
               key={id}
               onClick={() => setActiveTab(id as Tab)}
               className={`flex items-center gap-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
-                activeTab === id
-                  ? 'border-brand-jade-500 text-brand-jade-600'
+                activeTab === id 
+                  ? 'border-brand-jade-500 text-brand-jade-600' 
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
@@ -2084,22 +1542,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           ))}
         </nav>
       </div>
-
+      
       {/* Main content area */}
       <div className="flex-1 overflow-hidden">
         {renderTabContent()}
       </div>
-
-      {/* Conversion Prompt Modal */}
-      {showConversionPrompt && (
-        <ConversionPrompt
-          onClose={() => setShowConversionPrompt(false)}
-          onRegister={() => {
-            // Track conversion event
-            console.log('User clicked register from conversion prompt');
-          }}
-        />
-      )}
     </div>
   );
 }
