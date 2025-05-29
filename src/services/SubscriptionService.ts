@@ -321,6 +321,60 @@ class SubscriptionService {
   }
 
   /**
+   * Handle anonymous to authenticated user transition
+   * Merges anonymous consultation history and grants bonus consultations
+   */
+  async handleAnonymousToAuthenticatedTransition(userId: string, anonymousConsultations: number): Promise<void> {
+    try {
+      // Grant bonus consultations for creating an account
+      const SIGNUP_BONUS_CONSULTATIONS = 5;
+      
+      // Check if user already has a subscription
+      const currentSubscription = await this.getCurrentSubscription(userId);
+      
+      if (!currentSubscription) {
+        // Create free tier subscription
+        await this.createSubscription(userId, 'free');
+      }
+      
+      // Add bonus consultations to their current month's usage
+      // Instead of tracking used consultations, we'll add bonus to their limit
+      const { data: bonusData, error: bonusError } = await supabase
+        .from('subscription_bonuses')
+        .insert({
+          user_id: userId,
+          bonus_type: 'signup',
+          bonus_consultations: SIGNUP_BONUS_CONSULTATIONS,
+          anonymous_consultations_merged: anonymousConsultations,
+          created_at: new Date().toISOString(),
+          expires_at: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString() // 30 days
+        });
+      
+      if (bonusError) {
+        console.error('Error granting signup bonus:', bonusError);
+        // Don't throw - we still want the user to be able to sign up
+      }
+      
+      // Log the transition for analytics
+      await supabase
+        .from('user_events')
+        .insert({
+          user_id: userId,
+          event_type: 'anonymous_to_authenticated',
+          event_data: {
+            anonymous_consultations: anonymousConsultations,
+            bonus_granted: SIGNUP_BONUS_CONSULTATIONS
+          },
+          created_at: new Date().toISOString()
+        });
+      
+    } catch (error) {
+      console.error('Error handling anonymous to authenticated transition:', error);
+      // Don't throw - we don't want to block the signup process
+    }
+  }
+
+  /**
    * Send subscription notification
    */
   async sendSubscriptionNotification(userId: string, type: 'trial_ending' | 'payment_failed' | 'upgrade_available'): Promise<void> {

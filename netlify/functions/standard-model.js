@@ -46,18 +46,21 @@ console.log('Standard model function loading...');
 const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrbsv.supabase.co';
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
 
-// Environment variable for OpenAI API key with proper fallback
-const FALLBACK_KEY = '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';
-const openaiKey = process.env.OPENAI_API_KEY || FALLBACK_KEY;
+// Environment variable for OpenAI API key - REQUIRED
+const openaiKey = process.env.OPENAI_API_KEY;
 
-// Detailed API key debugging
-console.log('API KEY DEBUGGING:');
-console.log('OPENAI_API_KEY environment variable exists:', process.env.OPENAI_API_KEY ? 'YES' : 'NO');
-console.log('OPENAI_API_KEY environment variable length:', process.env.OPENAI_API_KEY ? process.env.OPENAI_API_KEY.length : 0);
-console.log('OPENAI_API_KEY environment variable format check:', process.env.OPENAI_API_KEY ? `Starts with: ${process.env.OPENAI_API_KEY.substring(0, 7)}, ends with: ${process.env.OPENAI_API_KEY.substring(process.env.OPENAI_API_KEY.length - 5)}` : 'N/A');
-console.log('Using hardcoded fallback key:', process.env.OPENAI_API_KEY ? 'NO' : 'YES');
-console.log('Final API key being used (first 10 chars):', openaiKey.substring(0, 10));
-console.log('Final API key format validation:', openaiKey.startsWith('sk-') ? 'VALID PREFIX' : 'INVALID PREFIX');
+// Validate required environment variables
+if (!openaiKey) {
+  console.error('OPENAI_API_KEY environment variable is required but not provided');
+  throw new Error('OPENAI_API_KEY environment variable is required');
+}
+
+if (!openaiKey.startsWith('sk-')) {
+  console.error('Invalid OpenAI API key format');
+  throw new Error('Invalid OpenAI API key format');
+}
+
+console.log('Environment validation passed - API key configured correctly');
 
 // Log all environment for debugging
 console.log('Function environment:', {

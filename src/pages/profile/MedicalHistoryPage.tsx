@@ -12,7 +12,7 @@ import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import Input from '../../components/ui/Input';
 import Badge from '../../components/ui/Badge';
-import Tabs from '../../components/ui/Tabs';
+import SimpleTabs from '../../components/ui/SimpleTabs';
 
 interface MedicalRecord {
   id: string;
@@ -210,7 +210,7 @@ export default function MedicalHistoryPage() {
 
         {/* Tabs */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+          <SimpleTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
         </div>
 
         {/* Content */}

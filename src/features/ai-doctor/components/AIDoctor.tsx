@@ -27,7 +27,11 @@ import ConfidenceVisualizer from './ConfidenceVisualizer';
 import AIDoctorMobile from './AIDoctorMobile';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 import { unifiedConversationService } from '../services/UnifiedConversationService';
-import { BrainIntegrationService, PatientContext } from '../services/BrainIntegrationService';
+import { BrainIntegrationService, PatientContext } from '../../../../brain/BrainIntegrationService';
+import { useConversation } from '../../../contexts/ConversationContext';
+import { anonymousConsultationTracker } from '../../../services/AnonymousConsultationTracker';
+import ConversionPrompt from '../../../components/ConversionPrompt';
+import { useAuth } from '../../../contexts/AuthContext';
 
 const OPENAI_KEY_STORAGE_KEY = 'openai_api_key';
 const DOCTOR_INSTRUCTIONS_KEY = 'doctor_instructions';
@@ -79,6 +83,11 @@ interface AIDoctorProps {
 
 function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps) {
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const { state: conversationState, addMessage, updateMessage, setConversationStarted, setFamilyMember, setLocation } = useConversation();
+  const { isAuthenticated } = useAuth();
+  const [showConversionPrompt, setShowConversionPrompt] = useState(false);
+  const [consultationLimit, setConsultationLimit] = useState(anonymousConsultationTracker.getUsageData());
+  
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [inputHeight, setInputHeight] = useState('auto');
@@ -96,18 +105,14 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const [currentThinkingStage, setCurrentThinkingStage] = useState(0);
   const [thinkingComplexity, setThinkingComplexity] = useState<'simple' | 'medium' | 'complex'>('simple');
 
-  // Session management
-  const [sessionId] = useState(`session_${Date.now()}`);
-
   const medicalReferences = [
     'Base de datos médica', 'Estudios clínicos', 'Literatura médica',
     'Atlas de dermatología', 'Investigaciones recientes'
   ];
 
-  // Mexican family context and quick symptoms
-  const [familyMember, setFamilyMember] = useState<string>('myself');
+  // Use conversation context state
+  const { messages, sessionId, familyMember, conversationStarted, location } = conversationState;
   const [showFamilySetup, setShowFamilySetup] = useState(false);
-  const [conversationStarted, setConversationStarted] = useState(false);
 
   const MEXICAN_FAMILY_OPTIONS = [
     { value: 'myself', label: 'Para mí' },
@@ -126,23 +131,6 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     { text: 'Problemas respiratorios', icon: '🤧' }
   ];
 
-  // Initialize with enhanced Mexican greeting
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: '¡Hola! Soy Dr. Simeon, tu médico mexicano inteligente. ¿Para quién es la consulta de hoy? Estoy aquí para ayudarte con cualquier problema de salud de tu familia.',
-      sender: 'bot',
-      timestamp: new Date(),
-      personalityApplied: true,
-      interactiveOptions: {
-        type: 'symptom_category',
-        options: ['Para mí', 'Para mi familia', 'Emergencia', 'Consulta general'],
-        questionId: 'initial'
-      }
-    }
-  ]);
-
-  const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<any[]>([]);
   const [appointments, setAppointments] = useState<any[]>([]);
@@ -198,15 +186,12 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
     shouldScrollRef.current = true; // Enable scrolling for user interactions
 
-    const userMessageId = Date.now().toString();
-    const newUserMessage: Message = {
-      id: userMessageId,
+    const newUserMessage = {
       text: input,
-      sender: 'user',
-      timestamp: new Date()
+      sender: 'user' as const
     };
 
-    setMessages(prev => [...prev, newUserMessage]);
+    addMessage(newUserMessage);
     const userInput = input;
     setInput('');
     setIsProcessing(true);
@@ -215,20 +200,45 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     // Mark conversation as started after first user message
     if (!conversationStarted) {
       setConversationStarted(true);
+      
+      // Track consultation for anonymous users
+      if (!isAuthenticated) {
+        const canStart = anonymousConsultationTracker.canStartConsultation();
+        if (!canStart) {
+          // Show hard conversion prompt
+          setShowConversionPrompt(true);
+          setIsProcessing(false);
+          setIsThinking(false);
+          return;
+        }
+        
+        // Track the consultation
+        anonymousConsultationTracker.trackConsultation(sessionId);
+        setConsultationLimit(anonymousConsultationTracker.getUsageData());
+        
+        // Check if we should show a conversion prompt
+        const prompt = anonymousConsultationTracker.getConversionPrompt();
+        if (prompt?.show && prompt.type !== 'hard') {
+          // Show prompt after a delay so user sees the response first
+          setTimeout(() => {
+            setShowConversionPrompt(true);
+          }, 3000);
+        }
+      }
     }
 
     // Create a bot message placeholder with enhanced streaming indicators
-    const botMessageId = (Date.now() + 1).toString();
-    const initialBotMessage: Message = {
+    const botMessageId = Date.now().toString();
+    const initialBotMessage = {
       id: botMessageId,
       text: '',
-      sender: 'bot',
-      timestamp: new Date(),
+      sender: 'bot' as const,
       isStreaming: true,
-      isComplete: false
+      isComplete: false,
+      timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, initialBotMessage]);
+    addMessage(initialBotMessage);
 
     try {
       // BRAIN INTEGRATION - Use enhanced intelligence modules
@@ -251,23 +261,16 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
 
       // Update message with brain assessment results
       setIsThinking(false);
-      setMessages(prev =>
-        prev.map(msg =>
-          msg.id === botMessageId
-            ? {
-                ...msg,
-                text: brainAssessment.response,
-                answerOptions: brainAssessment.answerOptions,
-                severity: brainAssessment.severity,
-                isEmergency: brainAssessment.isEmergency,
-                suggestedConditions: brainAssessment.diagnosis ? [brainAssessment.diagnosis] : undefined,
-                suggestedSpecialty: brainAssessment.specialistReferral,
-                isStreaming: false,
-                isComplete: true
-              }
-            : msg
-        )
-      );
+      updateMessage(botMessageId, {
+        text: brainAssessment.response,
+        answerOptions: brainAssessment.answerOptions,
+        severity: brainAssessment.severity,
+        isEmergency: brainAssessment.isEmergency,
+        suggestedConditions: brainAssessment.diagnosis ? [brainAssessment.diagnosis] : undefined,
+        suggestedSpecialty: brainAssessment.specialistReferral,
+        isStreaming: false,
+        isComplete: true
+      });
 
       setIsProcessing(false);
 
@@ -279,81 +282,20 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
         }
       }, 100);
 
-      return;
-
-      // Use unified conversation service for better context tracking
-      const unifiedResponse = await unifiedConversationService.processMessage(
-        sessionId,
-        userInput
-      );
-
-      // Check if this needs thinking animation
-      const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
-      const needsThinking = ConversationFlowService.needsThinkingAnimation(userInput);
-
-      // Update message with unified response
-      setIsThinking(false);
-      setMessages(prev =>
-        prev.map(msg =>
-          msg.id === botMessageId
-            ? {
-                ...msg,
-                text: unifiedResponse.text,
-                answerOptions: unifiedResponse.answerOptions,
-                severity: unifiedResponse.severity,
-                isEmergency: unifiedResponse.isEmergency,
-                suggestedSpecialty: unifiedResponse.suggestedSpecialty,
-                suggestedConditions: unifiedResponse.suggestedConditions,
-                suggestedMedications: unifiedResponse.suggestedMedications,
-                isStreaming: false,
-                isComplete: true
-              }
-            : msg
-        )
-      );
-
-      // Update severity if provided
-      if (unifiedResponse.severity) {
-        setSeverityLevel(unifiedResponse.severity);
-      }
-
-      // Handle any follow-up actions
-      if (unifiedResponse.suggestedSpecialty && location) {
-        setTimeout(() => {
-          findProviders(unifiedResponse.suggestedSpecialty!);
-        }, 1000);
-      }
-
-      if (unifiedResponse.suggestedMedications && unifiedResponse.suggestedMedications.length > 0) {
-        setTimeout(() => {
-          showGenericPharmacies(unifiedResponse.suggestedMedications!);
-        }, 2000);
-      }
-
-      setIsProcessing(false);
-      return;
+      // Skip the old unified conversation service code since we're using Brain Integration
 
     } catch (error) {
       console.error('Error processing message:', error);
 
-      setMessages(prev =>
-        prev.map(msg =>
-          msg.id === botMessageId
-            ? {
-                id: botMessageId,
-                text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
-                sender: 'bot',
-                timestamp: new Date(),
-                isStreaming: false,
-                isComplete: true
-              }
-            : msg
-        )
-      );
+      updateMessage(botMessageId, {
+        text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
+        isStreaming: false,
+        isComplete: true
+      });
       setIsProcessing(false);
       setIsThinking(false);
     }
-  }, [input, isUploading, messages, severityLevel, location, sessionId]);
+  }, [input, isUploading, conversationState, severityLevel, location, sessionId, familyMember, questionHistory, conversationStarted, isAuthenticated, addMessage, updateMessage, setConversationStarted]);
 
   // Handle initial message from homepage
   useEffect(() => {
@@ -777,7 +719,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       timestamp: new Date()
     };
 
-    setMessages(prev => [...prev, recommendationMessage]);
+    addMessage(recommendationMessage);
 
     setActiveTab('pharmacies');
   };
@@ -2035,6 +1977,35 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   // Main layout that works within DoctorLayout (not full-screen)
   return (
     <div className="h-full flex flex-col bg-white relative">
+      {/* Consultation limit indicator for anonymous users */}
+      {!isAuthenticated && (
+        <div className="bg-gradient-to-r from-[#D0F0EF] to-[#E6F7F5] px-6 py-2 border-b border-[#B8E6E2]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <span className="text-sm font-medium text-[#006D77]">
+                Consultas gratuitas: {consultationLimit.remaining} de {consultationLimit.total}
+              </span>
+              <div className="flex space-x-1">
+                {Array.from({ length: consultationLimit.total }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full ${
+                      i < consultationLimit.used ? 'bg-[#006D77]' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            <Link 
+              to="/register" 
+              className="text-sm font-medium text-[#006D77] hover:text-[#005B66] transition-colors"
+            >
+              Crear cuenta para más consultas →
+            </Link>
+          </div>
+        </div>
+      )}
+      
       {/* Tab navigation for desktop */}
       <div className="border-b border-gray-200 bg-white px-6">
         <nav className="flex space-x-8">
@@ -2066,6 +2037,17 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       <div className="flex-1 overflow-hidden">
         {renderTabContent()}
       </div>
+      
+      {/* Conversion Prompt Modal */}
+      {showConversionPrompt && (
+        <ConversionPrompt
+          onClose={() => setShowConversionPrompt(false)}
+          onRegister={() => {
+            // Track conversion event
+            console.log('User clicked register from conversion prompt');
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import {
   Send, Image, Mic, ArrowLeft, MoreVertical, Phone, Video,
   Paperclip, Camera, MapPin, X, Check, CheckCheck
 } from 'lucide-react';
+import { useConversation } from '../../../contexts/ConversationContext';
 import { enhancedAIService, EnhancedAIQueryOptions, EnhancedStreamingAIResponse, EnhancedStreamingResponseHandler } from '../../../core/services/ai/EnhancedAIService';
 import EncryptionService from '../../../core/services/security/EncryptionService';
 import { AIAnswerOption } from '../../../core/services/ai/AIService';
@@ -18,6 +19,9 @@ import { DiagnosticService } from '../services/DiagnosticService';
 import { ClinicalConversationManager, ClinicalResponse } from '../services/ClinicalConversationManager';
 import DiagnosticConfidenceDisplay from './DiagnosticConfidenceDisplay';
 import './styles/whatsapp-components.css';
+import { anonymousConsultationTracker } from '../../../services/AnonymousConsultationTracker';
+import ConversionPrompt from '../../../components/ConversionPrompt';
+import { useAuth } from '../../../contexts/AuthContext';
 
 type Message = {
   id: string;
@@ -69,6 +73,11 @@ const MEXICAN_QUICK_SYMPTOMS = [
 
 function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   const navigate = useNavigate();
+  const { state: conversationState, addMessage, updateMessage, setConversationStarted, setLocation } = useConversation();
+  const { isAuthenticated } = useAuth();
+  const [showConversionPrompt, setShowConversionPrompt] = useState(false);
+  const [consultationLimit, setConsultationLimit] = useState(anonymousConsultationTracker.getUsageData());
+  
   const [input, setInput] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -90,23 +99,9 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   // Add isThinking state for AI processing
   const [isThinking, setIsThinking] = useState(false);
 
-  // Session management
-  const [sessionId] = useState(`session_${Date.now()}`);
-  const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+  // Use conversation context state
+  const { messages, sessionId, location, conversationStarted } = conversationState;
   const [isProcessing, setIsProcessing] = useState(false);
-
-  // Initialize with clinical greeting - always use clinical mode
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Hola, soy el Dr. Simeon. ¿Cuál es el motivo principal de su consulta hoy?',
-      sender: 'bot',
-      timestamp: new Date(Date.now() - 60000), // 1 minute ago
-      personalityApplied: false,
-      status: 'read',
-      followUpQuestions: ['Dolor de cabeza', 'Dolor abdominal', 'Fiebre', 'Tos', 'Otro síntoma']
-    }
-  ]);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -176,6 +171,35 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
       timestamp: new Date(),
       status: 'sent'
     };
+
+    // Mark conversation as started and track consultation
+    if (!conversationStarted) {
+      setConversationStarted(true);
+      
+      // Track consultation for anonymous users
+      if (!isAuthenticated) {
+        const canStart = anonymousConsultationTracker.canStartConsultation();
+        if (!canStart) {
+          // Show hard conversion prompt
+          setShowConversionPrompt(true);
+          setIsProcessing(false);
+          return;
+        }
+        
+        // Track the consultation
+        anonymousConsultationTracker.trackConsultation(sessionId);
+        setConsultationLimit(anonymousConsultationTracker.getUsageData());
+        
+        // Check if we should show a conversion prompt
+        const prompt = anonymousConsultationTracker.getConversionPrompt();
+        if (prompt?.show && prompt.type !== 'hard') {
+          // Show prompt after a delay so user sees the response first
+          setTimeout(() => {
+            setShowConversionPrompt(true);
+          }, 3000);
+        }
+      }
+    }
 
     setMessages(prev => [...prev, newUserMessage]);
     const userInput = input;
@@ -612,7 +636,36 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
   };
 
   return (
-    <div className="ai-doctor-mobile-container">
+    <div className="ai-doctor-mobile-container" data-testid="mobile-ai-doctor">
+      {/* Consultation limit indicator for anonymous users */}
+      {!isAuthenticated && (
+        <div className="bg-gradient-to-r from-[#D0F0EF] to-[#E6F7F5] px-4 py-2 border-b border-[#B8E6E2]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <span className="text-xs font-medium text-[#006D77]">
+                Consultas gratuitas: {consultationLimit.remaining}/{consultationLimit.total}
+              </span>
+              <div className="flex space-x-0.5">
+                {Array.from({ length: consultationLimit.total }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      i < consultationLimit.used ? 'bg-[#006D77]' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            <Link 
+              to="/register" 
+              className="text-xs font-medium text-[#006D77] hover:text-[#005B66]"
+            >
+              Crear cuenta →
+            </Link>
+          </div>
+        </div>
+      )}
+      
       {/* WhatsApp-style Header */}
       <div className="bg-[#075E54] text-white p-3 flex items-center justify-between shadow-md">
         <div className="flex items-center space-x-3">
@@ -861,6 +914,17 @@ function AIDoctorMobile({ initialMessage, onBack }: AIDoctorMobileProps) {
           )}
         </div>
       </div>
+      
+      {/* Conversion Prompt Modal */}
+      {showConversionPrompt && (
+        <ConversionPrompt
+          onClose={() => setShowConversionPrompt(false)}
+          onRegister={() => {
+            // Track conversion event
+            console.log('User clicked register from conversion prompt');
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -1,1 +1,238 @@
-import { Message } from '../hooks/useMessageReducer';\n\nexport interface ConversationSession {\n  id: string;\n  userId?: string;\n  startTime: Date;\n  lastActivity: Date;\n  messages: Message[];\n  context: {\n    familyMember?: string;\n    mainSymptoms: string[];\n    suggestedConditions: string[];\n    currentSeverity: number;\n    culturalFactors: string[];\n    location?: {\n      latitude: number;\n      longitude: number;\n    };\n  };\n  summary: {\n    keyTopics: string[];\n    emergencyFlags: boolean[];\n    followUpNeeded: boolean;\n    lastDiagnosis?: string;\n  };\n}\n\nexport interface ContextualMemory {\n  medicalTerms: Set<string>;\n  symptomPatterns: Map<string, number>;\n  userPreferences: {\n    preferredLanguage: 'es' | 'en';\n    communicationStyle: 'formal' | 'casual';\n    familyOriented: boolean;\n  };\n  conversationFlow: {\n    commonTransitions: Map<string, string[]>;\n    topicClusters: Map<string, string[]>;\n  };\n}\n\nclass ConversationMemoryService {\n  private static instance: ConversationMemoryService;\n  private sessions = new Map<string, ConversationSession>();\n  private contextualMemory: ContextualMemory;\n  private maxSessionAge = 24 * 60 * 60 * 1000; // 24 hours\n  private maxSessions = 100; // Limit memory usage\n\n  constructor() {\n    this.contextualMemory = {\n      medicalTerms: new Set(),\n      symptomPatterns: new Map(),\n      userPreferences: {\n        preferredLanguage: 'es',\n        communicationStyle: 'casual',\n        familyOriented: true\n      },\n      conversationFlow: {\n        commonTransitions: new Map(),\n        topicClusters: new Map()\n      }\n    };\n\n    this.initializeMedicalTerms();\n    this.startCleanupTimer();\n  }\n\n  static getInstance(): ConversationMemoryService {\n    if (!ConversationMemoryService.instance) {\n      ConversationMemoryService.instance = new ConversationMemoryService();\n    }\n    return ConversationMemoryService.instance;\n  }\n\n  /**\n   * Create or update a conversation session\n   */\n  updateSession(sessionId: string, message: Message, context?: Partial<ConversationSession['context']>): void {\n    const now = new Date();\n    let session = this.sessions.get(sessionId);\n\n    if (!session) {\n      session = {\n        id: sessionId,\n        startTime: now,\n        lastActivity: now,\n        messages: [],\n        context: {\n          mainSymptoms: [],\n          suggestedConditions: [],\n          currentSeverity: 5,\n          culturalFactors: [],\n          ...context\n        },\n        summary: {\n          keyTopics: [],\n          emergencyFlags: [],\n          followUpNeeded: false\n        }\n      };\n    }\n\n    // Update session\n    session.lastActivity = now;\n    session.messages.push(message);\n\n    // Keep only last 50 messages per session for memory efficiency\n    if (session.messages.length > 50) {\n      session.messages = session.messages.slice(-50);\n    }\n\n    // Update context based on message content\n    this.updateSessionContext(session, message);\n\n    this.sessions.set(sessionId, session);\n    this.learnFromMessage(message);\n  }\n\n  /**\n   * Get conversation session\n   */\n  getSession(sessionId: string): ConversationSession | undefined {\n    return this.sessions.get(sessionId);\n  }\n\n  /**\n   * Get relevant context for current message\n   */\n  getRelevantContext(sessionId: string, currentMessage: string): {\n    recentMessages: Message[];\n    relatedSymptoms: string[];\n    conversationPattern: string;\n    culturalContext: string[];\n  } {\n    const session = this.sessions.get(sessionId);\n    if (!session) {\n      return {\n        recentMessages: [],\n        relatedSymptoms: [],\n        conversationPattern: 'initial',\n        culturalContext: []\n      };\n    }\n\n    // Get last 10 messages for immediate context\n    const recentMessages = session.messages.slice(-10);\n\n    // Find related symptoms from conversation history\n    const relatedSymptoms = this.extractRelatedSymptoms(currentMessage, session);\n\n    // Determine conversation pattern\n    const conversationPattern = this.determineConversationPattern(session);\n\n    return {\n      recentMessages,\n      relatedSymptoms,\n      conversationPattern,\n      culturalContext: session.context.culturalFactors\n    };\n  }\n\n  /**\n   * Get conversation summary for handoff to human doctor\n   */\n  getConversationSummary(sessionId: string): string {\n    const session = this.sessions.get(sessionId);\n    if (!session) return '';\n\n    const summary = [\n      `Sesión iniciada: ${session.startTime.toLocaleString('es-MX')}`,\n      `Duración: ${Math.round((session.lastActivity.getTime() - session.startTime.getTime()) / 60000)} minutos`,\n      `Mensajes intercambiados: ${session.messages.length}`,\n      '',\n      'Síntomas principales:',\n      ...session.context.mainSymptoms.map(s => `- ${s}`),\n      '',\n      'Condiciones sugeridas:',\n      ...session.context.suggestedConditions.map(c => `- ${c}`),\n      '',\n      `Nivel de severidad actual: ${session.context.currentSeverity}/10`,\n      '',\n      'Temas clave discutidos:',\n      ...session.summary.keyTopics.map(t => `- ${t}`)\n    ];\n\n    if (session.summary.emergencyFlags.some(flag => flag)) {\n      summary.unshift('⚠️ ALERTAS DE EMERGENCIA DETECTADAS');\n    }\n\n    if (session.context.familyMember && session.context.familyMember !== 'myself') {\n      summary.splice(4, 0, `Consulta para: ${session.context.familyMember}`);\n    }\n\n    return summary.join('\\n');\n  }\n\n  /**\n   * Clear old sessions to free memory\n   */\n  cleanupOldSessions(): void {\n    const now = Date.now();\n    const sessionsToDelete: string[] = [];\n\n    for (const [sessionId, session] of this.sessions) {\n      if (now - session.lastActivity.getTime() > this.maxSessionAge) {\n        sessionsToDelete.push(sessionId);\n      }\n    }\n\n    sessionsToDelete.forEach(id => this.sessions.delete(id));\n\n    // If still too many sessions, remove oldest ones\n    if (this.sessions.size > this.maxSessions) {\n      const sortedSessions = Array.from(this.sessions.entries())\n        .sort(([, a], [, b]) => a.lastActivity.getTime() - b.lastActivity.getTime());\n      \n      const toRemove = sortedSessions.slice(0, this.sessions.size - this.maxSessions);\n      toRemove.forEach(([id]) => this.sessions.delete(id));\n    }\n  }\n\n  private updateSessionContext(session: ConversationSession, message: Message): void {\n    if (message.sender === 'user') {\n      // Extract symptoms\n      const symptoms = this.extractSymptoms(message.text);\n      session.context.mainSymptoms = [...new Set([...session.context.mainSymptoms, ...symptoms])];\n\n      // Update severity if message contains severity indicators\n      const severityMatch = message.text.match(/dolor|duele|grave|fuerte|leve|moderado/gi);\n      if (severityMatch) {\n        if (message.text.includes('grave') || message.text.includes('fuerte')) {\n          session.context.currentSeverity = Math.max(session.context.currentSeverity, 7);\n        } else if (message.text.includes('leve')) {\n          session.context.currentSeverity = Math.min(session.context.currentSeverity, 3);\n        }\n      }\n    } else if (message.sender === 'bot') {\n      // Extract suggested conditions from bot responses\n      if (message.suggestedConditions) {\n        session.context.suggestedConditions = [...new Set([\n          ...session.context.suggestedConditions,\n          ...message.suggestedConditions\n        ])];\n      }\n\n      // Update severity from bot assessment\n      if (message.severity) {\n        session.context.currentSeverity = message.severity;\n      }\n\n      // Check for emergency flags\n      if (message.isEmergency) {\n        session.summary.emergencyFlags.push(true);\n      }\n    }\n\n    // Update key topics\n    const topics = this.extractKeyTopics(message.text);\n    session.summary.keyTopics = [...new Set([...session.summary.keyTopics, ...topics])].slice(-10);\n  }\n\n  private extractSymptoms(text: string): string[] {\n    const symptoms: string[] = [];\n    const lowerText = text.toLowerCase();\n\n    // Common Spanish symptoms\n    const symptomPatterns = [\n      { pattern: /dolor de (cabeza|espalda|estómago|garganta|pecho)/, extract: (match: string) => match },\n      { pattern: /me duele (el|la) ([\\w\\s]+)/, extract: (match: string) => `dolor de ${match.split(' ').slice(-1)[0]}` },\n      { pattern: /tengo (fiebre|tos|náuseas|mareos|vómitos)/, extract: (match: string) => match.split(' ')[1] },\n      { pattern: /(cansancio|fatiga|debilidad)/, extract: (match: string) => match }\n    ];\n\n    for (const { pattern, extract } of symptomPatterns) {\n      const matches = lowerText.match(pattern);\n      if (matches) {\n        symptoms.push(extract(matches[0]));\n      }\n    }\n\n    return symptoms;\n  }\n\n  private extractKeyTopics(text: string): string[] {\n    const topics: string[] = [];\n    const lowerText = text.toLowerCase();\n\n    // Medical topic patterns\n    const topicPatterns = [\n      { pattern: /medicamento|medicina|pastilla|tratamiento/, topic: 'medicamentos' },\n      { pattern: /doctor|médico|especialista/, topic: 'consulta_médica' },\n      { pattern: /familia|hijo|hija|esposo|esposa|padre|madre/, topic: 'familia' },\n      { pattern: /emergencia|urgente|grave|hospital/, topic: 'emergencia' },\n      { pattern: /análisis|examen|laboratorio/, topic: 'diagnóstico' }\n    ];\n\n    for (const { pattern, topic } of topicPatterns) {\n      if (pattern.test(lowerText)) {\n        topics.push(topic);\n      }\n    }\n\n    return topics;\n  }\n\n  private extractRelatedSymptoms(currentMessage: string, session: ConversationSession): string[] {\n    const currentSymptoms = this.extractSymptoms(currentMessage);\n    const relatedSymptoms: string[] = [];\n\n    // Find related symptoms from symptom patterns learned from other conversations\n    for (const symptom of currentSymptoms) {\n      const related = this.contextualMemory.symptomPatterns.get(symptom);\n      if (related) {\n        // Add symptoms that commonly appear together\n        relatedSymptoms.push(...session.context.mainSymptoms.filter(s => \n          this.contextualMemory.symptomPatterns.has(s)\n        ));\n      }\n    }\n\n    return [...new Set(relatedSymptoms)];\n  }\n\n  private determineConversationPattern(session: ConversationSession): string {\n    const messageCount = session.messages.length;\n    const userMessages = session.messages.filter(m => m.sender === 'user');\n    const hasEmergencyFlags = session.summary.emergencyFlags.some(flag => flag);\n\n    if (messageCount <= 2) return 'initial';\n    if (hasEmergencyFlags) return 'emergency';\n    if (userMessages.length > 10) return 'detailed_consultation';\n    if (session.context.suggestedConditions.length > 0) return 'diagnostic';\n    \n    return 'general_inquiry';\n  }\n\n  private learnFromMessage(message: Message): void {\n    // Learn medical terms\n    const terms = this.extractMedicalTerms(message.text);\n    terms.forEach(term => this.contextualMemory.medicalTerms.add(term));\n\n    // Learn symptom patterns\n    if (message.sender === 'user') {\n      const symptoms = this.extractSymptoms(message.text);\n      symptoms.forEach(symptom => {\n        const count = this.contextualMemory.symptomPatterns.get(symptom) || 0;\n        this.contextualMemory.symptomPatterns.set(symptom, count + 1);\n      });\n    }\n  }\n\n  private extractMedicalTerms(text: string): string[] {\n    const medicalTermPatterns = [\n      /\\b(diabetes|hipertensión|asma|alergia|infección|virus|bacteria)\\b/gi,\n      /\\b(paracetamol|ibuprofeno|aspirina|antibiótico)\\b/gi,\n      /\\b(corazón|pulmón|riñón|hígado|estómago)\\b/gi\n    ];\n\n    const terms: string[] = [];\n    for (const pattern of medicalTermPatterns) {\n      const matches = text.match(pattern);\n      if (matches) {\n        terms.push(...matches.map(m => m.toLowerCase()));\n      }\n    }\n\n    return [...new Set(terms)];\n  }\n\n  private initializeMedicalTerms(): void {\n    // Pre-populate with common Mexican medical terms\n    const commonTerms = [\n      'diabetes', 'hipertensión', 'gripe', 'tos', 'fiebre', 'dolor',\n      'paracetamol', 'ibuprofeno', 'aspirina', 'antibiótico',\n      'doctor', 'médico', 'hospital', 'clínica', 'farmacia'\n    ];\n\n    commonTerms.forEach(term => this.contextualMemory.medicalTerms.add(term));\n  }\n\n  private startCleanupTimer(): void {\n    // Clean up every hour\n    setInterval(() => {\n      this.cleanupOldSessions();\n    }, 60 * 60 * 1000);\n  }\n}\n\nexport const conversationMemoryService = ConversationMemoryService.getInstance();
+import { Message } from '../../../contexts/ConversationContext';
+
+export interface ConversationSession {
+  id: string;
+  userId?: string;
+  startTime: Date;
+  lastActivity: Date;
+  messages: Message[];
+  context: {
+    familyMember?: string;
+    mainSymptoms: string[];
+    suggestedConditions: string[];
+    currentSeverity: number;
+    culturalFactors: string[];
+    location?: {
+      latitude: number;
+      longitude: number;
+    };
+  };
+  summary: {
+    keyTopics: string[];
+    emergencyFlags: boolean[];
+    followUpNeeded: boolean;
+    lastDiagnosis?: string;
+  };
+}
+
+export interface ContextualMemory {
+  medicalTerms: Set<string>;
+  symptomPatterns: Map<string, number>;
+  userPreferences: {
+    preferredLanguage: 'es' | 'en';
+    communicationStyle: 'formal' | 'casual';
+    familyOriented: boolean;
+  };
+  conversationFlow: {
+    commonTransitions: Map<string, string[]>;
+    topicClusters: Map<string, string[]>;
+  };
+}
+
+class ConversationMemoryService {
+  private static instance: ConversationMemoryService;
+  private sessions = new Map<string, ConversationSession>();
+  private contextualMemory: ContextualMemory;
+  private maxSessionAge = 24 * 60 * 60 * 1000; // 24 hours
+  private maxSessions = 100; // Limit memory usage
+
+  constructor() {
+    this.contextualMemory = {
+      medicalTerms: new Set(),
+      symptomPatterns: new Map(),
+      userPreferences: {
+        preferredLanguage: 'es',
+        communicationStyle: 'casual',
+        familyOriented: true
+      },
+      conversationFlow: {
+        commonTransitions: new Map(),
+        topicClusters: new Map()
+      }
+    };
+
+    this.initializeMedicalTerms();
+    this.startCleanupTimer();
+  }
+
+  static getInstance(): ConversationMemoryService {
+    if (!ConversationMemoryService.instance) {
+      ConversationMemoryService.instance = new ConversationMemoryService();
+    }
+    return ConversationMemoryService.instance;
+  }
+
+  updateSession(sessionId: string, message: Message, context?: Partial<ConversationSession['context']>): void {
+    const now = new Date();
+    let session = this.sessions.get(sessionId);
+
+    if (!session) {
+      session = {
+        id: sessionId,
+        startTime: now,
+        lastActivity: now,
+        messages: [],
+        context: {
+          mainSymptoms: [],
+          suggestedConditions: [],
+          currentSeverity: 5,
+          culturalFactors: [],
+          ...context
+        },
+        summary: {
+          keyTopics: [],
+          emergencyFlags: [],
+          followUpNeeded: false
+        }
+      };
+    }
+
+    session.lastActivity = now;
+    session.messages.push(message);
+
+    if (session.messages.length > 50) {
+      session.messages = session.messages.slice(-50);
+    }
+
+    this.updateSessionContext(session, message);
+    this.sessions.set(sessionId, session);
+    this.learnFromMessage(message);
+  }
+
+  getSession(sessionId: string): ConversationSession | undefined {
+    return this.sessions.get(sessionId);
+  }
+
+  getRelevantContext(sessionId: string, currentMessage: string): {
+    recentMessages: Message[];
+    relatedSymptoms: string[];
+    conversationPattern: string;
+    culturalContext: string[];
+  } {
+    const session = this.sessions.get(sessionId);
+    if (!session) {
+      return {
+        recentMessages: [],
+        relatedSymptoms: [],
+        conversationPattern: 'initial',
+        culturalContext: []
+      };
+    }
+
+    const recentMessages = session.messages.slice(-10);
+    const relatedSymptoms = this.extractRelatedSymptoms(currentMessage, session);
+    const conversationPattern = this.determineConversationPattern(session);
+
+    return {
+      recentMessages,
+      relatedSymptoms,
+      conversationPattern,
+      culturalContext: session.context.culturalFactors
+    };
+  }
+
+  private updateSessionContext(session: ConversationSession, message: Message): void {
+    if (message.sender === 'user') {
+      const symptoms = this.extractSymptoms(message.text);
+      session.context.mainSymptoms = [...new Set([...session.context.mainSymptoms, ...symptoms])];
+    }
+
+    const topics = this.extractKeyTopics(message.text);
+    session.summary.keyTopics = [...new Set([...session.summary.keyTopics, ...topics])].slice(-10);
+  }
+
+  private extractSymptoms(text: string): string[] {
+    const symptoms: string[] = [];
+    const lowerText = text.toLowerCase();
+
+    const symptomPatterns = [
+      /dolor de (cabeza|espalda|estómago|garganta|pecho)/,
+      /tengo (fiebre|tos|náuseas|mareos|vómitos)/,
+      /(cansancio|fatiga|debilidad)/
+    ];
+
+    for (const pattern of symptomPatterns) {
+      const matches = lowerText.match(pattern);
+      if (matches) {
+        symptoms.push(matches[0]);
+      }
+    }
+
+    return symptoms;
+  }
+
+  private extractKeyTopics(text: string): string[] {
+    const topics: string[] = [];
+    const lowerText = text.toLowerCase();
+
+    const topicPatterns = [
+      { pattern: /medicamento|medicina|pastilla|tratamiento/, topic: 'medicamentos' },
+      { pattern: /doctor|médico|especialista/, topic: 'consulta_médica' },
+      { pattern: /familia|hijo|hija|esposo|esposa|padre|madre/, topic: 'familia' },
+      { pattern: /emergencia|urgente|grave|hospital/, topic: 'emergencia' }
+    ];
+
+    for (const { pattern, topic } of topicPatterns) {
+      if (pattern.test(lowerText)) {
+        topics.push(topic);
+      }
+    }
+
+    return topics;
+  }
+
+  private extractRelatedSymptoms(currentMessage: string, session: ConversationSession): string[] {
+    return [];
+  }
+
+  private determineConversationPattern(session: ConversationSession): string {
+    const messageCount = session.messages.length;
+    if (messageCount <= 2) return 'initial';
+    return 'general_inquiry';
+  }
+
+  private learnFromMessage(message: Message): void {
+    // Simple learning implementation
+  }
+
+  private initializeMedicalTerms(): void {
+    const commonTerms = [
+      'diabetes', 'hipertensión', 'gripe', 'tos', 'fiebre', 'dolor',
+      'paracetamol', 'ibuprofeno', 'aspirina', 'antibiótico',
+      'doctor', 'médico', 'hospital', 'clínica', 'farmacia'
+    ];
+
+    commonTerms.forEach(term => this.contextualMemory.medicalTerms.add(term));
+  }
+
+  private startCleanupTimer(): void {
+    setInterval(() => {
+      this.cleanupOldSessions();
+    }, 60 * 60 * 1000);
+  }
+
+  cleanupOldSessions(): void {
+    const now = Date.now();
+    const sessionsToDelete: string[] = [];
+
+    for (const [sessionId, session] of this.sessions) {
+      if (now - session.lastActivity.getTime() > this.maxSessionAge) {
+        sessionsToDelete.push(sessionId);
+      }
+    }
+
+    sessionsToDelete.forEach(id => this.sessions.delete(id));
+  }
+}
+
+export const conversationMemoryService = ConversationMemoryService.getInstance();

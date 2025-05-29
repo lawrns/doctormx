@@ -2,12 +2,11 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useAuth } from '../../contexts/AuthContext';
-import { Card, CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
-import { Button } from '../../components/ui/Button';
-import { Input } from '../../components/ui/Input';
-import { Badge } from '../../components/ui/Badge';
-import { Tabs } from '../../components/ui/Tabs';
-import { Select } from '../../components/ui/Select';
+import Card, { CardHeader, CardTitle, CardContent } from '../../components/ui/Card';
+import Button from '../../components/ui/Button';
+import Input from '../../components/ui/Input';
+import Badge from '../../components/ui/Badge';
+import SimpleTabs from '../../components/ui/SimpleTabs';
 import { Container } from '../../components/ui/Container';
 import { 
   Pill, 
@@ -265,32 +264,32 @@ const PrescriptionsPage: React.FC = () => {
                   />
                 </div>
               </div>
-              <Select 
+              <select 
                 value={filterStatus} 
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full md:w-48"
+                className="w-full md:w-48 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-jade-500"
               >
                 <option value="all">Todos los estados</option>
                 <option value="active">Activas</option>
                 <option value="expired">Vencidas</option>
                 <option value="cancelled">Canceladas</option>
                 <option value="completed">Completadas</option>
-              </Select>
-              <Select 
+              </select>
+              <select 
                 value={sortBy} 
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full md:w-48"
+                className="w-full md:w-48 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-jade-500"
               >
                 <option value="date">Fecha de prescripción</option>
                 <option value="name">Nombre del medicamento</option>
                 <option value="expiry">Fecha de vencimiento</option>
-              </Select>
+              </select>
             </div>
           </CardContent>
         </Card>
 
         {/* Tabs */}
-        <Tabs 
+        <SimpleTabs 
           tabs={[
             { id: 'all', label: 'Todas' },
             { id: 'active', label: 'Activas' },
