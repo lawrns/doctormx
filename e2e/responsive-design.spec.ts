@@ -19,7 +19,7 @@ test.describe('Responsive Design Tests', () => {
 
         // Check main content is visible
         await expect(page.locator('h1, h2').first()).toBeVisible();
-        
+
         // Check navigation is accessible
         if (width >= 768) {
           // Desktop/tablet navigation
@@ -46,23 +46,23 @@ test.describe('Responsive Design Tests', () => {
         await page.goto('/doctor');
         await page.waitForLoadState('networkidle');
 
-        // Check chat interface is visible
-        await expect(page.locator('input[placeholder*="síntomas"]')).toBeVisible();
-        await expect(page.locator('button[type="submit"]')).toBeVisible();
+        // Check chat interface is visible - Use correct selectors
+        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele"]')).toBeVisible();
+        await expect(page.locator('button[aria-label="Enviar mensaje"]')).toBeVisible();
 
         // Check chat header
         await expect(page.locator('h1, h2').first()).toBeVisible();
 
         // Check messages area is properly sized
-        const messagesArea = page.locator('.overflow-y-auto').first();
+        const messagesArea = page.locator('.chat-messages-container').first();
         if (await messagesArea.count() > 0) {
           await expect(messagesArea).toBeVisible();
         }
 
-        // Test chat interaction
-        const input = page.locator('input[placeholder*="síntomas"]');
+        // Test chat interaction - Use correct selectors
+        const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
         await input.fill('Test responsive message');
-        await page.locator('button[type="submit"]').click();
+        await page.locator('button[aria-label="Enviar mensaje"]').click();
 
         // Verify message appears and is properly formatted
         await expect(page.locator('text=Test responsive message')).toBeVisible();
@@ -101,17 +101,17 @@ test.describe('Responsive Design Tests', () => {
       await page.goto('/doctor');
       await page.waitForLoadState('networkidle');
 
-      const input = page.locator('input[placeholder*="síntomas"]');
-      
+      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+
       // Test touch input
       await input.tap();
       await expect(input).toBeFocused();
-      
+
       await input.fill('Touch test message');
-      
-      const sendButton = page.locator('button[type="submit"]');
+
+      const sendButton = page.locator('button[aria-label="Enviar mensaje"]');
       await sendButton.tap();
-      
+
       await expect(page.locator('text=Touch test message')).toBeVisible();
     });
 
@@ -121,15 +121,15 @@ test.describe('Responsive Design Tests', () => {
 
       // Tab through interactive elements
       await page.keyboard.press('Tab');
-      const input = page.locator('input[placeholder*="síntomas"]');
+      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
       await expect(input).toBeFocused();
 
       // Type message
       await page.keyboard.type('Keyboard navigation test');
-      
+
       // Submit with Enter
       await page.keyboard.press('Enter');
-      
+
       await expect(page.locator('text=Keyboard navigation test')).toBeVisible();
     });
   });
@@ -138,7 +138,7 @@ test.describe('Responsive Design Tests', () => {
     test('should load quickly on all viewports', async ({ page }) => {
       for (const { name, width, height } of viewports.slice(0, 3)) { // Test a few key sizes
         await page.setViewportSize({ width, height });
-        
+
         const startTime = Date.now();
         await page.goto('/doctor');
         await page.waitForLoadState('networkidle');
@@ -148,7 +148,7 @@ test.describe('Responsive Design Tests', () => {
         expect(loadTime).toBeLessThan(5000);
 
         // Check that critical elements are visible
-        await expect(page.locator('input[placeholder*="síntomas"]')).toBeVisible();
+        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele"]')).toBeVisible();
       }
     });
   });

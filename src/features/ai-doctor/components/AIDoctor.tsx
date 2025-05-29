@@ -27,7 +27,7 @@ import ConfidenceVisualizer from './ConfidenceVisualizer';
 import AIDoctorMobile from './AIDoctorMobile';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
 import { unifiedConversationService } from '../services/UnifiedConversationService';
-import { BrainIntegrationService, PatientContext } from '../../../../brain/BrainIntegrationService';
+import { BrainIntegrationService, PatientContext } from '../services/BrainIntegrationService';
 import { useConversation } from '../../../contexts/ConversationContext';
 import { anonymousConsultationTracker } from '../../../services/AnonymousConsultationTracker';
 import ConversionPrompt from '../../../components/ConversionPrompt';
@@ -87,7 +87,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
   const { isAuthenticated } = useAuth();
   const [showConversionPrompt, setShowConversionPrompt] = useState(false);
   const [consultationLimit, setConsultationLimit] = useState(anonymousConsultationTracker.getUsageData());
-  
+
   const [activeTab, setActiveTab] = useState<Tab>('chat');
   const [input, setInput] = useState('');
   const [inputHeight, setInputHeight] = useState('auto');
@@ -200,7 +200,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     // Mark conversation as started after first user message
     if (!conversationStarted) {
       setConversationStarted(true);
-      
+
       // Track consultation for anonymous users
       if (!isAuthenticated) {
         const canStart = anonymousConsultationTracker.canStartConsultation();
@@ -211,11 +211,11 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           setIsThinking(false);
           return;
         }
-        
+
         // Track the consultation
         anonymousConsultationTracker.trackConsultation(sessionId);
         setConsultationLimit(anonymousConsultationTracker.getUsageData());
-        
+
         // Check if we should show a conversion prompt
         const prompt = anonymousConsultationTracker.getConversionPrompt();
         if (prompt?.show && prompt.type !== 'hard') {
@@ -1996,8 +1996,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
                 ))}
               </div>
             </div>
-            <Link 
-              to="/register" 
+            <Link
+              to="/register"
               className="text-sm font-medium text-[#006D77] hover:text-[#005B66] transition-colors"
             >
               Crear cuenta para más consultas →
@@ -2005,7 +2005,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
           </div>
         </div>
       )}
-      
+
       {/* Tab navigation for desktop */}
       <div className="border-b border-gray-200 bg-white px-6">
         <nav className="flex space-x-8">
@@ -2037,7 +2037,7 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       <div className="flex-1 overflow-hidden">
         {renderTabContent()}
       </div>
-      
+
       {/* Conversion Prompt Modal */}
       {showConversionPrompt && (
         <ConversionPrompt
