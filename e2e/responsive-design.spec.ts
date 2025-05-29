@@ -46,21 +46,21 @@ test.describe('Responsive Design Tests', () => {
         await page.goto('/doctor');
         await page.waitForLoadState('networkidle');
 
-        // Check chat interface is visible - Use correct selectors
-        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele"]')).toBeVisible();
+        // Check chat interface is visible - Use actual selectors
+        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]')).toBeVisible();
         await expect(page.locator('button[aria-label="Enviar mensaje"]')).toBeVisible();
 
         // Check chat header
         await expect(page.locator('h1, h2').first()).toBeVisible();
 
         // Check messages area is properly sized
-        const messagesArea = page.locator('.chat-messages-container').first();
+        const messagesArea = page.locator('.chat-textarea').first();
         if (await messagesArea.count() > 0) {
           await expect(messagesArea).toBeVisible();
         }
 
-        // Test chat interaction - Use correct selectors
-        const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+        // Test chat interaction - Use actual selectors
+        const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
         await input.fill('Test responsive message');
         await page.locator('button[aria-label="Enviar mensaje"]').click();
 
@@ -101,7 +101,7 @@ test.describe('Responsive Design Tests', () => {
       await page.goto('/doctor');
       await page.waitForLoadState('networkidle');
 
-      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
 
       // Test touch input
       await input.tap();
@@ -121,7 +121,7 @@ test.describe('Responsive Design Tests', () => {
 
       // Tab through interactive elements
       await page.keyboard.press('Tab');
-      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+      const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
       await expect(input).toBeFocused();
 
       // Type message
@@ -148,7 +148,7 @@ test.describe('Responsive Design Tests', () => {
         expect(loadTime).toBeLessThan(5000);
 
         // Check that critical elements are visible
-        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele"]')).toBeVisible();
+        await expect(page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]')).toBeVisible();
       }
     });
   });

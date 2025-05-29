@@ -25,8 +25,8 @@ test.describe('AI Doctor Page', () => {
   test('should handle chat interaction', async ({ page }) => {
     await page.waitForLoadState('networkidle');
 
-    // Type a message - Use correct textarea selector
-    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+    // Type a message - Use actual textarea selector
+    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
     await input.fill('Tengo dolor de cabeza');
 
     // Send message - Use correct button selector
@@ -60,12 +60,12 @@ test.describe('AI Doctor Page', () => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.waitForLoadState('networkidle');
 
-    // Check mobile responsiveness - Use more specific selector
-    const chatContainer = page.locator('.chat-messages-container').first();
+    // Check mobile responsiveness - Use actual chat container
+    const chatContainer = page.locator('.chat-textarea').first();
     await expect(chatContainer).toBeVisible();
 
-    // Input should be responsive - Use correct textarea selector
-    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+    // Input should be responsive - Use actual textarea selector
+    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
     await expect(input).toBeVisible();
 
     // Send button should be visible - Use correct button selector
@@ -76,7 +76,7 @@ test.describe('AI Doctor Page', () => {
   test('should handle empty messages gracefully', async ({ page }) => {
     await page.waitForLoadState('networkidle');
 
-    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
     const sendButton = page.locator('button[aria-label="Enviar mensaje"]');
 
     // Try to send empty message
@@ -90,7 +90,7 @@ test.describe('AI Doctor Page', () => {
   test('should prevent multiple rapid submissions', async ({ page }) => {
     await page.waitForLoadState('networkidle');
 
-    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele"]');
+    const input = page.locator('textarea[placeholder*="Cuéntame qué te duele o preocupa"]');
     const sendButton = page.locator('button[aria-label="Enviar mensaje"]');
 
     await input.fill('Test message');
