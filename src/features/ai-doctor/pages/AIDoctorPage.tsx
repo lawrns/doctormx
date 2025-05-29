@@ -8,8 +8,8 @@
 // ======================================================
 
 import { useLocation } from 'react-router-dom';
-// import AIDoctor from '../components/AIDoctor';
-import AIDoctorFixed from '../components/AIDoctorFixed';
+import AIDoctor from '../components/AIDoctor';
+// import AIDoctorFixed from '../components/AIDoctorFixed';
 import SEO from '../../../core/components/SEO';
 import ClientOnly from '../../../components/ClientOnly';
 import { ConversationProvider } from '../../../contexts/ConversationContext';
@@ -29,7 +29,7 @@ function AIDoctorPage() {
       {/* Wrap AIDoctor with ClientOnly to prevent hydration mismatches */}
       <ClientOnly>
         <ConversationProvider>
-          <AIDoctorFixed initialMessage={initialMessage} />
+          <AIDoctor initialMessage={initialMessage} />
         </ConversationProvider>
       </ClientOnly>
     </>
