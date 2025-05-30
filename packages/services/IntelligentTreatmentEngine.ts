@@ -10,6 +10,7 @@ import { HerbService } from './HerbService';
 import { MexicanCulturalContextService } from './MexicanCulturalContextService';
 import { ConstitutionalAnalysisService } from './ConstitutionalAnalysisService';
 import { HerbInteractionService } from './HerbInteractionService';
+import { ComprehensiveProtocolDatabase } from './ComprehensiveProtocolDatabase';
 import {
   ComprehensiveAnalysisResult,
   HealthIndicator,
@@ -338,6 +339,11 @@ export class IntelligentTreatmentEngine {
         primaryFindings: analysis.primaryFindings.length
       });
 
+      // Validate input analysis
+      if (!analysis || !analysis.primaryFindings || !analysis.constitutionalAssessment) {
+        throw new Error('Invalid analysis data provided to treatment engine');
+      }
+
       // Step 1: Identify appropriate treatment protocols
       const matchingProtocols = await this.findMatchingProtocols(analysis);
 
@@ -353,8 +359,14 @@ export class IntelligentTreatmentEngine {
       // Step 5: Safety assessment
       const safetyAssessment = await this.performSafetyAssessment(selectedProtocol, patientContext);
 
-      // Step 6: Cultural adaptations
-      const culturalAdaptations = await this.applyCulturalAdaptations(selectedProtocol, analysis);
+      // Step 6: Cultural adaptations (with error handling)
+      let culturalAdaptations: string[] = [];
+      try {
+        culturalAdaptations = await this.applyCulturalAdaptations(selectedProtocol, analysis);
+      } catch (culturalError) {
+        loggingService.error('IntelligentTreatmentEngine', 'Cultural adaptations failed', culturalError as Error);
+        culturalAdaptations = ['Standard protocol without cultural adaptations'];
+      }
 
       // Step 7: Cost estimation
       const estimatedCost = await this.estimateTreatmentCost(selectedProtocol, personalizations);
@@ -652,7 +664,7 @@ export class IntelligentTreatmentEngine {
     const adaptations: string[] = [];
 
     // Get cultural context
-    const culturalInfo = await this.culturalService.getCulturalContext();
+    const culturalInfo = await this.culturalService.getCulturalContext('treatment_planning', 'general');
 
     adaptations.push(
       'Integrar con tradiciones familiares mexicanas de salud',
@@ -1050,108 +1062,47 @@ export class IntelligentTreatmentEngine {
   }
 
   /**
-   * Initialize treatment protocol database
+   * Initialize treatment protocol database - now uses ComprehensiveProtocolDatabase
    */
   private initializeTreatmentDatabase(): void {
-    // Initialize with basic protocols - in a full system this would load from database
-    const protocols: TreatmentProtocol[] = [
-      // Digestive Health Protocol
-      {
-        id: 'digestive_health_001',
-        name: 'Protocolo de Salud Digestiva Integral',
-        description: 'Protocolo completo para mejorar función digestiva usando medicina tradicional mexicana',
-        category: 'digestive',
-        condition: ['digestive_issues', 'stomach_heat', 'poor_digestion', 'bloating'],
-        constitution: ['pitta', 'all'],
-        duration: '6_weeks',
-        phases: [
-          {
-            phase: 1,
-            name: 'Calming digestive fire',
-            duration: '2 weeks',
-            goals: ['Reduce inflammation', 'Cool excessive heat'],
-            herbs: [
-              {
-                herbName: 'chamomile',
-                mexicanName: 'manzanilla',
-                dosage: '1 cup tea, 3 times daily',
-                preparation: 'Hot tea infusion, 5 minutes',
-                timing: '30 minutes before meals',
-                duration: '2 weeks',
-                purpose: 'Cool digestive fire and reduce inflammation',
-                interactions: [],
-                contraindications: ['Pregnancy (large amounts)'],
-                localAvailability: {
-                  markets: ['Mercado de San Juan', 'Mercado Medellín'],
-                  pharmacies: ['Farmacias Guadalajara', 'Farmacias del Ahorro'],
-                  onlineStores: ['MercadoLibre', 'Amazon Mexico'],
-                  substitutes: ['té de tila', 'hierba buena'],
-                  avgCost: 80,
-                  seasonal: false
-                }
-              }
-            ],
-            lifestyle: [
-              {
-                category: 'stress',
-                recommendation: 'Practice 10 minutes daily meditation',
-                mexicanContext: 'Use traditional Mexican breathing exercises',
-                frequency: 'daily',
-                importance: 'high'
-              }
-            ],
-            diet: [
-              {
-                category: 'foods_to_avoid',
-                recommendation: 'Avoid spicy and fried foods',
-                mexicanFoods: ['chiles picantes', 'tacos dorados', 'comida frita'],
-                seasonalConsiderations: 'Especially during hot months',
-                constitutionalNotes: 'Critical for pitta constitution'
-              }
-            ],
-            monitoring: [
-              {
-                metric: 'Digestive comfort',
-                frequency: 'after each meal',
-                method: '1-10 scale rating',
-                targetRange: '7-9',
-                concernThresholds: 'Below 5 or persistent discomfort'
-              }
-            ],
-            milestones: ['Reduced bloating after meals', 'Less heartburn']
-          }
-        ],
-        mexicanAdaptations: [
-          {
-            aspect: 'Diet',
-            adaptation: 'Incorporate Mexican cooling foods',
-            culturalContext: 'Traditional Mexican understanding of hot/cold foods',
-            practicalTips: ['Use agua fresca', 'Include cucumber and jicama', 'Prepare foods simply']
-          }
-        ],
-        safetyNotes: ['Monitor for allergic reactions', 'Start with smaller doses'],
-        contraindications: ['Severe gastritis', 'Active ulcers without medical supervision'],
-        successMetrics: [
-          {
-            metric: 'Digestive comfort score',
-            baseline: 'Initial assessment',
-            target: '40% improvement',
-            timeframe: '6 weeks',
-            measurement: 'Daily 1-10 scale ratings'
-          }
-        ],
-        evidenceLevel: 'A',
-        culturalRelevance: 90
-      }
-    ];
+    // Get the comprehensive protocol database instance
+    const protocolDB = ComprehensiveProtocolDatabase.getInstance();
+    
+    // Convert comprehensive protocols to treatment engine format
+    const comprehensiveProtocols = protocolDB.getAllProtocols();
+    const protocols: TreatmentProtocol[] = [];
+
+    // Convert each comprehensive protocol to treatment engine format
+    for (const [id, comprehensiveProtocol] of comprehensiveProtocols) {
+      const convertedProtocol: TreatmentProtocol = {
+        id: comprehensiveProtocol.id,
+        name: comprehensiveProtocol.name,
+        description: comprehensiveProtocol.description,
+        category: this.mapComprehensiveCategoryToEngine(comprehensiveProtocol.category),
+        condition: comprehensiveProtocol.condition,
+        constitution: this.mapComprehensiveConstitutionToEngine(comprehensiveProtocol.constitution),
+        duration: this.mapComprehensiveDurationToEngine(comprehensiveProtocol.duration),
+        phases: this.convertComprehensivePhasesToEngine(comprehensiveProtocol.phases),
+        mexicanAdaptations: this.convertCulturalAdaptationsToEngine(comprehensiveProtocol.culturalAdaptations),
+        safetyNotes: this.extractSafetyNotesFromProtocol(comprehensiveProtocol),
+        contraindications: comprehensiveProtocol.contraindications,
+        successMetrics: this.generateSuccessMetricsFromProtocol(comprehensiveProtocol),
+        evidenceLevel: this.mapComprehensiveEvidenceToEngine(comprehensiveProtocol.evidenceLevel),
+        culturalRelevance: 90 // High relevance for Mexican protocols
+      };
+      
+      protocols.push(convertedProtocol);
+    }
 
     // Store protocols in map
     protocols.forEach(protocol => {
       this.treatmentProtocols.set(protocol.id, protocol);
     });
 
-    loggingService.info('IntelligentTreatmentEngine', 'Treatment database initialized', {
-      protocolCount: protocols.length
+    loggingService.info('IntelligentTreatmentEngine', 'Treatment database initialized with comprehensive protocols', {
+      protocolCount: protocols.length,
+      categories: protocols.map(p => p.category),
+      protocolIds: protocols.map(p => p.id)
     });
   }
 
@@ -1179,6 +1130,138 @@ export class IntelligentTreatmentEngine {
         condition.toLowerCase().includes(c.toLowerCase())
       )
     );
+  }
+
+  /**
+   * Conversion helper methods for protocol format compatibility
+   */
+  private mapComprehensiveCategoryToEngine(category: string): TreatmentCategory {
+    const categoryMap: Record<string, TreatmentCategory> = {
+      'dermatological': 'integumentary',
+      'circulatory': 'circulatory',
+      'structural': 'musculoskeletal',
+      'respiratory': 'respiratory',
+      'digestive': 'digestive',
+      'nervous': 'nervous',
+      'endocrine': 'endocrine',
+      'immune': 'immune',
+      'constitutional': 'constitutional',
+      'emotional': 'emotional_mental',
+      'metabolic': 'endocrine',
+      'detoxification': 'digestive'
+    };
+    
+    return categoryMap[category] || 'constitutional';
+  }
+
+  private mapComprehensiveConstitutionToEngine(constitution: string[]): ('vata' | 'pitta' | 'kapha' | 'all')[] {
+    const constitutionMap: Record<string, 'vata' | 'pitta' | 'kapha' | 'all'> = {
+      'vata': 'vata',
+      'pitta': 'pitta',
+      'kapha': 'kapha',
+      'hot': 'pitta',
+      'cold': 'vata',
+      'damp': 'kapha',
+      'dry': 'vata',
+      'balanced': 'all',
+      'all': 'all'
+    };
+    
+    return constitution.map(c => constitutionMap[c] || 'all');
+  }
+
+  private mapComprehensiveDurationToEngine(duration: string): ProtocolDuration {
+    return duration as ProtocolDuration;
+  }
+
+  private convertComprehensivePhasesToEngine(phases: any[]): TreatmentPhase[] {
+    return phases.map(phase => ({
+      phase: phase.phase,
+      name: phase.name,
+      duration: phase.duration,
+      goals: phase.goals,
+      herbs: phase.herbs.map((herb: any) => ({
+        herbName: herb.herbName,
+        mexicanName: herb.mexicanName,
+        dosage: herb.dosage,
+        preparation: herb.preparation,
+        timing: herb.timing,
+        duration: herb.duration,
+        purpose: herb.purpose,
+        interactions: herb.interactions,
+        contraindications: herb.contraindications,
+        localAvailability: {
+          markets: herb.localAvailability.mexicanMarkets ? ['Mexican markets'] : [],
+          pharmacies: herb.localAvailability.pharmacies ? ['Mexican pharmacies'] : [],
+          onlineStores: ['MercadoLibre', 'Amazon Mexico'],
+          substitutes: herb.localAvailability.alternatives || [],
+          avgCost: 150, // Default cost
+          seasonal: herb.localAvailability.seasonality !== 'Year-round'
+        }
+      })),
+      lifestyle: phase.lifestyle.map((lifestyle: any) => ({
+        category: lifestyle.category,
+        recommendation: lifestyle.recommendation,
+        mexicanContext: lifestyle.mexicanAdaptation,
+        frequency: 'daily',
+        importance: lifestyle.priority as 'low' | 'medium' | 'high' | 'critical'
+      })),
+      diet: phase.monitoring.map((monitor: any) => ({
+        category: 'foods_to_include' as const,
+        recommendation: monitor.parameter,
+        mexicanFoods: ['Traditional Mexican foods'],
+        seasonalConsiderations: 'Year-round',
+        constitutionalNotes: 'General constitutional support'
+      })),
+      monitoring: phase.monitoring.map((monitor: any) => ({
+        metric: monitor.parameter,
+        frequency: monitor.frequency,
+        method: monitor.method,
+        targetRange: monitor.targetRange,
+        concernThresholds: monitor.alertConditions.join(', ')
+      })),
+      milestones: phase.milestones?.map((milestone: any) => milestone.milestone) || []
+    }));
+  }
+
+  private convertCulturalAdaptationsToEngine(adaptations: any[]): MexicanAdaptation[] {
+    return adaptations.map(adaptation => ({
+      aspect: adaptation.aspect,
+      adaptation: adaptation.adaptationStrategy,
+      culturalContext: adaptation.mexicanContext,
+      practicalTips: adaptation.culturalConsiderations
+    }));
+  }
+
+  private extractSafetyNotesFromProtocol(protocol: any): string[] {
+    return [
+      'Monitor for individual sensitivities',
+      'Start with lower doses and increase gradually',
+      'Consult healthcare provider if symptoms worsen'
+    ];
+  }
+
+  private generateSuccessMetricsFromProtocol(protocol: any): SuccessMetric[] {
+    return [
+      {
+        metric: 'Overall improvement score',
+        baseline: 'Initial assessment',
+        target: '50% improvement',
+        timeframe: protocol.duration.replace('_', ' '),
+        measurement: 'Patient-reported outcome measures'
+      }
+    ];
+  }
+
+  private mapComprehensiveEvidenceToEngine(evidence: string): 'A' | 'B' | 'C' | 'D' {
+    const evidenceMap: Record<string, 'A' | 'B' | 'C' | 'D'> = {
+      'A': 'A',
+      'B': 'B',
+      'C': 'C',
+      'Traditional': 'D'
+    };
+    
+    return evidenceMap[evidence] || 'C';
   }
 }
 

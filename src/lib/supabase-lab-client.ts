@@ -1,18 +1,6 @@
-import { createClient } from '@supabase/supabase-js';
+// Re-export from the main supabase module to avoid duplicate instances
+export { supabase, getSupabaseClient } from './supabase';
 import type { Database } from './database.types';
-
-// Create a single supabase client for interacting with your database
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Supabase URL or Anon Key is missing');
-}
-
-export const supabase = createClient<Database>(
-  supabaseUrl as string,
-  supabaseAnonKey as string
-);
 
 // Helper function to get the current user
 export async function getCurrentUser() {

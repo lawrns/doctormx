@@ -337,11 +337,14 @@ export interface HealthScore {
 }
 
 export interface HealthIndicator {
-  category: string;
-  finding: string;
+  category?: string;
+  type?: string;
+  finding?: string;
+  description?: string;
   severity: 'low' | 'moderate' | 'high' | 'critical';
   confidence: number;
-  organSystems: string[];
+  location?: string;
+  organSystems?: string[];
   recommendations: string[];
 }
 
@@ -513,38 +516,58 @@ export class ComprehensiveMedicalImageAnalyzer {
       // Step 2: Perform specific analysis based on type
       let result: ComprehensiveAnalysisResult;
 
-      switch (input.analysisType) {
-        case 'facial_analysis':
-          result = await this.performFacialAnalysis(input, qualityMetrics);
-          break;
-        case 'eye_analysis':
-          result = await this.performEyeAnalysis(input, qualityMetrics);
-          break;
-        case 'tongue_diagnosis':
-          result = await this.performTongueAnalysis(input, qualityMetrics);
-          break;
-        case 'skin_analysis':
-          result = await this.performSkinAnalysis(input, qualityMetrics);
-          break;
-        case 'nail_analysis':
-          result = await this.performNailAnalysis(input, qualityMetrics);
-          break;
-        case 'hair_scalp_analysis':
-          result = await this.performHairScalpAnalysis(input, qualityMetrics);
-          break;
-        case 'posture_analysis':
-          result = await this.performPostureAnalysis(input, qualityMetrics);
-          break;
-        case 'comprehensive_scan':
-          result = await this.performComprehensiveAnalysis(input, qualityMetrics);
-          break;
-        default:
-          result = await this.performGeneralAnalysis(input, qualityMetrics);
+      try {
+        switch (input.analysisType) {
+          case 'facial_analysis':
+            result = await this.performFacialAnalysis(input, qualityMetrics);
+            break;
+          case 'eye_analysis':
+            result = await this.performEyeAnalysis(input, qualityMetrics);
+            break;
+          case 'tongue_diagnosis':
+            result = await this.performTongueAnalysis(input, qualityMetrics);
+            break;
+          case 'skin_analysis':
+            result = await this.performSkinAnalysis(input, qualityMetrics);
+            break;
+          case 'nail_analysis':
+            result = await this.performNailAnalysis(input, qualityMetrics);
+            break;
+          case 'hair_scalp_analysis':
+            result = await this.performHairScalpAnalysis(input, qualityMetrics);
+            break;
+          case 'posture_analysis':
+            result = await this.performPostureAnalysis(input, qualityMetrics);
+            break;
+          case 'comprehensive_scan':
+            result = await this.performComprehensiveAnalysis(input, qualityMetrics);
+            break;
+          default:
+            result = await this.performGeneralAnalysis(input, qualityMetrics);
+        }
+      } catch (analysisError) {
+        loggingService.error(
+          'ComprehensiveMedicalImageAnalyzer',
+          `Analysis failed for type ${input.analysisType}`,
+          analysisError instanceof Error ? analysisError : new Error(String(analysisError))
+        );
+        
+        // Return fallback result instead of throwing
+        throw new Error(`Analysis failed for ${input.analysisType}: ${analysisError instanceof Error ? analysisError.message : String(analysisError)}`);
       }
 
       // Step 3: Cultural adaptation and herb recommendations
-      result = await this.applyCulturalContext(result, input.culturalContext || 'mexican');
-      result = await this.generateHerbRecommendations(result);
+      try {
+        result = await this.applyCulturalContext(result, input.culturalContext || 'mexican');
+        result = await this.generateHerbRecommendations(result);
+      } catch (contextError) {
+        loggingService.error(
+          'ComprehensiveMedicalImageAnalyzer',
+          'Failed to apply cultural context or herb recommendations',
+          contextError instanceof Error ? contextError : new Error(String(contextError))
+        );
+        // Continue without cultural enhancements rather than failing
+      }
 
       // Step 4: Final validation and confidence scoring
       result.confidence = this.calculateOverallConfidence(result);
@@ -585,9 +608,9 @@ export class ComprehensiveMedicalImageAnalyzer {
         }],
         secondaryFindings: [],
         constitutionalAssessment: {
-          ayurvedicType: 'unknown',
-          tcmConstitution: 'unknown',
-          metabolicType: 'unknown',
+          ayurvedicType: 'mixed' as const,
+          tcmConstitution: 'balanced' as const,
+          metabolicType: 'normal' as const,
           indicators: ['Analysis incomplete']
         },
         treatmentRecommendations: [],
@@ -597,12 +620,12 @@ export class ComprehensiveMedicalImageAnalyzer {
         followUpSchedule: 'As needed',
         confidence: 0,
         qualityMetrics: {
-          overallQuality: 0,
-          sharpness: 0,
-          lighting: 0,
-          contrast: 0,
+          imageQuality: 0,
+          lightingScore: 0,
+          focusScore: 0,
           colorAccuracy: 0,
           stabilityScore: 0,
+          overallQuality: 0,
           improvements: ['Improve image quality and try again']
         }
       };
@@ -1202,7 +1225,7 @@ export class ComprehensiveMedicalImageAnalyzer {
   ): Promise<ComprehensiveAnalysisResult> {
 
     if (culturalContext === 'mexican') {
-      const culturalInfo = await this.culturalService.getCulturalContext();
+      const culturalInfo = await this.culturalService.getCulturalContext('general_health', 'general');
 
       result.mexicanCulturalContext = [
         'Análisis adaptado para contexto mexicano',

@@ -7,6 +7,8 @@
 import { ConversationIntelligence } from './ConversationIntelligence';
 import { enhancedAIService } from '../../../core/services/ai/EnhancedAIService';
 import { AIAnswerOption } from '../types/AITypes';
+import { enhancedDiagnosticService } from '@svc/EnhancedDiagnosticService';
+import { featureFlagService } from '@svc/FeatureFlagService';
 
 export interface UnifiedResponse {
   text: string;
@@ -96,6 +98,7 @@ export class UnifiedConversationService {
     userMessage: string,
     selectedOption?: string
   ): Promise<UnifiedResponse> {
+    console.log('🔄 UnifiedConversationService.processMessage called:', { sessionId, userMessage, selectedOption });
     const context = this.getOrCreateContext(sessionId);
     
     // Update context with current message
@@ -119,8 +122,43 @@ export class UnifiedConversationService {
       Date.now().toString()
     );
     
-    // Generate unified response with contextual options
+    // Check if enhanced diagnostic service should be used
+    const useEnhancedDiagnostics = await featureFlagService.isFeatureEnabled(
+      'herbDatabase', 
+      context.userId, 
+      sessionId
+    );
+
+    if (useEnhancedDiagnostics) {
+      console.log('🔬 Using enhanced diagnostic service');
+      const enhancedResponse = await enhancedDiagnosticService.processDiagnosticRequest({
+        userMessage,
+        sessionId,
+        userId: context.userId
+      });
+
+      return {
+        text: enhancedResponse.text,
+        answerOptions: this.generateOptionsFromEnhancedResponse(enhancedResponse),
+        metadata: {
+          hasAskedAbout: new Set(context.answeredQuestions.keys()),
+          conversationStage: analysis.intent,
+          shouldShowOptions: true,
+          emotionalState: analysis.emotion,
+          confidence: enhancedResponse.confidence
+        },
+        severity: enhancedResponse.severity,
+        isEmergency: enhancedResponse.isEmergency,
+        suggestedSpecialty: enhancedResponse.suggestedSpecialty,
+        suggestedConditions: enhancedResponse.redFlags.map(f => f.description),
+        suggestedMedications: enhancedResponse.herbRecommendations.primary.map(h => h.commonNames[0] || h.latinName)
+      };
+    }
+
+    // Fallback to original unified response
+    console.log('🧠 Generating unified response with context:', context);
     const response = await this.generateUnifiedResponse(context, analysis);
+    console.log('✅ Generated unified response:', response);
     
     // Store bot response in history
     context.conversationHistory.push({
@@ -144,13 +182,26 @@ export class UnifiedConversationService {
     const enhancedPrompt = this.buildUnifiedPrompt(context, analysis);
     
     // Call AI service with special instructions
-    const aiResponse = await enhancedAIService.processEnhancedQuery({
-      userMessage: enhancedPrompt,
-      userHistory: context.conversationHistory.map(m => m.text),
-      sessionId: context.sessionId,
-      stream: false,
-      showThinking: false // We handle our own UI feedback
-    });
+    console.log('🚀 Calling enhancedAIService with prompt:', enhancedPrompt.substring(0, 200) + '...');
+    let aiResponse;
+    try {
+      aiResponse = await enhancedAIService.processEnhancedQuery({
+        userMessage: enhancedPrompt,
+        userHistory: context.conversationHistory.map(m => m.text),
+        sessionId: context.sessionId,
+        stream: false,
+        showThinking: false // We handle our own UI feedback
+      });
+      console.log('🎯 enhancedAIService response:', aiResponse);
+      
+      if (!aiResponse || !aiResponse.text) {
+        console.error('❌ Invalid response from enhancedAIService:', aiResponse);
+        throw new Error('No response received from AI service');
+      }
+    } catch (aiError) {
+      console.error('❌ Error calling enhancedAIService:', aiError);
+      throw new Error(`AI service error: ${aiError instanceof Error ? aiError.message : 'Unknown error'}`);
+    }
     
     // Parse the unified response
     const parsedResponse = this.parseUnifiedResponse(aiResponse.text, context);
@@ -409,6 +460,71 @@ IMPORTANTE: Las opciones deben ser contextualmente relevantes y NO repetir infor
     return options.slice(0, 4); // Max 4 options
   }
   
+  /**
+   * Generate answer options from enhanced diagnostic response
+   */
+  private generateOptionsFromEnhancedResponse(enhancedResponse: any): AIAnswerOption[] {
+    const options: AIAnswerOption[] = [];
+
+    // Emergency-specific options
+    if (enhancedResponse.isEmergency) {
+      options.push({
+        id: 'call_911',
+        text: 'Llamar al 911',
+        value: 'emergency_call',
+        category: 'emergency'
+      });
+      return options; // Only emergency option for emergencies
+    }
+
+    // Red flag options
+    if (enhancedResponse.redFlags.some((f: any) => f.type === 'urgent')) {
+      options.push({
+        id: 'schedule_urgent',
+        text: 'Necesito cita médica urgente',
+        value: 'urgent_appointment',
+        category: 'medical'
+      });
+    }
+
+    // Herb recommendation options
+    if (enhancedResponse.herbRecommendations.primary.length > 0) {
+      options.push({
+        id: 'herb_info',
+        text: 'Más información sobre remedios naturales',
+        value: 'herb_details',
+        category: 'treatment'
+      });
+    }
+
+    // Specialty referral option
+    if (enhancedResponse.suggestedSpecialty) {
+      options.push({
+        id: 'find_specialist',
+        text: `Buscar ${enhancedResponse.suggestedSpecialty}`,
+        value: 'find_specialist',
+        category: 'referral'
+      });
+    }
+
+    // Follow-up options
+    options.push({
+      id: 'follow_up',
+      text: 'Tengo más preguntas',
+      value: 'more_questions',
+      category: 'general'
+    });
+
+    options.push({
+      id: 'free_text',
+      text: 'Prefiero escribir mi respuesta',
+      value: 'free_text',
+      category: 'free_text'
+    });
+
+    return options.slice(0, 4); // Limit to 4 options
+  }
+
   /**
    * Clear conversation for a session
    */

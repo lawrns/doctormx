@@ -1,5 +1,7 @@
 import { createContext, useContext, ReactNode } from 'react';
-import { supabase } from '../lib/supabaseClient';
+import { getSupabaseClient } from '../lib/supabase';
+
+const supabase = getSupabaseClient();
 
 type SupabaseContextType = {
   supabase: typeof supabase;

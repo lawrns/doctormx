@@ -1,5 +1,7 @@
 import React, { createContext, useState, useContext, useEffect, useRef, ReactNode } from 'react';
-import { supabase } from '../lib/supabaseClient';
+import { getSupabaseClient } from '../lib/supabase';
+
+const supabase = getSupabaseClient();
 
 interface AuthContextType {
   user: any | null;
@@ -36,15 +38,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       if (isTestAccount.current) {
         return true;
       }
-      
+
       // Simple session check using getSession
       const { data: { session }, error } = await supabase.auth.getSession();
-      
+
       if (error) {
         console.error('[Auth] Session verification error:', error);
         return false;
       }
-      
+
       return !!session;
     } catch (error) {
       console.error('[Auth] Session verification error:', error);
@@ -55,20 +57,20 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   // Check for active session on mount with improved error handling
   useEffect(() => {
     let isMounted = true;
-    
+
     const checkSession = async () => {
       try {
         console.log('[Auth] Checking initial session...');
         const { data: { session }, error } = await supabase.auth.getSession();
-        
+
         if (error) {
           console.error('[Auth] Initial session error:', error);
           throw error;
         }
-        
+
         if (isMounted) {
           setUser(session?.user || null);
-          
+
           if (session?.user) {
             await fetchDoctorProfile(session.user.id);
           }
@@ -81,42 +83,42 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       }
     };
-    
+
     checkSession();
-    
+
     // Use a clean subscription approach for auth state changes
     const setupAuthSubscription = () => {
       // Clean up any existing subscription
       if (authSubscription.current) {
         authSubscription.current.unsubscribe();
       }
-      
+
       try {
         const { data } = supabase.auth.onAuthStateChange(async (event, session) => {
           console.log('[Auth] Auth state changed:', event);
-          
+
           if (isMounted) {
             setUser(session?.user || null);
-            
+
             if (event === 'SIGNED_IN' && session?.user) {
               await fetchDoctorProfile(session.user.id);
             } else if (event === 'SIGNED_OUT') {
               setDoctorProfile(null);
               isTestAccount.current = false;
             }
-            
+
             setLoading(false);
           }
         });
-        
+
         authSubscription.current = data.subscription;
       } catch (error) {
         console.error('[Auth] Subscription setup error:', error);
       }
     };
-    
+
     setupAuthSubscription();
-    
+
     // Cleanup function
     return () => {
       isMounted = false;
@@ -126,7 +128,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }
     };
   }, []);
-  
+
   // Fetch doctor profile
   const fetchDoctorProfile = async (userId: string) => {
     try {
@@ -160,24 +162,24 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           sunday: { start: '', end: '' }
         }
       };
-      
+
       setDoctorProfile(mockDoctorProfile);
     } catch (error) {
       console.error('[Auth] Error fetching doctor profile:', error);
     }
   };
-  
+
   // Enhanced login with better test account handling
   const login = async (email: string, password: string) => {
     try {
       console.log(`[Auth] Login attempt with ${email}`);
-      
+
       // Special handling for different test accounts
       if ((email === 'testing@test.com' || email === 'test@test.com') && password.length >= 4) {
         console.log('[Auth] Test credentials detected, using mock account');
-        
+
         const isDoctor = email.toLowerCase() === 'testing@test.com';
-        
+
         // Set up a mock user for the test account
         const mockUser = {
           id: 'test-user-id',
@@ -186,10 +188,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             name: isDoctor ? 'Dr. Test User' : 'Patient Test User'
           }
         };
-        
+
         setUser(mockUser);
         isTestAccount.current = true;
-        
+
         // Only set up doctor profile for the doctor test account
         if (isDoctor) {
           console.log('[Auth] Setting up mock doctor profile');
@@ -212,28 +214,28 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             appointmentDuration: 30,
             workingHours: {}
           };
-          
+
           setDoctorProfile(mockDoctorProfile);
         } else {
           console.log('[Auth] Setting up regular patient account');
           // Make sure no doctor profile is set for patient accounts
           setDoctorProfile(null);
         }
-        
+
         console.log('[Auth] Mock user set successfully');
         return { success: true };
       }
-      
+
       // Standard Supabase authentication with improved error handling
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password
       });
-      
+
       if (error) {
         throw error;
       }
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Login error:', error);
@@ -243,7 +245,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   // Login with Google
   const loginWithGoogle = async () => {
     try {
@@ -253,11 +255,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           redirectTo: `${window.location.origin}/auth/callback`
         }
       });
-      
+
       if (error) {
         throw error;
       }
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Google login error:', error);
@@ -267,7 +269,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   // Register new user
   const register = async (email: string, password: string, name: string) => {
     try {
@@ -280,14 +282,14 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           }
         }
       });
-      
+
       if (error) {
         throw error;
       }
-      
+
       // Create doctor profile
       // In a real implementation, we would create a record in the doctor_profiles table
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Registration error:', error);
@@ -297,12 +299,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   // Enhanced logout with proper cleanup
   const logout = async () => {
     try {
       console.log('[Auth] Logout initiated');
-      
+
       // For test accounts, just clear the state
       if (isTestAccount.current) {
         console.log('[Auth] Logging out test account');
@@ -311,7 +313,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         isTestAccount.current = false;
         return;
       }
-      
+
       // For real accounts, use Supabase signOut
       const { error } = await supabase.auth.signOut();
       if (error) {
@@ -324,18 +326,18 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       setDoctorProfile(null);
     }
   };
-  
+
   // Password reset request
   const forgotPassword = async (email: string) => {
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth/reset-password`,
       });
-      
+
       if (error) {
         throw error;
       }
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Forgot password error:', error);
@@ -345,18 +347,18 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   // Reset password
   const resetPassword = async (newPassword: string) => {
     try {
       const { error } = await supabase.auth.updateUser({
         password: newPassword
       });
-      
+
       if (error) {
         throw error;
       }
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Reset password error:', error);
@@ -366,7 +368,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   // Update profile
   const updateProfile = async (data: any) => {
     try {
@@ -378,21 +380,21 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             phone: data.phone
           }
         });
-        
+
         if (userError) {
           throw userError;
         }
       }
-      
+
       // Update doctor profile
       // In a real implementation, we would update the doctor_profiles table
-      
+
       // Update local state
       setDoctorProfile((prev: any) => ({
         ...prev,
         ...data
       }));
-      
+
       return { success: true };
     } catch (error: any) {
       console.error('[Auth] Profile update error:', error);
@@ -402,7 +404,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       };
     }
   };
-  
+
   const value = {
     user,
     loading,
@@ -421,7 +423,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     updateProfile,
     verifySession
   };
-  
+
   return (
     <AuthContext.Provider value={value}>
       {children}

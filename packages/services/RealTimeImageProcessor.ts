@@ -99,7 +99,7 @@ export class ImageQualityAssessment {
 
   constructor() {
     this.canvas = document.createElement('canvas');
-    const context = this.canvas.getContext('2d');
+    const context = this.canvas.getContext('2d', { willReadFrequently: true });
     if (!context) {
       throw new Error('Canvas 2D context not available');
     }
@@ -472,7 +472,7 @@ export class RealTimeImageProcessor {
     }
 
     const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) {
       throw new Error('Canvas 2D context not available');
     }
@@ -506,11 +506,6 @@ export class RealTimeImageProcessor {
 
         canvas.width = videoWidth;
         canvas.height = videoHeight;
-
-        // Set willReadFrequently for better performance with frequent getImageData calls
-        if (!(canvas as any).willReadFrequently) {
-          (canvas as any).willReadFrequently = true;
-        }
 
         ctx.drawImage(videoElement, 0, 0);
 
@@ -906,6 +901,13 @@ export class RealTimeImageProcessor {
     this.imageBuffer.frames = [];
     this.imageBuffer.currentIndex = 0;
     this.imageBuffer.isFull = false;
+  }
+
+  /**
+   * Analyze a single image directly (for manual capture)
+   */
+  async analyzeImage(input: ImageAnalysisInput): Promise<ComprehensiveAnalysisResult> {
+    return await this.imageAnalyzer.analyzeImage(input);
   }
 
   /**

@@ -15,7 +15,7 @@ import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
-import { DoctorAuthProvider } from './contexts/DoctorAuthContext';
+
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import './env-check';
 
@@ -42,15 +42,13 @@ root.render(
           <ThemeProvider>
             <SupabaseProvider>
               <AuthProvider>
-                <DoctorAuthProvider>
-                  <BrowserRouter>
-                    <ToastProvider>
-                      <QuestionnaireProvider>
-                        <App />
-                      </QuestionnaireProvider>
-                    </ToastProvider>
-                  </BrowserRouter>
-                </DoctorAuthProvider>
+                <BrowserRouter>
+                  <ToastProvider>
+                    <QuestionnaireProvider>
+                      <App />
+                    </QuestionnaireProvider>
+                  </ToastProvider>
+                </BrowserRouter>
               </AuthProvider>
             </SupabaseProvider>
           </ThemeProvider>

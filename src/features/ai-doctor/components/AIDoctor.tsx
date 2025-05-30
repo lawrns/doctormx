@@ -224,11 +224,13 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
     setMessages(prev => [...prev, initialBotMessage]);
 
     try {
+      console.log('🤖 Processing message with unified service:', userInput);
       // Use unified conversation service for better context tracking
       const unifiedResponse = await unifiedConversationService.processMessage(
         sessionId,
         userInput
       );
+      console.log('🤖 Got unified response:', unifiedResponse);
       
       // Check if this needs thinking animation
       const conversationAnalysis = ConversationFlowService.analyzeMessage(userInput);
@@ -277,14 +279,19 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       return;
       
     } catch (error) {
-      console.error('Error processing message:', error);
+      console.error('❌ Error processing message:', error);
+      console.error('❌ Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+      
+      const errorMessage = error instanceof Error ? 
+        `Error: ${error.message}` : 
+        'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.';
       
       setMessages(prev => 
         prev.map(msg => 
           msg.id === botMessageId 
             ? {
                 id: botMessageId,
-                text: 'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.',
+                text: errorMessage,
                 sender: 'bot',
                 timestamp: new Date(),
                 isStreaming: false,

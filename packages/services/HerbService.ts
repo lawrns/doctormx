@@ -3,19 +3,11 @@
  * Provides search, filtering, and recommendation functionality for herbal medicines
  */
 
-import { createClient } from '@supabase/supabase-js';
+import { getSupabaseClient } from '../../src/lib/supabase';
 import type { Herb, HerbSearchFilters, HerbSearchResult } from '@pkg/types';
 import { loggingService } from './LoggingService';
 
-// Use environment variables or fall back to existing config
-const supabaseUrl = process.env.VITE_SUPABASE_URL || import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.VITE_SUPABASE_ANON_KEY || import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase configuration for HerbService');
-}
-
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = getSupabaseClient();
 
 export class HerbService {
   private static instance: HerbService;

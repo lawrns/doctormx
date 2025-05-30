@@ -9,7 +9,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src'),
+      '@pkg': path.resolve(__dirname, 'packages'),
+      '@svc': path.resolve(__dirname, 'packages/services')
     },
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },

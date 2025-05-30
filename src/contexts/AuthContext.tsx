@@ -1,5 +1,7 @@
 import React, { createContext, useState, useContext, useEffect, useRef, ReactNode } from 'react';
-import { supabase } from '../lib/supabaseClient';
+import { getSupabaseClient } from '../lib/supabase';
+
+const supabase = getSupabaseClient();
 import { User } from '@supabase/supabase-js';
 import { anonymousConsultationTracker } from '../services/AnonymousConsultationTracker';
 import { subscriptionService } from '../services/SubscriptionService';
@@ -58,7 +60,7 @@ interface AuthContextType {
   createDoctorProfile: (data: Partial<DoctorProfile>) => Promise<{ success: boolean; error?: string }>;
   verifySession: () => Promise<boolean>;
   refreshProfile: () => Promise<void>;
-  
+
   // Legacy compatibility (for existing components)
   doctorId: string | null;
   doctorName: string | null;
@@ -215,12 +217,12 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const verifySession = async (): Promise<boolean> => {
     try {
       const { data: { session }, error } = await supabase.auth.getSession();
-      
+
       if (error) {
         console.error('[Auth] Session verification error:', error);
         return false;
       }
-      
+
       return !!session;
     } catch (error) {
       console.error('[Auth] Session verification error:', error);
@@ -232,7 +234,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const login = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
     try {
       setLoading(true);
-      
+
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password
@@ -302,7 +304,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       if (data.user) {
         // Create user profile
         await createUserProfile(data.user, { full_name: name });
-        
+
         // Handle anonymous consultation transition
         const anonymousUsage = anonymousConsultationTracker.getUsageData();
         if (anonymousUsage.used > 0) {
@@ -427,21 +429,21 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   // Initialize auth state
   useEffect(() => {
     let isMounted = true;
-    
+
     const initializeAuth = async () => {
       try {
         console.log('[Auth] Initializing authentication...');
-        
+
         const { data: { session }, error } = await supabase.auth.getSession();
-        
+
         if (error) {
           console.error('[Auth] Initial session error:', error);
           throw error;
         }
-        
+
         if (isMounted && session?.user) {
           setUser(session.user);
-          
+
           // Load user profile
           const userProf = await fetchUserProfile(session.user.id);
           if (userProf) {
@@ -451,11 +453,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             const newProfile = await createUserProfile(session.user);
             setUserProfile(newProfile);
           }
-          
+
           // Load doctor profile if exists
           const doctorProf = await fetchDoctorProfile(session.user.id);
           setDoctorProfile(doctorProf);
-          
+
           // Load admin profile if exists
           const adminProf = await fetchAdminProfile(session.user.id);
           setAdminProfile(adminProf);
@@ -468,17 +470,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       }
     };
-    
+
     initializeAuth();
-    
+
     // Set up auth state change listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       console.log('[Auth] Auth state changed:', event);
-      
+
       if (isMounted) {
         if (session?.user) {
           setUser(session.user);
-          
+
           if (event === 'SIGNED_IN') {
             // Load or create profiles
             let userProf = await fetchUserProfile(session.user.id);
@@ -486,10 +488,10 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
               userProf = await createUserProfile(session.user);
             }
             setUserProfile(userProf);
-            
+
             const doctorProf = await fetchDoctorProfile(session.user.id);
             setDoctorProfile(doctorProf);
-            
+
             const adminProf = await fetchAdminProfile(session.user.id);
             setAdminProfile(adminProf);
           }
@@ -499,13 +501,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           setDoctorProfile(null);
           setAdminProfile(null);
         }
-        
+
         setLoading(false);
       }
     });
-    
+
     authSubscription.current = { unsubscribe: subscription.unsubscribe };
-    
+
     return () => {
       isMounted = false;
       if (authSubscription.current) {
@@ -544,7 +546,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     createDoctorProfile,
     verifySession,
     refreshProfile,
-    
+
     // Legacy compatibility
     doctorId,
     doctorName,

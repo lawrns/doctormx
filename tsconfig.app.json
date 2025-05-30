@@ -19,7 +19,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Path mapping */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@pkg/*": ["./packages/*"],
+      "@svc/*": ["./packages/services/*"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "packages"]
 }

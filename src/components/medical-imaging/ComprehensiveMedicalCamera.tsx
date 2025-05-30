@@ -346,7 +346,7 @@ export default function ComprehensiveMedicalCamera({
           culturalContext
         };
 
-        const analysis = await processorRef.current.imageAnalyzer.analyzeImage(analysisInput);
+        const analysis = await processorRef.current.analyzeImage(analysisInput);
 
         setCameraState(prev => ({
           ...prev,

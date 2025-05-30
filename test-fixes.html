@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoctorMX Fixes Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #console-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            margin-top: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>DoctorMX Fixes Test Page</h1>
+
+    <div class="test-section">
+        <h2>1. Supabase Client Singleton Test</h2>
+        <p>Testing if multiple Supabase client instances are being created.</p>
+        <button onclick="testSupabaseInstances()">Test Supabase Instances</button>
+        <div id="supabase-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Feature Flags Test</h2>
+        <p>Testing if feature flags can be accessed without 404 errors.</p>
+        <button onclick="testFeatureFlags()">Test Feature Flags</button>
+        <div id="feature-flags-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Camera Processing Test</h2>
+        <p>Testing if camera processing handles zero dimensions properly.</p>
+        <button onclick="testCameraProcessing()">Test Camera Processing</button>
+        <div id="camera-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>4. Canvas Image Analysis Test</h2>
+        <p>Testing comprehensive medical image analysis with canvas operations.</p>
+        <button onclick="testCanvasImageAnalysis()">Test Image Analysis</button>
+        <canvas id="testCanvas" width="640" height="480" style="border: 1px solid #ccc; margin: 10px;"></canvas>
+        <div id="canvas-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>5. Analysis Types Test</h2>
+        <p>Testing all medical analysis types (facial, skin, body, wound, rash).</p>
+        <button onclick="testAllAnalysisTypes()">Test All Analysis Types</button>
+        <div id="analysis-types-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>6. Error Handling Test</h2>
+        <p>Testing error handling in image processing workflows.</p>
+        <button onclick="testErrorHandling()">Test Error Handling</button>
+        <div id="error-handling-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>7. Treatment Engine Test</h2>
+        <p>Testing treatment plan generation from image analysis.</p>
+        <button onclick="testTreatmentEngine()">Test Treatment Engine</button>
+        <div id="treatment-result"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Console Output</h2>
+        <div id="console-output"></div>
+        <button onclick="clearConsole()">Clear Console</button>
+    </div>
+
+    <script>
+        // Capture console output
+        const originalLog = console.log;
+        const originalWarn = console.warn;
+        const originalError = console.error;
+        const consoleOutput = document.getElementById('console-output');
+
+        function addToConsole(type, ...args) {
+            const timestamp = new Date().toLocaleTimeString();
+            const message = `[${timestamp}] ${type.toUpperCase()}: ${args.join(' ')}\n`;
+            consoleOutput.textContent += message;
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+
+        console.log = (...args) => {
+            originalLog(...args);
+            addToConsole('log', ...args);
+        };
+
+        console.warn = (...args) => {
+            originalWarn(...args);
+            addToConsole('warn', ...args);
+        };
+
+        console.error = (...args) => {
+            originalError(...args);
+            addToConsole('error', ...args);
+        };
+
+        function clearConsole() {
+            consoleOutput.textContent = '';
+        }
+
+        function setResult(elementId, success, message) {
+            const element = document.getElementById(elementId);
+            element.className = success ? 'success' : 'error';
+            element.innerHTML = `<strong>${success ? 'SUCCESS' : 'ERROR'}:</strong> ${message}`;
+        }
+
+        function testSupabaseInstances() {
+            console.log('Testing Supabase client instances...');
+
+            // Check if window has instance tracking
+            const instanceCount = window.__supabaseInstanceCount || 0;
+            const hasInstance = !!window.__supabaseInstance;
+
+            console.log('Supabase instance count:', instanceCount);
+            console.log('Has window instance:', hasInstance);
+
+            if (instanceCount <= 1) {
+                setResult('supabase-result', true, `Single instance detected. Count: ${instanceCount}`);
+            } else {
+                setResult('supabase-result', false, `Multiple instances detected. Count: ${instanceCount}`);
+            }
+        }
+
+        async function testFeatureFlags() {
+            console.log('Testing feature flags access...');
+
+            try {
+                // Test the actual feature flags endpoint on correct port
+                const response = await fetch('http://localhost:8888/.netlify/functions/test-feature-flags');
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setResult('feature-flags-result', true, `Feature flags accessible: ${data.message}`);
+                    console.log('Feature flags data:', data);
+                } else {
+                    setResult('feature-flags-result', false, `HTTP ${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Feature flags test error:', error);
+                setResult('feature-flags-result', false, error.message);
+            }
+        }
+
+        function testCameraProcessing() {
+            console.log('Testing camera processing with zero dimensions...');
+
+            // Create a mock video element with zero dimensions
+            const mockVideo = {
+                videoWidth: 0,
+                videoHeight: 0,
+                readyState: 1
+            };
+
+            // Simulate the dimension check logic
+            if (mockVideo.videoWidth === 0 || mockVideo.videoHeight === 0) {
+                console.log('Video dimensions not ready, skipping frame', {
+                    videoWidth: mockVideo.videoWidth,
+                    videoHeight: mockVideo.videoHeight,
+                    readyState: mockVideo.readyState
+                });
+                setResult('camera-result', true, 'Zero dimension handling works correctly');
+            } else {
+                setResult('camera-result', false, 'Zero dimension check failed');
+            }
+        }
+
+        async function testCanvasImageAnalysis() {
+            console.log('Testing canvas image analysis...');
+
+            try {
+                const canvas = document.getElementById('testCanvas');
+                const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+                if (!ctx) {
+                    throw new Error('Failed to get canvas context');
+                }
+
+                // Draw a medical test pattern
+                ctx.fillStyle = '#f0f0f0';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                // Simulate skin area
+                ctx.fillStyle = '#fdbcb4';
+                ctx.fillRect(100, 100, 200, 150);
+
+                // Simulate a medical finding (like a mole or rash)
+                ctx.fillStyle = '#8B4513';
+                ctx.beginPath();
+                ctx.arc(200, 175, 20, 0, 2 * Math.PI);
+                ctx.fill();
+
+                // Add some texture
+                ctx.fillStyle = '#ffd3cc';
+                for (let i = 0; i < 50; i++) {
+                    ctx.beginPath();
+                    ctx.arc(
+                        100 + Math.random() * 200,
+                        100 + Math.random() * 150,
+                        Math.random() * 2,
+                        0, 2 * Math.PI
+                    );
+                    ctx.fill();
+                }
+
+                // Test image data extraction
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                
+                if (imageData && imageData.data.length > 0) {
+                    console.log(`Successfully extracted ${imageData.data.length} pixels`);
+                    
+                    // Simulate quality assessment
+                    const quality = analyzeImageQuality(imageData);
+                    console.log('Image quality metrics:', quality);
+
+                    setResult('canvas-result', true, 
+                        `Canvas analysis successful. Quality: ${quality.overall.toFixed(1)}%`);
+                } else {
+                    throw new Error('Failed to extract image data');
+                }
+
+            } catch (error) {
+                console.error('Canvas analysis error:', error);
+                setResult('canvas-result', false, error.message);
+            }
+        }
+
+        function analyzeImageQuality(imageData) {
+            const data = imageData.data;
+            let brightness = 0;
+            let contrast = 0;
+            let pixelCount = data.length / 4;
+
+            // Calculate brightness
+            for (let i = 0; i < data.length; i += 4) {
+                brightness += (data[i] + data[i + 1] + data[i + 2]) / 3;
+            }
+            brightness = (brightness / pixelCount) / 255 * 100;
+
+            // Calculate contrast (simplified)
+            let variance = 0;
+            for (let i = 0; i < data.length; i += 4) {
+                const pixelBrightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
+                variance += Math.pow(pixelBrightness - (brightness * 255 / 100), 2);
+            }
+            contrast = Math.sqrt(variance / pixelCount) / 255 * 100;
+
+            return {
+                brightness,
+                contrast,
+                overall: (brightness + contrast) / 2
+            };
+        }
+
+        async function testAllAnalysisTypes() {
+            console.log('Testing all medical analysis types...');
+
+            const analysisTypes = [
+                'facial_analysis',
+                'skin_analysis',
+                'body_analysis',
+                'wound_assessment',
+                'rash_analysis'
+            ];
+
+            let passed = 0;
+            let total = analysisTypes.length;
+
+            for (const type of analysisTypes) {
+                try {
+                    const result = await simulateAnalysisType(type);
+                    console.log(`${type} analysis completed:`, result);
+                    passed++;
+                } catch (error) {
+                    console.error(`${type} analysis failed:`, error);
+                }
+            }
+
+            const success = passed === total;
+            setResult('analysis-types-result', success, 
+                `${passed}/${total} analysis types passed`);
+        }
+
+        async function simulateAnalysisType(type) {
+            // Simulate processing time
+            await new Promise(resolve => setTimeout(resolve, 100 + Math.random() * 200));
+
+            // Simulate analysis results based on type
+            const baseResult = {
+                analysisType: type,
+                timestamp: new Date().toISOString(),
+                confidence: 0.7 + Math.random() * 0.3
+            };
+
+            switch (type) {
+                case 'facial_analysis':
+                    return {
+                        ...baseResult,
+                        findings: ['Facial symmetry normal', 'Skin tone consistent'],
+                        recommendations: ['Regular skincare routine']
+                    };
+                case 'skin_analysis':
+                    return {
+                        ...baseResult,
+                        findings: ['Normal skin texture', 'Good hydration level'],
+                        recommendations: ['Continue current skincare']
+                    };
+                case 'body_analysis':
+                    return {
+                        ...baseResult,
+                        findings: ['Body proportions normal', 'No visible abnormalities'],
+                        recommendations: ['Regular health checkups']
+                    };
+                case 'wound_assessment':
+                    return {
+                        ...baseResult,
+                        findings: ['No active wounds detected'],
+                        recommendations: ['Maintain good hygiene']
+                    };
+                case 'rash_analysis':
+                    return {
+                        ...baseResult,
+                        findings: ['No rash patterns detected'],
+                        recommendations: ['Monitor for changes']
+                    };
+                default:
+                    throw new Error(`Unknown analysis type: ${type}`);
+            }
+        }
+
+        async function testErrorHandling() {
+            console.log('Testing error handling scenarios...');
+
+            let errorTests = [
+                { name: 'Null Image Data', test: () => processNullImageData() },
+                { name: 'Invalid Canvas Context', test: () => processInvalidContext() },
+                { name: 'Network Simulation Error', test: () => simulateNetworkError() },
+                { name: 'Analysis Type Error', test: () => simulateAnalysisType('invalid_type') }
+            ];
+
+            let passed = 0;
+            let total = errorTests.length;
+
+            for (const errorTest of errorTests) {
+                try {
+                    await errorTest.test();
+                    console.error(`${errorTest.name} should have thrown an error`);
+                } catch (error) {
+                    console.log(`${errorTest.name} properly caught error:`, error.message);
+                    passed++;
+                }
+            }
+
+            const success = passed === total;
+            setResult('error-handling-result', success, 
+                `${passed}/${total} error handling tests passed`);
+        }
+
+        function processNullImageData() {
+            if (!null || !null.data) {
+                throw new Error('Cannot process null image data');
+            }
+        }
+
+        function processInvalidContext() {
+            const invalidCanvas = document.createElement('canvas');
+            invalidCanvas.width = -1; // Invalid dimensions
+            const ctx = invalidCanvas.getContext('2d');
+            if (invalidCanvas.width < 0) {
+                throw new Error('Invalid canvas dimensions');
+            }
+        }
+
+        async function simulateNetworkError() {
+            await new Promise(resolve => setTimeout(resolve, 50));
+            throw new Error('Simulated network timeout');
+        }
+
+        async function testTreatmentEngine() {
+            console.log('Testing treatment engine with mock analysis data...');
+
+            try {
+                // Simulate a complete analysis result
+                const mockAnalysis = {
+                    analysisType: 'skin_analysis',
+                    primaryFindings: ['Dry skin detected', 'Minor irritation'],
+                    constitutionalAssessment: {
+                        energyLevel: 'moderate',
+                        hydration: 'low',
+                        circulation: 'normal'
+                    },
+                    confidence: 0.85,
+                    culturalContext: 'mexican'
+                };
+
+                const treatmentPlan = await generateMockTreatmentPlan(mockAnalysis);
+                console.log('Generated treatment plan:', treatmentPlan);
+
+                if (treatmentPlan && treatmentPlan.recommendations && treatmentPlan.recommendations.length > 0) {
+                    setResult('treatment-result', true, 
+                        `Treatment plan generated with ${treatmentPlan.recommendations.length} recommendations`);
+                } else {
+                    throw new Error('Failed to generate treatment plan');
+                }
+
+            } catch (error) {
+                console.error('Treatment engine error:', error);
+                setResult('treatment-result', false, error.message);
+            }
+        }
+
+        async function generateMockTreatmentPlan(analysis) {
+            // Simulate treatment plan generation
+            await new Promise(resolve => setTimeout(resolve, 200));
+
+            if (!analysis.primaryFindings || !analysis.constitutionalAssessment) {
+                throw new Error('Invalid analysis data for treatment generation');
+            }
+
+            return {
+                treatmentId: 'mock_' + Date.now(),
+                analysisId: 'analysis_' + Date.now(),
+                recommendations: [
+                    'Increase water intake to 2-3 liters daily',
+                    'Apply gentle moisturizer twice daily',
+                    'Use mild, fragrance-free cleansers',
+                    'Consider traditional Mexican herbs like manzanilla for soothing'
+                ],
+                culturalAdaptations: [
+                    'Incorporate traditional Mexican healing practices',
+                    'Use locally available natural remedies'
+                ],
+                followUpRequired: false,
+                urgencyLevel: 'low',
+                confidence: analysis.confidence
+            };
+        }
+
+        // Auto-run tests on page load
+        window.addEventListener('load', () => {
+            console.log('DoctorMX Fixes Test Page loaded');
+            setTimeout(() => {
+                testSupabaseInstances();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

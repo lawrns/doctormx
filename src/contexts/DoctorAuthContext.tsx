@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
+import { getSupabaseClient } from '../lib/supabase';
+
+const supabase = getSupabaseClient();
 import { User, Session } from '@supabase/supabase-js';
 
 interface DoctorProfile {
@@ -76,8 +78,8 @@ export const DoctorAuthProvider: React.FC<DoctorAuthProviderProps> = ({ children
 
   // Sign up new doctor
   const signUp = async (
-    email: string, 
-    password: string, 
+    email: string,
+    password: string,
     doctorData: Omit<DoctorProfile, 'id' | 'user_id' | 'status' | 'verificado' | 'created_at' | 'updated_at'>
   ) => {
     try {
@@ -240,7 +242,7 @@ export const DoctorAuthProvider: React.FC<DoctorAuthProviderProps> = ({ children
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
-      
+
       if (session?.user) {
         fetchDoctorProfile(session.user.id).then(profile => {
           setDoctorProfile(profile);
@@ -292,4 +294,4 @@ export const DoctorAuthProvider: React.FC<DoctorAuthProviderProps> = ({ children
   );
 };
 
-export default DoctorAuthContext; 
+export default DoctorAuthContext;
