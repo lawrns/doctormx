@@ -10,6 +10,7 @@ import AIHomePage from './pages/AIHomePage';
 import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
 import AnalysisPage from './features/ai-analysis/AnalysisPage';
 import ImageAnalysisPage from './features/ai-image-analysis/ImageAnalysisPage';
+import AdvancedImageAnalysisPage from './pages/ai-image-analysis/AdvancedImageAnalysisPage';
 import LabTestingPage from './pages/LabTestingPageSimple';
 import DoctorConnectPage from './pages/DoctorConnectPage';
 
@@ -39,6 +40,15 @@ const DoctorVerification = React.lazy(() => import('./pages/admin/DoctorVerifica
 const CommunityPage = React.lazy(() => import('./pages/community/CommunityPage'));
 const HealthEducationPage = React.lazy(() => import('./pages/community/HealthEducationPage'));
 
+// Constitutional Analysis page
+const ConstitutionalAnalysisPage = React.lazy(() => import('./pages/constitutional/ConstitutionalAnalysisPage'));
+
+// Progress Tracking page
+const ProgressTrackingPage = React.lazy(() => import('./pages/progress/ProgressTrackingPage'));
+
+// Protocol Timeline page
+const ProtocolTimelinePage = React.lazy(() => import('./pages/protocol/ProtocolTimelinePage'));
+
 function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
@@ -47,7 +57,9 @@ function App() {
         <Route path="/*" element={<AILayout />}>
           <Route index element={<AIHomePage />} />
           <Route path="image-analysis" element={<ImageAnalysisPage />} />
+          <Route path="advanced-image-analysis" element={<AdvancedImageAnalysisPage />} />
           <Route path="lab-testing" element={<LabTestingPage />} />
+          <Route path="constitutional-analysis" element={<ConstitutionalAnalysisPage />} />
           <Route path="connect" element={<DoctorConnectPage />} />
         </Route>
 
@@ -72,6 +84,8 @@ function App() {
           <Route path="family" element={<FamilyPage />} />
           <Route path="prescriptions" element={<PrescriptionsPage />} />
           <Route path="lab-results" element={<LabResultsPage />} />
+          <Route path="progress" element={<ProgressTrackingPage />} />
+          <Route path="protocols" element={<ProtocolTimelinePage />} />
         </Route>
 
         {/* Appointment Routes - with AI layout and auth protection */}

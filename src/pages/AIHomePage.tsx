@@ -554,6 +554,129 @@ function AIHomePage() {
                 ))}
               </div>
             </div>
+
+            {/* New Services Section */}
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
+                Servicios Especializados:
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                {/* Constitutional Analysis */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                >
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl">🧘‍♀️</div>
+                    <h4 className="text-lg font-semibold text-green-800">Análisis Constitucional</h4>
+                    <p className="text-sm text-gray-600">
+                      Descubre tu tipo constitucional ayurvédico y recibe recomendaciones personalizadas de hierbas y estilo de vida.
+                    </p>
+                    <Link
+                      to="/constitutional-analysis"
+                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                    >
+                      Comenzar Análisis
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Image Analysis */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                >
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl">📱</div>
+                    <h4 className="text-lg font-semibold text-blue-800">Análisis de Imágenes Médicas</h4>
+                    <p className="text-sm text-gray-600">
+                      Análisis médico avanzado: facial, ojos, lengua, piel, uñas y postura con IA de segunda generación.
+                    </p>
+                    <Link
+                      to="/advanced-image-analysis"
+                      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                    >
+                      Analizar Imagen
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Lab Testing */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                >
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl">🧪</div>
+                    <h4 className="text-lg font-semibold text-purple-800">Laboratorios</h4>
+                    <p className="text-sm text-gray-600">
+                      Encuentra laboratorios cercanos y obtén interpretación de resultados médicos.
+                    </p>
+                    <Link
+                      to="/lab-testing"
+                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                    >
+                      Ver Laboratorios
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Progress Tracking */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="bg-gradient-to-br from-indigo-50 to-teal-50 border-2 border-indigo-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                >
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl">📊</div>
+                    <h4 className="text-lg font-semibold text-indigo-800">Seguimiento de Progreso</h4>
+                    <p className="text-sm text-gray-600">
+                      Monitorea síntomas, establece objetivos y recibe análisis inteligente de tu evolución.
+                    </p>
+                    <Link
+                      to="/profile/progress"
+                      className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                    >
+                      Ver Dashboard
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {/* Protocol Timeline */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                >
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl">📋</div>
+                    <h4 className="text-lg font-semibold text-yellow-800">Protocolos de Tratamiento</h4>
+                    <p className="text-sm text-gray-600">
+                      Planes estructurados día a día con hierbas, dieta y hábitos personalizados para tu condición.
+                    </p>
+                    <Link
+                      to="/profile/protocols"
+                      className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                    >
+                      Ver Protocolos
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </div>
         </section>
 
