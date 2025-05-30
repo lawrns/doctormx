@@ -21,7 +21,7 @@ import SEO from '../../core/components/SEO';
 import {
   AnalysisType,
   ComprehensiveAnalysisResult
-} from '../../../packages/services/ComprehensiveMedicalImageAnalyzer';
+} from '../../../packages/services/RealComprehensiveMedicalImageAnalyzer';
 import {
   IntelligentTreatmentEngine,
   PersonalizedTreatmentPlan

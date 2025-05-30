@@ -24,7 +24,7 @@ import {
 import {
   AnalysisType,
   ComprehensiveAnalysisResult
-} from '../../../packages/services/ComprehensiveMedicalImageAnalyzer';
+} from '../../../packages/services/RealComprehensiveMedicalImageAnalyzer';
 
 interface Props {
   analysisType: AnalysisType;
