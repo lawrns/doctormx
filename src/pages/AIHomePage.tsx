@@ -10,6 +10,9 @@ import {
 import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
+import FeatureDiscovery from '../components/FeatureDiscovery';
+import Onboarding from '../components/Onboarding';
 
 // Enhanced chat messages for the animation
 const ENHANCED_MESSAGES = [
@@ -102,6 +105,7 @@ function AIHomePage() {
   const [chatInput, setChatInput] = useState('');
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   // Enhanced message rotation with thinking animation
   useEffect(() => {
@@ -861,6 +865,9 @@ function AIHomePage() {
           </div>
         </section>
 
+        {/* Feature Discovery Section */}
+        <FeatureDiscovery />
+
         {/* Enhanced Final CTA */}
         <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-16">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
@@ -890,6 +897,9 @@ function AIHomePage() {
         </section>
 
       </main>
+      
+      {/* Onboarding for new users */}
+      <Onboarding />
       
       <SEO 
         title="Dr. Simeon | Tu médico mexicano inteligente - DoctorMX"

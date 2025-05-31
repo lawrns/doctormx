@@ -18,6 +18,7 @@ import ToastProvider from './contexts/ToastContext';
 
 import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import './env-check';
+import './i18n/config'; // Initialize i18n
 
 // Create a client
 const queryClient = new QueryClient({

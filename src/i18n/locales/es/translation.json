@@ -1,0 +1,232 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "retry": "Reintentar",
+    "viewMore": "Ver más",
+    "viewLess": "Ver menos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "aiDoctor": "Doctor IA",
+    "appointments": "Citas",
+    "labTests": "Análisis",
+    "prescriptions": "Recetas",
+    "profile": "Perfil",
+    "settings": "Configuración",
+    "help": "Ayuda",
+    "logout": "Cerrar sesión",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "features": "Funciones",
+    "imageAnalysis": "Análisis de Imagen",
+    "constitutionalAnalysis": "Análisis Constitucional",
+    "progressTracking": "Seguimiento de Progreso",
+    "protocols": "Protocolos",
+    "community": "Comunidad",
+    "emergency": "Emergencia"
+  },
+  "home": {
+    "hero": {
+      "title": "Tu Salud, Nuestra Prioridad",
+      "subtitle": "Consulta médica con IA avanzada para todos los mexicanos",
+      "cta": "Comenzar consulta gratuita",
+      "features": {
+        "ai": "Diagnóstico con IA",
+        "247": "Disponible 24/7",
+        "secure": "100% Seguro",
+        "mexican": "Contexto Mexicano"
+      }
+    },
+    "discover": {
+      "title": "Descubre Nuestras Funciones",
+      "subtitle": "Todo lo que necesitas para cuidar tu salud",
+      "features": {
+        "aiDoctor": {
+          "title": "Doctor IA",
+          "description": "Consulta médica instantánea con inteligencia artificial"
+        },
+        "imageAnalysis": {
+          "title": "Análisis de Imagen",
+          "description": "Diagnóstico visual de piel, ojos, lengua y más"
+        },
+        "labTests": {
+          "title": "Análisis de Laboratorio",
+          "description": "Sube y comprende tus resultados de laboratorio"
+        },
+        "constitutional": {
+          "title": "Análisis Constitucional",
+          "description": "Descubre tu tipo constitucional Ayurvédico y TCM"
+        },
+        "progress": {
+          "title": "Seguimiento",
+          "description": "Monitorea tu progreso de salud a lo largo del tiempo"
+        },
+        "appointments": {
+          "title": "Citas Médicas",
+          "description": "Agenda citas con profesionales certificados"
+        }
+      }
+    }
+  },
+  "aiDoctor": {
+    "title": "Doctor IA",
+    "subtitle": "Háblame de tus síntomas",
+    "placeholder": "Describe cómo te sientes...",
+    "send": "Enviar",
+    "quickActions": {
+      "title": "Consultas rápidas",
+      "headache": "Tengo dolor de cabeza",
+      "fever": "Tengo fiebre",
+      "stomach": "Me duele el estómago",
+      "fatigue": "Me siento muy cansado"
+    },
+    "thinking": "Analizando tu consulta...",
+    "disclaimer": "Este es un asistente de IA. Para emergencias, llama al 911.",
+    "newConsultation": "Nueva consulta",
+    "exportConsultation": "Exportar consulta",
+    "voiceInput": "Entrada de voz",
+    "imageUpload": "Subir imagen"
+  },
+  "imageAnalysis": {
+    "title": "Análisis de Imagen Médica",
+    "subtitle": "Selecciona el tipo de análisis que necesitas",
+    "types": {
+      "facial": "Análisis Facial",
+      "eye": "Análisis de Ojos",
+      "tongue": "Diagnóstico de Lengua",
+      "skin": "Análisis de Piel",
+      "nail": "Análisis de Uñas",
+      "hair": "Análisis Capilar",
+      "posture": "Análisis Postural",
+      "comprehensive": "Escaneo Completo"
+    },
+    "capture": {
+      "title": "Captura de Imagen",
+      "instructions": "Posiciona la cámara correctamente",
+      "quality": "Calidad de imagen",
+      "lighting": "Iluminación",
+      "focus": "Enfoque",
+      "stability": "Estabilidad",
+      "capture": "Tomar Foto",
+      "retake": "Tomar otra",
+      "analyze": "Analizar",
+      "requirements": {
+        "good": "Buena iluminación natural",
+        "steady": "Mantén la cámara estable",
+        "clear": "Imagen clara y enfocada",
+        "centered": "Centra el área a analizar"
+      }
+    },
+    "results": {
+      "title": "Resultados del Análisis",
+      "confidence": "Confianza",
+      "findings": "Hallazgos",
+      "recommendations": "Recomendaciones",
+      "followUp": "Seguimiento recomendado"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "remember": "Recordarme",
+      "forgot": "¿Olvidaste tu contraseña?",
+      "submit": "Iniciar sesión",
+      "noAccount": "¿No tienes cuenta?",
+      "signUp": "Regístrate"
+    },
+    "register": {
+      "title": "Crear Cuenta",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "terms": "Acepto los términos y condiciones",
+      "submit": "Registrarse",
+      "hasAccount": "¿Ya tienes cuenta?",
+      "signIn": "Inicia sesión"
+    },
+    "errors": {
+      "invalidCredentials": "Credenciales inválidas",
+      "emailInUse": "Este correo ya está registrado",
+      "weakPassword": "La contraseña debe tener al menos 8 caracteres",
+      "networkError": "Error de conexión. Intenta de nuevo."
+    }
+  },
+  "errors": {
+    "general": "Algo salió mal. Por favor intenta de nuevo.",
+    "network": "Error de conexión. Verifica tu internet.",
+    "notFound": "Página no encontrada",
+    "unauthorized": "No tienes permiso para ver esto",
+    "serverError": "Error del servidor. Intenta más tarde.",
+    "imageUpload": "Error al subir la imagen",
+    "analysisError": "Error durante el análisis",
+    "retry": "Reintentar",
+    "goHome": "Ir al inicio"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "¡Bienvenido a DoctorMX!",
+      "subtitle": "Tu asistente de salud personal con IA",
+      "next": "Comenzar"
+    },
+    "features": {
+      "title": "¿Qué puedo hacer?",
+      "items": [
+        "Consulta médica instantánea 24/7",
+        "Análisis de imágenes médicas",
+        "Seguimiento de tu progreso",
+        "Recomendaciones personalizadas"
+      ]
+    },
+    "setup": {
+      "title": "Configuremos tu perfil",
+      "subtitle": "Esto nos ayuda a personalizar tu experiencia",
+      "age": "Edad",
+      "gender": "Género",
+      "conditions": "¿Tienes alguna condición médica?",
+      "skip": "Omitir por ahora",
+      "complete": "Completar configuración"
+    }
+  },
+  "help": {
+    "title": "Centro de Ayuda",
+    "search": "¿En qué podemos ayudarte?",
+    "categories": {
+      "gettingStarted": "Primeros Pasos",
+      "aiDoctor": "Usando el Doctor IA",
+      "imageAnalysis": "Análisis de Imágenes",
+      "account": "Cuenta y Configuración",
+      "privacy": "Privacidad y Seguridad"
+    },
+    "contact": {
+      "title": "¿Necesitas más ayuda?",
+      "email": "Envíanos un correo",
+      "chat": "Chat en vivo"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido",
+    "mainNavigation": "Navegación principal",
+    "closeMenu": "Cerrar menú",
+    "openMenu": "Abrir menú",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "language": "Idioma",
+    "fontSize": "Tamaño de texto"
+  }
+}

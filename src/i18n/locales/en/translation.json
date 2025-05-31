@@ -1,0 +1,232 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "retry": "Retry",
+    "viewMore": "View more",
+    "viewLess": "View less"
+  },
+  "nav": {
+    "home": "Home",
+    "aiDoctor": "AI Doctor",
+    "appointments": "Appointments",
+    "labTests": "Lab Tests",
+    "prescriptions": "Prescriptions",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "features": "Features",
+    "imageAnalysis": "Image Analysis",
+    "constitutionalAnalysis": "Constitutional Analysis",
+    "progressTracking": "Progress Tracking",
+    "protocols": "Protocols",
+    "community": "Community",
+    "emergency": "Emergency"
+  },
+  "home": {
+    "hero": {
+      "title": "Your Health, Our Priority",
+      "subtitle": "Advanced AI medical consultation for all Mexicans",
+      "cta": "Start free consultation",
+      "features": {
+        "ai": "AI Diagnosis",
+        "247": "Available 24/7",
+        "secure": "100% Secure",
+        "mexican": "Mexican Context"
+      }
+    },
+    "discover": {
+      "title": "Discover Our Features",
+      "subtitle": "Everything you need to take care of your health",
+      "features": {
+        "aiDoctor": {
+          "title": "AI Doctor",
+          "description": "Instant medical consultation with artificial intelligence"
+        },
+        "imageAnalysis": {
+          "title": "Image Analysis",
+          "description": "Visual diagnosis of skin, eyes, tongue and more"
+        },
+        "labTests": {
+          "title": "Lab Tests",
+          "description": "Upload and understand your lab results"
+        },
+        "constitutional": {
+          "title": "Constitutional Analysis",
+          "description": "Discover your Ayurvedic and TCM constitutional type"
+        },
+        "progress": {
+          "title": "Progress Tracking",
+          "description": "Monitor your health progress over time"
+        },
+        "appointments": {
+          "title": "Medical Appointments",
+          "description": "Schedule appointments with certified professionals"
+        }
+      }
+    }
+  },
+  "aiDoctor": {
+    "title": "AI Doctor",
+    "subtitle": "Tell me about your symptoms",
+    "placeholder": "Describe how you feel...",
+    "send": "Send",
+    "quickActions": {
+      "title": "Quick consultations",
+      "headache": "I have a headache",
+      "fever": "I have a fever",
+      "stomach": "My stomach hurts",
+      "fatigue": "I feel very tired"
+    },
+    "thinking": "Analyzing your consultation...",
+    "disclaimer": "This is an AI assistant. For emergencies, call 911.",
+    "newConsultation": "New consultation",
+    "exportConsultation": "Export consultation",
+    "voiceInput": "Voice input",
+    "imageUpload": "Upload image"
+  },
+  "imageAnalysis": {
+    "title": "Medical Image Analysis",
+    "subtitle": "Select the type of analysis you need",
+    "types": {
+      "facial": "Facial Analysis",
+      "eye": "Eye Analysis",
+      "tongue": "Tongue Diagnosis",
+      "skin": "Skin Analysis",
+      "nail": "Nail Analysis",
+      "hair": "Hair Analysis",
+      "posture": "Posture Analysis",
+      "comprehensive": "Complete Scan"
+    },
+    "capture": {
+      "title": "Image Capture",
+      "instructions": "Position the camera correctly",
+      "quality": "Image quality",
+      "lighting": "Lighting",
+      "focus": "Focus",
+      "stability": "Stability",
+      "capture": "Take Photo",
+      "retake": "Retake",
+      "analyze": "Analyze",
+      "requirements": {
+        "good": "Good natural lighting",
+        "steady": "Keep camera steady",
+        "clear": "Clear and focused image",
+        "centered": "Center the area to analyze"
+      }
+    },
+    "results": {
+      "title": "Analysis Results",
+      "confidence": "Confidence",
+      "findings": "Findings",
+      "recommendations": "Recommendations",
+      "followUp": "Recommended follow-up"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign in",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign up"
+    },
+    "register": {
+      "title": "Create Account",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "terms": "I accept the terms and conditions",
+      "submit": "Sign up",
+      "hasAccount": "Already have an account?",
+      "signIn": "Sign in"
+    },
+    "errors": {
+      "invalidCredentials": "Invalid credentials",
+      "emailInUse": "This email is already registered",
+      "weakPassword": "Password must be at least 8 characters",
+      "networkError": "Connection error. Please try again."
+    }
+  },
+  "errors": {
+    "general": "Something went wrong. Please try again.",
+    "network": "Connection error. Check your internet.",
+    "notFound": "Page not found",
+    "unauthorized": "You don't have permission to view this",
+    "serverError": "Server error. Try again later.",
+    "imageUpload": "Error uploading image",
+    "analysisError": "Error during analysis",
+    "retry": "Retry",
+    "goHome": "Go home"
+  },
+  "onboarding": {
+    "welcome": {
+      "title": "Welcome to DoctorMX!",
+      "subtitle": "Your personal AI health assistant",
+      "next": "Get Started"
+    },
+    "features": {
+      "title": "What can I do?",
+      "items": [
+        "24/7 instant medical consultation",
+        "Medical image analysis",
+        "Track your progress",
+        "Personalized recommendations"
+      ]
+    },
+    "setup": {
+      "title": "Let's set up your profile",
+      "subtitle": "This helps us personalize your experience",
+      "age": "Age",
+      "gender": "Gender",
+      "conditions": "Do you have any medical conditions?",
+      "skip": "Skip for now",
+      "complete": "Complete setup"
+    }
+  },
+  "help": {
+    "title": "Help Center",
+    "search": "How can we help you?",
+    "categories": {
+      "gettingStarted": "Getting Started",
+      "aiDoctor": "Using AI Doctor",
+      "imageAnalysis": "Image Analysis",
+      "account": "Account & Settings",
+      "privacy": "Privacy & Security"
+    },
+    "contact": {
+      "title": "Need more help?",
+      "email": "Email us",
+      "chat": "Live chat"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "mainNavigation": "Main navigation",
+    "closeMenu": "Close menu",
+    "openMenu": "Open menu",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "language": "Language",
+    "fontSize": "Text size"
+  }
+}
