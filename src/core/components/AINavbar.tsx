@@ -105,7 +105,7 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
                   {t('nav.profile')}
                 </Link>
                 <Link to="/medical-history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                  {t('nav.medicalHistory') || 'Historial Médico'}
+                  {t('nav.medicalHistory')}
                 </Link>
                 <div className="border-t border-gray-100 my-1"></div>
                 <button

@@ -36,7 +36,8 @@
     "progressTracking": "Progress Tracking",
     "protocols": "Protocols",
     "community": "Community",
-    "emergency": "Emergency"
+    "emergency": "Emergency",
+    "medicalHistory": "Medical History"
   },
   "home": {
     "hero": {

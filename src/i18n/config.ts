@@ -31,8 +31,10 @@ i18n
       caches: ['localStorage']
     },
     
+    returnObjects: true, // Allow returning objects/arrays
+    
     // Debug in development
-    debug: process.env.NODE_ENV === 'development'
+    debug: false // Disable debug logs
   });
 
 export default i18n;

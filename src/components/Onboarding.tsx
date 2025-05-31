@@ -26,7 +26,7 @@ const Onboarding: React.FC = () => {
     },
     {
       title: t('onboarding.features.title'),
-      content: t('onboarding.features.items') as string[],
+      content: t('onboarding.features.items', { returnObjects: true }) as string[],
     },
     {
       title: t('onboarding.setup.title'),
@@ -113,11 +113,11 @@ const Onboarding: React.FC = () => {
             {currentStepData.title}
           </h2>
           
-          {currentStepData.content.length === 1 ? (
+          {Array.isArray(currentStepData.content) && currentStepData.content.length === 1 ? (
             <p className="text-center text-gray-600">
               {currentStepData.content[0]}
             </p>
-          ) : (
+          ) : Array.isArray(currentStepData.content) ? (
             <ul className="space-y-2">
               {currentStepData.content.map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
@@ -126,6 +126,10 @@ const Onboarding: React.FC = () => {
                 </li>
               ))}
             </ul>
+          ) : (
+            <p className="text-center text-gray-600">
+              {currentStepData.content}
+            </p>
           )}
         </div>
 
