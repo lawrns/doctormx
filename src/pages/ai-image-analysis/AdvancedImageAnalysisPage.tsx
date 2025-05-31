@@ -17,6 +17,7 @@ import {
 import { Button } from '../../components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
 import ComprehensiveMedicalCamera from '../../components/medical-imaging/ComprehensiveMedicalCamera';
+import ImageCaptureWithOverlay from '../../components/medical-imaging/ImageCaptureWithOverlay';
 import SEO from '../../core/components/SEO';
 import {
   AnalysisType,
@@ -269,14 +270,26 @@ export default function AdvancedImageAnalysisPage() {
 
   if (currentStep === 'capture' && selectedAnalysis) {
     return (
-      <ComprehensiveMedicalCamera
-        analysisType={selectedAnalysis.type}
-        onAnalysisComplete={handleAnalysisComplete}
-        onClose={goBack}
-        culturalContext="mexican"
-        enableGuidance={true}
-        enableRealTimeAnalysis={true}
-      />
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="mb-6">
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={goBack}
+              className="hover:bg-gray-100"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Selection
+            </Button>
+          </div>
+          <ImageCaptureWithOverlay
+            analysisType={selectedAnalysis.type}
+            onComplete={handleAnalysisComplete}
+            culturalContext="mexican"
+          />
+        </div>
+      </div>
     );
   }
 

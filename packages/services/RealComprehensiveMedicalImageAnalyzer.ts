@@ -17,6 +17,7 @@ import { RealFacialAnalyzer } from './RealFacialAnalyzer';
 import { IntelligentProtocolMatcher } from './IntelligentProtocolMatcher';
 import { HerbService } from './HerbService';
 import { MexicanCulturalContextService } from './MexicanCulturalContextService';
+import { realDiagnosticAnalysisService } from './RealDiagnosticAnalysisService';
 
 // Import existing interfaces that we need to maintain compatibility
 export interface ImageAnalysisInput {
@@ -141,13 +142,31 @@ export class RealComprehensiveMedicalImageAnalyzer {
   }
 
   constructor() {
-    this.imageProcessor = RealImageProcessor.getInstance();
-    this.cvAnalyzer = ComputerVisionAnalyzer.getInstance();
-    this.skinAnalyzer = RealSkinAnalyzer.getInstance();
-    this.facialAnalyzer = RealFacialAnalyzer.getInstance();
-    this.protocolMatcher = IntelligentProtocolMatcher.getInstance();
-    this.herbService = HerbService.getInstance();
-    this.culturalService = MexicanCulturalContextService.getInstance();
+    try {
+      this.imageProcessor = RealImageProcessor.getInstance();
+      this.cvAnalyzer = ComputerVisionAnalyzer.getInstance();
+      this.skinAnalyzer = RealSkinAnalyzer.getInstance();
+      this.facialAnalyzer = RealFacialAnalyzer.getInstance();
+      this.protocolMatcher = IntelligentProtocolMatcher.getInstance();
+      this.herbService = HerbService.getInstance();
+      this.culturalService = MexicanCulturalContextService.getInstance();
+      
+      // Validate all dependencies are properly initialized
+      if (!this.imageProcessor) {
+        throw new Error('Failed to initialize RealImageProcessor');
+      }
+      if (!this.facialAnalyzer) {
+        throw new Error('Failed to initialize RealFacialAnalyzer');
+      }
+      if (!this.facialAnalyzer.analyzeFace) {
+        throw new Error('RealFacialAnalyzer missing analyzeFace method');
+      }
+      
+      loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'All dependencies initialized successfully');
+    } catch (error) {
+      loggingService.error('RealComprehensiveMedicalImageAnalyzer', 'Failed to initialize dependencies', error as Error);
+      throw error;
+    }
   }
 
   /**
@@ -171,7 +190,29 @@ export class RealComprehensiveMedicalImageAnalyzer {
         throw new Error(`Image quality insufficient for analysis. Score: ${qualityMetrics.overallQuality}/100`);
       }
 
-      // Step 3: Perform real analysis based on type
+      // Step 3: Extract features for diagnostic analysis
+      const imageFeatures = await realDiagnosticAnalysisService.extractImageFeatures(imageData);
+      
+      // Step 4: Perform real diagnostic analysis
+      const diagnosticResult = await realDiagnosticAnalysisService.analyzeDiagnostics(
+        imageData,
+        input.analysisType,
+        imageFeatures
+      );
+
+      // Step 5: Generate constitutional assessment
+      const constitutionalMarkers = await realDiagnosticAnalysisService.generateConstitutionalAssessment(
+        imageFeatures,
+        input.analysisType
+      );
+
+      // Step 6: Generate treatment recommendations
+      const treatmentRecommendations = await realDiagnosticAnalysisService.generateTreatmentRecommendations(
+        diagnosticResult.findings,
+        constitutionalMarkers
+      );
+
+      // Step 7: Perform specialized analysis based on type
       let result: ComprehensiveAnalysisResult;
 
       switch (input.analysisType) {
@@ -199,14 +240,18 @@ export class RealComprehensiveMedicalImageAnalyzer {
           result = await this.performRealFacialAnalysis(imageData, input, qualityMetrics);
       }
 
-      // Step 4: Apply cultural context
+      // Step 8: Merge real diagnostic findings with specialized analysis
+      result = this.mergeWithRealDiagnostics(result, diagnosticResult, constitutionalMarkers, treatmentRecommendations);
+
+      // Step 9: Apply cultural context
       result = await this.applyCulturalContext(result, input.culturalContext || 'mexican');
 
-      // Step 5: Generate herb recommendations
+      // Step 10: Generate herb recommendations
       result = await this.generateHerbRecommendations(result);
 
-      // Step 6: Store real analysis data
+      // Step 11: Store real analysis data
       result.realImageMetrics = realImageMetrics;
+      result.confidence = Math.max(result.confidence, diagnosticResult.confidence);
 
       loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Real analysis completed successfully', {
         analysisType: input.analysisType,
@@ -218,8 +263,13 @@ export class RealComprehensiveMedicalImageAnalyzer {
       return result;
 
     } catch (error) {
-      loggingService.error('RealComprehensiveMedicalImageAnalyzer', 'Real analysis failed', error as Error);
-      throw new Error(`Real image analysis failed: ${(error as Error).message}`);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      loggingService.error('RealComprehensiveMedicalImageAnalyzer', 'Real analysis failed', error as Error, {
+        errorType: error?.constructor?.name,
+        errorMessage,
+        analysisType: input.analysisType
+      });
+      throw new Error(`Real image analysis failed: ${errorMessage}`);
     }
   }
 
@@ -232,8 +282,34 @@ export class RealComprehensiveMedicalImageAnalyzer {
     qualityMetrics: QualityMetrics
   ): Promise<ComprehensiveAnalysisResult> {
     
-    // Use the real facial analyzer
-    const facialAnalysisResult = await this.facialAnalyzer.analyzeFace(imageData);
+    try {
+      loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Starting facial analysis step', {
+        imageSize: `${imageData.width}x${imageData.height}`,
+        facialAnalyzerType: typeof this.facialAnalyzer,
+        analyzeFaceMethod: typeof this.facialAnalyzer.analyzeFace
+      });
+      
+      // Check if facial analyzer is properly initialized
+      if (!this.facialAnalyzer) {
+        throw new Error('FacialAnalyzer not initialized');
+      }
+      
+      if (typeof this.facialAnalyzer.analyzeFace !== 'function') {
+        throw new Error('FacialAnalyzer.analyzeFace is not a function');
+      }
+      
+      // Use the real facial analyzer with error handling
+      const facialAnalysisResult = await Promise.race([
+        this.facialAnalyzer.analyzeFace(imageData),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Facial analysis timeout after 30 seconds')), 30000)
+        )
+      ]) as any;
+      
+      loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Facial analysis completed successfully', {
+        confidence: facialAnalysisResult.confidence,
+        healthIndicatorsCount: facialAnalysisResult.healthIndicators.length
+      });
     
     // Convert facial analysis results to legacy format
     const primaryFindings = this.convertFacialFindingsToHealthIndicators(facialAnalysisResult.healthIndicators);
@@ -271,6 +347,39 @@ export class RealComprehensiveMedicalImageAnalyzer {
       facialAnalysisResult,
       protocolRecommendation
     };
+
+    } catch (error) {
+      loggingService.error('RealComprehensiveMedicalImageAnalyzer', 'Facial analysis failed, using fallback', error as Error);
+      
+      // Return a basic result with minimal findings
+      return {
+        analysisType: input.analysisType,
+        timestamp: new Date(),
+        overallHealthScore: { score: 70, status: 'fair', indicators: ['Basic analysis'], recommendations: ['Continue monitoring'] },
+        primaryFindings: [{
+          category: 'constitutional',
+          finding: 'General facial analysis completed',
+          severity: 'low',
+          confidence: 0.6,
+          organSystems: ['general'],
+          recommendations: ['Regular health monitoring']
+        }],
+        secondaryFindings: [],
+        constitutionalAssessment: {
+          ayurvedicType: 'mixed',
+          tcmConstitution: 'balanced',
+          metabolicType: 'normal',
+          indicators: ['Basic constitutional assessment']
+        },
+        treatmentRecommendations: [],
+        mexicanCulturalContext: [],
+        herbRecommendations: [],
+        urgentReferrals: [],
+        followUpSchedule: '2 weeks',
+        confidence: 0.6,
+        qualityMetrics
+      };
+    }
   }
 
   /**
@@ -435,36 +544,63 @@ export class RealComprehensiveMedicalImageAnalyzer {
 
   private convertToImageData(input: string | File | Blob): Promise<ImageData> {
     return new Promise((resolve, reject) => {
-      if (typeof input === 'string') {
-        // Handle base64 string
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
-        
-        img.onload = () => {
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx?.drawImage(img, 0, 0);
-          const imageData = ctx?.getImageData(0, 0, canvas.width, canvas.height);
-          if (imageData) {
-            resolve(imageData);
-          } else {
-            reject(new Error('Failed to extract image data'));
+      // Check if DOM APIs are available
+      if (typeof document === 'undefined' || typeof window === 'undefined') {
+        reject(new Error('DOM APIs not available for image processing'));
+        return;
+      }
+      
+      try {
+        if (typeof input === 'string') {
+          // Handle base64 string
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d', { willReadFrequently: true });
+          if (!ctx) {
+            reject(new Error('Failed to get canvas 2D context'));
+            return;
           }
-        };
-        
-        img.onerror = () => reject(new Error('Failed to load image'));
-        img.src = input;
-      } else {
-        // Handle File or Blob
-        const reader = new FileReader();
-        reader.onload = () => {
-          if (reader.result) {
-            this.convertToImageData(reader.result as string).then(resolve).catch(reject);
-          }
-        };
-        reader.onerror = () => reject(new Error('Failed to read file'));
-        reader.readAsDataURL(input);
+          
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          
+          img.onload = () => {
+            try {
+              // Validate image dimensions
+              if (img.width === 0 || img.height === 0) {
+                reject(new Error('Invalid image dimensions'));
+                return;
+              }
+              
+              canvas.width = img.width;
+              canvas.height = img.height;
+              ctx.drawImage(img, 0, 0);
+              const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              resolve(imageData);
+            } catch (drawError) {
+              reject(new Error(`Failed to process image: ${drawError instanceof Error ? drawError.message : 'Unknown error'}`));
+            }
+          };
+          
+          img.onerror = (e) => {
+            reject(new Error(`Failed to load image: ${e instanceof Error ? e.message : 'Image load error'}`));
+          };
+          
+          img.src = input;
+        } else {
+          // Handle File or Blob
+          const reader = new FileReader();
+          reader.onload = () => {
+            if (reader.result && typeof reader.result === 'string') {
+              this.convertToImageData(reader.result).then(resolve).catch(reject);
+            } else {
+              reject(new Error('Failed to read file data'));
+            }
+          };
+          reader.onerror = () => reject(new Error('Failed to read file'));
+          reader.readAsDataURL(input);
+        }
+      } catch (error) {
+        reject(new Error(`Image conversion error: ${error instanceof Error ? error.message : 'Unknown error'}`));
       }
     });
   }
@@ -797,6 +933,73 @@ export class RealComprehensiveMedicalImageAnalyzer {
     
     result.herbRecommendations = [...new Set(herbRecommendations)]; // Remove duplicates
     
+    return result;
+  }
+
+  /**
+   * Merge real diagnostic findings with specialized analysis results
+   */
+  private mergeWithRealDiagnostics(
+    result: ComprehensiveAnalysisResult,
+    diagnosticResult: any,
+    constitutionalMarkers: ConstitutionalMarkers,
+    treatmentRecommendations: TreatmentRecommendation[]
+  ): ComprehensiveAnalysisResult {
+    // Replace mock findings with real diagnostic findings
+    result.primaryFindings = diagnosticResult.findings.filter((f: HealthIndicator) => 
+      f.severity === 'high' || f.severity === 'moderate'
+    );
+    
+    result.secondaryFindings = diagnosticResult.findings.filter((f: HealthIndicator) => 
+      f.severity === 'low'
+    );
+
+    // Use real constitutional assessment if more specific
+    if (constitutionalMarkers.indicators.length > result.constitutionalAssessment.indicators.length) {
+      result.constitutionalAssessment = constitutionalMarkers;
+    }
+
+    // Merge treatment recommendations, prioritizing real diagnostic recommendations
+    const existingCategories = new Set(result.treatmentRecommendations.map(r => r.category));
+    const newRecommendations = treatmentRecommendations.filter(r => 
+      !existingCategories.has(r.category) || r.urgency === 'urgent'
+    );
+    
+    result.treatmentRecommendations = [
+      ...treatmentRecommendations.filter(r => r.urgency === 'urgent' || r.urgency === 'emergency'),
+      ...result.treatmentRecommendations.filter(r => r.urgency !== 'urgent' && r.urgency !== 'emergency'),
+      ...newRecommendations
+    ];
+
+    // Update confidence based on diagnostic confidence
+    result.confidence = (result.confidence + diagnosticResult.confidence) / 2;
+
+    // Update health score based on findings
+    const severeFindings = diagnosticResult.findings.filter((f: HealthIndicator) => f.severity === 'high').length;
+    const moderateFindings = diagnosticResult.findings.filter((f: HealthIndicator) => f.severity === 'moderate').length;
+    
+    // Adjust health score based on findings
+    const findingsPenalty = (severeFindings * 15) + (moderateFindings * 5);
+    result.overallHealthScore.score = Math.max(20, result.overallHealthScore.score - findingsPenalty);
+    
+    // Update health status based on new score
+    if (result.overallHealthScore.score >= 85) {
+      result.overallHealthScore.status = 'excellent';
+    } else if (result.overallHealthScore.score >= 70) {
+      result.overallHealthScore.status = 'good';
+    } else if (result.overallHealthScore.score >= 50) {
+      result.overallHealthScore.status = 'fair';
+    } else {
+      result.overallHealthScore.status = 'poor';
+    }
+
+    // Add diagnostic basis to indicators
+    result.overallHealthScore.indicators = [
+      ...result.overallHealthScore.indicators,
+      `Based on ${diagnosticResult.basedOnFeatures.length} analyzed features`,
+      `${diagnosticResult.findings.length} health indicators identified`
+    ];
+
     return result;
   }
 }

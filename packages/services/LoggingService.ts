@@ -40,7 +40,7 @@ export class LoggingService {
   private logs: LogEntry[] = [];
   private errorReports: ErrorReport[] = [];
   private maxLogEntries = 1000;
-  private isDevelopment = import.meta.env.DEV;
+  private isDevelopment = typeof import.meta !== 'undefined' && import.meta.env?.DEV || process.env.NODE_ENV === 'development' || false;
 
   static getInstance(): LoggingService {
     if (!LoggingService.instance) {

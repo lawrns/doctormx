@@ -7,9 +7,12 @@
  */
 
 // Core Medical Services
-export * from './ComprehensiveMedicalImageAnalyzer';
+export * from './RealComprehensiveMedicalImageAnalyzer';
 export * from './RealTimeImageProcessor';
 export * from './IntelligentTreatmentEngine';
+export * from './ImageAnalysisErrorHandler';
+export * from './ImageOptimizationService';
+export * from './RealDiagnosticAnalysisService';
 
 // Specialized Analysis Services
 export * from './ConstitutionalAnalysisService';
@@ -35,7 +38,7 @@ export { enhancedDiagnosticService, EnhancedDiagnosticService } from './Enhanced
 export * from './ProtocolBuilderService';
 
 // Service Registry for easy access
-import { ComprehensiveMedicalImageAnalyzer } from './ComprehensiveMedicalImageAnalyzer';
+import { RealComprehensiveMedicalImageAnalyzer } from './RealComprehensiveMedicalImageAnalyzer';
 import { RealTimeImageProcessor } from './RealTimeImageProcessor';
 import { IntelligentTreatmentEngine } from './IntelligentTreatmentEngine';
 import { ConstitutionalAnalysisService } from './ConstitutionalAnalysisService';
@@ -56,7 +59,7 @@ export class ServiceRegistry {
   private static instance: ServiceRegistry;
   
   // Core Medical Services
-  public readonly imageAnalyzer: ComprehensiveMedicalImageAnalyzer;
+  public readonly imageAnalyzer: RealComprehensiveMedicalImageAnalyzer;
   public readonly realtimeProcessor: RealTimeImageProcessor;
   public readonly treatmentEngine: IntelligentTreatmentEngine;
   
@@ -85,7 +88,7 @@ export class ServiceRegistry {
 
   private constructor() {
     // Initialize all services as singletons
-    this.imageAnalyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    this.imageAnalyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     this.realtimeProcessor = RealTimeImageProcessor.getInstance();
     this.treatmentEngine = IntelligentTreatmentEngine.getInstance();
     this.constitutionalAnalysis = ConstitutionalAnalysisService.getInstance();

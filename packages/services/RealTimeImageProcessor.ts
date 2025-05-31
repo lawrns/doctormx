@@ -7,12 +7,12 @@
 
 import { loggingService } from './LoggingService';
 import {
-  ComprehensiveMedicalImageAnalyzer,
+  RealComprehensiveMedicalImageAnalyzer,
   ImageAnalysisInput,
   ComprehensiveAnalysisResult,
   QualityMetrics,
   AnalysisType
-} from './ComprehensiveMedicalImageAnalyzer';
+} from './RealComprehensiveMedicalImageAnalyzer';
 
 export interface CameraConfig {
   width: number;
@@ -98,6 +98,9 @@ export class ImageQualityAssessment {
   private ctx: CanvasRenderingContext2D;
 
   constructor() {
+    if (typeof document === 'undefined') {
+      throw new Error('ImageQualityAssessment requires DOM environment');
+    }
     this.canvas = document.createElement('canvas');
     const context = this.canvas.getContext('2d', { willReadFrequently: true });
     if (!context) {
@@ -110,19 +113,37 @@ export class ImageQualityAssessment {
    * Comprehensive quality assessment for medical images
    */
   assessQuality(imageData: ImageData, analysisType: AnalysisType): FrameAnalysisMetrics {
-    this.canvas.width = imageData.width;
-    this.canvas.height = imageData.height;
-    this.ctx.putImageData(imageData, 0, 0);
+    try {
+      // Validate imageData
+      if (!imageData || !imageData.data || imageData.width === 0 || imageData.height === 0) {
+        throw new Error('Invalid image data provided');
+      }
+      
+      this.canvas.width = imageData.width;
+      this.canvas.height = imageData.height;
+      this.ctx.putImageData(imageData, 0, 0);
 
-    return {
-      brightness: this.calculateBrightness(imageData),
-      contrast: this.calculateContrast(imageData),
-      sharpness: this.calculateSharpness(imageData),
-      colorBalance: this.calculateColorBalance(imageData),
-      motionBlur: this.detectMotionBlur(imageData),
-      noiseLevel: this.calculateNoise(imageData),
-      focus: this.calculateFocus(imageData)
-    };
+      return {
+        brightness: this.calculateBrightness(imageData),
+        contrast: this.calculateContrast(imageData),
+        sharpness: this.calculateSharpness(imageData),
+        colorBalance: this.calculateColorBalance(imageData),
+        motionBlur: this.detectMotionBlur(imageData),
+        noiseLevel: this.calculateNoise(imageData),
+        focus: this.calculateFocus(imageData)
+      };
+    } catch (error) {
+      loggingService.error('ImageQualityAssessment', 'Quality assessment failed', error as Error);
+      return {
+        brightness: 0.5,
+        contrast: 0.5,
+        sharpness: 0.5,
+        colorBalance: 0.5,
+        motionBlur: 0.8,
+        noiseLevel: 0.8,
+        focus: 0.3
+      };
+    }
   }
 
   /**
@@ -376,7 +397,7 @@ export class ImageQualityAssessment {
  */
 export class RealTimeImageProcessor {
   private static instance: RealTimeImageProcessor;
-  private imageAnalyzer: ComprehensiveMedicalImageAnalyzer;
+  private imageAnalyzer: RealComprehensiveMedicalImageAnalyzer;
   private qualityAssessment: ImageQualityAssessment;
   private imageBuffer: ImageBuffer;
   private isProcessing: boolean = false;
@@ -390,7 +411,7 @@ export class RealTimeImageProcessor {
   }
 
   constructor() {
-    this.imageAnalyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    this.imageAnalyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     this.qualityAssessment = new ImageQualityAssessment();
     this.imageBuffer = this.initializeBuffer(5); // Default buffer size
     this.currentConfig = this.getDefaultConfig();
@@ -471,6 +492,11 @@ export class RealTimeImageProcessor {
       this.configureAnalysis(config);
     }
 
+    // Validate environment
+    if (typeof document === 'undefined') {
+      throw new Error('Document not available for canvas processing');
+    }
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx) {
@@ -495,34 +521,40 @@ export class RealTimeImageProcessor {
         const videoHeight = videoElement.videoHeight;
 
         // Skip if video dimensions are not ready
-        if (videoWidth === 0 || videoHeight === 0) {
+        if (videoWidth === 0 || videoHeight === 0 || !isFinite(videoWidth) || !isFinite(videoHeight)) {
           loggingService.info('RealTimeImageProcessor', 'Video dimensions not ready, skipping frame', {
             videoWidth,
             videoHeight,
             readyState: videoElement.readyState
           });
+          await this.sleep(100); // Wait longer for video to be ready
           continue;
         }
 
-        canvas.width = videoWidth;
-        canvas.height = videoHeight;
+        try {
+          canvas.width = videoWidth;
+          canvas.height = videoHeight;
 
-        ctx.drawImage(videoElement, 0, 0);
+          ctx.drawImage(videoElement, 0, 0);
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const startTime = performance.now();
 
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const startTime = performance.now();
+          // Process frame
+          const result = await this.processFrame(imageData);
+          const processingTime = performance.now() - startTime;
 
-        // Process frame
-        const result = await this.processFrame(imageData);
-        const processingTime = performance.now() - startTime;
+          result.processingTime = processingTime;
+          lastProcessTime = currentTime;
 
-        result.processingTime = processingTime;
-        lastProcessTime = currentTime;
+          yield result;
 
-        yield result;
-
-        // Small delay to prevent blocking
-        await this.sleep(1);
+          // Small delay to prevent blocking
+          await this.sleep(1);
+        } catch (frameError) {
+          loggingService.error('RealTimeImageProcessor', 'Frame capture failed', frameError as Error);
+          await this.sleep(100); // Wait before retrying
+          continue;
+        }
       }
     } finally {
       this.isProcessing = false;

@@ -890,7 +890,4 @@ export class ComputerVisionAnalyzer {
     return recommendations;
   }
 
-  private detectEdges(grayData: Uint8Array, width: number, height: number): Promise<ImageData> {
-    return this.detectEdges(grayData, width, height);
-  }
 }
