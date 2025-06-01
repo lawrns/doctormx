@@ -13,7 +13,7 @@ import { Badge } from '../ui/Badge';
 
 interface ImageCaptureWithOverlayProps {
   analysisType: AnalysisType;
-  onComplete?: (result: ComprehensiveAnalysisResult) => void;
+  onComplete?: (result: ComprehensiveAnalysisResult, imageUrl?: string) => void;
   culturalContext?: 'mexican' | 'tcm' | 'ayurveda' | 'global';
 }
 
@@ -225,7 +225,7 @@ const ImageCaptureWithOverlay: React.FC<ImageCaptureWithOverlayProps> = ({
       }, 500);
       
       if (onComplete) {
-        onComplete(result);
+        onComplete(result, capturedPhoto.dataUrl);
       }
     } catch (err) {
       const errorMessage = imageAnalysisErrorHandler.getUserFriendlyMessage(err);

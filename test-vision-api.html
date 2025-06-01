@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Vision API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .container {
+      margin: 20px 0;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .result {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .error {
+      background: #fee;
+      color: #c00;
+    }
+    .success {
+      background: #efe;
+      color: #060;
+    }
+    #imagePreview {
+      max-width: 300px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Vision API Integration</h1>
+  
+  <div class="container">
+    <h2>Step 1: Select an image</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <img id="imagePreview" style="display: none;">
+  </div>
+
+  <div class="container">
+    <h2>Step 2: Test Vision API</h2>
+    <button onclick="testVisionAPI()">Test Direct Vision API Call</button>
+    <button onclick="testFullAnalysis()">Test Full Analysis Pipeline</button>
+  </div>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <script>
+    const imageInput = document.getElementById('imageInput');
+    const imagePreview = document.getElementById('imagePreview');
+    const resultDiv = document.getElementById('result');
+    let currentImageDataUrl = null;
+
+    imageInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          currentImageDataUrl = e.target.result;
+          imagePreview.src = currentImageDataUrl;
+          imagePreview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function showResult(message, isError = false) {
+      resultDiv.textContent = message;
+      resultDiv.className = `result ${isError ? 'error' : 'success'}`;
+      resultDiv.style.display = 'block';
+    }
+
+    async function testVisionAPI() {
+      if (!currentImageDataUrl) {
+        showResult('Please select an image first', true);
+        return;
+      }
+
+      showResult('Testing Vision API...');
+
+      try {
+        const response = await fetch('/.netlify/functions/image-analysis', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            imageUrl: currentImageDataUrl,
+            symptoms: 'Test symptoms for vision analysis',
+            analysisType: 'facial_analysis',
+            culturalContext: 'mexican'
+          })
+        });
+
+        const data = await response.json();
+        showResult(JSON.stringify(data, null, 2), !data.success);
+      } catch (error) {
+        showResult(`Error: ${error.message}`, true);
+      }
+    }
+
+    async function testFullAnalysis() {
+      if (!currentImageDataUrl) {
+        showResult('Please select an image first', true);
+        return;
+      }
+
+      showResult('Testing full analysis pipeline...');
+
+      try {
+        // Import the services
+        const { realTimeImageProcessor } = await import('/packages/services/index.ts');
+        
+        const result = await realTimeImageProcessor.analyzeImage({
+          imageData: currentImageDataUrl,
+          analysisType: 'facial_analysis',
+          culturalContext: 'mexican'
+        });
+
+        showResult(JSON.stringify(result, null, 2));
+      } catch (error) {
+        showResult(`Error: ${error.message}\n\nStack: ${error.stack}`, true);
+      }
+    }
+  </script>
+</body>
+</html>

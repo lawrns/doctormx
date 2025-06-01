@@ -7,6 +7,7 @@
  */
 
 import { loggingService } from './LoggingService';
+import { specificDermatologicalProtocols, addSpecificProtocolsToDatabase } from './SpecificDermatologicalProtocols';
 
 export interface TreatmentProtocol {
   id: string;
@@ -14,6 +15,7 @@ export interface TreatmentProtocol {
   description: string;
   category: ProtocolCategory;
   condition: string[];
+  targetOrganSystems?: string[];
   constitution: ConstitutionType[];
   duration: ProtocolDuration;
   phases: TreatmentPhase[];
@@ -173,6 +175,9 @@ export class ComprehensiveProtocolDatabase {
     // Dermatological Protocols
     this.addDermatologicalProtocols();
     
+    // Add specific Vision API protocols
+    addSpecificProtocolsToDatabase(this);
+    
     // Circulatory Protocols
     this.addCirculatoryProtocols();
     
@@ -196,6 +201,9 @@ export class ComprehensiveProtocolDatabase {
     
     // Emotional/Stress Protocols
     this.addEmotionalProtocols();
+    
+    // General Wellness Protocol (Fallback)
+    this.addGeneralWellnessProtocol();
 
     loggingService.info('ComprehensiveProtocolDatabase', 'Protocol database initialized', {
       totalProtocols: this.protocols.size,
@@ -214,6 +222,7 @@ export class ComprehensiveProtocolDatabase {
       description: 'Protocolo completo para restaurar hidratación y elasticidad de la piel',
       category: 'dermatological',
       condition: ['dry_skin', 'dehydration', 'skin_texture_issues', 'low_hydration'],
+      targetOrganSystems: ['integumentary'],
       constitution: ['vata', 'dry', 'all'],
       duration: '6_weeks',
       phases: [
@@ -543,13 +552,14 @@ export class ComprehensiveProtocolDatabase {
       description: 'Programa integral para mejorar circulación facial y oxigenación tisular',
       category: 'circulatory',
       condition: ['poor_circulation', 'pallor', 'circulation_issues', 'low_circulation_score'],
+      targetOrganSystems: ['circulatory', 'cardiovascular', 'integumentary'],
       constitution: ['vata', 'cold', 'all'],
       duration: '8_weeks',
       phases: [
         {
           phase: 1,
           name: 'Activación Circulatoria',
-          duration: '2 weeks',
+          duration: '3 weeks',
           goals: ['Stimulate blood flow', 'Improve oxygenation', 'Enhance lymphatic drainage'],
           herbs: [
             {
@@ -623,6 +633,112 @@ export class ComprehensiveProtocolDatabase {
               nextSteps: 'Increase circulation stimulation activities'
             }
           ]
+        },
+        {
+          phase: 2,
+          name: 'Fortalecimiento Vascular',
+          duration: '3 weeks',
+          goals: ['Strengthen blood vessels', 'Improve capillary health', 'Maintain circulation gains'],
+          herbs: [
+            {
+              herbName: 'hawthorn',
+              mexicanName: 'espino blanco',
+              dosage: '300mg extract 2x daily',
+              preparation: 'Standardized extract or tea',
+              timing: 'Morning and afternoon',
+              duration: '3 weeks',
+              purpose: 'Cardiovascular support and vessel health',
+              interactions: ['Heart medications', 'Blood pressure drugs'],
+              contraindications: ['Heart disease (consult doctor)'],
+              localAvailability: {
+                mexicanMarkets: false,
+                pharmacies: true,
+                growsWild: true,
+                seasonality: 'Fall berries',
+                alternatives: ['garlic', 'ginger']
+              }
+            }
+          ],
+          lifestyle: [
+            {
+              category: 'exercise',
+              recommendation: 'Progressive cardio training',
+              mexicanAdaptation: 'Walking in parks, dancing, swimming',
+              priority: 'essential',
+              implementation: '30 minutes daily, gradually increasing intensity'
+            }
+          ],
+          monitoring: [
+            {
+              parameter: 'Capillary refill time',
+              method: 'Press nail bed and time color return',
+              frequency: 'Twice weekly',
+              targetRange: 'Less than 2 seconds',
+              alertConditions: ['Slow refill', 'Blue nails']
+            }
+          ],
+          milestones: [
+            {
+              milestone: 'Sustained circulation improvement',
+              expectedTimeframe: '2 weeks',
+              successIndicators: ['Consistent warm skin', 'Good color'],
+              failureIndicators: ['Circulation regression', 'New symptoms'],
+              nextSteps: 'Progress to maintenance phase'
+            }
+          ]
+        },
+        {
+          phase: 3,
+          name: 'Mantenimiento y Prevención',
+          duration: '2 weeks',
+          goals: ['Maintain gains', 'Prevent regression', 'Establish long-term habits'],
+          herbs: [
+            {
+              herbName: 'green tea',
+              mexicanName: 'té verde',
+              dosage: '2-3 cups daily',
+              preparation: 'Steep 3-5 minutes in hot water',
+              timing: 'Between meals',
+              duration: 'Ongoing',
+              purpose: 'Antioxidant support and mild circulation boost',
+              interactions: ['Blood thinners', 'Stimulant medications'],
+              contraindications: ['Caffeine sensitivity'],
+              localAvailability: {
+                mexicanMarkets: true,
+                pharmacies: true,
+                growsWild: false,
+                seasonality: 'Year-round',
+                alternatives: ['white tea', 'hibiscus']
+              }
+            }
+          ],
+          lifestyle: [
+            {
+              category: 'diet',
+              recommendation: 'Anti-inflammatory diet rich in omega-3s',
+              mexicanAdaptation: 'Fish tacos, chia seeds, avocados',
+              priority: 'important',
+              implementation: 'Daily inclusion of circulation-supporting foods'
+            }
+          ],
+          monitoring: [
+            {
+              parameter: 'Overall circulation health',
+              method: 'Weekly self-assessment checklist',
+              frequency: 'Weekly',
+              targetRange: 'Maintained improvements',
+              alertConditions: ['Any regression']
+            }
+          ],
+          milestones: [
+            {
+              milestone: 'Established circulation habits',
+              expectedTimeframe: '2 weeks',
+              successIndicators: ['Habits integrated', 'Stable improvements'],
+              failureIndicators: ['Difficulty maintaining', 'Loss of gains'],
+              nextSteps: 'Continue maintenance indefinitely'
+            }
+          ]
         }
       ],
       evidenceLevel: 'B',
@@ -635,16 +751,32 @@ export class ComprehensiveProtocolDatabase {
         }
       ],
       estimatedCost: {
-        totalCostMXN: 620,
+        totalCostMXN: 1250,
         phaseBreakdown: [
           {
             phase: 1,
             costMXN: 620,
             items: [
-              { item: 'Ginkgo supplements (1 month)', cost: 280 },
+              { item: 'Ginkgo supplements (3 weeks)', cost: 280 },
               { item: 'Cayenne pepper', cost: 40 },
               { item: 'Massage oil', cost: 150 },
               { item: 'Exercise equipment (optional)', cost: 150 }
+            ]
+          },
+          {
+            phase: 2,
+            costMXN: 430,
+            items: [
+              { item: 'Hawthorn extract (3 weeks)', cost: 320 },
+              { item: 'Vitamin C supplements', cost: 110 }
+            ]
+          },
+          {
+            phase: 3,
+            costMXN: 200,
+            items: [
+              { item: 'Green tea (high quality)', cost: 120 },
+              { item: 'Omega-3 rich foods', cost: 80 }
             ]
           }
         ],
@@ -1634,10 +1766,204 @@ export class ComprehensiveProtocolDatabase {
   }
 
   /**
+   * Add general wellness protocol (fallback)
+   */
+  private addGeneralWellnessProtocol(): void {
+    this.protocols.set('general_wellness_001', {
+      id: 'general_wellness_001',
+      name: 'Protocolo General de Bienestar',
+      description: 'Protocolo básico de medicina tradicional mexicana para bienestar general',
+      category: 'constitutional',
+      condition: ['general_health', 'wellness', 'prevention', 'maintenance', 'unknown_condition'],
+      constitution: ['all'],
+      duration: '4_weeks',
+      phases: [
+        {
+          phase: 1,
+          name: 'Estabilización Constitucional',
+          duration: '2 weeks',
+          goals: ['Establecer equilibrio constitucional', 'Mejorar vitalidad general'],
+          herbs: [
+            {
+              herbName: 'chamomile',
+              mexicanName: 'manzanilla',
+              dosage: '1 taza de infusión',
+              preparation: 'Infusión de flores secas',
+              timing: 'Antes de dormir',
+              duration: '2 semanas',
+              purpose: 'Calmar el sistema nervioso y mejorar el sueño',
+              interactions: ['Anticoagulantes'],
+              contraindications: ['Alergia a asteráceas'],
+              localAvailability: {
+                mexicanMarkets: true,
+                pharmacies: true,
+                growsWild: true,
+                seasonality: 'Todo el año',
+                alternatives: ['tila', 'pasiflora']
+              }
+            },
+            {
+              herbName: 'peppermint',
+              mexicanName: 'hierbabuena',
+              dosage: '2-3 tazas diarias',
+              preparation: 'Infusión de hojas frescas o secas',
+              timing: 'Después de comidas',
+              duration: '2 semanas',
+              purpose: 'Apoyo digestivo y energía suave',
+              interactions: ['Medicamentos para reflujo'],
+              contraindications: ['ERGE severo'],
+              localAvailability: {
+                mexicanMarkets: true,
+                pharmacies: true,
+                growsWild: true,
+                seasonality: 'Todo el año',
+                alternatives: ['menta', 'albahaca']
+              }
+            }
+          ],
+          lifestyle: [
+            {
+              category: 'diet',
+              recommendation: 'Dieta tradicional mexicana equilibrada',
+              mexicanAdaptation: 'Frijoles, maíz, quelites, nopales, frutas de temporada',
+              priority: 'essential',
+              implementation: 'Comidas regulares con alimentos locales frescos'
+            },
+            {
+              category: 'sleep',
+              recommendation: 'Horario regular de sueño',
+              mexicanAdaptation: 'Siesta opcional después de comida',
+              priority: 'important',
+              implementation: '7-9 horas nocturnas, siesta de 20-30 minutos si es costumbre'
+            }
+          ],
+          monitoring: [
+            {
+              parameter: 'Bienestar general',
+              method: 'Autoevaluación diaria',
+              frequency: 'Diaria',
+              targetRange: 'Mejora progresiva',
+              alertConditions: ['Síntomas nuevos o empeoramiento']
+            }
+          ],
+          milestones: [
+            {
+              milestone: 'Mejora en calidad del sueño',
+              expectedTimeframe: '1 semana',
+              successIndicators: ['Sueño más reparador'],
+              failureIndicators: ['Sin cambios en el sueño'],
+              nextSteps: 'Continuar protocolo'
+            }
+          ]
+        },
+        {
+          phase: 2,
+          name: 'Fortalecimiento y Mantenimiento',
+          duration: '2 weeks',
+          goals: ['Fortalecer sistema inmune', 'Mantener equilibrio alcanzado'],
+          herbs: [
+            {
+              herbName: 'green tea',
+              mexicanName: 'té verde',
+              dosage: '2-3 tazas diarias',
+              preparation: 'Infusión estándar',
+              timing: 'Entre comidas',
+              duration: '2 semanas',
+              purpose: 'Antioxidantes y energía suave',
+              interactions: ['Medicamentos estimulantes'],
+              contraindications: ['Sensibilidad a cafeína'],
+              localAvailability: {
+                mexicanMarkets: true,
+                pharmacies: true,
+                growsWild: false,
+                seasonality: 'Todo el año',
+                alternatives: ['té de limón', 'jamaica']
+              }
+            }
+          ],
+          lifestyle: [
+            {
+              category: 'exercise',
+              recommendation: 'Actividad física moderada',
+              mexicanAdaptation: 'Caminata, baile tradicional, trabajo en jardín',
+              priority: 'important',
+              implementation: '30 minutos diarios de actividad placentera'
+            }
+          ],
+          monitoring: [
+            {
+              parameter: 'Niveles de energía',
+              method: 'Escala de 1-10',
+              frequency: 'Diaria',
+              targetRange: '7-9',
+              alertConditions: ['Fatiga persistente']
+            }
+          ],
+          milestones: [
+            {
+              milestone: 'Energía estable',
+              expectedTimeframe: '2 semanas',
+              successIndicators: ['Energía consistente durante el día'],
+              failureIndicators: ['Fatiga continua'],
+              nextSteps: 'Mantener hábitos saludables'
+            }
+          ]
+        }
+      ],
+      evidenceLevel: 'Traditional',
+      culturalAdaptations: [
+        {
+          aspect: 'Integración con medicina tradicional',
+          mexicanContext: 'Uso de remedios caseros y plantas medicinales locales',
+          adaptationStrategy: 'Combinar sabiduría tradicional con prácticas modernas',
+          culturalConsiderations: ['Respeto por conocimiento ancestral']
+        }
+      ],
+      estimatedCost: {
+        totalCostMXN: 250,
+        phaseBreakdown: [
+          {
+            phase: 1,
+            costMXN: 150,
+            items: [
+              { item: 'Manzanilla', cost: 50 },
+              { item: 'Hierbabuena', cost: 40 },
+              { item: 'Alimentos frescos adicionales', cost: 60 }
+            ]
+          },
+          {
+            phase: 2,
+            costMXN: 100,
+            items: [
+              { item: 'Té verde', cost: 60 },
+              { item: 'Suplementos básicos', cost: 40 }
+            ]
+          }
+        ],
+        alternatives: [
+          {
+            option: 'Solo hierbas del jardín',
+            costMXN: 50,
+            description: 'Usando solo plantas cultivadas en casa'
+          }
+        ]
+      },
+      contraindications: ['Alergias específicas a hierbas'],
+      interactions: ['Consultar si toma medicamentos'],
+      followUpSchedule: {
+        initialFollowUp: '1 semana',
+        ongoingSchedule: 'Mensual',
+        emergencyContacts: false,
+        selfMonitoring: ['Bienestar general', 'Síntomas nuevos']
+      }
+    });
+  }
+
+  /**
    * Get all protocols
    */
   getAllProtocols(): Map<string, TreatmentProtocol> {
-    return new Map(this.protocols);
+    return this.protocols;
   }
 
   /**

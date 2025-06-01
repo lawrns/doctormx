@@ -13,6 +13,10 @@ export * from './IntelligentTreatmentEngine';
 export * from './ImageAnalysisErrorHandler';
 export * from './ImageOptimizationService';
 export * from './RealDiagnosticAnalysisService';
+export * from './OpenAIVisionService';
+export * from './RealFacialAnalyzer';
+export * from './RealSkinAnalyzer';
+export * from './ComputerVisionAnalyzer';
 
 // Specialized Analysis Services
 export * from './ConstitutionalAnalysisService';

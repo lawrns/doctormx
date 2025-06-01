@@ -12,7 +12,7 @@ import {
   Camera, Eye, Heart, Shield, Activity, Leaf, Target,
   ArrowRight, ArrowLeft, CheckCircle, Brain, Stethoscope,
   Download, Share2, Calendar, AlertTriangle, Info,
-  Sparkles, Zap, Award, Clock
+  Sparkles, Zap, Award, Clock, TrendingUp, AlertCircle
 } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/Card';
@@ -183,6 +183,52 @@ const ANALYSIS_OPTIONS: AnalysisOption[] = [
     mexicanContext: 'Considera trabajos y actividades comunes en México',
     color: 'indigo',
     gradient: 'from-indigo-500 to-blue-500'
+  },
+  {
+    type: 'hair_scalp_analysis',
+    title: 'Análisis Capilar y Cuero Cabelludo',
+    description: 'Evaluación de salud capilar, pérdida de cabello y condiciones del cuero cabelludo',
+    icon: Sparkles,
+    duration: '2-3 min',
+    accuracy: '86%',
+    difficulty: 'easy',
+    benefits: [
+      'Detección de alopecia temprana',
+      'Evaluación de salud capilar',
+      'Análisis de cuero cabelludo',
+      'Deficiencias nutricionales'
+    ],
+    requirements: [
+      'Cabello limpio y seco',
+      'Buena iluminación',
+      'Vista clara del cuero cabelludo'
+    ],
+    mexicanContext: 'Adaptado a tipos de cabello y condiciones climáticas mexicanas',
+    color: 'pink',
+    gradient: 'from-pink-500 to-rose-500'
+  },
+  {
+    type: 'comprehensive_scan',
+    title: 'Análisis Médico Integral',
+    description: 'Evaluación completa combinando múltiples sistemas de análisis',
+    icon: Brain,
+    duration: '5-7 min',
+    accuracy: '95%',
+    difficulty: 'advanced',
+    benefits: [
+      'Evaluación multisistémica',
+      'Detección integral de patologías',
+      'Análisis holístico completo',
+      'Plan de salud personalizado'
+    ],
+    requirements: [
+      'Múltiples fotografías',
+      'Tiempo adicional',
+      'Preparación completa'
+    ],
+    mexicanContext: 'Integración completa de medicina tradicional y moderna mexicana',
+    color: 'emerald',
+    gradient: 'from-emerald-500 to-teal-500'
   }
 ];
 
@@ -194,16 +240,40 @@ export default function AdvancedImageAnalysisPage() {
   const [treatmentPlan, setTreatmentPlan] = useState<PersonalizedTreatmentPlan | null>(null);
   const [isGeneratingTreatment, setIsGeneratingTreatment] = useState(false);
   const [showDetailedView, setShowDetailedView] = useState(false);
+  const [capturedImageUrl, setCapturedImageUrl] = useState<string | null>(null);
+  const [isRealAIEnabled, setIsRealAIEnabled] = useState<boolean>(() => {
+    return localStorage.getItem('force_real_ai') === 'true';
+  });
+  const [medicalReport, setMedicalReport] = useState<any>(null);
+  const [showReport, setShowReport] = useState(false);
+  const [isGeneratingReport, setIsGeneratingReport] = useState(false);
 
   const treatmentEngine = IntelligentTreatmentEngine.getInstance();
+
+  // Toggle between mock and real AI analysis
+  const toggleRealAI = () => {
+    const newValue = !isRealAIEnabled;
+    setIsRealAIEnabled(newValue);
+    localStorage.setItem('force_real_ai', newValue ? 'true' : 'false');
+    
+    // Show feedback
+    const message = newValue ? 
+      '🔥 Real AI Mode Enabled - Using actual API calls' : 
+      '🧪 Mock Mode Enabled - Using simulated responses';
+      
+    alert(message);
+  };
 
   const handleAnalysisSelect = (option: AnalysisOption) => {
     setSelectedAnalysis(option);
     setCurrentStep('capture');
   };
 
-  const handleAnalysisComplete = async (result: ComprehensiveAnalysisResult) => {
+  const handleAnalysisComplete = async (result: ComprehensiveAnalysisResult, imageUrl?: string) => {
     setAnalysisResult(result);
+    if (imageUrl) {
+      setCapturedImageUrl(imageUrl);
+    }
     setCurrentStep('analysis');
 
     // Brief delay for analysis animation
@@ -229,6 +299,31 @@ export default function AdvancedImageAnalysisPage() {
       console.error('Failed to generate treatment plan:', error);
     } finally {
       setIsGeneratingTreatment(false);
+    }
+  };
+
+  const generateDoctorReport = async () => {
+    if (!analysisResult) return;
+    
+    setIsGeneratingReport(true);
+    try {
+      // Import the report generator
+      const { MedicalReportGenerator } = await import('../../../packages/services/MedicalReportGenerator');
+      const reportGenerator = MedicalReportGenerator.getInstance();
+      
+      // Generate the report
+      const report = await reportGenerator.generateReport(
+        analysisResult,
+        treatmentPlan || undefined
+      );
+      
+      setMedicalReport(report);
+      setShowReport(true);
+    } catch (error) {
+      console.error('Failed to generate medical report:', error);
+      alert('Error al generar el reporte médico. Por favor intente nuevamente.');
+    } finally {
+      setIsGeneratingReport(false);
     }
   };
 
@@ -272,7 +367,7 @@ export default function AdvancedImageAnalysisPage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="mb-6">
+          <div className="mb-6 flex justify-between items-center">
             <Button
               variant="secondary"
               size="sm"
@@ -280,12 +375,21 @@ export default function AdvancedImageAnalysisPage() {
               className="hover:bg-gray-100"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Selection
+              Regresar a Selección
+            </Button>
+            
+            <Button
+              size="sm"
+              onClick={toggleRealAI}
+              className={`${isRealAIEnabled ? 'bg-green-600 hover:bg-green-700' : 'bg-gray-600 hover:bg-gray-700'} text-white transition-colors`}
+            >
+              <Sparkles className="w-4 h-4 mr-2" />
+              {isRealAIEnabled ? 'Modo IA Real: ACTIVO' : 'Modo IA Real: INACTIVO'}
             </Button>
           </div>
           <ImageCaptureWithOverlay
             analysisType={selectedAnalysis.type}
-            onComplete={handleAnalysisComplete}
+            onComplete={(result, imageUrl) => handleAnalysisComplete(result, imageUrl)}
             culturalContext="mexican"
           />
         </div>
@@ -375,6 +479,15 @@ export default function AdvancedImageAnalysisPage() {
                   <h2 className="text-4xl font-bold text-gray-900 mb-4">
                     Análisis Médico de Segunda Generación
                   </h2>
+                  {/* Dev Mode Toggle Button */}
+                  <Button
+                    size="sm"
+                    onClick={toggleRealAI}
+                    className={`${isRealAIEnabled ? 'bg-green-600 hover:bg-green-700' : 'bg-gray-600 hover:bg-gray-700'} text-white transition-colors mx-auto mb-4`}
+                  >
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    {isRealAIEnabled ? '✅ Usando API Real' : '🧪 Usando Mock Data'}
+                  </Button>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     Tecnología de imagen médica más avanzada del mundo, combinando IA de última generación
                     con sabiduría tradicional mexicana para diagnósticos precisos y tratamientos personalizados.
@@ -630,7 +743,118 @@ export default function AdvancedImageAnalysisPage() {
                 </CardContent>
               </Card>
 
-              {/* Primary Findings */}
+              {/* Diagnostic Confidence Visualization */}
+              <Card className="border-2 border-blue-100">
+                <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
+                  <CardTitle className="flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-blue-600" />
+                    Confianza Diagnóstica
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-6">
+                  <div className="space-y-6">
+                    {/* Overall Confidence Score */}
+                    <div className="text-center">
+                      <div className="relative inline-flex items-center justify-center w-32 h-32 mx-auto">
+                        <svg className="transform -rotate-90 w-32 h-32">
+                          <circle
+                            cx="64"
+                            cy="64"
+                            r="56"
+                            stroke="currentColor"
+                            strokeWidth="12"
+                            fill="none"
+                            className="text-gray-200"
+                          />
+                          <circle
+                            cx="64"
+                            cy="64"
+                            r="56"
+                            stroke="currentColor"
+                            strokeWidth="12"
+                            fill="none"
+                            strokeDasharray={`${2 * Math.PI * 56}`}
+                            strokeDashoffset={`${2 * Math.PI * 56 * (1 - analysisResult.confidenceScore.overall)}`}
+                            className="text-blue-600 transition-all duration-1000"
+                          />
+                        </svg>
+                        <div className="absolute">
+                          <div className="text-3xl font-bold text-blue-600">
+                            {(analysisResult.confidenceScore.overall * 100).toFixed(0)}%
+                          </div>
+                          <div className="text-xs text-gray-600">Confianza</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Category Breakdown */}
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-medium text-gray-700">Desglose por Categoría</h4>
+                      {Object.entries(analysisResult.confidenceScore.byCategory).map(([category, score]) => (
+                        <div key={category} className="space-y-1">
+                          <div className="flex justify-between items-center text-sm">
+                            <span className="text-gray-600">
+                              {category === 'imaging' ? '📷 Análisis de Imagen' :
+                               category === 'constitutional' ? '🧘 Evaluación Constitucional' :
+                               category === 'cultural' ? '🌍 Contexto Cultural' :
+                               category === 'aiAnalysis' ? '🤖 Análisis IA' : category}
+                            </span>
+                            <span className="font-medium text-gray-700">{(score * 100).toFixed(0)}%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                            <div 
+                              className={`h-full rounded-full transition-all duration-700 ${
+                                score >= 0.8 ? 'bg-green-500' :
+                                score >= 0.6 ? 'bg-blue-500' :
+                                score >= 0.4 ? 'bg-yellow-500' :
+                                'bg-red-500'
+                              }`}
+                              style={{ width: `${score * 100}%` }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Confidence Interpretation */}
+                    <div className={`p-4 rounded-lg ${
+                      analysisResult.confidenceScore.overall >= 0.8 ? 'bg-green-50 border border-green-200' :
+                      analysisResult.confidenceScore.overall >= 0.6 ? 'bg-blue-50 border border-blue-200' :
+                      'bg-amber-50 border border-amber-200'
+                    }`}>
+                      <div className="flex items-start gap-3">
+                        <Info className={`w-5 h-5 mt-0.5 ${
+                          analysisResult.confidenceScore.overall >= 0.8 ? 'text-green-600' :
+                          analysisResult.confidenceScore.overall >= 0.6 ? 'text-blue-600' :
+                          'text-amber-600'
+                        }`} />
+                        <div className="flex-1">
+                          <p className={`text-sm font-medium ${
+                            analysisResult.confidenceScore.overall >= 0.8 ? 'text-green-800' :
+                            analysisResult.confidenceScore.overall >= 0.6 ? 'text-blue-800' :
+                            'text-amber-800'
+                          }`}>
+                            {analysisResult.confidenceScore.overall >= 0.8 ? 
+                              '✅ Análisis de Alta Confianza' :
+                             analysisResult.confidenceScore.overall >= 0.6 ?
+                              '📊 Análisis Confiable' :
+                              '⚠️ Análisis Preliminar'}
+                          </p>
+                          <p className="text-sm text-gray-600 mt-1">
+                            {analysisResult.confidenceScore.overall >= 0.8 ? 
+                              'Los resultados muestran hallazgos claros y consistentes. Las recomendaciones son altamente confiables.' :
+                             analysisResult.confidenceScore.overall >= 0.6 ?
+                              'El análisis proporciona información valiosa. Se recomienda seguimiento para confirmar algunos hallazgos.' :
+                              'Los resultados son indicativos. Se sugiere una evaluación médica profesional para confirmar los hallazgos.'}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Primary Findings with Enhanced Visualization */}
               {analysisResult.primaryFindings.length > 0 && (
                 <Card>
                   <CardHeader>
@@ -640,25 +864,126 @@ export default function AdvancedImageAnalysisPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
+                    {/* Urgency Alert */}
+                    {analysisResult.urgencyLevel && analysisResult.urgencyLevel !== 'routine' && (
+                      <div className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
+                        analysisResult.urgencyLevel === 'emergency' ? 'bg-red-50 border border-red-300' :
+                        analysisResult.urgencyLevel === 'urgent' ? 'bg-orange-50 border border-orange-300' :
+                        'bg-amber-50 border border-amber-300'
+                      }`}>
+                        <AlertCircle className={`w-6 h-6 ${
+                          analysisResult.urgencyLevel === 'emergency' ? 'text-red-600' :
+                          analysisResult.urgencyLevel === 'urgent' ? 'text-orange-600' :
+                          'text-amber-600'
+                        }`} />
+                        <div className="flex-1">
+                          <p className={`font-medium ${
+                            analysisResult.urgencyLevel === 'emergency' ? 'text-red-800' :
+                            analysisResult.urgencyLevel === 'urgent' ? 'text-orange-800' :
+                            'text-amber-800'
+                          }`}>
+                            {analysisResult.urgencyLevel === 'emergency' ? '🚨 Atención Inmediata Requerida' :
+                             analysisResult.urgencyLevel === 'urgent' ? '⚡ Consulta Pronta Recomendada' :
+                             '📅 Seguimiento Sugerido'}
+                          </p>
+                          <p className="text-sm text-gray-600 mt-1">
+                            {analysisResult.urgencyLevel === 'emergency' ? 
+                              'Algunos hallazgos requieren evaluación médica inmediata.' :
+                             analysisResult.urgencyLevel === 'urgent' ? 
+                              'Se recomienda consultar con un profesional de salud pronto.' :
+                              'Programar una consulta en las próximas semanas sería beneficioso.'}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="space-y-4">
                       {analysisResult.primaryFindings.map((finding, index) => (
-                        <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
-                          <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-gray-900 capitalize">
-                              {finding.category ? finding.category.replace('_', ' ') : finding.type || 'Hallazgo'}
-                            </h4>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              finding.severity === 'high' ? 'bg-red-100 text-red-800' :
-                              finding.severity === 'moderate' ? 'bg-yellow-100 text-yellow-800' :
-                              'bg-green-100 text-green-800'
-                            }`}>
-                              {finding.severity === 'high' ? 'Alta' :
-                               finding.severity === 'moderate' ? 'Moderada' : 'Baja'}
-                            </span>
+                        <div key={index} className={`border-l-4 pl-4 py-3 rounded-r-lg ${
+                          finding.severity === 'high' ? 'border-red-500 bg-red-50' :
+                          finding.severity === 'moderate' ? 'border-amber-500 bg-amber-50' :
+                          'border-green-500 bg-green-50'
+                        }`}>
+                          <div className="flex items-start justify-between mb-2">
+                            <div className="flex-1">
+                              <h4 className="font-semibold text-gray-900 flex items-center gap-2">
+                                {finding.category === 'circulatory' ? '❤️' :
+                                 finding.category === 'respiratory' ? '🫁' :
+                                 finding.category === 'digestive' ? '🍽️' :
+                                 finding.category === 'nervous' ? '🧠' :
+                                 finding.category === 'dermatological' ? '🔬' :
+                                 finding.category === 'structural' ? '🦴' :
+                                 finding.category === 'emotional' ? '💭' : '🩺'}
+                                <span className="capitalize">
+                                  {finding.category === 'circulatory' ? 'Sistema Circulatorio' :
+                                   finding.category === 'respiratory' ? 'Sistema Respiratorio' :
+                                   finding.category === 'digestive' ? 'Sistema Digestivo' :
+                                   finding.category === 'nervous' ? 'Sistema Nervioso' :
+                                   finding.category === 'dermatological' ? 'Dermatológico' :
+                                   finding.category === 'structural' ? 'Estructural' :
+                                   finding.category === 'emotional' ? 'Emocional' :
+                                   finding.category === 'constitutional' ? 'Constitucional' :
+                                   finding.category === 'metabolic' ? 'Metabólico' :
+                                   finding.category === 'endocrine' ? 'Endocrino' :
+                                   'Hallazgo General'}
+                                </span>
+                              </h4>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                                finding.severity === 'high' || finding.severity === 'severe' ? 'bg-red-100 text-red-800' :
+                                finding.severity === 'moderate' ? 'bg-amber-100 text-amber-800' :
+                                'bg-green-100 text-green-800'
+                              }`}>
+                                {finding.severity === 'high' || finding.severity === 'severe' ? '⚠️ Severa' :
+                                 finding.severity === 'moderate' ? '⚡ Moderada' : '✓ Leve'}
+                              </span>
+                            </div>
                           </div>
-                          <p className="text-gray-700 mb-2">{finding.finding}</p>
-                          <div className="text-sm text-gray-600">
-                            <strong>Confianza:</strong> {Math.round(finding.confidence * 100)}%
+                          
+                          <p className="text-gray-800 mb-3 font-medium">{finding.finding}</p>
+                          
+                          {/* Affected Systems */}
+                          {finding.organSystems && finding.organSystems.length > 0 && (
+                            <div className="mb-3">
+                              <span className="text-xs text-gray-600 font-medium">Sistemas Afectados:</span>
+                              <div className="flex flex-wrap gap-2 mt-1">
+                                {finding.organSystems.map((system, i) => (
+                                  <span key={i} className="text-xs bg-white px-2 py-1 rounded-full border border-gray-300">
+                                    {system}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Recommendations */}
+                          {finding.recommendations && finding.recommendations.length > 0 && (
+                            <div className="bg-white bg-opacity-60 rounded-lg p-3 mt-3">
+                              <p className="text-xs font-medium text-gray-700 mb-2">💡 Recomendaciones:</p>
+                              <ul className="space-y-1">
+                                {finding.recommendations.slice(0, 3).map((rec, i) => (
+                                  <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
+                                    <span className="text-blue-600 mt-0.5">•</span>
+                                    <span>{rec}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          
+                          {/* Confidence Bar */}
+                          <div className="mt-3 flex items-center gap-3">
+                            <span className="text-xs text-gray-600">Confianza:</span>
+                            <div className="flex-1 bg-gray-200 rounded-full h-1.5 max-w-[100px]">
+                              <div 
+                                className="h-full bg-blue-500 rounded-full transition-all duration-500"
+                                style={{ width: `${finding.confidence * 100}%` }}
+                              />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700">
+                              {Math.round(finding.confidence * 100)}%
+                            </span>
                           </div>
                         </div>
                       ))}
@@ -766,9 +1091,12 @@ export default function AdvancedImageAnalysisPage() {
                   )}
                 </Button>
 
-                <Button variant="secondary">
-                  <Download className="w-4 h-4 mr-2" />
-                  Descargar Reporte
+                <Button 
+                  variant="secondary"
+                  onClick={generateDoctorReport}
+                >
+                  <Stethoscope className="w-4 h-4 mr-2" />
+                  Generar Reporte Médico
                 </Button>
 
                 <Button variant="secondary">
@@ -788,6 +1116,48 @@ export default function AdvancedImageAnalysisPage() {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-8"
             >
+              {/* Vision Analysis Observations Section - Moved to top */}
+              {analysisResult?.aiInsights && capturedImageUrl && (
+                <Card className="border-2 border-blue-200 bg-blue-50 mb-6">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-blue-800">
+                      <Eye className="w-5 h-5" />
+                      Observaciones del Análisis Visual
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Imagen Analizada</h4>
+                        <img 
+                          src={capturedImageUrl} 
+                          alt="Imagen médica analizada"
+                          className="w-full h-64 object-cover rounded-lg shadow-md"
+                        />
+                      </div>
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-2">Análisis Detallado</h4>
+                          <p className="text-gray-700 whitespace-pre-line">{analysisResult.aiInsights.analysis}</p>
+                        </div>
+                        {analysisResult.aiInsights.findings && (
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2">Hallazgos Principales</h4>
+                            <p className="text-gray-700">{analysisResult.aiInsights.findings}</p>
+                          </div>
+                        )}
+                        {analysisResult.aiInsights.suggestedSpecialty && (
+                          <div className="bg-blue-100 border border-blue-300 rounded-lg p-3">
+                            <h5 className="font-medium text-blue-900 mb-1">Especialidad Sugerida</h5>
+                            <p className="text-blue-800">{analysisResult.aiInsights.suggestedSpecialty}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Heart className="w-8 h-8 text-white" />
@@ -814,7 +1184,14 @@ export default function AdvancedImageAnalysisPage() {
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-purple-700 mb-1">
-                        {treatmentPlan.protocol.duration.replace('_', ' ').toUpperCase()}
+                        {treatmentPlan.protocol.duration === '1_month' ? '1 MES' :
+                         treatmentPlan.protocol.duration === '2_weeks' ? '2 SEMANAS' :
+                         treatmentPlan.protocol.duration === '3_months' ? '3 MESES' :
+                         treatmentPlan.protocol.duration === '6_months' ? '6 MESES' :
+                         treatmentPlan.protocol.duration === '4_weeks' ? '4 SEMANAS' :
+                         treatmentPlan.protocol.duration === '8_weeks' ? '8 SEMANAS' :
+                         treatmentPlan.protocol.duration === '12_weeks' ? '12 SEMANAS' :
+                         treatmentPlan.protocol.duration.replace('_', ' ').replace('weeks', 'SEMANAS').replace('month', 'MES').replace('months', 'MESES').toUpperCase()}
                       </div>
                       <div className="text-sm text-gray-600">Duración Total</div>
                     </div>
@@ -944,26 +1321,6 @@ export default function AdvancedImageAnalysisPage() {
                 </Card>
               )}
 
-              {/* Mexican Cultural Adaptations */}
-              {treatmentPlan.culturalAdaptations.length > 0 && (
-                <Card className="border-2 border-green-200 bg-green-50">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-green-800">
-                      🇲🇽 Adaptaciones Culturales Mexicanas
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {treatmentPlan.culturalAdaptations.map((adaptation, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-green-700">
-                          <CheckCircle className="w-4 h-4 text-green-600" />
-                          {adaptation}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              )}
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
@@ -990,6 +1347,89 @@ export default function AdvancedImageAnalysisPage() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Medical Report Modal */}
+      {showReport && medicalReport && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <div className="p-6 border-b flex justify-between items-center">
+              <h2 className="text-2xl font-bold text-gray-900">Reporte Médico</h2>
+              <button
+                onClick={() => setShowReport(false)}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto p-6">
+              <div className="medical-report-content">
+                <style jsx>{`
+                  .medical-report h1 { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
+                  .medical-report h2 { font-size: 1.25rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1e40af; }
+                  .medical-report h3 { font-size: 1.1rem; font-weight: semibold; margin-top: 1rem; margin-bottom: 0.5rem; }
+                  .medical-report pre { white-space: pre-wrap; font-family: inherit; }
+                  .medical-report ul { list-style-type: disc; margin-left: 1.5rem; }
+                  .medical-report li { margin-bottom: 0.25rem; }
+                  .report-header { border-bottom: 2px solid #e5e7eb; padding-bottom: 1rem; margin-bottom: 1.5rem; }
+                  .finding-category { background-color: #f3f4f6; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem; }
+                `}</style>
+                <div dangerouslySetInnerHTML={{ 
+                  __html: (() => {
+                    const { MedicalReportGenerator } = require('../../../packages/services/MedicalReportGenerator');
+                    const generator = MedicalReportGenerator.getInstance();
+                    return generator.formatReportAsHTML(medicalReport);
+                  })()
+                }} />
+              </div>
+            </div>
+            
+            <div className="p-6 border-t flex justify-end gap-4">
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  // Implement PDF download
+                  const reportContent = document.querySelector('.medical-report-content')?.innerHTML || '';
+                  const printWindow = window.open('', '_blank');
+                  if (printWindow) {
+                    printWindow.document.write(`
+                      <html>
+                        <head>
+                          <title>Reporte Médico - ${medicalReport.reportId}</title>
+                          <style>
+                            body { font-family: Arial, sans-serif; margin: 2rem; }
+                            h1 { font-size: 24px; }
+                            h2 { font-size: 20px; color: #1e40af; margin-top: 1.5rem; }
+                            h3 { font-size: 18px; margin-top: 1rem; }
+                            pre { white-space: pre-wrap; }
+                            ul { margin-left: 1.5rem; }
+                            .finding-category { background-color: #f3f4f6; padding: 1rem; margin-bottom: 1rem; }
+                          </style>
+                        </head>
+                        <body>
+                          ${reportContent}
+                        </body>
+                      </html>
+                    `);
+                    printWindow.document.close();
+                    printWindow.print();
+                  }
+                }}
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Descargar PDF
+              </Button>
+              <Button
+                onClick={() => setShowReport(false)}
+              >
+                Cerrar
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

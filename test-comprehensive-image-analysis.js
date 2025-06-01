@@ -4,7 +4,7 @@
  */
 
 // Import the services we need to test
-import { ComprehensiveMedicalImageAnalyzer } from './packages/services/ComprehensiveMedicalImageAnalyzer.js';
+import { RealComprehensiveMedicalImageAnalyzer } from './packages/services/RealComprehensiveMedicalImageAnalyzer.js';
 import { RealTimeImageProcessor } from './packages/services/RealTimeImageProcessor.js';
 import { IntelligentTreatmentEngine } from './packages/services/IntelligentTreatmentEngine.js';
 
@@ -125,13 +125,13 @@ async function runComprehensiveImageAnalysisTests() {
 // Test Group 1: Service Initialization
 async function testServiceInitialization() {
   try {
-    // Test ComprehensiveMedicalImageAnalyzer singleton
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
-    assertExists(analyzer, 'ComprehensiveMedicalImageAnalyzer instance');
+    // Test RealComprehensiveMedicalImageAnalyzer singleton
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
+    assertExists(analyzer, 'RealComprehensiveMedicalImageAnalyzer instance');
     
     // Test that getInstance returns the same instance
-    const analyzer2 = ComprehensiveMedicalImageAnalyzer.getInstance();
-    assert(analyzer === analyzer2, 'ComprehensiveMedicalImageAnalyzer singleton pattern');
+    const analyzer2 = RealComprehensiveMedicalImageAnalyzer.getInstance();
+    assert(analyzer === analyzer2, 'RealComprehensiveMedicalImageAnalyzer singleton pattern');
     
     // Test RealTimeImageProcessor singleton
     const processor = RealTimeImageProcessor.getInstance();
@@ -153,7 +153,7 @@ async function testServiceInitialization() {
 // Test Group 2: Analysis Type Support
 async function testAnalysisTypeSupport() {
   try {
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     const supportedTypes = analyzer.getSupportedAnalysisTypes();
     
     // Test all expected analysis types are supported
@@ -200,7 +200,7 @@ async function testImageQualityAssessment() {
     };
     
     // Test quality assessment indirectly through analysis
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     const result = await analyzer.analyzeImage(analysisInput);
     
     assertExists(result.qualityMetrics, 'Quality metrics in result');
@@ -316,7 +316,7 @@ async function testRealTimeProcessing() {
 // Test Group 6: Treatment Engine Integration
 async function testTreatmentEngineIntegration() {
   try {
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     const treatmentEngine = IntelligentTreatmentEngine.getInstance();
     
     // First get an analysis result
@@ -361,7 +361,7 @@ async function testTreatmentEngineIntegration() {
 // Test Group 7: Error Handling
 async function testErrorHandling() {
   try {
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     
     // Test with invalid image data
     try {
@@ -411,7 +411,7 @@ async function testErrorHandling() {
 // Test Group 8: Cultural Context Integration
 async function testCulturalContextIntegration() {
   try {
-    const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+    const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
     const mockImageData = createMockImageData();
     
     // Test Mexican cultural context

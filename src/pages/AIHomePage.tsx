@@ -11,7 +11,7 @@ import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
 import { useTheme } from '../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
-import FeatureDiscovery from '../components/FeatureDiscovery';
+
 import Onboarding from '../components/Onboarding';
 
 // Enhanced chat messages for the animation
@@ -536,7 +536,7 @@ function AIHomePage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
                 Consultas más comunes en México:
               </h3>
-              <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4">
                 {COMMON_MEXICAN_SYMPTOMS.map((item, index) => (
                   <motion.button
                     key={item.symptom}
@@ -544,12 +544,14 @@ function AIHomePage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => navigate('/doctor', { state: { initialMessage: `Tengo problemas con ${item.symptom.toLowerCase()}` } })}
-                    className={`p-4 rounded-xl border-2 hover:shadow-lg transition-all duration-200 hover:scale-105 ${
-                      item.urgent ? 'border-red-200 bg-red-50 hover:border-red-300' : 'border-[#006D77]/20 bg-[#D0F0EF]/30 hover:border-[#006D77]'
+                    className={`h-24 p-3 rounded-xl border-2 hover:shadow-lg transition-all duration-200 hover:scale-105 flex flex-col items-center justify-center text-center ${
+                      item.urgent
+                        ? 'border-red-200 bg-gradient-to-br from-red-50 to-red-100 hover:border-red-300 hover:from-red-100 hover:to-red-200'
+                        : 'border-[#006D77]/20 bg-gradient-to-br from-[#D0F0EF]/40 to-white hover:border-[#006D77] hover:from-[#D0F0EF]/60 hover:to-[#D0F0EF]/20'
                     }`}
                   >
-                    <div className="text-2xl mb-2">{item.icon}</div>
-                    <div className={`text-sm font-medium ${
+                    <div className="text-xl mb-1">{item.icon}</div>
+                    <div className={`text-xs font-semibold leading-tight ${
                       item.urgent ? 'text-red-700' : 'text-[#006D77]'
                     }`}>
                       {item.symptom}
@@ -564,26 +566,26 @@ function AIHomePage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
                 Servicios Especializados:
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
                 {/* Constitutional Analysis */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
                 >
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl">🧘‍♀️</div>
-                    <h4 className="text-lg font-semibold text-green-800">Análisis Constitucional</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="h-full flex flex-col text-center">
+                    <div className="text-3xl mb-3">🧘‍♀️</div>
+                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Análisis Constitucional</h4>
+                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
                       Descubre tu tipo constitucional ayurvédico y recibe recomendaciones personalizadas de hierbas y estilo de vida.
                     </p>
                     <Link
                       to="/constitutional-analysis"
-                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
                     >
                       Comenzar Análisis
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </motion.div>
@@ -593,20 +595,20 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
                 >
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl">📱</div>
-                    <h4 className="text-lg font-semibold text-blue-800">Análisis de Imágenes Médicas</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="h-full flex flex-col text-center">
+                    <div className="text-3xl mb-3">📱</div>
+                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Análisis de Imágenes Médicas</h4>
+                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
                       Análisis médico avanzado: facial, ojos, lengua, piel, uñas y postura con IA de segunda generación.
                     </p>
                     <Link
                       to="/advanced-image-analysis"
-                      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
                     >
                       Analizar Imagen
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </motion.div>
@@ -616,20 +618,20 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
                 >
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl">🧪</div>
-                    <h4 className="text-lg font-semibold text-purple-800">Laboratorios</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="h-full flex flex-col text-center">
+                    <div className="text-3xl mb-3">🧪</div>
+                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Laboratorios</h4>
+                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
                       Encuentra laboratorios cercanos y obtén interpretación de resultados médicos.
                     </p>
                     <Link
                       to="/lab-testing"
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
                     >
                       Ver Laboratorios
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </motion.div>
@@ -639,20 +641,20 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="bg-gradient-to-br from-indigo-50 to-teal-50 border-2 border-indigo-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
                 >
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl">📊</div>
-                    <h4 className="text-lg font-semibold text-indigo-800">Seguimiento de Progreso</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="h-full flex flex-col text-center">
+                    <div className="text-3xl mb-3">📊</div>
+                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Seguimiento de Progreso</h4>
+                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
                       Monitorea síntomas, establece objetivos y recibe análisis inteligente de tu evolución.
                     </p>
                     <Link
                       to="/profile/progress"
-                      className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
                     >
                       Ver Dashboard
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </motion.div>
@@ -662,20 +664,20 @@ function AIHomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-xl p-6 hover:shadow-lg transition-all duration-200 hover:scale-105"
+                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
                 >
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl">📋</div>
-                    <h4 className="text-lg font-semibold text-yellow-800">Protocolos de Tratamiento</h4>
-                    <p className="text-sm text-gray-600">
+                  <div className="h-full flex flex-col text-center">
+                    <div className="text-3xl mb-3">📋</div>
+                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Protocolos de Tratamiento</h4>
+                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
                       Planes estructurados día a día con hierbas, dieta y hábitos personalizados para tu condición.
                     </p>
                     <Link
                       to="/profile/protocols"
-                      className="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition-colors inline-flex items-center gap-2 text-sm font-medium"
+                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
                     >
                       Ver Protocolos
-                      <ArrowRight className="w-4 h-4" />
+                      <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>
                 </motion.div>
@@ -865,8 +867,7 @@ function AIHomePage() {
           </div>
         </section>
 
-        {/* Feature Discovery Section */}
-        <FeatureDiscovery />
+
 
         {/* Enhanced Final CTA */}
         <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-16">

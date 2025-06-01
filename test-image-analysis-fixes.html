@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Image Analysis Fixes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .upload-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 4px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0052a3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .result-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .result-section h3 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+        .metric {
+            display: inline-block;
+            margin: 5px 10px;
+            padding: 5px 10px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+        }
+        .finding {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-left: 4px solid #0066cc;
+        }
+        .error {
+            color: #d32f2f;
+            background-color: #ffebee;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .success {
+            color: #388e3c;
+            background-color: #e8f5e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .protocol {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .loader {
+            display: none;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0066cc;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .timing {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Test Image Analysis Fixes</h1>
+        
+        <div class="upload-section">
+            <h2>Upload Test Image</h2>
+            <p>Upload a facial image to test the analysis system</p>
+            <input type="file" id="imageInput" accept="image/*">
+            <br><br>
+            <button id="analyzeBtn" onclick="analyzeImage()">Analyze Image</button>
+        </div>
+
+        <div class="loader" id="loader"></div>
+        
+        <div id="results" class="results"></div>
+    </div>
+
+    <script>
+        async function loadImageAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function analyzeImage() {
+            const fileInput = document.getElementById('imageInput');
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                alert('Please select an image first');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            const loader = document.getElementById('loader');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            
+            // Show loader and disable button
+            loader.style.display = 'block';
+            analyzeBtn.disabled = true;
+            resultsDiv.innerHTML = '';
+
+            const startTime = performance.now();
+
+            try {
+                // Convert image to base64
+                const base64Image = await loadImageAsBase64(file);
+                
+                // Call the analysis API
+                const response = await fetch('http://localhost:8888/.netlify/functions/image-analysis', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        imageData: base64Image,
+                        analysisType: 'facial_analysis',
+                        culturalContext: 'mexican'
+                    })
+                });
+
+                const endTime = performance.now();
+                const totalTime = ((endTime - startTime) / 1000).toFixed(2);
+
+                if (!response.ok) {
+                    throw new Error(`Analysis failed: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                // Display results
+                displayResults(result, totalTime);
+
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>❌ Error</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            } finally {
+                loader.style.display = 'none';
+                analyzeBtn.disabled = false;
+            }
+        }
+
+        function displayResults(result, totalTime) {
+            const resultsDiv = document.getElementById('results');
+            
+            let html = `
+                <div class="success">
+                    <h3>✅ Analysis Complete</h3>
+                    <p class="timing">Total time: ${totalTime}s</p>
+                </div>
+            `;
+
+            // Image Quality Metrics
+            if (result.qualityMetrics) {
+                html += `
+                    <div class="result-section">
+                        <h3>📊 Image Quality Metrics</h3>
+                        <div class="metric">Quality Score: ${result.qualityMetrics.overallQuality}/100</div>
+                        <div class="metric">Brightness: ${result.qualityMetrics.lightingScore}/100</div>
+                        <div class="metric">Sharpness: ${result.qualityMetrics.focusScore}/100</div>
+                        <div class="metric">Color Accuracy: ${result.qualityMetrics.colorAccuracy}/100</div>
+                    </div>
+                `;
+            }
+
+            // Primary Findings
+            if (result.primaryFindings && result.primaryFindings.length > 0) {
+                html += `
+                    <div class="result-section">
+                        <h3>🔍 Primary Findings (${result.primaryFindings.length})</h3>
+                `;
+                result.primaryFindings.forEach(finding => {
+                    html += `
+                        <div class="finding">
+                            <strong>${finding.finding}</strong><br>
+                            Category: ${finding.category} | 
+                            Severity: ${finding.severity} | 
+                            Confidence: ${(finding.confidence * 100).toFixed(0)}%<br>
+                            Organ Systems: ${finding.organSystems.join(', ')}
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+
+            // Vision API Insights
+            if (result.aiInsights) {
+                html += `
+                    <div class="result-section">
+                        <h3>🤖 AI Vision Analysis</h3>
+                        <p><strong>Analysis:</strong> ${result.aiInsights.analysis}</p>
+                        <p><strong>Findings:</strong> ${result.aiInsights.findings}</p>
+                        <p><strong>Suggested Specialty:</strong> ${result.aiInsights.suggestedSpecialty}</p>
+                    </div>
+                `;
+            }
+
+            // Protocol Recommendations
+            if (result.protocolRecommendation && result.protocolRecommendation.primaryProtocol) {
+                const protocol = result.protocolRecommendation.primaryProtocol.protocol;
+                html += `
+                    <div class="result-section">
+                        <h3>💊 Recommended Protocol</h3>
+                        <div class="protocol">
+                            <h4>${protocol.name}</h4>
+                            <p>${protocol.description}</p>
+                            <p><strong>Duration:</strong> ${protocol.duration.replace('_', ' ')}</p>
+                            <p><strong>Estimated Cost:</strong> $${protocol.estimatedCost.totalCostMXN} MXN</p>
+                            <p><strong>Match Score:</strong> ${result.protocolRecommendation.primaryProtocol.matchScore.toFixed(1)}%</p>
+                            <p><strong>Reasons:</strong></p>
+                            <ul>
+                                ${result.protocolRecommendation.primaryProtocol.matchingReasons.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                
+                // Show phases
+                if (protocol.phases && protocol.phases.length > 0) {
+                    html += `<h4>Treatment Phases:</h4>`;
+                    protocol.phases.forEach((phase, idx) => {
+                        html += `
+                            <div style="margin-left: 20px; margin-bottom: 10px;">
+                                <strong>Phase ${idx + 1}: ${phase.name}</strong> (${phase.duration})<br>
+                                Goals: ${phase.goals.join(', ')}<br>
+                                Herbs: ${phase.herbs.map(h => h.mexicanName || h.herbName).join(', ')}
+                            </div>
+                        `;
+                    });
+                }
+                
+                html += `</div>`;
+            }
+
+            // Constitutional Assessment
+            if (result.constitutionalAssessment) {
+                html += `
+                    <div class="result-section">
+                        <h3>🧬 Constitutional Assessment</h3>
+                        <p><strong>Ayurvedic Type:</strong> ${result.constitutionalAssessment.ayurvedicType}</p>
+                        <p><strong>TCM Constitution:</strong> ${result.constitutionalAssessment.tcmConstitution}</p>
+                        <p><strong>Metabolic Type:</strong> ${result.constitutionalAssessment.metabolicType}</p>
+                    </div>
+                `;
+            }
+
+            // Overall Health Score
+            if (result.overallHealthScore) {
+                html += `
+                    <div class="result-section">
+                        <h3>💯 Overall Health Score</h3>
+                        <div class="metric">Score: ${result.overallHealthScore.score}/100</div>
+                        <div class="metric">Status: ${result.overallHealthScore.status}</div>
+                    </div>
+                `;
+            }
+
+            // Confidence Score
+            if (result.confidence !== undefined) {
+                html += `
+                    <div class="result-section">
+                        <h3>📈 Analysis Confidence</h3>
+                        <div class="metric">Overall Confidence: ${(result.confidence * 100).toFixed(0)}%</div>
+                    </div>
+                `;
+            }
+
+            resultsDiv.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

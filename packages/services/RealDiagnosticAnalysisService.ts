@@ -142,50 +142,50 @@ export class RealDiagnosticAnalysisService {
     if (features.colors.redness > 0.6) {
       findings.push({
         category: 'circulatory',
-        finding: 'Facial redness detected - possible inflammation or circulatory issues',
+        finding: 'Enrojecimiento facial detectado - posible inflamación o problemas circulatorios',
         severity: features.colors.redness > 0.8 ? 'high' : 'moderate',
         confidence: 0.75,
-        organSystems: ['circulatory', 'integumentary'],
+        organSystems: ['circulatorio', 'tegumentario'],
         recommendations: [
-          'Monitor blood pressure',
-          'Consider anti-inflammatory diet',
-          'Avoid spicy foods and alcohol'
+          'Monitorear presión arterial',
+          'Considerar dieta antiinflamatoria',
+          'Evitar alimentos picantes y alcohol'
         ]
       });
-      basedOnFeatures.push('High facial redness detected');
+      basedOnFeatures.push('Alto enrojecimiento facial detectado');
     }
 
     if (features.colors.yellowness > 0.5) {
       findings.push({
         category: 'digestive',
-        finding: 'Yellowish skin tone - possible liver or digestive concerns',
+        finding: 'Tono de piel amarillento - posibles problemas hepáticos o digestivos',
         severity: features.colors.yellowness > 0.7 ? 'high' : 'moderate',
         confidence: 0.65,
-        organSystems: ['digestive', 'hepatic'],
+        organSystems: ['digestivo', 'hepático'],
         recommendations: [
-          'Liver function assessment recommended',
-          'Increase water intake',
-          'Consider hepatoprotective herbs'
+          'Se recomienda evaluación de función hepática',
+          'Aumentar consumo de agua',
+          'Considerar hierbas hepatoprotectoras'
         ]
       });
-      basedOnFeatures.push('Yellowish skin tone observed');
+      basedOnFeatures.push('Tono de piel amarillento observado');
     }
 
     // Analyze symmetry
     if (features.patterns.symmetry < 0.7) {
       findings.push({
         category: 'nervous',
-        finding: 'Facial asymmetry detected - possible nerve or muscle tension',
+        finding: 'Asimetría facial detectada - posible tensión nerviosa o muscular',
         severity: 'low',
         confidence: 0.6,
-        organSystems: ['nervous', 'muscular'],
+        organSystems: ['nervioso', 'muscular'],
         recommendations: [
-          'Facial exercises recommended',
-          'Consider stress reduction techniques',
-          'Monitor for other neurological symptoms'
+          'Ejercicios faciales recomendados',
+          'Considerar técnicas de reducción de estrés',
+          'Monitorear otros síntomas neurológicos'
         ]
       });
-      basedOnFeatures.push('Facial asymmetry detected');
+      basedOnFeatures.push('Asimetría facial detectada');
     }
 
     // Analyze specific regions
@@ -193,32 +193,32 @@ export class RealDiagnosticAnalysisService {
       if (region.location === 'forehead' && region.abnormalities.length > 0) {
         findings.push({
           category: 'digestive',
-          finding: 'Forehead abnormalities - traditionally associated with digestive health',
+          finding: 'Anomalías en la frente - tradicionalmente asociadas con salud digestiva',
           severity: 'low',
           confidence: 0.55,
-          organSystems: ['digestive'],
+          organSystems: ['digestivo'],
           recommendations: [
-            'Monitor digestive health',
-            'Consider probiotic supplementation'
+            'Monitorear salud digestiva',
+            'Considerar suplementación con probióticos'
           ]
         });
-        basedOnFeatures.push('Forehead region analysis');
+        basedOnFeatures.push('Análisis de región frontal');
       }
 
       if (region.location === 'cheeks' && region.abnormalities.includes('redness')) {
         findings.push({
           category: 'respiratory',
-          finding: 'Cheek redness - may indicate respiratory or allergic conditions',
+          finding: 'Enrojecimiento en mejillas - puede indicar condiciones respiratorias o alérgicas',
           severity: 'moderate',
           confidence: 0.6,
-          organSystems: ['respiratory'],
+          organSystems: ['respiratorio'],
           recommendations: [
-            'Monitor breathing patterns',
-            'Consider allergy testing',
-            'Ensure good air quality'
+            'Monitorear patrones respiratorios',
+            'Considerar pruebas de alergia',
+            'Asegurar buena calidad del aire'
           ]
         });
-        basedOnFeatures.push('Cheek region analysis');
+        basedOnFeatures.push('Análisis de región de mejillas');
       }
     });
 
@@ -227,17 +227,52 @@ export class RealDiagnosticAnalysisService {
     if (eyeRegion && eyeRegion.characteristics.includes('dark_circles')) {
       findings.push({
         category: 'circulatory',
-        finding: 'Dark circles under eyes - possible fatigue or circulatory issues',
+        finding: 'Ojeras detectadas - posible fatiga o problemas circulatorios',
         severity: 'low',
         confidence: 0.7,
-        organSystems: ['circulatory'],
+        organSystems: ['circulatorio'],
         recommendations: [
-          'Ensure adequate sleep (7-9 hours)',
-          'Increase iron-rich foods',
-          'Stay hydrated'
+          'Asegurar sueño adecuado (7-9 horas)',
+          'Aumentar alimentos ricos en hierro',
+          'Mantenerse hidratado'
         ]
       });
-      basedOnFeatures.push('Dark circles detected');
+      basedOnFeatures.push('Ojeras detectadas');
+    }
+
+    // Analizar piel pálida
+    if (features.colors.skinTone && features.colors.skinTone.lightness > 0.8) {
+      findings.push({
+        category: 'circulatory',
+        finding: 'Palidez facial detectada - posible anemia o deficiencia circulatoria',
+        severity: 'moderate',
+        confidence: 0.65,
+        organSystems: ['circulatorio', 'hematológico'],
+        recommendations: [
+          'Realizar análisis de sangre completo',
+          'Incluir alimentos ricos en hierro y vitamina B12',
+          'Evaluar niveles de energía diarios'
+        ]
+      });
+      basedOnFeatures.push('Palidez facial observada');
+    }
+
+    // Analizar hinchazón facial
+    const swellingRegions = features.regions.regions.filter(r => r.characteristics.includes('swelling'));
+    if (swellingRegions.length > 0) {
+      findings.push({
+        category: 'lymphatic',
+        finding: 'Hinchazón facial detectada - posible retención de líquidos o problemas linfáticos',
+        severity: 'moderate',
+        confidence: 0.68,
+        organSystems: ['linfático', 'renal'],
+        recommendations: [
+          'Reducir consumo de sodio',
+          'Realizar drenaje linfático suave',
+          'Evaluar función renal'
+        ]
+      });
+      basedOnFeatures.push('Hinchazón facial detectada');
     }
 
     return { findings, confidence, basedOnFeatures };
@@ -946,12 +981,12 @@ export class RealDiagnosticAnalysisService {
       recommendations.push({
         category: 'medical_referral',
         recommendations: [
-          'Consult with healthcare provider for comprehensive evaluation',
-          'Document symptoms and changes',
-          'Bring this analysis report to your appointment'
+          'Consultar con profesional de salud para evaluación integral',
+          'Documentar síntomas y cambios observados',
+          'Llevar este reporte de análisis a su cita médica'
         ],
         urgency: 'urgent',
-        followUp: 'Within 1 week'
+        followUp: 'Dentro de 1 semana'
       });
       addedCategories.add('medical_referral');
     }
@@ -964,9 +999,9 @@ export class RealDiagnosticAnalysisService {
           category: 'herbal',
           recommendations: herbRecs,
           mexicanHerbs: this.getMexicanHerbs(constitutionalMarkers, findings),
-          culturalAdaptations: ['Prepared as traditional Mexican tea (infusión)'],
+          culturalAdaptations: ['Preparar como infusión tradicional mexicana'],
           urgency: 'routine',
-          followUp: 'Monitor effects after 2 weeks'
+          followUp: 'Monitorear efectos después de 2 semanas'
         });
       }
     }
@@ -979,7 +1014,7 @@ export class RealDiagnosticAnalysisService {
         recommendations: dietaryRecs,
         culturalAdaptations: this.getMexicanDietaryAdaptations(constitutionalMarkers),
         urgency: 'routine',
-        followUp: 'Assess changes after 4 weeks'
+        followUp: 'Evaluar cambios después de 4 semanas'
       });
     }
 
@@ -990,7 +1025,7 @@ export class RealDiagnosticAnalysisService {
         category: 'lifestyle',
         recommendations: lifestyleRecs,
         urgency: 'routine',
-        followUp: 'Review progress monthly'
+        followUp: 'Revisar progreso mensualmente'
       });
     }
 
@@ -1009,23 +1044,23 @@ export class RealDiagnosticAnalysisService {
     // Constitution-based herbs
     switch (constitution.ayurvedicType) {
       case 'vata':
-        recommendations.push('Warming herbs: ginger, cinnamon, ashwagandha');
+        recommendations.push('Hierbas calientes: jengibre, canela, ashwagandha');
         break;
       case 'pitta':
-        recommendations.push('Cooling herbs: mint, fennel, aloe vera');
+        recommendations.push('Hierbas refrescantes: menta, hinojo, sábila');
         break;
       case 'kapha':
-        recommendations.push('Stimulating herbs: black pepper, turmeric, guggul');
+        recommendations.push('Hierbas estimulantes: pimienta negra, cúrcuma, guggul');
         break;
     }
 
     // Symptom-based herbs
     if (findings.some(f => f.category === 'digestive')) {
-      recommendations.push('Digestive support: chamomile, peppermint, ginger');
+      recommendations.push('Apoyo digestivo: manzanilla, hierbabuena, jengibre');
     }
 
     if (findings.some(f => f.category === 'nervous')) {
-      recommendations.push('Calming herbs: passionflower, lemon balm, valerian');
+      recommendations.push('Hierbas calmantes: pasiflora, toronjil, valeriana');
     }
 
     return recommendations;
@@ -1077,19 +1112,19 @@ export class RealDiagnosticAnalysisService {
     // Constitution-based diet
     switch (constitution.ayurvedicType) {
       case 'vata':
-        recommendations.push('Warm, cooked foods', 'Healthy fats and oils', 'Regular meal times');
+        recommendations.push('Alimentos calientes y cocidos', 'Grasas y aceites saludables', 'Horarios regulares de comida');
         break;
       case 'pitta':
-        recommendations.push('Cooling foods', 'Avoid spicy and acidic foods', 'Fresh fruits and vegetables');
+        recommendations.push('Alimentos refrescantes', 'Evitar comidas picantes y ácidas', 'Frutas y verduras frescas');
         break;
       case 'kapha':
-        recommendations.push('Light, warm foods', 'Reduce dairy and sweets', 'Increase spices');
+        recommendations.push('Alimentos ligeros y calientes', 'Reducir lácteos y dulces', 'Aumentar especias');
         break;
     }
 
     // Add hydration if skin issues
     if (findings.some(f => f.category === 'dermatological')) {
-      recommendations.push('Increase water intake to 8-10 glasses daily');
+      recommendations.push('Aumentar consumo de agua a 8-10 vasos diarios');
     }
 
     return recommendations;
@@ -1123,23 +1158,23 @@ export class RealDiagnosticAnalysisService {
     const recommendations: string[] = [];
 
     // Sleep recommendations for various conditions
-    if (findings.some(f => f.finding.includes('fatigue') || f.finding.includes('dark circles'))) {
-      recommendations.push('Ensure 7-9 hours of quality sleep', 'Establish regular sleep schedule');
+    if (findings.some(f => f.finding.includes('fatiga') || f.finding.includes('ojeras'))) {
+      recommendations.push('Asegurar 7-9 horas de sueño de calidad', 'Establecer horario regular de sueño');
     }
 
     // Stress management
     if (findings.some(f => f.category === 'nervous' || f.category === 'emotional')) {
-      recommendations.push('Practice stress reduction techniques', 'Consider meditation or yoga');
+      recommendations.push('Practicar técnicas de reducción de estrés', 'Considerar meditación o yoga');
     }
 
     // Exercise
     if (findings.some(f => f.category === 'circulatory')) {
-      recommendations.push('Regular moderate exercise (30 min/day)', 'Walking or swimming recommended');
+      recommendations.push('Ejercicio moderado regular (30 min/día)', 'Se recomienda caminar o nadar');
     }
 
     // Skin care
     if (findings.some(f => f.category === 'dermatological')) {
-      recommendations.push('Gentle skincare routine', 'Sun protection (SPF 30+)', 'Avoid harsh products');
+      recommendations.push('Rutina suave de cuidado de piel', 'Protección solar (FPS 30+)', 'Evitar productos agresivos');
     }
 
     return recommendations;

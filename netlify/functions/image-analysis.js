@@ -9,6 +9,9 @@ console.log('Image analysis function loading...');
 // Environment variable for OpenAI API key - use the same key from .env
 const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
 
+// Vision model to use - default to gpt-4o-mini if not specified
+const visionModel = process.env.VISION_MODEL || process.env.VITE_VISION_MODEL || 'gpt-4o-mini';
+
 if (!openaiKey) {
   console.error('❌ No OpenAI API key found in environment variables');
   console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('OPENAI')));
@@ -82,62 +85,85 @@ exports.handler = async function(event) {
     try {
       console.log("Creating OpenAI client for vision model");
       
-      // Try to use GPT-4o or Vision API based on configuration
-      const useVisionAPI = process.env.VITE_USE_VISION_API === 'true';
-      console.log(`Using ${useVisionAPI ? 'Vision API' : 'Standard API with markdown'}`);
+      // All vision-enabled models now use the same format for image inputs
+      console.log(`Using Vision API with model: ${visionModel}`);
       
-      // For GPT-4 Vision API (multimodal format)
-      if (useVisionAPI) {
+      try {
+        const systemPrompt = process.env.VITE_DOCTOR_INSTRUCTIONS || 
+          'You are analyzing facial features for wellness assessment. Describe observable characteristics like skin tone, facial symmetry, visible fatigue indicators, and general appearance. Focus on wellness observations rather than medical diagnosis.';
+        
         const messages = [
           { 
             role: 'system', 
-            content: process.env.VITE_DOCTOR_INSTRUCTIONS || 'Eres un médico virtual compasivo y profesional. Proporciona un análisis de imágenes médicas.' 
+            content: systemPrompt
           },
           { 
             role: 'user', 
             content: [
               { 
                 type: 'text', 
-                text: `Analiza la siguiente imagen médica y describe los hallazgos:${symptoms ? `\n\nSíntomas reportados: ${symptoms}` : ''}`
+                text: symptoms ? 
+                  `Please describe the observable wellness indicators in this facial image. The person reports: ${symptoms}. Focus on visible characteristics like skin appearance, facial balance, signs of rest or fatigue, and general wellness indicators.` : 
+                  'Please describe the observable wellness indicators in this facial image. Focus on visible characteristics like skin appearance, facial balance, signs of rest or fatigue, and general wellness indicators.'
               },
               {
                 type: 'image_url',
                 image_url: {
-                  url: imageUrl,
+                  url: imageUrl
                 }
               }
             ]
           }
         ];
         
-        console.log("Sending request to OpenAI vision model: gpt-4-vision-preview");
+        console.log(`Sending request to OpenAI vision model: ${visionModel}`);
         completion = await openai.chat.completions.create({
-          model: 'gpt-4-vision-preview',
+          model: visionModel,
           messages: messages,
           max_tokens: 1000,
-          temperature: 0.7
+          temperature: 0.2 // Lower temperature for medical reliability
         });
-      } else {
-        // Standard format (non-multimodal - using markdown)
-        const messages = [
-          { 
-            role: 'system', 
-            content: process.env.VITE_DOCTOR_INSTRUCTIONS || 'Eres un médico virtual compasivo y profesional. Proporciona un análisis de imágenes médicas.' 
-          },
-          { 
-            role: 'user', 
-            content: `Analiza la siguiente imagen y describe los hallazgos:\n\n![imagen](${imageUrl})${symptoms ? `\n\nSíntomas: ${symptoms}` : ''}` 
-          }
-        ];
-        
-        const model = process.env.VITE_IMAGE_ANALYSIS_MODEL || 'gpt-4o';
-        console.log(`Sending request to OpenAI standard model: ${model}`);
-        
-        completion = await openai.chat.completions.create({
-          model: model,
-          messages: messages,
-          temperature: 0.7
-        });
+      } catch (modelError) {
+        // Graceful fallback for future deprecations
+        if (modelError.code === 'model_not_found') {
+          console.log(`Model ${visionModel} not found, falling back to gpt-4o`);
+          // Retry with gpt-4o as fallback
+          const fallbackModel = 'gpt-4o';
+          
+          const messages = [
+            { 
+              role: 'system', 
+              content: process.env.VITE_DOCTOR_INSTRUCTIONS || 'You are analyzing facial features for wellness assessment. Describe observable characteristics like skin tone, facial symmetry, visible fatigue indicators, and general appearance. Focus on wellness observations rather than medical diagnosis.'
+            },
+            { 
+              role: 'user', 
+              content: [
+                { 
+                  type: 'text', 
+                  text: symptoms ? 
+                    `Please describe the observable wellness indicators in this facial image. The person reports: ${symptoms}. Focus on visible characteristics like skin appearance, facial balance, signs of rest or fatigue, and general wellness indicators.` : 
+                    'Please describe the observable wellness indicators in this facial image. Focus on visible characteristics like skin appearance, facial balance, signs of rest or fatigue, and general wellness indicators.'
+                },
+                {
+                  type: 'image_url',
+                  image_url: {
+                    url: imageUrl
+                  }
+                }
+              ]
+            }
+          ];
+          
+          console.log(`Retrying with fallback model: ${fallbackModel}`);
+          completion = await openai.chat.completions.create({
+            model: fallbackModel,
+            messages: messages,
+            max_tokens: 1000,
+            temperature: 0.2
+          });
+        } else {
+          throw modelError; // Re-throw if it's not a model_not_found error
+        }
       }
       
       const analysis = completion.choices?.[0]?.message?.content || '';
@@ -152,7 +178,7 @@ exports.handler = async function(event) {
           confidence: 0.85,
           severity: 40,
           suggestedSpecialty: "Medicina General",
-          model: useVisionAPI ? 'gpt-4-vision-preview' : (process.env.VITE_IMAGE_ANALYSIS_MODEL || 'gpt-4o'),
+          model: visionModel,
           success: true
         }) 
       };

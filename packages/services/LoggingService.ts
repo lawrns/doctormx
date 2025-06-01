@@ -68,6 +68,12 @@ export class LoggingService {
    */
   warn(service: string, message: string, data?: any, context?: { userId?: string; sessionId?: string }): void {
     this.log('warn', service, message, data, context);
+    
+    // Special handling for image quality warnings
+    if (message.includes('image quality') || message.includes('Image quality')) {
+      console.warn(`🔍 IMAGE QUALITY WARNING from ${service}:`, message, data);
+      console.trace('Call stack for quality warning');
+    }
   }
 
   /**
@@ -75,6 +81,13 @@ export class LoggingService {
    */
   error(service: string, message: string, error?: Error, context?: { userId?: string; sessionId?: string }): void {
     this.log('error', service, message, { error: this.serializeError(error) }, context);
+    
+    // Special handling for image quality errors
+    if (message.includes('image quality') || message.includes('Image quality') || 
+        (error && error.message && error.message.includes('Image quality'))) {
+      console.error(`🔍 IMAGE QUALITY ERROR from ${service}:`, message, error?.message);
+      console.trace('Call stack for quality error');
+    }
     
     if (error) {
       this.reportError(service, error, context || {}, 'medium');

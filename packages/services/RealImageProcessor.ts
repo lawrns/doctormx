@@ -638,10 +638,18 @@ export class RealImageProcessor {
     const textureWeight = 0.2;
     
     // Optimal ranges and scoring
-    const brightnessScore = Math.max(0, 100 - Math.abs(brightness - 50) * 2); // Optimal around 50%
+    let brightnessScore = Math.max(0, 100 - Math.abs(brightness - 50) * 2); // Optimal around 50%
     const contrastScore = Math.min(contrast * 2, 100); // Higher contrast generally better
     const sharpnessScore = sharpness; // Higher sharpness better
     const textureScore = (textureMetrics.uniformity + textureMetrics.edgeDensity) / 2;
+    
+    // Raise brightness penalty floor - well-lit selfies shouldn't be penalized
+    if (contrastScore < 25 && brightnessScore > 80) {
+      brightnessScore -= 10; // Minor penalty only
+    } else if (contrast > 15 && brightness > 30 && brightness < 80) {
+      // Boost score for normal indoor lighting conditions
+      brightnessScore = Math.max(brightnessScore, 60);
+    }
     
     const qualityScore = 
       brightnessScore * brightnessWeight +

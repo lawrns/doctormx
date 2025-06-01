@@ -11,6 +11,7 @@
 
 import { loggingService } from './LoggingService';
 import { ComprehensiveProtocolDatabase, TreatmentProtocol } from './ComprehensiveProtocolDatabase';
+import { EnhancedProtocolMatcher } from './EnhancedProtocolMatcher';
 
 export interface ProtocolMatchingCriteria {
   primaryFindings: HealthIndicator[];
@@ -22,12 +23,14 @@ export interface ProtocolMatchingCriteria {
 }
 
 export interface HealthIndicator {
+  id?: string; // Add optional id property
   category: string;
   finding: string;
   severity: 'mild' | 'moderate' | 'severe';
   confidence: number;
   organSystems: string[];
   recommendations?: string[];
+  type?: string; // Add optional type property
 }
 
 export interface ConstitutionalMarkers {
@@ -145,8 +148,39 @@ export class IntelligentProtocolMatcher {
     });
 
     try {
+      // Enhanced logging of input criteria
+      loggingService.info('IntelligentProtocolMatcher', 'Protocol matching criteria details', {
+        primaryFindingsCount: criteria.primaryFindings.length,
+        primaryFindingsCategories: criteria.primaryFindings.map(f => f.category).join(','),
+        constitutionTypes: criteria.constitutionalAssessment.ayurvedicType,
+        urgencyLevel: criteria.urgencyLevel,
+        hasPatientContext: !!criteria.patientContext
+      });
+      
+      // Log detailed findings
+      criteria.primaryFindings.forEach((finding, index) => {
+        loggingService.info('IntelligentProtocolMatcher', `Input finding ${index + 1}`, {
+          category: finding.category,
+          finding: finding.finding,
+          severity: finding.severity,
+          confidence: finding.confidence,
+          organSystems: finding.organSystems,
+          organSystemsType: typeof finding.organSystems,
+          organSystemsIsArray: Array.isArray(finding.organSystems),
+          organSystemsValues: Array.isArray(finding.organSystems) ? 
+            finding.organSystems.map(org => ({ value: org, type: typeof org })) : 
+            'not an array'
+        });
+      });
+      
       // Step 1: Score all protocols against criteria
       const scoredProtocols = await this.scoreAllProtocols(criteria);
+      
+      // Check if we have any protocols
+      if (!scoredProtocols || scoredProtocols.length === 0) {
+        loggingService.warn('IntelligentProtocolMatcher', 'No matching protocols found, creating fallback protocol');
+        return this.createFallbackRecommendation(criteria);
+      }
       
       // Step 2: Select primary protocol
       const primaryProtocol = this.selectPrimaryProtocol(scoredProtocols, criteria);
@@ -185,8 +219,19 @@ export class IntelligentProtocolMatcher {
       return recommendation;
 
     } catch (error) {
-      loggingService.error('IntelligentProtocolMatcher', 'Protocol matching failed', error as Error);
-      throw new Error(`Protocol matching failed: ${(error as Error).message}`);
+      // Enhanced error logging with more context
+      const errorObj = error as Error;
+      loggingService.error('IntelligentProtocolMatcher', 'Protocol matching failed', errorObj, {
+        // Using type assertion for error details
+        errorName: errorObj?.name || 'Unknown',
+        errorMessage: errorObj?.message || 'No message',
+        criteriaProvided: !!criteria,
+        primaryFindingsCount: criteria?.primaryFindings?.length || 0,
+        constitutionProvided: !!criteria?.constitutionalAssessment
+      });
+      
+      // Return a fallback recommendation instead of throwing an error
+      return this.createFallbackRecommendation(criteria);
     }
   }
 
@@ -194,18 +239,97 @@ export class IntelligentProtocolMatcher {
    * Score all protocols against the matching criteria
    */
   private async scoreAllProtocols(criteria: ProtocolMatchingCriteria): Promise<MatchedProtocol[]> {
-    const allProtocols = this.protocolDatabase.getAllProtocols();
-    const scoredProtocols: MatchedProtocol[] = [];
-
-    for (const [_, protocol] of allProtocols) {
-      const matchResult = this.scoreProtocolMatch(protocol, criteria);
-      if (matchResult.matchScore > 0) {
-        scoredProtocols.push(matchResult);
+    try {
+      // Log details about the protocols collection and criteria
+      const allProtocols = this.protocolDatabase.getAllProtocols();
+      const protocolCount = allProtocols ? allProtocols.size : 0;
+      
+      loggingService.info('IntelligentProtocolMatcher', 'Scoring protocols', {
+        protocolCount,
+        criteriaFindings: criteria.primaryFindings.length,
+        constitution: criteria.constitutionalAssessment.ayurvedicType
+      });
+      
+      // Validate that we have protocols to work with
+      if (!allProtocols || protocolCount === 0) {
+        loggingService.warn('IntelligentProtocolMatcher', 'No protocols available in database');
+        return [];
       }
-    }
+      
+      const scoredProtocols: MatchedProtocol[] = [];
+      const EARLY_BREAK_THRESHOLD = 75; // High confidence match
+      const MIN_PROTOCOLS_TO_SCORE = 3; // Always score at least 3
+      let highConfidenceFound = false;
 
-    // Sort by match score (highest first)
-    return scoredProtocols.sort((a, b) => b.matchScore - a.matchScore);
+      // Score each protocol
+      for (const [protocolId, protocol] of allProtocols) {
+        try {
+          // Validate protocol structure before scoring
+          if (!this.validateProtocolStructure(protocol)) {
+            loggingService.warn('IntelligentProtocolMatcher', 'Skipping invalid protocol', { protocolId });
+            continue;
+          }
+          
+          const matchResult = this.scoreProtocolMatch(protocol, criteria);
+          if (matchResult.matchScore > 0) {
+            scoredProtocols.push(matchResult);
+            
+            // Early break if we found a high-confidence match after minimum protocols
+            if (matchResult.matchScore >= EARLY_BREAK_THRESHOLD && scoredProtocols.length >= MIN_PROTOCOLS_TO_SCORE) {
+              highConfidenceFound = true;
+              loggingService.info('IntelligentProtocolMatcher', 'High confidence match found, stopping early', {
+                protocolName: matchResult.protocol.name,
+                score: matchResult.matchScore,
+                protocolsScored: scoredProtocols.length
+              });
+              break;
+            }
+          }
+        } catch (protocolError) {
+          // Log error but continue with other protocols
+          loggingService.error('IntelligentProtocolMatcher', `Error scoring protocol ${protocolId}`, protocolError as Error);
+          continue;
+        }
+      }
+
+      loggingService.info('IntelligentProtocolMatcher', 'Protocol scoring completed', {
+        totalScored: scoredProtocols.length,
+        matchingProtocols: scoredProtocols.filter(p => p.matchScore > 50).length,
+        topProtocols: scoredProtocols
+          .sort((a, b) => b.matchScore - a.matchScore)
+          .slice(0, 5)
+          .map(p => ({
+            name: p.protocol.name,
+            score: p.matchScore,
+            reasons: p.matchReasons
+          }))
+      });
+      
+      // Sort by match score (highest first)
+      return scoredProtocols.sort((a, b) => b.matchScore - a.matchScore);
+    } catch (error) {
+      loggingService.error('IntelligentProtocolMatcher', 'Failed to score protocols', error as Error);
+      throw error; // Re-throw to be caught by findOptimalProtocols
+    }
+  }
+  
+  /**
+   * Validate that a protocol has the required structure to be scored
+   */
+  private validateProtocolStructure(protocol: TreatmentProtocol): boolean {
+    if (!protocol) return false;
+    if (!protocol.id || !protocol.name) return false;
+    if (!Array.isArray(protocol.phases) || protocol.phases.length === 0) return false;
+    if (!Array.isArray(protocol.constitution)) return false;
+    
+    // Check at least one phase has required properties
+    const validPhase = protocol.phases.some(phase => 
+      phase && 
+      typeof phase.phase === 'number' && 
+      Array.isArray(phase.herbs)
+    );
+    
+    return validPhase;
   }
 
   /**
@@ -217,10 +341,27 @@ export class IntelligentProtocolMatcher {
     const adaptations: string[] = [];
     const concerns: string[] = [];
 
+    // Log protocol being scored
+    loggingService.info('IntelligentProtocolMatcher', 'Scoring protocol', {
+      protocolId: protocol.id,
+      protocolName: protocol.name,
+      protocolCategory: protocol.category,
+      protocolConditions: protocol.condition,
+      protocolTargetOrgans: protocol.targetOrganSystems,
+      findingsCount: criteria.primaryFindings.length
+    });
+
     // Score based on primary findings (40% weight)
     const findingsScore = this.scoreFindingsMatch(protocol, criteria.primaryFindings);
     score += findingsScore.score * 0.4;
     matchingReasons.push(...findingsScore.reasons);
+    
+    loggingService.info('IntelligentProtocolMatcher', 'Findings score', {
+      protocolName: protocol.name,
+      findingsScore: findingsScore.score,
+      weightedScore: findingsScore.score * 0.4,
+      reasons: findingsScore.reasons
+    });
 
     // Score based on constitutional compatibility (25% weight)
     const constitutionalScore = this.scoreConstitutionalMatch(protocol, criteria.constitutionalAssessment);
@@ -247,14 +388,64 @@ export class IntelligentProtocolMatcher {
     const protocolConcerns = this.identifyProtocolConcerns(protocol, criteria);
     concerns.push(...protocolConcerns);
 
+    // Apply bonus for specific protocols
+    if (!protocol.name.toLowerCase().includes('general') && 
+        !protocol.name.toLowerCase().includes('bienestar') &&
+        matchingReasons.some(reason => reason.includes('específica') || reason.includes('exacta'))) {
+      score *= 1.5; // 50% bonus for specific protocols with good matches
+      matchingReasons.push('Bonus por protocolo específico');
+    }
+    
+    // Apply penalty for overly generic protocols
+    if ((protocol.name.toLowerCase().includes('general') || 
+         protocol.name.toLowerCase().includes('bienestar')) &&
+        criteria.primaryFindings.some(f => 
+          ['rosácea', 'acné', 'dermatitis', 'eczema'].some(condition => 
+            f.finding.toLowerCase().includes(condition)
+          )
+        )) {
+      score *= 0.4; // 60% penalty for generic protocols with specific conditions
+      concerns.push('Protocolo demasiado genérico para las condiciones detectadas');
+    }
+    
+    // Apply enhanced scoring for Vision API findings
+    const hasVisionAPIFindings = criteria.primaryFindings.some(f => f.confidence === 0.85);
+    if (hasVisionAPIFindings) {
+      const enhanced = EnhancedProtocolMatcher.enhanceProtocolScoring(
+        protocol,
+        criteria.primaryFindings,
+        score,
+        matchingReasons
+      );
+      score = enhanced.enhancedScore;
+      matchingReasons.push(...enhanced.enhancedReasons);
+      
+      loggingService.info('IntelligentProtocolMatcher', 'Applied Vision API enhancement', {
+        protocolName: protocol.name,
+        originalScore: score,
+        enhancedScore: enhanced.enhancedScore,
+        newReasons: enhanced.enhancedReasons
+      });
+    }
+    
     // Reduce score for concerns
     if (concerns.length > 0) {
       score *= Math.max(0.5, 1 - (concerns.length * 0.1));
     }
 
+    const finalScore = Math.max(0, Math.min(100, score));
+    
+    loggingService.info('IntelligentProtocolMatcher', 'Protocol final score', {
+      protocolName: protocol.name,
+      finalScore,
+      hasReasons: matchingReasons.length > 0,
+      reasonCount: matchingReasons.length,
+      concernCount: concerns.length
+    });
+
     return {
       protocol,
-      matchScore: Math.max(0, Math.min(100, score)),
+      matchScore: finalScore,
       matchingReasons,
       adaptations,
       concerns
@@ -271,33 +462,167 @@ export class IntelligentProtocolMatcher {
     let score = 0;
     const reasons: string[] = [];
 
-    findings.forEach(finding => {
-      // Direct condition match
-      const directMatch = protocol.condition.some(condition =>
-        condition.toLowerCase().includes(finding.category.toLowerCase()) ||
-        finding.category.toLowerCase().includes(condition.toLowerCase()) ||
-        condition.toLowerCase().includes(finding.finding.toLowerCase())
-      );
+    loggingService.info('IntelligentProtocolMatcher', 'Starting findings match scoring', {
+      protocolName: protocol.name,
+      protocolConditions: protocol.condition,
+      findingsCount: findings.length
+    });
 
-      if (directMatch) {
-        const findingScore = finding.confidence * 30; // Up to 30 points per finding
-        score += findingScore;
-        reasons.push(`Directly addresses ${finding.category} (${finding.finding})`);
+    findings.forEach((finding, index) => {
+      loggingService.info('IntelligentProtocolMatcher', `Scoring finding ${index + 1}`, {
+        findingCategory: finding.category,
+        findingText: finding.finding,
+        findingSeverity: finding.severity,
+        findingOrgans: finding.organSystems,
+        findingConfidence: finding.confidence
+      });
+
+      // Enhanced condition matching with specificity bonus
+      let bestMatchScore = 0;
+      let bestMatchReason = '';
+      
+      protocol.condition.forEach(condition => {
+        const conditionLower = condition.toLowerCase();
+        const findingLower = finding.finding.toLowerCase();
+        const categoryLower = finding.category.toLowerCase();
+        
+        // Check for specific dermatological conditions
+        const dermatologicalKeywords = ['rosácea', 'acné', 'dermatitis', 'eczema', 'psoriasis', 'melasma', 'pigmentación'];
+        const isDermatological = dermatologicalKeywords.some(keyword => 
+          findingLower.includes(keyword) || conditionLower.includes(keyword)
+        );
+        
+        // Exact match gets highest score
+        if (conditionLower === findingLower || 
+            (isDermatological && finding.category === 'dermatological' && conditionLower.includes(findingLower.split(' ')[0]))) {
+          const exactScore = finding.confidence * 50; // Higher score for exact matches
+          if (exactScore > bestMatchScore) {
+            bestMatchScore = exactScore;
+            bestMatchReason = `Coincidencia exacta: ${condition} con ${finding.finding}`;
+          }
+        }
+        // Partial but specific match
+        else if (conditionLower.includes(findingLower) || findingLower.includes(conditionLower)) {
+          const partialScore = finding.confidence * 35;
+          if (partialScore > bestMatchScore) {
+            bestMatchScore = partialScore;
+            bestMatchReason = `Trata específicamente: ${finding.finding}`;
+          }
+        }
+        // Category match but not generic
+        else if (categoryLower === protocol.category && !protocol.name.toLowerCase().includes('general')) {
+          const categoryScore = finding.confidence * 25;
+          if (categoryScore > bestMatchScore) {
+            bestMatchScore = categoryScore;
+            bestMatchReason = `Categoría específica: ${finding.category}`;
+          }
+        }
+      });
+      
+      // Apply penalty for generic protocols when specific conditions are found
+      if (protocol.name.toLowerCase().includes('general') || protocol.name.toLowerCase().includes('bienestar')) {
+        const specificConditions = ['rosácea', 'acné', 'dermatitis', 'eczema', 'psoriasis'];
+        const hasSpecificCondition = specificConditions.some(condition => 
+          finding.finding.toLowerCase().includes(condition)
+        );
+        
+        if (hasSpecificCondition) {
+          bestMatchScore *= 0.3; // Reduce score by 70% for generic protocols when specific conditions exist
+          bestMatchReason = `Protocolo genérico (penalizado por condición específica)`;
+        }
+      }
+      
+      if (bestMatchScore > 0) {
+        score += bestMatchScore;
+        reasons.push(bestMatchReason);
+        loggingService.info('IntelligentProtocolMatcher', 'Condition match scoring', {
+          protocolName: protocol.name,
+          finding: finding.finding,
+          matchType: bestMatchReason,
+          scoreAdded: bestMatchScore
+        });
       }
 
       // Category match
       const categoryMatch = protocol.category === finding.category;
       if (categoryMatch) {
-        score += finding.confidence * 20; // Up to 20 points for category match
+        const categoryScore = finding.confidence * 20; // Up to 20 points for category match
+        score += categoryScore;
         reasons.push(`Protocol category matches finding category: ${finding.category}`);
+        loggingService.info('IntelligentProtocolMatcher', 'Category match found', {
+          protocolName: protocol.name,
+          category: finding.category,
+          scoreAdded: categoryScore
+        });
       }
 
       // Organ system match
-      const organMatch = finding.organSystems.some(organ =>
-        protocol.condition.some(condition =>
-          condition.toLowerCase().includes(organ.toLowerCase())
-        )
-      );
+      const organMatch = finding.organSystems.some(organ => {
+        // Ensure organ is a string before calling toLowerCase
+        if (typeof organ !== 'string') {
+          loggingService.warn('IntelligentProtocolMatcher', 'Invalid organ system type', {
+            organType: typeof organ,
+            organValue: JSON.stringify(organ),
+            findingText: finding.finding,
+            findingCategory: finding.category,
+            allOrganSystems: JSON.stringify(finding.organSystems)
+          });
+          return false;
+        }
+        
+        // Check if protocol targets this organ system
+        const protocolTargetsOrgan = protocol.targetOrganSystems?.some(targetOrgan => {
+          if (typeof targetOrgan !== 'string') {
+            loggingService.warn('IntelligentProtocolMatcher', 'Invalid target organ type', {
+              targetOrganType: typeof targetOrgan,
+              targetOrganValue: JSON.stringify(targetOrgan),
+              protocolId: protocol.id,
+              protocolName: protocol.name
+            });
+            return false;
+          }
+          
+          return targetOrgan.toLowerCase() === organ.toLowerCase() ||
+                 targetOrgan.toLowerCase().includes(organ.toLowerCase()) ||
+                 organ.toLowerCase().includes(targetOrgan.toLowerCase());
+        });
+        
+        if (protocolTargetsOrgan) {
+          loggingService.info('IntelligentProtocolMatcher', 'Target organ system match found', {
+            protocolName: protocol.name,
+            organ,
+            protocolTargets: protocol.targetOrganSystems
+          });
+          return true;
+        }
+        
+        // Also check conditions for organ mentions
+        return protocol.condition.some(condition => {
+          // Ensure condition is a string before calling toLowerCase
+          if (typeof condition !== 'string') {
+            loggingService.warn('IntelligentProtocolMatcher', 'Invalid condition type', {
+              conditionType: typeof condition,
+              conditionValue: JSON.stringify(condition),
+              protocolId: protocol.id,
+              protocolName: protocol.name
+            });
+            return false;
+          }
+          
+          const isMatch = condition.toLowerCase().includes(organ.toLowerCase()) ||
+                         organ.toLowerCase().includes(condition.toLowerCase());
+          
+          if (isMatch) {
+            loggingService.info('IntelligentProtocolMatcher', 'Condition-organ match found', {
+              organ,
+              condition,
+              protocol: protocol.name
+            });
+          }
+          
+          return isMatch;
+        });
+      });
 
       if (organMatch) {
         score += finding.confidence * 10; // Up to 10 points for organ system match
@@ -545,11 +870,25 @@ export class IntelligentProtocolMatcher {
    */
   private selectPrimaryProtocol(scoredProtocols: MatchedProtocol[], criteria: ProtocolMatchingCriteria): MatchedProtocol {
     if (scoredProtocols.length === 0) {
+      loggingService.error('IntelligentProtocolMatcher', 'No protocols found - will throw error');
       throw new Error('No suitable protocols found for the given criteria');
     }
 
     // Get the highest scoring protocol
     const primary = scoredProtocols[0];
+    
+    loggingService.info('IntelligentProtocolMatcher', 'Primary protocol selected', {
+      protocolName: primary.protocol.name,
+      protocolId: primary.protocol.id,
+      matchScore: primary.matchScore,
+      matchReasons: primary.matchReasons,
+      isGeneralWellness: primary.protocol.id === 'general_wellness_001',
+      totalProtocolsScored: scoredProtocols.length,
+      top3Protocols: scoredProtocols.slice(0, 3).map(p => ({
+        name: p.protocol.name,
+        score: p.matchScore
+      }))
+    });
     
     // Add alternative options
     primary.alternativeOptions = scoredProtocols.slice(1, 4); // Top 3 alternatives
@@ -736,20 +1075,177 @@ export class IntelligentProtocolMatcher {
     supportive: MatchedProtocol[], 
     criteria: ProtocolMatchingCriteria
   ): number {
-    let confidence = primary.matchScore / 100 * 0.6; // Primary protocol weight
+    // Base confidence from primary protocol match score
+    let confidence = primary.matchScore / 100;
     
-    // Add supportive protocol confidence
-    const supportiveConfidence = supportive.reduce((sum, protocol) => 
-      sum + (protocol.matchScore / 100), 0
-    ) / Math.max(supportive.length, 1) * 0.3;
+    // Adjust based on data quality
+    const criteriaQuality = this.assessCriteriaQuality(criteria);
+    confidence *= criteriaQuality;
     
-    confidence += supportiveConfidence;
+    // Adjust based on concerns
+    if (primary.concerns.length > 0) {
+      confidence *= Math.max(0.7, 1 - (primary.concerns.length * 0.05));
+    }
     
-    // Add criteria quality factor
-    const criteriaQuality = this.assessCriteriaQuality(criteria) * 0.1;
-    confidence += criteriaQuality;
+    // Minor adjustment for supportive protocols
+    if (supportive.length > 0) {
+      confidence += 0.05;
+    }
     
+    // Cap at 95% - we're never 100% confident
     return Math.min(0.95, confidence);
+  }
+  
+  /**
+   * Create a fallback recommendation when no protocols match or an error occurs
+   */
+  private createFallbackRecommendation(criteria: ProtocolMatchingCriteria): ProtocolRecommendation {
+    loggingService.info('IntelligentProtocolMatcher', 'Creating fallback protocol recommendation');
+    
+    // Create a minimal fallback protocol
+    const fallbackProtocol: TreatmentProtocol = {
+      id: 'fallback-protocol',
+      name: 'General Wellness Protocol',
+      description: 'Basic wellness protocol for general health maintenance',
+      category: 'constitutional',
+      condition: ['general wellness'],
+      constitution: ['vata', 'pitta', 'kapha'],
+      duration: '4_weeks',
+      phases: [{
+        phase: 1,
+        name: 'Wellness Foundation',
+        duration: '4 weeks',
+        goals: ['Improve general wellness', 'Establish healthy routines'],
+        herbs: [{
+          herbName: 'Chamomile',
+          mexicanName: 'Manzanilla',
+          dosage: '1 cup',
+          preparation: 'Tea',
+          timing: 'Evening',
+          duration: '4 weeks',
+          purpose: 'Calming, digestive support',
+          interactions: [],
+          contraindications: [],
+          localAvailability: {
+            mexicanMarkets: true,
+            pharmacies: true,
+            growsWild: false,
+            seasonality: 'Year-round',
+            alternatives: ['Linden flowers', 'Valerian']
+          }
+        }],
+        lifestyle: [{
+          category: 'diet',
+          recommendation: 'Balanced nutrition with emphasis on fresh vegetables',
+          mexicanAdaptation: 'Incorporate local fruits and vegetables',
+          priority: 'essential',
+          implementation: 'Start with adding one serving of vegetables to each meal'
+        }],
+        monitoring: [{
+          parameter: 'Energy level',
+          method: 'Daily journal',
+          frequency: 'Daily',
+          targetRange: 'Improvement',
+          alertConditions: ['Persistent fatigue']
+        }],
+        milestones: [{
+          milestone: 'Improved daily energy',
+          expectedTimeframe: '2 weeks',
+          successIndicators: ['Sustained energy throughout the day'],
+          failureIndicators: ['Continued fatigue'],
+          nextSteps: 'Consult healthcare provider'
+        }]
+      }],
+      evidenceLevel: 'B',
+      culturalAdaptations: [{
+        aspect: 'Herbs',
+        mexicanContext: 'Using locally available herbs',
+        adaptationStrategy: 'Substitute with local equivalents',
+        culturalConsiderations: ['Local traditional usage']
+      }],
+      estimatedCost: {
+        totalCostMXN: 500,
+        phaseBreakdown: [{
+          phase: 1,
+          costMXN: 500,
+          items: [{ item: 'Herbs', cost: 200 }, { item: 'Supplements', cost: 300 }]
+        }],
+        alternatives: [{
+          option: 'Budget option',
+          costMXN: 300,
+          description: 'Using only essential components'
+        }]
+      },
+      contraindications: [],
+      interactions: [],
+      followUpSchedule: {
+        initialFollowUp: '2 weeks',
+        ongoingSchedule: 'Monthly',
+        emergencyContacts: false,
+        selfMonitoring: ['Energy levels', 'Sleep quality']
+      }
+    };
+
+    // Create a matched protocol with minimal scoring
+    const matchedProtocol: MatchedProtocol = {
+      protocol: fallbackProtocol,
+      matchScore: 50, // Medium confidence
+      matchingReasons: ['Fallback general protocol'],
+      adaptations: ['Adapted for general wellness'],
+      concerns: []
+    };
+
+    // Create basic implementation plan
+    const implementationPlan: ImplementationPlan = {
+      startingProtocol: 'General Wellness Protocol',
+      week1Actions: ['Begin herbal tea daily', 'Start nutrition improvements'],
+      week2Actions: ['Continue herbal regimen', 'Add light exercise if appropriate'],
+      monthlyReviews: ['Review progress after 4 weeks'],
+      successMetrics: ['Improved energy', 'Better sleep quality'],
+      adjustmentTriggers: ['No improvement after 2 weeks']
+    };
+
+    // Create monitoring plan
+    const monitoringPlan: MonitoringPlan = {
+      dailyTracking: ['Energy levels', 'Sleep quality'],
+      weeklyAssessments: ['Overall wellbeing'],
+      monthlyEvaluations: ['Progress review'],
+      alertConditions: ['Worsening symptoms', 'New symptoms'],
+      emergencyContacts: false
+    };
+
+    // Create cost optimization
+    const costOptimization: CostOptimization = {
+      totalEstimatedCost: 500,
+      sharedResources: ['Herbs can be used for multiple purposes'],
+      bulkPurchaseOptions: ['Buy herbs in bulk for cost savings'],
+      alternatives: [{
+        description: 'Budget option with fewer components',
+        savings: 200,
+        tradeoffs: ['Potentially slower results']
+      }]
+    };
+
+    // Return the fallback recommendation
+    return {
+      primaryProtocol: matchedProtocol,
+      supportiveProtocols: [],
+      combinationStrategy: {
+        approach: 'sequential',
+        phaseIntegration: [{
+          phase: 1,
+          protocols: ['General Wellness Protocol'],
+          duration: '4 weeks',
+          focusAreas: ['General wellness'],
+          monitoring: ['Weekly self-assessment']
+        }],
+        interactionWarnings: [],
+        costOptimization
+      },
+      overallConfidence: 0.5, // Medium confidence
+      implementationPlan,
+      monitoring: monitoringPlan
+    };
   }
 
   // Helper methods

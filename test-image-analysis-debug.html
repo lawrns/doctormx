@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            background-color: #fee;
+            color: #c00;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #efe;
+            color: #0a0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .info {
+            background-color: #eef;
+            color: #00a;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Analysis Debug Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Create and Validate ImageData</h2>
+        <button onclick="testImageDataCreation()">Run Test</button>
+        <div id="test1-results"></div>
+        <canvas id="test-canvas" width="200" height="200"></canvas>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Test Facial Analyzer Directly</h2>
+        <button onclick="testFacialAnalyzer()">Run Test</button>
+        <div id="test2-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Test Comprehensive Analyzer</h2>
+        <button onclick="testComprehensiveAnalyzer()">Run Test</button>
+        <div id="test3-results"></div>
+    </div>
+
+    <script type="module">
+        // Import test utilities
+        function log(containerId, message, type = 'info') {
+            const container = document.getElementById(containerId);
+            const div = document.createElement('div');
+            div.className = type;
+            div.innerHTML = message;
+            container.appendChild(div);
+        }
+
+        function logJson(containerId, obj, label) {
+            const container = document.getElementById(containerId);
+            const pre = document.createElement('pre');
+            pre.textContent = `${label}:\n${JSON.stringify(obj, null, 2)}`;
+            container.appendChild(pre);
+        }
+
+        // Test 1: Create and validate ImageData
+        window.testImageDataCreation = function() {
+            const results = document.getElementById('test1-results');
+            results.innerHTML = '';
+            
+            try {
+                // Create a test canvas
+                const canvas = document.getElementById('test-canvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Draw a simple test pattern
+                ctx.fillStyle = '#fdb';
+                ctx.fillRect(0, 0, 200, 200);
+                ctx.fillStyle = '#642';
+                ctx.fillRect(50, 50, 100, 100);
+                ctx.fillStyle = '#fff';
+                ctx.fillRect(75, 75, 50, 50);
+                
+                log('test1-results', 'Canvas created and test pattern drawn', 'success');
+                
+                // Get ImageData
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                
+                log('test1-results', 'ImageData created successfully', 'success');
+                
+                // Validate ImageData
+                const validation = {
+                    exists: !!imageData,
+                    type: imageData.constructor.name,
+                    width: imageData.width,
+                    height: imageData.height,
+                    dataExists: !!imageData.data,
+                    dataType: imageData.data.constructor.name,
+                    dataLength: imageData.data.length,
+                    expectedLength: imageData.width * imageData.height * 4,
+                    lengthMatch: imageData.data.length === (imageData.width * imageData.height * 4),
+                    colorSpaceType: imageData.colorSpace || 'srgb',
+                    firstPixel: Array.from(imageData.data.slice(0, 4))
+                };
+                
+                logJson('test1-results', validation, 'ImageData Validation');
+                
+                if (validation.lengthMatch) {
+                    log('test1-results', '✅ ImageData is valid and ready for analysis', 'success');
+                } else {
+                    log('test1-results', '❌ ImageData validation failed', 'error');
+                }
+                
+            } catch (error) {
+                log('test1-results', `Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        };
+
+        // Test 2: Test Facial Analyzer
+        window.testFacialAnalyzer = async function() {
+            const results = document.getElementById('test2-results');
+            results.innerHTML = '';
+            
+            try {
+                // Import the analyzer
+                const { RealFacialAnalyzer } = await import('/packages/services/RealFacialAnalyzer.ts');
+                
+                log('test2-results', 'RealFacialAnalyzer imported successfully', 'success');
+                
+                // Get instance
+                const facialAnalyzer = RealFacialAnalyzer.getInstance();
+                
+                log('test2-results', 'RealFacialAnalyzer instance created', 'success');
+                
+                // Check if analyzeFace method exists
+                const methodCheck = {
+                    hasAnalyzeFace: !!facialAnalyzer.analyzeFace,
+                    analyzeFaceType: typeof facialAnalyzer.analyzeFace,
+                    methods: Object.getOwnPropertyNames(Object.getPrototypeOf(facialAnalyzer))
+                };
+                
+                logJson('test2-results', methodCheck, 'Method Check');
+                
+                // Create test ImageData
+                const canvas = document.createElement('canvas');
+                canvas.width = 100;
+                canvas.height = 100;
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#fdb';
+                ctx.fillRect(0, 0, 100, 100);
+                const imageData = ctx.getImageData(0, 0, 100, 100);
+                
+                log('test2-results', 'Test ImageData created', 'info');
+                
+                // Try to analyze
+                try {
+                    const result = await facialAnalyzer.analyzeFace(imageData);
+                    log('test2-results', '✅ Facial analysis succeeded!', 'success');
+                    logJson('test2-results', result, 'Analysis Result');
+                } catch (analysisError) {
+                    log('test2-results', `❌ Facial analysis error: ${analysisError.message}`, 'error');
+                    console.error('Facial analysis error:', analysisError);
+                }
+                
+            } catch (error) {
+                log('test2-results', `Import/Setup Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        };
+
+        // Test 3: Test Comprehensive Analyzer
+        window.testComprehensiveAnalyzer = async function() {
+            const results = document.getElementById('test3-results');
+            results.innerHTML = '';
+            
+            try {
+                // Import the analyzer
+                const { RealComprehensiveMedicalImageAnalyzer } = await import('/packages/services/RealComprehensiveMedicalImageAnalyzer.ts');
+                
+                log('test3-results', 'RealComprehensiveMedicalImageAnalyzer imported successfully', 'success');
+                
+                // Get instance
+                const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
+                
+                log('test3-results', 'Analyzer instance created', 'success');
+                
+                // Create test ImageData
+                const canvas = document.createElement('canvas');
+                canvas.width = 200;
+                canvas.height = 200;
+                const ctx = canvas.getContext('2d');
+                
+                // Draw a more realistic face-like pattern
+                ctx.fillStyle = '#fdb';
+                ctx.fillRect(0, 0, 200, 200);
+                
+                // Eyes
+                ctx.fillStyle = '#642';
+                ctx.fillRect(50, 60, 30, 20);
+                ctx.fillRect(120, 60, 30, 20);
+                
+                // Nose
+                ctx.fillStyle = '#c97';
+                ctx.fillRect(90, 90, 20, 30);
+                
+                // Mouth
+                ctx.fillStyle = '#a54';
+                ctx.fillRect(70, 130, 60, 20);
+                
+                const imageData = ctx.getImageData(0, 0, 200, 200);
+                
+                log('test3-results', 'Test image created with face-like pattern', 'info');
+                
+                // Create analysis input
+                const input = {
+                    imageData: imageData,
+                    analysisType: 'facial_analysis',
+                    culturalContext: 'mexican'
+                };
+                
+                logJson('test3-results', {
+                    analysisType: input.analysisType,
+                    culturalContext: input.culturalContext,
+                    imageDataValid: !!input.imageData,
+                    imageDataType: input.imageData.constructor.name,
+                    width: input.imageData.width,
+                    height: input.imageData.height
+                }, 'Analysis Input');
+                
+                // Try to analyze
+                try {
+                    log('test3-results', 'Starting analysis...', 'info');
+                    const result = await analyzer.analyzeImage(input);
+                    log('test3-results', '✅ Comprehensive analysis succeeded!', 'success');
+                    logJson('test3-results', {
+                        analysisType: result.analysisType,
+                        confidence: result.confidence,
+                        primaryFindings: result.primaryFindings.length,
+                        healthScore: result.overallHealthScore.score
+                    }, 'Analysis Summary');
+                } catch (analysisError) {
+                    log('test3-results', `❌ Comprehensive analysis error: ${analysisError.message}`, 'error');
+                    console.error('Comprehensive analysis error:', analysisError);
+                    
+                    // Log more details
+                    logJson('test3-results', {
+                        errorName: analysisError.name,
+                        errorMessage: analysisError.message,
+                        errorStack: analysisError.stack?.split('\n').slice(0, 5)
+                    }, 'Error Details');
+                }
+                
+            } catch (error) {
+                log('test3-results', `Import/Setup Error: ${error.message}`, 'error');
+                console.error(error);
+            }
+        };
+
+        // Auto-run first test on load
+        setTimeout(() => testImageDataCreation(), 500);
+    </script>
+</body>
+</html>

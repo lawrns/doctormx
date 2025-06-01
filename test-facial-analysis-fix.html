@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Facial Analysis Fix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .test-section {
+      margin: 20px 0;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .test-section h2 {
+      margin-top: 0;
+      color: #555;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .error {
+      color: red;
+      background-color: #ffebee;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+    .success {
+      color: green;
+      background-color: #e8f5e9;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+    }
+    .log {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    #canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Test Facial Analysis Fix</h1>
+    
+    <div class="test-section">
+      <h2>Test 1: Valid ImageData</h2>
+      <button onclick="testValidImageData()">Run Test</button>
+      <div id="test1-result"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Test 2: Null ImageData</h2>
+      <button onclick="testNullImageData()">Run Test</button>
+      <div id="test2-result"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Test 3: Invalid ImageData Dimensions</h2>
+      <button onclick="testInvalidDimensions()">Run Test</button>
+      <div id="test3-result"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Test 4: Missing Data Array</h2>
+      <button onclick="testMissingDataArray()">Run Test</button>
+      <div id="test4-result"></div>
+    </div>
+    
+    <div class="test-section">
+      <h2>Test 5: Real Image Analysis</h2>
+      <canvas id="canvas" width="300" height="300"></canvas>
+      <button onclick="testRealImageAnalysis()">Analyze Canvas Image</button>
+      <div id="test5-result"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { RealFacialAnalyzer } from './packages/services/RealFacialAnalyzer.js';
+    import { RealComprehensiveMedicalImageAnalyzer } from './packages/services/RealComprehensiveMedicalImageAnalyzer.js';
+    
+    window.facialAnalyzer = RealFacialAnalyzer.getInstance();
+    window.comprehensiveAnalyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
+    
+    // Draw a test face on the canvas
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Draw a simple face for testing
+    ctx.fillStyle = '#FDBCB4';
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Eyes
+    ctx.fillStyle = 'white';
+    ctx.beginPath();
+    ctx.arc(120, 130, 20, 0, Math.PI * 2);
+    ctx.arc(180, 130, 20, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.fillStyle = 'black';
+    ctx.beginPath();
+    ctx.arc(120, 130, 10, 0, Math.PI * 2);
+    ctx.arc(180, 130, 10, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Mouth
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(150, 170, 30, 0, Math.PI);
+    ctx.stroke();
+    
+    // Nose
+    ctx.beginPath();
+    ctx.moveTo(150, 140);
+    ctx.lineTo(140, 160);
+    ctx.lineTo(160, 160);
+    ctx.stroke();
+  </script>
+
+  <script>
+    function displayResult(elementId, success, message, details = null) {
+      const resultDiv = document.getElementById(elementId);
+      resultDiv.innerHTML = '';
+      
+      const msgDiv = document.createElement('div');
+      msgDiv.className = success ? 'success' : 'error';
+      msgDiv.textContent = message;
+      resultDiv.appendChild(msgDiv);
+      
+      if (details) {
+        const logDiv = document.createElement('div');
+        logDiv.className = 'log';
+        logDiv.textContent = typeof details === 'string' ? details : JSON.stringify(details, null, 2);
+        resultDiv.appendChild(logDiv);
+      }
+    }
+    
+    async function testValidImageData() {
+      try {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        
+        console.log('Testing with valid ImageData:', {
+          width: imageData.width,
+          height: imageData.height,
+          dataLength: imageData.data.length
+        });
+        
+        const result = await window.facialAnalyzer.analyzeFace(imageData);
+        displayResult('test1-result', true, 'Analysis successful!', {
+          confidence: result.confidence,
+          healthIndicators: result.healthIndicators.length,
+          overallHealth: result.overallFacialHealth.overall
+        });
+      } catch (error) {
+        displayResult('test1-result', false, 'Analysis failed: ' + error.message, error.stack);
+      }
+    }
+    
+    async function testNullImageData() {
+      try {
+        const result = await window.facialAnalyzer.analyzeFace(null);
+        displayResult('test2-result', false, 'Should have failed but succeeded', result);
+      } catch (error) {
+        displayResult('test2-result', true, 'Correctly caught null ImageData error', error.message);
+      }
+    }
+    
+    async function testInvalidDimensions() {
+      try {
+        const invalidImageData = {
+          width: 0,
+          height: 0,
+          data: new Uint8ClampedArray(0)
+        };
+        const result = await window.facialAnalyzer.analyzeFace(invalidImageData);
+        displayResult('test3-result', false, 'Should have failed but succeeded', result);
+      } catch (error) {
+        displayResult('test3-result', true, 'Correctly caught invalid dimensions error', error.message);
+      }
+    }
+    
+    async function testMissingDataArray() {
+      try {
+        const invalidImageData = {
+          width: 100,
+          height: 100,
+          data: null
+        };
+        const result = await window.facialAnalyzer.analyzeFace(invalidImageData);
+        displayResult('test4-result', false, 'Should have failed but succeeded', result);
+      } catch (error) {
+        displayResult('test4-result', true, 'Correctly caught missing data array error', error.message);
+      }
+    }
+    
+    async function testRealImageAnalysis() {
+      try {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        
+        // Convert canvas to data URL
+        const dataUrl = canvas.toDataURL('image/png');
+        
+        const input = {
+          imageData: dataUrl,
+          analysisType: 'face',
+          userId: 'test-user',
+          metadata: {
+            source: 'test-page',
+            timestamp: new Date().toISOString()
+          }
+        };
+        
+        console.log('Testing comprehensive analysis with:', input);
+        
+        const result = await window.comprehensiveAnalyzer.analyzeImage(input);
+        displayResult('test5-result', true, 'Comprehensive analysis successful!', {
+          analysisType: result.analysisType,
+          overallHealth: result.overallHealthScore,
+          primaryFindings: result.primaryFindings.length,
+          confidence: result.confidence || 'N/A'
+        });
+      } catch (error) {
+        displayResult('test5-result', false, 'Comprehensive analysis failed: ' + error.message, error.stack);
+      }
+    }
+  </script>
+</body>
+</html>

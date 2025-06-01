@@ -282,8 +282,8 @@ function AIDoctor({ onClose, isEmbedded = false, initialMessage }: AIDoctorProps
       console.error('❌ Error processing message:', error);
       console.error('❌ Error stack:', error instanceof Error ? error.stack : 'No stack trace');
       
-      const errorMessage = error instanceof Error ? 
-        `Error: ${error.message}` : 
+      const errorMessage = error instanceof Error ?
+        `Error: ${error.message}` :
         'Lo siento, hubo un error al procesar tu mensaje. Por favor, intenta nuevamente.';
       
       setMessages(prev => 

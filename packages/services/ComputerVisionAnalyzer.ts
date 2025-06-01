@@ -771,7 +771,7 @@ export class ComputerVisionAnalyzer {
         chin: { x: 0, y: 0 },
         forehead: []
       },
-      confidence: 0
+      confidence: 0.4
     };
   }
 

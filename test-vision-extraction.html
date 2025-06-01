@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Vision API Extraction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .result {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .error {
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #f44336;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #1976d2;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+        }
+        .indicator {
+            background: #f0f4f8;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #d0d7de;
+        }
+        .indicator h4 {
+            margin: 0 0 8px 0;
+            color: #0969da;
+        }
+        .indicator p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+        .severity-high {
+            border-left: 4px solid #f44336;
+        }
+        .severity-moderate {
+            border-left: 4px solid #ff9800;
+        }
+        .severity-low {
+            border-left: 4px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Vision API Health Indicator Extraction</h1>
+    
+    <div class="container">
+        <h2>Test Cases</h2>
+        <button onclick="testRosaceaAnalysis()">Test Rosácea Analysis</button>
+        <button onclick="testAcneAnalysis()">Test Acné Analysis</button>
+        <button onclick="testGeneralSkinAnalysis()">Test General Skin Analysis</button>
+        <button onclick="testMultipleConditions()">Test Multiple Conditions</button>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        // Simplified version of extractHealthIndicators function
+        function extractHealthIndicators(analysis) {
+            const indicators = [];
+            const analysisLower = analysis.toLowerCase();
+            
+            // Enhanced health patterns with more specific conditions
+            const healthPatterns = [
+                {
+                    category: 'dermatological',
+                    patterns: [
+                        { regex: /rosacea|rosácea/i, finding: 'Signos de rosácea detectados', severity: 'moderate' },
+                        { regex: /acné|acne|comedones/i, finding: 'Presencia de acné o comedones', severity: 'moderate' },
+                        { regex: /manchas|pigmentación|hiperpigmentación/i, finding: 'Alteraciones en la pigmentación cutánea', severity: 'low' },
+                        { regex: /rojez|enrojecimiento|eritema/i, finding: 'Enrojecimiento cutáneo detectado', severity: 'moderate' },
+                        { regex: /seca|deshidratación|sequedad/i, finding: 'Piel seca o deshidratada', severity: 'low' },
+                        { regex: /grasa|oleosa|sebácea/i, finding: 'Piel grasa o hipersecreción sebácea', severity: 'low' },
+                        { regex: /textura irregular|poros dilatados/i, finding: 'Textura cutánea irregular o poros dilatados', severity: 'low' },
+                        { regex: /dermatitis|eczema/i, finding: 'Posible dermatitis o eczema', severity: 'moderate' },
+                        { regex: /inflamación cutánea|piel inflamada/i, finding: 'Inflamación cutánea presente', severity: 'moderate' }
+                    ],
+                    organSystems: ['integumentario', 'inmunológico']
+                },
+                {
+                    category: 'circulatory',
+                    patterns: [
+                        { regex: /circulación|vascular/i, finding: 'Alteraciones circulatorias observadas', severity: 'moderate' },
+                        { regex: /palidez|pálido/i, finding: 'Palidez cutánea - posible anemia', severity: 'moderate' },
+                        { regex: /cianosis|azulado/i, finding: 'Cianosis detectada - revisar oxigenación', severity: 'high' },
+                        { regex: /edema|hinchazón/i, finding: 'Edema o retención de líquidos', severity: 'moderate' },
+                        { regex: /capilares rotos|telangiectasias/i, finding: 'Capilares visibles o telangiectasias', severity: 'low' }
+                    ],
+                    organSystems: ['cardiovascular', 'hematológico']
+                }
+            ];
+
+            // Extract findings based on patterns
+            healthPatterns.forEach(pattern => {
+                pattern.patterns.forEach(p => {
+                    if (p.regex.test(analysis)) {
+                        indicators.push({
+                            category: pattern.category,
+                            finding: p.finding,
+                            severity: p.severity,
+                            confidence: p.severity === 'high' ? 0.85 : p.severity === 'moderate' ? 0.75 : 0.65,
+                            organSystems: pattern.organSystems,
+                            recommendations: generateRecommendations(pattern.category, p.severity)
+                        });
+                    }
+                });
+            });
+
+            return indicators;
+        }
+
+        function generateRecommendations(category, severity) {
+            const recommendations = {
+                dermatological: {
+                    high: [
+                        'Consultar dermatólogo en las próximas 48 horas',
+                        'Evitar exposición solar directa',
+                        'Mantener la piel limpia e hidratada',
+                        'Documentar cambios diarios con fotos'
+                    ],
+                    moderate: [
+                        'Programar consulta dermatológica',
+                        'Usar protector solar SPF 50+',
+                        'Aplicar cremas hidratantes sin fragancia',
+                        'Evitar productos irritantes'
+                    ],
+                    low: [
+                        'Mantener rutina de cuidado facial',
+                        'Hidratación adecuada (2L agua/día)',
+                        'Dieta rica en antioxidantes',
+                        'Protección solar diaria'
+                    ]
+                },
+                circulatory: {
+                    high: [
+                        'Evaluación médica urgente',
+                        'Monitorear presión arterial',
+                        'Evitar esfuerzos físicos intensos',
+                        'Mantener extremidades elevadas si hay edema'
+                    ],
+                    moderate: [
+                        'Exámenes de sangre completos',
+                        'Ejercicio cardiovascular moderado',
+                        'Dieta baja en sodio',
+                        'Compresión elástica si es necesario'
+                    ],
+                    low: [
+                        'Actividad física regular',
+                        'Masajes circulatorios',
+                        'Baños alternos frío-calor',
+                        'Elevar piernas 15 min/día'
+                    ]
+                }
+            };
+
+            return recommendations[category]?.[severity] || ['Observación continua', 'Estilo de vida saludable'];
+        }
+
+        function displayResults(testName, visionAnalysis, indicators) {
+            const resultsDiv = document.getElementById('results');
+            
+            const container = document.createElement('div');
+            container.className = 'container';
+            
+            container.innerHTML = `
+                <h2>${testName}</h2>
+                <h3>Vision API Analysis:</h3>
+                <pre>${visionAnalysis}</pre>
+                
+                <h3>Extracted Health Indicators (${indicators.length} found):</h3>
+            `;
+            
+            if (indicators.length === 0) {
+                container.innerHTML += '<div class="error">No health indicators extracted</div>';
+            } else {
+                indicators.forEach((indicator, index) => {
+                    const indicatorDiv = document.createElement('div');
+                    indicatorDiv.className = `indicator severity-${indicator.severity}`;
+                    indicatorDiv.innerHTML = `
+                        <h4>${index + 1}. ${indicator.finding}</h4>
+                        <p><strong>Category:</strong> ${indicator.category}</p>
+                        <p><strong>Severity:</strong> ${indicator.severity}</p>
+                        <p><strong>Confidence:</strong> ${(indicator.confidence * 100).toFixed(0)}%</p>
+                        <p><strong>Organ Systems:</strong> ${indicator.organSystems.join(', ')}</p>
+                        <p><strong>Recommendations:</strong></p>
+                        <ul>
+                            ${indicator.recommendations.map(rec => `<li>${rec}</li>`).join('')}
+                        </ul>
+                    `;
+                    container.appendChild(indicatorDiv);
+                });
+            }
+            
+            resultsDiv.appendChild(container);
+        }
+
+        function testRosaceaAnalysis() {
+            const analysis = `Análisis de la imagen médica:
+      
+Se observa una piel facial con signos evidentes de rosácea:
+- Enrojecimiento persistente en mejillas y nariz
+- Capilares visibles (telangiectasias) en las mejillas
+- Textura irregular con áreas de inflamación
+- Piel sensible con tendencia a la irritación
+- Manchas rojizas difusas en zona central del rostro
+
+La condición parece estar en fase moderada, con inflamación activa
+que requiere tratamiento específico para rosácea.`;
+            
+            const indicators = extractHealthIndicators(analysis);
+            displayResults('Rosácea Analysis Test', analysis, indicators);
+        }
+
+        function testAcneAnalysis() {
+            const analysis = `Evaluación dermatológica de imagen facial:
+
+Se identifican múltiples lesiones acneiformes:
+- Comedones abiertos y cerrados en zona T
+- Pápulas inflamatorias en mejillas y mentón
+- Piel oleosa con hipersecreción sebácea
+- Poros dilatados visibles
+- Algunas manchas post-inflamatorias (hiperpigmentación)
+
+El cuadro sugiere acné moderado con componente inflamatorio activo.`;
+            
+            const indicators = extractHealthIndicators(analysis);
+            displayResults('Acné Analysis Test', analysis, indicators);
+        }
+
+        function testGeneralSkinAnalysis() {
+            const analysis = `Análisis general de la piel:
+
+La evaluación muestra una piel con características mixtas:
+- Zona T con tendencia grasa
+- Mejillas con signos de deshidratación
+- Textura cutánea uniforme sin lesiones aparentes
+- Tono de piel homogéneo
+- No se observan signos de patología específica
+
+Estado general de la piel: saludable con necesidades básicas de hidratación.`;
+            
+            const indicators = extractHealthIndicators(analysis);
+            displayResults('General Skin Analysis Test', analysis, indicators);
+        }
+
+        function testMultipleConditions() {
+            const analysis = `Evaluación integral de imagen médica:
+
+Se observan múltiples hallazgos dermatológicos:
+1. Rosácea en fase inicial con eritema leve
+2. Signos de dermatitis seborreica en pliegues nasolabiales
+3. Capilares rotos (telangiectasias) en alas nasales
+4. Piel con textura irregular y poros dilatados
+5. Manchas de hiperpigmentación post-inflamatoria
+6. Edema leve periorbital sugiriendo posible retención de líquidos
+
+Además se aprecia palidez generalizada que podría indicar alteraciones circulatorias.
+La inflamación cutánea presente requiere evaluación especializada.`;
+            
+            const indicators = extractHealthIndicators(analysis);
+            displayResults('Multiple Conditions Test', analysis, indicators);
+        }
+    </script>
+</body>
+</html>

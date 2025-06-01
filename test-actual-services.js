@@ -25,23 +25,23 @@ async function testActualServices() {
   }
   
   try {
-    // Test 1: Import ComprehensiveMedicalImageAnalyzer
+    // Test 1: Import RealComprehensiveMedicalImageAnalyzer
     console.log('📦 Testing Service Imports...');
     
-    let ComprehensiveMedicalImageAnalyzer;
+    let RealComprehensiveMedicalImageAnalyzer;
     try {
       // Try ES6 import first
-      const module = await import('./packages/services/ComprehensiveMedicalImageAnalyzer.js');
-      ComprehensiveMedicalImageAnalyzer = module.ComprehensiveMedicalImageAnalyzer;
-      assert(ComprehensiveMedicalImageAnalyzer !== undefined, 'ComprehensiveMedicalImageAnalyzer imported successfully');
+      const module = await import('./packages/services/RealComprehensiveMedicalImageAnalyzer.js');
+      RealComprehensiveMedicalImageAnalyzer = module.RealComprehensiveMedicalImageAnalyzer;
+      assert(RealComprehensiveMedicalImageAnalyzer !== undefined, 'RealComprehensiveMedicalImageAnalyzer imported successfully');
     } catch (importError) {
       // Fall back to require if available
       try {
-        const module = require('./packages/services/ComprehensiveMedicalImageAnalyzer.ts');
-        ComprehensiveMedicalImageAnalyzer = module.ComprehensiveMedicalImageAnalyzer;
-        assert(ComprehensiveMedicalImageAnalyzer !== undefined, 'ComprehensiveMedicalImageAnalyzer imported via require');
+        const module = require('./packages/services/RealComprehensiveMedicalImageAnalyzer.ts');
+        RealComprehensiveMedicalImageAnalyzer = module.RealComprehensiveMedicalImageAnalyzer;
+        assert(RealComprehensiveMedicalImageAnalyzer !== undefined, 'RealComprehensiveMedicalImageAnalyzer imported via require');
       } catch (requireError) {
-        assert(false, `Failed to import ComprehensiveMedicalImageAnalyzer: ${importError.message}`);
+        assert(false, `Failed to import RealComprehensiveMedicalImageAnalyzer: ${importError.message}`);
         console.log('💡 Running mock tests instead...');
         return runMockTests();
       }
@@ -50,10 +50,10 @@ async function testActualServices() {
     // Test 2: Service Initialization
     console.log('\\n🔧 Testing Service Initialization...');
     
-    if (ComprehensiveMedicalImageAnalyzer) {
+    if (RealComprehensiveMedicalImageAnalyzer) {
       try {
-        const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
-        assert(analyzer !== null, 'ComprehensiveMedicalImageAnalyzer instance created');
+        const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
+        assert(analyzer !== null, 'RealComprehensiveMedicalImageAnalyzer instance created');
         
         const supportedTypes = analyzer.getSupportedAnalysisTypes();
         assert(Array.isArray(supportedTypes), 'getSupportedAnalysisTypes returns array');
@@ -68,9 +68,9 @@ async function testActualServices() {
     // Test 3: Analysis Requirements
     console.log('\\n📋 Testing Analysis Requirements...');
     
-    if (ComprehensiveMedicalImageAnalyzer) {
+    if (RealComprehensiveMedicalImageAnalyzer) {
       try {
-        const analyzer = ComprehensiveMedicalImageAnalyzer.getInstance();
+        const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
         const supportedTypes = analyzer.getSupportedAnalysisTypes();
         
         for (const type of supportedTypes.slice(0, 3)) { // Test first 3 types

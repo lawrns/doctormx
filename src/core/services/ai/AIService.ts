@@ -470,15 +470,28 @@ class AIService {
       // Check if we're in development mode and provide mock responses
       const isDevelopment = import.meta.env.DEV || window.location.hostname === 'localhost';
       const forceRealAPI = import.meta.env.VITE_FORCE_REAL_AI === 'true';
+      const forceThroughLocalStorage = localStorage.getItem('force_real_ai') === 'true';
       
-      if (isDevelopment && !forceRealAPI && endpoint.includes('/.netlify/functions/')) {
-        console.log('Development mode detected - using mock AI response');
+      // Debug logging for environment variables
+      console.log('AI Service - Environment variables:');
+      console.log('- isDevelopment:', isDevelopment);
+      console.log('- VITE_FORCE_REAL_AI:', import.meta.env.VITE_FORCE_REAL_AI);
+      console.log('- forceRealAPI value:', forceRealAPI);
+      console.log('- forceThroughLocalStorage:', forceThroughLocalStorage);
+      
+      // Modified condition to prioritize real API calls
+      if (isDevelopment && !forceRealAPI && !forceThroughLocalStorage && endpoint.includes('/.netlify/functions/')) {
+        console.log('Development mode detected with mock mode enabled - using mock AI response');
         
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
         
         // Generate contextually aware mock response based on user message
         return this.generateContextualMockResponse(data);
+      }
+      
+      if (forceRealAPI || forceThroughLocalStorage) {
+        console.log('🔥 USING REAL AI API CALLS - Mock responses disabled');
       }
 
       // Ensure we're using the full URL with origin

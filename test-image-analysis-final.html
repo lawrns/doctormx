@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis Final Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .test-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .input-section, .output-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        #imagePreview {
+            max-width: 100%;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .summary {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 DoctorMX Image Analysis Test</h1>
+        
+        <div class="test-area">
+            <div class="input-section">
+                <h2>Input</h2>
+                <button onclick="loadTestImage()">Load Test Image</button>
+                <button onclick="captureFromCamera()">Capture from Camera</button>
+                <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+                <canvas id="imageCanvas" width="300" height="300" style="display:none;"></canvas>
+                <img id="imagePreview" style="display:none;">
+                <div id="status"></div>
+            </div>
+            
+            <div class="output-section">
+                <h2>Analysis Results</h2>
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // Make functions available globally
+        window.updateStatus = function(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = type;
+        };
+
+        window.loadTestImage = function() {
+            updateStatus('Creating test image...', 'info');
+            
+            const canvas = document.getElementById('imageCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Create a simple face-like pattern
+            ctx.fillStyle = '#fdb'; // Skin tone
+            ctx.fillRect(0, 0, 300, 300);
+            
+            // Eyes
+            ctx.fillStyle = '#642';
+            ctx.fillRect(80, 100, 40, 20);
+            ctx.fillRect(180, 100, 40, 20);
+            
+            // Pupils
+            ctx.fillStyle = '#000';
+            ctx.fillRect(95, 105, 10, 10);
+            ctx.fillRect(195, 105, 10, 10);
+            
+            // Nose
+            ctx.fillStyle = '#c97';
+            ctx.fillRect(140, 140, 20, 40);
+            
+            // Mouth
+            ctx.fillStyle = '#a54';
+            ctx.fillRect(120, 200, 60, 20);
+            
+            // Show preview
+            const preview = document.getElementById('imagePreview');
+            preview.src = canvas.toDataURL();
+            preview.style.display = 'block';
+            
+            updateStatus('Test image created. Click "Analyze Image" to proceed.', 'success');
+            
+            // Add analyze button
+            if (!document.getElementById('analyzeBtn')) {
+                const btn = document.createElement('button');
+                btn.id = 'analyzeBtn';
+                btn.textContent = 'Analyze Image';
+                btn.onclick = () => analyzeImage();
+                btn.style.backgroundColor = '#28a745';
+                status.parentNode.appendChild(btn);
+            }
+        };
+
+        window.captureFromCamera = async function() {
+            try {
+                updateStatus('Requesting camera access...', 'info');
+                
+                const stream = await navigator.mediaDevices.getUserMedia({ 
+                    video: { facingMode: 'user' } 
+                });
+                
+                const video = document.createElement('video');
+                video.srcObject = stream;
+                await video.play();
+                
+                const canvas = document.getElementById('imageCanvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(video, 0, 0);
+                
+                // Stop camera
+                stream.getTracks().forEach(track => track.stop());
+                
+                // Show preview
+                const preview = document.getElementById('imagePreview');
+                preview.src = canvas.toDataURL();
+                preview.style.display = 'block';
+                
+                updateStatus('Image captured. Click "Analyze Image" to proceed.', 'success');
+                
+                // Add analyze button
+                if (!document.getElementById('analyzeBtn')) {
+                    const btn = document.createElement('button');
+                    btn.id = 'analyzeBtn';
+                    btn.textContent = 'Analyze Image';
+                    btn.onclick = () => analyzeImage();
+                    btn.style.backgroundColor = '#28a745';
+                    status.parentNode.appendChild(btn);
+                }
+            } catch (error) {
+                updateStatus(`Camera error: ${error.message}`, 'error');
+            }
+        };
+
+        window.handleFileSelect = function(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            updateStatus('Loading image...', 'info');
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.getElementById('imageCanvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Show preview
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                    
+                    updateStatus('Image loaded. Click "Analyze Image" to proceed.', 'success');
+                    
+                    // Add analyze button
+                    if (!document.getElementById('analyzeBtn')) {
+                        const btn = document.createElement('button');
+                        btn.id = 'analyzeBtn';
+                        btn.textContent = 'Analyze Image';
+                        btn.onclick = () => analyzeImage();
+                        btn.style.backgroundColor = '#28a745';
+                        status.parentNode.appendChild(btn);
+                    }
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+
+        window.analyzeImage = async function() {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="info">Analyzing image...</div>';
+            updateStatus('Starting analysis...', 'info');
+            
+            try {
+                // Import the analyzer
+                const { RealComprehensiveMedicalImageAnalyzer } = await import('./packages/services/RealComprehensiveMedicalImageAnalyzer.ts');
+                
+                const analyzer = RealComprehensiveMedicalImageAnalyzer.getInstance();
+                
+                // Get image data
+                const canvas = document.getElementById('imageCanvas');
+                const ctx = canvas.getContext('2d');
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                
+                // Get data URL for Vision API
+                const dataUrl = canvas.toDataURL('image/jpeg', 0.9);
+                
+                updateStatus('Running comprehensive analysis...', 'info');
+                
+                // Analyze
+                const result = await analyzer.analyzeImage({
+                    imageData: dataUrl, // Pass data URL directly
+                    analysisType: 'facial_analysis',
+                    culturalContext: 'mexican'
+                });
+                
+                updateStatus('Analysis complete!', 'success');
+                
+                // Display results
+                displayResults(result);
+                
+            } catch (error) {
+                updateStatus(`Analysis error: ${error.message}`, 'error');
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>Analysis Failed</h3>
+                        <p><strong>Error:</strong> ${error.message}</p>
+                        <pre>${error.stack}</pre>
+                    </div>
+                `;
+            }
+        };
+
+        function displayResults(result) {
+            const resultsDiv = document.getElementById('results');
+            
+            const summary = `
+                <div class="summary">
+                    <h3>Analysis Summary</h3>
+                    <p><strong>Type:</strong> ${result.analysisType}</p>
+                    <p><strong>Confidence:</strong> ${(result.confidence * 100).toFixed(1)}%</p>
+                    <p><strong>Health Score:</strong> ${result.overallHealthScore.score}/100 (${result.overallHealthScore.status})</p>
+                    <p><strong>Primary Findings:</strong> ${result.primaryFindings.length}</p>
+                    <p><strong>Recommendations:</strong> ${result.treatmentRecommendations.length}</p>
+                </div>
+            `;
+            
+            let findingsHtml = '<h3>Health Indicators</h3>';
+            result.primaryFindings.forEach(finding => {
+                findingsHtml += `
+                    <div style="margin: 10px 0; padding: 10px; background: #f9f9f9; border-radius: 5px;">
+                        <strong>${finding.category}:</strong> ${finding.finding}<br>
+                        <em>Severity:</em> ${finding.severity} | <em>Confidence:</em> ${(finding.confidence * 100).toFixed(0)}%
+                    </div>
+                `;
+            });
+            
+            let recommendationsHtml = '<h3>Recommendations</h3>';
+            result.treatmentRecommendations.forEach(rec => {
+                recommendationsHtml += `
+                    <div style="margin: 10px 0; padding: 10px; background: #f0f8ff; border-radius: 5px;">
+                        <strong>${rec.category}:</strong><br>
+                        ${rec.recommendations.join('<br>')}
+                    </div>
+                `;
+            });
+            
+            let aiInsightsHtml = '';
+            if (result.aiInsights) {
+                aiInsightsHtml = `
+                    <h3>AI Vision Analysis</h3>
+                    <div style="padding: 10px; background: #e8f4e8; border-radius: 5px;">
+                        <p>${result.aiInsights.analysis || 'No AI analysis available'}</p>
+                    </div>
+                `;
+            }
+            
+            resultsDiv.innerHTML = summary + findingsHtml + recommendationsHtml + aiInsightsHtml;
+            
+            // Log full result for debugging
+            console.log('Full analysis result:', result);
+        }
+
+        // Auto-load test image on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => loadTestImage(), 500);
+        });
+    </script>
+</body>
+</html>

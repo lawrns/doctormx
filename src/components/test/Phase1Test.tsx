@@ -107,16 +107,16 @@ export default function Phase1Test() {
       {/* Sample Herbs */}
       {herbs.length > 0 && (
         <div className="bg-green-50 rounded-lg p-4">
-          <h4 className="font-semibold mb-2">🌿 Sample Herbs Found:</h4>
+          <h4 className="font-semibold mb-2">🌿 Hierbas de Muestra Encontradas:</h4>
           <div className="space-y-2">
             {herbs.slice(0, 3).map((herb) => (
               <div key={herb.id} className="border border-green-200 rounded p-2">
                 <div className="font-medium">{herb.commonNames[0] || herb.latinName}</div>
                 <div className="text-sm text-gray-600">
-                  Latin: {herb.latinName} | Evidence: {herb.evidence_grade}
+                  Latín: {herb.latinName} | Evidencia: {herb.evidence_grade}
                 </div>
                 <div className="text-xs text-gray-500">
-                  Uses: {herb.traditionalUses.slice(0, 2).join(', ')}
+                  Usos: {herb.traditionalUses.slice(0, 2).join(', ')}
                 </div>
               </div>
             ))}

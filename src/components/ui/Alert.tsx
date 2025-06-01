@@ -50,7 +50,7 @@ export const Alert: React.FC<AlertProps> = ({
               className="inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200"
               onClick={onDismiss}
             >
-              <span className="sr-only">Dismiss</span>
+              <span className="sr-only">Descartar</span>
               <X className="h-5 w-5" />
             </button>
           </div>
