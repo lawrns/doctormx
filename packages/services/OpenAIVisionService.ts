@@ -13,12 +13,35 @@ export interface VisionAnalysisInput {
 }
 
 export interface VisionAPIResponse {
+  // Legacy fields
   analysis: string;
   findings: string;
   confidence: number;
   severity: number;
   suggestedSpecialty: string;
   success: boolean;
+  
+  // New structured fields
+  emergency?: boolean;
+  redFlags?: string[];
+  differentialDiagnosis?: Array<{
+    condition: string;
+    probability: number;
+    reasoning: string;
+  }>;
+  recommendations?: {
+    immediate: string;
+    traditional: string;
+    conventional: string;
+    lifestyle: string;
+  };
+  followUp?: {
+    timeframe: string;
+    warningSigns: string[];
+    monitoring: string;
+  };
+  culturalNotes?: string;
+  disclaimers?: string;
 }
 
 export class OpenAIVisionService {
@@ -97,17 +120,51 @@ export class OpenAIVisionService {
     visionResponse: VisionAPIResponse,
     localAnalysis: Partial<ComprehensiveAnalysisResult>
   ): ComprehensiveAnalysisResult {
-    // Parse the Vision API analysis to extract health indicators
-    const healthIndicators = this.extractHealthIndicators(visionResponse.analysis);
+    // Extract health indicators from both structured data and text analysis
+    const structuredIndicators = this.extractStructuredIndicators(visionResponse);
+    const textIndicators = this.extractHealthIndicators(visionResponse.analysis);
+    
+    // Merge indicators, prioritizing structured over text-based
+    const allIndicators = [...structuredIndicators, ...textIndicators];
+    const uniqueIndicators = this.deduplicateIndicators(allIndicators);
+    
+    // Update urgency based on emergency flag
+    const urgencyLevel = visionResponse.emergency ? 'emergency' : 
+                        visionResponse.severity >= 70 ? 'urgent' :
+                        visionResponse.severity >= 50 ? 'soon' : 'routine';
+    
+    // Build treatment recommendations from structured data
+    const treatmentRecommendations: TreatmentRecommendation[] = [];
+    if (visionResponse.recommendations) {
+      treatmentRecommendations.push({
+        category: 'medical_referral',
+        recommendations: [visionResponse.recommendations.immediate],
+        urgency: urgencyLevel === 'emergency' ? 'emergency' : 'moderate',
+        followUp: visionResponse.followUp?.timeframe || '48 horas'
+      });
+      
+      if (visionResponse.recommendations.traditional) {
+        treatmentRecommendations.push({
+          category: 'herbal',
+          recommendations: [visionResponse.recommendations.traditional],
+          mexicanHerbs: this.extractMexicanHerbs(visionResponse.recommendations.traditional),
+          urgency: 'routine',
+          followUp: 'Según evolución'
+        });
+      }
+    }
     
     // Merge with local analysis results
     return {
       ...localAnalysis as ComprehensiveAnalysisResult,
-      primaryFindings: [
-        ...(localAnalysis.primaryFindings || []),
-        ...healthIndicators
+      primaryFindings: uniqueIndicators,
+      urgencyLevel,
+      urgentReferrals: visionResponse.emergency ? 
+        ['Atención médica inmediata requerida', ...(visionResponse.redFlags || [])] : [],
+      treatmentRecommendations: [
+        ...treatmentRecommendations,
+        ...(localAnalysis.treatmentRecommendations || [])
       ],
-      urgencyLevel: this.determineUrgency(visionResponse.severity),
       confidenceScore: {
         overall: visionResponse.confidence,
         byCategory: {
@@ -121,7 +178,10 @@ export class OpenAIVisionService {
         analysis: visionResponse.analysis,
         findings: visionResponse.findings,
         suggestedSpecialty: visionResponse.suggestedSpecialty
-      }
+      },
+      mexicanCulturalContext: visionResponse.culturalNotes ? 
+        [visionResponse.culturalNotes] : 
+        (localAnalysis.mexicanCulturalContext || [])
     };
   }
 
@@ -321,6 +381,176 @@ export class OpenAIVisionService {
     if (severity >= 60) return 'urgent';
     if (severity >= 40) return 'soon';
     return 'routine';
+  }
+
+  /**
+   * Extract structured health indicators from differential diagnosis
+   */
+  private extractStructuredIndicators(visionResponse: VisionAPIResponse): HealthIndicator[] {
+    const indicators: HealthIndicator[] = [];
+    
+    if (visionResponse.differentialDiagnosis && visionResponse.differentialDiagnosis.length > 0) {
+      visionResponse.differentialDiagnosis.forEach(diagnosis => {
+        // Map condition to category
+        const category = this.mapConditionToCategory(diagnosis.condition);
+        const severity = diagnosis.probability >= 0.7 ? 'high' : 
+                        diagnosis.probability >= 0.4 ? 'moderate' : 'low';
+        
+        indicators.push({
+          category,
+          finding: `${diagnosis.condition} - ${diagnosis.reasoning}`,
+          severity,
+          confidence: diagnosis.probability,
+          organSystems: this.mapCategoryToOrganSystems(category),
+          recommendations: this.extractRecommendationsForCondition(diagnosis.condition, visionResponse)
+        });
+      });
+    }
+    
+    // Add red flags as high-priority indicators
+    if (visionResponse.redFlags && visionResponse.redFlags.length > 0) {
+      visionResponse.redFlags.forEach(flag => {
+        indicators.push({
+          category: 'emergency' as any,
+          finding: flag,
+          severity: 'high',
+          confidence: 0.9,
+          organSystems: ['general'],
+          recommendations: ['Buscar atención médica inmediata', 'Llamar al 911 si es necesario']
+        });
+      });
+    }
+    
+    return indicators;
+  }
+  
+  /**
+   * Map condition name to health indicator category
+   */
+  private mapConditionToCategory(condition: string): HealthIndicator['category'] {
+    const conditionLower = condition.toLowerCase();
+    
+    if (conditionLower.includes('dermat') || conditionLower.includes('piel') || 
+        conditionLower.includes('acné') || conditionLower.includes('rosácea')) {
+      return 'dermatological';
+    }
+    if (conditionLower.includes('circula') || conditionLower.includes('anemia') || 
+        conditionLower.includes('vascular')) {
+      return 'circulatory';
+    }
+    if (conditionLower.includes('respira') || conditionLower.includes('congest') || 
+        conditionLower.includes('pulmon')) {
+      return 'respiratory';
+    }
+    if (conditionLower.includes('digest') || conditionLower.includes('gástric') || 
+        conditionLower.includes('estómago')) {
+      return 'digestive';
+    }
+    if (conditionLower.includes('nerv') || conditionLower.includes('estrés') || 
+        conditionLower.includes('ansiedad')) {
+      return 'nervous';
+    }
+    
+    return 'constitutional';
+  }
+  
+  /**
+   * Map category to organ systems
+   */
+  private mapCategoryToOrganSystems(category: string): string[] {
+    const mapping: Record<string, string[]> = {
+      dermatological: ['integumentario', 'inmunológico'],
+      circulatory: ['cardiovascular', 'hematológico'],
+      respiratory: ['respiratorio', 'inmunológico'],
+      digestive: ['digestivo', 'hepático'],
+      nervous: ['nervioso', 'endocrino'],
+      constitutional: ['constitucional', 'metabólico'],
+      emergency: ['general', 'sistémico']
+    };
+    
+    return mapping[category] || ['general'];
+  }
+  
+  /**
+   * Extract recommendations for specific condition
+   */
+  private extractRecommendationsForCondition(
+    condition: string, 
+    visionResponse: VisionAPIResponse
+  ): string[] {
+    const recommendations: string[] = [];
+    
+    // Add immediate recommendations if relevant
+    if (visionResponse.recommendations?.immediate) {
+      recommendations.push(visionResponse.recommendations.immediate);
+    }
+    
+    // Add condition-specific recommendations
+    const conditionLower = condition.toLowerCase();
+    if (conditionLower.includes('infección')) {
+      recommendations.push('Mantener área limpia y seca', 'Evitar rascar o tocar');
+    }
+    if (conditionLower.includes('alergia')) {
+      recommendations.push('Identificar y evitar alérgenos', 'Considerar antihistamínicos');
+    }
+    
+    // Add follow-up recommendations
+    if (visionResponse.followUp?.monitoring) {
+      recommendations.push(visionResponse.followUp.monitoring);
+    }
+    
+    return recommendations.length > 0 ? recommendations : ['Seguimiento médico recomendado'];
+  }
+  
+  /**
+   * Extract Mexican herbs from traditional recommendations
+   */
+  private extractMexicanHerbs(traditionalRecommendation: string): string[] {
+    const herbs: string[] = [];
+    const herbPatterns = [
+      'manzanilla', 'gordolobo', 'eucalipto', 'bugambilia', 'sábila',
+      'caléndula', 'árnica', 'hierba buena', 'tomillo', 'jamaica',
+      'nopal', 'ajo', 'jengibre', 'cúrcuma', 'valeriana', 'pasiflora'
+    ];
+    
+    const textLower = traditionalRecommendation.toLowerCase();
+    herbPatterns.forEach(herb => {
+      if (textLower.includes(herb)) {
+        herbs.push(herb);
+      }
+    });
+    
+    return herbs;
+  }
+  
+  /**
+   * Deduplicate health indicators based on similarity
+   */
+  private deduplicateIndicators(indicators: HealthIndicator[]): HealthIndicator[] {
+    const unique: HealthIndicator[] = [];
+    const seen = new Set<string>();
+    
+    indicators.forEach(indicator => {
+      // Create a key based on category and finding similarity
+      const key = `${indicator.category}-${indicator.finding.substring(0, 30).toLowerCase()}`;
+      
+      if (!seen.has(key)) {
+        seen.add(key);
+        unique.push(indicator);
+      } else {
+        // If duplicate, merge with higher confidence
+        const existing = unique.find(u => 
+          u.category === indicator.category && 
+          u.finding.substring(0, 30).toLowerCase() === indicator.finding.substring(0, 30).toLowerCase()
+        );
+        if (existing && indicator.confidence > existing.confidence) {
+          existing.confidence = indicator.confidence;
+          existing.severity = indicator.severity;
+        }
+      }
+    });
+    
+    return unique;
   }
 }
 

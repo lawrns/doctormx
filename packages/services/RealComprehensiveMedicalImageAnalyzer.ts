@@ -480,10 +480,11 @@ export class RealComprehensiveMedicalImageAnalyzer {
 
     // Check if we need Vision API enhancement based on findings
     const needsVisionEnhancement = primaryFindings.length <= 1 || 
-                                  (primaryFindings.length === 1 && primaryFindings[0].finding.includes('análisis limitado'));
+                                  (primaryFindings.length === 1 && primaryFindings[0].finding.includes('análisis limitado')) ||
+                                  facialAnalysisResult.confidence < 0.7;
     
-    // Always try to enhance with Vision API for better diagnosis
-    if (needsVisionEnhancement || true) { // Force Vision API for all analyses
+    // Try to enhance with Vision API when local analysis has low confidence or limited findings
+    if (needsVisionEnhancement) {
       try {
         loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Enhancing analysis with Vision API before protocol matching', {
           qualityScore: qualityMetrics.imageQuality,
@@ -1218,11 +1219,53 @@ export class RealComprehensiveMedicalImageAnalyzer {
       return findings;
     }
     
+    // First, extract structured findings from differentialDiagnosis if available
+    if (visionResponse.differentialDiagnosis && Array.isArray(visionResponse.differentialDiagnosis)) {
+      visionResponse.differentialDiagnosis.forEach((diagnosis: any) => {
+        const category = this.mapConditionToHealthCategory(diagnosis.condition);
+        const severity = diagnosis.probability >= 0.7 ? 'high' : 
+                        diagnosis.probability >= 0.4 ? 'moderate' : 'low';
+        
+        findings.push({
+          category,
+          finding: `${diagnosis.condition} - ${diagnosis.reasoning}`,
+          severity,
+          confidence: diagnosis.probability,
+          organSystems: this.mapCategoryToOrganSystems(category),
+          recommendations: this.extractDiagnosisRecommendations(diagnosis, visionResponse)
+        });
+      });
+    }
+    
+    // Add red flags as high-priority findings
+    if (visionResponse.redFlags && Array.isArray(visionResponse.redFlags)) {
+      visionResponse.redFlags.forEach((flag: string) => {
+        findings.push({
+          category: 'emergency' as any,
+          finding: flag,
+          severity: 'high',
+          confidence: 0.9,
+          organSystems: ['general', 'systémico'],
+          recommendations: ['Buscar atención médica INMEDIATA', 'Llamar al 911 o acudir a urgencias']
+        });
+      });
+    }
+    
+    // If structured data provided sufficient findings, return them
+    if (findings.length >= 2) {
+      loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Using structured Vision API findings', {
+        structuredFindingsCount: findings.length,
+        hasRedFlags: visionResponse.redFlags?.length > 0
+      });
+      return findings;
+    }
+    
+    // Otherwise, fall back to text analysis
     const analysis = visionResponse.analysis.toLowerCase();
     const findingsText = visionResponse.findings?.toLowerCase() || '';
     const combinedText = `${analysis} ${findingsText}`;
     
-    loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Extracting Vision API findings', {
+    loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Extracting Vision API findings from text', {
       analysisLength: analysis.length,
       findingsLength: findingsText.length,
       severity: visionResponse.severity,
@@ -1710,5 +1753,88 @@ export class RealComprehensiveMedicalImageAnalyzer {
       metabolicType: 'normal',
       indicators: ['Evaluación basada en análisis de imagen local']
     };
+  }
+  
+  /**
+   * Map condition name to health category
+   */
+  private mapConditionToHealthCategory(condition: string): HealthIndicator['category'] {
+    const conditionLower = condition.toLowerCase();
+    
+    if (conditionLower.includes('dermat') || conditionLower.includes('piel') || 
+        conditionLower.includes('acné') || conditionLower.includes('rosácea')) {
+      return 'dermatological';
+    }
+    if (conditionLower.includes('circula') || conditionLower.includes('anemia') || 
+        conditionLower.includes('vascular')) {
+      return 'circulatory';
+    }
+    if (conditionLower.includes('respira') || conditionLower.includes('congest') || 
+        conditionLower.includes('pulmon')) {
+      return 'respiratory';
+    }
+    if (conditionLower.includes('digest') || conditionLower.includes('gástric') || 
+        conditionLower.includes('estómago')) {
+      return 'digestive';
+    }
+    if (conditionLower.includes('nerv') || conditionLower.includes('estrés') || 
+        conditionLower.includes('ansiedad')) {
+      return 'nervous';
+    }
+    
+    return 'constitutional';
+  }
+  
+  /**
+   * Map category to organ systems
+   */
+  private mapCategoryToOrganSystems(category: string): string[] {
+    const mapping: Record<string, string[]> = {
+      dermatological: ['integumentario', 'inmunológico'],
+      circulatory: ['cardiovascular', 'hematológico'],
+      respiratory: ['respiratorio', 'inmunológico'],
+      digestive: ['digestivo', 'hepático'],
+      nervous: ['nervioso', 'endocrino'],
+      constitutional: ['constitucional', 'metabólico'],
+      emergency: ['general', 'sistémico'],
+      emotional: ['nervioso', 'psicológico'],
+      structural: ['musculoesquelético', 'postural']
+    };
+    
+    return mapping[category] || ['general'];
+  }
+  
+  /**
+   * Extract diagnosis-specific recommendations
+   */
+  private extractDiagnosisRecommendations(diagnosis: any, visionResponse: any): string[] {
+    const recommendations: string[] = [];
+    
+    // Add immediate recommendations if relevant
+    if (visionResponse.recommendations?.immediate) {
+      recommendations.push(visionResponse.recommendations.immediate);
+    }
+    
+    // Add condition-specific recommendations
+    const conditionLower = diagnosis.condition.toLowerCase();
+    if (conditionLower.includes('infección')) {
+      recommendations.push('Mantener área limpia y seca', 'Evitar rascar o tocar');
+    } else if (conditionLower.includes('alergia')) {
+      recommendations.push('Identificar y evitar alérgenos', 'Considerar antihistamínicos');
+    } else if (conditionLower.includes('anemia')) {
+      recommendations.push('Consumir alimentos ricos en hierro', 'Vitamina C con las comidas');
+    }
+    
+    // Add traditional Mexican remedies if available
+    if (visionResponse.recommendations?.traditional) {
+      recommendations.push(visionResponse.recommendations.traditional);
+    }
+    
+    // Add follow-up monitoring
+    if (visionResponse.followUp?.monitoring) {
+      recommendations.push(visionResponse.followUp.monitoring);
+    }
+    
+    return recommendations.length > 0 ? recommendations : ['Seguimiento médico recomendado'];
   }
 }
