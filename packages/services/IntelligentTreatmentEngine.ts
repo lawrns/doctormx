@@ -415,18 +415,52 @@ export class IntelligentTreatmentEngine {
   private async findMatchingProtocols(analysis: ComprehensiveAnalysisResult): Promise<TreatmentProtocol[]> {
     const matchingProtocols: TreatmentProtocol[] = [];
 
+    loggingService.info('IntelligentTreatmentEngine', 'Finding matching protocols', {
+      primaryFindings: analysis.primaryFindings.map(f => ({
+        category: f.category,
+        finding: f.finding,
+        severity: f.severity
+      })),
+      constitution: analysis.constitutionalAssessment.ayurvedicType
+    });
+
     for (const [_, protocol] of this.treatmentProtocols) {
       // Check if protocol addresses the primary findings
       const addressesFindings = analysis.primaryFindings.some(finding => {
-        // Use category or type or description as fallback
-        const findingType = finding.category || finding.type || finding.description || '';
-
+        // Enhanced matching logic that checks both category and actual finding text
+        const findingCategory = finding.category || '';
+        const findingText = finding.finding || '';
+        
         return protocol.condition.some(condition => {
           const conditionLower = condition.toLowerCase();
-          const findingLower = findingType.toLowerCase();
+          const categoryLower = findingCategory.toLowerCase();
+          const textLower = findingText.toLowerCase();
 
-          return conditionLower.includes(findingLower) ||
-                 findingLower.includes(conditionLower);
+          // Check category match
+          const categoryMatch = conditionLower.includes(categoryLower) ||
+                               categoryLower.includes(conditionLower);
+          
+          // Check if finding text contains key condition terms
+          const textMatch = this.findingContainsCondition(textLower, conditionLower);
+          
+          // Check for specific condition keywords in finding
+          const conditionKeywords = this.extractConditionKeywords(textLower);
+          const keywordMatch = conditionKeywords.some(keyword => 
+            conditionLower.includes(keyword) || keyword.includes(conditionLower)
+          );
+
+          const matched = categoryMatch || textMatch || keywordMatch;
+          
+          if (matched) {
+            loggingService.info('IntelligentTreatmentEngine', 'Protocol match found', {
+              protocol: protocol.name,
+              condition,
+              finding: finding.finding,
+              matchType: categoryMatch ? 'category' : textMatch ? 'text' : 'keyword'
+            });
+          }
+
+          return matched;
         });
       });
 
@@ -439,6 +473,27 @@ export class IntelligentTreatmentEngine {
       }
     }
 
+    // If no specific matches found, include general protocols based on severity
+    if (matchingProtocols.length === 0) {
+      loggingService.warn('IntelligentTreatmentEngine', 'No specific protocol matches found, using severity-based selection');
+      
+      // Find protocols that match general categories or severity
+      for (const [_, protocol] of this.treatmentProtocols) {
+        if (protocol.category === 'constitutional' || 
+            protocol.condition.includes('general_wellness') ||
+            protocol.condition.includes('prevention')) {
+          
+          const severityMatch = this.protocolMatchesSeverity(protocol, analysis);
+          const constitutionalMatch = protocol.constitution.includes('all') ||
+            protocol.constitution.includes(analysis.constitutionalAssessment.ayurvedicType);
+          
+          if (severityMatch && constitutionalMatch) {
+            matchingProtocols.push(protocol);
+          }
+        }
+      }
+    }
+
     // Sort by evidence level and cultural relevance
     return matchingProtocols.sort((a, b) => {
       const evidenceScore = { 'A': 4, 'B': 3, 'C': 2, 'D': 1 };
@@ -446,6 +501,99 @@ export class IntelligentTreatmentEngine {
       const bScore = evidenceScore[b.evidenceLevel] + (b.culturalRelevance / 100);
       return bScore - aScore;
     });
+  }
+
+  /**
+   * Check if finding text contains condition-related terms
+   */
+  private findingContainsCondition(findingText: string, condition: string): boolean {
+    // Direct substring match
+    if (findingText.includes(condition)) return true;
+    
+    // Check for related terms
+    const conditionSynonyms: Record<string, string[]> = {
+      'rosácea': ['rosacea', 'enrojecimiento facial', 'rojez facial'],
+      'acné': ['acne', 'comedones', 'espinillas', 'puntos negros'],
+      'dermatitis': ['inflamación cutánea', 'eccema', 'eczema'],
+      'psoriasis': ['placas escamosas', 'descamación'],
+      'melasma': ['manchas', 'hiperpigmentación', 'pigmentación'],
+      'anemia': ['palidez', 'pálido', 'deficiencia hierro'],
+      'estrés': ['stress', 'tensión', 'ansiedad', 'fatiga'],
+      'circulación': ['circulatory', 'vascular', 'edema', 'hinchazón'],
+      'digestivo': ['digestive', 'estómago', 'intestinal', 'gástrico'],
+      'respiratorio': ['respiratory', 'congestión', 'mucosidad', 'respiración']
+    };
+    
+    // Check if any synonym matches
+    for (const [key, synonyms] of Object.entries(conditionSynonyms)) {
+      if (condition.includes(key)) {
+        return synonyms.some(synonym => findingText.includes(synonym));
+      }
+    }
+    
+    return false;
+  }
+
+  /**
+   * Extract condition keywords from finding text
+   */
+  private extractConditionKeywords(findingText: string): string[] {
+    const keywords: string[] = [];
+    
+    // Common medical conditions in Spanish
+    const conditionPatterns = [
+      'rosácea', 'acné', 'dermatitis', 'psoriasis', 'melasma',
+      'anemia', 'deficiencia', 'infección', 'inflamación',
+      'alergia', 'eccema', 'urticaria', 'vitiligo',
+      'circulación', 'vascular', 'edema', 'várices',
+      'digestivo', 'gástrico', 'intestinal', 'hepático',
+      'respiratorio', 'congestión', 'asma', 'bronquitis',
+      'estrés', 'ansiedad', 'fatiga', 'insomnio',
+      'hormonal', 'tiroides', 'metabólico', 'diabetes'
+    ];
+    
+    // Extract matching patterns
+    conditionPatterns.forEach(pattern => {
+      if (findingText.includes(pattern)) {
+        keywords.push(pattern);
+      }
+    });
+    
+    // Extract from differential diagnosis format "condition - reasoning"
+    const diagnosisMatch = findingText.match(/^([^-]+)\s*-/);
+    if (diagnosisMatch) {
+      keywords.push(diagnosisMatch[1].trim().toLowerCase());
+    }
+    
+    return keywords;
+  }
+
+  /**
+   * Check if protocol matches analysis severity
+   */
+  private protocolMatchesSeverity(protocol: TreatmentProtocol, analysis: ComprehensiveAnalysisResult): boolean {
+    const severityLevel = this.calculateSeverityLevel(analysis);
+    
+    // Match protocol intensity to severity
+    if (severityLevel === 'high' && protocol.condition.some(c => 
+      c.includes('severe') || c.includes('urgent') || c.includes('intensive')
+    )) {
+      return true;
+    }
+    
+    if (severityLevel === 'moderate' && protocol.condition.some(c => 
+      c.includes('moderate') || c.includes('maintenance') || c.includes('support')
+    )) {
+      return true;
+    }
+    
+    if (severityLevel === 'low' && protocol.condition.some(c => 
+      c.includes('prevention') || c.includes('wellness') || c.includes('mild')
+    )) {
+      return true;
+    }
+    
+    return false;
   }
 
   /**
