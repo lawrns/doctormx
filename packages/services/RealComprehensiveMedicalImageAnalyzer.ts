@@ -1585,6 +1585,33 @@ export class RealComprehensiveMedicalImageAnalyzer {
       };
     }
     
+    // Generate symptom-based findings if available
+    if (input.patientContext?.currentSymptoms && input.patientContext.currentSymptoms.length > 0) {
+      const symptomFindings = this.generateFindingsFromSymptoms(input.patientContext.currentSymptoms);
+      
+      // Merge symptom findings with existing findings
+      if (result.primaryFindings.length <= 1) {
+        // Replace generic finding with symptom-based findings
+        result.primaryFindings = symptomFindings;
+      } else {
+        // Add symptom findings to existing
+        result.primaryFindings = [...result.primaryFindings, ...symptomFindings];
+      }
+      
+      loggingService.info('RealComprehensiveMedicalImageAnalyzer', 'Added symptom-based findings', {
+        symptomCount: input.patientContext.currentSymptoms.length,
+        findingsAdded: symptomFindings.length
+      });
+    }
+    
+    // Enhance findings based on facial analysis results
+    if (result.facialAnalysisResult) {
+      const facialFindings = this.generateEnhancedFacialFindings(result.facialAnalysisResult);
+      if (facialFindings.length > 0) {
+        result.primaryFindings = [...result.primaryFindings, ...facialFindings];
+      }
+    }
+    
     // Enhance findings with more detailed descriptions
     result.primaryFindings = result.primaryFindings.map(finding => {
       // Add more context to findings
@@ -1599,6 +1626,9 @@ export class RealComprehensiveMedicalImageAnalyzer {
       
       return finding;
     });
+    
+    // Remove duplicates and limit to top 5 findings
+    result.primaryFindings = this.deduplicateAndPrioritizeFindings(result.primaryFindings);
     
     // Add general health maintenance finding if no specific findings
     if (result.primaryFindings.length === 0) {
@@ -1836,5 +1866,240 @@ export class RealComprehensiveMedicalImageAnalyzer {
     }
     
     return recommendations.length > 0 ? recommendations : ['Seguimiento médico recomendado'];
+  }
+  
+  /**
+   * Generate findings from patient symptoms
+   */
+  private generateFindingsFromSymptoms(symptoms: string[]): HealthIndicator[] {
+    const findings: HealthIndicator[] = [];
+    const symptomText = symptoms.join(' ').toLowerCase();
+    
+    // Map common symptoms to findings
+    const symptomMappings = [
+      {
+        keywords: ['dolor de cabeza', 'cefalea', 'migraña'],
+        finding: {
+          category: 'nervous' as const,
+          finding: 'Cefalea reportada - posible tensión o migraña',
+          severity: 'moderate' as const,
+          confidence: 0.7,
+          organSystems: ['nervioso', 'vascular'],
+          recommendations: [
+            'Descanso en ambiente oscuro y silencioso',
+            'Hidratación adecuada',
+            'Técnicas de relajación',
+            'Consultar si persiste más de 72 horas'
+          ]
+        }
+      },
+      {
+        keywords: ['fatiga', 'cansancio', 'agotamiento', 'debilidad'],
+        finding: {
+          category: 'constitutional' as const,
+          finding: 'Fatiga crónica - evaluar causas metabólicas',
+          severity: 'moderate' as const,
+          confidence: 0.65,
+          organSystems: ['endocrino', 'metabólico'],
+          recommendations: [
+            'Análisis de sangre completo',
+            'Evaluar niveles de hierro y vitamina B12',
+            'Mejorar higiene del sueño',
+            'Reducir estrés'
+          ]
+        }
+      },
+      {
+        keywords: ['mareo', 'vértigo', 'inestabilidad'],
+        finding: {
+          category: 'nervous' as const,
+          finding: 'Mareos - descartar problemas vestibulares o circulatorios',
+          severity: 'moderate' as const,
+          confidence: 0.7,
+          organSystems: ['nervioso', 'cardiovascular'],
+          recommendations: [
+            'Evitar movimientos bruscos',
+            'Levantarse lentamente',
+            'Mantener hidratación',
+            'Consulta con otorrinolaringólogo si persiste'
+          ]
+        }
+      },
+      {
+        keywords: ['dolor abdominal', 'dolor estómago', 'dolor barriga'],
+        finding: {
+          category: 'digestive' as const,
+          finding: 'Dolor abdominal - evaluar origen gastrointestinal',
+          severity: 'moderate' as const,
+          confidence: 0.65,
+          organSystems: ['digestivo'],
+          recommendations: [
+            'Dieta blanda temporal',
+            'Evitar irritantes (café, picante)',
+            'Té de manzanilla o hierbabuena',
+            'Consultar si hay sangrado o fiebre'
+          ]
+        }
+      },
+      {
+        keywords: ['estrés', 'ansiedad', 'nervios', 'preocupación'],
+        finding: {
+          category: 'emotional' as const,
+          finding: 'Estrés y ansiedad - impacto en salud general',
+          severity: 'moderate' as const,
+          confidence: 0.75,
+          organSystems: ['nervioso', 'endocrino'],
+          recommendations: [
+            'Técnicas de respiración profunda',
+            'Meditación o mindfulness',
+            'Ejercicio regular',
+            'Considerar apoyo psicológico'
+          ]
+        }
+      },
+      {
+        keywords: ['piel', 'sarpullido', 'comezón', 'picazón', 'rash'],
+        finding: {
+          category: 'dermatological' as const,
+          finding: 'Alteración cutánea - evaluar causa dermatológica',
+          severity: 'moderate' as const,
+          confidence: 0.7,
+          organSystems: ['integumentario'],
+          recommendations: [
+            'Evitar rascar la zona afectada',
+            'Aplicar compresas frías',
+            'Usar jabón neutro',
+            'Consultar dermatólogo si empeora'
+          ]
+        }
+      },
+      {
+        keywords: ['tos', 'flema', 'congestión', 'gripe'],
+        finding: {
+          category: 'respiratory' as const,
+          finding: 'Síntomas respiratorios - posible infección o alergia',
+          severity: 'moderate' as const,
+          confidence: 0.7,
+          organSystems: ['respiratorio'],
+          recommendations: [
+            'Hidratación abundante',
+            'Vaporizaciones con eucalipto',
+            'Evitar cambios bruscos de temperatura',
+            'Consultar si hay fiebre alta o dificultad respiratoria'
+          ]
+        }
+      }
+    ];
+    
+    // Check each symptom mapping
+    symptomMappings.forEach(mapping => {
+      const hasSymptom = mapping.keywords.some(keyword => symptomText.includes(keyword));
+      if (hasSymptom) {
+        findings.push(mapping.finding);
+      }
+    });
+    
+    // If no specific mappings found but symptoms exist, add general finding
+    if (findings.length === 0 && symptoms.length > 0) {
+      findings.push({
+        category: 'constitutional',
+        finding: `Síntomas reportados: ${symptoms.join(', ')}`,
+        severity: 'moderate',
+        confidence: 0.6,
+        organSystems: ['general'],
+        recommendations: [
+          'Monitoreo de síntomas',
+          'Mantener registro de evolución',
+          'Consultar si empeoran o persisten'
+        ]
+      });
+    }
+    
+    return findings;
+  }
+  
+  /**
+   * Generate enhanced findings from facial analysis
+   */
+  private generateEnhancedFacialFindings(facialAnalysis: any): HealthIndicator[] {
+    const findings: HealthIndicator[] = [];
+    
+    // Check facial health indicators
+    if (facialAnalysis.overallFacialHealth) {
+      const health = facialAnalysis.overallFacialHealth;
+      
+      if (health.skinTone < 50) {
+        findings.push({
+          category: 'dermatological',
+          finding: 'Tono de piel irregular - posible hiperpigmentación o palidez',
+          severity: 'low',
+          confidence: 0.65,
+          organSystems: ['integumentario'],
+          recommendations: [
+            'Protección solar diaria',
+            'Antioxidantes tópicos',
+            'Consultar dermatólogo para evaluación'
+          ]
+        });
+      }
+      
+      if (health.inflammation > 60) {
+        findings.push({
+          category: 'circulatory',
+          finding: 'Signos de inflamación facial detectados',
+          severity: 'moderate',
+          confidence: 0.7,
+          organSystems: ['circulatorio', 'inmunológico'],
+          recommendations: [
+            'Aplicar compresas frías',
+            'Evitar productos irritantes',
+            'Dieta antiinflamatoria'
+          ]
+        });
+      }
+    }
+    
+    // Check eye region
+    if (facialAnalysis.eyeRegionAnalysis) {
+      const eyes = facialAnalysis.eyeRegionAnalysis;
+      
+      if (eyes.darkCircles > 0.6) {
+        findings.push({
+          category: 'circulatory',
+          finding: 'Ojeras pronunciadas - posible fatiga o deficiencia nutricional',
+          severity: 'low',
+          confidence: 0.65,
+          organSystems: ['circulatorio'],
+          recommendations: [
+            'Mejorar calidad del sueño',
+            'Suplementar hierro si hay deficiencia',
+            'Masaje periocular suave'
+          ]
+        });
+      }
+    }
+    
+    return findings;
+  }
+  
+  /**
+   * Deduplicate and prioritize findings
+   */
+  private deduplicateAndPrioritizeFindings(findings: HealthIndicator[]): HealthIndicator[] {
+    // Remove exact duplicates
+    const uniqueFindings = findings.filter((finding, index, self) =>
+      index === self.findIndex(f => f.finding === finding.finding)
+    );
+    
+    // Sort by severity and confidence
+    uniqueFindings.sort((a, b) => {
+      const severityScore = { high: 3, moderate: 2, low: 1 };
+      const aScore = severityScore[a.severity] * a.confidence;
+      const bScore = severityScore[b.severity] * b.confidence;
+      return bScore - aScore;
+    });
+    
+    // Return top 5 findings
+    return uniqueFindings.slice(0, 5);
   }
 }

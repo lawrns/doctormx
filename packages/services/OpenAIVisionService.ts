@@ -83,18 +83,37 @@ export class OpenAIVisionService {
         bodySize: JSON.stringify(requestBody).length
       });
 
-      // Call the Netlify function
-      const response = await fetch(this.apiEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      });
+      // Call the Netlify function with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+      
+      let response;
+      try {
+        response = await fetch(this.apiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody),
+          signal: controller.signal
+        });
+      } catch (fetchError: any) {
+        if (fetchError.name === 'AbortError') {
+          throw new Error('Vision API request timed out after 30 seconds');
+        }
+        throw fetchError;
+      } finally {
+        clearTimeout(timeoutId);
+      }
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-        throw new Error(`Vision API failed: ${errorData.error || response.statusText}`);
+        const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+        loggingService.error('OpenAIVisionService', 'Vision API HTTP error', new Error(`Status: ${response.status}`), {
+          status: response.status,
+          statusText: response.statusText,
+          error: errorData
+        });
+        throw new Error(`Vision API failed: ${errorData.error || response.statusText} (Status: ${response.status})`);
       }
 
       const result = await response.json() as VisionAPIResponse;
