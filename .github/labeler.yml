@@ -1,0 +1,106 @@
+# Configuration for GitHub labeler action
+# Used in PR validation workflow to automatically label PRs
+
+# Frontend changes
+frontend:
+  - src/**/*
+  - '*.tsx'
+  - '*.ts'
+  - '*.jsx'
+  - '*.js'
+
+# Component changes
+components:
+  - src/components/**/*
+  - src/features/**/components/**/*
+
+# Styling changes
+styling:
+  - '**/*.css'
+  - '**/*.scss'
+  - 'tailwind.config.js'
+  - 'postcss.config.cjs'
+  - src/styles/**/*
+
+# Documentation
+documentation:
+  - '**/*.md'
+  - docs/**/*
+  - README.md
+
+# Tests
+tests:
+  - '**/*.test.ts'
+  - '**/*.test.tsx'
+  - '**/*.spec.ts'
+  - '**/*.spec.tsx'
+  - e2e/**/*
+  - __tests__/**/*
+  - playwright.config.ts
+
+# AI/ML features
+ai-ml:
+  - src/features/ai-doctor/**/*
+  - src/features/ai-image-analysis/**/*
+  - packages/services/*Analyzer*
+  - packages/services/*AI*
+  - brain/**/*
+
+# Medical features
+medical:
+  - packages/services/*Medical*
+  - packages/services/*Protocol*
+  - packages/services/*Herb*
+  - src/features/lab-testing/**/*
+
+# Infrastructure
+infrastructure:
+  - .github/**/*
+  - netlify.toml
+  - Dockerfile
+  - docker-compose.yml
+  - '*.config.js'
+  - '*.config.ts'
+
+# Dependencies
+dependencies:
+  - package.json
+  - pnpm-lock.yaml
+  - .npmrc
+
+# Database
+database:
+  - '**/*.sql'
+  - supabase/**/*
+  - migrations/**/*
+
+# Security
+security:
+  - src/services/security/**/*
+  - packages/services/*Encryption*
+  - .env.example
+
+# PWA
+pwa:
+  - src/pwa/**/*
+  - public/manifest.json
+  - public/service-worker.js
+  - public/sw.js
+
+# API/Backend
+api:
+  - netlify/functions/**/*
+  - src/lib/api/**/*
+
+# Build/CI
+build:
+  - vite.config.js
+  - tsconfig*.json
+  - build-script.js
+  - unified-build.js
+
+# Mobile/Responsive
+mobile:
+  - src/features/ai-doctor/components/*Mobile*
+  - mobile.css
+  - src/styles/responsive*.css

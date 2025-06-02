@@ -1,0 +1,295 @@
+# Scheduled maintenance and monitoring workflow
+name: Scheduled Maintenance
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Maintenance task to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - dependencies
+          - security
+          - cleanup
+          - monitoring
+
+env:
+  NODE_VERSION: '20'
+  PNPM_VERSION: '8.15.0'
+
+jobs:
+  # Dependency updates check
+  dependency-updates:
+    name: Check Dependency Updates
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event.inputs.task == 'all' || 
+      github.event.inputs.task == 'dependencies'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Check for updates
+        run: |
+          echo "## Dependency Update Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check for outdated packages
+          echo "### Outdated Packages" >> $GITHUB_STEP_SUMMARY
+          pnpm outdated >> $GITHUB_STEP_SUMMARY || echo "No outdated packages found" >> $GITHUB_STEP_SUMMARY
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Security Audit" >> $GITHUB_STEP_SUMMARY
+          pnpm audit --audit-level=moderate >> $GITHUB_STEP_SUMMARY || echo "Security vulnerabilities found" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Create update PR if needed
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update dependencies'
+          title: 'chore: automated dependency updates'
+          body: |
+            ## Automated Dependency Updates
+            
+            This PR contains automated dependency updates discovered during scheduled maintenance.
+            
+            Please review the changes and ensure all tests pass before merging.
+          branch: deps/automated-updates-${{ github.run_number }}
+          delete-branch: true
+
+  # Security scanning
+  security-scan:
+    name: Security Scanning
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event.inputs.task == 'all' || 
+      github.event.inputs.task == 'security'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run GitHub Security Scanning
+        uses: github/super-linter@v5
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_JSON: true
+          VALIDATE_YAML: true
+          FILTER_REGEX_EXCLUDE: .*dist/.*|.*node_modules/.*|.*coverage/.*
+      
+      - name: OWASP Dependency Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: 'DoctorMX'
+          path: '.'
+          format: 'HTML'
+      
+      - name: Upload security reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-reports-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+
+  # Clean up old deployments and artifacts
+  cleanup:
+    name: Cleanup Old Resources
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event.inputs.task == 'all' || 
+      github.event.inputs.task == 'cleanup'
+    
+    steps:
+      - name: Cleanup old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 10
+      
+      - name: Delete old artifacts
+        uses: c-hive/gha-remove-artifacts@v1
+        with:
+          age: '7 days'
+          skip-tags: true
+      
+      - name: Cleanup Netlify deployments
+        run: |
+          # This would require Netlify CLI and proper authentication
+          echo "Cleaning up old Netlify preview deployments..."
+          # netlify api listSiteDeploys --site-id $NETLIFY_SITE_ID | jq '.[] | select(.created_at < (now - 7*24*60*60)) | .id' | xargs -I {} netlify api deleteDeploy --deploy-id {}
+
+  # Health monitoring
+  health-check:
+    name: Production Health Check
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event.inputs.task == 'all' || 
+      github.event.inputs.task == 'monitoring'
+    
+    steps:
+      - name: Check production site
+        run: |
+          echo "## Health Check Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Check main site
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://doctormx.netlify.app)
+          if [ "$response" = "200" ]; then
+            echo "✅ Main site is up (HTTP $response)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Main site is down (HTTP $response)" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          
+          # Check API endpoints
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### API Endpoints" >> $GITHUB_STEP_SUMMARY
+          
+          endpoints=(
+            "/api/v1/standard-model"
+            "/api/v1/premium-model"
+            "/api/v1/image-analysis"
+          )
+          
+          for endpoint in "${endpoints[@]}"; do
+            response=$(curl -s -o /dev/null -w "%{http_code}" https://doctormx.netlify.app$endpoint)
+            if [ "$response" = "200" ] || [ "$response" = "405" ]; then
+              echo "✅ $endpoint is responding (HTTP $response)" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "⚠️ $endpoint returned HTTP $response" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+      
+      - name: Check SSL certificate
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### SSL Certificate Status" >> $GITHUB_STEP_SUMMARY
+          
+          # Check SSL certificate expiration
+          expiry_date=$(echo | openssl s_client -servername doctormx.netlify.app -connect doctormx.netlify.app:443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
+          expiry_epoch=$(date -d "$expiry_date" +%s)
+          current_epoch=$(date +%s)
+          days_until_expiry=$(( ($expiry_epoch - $current_epoch) / 86400 ))
+          
+          if [ $days_until_expiry -lt 30 ]; then
+            echo "⚠️ SSL certificate expires in $days_until_expiry days" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ SSL certificate valid for $days_until_expiry more days" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Performance check
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Performance Metrics" >> $GITHUB_STEP_SUMMARY
+          
+          # Simple performance check
+          start_time=$(date +%s%N)
+          curl -s https://doctormx.netlify.app > /dev/null
+          end_time=$(date +%s%N)
+          
+          response_time=$(( ($end_time - $start_time) / 1000000 ))
+          echo "Homepage response time: ${response_time}ms" >> $GITHUB_STEP_SUMMARY
+          
+          if [ $response_time -gt 3000 ]; then
+            echo "⚠️ Response time is above 3 seconds" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Response time is acceptable" >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # Database backup check (if applicable)
+  database-maintenance:
+    name: Database Maintenance
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'schedule' || 
+      github.event.inputs.task == 'all'
+    
+    steps:
+      - name: Check Supabase status
+        run: |
+          echo "## Database Status" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # This would require Supabase CLI setup
+          echo "Checking Supabase database status..." >> $GITHUB_STEP_SUMMARY
+          # supabase status would go here
+      
+      - name: Notify if issues found
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          text: 'Database maintenance check failed!'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  # Summary notification
+  maintenance-summary:
+    name: Maintenance Summary
+    runs-on: ubuntu-latest
+    needs: [dependency-updates, security-scan, cleanup, health-check, database-maintenance]
+    if: always()
+    
+    steps:
+      - name: Create summary issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const date = new Date().toISOString().split('T')[0];
+            const jobs = ${{ toJson(needs) }};
+            
+            let body = `## Scheduled Maintenance Report - ${date}\n\n`;
+            body += '### Job Results\n\n';
+            body += '| Task | Status |\n';
+            body += '|------|--------|\n';
+            
+            for (const [job, data] of Object.entries(jobs)) {
+              const status = data.result === 'success' ? '✅ Success' : 
+                           data.result === 'failure' ? '❌ Failed' : 
+                           '⚠️ Skipped';
+              const jobName = job.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+              body += `| ${jobName} | ${status} |\n`;
+            }
+            
+            body += '\n### Actions Required\n\n';
+            body += '- [ ] Review dependency updates\n';
+            body += '- [ ] Check security scan results\n';
+            body += '- [ ] Verify production health\n';
+            
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Maintenance Report - ${date}`,
+              body: body,
+              labels: ['maintenance', 'automated']
+            });

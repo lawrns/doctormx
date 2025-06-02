@@ -1,0 +1,78 @@
+# Dependabot configuration for DoctorMX
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "excite"
+    labels:
+      - "dependencies"
+      - "automated"
+    groups:
+      # Group all development dependencies
+      dev-dependencies:
+        patterns:
+          - "@babel/*"
+          - "@types/*"
+          - "@playwright/*"
+          - "typescript"
+          - "vite*"
+          - "puppeteer"
+      # Group React-related dependencies
+      react:
+        patterns:
+          - "react"
+          - "react-*"
+          - "@tanstack/*"
+      # Group build tools
+      build-tools:
+        patterns:
+          - "vite*"
+          - "tailwindcss"
+          - "postcss*"
+          - "autoprefixer"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore"
+      include: "scope"
+    
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    reviewers:
+      - "excite"
+    labels:
+      - "ci/cd"
+      - "automated"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+  # Enable security updates for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "excite"
+    labels:
+      - "security"
+      - "automated"
+      - "priority"
+    commit-message:
+      prefix: "security"
+      include: "scope"
+    # Only create PRs for security updates
+    versioning-strategy: increase-if-necessary

@@ -1,0 +1,7 @@
+packages:
+  # All packages in subdirs of packages/
+  - 'packages/*'
+  # Include apps
+  - 'apps/*'
+  # Future monorepo structure
+  - 'services/*'
