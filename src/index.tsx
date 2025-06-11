@@ -11,6 +11,7 @@ import './styles/chat-fixes.css';
 import './styles/ai-doctor-fixes.css';
 import './styles/responsive-fixes.css';
 import { AuthProvider } from './contexts/AuthContext';
+import { DoctorAuthProvider } from './contexts/DoctorAuthContext';
 import { SupabaseProvider } from './contexts/SupabaseContext';
 import { QuestionnaireProvider } from './contexts/QuestionnaireContext';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -43,13 +44,15 @@ root.render(
           <ThemeProvider>
             <SupabaseProvider>
               <AuthProvider>
-                <BrowserRouter>
-                  <ToastProvider>
-                    <QuestionnaireProvider>
-                      <App />
-                    </QuestionnaireProvider>
-                  </ToastProvider>
-                </BrowserRouter>
+                <DoctorAuthProvider>
+                  <BrowserRouter>
+                    <ToastProvider>
+                      <QuestionnaireProvider>
+                        <App />
+                      </QuestionnaireProvider>
+                    </ToastProvider>
+                  </BrowserRouter>
+                </DoctorAuthProvider>
               </AuthProvider>
             </SupabaseProvider>
           </ThemeProvider>
