@@ -19,6 +19,12 @@
   npm_config_arch = "x64"
   npm_config_platform = "linux"
   npm_config_libc = "glibc"
+  # Force npm to use x64 architecture
+  npm_config_target_arch = "x64"
+  npm_config_target_platform = "linux"
+  npm_config_target_libc = "glibc"
+  # Disable binary caching
+  npm_config_cache = "/tmp/.npm"
 
 # EXPLICIT: Production deploy context for main branch
 [context.production]
@@ -32,12 +38,12 @@
 # Deploy preview context for pull requests
 [context.deploy-preview]
   publish = "dist"
-  command = "npm ci && npm run build"
+  command = "rm -rf node_modules package-lock.json && npm install --force && npm run build"
 
 # Branch deploy context - should not be used for main
 [context.branch-deploy]
   publish = "dist"
-  command = "npm ci && npm run build"
+  command = "rm -rf node_modules package-lock.json && npm install --force && npm run build"
 
 [functions]
   node_bundler = "esbuild"
