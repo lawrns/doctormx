@@ -179,28 +179,28 @@ const DoctorConnectPage: React.FC = () => {
 
   const metrics = [
     { 
-      number: "50,000+", 
+      number: "500,000+", 
       label: "Consultas mensuales", 
       icon: MessageSquare,
-      description: "Pacientes activos buscando atención médica"
+      description: "Pacientes activos buscando atención médica inmediata"
     },
     { 
-      number: "95%", 
-      label: "Satisfacción del paciente", 
-      icon: Heart,
-      description: "Calificación promedio de nuestros doctores"
+      number: "13,000", 
+      label: "Doctores objetivo", 
+      icon: Users,
+      description: "Red de médicos certificados que buscamos crear"
     },
     { 
-      number: "$25,000+", 
+      number: "$45,000+", 
       label: "Ingresos mensuales promedio", 
       icon: DollarSign,
-      description: "Potencial de ganancias para doctores activos"
+      description: "Potencial de ganancias con 100 consultas/mes a $45 MXN c/u"
     },
     { 
-      number: "98%", 
-      label: "Resolución exitosa", 
+      number: "$29.25M", 
+      label: "Oportunidad de mercado mensual", 
       icon: Target,
-      description: "Casos resueltos satisfactoriamente"
+      description: "Tamaño total del mercado disponible para doctores"
     }
   ];
 
@@ -234,35 +234,48 @@ const DoctorConnectPage: React.FC = () => {
   const benefits = [
     {
       icon: TrendingUp,
-      title: "Aumenta tus ingresos",
-      description: "Genera ingresos adicionales atendiendo pacientes en línea, con tarifas competitivas del mercado."
+      title: "Ingresos Extraordinarios",
+      description: "Gana $45 MXN por consulta (90% de $50). Con solo 100 consultas mensuales: $45,000 MXN adicionales."
     },
     {
       icon: Clock,
-      title: "Flexibilidad total",
-      description: "Define tu horario y atiende desde donde quieras. Concilia tu vida profesional y personal."
+      title: "Consultas Instantáneas (<30 seg)",
+      description: "Pacientes conectados inmediatamente. Sin citas, sin esperas. Máxima eficiencia de tiempo."
     },
     {
       icon: Users,
-      title: "Acceso a más pacientes",
-      description: "Conecta con pacientes de todo México que buscan atención médica especializada."
+      title: "Mercado Masivo de 500K+ Consultas",
+      description: "Acceso a la demanda más grande de telemedicina en México. Pacientes pagando inmediatamente."
     },
     {
       icon: Shield,
-      title: "Soporte legal completo",
-      description: "Plataforma certificada con respaldo legal y seguro de responsabilidad civil."
+      title: "Sistema Completo de Pagos",
+      description: "Cobro automático $50 MXN/consulta. Pagos semanales mínimo $100 MXN. Sin complicaciones."
     },
     {
       icon: Award,
-      title: "Tecnología de vanguardia",
-      description: "Herramientas de IA que te asisten en el diagnóstico y mejoran la precisión de tus consultas."
+      title: "IA Que Aumenta Tu Precisión",
+      description: "Dr. Simeon pre-analiza casos y te deriva pacientes relevantes. Diagnósticos más efectivos."
     },
     {
       icon: Heart,
-      title: "Impacto social",
-      description: "Democratiza el acceso a la salud en México y mejora la vida de miles de familias."
+      title: "Revolución Nacional de Salud",
+      description: "Forma parte del cambio más grande en medicina mexicana. Democratiza el acceso a la salud."
     }
   ];
+
+  const telemedicineOpportunity = {
+    totalMonthlyRevenue: "29.25M MXN",
+    perDoctorPotential: "45,000 MXN",
+    consultationFee: "50 MXN",
+    doctorEarnings: "45 MXN", 
+    platformFee: "5 MXN",
+    targetDoctors: "13,000",
+    consultationsPerMonth: "585,000",
+    averageConsultationsPerDoctor: "100",
+    payoutFrequency: "Semanal",
+    minimumPayout: "100 MXN"
+  };
 
   const especialidades = [
     "Medicina General", "Cardiología", "Dermatología", "Pediatría",
@@ -503,6 +516,170 @@ const DoctorConnectPage: React.FC = () => {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Massive Telemedicine Opportunity Section */}
+      <section className="py-20 bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl font-extrabold mb-6 tracking-tight"
+            >
+              💰 La Oportunidad Más Grande de
+              <span className="block text-emerald-300">Telemedicina en México</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl leading-8 text-emerald-100 max-w-4xl mx-auto"
+            >
+              Dr. Simeon está construyendo la red de telemedicina más grande de México. 
+              <strong className="text-emerald-300"> $29.25 millones MXN en oportunidad mensual</strong> esperando a ser capturada por doctores visionarios.
+            </motion.p>
+          </div>
+          
+          {/* Revenue Calculator */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-emerald-400/30"
+          >
+            <h3 className="text-3xl font-bold text-center mb-8 text-emerald-300">
+              🎯 Tu Potencial de Ingresos Calculado
+            </h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="text-center p-6 bg-emerald-800/50 rounded-xl border border-emerald-400/30">
+                <div className="text-4xl font-bold text-emerald-300 mb-2">$50</div>
+                <div className="text-emerald-100 font-medium">Por Consulta</div>
+                <div className="text-sm text-emerald-200 mt-1">Paciente paga</div>
+              </div>
+              
+              <div className="text-center p-6 bg-emerald-700/50 rounded-xl border border-emerald-400/30">
+                <div className="text-4xl font-bold text-emerald-300 mb-2">$45</div>
+                <div className="text-emerald-100 font-medium">Tú Recibes</div>
+                <div className="text-sm text-emerald-200 mt-1">90% para ti</div>
+              </div>
+              
+              <div className="text-center p-6 bg-emerald-600/50 rounded-xl border border-emerald-400/30">
+                <div className="text-4xl font-bold text-emerald-300 mb-2">100</div>
+                <div className="text-emerald-100 font-medium">Consultas/Mes</div>
+                <div className="text-sm text-emerald-200 mt-1">Promedio conservador</div>
+              </div>
+              
+              <div className="text-center p-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl border-2 border-emerald-300">
+                <div className="text-4xl font-bold text-white mb-2">$45,000</div>
+                <div className="text-white font-medium">MXN Mensuales</div>
+                <div className="text-sm text-emerald-100 mt-1">¡Ingreso adicional!</div>
+              </div>
+            </div>
+            
+            <div className="bg-emerald-800/50 rounded-xl p-6 border border-emerald-400/30">
+              <h4 className="text-xl font-bold text-emerald-300 mb-4 flex items-center">
+                <TrendingUp className="w-6 h-6 mr-2" />
+                Escalamiento de Ingresos
+              </h4>
+              <div className="grid md:grid-cols-3 gap-4 text-center">
+                <div className="p-4 bg-emerald-700/50 rounded-lg">
+                  <div className="text-2xl font-bold text-emerald-300">$22,500</div>
+                  <div className="text-emerald-100">50 consultas/mes</div>
+                  <div className="text-xs text-emerald-200">Medio tiempo</div>
+                </div>
+                <div className="p-4 bg-emerald-600/50 rounded-lg border border-emerald-400/50">
+                  <div className="text-2xl font-bold text-emerald-300">$45,000</div>
+                  <div className="text-emerald-100">100 consultas/mes</div>
+                  <div className="text-xs text-emerald-200">Objetivo estándar</div>
+                </div>
+                <div className="p-4 bg-gradient-to-br from-emerald-500 to-emerald-400 rounded-lg border-2 border-emerald-300">
+                  <div className="text-2xl font-bold text-white">$90,000</div>
+                  <div className="text-white">200 consultas/mes</div>
+                  <div className="text-xs text-emerald-100">Doctores top</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Market Size */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="grid md:grid-cols-2 gap-8 mb-12"
+          >
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-emerald-400/30">
+              <h4 className="text-2xl font-bold text-emerald-300 mb-6 flex items-center">
+                <Target className="w-8 h-8 mr-3" />
+                Tamaño del Mercado
+              </h4>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-emerald-800/50 rounded-lg">
+                  <span className="text-emerald-100">Consultas Mensuales Objetivo:</span>
+                  <span className="text-emerald-300 font-bold">585,000</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-emerald-800/50 rounded-lg">
+                  <span className="text-emerald-100">Doctores Objetivo:</span>
+                  <span className="text-emerald-300 font-bold">13,000</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-emerald-700 to-emerald-600 rounded-lg border border-emerald-400/50">
+                  <span className="text-white font-medium">Oportunidad Total Mensual:</span>
+                  <span className="text-white font-bold text-xl">$29.25M MXN</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-emerald-400/30">
+              <h4 className="text-2xl font-bold text-emerald-300 mb-6 flex items-center">
+                <Clock className="w-8 h-8 mr-3" />
+                Operación Optimizada
+              </h4>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center p-3 bg-emerald-800/50 rounded-lg">
+                  <span className="text-emerald-100">Tiempo de Conexión:</span>
+                  <span className="text-emerald-300 font-bold">&lt; 30 segundos</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-emerald-800/50 rounded-lg">
+                  <span className="text-emerald-100">Frecuencia de Pagos:</span>
+                  <span className="text-emerald-300 font-bold">Semanal</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-emerald-800/50 rounded-lg">
+                  <span className="text-emerald-100">Pago Mínimo:</span>
+                  <span className="text-emerald-300 font-bold">$100 MXN</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-gradient-to-r from-emerald-700 to-emerald-600 rounded-lg border border-emerald-400/50">
+                  <span className="text-white font-medium">Máximo 3 Consultas Simultáneas:</span>
+                  <span className="text-white font-bold">✅</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Call to Action */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="text-center"
+          >
+            <div className="bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-2xl p-8 border-2 border-emerald-300">
+              <h4 className="text-3xl font-bold text-white mb-4">
+                🚀 ¡La Revolución Digital de la Medicina Ya Comenzó!
+              </h4>
+              <p className="text-xl text-emerald-100 mb-6">
+                Los primeros 1,000 doctores registrados tendrán <strong className="text-white">comisión preferencial del 95%</strong> durante los primeros 6 meses.
+              </p>
+              <button
+                onClick={() => document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-white text-emerald-700 font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] text-lg"
+              >
+                Quiero Ser de los Primeros 1,000 →
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 

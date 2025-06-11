@@ -215,28 +215,40 @@ function AIHomePage() {
                   transition={{ delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    {/* Mobile-optimized buttons */}
+                  <div className="space-y-3">
+                    {/* Primary CTA - AI Doctor */}
                     <Link 
                       to="/doctor"
-                      className="flex-1 bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
                       aria-label="Iniciar consulta médica gratuita"
                     >
                       <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Consulta Web Gratis
+                      Consulta con Dr. Simeon (IA) - Gratis
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     
+                    {/* Secondary CTA - Human Doctors */}
+                    <Link 
+                      to="/consultation/instant"
+                      className="w-full bg-gradient-to-r from-[#007B8A] to-[#006D77] hover:from-[#006D77] hover:to-[#005B66] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center border-2 border-white/20"
+                      aria-label="Consulta instantánea con doctor real"
+                    >
+                      <Video className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                      Consulta Instantánea con Doctor Real - $50 MXN
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    
+                    {/* Tertiary CTA - WhatsApp */}
                     <a 
                       href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 sm:px-6 py-2.5 text-sm sm:text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
                       aria-label="Consultar por WhatsApp"
                     >
-                      <Phone className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
+                      <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                       WhatsApp Directo
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                   

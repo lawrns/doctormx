@@ -49,6 +49,11 @@ const ProgressTrackingPage = React.lazy(() => import('./pages/progress/ProgressT
 // Protocol Timeline page
 const ProtocolTimelinePage = React.lazy(() => import('./pages/protocol/ProtocolTimelinePage'));
 
+// Telemedicine pages
+const DoctorTelemedicineDashboard = React.lazy(() => import('./pages/doctor/DoctorTelemedicineDashboard'));
+const DoctorEarningsPage = React.lazy(() => import('./pages/doctor/DoctorEarningsPage'));
+const InstantConsultationPage = React.lazy(() => import('./pages/patient/InstantConsultationPage'));
+
 function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
@@ -113,6 +118,28 @@ function App() {
           <Route index element={<CommunityPage />} />
           <Route path="education" element={<HealthEducationPage />} />
         </Route>
+
+        {/* Telemedicine Routes - new feature */}
+        <Route path="/consultation/*" element={
+          <ProtectedRoute requireAuth={true}>
+            <AILayout />
+          </ProtectedRoute>
+        }>
+          <Route path="instant" element={<InstantConsultationPage />} />
+        </Route>
+
+        {/* Doctor Dashboard Routes - telemedicine */}
+        <Route path="/doctor/dashboard" element={
+          <ProtectedRoute requireAuth={true} requireDoctor={true}>
+            <DoctorTelemedicineDashboard />
+          </ProtectedRoute>
+        } />
+        
+        <Route path="/doctor/earnings" element={
+          <ProtectedRoute requireAuth={true} requireDoctor={true}>
+            <DoctorEarningsPage />
+          </ProtectedRoute>
+        } />
 
         {/* Doctor/Medical Professional Routes - with sidebar and doctor protection */}
         <Route path="/medical/doctor" element={

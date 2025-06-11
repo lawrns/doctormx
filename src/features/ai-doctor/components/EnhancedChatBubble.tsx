@@ -1,5 +1,6 @@
 import React from 'react';
-import { Stethoscope, AlertCircle, Info, Check, ChevronRight, Pill, MapPin } from 'lucide-react';
+import { Stethoscope, AlertCircle, Info, Check, ChevronRight, Pill, MapPin, Video } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface AIAnswerOption {
   id: string;
@@ -307,6 +308,26 @@ const EnhancedChatBubble: React.FC<EnhancedChatBubbleProps> = ({
                   <MapPin size={12} className="mr-1" />
                   Encontrar farmacias cercanas
                 </button>
+              </div>
+            )}
+            
+            {/* Telemedicine Handoff Option */}
+            {message.sender === 'bot' && (message.suggestedSpecialty || message.severity && message.severity >= 6) && (
+              <div className="mt-4 p-3 bg-gradient-to-r from-[#006D77]/10 to-[#007B8A]/10 rounded-lg border border-[#006D77]/20">
+                <p className="text-sm font-medium text-[#006D77] mb-2">
+                  💬 ¿Necesitas hablar con un doctor real?
+                </p>
+                <p className="text-xs text-gray-600 mb-3">
+                  Conecta con un médico certificado en menos de 30 segundos
+                </p>
+                <Link
+                  to="/consultation/instant"
+                  className="inline-flex items-center px-4 py-2 bg-[#006D77] text-white rounded-lg hover:bg-[#005B66] transition-colors text-sm font-medium shadow-sm"
+                >
+                  <Video className="w-4 h-4 mr-2" />
+                  Consulta Instantánea - $50 MXN
+                  <ChevronRight className="w-4 h-4 ml-1" />
+                </Link>
               </div>
             )}
           </>

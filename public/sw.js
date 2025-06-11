@@ -4,7 +4,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox
 // Use workbox CDN to avoid ES module issues
 workbox.core.setCacheNameDetails({
   prefix: 'doctormx',
-  suffix: 'v2', // Increment this when making major changes
+  suffix: 'v3', // Increment this when making major changes
   precache: 'precache',
   runtime: 'runtime'
 });
@@ -13,6 +13,19 @@ workbox.core.setCacheNameDetails({
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
 workbox.precaching.cleanupOutdatedCaches();
+
+// Clear all old caches on activation
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames
+          .filter(cacheName => !cacheName.includes('v3'))
+          .map(cacheName => caches.delete(cacheName))
+      );
+    })
+  );
+});
 
 // Precache all files in the __WB_MANIFEST
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
@@ -97,8 +110,8 @@ workbox.routing.registerRoute(
         statuses: [0, 200],
       }),
       new workbox.expiration.ExpirationPlugin({
-        maxEntries: 50,
-        maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+        maxEntries: 20, // Reduced from 50
+        maxAgeSeconds: 60 * 60 * 24 * 3, // 3 days instead of 7
       }),
     ],
   })

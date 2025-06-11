@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ChevronDown } from 'lucide-react';
 import { 
   Stethoscope, Camera, Beaker, Heart, TrendingUp, Calendar,
-  Brain, FileText, Users, Shield, Pill, Building
+  Brain, FileText, Users, Shield, Pill, Building, Video
 } from 'lucide-react';
 
 interface MenuCategory {
@@ -33,7 +33,14 @@ const MegaMenu: React.FC = () => {
           path: '/doctor',
           icon: <Stethoscope className="w-5 h-5" />,
           description: 'Consulta médica instantánea 24/7',
-          badge: 'Popular'
+          badge: 'Gratis'
+        },
+        {
+          label: 'Consulta Instantánea',
+          path: '/consultation/instant',
+          icon: <Video className="w-5 h-5" />,
+          description: 'Doctor real en menos de 30 segundos',
+          badge: '$50 MXN'
         },
         {
           label: 'Citas Médicas',

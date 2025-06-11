@@ -1,22 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Brain, Image, Stethoscope, Calendar, Menu, X, User, LogOut, Globe, Bell } from 'lucide-react';
+import { Brain, Image, Stethoscope, Calendar, Menu, X, User, LogOut, Globe, Bell, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Button from '../../components/ui/Button';
 import LanguageSelector from '../../components/LanguageSelector';
 import { useAuth } from '../../contexts/AuthContext';
-import MegaMenu from '../../components/MegaMenu';
+import ServicesNav from '../../components/ServicesNav';
 
-interface AINavbarProps {
-  onSidebarToggle?: () => void;
-  isSidebarOpen?: boolean;
-}
-
-function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
+function AINavbar() {
   const location = useLocation();
   const { t } = useTranslation();
   const { isAuthenticated, signOut } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   
   const quickAccessItems = [
     { path: '/doctor', label: t('nav.aiDoctor'), icon: Stethoscope },
@@ -49,9 +45,9 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
           </Link>
         </div>
         
-        {/* Center section: Mega Menu and Quick access navigation */}
+        {/* Center section: Services Nav and Quick access navigation */}
         <nav className="hidden lg:flex items-center gap-1">
-          <MegaMenu />
+          <ServicesNav />
           
           {quickAccessItems.map((item) => {
             const Icon = item.icon;
@@ -135,85 +131,78 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
         </div>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setIsMobileMenuOpen(false)}>
-          <div 
-            className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-semibold">{t('nav.features')}</h2>
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#006D77] shadow-lg">
+          <div className="px-4 py-3 space-y-2">
+            {/* Services Dropdown Mobile */}
+            <div className="border-t border-white/20 pt-2">
               <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg"
-                aria-label={t('accessibility.closeMenu')}
+                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                className="w-full flex items-center justify-between text-white/90 hover:text-white py-2 text-sm font-medium"
               >
-                <X size={20} />
+                <span>Servicios</span>
+                <ChevronDown 
+                  size={16} 
+                  className={`transform transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+                />
               </button>
-            </div>
-            
-            <nav className="p-4 space-y-2">
-              {quickAccessItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center gap-3 p-3 rounded-lg transition-colors ${
-                      location.pathname === item.path
-                        ? 'bg-blue-50 text-blue-600'
-                        : 'hover:bg-gray-100'
-                    }`}
-                  >
-                    <Icon size={20} />
-                    <span>{item.label}</span>
+              {isServicesDropdownOpen && (
+                <div className="mt-2 space-y-1 pl-4">
+                  <Link to="/connect" className="block py-2 text-white/80 hover:text-white text-sm">
+                    Conectar con Doctores
                   </Link>
-                );
-              })}
-              
-              <div className="border-t pt-4 mt-4">
-                <Link
-                  to="/constitutional-analysis"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100"
-                >
-                  <Brain size={20} />
-                  <span>{t('nav.constitutionalAnalysis')}</span>
-                </Link>
-                <Link
-                  to="/profile/progress"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-100"
-                >
-                  <Calendar size={20} />
-                  <span>{t('nav.progressTracking')}</span>
-                </Link>
-              </div>
-              
-              <div className="border-t pt-4 mt-4">
-                <div className="mb-4">
-                  <p className="text-sm text-gray-600 mb-2">{t('accessibility.language')}</p>
-                  <LanguageSelector />
-                </div>
-              </div>
-              
-              {!isAuthenticated && (
-                <div className="border-t pt-4 mt-4 space-y-2">
-                  <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button variant="outline" className="w-full">
-                      {t('nav.login')}
-                    </Button>
+                  <Link to="/lab-testing" className="block py-2 text-white/80 hover:text-white text-sm">
+                    Análisis de Laboratorio
                   </Link>
-                  <Link to="/register" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full">
-                      {t('nav.register')}
-                    </Button>
+                  <Link to="/constitutional-analysis" className="block py-2 text-white/80 hover:text-white text-sm">
+                    Análisis Constitucional
+                  </Link>
+                  <Link to="/community" className="block py-2 text-white/80 hover:text-white text-sm">
+                    Comunidad
+                  </Link>
+                  <Link to="/community/education" className="block py-2 text-white/80 hover:text-white text-sm">
+                    Educación en Salud
                   </Link>
                 </div>
               )}
-            </nav>
+            </div>
+            
+            {/* Quick Access Items Mobile */}
+            {quickAccessItems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 text-white/90 hover:text-white py-2 text-sm"
+                >
+                  <Icon size={18} />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+            
+            {/* Auth Mobile */}
+            {!isAuthenticated && (
+              <div className="border-t border-white/20 pt-2 space-y-2">
+                <Link 
+                  to="/login" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-white/90 hover:text-white py-2 text-sm"
+                >
+                  {t('nav.login')}
+                </Link>
+                <Link 
+                  to="/register" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-white/90 hover:text-white py-2 text-sm font-medium"
+                >
+                  {t('nav.register')}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -1,48 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 import AINavbar from './AINavbar';
-import AISidebar from './AISidebar';
 
 function DoctorLayout() {
-  const location = useLocation();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  
-  // Auto-collapse sidebar on mobile and when visiting /doctor route
-  useEffect(() => {
-    const isMobile = window.innerWidth < 1024;
-    const isDoctorRoute = location.pathname === '/doctor';
-    
-    if (isMobile || isDoctorRoute) {
-      setIsSidebarOpen(false);
-    }
-  }, [location.pathname]);
-
-  const handleSidebarToggle = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
   return (
     <div className="doctor-layout-container">
       {/* Navigation */}
-      <AINavbar 
-        onSidebarToggle={handleSidebarToggle}
-        isSidebarOpen={isSidebarOpen}
-      />
+      <AINavbar />
       
-      {/* Main content area with sidebar */}
-      <div className={`doctor-layout-content ${!isSidebarOpen ? 'sidebar-collapsed' : ''}`}>
-        {/* Sidebar */}
-        <div className={`sidebar-wrapper ${isSidebarOpen ? 'open' : 'collapsed'}`}>
-          <AISidebar 
-            isOpen={isSidebarOpen} 
-            onClose={closeSidebar}
-          />
-        </div>
-        
+      {/* Main content area */}
+      <div className="doctor-layout-content">
         {/* Main content */}
         <main className="flex-1 overflow-hidden">
           <Outlet />
