@@ -1,12 +1,12 @@
 [build]
-  command = "npm install && npm run build"
+  command = "rm -rf node_modules && npm install --force && npm run build"
   publish = "dist"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20.12.2"
   NODE_FETCH_TIMEOUT = "30000"
-  NPM_FLAGS = "--legacy-peer-deps"
+  NPM_FLAGS = "--legacy-peer-deps --force"
   # Build optimization variables
   FORCE_COLOR = "1"
   CI = "true"
@@ -14,11 +14,16 @@
   VITE_ENTRY = "/src/index.tsx"
   # Force production context
   CONTEXT = "production"
+  # Sharp configuration for Netlify
+  SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
+  npm_config_arch = "x64"
+  npm_config_platform = "linux"
+  npm_config_libc = "glibc"
 
 # EXPLICIT: Production deploy context for main branch
 [context.production]
   publish = "dist"
-  command = "npm ci && npm run build"
+  command = "rm -rf node_modules package-lock.json && npm install --force && npm run build"
   
 [context.production.environment]
   NODE_ENV = "production"
