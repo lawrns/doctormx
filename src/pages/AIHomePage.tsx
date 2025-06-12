@@ -103,6 +103,8 @@ function AIHomePage() {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isThinking, setIsThinking] = useState(false);
   const [chatInput, setChatInput] = useState('');
+  const [onlineDoctors, setOnlineDoctors] = useState(147);
+  const [todayConsults, setTodayConsults] = useState(3245);
   const { theme } = useTheme();
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -117,6 +119,15 @@ function AIHomePage() {
       }, 1000);
     }, 4000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Live metrics animation
+  useEffect(() => {
+    const metricsTimer = setInterval(() => {
+      setOnlineDoctors(prev => prev + Math.floor(Math.random() * 3) - 1);
+      setTodayConsults(prev => prev + Math.floor(Math.random() * 5));
+    }, 5000);
+    return () => clearInterval(metricsTimer);
   }, []);
 
   const handleChatSubmit = (e: React.FormEvent) => {
@@ -152,9 +163,9 @@ function AIHomePage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight"
                   >
-                    <span className="text-[#006D77]">Dr. Simeon</span>
+                    Encuentra al médico adecuado,
                     <br />
-                    Tu médico mexicano inteligente
+                    <span className="text-[#006D77]">fácilmente</span>
                   </motion.h1>
                   <motion.p 
                     initial={{ opacity: 0, y: 20 }}
@@ -162,16 +173,41 @@ function AIHomePage() {
                     transition={{ delay: 0.2 }}
                     className="text-lg leading-7 text-neutral-700 max-w-lg"
                   >
-                    Consulta médica personalizada con inteligencia artificial. 
-                    Diseñado específicamente para mexicanos, por mexicanos.
+                    Dr. Simeon, tu médico virtual disponible 24/7. 
+                    Consultas gratuitas con IA médica certificada.
                   </motion.p>
                 </div>
                 
-                {/* Enhanced Trust Indicators with improved layout */}
+                {/* Trust Badges */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
+                  className="flex flex-wrap gap-3"
+                >
+                  <div className="flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm font-medium">
+                    <Shield className="w-4 h-4" />
+                    Médicos Certificados
+                  </div>
+                  <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full text-sm font-medium">
+                    <Clock className="w-4 h-4" />
+                    Consulta 24/7
+                  </div>
+                  <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full text-sm font-medium">
+                    <MessageSquare className="w-4 h-4" />
+                    {todayConsults.toLocaleString()} consultas hoy
+                  </div>
+                  <div className="flex items-center gap-2 bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full text-sm font-medium">
+                    <Users className="w-4 h-4" />
+                    {onlineDoctors} doctores en línea
+                  </div>
+                </motion.div>
+
+                {/* Enhanced Trust Indicators with improved layout */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
                   className="flex items-center space-x-6"
                 >
                   <div className="flex items-center">
@@ -219,11 +255,11 @@ function AIHomePage() {
                     {/* Primary CTA - AI Doctor */}
                     <Link 
                       to="/doctor"
-                      className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
+                      className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 sm:px-8 py-4 text-lg sm:text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
                       aria-label="Iniciar consulta médica gratuita"
                     >
                       <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Consulta con Dr. Simeon (IA) - Gratis
+                      Hablar con un Doctor Ahora
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     
@@ -422,6 +458,118 @@ function AIHomePage() {
           </div>
         </section>
 
+        {/* Quick Services Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Nuestros Servicios</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Consulta Virtual */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-[1.02] cursor-pointer"
+                onClick={() => navigate('/doctor')}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-[#D0F0EF] rounded-lg flex items-center justify-center">
+                    <MessageSquare className="w-6 h-6 text-[#006D77]" />
+                  </div>
+                  <span className="text-sm text-gray-500">Respuesta inmediata</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Consulta Virtual</h3>
+                <p className="text-gray-600 text-sm mb-4">Habla con Dr. Simeon o un médico real por chat o video</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#006D77] font-semibold">Desde $0 MXN</span>
+                  <ArrowRight className="w-5 h-5 text-[#006D77]" />
+                </div>
+              </motion.div>
+
+              {/* Análisis de Imágenes */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-[1.02] cursor-pointer"
+                onClick={() => navigate('/image-analysis')}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-[#D0F0EF] rounded-lg flex items-center justify-center">
+                    <Activity className="w-6 h-6 text-[#006D77]" />
+                  </div>
+                  <span className="text-sm text-gray-500">Análisis en segundos</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Análisis de Imágenes</h3>
+                <p className="text-gray-600 text-sm mb-4">Sube fotos para diagnóstico visual con IA avanzada</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#006D77] font-semibold">Incluido gratis</span>
+                  <ArrowRight className="w-5 h-5 text-[#006D77]" />
+                </div>
+              </motion.div>
+
+              {/* Exámenes a Domicilio */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 hover:scale-[1.02] cursor-pointer"
+                onClick={() => navigate('/lab-testing')}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-[#D0F0EF] rounded-lg flex items-center justify-center">
+                    <Stethoscope className="w-6 h-6 text-[#006D77]" />
+                  </div>
+                  <span className="text-sm text-gray-500">A domicilio</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Exámenes a Domicilio</h3>
+                <p className="text-gray-600 text-sm mb-4">Laboratorios certificados van a tu casa u oficina</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#006D77] font-semibold">Desde $299 MXN</span>
+                  <ArrowRight className="w-5 h-5 text-[#006D77]" />
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Carousel */}
+        <section className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900">Lo que dicen nuestros pacientes</h2>
+            </div>
+            <div className="relative">
+              <motion.div
+                key={currentMessage % MEXICAN_TESTIMONIALS.length}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="bg-gradient-to-br from-[#D0F0EF] to-white p-8 rounded-2xl shadow-lg border border-[#006D77]/20"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex text-yellow-400">
+                    {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
+                  </div>
+                  <img src="/Doctorlogo.png" alt="DoctorMX" className="h-8 opacity-50" />
+                </div>
+                <p className="text-lg text-gray-700 mb-6 italic">
+                  "{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].text}"
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-[#006D77] rounded-full flex items-center justify-center text-white font-semibold">
+                    {MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div className="ml-4">
+                    <p className="font-semibold text-gray-900">{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].name}</p>
+                    <p className="text-sm text-gray-600">{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].location}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Enhanced Trust Metrics Section */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,50 +645,13 @@ function AIHomePage() {
           </div>
         </section>
 
-        {/* Mexican Health Context Section */}
+        {/* Mexican Health Context Section - Simplified */}
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                Especializado para México
+                Consulta rápida sobre síntomas comunes
               </h2>
-              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
-                Consulta rápidamente sobre los problemas de salud más comunes en México
-              </p>
-            </div>
-            
-            <div className="bg-green-50 p-8 rounded-2xl border border-green-200 mb-12">
-              <h3 className="font-bold text-green-800 mb-6 text-xl text-center">🇲🇽 Diseñado para mexicanos:</h3>
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                <ul className="space-y-3 text-green-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Medicamentos genéricos mexicanos
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Costos de IMSS/ISSSTE
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Farmacias cercanas
-                  </li>
-                </ul>
-                <ul className="space-y-3 text-green-700">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Médicos en tu estado
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Contexto cultural mexicano
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
-                    Enfoque familiar
-                  </li>
-                </ul>
-              </div>
             </div>
             
             {/* Common Mexican Health Issues */}
@@ -573,235 +684,35 @@ function AIHomePage() {
               </div>
             </div>
 
-            {/* New Services Section */}
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
-                Servicios Especializados:
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
-                {/* Constitutional Analysis */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
-                >
-                  <div className="h-full flex flex-col text-center">
-                    <div className="text-3xl mb-3">🧘‍♀️</div>
-                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Análisis Constitucional</h4>
-                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
-                      Descubre tu tipo constitucional ayurvédico y recibe recomendaciones personalizadas de hierbas y estilo de vida.
-                    </p>
-                    <Link
-                      to="/constitutional-analysis"
-                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
-                    >
-                      Comenzar Análisis
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </motion.div>
+          </div>
+        </section>
 
-                {/* Image Analysis */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
-                >
-                  <div className="h-full flex flex-col text-center">
-                    <div className="text-3xl mb-3">📱</div>
-                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Análisis de Imágenes Médicas</h4>
-                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
-                      Análisis médico avanzado: facial, ojos, lengua, piel, uñas y postura con IA de segunda generación.
-                    </p>
-                    <Link
-                      to="/advanced-image-analysis"
-                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
-                    >
-                      Analizar Imagen
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </motion.div>
-
-                {/* Lab Testing */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
-                >
-                  <div className="h-full flex flex-col text-center">
-                    <div className="text-3xl mb-3">🧪</div>
-                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Laboratorios</h4>
-                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
-                      Encuentra laboratorios cercanos y obtén interpretación de resultados médicos.
-                    </p>
-                    <Link
-                      to="/lab-testing"
-                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
-                    >
-                      Ver Laboratorios
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </motion.div>
-
-                {/* Progress Tracking */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
-                >
-                  <div className="h-full flex flex-col text-center">
-                    <div className="text-3xl mb-3">📊</div>
-                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Seguimiento de Progreso</h4>
-                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
-                      Monitorea síntomas, establece objetivos y recibe análisis inteligente de tu evolución.
-                    </p>
-                    <Link
-                      to="/profile/progress"
-                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
-                    >
-                      Ver Dashboard
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </motion.div>
-
-                {/* Protocol Timeline */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="h-80 bg-gradient-to-br from-[#D0F0EF]/30 to-[#006D77]/5 border-2 border-[#006D77]/20 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#006D77]/40"
-                >
-                  <div className="h-full flex flex-col text-center">
-                    <div className="text-3xl mb-3">📋</div>
-                    <h4 className="text-base font-semibold text-[#006D77] mb-3 leading-tight">Protocolos de Tratamiento</h4>
-                    <p className="text-xs text-gray-600 mb-4 flex-grow leading-relaxed">
-                      Planes estructurados día a día con hierbas, dieta y hábitos personalizados para tu condición.
-                    </p>
-                    <Link
-                      to="/profile/protocols"
-                      className="bg-[#006D77] text-white px-3 py-2 rounded-lg hover:bg-[#005B66] transition-colors inline-flex items-center justify-center gap-2 text-xs font-medium mt-auto"
-                    >
-                      Ver Protocolos
-                      <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </motion.div>
+        {/* Simple Pricing Banner */}
+        <section className="py-12 bg-gradient-to-br from-[#D0F0EF] to-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              Empieza gratis, mejora cuando quieras
+            </h2>
+            <div className="bg-white p-6 rounded-xl shadow-md border border-gray-200 inline-block">
+              <div className="flex items-center gap-8">
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">Plan Básico</p>
+                  <p className="text-3xl font-bold text-[#006D77]">Gratis</p>
+                  <p className="text-sm text-gray-600">5 consultas al mes</p>
+                </div>
+                <div className="text-gray-400">
+                  <ArrowRight className="w-8 h-8" />
+                </div>
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">Plan Familiar</p>
+                  <p className="text-3xl font-bold text-[#006D77]">$99 MXN</p>
+                  <p className="text-sm text-gray-600">Consultas ilimitadas</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing Section */}
-        <section className="py-16 bg-gradient-to-br from-[#D0F0EF] to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                Precios justos para familias mexicanas
-              </h2>
-              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
-                Sin sorpresas, sin letra pequeña. Transparencia total.
-              </p>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-              {PRICING_TIERS.map((tier, index) => (
-                <motion.div
-                  key={tier.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className={`bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] border-2 ${
-                    index === 1 ? 'border-[#006D77] relative' : 'border-gray-200'
-                  }`}
-                >
-                  {index === 1 && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-[#006D77] text-white px-4 py-2 rounded-full text-sm font-medium">
-                        🔥 Más Popular
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{tier.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-[#006D77]">{tier.price}</span>
-                      {tier.period && <span className="text-gray-600 ml-1">/{tier.period}</span>}
-                    </div>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <CheckCircle className="w-5 h-5 text-[#006D77] mr-3" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/doctor"
-                    className={`w-full py-3 px-6 rounded-xl font-medium transition-all duration-200 hover:scale-[1.02] inline-flex items-center justify-center ${
-                      index === 1
-                        ? 'bg-[#006D77] text-white hover:bg-[#005B66] shadow-lg'
-                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
-                  >
-                    {index === 0 ? 'Empezar Gratis' : 'Elegir Premium'}
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Mexican Testimonials Section */}
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                Lo que dicen los mexicanos
-              </h2>
-              <p className="text-lg leading-7 text-neutral-700 max-w-2xl mx-auto">
-                Testimonios reales de familias mexicanas que confían en Dr. Simeon
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {MEXICAN_TESTIMONIALS.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-[#D0F0EF] to-white p-4 sm:p-6 rounded-xl border border-[#006D77]/20 hover:shadow-lg transition-all duration-200"
-                >
-                  <div className="flex text-yellow-400 mb-4">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-[#006D77] rounded-full flex items-center justify-center text-white font-semibold">
-                      {testimonial.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                    <div className="ml-3">
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.location}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
         
         {/* Enhanced Sponsors Section */}
         <section className="bg-white py-12 border-t border-gray-100">
@@ -828,88 +739,40 @@ function AIHomePage() {
           </div>
         </section>
 
-        {/* Enhanced Security & Privacy Section */}
-        <section className="bg-gray-900 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-extrabold mb-6 tracking-tight">
-                  Tu privacidad es nuestra prioridad
-                </h2>
-                <p className="text-gray-300 text-lg leading-7 mb-8">
-                  Cumplimos con todas las leyes mexicanas de protección de datos y utilizamos los más altos estándares de seguridad.
-                </p>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <Lock className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Cifrado AES-256 de grado militar</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Shield className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Cumplimiento LFPDPPP (Ley Federal de Protección de Datos Personales)</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Award className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Servidores ubicados en México</span>
-                  </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-6 h-6 text-[#006D77] mr-3" />
-                    <span>Datos nunca salen del territorio mexicano</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl border border-gray-700">
-                <div className="text-center">
-                  <Shield className="w-16 h-16 text-[#006D77] mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-4">100% Confidencial</h3>
-                  <p className="text-gray-300 mb-4">
-                    Tus datos médicos nunca se comparten sin tu consentimiento explícito.
-                  </p>
-                  <div className="bg-amber-900/30 border border-amber-700 rounded-lg p-4">
-                    <p className="text-sm text-amber-200">
-                      <strong>AVISO MÉDICO:</strong> Dr. Simeon proporciona orientación educativa. 
-                      En emergencias, contacte 911 o Cruz Roja (065). Cumplimos con NOM-004-SSA3-2012.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
 
 
-        {/* Enhanced Final CTA */}
-        <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-16">
+        {/* Simple Final CTA */}
+        <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-12 mb-16 md:mb-0">
           <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-extrabold mb-6 tracking-tight">
-              ¿Listo para tu primera consulta con Dr. Simeon?
+            <h2 className="text-3xl font-bold mb-4">
+              ¿Listo para empezar?
             </h2>
-            <p className="text-xl text-[#D0F0EF] mb-8">
-              Únete a miles de mexicanos que ya confían en nuestra plataforma médica inteligente.
+            <p className="text-lg text-[#D0F0EF] mb-6">
+              Habla con Dr. Simeon ahora mismo
             </p>
-            
-            <div className="space-y-4">
-              <Link 
-                to="/doctor"
-                className="bg-white text-[#006D77] hover:bg-gray-100 px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
-                aria-label="Comenzar consulta médica gratuita"
-              >
-                <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                Comenzar consulta gratuita
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-              <p className="text-[#D0F0EF] text-sm">
-                Sin compromisos • Sin tarjeta de crédito • Respuesta inmediata
-              </p>
-            </div>
+            <Link 
+              to="/doctor"
+              className="bg-white text-[#006D77] hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] inline-flex items-center justify-center"
+            >
+              <MessageSquare className="w-5 h-5 mr-2" />
+              Comenzar consulta gratuita
+            </Link>
           </div>
         </section>
 
       </main>
+
+      {/* Mobile Sticky CTA */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden z-50">
+        <Link 
+          to="/doctor"
+          className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 group inline-flex items-center justify-center"
+        >
+          <MessageSquare className="w-5 h-5 mr-2" />
+          Hablar con Dr. Simeon
+        </Link>
+      </div>
       
       {/* Onboarding for new users */}
       <Onboarding />
