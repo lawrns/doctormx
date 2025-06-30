@@ -1,0 +1,219 @@
+{
+  "project": {
+    "name": "DoctorMX Video Consultation Implementation",
+    "version": "1.0.0",
+    "phase": "1.1-requirements-analysis",
+    "startDate": "2025-06-30",
+    "estimatedDuration": "3 days",
+    "status": "setup-complete"
+  },
+  "team": {
+    "projectManager": {
+      "role": "Project Manager",
+      "responsibilities": ["Overall coordination", "Timeline management", "Stakeholder communication"],
+      "assignedCategories": ["G"]
+    },
+    "uxResearcher": {
+      "role": "UX Researcher", 
+      "responsibilities": ["User research", "Persona development", "Journey mapping"],
+      "assignedCategories": ["A", "D"]
+    },
+    "technicalArchitect": {
+      "role": "Technical Architect",
+      "responsibilities": ["Technical feasibility", "Architecture analysis", "Integration planning"],
+      "assignedCategories": ["E"]
+    },
+    "businessAnalyst": {
+      "role": "Business Analyst",
+      "responsibilities": ["Market analysis", "Business model", "Financial planning"],
+      "assignedCategories": ["C"]
+    },
+    "medicalSpecialist": {
+      "role": "Medical/Legal Specialist",
+      "responsibilities": ["Medical protocols", "Regulatory compliance", "Legal requirements"],
+      "assignedCategories": ["B", "F"]
+    }
+  },
+  "phases": {
+    "1.1": {
+      "name": "Requirements Analysis",
+      "duration": "3 days",
+      "totalTasks": 25,
+      "totalEffort": "75 hours",
+      "categories": {
+        "A": {
+          "name": "Stakeholder Analysis",
+          "tasks": 3,
+          "effort": "16 hours",
+          "priority": "Alta",
+          "owner": "uxResearcher"
+        },
+        "B": {
+          "name": "Medical Services Definition", 
+          "tasks": 3,
+          "effort": "9 hours",
+          "priority": "Alta",
+          "owner": "medicalSpecialist"
+        },
+        "C": {
+          "name": "Business Model & Pricing",
+          "tasks": 3, 
+          "effort": "10 hours",
+          "priority": "Alta",
+          "owner": "businessAnalyst"
+        },
+        "D": {
+          "name": "User Experience",
+          "tasks": 3,
+          "effort": "11 hours", 
+          "priority": "Alta",
+          "owner": "uxResearcher"
+        },
+        "E": {
+          "name": "Technical Requirements",
+          "tasks": 4,
+          "effort": "11 hours",
+          "priority": "Alta", 
+          "owner": "technicalArchitect"
+        },
+        "F": {
+          "name": "Security & Compliance",
+          "tasks": 3,
+          "effort": "10 hours",
+          "priority": "Crítica",
+          "owner": "medicalSpecialist"
+        },
+        "G": {
+          "name": "Risk & Viability Analysis",
+          "tasks": 3,
+          "effort": "8 hours",
+          "priority": "Alta",
+          "owner": "projectManager"
+        }
+      }
+    }
+  },
+  "deliverables": {
+    "masterRequirementsDocument": {
+      "name": "Master Requirements Document",
+      "description": "Consolidated requirements analysis",
+      "format": "Markdown",
+      "location": "docs/video-consultation/deliverables/master-requirements.md",
+      "dependencies": ["All category deliverables"],
+      "approver": "Project Manager"
+    },
+    "implementationRoadmap": {
+      "name": "Refined Implementation Roadmap", 
+      "description": "Updated timeline based on requirements",
+      "format": "Markdown + Gantt",
+      "location": "docs/video-consultation/deliverables/implementation-roadmap.md",
+      "dependencies": ["Technical and business analysis"],
+      "approver": "Technical Architect"
+    },
+    "technicalDecisions": {
+      "name": "Technical Decisions Matrix",
+      "description": "Key technical decisions with justification",
+      "format": "Markdown",
+      "location": "docs/video-consultation/deliverables/technical-decisions.md", 
+      "dependencies": ["Category E deliverables"],
+      "approver": "Technical Architect"
+    }
+  },
+  "integrationPoints": {
+    "authentication": {
+      "currentSystem": "Supabase Auth + profiles",
+      "modifications": ["Extend user profiles", "Add doctor verification", "Role-based access"],
+      "files": ["src/contexts/AuthContext.tsx", "src/types/auth.ts", "src/services/auth/AuthService.ts"]
+    },
+    "navigation": {
+      "currentSystem": "React Router DOM",
+      "modifications": ["Add video consultation routes", "Protected routes", "Update navigation"],
+      "files": ["src/App.tsx", "src/components/navigation/", "src/pages/"]
+    },
+    "database": {
+      "currentSystem": "Supabase PostgreSQL",
+      "modifications": ["New tables: doctors, appointments, payments", "Extend profiles table"],
+      "migrations": ["001_add_doctors_table.sql", "002_add_appointments_table.sql", "003_add_payments_table.sql"]
+    },
+    "ui": {
+      "currentSystem": "Custom components + Tailwind CSS",
+      "modifications": ["Video-specific components", "Extend design system", "Responsive patterns"],
+      "files": ["src/components/ui/", "src/styles/responsive-fixes.css"]
+    }
+  },
+  "validation": {
+    "stages": ["self-validation", "peer-review", "stakeholder-approval"],
+    "approvers": {
+      "A": "Product Manager",
+      "B": "Medical Specialist", 
+      "C": "Business Lead",
+      "D": "UX Lead",
+      "E": "Technical Architect",
+      "F": "Legal Specialist",
+      "G": "Project Manager"
+    },
+    "criteria": {
+      "completeness": "All sections filled with meaningful content",
+      "accuracy": "Information is factual and up-to-date", 
+      "actionability": "Insights lead to clear next steps",
+      "compliance": "Meets regulatory and legal requirements"
+    }
+  },
+  "tools": {
+    "documentation": "Markdown files",
+    "tracking": "JSON + Markdown dashboard",
+    "collaboration": "Git-based workflow",
+    "validation": "Structured checklists",
+    "ai-assistance": "Augment for content generation"
+  },
+  "schedule": {
+    "day1": {
+      "focus": "Categories A, B, C",
+      "morning": ["A.1 Stakeholder Mapping"],
+      "afternoon": ["A.2 Patient Research", "A.3 Doctor Research"],
+      "evening": ["B.1-B.3 Medical Services", "C.1-C.3 Business Model"]
+    },
+    "day2": {
+      "focus": "Categories D, E",
+      "morning": ["D.1 Patient Journey", "D.2 Doctor Journey"],
+      "afternoon": ["E.1 Architecture", "E.2 Video Quality", "E.3 Provider Evaluation"],
+      "evening": ["D.3 Use Cases", "E.4 Device Compatibility"]
+    },
+    "day3": {
+      "focus": "Categories F, G + Validation",
+      "morning": ["F.1 Regulatory", "G.1 Technical Risks"],
+      "afternoon": ["F.2 Security", "F.3 Legal", "G.2 Financial"],
+      "evening": ["G.3 Market Adoption", "Final validation"]
+    }
+  },
+  "successCriteria": {
+    "taskCompletion": "100% of tasks completed with acceptance criteria met",
+    "stakeholderValidation": "All critical requirements validated by stakeholders",
+    "legalApproval": "Regulatory compliance confirmed by legal specialist",
+    "technicalFeasibility": "Technical feasibility confirmed by architect",
+    "businessCase": "Business case approved by management"
+  },
+  "risks": {
+    "legalSpecialistAvailability": {
+      "probability": "Medium",
+      "impact": "High", 
+      "mitigation": "Secure legal specialist commitment early"
+    },
+    "userAccessForValidation": {
+      "probability": "Medium",
+      "impact": "Medium",
+      "mitigation": "Prepare alternative validation methods"
+    },
+    "technicalComplexity": {
+      "probability": "Low",
+      "impact": "High",
+      "mitigation": "Technical architect dedicated to project"
+    }
+  },
+  "metadata": {
+    "created": "2025-06-30T12:30:00Z",
+    "lastUpdated": "2025-06-30T12:30:00Z",
+    "version": "1.0.0",
+    "configOwner": "Project Manager"
+  }
+}

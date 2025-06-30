@@ -310,3 +310,1453 @@ header[class*="bg-[#006D77]"] a[href="/register"] button:hover {
     -webkit-backface-visibility: hidden;
   }
 }
+
+/* ========================================
+   AIHomePage Mobile Responsiveness Fixes
+   ======================================== */
+
+/* Phase 1: Critical Fixes - Hero Section */
+@media (max-width: 375px) {
+  .aihomepage-hero-title {
+    font-size: 2rem !important; /* 32px */
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .aihomepage-hero-subtitle-text {
+    font-size: 1.5rem !important; /* 24px */
+    line-height: 1.3 !important;
+  }
+
+  .aihomepage-hero-subtitle {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (max-width: 428px) {
+  .aihomepage-hero-title {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 1.2 !important;
+  }
+
+  .aihomepage-hero-subtitle-text {
+    font-size: 1.75rem !important; /* 28px */
+    line-height: 1.3 !important;
+  }
+
+  .aihomepage-hero-subtitle {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.5 !important;
+  }
+}
+
+/* Phase 1: Critical Fixes - Trust Indicators */
+@media (max-width: 767px) {
+  .aihomepage-trust-indicators {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    text-align: center !important;
+  }
+
+  .aihomepage-trust-text {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .aihomepage-trust-badges {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .aihomepage-trust-badge {
+    font-size: 0.875rem !important; /* 14px */
+    white-space: nowrap !important;
+  }
+}
+
+/* Phase 1: Critical Fixes - Chat Interface */
+@media (max-width: 767px) {
+  .aihomepage-chat-container {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+  }
+
+  .aihomepage-chat-message {
+    font-size: 0.875rem !important; /* 14px */
+    padding: 0.75rem !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .aihomepage-chat-container {
+    padding: 0.75rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .aihomepage-chat-message {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    padding: 1rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+/* Phase 2: High Impact Improvements - CTA Buttons */
+@media (max-width: 767px) {
+  .aihomepage-cta-buttons {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .aihomepage-touch-target {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+  }
+}
+
+/* Phase 2: High Impact Improvements - Services Grid */
+@media (max-width: 767px) {
+  .aihomepage-services-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .aihomepage-service-card {
+    height: auto !important;
+    min-height: 200px !important;
+    padding: 1.5rem !important;
+  }
+
+  .aihomepage-service-description {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .aihomepage-service-card {
+    padding: 1rem !important;
+    min-height: 180px !important;
+  }
+
+  .aihomepage-service-description {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.5 !important;
+  }
+}
+
+/* Phase 2: High Impact Improvements - Testimonials */
+@media (max-width: 767px) {
+  .aihomepage-testimonial-card {
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .aihomepage-testimonial-text {
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .aihomepage-testimonial-text {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.6 !important;
+  }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 767px) {
+  /* Improve spacing for mobile */
+  .aihomepage-hero-title {
+    text-align: center !important;
+  }
+
+  .aihomepage-hero-subtitle {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Ensure proper touch targets for all interactive elements */
+  .aihomepage-touch-target:focus {
+    outline: 2px solid #006D77 !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Prevent horizontal scrolling */
+  .aihomepage-chat-container,
+  .aihomepage-service-card,
+  .aihomepage-testimonial-card {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (max-width: 767px) {
+  /* Ensure sufficient color contrast */
+  .aihomepage-trust-badge {
+    color: #374151 !important; /* Darker gray for better contrast */
+  }
+
+  /* Improve focus indicators */
+  .aihomepage-touch-target:focus-visible {
+    outline: 3px solid #006D77 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 6px rgba(0, 109, 119, 0.2) !important;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 767px) {
+  /* Reduce motion for better performance */
+  .aihomepage-service-card,
+  .aihomepage-testimonial-card {
+    transition: none !important;
+  }
+
+  /* Optimize animations */
+  .aihomepage-service-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Phase 3: Additional Section Optimizations */
+
+/* Pricing Section Mobile */
+@media (max-width: 640px) {
+  .aihomepage-pricing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* Sponsors Section Mobile */
+@media (max-width: 767px) {
+  .aihomepage-sponsors-mobile {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .aihomepage-sponsors-mobile > div {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+  }
+}
+
+/* Emergency Banner Mobile Optimization */
+@media (max-width: 767px) {
+  .bg-red-500.text-white.p-3 {
+    padding: 1rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .bg-red-500.text-white.p-3 {
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    text-align: center !important;
+  }
+}
+
+/* Final Mobile Polish */
+@media (max-width: 767px) {
+  /* Ensure all sections have proper mobile spacing */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Improve readability of all text elements */
+  h2, h3, h4 {
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Ensure proper spacing for mobile content */
+  .max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ========================================
+   Feature Cards Icon Centering Fixes
+   ======================================== */
+
+/* Ensure feature card icons are perfectly centered */
+.aihomepage-feature-icon-container {
+  /* Force horizontal centering */
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  /* Ensure flexbox centering is applied */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* Maintain consistent positioning */
+  position: relative !important;
+}
+
+.aihomepage-feature-icon {
+  /* Center the icon within its container */
+  display: block !important;
+  margin: 0 auto !important;
+
+  /* Ensure icon doesn't shift during animations */
+  transform-origin: center !important;
+}
+
+/* Responsive centering for all viewport sizes */
+@media (max-width: 767px) {
+  .aihomepage-feature-icon-container {
+    /* Ensure centering on mobile */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 4rem !important; /* 64px - maintain consistent size */
+    height: 4rem !important; /* 64px - maintain consistent size */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aihomepage-feature-icon-container {
+    /* Ensure centering on tablet */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aihomepage-feature-icon-container {
+    /* Ensure centering on desktop */
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Preserve hover animations while maintaining centering */
+.group:hover .aihomepage-feature-icon-container {
+  /* Maintain center position during hover scale */
+  transform-origin: center !important;
+}
+
+.group:hover .aihomepage-feature-icon {
+  /* Ensure icon stays centered during parent scale */
+  transform-origin: center !important;
+}
+
+/* ========================================
+   Feature Cards Content Centering
+   ======================================== */
+
+/* Center all content elements within feature cards */
+.aihomepage-feature-content {
+  /* Center all child elements */
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+/* Center the highlight badge */
+.aihomepage-feature-badge-container {
+  /* Center the badge container */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.aihomepage-feature-badge {
+  /* Ensure badge is centered and maintains its styling */
+  display: inline-block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center the feature title */
+.aihomepage-feature-title {
+  /* Center title text */
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  /* Maintain proper spacing */
+  margin-bottom: 0.75rem !important;
+
+  /* Ensure consistent width for better centering */
+  width: 100% !important;
+}
+
+/* Center the feature description */
+.aihomepage-feature-description {
+  /* Center description text */
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  /* Maintain readability with proper line height */
+  line-height: 1.6 !important;
+
+  /* Ensure consistent width */
+  width: 100% !important;
+}
+
+/* Responsive centering for feature card content */
+@media (max-width: 767px) {
+  .aihomepage-feature-content {
+    /* Enhanced mobile centering */
+    text-align: center !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .aihomepage-feature-title {
+    /* Mobile title centering */
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.4 !important;
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .aihomepage-feature-description {
+    /* Mobile description centering and readability */
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.6 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+  }
+
+  .aihomepage-feature-badge {
+    /* Mobile badge centering */
+    font-size: 0.75rem !important; /* 12px */
+    padding: 0.25rem 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .aihomepage-feature-title {
+    /* iPhone SE title optimization */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.3 !important;
+  }
+
+  .aihomepage-feature-description {
+    /* iPhone SE description optimization */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.5 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .aihomepage-feature-content {
+    /* Tablet centering */
+    text-align: center !important;
+    padding: 0 1rem !important;
+  }
+
+  .aihomepage-feature-title {
+    /* Tablet title centering */
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .aihomepage-feature-description {
+    /* Tablet description centering */
+    text-align: center !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aihomepage-feature-content {
+    /* Desktop centering */
+    text-align: center !important;
+    padding: 0 1.5rem !important;
+  }
+
+  .aihomepage-feature-title {
+    /* Desktop title centering */
+    text-align: center !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .aihomepage-feature-description {
+    /* Desktop description centering */
+    text-align: center !important;
+    max-width: 85% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ========================================
+   Feature Cards Animation & Polish
+   ======================================== */
+
+/* Preserve all existing animations while maintaining centering */
+.group:hover .aihomepage-feature-content {
+  /* Maintain center alignment during card hover */
+  text-align: center !important;
+  transform-origin: center !important;
+}
+
+.group:hover .aihomepage-feature-title,
+.group:hover .aihomepage-feature-description,
+.group:hover .aihomepage-feature-badge {
+  /* Maintain center alignment during hover animations */
+  text-align: center !important;
+  transform-origin: center !important;
+}
+
+/* Enhanced visual hierarchy while maintaining centering */
+.aihomepage-feature-badge {
+  /* Ensure badge stands out while centered */
+  box-shadow: 0 1px 3px rgba(0, 109, 119, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.group:hover .aihomepage-feature-badge {
+  /* Subtle badge enhancement on card hover */
+  box-shadow: 0 2px 6px rgba(0, 109, 119, 0.15) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Ensure proper spacing and alignment consistency */
+.aihomepage-feature-content > * {
+  /* Apply consistent centering to all child elements */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Final accessibility and readability enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .aihomepage-feature-badge,
+  .group:hover .aihomepage-feature-badge {
+    /* Respect user motion preferences */
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .aihomepage-feature-badge {
+    /* Enhanced contrast for accessibility */
+    border: 1px solid #006D77 !important;
+  }
+
+  .aihomepage-feature-title {
+    /* Enhanced title contrast */
+    color: #000000 !important;
+  }
+}
+
+/* ========================================
+   Enhanced Mexican Health Context Section
+   ======================================== */
+
+/* Main container styling */
+.mexican-features-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Feature cards grid styling */
+.mexican-feature-card {
+  /* Enhanced card styling */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(0, 109, 119, 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.mexican-feature-card::before {
+  /* Subtle gradient overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #006D77, #007B8A);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mexican-feature-card:hover::before {
+  opacity: 1;
+}
+
+.mexican-feature-card:hover {
+  /* Enhanced hover effects */
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(0, 109, 119, 0.15) !important;
+  border-color: rgba(0, 109, 119, 0.2) !important;
+}
+
+/* Icon container styling */
+.mexican-feature-card .w-12.h-12 {
+  /* Enhanced icon containers */
+  background: linear-gradient(135deg, #D0F0EF 0%, rgba(0, 109, 119, 0.1) 100%) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 109, 119, 0.1) !important;
+}
+
+.mexican-feature-card:hover .w-12.h-12 {
+  /* Icon hover effects */
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 4px 16px rgba(0, 109, 119, 0.2) !important;
+}
+
+/* Typography enhancements */
+.mexican-feature-card h4 {
+  /* Feature card titles */
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.mexican-feature-card p {
+  /* Feature card descriptions */
+  color: #6b7280 !important;
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Responsive design for Mexican features section */
+@media (max-width: 767px) {
+  .mexican-features-container {
+    /* Mobile container adjustments */
+    margin-bottom: 2rem !important;
+  }
+
+  .mexican-features-container .bg-gradient-to-br {
+    /* Mobile main container */
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .mexican-feature-card {
+    /* Mobile feature cards */
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .mexican-feature-card h4 {
+    /* Mobile card titles */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.3 !important;
+  }
+
+  .mexican-feature-card p {
+    /* Mobile card descriptions */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.5 !important;
+  }
+
+  /* Mobile grid adjustments */
+  .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .mexican-features-container .bg-gradient-to-br {
+    /* iPhone SE adjustments */
+    padding: 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .mexican-feature-card {
+    /* iPhone SE cards */
+    padding: 0.75rem !important;
+  }
+
+  .mexican-feature-card .w-12.h-12 {
+    /* iPhone SE icons */
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet optimizations */
+  .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .mexican-feature-card {
+    /* Tablet cards */
+    padding: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop optimizations */
+  .grid.md\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  .mexican-feature-card {
+    /* Desktop cards */
+    padding: 1.5rem !important;
+  }
+}
+
+/* Advanced visual effects for Mexican section */
+.mexican-features-container .bg-gradient-to-br {
+  /* Enhanced main container styling */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  position: relative !important;
+}
+
+.mexican-features-container .bg-gradient-to-br::before {
+  /* Subtle pattern overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(0, 109, 119, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 123, 138, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mexican-features-container .relative {
+  /* Ensure content is above pattern */
+  z-index: 2;
+  position: relative;
+}
+
+/* Enhanced section header styling */
+.mexican-features-container h2 span {
+  /* Animated text gradient */
+  background: linear-gradient(135deg, #006D77, #007B8A, #006D77);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .mexican-feature-card,
+  .mexican-feature-card .w-12.h-12,
+  .mexican-features-container h2 span {
+    /* Disable animations for users who prefer reduced motion */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .mexican-feature-card:hover {
+    /* Simplified hover for reduced motion */
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 109, 119, 0.15) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mexican-feature-card {
+    /* Enhanced contrast */
+    border: 2px solid #006D77 !important;
+    background: #ffffff !important;
+  }
+
+  .mexican-feature-card h4 {
+    /* High contrast titles */
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .mexican-feature-card p {
+    /* High contrast descriptions */
+    color: #333333 !important;
+  }
+}
+
+/* Focus indicators for accessibility */
+.mexican-feature-card:focus-within {
+  /* Enhanced focus state */
+  outline: 3px solid #006D77 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 6px rgba(0, 109, 119, 0.2) !important;
+}
+
+/* Print styles */
+@media print {
+  .mexican-features-container {
+    /* Print-friendly styling */
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  .mexican-feature-card {
+    /* Print-friendly cards */
+    background: white !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+  }
+}
+
+/* ========================================
+   Enhanced Common Symptoms Section (Display Only)
+   ======================================== */
+
+/* Main symptoms container styling */
+.common-symptoms-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Individual symptom card styling (display only) */
+.common-symptom-card {
+  /* Enhanced card base styling - visual display only */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: default !important;
+  min-height: 80px !important;
+}
+
+.common-symptom-card::before {
+  /* Subtle gradient border effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.common-symptom-card:hover::before {
+  opacity: 0.3;
+}
+
+/* Enhanced hover effects */
+.common-symptom-card:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Urgent symptom cards specific styling */
+.common-symptom-card:hover.border-red-200 {
+  box-shadow: 0 20px 40px rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Regular symptom cards specific styling */
+.common-symptom-card:hover.border-\\[\\#006D77\\]\\/20 {
+  box-shadow: 0 20px 40px rgba(0, 109, 119, 0.15) !important;
+}
+
+/* Icon container enhancements */
+.common-symptom-card .w-16.h-16 {
+  /* Enhanced icon styling */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.common-symptom-card:hover .w-16.h-16 {
+  /* Icon hover effects */
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Typography enhancements */
+.common-symptom-card h4 {
+  /* Symptom titles */
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.common-symptom-card p {
+  /* Symptom descriptions */
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.3s ease !important;
+}
+
+.common-symptom-card:hover p {
+  opacity: 1 !important;
+}
+
+/* Arrow indicator styling */
+.common-symptom-card .w-8.h-8 {
+  /* Arrow container */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.common-symptom-card:hover .w-8.h-8 {
+  /* Arrow hover effect */
+  transform: translateX(4px) scale(1.1) !important;
+}
+
+/* Responsive design for common symptoms section */
+@media (max-width: 767px) {
+  .common-symptoms-container {
+    /* Mobile container adjustments */
+    margin-bottom: 2rem !important;
+  }
+
+  .common-symptoms-container .bg-gradient-to-br {
+    /* Mobile main container */
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .common-symptom-card {
+    /* Mobile symptom cards */
+    padding: 1rem !important;
+    min-height: 70px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  .common-symptom-card .w-16.h-16 {
+    /* Mobile icon containers */
+    width: 3rem !important;
+    height: 3rem !important;
+    margin-right: 0.75rem !important;
+  }
+
+  .common-symptom-card h4 {
+    /* Mobile card titles */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.3 !important;
+  }
+
+  .common-symptom-card p {
+    /* Mobile card descriptions */
+    font-size: 0.875rem !important; /* 14px */
+    line-height: 1.4 !important;
+  }
+
+  /* Mobile grid adjustments */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .common-symptoms-container .bg-gradient-to-br {
+    /* iPhone SE adjustments */
+    padding: 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .common-symptom-card {
+    /* iPhone SE cards */
+    padding: 0.75rem !important;
+    min-height: 64px !important;
+  }
+
+  .common-symptom-card .w-16.h-16 {
+    /* iPhone SE icons */
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .common-symptom-card h4 {
+    /* iPhone SE titles */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+  }
+
+  .common-symptom-card p {
+    /* iPhone SE descriptions */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.3 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet optimizations */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .common-symptom-card {
+    /* Tablet cards */
+    padding: 1.25rem !important;
+    min-height: 75px !important;
+  }
+
+  .common-symptom-card .w-16.h-16 {
+    /* Tablet icons */
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop optimizations */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .common-symptom-card {
+    /* Desktop cards */
+    padding: 1.5rem !important;
+    min-height: 80px !important;
+  }
+
+  .common-symptom-card .w-16.h-16 {
+    /* Desktop icons */
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+}
+
+/* Advanced visual effects for symptoms section */
+.common-symptoms-container .bg-gradient-to-br {
+  /* Enhanced main container styling */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  position: relative !important;
+}
+
+.common-symptoms-container .bg-gradient-to-br::before {
+  /* Subtle pattern overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 30% 70%, rgba(0, 109, 119, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 30%, rgba(239, 68, 68, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.common-symptoms-container .relative {
+  /* Ensure content is above pattern */
+  z-index: 2;
+  position: relative;
+}
+
+/* Urgent indicator animation */
+@keyframes urgentPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.common-symptom-card .animate-pulse {
+  animation: urgentPulse 2s ease-in-out infinite !important;
+}
+
+/* Enhanced section header styling */
+.common-symptoms-container h3 span {
+  /* Animated text gradient */
+  background: linear-gradient(135deg, #006D77, #007B8A, #006D77);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Display card enhancements for mobile */
+@media (max-width: 767px) {
+  .common-symptom-card {
+    /* Maintain minimum height for visual consistency */
+    min-height: 44px !important;
+  }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .common-symptom-card,
+  .common-symptom-card .w-16.h-16,
+  .common-symptom-card .w-8.h-8,
+  .common-symptoms-container h3 span,
+  .common-symptom-card .animate-pulse {
+    /* Disable animations for users who prefer reduced motion */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .common-symptom-card:hover {
+    /* Simplified hover for reduced motion */
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .common-symptom-card {
+    /* Enhanced contrast */
+    border-width: 2px !important;
+    background: #ffffff !important;
+  }
+
+  .common-symptom-card.border-red-200 {
+    /* High contrast urgent cards */
+    border-color: #dc2626 !important;
+    background: #fef2f2 !important;
+  }
+
+  .common-symptom-card h4 {
+    /* High contrast titles */
+    font-weight: 700 !important;
+  }
+
+  .common-symptom-card p {
+    /* High contrast descriptions */
+    opacity: 1 !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* Visual enhancement indicators (no longer interactive) */
+.common-symptom-card:hover {
+  /* Enhanced visual feedback on hover */
+  outline: none !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Print styles */
+@media print {
+  .common-symptoms-container {
+    /* Print-friendly styling */
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  .common-symptom-card {
+    /* Print-friendly cards */
+    background: white !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+  }
+
+  .common-symptom-card .animate-pulse {
+    /* Remove animations in print */
+    animation: none !important;
+  }
+}
+
+/* ========================================
+   Enhanced Specialized Services Section
+   ======================================== */
+
+/* Main specialized services container styling */
+.specialized-services-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Individual specialized service card styling */
+.specialized-service-card {
+  /* Enhanced card base styling */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(0, 109, 119, 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.specialized-service-card::before {
+  /* Subtle gradient overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #006D77, #007B8A);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.specialized-service-card:hover::before {
+  opacity: 1;
+}
+
+.specialized-service-card:hover {
+  /* Enhanced hover effects */
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(0, 109, 119, 0.15) !important;
+  border-color: rgba(0, 109, 119, 0.2) !important;
+}
+
+/* Icon container styling */
+.specialized-service-card .w-12.h-12 {
+  /* Enhanced icon containers */
+  background: linear-gradient(135deg, #D0F0EF 0%, rgba(0, 109, 119, 0.1) 100%) !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 109, 119, 0.1) !important;
+}
+
+.specialized-service-card:hover .w-12.h-12 {
+  /* Icon hover effects */
+  transform: scale(1.1) rotate(5deg) !important;
+  box-shadow: 0 4px 16px rgba(0, 109, 119, 0.2) !important;
+}
+
+/* Typography enhancements */
+.specialized-service-card h4 {
+  /* Service card titles */
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  font-size: 1.125rem !important; /* 18px */
+  line-height: 1.4 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.specialized-service-card p {
+  /* Service card descriptions */
+  color: #6b7280 !important;
+  font-size: 0.875rem !important; /* 14px */
+  line-height: 1.6 !important;
+}
+
+/* Button styling */
+.specialized-service-button {
+  /* Enhanced button styling */
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 8px rgba(0, 109, 119, 0.2) !important;
+}
+
+.specialized-service-button:hover {
+  /* Button hover effects */
+  transform: scale(1.02) !important;
+  box-shadow: 0 4px 16px rgba(0, 109, 119, 0.3) !important;
+}
+
+/* Responsive design for specialized services section */
+@media (max-width: 767px) {
+  .specialized-services-container {
+    /* Mobile container adjustments */
+    margin-bottom: 2rem !important;
+  }
+
+  .specialized-services-container .bg-gradient-to-br {
+    /* Mobile main container */
+    padding: 1.5rem !important;
+    border-radius: 1.5rem !important;
+  }
+
+  .specialized-service-card {
+    /* Mobile service cards */
+    padding: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .specialized-service-card h4 {
+    /* Mobile card titles */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.3 !important;
+  }
+
+  .specialized-service-card p {
+    /* Mobile card descriptions */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    line-height: 1.5 !important;
+  }
+
+  .specialized-service-button {
+    /* Mobile buttons */
+    font-size: 0.875rem !important; /* 14px */
+    padding: 0.75rem 1rem !important;
+    min-height: 44px !important;
+  }
+
+  /* Mobile grid adjustments */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .specialized-services-container .bg-gradient-to-br {
+    /* iPhone SE adjustments */
+    padding: 1rem !important;
+    margin: 0 0.5rem !important;
+  }
+
+  .specialized-service-card {
+    /* iPhone SE cards */
+    padding: 0.75rem !important;
+  }
+
+  .specialized-service-card .w-12.h-12 {
+    /* iPhone SE icons */
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .specialized-service-button {
+    /* iPhone SE buttons */
+    font-size: 1rem !important; /* 16px - meets minimum readability */
+    padding: 0.75rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet optimizations */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .specialized-service-card {
+    /* Tablet cards */
+    padding: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop optimizations */
+  .grid.sm\\:grid-cols-2.lg\\:grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+  }
+
+  .specialized-service-card {
+    /* Desktop cards */
+    padding: 1.5rem !important;
+  }
+}
+
+/* Advanced visual effects for specialized services section */
+.specialized-services-container .bg-gradient-to-br {
+  /* Enhanced main container styling */
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  position: relative !important;
+}
+
+.specialized-services-container .bg-gradient-to-br::before {
+  /* Subtle pattern overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 25% 75%, rgba(0, 109, 119, 0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 25%, rgba(0, 123, 138, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.specialized-services-container .relative {
+  /* Ensure content is above pattern */
+  z-index: 2;
+  position: relative;
+}
+
+/* Enhanced section header styling */
+.specialized-services-container h3 span {
+  /* Animated text gradient */
+  background: linear-gradient(135deg, #006D77, #007B8A, #006D77);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .specialized-service-card,
+  .specialized-service-card .w-12.h-12,
+  .specialized-service-button,
+  .specialized-services-container h3 span {
+    /* Disable animations for users who prefer reduced motion */
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .specialized-service-card:hover {
+    /* Simplified hover for reduced motion */
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0, 109, 119, 0.15) !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .specialized-service-card {
+    /* Enhanced contrast */
+    border: 2px solid #006D77 !important;
+    background: #ffffff !important;
+  }
+
+  .specialized-service-card h4 {
+    /* High contrast titles */
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+
+  .specialized-service-card p {
+    /* High contrast descriptions */
+    color: #333333 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .specialized-services-container {
+    /* Print-friendly styling */
+    background: white !important;
+    box-shadow: none !important;
+  }
+
+  .specialized-service-card {
+    /* Print-friendly cards */
+    background: white !important;
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+  }
+}
