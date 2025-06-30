@@ -2,12 +2,12 @@
 
 ## 🎯 **Overall Progress**
 - **Total Tasks**: 25
-- **Completed**: 4 ✅
+- **Completed**: 5 ✅
 - **In Progress**: 0 🔄
-- **Pending**: 21 ⏳
+- **Pending**: 20 ⏳
 - **Blocked**: 0 🚫
 
-**Overall Completion**: 16% (4/25)
+**Overall Completion**: 20% (5/25)
 
 ---
 
@@ -23,12 +23,12 @@
 ---
 
 ## 🏥 **Category B: Medical Services Definition (9 hours)**
-**Progress**: 33% (1/3) | **Priority**: Alta
+**Progress**: 67% (2/3) | **Priority**: Alta
 
 | Task | Status | Effort | Assignee | Due Date | Dependencies | Deliverable |
 |------|--------|--------|----------|----------|--------------|-------------|
 | B.1 Consultation Types | ✅ | 4h | Completed | Day 1 | A.2, A.3 | [B1-consultation-types.md](../requirements-analysis/medical-services/B1-consultation-types.md) |
-| B.2 Medical Specialties | ⏳ | 3h | [TBD] | Day 1 | B.1 | [B2-medical-specialties.md](../requirements-analysis/medical-services/B2-medical-specialties.md) |
+| B.2 Medical Specialties | ✅ | 3h | Completed | Day 1 | B.1 | [B2-medical-specialties.md](../requirements-analysis/medical-services/B2-medical-specialties.md) |
 | B.3 Consultation Structure | ⏳ | 2h | [TBD] | Day 1 | B.1, B.2 | [B3-consultation-structure.md](../requirements-analysis/medical-services/B3-consultation-structure.md) |
 
 ---
