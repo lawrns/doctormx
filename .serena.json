@@ -1,0 +1,53 @@
+{
+  "name": "doctormx",
+  "version": "1.0.0",
+  "type": "react-typescript",
+  "root": ".",
+  "src": "./src",
+  "build": "./dist",
+  "public": "./public",
+  "packageManager": "npm",
+  "framework": {
+    "name": "react",
+    "version": "18.x",
+    "typescript": true,
+    "bundler": "vite"
+  },
+  "dependencies": {
+    "styling": "tailwindcss",
+    "routing": "react-router-dom",
+    "stateManagement": "react-query",
+    "backend": "supabase"
+  },
+  "serena": {
+    "languageServer": {
+      "enabled": true,
+      "port": 9229,
+      "host": "localhost"
+    },
+    "codeAnalysis": {
+      "typescript": true,
+      "react": true,
+      "tailwind": true,
+      "eslint": true
+    },
+    "features": {
+      "autoImports": true,
+      "codeCompletion": true,
+      "refactoring": true,
+      "debugging": true,
+      "testing": true
+    },
+    "workspace": {
+      "indexOnStartup": true,
+      "watchFiles": true,
+      "excludePatterns": [
+        "node_modules/**",
+        "dist/**",
+        "build/**",
+        ".git/**",
+        "*.log"
+      ]
+    }
+  }
+}

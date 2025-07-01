@@ -28,16 +28,27 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
   const remoteVideoRefs = useRef<Map<string, HTMLDivElement>>(new Map());
   const initializationStarted = useRef<boolean>(false);
 
+  // Initialize call only once
   useEffect(() => {
     if (autoStart && !initializationStarted.current) {
       initializationStarted.current = true;
       initializeCall();
+      setupEventListeners(); // Set up event listeners only once during initialization
     }
-    setupEventListeners();
 
-    // Temporary workaround: Poll for remote users every 3 seconds
-    const pollInterval = setInterval(() => {
-      if (callState.isJoined) {
+    // Cleanup only on component unmount
+    return () => {
+      cleanup();
+    };
+  }, [autoStart]); // Only depend on autoStart
+
+  // Separate effect for polling remote users
+  useEffect(() => {
+    let pollInterval: NodeJS.Timeout | null = null;
+
+    if (callState.isJoined) {
+      // Start polling when joined
+      pollInterval = setInterval(() => {
         console.log('[VideoCall] Polling for remote users...');
         const remoteUsers = agoraService.getRemoteUsersFromClient();
         if (remoteUsers.length > 0 && callState.remoteUsers.length === 0) {
@@ -47,14 +58,15 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
             remoteUsers: remoteUsers
           }));
         }
-      }
-    }, 3000);
+      }, 3000);
+    }
 
     return () => {
-      clearInterval(pollInterval);
-      cleanup();
+      if (pollInterval) {
+        clearInterval(pollInterval);
+      }
     };
-  }, [autoStart, callState.isJoined, callState.remoteUsers.length]);
+  }, [callState.isJoined, callState.remoteUsers.length]);
 
   useEffect(() => {
     // Render local video when track is available
@@ -119,6 +131,9 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
   };
 
   const setupEventListeners = () => {
+    // Clear any existing listeners first to prevent duplicates
+    agoraService.eventListeners.clear();
+
     agoraService.on('remoteUserJoined', ({ uid }) => {
       console.log('[VideoCall] Remote user joined:', uid);
       setCallState(prev => ({

@@ -33,19 +33,19 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
       <div className="flex items-center justify-between h-full px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Left section: Logo and brand name */}
         <div className="flex items-center gap-4">
-          {/* Mobile menu toggle */}
+          {/* Mobile menu toggle - Enhanced touch target */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 hover:bg-white/10 rounded-lg transition-colors text-white"
+            className="lg:hidden p-3 hover:bg-white/10 rounded-lg transition-colors text-white min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label={isMobileMenuOpen ? t('accessibility.closeMenu') : t('accessibility.openMenu')}
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
-          
-          {/* Logo and brand name in top-left */}
+
+          {/* Logo and brand name in top-left - Always visible */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img src="/Doctorlogo.png" alt="DoctorMX" className="h-7 sm:h-8 w-auto" />
-            <span className="text-base sm:text-lg font-bold text-white tracking-tight hidden xs:block">DoctorMX</span>
+            <span className="text-sm sm:text-base lg:text-lg font-bold text-white tracking-tight">DoctorMX</span>
           </Link>
         </div>
         
@@ -77,10 +77,10 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
         
         {/* Right section: Notifications, Language, Auth */}
         <div className="flex items-center gap-3">
-          {/* Notifications */}
+          {/* Notifications - Enhanced touch target */}
           {isAuthenticated && (
-            <button 
-              className="relative p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+            <button
+              className="relative p-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Notificaciones"
             >
               <Bell size={18} />
@@ -119,15 +119,23 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
             </div>
           ) : (
             <div className="flex items-center gap-2">
+              {/* Mobile login button - User icon only */}
+              <Link to="/login" className="sm:hidden">
+                <button className="p-3 text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center">
+                  <User size={18} />
+                </button>
+              </Link>
+              {/* Desktop login button - Text */}
               <Link to="/login" className="hidden sm:block">
-                <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200">
+                <button className="px-3 py-2 text-sm font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 min-h-[44px]">
                   {t('nav.login')}
                 </button>
               </Link>
+              {/* Register button - Fixed text confusion */}
               <Link to="/register">
                 <Button size="sm" className="register-button-fix transition-transform duration-200 hover:scale-[1.02] text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
                   <span className="hidden sm:inline">{t('nav.register')}</span>
-                  <span className="sm:hidden">{t('nav.login')}</span>
+                  <span className="sm:hidden text-xs">{t('nav.register')}</span>
                 </Button>
               </Link>
             </div>
@@ -135,11 +143,11 @@ function AINavbar({ onSidebarToggle, isSidebarOpen }: AINavbarProps) {
         </div>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Optimized width for small screens */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 bg-black/50" onClick={() => setIsMobileMenuOpen(false)}>
-          <div 
-            className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl"
+          <div
+            className="fixed right-0 top-0 h-full w-72 sm:w-80 bg-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between p-4 border-b">

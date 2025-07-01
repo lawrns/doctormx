@@ -49,20 +49,13 @@ export class AgoraService {
     }
 
     // If client already exists and is working, don't reinitialize
-    if (this.client && !this.isJoined) {
-      console.log('[AgoraService] Client already initialized and ready');
+    if (this.client) {
+      console.log('[AgoraService] Client already initialized, skipping reinitialization');
       return;
     }
 
     try {
       this.isInitializing = true;
-
-      // Check if client already exists and clean up
-      if (this.client) {
-        console.log('[AgoraService] Cleaning up existing client...');
-        await this.leaveChannel();
-        this.client = null;
-      }
 
       this.client = AgoraRTC.createClient({
         mode: 'rtc',
@@ -132,10 +125,11 @@ export class AgoraService {
         console.log('[AgoraService] Local tracks created and published');
 
         // Check again for remote users after publishing (in case they joined while we were publishing)
-        setTimeout(() => {
-          console.log('[AgoraService] Delayed check for remote users after publishing...');
-          this.checkExistingRemoteUsers();
-        }, 1000);
+        // Temporarily disabled to debug disconnection issue
+        // setTimeout(() => {
+        //   console.log('[AgoraService] Delayed check for remote users after publishing...');
+        //   this.checkExistingRemoteUsers();
+        // }, 1000);
       } catch (mediaError) {
         console.warn('[AgoraService] Failed to create/publish tracks, continuing without media:', mediaError);
         // Continue without local tracks - user can enable them later
