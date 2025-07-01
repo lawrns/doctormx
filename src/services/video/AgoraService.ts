@@ -124,12 +124,16 @@ export class AgoraService {
         await this.publishLocalTracks();
         console.log('[AgoraService] Local tracks created and published');
 
-        // Check again for remote users after publishing (in case they joined while we were publishing)
-        // Temporarily disabled to debug disconnection issue
-        // setTimeout(() => {
-        //   console.log('[AgoraService] Delayed check for remote users after publishing...');
-        //   this.checkExistingRemoteUsers();
-        // }, 1000);
+        // Check again for remote users after publishing (critical for multi-user detection)
+        setTimeout(() => {
+          console.log('[AgoraService] Delayed check for remote users after publishing...');
+          // Only check if we're still connected to prevent issues
+          if (this.client && this.isJoined) {
+            this.checkExistingRemoteUsers().catch(error => {
+              console.error('[AgoraService] Error in delayed remote user check:', error);
+            });
+          }
+        }, 1000);
       } catch (mediaError) {
         console.warn('[AgoraService] Failed to create/publish tracks, continuing without media:', mediaError);
         // Continue without local tracks - user can enable them later
@@ -330,6 +334,10 @@ export class AgoraService {
    * Manual check for remote users and trigger events if needed (public method for debugging)
    */
   async manualCheckRemoteUsers(): Promise<void> {
+    console.log('🔧 [AgoraService] Manual remote user check triggered...');
+    console.log('📊 [AgoraService] Client remote users:', this.client?.remoteUsers.length || 0);
+    console.log('📊 [AgoraService] Tracked video tracks:', this.remoteVideoTracks.size);
+    console.log('📊 [AgoraService] Tracked audio tracks:', this.remoteAudioTracks.size);
     await this.checkExistingRemoteUsers();
   }
 
@@ -531,6 +539,7 @@ export class AgoraService {
     // Handle remote user joining
     this.client.on('user-published', async (user, mediaType) => {
       console.log('🎯 [AgoraService] USER-PUBLISHED EVENT FIRED!', user.uid, 'mediaType:', mediaType);
+      console.log('📊 [AgoraService] Current remote users count:', this.client?.remoteUsers.length || 0);
       try {
         console.log('[AgoraService] Attempting to subscribe to user:', user.uid, 'mediaType:', mediaType);
         await this.client!.subscribe(user, mediaType);
