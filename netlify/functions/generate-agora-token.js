@@ -43,7 +43,8 @@ exports.handler = async (event, context) => {
     }
 
     // Get Agora credentials from environment variables
-    const appId = process.env.VITE_AGORA_APP_ID;
+    // Try both VITE_ prefixed and non-prefixed versions for compatibility
+    const appId = process.env.VITE_AGORA_APP_ID || process.env.AGORA_APP_ID;
     const appCertificate = process.env.AGORA_APP_CERTIFICATE;
 
     console.log('[AgoraToken] App ID:', appId ? 'Present' : 'Missing');
