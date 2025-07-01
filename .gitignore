@@ -33,6 +33,17 @@ dist-ssr
 !.env.local
 !.env.example
 
+# SSL certificates for local development
+certs/
+*.pem
+*.crt
+*.key
+localhost.pem
+localhost-key.pem
+
+# Test files
+test-*.js
+
 # Local Netlify folder
 .netlify
 

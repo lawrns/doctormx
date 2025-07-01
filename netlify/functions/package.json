@@ -1,0 +1,8 @@
+{
+  "name": "doctormx-netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify functions for DoctorMX",
+  "dependencies": {
+    "agora-access-token": "^2.0.4"
+  }
+}

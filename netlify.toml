@@ -42,7 +42,6 @@
 [dev]
   command = "vite"
   port = 8888
-  publish = "dist"
   functions = "netlify/functions"
 
 # Specific API redirects for cleaner routing

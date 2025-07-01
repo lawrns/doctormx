@@ -1,18 +1,18 @@
 import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute';
 import AILayout from './core/components/AILayout';
 import DoctorLayout from './core/components/DoctorLayout';
 import SplashScreen from './core/components/SplashScreen';
-import ProtectedRoute from './components/ProtectedRoute';
 
 // Import directly instead of lazy loading to test
-import AIHomePage from './pages/AIHomePage';
-import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
 import AnalysisPage from './features/ai-analysis/AnalysisPage';
+import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
 import ImageAnalysisPage from './features/ai-image-analysis/ImageAnalysisPage';
 import AdvancedImageAnalysisPage from './pages/ai-image-analysis/AdvancedImageAnalysisPage';
-import LabTestingPage from './pages/LabTestingPageSimple';
+import AIHomePage from './pages/AIHomePage';
 import DoctorConnectPage from './pages/DoctorConnectPage';
+import LabTestingPage from './pages/LabTestingPageSimple';
 
 // Auth pages
 const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));
@@ -49,6 +49,10 @@ const ProgressTrackingPage = React.lazy(() => import('./pages/progress/ProgressT
 // Protocol Timeline page
 const ProtocolTimelinePage = React.lazy(() => import('./pages/protocol/ProtocolTimelinePage'));
 
+// Video Call Test page
+const VideoCallTest = React.lazy(() => import('./pages/VideoCallTest'));
+const VideoCallTestSimple = React.lazy(() => import('./pages/VideoCallTestSimple'));
+
 function App() {
   return (
     <Suspense fallback={<SplashScreen />}>
@@ -61,6 +65,8 @@ function App() {
           <Route path="lab-testing" element={<LabTestingPage />} />
           <Route path="constitutional-analysis" element={<ConstitutionalAnalysisPage />} />
           <Route path="connect" element={<DoctorConnectPage />} />
+          <Route path="video-test" element={<VideoCallTest />} />
+          <Route path="video-test-simple" element={<VideoCallTestSimple />} />
         </Route>
 
         {/* Doctor Route - with DoctorLayout */}
