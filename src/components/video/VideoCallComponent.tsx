@@ -35,10 +35,26 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
     }
     setupEventListeners();
 
+    // Temporary workaround: Poll for remote users every 3 seconds
+    const pollInterval = setInterval(() => {
+      if (callState.isJoined) {
+        console.log('[VideoCall] Polling for remote users...');
+        const remoteUsers = agoraService.getRemoteUsersFromClient();
+        if (remoteUsers.length > 0 && callState.remoteUsers.length === 0) {
+          console.log('[VideoCall] Found remote users via polling:', remoteUsers);
+          setCallState(prev => ({
+            ...prev,
+            remoteUsers: remoteUsers
+          }));
+        }
+      }
+    }, 3000);
+
     return () => {
+      clearInterval(pollInterval);
       cleanup();
     };
-  }, [autoStart]);
+  }, [autoStart, callState.isJoined, callState.remoteUsers.length]);
 
   useEffect(() => {
     // Render local video when track is available
@@ -52,13 +68,21 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
 
   useEffect(() => {
     // Render remote videos when users join
+    console.log('[VideoCall] Remote users changed:', callState.remoteUsers);
     callState.remoteUsers.forEach(uid => {
       const videoElement = remoteVideoRefs.current.get(uid.toString());
+      console.log('[VideoCall] Video element for uid', uid, ':', videoElement);
       if (videoElement) {
         const remoteTrack = agoraService.getRemoteVideoTrack(uid);
+        console.log('[VideoCall] Remote track for uid', uid, ':', remoteTrack);
         if (remoteTrack) {
+          console.log('[VideoCall] Playing remote track for uid', uid);
           remoteTrack.play(videoElement);
+        } else {
+          console.warn('[VideoCall] No remote track found for uid', uid);
         }
+      } else {
+        console.warn('[VideoCall] No video element found for uid', uid);
       }
     });
   }, [callState.remoteUsers]);
@@ -96,6 +120,7 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
 
   const setupEventListeners = () => {
     agoraService.on('remoteUserJoined', ({ uid }) => {
+      console.log('[VideoCall] Remote user joined:', uid);
       setCallState(prev => ({
         ...prev,
         remoteUsers: [...prev.remoteUsers.filter(u => u !== uid), uid]
@@ -162,6 +187,17 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
     }
   };
 
+  const manualCheckRemoteUsers = async () => {
+    try {
+      console.log('[VideoCall] Manual check triggered...');
+      await agoraService.manualCheckRemoteUsers();
+      const remoteUsers = agoraService.getRemoteUsersFromClient();
+      console.log('[VideoCall] Remote users from client:', remoteUsers);
+    } catch (error) {
+      console.error('[VideoCall] Error in manual check:', error);
+    }
+  };
+
   const cleanup = async () => {
     try {
       await agoraService.cleanup();
@@ -197,10 +233,18 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
               <div
                 key={uid.toString()}
                 ref={el => {
-                  if (el) remoteVideoRefs.current.set(uid.toString(), el);
+                  if (el) {
+                    console.log('[VideoCall] Setting video ref for uid:', uid, el);
+                    remoteVideoRefs.current.set(uid.toString(), el);
+                  }
                 }}
-                className="w-full h-full bg-gray-800"
-              />
+                className="w-full h-full bg-gray-800 border-2 border-green-500"
+                style={{ minHeight: '200px' }}
+              >
+                <div className="text-white p-2 text-sm">
+                  Remote User: {uid.toString()}
+                </div>
+              </div>
             ))}
           </div>
         ) : (
@@ -208,6 +252,7 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
             <div className="text-center text-white">
               <Video className="w-16 h-16 mx-auto mb-4 opacity-50" />
               <p>Esperando al doctor...</p>
+              <p className="text-sm mt-2">Remote users: {callState.remoteUsers.length}</p>
             </div>
           </div>
         )}
@@ -282,6 +327,15 @@ export const VideoCallComponent: React.FC<VideoCallComponentProps> = ({
             title="Terminar consulta"
           >
             <PhoneOff className="w-5 h-5" />
+          </button>
+
+          {/* Debug button - temporary */}
+          <button
+            onClick={manualCheckRemoteUsers}
+            className="bg-yellow-600 hover:bg-yellow-700 text-white p-2 rounded text-sm ml-2"
+            title="Debug: Check Remote Users"
+          >
+            🔍 Debug
           </button>
         </div>
 

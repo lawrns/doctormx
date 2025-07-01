@@ -70,7 +70,9 @@ export class AgoraService {
       });
 
       // Set up event listeners
+      console.log('[AgoraService] About to set up event listeners...');
       this.setupEventListeners();
+      console.log('[AgoraService] Event listeners set up completed');
 
       console.log('[AgoraService] Client initialized successfully');
     } catch (error) {
@@ -119,11 +121,21 @@ export class AgoraService {
       this.isJoined = true;
       console.log('[AgoraService] Successfully joined channel:', config.channel);
 
+      // Check for existing remote users immediately after joining
+      console.log('[AgoraService] Checking for existing remote users...');
+      await this.checkExistingRemoteUsers();
+
       // Create and publish local tracks separately with error handling
       try {
         await this.createLocalTracks();
         await this.publishLocalTracks();
         console.log('[AgoraService] Local tracks created and published');
+
+        // Check again for remote users after publishing (in case they joined while we were publishing)
+        setTimeout(() => {
+          console.log('[AgoraService] Delayed check for remote users after publishing...');
+          this.checkExistingRemoteUsers();
+        }, 1000);
       } catch (mediaError) {
         console.warn('[AgoraService] Failed to create/publish tracks, continuing without media:', mediaError);
         // Continue without local tracks - user can enable them later
@@ -256,6 +268,75 @@ export class AgoraService {
    */
   getRemoteUsers(): UID[] {
     return Array.from(this.remoteVideoTracks.keys());
+  }
+
+  /**
+   * Get all remote users from Agora client directly (for debugging)
+   */
+  getRemoteUsersFromClient(): UID[] {
+    if (!this.client) return [];
+    try {
+      const remoteUsers = this.client.remoteUsers;
+      console.log('[AgoraService] Remote users from client:', remoteUsers.map(u => u.uid));
+      return remoteUsers.map(u => u.uid);
+    } catch (error) {
+      console.error('[AgoraService] Error getting remote users from client:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Check for existing remote users in the channel (critical for fixing user-published event timing issues)
+   */
+  private async checkExistingRemoteUsers(): Promise<void> {
+    if (!this.client) return;
+
+    try {
+      console.log('🔍 [AgoraService] Checking for existing remote users...');
+      const clientRemoteUsers = this.client.remoteUsers;
+      console.log(`📊 [AgoraService] Found ${clientRemoteUsers.length} remote users:`, clientRemoteUsers.map(u => u.uid));
+
+      for (const user of clientRemoteUsers) {
+        console.log(`👤 [AgoraService] Processing user ${user.uid}: hasVideo=${!!user.videoTrack}, hasAudio=${!!user.audioTrack}`);
+
+        // Handle video track
+        if (user.videoTrack && !this.remoteVideoTracks.has(user.uid)) {
+          try {
+            console.log(`📹 [AgoraService] Subscribing to existing video track for user: ${user.uid}`);
+            await this.client.subscribe(user, 'video');
+            this.remoteVideoTracks.set(user.uid, user.videoTrack);
+            console.log(`✅ [AgoraService] Successfully subscribed to video for user: ${user.uid}`);
+            this.emit('remoteUserJoined', { uid: user.uid, mediaType: 'video' });
+          } catch (error) {
+            console.error(`❌ [AgoraService] Failed to subscribe to video for user ${user.uid}:`, error);
+          }
+        }
+
+        // Handle audio track
+        if (user.audioTrack && !this.remoteAudioTracks.has(user.uid)) {
+          try {
+            console.log(`🔊 [AgoraService] Subscribing to existing audio track for user: ${user.uid}`);
+            await this.client.subscribe(user, 'audio');
+            this.remoteAudioTracks.set(user.uid, user.audioTrack);
+            user.audioTrack.play();
+            console.log(`✅ [AgoraService] Successfully subscribed to audio for user: ${user.uid}`);
+          } catch (error) {
+            console.error(`❌ [AgoraService] Failed to subscribe to audio for user ${user.uid}:`, error);
+          }
+        }
+      }
+
+      console.log(`🎯 [AgoraService] Remote user check completed. Video tracks: ${this.remoteVideoTracks.size}, Audio tracks: ${this.remoteAudioTracks.size}`);
+    } catch (error) {
+      console.error('❌ [AgoraService] Error in checkExistingRemoteUsers:', error);
+    }
+  }
+
+  /**
+   * Manual check for remote users and trigger events if needed (public method for debugging)
+   */
+  async manualCheckRemoteUsers(): Promise<void> {
+    await this.checkExistingRemoteUsers();
   }
 
   /**
@@ -446,30 +527,47 @@ export class AgoraService {
    * Set up Agora client event listeners
    */
   private setupEventListeners(): void {
-    if (!this.client) return;
+    if (!this.client) {
+      console.error('[AgoraService] Cannot set up event listeners - client is null!');
+      return;
+    }
+
+    console.log('[AgoraService] Setting up event listeners for client...');
 
     // Handle remote user joining
     this.client.on('user-published', async (user, mediaType) => {
-      await this.client!.subscribe(user, mediaType);
-      
-      if (mediaType === 'video') {
-        this.remoteVideoTracks.set(user.uid, user.videoTrack!);
-        this.emit('remoteUserJoined', { uid: user.uid, mediaType });
-      }
-      
-      if (mediaType === 'audio') {
-        this.remoteAudioTracks.set(user.uid, user.audioTrack!);
-        user.audioTrack!.play();
+      console.log('🎯 [AgoraService] USER-PUBLISHED EVENT FIRED!', user.uid, 'mediaType:', mediaType);
+      try {
+        console.log('[AgoraService] Attempting to subscribe to user:', user.uid, 'mediaType:', mediaType);
+        await this.client!.subscribe(user, mediaType);
+        console.log('✅ [AgoraService] Successfully subscribed to user:', user.uid, 'mediaType:', mediaType);
+
+        if (mediaType === 'video') {
+          this.remoteVideoTracks.set(user.uid, user.videoTrack!);
+          console.log('📹 [AgoraService] Added remote video track for user:', user.uid);
+          this.emit('remoteUserJoined', { uid: user.uid, mediaType });
+        }
+
+        if (mediaType === 'audio') {
+          this.remoteAudioTracks.set(user.uid, user.audioTrack!);
+          user.audioTrack!.play();
+          console.log('🔊 [AgoraService] Added and playing remote audio track for user:', user.uid);
+        }
+      } catch (error) {
+        console.error('❌ [AgoraService] Failed to subscribe to user:', user.uid, 'mediaType:', mediaType, 'error:', error);
       }
     });
 
     // Handle remote user leaving
     this.client.on('user-unpublished', (user, mediaType) => {
+      console.log('[AgoraService] User unpublished:', user.uid, 'mediaType:', mediaType);
       if (mediaType === 'video') {
         this.remoteVideoTracks.delete(user.uid);
+        console.log('[AgoraService] Removed remote video track for user:', user.uid);
       }
       if (mediaType === 'audio') {
         this.remoteAudioTracks.delete(user.uid);
+        console.log('[AgoraService] Removed remote audio track for user:', user.uid);
       }
       this.emit('remoteUserLeft', { uid: user.uid, mediaType });
     });
@@ -484,6 +582,8 @@ export class AgoraService {
     this.client.on('network-quality', (stats) => {
       this.emit('networkQuality', stats);
     });
+
+    console.log('✅ [AgoraService] All event listeners set up successfully!');
   }
 
   /**

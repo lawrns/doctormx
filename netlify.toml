@@ -63,6 +63,12 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/api/agora/token"
+  to = "/.netlify/functions/generate-agora-token"
+  status = 200
+  force = true
+
 # Fallback for other API routes
 [[redirects]]
   from = "/api/v1/*"
