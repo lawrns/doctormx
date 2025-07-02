@@ -52,6 +52,7 @@ const ProtocolTimelinePage = React.lazy(() => import('./pages/protocol/ProtocolT
 // Video Call Test page
 const VideoCallTest = React.lazy(() => import('./pages/VideoCallTest'));
 const VideoCallTestSimple = React.lazy(() => import('./pages/VideoCallTestSimple'));
+const VideoTestRedux = React.lazy(() => import('./pages/VideoTestRedux'));
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
           <Route path="connect" element={<DoctorConnectPage />} />
           <Route path="video-test" element={<VideoCallTest />} />
           <Route path="video-test-simple" element={<VideoCallTestSimple />} />
+          <Route path="video-test-redux" element={<VideoTestRedux />} />
         </Route>
 
         {/* Doctor Route - with DoctorLayout */}

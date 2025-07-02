@@ -2,6 +2,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import { Provider as ReduxProvider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { AuthProvider } from './contexts/AuthContext';
@@ -11,6 +12,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import ToastProvider from './contexts/ToastContext';
 import './index.css';
 import './mobile.css'; // Import mobile-specific styles
+import { store } from './store';
 import './styles/ai-doctor-fixes.css';
 import './styles/chat-fixes.css';
 import './styles/responsive-fixes.css';
@@ -36,22 +38,24 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <SimpleErrorBoundary>
+    <ReduxProvider store={store}>
       <HelmetProvider>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            <SupabaseProvider>
-              <AuthProvider>
-                <BrowserRouter>
-                  <ToastProvider>
-                    <QuestionnaireProvider>
-                      <App />
-                    </QuestionnaireProvider>
-                  </ToastProvider>
-                </BrowserRouter>
-              </AuthProvider>
-            </SupabaseProvider>
-          </ThemeProvider>
-        </QueryClientProvider>
-      </HelmetProvider>
-    </SimpleErrorBoundary>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+              <SupabaseProvider>
+                <AuthProvider>
+                  <BrowserRouter>
+                    <ToastProvider>
+                      <QuestionnaireProvider>
+                        <App />
+                      </QuestionnaireProvider>
+                    </ToastProvider>
+                  </BrowserRouter>
+                </AuthProvider>
+              </SupabaseProvider>
+            </ThemeProvider>
+          </QueryClientProvider>
+        </HelmetProvider>
+    </ReduxProvider>
+  </SimpleErrorBoundary>
 );

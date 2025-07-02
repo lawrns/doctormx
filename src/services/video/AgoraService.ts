@@ -67,6 +67,16 @@ export class AgoraService {
       this.setupEventListeners();
       console.log('[AgoraService] Event listeners set up completed');
 
+      // Create local tracks immediately for camera preview
+      console.log('[AgoraService] Creating local tracks for camera preview...');
+      try {
+        await this.createLocalTracks();
+        console.log('[AgoraService] Local tracks created successfully');
+      } catch (error) {
+        console.warn('[AgoraService] Failed to create local tracks during initialization:', error);
+        // Don't throw error here, allow initialization to complete
+      }
+
       console.log('[AgoraService] Client initialized successfully');
     } catch (error) {
       console.error('[AgoraService] Failed to initialize client:', error);
@@ -120,7 +130,10 @@ export class AgoraService {
 
       // Create and publish local tracks separately with error handling
       try {
-        await this.createLocalTracks();
+        // Only create tracks if they don't exist
+        if (!this.localVideoTrack || !this.localAudioTrack) {
+          await this.createLocalTracks();
+        }
         await this.publishLocalTracks();
         console.log('[AgoraService] Local tracks created and published');
 
@@ -212,6 +225,42 @@ export class AgoraService {
   }
 
   /**
+   * Enable video
+   */
+  async enableVideo(): Promise<void> {
+    if (!this.localVideoTrack) {
+      throw new Error('Video track not available');
+    }
+
+    try {
+      await this.localVideoTrack.setEnabled(true);
+      this.emit('videoToggled', { enabled: true });
+      console.log('[AgoraService] Video enabled');
+    } catch (error) {
+      console.error('[AgoraService] Error enabling video:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Disable video
+   */
+  async disableVideo(): Promise<void> {
+    if (!this.localVideoTrack) {
+      throw new Error('Video track not available');
+    }
+
+    try {
+      await this.localVideoTrack.setEnabled(false);
+      this.emit('videoToggled', { enabled: false });
+      console.log('[AgoraService] Video disabled');
+    } catch (error) {
+      console.error('[AgoraService] Error disabling video:', error);
+      throw error;
+    }
+  }
+
+  /**
    * Toggle video on/off
    */
   async toggleVideo(): Promise<boolean> {
@@ -220,12 +269,48 @@ export class AgoraService {
     try {
       const isEnabled = this.localVideoTrack.enabled;
       await this.localVideoTrack.setEnabled(!isEnabled);
-      
+
       this.emit('videoToggled', { enabled: !isEnabled });
       return !isEnabled;
     } catch (error) {
       console.error('[AgoraService] Error toggling video:', error);
       return false;
+    }
+  }
+
+  /**
+   * Enable audio
+   */
+  async enableAudio(): Promise<void> {
+    if (!this.localAudioTrack) {
+      throw new Error('Audio track not available');
+    }
+
+    try {
+      await this.localAudioTrack.setEnabled(true);
+      this.emit('audioToggled', { enabled: true });
+      console.log('[AgoraService] Audio enabled');
+    } catch (error) {
+      console.error('[AgoraService] Error enabling audio:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Disable audio
+   */
+  async disableAudio(): Promise<void> {
+    if (!this.localAudioTrack) {
+      throw new Error('Audio track not available');
+    }
+
+    try {
+      await this.localAudioTrack.setEnabled(false);
+      this.emit('audioToggled', { enabled: false });
+      console.log('[AgoraService] Audio disabled');
+    } catch (error) {
+      console.error('[AgoraService] Error disabling audio:', error);
+      throw error;
     }
   }
 
@@ -238,7 +323,7 @@ export class AgoraService {
     try {
       const isEnabled = this.localAudioTrack.enabled;
       await this.localAudioTrack.setEnabled(!isEnabled);
-      
+
       this.emit('audioToggled', { enabled: !isEnabled });
       return !isEnabled;
     } catch (error) {
@@ -304,7 +389,8 @@ export class AgoraService {
             await this.client.subscribe(user, 'video');
             this.remoteVideoTracks.set(user.uid, user.videoTrack);
             console.log(`✅ [AgoraService] Successfully subscribed to video for user: ${user.uid}`);
-            this.emit('remoteUserJoined', { uid: user.uid, mediaType: 'video' });
+            this.emit('user-joined', user.uid);
+            this.emit('remote-video-track-added', { uid: user.uid, track: user.videoTrack });
           } catch (error) {
             console.error(`❌ [AgoraService] Failed to subscribe to video for user ${user.uid}:`, error);
           }
@@ -416,7 +502,7 @@ export class AgoraService {
       // Check permissions first
       const permissions = await this.checkMediaPermissions();
 
-      if (permissions.video) {
+      if (permissions.video && !this.localVideoTrack) {
         // Create video track with conservative settings for better compatibility
         this.localVideoTrack = await AgoraRTC.createCameraVideoTrack({
           encoderConfig: {
@@ -428,11 +514,12 @@ export class AgoraService {
           }
         });
         console.log('[AgoraService] Video track created');
+        this.emit('local-video-track-created', this.localVideoTrack);
       } else {
         console.warn('[AgoraService] Video permission denied, skipping video track');
       }
 
-      if (permissions.audio) {
+      if (permissions.audio && !this.localAudioTrack) {
         // Create audio track with basic settings for better compatibility
         this.localAudioTrack = await AgoraRTC.createMicrophoneAudioTrack({
           encoderConfig: {
@@ -445,6 +532,7 @@ export class AgoraService {
           ANS: true, // Automatic Noise Suppression
         });
         console.log('[AgoraService] Audio track created');
+        this.emit('local-audio-track-created', this.localAudioTrack);
       } else {
         console.warn('[AgoraService] Audio permission denied, skipping audio track');
       }
@@ -548,13 +636,19 @@ export class AgoraService {
         if (mediaType === 'video') {
           this.remoteVideoTracks.set(user.uid, user.videoTrack!);
           console.log('📹 [AgoraService] Added remote video track for user:', user.uid);
-          this.emit('remoteUserJoined', { uid: user.uid, mediaType });
+          // Emit the events that Redux is listening for
+          this.emit('user-joined', user.uid);
+          this.emit('remote-video-track-added', { uid: user.uid, track: user.videoTrack! });
+          console.log('🎯 [AgoraService] Emitted user-joined and remote-video-track-added events for user:', user.uid);
         }
 
         if (mediaType === 'audio') {
           this.remoteAudioTracks.set(user.uid, user.audioTrack!);
           user.audioTrack!.play();
           console.log('🔊 [AgoraService] Added and playing remote audio track for user:', user.uid);
+          // Emit the specific event that Redux is listening for
+          this.emit('remote-audio-track-added', { uid: user.uid, track: user.audioTrack! });
+          console.log('🎯 [AgoraService] Emitted remote-audio-track-added event for user:', user.uid);
         }
       } catch (error) {
         console.error('❌ [AgoraService] Failed to subscribe to user:', user.uid, 'mediaType:', mediaType, 'error:', error);
@@ -567,12 +661,14 @@ export class AgoraService {
       if (mediaType === 'video') {
         this.remoteVideoTracks.delete(user.uid);
         console.log('[AgoraService] Removed remote video track for user:', user.uid);
+        // Emit user-left event when video is unpublished (main indicator of user leaving)
+        this.emit('user-left', user.uid);
+        console.log('🎯 [AgoraService] Emitted user-left event for user:', user.uid);
       }
       if (mediaType === 'audio') {
         this.remoteAudioTracks.delete(user.uid);
         console.log('[AgoraService] Removed remote audio track for user:', user.uid);
       }
-      this.emit('remoteUserLeft', { uid: user.uid, mediaType });
     });
 
     // Handle connection state changes
