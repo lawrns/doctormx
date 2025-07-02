@@ -154,7 +154,7 @@ export class VideoConsultationService {
 
   /**
    * Get user's appointments
-   */
+   */ 
   static async getUserAppointments(userId?: string): Promise<Appointment[]> {
     try {
       // Get current user if userId not provided
