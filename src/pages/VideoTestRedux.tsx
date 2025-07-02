@@ -1,14 +1,11 @@
-import { ArrowLeft, BarChart3, Play, Settings } from 'lucide-react'
+import { ArrowLeft, Play, Settings } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { VideoCallComponentRedux } from '../components/video/VideoCallComponentRedux'
 import { VideoCallConfig } from '../services/video/AgoraService'
-import { useAppDispatch, useAppSelector } from '../store'
-import { toggleDebugMode } from '../store/slices/videoCallSlice'
 
 const VideoTestRedux: React.FC = () => {
   const navigate = useNavigate()
-  const dispatch = useAppDispatch()
 
   // Get channel from URL parameters or use default shared channel
   const getInitialChannel = () => {
@@ -17,10 +14,6 @@ const VideoTestRedux: React.FC = () => {
     if (urlChannel) return urlChannel
     return 'doctormx-consultation' // Default shared channel for all users
   }
-
-  // Redux state
-  const videoState = useAppSelector(state => state.videoCall)
-  const authState = useAppSelector(state => state.auth)
 
   // Local state
   const [showConfig, setShowConfig] = useState(false)
@@ -172,26 +165,15 @@ const VideoTestRedux: React.FC = () => {
               </button>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  🚀 Redux Video Call Test
+                  📹 Video Consultation
                 </h1>
                 <p className="text-sm text-gray-600">
-                  Testing video consultation with Redux state management
+                  Professional video consultation platform
                 </p>
               </div>
             </div>
             
             <div className="flex items-center space-x-2">
-              <button
-                onClick={() => dispatch(toggleDebugMode())}
-                className={`p-2 rounded-lg transition-colors ${
-                  videoState.isDebugMode
-                    ? 'bg-blue-100 text-blue-600'
-                    : 'hover:bg-gray-100 text-gray-600'
-                }`}
-              >
-                <BarChart3 className="w-5 h-5" />
-              </button>
-
               <button
                 onClick={() => setShowShareOptions(!showShareOptions)}
                 className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -354,113 +336,9 @@ const VideoTestRedux: React.FC = () => {
               </div>
             )}
 
-            {/* Redux State Display */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">📊 Redux State</h3>
-              
-              {/* Video Call State */}
-              <div className="space-y-3">
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <h4 className="font-medium text-gray-900 mb-2">Video Call State</h4>
-                  <div className="text-sm space-y-1">
-                    <div className="flex justify-between">
-                      <span>Connected:</span>
-                      <span className={videoState.isJoined ? 'text-green-600' : 'text-red-600'}>
-                        {videoState.isJoined ? 'Yes' : 'No'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Status:</span>
-                      <span>{videoState.connectionState}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Participants:</span>
-                      <span>{videoState.participantCount}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Remote Users:</span>
-                      <span>{videoState.remoteUsers.length}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Video:</span>
-                      <span className={videoState.isVideoEnabled ? 'text-green-600' : 'text-red-600'}>
-                        {videoState.isVideoEnabled ? 'ON' : 'OFF'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Audio:</span>
-                      <span className={videoState.isAudioEnabled ? 'text-green-600' : 'text-red-600'}>
-                        {videoState.isAudioEnabled ? 'ON' : 'OFF'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Auth State */}
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <h4 className="font-medium text-gray-900 mb-2">Auth State</h4>
-                  <div className="text-sm space-y-1">
-                    <div className="flex justify-between">
-                      <span>Authenticated:</span>
-                      <span className={authState.isAuthenticated ? 'text-green-600' : 'text-red-600'}>
-                        {authState.isAuthenticated ? 'Yes' : 'No'}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Language:</span>
-                      <span>{authState.preferences.language}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Theme:</span>
-                      <span>{authState.preferences.theme}</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Error State */}
-                {videoState.error && (
-                  <div className="bg-red-50 p-3 rounded-lg">
-                    <h4 className="font-medium text-red-900 mb-2">Error</h4>
-                    <p className="text-sm text-red-700">{videoState.error}</p>
-                  </div>
-                )}
-                
-                {/* Debug Info */}
-                {videoState.isDebugMode && (
-                  <div className="bg-blue-50 p-3 rounded-lg">
-                    <h4 className="font-medium text-blue-900 mb-2">Debug Info</h4>
-                    <div className="text-xs text-blue-700 space-y-1">
-                      <div>Channel: {videoState.channelName}</div>
-                      <div>User ID: {videoState.userId}</div>
-                      <div>Quality: {videoState.connectionQuality}</div>
-                      <div>Last Connection: {videoState.lastConnectionTime ? new Date(videoState.lastConnectionTime).toLocaleTimeString() : 'Never'}</div>
-                      <div>Remote Users: [{videoState.remoteUsers.join(', ')}]</div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
+
             
-            {/* Instructions */}
-            <div className="bg-white rounded-xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">📝 Multi-Device Video Consultation</h3>
-              <div className="text-sm text-gray-600 space-y-2">
-                <p><strong>🔗 To connect with another device:</strong></p>
-                <p>1. Click the share button (▶️) and copy the share link</p>
-                <p>2. Send the link to another device or person</p>
-                <p>3. Both devices will join the same video consultation</p>
-                <p></p>
-                <p><strong>🏠 Quick Options:</strong></p>
-                <p>• <strong>Default Room:</strong> Join 'doctormx-consultation' (shared by all users)</p>
-                <p>• <strong>Private Room:</strong> Create a unique private channel</p>
-                <p>• <strong>Custom Room:</strong> Enter a specific channel name</p>
-                <p></p>
-                <p><strong>📱 Testing:</strong></p>
-                <p>• Open multiple browser tabs with the same channel</p>
-                <p>• Test on different devices (laptop, phone, tablet)</p>
-                <p>• Monitor Redux state updates in real-time</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>

@@ -324,12 +324,7 @@ export const VideoCallComponentRedux: React.FC<VideoCallComponentReduxProps> = (
           </button>
         </div>
         
-        {/* Debug info */}
-        <div className="mt-4 text-xs text-gray-500 text-center">
-          <div>Estado: {connectionState} | Calidad: {connectionQuality}</div>
-          <div>Video: {isVideoEnabled ? 'ON' : 'OFF'} | Audio: {isAudioEnabled ? 'ON' : 'OFF'}</div>
-          <div>Usuarios remotos: {remoteUsers.join(', ') || 'Ninguno'}</div>
-        </div>
+
       </div>
     </div>
   )
