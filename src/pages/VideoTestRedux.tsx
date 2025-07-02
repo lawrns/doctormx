@@ -6,6 +6,7 @@ import { VideoCallConfig } from '../services/video/AgoraService'
 
 const VideoTestRedux: React.FC = () => {
   const navigate = useNavigate()
+  // Force deployment - UI cleanup completed
 
   // Get channel from URL parameters or use default shared channel
   const getInitialChannel = () => {
