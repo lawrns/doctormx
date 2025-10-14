@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
 const messages = [
-  { id: 1, type: 'user', text: 'Tengo fiebre desde ayer y dolor de cabeza...', delay: 500 },
-  { id: 2, type: 'bot', text: '¿Cuánta temperatura tienes?', delay: 1500 },
-  { id: 3, type: 'user', text: '38.5°C', delay: 2500 },
-  { id: 4, type: 'bot', text: 'Entendido. ¿Tienes otros síntomas como tos o dolor de garganta?', delay: 3500 },
-  { id: 5, type: 'user', text: 'Sí, un poco de tos', delay: 4500 },
-  { id: 6, type: 'bot', text: 'Basado en tus síntomas, te recomiendo consulta con médico general. Te conecto con especialistas cercanos...', delay: 5500 },
+  { id: 1, type: 'user', text: 'Tengo fiebre desde ayer y dolor de cabeza...', delay: 800, time: '13:45' },
+  { id: 2, type: 'bot', text: '¿Cuánta temperatura tienes? ¿Has tomado algún medicamento?', delay: 2200, time: '13:45' },
+  { id: 3, type: 'user', text: '38.5°C y solo he tomado paracetamol', delay: 3800, time: '13:46' },
+  { id: 4, type: 'bot', text: 'Entendido. ¿Tienes otros síntomas como tos, dolor de garganta o congestión nasal?', delay: 5400, time: '13:46' },
+  { id: 5, type: 'user', text: 'Sí, tengo tos y dolor de garganta', delay: 7000, time: '13:47' },
+  { id: 6, type: 'bot', text: 'Basado en tus síntomas, recomiendo consulta con Médico General. Te muestro especialistas verificados cerca de ti:', delay: 8800, time: '13:47' },
+  { id: 7, type: 'referral', doctor: 'Dr. Carlos Méndez', specialty: 'Medicina General', distance: '1.2 km', delay: 10200, time: '13:48' },
 ]
 
 export default function AnimatedChat() {
@@ -58,18 +59,48 @@ export default function AnimatedChat() {
                 key={msg.id}
                 className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in-up`}
               >
-                <div
-                  className={`max-w-[75%] px-4 py-2.5 rounded-2xl shadow-sm ${
-                    msg.type === 'user'
-                      ? 'bg-brand-500 text-white rounded-br-md'
-                      : 'bg-white text-ink-primary border border-ink-border rounded-bl-md'
-                  }`}
-                >
-                  <p className="text-sm leading-relaxed">{msg.text}</p>
-                  <div className={`text-[10px] mt-1 ${msg.type === 'user' ? 'text-white/70' : 'text-ink-muted'}`}>
-                    {new Date(Date.now() + msg.delay).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })}
+                {msg.type === 'referral' ? (
+                  <div className="w-full bg-white border border-medical-200 rounded-xl p-3 shadow-sm">
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-medical-500 to-medical-600 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                        {msg.doctor.split(' ')[1]?.charAt(0) || 'D'}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <p className="font-semibold text-ink-primary text-sm">{msg.doctor}</p>
+                          <svg className="w-4 h-4 text-medical-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <p className="text-xs text-medical-600 font-medium">{msg.specialty}</p>
+                        <div className="flex items-center gap-1 mt-1">
+                          <svg className="w-3 h-3 text-ink-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                          <span className="text-[10px] text-ink-muted">{msg.distance}</span>
+                        </div>
+                      </div>
+                      <button className="px-3 py-1.5 bg-gradient-to-r from-brand-600 to-brand-500 text-white text-xs font-semibold rounded-lg flex-shrink-0">
+                        Ver perfil
+                      </button>
+                    </div>
+                    <div className="text-[10px] text-ink-muted mt-2">{msg.time}</div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className={`max-w-[75%] px-4 py-2.5 rounded-2xl shadow-sm ${
+                      msg.type === 'user'
+                        ? 'bg-brand-500 text-white rounded-br-md'
+                        : 'bg-white text-ink-primary border border-ink-border rounded-bl-md'
+                    }`}
+                  >
+                    <p className="text-sm leading-relaxed">{msg.text}</p>
+                    <div className={`text-[10px] mt-1 ${msg.type === 'user' ? 'text-white/70' : 'text-ink-muted'}`}>
+                      {msg.time}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
 
