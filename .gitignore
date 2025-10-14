@@ -6,3 +6,6 @@ dist
 
 .cursor/rules/kluster-code-verify.mdc
 .kluster
+
+# Local Netlify folder
+.netlify
