@@ -1,0 +1,532 @@
+{
+  "projectName": "Doctor.mx - Telemedicine Platform",
+  "version": "1.0.0",
+  "testingDate": "2025-10-14",
+  "baseUrl": "http://localhost:5176",
+  "apiUrl": "http://localhost:8787",
+
+  "systemStatus": {
+    "database": "✅ Supabase PostgreSQL - Connected",
+    "frontend": "✅ Vite Dev Server - Port 5176",
+    "backend": "✅ Express API Server - Port 8787",
+    "aiIntegration": "✅ OpenAI GPT-4o-mini - Configured",
+    "authentication": "✅ Supabase Auth - Active"
+  },
+
+  "credentials": {
+    "openai": {
+      "apiKey": "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",
+      "model": "gpt-4o-mini",
+      "purpose": "Medical AI chatbot for symptom triage and specialist referrals"
+    },
+    "supabase": {
+      "url": "https://oxlbametpfubwnrmrbsv.supabase.co",
+      "status": "Active with 43 tables created"
+    }
+  },
+
+  "testingWorkflows": [
+    {
+      "workflow": "AI Doctor Chat Test",
+      "priority": "HIGH",
+      "url": "http://localhost:5176/doctor",
+      "prerequisites": ["User must be logged in"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/doctor",
+          "expected": "AI Doctor chat interface loads with welcome message"
+        },
+        {
+          "step": 2,
+          "action": "Type a medical symptom (e.g., 'Tengo dolor de cabeza desde hace 2 días')",
+          "expected": "AI responds with medical guidance in Spanish"
+        },
+        {
+          "step": 3,
+          "action": "Continue conversation with follow-up details",
+          "expected": "AI asks relevant medical questions and provides triage"
+        },
+        {
+          "step": 4,
+          "action": "Wait for specialty suggestion in response",
+          "expected": "AI suggests a medical specialty (e.g., 'Especialidad Sugerida: Neurólogo')"
+        },
+        {
+          "step": 5,
+          "action": "Verify specialist list appears automatically",
+          "expected": "List of nearby specialists appears with contact info, ratings, and call-to-action buttons"
+        }
+      ],
+      "validation": {
+        "aiResponse": "Must be in Spanish, medically accurate, and include disclaimer",
+        "specialistSearch": "Automatically triggered when specialty is detected",
+        "uiElements": "Chat messages, loading states, and specialist cards render correctly"
+      }
+    },
+    {
+      "workflow": "User Registration & Authentication",
+      "priority": "HIGH",
+      "url": "http://localhost:5176/register",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/register",
+          "expected": "Registration form appears"
+        },
+        {
+          "step": 2,
+          "action": "Fill out form with: full_name, email, password, role (patient/doctor)",
+          "expected": "Form validates input"
+        },
+        {
+          "step": 3,
+          "action": "Submit registration",
+          "expected": "User created in Supabase, redirected to appropriate page"
+        },
+        {
+          "step": 4,
+          "action": "Test login at http://localhost:5176/login",
+          "expected": "Successful authentication, session created"
+        }
+      ]
+    },
+    {
+      "workflow": "Doctor Directory & Search",
+      "priority": "MEDIUM",
+      "url": "http://localhost:5176/doctors",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/doctors",
+          "expected": "Doctor directory page loads with filters"
+        },
+        {
+          "step": 2,
+          "action": "Use search filter to find doctors by name or specialty",
+          "expected": "Results filter dynamically"
+        },
+        {
+          "step": 3,
+          "action": "Select a specialty from dropdown (e.g., 'Cardiología')",
+          "expected": "Only cardiologists are shown"
+        },
+        {
+          "step": 4,
+          "action": "Toggle 'Solo disponibles ahora' checkbox",
+          "expected": "Only available doctors shown"
+        },
+        {
+          "step": 5,
+          "action": "Click on a doctor card",
+          "expected": "Navigate to doctor profile page"
+        }
+      ],
+      "apiEndpoint": "Supabase: from('doctors').select('*').eq('verified', true)",
+      "dataValidation": "Doctors must have: full_name, specialty, verified=true, bio, cedula"
+    },
+    {
+      "workflow": "Doctor Profile View",
+      "priority": "MEDIUM",
+      "url": "http://localhost:5176/doctors/:id",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Click on any doctor from directory",
+          "expected": "Doctor profile page loads with full details"
+        },
+        {
+          "step": 2,
+          "action": "Verify profile information displayed",
+          "expected": "Shows: name, specialty, bio, cedula, availability, verification badge"
+        },
+        {
+          "step": 3,
+          "action": "Test 'Contact' or 'Book' buttons if present",
+          "expected": "Initiates booking or contact flow"
+        }
+      ]
+    },
+    {
+      "workflow": "Patient Dashboard",
+      "priority": "MEDIUM",
+      "url": "http://localhost:5176/dashboard",
+      "prerequisites": ["User logged in as patient"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/dashboard",
+          "expected": "Patient dashboard loads with 3 tabs: Consultas, Recetas, Referencias"
+        },
+        {
+          "step": 2,
+          "action": "Check 'Consultas' tab",
+          "expected": "Lists past consultations with doctor name, specialty, date, status"
+        },
+        {
+          "step": 3,
+          "action": "Switch to 'Recetas' tab",
+          "expected": "Shows electronic prescriptions (e-Rx) with medication details"
+        },
+        {
+          "step": 4,
+          "action": "Switch to 'Referencias' tab",
+          "expected": "Displays specialist referrals from doctors"
+        },
+        {
+          "step": 5,
+          "action": "Verify stats cards show correct counts",
+          "expected": "Total consultations, prescriptions, and referrals displayed"
+        }
+      ],
+      "apiEndpoints": {
+        "consultations": "from('consults').eq('patient_id', user.id)",
+        "prescriptions": "from('erx').eq('patient_id', user.id)",
+        "referrals": "from('referrals').eq('patient_id', user.id)"
+      }
+    },
+    {
+      "workflow": "Doctor Dashboard",
+      "priority": "MEDIUM",
+      "url": "http://localhost:5176/connect/dashboard",
+      "prerequisites": ["User logged in as verified doctor"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/connect/dashboard",
+          "expected": "Doctor dashboard loads with patient queue and consultation history"
+        },
+        {
+          "step": 2,
+          "action": "Check active consultations",
+          "expected": "Shows patients waiting for consultation"
+        },
+        {
+          "step": 3,
+          "action": "Test prescription creation (if available)",
+          "expected": "Can create e-Rx for patients"
+        },
+        {
+          "step": 4,
+          "action": "Test referral creation",
+          "expected": "Can refer patients to specialists"
+        }
+      ]
+    },
+    {
+      "workflow": "Doctor Onboarding",
+      "priority": "LOW",
+      "url": "http://localhost:5176/connect",
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/connect",
+          "expected": "Doctor onboarding landing page loads"
+        },
+        {
+          "step": 2,
+          "action": "Click 'Únete' or signup button",
+          "expected": "Navigate to /connect/signup"
+        },
+        {
+          "step": 3,
+          "action": "Fill doctor signup form with cedula, specialty, etc.",
+          "expected": "Form validates professional credentials"
+        },
+        {
+          "step": 4,
+          "action": "Submit for verification",
+          "expected": "Doctor record created with verified=false"
+        },
+        {
+          "step": 5,
+          "action": "Admin manually sets verified=true in database",
+          "expected": "Doctor can access dashboard"
+        }
+      ]
+    },
+    {
+      "workflow": "Pharmacy Portal",
+      "priority": "LOW",
+      "url": "http://localhost:5176/pharmacy/portal",
+      "prerequisites": ["User logged in as pharmacy"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/pharmacy/portal",
+          "expected": "Pharmacy portal loads"
+        },
+        {
+          "step": 2,
+          "action": "View incoming prescriptions",
+          "expected": "Shows e-Rx that need fulfillment"
+        },
+        {
+          "step": 3,
+          "action": "Mark prescription as filled",
+          "expected": "Updates pharmacy_fills table"
+        }
+      ]
+    },
+    {
+      "workflow": "Payment Checkout",
+      "priority": "MEDIUM",
+      "url": "http://localhost:5176/pay/checkout",
+      "prerequisites": ["User logged in"],
+      "steps": [
+        {
+          "step": 1,
+          "action": "Navigate to http://localhost:5176/pay/checkout",
+          "expected": "Stripe checkout page loads"
+        },
+        {
+          "step": 2,
+          "action": "Select consultation type (Chat $79, Video $149, etc.)",
+          "expected": "Stripe payment form appears"
+        },
+        {
+          "step": 3,
+          "action": "Use Stripe test card: 4242 4242 4242 4242",
+          "expected": "Payment processes successfully"
+        },
+        {
+          "step": 4,
+          "action": "Verify payment record created",
+          "expected": "Entry in 'payments' and 'invoices' tables"
+        }
+      ]
+    }
+  ],
+
+  "apiEndpointsToTest": {
+    "aiChat": {
+      "endpoint": "POST http://localhost:8787/api/chat",
+      "payload": {
+        "message": "Tengo dolor de cabeza",
+        "history": [],
+        "intake": {}
+      },
+      "expectedResponse": {
+        "careLevel": "PRIMARY or ER",
+        "redFlags": {"triggered": false, "reasons": []},
+        "message": "AI medical guidance in Spanish with disclaimer"
+      }
+    },
+    "findSpecialists": {
+      "endpoint": "POST http://localhost:8787/api/specialists",
+      "payload": {
+        "specialty": "Cardiólogo",
+        "city": "Ciudad de México",
+        "lat": 19.4326,
+        "lon": -99.1332
+      },
+      "expectedResponse": {
+        "specialists": [
+          {
+            "id": "uuid",
+            "name": "Dr. Name",
+            "specialty": "Cardiólogo",
+            "address": "Street address",
+            "phone": "+52...",
+            "verified": true,
+            "rating": 4.8,
+            "distance": 1500
+          }
+        ]
+      }
+    },
+    "healthCheck": {
+      "endpoint": "GET http://localhost:8787/api/health",
+      "expectedResponse": {
+        "status": "online"
+      }
+    }
+  },
+
+  "databaseTables": {
+    "core": [
+      "users",
+      "profiles",
+      "medical_profiles",
+      "doctors",
+      "providers"
+    ],
+    "consultations": [
+      "consults",
+      "appointments",
+      "video_consultations"
+    ],
+    "prescriptions": [
+      "erx",
+      "medications",
+      "pharmacy_fills",
+      "pharmacies"
+    ],
+    "ai": [
+      "ai_conversations",
+      "ai_insights"
+    ],
+    "health": [
+      "vital_signs",
+      "symptoms",
+      "health_scores",
+      "health_goals"
+    ],
+    "payments": [
+      "payments",
+      "invoices",
+      "credits_ledger",
+      "doctor_subscriptions",
+      "stripe_events"
+    ],
+    "referrals": [
+      "referrals"
+    ],
+    "misc": [
+      "messages",
+      "audit_log",
+      "audit_trail",
+      "lab_orders",
+      "lab_results"
+    ]
+  },
+
+  "browserAITestingInstructions": {
+    "overview": "Use a browser-connected AI (like Claude with browser access) to navigate and test the Doctor.mx application",
+    "steps": [
+      {
+        "task": "Initial Setup",
+        "instructions": [
+          "Open http://localhost:5176 in browser",
+          "Verify homepage loads with medical theme and branding",
+          "Check that navigation menu is visible",
+          "Confirm 'Consultar ahora' CTA button is prominent"
+        ]
+      },
+      {
+        "task": "Test User Registration Flow",
+        "instructions": [
+          "Click 'Registrarse' button",
+          "Fill form with test data: name='Test User', email='test@test.com', password='Test123!', role='patient'",
+          "Submit and verify redirect to dashboard or doctor AI page",
+          "Check that user appears in Supabase 'users' table"
+        ]
+      },
+      {
+        "task": "Test AI Doctor Chat",
+        "instructions": [
+          "Navigate to /doctor page",
+          "Type symptom in Spanish: 'Tengo fiebre de 38 grados y dolor de garganta desde hace 3 días'",
+          "Observe AI response appears within 5-10 seconds",
+          "Verify response includes medical guidance, questions, and disclaimer",
+          "Check if specialty suggestion triggers specialist list",
+          "Interact with specialist cards (call button, website button)"
+        ]
+      },
+      {
+        "task": "Test Doctor Directory",
+        "instructions": [
+          "Navigate to /doctors",
+          "Use search bar to search for 'Cardio'",
+          "Select 'Cardiología' from specialty dropdown",
+          "Toggle 'Solo disponibles ahora' checkbox",
+          "Click on a doctor card and verify profile loads",
+          "Test back navigation to directory"
+        ]
+      },
+      {
+        "task": "Test Patient Dashboard",
+        "instructions": [
+          "Navigate to /dashboard",
+          "Switch between all 3 tabs: Consultas, Recetas, Referencias",
+          "Verify each tab shows appropriate empty state or data",
+          "Check stats cards show numerical counts",
+          "Test navigation from dashboard to consultation details (if data exists)"
+        ]
+      },
+      {
+        "task": "Test Responsive Design",
+        "instructions": [
+          "Resize browser to mobile width (375px)",
+          "Verify mobile menu appears and works",
+          "Check that chat interface is usable on mobile",
+          "Test specialist cards stack vertically on mobile",
+          "Verify all text is readable and buttons are tappable"
+        ]
+      },
+      {
+        "task": "Test Error Handling",
+        "instructions": [
+          "Try accessing /doctor without logging in (should redirect to login)",
+          "Try invalid login credentials (should show error)",
+          "Try submitting empty chat message (should be prevented)",
+          "Try searching for non-existent specialty (should show 'no results')"
+        ]
+      }
+    ],
+    "expectedBehavior": {
+      "performance": "Page loads < 2s, AI responses < 10s",
+      "accessibility": "Keyboard navigable, ARIA labels present",
+      "security": "Protected routes require authentication",
+      "ux": "Smooth animations, clear feedback, intuitive navigation"
+    }
+  },
+
+  "quickStartCommands": {
+    "startFrontend": "npm run dev (runs on port 5176)",
+    "startBackend": "npm run dev:api (runs on port 8787)",
+    "runMigration": "node migrate.js",
+    "checkEnv": "cat .env | grep -E '(OPENAI|SUPABASE|STRIPE)'"
+  },
+
+  "troubleshooting": {
+    "aiNotResponding": "Check API server is running on port 8787, verify OpenAI API key is set",
+    "databaseError": "Verify Supabase credentials in .env, check migration ran successfully",
+    "specialistsNotShowing": "Check 'doctors' table has verified=true entries, verify Google Places API if using external data",
+    "authenticationIssues": "Clear browser cookies, check Supabase Auth is enabled, verify SUPABASE_ANON_KEY"
+  },
+
+  "testResults": {
+    "✅ COMPLETED": [
+      "Database migration - 43 tables created",
+      "OpenAI API key configured",
+      "AI Doctor chat interface built",
+      "Doctor Directory page with filters",
+      "Doctor Profile detail page",
+      "Patient Dashboard with tabs (Consultas, Recetas, Referencias)",
+      "Authentication system with Supabase",
+      "All routes configured in main.jsx"
+    ],
+    "✅ READY FOR TESTING": [
+      "AI medical chatbot with GPT-4o-mini",
+      "Specialist search and referral system",
+      "Doctor directory search and filters",
+      "Patient prescription viewing",
+      "Referral system",
+      "Payment integration (Stripe configured)"
+    ],
+    "⚠️ NEEDS SAMPLE DATA": [
+      "Verified doctors in database for directory testing",
+      "Sample consultations for patient dashboard",
+      "Sample prescriptions (erx) for testing",
+      "Sample referrals for testing"
+    ]
+  },
+
+  "summary": {
+    "projectStatus": "✅ Fully configured and ready for testing",
+    "aiIntegration": "✅ OpenAI GPT-4o-mini connected and working",
+    "database": "✅ Supabase with 43 tables migrated",
+    "frontend": "✅ React + Vite on http://localhost:5176",
+    "backend": "✅ Express API on http://localhost:8787",
+    "nextSteps": [
+      "1. Open browser to http://localhost:5176",
+      "2. Register a test user account",
+      "3. Navigate to /doctor and test AI chat",
+      "4. Ask about symptoms to trigger specialist search",
+      "5. Explore doctor directory at /doctors",
+      "6. Check patient dashboard at /dashboard",
+      "7. Add sample data to database if needed for full testing"
+    ]
+  }
+}

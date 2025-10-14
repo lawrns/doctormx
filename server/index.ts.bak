@@ -1,0 +1,36 @@
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+import { evaluateRedFlags } from './triage.js';
+import { doctorReply } from './providers/openai.js';
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message, history = [], intake } = req.body || {};
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'message requerido' });
+    }
+
+    const red = evaluateRedFlags({ message, intake });
+    if (red.triggered) {
+      const msg = `Con tus datos hay señales de alarma. Motivo: ${red.reasons.join('; ')}. Te recomiendo acudir a urgencias ahora mismo.\n\nEsto no sustituye una evaluación médica profesional.`;
+      return res.json({ careLevel: red.action || 'ER', redFlags: red, message: msg });
+    }
+
+    const reply = await doctorReply({ history: [...history, { role: 'user', content: message }], redFlags: red });
+    res.json({ careLevel: 'PRIMARY', redFlags: red, message: reply });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+const PORT = process.env.PORT || 8787;
+app.listen(PORT, () => console.log(`API http://localhost:${PORT}`));

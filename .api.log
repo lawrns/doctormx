@@ -1,0 +1,16 @@
+
+> doctormx@0.0.1 dev:api
+> tsx server/index.ts
+
+[dotenv@17.2.1] injecting env (18) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[dotenv@17.2.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+⚠️  Missing WhatsApp config: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN
+   Set in .env or use test mode
+⚠️  WhatsApp Cloud API not fully configured - check .env file
+🚀 Doctor.mx API running on http://localhost:8787
+📞 WhatsApp webhook: http://localhost:8787/api/whatsapp/webhook
+Búsqueda de especialistas solicitada: { specialty: 'Cardiología', city: 'Ciudad de México' }
+Iniciando búsqueda de especialistas: { specialty: 'Cardiología', city: 'Ciudad de México' }
+Buscando especialistas locales...
+Encontrados 1 especialistas locales
+Retornando 1 especialistas únicos

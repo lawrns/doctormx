@@ -1,0 +1,24 @@
+rules:
+  - id: chest_pain_dyspnea
+    when:
+      all:
+        - symptom_contains: "dolor torácico"
+        - symptom_contains_any: ["falta de aire", "disnea"]
+    action: ER
+    reason: "Dolor torácico + disnea puede indicar evento cardiaco o tromboembolismo."
+  - id: neuro_headache
+    when:
+      all:
+        - symptom_contains: "dolor de cabeza"
+        - any:
+            - text_contains_any: ["debilidad en un lado", "dificultad para hablar", "convulsiones"]
+            - vitals.spo2_lt: 92
+    action: ER
+    reason: "Cefalea con déficit neurológico agudo o hipoxemia."
+  - id: pregnancy_bleeding
+    when:
+      all:
+        - isPregnant: true
+        - symptom_contains_any: ["sangrado", "dolor abdominal severo"]
+    action: URGENT
+    reason: "Embarazo con sangrado/dolor requiere evaluación inmediata."

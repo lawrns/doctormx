@@ -1,0 +1,286 @@
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+export default function ConnectLanding() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white to-medical-50">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-medical-500 to-medical-600">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+        <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+        <nav className="relative px-6 py-4">
+          <div className="max-w-6xl mx-auto flex items-center justify-between">
+            <Link to="/" className="text-white text-2xl font-bold">Doctor.mx</Link>
+            <Link
+              to="/connect/signup"
+              className="px-6 py-2 bg-white text-medical-600 rounded-lg font-semibold hover:bg-medical-50 transition-colors"
+            >
+              Comenzar
+            </Link>
+          </div>
+        </nav>
+
+        <div className="relative max-w-6xl mx-auto px-6 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Atiende pacientes por WhatsApp
+            </h1>
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+              Únete a la red de médicos que ganan más atendiendo consultas digitales.
+              Flexible, bien pagado, sin burocracia.
+            </p>
+            <div className="flex items-center justify-center gap-6 mb-12">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-white">$200+</div>
+                <div className="text-white/80 text-sm">por consulta</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-white">15 min</div>
+                <div className="text-white/80 text-sm">promedio</div>
+              </div>
+              <div className="w-px h-12 bg-white/30"></div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-white">24/7</div>
+                <div className="text-white/80 text-sm">tu horario</div>
+              </div>
+            </div>
+            <Link
+              to="/connect/signup"
+              className="inline-block px-8 py-4 bg-white text-medical-600 rounded-xl font-bold text-lg hover:bg-medical-50 transition-all hover:scale-105 shadow-xl"
+            >
+              Comenzar ahora
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* How It Works */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Cómo funciona</h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-xl p-8 shadow-lg"
+          >
+            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-medical-600">1</span>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">Regístrate y verifica</h3>
+            <p className="text-gray-600">
+              Sube tu cédula profesional. Verificamos en 24 horas con la SEP.
+              Listo para empezar.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-xl p-8 shadow-lg"
+          >
+            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-medical-600">2</span>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">Elige tu horario</h3>
+            <p className="text-gray-600">
+              Conecta cuando quieras. Recibe consultas por WhatsApp en tu móvil.
+              Tú decides cuándo trabajar.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="bg-white rounded-xl p-8 shadow-lg"
+          >
+            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-medical-600">3</span>
+            </div>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">Cobra al instante</h3>
+            <p className="text-gray-600">
+              Pagos semanales a tu cuenta. Sin papeleo, sin esperas.
+              Incluye recetas digitales válidas.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Earnings Calculator */}
+      <div className="bg-gradient-to-br from-brand-500 to-brand-600 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-white">¿Cuánto puedes ganar?</h2>
+          <p className="text-white/90 mb-8">Calcula tu ingreso potencial con consultas digitales</p>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="text-center">
+                <div className="text-white/80 text-sm mb-2">Consultas por día</div>
+                <div className="text-4xl font-bold text-white">4-8</div>
+              </div>
+              <div className="text-center">
+                <div className="text-white/80 text-sm mb-2">Pago por consulta</div>
+                <div className="text-4xl font-bold text-white">$200</div>
+              </div>
+              <div className="text-center">
+                <div className="text-white/80 text-sm mb-2">Ingreso mensual</div>
+                <div className="text-4xl font-bold text-white">$24k-48k</div>
+              </div>
+            </div>
+            <p className="text-white/80 text-sm">
+              Tiempo parcial, sin gastos de consultorio, sin intermediarios
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits */}
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Beneficios para ti</h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>,
+              title: 'WhatsApp Native',
+              desc: 'Atiende desde tu teléfono. Sin apps complicadas ni plataformas lentas.'
+            },
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+              title: 'Pagos transparentes',
+              desc: '70% del precio de consulta va directo a ti. Sin sorpresas.'
+            },
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+              title: 'Recetas válidas',
+              desc: 'Sistema integrado de e-Rx con QR. Cumple con NOM-004.'
+            },
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+              title: 'Dashboard completo',
+              desc: 'Seguimiento de pacientes, métricas, ingresos y calidad.'
+            },
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+              title: 'Sin burocracia',
+              desc: 'Registro simple. Verificación rápida. Empiezas de inmediato.'
+            },
+            {
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+              title: 'Respaldo legal',
+              desc: 'Consentimientos automatizados, auditoría y cumplimiento NOM-024.'
+            },
+          ].map((benefit, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md"
+            >
+              <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center text-medical-600 flex-shrink-0">{benefit.icon}</div>
+              <div>
+                <h3 className="font-bold text-lg mb-2 text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Specialties */}
+      <div className="bg-medical-50 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Especialidades buscadas</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            {[
+              'Medicina General',
+              'Dermatología',
+              'Nutrición',
+              'Psicología',
+              'Pediatría',
+              'Ginecología',
+              'Medicina Interna',
+              'Psiquiatría'
+            ].map((specialty, i) => (
+              <span
+                key={i}
+                className="px-6 py-3 bg-white text-medical-700 font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow"
+              >
+                {specialty}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="bg-gradient-to-br from-medical-500 to-medical-600 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-6 text-white">
+            ¿Listo para comenzar?
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            Únete a los médicos que ya están ganando más con horarios flexibles
+          </p>
+          <Link
+            to="/connect/signup"
+            className="inline-block px-8 py-4 bg-white text-medical-600 rounded-xl font-bold text-lg hover:bg-medical-50 transition-all hover:scale-105 shadow-xl"
+          >
+            Crear cuenta gratis
+          </Link>
+          <p className="text-white/70 text-sm mt-4">
+            Verificación en 24 horas • Sin costo de registro • Empieza cuando quieras
+          </p>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="font-bold text-lg mb-4">Doctor.mx</h3>
+              <p className="text-gray-400 text-sm">
+                Telemedicina WhatsApp-first para México
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Para Médicos</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link to="/connect" className="hover:text-white">Cómo funciona</Link></li>
+                <li><Link to="/connect/signup" className="hover:text-white">Registrarse</Link></li>
+                <li><Link to="/connect/login" className="hover:text-white">Iniciar sesión</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li><Link to="/legal/terms" className="hover:text-white">Términos</Link></li>
+                <li><Link to="/privacy" className="hover:text-white">Privacidad</Link></li>
+                <li><a href="mailto:doctors@doctor.mx" className="hover:text-white">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+            © 2025 Doctor.mx • Todos los derechos reservados
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
