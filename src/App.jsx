@@ -166,11 +166,11 @@ export default function App(){
   }, [mobileMenuOpen])
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-dark-50 via-ink-inverse to-ink-bg overflow-x-hidden">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <ScrollIndicator />
 
-      {/* Top nav with glassmorphism */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-ink-border/50">
+      {/* Top nav */}
+      <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-sm border-b border-ink-border">
         <div className="mx-auto flex max-w-container items-center justify-between px-6 py-4 md:px-8">
           <Logo />
 
@@ -227,50 +227,46 @@ export default function App(){
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
       <main>
-        {/* Hero Section - Dark Modern */}
-        <section className="relative mx-auto max-w-container px-6 py-24 md:py-32 lg:py-40 md:px-8 overflow-hidden">
-          {/* Dark background with modern gradients */}
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-dark-50 via-dark-100 to-dark-50">
-            {/* Glowing orbs */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-brand-500/20 to-transparent rounded-full blur-3xl animate-glow-pulse"></div>
-            <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-gradient-to-tr from-medical-500/20 to-transparent rounded-full blur-3xl animate-glow-pulse" style={{animationDelay: '1.5s'}}></div>
-            {/* Subtle grid */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]"></div>
+        {/* Hero */}
+        <section className="relative mx-auto max-w-container px-6 py-20 md:py-28 lg:py-36 md:px-8 overflow-hidden">
+          {/* Sophisticated background elements */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-brand-100/40 to-medical-50/20 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-gradient-to-tr from-medical-50/30 to-transparent rounded-full blur-3xl"></div>
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              {/* Badge */}
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="mb-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-xl px-5 py-2.5 text-sm font-semibold text-white shadow-lg ring-1 ring-white/20">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-700 shadow-sm ring-1 ring-brand-200/50">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-medical-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-medical-400"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-medical-500"></span>
                   </span>
                   Disponible 24/7 · Respuesta inmediata
                 </span>
               </div>
 
-              {/* Headline */}
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 leading-[1.05]">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink-primary mb-8 leading-[1.05]">
                 Atención médica{' '}
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-brand-400 via-brand-300 to-medical-400 bg-clip-text text-transparent">instantánea</span>
+                  <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">instantánea</span>
+                  <span className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-brand-200/50 to-medical-200/50 -rotate-1"></span>
                 </span>
-                {' '}por IA
+                {' '}por WhatsApp
               </h1>
 
-              {/* Description */}
-              <p className="text-xl text-white/80 leading-relaxed mb-10 max-w-xl">
-                Consulta con IA médica de última generación. Diagnóstico inicial en segundos, referencias a especialistas verificados.
-                <span className="block mt-3 text-white font-semibold">Desde $79 MXN · Sin citas · Sin esperas</span>
+              <p className="text-xl text-ink-secondary leading-relaxed mb-10 max-w-xl">
+                Consulta con IA médica 24/7. Referencia a especialistas verificados.
+                <span className="block mt-2 text-ink-primary font-semibold"> Desde $79 MXN · Sin citas · Sin esperas</span>
               </p>
 
-              {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/doctor"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 px-8 py-4 text-lg font-semibold text-white shadow-xl shadow-brand/50 transition-all duration-300 hover:shadow-2xl hover:shadow-brand/60 hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5"
                 >
                   Consultar ahora
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -280,96 +276,95 @@ export default function App(){
 
                 <a
                   href="#precios"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-ink-border px-8 py-4 text-lg font-semibold text-ink-primary transition-all duration-200 hover:border-brand-500 hover:bg-brand-50/50"
                 >
                   Ver planes
-                  <span className="text-sm font-normal text-white/70">desde $79</span>
+                  <span className="text-sm font-normal text-ink-secondary">desde $79</span>
                 </a>
               </div>
 
-              {/* Trust indicators - Modern dark style */}
-              <div className="flex flex-wrap items-center gap-6">
+              {/* Trust indicators - Medical style */}
+              <div className="flex flex-wrap items-center gap-8">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-medical-500/20 backdrop-blur-sm ring-1 ring-medical-400/30">
-                    <svg className="h-5 w-5 text-medical-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-medical-100">
+                    <svg className="h-4 w-4 text-medical-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-white/90">NOM-004 compliant</span>
+                  <span className="text-sm font-medium text-ink-secondary">NOM-004 compliant</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-500/20 backdrop-blur-sm ring-1 ring-brand-400/30">
-                    <svg className="h-5 w-5 text-brand-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100">
+                    <svg className="h-4 w-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-white/90">Datos encriptados</span>
+                  <span className="text-sm font-medium text-ink-secondary">Datos encriptados</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-medical-500/20 backdrop-blur-sm ring-1 ring-medical-400/30">
-                    <svg className="h-5 w-5 text-medical-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-medical-100">
+                    <svg className="h-4 w-4 text-medical-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-white/90">Médicos verificados</span>
+                  <span className="text-sm font-medium text-ink-secondary">Médicos verificados</span>
                 </div>
               </div>
             </div>
-            <div className={`relative transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
-              {/* Animated chat conversation with modern glow */}
+            <div className={`relative transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              {/* Animated chat conversation */}
               <div className="relative">
-                {/* Enhanced glow effect */}
-                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-500/30 via-medical-500/20 to-transparent rounded-[3rem] blur-3xl"></div>
-                <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-brand-400/20 to-transparent rounded-[3rem] blur-2xl"></div>
+                {/* Glow effect */}
+                <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-200/40 via-medical-100/20 to-transparent rounded-[3rem] blur-3xl"></div>
                 <AnimatedChat />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Stats Dashboard - Clean White Section */}
-        <section className="py-20 md:py-32 bg-white">
+        {/* Stats Dashboard */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
           <div className="mx-auto max-w-container px-6 md:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-ink-primary mb-6 tracking-tight">
+                <h2 className="text-3xl md:text-4xl font-bold text-ink-primary mb-6">
                   Atención médica en tiempo real
                 </h2>
-                <p className="text-xl text-ink-secondary leading-relaxed mb-10">
-                  Miles de personas confían en doctor.mx cada día para recibir atención médica rápida, segura y profesional.
+                <p className="text-lg text-ink-secondary leading-relaxed mb-8">
+                  Más de mil personas confían en doctor.mx cada día para recibir atención médica rápida y profesional.
                 </p>
-                <div className="space-y-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-medical-500 to-medical-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-medical-500/25">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-medical-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-medical-600" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-bold text-ink-primary text-lg">Disponibilidad 24/7</div>
-                      <div className="text-ink-secondary">Acceso inmediato a doctores en cualquier momento del día</div>
+                      <div className="font-semibold text-ink-primary">Disponibilidad 24/7</div>
+                      <div className="text-sm text-ink-secondary">Acceso inmediato a doctores en cualquier momento</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-brand-500 to-brand-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-brand-500/25">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-brand-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-bold text-ink-primary text-lg">Respuesta instantánea</div>
-                      <div className="text-ink-secondary">Diagnóstico inicial en segundos, no en días</div>
+                      <div className="font-semibold text-ink-primary">Respuesta promedio en minutos</div>
+                      <div className="text-sm text-ink-secondary">No más esperas de semanas para una cita</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-yellow-500/25">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
                     <div>
-                      <div className="font-bold text-ink-primary text-lg">4.9/5.0 de satisfacción</div>
-                      <div className="text-ink-secondary">Miles de pacientes satisfechos confían en nosotros</div>
+                      <div className="font-semibold text-ink-primary">Alta satisfacción del paciente</div>
+                      <div className="text-sm text-ink-secondary">Calificación promedio de 4.9 de 5.0</div>
                     </div>
                   </div>
                 </div>
@@ -381,104 +376,101 @@ export default function App(){
           </div>
         </section>
 
-        {/* Features - Modern Bento Layout with Dark Background */}
-        <section id="features" className="py-24 md:py-32 bg-gradient-to-b from-dark-50 to-dark-100 relative overflow-hidden">
-          {/* Background patterns */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-
-          <div className="mx-auto max-w-container px-6 md:px-8 relative z-10">
+        {/* Features - Bento Box Layout */}
+        <section id="features" className="py-24 md:py-32">
+          <div className="mx-auto max-w-container px-6 md:px-8">
             <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-ink-primary mb-6">
                 Atención médica moderna
               </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-ink-secondary max-w-3xl mx-auto leading-relaxed">
                 La plataforma más rápida y accesible para consultas médicas en México
               </p>
             </div>
 
             {/* Bento Box Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Large Feature 1 - Spans 2 columns */}
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 to-brand-600 p-10 shadow-2xl lg:col-span-2 transition-all duration-500 hover:shadow-brand hover:scale-[1.02]">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
+              {/* Large Feature 1 - Spans 2 columns on desktop */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 p-8 shadow-lg lg:col-span-2 transition-all hover:shadow-2xl hover:scale-[1.02]">
                 <div className="relative z-10">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/20 text-white mb-8 backdrop-blur-sm ring-1 ring-white/30 shadow-xl">
-                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 text-white mb-6 backdrop-blur-sm">
+                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-3xl font-bold text-white">
-                    Respuesta instantánea con IA
+                  <h3 className="mb-4 text-2xl font-bold text-white">
+                    Respuesta instantánea
                   </h3>
                   <p className="text-white/90 leading-relaxed text-lg">
-                    Tecnología de inteligencia artificial médica disponible 24/7. Diagnóstico inicial en segundos, referencias a especialistas en minutos.
+                    IA médica disponible 24/7. Obtén orientación en segundos, no en días. Sin citas, sin esperas.
                   </p>
                 </div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
               </div>
 
-              {/* Feature 2 - Glassmorphism */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl p-8 shadow-xl ring-1 ring-white/20 transition-all duration-500 hover:bg-white/15 hover:ring-white/30">
+              {/* Feature 2 */}
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5 transition-all hover:shadow-xl hover:ring-medical-200">
                 <div className="mb-6">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-medical-500/20 backdrop-blur-sm text-medical-400 ring-1 ring-medical-400/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-medical-500/30">
-                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-medical-100 text-medical-600 transition-transform group-hover:scale-110">
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-white">
+                <h3 className="mb-3 text-xl font-semibold text-ink-primary">
                   Privacidad garantizada
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-ink-secondary leading-relaxed">
                   Cumplimos NOM-004. Datos encriptados y protegidos por ley mexicana.
                 </p>
               </div>
 
-              {/* Feature 3 - Glassmorphism */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl p-8 shadow-xl ring-1 ring-white/20 transition-all duration-500 hover:bg-white/15 hover:ring-white/30 md:col-span-2 lg:col-span-1">
+              {/* Feature 3 */}
+              <div className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm ring-1 ring-black/5 transition-all hover:shadow-xl hover:ring-medical-200">
                 <div className="mb-6">
-                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-500/20 backdrop-blur-sm text-brand-400 ring-1 ring-brand-400/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-500/30">
-                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-medical-100 text-medical-600 transition-transform group-hover:scale-110">
+                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-white">
+                <h3 className="mb-3 text-xl font-semibold text-ink-primary">
                   Médicos verificados
                 </h3>
-                <p className="text-white/70 leading-relaxed">
-                  Red de especialistas certificados. Validación de cédula profesional y experiencia comprobada.
+                <p className="text-ink-secondary leading-relaxed">
+                  Red de especialistas certificados. Validación de cédula profesional.
                 </p>
               </div>
 
-              {/* Large Feature 4 - Teal Gradient */}
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-medical-500 to-medical-600 p-10 shadow-2xl md:col-span-2 transition-all duration-500 hover:shadow-glow-teal hover:scale-[1.02]">
+              {/* Large Feature 4 - Spans 2 columns on desktop */}
+              <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-medical-500 to-medical-600 p-8 shadow-lg lg:col-span-2 transition-all hover:shadow-2xl hover:scale-[1.02]">
                 <div className="relative z-10">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/20 text-white mb-8 backdrop-blur-sm ring-1 ring-white/30 shadow-xl">
-                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 text-white mb-6 backdrop-blur-sm">
+                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="mb-4 text-3xl font-bold text-white">
+                  <h3 className="mb-4 text-2xl font-bold text-white">
                     100% por WhatsApp
                   </h3>
                   <p className="text-white/90 leading-relaxed text-lg">
-                    Sin apps nuevas ni complicaciones. Usa la aplicación que ya tienes y conoces. Simple, rápido y familiar.
+                    Sin apps nuevas. Usa la app que ya tienes y conoces perfectamente. Simple, rápido, familiar.
                   </p>
                 </div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing Section - Clean White */}
-        <section id="precios" className="py-20 md:py-32 bg-white">
+        {/* Pricing Section */}
+        <section id="precios" className="py-16 md:py-24">
           <div className="mx-auto max-w-container px-6 md:px-8">
-            <div className="text-center mb-16 md:mb-20">
-              <h2 className="text-4xl md:text-5xl font-bold text-ink-primary mb-6 tracking-tight">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-ink-primary mb-4">
                 Planes accesibles para todos
               </h2>
-              <p className="text-xl text-ink-secondary max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
                 Desde consultas gratuitas con IA hasta atención médica profesional
               </p>
             </div>

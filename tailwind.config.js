@@ -3,33 +3,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Modern purple-blue gradient (Mollie-inspired primary)
+        // Medical blue/teal (primary brand) - Doctoralia-inspired
         brand: {
-          50: '#F5F3FF',
-          100: '#EDE9FE',
-          200: '#DDD6FE',
-          300: '#C4B5FD',
-          400: '#A78BFA',
-          500: '#8B5CF6', // Main purple
-          600: '#7C3AED',
-          700: '#6D28D9',
-          800: '#5B21B6',
-          900: '#4C1D95',
-          950: '#2E1065',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6', // Main medical blue
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#1E3A8A',
         },
-        // Teal accent (modern, fresh)
+        // Medical teal (secondary/accent)
         medical: {
-          50: '#ECFDF5',
-          100: '#D1FAE5',
-          200: '#A7F3D0',
-          300: '#6EE7B7',
-          400: '#34D399',
-          500: '#10B981', // Main teal
-          600: '#059669',
-          700: '#047857',
-          800: '#065F46',
-          900: '#064E3B',
-          950: '#022C22',
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          200: '#99F6E4',
+          300: '#5EEAD4',
+          400: '#2DD4BF',
+          500: '#14B8A6', // Main teal
+          600: '#0D9488',
+          700: '#0F766E',
+          800: '#115E59',
+          900: '#134E4A',
         },
         // Keep pharmacy as alias for backwards compatibility (map to teal)
         pharmacy: {
@@ -57,28 +55,15 @@ export default {
           800: '#92400E',
           900: '#78350F',
         },
-        // Modern high-contrast grayscale (Mollie-style)
+        // High-contrast grayscale (Mollie-style)
         ink: {
-          primary: '#09090B',    // Near black for text
-          secondary: '#3F3F46',  // Medium gray
-          muted: '#71717A',      // Lighter gray
-          subtle: '#A1A1AA',     // Very light gray
-          border: '#E4E4E7',     // Borders
+          primary: '#0A0A0A',    // Near black for text
+          secondary: '#525252',  // Medium gray
+          muted: '#737373',      // Lighter gray
+          subtle: '#A3A3A3',     // Very light gray
+          border: '#E5E5E5',     // Borders
           bg: '#FAFAFA',         // Subtle backgrounds
           inverse: '#FFFFFF'     // White
-        },
-        // Background colors for modern dark sections
-        dark: {
-          50: '#18181B',
-          100: '#27272A',
-          200: '#3F3F46',
-          300: '#52525B',
-          400: '#71717A',
-          500: '#A1A1AA',
-          600: '#D4D4D8',
-          700: '#E4E4E7',
-          800: '#F4F4F5',
-          900: '#FAFAFA',
         }
       },
       fontFamily: {
@@ -113,21 +98,20 @@ export default {
         '128': '32rem',
       },
       boxShadow: {
-        // Mollie-style sophisticated shadows
+        // Subtle, crisp shadows
         'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-        'DEFAULT': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)',
-        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)',
-        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)',
-        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
-        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+        'DEFAULT': '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08)',
+        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08)',
+        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08)',
+        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
         'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)',
-        'card': '0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08)',
-        'glow': '0 0 40px rgba(139, 92, 246, 0.3)',
-        'glow-teal': '0 0 40px rgba(16, 185, 129, 0.3)',
-        'brand': '0 8px 32px rgba(139, 92, 246, 0.25)',
-        'medical': '0 8px 32px rgba(16, 185, 129, 0.25)',
-        'alert': '0 8px 24px rgba(245, 158, 11, 0.2)',
+        'card': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
+        'card-hover': '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08)',
+        'pharmacy': '0 8px 24px rgba(20, 184, 166, 0.15)',
+        'brand': '0 8px 24px rgba(59, 130, 246, 0.15)',
+        'medical': '0 8px 24px rgba(20, 184, 166, 0.15)',
+        'alert': '0 8px 24px rgba(245, 158, 11, 0.15)',
       },
       borderRadius: {
         'sm': '0.375rem',
@@ -144,20 +128,13 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
-        'fade-in-up': 'fadeInUp 0.6s ease-out',
         'slide-up': 'slideUp 0.4s ease-out',
         'slide-down': 'slideDown 0.4s ease-out',
-        'scale-in': 'scaleIn 0.5s ease-out',
-        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideUp: {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
@@ -167,17 +144,6 @@ export default {
           '0%': { transform: 'translateY(-10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        glowPulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
-        },
-      },
-      backdropBlur: {
-        xs: '2px',
       },
     }
   },
