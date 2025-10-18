@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { chatTurn, findSpecialists } from '../lib/api';
 import Layout from '../components/Layout';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function DoctorAI() {
   const [input, setInput] = useState('');
@@ -8,6 +9,11 @@ export default function DoctorAI() {
   const [loading, setLoading] = useState(false);
   const [intake, setIntake] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [freeQuestionsRemaining, setFreeQuestionsRemaining] = useState(5);
+  const [showFreeQuestionAlert, setShowFreeQuestionAlert] = useState(false);
+  const [freeQuestionMessage, setFreeQuestionMessage] = useState('');
+  
+  const { user } = useAuth();
 
   const chatContainerRef = useRef(null);
   const textareaRef = useRef(null);
@@ -71,7 +77,27 @@ export default function DoctorAI() {
 
   useEffect(() => {
     setIsLoaded(true);
-  }, []);
+    
+    // Check free questions eligibility when component loads
+    if (user) {
+      checkFreeQuestionsEligibility();
+    }
+  }, [user]);
+
+  // Function to check free questions eligibility
+  const checkFreeQuestionsEligibility = async () => {
+    if (!user) return;
+    
+    try {
+      const response = await fetch(`/api/free-questions/${user.id}/eligibility`);
+      if (response.ok) {
+        const data = await response.json();
+        setFreeQuestionsRemaining(data.remaining);
+      }
+    } catch (error) {
+      console.error('Error checking free questions eligibility:', error);
+    }
+  };
 
   // Auto-scroll to bottom when history changes
   useEffect(() => {
@@ -100,16 +126,39 @@ export default function DoctorAI() {
     const newHist = [...history, { role: 'user', content: msg }];
     setHistory(newHist);
     try {
-      const data = await chatTurn({ message: msg, history: newHist, intake });
+      const data = await chatTurn({ 
+        message: msg, 
+        history: newHist, 
+        intake, 
+        userId: user?.id 
+      });
+      
       setHistory(h => [...h, { role: 'assistant', content: data.message }]);
+      
+      // Handle free question usage feedback
+      if (data.freeQuestionUsed && data.freeQuestionMessage) {
+        setFreeQuestionMessage(data.freeQuestionMessage);
+        setShowFreeQuestionAlert(true);
+        // Update remaining questions
+        await checkFreeQuestionsEligibility();
+      }
       
       // Detectar si hay derivación y buscar especialistas automáticamente
       const specialty = extractSpecialty(data.message);
       if (specialty) {
         await searchSpecialistsAndAddToChat(specialty);
       }
-    } catch {
-      setHistory(h => [...h, { role: 'assistant', content: 'Error del servidor. Intenta de nuevo.' }]);
+    } catch (error) {
+      if (error.status === 402) {
+        // Free questions exhausted
+        setHistory(h => [...h, { 
+          role: 'assistant', 
+          content: 'Has agotado tus preguntas gratuitas este mes. Las preguntas se renuevan automáticamente cada mes. Para continuar, puedes suscribirte a uno de nuestros planes.' 
+        }]);
+        setFreeQuestionsRemaining(0);
+      } else {
+        setHistory(h => [...h, { role: 'assistant', content: 'Error del servidor. Intenta de nuevo.' }]);
+      }
     } finally {
       setLoading(false);
     }
@@ -149,6 +198,23 @@ export default function DoctorAI() {
             <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed mb-8">
               Describe tus síntomas con detalle. Recibirás orientación médica inmediata y, si es necesario, referencias a especialistas cerca de ti.
             </p>
+
+            {/* Free Questions Counter */}
+            {user && (
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg">
+                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm font-medium text-green-800">
+                    {freeQuestionsRemaining > 0 
+                      ? `${freeQuestionsRemaining} preguntas GRATIS restantes este mes`
+                      : 'Preguntas gratuitas agotadas - se renuevan cada mes'
+                    }
+                  </span>
+                </div>
+              </div>
+            )}
 
             {/* Quick actions */}
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
@@ -506,6 +572,31 @@ export default function DoctorAI() {
           </div>
         </div>
       </div>
+
+      {/* Free Question Alert */}
+      {showFreeQuestionAlert && (
+        <div className="fixed top-4 right-4 z-50 max-w-sm">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 shadow-lg">
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <div className="flex-1">
+                <p className="text-sm font-medium text-green-800 mb-1">¡Pregunta gratuita utilizada!</p>
+                <p className="text-xs text-green-700">{freeQuestionMessage}</p>
+              </div>
+              <button
+                onClick={() => setShowFreeQuestionAlert(false)}
+                className="text-green-600 hover:text-green-800"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </Layout>
   );
 }

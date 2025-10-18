@@ -250,25 +250,25 @@ export default function App(){
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink-primary mb-8 leading-[1.05]">
-                Atención médica{' '}
+                Salud gratuita{' '}
                 <span className="relative inline-block">
-                  <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">instantánea</span>
+                  <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">para México</span>
                   <span className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-brand-200/50 to-medical-200/50 -rotate-1"></span>
                 </span>
-                {' '}por WhatsApp
+                {' '}con IA médica
               </h1>
 
               <p className="text-xl text-ink-secondary leading-relaxed mb-10 max-w-xl">
-                Consulta con IA médica 24/7. Referencia a especialistas verificados.
-                <span className="block mt-2 text-ink-primary font-semibold"> Desde $79 MXN · Sin citas · Sin esperas</span>
+                <span className="text-green-600 font-bold">5 preguntas GRATIS</span> para cada mexicano. Segunda opinión médica instantánea.
+                <span className="block mt-2 text-ink-primary font-semibold"> Sin costo inicial · Sin citas · Sin esperas</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/doctor"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-brand-500/30 hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-green-500/30 hover:-translate-y-0.5"
                 >
-                  Consultar ahora
+                  ¡Pregunta GRATIS ahora!
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -276,7 +276,7 @@ export default function App(){
 
                 <a
                   href="#precios"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-ink-border px-8 py-4 text-lg font-semibold text-ink-primary transition-all duration-200 hover:border-brand-500 hover:bg-brand-50/50"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-ink-border px-8 py-4 text-lg font-semibold text-ink-primary transition-all duration-200 hover:border-green-500 hover:bg-green-50/50"
                 >
                   Ver planes
                   <span className="text-sm font-normal text-ink-secondary">desde $79</span>
@@ -286,20 +286,20 @@ export default function App(){
               {/* Trust indicators - Medical style */}
               <div className="flex flex-wrap items-center gap-8">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-medical-100">
-                    <svg className="h-4 w-4 text-medical-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-100">
+                    <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">NOM-004 compliant</span>
+                  <span className="text-sm font-medium text-ink-secondary">5 preguntas GRATIS</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100">
-                    <svg className="h-4 w-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10 2a5 5 0 00-5 5v2a2 2 0 00-2 2v5a2 2 0 002 2h10a2 2 0 002-2v-5a2 2 0 00-2-2H7V7a3 3 0 015.905-.75 1 1 0 001.937-.5A5.002 5.002 0 0010 2z" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100">
+                    <svg className="h-4 w-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">Datos encriptados</span>
+                  <span className="text-sm font-medium text-ink-secondary">Segunda opinión médica</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-medical-100">
@@ -307,7 +307,7 @@ export default function App(){
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">Médicos verificados</span>
+                  <span className="text-sm font-medium text-ink-secondary">NOM-004 compliant</span>
                 </div>
               </div>
             </div>
@@ -468,45 +468,50 @@ export default function App(){
           <div className="mx-auto max-w-container px-6 md:px-8">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-ink-primary mb-4">
-                Planes accesibles para todos
+                Salud gratuita para todos los mexicanos
               </h2>
               <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-                Desde consultas gratuitas con IA hasta atención médica profesional
+                <span className="text-green-600 font-bold">5 preguntas GRATIS</span> para cada usuario. Segunda opinión médica instantánea con IA.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Free Plan */}
-              <div className="bg-white border border-ink-border rounded-2xl p-6 hover:shadow-card-hover transition-all duration-200">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-500 rounded-2xl p-6 hover:shadow-green-500/20 transition-all duration-200 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-green-600 to-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    ¡GRATIS!
+                  </span>
+                </div>
                 <div className="mb-6">
-                  <h3 className="text-xl font-semibold text-ink-primary mb-2">Gratis</h3>
+                  <h3 className="text-xl font-semibold text-ink-primary mb-2">5 Preguntas Gratis</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-ink-primary">$0</span>
+                    <span className="text-4xl font-bold text-green-600">$0</span>
                     <span className="text-ink-secondary text-sm">MXN</span>
                   </div>
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-medical-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    IA triage + guía básica
+                    5 preguntas con IA médica
                   </li>
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-medical-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Recordatorios WhatsApp
+                    Segunda opinión médica
                   </li>
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-medical-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    Pre-check de recetas
+                    Referencias a especialistas
                   </li>
                 </ul>
-                <Link to="/doctor" className="block w-full text-center py-2.5 rounded-lg border border-ink-border text-ink-primary font-medium hover:bg-ink-bg transition-colors">
-                  Empezar gratis
+                <Link to="/doctor" className="block w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold hover:from-green-700 hover:to-green-600 transition-colors shadow-sm">
+                  ¡Pregunta GRATIS ahora!
                 </Link>
               </div>
 

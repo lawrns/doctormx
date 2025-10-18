@@ -1,10 +1,14 @@
-export async function chatTurn({ message, history = [], intake }) {
+export async function chatTurn({ message, history = [], intake, userId }) {
   const r = await fetch('/api/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, history, intake })
+    body: JSON.stringify({ message, history, intake, userId })
   });
-  if (!r.ok) throw new Error('API error');
+  if (!r.ok) {
+    const error = new Error('API error');
+    error.status = r.status;
+    throw error;
+  }
   return r.json();
 }
 

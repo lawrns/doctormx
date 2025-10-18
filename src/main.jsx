@@ -21,6 +21,8 @@ import HealthMarketplace from './components/HealthMarketplace.jsx';
 import GamificationDashboard from './components/GamificationDashboard.jsx';
 import AffiliateDashboard from './components/AffiliateDashboard.jsx';
 import SubscriptionPlans from './components/SubscriptionPlans.jsx';
+import EnhancedDoctorPanel from './components/EnhancedDoctorPanel.jsx';
+import AIReferralSystem from './components/AIReferralSystem.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
@@ -117,6 +119,20 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/subscriptions' element={
             <ProtectedRoute>
               <SubscriptionPlans />
+            </ProtectedRoute>
+          } />
+
+          {/* Enhanced Doctor Panel */}
+          <Route path='/doctor-panel' element={
+            <ProtectedRoute>
+              <EnhancedDoctorPanel />
+            </ProtectedRoute>
+          } />
+
+          {/* AI Referral System */}
+          <Route path='/ai-referrals' element={
+            <ProtectedRoute>
+              <AIReferralSystem />
             </ProtectedRoute>
           } />
         </Routes>

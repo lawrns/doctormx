@@ -5,12 +5,14 @@ dotenv.config();
 
 import express from 'express';
 import cors from 'cors';
-import { evaluateRedFlags } from './triage.js';
-import { doctorReply } from './providers/openai.js';
-import { findSpecialists, validateSearchParams } from './providers/orchestrator.js';
-import { verifyWebhook, handleWebhook, healthCheck } from './services/whatsapp/webhook.js';
-import { validateWhatsAppConfig } from './services/whatsapp/config.js';
-import { getActiveSessionCount } from './services/whatsapp/conversationHandler.js';
+import { evaluateRedFlags } from './triage.ts';
+import { doctorReply } from './providers/openai.ts';
+import { findSpecialists, validateSearchParams } from './providers/orchestrator.ts';
+import { verifyWebhook, handleWebhook, healthCheck } from './services/whatsapp/webhook.ts';
+import { validateWhatsAppConfig } from './services/whatsapp/config.ts';
+import { getActiveSessionCount } from './services/whatsapp/conversationHandler.ts';
+import { createAIReferral, getPatientReferrals, updateReferralStatus, findMatchingDoctors } from './providers/referralSystem.ts';
+import { getUserFreeQuestions, useFreeQuestion, checkFreeQuestionEligibility } from './providers/freeQuestions.ts';
 
 const app = express();
 app.use(cors());
@@ -25,19 +27,75 @@ if (validateWhatsAppConfig()) {
 
 app.post('/api/chat', async (req, res) => {
   try {
-    const { message, history = [], intake } = req.body || {};
+    const { message, history = [], intake, userId } = req.body || {};
     if (!message || typeof message !== 'string') {
       return res.status(400).json({ error: 'message requerido' });
+    }
+
+    // Check free question eligibility if userId is provided
+    let freeQuestionUsed = false;
+    let freeQuestionMessage = '';
+    
+    if (userId) {
+      try {
+        const eligibility = await checkFreeQuestionEligibility(userId);
+        if (!eligibility.eligible) {
+          return res.status(402).json({ 
+            error: 'Free questions exhausted',
+            message: eligibility.message,
+            careLevel: 'PAYMENT_REQUIRED'
+          });
+        }
+      } catch (error) {
+        console.error('Error checking free question eligibility:', error);
+        // Continue without free question check if there's an error
+      }
     }
 
     const red = evaluateRedFlags({ message, intake });
     if (red.triggered) {
       const msg = `Con tus datos hay señales de alarma. Motivo: ${red.reasons.join('; ')}. Te recomiendo acudir a urgencias ahora mismo.\n\nEsto no sustituye una evaluación médica profesional.`;
-      return res.json({ careLevel: red.action || 'ER', redFlags: red, message: msg });
+      
+      // Use free question if available
+      if (userId) {
+        try {
+          const result = await useFreeQuestion(userId);
+          freeQuestionUsed = result.success;
+          freeQuestionMessage = result.message;
+        } catch (error) {
+          console.error('Error using free question:', error);
+        }
+      }
+      
+      return res.json({ 
+        careLevel: red.action || 'ER', 
+        redFlags: red, 
+        message: msg,
+        freeQuestionUsed,
+        freeQuestionMessage
+      });
     }
 
     const reply = await doctorReply({ history: [...history, { role: 'user', content: message }], redFlags: red });
-    res.json({ careLevel: 'PRIMARY', redFlags: red, message: reply });
+    
+    // Use free question if available
+    if (userId) {
+      try {
+        const result = await useFreeQuestion(userId);
+        freeQuestionUsed = result.success;
+        freeQuestionMessage = result.message;
+      } catch (error) {
+        console.error('Error using free question:', error);
+      }
+    }
+    
+    res.json({ 
+      careLevel: 'PRIMARY', 
+      redFlags: red, 
+      message: reply,
+      freeQuestionUsed,
+      freeQuestionMessage
+    });
   } catch (e) {
     console.error(e);
     res.status(500).json({ error: 'Error interno del servidor' });
@@ -593,6 +651,105 @@ app.get('/api/marketplace/categories', async (req, res) => {
   } catch (e) {
     console.error('Error getting categories:', e);
     res.status(500).json({ error: 'Error al obtener categorías' });
+  }
+});
+
+// AI Referral System Endpoints
+app.post('/api/referrals/create', async (req, res) => {
+  try {
+    const { patientId, symptoms, additionalInfo } = req.body || {};
+    
+    if (!patientId || !symptoms) {
+      return res.status(400).json({ error: 'patientId y symptoms requeridos' });
+    }
+
+    const referral = await createAIReferral(patientId, symptoms, additionalInfo);
+    res.json({ referral });
+  } catch (e) {
+    console.error('Error creating AI referral:', e);
+    res.status(500).json({ error: 'Error al crear referencia' });
+  }
+});
+
+app.get('/api/referrals/patient/:patientId', async (req, res) => {
+  try {
+    const { patientId } = req.params;
+    
+    const referrals = await getPatientReferrals(patientId);
+    res.json({ referrals });
+  } catch (e) {
+    console.error('Error getting patient referrals:', e);
+    res.status(500).json({ error: 'Error al obtener referencias' });
+  }
+});
+
+app.put('/api/referrals/:referralId/status', async (req, res) => {
+  try {
+    const { referralId } = req.params;
+    const { status, doctorId } = req.body || {};
+    
+    if (!status) {
+      return res.status(400).json({ error: 'status requerido' });
+    }
+
+    await updateReferralStatus(referralId, status, doctorId);
+    res.json({ success: true });
+  } catch (e) {
+    console.error('Error updating referral status:', e);
+    res.status(500).json({ error: 'Error al actualizar estado de referencia' });
+  }
+});
+
+app.post('/api/referrals/find-doctors', async (req, res) => {
+  try {
+    const { criteria, limit = 5 } = req.body || {};
+    
+    if (!criteria) {
+      return res.status(400).json({ error: 'criteria requerido' });
+    }
+
+    const doctors = await findMatchingDoctors(criteria, limit);
+    res.json({ doctors });
+  } catch (e) {
+    console.error('Error finding matching doctors:', e);
+    res.status(500).json({ error: 'Error al encontrar doctores' });
+  }
+});
+
+// Free Questions System Endpoints
+app.get('/api/free-questions/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    
+    const usage = await getUserFreeQuestions(userId);
+    res.json({ usage });
+  } catch (e) {
+    console.error('Error getting free questions usage:', e);
+    res.status(500).json({ error: 'Error al obtener uso de preguntas gratuitas' });
+  }
+});
+
+app.get('/api/free-questions/:userId/eligibility', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    
+    const eligibility = await checkFreeQuestionEligibility(userId);
+    res.json(eligibility);
+  } catch (e) {
+    console.error('Error checking free question eligibility:', e);
+    res.status(500).json({ error: 'Error al verificar elegibilidad de preguntas gratuitas' });
+  }
+});
+
+app.post('/api/free-questions/:userId/use', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    
+    const result = await useFreeQuestion(userId);
+    res.json(result);
+  } catch (e) {
+    console.error('Error using free question:', e);
+    res.status(500).json({ error: 'Error al usar pregunta gratuita' });
   }
 });
 

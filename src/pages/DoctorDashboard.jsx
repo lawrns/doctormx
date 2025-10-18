@@ -177,13 +177,20 @@ export default function DoctorDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+      <header className="bg-white border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold text-medical-600">Doctor.mx</h1>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-lg">
+                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h1 className="text-xl font-bold text-gray-900">Doctor.mx</h1>
+              </div>
               <span className="text-gray-400">|</span>
-              <span className="text-gray-700">Dashboard</span>
+              <span className="text-gray-700">Dashboard Médico</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
@@ -202,12 +209,12 @@ export default function DoctorDashboard() {
       </header>
 
       {/* Stats Cards */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="grid md:grid-cols-4 gap-4 mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-xl p-6 shadow-sm"
+            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
           >
             <div className="text-sm text-gray-600 mb-1">Consultas totales</div>
             <div className="text-3xl font-bold text-gray-900">{stats.total_consults}</div>
@@ -217,17 +224,17 @@ export default function DoctorDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-xl p-6 shadow-sm"
+            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
           >
             <div className="text-sm text-gray-600 mb-1">Activas ahora</div>
-            <div className="text-3xl font-bold text-medical-600">{stats.active_consults}</div>
+            <div className="text-3xl font-bold text-blue-600">{stats.active_consults}</div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white rounded-xl p-6 shadow-sm"
+            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
           >
             <div className="text-sm text-gray-600 mb-1">Tiempo de respuesta</div>
             <div className="text-3xl font-bold text-gray-900">
@@ -239,7 +246,7 @@ export default function DoctorDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-gradient-to-br from-medical-500 to-medical-600 rounded-xl p-6 shadow-sm"
+            className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-6 shadow-sm"
           >
             <div className="text-sm text-white/80 mb-1">Ganancias totales</div>
             <div className="text-3xl font-bold text-white">
@@ -249,17 +256,17 @@ export default function DoctorDashboard() {
         </div>
 
         {/* Tabs */}
-        <div className="bg-white rounded-xl shadow-sm">
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="border-b border-gray-200">
-            <nav className="flex">
+            <nav className="flex space-x-8 px-6">
               {['inbox', 'history', 'settings'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-4 font-semibold transition-colors ${
+                  className={`py-4 text-sm font-medium border-b-2 transition-colors ${
                     activeTab === tab
-                      ? 'border-b-2 border-medical-500 text-medical-600'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'border-blue-500 text-blue-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700'
                   }`}
                 >
                   {tab === 'inbox' && 'Inbox'}
@@ -276,7 +283,11 @@ export default function DoctorDashboard() {
               <div>
                 {consults.length === 0 ? (
                   <div className="text-center py-12">
-                    <div className="text-6xl mb-4">📭</div>
+                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                      </svg>
+                    </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       No hay consultas pendientes
                     </h3>
@@ -289,7 +300,7 @@ export default function DoctorDashboard() {
                     {consults.map((consult) => (
                       <div
                         key={consult.id}
-                        className="border border-gray-200 rounded-lg p-4 hover:border-medical-300 transition-colors cursor-pointer"
+                        className="border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-colors cursor-pointer"
                         onClick={() => setSelectedConsult(consult)}
                       >
                         <div className="flex items-start justify-between mb-3">
@@ -348,8 +359,8 @@ export default function DoctorDashboard() {
             {/* History Tab */}
             {activeTab === 'history' && (
               <div className="text-center py-12">
-                <div className="w-20 h-20 mx-auto mb-4 bg-medical-100 rounded-2xl flex items-center justify-center">
-                  <svg className="w-10 h-10 text-medical-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
@@ -403,7 +414,7 @@ export default function DoctorDashboard() {
 
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Datos de pago</h3>
-                  <button className="px-4 py-2 bg-medical-500 text-white rounded-lg hover:bg-medical-600 transition-colors">
+                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                     Configurar cuenta de pago
                   </button>
                 </div>
@@ -453,7 +464,7 @@ export default function DoctorDashboard() {
                     key={i}
                     className={`p-3 rounded-lg ${
                       msg.from === 'doctor'
-                        ? 'bg-medical-100 ml-8'
+                        ? 'bg-blue-100 ml-8'
                         : 'bg-gray-100 mr-8'
                     }`}
                   >
@@ -471,7 +482,7 @@ export default function DoctorDashboard() {
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
                   placeholder="Escribe tu respuesta al paciente..."
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                   rows={4}
                 />
               </div>
@@ -481,7 +492,7 @@ export default function DoctorDashboard() {
                 <button
                   onClick={() => handleReply(selectedConsult.id)}
                   disabled={!replyText.trim()}
-                  className="flex-1 py-3 bg-medical-500 text-white font-semibold rounded-lg hover:bg-medical-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Enviar mensaje
                 </button>
