@@ -15,6 +15,12 @@ import DoctorProfile from './pages/DoctorProfile.jsx';
 import PatientDashboard from './pages/PatientDashboard.jsx';
 import PaymentCheckout from './pages/PaymentCheckout.jsx';
 import PharmacyPortal from './pages/PharmacyPortal.jsx';
+import VisionConsultation from './pages/VisionConsultation.jsx';
+import HealthCommunity from './components/HealthCommunity.jsx';
+import HealthMarketplace from './components/HealthMarketplace.jsx';
+import GamificationDashboard from './components/GamificationDashboard.jsx';
+import AffiliateDashboard from './components/AffiliateDashboard.jsx';
+import SubscriptionPlans from './components/SubscriptionPlans.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
@@ -69,6 +75,48 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/dashboard' element={
             <ProtectedRoute>
               <PatientDashboard />
+            </ProtectedRoute>
+          } />
+
+          {/* Vision consultation */}
+          <Route path='/vision' element={
+            <ProtectedRoute>
+              <VisionConsultation />
+            </ProtectedRoute>
+          } />
+
+          {/* Community */}
+          <Route path='/community' element={
+            <ProtectedRoute>
+              <HealthCommunity />
+            </ProtectedRoute>
+          } />
+
+          {/* Marketplace */}
+          <Route path='/marketplace' element={
+            <ProtectedRoute>
+              <HealthMarketplace />
+            </ProtectedRoute>
+          } />
+
+          {/* Gamification */}
+          <Route path='/gamification' element={
+            <ProtectedRoute>
+              <GamificationDashboard />
+            </ProtectedRoute>
+          } />
+
+          {/* Affiliate */}
+          <Route path='/affiliate' element={
+            <ProtectedRoute>
+              <AffiliateDashboard />
+            </ProtectedRoute>
+          } />
+
+          {/* Subscription Plans */}
+          <Route path='/subscriptions' element={
+            <ProtectedRoute>
+              <SubscriptionPlans />
             </ProtectedRoute>
           } />
         </Routes>

@@ -76,13 +76,21 @@ function MobileMenu({ isOpen, onClose }) {
             </div>
           )}
 
-          <div className="pt-4 border-t border-ink-border">
+          <div className="pt-4 border-t border-ink-border space-y-3">
             <Link
               to="/doctor"
               className="block w-full text-center rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-6 py-3.5 text-base font-semibold text-white shadow-brand transition-all duration-200 hover:shadow-lg"
             >
               Consultar ahora
             </Link>
+            {user && (
+              <Link
+                to="/vision"
+                className="block w-full text-center rounded-xl bg-gradient-to-r from-medical-500 to-medical-600 px-6 py-3.5 text-base font-semibold text-white shadow-brand transition-all duration-200 hover:shadow-lg"
+              >
+                Análisis de Imágenes
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -152,6 +160,22 @@ export default function Layout({ children }) {
             <Link to="/doctors" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
               Doctores
             </Link>
+            {user && (
+              <>
+                <Link to="/vision" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
+                  Análisis de Imágenes
+                </Link>
+                <Link to="/community" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
+                  Comunidad
+                </Link>
+                <Link to="/marketplace" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
+                  Marketplace
+                </Link>
+                <Link to="/gamification" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
+                  Gamificación
+                </Link>
+              </>
+            )}
             {user ? (
               <div className="flex items-center gap-4">
                 <Link to="/dashboard" className="text-sm font-medium text-ink-secondary hover:text-brand-600 transition-colors">
