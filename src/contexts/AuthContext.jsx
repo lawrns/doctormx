@@ -24,12 +24,21 @@ export const AuthProvider = ({ children }) => {
       try {
         const { user, error } = await getCurrentUser();
         if (error) {
-          console.error('Error obteniendo usuario:', error);
+          // Only log error if it's not just a missing session (which is normal for logged-out users)
+          if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
+            console.error('Error obteniendo usuario:', error);
+          }
+          // No user logged in is a valid state, just set user to null
+          setUser(null);
         } else {
           setUser(user);
         }
       } catch (error) {
-        console.error('Error inesperado obteniendo usuario:', error);
+        // Only log unexpected errors that aren't related to missing sessions
+        if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
+          console.error('Error inesperado obteniendo usuario:', error);
+        }
+        setUser(null);
       } finally {
         setLoading(false);
       }

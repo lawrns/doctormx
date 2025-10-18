@@ -15,19 +15,28 @@ export default function AnimatedChat() {
   const [isTyping, setIsTyping] = useState(false)
 
   useEffect(() => {
+    const timeouts = []
+
     messages.forEach((msg) => {
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         if (msg.type === 'bot') {
           setIsTyping(true)
-          setTimeout(() => {
+          const typingTimeout = setTimeout(() => {
             setIsTyping(false)
             setVisibleMessages(prev => [...prev, msg])
           }, 800)
+          timeouts.push(typingTimeout)
         } else {
           setVisibleMessages(prev => [...prev, msg])
         }
       }, msg.delay)
+      timeouts.push(timeout)
     })
+
+    // Cleanup function to clear all timeouts if component unmounts
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout))
+    }
   }, [])
 
   return (
