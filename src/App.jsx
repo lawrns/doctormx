@@ -7,12 +7,12 @@ import StatsBoard from './components/StatsBoard'
 function Logo() {
   return (
     <div className="flex items-center gap-2.5 group">
-      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-teal-600 text-white shadow-sm transition-all duration-200 group-hover:shadow-lg group-hover:scale-105">
+      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary-600 to-accent-600 text-white shadow-sm transition-all duration-200 group-hover:shadow-lg group-hover:scale-105">
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
           <path d="M10 4h4a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2V6a2 2 0 0 1 2-2z"/>
         </svg>
       </span>
-      <span className="text-xl font-semibold tracking-tight text-gray-900 transition-colors duration-200 group-hover:text-blue-600">doctor.mx</span>
+      <span className="text-xl font-semibold tracking-tight text-neutral-900 transition-colors duration-200 group-hover:text-primary-600">doctor.mx</span>
     </div>
   )
 }
@@ -259,14 +259,14 @@ export default function App(){
               </h1>
 
               <p className="text-xl text-ink-secondary leading-relaxed mb-10 max-w-xl">
-                <span className="text-green-600 font-bold">5 preguntas GRATIS</span> para cada mexicano. Segunda opinión médica instantánea.
+                <span className="text-primary-600 font-bold">5 preguntas GRATIS</span> para cada mexicano. Segunda opinión médica instantánea.
                 <span className="block mt-2 text-ink-primary font-semibold"> Sin costo inicial · Sin citas · Sin esperas</span>
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <Link
                   to="/doctor"
-                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-green-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-green-500/30 hover:-translate-y-0.5"
+                  className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 to-primary-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-primary-500/25 transition-all duration-200 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5"
                 >
                   ¡Pregunta GRATIS ahora!
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -276,38 +276,38 @@ export default function App(){
 
                 <a
                   href="#precios"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-ink-border px-8 py-4 text-lg font-semibold text-ink-primary transition-all duration-200 hover:border-green-500 hover:bg-green-50/50"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white border-2 border-neutral-300 px-8 py-4 text-lg font-semibold text-neutral-900 transition-all duration-200 hover:border-primary-500 hover:bg-primary-50/50"
                 >
                   Ver planes
-                  <span className="text-sm font-normal text-ink-secondary">desde $79</span>
+                  <span className="text-sm font-normal text-secondary-600">desde $79</span>
                 </a>
               </div>
 
               {/* Trust indicators - Medical style */}
               <div className="flex flex-wrap items-center gap-8">
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-100">
-                    <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-100">
+                    <svg className="h-4 w-4 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">5 preguntas GRATIS</span>
+                  <span className="text-sm font-medium text-secondary-600">5 preguntas GRATIS</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100">
-                    <svg className="h-4 w-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-100">
+                    <svg className="h-4 w-4 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">Segunda opinión médica</span>
+                  <span className="text-sm font-medium text-secondary-600">Segunda opinión médica</span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-medical-100">
-                    <svg className="h-4 w-4 text-medical-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-100">
+                    <svg className="h-4 w-4 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-sm font-medium text-ink-secondary">NOM-004 compliant</span>
+                  <span className="text-sm font-medium text-secondary-600">NOM-004 compliant</span>
                 </div>
               </div>
             </div>
@@ -471,46 +471,46 @@ export default function App(){
                 Salud gratuita para todos los mexicanos
               </h2>
               <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed">
-                <span className="text-green-600 font-bold">5 preguntas GRATIS</span> para cada usuario. Segunda opinión médica instantánea con IA.
+                <span className="text-primary-600 font-bold">5 preguntas GRATIS</span> para cada usuario. Segunda opinión médica instantánea con IA.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {/* Free Plan */}
-              <div className="bg-gradient-to-br from-green-50 to-green-100 border-2 border-green-500 rounded-2xl p-6 hover:shadow-green-500/20 transition-all duration-200 relative">
+              <div className="bg-gradient-to-br from-primary-50 to-primary-100 border-2 border-primary-500 rounded-2xl p-6 hover:shadow-primary-500/20 transition-all duration-200 relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-green-600 to-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                  <span className="bg-gradient-to-r from-primary-600 to-primary-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                     ¡GRATIS!
                   </span>
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-ink-primary mb-2">5 Preguntas Gratis</h3>
                   <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-green-600">$0</span>
+                    <span className="text-4xl font-bold text-primary-600">$0</span>
                     <span className="text-ink-secondary text-sm">MXN</span>
                   </div>
                 </div>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-primary-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     5 preguntas con IA médica
                   </li>
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-primary-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     Segunda opinión médica
                   </li>
                   <li className="flex items-start gap-2 text-sm text-ink-secondary">
-                    <svg className="h-5 w-5 text-green-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="h-5 w-5 text-primary-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     Referencias a especialistas
                   </li>
                 </ul>
-                <Link to="/doctor" className="block w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold hover:from-green-700 hover:to-green-600 transition-colors shadow-sm">
+                <Link to="/doctor" className="block w-full text-center py-2.5 rounded-lg bg-gradient-to-r from-primary-600 to-primary-500 text-white font-semibold hover:from-primary-700 hover:to-primary-600 transition-colors shadow-sm">
                   ¡Pregunta GRATIS ahora!
                 </Link>
               </div>
@@ -630,7 +630,7 @@ export default function App(){
         </section>
 
         {/* Doctor Connect Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="mx-auto max-w-container px-6 md:px-8">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -658,8 +658,8 @@ export default function App(){
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -670,8 +670,8 @@ export default function App(){
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -685,7 +685,7 @@ export default function App(){
                 <div className="mt-8">
                   <Link
                     to="/connect"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-teal-700 transition-all shadow-lg"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-600 to-accent-600 text-white font-semibold rounded-xl hover:from-primary-700 hover:to-accent-700 transition-all shadow-lg"
                   >
                     Únete como médico
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -715,7 +715,7 @@ export default function App(){
                           <div className="flex items-center gap-3">
                             <div className="flex-1 bg-gray-200 rounded-full h-2">
                               <div 
-                                className="bg-gradient-to-r from-blue-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                                className="bg-gradient-to-r from-primary-500 to-accent-500 h-2 rounded-full transition-all duration-1000 ease-out"
                                 style={{ width: `${specialty.percentage}%` }}
                               ></div>
                             </div>

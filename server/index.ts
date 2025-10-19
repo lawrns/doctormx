@@ -51,6 +51,7 @@ import {
   respondToReview,
   getReviewStatistics
 } from './providers/ratings.ts';
+import { findRelevantDoctors, getDoctorAvailability, createReferralRequest, getSpecialtyRecommendations } from './providers/doctorReferral.ts';
 import {
   trackOnboardingEvent,
   getOnboardingFunnelMetrics,
@@ -223,6 +224,11 @@ app.post('/api/chat', async (req, res) => {
       }
     }
 
+    // Determine conversation stage based on history length and content
+    const conversationStage = history.length === 0 ? 'initial' : 
+                            history.length < 3 ? 'followup' : 
+                            history.length < 6 ? 'detailed' : 'referral';
+
     console.log('🤖 Generating AI reply...');
     const reply = await doctorReply({ 
       history: [...history, { role: 'user', content: message }], 
@@ -231,7 +237,8 @@ app.post('/api/chat', async (req, res) => {
         age: userData?.age,
         sex: userData?.sex,
         specialty: undefined // Could be determined from symptoms or user preferences
-      }
+      },
+      conversationStage
     });
     console.log('✅ AI reply generated:', reply.substring(0, 100) + '...');
     
@@ -2610,6 +2617,128 @@ app.post('/api/vision/compare', async (req, res) => {
     res.json(comparison);
   } catch (error) {
     console.error('❌ Error comparing images:', error);
+    res.status(500).json({ 
+      error: 'Error interno del servidor',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Doctor Referral System endpoints
+app.post('/api/doctors/find-relevant', async (req, res) => {
+  try {
+    const { symptoms, urgency, location, maxFee, languages, verifiedOnly } = req.body;
+    console.log('🔍 Finding relevant doctors:', { symptoms, urgency, location });
+
+    if (!symptoms || !urgency) {
+      return res.status(400).json({ error: 'Síntomas y urgencia son requeridos' });
+    }
+
+    const criteria = {
+      specialty: undefined, // Will be determined from symptoms
+      urgency: urgency as 'emergency' | 'urgent' | 'routine',
+      location,
+      maxFee,
+      languages,
+      verifiedOnly
+    };
+
+    // Get specialty recommendations based on symptoms
+    const specialtyRecommendations = await getSpecialtyRecommendations(symptoms);
+    console.log('🎯 Specialty recommendations:', specialtyRecommendations);
+
+    // Find doctors for each recommended specialty
+    const allDoctors = [];
+    for (const specialty of specialtyRecommendations) {
+      const doctors = await findRelevantDoctors({ ...criteria, specialty });
+      allDoctors.push(...doctors);
+    }
+
+    // Remove duplicates and sort by relevance
+    const uniqueDoctors = allDoctors.filter((doctor, index, self) => 
+      index === self.findIndex(d => d.id === doctor.id)
+    );
+
+    console.log(`✅ Found ${uniqueDoctors.length} relevant doctors`);
+    res.json({ doctors: uniqueDoctors, specialtyRecommendations });
+
+  } catch (error) {
+    console.error('❌ Error finding relevant doctors:', error);
+    res.status(500).json({ 
+      error: 'Error interno del servidor',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+app.get('/api/doctors/:doctorId/availability', async (req, res) => {
+  try {
+    const { doctorId } = req.params;
+    console.log('📅 Getting doctor availability:', doctorId);
+
+    const availability = await getDoctorAvailability(doctorId);
+    console.log('✅ Doctor availability retrieved:', availability);
+
+    res.json(availability);
+
+  } catch (error) {
+    console.error('❌ Error getting doctor availability:', error);
+    res.status(500).json({ 
+      error: 'Error interno del servidor',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+app.post('/api/referrals/create', async (req, res) => {
+  try {
+    const { patientId, doctorId, symptoms, urgency, message } = req.body;
+    console.log('📋 Creating referral request:', { patientId, doctorId, urgency });
+
+    if (!patientId || !doctorId || !symptoms || !urgency) {
+      return res.status(400).json({ error: 'Datos requeridos: patientId, doctorId, symptoms, urgency' });
+    }
+
+    const result = await createReferralRequest({
+      patientId,
+      doctorId,
+      symptoms,
+      urgency: urgency as 'emergency' | 'urgent' | 'routine',
+      message
+    });
+
+    if (!result.success) {
+      return res.status(500).json({ error: result.error });
+    }
+
+    console.log('✅ Referral request created:', result.referralId);
+    res.json({ success: true, referralId: result.referralId });
+
+  } catch (error) {
+    console.error('❌ Error creating referral request:', error);
+    res.status(500).json({ 
+      error: 'Error interno del servidor',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+app.get('/api/specialties/recommendations', async (req, res) => {
+  try {
+    const { symptoms } = req.query;
+    console.log('🎯 Getting specialty recommendations for:', symptoms);
+
+    if (!symptoms || typeof symptoms !== 'string') {
+      return res.status(400).json({ error: 'Síntomas requeridos' });
+    }
+
+    const recommendations = await getSpecialtyRecommendations(symptoms);
+    console.log('✅ Specialty recommendations:', recommendations);
+
+    res.json({ specialties: recommendations });
+
+  } catch (error) {
+    console.error('❌ Error getting specialty recommendations:', error);
     res.status(500).json({ 
       error: 'Error interno del servidor',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

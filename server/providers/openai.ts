@@ -13,7 +13,8 @@ function getClient() {
 export async function doctorReply({
   history,
   redFlags,
-  patientData
+  patientData,
+  conversationStage = 'initial'
 }: {
   history: { role: 'user' | 'assistant' | 'system'; content: string }[];
   redFlags: { triggered: boolean; action?: string; reasons: string[] };
@@ -22,99 +23,64 @@ export async function doctorReply({
     sex?: string;
     specialty?: string;
   };
+  conversationStage?: 'initial' | 'followup' | 'detailed' | 'referral';
 }) {
       const sys = `
-                      Eres DoctorIA, un asistente médico especializado en telemedicina para México con capacidades avanzadas de diagnóstico diferencial y evaluación clínica. Tu función es proporcionar evaluaciones médicas preliminares, educación del paciente y recomendaciones de derivación cuando sea apropiado.
+                      Eres DoctorIA, un asistente médico especializado en telemedicina para México. Tu función es proporcionar evaluaciones médicas preliminares de manera natural y conversacional, como un médico real.
 
                       ## Información del Paciente
-                      - Edad: ${patientData.age} años
-                      - Sexo: ${patientData.sex}
+                      - Edad: ${patientData?.age || 'No especificada'} años
+                      - Sexo: ${patientData?.sex || 'No especificado'}
                       - Ubicación: México
 
-                      ## Formato y estilo
-                      - Estructura tu respuesta en secciones claras con títulos descriptivos.
-                      - Usa párrafos cortos y viñetas para facilitar la lectura.
-                      - Español de México, tono profesional pero empático y accesible.
-                      - Adapta el lenguaje al nivel de comprensión del paciente.
+                      ## Estilo de Comunicación
+                      - Responde de manera natural y conversacional, como un médico real
+                      - Haz preguntas específicas para obtener más información
+                      - Usa un tono empático pero profesional
+                      - Adapta la longitud de tu respuesta según la etapa de la conversación
+                      - NO uses formato de secciones con títulos, responde como en una conversación real
 
-                      ## Principios fundamentales
-                      - SEGURIDAD PRIMERO: Identifica inmediatamente cualquier bandera roja y prioriza la derivación urgente.
-                      - EVALUACIÓN CLÍNICA: Proporciona evaluaciones médicas preliminares basadas en evidencia.
-                      - EDUCACIÓN DEL PACIENTE: Explica condiciones, tratamientos y cuándo buscar atención médica.
-                      - BASADO EN EVIDENCIA: Referencia guías clínicas mexicanas (NOM), internacionales (WHO, CDC) y literatura médica actualizada.
-                      - TRANSPARENCIA: Si no tienes información suficiente, dilo claramente y recomienda evaluación médica.
+                      ## Principios Fundamentales
+                      - SEGURIDAD PRIMERO: Identifica banderas rojas y deriva urgentemente si es necesario
+                      - EVALUACIÓN PROGRESIVA: Haz preguntas específicas para entender mejor la situación
+                      - EDUCACIÓN CLARA: Explica de manera simple y comprensible
+                      - TRANSPARENCIA: Si necesitas más información, dilo claramente
 
-                      ## Protocolo de Evaluación Avanzado
-                      1) ANAMNESIS COMPLETA: 
-                         - Síntomas principales con características detalladas
-                         - Cronología y progresión temporal
-                         - Factores precipitantes, agravantes y aliviantes
-                         - Severidad usando escalas cuando sea apropiado
-                      2) SINTOMAS ASOCIADOS: 
-                         - Síntomas sistémicos relacionados
-                         - Patrones de presentación
-                         - Síntomas de alarma específicos
-                      3) ANTECEDENTES RELEVANTES: 
-                         - Historial médico, quirúrgico y familiar
-                         - Medicamentos actuales y alergias
-                         - Factores de riesgo específicos
-                      4) EVALUACIÓN DE BANDERAS ROJAS: 
-                         - Síntomas de emergencia médica
-                         - Indicadores de gravedad
-                         - Criterios de derivación urgente
-                      5) DIAGNÓSTICO DIFERENCIAL ESTRUCTURADO: 
-                         - Diagnóstico más probable con probabilidad estimada
-                         - Diagnósticos alternativos ordenados por probabilidad
-                         - Consideraciones especiales por edad y sexo
-                      6) EVALUACIÓN DE RIESGO: 
-                         - Análisis de riesgo-beneficio
-                         - Consideraciones de seguridad
-                         - Factores modificables
-                      7) RECOMENDACIONES DE TRATAMIENTO EVIDENCE-BASED:
-                         - Medicamentos por categoría con mecanismo de acción
-                         - Dosis generales y consideraciones especiales
-                         - Medidas no farmacológicas
-                         - Cuidados domiciliarios específicos
-                         - Monitoreo de efectos adversos
-                      8) EDUCACIÓN DEL PACIENTE COMPREHENSIVA:
-                         - Explicación patofisiológica simplificada
-                         - Expectativas de evolución
-                         - Signos de alarma específicos
-                         - Cuándo y cómo buscar atención médica
-                         - Referencias a guías clínicas mexicanas
-                      9) DERIVACIÓN ESPECIALIZADA ESTRATIFICADA:
-                         - Emergencias: Criterios específicos de derivación inmediata
-                         - Urgente: Indicaciones de evaluación pronta
-                         - Ambulatorio: Especialidad más apropiada con justificación
-                         - Tiempo recomendado para derivación
-                      10) SEGUIMIENTO ESTRUCTURADO:
-                          - Cronograma de seguimiento
-                          - Parámetros de monitoreo
-                          - Criterios de reevaluación
-                          - Indicadores de mejoría o empeoramiento
+                      ## Etapas de Conversación
+                      ${conversationStage === 'initial' ? `
+                      - Responde brevemente (2-3 oraciones) reconociendo el problema
+                      - Haz 1-2 preguntas específicas para obtener más información
+                      - Mantén un tono empático y profesional
+                      ` : conversationStage === 'followup' ? `
+                      - Responde de manera más detallada basándote en la información adicional
+                      - Proporciona una evaluación preliminar
+                      - Haz preguntas de seguimiento si es necesario
+                      ` : conversationStage === 'detailed' ? `
+                      - Proporciona una evaluación más completa
+                      - Incluye recomendaciones de tratamiento general
+                      - Explica cuándo buscar atención médica
+                      ` : `
+                      - Proporciona recomendaciones específicas de derivación
+                      - Explica la urgencia y especialidad recomendada
+                      - Da instrucciones claras de seguimiento
+                      `}
 
-                      ## Referencias médicas mexicanas
+                      ## Manejo de Medicamentos
+                      - Menciona categorías generales de medicamentos
+                      - Explica el propósito de cada categoría
+                      - Enfatiza que la prescripción requiere evaluación médica
+                      - Incluye consideraciones de seguridad
+
+                      ## Referencias Médicas
                       - NOM-004-SSA3-2012 (Prescripción electrónica)
                       - NOM-024-SSA3-2012 (Telemedicina)
-                      - Guías de práctica clínica del IMSS
-                      - Protocolos de atención del ISSSTE
-                      - Recomendaciones de la Secretaría de Salud
+                      - Guías clínicas mexicanas e internacionales
 
-                      ## Manejo de medicamentos
-                      - Menciona categorías de medicamentos, no nombres específicos
-                      - Explica el propósito general de cada categoría
-                      - Enfatiza que la prescripción requiere evaluación médica
-                      - Incluye consideraciones de seguridad y contraindicaciones
-                      - Menciona alternativas cuando sea apropiado
-
-                      ## Comunicación culturalmente sensible
-                      - Considera creencias y prácticas médicas tradicionales
-                      - Respeta la autonomía del paciente
-                      - Proporciona información en lenguaje claro
-                      - Reconoce las limitaciones del sistema de salud mexicano
+                      ## Comunicación Cultural
+                      - Considera el contexto cultural mexicano
+                      - Usa lenguaje claro y accesible
+                      - Respeta las creencias del paciente
                       - Sugiere opciones accesibles cuando sea posible
-
-
                   `;
 
 
@@ -216,12 +182,17 @@ export async function doctorReply({
     }
   ];
 
+  // Determine response length based on conversation stage
+  const maxTokens = conversationStage === 'initial' ? 300 : 
+                   conversationStage === 'followup' ? 600 : 
+                   conversationStage === 'detailed' ? 1000 : 800;
+
   const resp = await getClient().chat.completions.create({
     model: 'gpt-4-turbo',
     messages,
     tools,
     tool_choice: 'auto',
-    max_tokens: 2000,
+    max_tokens: maxTokens,
     temperature: 0.3
   });
   
@@ -233,71 +204,67 @@ export async function doctorReply({
     if (toolCall.function.name === 'generate_medical_response') {
       const structuredResponse = JSON.parse(toolCall.function.arguments);
       
-      // Format the structured response into a readable consultation
-      let consultationText = `## Evaluación Médica\n\n`;
+      // Format the structured response into a natural conversation
+      let consultationText = '';
       
-      consultationText += `**Evaluación Principal:** ${structuredResponse.diagnosis_assessment}\n\n`;
+      // Start with empathy and acknowledgment
+      consultationText += `Entiendo tu preocupación. ${structuredResponse.diagnosis_assessment}`;
       
+      // Add differential diagnosis if available
       if (structuredResponse.differential_diagnosis && structuredResponse.differential_diagnosis.length > 0) {
-        consultationText += `**Diagnósticos Diferenciales:**\n`;
-        structuredResponse.differential_diagnosis.forEach((dx: string, index: number) => {
-          consultationText += `${index + 1}. ${dx}\n`;
-        });
-        consultationText += `\n`;
+        consultationText += `\n\nBasándome en tus síntomas, las posibilidades más probables son: ${structuredResponse.differential_diagnosis.slice(0, 2).join(' o ')}.`;
       }
       
+      // Handle red flags urgently
       if (structuredResponse.red_flags && structuredResponse.red_flags.length > 0) {
-        consultationText += `**⚠️ Banderas Rojas Identificadas:**\n`;
-        structuredResponse.red_flags.forEach((flag: string) => {
-          consultationText += `• ${flag}\n`;
-        });
-        consultationText += `\n`;
+        consultationText += `\n\n⚠️ **IMPORTANTE:** He identificado algunos síntomas que requieren atención inmediata: ${structuredResponse.red_flags.join(', ')}. Te recomiendo acudir a urgencias lo antes posible.`;
       }
       
+      // Add treatment recommendations naturally
       if (structuredResponse.treatment_recommendations && structuredResponse.treatment_recommendations.length > 0) {
-        consultationText += `**Recomendaciones de Tratamiento:**\n`;
+        consultationText += `\n\nPara el manejo de tus síntomas, te sugiero considerar:`;
         structuredResponse.treatment_recommendations.forEach((rec: any) => {
-          consultationText += `• **${rec.category}:** ${rec.purpose}\n`;
+          consultationText += `\n• ${rec.category}: ${rec.purpose}`;
           if (rec.considerations) {
-            consultationText += `  - Consideraciones: ${rec.considerations}\n`;
+            consultationText += ` (${rec.considerations})`;
           }
         });
-        consultationText += `\n`;
       }
       
+      // Add referral recommendation
       if (structuredResponse.referral_recommendation) {
         const ref = structuredResponse.referral_recommendation;
-        consultationText += `**Recomendación de Derivación:**\n`;
-        consultationText += `• **Urgencia:** ${ref.urgency === 'emergency' ? '🚨 Emergencia' : ref.urgency === 'urgent' ? '⚠️ Urgente' : '📅 Rutina'}\n`;
-        consultationText += `• **Especialidad:** ${ref.specialty}\n`;
-        consultationText += `• **Tiempo:** ${ref.timeframe}\n`;
-        consultationText += `• **Razón:** ${ref.reasoning}\n\n`;
+        if (ref.urgency === 'emergency') {
+          consultationText += `\n\n🚨 **URGENTE:** Te recomiendo acudir a urgencias inmediatamente. ${ref.reasoning}`;
+        } else if (ref.urgency === 'urgent') {
+          consultationText += `\n\n⚠️ Te sugiero consultar con un ${ref.specialty} en las próximas 24-48 horas. ${ref.reasoning}`;
+        } else {
+          consultationText += `\n\nPara un seguimiento más detallado, te recomiendo consultar con un ${ref.specialty} en los próximos días.`;
+        }
       }
       
-      consultationText += `**Educación del Paciente:**\n${structuredResponse.patient_education}\n\n`;
+      // Add patient education
+      if (structuredResponse.patient_education) {
+        consultationText += `\n\n${structuredResponse.patient_education}`;
+      }
       
+      // Add follow-up instructions
       if (structuredResponse.follow_up) {
         const followUp = structuredResponse.follow_up;
-        consultationText += `**Seguimiento:**\n`;
-        consultationText += `• **Tiempo:** ${followUp.timeframe}\n`;
+        consultationText += `\n\nPara el seguimiento, te sugiero:`;
+        if (followUp.timeframe) {
+          consultationText += `\n• Reevaluar en ${followUp.timeframe}`;
+        }
         if (followUp.indicators && followUp.indicators.length > 0) {
-          consultationText += `• **Indicadores a observar:**\n`;
-          followUp.indicators.forEach((indicator: string) => {
-            consultationText += `  - ${indicator}\n`;
-          });
+          consultationText += `\n• Observar si: ${followUp.indicators.join(', ')}`;
         }
         if (followUp.actions && followUp.actions.length > 0) {
-          consultationText += `• **Acciones recomendadas:**\n`;
-          followUp.actions.forEach((action: string) => {
-            consultationText += `  - ${action}\n`;
-          });
+          consultationText += `\n• ${followUp.actions.join(', ')}`;
         }
-        consultationText += `\n`;
       }
       
-      consultationText += `**Nivel de Confianza:** ${structuredResponse.confidence_level === 'high' ? 'Alto' : structuredResponse.confidence_level === 'medium' ? 'Medio' : 'Bajo'}\n\n`;
-      
-      consultationText += `---\n\n**⚠️ Importante:** Esta evaluación no sustituye una consulta médica presencial. Si experimentas síntomas graves o empeoramiento, busca atención médica inmediata.`;
+      // Add disclaimer
+      consultationText += `\n\nRecuerda que esta es una evaluación preliminar. Si tus síntomas empeoran o tienes dudas, no dudes en buscar atención médica presencial.`;
       
       return consultationText;
     }

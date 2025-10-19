@@ -9,10 +9,10 @@ import Announcer from './ui/Announcer';
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-3 group">
-      <div className="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-lg group-hover:bg-blue-700 transition-colors">
+      <div className="flex items-center justify-center w-10 h-10 bg-primary-500 rounded-lg group-hover:bg-primary-600 transition-colors">
         <Icon name="heart" size="lg" color="white" />
       </div>
-      <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Doctor.mx</span>
+      <span className="text-xl font-bold text-neutral-900 group-hover:text-primary-600 transition-colors">Doctor.mx</span>
     </Link>
   );
 }
@@ -39,24 +39,24 @@ function MobileMenu({ isOpen, onClose }) {
     >
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose}></div>
       <div className={`fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between p-6 border-b border-neutral-200">
           <Logo />
-          <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Cerrar menú">
+          <button onClick={onClose} className="p-2 rounded-lg hover:bg-neutral-100 transition-colors" aria-label="Cerrar menú">
             <Icon name="x-mark" size="lg" color="gray" />
           </button>
         </div>
         <div className="p-6 space-y-6">
           {user ? (
             <div className="space-y-4">
-              <div className="text-center py-4 border-b border-gray-200 mb-4">
-                <span className="text-sm text-gray-600">
+              <div className="text-center py-4 border-b border-neutral-200 mb-4">
+                <span className="text-sm text-secondary-600">
                   Hola, {user.user_metadata?.full_name || user.email}
                 </span>
               </div>
               <button
                 onClick={handleLogout}
                 disabled={isLoggingOut}
-                className="block w-full text-center text-gray-600 hover:text-blue-600 transition-colors py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm"
+                className="block w-full text-center text-secondary-600 hover:text-primary-600 transition-colors py-2.5 border border-neutral-300 rounded-lg hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed font-medium text-sm"
               >
                 {isLoggingOut ? (
                   <div className="flex items-center justify-center">
@@ -70,19 +70,19 @@ function MobileMenu({ isOpen, onClose }) {
             </div>
           ) : (
             <div className="space-y-3">
-              <Link to="/login" className="block text-center text-gray-600 hover:text-blue-600 transition-colors py-2.5 font-medium text-sm">
+              <Link to="/login" className="block text-center text-secondary-600 hover:text-primary-600 transition-colors py-2.5 font-medium text-sm">
                 Iniciar Sesión
               </Link>
-              <Link to="/register" className="block text-center text-white bg-blue-600 hover:bg-blue-700 transition-colors py-2.5 rounded-lg font-medium text-sm">
+              <Link to="/register" className="block text-center text-white bg-primary-500 hover:bg-primary-600 transition-colors py-2.5 rounded-lg font-medium text-sm">
                 Registrarse
               </Link>
             </div>
           )}
 
-          <div className="pt-4 border-t border-gray-200 space-y-3">
+          <div className="pt-4 border-t border-neutral-200 space-y-3">
             <Link
               to="/doctor"
-              className="block w-full text-center rounded-lg bg-blue-600 hover:bg-blue-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+              className="block w-full text-center rounded-lg bg-primary-500 hover:bg-primary-600 px-6 py-3 text-base font-semibold text-white transition-colors"
             >
               Consultar ahora
             </Link>
@@ -90,20 +90,20 @@ function MobileMenu({ isOpen, onClose }) {
               <>
                 <Link
                   to="/vision"
-                  className="block w-full text-center rounded-lg bg-teal-600 hover:bg-teal-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+                  className="block w-full text-center rounded-lg bg-accent-500 hover:bg-accent-600 px-6 py-3 text-base font-semibold text-white transition-colors"
                 >
                   Análisis de Imágenes
                 </Link>
                 <Link
                   to="/ai-referrals"
-                  className="block w-full text-center rounded-lg bg-purple-600 hover:bg-purple-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+                  className="block w-full text-center rounded-lg bg-secondary-600 hover:bg-secondary-700 px-6 py-3 text-base font-semibold text-white transition-colors"
                 >
                   Referencias IA
                 </Link>
                 {user.role === 'doctor' && (
                   <Link
                     to="/doctor-panel"
-                    className="block w-full text-center rounded-lg bg-green-600 hover:bg-green-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+                    className="block w-full text-center rounded-lg bg-primary-600 hover:bg-primary-700 px-6 py-3 text-base font-semibold text-white transition-colors"
                   >
                     Panel Doctor
                   </Link>
@@ -132,9 +132,9 @@ function ScrollIndicator() {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-0.5 bg-gray-200 z-50">
+    <div className="fixed top-0 left-0 w-full h-0.5 bg-neutral-200 z-50">
       <div
-        className="h-full bg-blue-600 transition-all duration-150 ease-out"
+        className="h-full bg-primary-500 transition-all duration-150 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
@@ -166,12 +166,12 @@ export default function Layout({ children, variant = 'app' }) {
   }, [mobileMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+    <div className="min-h-screen bg-neutral-50 overflow-x-hidden">
       <SkipLink />
       <ScrollIndicator />
 
       {/* Top nav */}
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm" role="banner">
+      <header className="sticky top-0 z-40 bg-white border-b border-neutral-200 shadow-sm" role="banner">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Logo />
@@ -180,40 +180,40 @@ export default function Layout({ children, variant = 'app' }) {
             <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
               {variant === 'marketing' ? (
                 <>
-                  <Link to="/doctors" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/doctors" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Doctores
                   </Link>
-                  <Link to="/doctor" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/doctor" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Consultar IA
                   </Link>
-                  <Link to="/connect" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/connect" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Para Doctores
                   </Link>
                 </>
               ) : (
                 <>
-                  <Link to="/doctors" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/doctors" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Doctores
                   </Link>
                   {user && (
                     <>
-                      <Link to="/vision" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      <Link to="/vision" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                         Análisis de Imágenes
                       </Link>
-                      <Link to="/ai-referrals" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      <Link to="/ai-referrals" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                         Referencias IA
                       </Link>
-                      <Link to="/community" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      <Link to="/community" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                         Comunidad
                       </Link>
-                      <Link to="/marketplace" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      <Link to="/marketplace" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                         Marketplace
                       </Link>
-                      <Link to="/gamification" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                      <Link to="/gamification" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                         Gamificación
                       </Link>
                       {user.role === 'doctor' && (
-                        <Link to="/doctor-panel" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        <Link to="/doctor-panel" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                           Panel Doctor
                         </Link>
                       )}
@@ -228,19 +228,19 @@ export default function Layout({ children, variant = 'app' }) {
               {user ? (
                 <>
                   <GamificationHeader />
-                  <Link to="/dashboard" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/dashboard" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Mi Dashboard
                   </Link>
                   <div className="flex items-center space-x-3">
                     <div className="text-right">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="text-sm font-medium text-neutral-900">
                         {user.user_metadata?.full_name || user.email}
                       </div>
                     </div>
                     <button
                       onClick={handleLogout}
                       disabled={isLoggingOut}
-                      className="inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center px-3 py-2 border border-neutral-300 text-sm font-medium rounded-md text-secondary-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoggingOut ? (
                         <div className="flex items-center">
@@ -258,10 +258,10 @@ export default function Layout({ children, variant = 'app' }) {
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                  <Link to="/login" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
                     Iniciar Sesión
                   </Link>
-                  <Link to="/register" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  <Link to="/register" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
                     Registrarse
                   </Link>
                 </>
@@ -271,7 +271,7 @@ export default function Layout({ children, variant = 'app' }) {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="lg:hidden p-2 rounded-md text-neutral-400 hover:text-neutral-500 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
               aria-label="Abrir menú de navegación"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
@@ -288,14 +288,14 @@ export default function Layout({ children, variant = 'app' }) {
       <main id="main-content" className="flex-1" role="main">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200" role="contentinfo">
+      <footer className="bg-white border-t border-neutral-200" role="contentinfo">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-500 text-center md:text-left">
+            <p className="text-sm text-secondary-500 text-center md:text-left">
               © 2025 Doctor.mx. Todos los derechos reservados.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <div className="flex items-center gap-2 text-sm text-secondary-500">
+              <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
               <span>Sistema operativo</span>
             </div>
           </div>
