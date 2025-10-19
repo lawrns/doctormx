@@ -12,3 +12,11 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
+// Admin client with service role key for server-side operations
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+if (!supabaseServiceKey) {
+  console.warn('SUPABASE_SERVICE_ROLE_KEY not found, using anon key for admin operations')
+}
+
+export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey)
+

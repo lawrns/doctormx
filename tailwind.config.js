@@ -219,12 +219,34 @@ export default {
         container: '67.5rem', // 1080px clinical container
         reading: '65ch'       // Optimal reading width
       },
+      backgroundImage: {
+        // Gradient backgrounds
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-medical': 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #F8FAFC 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #F0F4FF 0%, #E0EAFF 25%, #F8FAFC 50%, #F0F9FF 75%, #E0F2FE 100%)',
+        'gradient-card': 'linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%)',
+        'gradient-glass': 'linear-gradient(145deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)',
+      },
+      backdropBlur: {
+        'xs': '2px',
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        '2xl': '24px',
+        '3xl': '40px',
+      },
       animation: {
         // Clinical motion system
         'fade-in': 'fadeIn 130ms cubic-bezier(.16,1,.3,1)',
         'slide-up': 'slideUp 220ms cubic-bezier(.16,1,.3,1)',
         'scale-in': 'scaleIn 220ms cubic-bezier(.16,1,.3,1)',
         'count-up': 'countUp 600ms cubic-bezier(.16,1,.3,1)',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+        'gradient-shift': 'gradientShift 6s ease infinite',
+        'bounce-gentle': 'bounceGentle 2s infinite',
         // Legacy animations
         'slide-down': 'slideDown 0.4s ease-out',
       },
@@ -244,6 +266,32 @@ export default {
         countUp: {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '33%': { transform: 'translateY(-8px) rotate(1deg)' },
+          '66%': { transform: 'translateY(-4px) rotate(-1deg)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { 
+            opacity: '1', 
+            transform: 'scale(1)',
+            boxShadow: '0 0 0 0 rgba(99, 102, 241, 0.4)'
+          },
+          '50%': { 
+            opacity: '0.9', 
+            transform: 'scale(1.05)',
+            boxShadow: '0 0 0 10px rgba(99, 102, 241, 0)'
+          },
+        },
+        gradientShift: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+        bounceGentle: {
+          '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-8px)' },
+          '60%': { transform: 'translateY(-4px)' },
         },
         slideDown: {
           '0%': { transform: 'translateY(-10px)', opacity: '0' },
