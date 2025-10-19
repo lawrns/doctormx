@@ -3,33 +3,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Medical blue/teal (primary brand) - Doctoralia-inspired
+        // New sophisticated clinical color scheme
         brand: {
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA',
-          500: '#3B82F6', // Main medical blue
-          600: '#2563EB',
-          700: '#1D4ED8',
-          800: '#1E40AF',
-          900: '#1E3A8A',
+          primary: '#2B7FFF',
+          'primary-600': '#1D5ED8',
+          teal: '#0BA6A6',
         },
-        // Medical teal (secondary/accent)
+        neutrals: {
+          bg: '#0A0F1A',
+          'bg-alt': '#0C1320',
+          card: '#0E1526',
+          stroke: '#1C263A',
+          'text-h': '#F5F7FA',
+          'text-m': '#C9D3E0',
+          'text-l': '#99A6B8',
+        },
+        utility: {
+          success: '#18C58B',
+          warning: '#FFB020',
+          danger: '#EF4444',
+          info: '#60A5FA',
+        },
+        // Legacy colors for backwards compatibility
         medical: {
           50: '#F0FDFA',
           100: '#CCFBF1',
           200: '#99F6E4',
           300: '#5EEAD4',
           400: '#2DD4BF',
-          500: '#14B8A6', // Main teal
+          500: '#14B8A6',
           600: '#0D9488',
           700: '#0F766E',
           800: '#115E59',
           900: '#134E4A',
         },
-        // Keep pharmacy as alias for backwards compatibility (map to teal)
         pharmacy: {
           50: '#F0FDFA',
           100: '#CCFBF1',
@@ -42,28 +49,26 @@ export default {
           800: '#115E59',
           900: '#134E4A',
         },
-        // Alert amber (warnings, emergencies)
         alert: {
           50: '#FFFBEB',
           100: '#FEF3C7',
           200: '#FDE68A',
           300: '#FCD34D',
           400: '#FBBF24',
-          500: '#F59E0B', // Main alert amber
+          500: '#F59E0B',
           600: '#D97706',
           700: '#B45309',
           800: '#92400E',
           900: '#78350F',
         },
-        // High-contrast grayscale (Mollie-style)
         ink: {
-          primary: '#0A0A0A',    // Near black for text
-          secondary: '#525252',  // Medium gray
-          muted: '#737373',      // Lighter gray
-          subtle: '#A3A3A3',     // Very light gray
-          border: '#E5E5E5',     // Borders
-          bg: '#FAFAFA',         // Subtle backgrounds
-          inverse: '#FFFFFF'     // White
+          primary: '#0A0A0A',
+          secondary: '#525252',
+          muted: '#737373',
+          subtle: '#A3A3A3',
+          border: '#E5E5E5',
+          bg: '#FAFAFA',
+          inverse: '#FFFFFF'
         }
       },
       fontFamily: {
@@ -77,7 +82,15 @@ export default {
         ]
       },
       fontSize: {
-        // Mollie-style modular scale
+        // Clinical typography scale
+        'eyebrow': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.06em' }],
+        'small': ['0.875rem', { lineHeight: '1.25rem' }],
+        'body': ['1rem', { lineHeight: '1.5rem' }],
+        'h4': ['1.25rem', { lineHeight: '1.5rem' }],
+        'h3': ['1.5rem', { lineHeight: '1.25rem' }],
+        'h2': ['2rem', { lineHeight: '1.25rem', letterSpacing: '-0.02em' }],
+        'h1': ['2.75rem', { lineHeight: '1.1', letterSpacing: '-0.04em' }],
+        // Legacy sizes for backwards compatibility
         'xs': ['0.75rem', { lineHeight: '1rem' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem' }],
         'base': ['1rem', { lineHeight: '1.5rem' }],
@@ -91,14 +104,28 @@ export default {
         '7xl': ['4.5rem', { lineHeight: '4.75rem' }],
       },
       spacing: {
-        // Precise 4px-based system
-        '18': '4.5rem',
+        // Clinical spacing scale (4px base)
+        '1': '0.25rem',   // 4px
+        '2': '0.5rem',    // 8px
+        '3': '0.75rem',   // 12px
+        '4': '1rem',      // 16px
+        '6': '1.5rem',    // 24px
+        '8': '2rem',      // 32px
+        '10': '2.5rem',   // 40px
+        '14': '3.5rem',   // 56px
+        '18': '4.5rem',   // 72px
+        '24': '6rem',     // 96px
+        // Legacy spacing
         '88': '22rem',
         '112': '28rem',
         '128': '32rem',
       },
       boxShadow: {
-        // Subtle, crisp shadows
+        // Clinical shadows with material depth
+        'z1': '0 1px 0 rgba(255,255,255,0.04) inset, 0 1px 2px rgba(0,0,0,0.4)',
+        'z2': '0 2px 6px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) inset',
+        'brand': '0 0 0 2px rgba(43,127,255,0.15), 0 8px 24px rgba(27, 100, 255, 0.18)',
+        // Legacy shadows
         'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
         'DEFAULT': '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08)',
         'md': '0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08)',
@@ -109,26 +136,32 @@ export default {
         'card': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08)',
         'pharmacy': '0 8px 24px rgba(20, 184, 166, 0.15)',
-        'brand': '0 8px 24px rgba(59, 130, 246, 0.15)',
         'medical': '0 8px 24px rgba(20, 184, 166, 0.15)',
         'alert': '0 8px 24px rgba(245, 158, 11, 0.15)',
       },
       borderRadius: {
-        'sm': '0.375rem',
+        // Clinical radius scale
+        'sm': '0.5rem',     // 8px
+        'md': '0.75rem',    // 12px
+        'lg': '1rem',       // 16px
+        'xl': '1.25rem',    // 20px
+        'pill': '9999px',   // pill shape
+        // Legacy radius
         'DEFAULT': '0.5rem',
-        'md': '0.625rem',
-        'lg': '0.75rem',
-        'xl': '1rem',
         '2xl': '1.25rem',
         '3xl': '1.5rem',
       },
       maxWidth: {
-        container: '75rem', // Slightly wider for breathing room
-        reading: '65ch'     // Optimal reading width
+        container: '67.5rem', // 1080px clinical container
+        reading: '65ch'       // Optimal reading width
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.4s ease-out',
+        // Clinical motion system
+        'fade-in': 'fadeIn 130ms cubic-bezier(.16,1,.3,1)',
+        'slide-up': 'slideUp 220ms cubic-bezier(.16,1,.3,1)',
+        'scale-in': 'scaleIn 220ms cubic-bezier(.16,1,.3,1)',
+        'count-up': 'countUp 600ms cubic-bezier(.16,1,.3,1)',
+        // Legacy animations
         'slide-down': 'slideDown 0.4s ease-out',
       },
       keyframes: {
@@ -137,6 +170,14 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
+          '0%': { transform: 'translateY(6px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        scaleIn: {
+          '0%': { transform: 'scale(0.98)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        countUp: {
           '0%': { transform: 'translateY(10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
