@@ -629,6 +629,120 @@ export default function App(){
           </div>
         </section>
 
+        {/* Doctor Connect Section */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-teal-50">
+          <div className="mx-auto max-w-container px-6 md:px-8">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                ¿Eres médico? Únete a nuestra red
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Recibe pacientes referidos por IA médica. Consultas presenciales y telemedicina.
+                <span className="block mt-2 text-blue-600 font-semibold">$499 MXN/mes • $200+ por consulta</span>
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Referencias inteligentes</h3>
+                      <p className="text-gray-600">Nuestro doctor IA analiza síntomas y te refiere pacientes calificados para tu especialidad.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Pagos transparentes</h3>
+                      <p className="text-gray-600">70% del precio de consulta va directo a ti. Sin sorpresas.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Sin burocracia</h3>
+                      <p className="text-gray-600">Registro simple. Verificación rápida en 24 horas. Empiezas de inmediato.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <Link
+                    to="/connect"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-teal-700 transition-all shadow-lg"
+                  >
+                    Únete como médico
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="lg:pl-8">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                  <h3 className="text-xl font-bold text-gray-900 mb-6">Especialidades más buscadas</h3>
+                  
+                  <div className="space-y-4">
+                    {[
+                      { name: 'Medicina General', percentage: 28, searches: 1247 },
+                      { name: 'Dermatología', percentage: 18, searches: 801 },
+                      { name: 'Psicología', percentage: 15, searches: 667 },
+                      { name: 'Nutrición', percentage: 12, searches: 534 },
+                      { name: 'Pediatría', percentage: 10, searches: 445 }
+                    ].map((specialty, i) => (
+                      <div key={i} className="flex items-center gap-4">
+                        <div className="w-20 text-sm font-medium text-gray-700 text-right flex-shrink-0">
+                          {specialty.name}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3">
+                            <div className="flex-1 bg-gray-200 rounded-full h-2">
+                              <div 
+                                className="bg-gradient-to-r from-blue-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                                style={{ width: `${specialty.percentage}%` }}
+                              ></div>
+                            </div>
+                            <div className="w-12 text-sm font-semibold text-gray-900 text-right">
+                              {specialty.percentage}%
+                            </div>
+                            <div className="w-16 text-xs text-gray-500 text-right">
+                              {specialty.searches.toLocaleString()}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <div className="flex justify-between items-center text-sm text-gray-600">
+                      <span>Total de consultas analizadas</span>
+                      <span className="font-semibold">4,451 consultas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       {/* Footer */}

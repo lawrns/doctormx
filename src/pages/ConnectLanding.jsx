@@ -94,13 +94,13 @@ export default function ConnectLanding() {
 
             <div className="flex items-center justify-center gap-6 mb-12">
               <div className="text-center">
-                <div className="text-4xl font-bold text-white">$200+</div>
-                <div className="text-white/80 text-sm">por consulta</div>
+                <div className="text-4xl font-bold text-white">$499</div>
+                <div className="text-white/80 text-sm">MXN/mes</div>
               </div>
               <div className="w-px h-12 bg-white/30"></div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-white">15 min</div>
-                <div className="text-white/80 text-sm">promedio</div>
+                <div className="text-4xl font-bold text-white">$200+</div>
+                <div className="text-white/80 text-sm">por consulta</div>
               </div>
               <div className="w-px h-12 bg-white/30"></div>
               <div className="text-center">
@@ -185,16 +185,19 @@ export default function ConnectLanding() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="text-center">
-                <div className="text-white/80 text-sm mb-2">Consultas por día</div>
-                <div className="text-4xl font-bold text-white">4-8</div>
+                <div className="text-white/80 text-sm mb-2">Suscripción mensual</div>
+                <div className="text-4xl font-bold text-white">$499</div>
+                <div className="text-white/60 text-xs">MXN</div>
               </div>
               <div className="text-center">
                 <div className="text-white/80 text-sm mb-2">Pago por consulta</div>
-                <div className="text-4xl font-bold text-white">$200</div>
+                <div className="text-4xl font-bold text-white">$200+</div>
+                <div className="text-white/60 text-xs">70% para ti</div>
               </div>
               <div className="text-center">
-                <div className="text-white/80 text-sm mb-2">Ingreso mensual</div>
-                <div className="text-4xl font-bold text-white">$24k-48k</div>
+                <div className="text-white/80 text-sm mb-2">Ingreso potencial</div>
+                <div className="text-4xl font-bold text-white">$24k+</div>
+                <div className="text-white/60 text-xs">MXN/mes</div>
               </div>
             </div>
             <p className="text-white/80 text-sm">
@@ -206,54 +209,57 @@ export default function ConnectLanding() {
 
       {/* Benefits */}
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Beneficios para ti</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">Beneficios para ti</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Herramientas diseñadas específicamente para médicos que buscan crecer con tecnología inteligente
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
               title: 'Referencias Inteligentes',
               desc: 'Nuestro doctor IA analiza síntomas y te refiere pacientes calificados para tu especialidad.'
             },
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
               title: 'Pagos transparentes',
               desc: '70% del precio de consulta va directo a ti. Sin sorpresas.'
             },
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
               title: 'Recetas válidas',
               desc: 'Sistema integrado de e-Rx con QR. Cumple con NOM-004.'
             },
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
               title: 'Dashboard completo',
               desc: 'Seguimiento de pacientes referidos, métricas, ingresos y calidad de atención.'
             },
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
               title: 'Sin burocracia',
               desc: 'Registro simple. Verificación rápida. Empiezas de inmediato.'
             },
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+              icon: <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
               title: 'Respaldo legal',
               desc: 'Consentimientos automatizados, auditoría y cumplimiento NOM-024.'
             },
           ].map((benefit, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md border border-gray-200"
+              className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0">{benefit.icon}</div>
-              <div>
-                <h3 className="font-bold text-lg mb-2 text-gray-900">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.desc}</p>
-              </div>
+              <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4">{benefit.icon}</div>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">{benefit.title}</h3>
+              <p className="text-gray-600 text-sm">{benefit.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -342,8 +348,60 @@ export default function ConnectLanding() {
             </motion.div>
           </div>
 
-          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Especialidades buscadas</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Especialidades más buscadas</h3>
+          
+          {/* Specialty Search Volume Chart */}
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 mb-8">
+            <div className="text-center mb-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Volumen de búsquedas por especialidad</h4>
+              <p className="text-sm text-gray-600">Basado en consultas de pacientes en los últimos 3 meses</p>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { name: 'Medicina General', percentage: 28, searches: 1247, color: 'bg-blue-500' },
+                { name: 'Dermatología', percentage: 18, searches: 801, color: 'bg-green-500' },
+                { name: 'Psicología', percentage: 15, searches: 667, color: 'bg-purple-500' },
+                { name: 'Nutrición', percentage: 12, searches: 534, color: 'bg-orange-500' },
+                { name: 'Pediatría', percentage: 10, searches: 445, color: 'bg-pink-500' },
+                { name: 'Ginecología', percentage: 8, searches: 356, color: 'bg-indigo-500' },
+                { name: 'Medicina Interna', percentage: 6, searches: 267, color: 'bg-teal-500' },
+                { name: 'Psiquiatría', percentage: 3, searches: 134, color: 'bg-gray-500' }
+              ].map((specialty, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-24 text-sm font-medium text-gray-700 text-right flex-shrink-0">
+                    {specialty.name}
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 bg-gray-200 rounded-full h-3">
+                        <div 
+                          className={`${specialty.color} h-3 rounded-full transition-all duration-1000 ease-out`}
+                          style={{ width: `${specialty.percentage}%` }}
+                        ></div>
+                      </div>
+                      <div className="w-16 text-sm font-semibold text-gray-900 text-right">
+                        {specialty.percentage}%
+                      </div>
+                      <div className="w-20 text-xs text-gray-500 text-right">
+                        {specialty.searches.toLocaleString()}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="flex justify-between items-center text-sm text-gray-600">
+                <span>Total de consultas analizadas</span>
+                <span className="font-semibold">4,451 consultas</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Specialty Tags */}
+          <div className="flex flex-wrap justify-center gap-3">
             {[
               'Medicina General',
               'Dermatología',
@@ -356,7 +414,7 @@ export default function ConnectLanding() {
             ].map((specialty, i) => (
               <span
                 key={i}
-                className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-200"
+                className="px-4 py-2 bg-white text-blue-700 font-medium rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-200 text-sm"
               >
                 {specialty}
               </span>
