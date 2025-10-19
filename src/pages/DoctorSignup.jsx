@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
+import Icon from '../components/ui/Icon';
+import MobileSpacing from '../components/ui/MobileOptimized';
 
 export default function DoctorSignup() {
   const navigate = useNavigate();
@@ -13,6 +16,7 @@ export default function DoctorSignup() {
     phone: '',
     cedula: '',
     specialties: [],
+    subscriptionPlan: 'monthly',
     referralCode: ''
   });
 
@@ -44,7 +48,7 @@ export default function DoctorSignup() {
 
     try {
       // Validate form
-      if (!formData.name || !formData.email || !formData.phone || !formData.cedula) {
+      if (!formData.name || !formData.email || !formData.phone || !formData.cedula || !formData.subscriptionPlan) {
         toast.error('Por favor completa todos los campos requeridos');
         return;
       }
@@ -112,8 +116,8 @@ export default function DoctorSignup() {
         });
       }
 
-      toast.success('¡Registro exitoso! Revisa tu correo para verificar tu cuenta');
-      navigate('/connect/verify');
+      toast.success('¡Registro exitoso! Ahora configura tu suscripción para comenzar');
+      navigate('/connect/subscription');
     } catch (error) {
       console.error('Signup error:', error);
       toast.error(error.message || 'Error al crear cuenta');
@@ -123,41 +127,30 @@ export default function DoctorSignup() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-teal-600 text-white shadow-lg transition-all duration-200 group-hover:shadow-blue-500/25 group-hover:scale-105">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
-                <path d="M10 4h4a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2V6a2 2 0 0 1 2-2z"/>
-              </svg>
-            </div>
-            <span className="text-2xl font-bold tracking-tight text-gray-900 transition-colors duration-200 group-hover:text-blue-600">doctor.mx</span>
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link to="/connect" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-              Volver
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <div className="max-w-2xl mx-auto py-12 px-6">
+    <Layout variant="marketing">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        <MobileSpacing.Container className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8"
+          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 lg:p-8"
         >
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2 text-gray-900">Únete como médico</h1>
-            <p className="text-gray-600 mb-4">Recibe pacientes referidos por IA médica</p>
+          <div className="text-center mb-6 sm:mb-8">
+            <MobileSpacing.Text variant="h1" className="mb-2 text-gray-900">
+              Únete como médico
+            </MobileSpacing.Text>
+            <MobileSpacing.Text variant="body" className="text-gray-600 mb-4">
+              Recibe pacientes referidos por IA médica
+            </MobileSpacing.Text>
             
             {/* Pricing Highlight */}
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100 mb-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-blue-600">$499 MXN/mes</div>
                 <div className="text-sm text-gray-600">Suscripción mensual • $200+ por consulta</div>
+                <div className="mt-2 text-xs text-gray-500">
+                  ✓ 7 días de prueba gratuita • ✓ Cancela cuando quieras
+                </div>
               </div>
             </div>
           </div>
@@ -252,6 +245,79 @@ export default function DoctorSignup() {
               </div>
             </div>
 
+            {/* Subscription Plan Selection */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
+                Plan de Suscripción *
+              </label>
+              <div className="grid md:grid-cols-2 gap-4">
+                <label className={`relative p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                  formData.subscriptionPlan === 'monthly' 
+                    ? 'border-blue-500 bg-blue-50' 
+                    : 'border-gray-200 hover:border-gray-300'
+                }`}>
+                  <input
+                    type="radio"
+                    name="subscriptionPlan"
+                    value="monthly"
+                    checked={formData.subscriptionPlan === 'monthly'}
+                    onChange={(e) => setFormData({ ...formData, subscriptionPlan: e.target.value })}
+                    className="sr-only"
+                  />
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-gray-900">Plan Mensual</span>
+                    <span className="text-lg font-bold text-blue-600">$499 MXN</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mb-3">por mes</div>
+                  <div className="space-y-1 text-xs text-gray-700">
+                    <div className="flex items-center gap-1">
+                      <Icon name="check-circle" size="sm" color="success" />
+                      <span>7 días de prueba gratuita</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="check-circle" size="sm" color="success" />
+                      <span>Cancela cuando quieras</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label className={`relative p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                  formData.subscriptionPlan === 'yearly' 
+                    ? 'border-blue-500 bg-blue-50' 
+                    : 'border-gray-200 hover:border-gray-300'
+                }`}>
+                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-green-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+                      Más Popular
+                    </span>
+                  </div>
+                  <input
+                    type="radio"
+                    name="subscriptionPlan"
+                    value="yearly"
+                    checked={formData.subscriptionPlan === 'yearly'}
+                    onChange={(e) => setFormData({ ...formData, subscriptionPlan: e.target.value })}
+                    className="sr-only"
+                  />
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-gray-900">Plan Anual</span>
+                    <span className="text-lg font-bold text-green-600">$4999 MXN</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mb-3">por año (2 meses gratis)</div>
+                  <div className="space-y-1 text-xs text-gray-700">
+                    <div className="flex items-center gap-1">
+                      <Icon name="check-circle" size="sm" color="success" />
+                      <span>Ahorra $998 MXN</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="check-circle" size="sm" color="success" />
+                      <span>Prioridad en referencias</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+            </div>
+
             {/* Referral Code */}
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -282,13 +348,28 @@ export default function DoctorSignup() {
             </div>
 
             {/* Submit */}
-            <button
+            <MobileSpacing.Button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-bold rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white font-bold rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
+              size="lg"
             >
-              {loading ? 'Creando cuenta...' : 'Crear cuenta'}
-            </button>
+              {loading ? 'Creando cuenta...' : 'Crear cuenta y continuar'}
+            </MobileSpacing.Button>
+            
+            {/* Subscription Note */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <Icon name="information-circle" size="md" color="success" />
+                <div>
+                  <div className="font-semibold text-green-800">Próximo paso: Suscripción</div>
+                  <div className="text-sm text-green-700 mt-1">
+                    Después de crear tu cuenta, te guiaremos para configurar tu suscripción de $499 MXN/mes 
+                    y comenzar a recibir pacientes referidos por IA.
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <p className="text-center text-sm text-gray-600">
               ¿Ya tienes cuenta?{' '}
@@ -300,36 +381,34 @@ export default function DoctorSignup() {
         </motion.div>
 
         {/* Info cards */}
-        <div className="mt-8 grid md:grid-cols-3 gap-4">
+        <MobileSpacing.Grid 
+          cols={{ mobile: 1, tablet: 2, desktop: 3 }}
+          className="mt-6 sm:mt-8"
+        >
           <div className="bg-white rounded-lg p-4 shadow-sm text-center border border-gray-200">
             <div className="w-10 h-10 mx-auto mb-2 bg-blue-50 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+              <Icon name="bolt" size="md" color="primary" />
             </div>
             <div className="text-sm font-semibold text-gray-700">Verificación rápida</div>
             <div className="text-xs text-gray-500">En 24 horas</div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow-sm text-center border border-gray-200">
             <div className="w-10 h-10 mx-auto mb-2 bg-green-50 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              <Icon name="currency-dollar" size="md" color="success" />
             </div>
             <div className="text-sm font-semibold text-gray-700">$200+ por consulta</div>
             <div className="text-xs text-gray-500">70% para ti</div>
           </div>
           <div className="bg-white rounded-lg p-4 shadow-sm text-center border border-gray-200">
             <div className="w-10 h-10 mx-auto mb-2 bg-teal-50 rounded-lg flex items-center justify-center">
-              <svg className="w-5 h-5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
+              <Icon name="cpu-chip" size="md" color="secondary" />
             </div>
             <div className="text-sm font-semibold text-gray-700">Referencias IA</div>
             <div className="text-xs text-gray-500">Pacientes calificados</div>
           </div>
-        </div>
+        </MobileSpacing.Grid>
+        </MobileSpacing.Container>
       </div>
-    </div>
+    </Layout>
   );
 }

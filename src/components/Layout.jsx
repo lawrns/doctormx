@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import GamificationHeader from './GamificationHeader';
+import Icon from './ui/Icon';
+import SkipLink from './ui/SkipLink';
+import Announcer from './ui/Announcer';
 
 function Logo() {
   return (
     <Link to="/" className="flex items-center gap-3 group">
       <div className="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-lg group-hover:bg-blue-700 transition-colors">
-        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
+        <Icon name="heart" size="lg" color="white" />
       </div>
       <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Doctor.mx</span>
     </Link>
@@ -29,15 +30,19 @@ function MobileMenu({ isOpen, onClose }) {
   };
 
   return (
-    <div className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+    <div 
+      className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      id="mobile-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Menú de navegación móvil"
+    >
       <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose}></div>
       <div className={`fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <Logo />
           <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Cerrar menú">
-            <svg className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <Icon name="x-mark" size="lg" color="gray" />
           </button>
         </div>
         <div className="p-6 space-y-6">
@@ -55,10 +60,7 @@ function MobileMenu({ isOpen, onClose }) {
               >
                 {isLoggingOut ? (
                   <div className="flex items-center justify-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
+                    <Icon name="clock" size="sm" className="animate-spin -ml-1 mr-3" />
                     Cerrando sesión...
                   </div>
                 ) : (
@@ -139,7 +141,7 @@ function ScrollIndicator() {
   );
 }
 
-export default function Layout({ children }) {
+export default function Layout({ children, variant = 'app' }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, logout, isLoggingOut } = useAuth();
 
@@ -165,44 +167,61 @@ export default function Layout({ children }) {
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
+      <SkipLink />
       <ScrollIndicator />
 
       {/* Top nav */}
-      <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <header className="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm" role="banner">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Logo />
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
-              <Link to="/doctors" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                Doctores
-              </Link>
-              {user && (
+            <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
+              {variant === 'marketing' ? (
                 <>
-                  <Link to="/vision" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                    Análisis de Imágenes
+                  <Link to="/doctors" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                    Doctores
                   </Link>
-                  <Link to="/ai-referrals" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                    Referencias IA
+                  <Link to="/doctor" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                    Consultar IA
                   </Link>
-                  <Link to="/community" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                    Comunidad
+                  <Link to="/connect" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                    Para Doctores
                   </Link>
-                  <Link to="/marketplace" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                    Marketplace
+                </>
+              ) : (
+                <>
+                  <Link to="/doctors" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                    Doctores
                   </Link>
-                  <Link to="/gamification" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                    Gamificación
-                  </Link>
-                  {user.role === 'doctor' && (
-                    <Link to="/doctor-panel" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                      Panel Doctor
-                    </Link>
+                  {user && (
+                    <>
+                      <Link to="/vision" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        Análisis de Imágenes
+                      </Link>
+                      <Link to="/ai-referrals" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        Referencias IA
+                      </Link>
+                      <Link to="/community" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        Comunidad
+                      </Link>
+                      <Link to="/marketplace" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        Marketplace
+                      </Link>
+                      <Link to="/gamification" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                        Gamificación
+                      </Link>
+                      {user.role === 'doctor' && (
+                        <Link to="/doctor-panel" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                          Panel Doctor
+                        </Link>
+                      )}
+                    </>
                   )}
                 </>
               )}
-            </div>
+            </nav>
 
             {/* Right side - Auth */}
             <div className="hidden lg:flex items-center space-x-4">
@@ -253,11 +272,11 @@ export default function Layout({ children }) {
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="lg:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-              aria-label="Abrir menú"
+              aria-label="Abrir menú de navegación"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <Icon name="bars-3" size="lg" />
             </button>
           </div>
         </div>
@@ -266,10 +285,10 @@ export default function Layout({ children }) {
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
       {/* Main content */}
-      <main className="flex-1">{children}</main>
+      <main id="main-content" className="flex-1" role="main">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200">
+      <footer className="bg-white border-t border-gray-200" role="contentinfo">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500 text-center md:text-left">

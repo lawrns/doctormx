@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
+import Icon from '../components/ui/Icon';
 
 export default function DoctorVerification() {
   const navigate = useNavigate();
@@ -10,6 +12,8 @@ export default function DoctorVerification() {
   const [uploadProgress, setUploadProgress] = useState(0);
   const [verificationStatus, setVerificationStatus] = useState('pending');
   const [doctorData, setDoctorData] = useState(null);
+  const [sepVerificationResult, setSepVerificationResult] = useState(null);
+  const [autoVerifying, setAutoVerifying] = useState(false);
   const [documents, setDocuments] = useState({
     cedula_front: null,
     cedula_back: null,
@@ -97,21 +101,21 @@ export default function DoctorVerification() {
       // Upload cedula front
       if (documents.cedula_front) {
         urls.cedula_front = await uploadDocument(documents.cedula_front, 'cedula_front');
-        progress += 33;
+        progress += 25;
         setUploadProgress(progress);
       }
 
       // Upload cedula back
       if (documents.cedula_back) {
         urls.cedula_back = await uploadDocument(documents.cedula_back, 'cedula_back');
-        progress += 33;
+        progress += 25;
         setUploadProgress(progress);
       }
 
       // Upload INE (optional)
       if (documents.ine_front) {
         urls.ine_front = await uploadDocument(documents.ine_front, 'ine_front');
-        progress += 34;
+        progress += 25;
         setUploadProgress(progress);
       }
 
@@ -138,8 +142,59 @@ export default function DoctorVerification() {
         diff: { documents: Object.keys(urls) }
       });
 
-      toast.success('¡Documentos enviados! Te notificaremos cuando se complete la verificación');
-      setVerificationStatus('pending');
+      progress += 25;
+      setUploadProgress(progress);
+
+      // Trigger automated SEP verification
+      toast.info('Verificando cédula con la base de datos de la SEP...');
+      
+      setAutoVerifying(true);
+      const verificationResponse = await fetch('/api/doctors/verify-cedula', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          cedulaNumber: doctorData.cedula,
+          doctorName: doctorData.users.name
+        }),
+      });
+
+      const verificationResult = await verificationResponse.json();
+
+      if (verificationResult.isValid && verificationResult.status === 'verified') {
+        // Automatic approval
+        const { error: approveError } = await supabase
+          .from('doctors')
+          .update({
+            license_status: 'verified',
+            kpis: {
+              ...doctorData.kpis,
+              documents: urls,
+              submitted_at: new Date().toISOString(),
+              verified_at: new Date().toISOString(),
+              verification_method: 'automated_sep',
+              sep_details: verificationResult.details
+            }
+          })
+          .eq('user_id', doctorData.user_id);
+
+        if (approveError) throw approveError;
+
+        toast.success('¡Verificación completada automáticamente! Tu cuenta está lista para usar.');
+        setVerificationStatus('verified');
+        
+        // Redirect to dashboard after 2 seconds
+        setTimeout(() => {
+          navigate('/connect/dashboard');
+        }, 2000);
+      } else {
+        // Manual review required
+        toast.warning('Verificación automática no disponible. Tu solicitud será revisada manualmente en 24-48 horas.');
+        setVerificationStatus('pending');
+      }
+
+      setSepVerificationResult(verificationResult);
 
     } catch (error) {
       console.error('Verification error:', error);
@@ -147,6 +202,7 @@ export default function DoctorVerification() {
     } finally {
       setLoading(false);
       setUploadProgress(0);
+      setAutoVerifying(false);
     }
   };
 
@@ -162,8 +218,9 @@ export default function DoctorVerification() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-medical-50 to-white py-12 px-4">
-      <div className="max-w-3xl mx-auto">
+    <Layout variant="marketing">
+      <div className="min-h-screen bg-gradient-to-b from-medical-50 to-white py-12 px-4">
+        <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -308,16 +365,68 @@ export default function DoctorVerification() {
             {/* Info Box */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                <span>ℹ️</span>
-                <span>Proceso de verificación</span>
+                <Icon name="bolt" size="sm" color="primary" />
+                <span>Verificación Automática</span>
               </h3>
               <ul className="text-sm text-blue-800 space-y-1">
-                <li>• Verificamos tu cédula con la base de datos de la SEP</li>
-                <li>• El proceso toma 24-48 horas hábiles</li>
-                <li>• Te notificaremos por email y WhatsApp</li>
+                <li>• Verificamos tu cédula automáticamente con la base de datos de la SEP</li>
+                <li>• Si la verificación es exitosa, tu cuenta se activa inmediatamente</li>
+                <li>• Si no podemos verificar automáticamente, revisión manual en 24-48 horas</li>
+                <li>• Te notificaremos por email y WhatsApp en ambos casos</li>
                 <li>• Una vez verificado, podrás empezar a atender pacientes</li>
               </ul>
             </div>
+
+            {/* SEP Verification Status */}
+            {autoVerifying && (
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                <div className="flex items-center gap-3">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-yellow-600"></div>
+                  <div>
+                    <h3 className="font-semibold text-yellow-900">Verificando con SEP...</h3>
+                    <p className="text-sm text-yellow-800">Consultando la base de datos de la Secretaría de Educación Pública</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {sepVerificationResult && (
+              <div className={`border rounded-lg p-4 ${
+                sepVerificationResult.isValid 
+                  ? 'bg-green-50 border-green-200' 
+                  : 'bg-orange-50 border-orange-200'
+              }`}>
+                <div className="flex items-center gap-3">
+                  <Icon 
+                    name={sepVerificationResult.isValid ? "check-circle" : "exclamation-triangle"} 
+                    size="md" 
+                    color={sepVerificationResult.isValid ? "success" : "warning"} 
+                  />
+                  <div>
+                    <h3 className={`font-semibold ${
+                      sepVerificationResult.isValid ? 'text-green-900' : 'text-orange-900'
+                    }`}>
+                      {sepVerificationResult.isValid ? 'Verificación Exitosa' : 'Verificación Pendiente'}
+                    </h3>
+                    <p className={`text-sm ${
+                      sepVerificationResult.isValid ? 'text-green-800' : 'text-orange-800'
+                    }`}>
+                      {sepVerificationResult.isValid 
+                        ? 'Tu cédula fue verificada automáticamente con la SEP'
+                        : 'No pudimos verificar automáticamente. Tu solicitud será revisada manualmente.'
+                      }
+                    </p>
+                    {sepVerificationResult.details && (
+                      <div className="mt-2 text-xs text-gray-600">
+                        <p><strong>Especialidad:</strong> {sepVerificationResult.details.specialty}</p>
+                        <p><strong>Institución:</strong> {sepVerificationResult.details.institution}</p>
+                        <p><strong>Estado:</strong> {sepVerificationResult.details.status}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Submit Button */}
             <button
@@ -339,7 +448,8 @@ export default function DoctorVerification() {
             </p>
           </div>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

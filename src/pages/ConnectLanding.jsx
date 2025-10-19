@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
+import TrustIndicators from '../components/TrustIndicators';
+import ComplianceBadges from '../components/ComplianceBadges';
+import SecurityBadges from '../components/SecurityBadges';
+import Icon from '../components/ui/Icon';
 
 function Logo() {
   return (
     <a href="/" className="flex items-center gap-3 group">
       <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-teal-600 text-white shadow-lg transition-all duration-200 group-hover:shadow-blue-500/25 group-hover:scale-105">
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
-          <path d="M10 4h4a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2V6a2 2 0 0 1 2-2z"/>
-        </svg>
+        <Icon name="heart" size="lg" color="white" />
       </div>
       <span className="text-2xl font-bold tracking-tight text-gray-900 transition-colors duration-200 group-hover:text-blue-600">doctor.mx</span>
     </a>
@@ -16,24 +19,8 @@ function Logo() {
 
 export default function ConnectLanding() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
-          <Logo />
-          <div className="flex items-center gap-4">
-            <Link to="/" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-              Volver al inicio
-            </Link>
-            <Link
-              to="/connect/signup"
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-            >
-              Comenzar
-            </Link>
-          </div>
-        </div>
-      </header>
+    <Layout variant="marketing">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
 
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-teal-600">
@@ -444,6 +431,26 @@ export default function ConnectLanding() {
         </div>
       </div>
 
+      {/* Trust Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Confianza y Seguridad Garantizada
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Nuestra plataforma cumple con los más altos estándares de seguridad y regulaciones médicas mexicanas
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            <TrustIndicators />
+            <ComplianceBadges />
+            <SecurityBadges />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -476,6 +483,7 @@ export default function ConnectLanding() {
           </div>
         </div>
       </footer>
-    </div>
+      </div>
+    </Layout>
   );
 }

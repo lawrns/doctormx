@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
+import TrustBadges from '../components/TrustBadges';
 
 export default function DoctorProfile() {
   const { id } = useParams();
@@ -19,14 +20,14 @@ export default function DoctorProfile() {
   async function fetchDoctor() {
     try {
       setLoading(true);
-      const { data, error } = await supabase
-        .from('doctors')
-        .select('*')
-        .eq('id', id)
-        .single();
-
-      if (error) throw error;
-      setDoctor(data);
+      const response = await fetch(`/api/doctors/${id}`);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Error fetching doctor');
+      }
+      
+      setDoctor(data.doctor);
     } catch (error) {
       console.error('Error fetching doctor:', error);
     } finally {
@@ -124,7 +125,7 @@ export default function DoctorProfile() {
                 <div className="flex items-start gap-6 mb-6">
                   <div className="relative">
                     <div className="w-24 h-24 bg-gradient-to-br from-medical-500 to-medical-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
-                      {doctor.full_name?.charAt(0) || 'D'}
+                      {doctor.users?.name?.charAt(0) || 'D'}
                     </div>
                     {doctor.available && (
                       <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-4 border-white rounded-full"></div>
@@ -133,15 +134,15 @@ export default function DoctorProfile() {
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <h1 className="text-3xl font-bold text-ink-primary">
-                        Dr. {doctor.full_name}
+                        {doctor.users?.name || 'Dr. Sin Nombre'}
                       </h1>
-                      {doctor.verified && (
+                      {doctor.license_status === 'verified' && (
                         <svg className="w-7 h-7 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                       )}
                     </div>
-                    <p className="text-lg text-brand-600 font-semibold mb-2">{doctor.specialty}</p>
+                    <p className="text-lg text-brand-600 font-semibold mb-2">{doctor.specialties?.join(', ') || 'Medicina General'}</p>
                     {doctor.available ? (
                       <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
@@ -161,6 +162,12 @@ export default function DoctorProfile() {
                   <p className="text-ink-secondary leading-relaxed">
                     {doctor.bio || 'Doctor verificado con experiencia en atención médica de calidad.'}
                   </p>
+                </div>
+
+                {/* Trust Badges */}
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-ink-primary mb-3">Certificaciones y Verificaciones</h3>
+                  <TrustBadges doctorId={doctor.user_id} showAll={true} />
                 </div>
 
                 {/* Credentials */}

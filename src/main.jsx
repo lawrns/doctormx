@@ -10,6 +10,7 @@ import ConnectLanding from './pages/ConnectLanding.jsx';
 import DoctorSignup from './pages/DoctorSignup.jsx';
 import DoctorVerification from './pages/DoctorVerification.jsx';
 import DoctorDashboard from './pages/DoctorDashboard.jsx';
+import DoctorSubscriptionManagement from './pages/DoctorSubscriptionManagement.jsx';
 import DoctorDirectory from './pages/DoctorDirectory.jsx';
 import DoctorProfile from './pages/DoctorProfile.jsx';
 import PatientDashboard from './pages/PatientDashboard.jsx';
@@ -48,6 +49,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/connect/verify' element={
             <ProtectedRoute>
               <DoctorVerification />
+            </ProtectedRoute>
+          } />
+          <Route path='/connect/subscription' element={
+            <ProtectedRoute>
+              <DoctorSubscriptionManagement />
             </ProtectedRoute>
           } />
           <Route path='/connect/dashboard' element={

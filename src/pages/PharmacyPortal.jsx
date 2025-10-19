@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
 import PrescriptionView from '../components/PrescriptionView';
+import Icon from '../components/ui/Icon';
 
 export default function PharmacyPortal() {
   const [loading, setLoading] = useState(true);
@@ -214,11 +216,10 @@ export default function PharmacyPortal() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+    <Layout variant="app">
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white shadow-sm border-b">
+          <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex items-center gap-4">
               <h1 className="text-2xl font-bold text-medical-600">Doctor.mx</h1>
               <span className="text-gray-400">|</span>
@@ -229,8 +230,7 @@ export default function PharmacyPortal() {
               <div className="text-sm text-gray-500">ID: {pharmacyData?.store_id}</div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
       {/* Stats Cards */}
       <div className="max-w-7xl mx-auto px-4 py-6">
@@ -447,6 +447,7 @@ export default function PharmacyPortal() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </Layout>
   );
 }

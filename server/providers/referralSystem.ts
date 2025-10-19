@@ -1,21 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../lib/supabase.js';
 import { doctorReply } from './openai';
-
-let supabase: any = null;
-
-function getSupabaseClient() {
-  if (!supabase) {
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    
-    if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Supabase URL and Service Role Key must be provided in .env');
-    }
-    
-    supabase = createClient(supabaseUrl, supabaseKey);
-  }
-  return supabase;
-}
 
 export interface ReferralCriteria {
   symptoms: string[];
@@ -117,7 +101,11 @@ Especialidades disponibles:
 - Radiología
 `;
 
-    const response = await doctorReply(analysisPrompt);
+    const response = await doctorReply({
+      history: [{ role: 'user', content: analysisPrompt }],
+      redFlags: { triggered: false, reasons: [] },
+      patientData: undefined
+    });
     
     try {
       const analysis = JSON.parse(response);

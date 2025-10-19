@@ -413,10 +413,18 @@ export default function DoctorDashboard() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Datos de pago</h3>
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                    Configurar cuenta de pago
-                  </button>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Suscripción</h3>
+                  <div className="space-y-3">
+                    <button 
+                      onClick={() => navigate('/connect/subscription')}
+                      className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Gestionar Suscripción
+                    </button>
+                    <div className="text-sm text-gray-600">
+                      Plan: Professional • $499 MXN/mes
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
