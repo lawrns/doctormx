@@ -55,10 +55,10 @@ export default function ConnectLanding() {
               Verificado NOM-004 • SSL Seguro
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Atiende pacientes por WhatsApp
+              Recibe pacientes referidos por IA
             </h1>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Únete a la red de médicos que ganan más atendiendo consultas digitales.
+              Nuestro doctor IA tria pacientes y los refiere a médicos locales para consultas presenciales y telemedicina.
               Flexible, bien pagado, sin burocracia.
             </p>
             
@@ -145,10 +145,10 @@ export default function ConnectLanding() {
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl font-bold text-blue-600">2</span>
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-900">Elige tu horario</h3>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">Recibe referencias de IA</h3>
             <p className="text-gray-600">
-              Conecta cuando quieras. Recibe consultas por WhatsApp en tu móvil.
-              Tú decides cuándo trabajar.
+              Nuestro doctor IA analiza síntomas y te refiere pacientes calificados.
+              Consultas presenciales o por videollamada, tú decides.
             </p>
           </motion.div>
 
@@ -175,7 +175,7 @@ export default function ConnectLanding() {
       <div className="bg-gradient-to-br from-blue-600 to-teal-600 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">¿Cuánto puedes ganar?</h2>
-          <p className="text-white/90 mb-8">Calcula tu ingreso potencial con consultas digitales</p>
+          <p className="text-white/90 mb-8">Calcula tu ingreso potencial con pacientes referidos por IA</p>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <div className="grid md:grid-cols-3 gap-6 mb-6">
@@ -193,7 +193,7 @@ export default function ConnectLanding() {
               </div>
             </div>
             <p className="text-white/80 text-sm">
-              Tiempo parcial, sin gastos de consultorio, sin intermediarios
+              Pacientes pre-cualificados por IA • Consultas presenciales y telemedicina • Sin intermediarios
             </p>
           </div>
         </div>
@@ -206,9 +206,9 @@ export default function ConnectLanding() {
         <div className="grid md:grid-cols-2 gap-8">
           {[
             {
-              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>,
-              title: 'WhatsApp Native',
-              desc: 'Atiende desde tu teléfono. Sin apps complicadas ni plataformas lentas.'
+              icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>,
+              title: 'Referencias Inteligentes',
+              desc: 'Nuestro doctor IA analiza síntomas y te refiere pacientes calificados para tu especialidad.'
             },
             {
               icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
@@ -223,7 +223,7 @@ export default function ConnectLanding() {
             {
               icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
               title: 'Dashboard completo',
-              desc: 'Seguimiento de pacientes, métricas, ingresos y calidad.'
+              desc: 'Seguimiento de pacientes referidos, métricas, ingresos y calidad de atención.'
             },
             {
               icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
@@ -254,10 +254,90 @@ export default function ConnectLanding() {
         </div>
       </div>
 
-      {/* Specialties */}
+      {/* Consultation Types */}
       <div className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Especialidades buscadas</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Tipos de consulta disponibles</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Consultas Presenciales</h3>
+              <p className="text-gray-600 mb-4">
+                Atiende pacientes en tu consultorio. El doctor IA los refiere con historia clínica completa y síntomas analizados.
+              </p>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Pacientes pre-cualificados por IA
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Historia clínica inicial completa
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Referencia específica a tu especialidad
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Telemedicina</h3>
+              <p className="text-gray-600 mb-4">
+                Consultas por videollamada desde cualquier lugar. Ideal para seguimientos, segundas opiniones y consultas de rutina.
+              </p>
+              <ul className="text-sm text-gray-600 space-y-2">
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Videollamadas HD integradas
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Recetas digitales con QR
+                </li>
+                <li className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  Expediente digital completo
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Especialidades buscadas</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               'Medicina General',
@@ -308,7 +388,7 @@ export default function ConnectLanding() {
             <div>
               <h3 className="font-bold text-lg mb-4">Doctor.mx</h3>
               <p className="text-gray-400 text-sm">
-                Telemedicina WhatsApp-first para México
+                Referencias médicas inteligentes por IA para México
               </p>
             </div>
             <div>
