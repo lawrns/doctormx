@@ -5,10 +5,10 @@ let supabase: any = null;
 function getSupabaseClient() {
   if (!supabase) {
     const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Supabase URL and Anon Key must be provided in .env');
+      throw new Error('Supabase URL and Service Role Key must be provided in .env');
     }
     
     supabase = createClient(supabaseUrl, supabaseKey);
@@ -19,11 +19,8 @@ function getSupabaseClient() {
 export interface HealthPoints {
   id: string;
   user_id: string;
-  points: number;
+  score: number;
   level: number;
-  total_points_earned: number;
-  streak_days: number;
-  last_activity_date: string;
   created_at: string;
   updated_at: string;
 }
@@ -33,10 +30,16 @@ export interface Achievement {
   name: string;
   description: string;
   icon: string;
-  points_reward: number;
+  points: number;
   category: string;
-  requirements: Record<string, any>;
+  requirement_type: string;
+  requirement_value: number;
+  requirement_description: string;
+  rarity: string;
+  achievement_type: string;
+  difficulty: string;
   is_active: boolean;
+  points_reward: number;
   created_at: string;
 }
 
@@ -84,7 +87,7 @@ export async function getUserHealthPoints(userId: string): Promise<HealthPoints 
     const supabaseClient = getSupabaseClient();
     
     const { data, error } = await supabaseClient
-      .from('health_points')
+      .from('health_scores')
       .select('*')
       .eq('user_id', userId)
       .single();
@@ -112,14 +115,11 @@ export async function createUserHealthPoints(userId: string): Promise<HealthPoin
     const supabaseClient = getSupabaseClient();
     
     const { data, error } = await supabaseClient
-      .from('health_points')
+      .from('health_scores')
       .insert({
         user_id: userId,
-        points: 0,
-        level: 1,
-        total_points_earned: 0,
-        streak_days: 0,
-        last_activity_date: new Date().toISOString().split('T')[0]
+        score: 0,
+        level: 1
       })
       .select()
       .single();
@@ -161,18 +161,16 @@ export async function addHealthPoints(
       throw fetchError;
     }
 
-    const newTotalPoints = currentPoints.total_points_earned + points;
-    const newLevel = Math.floor(newTotalPoints / 1000) + 1; // 1000 points per level
+    const newScore = currentPoints.score + points;
+    const newLevel = Math.floor(newScore / 1000) + 1; // 1000 points per level
     const levelUp = newLevel > currentPoints.level;
 
     // Update health points
     const { error: updateError } = await supabaseClient
-      .from('health_points')
+      .from('health_scores')
       .update({
-        points: currentPoints.points + points,
-        level: newLevel,
-        total_points_earned: newTotalPoints,
-        last_activity_date: new Date().toISOString().split('T')[0]
+        score: newScore,
+        level: newLevel
       })
       .eq('user_id', userId);
 
@@ -197,7 +195,8 @@ export async function addHealthPoints(
     return {
       success: true,
       newLevel: levelUp ? newLevel : undefined,
-      pointsAdded: points
+      pointsAdded: points,
+      newScore: newScore
     };
   } catch (error) {
     console.error('Error adding health points:', error);
@@ -586,7 +585,7 @@ export async function updateUserStreak(userId: string): Promise<{ success: boole
     const today = new Date().toISOString().split('T')[0];
     
     const { data: healthPoints, error: fetchError } = await supabaseClient
-      .from('health_points')
+      .from('health_scores')
       .select('*')
       .eq('user_id', userId)
       .single();
@@ -599,31 +598,14 @@ export async function updateUserStreak(userId: string): Promise<{ success: boole
       throw fetchError;
     }
 
-    const lastActivity = healthPoints.last_activity_date;
-    const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    // Simplified streak logic - just award bonus points
+    const streakBonus = 10; // Fixed bonus for daily activity
 
-    let newStreakDays = healthPoints.streak_days;
-    let streakBonus = 0;
-
-    if (lastActivity === today) {
-      // Already updated today
-      return { success: true, streakDays: newStreakDays };
-    } else if (lastActivity === yesterday) {
-      // Consecutive day
-      newStreakDays += 1;
-      streakBonus = Math.min(newStreakDays * 10, 100); // Max 100 bonus points
-    } else {
-      // Streak broken
-      newStreakDays = 1;
-      streakBonus = 10;
-    }
-
-    // Update streak
+    // Update score with streak bonus
     const { error: updateError } = await supabaseClient
-      .from('health_points')
+      .from('health_scores')
       .update({
-        streak_days: newStreakDays,
-        last_activity_date: today
+        score: healthPoints.score + streakBonus
       })
       .eq('user_id', userId);
 
@@ -635,12 +617,12 @@ export async function updateUserStreak(userId: string): Promise<{ success: boole
         userId,
         streakBonus,
         'streak_bonus',
-        `Racha de ${newStreakDays} días`,
-        { streak_days: newStreakDays }
+        'Actividad diaria',
+        { streak_bonus: streakBonus }
       );
     }
 
-    return { success: true, streakDays: newStreakDays, streakBonus };
+    return { success: true, streakBonus };
   } catch (error) {
     console.error('Error updating user streak:', error);
     throw error;

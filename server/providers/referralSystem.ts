@@ -6,10 +6,10 @@ let supabase: any = null;
 function getSupabaseClient() {
   if (!supabase) {
     const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     
     if (!supabaseUrl || !supabaseKey) {
-      throw new Error('Supabase URL and Anon Key must be provided in .env');
+      throw new Error('Supabase URL and Service Role Key must be provided in .env');
     }
     
     supabase = createClient(supabaseUrl, supabaseKey);

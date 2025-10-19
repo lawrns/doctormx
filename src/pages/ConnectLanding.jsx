@@ -1,33 +1,59 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+function Logo() {
+  return (
+    <a href="/" className="flex items-center gap-3 group">
+      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-teal-600 text-white shadow-lg transition-all duration-200 group-hover:shadow-blue-500/25 group-hover:scale-105">
+        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+          <path d="M10 4h4a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2V6a2 2 0 0 1 2-2z"/>
+        </svg>
+      </div>
+      <span className="text-2xl font-bold tracking-tight text-gray-900 transition-colors duration-200 group-hover:text-blue-600">doctor.mx</span>
+    </a>
+  )
+}
+
 export default function ConnectLanding() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-medical-50">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-medical-500 to-medical-600">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-        <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-
-        <nav className="relative px-6 py-4">
-          <div className="max-w-6xl mx-auto flex items-center justify-between">
-            <Link to="/" className="text-white text-2xl font-bold">Doctor.mx</Link>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
+          <Logo />
+          <div className="flex items-center gap-4">
+            <Link to="/" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
+              Volver al inicio
+            </Link>
             <Link
               to="/connect/signup"
-              className="px-6 py-2 bg-white text-medical-600 rounded-lg font-semibold hover:bg-medical-50 transition-colors"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Comenzar
             </Link>
           </div>
-        </nav>
+        </div>
+      </header>
 
-        <div className="relative max-w-6xl mx-auto px-6 py-20">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-teal-600">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+        <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+
+        <div className="relative max-w-7xl mx-auto px-6 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-6">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Verificado NOM-004 • SSL Seguro
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Atiende pacientes por WhatsApp
             </h1>
@@ -35,6 +61,32 @@ export default function ConnectLanding() {
               Únete a la red de médicos que ganan más atendiendo consultas digitales.
               Flexible, bien pagado, sin burocracia.
             </p>
+            
+            {/* AI Doctor Referral Benefits */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20 max-w-4xl mx-auto">
+              <h3 className="text-lg font-semibold text-white mb-4">🎯 Recibe pacientes pre-cualificados por IA</h3>
+              <div className="grid md:grid-cols-3 gap-4 text-sm text-white/90">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Pacientes ya triados por IA médica</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Historia clínica inicial completa</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span>Especialidad recomendada por IA</span>
+                </div>
+              </div>
+            </div>
+
             <div className="flex items-center justify-center gap-6 mb-12">
               <div className="text-center">
                 <div className="text-4xl font-bold text-white">$200+</div>
@@ -53,7 +105,7 @@ export default function ConnectLanding() {
             </div>
             <Link
               to="/connect/signup"
-              className="inline-block px-8 py-4 bg-white text-medical-600 rounded-xl font-bold text-lg hover:bg-medical-50 transition-all hover:scale-105 shadow-xl"
+              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
             >
               Comenzar ahora
             </Link>
@@ -62,7 +114,7 @@ export default function ConnectLanding() {
       </div>
 
       {/* How It Works */}
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Cómo funciona</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -71,10 +123,10 @@ export default function ConnectLanding() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-xl p-8 shadow-lg"
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
           >
-            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
-              <span className="text-2xl font-bold text-medical-600">1</span>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-blue-600">1</span>
             </div>
             <h3 className="text-xl font-bold mb-3 text-gray-900">Regístrate y verifica</h3>
             <p className="text-gray-600">
@@ -88,10 +140,10 @@ export default function ConnectLanding() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white rounded-xl p-8 shadow-lg"
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
           >
-            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
-              <span className="text-2xl font-bold text-medical-600">2</span>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-blue-600">2</span>
             </div>
             <h3 className="text-xl font-bold mb-3 text-gray-900">Elige tu horario</h3>
             <p className="text-gray-600">
@@ -105,10 +157,10 @@ export default function ConnectLanding() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-white rounded-xl p-8 shadow-lg"
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
           >
-            <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center mb-4">
-              <span className="text-2xl font-bold text-medical-600">3</span>
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <span className="text-2xl font-bold text-blue-600">3</span>
             </div>
             <h3 className="text-xl font-bold mb-3 text-gray-900">Cobra al instante</h3>
             <p className="text-gray-600">
@@ -120,7 +172,7 @@ export default function ConnectLanding() {
       </div>
 
       {/* Earnings Calculator */}
-      <div className="bg-gradient-to-br from-brand-500 to-brand-600 py-20">
+      <div className="bg-gradient-to-br from-blue-600 to-teal-600 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">¿Cuánto puedes ganar?</h2>
           <p className="text-white/90 mb-8">Calcula tu ingreso potencial con consultas digitales</p>
@@ -148,7 +200,7 @@ export default function ConnectLanding() {
       </div>
 
       {/* Benefits */}
-      <div className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Beneficios para ti</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -190,9 +242,9 @@ export default function ConnectLanding() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md"
+              className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-md border border-gray-200"
             >
-              <div className="w-12 h-12 bg-medical-100 rounded-lg flex items-center justify-center text-medical-600 flex-shrink-0">{benefit.icon}</div>
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0">{benefit.icon}</div>
               <div>
                 <h3 className="font-bold text-lg mb-2 text-gray-900">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.desc}</p>
@@ -203,8 +255,8 @@ export default function ConnectLanding() {
       </div>
 
       {/* Specialties */}
-      <div className="bg-medical-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
+      <div className="bg-gray-50 py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Especialidades buscadas</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {[
@@ -219,7 +271,7 @@ export default function ConnectLanding() {
             ].map((specialty, i) => (
               <span
                 key={i}
-                className="px-6 py-3 bg-white text-medical-700 font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow"
+                className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-full shadow-sm hover:shadow-md transition-shadow border border-gray-200"
               >
                 {specialty}
               </span>
@@ -229,7 +281,7 @@ export default function ConnectLanding() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-br from-medical-500 to-medical-600 py-20">
+      <div className="bg-gradient-to-br from-blue-600 to-teal-600 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-6 text-white">
             ¿Listo para comenzar?
@@ -239,7 +291,7 @@ export default function ConnectLanding() {
           </p>
           <Link
             to="/connect/signup"
-            className="inline-block px-8 py-4 bg-white text-medical-600 rounded-xl font-bold text-lg hover:bg-medical-50 transition-all hover:scale-105 shadow-xl"
+            className="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
           >
             Crear cuenta gratis
           </Link>
@@ -251,7 +303,7 @@ export default function ConnectLanding() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Doctor.mx</h3>

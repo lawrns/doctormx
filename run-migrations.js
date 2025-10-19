@@ -41,7 +41,9 @@ const migrations = [
   '002_ai_referral_system.sql', 
   '003_free_questions_system.sql',
   '004_qa_board_system.sql',
-  '005_affiliate_tracking_system.sql'
+  '005_affiliate_tracking_system.sql',
+  '006_gamification_system.sql',
+  '007_health_scores_fix.sql'
 ];
 
 async function runMigrations() {
