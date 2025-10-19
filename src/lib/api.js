@@ -21,3 +21,12 @@ export async function findSpecialists({ specialty, city, lat, lon, radius }) {
   if (!res.ok) throw new Error('Network error');
   return res.json();
 }
+
+export async function checkFreeQuestionsEligibility(userId) {
+  const res = await fetch(`/api/free-questions/${userId}/eligibility`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  });
+  if (!res.ok) throw new Error('Network error');
+  return res.json();
+}

@@ -23,6 +23,7 @@ import AffiliateDashboard from './components/AffiliateDashboard.jsx';
 import SubscriptionPlans from './components/SubscriptionPlans.jsx';
 import EnhancedDoctorPanel from './components/EnhancedDoctorPanel.jsx';
 import AIReferralSystem from './components/AIReferralSystem.jsx';
+import QABoard from './components/QABoard.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
@@ -135,6 +136,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <AIReferralSystem />
             </ProtectedRoute>
           } />
+
+          {/* Q&A Board */}
+          <Route path='/qa' element={<QABoard />} />
         </Routes>
         <ToastConfig />
       </AuthProvider>

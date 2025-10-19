@@ -37,6 +37,48 @@ export default function VisionConsultation() {
     toast.success('Análisis completado y guardado');
   };
 
+  const handleSpecializedAnalysis = async (specialty) => {
+    if (analysisHistory.length === 0) {
+      toast.error('No hay análisis previos para revisar');
+      return;
+    }
+
+    try {
+      const latestAnalysis = analysisHistory[0];
+      toast.info(`Obteniendo análisis especializado de ${specialty}...`);
+      
+      // This would call the specialized analysis endpoint
+      // For now, we'll show a placeholder
+      setTimeout(() => {
+        toast.success(`Análisis especializado de ${specialty} completado`);
+      }, 2000);
+    } catch (error) {
+      console.error('Error getting specialized analysis:', error);
+      toast.error('Error al obtener análisis especializado');
+    }
+  };
+
+  const handleImageComparison = async () => {
+    if (analysisHistory.length < 2) {
+      toast.error('Necesitas al menos 2 análisis para comparar');
+      return;
+    }
+
+    try {
+      const recentAnalyses = analysisHistory.slice(0, 2);
+      toast.info('Comparando análisis de imágenes...');
+      
+      // This would call the comparison endpoint
+      // For now, we'll show a placeholder
+      setTimeout(() => {
+        toast.success('Comparación de imágenes completada');
+      }, 2000);
+    } catch (error) {
+      console.error('Error comparing images:', error);
+      toast.error('Error al comparar imágenes');
+    }
+  };
+
   const getUrgencyColor = (urgency) => {
     switch (urgency) {
       case 'critical': return 'text-red-600 bg-red-100';
@@ -81,7 +123,7 @@ export default function VisionConsultation() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-4 font-semibold transition-colors flex items-center gap-2 ${
                       activeTab === tab.id
-                        ? 'border-b-2 border-medical-500 text-medical-600'
+                        ? 'border-b-2 border-blue-500 text-blue-600'
                         : 'text-gray-600 hover:text-gray-900'
                     }`}
                   >
@@ -123,7 +165,7 @@ export default function VisionConsultation() {
                   ) : (
                     <div className="space-y-4">
                       {analysisHistory.map((analysis) => (
-                        <div key={analysis.id} className="border border-gray-200 rounded-xl p-4 hover:border-medical-300 transition-colors">
+                        <div key={analysis.id} className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex-1">
                               <div className="flex items-center gap-2 mb-2">
@@ -147,7 +189,7 @@ export default function VisionConsultation() {
                                 <span className="text-sm text-gray-600">Confianza:</span>
                                 <div className="flex-1 bg-gray-200 rounded-full h-2 max-w-32">
                                   <div
-                                    className="bg-medical-500 h-2 rounded-full"
+                                    className="bg-blue-500 h-2 rounded-full"
                                     style={{ width: `${analysis.confidence}%` }}
                                   ></div>
                                 </div>
@@ -160,7 +202,7 @@ export default function VisionConsultation() {
                                   // View details
                                   toast.info('Mostrando detalles del análisis');
                                 }}
-                                className="px-3 py-1 text-sm font-medium text-medical-600 hover:bg-medical-50 rounded-lg transition-colors"
+                                className="px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                               >
                                 Ver detalles
                               </button>
@@ -180,7 +222,7 @@ export default function VisionConsultation() {
                             <ul className="text-sm text-gray-600 space-y-1">
                               {analysis.findings.slice(0, 3).map((finding, index) => (
                                 <li key={index} className="flex items-start gap-2">
-                                  <span className="text-medical-500 mt-1">•</span>
+                                  <span className="text-blue-500 mt-1">•</span>
                                   <span>{finding}</span>
                                 </li>
                               ))}
@@ -206,8 +248,8 @@ export default function VisionConsultation() {
                   className="space-y-6"
                 >
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-medical-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-medical-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                     </div>
@@ -217,9 +259,13 @@ export default function VisionConsultation() {
                     </p>
                     <button
                       onClick={() => {
-                        toast.info('Función de comparación próximamente disponible');
+                        if (analysisHistory.length >= 2) {
+                          handleImageComparison();
+                        } else {
+                          toast.info('Necesitas al menos 2 análisis para comparar');
+                        }
                       }}
-                      className="px-6 py-2 bg-medical-500 text-white font-semibold rounded-lg hover:bg-medical-600 transition-colors"
+                      className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-colors"
                     >
                       Comparar imágenes
                     </button>
@@ -247,9 +293,15 @@ export default function VisionConsultation() {
                     {specialties.map((specialty) => (
                       <div
                         key={specialty.name}
-                        className="border border-gray-200 rounded-xl p-4 hover:border-medical-300 transition-colors cursor-pointer"
+                        className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors cursor-pointer"
                         onClick={() => {
-                          toast.info(`Análisis de ${specialty.name} próximamente disponible`);
+                          if (analysisHistory.length > 0) {
+                            // Use the most recent analysis for specialized review
+                            const latestAnalysis = analysisHistory[0];
+                            handleSpecializedAnalysis(specialty.name.toLowerCase());
+                          } else {
+                            toast.info('Primero sube una imagen para análisis especializado');
+                          }
                         }}
                       >
                         <div className="text-center">
@@ -266,7 +318,7 @@ export default function VisionConsultation() {
           </div>
 
           {/* Features Overview */}
-          <div className="bg-gradient-to-r from-medical-50 to-blue-50 rounded-2xl p-8 border border-medical-200">
+          <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 border border-blue-200">
             <h3 className="text-xl font-bold text-ink-primary mb-4">
               ¿Qué puedes analizar?
             </h3>

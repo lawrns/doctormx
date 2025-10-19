@@ -1,10 +1,21 @@
 import { createClient } from '@supabase/supabase-js';
 import { doctorReply } from './openai';
 
-const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_ANON_KEY!
-);
+let supabase: any = null;
+
+function getSupabaseClient() {
+  if (!supabase) {
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase URL and Anon Key must be provided in .env');
+    }
+    
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
 
 export interface ReferralCriteria {
   symptoms: string[];
@@ -397,7 +408,8 @@ export async function updateReferralStatus(
       updateData.selected_doctor_id = doctorId;
     }
 
-    const { error } = await supabase
+    const supabaseClient = getSupabaseClient();
+    const { error } = await supabaseClient
       .from('ai_referrals')
       .update(updateData)
       .eq('id', referralId);
@@ -408,6 +420,78 @@ export async function updateReferralStatus(
     }
   } catch (error) {
     console.error('Error updating referral status:', error);
+    throw error;
+  }
+}
+
+export async function getAIReferrals(doctorId: string): Promise<any[]> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    const { data, error } = await supabaseClient
+      .from('ai_referrals')
+      .select('*')
+      .eq('selected_doctor_id', doctorId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+    return data || [];
+  } catch (error) {
+    console.error('Error getting AI referrals:', error);
+    throw error;
+  }
+}
+
+export async function getDoctorAvailability(doctorId: string): Promise<any[]> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    const { data, error } = await supabaseClient
+      .from('doctor_availability')
+      .select('*')
+      .eq('doctor_id', doctorId)
+      .gte('date', new Date().toISOString().split('T')[0])
+      .order('date', { ascending: true });
+
+    if (error) throw error;
+    return data || [];
+  } catch (error) {
+    console.error('Error getting doctor availability:', error);
+    throw error;
+  }
+}
+
+export async function createAppointmentBooking({
+  referralId,
+  doctorId,
+  patientId,
+  appointmentTime,
+  notes
+}: {
+  referralId: string;
+  doctorId: string;
+  patientId: string;
+  appointmentTime: string;
+  notes?: string;
+}): Promise<any> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    const { data, error } = await supabaseClient
+      .from('appointment_bookings')
+      .insert({
+        referral_id: referralId,
+        doctor_id: doctorId,
+        patient_id: patientId,
+        appointment_time: appointmentTime,
+        status: 'confirmed',
+        notes,
+        created_at: new Date().toISOString()
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error creating appointment booking:', error);
     throw error;
   }
 }

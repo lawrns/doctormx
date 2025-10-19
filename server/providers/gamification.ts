@@ -1,400 +1,223 @@
-import { supabase } from '../lib/supabase';
+import { createClient } from '@supabase/supabase-js';
+
+let supabase: any = null;
+
+function getSupabaseClient() {
+  if (!supabase) {
+    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseKey = process.env.SUPABASE_ANON_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Supabase URL and Anon Key must be provided in .env');
+    }
+    
+    supabase = createClient(supabaseUrl, supabaseKey);
+  }
+  return supabase;
+}
+
+export interface HealthPoints {
+  id: string;
+  user_id: string;
+  points: number;
+  level: number;
+  total_points_earned: number;
+  streak_days: number;
+  last_activity_date: string;
+  created_at: string;
+  updated_at: string;
+}
 
 export interface Achievement {
   id: string;
   name: string;
   description: string;
   icon: string;
-  points: number;
-  category: 'health' | 'social' | 'learning' | 'streak' | 'special';
-  requirement: {
-    type: 'consultations' | 'days_streak' | 'points_earned' | 'referrals' | 'trivia_correct' | 'custom';
-    value: number;
-    description: string;
-  };
-  rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
-}
-
-export interface HealthPoints {
-  userId: string;
-  totalPoints: number;
-  availablePoints: number;
-  spentPoints: number;
-  level: number;
-  levelProgress: number;
-  nextLevelPoints: number;
+  points_reward: number;
+  category: string;
+  requirements: Record<string, any>;
+  is_active: boolean;
+  created_at: string;
 }
 
 export interface UserAchievement {
   id: string;
-  userId: string;
-  achievementId: string;
-  earnedAt: string;
+  user_id: string;
+  achievement_id: string;
+  earned_at: string;
   progress: number;
-  completed: boolean;
+  is_completed: boolean;
+  achievement?: Achievement;
 }
 
-export const ACHIEVEMENTS: Achievement[] = [
-  // Health Achievements
-  {
-    id: 'first_consultation',
-    name: 'Primera Consulta',
-    description: 'Completa tu primera consulta médica',
-    icon: '🩺',
-    points: 50,
-    category: 'health',
-    requirement: {
-      type: 'consultations',
-      value: 1,
-      description: 'Completa 1 consulta'
-    },
-    rarity: 'common'
-  },
-  {
-    id: 'health_explorer',
-    name: 'Explorador de la Salud',
-    description: 'Completa 10 consultas médicas',
-    icon: '🗺️',
-    points: 200,
-    category: 'health',
-    requirement: {
-      type: 'consultations',
-      value: 10,
-      description: 'Completa 10 consultas'
-    },
-    rarity: 'uncommon'
-  },
-  {
-    id: 'health_champion',
-    name: 'Campeón de la Salud',
-    description: 'Completa 50 consultas médicas',
-    icon: '🏆',
-    points: 1000,
-    category: 'health',
-    requirement: {
-      type: 'consultations',
-      value: 50,
-      description: 'Completa 50 consultas'
-    },
-    rarity: 'rare'
-  },
-  {
-    id: 'health_master',
-    name: 'Maestro de la Salud',
-    description: 'Completa 100 consultas médicas',
-    icon: '👑',
-    points: 2500,
-    category: 'health',
-    requirement: {
-      type: 'consultations',
-      value: 100,
-      description: 'Completa 100 consultas'
-    },
-    rarity: 'epic'
-  },
+export interface HealthGoal {
+  id: string;
+  user_id: string;
+  title: string;
+  description: string;
+  target_value: number;
+  current_value: number;
+  unit: string;
+  category: string;
+  target_date: string;
+  is_completed: boolean;
+  points_reward: number;
+  created_at: string;
+  updated_at: string;
+}
 
-  // Streak Achievements
-  {
-    id: 'daily_visitor',
-    name: 'Visitante Diario',
-    description: 'Visita la plataforma por 3 días consecutivos',
-    icon: '📅',
-    points: 100,
-    category: 'streak',
-    requirement: {
-      type: 'days_streak',
-      value: 3,
-      description: 'Visita por 3 días consecutivos'
-    },
-    rarity: 'common'
-  },
-  {
-    id: 'week_warrior',
-    name: 'Guerrero de la Semana',
-    description: 'Visita la plataforma por 7 días consecutivos',
-    icon: '⚔️',
-    points: 300,
-    category: 'streak',
-    requirement: {
-      type: 'days_streak',
-      value: 7,
-      description: 'Visita por 7 días consecutivos'
-    },
-    rarity: 'uncommon'
-  },
-  {
-    id: 'month_master',
-    name: 'Maestro del Mes',
-    description: 'Visita la plataforma por 30 días consecutivos',
-    icon: '🗓️',
-    points: 1500,
-    category: 'streak',
-    requirement: {
-      type: 'days_streak',
-      value: 30,
-      description: 'Visita por 30 días consecutivos'
-    },
-    rarity: 'rare'
-  },
+export interface PointsTransaction {
+  id: string;
+  user_id: string;
+  points: number;
+  transaction_type: string;
+  description: string;
+  metadata: Record<string, any>;
+  created_at: string;
+}
 
-  // Learning Achievements
-  {
-    id: 'trivia_novice',
-    name: 'Novato en Trivia',
-    description: 'Responde correctamente 5 preguntas de trivia médica',
-    icon: '🧠',
-    points: 150,
-    category: 'learning',
-    requirement: {
-      type: 'trivia_correct',
-      value: 5,
-      description: 'Responde 5 preguntas correctamente'
-    },
-    rarity: 'common'
-  },
-  {
-    id: 'trivia_expert',
-    name: 'Experto en Trivia',
-    description: 'Responde correctamente 25 preguntas de trivia médica',
-    icon: '🎓',
-    points: 500,
-    category: 'learning',
-    requirement: {
-      type: 'trivia_correct',
-      value: 25,
-      description: 'Responde 25 preguntas correctamente'
-    },
-    rarity: 'uncommon'
-  },
-  {
-    id: 'trivia_master',
-    name: 'Maestro en Trivia',
-    description: 'Responde correctamente 100 preguntas de trivia médica',
-    icon: '🧙‍♂️',
-    points: 2000,
-    category: 'learning',
-    requirement: {
-      type: 'trivia_correct',
-      value: 100,
-      description: 'Responde 100 preguntas correctamente'
-    },
-    rarity: 'rare'
-  },
-
-  // Social Achievements
-  {
-    id: 'first_referral',
-    name: 'Primer Referido',
-    description: 'Refiere a tu primer amigo',
-    icon: '👥',
-    points: 100,
-    category: 'social',
-    requirement: {
-      type: 'referrals',
-      value: 1,
-      description: 'Refiere a 1 amigo'
-    },
-    rarity: 'common'
-  },
-  {
-    id: 'social_butterfly',
-    name: 'Mariposa Social',
-    description: 'Refiere a 10 amigos',
-    icon: '🦋',
-    points: 500,
-    category: 'social',
-    requirement: {
-      type: 'referrals',
-      value: 10,
-      description: 'Refiere a 10 amigos'
-    },
-    rarity: 'uncommon'
-  },
-  {
-    id: 'community_leader',
-    name: 'Líder de la Comunidad',
-    description: 'Refiere a 50 amigos',
-    icon: '👑',
-    points: 2000,
-    category: 'social',
-    requirement: {
-      type: 'referrals',
-      value: 50,
-      description: 'Refiere a 50 amigos'
-    },
-    rarity: 'rare'
-  },
-
-  // Special Achievements
-  {
-    id: 'early_adopter',
-    name: 'Pionero',
-    description: 'Únete a Doctor.mx en sus primeros días',
-    icon: '🚀',
-    points: 1000,
-    category: 'special',
-    requirement: {
-      type: 'custom',
-      value: 1,
-      description: 'Usuario pionero'
-    },
-    rarity: 'legendary'
-  },
-  {
-    id: 'beta_tester',
-    name: 'Probador Beta',
-    description: 'Participa en el programa beta de Doctor.mx',
-    icon: '🧪',
-    points: 750,
-    category: 'special',
-    requirement: {
-      type: 'custom',
-      value: 1,
-      description: 'Probador beta'
-    },
-    rarity: 'epic'
-  }
-];
-
-export async function getUserHealthPoints(userId: string): Promise<HealthPoints> {
+/**
+ * Get user health points and level
+ */
+export async function getUserHealthPoints(userId: string): Promise<HealthPoints | null> {
   try {
-    const { data: pointsData, error } = await supabase
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
       .from('health_points')
       .select('*')
       .eq('user_id', userId)
       .single();
 
-    if (error && error.code !== 'PGRST116') {
+    if (error) {
+      if (error.code === 'PGRST116') {
+        // User doesn't have health points yet, create them
+        return await createUserHealthPoints(userId);
+      }
       throw error;
     }
 
-    if (!pointsData) {
-      // Create new health points record
-      const { data: newPoints, error: createError } = await supabase
-        .from('health_points')
-        .insert({
-          user_id: userId,
-          total_points: 0,
-          available_points: 0,
-          spent_points: 0,
-          level: 1,
-          level_progress: 0,
-          next_level_points: 100
-        })
-        .select()
-        .single();
-
-      if (createError) throw createError;
-      return mapHealthPoints(newPoints);
-    }
-
-    return mapHealthPoints(pointsData);
+    return data;
   } catch (error) {
     console.error('Error getting user health points:', error);
     throw error;
   }
 }
 
-export async function addHealthPoints(
-  userId: string,
-  points: number,
-  reason: string,
-  metadata?: any
-): Promise<HealthPoints> {
+/**
+ * Create initial health points for user
+ */
+export async function createUserHealthPoints(userId: string): Promise<HealthPoints> {
   try {
-    // Get current points
-    const currentPoints = await getUserHealthPoints(userId);
+    const supabaseClient = getSupabaseClient();
     
-    // Calculate new level
-    const newTotalPoints = currentPoints.totalPoints + points;
-    const newLevel = Math.floor(newTotalPoints / 100) + 1;
-    const levelProgress = newTotalPoints % 100;
-    const nextLevelPoints = newLevel * 100;
-
-    // Update points
-    const { data: updatedPoints, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('health_points')
-      .update({
-        total_points: newTotalPoints,
-        available_points: currentPoints.availablePoints + points,
-        level: newLevel,
-        level_progress: levelProgress,
-        next_level_points: nextLevelPoints
+      .insert({
+        user_id: userId,
+        points: 0,
+        level: 1,
+        total_points_earned: 0,
+        streak_days: 0,
+        last_activity_date: new Date().toISOString().split('T')[0]
       })
-      .eq('user_id', userId)
       .select()
       .single();
 
     if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error creating user health points:', error);
+    throw error;
+  }
+}
 
-    // Log points transaction
-    await supabase
+/**
+ * Add points to user
+ */
+export async function addHealthPoints(
+  userId: string,
+  points: number,
+  transactionType: string,
+  description: string,
+  metadata: Record<string, any> = {}
+): Promise<{ success: boolean; newLevel?: number; pointsAdded: number }> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    // Start transaction
+    const { data: currentPoints, error: fetchError } = await supabaseClient
+      .from('health_points')
+      .select('*')
+      .eq('user_id', userId)
+      .single();
+
+    if (fetchError) {
+      if (fetchError.code === 'PGRST116') {
+        // Create health points if they don't exist
+        await createUserHealthPoints(userId);
+        return await addHealthPoints(userId, points, transactionType, description, metadata);
+      }
+      throw fetchError;
+    }
+
+    const newTotalPoints = currentPoints.total_points_earned + points;
+    const newLevel = Math.floor(newTotalPoints / 1000) + 1; // 1000 points per level
+    const levelUp = newLevel > currentPoints.level;
+
+    // Update health points
+    const { error: updateError } = await supabaseClient
+      .from('health_points')
+      .update({
+        points: currentPoints.points + points,
+        level: newLevel,
+        total_points_earned: newTotalPoints,
+        last_activity_date: new Date().toISOString().split('T')[0]
+      })
+      .eq('user_id', userId);
+
+    if (updateError) throw updateError;
+
+    // Record transaction
+    const { error: transactionError } = await supabaseClient
       .from('points_transactions')
       .insert({
         user_id: userId,
         points: points,
-        reason: reason,
-        metadata: metadata || {},
-        transaction_type: 'earned'
+        transaction_type: transactionType,
+        description: description,
+        metadata: metadata
       });
 
-    return mapHealthPoints(updatedPoints);
+    if (transactionError) {
+      console.error('Error recording points transaction:', transactionError);
+      // Don't throw error for transaction logging failures
+    }
+
+    return {
+      success: true,
+      newLevel: levelUp ? newLevel : undefined,
+      pointsAdded: points
+    };
   } catch (error) {
     console.error('Error adding health points:', error);
     throw error;
   }
 }
 
-export async function spendHealthPoints(
-  userId: string,
-  points: number,
-  reason: string,
-  metadata?: any
-): Promise<HealthPoints> {
-  try {
-    // Get current points
-    const currentPoints = await getUserHealthPoints(userId);
-    
-    if (currentPoints.availablePoints < points) {
-      throw new Error('Insufficient points');
-    }
-
-    // Update points
-    const { data: updatedPoints, error } = await supabase
-      .from('health_points')
-      .update({
-        available_points: currentPoints.availablePoints - points,
-        spent_points: currentPoints.spentPoints + points
-      })
-      .eq('user_id', userId)
-      .select()
-      .single();
-
-    if (error) throw error;
-
-    // Log points transaction
-    await supabase
-      .from('points_transactions')
-      .insert({
-        user_id: userId,
-        points: -points,
-        reason: reason,
-        metadata: metadata || {},
-        transaction_type: 'spent'
-      });
-
-    return mapHealthPoints(updatedPoints);
-  } catch (error) {
-    console.error('Error spending health points:', error);
-    throw error;
-  }
-}
-
+/**
+ * Get user achievements
+ */
 export async function getUserAchievements(userId: string): Promise<UserAchievement[]> {
   try {
-    const { data, error } = await supabase
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
       .from('user_achievements')
-      .select('*')
+      .select(`
+        *,
+        achievement:achievements(*)
+      `)
       .eq('user_id', userId)
       .order('earned_at', { ascending: false });
 
@@ -406,169 +229,420 @@ export async function getUserAchievements(userId: string): Promise<UserAchieveme
   }
 }
 
-export async function checkAndAwardAchievements(userId: string): Promise<UserAchievement[]> {
+/**
+ * Get all available achievements
+ */
+export async function getAllAchievements(): Promise<Achievement[]> {
   try {
-    const userAchievements = await getUserAchievements(userId);
-    const userPoints = await getUserHealthPoints(userId);
-    const newAchievements: UserAchievement[] = [];
-
-    // Get user stats
-    const { data: stats } = await supabase
-      .from('user_stats')
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
+      .from('achievements')
       .select('*')
-      .eq('user_id', userId)
-      .single();
+      .eq('is_active', true)
+      .order('points_reward', { ascending: false });
 
-    const userStats = stats || {
-      consultations_completed: 0,
-      days_streak: 0,
-      referrals_made: 0,
-      trivia_correct: 0
-    };
-
-    // Check each achievement
-    for (const achievement of ACHIEVEMENTS) {
-      const existingAchievement = userAchievements.find(ua => ua.achievementId === achievement.id);
-      
-      if (existingAchievement && existingAchievement.completed) {
-        continue; // Already earned
-      }
-
-      let progress = 0;
-      let completed = false;
-
-      switch (achievement.requirement.type) {
-        case 'consultations':
-          progress = Math.min(userStats.consultations_completed, achievement.requirement.value);
-          completed = userStats.consultations_completed >= achievement.requirement.value;
-          break;
-        case 'days_streak':
-          progress = Math.min(userStats.days_streak, achievement.requirement.value);
-          completed = userStats.days_streak >= achievement.requirement.value;
-          break;
-        case 'referrals':
-          progress = Math.min(userStats.referrals_made, achievement.requirement.value);
-          completed = userStats.referrals_made >= achievement.requirement.value;
-          break;
-        case 'trivia_correct':
-          progress = Math.min(userStats.trivia_correct, achievement.requirement.value);
-          completed = userStats.trivia_correct >= achievement.requirement.value;
-          break;
-        case 'points_earned':
-          progress = Math.min(userPoints.totalPoints, achievement.requirement.value);
-          completed = userPoints.totalPoints >= achievement.requirement.value;
-          break;
-        case 'custom':
-          // Special achievements are manually awarded
-          continue;
-      }
-
-      if (completed && !existingAchievement) {
-        // Award new achievement
-        const { data: newAchievement, error } = await supabase
-          .from('user_achievements')
-          .insert({
-            user_id: userId,
-            achievement_id: achievement.id,
-            earned_at: new Date().toISOString(),
-            progress: progress,
-            completed: true
-          })
-          .select()
-          .single();
-
-        if (error) throw error;
-
-        newAchievements.push(newAchievement);
-
-        // Award points for achievement
-        await addHealthPoints(userId, achievement.points, `Achievement: ${achievement.name}`, {
-          achievement_id: achievement.id
-        });
-      } else if (existingAchievement && !existingAchievement.completed) {
-        // Update progress
-        const { error } = await supabase
-          .from('user_achievements')
-          .update({
-            progress: progress,
-            completed: completed
-          })
-          .eq('id', existingAchievement.id);
-
-        if (error) throw error;
-      }
-    }
-
-    return newAchievements;
+    if (error) throw error;
+    return data || [];
   } catch (error) {
-    console.error('Error checking achievements:', error);
+    console.error('Error getting all achievements:', error);
     throw error;
   }
 }
 
-export async function getLeaderboard(type: 'points' | 'achievements' | 'streak' = 'points', limit: number = 10): Promise<any[]> {
+/**
+ * Award achievement to user
+ */
+export async function awardAchievement(
+  userId: string,
+  achievementId: string,
+  progress: number = 100
+): Promise<{ success: boolean; achievement?: Achievement }> {
   try {
-    let query;
+    const supabaseClient = getSupabaseClient();
     
-    switch (type) {
-      case 'points':
-        query = supabase
-          .from('health_points')
-          .select(`
-            *,
-            users!inner(name, email)
-          `)
-          .order('total_points', { ascending: false })
-          .limit(limit);
-        break;
-      case 'achievements':
-        query = supabase
-          .from('user_achievements')
-          .select(`
-            user_id,
-            users!inner(name, email)
-          `)
-          .eq('completed', true)
-          .limit(limit);
-        break;
-      case 'streak':
-        query = supabase
-          .from('user_stats')
-          .select(`
-            *,
-            users!inner(name, email)
-          `)
-          .order('days_streak', { ascending: false })
-          .limit(limit);
-        break;
+    // Check if user already has this achievement
+    const { data: existingAchievement, error: checkError } = await supabaseClient
+      .from('user_achievements')
+      .select('*')
+      .eq('user_id', userId)
+      .eq('achievement_id', achievementId)
+      .single();
+
+    if (checkError && checkError.code !== 'PGRST116') {
+      throw checkError;
     }
 
-    const { data, error } = await query;
+    if (existingAchievement) {
+      return { success: false }; // Already has this achievement
+    }
+
+    // Get achievement details
+    const { data: achievement, error: achievementError } = await supabaseClient
+      .from('achievements')
+      .select('*')
+      .eq('id', achievementId)
+      .single();
+
+    if (achievementError) throw achievementError;
+
+    // Award achievement
+    const { error: awardError } = await supabaseClient
+      .from('user_achievements')
+      .insert({
+        user_id: userId,
+        achievement_id: achievementId,
+        progress: progress,
+        is_completed: progress >= 100,
+        earned_at: new Date().toISOString()
+      });
+
+    if (awardError) throw awardError;
+
+    // Add points if achievement gives points
+    if (achievement.points_reward > 0) {
+      await addHealthPoints(
+        userId,
+        achievement.points_reward,
+        'achievement',
+        `Logro desbloqueado: ${achievement.name}`,
+        { achievement_id: achievementId }
+      );
+    }
+
+    return { success: true, achievement };
+  } catch (error) {
+    console.error('Error awarding achievement:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get user health goals
+ */
+export async function getUserHealthGoals(userId: string): Promise<HealthGoal[]> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
+      .from('health_goals')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+    return data || [];
+  } catch (error) {
+    console.error('Error getting user health goals:', error);
+    throw error;
+  }
+}
+
+/**
+ * Create health goal
+ */
+export async function createHealthGoal(
+  userId: string,
+  title: string,
+  description: string,
+  targetValue: number,
+  unit: string,
+  category: string,
+  targetDate: string,
+  pointsReward: number = 100
+): Promise<HealthGoal> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
+      .from('health_goals')
+      .insert({
+        user_id: userId,
+        title,
+        description,
+        target_value: targetValue,
+        current_value: 0,
+        unit,
+        category,
+        target_date: targetDate,
+        is_completed: false,
+        points_reward: pointsReward
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  } catch (error) {
+    console.error('Error creating health goal:', error);
+    throw error;
+  }
+}
+
+/**
+ * Update health goal progress
+ */
+export async function updateHealthGoalProgress(
+  goalId: string,
+  currentValue: number
+): Promise<{ success: boolean; completed: boolean; pointsAwarded?: number }> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    // Get goal details
+    const { data: goal, error: goalError } = await supabaseClient
+      .from('health_goals')
+      .select('*')
+      .eq('id', goalId)
+      .single();
+
+    if (goalError) throw goalError;
+
+    const isCompleted = currentValue >= goal.target_value;
+    const wasCompleted = goal.is_completed;
+
+    // Update goal
+    const { error: updateError } = await supabaseClient
+      .from('health_goals')
+      .update({
+        current_value: currentValue,
+        is_completed: isCompleted
+      })
+      .eq('id', goalId);
+
+    if (updateError) throw updateError;
+
+    // Award points if goal was just completed
+    if (isCompleted && !wasCompleted) {
+      await addHealthPoints(
+        goal.user_id,
+        goal.points_reward,
+        'goal_completion',
+        `Meta completada: ${goal.title}`,
+        { goal_id: goalId }
+      );
+
+      return { success: true, completed: true, pointsAwarded: goal.points_reward };
+    }
+
+    return { success: true, completed: false };
+  } catch (error) {
+    console.error('Error updating health goal progress:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get points transaction history
+ */
+export async function getPointsTransactionHistory(
+  userId: string,
+  limit: number = 50
+): Promise<PointsTransaction[]> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
+      .from('points_transactions')
+      .select('*')
+      .eq('user_id', userId)
+      .order('created_at', { ascending: false })
+      .limit(limit);
+
+    if (error) throw error;
+    return data || [];
+  } catch (error) {
+    console.error('Error getting points transaction history:', error);
+    throw error;
+  }
+}
+
+/**
+ * Get leaderboard
+ */
+export async function getLeaderboard(limit: number = 10): Promise<Array<{
+  user_id: string;
+  total_points: number;
+  level: number;
+  user_name?: string;
+  rank: number;
+}>> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    const { data, error } = await supabaseClient
+      .from('health_points')
+      .select(`
+        user_id,
+        total_points_earned,
+        level,
+        users!inner(name)
+      `)
+      .order('total_points_earned', { ascending: false })
+      .limit(limit);
+
     if (error) throw error;
 
-    return data || [];
+    return (data || []).map((item, index) => ({
+      user_id: item.user_id,
+      total_points: item.total_points_earned,
+      level: item.level,
+      user_name: item.users?.name || 'Usuario',
+      rank: index + 1
+    }));
   } catch (error) {
     console.error('Error getting leaderboard:', error);
     throw error;
   }
 }
 
-function mapHealthPoints(data: any): HealthPoints {
-  return {
-    userId: data.user_id,
-    totalPoints: data.total_points,
-    availablePoints: data.available_points,
-    spentPoints: data.spent_points,
-    level: data.level,
-    levelProgress: data.level_progress,
-    nextLevelPoints: data.next_level_points
-  };
+/**
+ * Check and award achievements based on user activity
+ */
+export async function checkAndAwardAchievements(userId: string, activityType: string, metadata: Record<string, any> = {}): Promise<Achievement[]> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    // Get all active achievements
+    const { data: achievements, error: achievementsError } = await supabaseClient
+      .from('achievements')
+      .select('*')
+      .eq('is_active', true);
+
+    if (achievementsError) throw achievementsError;
+
+    const awardedAchievements: Achievement[] = [];
+
+    for (const achievement of achievements || []) {
+      let shouldAward = false;
+
+      // Check achievement requirements based on type
+      switch (achievement.category) {
+        case 'consultations':
+          if (activityType === 'consultation_completed') {
+            const { data: consultationCount } = await supabaseClient
+              .from('consults')
+              .select('id', { count: 'exact' })
+              .eq('user_id', userId)
+              .eq('status', 'completed');
+
+            if (consultationCount && consultationCount.length >= (achievement.requirements?.count || 1)) {
+              shouldAward = true;
+            }
+          }
+          break;
+
+        case 'streak':
+          if (activityType === 'daily_login') {
+            const { data: healthPoints } = await supabaseClient
+              .from('health_points')
+              .select('streak_days')
+              .eq('user_id', userId)
+              .single();
+
+            if (healthPoints && healthPoints.streak_days >= (achievement.requirements?.days || 7)) {
+              shouldAward = true;
+            }
+          }
+          break;
+
+        case 'points':
+          if (activityType === 'points_earned') {
+            const { data: healthPoints } = await supabaseClient
+              .from('health_points')
+              .select('total_points_earned')
+              .eq('user_id', userId)
+              .single();
+
+            if (healthPoints && healthPoints.total_points_earned >= (achievement.requirements?.points || 1000)) {
+              shouldAward = true;
+            }
+          }
+          break;
+      }
+
+      if (shouldAward) {
+        const result = await awardAchievement(userId, achievement.id);
+        if (result.success && result.achievement) {
+          awardedAchievements.push(result.achievement);
+        }
+      }
+    }
+
+    return awardedAchievements;
+  } catch (error) {
+    console.error('Error checking and awarding achievements:', error);
+    throw error;
+  }
 }
 
-export function getAllAchievements(): Achievement[] {
-  return ACHIEVEMENTS;
-}
+/**
+ * Update user streak
+ */
+export async function updateUserStreak(userId: string): Promise<{ success: boolean; streakDays: number; streakBonus?: number }> {
+  try {
+    const supabaseClient = getSupabaseClient();
+    
+    const today = new Date().toISOString().split('T')[0];
+    
+    const { data: healthPoints, error: fetchError } = await supabaseClient
+      .from('health_points')
+      .select('*')
+      .eq('user_id', userId)
+      .single();
 
-export function getAchievementById(id: string): Achievement | undefined {
-  return ACHIEVEMENTS.find(a => a.id === id);
+    if (fetchError) {
+      if (fetchError.code === 'PGRST116') {
+        await createUserHealthPoints(userId);
+        return await updateUserStreak(userId);
+      }
+      throw fetchError;
+    }
+
+    const lastActivity = healthPoints.last_activity_date;
+    const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+    let newStreakDays = healthPoints.streak_days;
+    let streakBonus = 0;
+
+    if (lastActivity === today) {
+      // Already updated today
+      return { success: true, streakDays: newStreakDays };
+    } else if (lastActivity === yesterday) {
+      // Consecutive day
+      newStreakDays += 1;
+      streakBonus = Math.min(newStreakDays * 10, 100); // Max 100 bonus points
+    } else {
+      // Streak broken
+      newStreakDays = 1;
+      streakBonus = 10;
+    }
+
+    // Update streak
+    const { error: updateError } = await supabaseClient
+      .from('health_points')
+      .update({
+        streak_days: newStreakDays,
+        last_activity_date: today
+      })
+      .eq('user_id', userId);
+
+    if (updateError) throw updateError;
+
+    // Award streak bonus points
+    if (streakBonus > 0) {
+      await addHealthPoints(
+        userId,
+        streakBonus,
+        'streak_bonus',
+        `Racha de ${newStreakDays} días`,
+        { streak_days: newStreakDays }
+      );
+    }
+
+    return { success: true, streakDays: newStreakDays, streakBonus };
+  } catch (error) {
+    console.error('Error updating user streak:', error);
+    throw error;
+  }
 }

@@ -145,7 +145,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Selecciona una imagen médica
             </label>
-            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-medical-400 transition-colors">
+            <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-blue-400 transition-colors">
               <input
                 ref={fileInputRef}
                 type="file"
@@ -162,7 +162,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                   />
                   <button
                     onClick={() => fileInputRef.current.click()}
-                    className="text-sm text-medical-600 hover:text-medical-700"
+                    className="text-sm text-blue-600 hover:text-blue-700"
                   >
                     Cambiar imagen
                   </button>
@@ -173,7 +173,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                   <div>
                     <button
                       onClick={() => fileInputRef.current.click()}
-                      className="px-4 py-2 bg-medical-500 text-white rounded-lg hover:bg-medical-600 transition-colors"
+                      className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                     >
                       Seleccionar imagen
                     </button>
@@ -198,7 +198,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                   onClick={() => setImageType(type.value)}
                   className={`p-3 rounded-lg border-2 transition-colors ${
                     imageType === type.value
-                      ? 'border-medical-500 bg-medical-50 text-medical-700'
+                      ? 'border-blue-500 bg-blue-50 text-blue-700'
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -219,7 +219,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                 type="number"
                 value={patientInfo.age}
                 onChange={(e) => setPatientInfo({...patientInfo, age: e.target.value})}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Ej: 35"
               />
             </div>
@@ -230,7 +230,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
               <select
                 value={patientInfo.gender}
                 onChange={(e) => setPatientInfo({...patientInfo, gender: e.target.value})}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Seleccionar</option>
                 <option value="masculino">Masculino</option>
@@ -247,7 +247,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
             <textarea
               value={patientInfo.symptoms}
               onChange={(e) => setPatientInfo({...patientInfo, symptoms: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               rows={3}
               placeholder="Describe los síntomas que experimentas..."
             />
@@ -260,7 +260,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
             <textarea
               value={patientInfo.medicalHistory}
               onChange={(e) => setPatientInfo({...patientInfo, medicalHistory: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-medical-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               rows={3}
               placeholder="Menciona condiciones médicas previas, medicamentos, alergias..."
             />
@@ -271,7 +271,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
             <button
               onClick={handleAnalysis}
               disabled={loading || !imagePreview}
-              className="px-8 py-3 bg-gradient-to-r from-medical-500 to-medical-600 text-white font-semibold rounded-lg hover:from-medical-600 hover:to-medical-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
             >
               {loading ? (
                 <>
@@ -296,7 +296,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
               animate={{ opacity: 1, y: 0 }}
               className="mt-8 space-y-6"
             >
-              <div className="bg-gradient-to-r from-medical-50 to-blue-50 rounded-xl p-6 border border-medical-200">
+              <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-xl p-6 border border-blue-200">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   Resultados del Análisis
                 </h3>
@@ -313,7 +313,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                     <span className="text-sm font-medium text-gray-700">Confianza:</span>
                     <div className="flex-1 bg-gray-200 rounded-full h-2">
                       <div
-                        className="bg-medical-500 h-2 rounded-full transition-all duration-500"
+                        className="bg-blue-500 h-2 rounded-full transition-all duration-500"
                         style={{ width: `${analysis.confidence}%` }}
                       ></div>
                     </div>
@@ -327,7 +327,7 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                   <ul className="space-y-1">
                     {analysis.findings.map((finding, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <span className="text-medical-500 mt-1">•</span>
+                        <span className="text-blue-500 mt-1">•</span>
                         <span className="text-gray-700">{finding}</span>
                       </li>
                     ))}

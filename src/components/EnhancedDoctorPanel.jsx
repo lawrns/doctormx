@@ -31,13 +31,38 @@ export default function EnhancedDoctorPanel() {
     try {
       setLoading(true);
       
-      // Simulate API calls
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Mock doctor data
+      if (!user?.id) {
+        setLoading(false);
+        return;
+      }
+
+      // Load referrals from API
+      const referralsResponse = await fetch(`/api/referrals/${user.id}`);
+      if (referralsResponse.ok) {
+        const referralsData = await referralsResponse.json();
+        setReferrals(referralsData);
+      }
+
+      // Load doctor availability
+      const availabilityResponse = await fetch(`/api/doctors/${user.id}/availability`);
+      if (availabilityResponse.ok) {
+        const availabilityData = await availabilityResponse.json();
+        // Convert availability to appointments format
+        const appointmentsData = availabilityData.map(slot => ({
+          id: slot.id,
+          patient_name: 'Paciente asignado',
+          appointment_time: slot.date + ' ' + slot.time_slot,
+          status: 'confirmed',
+          type: 'consultation',
+          notes: 'Cita programada'
+        }));
+        setAppointments(appointmentsData);
+      }
+
+      // Mock doctor data (will be replaced with real API later)
       setDoctorData({
         id: user?.id,
-        name: user?.name || 'Dr. María García',
+        name: user?.user_metadata?.full_name || 'Dr. María García',
         specialty: 'Medicina Interna',
         verification_status: 'verified',
         license_status: 'verified',
@@ -183,34 +208,56 @@ export default function EnhancedDoctorPanel() {
 
   const handleAcceptReferral = async (referralId) => {
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      setReferrals(referrals.map(ref => 
-        ref.id === referralId 
-          ? { ...ref, status: 'accepted' }
-          : ref
-      ));
-      
-      toast.success('Referencia aceptada exitosamente');
+      const response = await fetch(`/api/referrals/${referralId}/status`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          status: 'accepted',
+          doctorId: user?.id 
+        })
+      });
+
+      if (response.ok) {
+        setReferrals(referrals.map(ref => 
+          ref.id === referralId 
+            ? { ...ref, status: 'accepted' }
+            : ref
+        ));
+        
+        toast.success('Referencia aceptada exitosamente');
+      } else {
+        throw new Error('Error updating referral status');
+      }
     } catch (error) {
+      console.error('Error accepting referral:', error);
       toast.error('Error al aceptar referencia');
     }
   };
 
   const handleRejectReferral = async (referralId) => {
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      setReferrals(referrals.map(ref => 
-        ref.id === referralId 
-          ? { ...ref, status: 'rejected' }
-          : ref
-      ));
-      
-      toast.success('Referencia rechazada');
+      const response = await fetch(`/api/referrals/${referralId}/status`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          status: 'rejected',
+          doctorId: user?.id 
+        })
+      });
+
+      if (response.ok) {
+        setReferrals(referrals.map(ref => 
+          ref.id === referralId 
+            ? { ...ref, status: 'rejected' }
+            : ref
+        ));
+        
+        toast.success('Referencia rechazada');
+      } else {
+        throw new Error('Error updating referral status');
+      }
     } catch (error) {
+      console.error('Error rejecting referral:', error);
       toast.error('Error al rechazar referencia');
     }
   };

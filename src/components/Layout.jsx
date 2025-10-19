@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import GamificationHeader from './GamificationHeader';
 
 function Logo() {
   return (
@@ -207,6 +208,7 @@ export default function Layout({ children }) {
             <div className="hidden lg:flex items-center space-x-4">
               {user ? (
                 <>
+                  <GamificationHeader />
                   <Link to="/dashboard" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
                     Mi Dashboard
                   </Link>

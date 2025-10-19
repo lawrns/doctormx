@@ -7,12 +7,12 @@ import StatsBoard from './components/StatsBoard'
 function Logo() {
   return (
     <div className="flex items-center gap-2.5 group">
-      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-brand-500 to-medical-500 text-white shadow-sm transition-all duration-200 group-hover:shadow-brand group-hover:scale-105">
+      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-teal-600 text-white shadow-sm transition-all duration-200 group-hover:shadow-lg group-hover:scale-105">
         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
           <path d="M10 4h4a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H6a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2V6a2 2 0 0 1 2-2z"/>
         </svg>
       </span>
-      <span className="text-xl font-semibold tracking-tight text-ink-primary transition-colors duration-200 group-hover:text-brand-600">doctor.mx</span>
+      <span className="text-xl font-semibold tracking-tight text-gray-900 transition-colors duration-200 group-hover:text-blue-600">doctor.mx</span>
     </div>
   )
 }
@@ -31,12 +31,12 @@ function MobileMenu({ isOpen, onClose }) {
 
   return (
     <div className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-      <div className="fixed inset-0 bg-ink-primary/60 backdrop-blur-sm" onClick={onClose}></div>
-      <div className={`fixed right-0 top-0 h-full w-80 bg-white shadow-2xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex items-center justify-between p-6 border-b border-ink-border">
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose}></div>
+      <div className={`fixed right-0 top-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <Logo />
-          <button onClick={onClose} className="p-2 rounded-lg hover:bg-ink-bg transition-colors" aria-label="Cerrar menú">
-            <svg className="h-6 w-6 text-ink-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <button onClick={onClose} className="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Cerrar menú">
+            <svg className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
@@ -44,8 +44,8 @@ function MobileMenu({ isOpen, onClose }) {
         <div className="p-6 space-y-6">
           {user ? (
             <div className="space-y-4">
-              <div className="text-center py-4 border-b border-ink-border mb-4">
-                <span className="text-sm text-ink-secondary">
+              <div className="text-center py-4 border-b border-gray-200 mb-4">
+                <span className="text-sm text-gray-600">
                   Hola, {user.user_metadata?.full_name || user.email}
                 </span>
               </div>

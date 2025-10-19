@@ -1,8 +1,15 @@
 import OpenAI from 'openai';
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+let client: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!client) {
+    client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return client;
+}
 
 export interface MedicalImageAnalysis {
   imageType: string;
@@ -29,7 +36,7 @@ export async function analyzeMedicalImage(request: VisionAnalysisRequest): Promi
   try {
     const systemPrompt = getSystemPrompt(request.imageType);
     
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o",
       messages: [
         {
@@ -205,7 +212,7 @@ export async function getSpecializedAnalysis(
   const specialtyPrompt = specialtyPrompts[specialty.toLowerCase()] || '';
 
   try {
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o",
       messages: [
         {
@@ -266,7 +273,7 @@ export async function compareImages(
       }
     }));
 
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o",
       messages: [
         {

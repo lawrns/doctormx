@@ -1,8 +1,15 @@
 import OpenAI from 'openai';
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+let client: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!client) {
+    client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+  }
+  return client;
+}
 
 export interface AIPersonality {
   id: string;
@@ -106,7 +113,7 @@ export async function getPersonalityResponse(
   }
 
   try {
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
@@ -147,7 +154,7 @@ export async function getEntertainmentContent(
   };
 
   try {
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
@@ -191,7 +198,7 @@ export async function getHealthTrivia(
   };
 
   try {
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
@@ -258,7 +265,7 @@ export async function getMotivationalMessage(
   };
 
   try {
-    const response = await client.chat.completions.create({
+    const response = await getOpenAIClient().chat.completions.create({
       model: "gpt-4o-mini",
       messages: [
         {
