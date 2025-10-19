@@ -90,7 +90,7 @@ export default function AnimatedChat() {
                           <span className="text-[10px] text-ink-muted">{msg.distance}</span>
                         </div>
                       </div>
-                      <button className="px-3 py-1.5 bg-gradient-to-r from-brand-600 to-brand-500 text-white text-xs font-semibold rounded-lg flex-shrink-0">
+                      <button className="px-3 py-1.5 bg-gradient-to-r from-brand-primary-600 to-brand-primary text-white text-xs font-semibold rounded-lg flex-shrink-0">
                         Ver perfil
                       </button>
                     </div>
@@ -100,7 +100,7 @@ export default function AnimatedChat() {
                   <div
                     className={`max-w-[75%] px-4 py-2.5 rounded-2xl shadow-sm ${
                       msg.type === 'user'
-                        ? 'bg-brand-500 text-white rounded-br-md'
+                        ? 'bg-brand-primary text-white rounded-br-md'
                         : 'bg-white text-ink-primary border border-ink-border rounded-bl-md'
                     }`}
                   >
@@ -161,8 +161,8 @@ export default function AnimatedChat() {
       {/* Floating response time badge */}
       <div className="absolute -top-4 -right-4 bg-white rounded-xl shadow-lg p-3 border border-ink-border animate-fade-in-up" style={{animationDelay: '1.5s'}}>
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-brand-100 rounded-lg flex items-center justify-center">
-            <svg className="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+            <svg className="w-5 h-5 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
