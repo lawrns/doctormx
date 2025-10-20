@@ -1,5 +1,5 @@
 export async function chatTurn({ message, history = [], intake, userId }) {
-  const r = await fetch('/api/chat', {
+  const r = await fetch('/.netlify/functions/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ message, history, intake, userId })
@@ -23,9 +23,10 @@ export async function findSpecialists({ specialty, city, lat, lon, radius }) {
 }
 
 export async function checkFreeQuestionsEligibility(userId) {
-  const res = await fetch(`/api/free-questions/${userId}/eligibility`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' }
+  const res = await fetch('/.netlify/functions/free-questions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ userId })
   });
   if (!res.ok) throw new Error('Network error');
   return res.json();

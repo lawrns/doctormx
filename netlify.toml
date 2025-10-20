@@ -10,6 +10,12 @@
   # Node.js version for builds
   NODE_VERSION = "18"
 
+[functions]
+  # Functions directory
+  directory = "netlify/functions"
+  # Node.js version for functions
+  node_bundler = "esbuild"
+
 # SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
