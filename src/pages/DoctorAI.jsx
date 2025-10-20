@@ -23,11 +23,17 @@ export default function DoctorAI() {
 
   // Función para convertir **texto** en negritas HTML
   const formatTextWithBold = (text) => {
+    if (!text || typeof text !== 'string') {
+      return '';
+    }
     return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   };
 
   // Función para extraer especialidad de la respuesta del bot
   const extractSpecialty = (message) => {
+    if (!message || typeof message !== 'string') {
+      return null;
+    }
     const derivacionMatch = message.match(/Especialidad Sugerida:\s*([^\n\.]+)/i);
     return derivacionMatch ? derivacionMatch[1].trim() : null;
   };
@@ -92,7 +98,7 @@ export default function DoctorAI() {
     if (!user) return;
     
     try {
-      const response = await fetch(`/api/free-questions/${user.id}/eligibility`);
+      const response = await fetch(`/.netlify/functions/free-questions/${user.id}/eligibility`);
       if (response.ok) {
         const data = await response.json();
         setFreeQuestionsRemaining(data.remaining);
