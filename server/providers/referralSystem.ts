@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase.js';
-import { doctorReply } from './openai';
+import { doctorReply } from './openai.ts';
 
 export interface ReferralCriteria {
   symptoms: string[];

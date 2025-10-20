@@ -337,7 +337,8 @@ async function insertDoctorsToDatabase(doctors) {
       const userRecords = batch.map(doctor => ({
         id: doctor.user_id,
         email: `${doctor.user_id}@doctor.mx`,
-        role: 'doctor',
+        name: doctor.full_name,
+        role: 'provider',
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString()
       }));

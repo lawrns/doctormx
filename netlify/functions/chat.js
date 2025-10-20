@@ -377,17 +377,15 @@ INSTRUCCIONES PARA OPCIONES INTERACTIVAS:
       }
 
       // Specialist referral (adaptive based on symptoms)
-      if (stage === 'analysis' || stage === 'conclusion') {
-        if (replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad') || detectedSymptoms.length > 0) {
-          primary.push({
-            id: 'find_specialist',
-            text: `🔍 Buscar ${suggestedSpecialty}`,
-            action: 'find_specialist',
-            value: suggestedSpecialty,
-            style: 'primary',
-            priority: 4
-          });
-        }
+      if (detectedSymptoms.length > 0 || replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad')) {
+        primary.push({
+          id: 'find_specialist',
+          text: `🔍 Buscar ${suggestedSpecialty}`,
+          action: 'find_specialist',
+          value: suggestedSpecialty,
+          style: 'primary',
+          priority: 4
+        });
       }
 
       // Follow-up questions for exploration stage

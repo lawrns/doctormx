@@ -16,7 +16,7 @@ import { supabase } from './lib/supabase.js';
 import { doctorReply } from './providers/openai.ts';
 import { evaluateRedFlags } from './triage.ts';
 import { getUserFreeQuestions, useFreeQuestion, checkFreeQuestionEligibility } from './providers/freeQuestions.ts';
-import { createAIReferral, getAIReferrals, updateReferralStatus, getDoctorAvailability, createAppointmentBooking } from './providers/referralSystem.ts';
+import { createAIReferral, getAIReferrals, updateReferralStatus, createAppointmentBooking } from './providers/referralSystem.ts';
 import { createBooking, getAvailableSlots, getDoctorBookings, cancelBooking, getPatientBookings } from './providers/booking.ts';
 import { createCheckoutSession, createPaymentIntent, getCheckoutSession, getPaymentIntent, handleWebhookEvent, validateWebhookSignature, convertToCentavos, formatCurrency } from './providers/payments.ts';
 import { getQuestions, getQuestionWithAnswers, createQuestion, createAnswer, likeItem, rateAnswerHelpful, incrementQuestionViews, getCategories, getPopularTags, moderateQuestion, moderateAnswer } from './providers/qaBoard.ts';
@@ -40,7 +40,6 @@ import {
 } from './providers/sepVerification.ts';
 import {
   submitDoctorReview,
-  getDoctorRating,
   getDoctorReviews,
   updateDoctorStats,
   flagReviewForModeration,
@@ -70,15 +69,6 @@ import {
   updateMedicalKnowledge,
   getDocumentsBySpecialty
 } from './providers/medicalKnowledgeBase.ts';
-import { 
-  submitDoctorReview,
-  getDoctorRating,
-  getDoctorReviews,
-  updateDoctorStats,
-  flagReviewForModeration,
-  moderateReview,
-  getReviewStatistics
-} from './providers/ratings.ts';
 import {
   getDoctorBadges,
   createDoctorBadge,
@@ -86,7 +76,7 @@ import {
   deactivateDoctorBadge,
   getBadgeStatistics,
   verifyDoctorBadges
-} from './providers/trustBadges.js';
+} from './providers/trustBadges.ts';
 
 const app = express();
 app.use(cors());
@@ -318,17 +308,15 @@ app.post('/api/chat', async (req, res) => {
       }
 
       // Specialist referral (adaptive based on symptoms)
-      if (stage === 'detailed' || stage === 'referral') {
-        if (replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad') || detectedSymptoms.length > 0) {
-          primary.push({
-            id: 'find_specialist',
-            text: `🔍 Buscar ${suggestedSpecialty}`,
-            action: 'find_specialist',
-            value: suggestedSpecialty,
-            style: 'primary',
-            priority: 4
-          });
-        }
+      if (detectedSymptoms.length > 0 || replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad')) {
+        primary.push({
+          id: 'find_specialist',
+          text: `🔍 Buscar ${suggestedSpecialty}`,
+          action: 'find_specialist',
+          value: suggestedSpecialty,
+          style: 'primary',
+          priority: 4
+        });
       }
 
       // Follow-up questions for followup stage
@@ -822,7 +810,7 @@ app.post('/api/payments/webhook', async (req, res) => {
 // Doctor Directory endpoints
 app.get('/api/doctors', async (req, res) => {
   try {
-    const { specialty, search, available } = req.query;
+    const { specialty, search, available, limit = 1000, offset = 0 } = req.query;
     
     let query = supabase
       .from('doctors')
@@ -835,7 +823,9 @@ app.get('/api/doctors', async (req, res) => {
           phone
         )
       `)
-      .eq('license_status', 'verified');
+      .eq('license_status', 'verified')
+      .order('created_at', { ascending: false })
+      .range(parseInt(offset as string), parseInt(offset as string) + parseInt(limit as string) - 1);
     
     if (specialty && specialty !== 'Todas las especialidades') {
       query = query.contains('specialties', [specialty]);
@@ -845,7 +835,7 @@ app.get('/api/doctors', async (req, res) => {
       query = query.or(`users.name.ilike.%${search}%,specialties.cs.{${search}}`);
     }
     
-    const { data: doctors, error } = await query;
+    const { data: doctors, error } = await query.limit(parseInt(limit as string));
     
     if (error) {
       console.error('Error fetching doctors:', error);
@@ -2784,10 +2774,16 @@ app.post('/api/doctors/find-relevant', async (req, res) => {
     const specialtyRecommendations = await getSpecialtyRecommendations(symptoms);
     console.log('🎯 Specialty recommendations:', specialtyRecommendations);
 
-    // Find doctors for each recommended specialty
+    // Find doctors for each recommended specialty, or all doctors if no specific specialty
     const allDoctors = [];
-    for (const specialty of specialtyRecommendations) {
-      const doctors = await findRelevantDoctors({ ...criteria, specialty });
+    if (specialtyRecommendations.length > 0) {
+      for (const specialty of specialtyRecommendations) {
+        const doctors = await findRelevantDoctors({ ...criteria, specialty });
+        allDoctors.push(...doctors);
+      }
+    } else {
+      // If no specific specialty recommendations, get all verified doctors
+      const doctors = await findRelevantDoctors(criteria);
       allDoctors.push(...doctors);
     }
 

@@ -1,5 +1,5 @@
 import OpenAI from 'openai';
-import { retrieveMedicalContext, generateAugmentedPrompt } from './medicalKnowledgeBase';
+import { retrieveMedicalContext, generateAugmentedPrompt } from './medicalKnowledgeBase.ts';
 
 let client: OpenAI;
 
