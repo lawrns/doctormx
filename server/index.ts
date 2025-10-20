@@ -810,7 +810,7 @@ app.post('/api/payments/webhook', async (req, res) => {
 // Doctor Directory endpoints
 app.get('/api/doctors', async (req, res) => {
   try {
-    const { specialty, search, available, limit = 1000, offset = 0 } = req.query;
+    const { specialty, search, available, location, limit = 1000, offset = 0 } = req.query;
     
     let query = supabase
       .from('doctors')
@@ -835,6 +835,16 @@ app.get('/api/doctors', async (req, res) => {
       query = query.or(`users.name.ilike.%${search}%,specialties.cs.{${search}}`);
     }
     
+    if (location) {
+      query = query.ilike('full_name', `%${location}%`);
+    }
+    
+    // Get total count for pagination
+    const { count: totalCount } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('license_status', 'verified');
+    
     const { data: doctors, error } = await query.limit(parseInt(limit as string));
     
     if (error) {
@@ -842,7 +852,10 @@ app.get('/api/doctors', async (req, res) => {
       return res.status(500).json({ error: 'Error fetching doctors' });
     }
     
-    res.json({ doctors: doctors || [] });
+    res.json({ 
+      doctors: doctors || [], 
+      totalCount: totalCount || 0 
+    });
   } catch (error) {
     console.error('Error in doctors endpoint:', error);
     res.status(500).json({ error: 'Internal server error' });
@@ -868,6 +881,11 @@ app.get('/api/doctors/:id', async (req, res) => {
       .eq('user_id', id)
       .eq('license_status', 'verified')
       .single();
+    
+    // Ensure the doctor has a proper name
+    if (doctor && !doctor.full_name && doctor.users?.name) {
+      doctor.full_name = doctor.users.name;
+    }
     
     if (error) {
       console.error('Error fetching doctor:', error);

@@ -16,7 +16,14 @@ export default function DoctorDirectory() {
   const [filters, setFilters] = useState({
     specialty: '',
     search: '',
-    available: false
+    available: false,
+    location: ''
+  });
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 1,
+    totalDoctors: 0,
+    doctorsPerPage: 12
   });
   const navigate = useNavigate();
 
@@ -52,6 +59,14 @@ export default function DoctorDirectory() {
       if (filters.available) {
         params.append('available', 'true');
       }
+      if (filters.location) {
+        params.append('location', filters.location);
+      }
+      
+      // Add pagination parameters
+      const offset = (pagination.currentPage - 1) * pagination.doctorsPerPage;
+      params.append('limit', pagination.doctorsPerPage.toString());
+      params.append('offset', offset.toString());
 
       const response = await fetch(`/api/doctors?${params.toString()}`);
       if (!response.ok) {
@@ -60,6 +75,14 @@ export default function DoctorDirectory() {
       
       const data = await response.json();
       setDoctors(data.doctors || []);
+      
+      // Update pagination info
+      const totalPages = Math.ceil(data.totalCount / pagination.doctorsPerPage);
+      setPagination(prev => ({
+        ...prev,
+        totalPages,
+        totalDoctors: data.totalCount || 0
+      }));
     } catch (error) {
       console.error('Error fetching doctors:', error);
       setError(error.message);
@@ -86,9 +109,23 @@ export default function DoctorDirectory() {
                 Doctor Ideal
               </span>
             </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-6">
               Doctores verificados y especializados disponibles para consulta inmediata
             </p>
+            <div className="flex items-center justify-center gap-4 text-sm text-neutral-500">
+              <div className="flex items-center gap-2">
+                <Icon name="user-group" size="sm" />
+                <span>{pagination.totalDoctors || 1000}+ doctores verificados</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="map-pin" size="sm" />
+                <span>32 estados de México</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Icon name="clock" size="sm" />
+                <span>Disponibles 24/7</span>
+              </div>
+            </div>
           </div>
 
           {/* Filters */}
@@ -132,6 +169,31 @@ export default function DoctorDirectory() {
                 </select>
               </div>
 
+              {/* Location */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="map-pin" size="sm" className="inline mr-2" />
+                  Ubicación
+                </label>
+                <select
+                  value={filters.location}
+                  onChange={(e) => setFilters({ ...filters, location: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Todas las ubicaciones</option>
+                  <option value="Ciudad de México">Ciudad de México</option>
+                  <option value="Guadalajara">Guadalajara</option>
+                  <option value="Monterrey">Monterrey</option>
+                  <option value="Puebla">Puebla</option>
+                  <option value="Tijuana">Tijuana</option>
+                  <option value="León">León</option>
+                  <option value="Juárez">Juárez</option>
+                  <option value="Torreón">Torreón</option>
+                  <option value="Querétaro">Querétaro</option>
+                  <option value="San Luis Potosí">San Luis Potosí</option>
+                </select>
+              </div>
+
               {/* Available */}
               <div className="flex items-end">
                 <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-white/50 transition-colors duration-200">
@@ -149,6 +211,37 @@ export default function DoctorDirectory() {
               </div>
             </div>
           </div>
+
+          {/* Results Summary */}
+          {!loading && !error && (
+            <div className="mb-6 flex items-center justify-between">
+              <div className="text-sm text-neutral-600">
+                {pagination.totalDoctors > 0 ? (
+                  <>
+                    Mostrando <span className="font-semibold text-neutral-900">{doctors.length}</span> de{' '}
+                    <span className="font-semibold text-neutral-900">{pagination.totalDoctors}</span> doctores
+                    {filters.specialty && filters.specialty !== 'Todas las especialidades' && (
+                      <span> en <span className="font-semibold text-primary-600">{filters.specialty}</span></span>
+                    )}
+                    {filters.location && (
+                      <span> en <span className="font-semibold text-primary-600">{filters.location}</span></span>
+                    )}
+                  </>
+                ) : (
+                  'No se encontraron doctores'
+                )}
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-neutral-600">Ordenar por:</span>
+                <select className="text-sm border border-neutral-200 rounded-lg px-3 py-1 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                  <option value="rating">Mejor calificados</option>
+                  <option value="price">Precio más bajo</option>
+                  <option value="availability">Más disponibles</option>
+                  <option value="distance">Más cercanos</option>
+                </select>
+              </div>
+            </div>
+          )}
 
           {/* Doctors Grid */}
           {error ? (
@@ -202,9 +295,29 @@ export default function DoctorDirectory() {
                   {/* Doctor Header */}
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
-                        {doctor.full_name?.charAt(0) || 'D'}
-                      </div>
+                      {(() => {
+                        const doctorName = doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre';
+                        const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+                        const imagePath = `/images/doctors/Ciudad de México/Ciudad de México/${imageName}.webp`;
+                        
+                        return (
+                          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                            <img
+                              src={imagePath}
+                              alt={doctorName}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                // Fallback to initials if image doesn't exist
+                                e.target.style.display = 'none';
+                                e.target.nextSibling.style.display = 'flex';
+                              }}
+                            />
+                            <div className="w-full h-full bg-gradient-to-br from-primary-500 to-accent-600 flex items-center justify-center text-white text-xl font-bold" style={{ display: 'none' }}>
+                              {doctorName.charAt(0)}
+                            </div>
+                          </div>
+                        );
+                      })()}
                       {doctor.license_status === 'verified' && (
                         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success-500 border-2 border-white rounded-full flex items-center justify-center">
                           <Icon name="check" size="xs" className="text-white" />
@@ -214,7 +327,7 @@ export default function DoctorDirectory() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
                         <h3 className="font-bold text-neutral-900 truncate text-lg">
-                          {doctor.full_name || 'Dr. Sin Nombre'}
+                          {doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
                         </h3>
                         {doctor.license_status === 'verified' && (
                           <Icon name="shield-check" size="sm" className="text-success-600 flex-shrink-0" />
@@ -281,6 +394,63 @@ export default function DoctorDirectory() {
                   </Button>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Pagination */}
+          {!loading && !error && doctors.length > 0 && pagination.totalPages > 1 && (
+            <div className="glass-card mt-8 p-6">
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-neutral-600">
+                  Mostrando {((pagination.currentPage - 1) * pagination.doctorsPerPage) + 1} - {Math.min(pagination.currentPage * pagination.doctorsPerPage, pagination.totalDoctors)} de {pagination.totalDoctors} doctores
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setPagination(prev => ({ ...prev, currentPage: prev.currentPage - 1 }));
+                      fetchDoctors();
+                    }}
+                    disabled={pagination.currentPage === 1}
+                    className="px-3 py-2"
+                  >
+                    <Icon name="chevron-left" size="sm" />
+                  </Button>
+                  
+                  <div className="flex items-center space-x-1">
+                    {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
+                      const pageNum = Math.max(1, pagination.currentPage - 2) + i;
+                      if (pageNum > pagination.totalPages) return null;
+                      
+                      return (
+                        <Button
+                          key={pageNum}
+                          variant={pageNum === pagination.currentPage ? "primary" : "secondary"}
+                          onClick={() => {
+                            setPagination(prev => ({ ...prev, currentPage: pageNum }));
+                            fetchDoctors();
+                          }}
+                          className="px-3 py-2 min-w-[40px]"
+                        >
+                          {pageNum}
+                        </Button>
+                      );
+                    })}
+                  </div>
+                  
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setPagination(prev => ({ ...prev, currentPage: prev.currentPage + 1 }));
+                      fetchDoctors();
+                    }}
+                    disabled={pagination.currentPage === pagination.totalPages}
+                    className="px-3 py-2"
+                  >
+                    <Icon name="chevron-right" size="sm" />
+                  </Button>
+                </div>
+              </div>
             </div>
           )}
         </div>
