@@ -82,29 +82,33 @@ function MobileMenu({ isOpen, onClose }) {
           <div className="pt-4 border-t border-neutral-200 space-y-3">
             <Link
               to="/doctor"
-              className="block w-full text-center rounded-lg bg-primary-500 hover:bg-primary-600 px-6 py-3 text-base font-semibold text-white transition-colors"
+              className="flex items-center justify-center w-full rounded-lg bg-primary-500 hover:bg-primary-600 px-6 py-3 text-base font-semibold text-white transition-colors shadow-sm"
             >
+              <Icon name="chat-bubble-left-right" size="sm" className="mr-2" />
               Consultar ahora
             </Link>
             {user && (
               <>
                 <Link
                   to="/vision"
-                  className="block w-full text-center rounded-lg bg-accent-500 hover:bg-accent-600 px-6 py-3 text-base font-semibold text-white transition-colors"
+                  className="flex items-center justify-center w-full rounded-lg bg-accent-500 hover:bg-accent-600 px-6 py-3 text-base font-semibold text-white transition-colors shadow-sm"
                 >
+                  <Icon name="camera" size="sm" className="mr-2" />
                   Análisis de Imágenes
                 </Link>
                 <Link
                   to="/ai-referrals"
-                  className="block w-full text-center rounded-lg bg-secondary-600 hover:bg-secondary-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+                  className="flex items-center justify-center w-full rounded-lg bg-secondary-600 hover:bg-secondary-700 px-6 py-3 text-base font-semibold text-white transition-colors shadow-sm"
                 >
+                  <Icon name="arrow-right-circle" size="sm" className="mr-2" />
                   Referencias IA
                 </Link>
                 {user.role === 'doctor' && (
                   <Link
                     to="/doctor-panel"
-                    className="block w-full text-center rounded-lg bg-primary-600 hover:bg-primary-700 px-6 py-3 text-base font-semibold text-white transition-colors"
+                    className="flex items-center justify-center w-full rounded-lg bg-primary-600 hover:bg-primary-700 px-6 py-3 text-base font-semibold text-white transition-colors shadow-sm"
                   >
+                    <Icon name="clipboard-document-list" size="sm" className="mr-2" />
                     Panel Doctor
                   </Link>
                 )}
@@ -177,62 +181,76 @@ export default function Layout({ children, variant = 'app' }) {
             <Logo />
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Navegación principal">
+            <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Navegación principal">
               {variant === 'marketing' ? (
-                <>
-                  <Link to="/doctors" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                <div className="flex items-center space-x-1">
+                  <Link to="/doctors" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                    <Icon name="user-group" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                     Doctores
                   </Link>
-                  <Link to="/doctor" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                  <Link to="/doctor" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                    <Icon name="chat-bubble-left-right" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                     Consultar IA
                   </Link>
-                  <Link to="/connect" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                  <Link to="/connect" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                    <Icon name="user-plus" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                     Para Doctores
                   </Link>
-                </>
+                </div>
               ) : (
-                <>
-                  <Link to="/doctors" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                <div className="flex items-center space-x-1">
+                  <Link to="/doctors" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                    <Icon name="user-group" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                     Doctores
                   </Link>
                   {user && (
                     <>
-                      <Link to="/vision" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                      <div className="h-6 w-px bg-neutral-200 mx-2"></div>
+                      <Link to="/vision" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                        <Icon name="camera" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                         Análisis de Imágenes
                       </Link>
-                      <Link to="/ai-referrals" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                      <Link to="/ai-referrals" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                        <Icon name="arrow-right-circle" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                         Referencias IA
                       </Link>
-                      <Link to="/community" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                      <Link to="/community" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                        <Icon name="users" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                         Comunidad
                       </Link>
-                      <Link to="/marketplace" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                      <Link to="/marketplace" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                        <Icon name="shopping-bag" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                         Marketplace
                       </Link>
-                      <Link to="/gamification" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                      <Link to="/gamification" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                        <Icon name="trophy" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                         Gamificación
                       </Link>
                       {user.role === 'doctor' && (
-                        <Link to="/doctor-panel" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
-                          Panel Doctor
-                        </Link>
+                        <>
+                          <div className="h-6 w-px bg-neutral-200 mx-2"></div>
+                          <Link to="/doctor-panel" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                            <Icon name="clipboard-document-list" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
+                            Panel Doctor
+                          </Link>
+                        </>
                       )}
                     </>
                   )}
-                </>
+                </div>
               )}
             </nav>
 
             {/* Right side - Auth */}
-            <div className="hidden lg:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-3">
               {user ? (
                 <>
                   <GamificationHeader />
-                  <Link to="/dashboard" className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-lg transition-colors">
+                  <Link to="/dashboard" className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md">
                     <Icon name="chart-bar" size="sm" className="mr-2" />
                     Dashboard
                   </Link>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 pl-3 border-l border-neutral-200">
                     <div className="text-right">
                       <div className="text-sm font-medium text-neutral-900">
                         {user.user_metadata?.full_name || user.email}
@@ -249,7 +267,7 @@ export default function Layout({ children, variant = 'app' }) {
                     <button
                       onClick={handleLogout}
                       disabled={isLoggingOut}
-                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoggingOut ? (
                         <div className="flex items-center">
@@ -260,17 +278,22 @@ export default function Layout({ children, variant = 'app' }) {
                           Cerrando...
                         </div>
                       ) : (
-                        'Cerrar Sesión'
+                        <>
+                          <Icon name="arrow-right-on-rectangle" size="sm" className="mr-2" />
+                          Cerrar Sesión
+                        </>
                       )}
                     </button>
                   </div>
                 </>
               ) : (
                 <>
-                  <Link to="/login" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
+                  <Link to="/login" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200">
+                    <Icon name="arrow-right-on-rectangle" size="sm" className="mr-2" />
                     Iniciar Sesión
                   </Link>
-                  <Link to="/register" className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500">
+                  <Link to="/register" className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md">
+                    <Icon name="user-plus" size="sm" className="mr-2" />
                     Registrarse
                   </Link>
                 </>
