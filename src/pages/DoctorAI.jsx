@@ -159,6 +159,66 @@ export default function DoctorAI() {
     setUploadedImages(prev => prev.filter(img => img.id !== imageId));
   };
 
+  // Handle response option clicks
+  const handleResponseOption = async (option) => {
+    let message = '';
+    
+    switch (option.action) {
+      case 'severity':
+        message = `La intensidad es ${option.value}`;
+        break;
+      case 'question':
+        switch (option.value) {
+          case 'duration':
+            message = '¿Cuánto tiempo llevas con estos síntomas?';
+            break;
+          case 'frequency':
+            message = '¿Con qué frecuencia ocurre?';
+            break;
+          case 'triggers':
+            message = '¿Qué factores lo empeoran o mejoran?';
+            break;
+          default:
+            message = option.text;
+        }
+        break;
+      case 'emergency':
+        message = 'Necesito ayuda de emergencia inmediatamente';
+        break;
+      case 'find_specialist':
+        message = `Necesito encontrar un especialista en ${option.value || 'medicina general'}`;
+        break;
+      case 'book_appointment':
+        message = `Quiero agendar una cita con un especialista en ${option.value || 'medicina general'}`;
+        break;
+      case 'prescription':
+        message = 'Necesito una receta médica';
+        break;
+      case 'appointment':
+        message = 'Quiero agendar una cita médica';
+        break;
+      case 'emergency_call':
+        message = 'Necesito ayuda de emergencia inmediatamente';
+        break;
+      case 'find_hospital':
+        message = 'Necesito encontrar el hospital más cercano';
+        break;
+      case 'upload_image':
+        // Trigger file input
+        fileInputRef.current?.click();
+        return;
+      default:
+        message = option.text;
+    }
+    
+    setInput(message);
+    // Auto-send the message
+    setTimeout(() => {
+      setInput('');
+      send();
+    }, 100);
+  };
+
   // Auto-scroll to bottom when history changes
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -206,7 +266,12 @@ export default function DoctorAI() {
         images: uploadedImages.length > 0 ? uploadedImages : undefined
       });
       
-      setHistory(h => [...h, { role: 'assistant', content: data.reply }]);
+      setHistory(h => [...h, { 
+        role: 'assistant', 
+        content: data.reply,
+        conversationStage: data.conversationStage,
+        responseOptions: data.responseOptions
+      }]);
       
       // Handle free question usage feedback
       if (data.freeQuestionUsed && data.freeQuestionMessage) {
@@ -535,6 +600,31 @@ export default function DoctorAI() {
                                 className="text-sm leading-relaxed whitespace-pre-wrap"
                                 dangerouslySetInnerHTML={{ __html: formatTextWithBold(m.content) }}
                               />
+                              
+                              {/* Response Options */}
+                              {m.responseOptions && m.responseOptions.length > 0 && (
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                  {m.responseOptions.map((option) => (
+                                    <button
+                                      key={option.id}
+                                      onClick={() => handleResponseOption(option)}
+                                      className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 hover:scale-105 ${
+                                        option.style === 'danger' 
+                                          ? 'bg-red-100 text-red-700 hover:bg-red-200 border border-red-200' :
+                                        option.style === 'warning' 
+                                          ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 border border-yellow-200' :
+                                        option.style === 'success' 
+                                          ? 'bg-green-100 text-green-700 hover:bg-green-200 border border-green-200' :
+                                        option.style === 'primary' 
+                                          ? 'bg-primary-100 text-primary-700 hover:bg-primary-200 border border-primary-200' :
+                                        'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                                      }`}
+                                    >
+                                      {option.text}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           )}
 

@@ -1,5 +1,9 @@
 export async function chatTurn({ message, history = [], intake, userId, images }) {
-  const r = await fetch('/.netlify/functions/chat', {
+  // Use local API for development, Netlify functions for production
+  const isLocal = window.location.hostname === 'localhost';
+  const endpoint = isLocal ? '/api/chat' : '/.netlify/functions/chat';
+  
+  const r = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ message, history, intake, userId, images })
@@ -23,7 +27,13 @@ export async function findSpecialists({ specialty, city, lat, lon, radius }) {
 }
 
 export async function checkFreeQuestionsEligibility(userId) {
-  const res = await fetch(`/.netlify/functions/free-questions/${userId}/eligibility`, {
+  // Use local API for development, Netlify functions for production
+  const isLocal = window.location.hostname === 'localhost';
+  const endpoint = isLocal 
+    ? `/api/free-questions/${userId}/eligibility` 
+    : `/.netlify/functions/free-questions/${userId}/eligibility`;
+    
+  const res = await fetch(endpoint, {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' }
   });

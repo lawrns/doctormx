@@ -253,11 +253,12 @@ app.post('/api/chat', async (req, res) => {
     
     console.log('✅ Returning successful response');
     res.json({ 
-      careLevel: 'PRIMARY', 
-      redFlags: red, 
-      message: reply,
+      reply: reply,
       freeQuestionUsed,
-      freeQuestionMessage
+      remainingFreeQuestions: freeQuestionUsed ? 4 : 5, // This should be calculated properly
+      redFlagsTriggered: false,
+      conversationStage: conversationStage,
+      responseOptions: [] // Add response options logic here
     });
   } catch (e) {
     console.error('❌ Chat endpoint error:', e);
