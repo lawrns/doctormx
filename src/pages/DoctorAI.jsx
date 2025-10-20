@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { chatTurn, findSpecialists } from '../lib/api';
+import { chatTurn, findSpecialists, checkFreeQuestionsEligibility } from '../lib/api';
 import Layout from '../components/Layout';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -92,20 +92,17 @@ export default function DoctorAI() {
     
     // Check free questions eligibility when component loads
     if (user) {
-      checkFreeQuestionsEligibility();
+      checkFreeQuestionsEligibilityLocal();
     }
   }, [user]);
 
   // Function to check free questions eligibility
-  const checkFreeQuestionsEligibility = async () => {
+  const checkFreeQuestionsEligibilityLocal = async () => {
     if (!user) return;
     
     try {
-      const response = await fetch(`/.netlify/functions/free-questions/${user.id}/eligibility`);
-      if (response.ok) {
-        const data = await response.json();
-        setFreeQuestionsRemaining(data.remaining);
-      }
+      const data = await checkFreeQuestionsEligibility(user.id);
+      setFreeQuestionsRemaining(data.remaining);
     } catch (error) {
       console.error('Error checking free questions eligibility:', error);
     }
@@ -262,7 +259,6 @@ export default function DoctorAI() {
     setInput(message);
     // Auto-send the message
     setTimeout(() => {
-      setInput('');
       send();
     }, 100);
   };
@@ -335,7 +331,6 @@ export default function DoctorAI() {
   async function send() {
     if (!input.trim() && uploadedImages.length === 0) return;
     const msg = input.trim();
-    setInput('');
     setLoading(true);
     
     // Create user message with text and images
@@ -347,6 +342,7 @@ export default function DoctorAI() {
     
     const newHist = [...history, userMessage];
     setHistory(newHist);
+    setInput(''); // Clear input after adding to history
     
     // Clear uploaded images after sending
     setUploadedImages([]);
@@ -372,7 +368,7 @@ export default function DoctorAI() {
         setFreeQuestionMessage(data.freeQuestionMessage);
         setShowFreeQuestionAlert(true);
         // Update remaining questions
-        await checkFreeQuestionsEligibility();
+        await checkFreeQuestionsEligibilityLocal();
       }
       
       // Detectar si hay derivación y buscar especialistas automáticamente
