@@ -1,8 +1,8 @@
-export async function chatTurn({ message, history = [], intake, userId }) {
+export async function chatTurn({ message, history = [], intake, userId, images }) {
   const r = await fetch('/.netlify/functions/chat', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, history, intake, userId })
+    body: JSON.stringify({ message, history, intake, userId, images })
   });
   if (!r.ok) {
     const error = new Error('API error');

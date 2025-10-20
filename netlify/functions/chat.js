@@ -36,7 +36,7 @@ export const handler = async (event, context) => {
   }
 
   try {
-    const { message, userId, history = [] } = JSON.parse(event.body)
+    const { message, userId, history = [], images = [] } = JSON.parse(event.body)
 
     if (!message || !userId) {
       return {
@@ -51,6 +51,8 @@ export const handler = async (event, context) => {
     console.log('📝 Chat request received:', {
       hasMessage: !!message,
       hasUserId: !!userId,
+      hasImages: images.length > 0,
+      imageCount: images.length,
       timestamp: new Date().toISOString()
     })
 
@@ -118,7 +120,7 @@ export const handler = async (event, context) => {
     // Generate AI reply
     console.log('🤖 Generating AI reply...')
 
-    const systemPrompt = `Eres un doctor virtual mexicano especializado en medicina general. Tu objetivo es proporcionar orientación médica inicial de manera empática, profesional y responsable.
+    const systemPrompt = `Eres Dr. Simeon, un doctor virtual mexicano especializado en medicina general. Tu objetivo es proporcionar orientación médica inicial de manera empática, profesional y responsable.
 
 INSTRUCCIONES IMPORTANTES:
 - Responde de manera conversacional y natural, como un doctor real
@@ -128,23 +130,53 @@ INSTRUCCIONES IMPORTANTES:
 - Siempre recomienda consultar con un médico en persona si los síntomas persisten
 - Usa lenguaje médico apropiado pero accesible
 - Mantén las respuestas concisas pero informativas
+- Si el usuario sube imágenes médicas, analízalas y proporciona orientación basada en lo que ves
 
 FORMATO DE RESPUESTA:
 - Saluda de manera profesional
+- Si hay imágenes, menciona que las estás analizando
 - Pregunta sobre síntomas específicos
 - Proporciona orientación general
 - Recomienda cuándo buscar atención médica presencial
 
 IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la consulta médica profesional.`
 
+    // Prepare messages for OpenAI
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      ...history.map(h => ({ role: h.role, content: h.content }))
+    ]
+
+    // Handle image analysis if images are provided
+    if (images && images.length > 0) {
+      console.log('🖼️ Processing images for analysis...')
+      
+      const imageContent = images.map(img => ({
+        type: 'image_url',
+        image_url: {
+          url: img.data,
+          detail: 'high'
+        }
+      }))
+
+      messages.push({
+        role: 'user',
+        content: [
+          {
+            type: 'text',
+            text: message || 'Por favor analiza estas imágenes médicas y proporciona orientación.'
+          },
+          ...imageContent
+        ]
+      })
+    } else {
+      messages.push({ role: 'user', content: message })
+    }
+
     const completion = await openai.chat.completions.create({
       model: 'gpt-4-turbo',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        ...history.map(h => ({ role: h.role, content: h.content })),
-        { role: 'user', content: message }
-      ],
-      max_tokens: 300,
+      messages: messages,
+      max_tokens: 500,
       temperature: 0.7
     })
 
