@@ -206,7 +206,7 @@ export default function DoctorAI() {
         images: uploadedImages.length > 0 ? uploadedImages : undefined
       });
       
-      setHistory(h => [...h, { role: 'assistant', content: data.message }]);
+      setHistory(h => [...h, { role: 'assistant', content: data.reply }]);
       
       // Handle free question usage feedback
       if (data.freeQuestionUsed && data.freeQuestionMessage) {
@@ -217,7 +217,7 @@ export default function DoctorAI() {
       }
       
       // Detectar si hay derivación y buscar especialistas automáticamente
-      const specialty = extractSpecialty(data.message);
+      const specialty = extractSpecialty(data.reply);
       if (specialty) {
         await searchSpecialistsAndAddToChat(specialty);
       }

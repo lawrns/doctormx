@@ -23,10 +23,9 @@ export async function findSpecialists({ specialty, city, lat, lon, radius }) {
 }
 
 export async function checkFreeQuestionsEligibility(userId) {
-  const res = await fetch('/.netlify/functions/free-questions', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ userId })
+  const res = await fetch(`/.netlify/functions/free-questions/${userId}/eligibility`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
   });
   if (!res.ok) throw new Error('Network error');
   return res.json();
