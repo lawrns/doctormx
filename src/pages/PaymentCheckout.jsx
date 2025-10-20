@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { toast } from '../lib/toast';
 import { useAuth } from '../contexts/AuthContext';
 import { loadStripe } from '@stripe/stripe-js';
+import Icon from '../components/ui/Icon';
 
 // Initialize Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
@@ -197,7 +198,9 @@ export default function PaymentCheckout() {
             {paymentMethod === 'card' && (
               <div className="bg-blue-50 rounded-lg p-6">
                 <div className="text-center">
-                  <div className="text-4xl mb-4">🔒</div>
+                  <div className="text-primary-600 mb-4">
+                    <Icon name="shield-check" size="xl" />
+                  </div>
                   <h3 className="text-lg font-semibold text-blue-900 mb-2">
                     Pago Seguro con Stripe
                   </h3>
@@ -271,7 +274,8 @@ export default function PaymentCheckout() {
 
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-500">
-              🔒 Tu información está protegida con encriptación SSL
+              <Icon name="shield-check" size="sm" className="inline mr-1" />
+              Tu información está protegida con encriptación SSL
             </p>
             <p className="text-xs text-gray-400 mt-2">
               Powered by Stripe • Aceptamos Visa, Mastercard, American Express

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import VisionAnalysis from '../components/VisionAnalysis';
+import Icon from '../components/ui/Icon';
 import { toast } from '../lib/toast';
 
 export default function VisionConsultation() {
@@ -10,21 +11,21 @@ export default function VisionConsultation() {
   const [comparisonMode, setComparisonMode] = useState(false);
 
   const tabs = [
-    { id: 'upload', label: 'Nuevo Análisis', icon: '📷' },
-    { id: 'history', label: 'Historial', icon: '📋' },
-    { id: 'compare', label: 'Comparar', icon: '🔄' },
-    { id: 'specialists', label: 'Especialistas', icon: '👨‍⚕️' }
+    { id: 'upload', label: 'Nuevo Análisis', icon: 'camera' },
+    { id: 'history', label: 'Historial', icon: 'clipboard-document-list' },
+    { id: 'compare', label: 'Comparar', icon: 'arrow-path' },
+    { id: 'specialists', label: 'Especialistas', icon: 'user-group' }
   ];
 
   const specialties = [
-    { name: 'Cardiología', icon: '❤️', description: 'Análisis de corazón y vasos sanguíneos' },
-    { name: 'Neumología', icon: '🫁', description: 'Análisis de pulmones y vías respiratorias' },
-    { name: 'Ortopedia', icon: '🦴', description: 'Análisis de huesos y articulaciones' },
-    { name: 'Neurología', icon: '🧠', description: 'Análisis de cerebro y sistema nervioso' },
-    { name: 'Dermatología', icon: '🦠', description: 'Análisis de piel y lesiones cutáneas' },
-    { name: 'Ginecología', icon: '👩', description: 'Análisis de órganos reproductivos femeninos' },
-    { name: 'Urología', icon: '🔬', description: 'Análisis de riñones y sistema urinario' },
-    { name: 'Gastroenterología', icon: '🍽️', description: 'Análisis de tracto digestivo' }
+    { name: 'Cardiología', icon: 'heart', description: 'Análisis de corazón y vasos sanguíneos' },
+    { name: 'Neumología', icon: 'lungs', description: 'Análisis de pulmones y vías respiratorias' },
+    { name: 'Ortopedia', icon: 'bone', description: 'Análisis de huesos y articulaciones' },
+    { name: 'Neurología', icon: 'brain', description: 'Análisis de cerebro y sistema nervioso' },
+    { name: 'Dermatología', icon: 'microscope', description: 'Análisis de piel y lesiones cutáneas' },
+    { name: 'Ginecología', icon: 'user', description: 'Análisis de órganos reproductivos femeninos' },
+    { name: 'Urología', icon: 'beaker', description: 'Análisis de riñones y sistema urinario' },
+    { name: 'Gastroenterología', icon: 'chart-bar', description: 'Análisis de tracto digestivo' }
   ];
 
   const handleAnalysisComplete = (analysis) => {
@@ -101,21 +102,21 @@ export default function VisionConsultation() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-16">
+      <div className="min-h-screen bg-gradient-medical py-16">
         <div className="mx-auto max-w-7xl px-6 md:px-8">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-ink-primary mb-2">
-              Consulta de Imágenes Médicas
+            <h1 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-2">
+              <span className="gradient-text">Consulta de Imágenes Médicas</span>
             </h1>
-            <p className="text-ink-secondary">
+            <p className="text-neutral-600">
               Obtén una segunda opinión de IA sobre tus imágenes médicas, rayos X, y resultados de laboratorio
             </p>
           </div>
 
           {/* Tabs */}
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 mb-8">
-            <div className="border-b border-gray-200">
+          <div className="glass-card mb-8">
+            <div className="border-b border-neutral-200">
               <nav className="flex">
                 {tabs.map((tab) => (
                   <button
@@ -123,11 +124,11 @@ export default function VisionConsultation() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`px-6 py-4 font-semibold transition-colors flex items-center gap-2 ${
                       activeTab === tab.id
-                        ? 'border-b-2 border-blue-500 text-blue-600'
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'border-b-2 border-primary-500 text-primary-600'
+                        : 'text-neutral-600 hover:text-neutral-900'
                     }`}
                   >
-                    <span className="text-lg">{tab.icon}</span>
+                    <Icon name={tab.icon} size="sm" />
                     {tab.label}
                   </button>
                 ))}
@@ -324,17 +325,19 @@ export default function VisionConsultation() {
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { icon: '🦴', title: 'Radiografías', desc: 'Fracturas, pulmones, huesos' },
-                { icon: '🧠', title: 'Tomografías', desc: 'Estructuras internas, lesiones' },
-                { icon: '🔬', title: 'Resonancia Magnética', desc: 'Tejidos blandos, cerebro' },
-                { icon: '👶', title: 'Ultrasonidos', desc: 'Órganos, embarazo, flujo' },
-                { icon: '🧪', title: 'Laboratorio', desc: 'Análisis de sangre, orina' },
-                { icon: '🦠', title: 'Dermatología', desc: 'Piel, lunares, lesiones' },
-                { icon: '📷', title: 'General', desc: 'Cualquier imagen médica' },
-                { icon: '🔄', title: 'Comparación', desc: 'Progresión en el tiempo' }
+                { icon: 'bone', title: 'Radiografías', desc: 'Fracturas, pulmones, huesos' },
+                { icon: 'brain', title: 'Tomografías', desc: 'Estructuras internas, lesiones' },
+                { icon: 'beaker', title: 'Resonancia Magnética', desc: 'Tejidos blandos, cerebro' },
+                { icon: 'heart', title: 'Ultrasonidos', desc: 'Órganos, embarazo, flujo' },
+                { icon: 'flask', title: 'Laboratorio', desc: 'Análisis de sangre, orina' },
+                { icon: 'microscope', title: 'Dermatología', desc: 'Piel, lunares, lesiones' },
+                { icon: 'camera', title: 'General', desc: 'Cualquier imagen médica' },
+                { icon: 'arrow-path', title: 'Comparación', desc: 'Progresión en el tiempo' }
               ].map((feature, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-3xl mb-2">{feature.icon}</div>
+                  <div className="text-primary-600 mb-2">
+                    <Icon name={feature.icon} size="lg" />
+                  </div>
                   <h4 className="font-semibold text-ink-primary text-sm">{feature.title}</h4>
                   <p className="text-xs text-ink-secondary">{feature.desc}</p>
                 </div>

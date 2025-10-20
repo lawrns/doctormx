@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-10-20T17:27:08.137Z",
+  "total_scraped": 2440,
+  "successfully_inserted": 0,
+  "insertion_errors": 2440,
+  "success_rate": 0,
+  "specialty_counts": {
+    "undefined": 2440
+  },
+  "state_counts": {
+    "undefined": 2440
+  }
+}

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from '../lib/toast';
+import Icon from './ui/Icon';
 
 export default function VisionAnalysis({ onAnalysisComplete }) {
   const [loading, setLoading] = useState(false);
@@ -16,13 +17,13 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
   const fileInputRef = useRef(null);
 
   const imageTypes = [
-    { value: 'xray', label: 'Radiografía', icon: '🦴' },
-    { value: 'ct', label: 'Tomografía', icon: '🧠' },
-    { value: 'mri', label: 'Resonancia Magnética', icon: '🔬' },
-    { value: 'ultrasound', label: 'Ultrasonido', icon: '👶' },
-    { value: 'lab_result', label: 'Resultado de Laboratorio', icon: '🧪' },
-    { value: 'skin', label: 'Dermatología', icon: '🦠' },
-    { value: 'general', label: 'General', icon: '📷' }
+    { value: 'xray', label: 'Radiografía', icon: 'bone' },
+    { value: 'ct', label: 'Tomografía', icon: 'brain' },
+    { value: 'mri', label: 'Resonancia Magnética', icon: 'beaker' },
+    { value: 'ultrasound', label: 'Ultrasonido', icon: 'heart' },
+    { value: 'lab_result', label: 'Resultado de Laboratorio', icon: 'flask' },
+    { value: 'skin', label: 'Dermatología', icon: 'microscope' },
+    { value: 'general', label: 'General', icon: 'camera' }
   ];
 
   const handleImageUpload = (event) => {
@@ -169,7 +170,9 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  <div className="text-6xl">📷</div>
+                  <div className="text-primary-600">
+                    <Icon name="camera" size="xl" />
+                  </div>
                   <div>
                     <button
                       onClick={() => fileInputRef.current.click()}
@@ -202,7 +205,9 @@ export default function VisionAnalysis({ onAnalysisComplete }) {
                       : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  <div className="text-2xl mb-1">{type.icon}</div>
+                  <div className="text-primary-600 mb-1">
+                    <Icon name={type.icon} size="lg" />
+                  </div>
                   <div className="text-sm font-medium">{type.label}</div>
                 </button>
               ))}

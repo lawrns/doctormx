@@ -7,7 +7,7 @@ import Card from '../components/ui/Card';
 import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import Alert from '../components/ui/Alert';
-import MobileSpacing from '../components/ui/MobileOptimized';
+import Icon from '../components/ui/Icon';
 
 export default function DoctorDirectory() {
   const [doctors, setDoctors] = useState([]);
@@ -70,52 +70,58 @@ export default function DoctorDirectory() {
 
   return (
     <Layout>
-      <div className="relative bg-gradient-to-b from-white to-gray-50 py-8 sm:py-12 lg:py-16">
+      <div className="relative bg-gradient-medical min-h-screen">
         {/* Background decoration */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-brand-100/30 to-medical-50/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-100/40 to-accent-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-secondary-100/30 to-primary-100/20 rounded-full blur-3xl"></div>
         </div>
 
-        <MobileSpacing.Container className="mx-auto max-w-7xl">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-12">
-            <MobileSpacing.Text variant="h1" className="text-ink-primary mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
               Encuentra tu{' '}
-              <span className="bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">
-                Doctor
+              <span className="gradient-text">
+                Doctor Ideal
               </span>
-            </MobileSpacing.Text>
-            <MobileSpacing.Text variant="body" className="text-ink-secondary max-w-2xl mx-auto">
-              Doctores verificados disponibles para consulta inmediata por WhatsApp
-            </MobileSpacing.Text>
+            </h1>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              Doctores verificados y especializados disponibles para consulta inmediata
+            </p>
           </div>
 
           {/* Filters */}
-          <MobileSpacing.Card className="mb-6 sm:mb-8">
-            <MobileSpacing.Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }}>
+          <div className="glass-card mb-8 sm:mb-12 p-6 sm:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Search */}
-              <div>
-                <label className="block text-sm font-medium text-ink-primary mb-2">
+              <div className="lg:col-span-2">
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="magnifying-glass" size="sm" className="inline mr-2" />
                   Buscar doctor
                 </label>
-                <MobileSpacing.Input
-                  type="text"
-                  placeholder="Nombre o especialidad..."
-                  value={filters.search}
-                  onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-                  className="w-full border border-ink-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Nombre, especialidad o ubicación..."
+                    value={filters.search}
+                    onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+                    className="w-full px-4 py-3 pl-10 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                  />
+                  <Icon name="magnifying-glass" size="sm" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" />
+                </div>
               </div>
 
               {/* Specialty */}
               <div>
-                <label className="block text-sm font-medium text-ink-primary mb-2">
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="academic-cap" size="sm" className="inline mr-2" />
                   Especialidad
                 </label>
                 <select
                   value={filters.specialty}
                   onChange={(e) => setFilters({ ...filters, specialty: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-ink-border rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
                 >
                   <option value="">Todas las especialidades</option>
                   {specialties.map((spec) => (
@@ -128,104 +134,135 @@ export default function DoctorDirectory() {
 
               {/* Available */}
               <div className="flex items-end">
-                <label className="flex items-center gap-2 cursor-pointer">
+                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-white/50 transition-colors duration-200">
                   <input
                     type="checkbox"
                     checked={filters.available}
                     onChange={(e) => setFilters({ ...filters, available: e.target.checked })}
-                    className="w-5 h-5 rounded border-ink-border text-brand-600 focus:ring-2 focus:ring-brand-500"
+                    className="w-5 h-5 rounded border-neutral-300 text-primary-600 focus:ring-2 focus:ring-primary-500"
                   />
-                  <span className="text-sm font-medium text-ink-primary">Solo disponibles ahora</span>
+                  <span className="text-sm font-medium text-neutral-700">
+                    <Icon name="clock" size="sm" className="inline mr-1" />
+                    Solo disponibles ahora
+                  </span>
                 </label>
               </div>
-            </MobileSpacing.Grid>
-          </MobileSpacing.Card>
+            </div>
+          </div>
 
           {/* Doctors Grid */}
           {error ? (
-            <Alert variant="error" title="Error al cargar doctores">
-              {error}
-              <div className="mt-3">
-                <Button size="sm" onClick={fetchDoctors}>
-                  Reintentar
-                </Button>
-              </div>
-            </Alert>
+            <div className="glass-card p-6 sm:p-8 text-center">
+              <Icon name="exclamation-triangle" size="lg" className="text-error-500 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-neutral-900 mb-2">Error al cargar doctores</h3>
+              <p className="text-neutral-600 mb-4">{error}</p>
+              <Button onClick={fetchDoctors} variant="primary">
+                <Icon name="arrow-path" size="sm" className="mr-2" />
+                Reintentar
+              </Button>
+            </div>
           ) : loading ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <Card key={i} className="animate-pulse">
+                <div key={i} className="glass-card p-6 animate-pulse">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
+                    <div className="w-16 h-16 bg-neutral-200 rounded-full"></div>
                     <div className="flex-1">
-                      <div className="h-5 bg-gray-200 rounded w-3/4 mb-2"></div>
-                      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                      <div className="h-5 bg-neutral-200 rounded w-3/4 mb-2"></div>
+                      <div className="h-4 bg-neutral-200 rounded w-1/2"></div>
                     </div>
                   </div>
-                  <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-5/6"></div>
-                </Card>
+                  <div className="h-4 bg-neutral-200 rounded w-full mb-2"></div>
+                  <div className="h-4 bg-neutral-200 rounded w-5/6 mb-4"></div>
+                  <div className="h-10 bg-neutral-200 rounded"></div>
+                </div>
               ))}
             </div>
           ) : doctors.length === 0 ? (
-            <NoResultsEmptyState 
-              onClearFilters={() => setFilters({ specialty: '', search: '', available: false })}
-            />
+            <div className="glass-card p-8 sm:p-12 text-center">
+              <Icon name="user-group" size="xl" className="text-neutral-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">No se encontraron doctores</h3>
+              <p className="text-neutral-600 mb-6">Intenta ajustar los filtros de búsqueda</p>
+              <Button 
+                onClick={() => setFilters({ specialty: '', search: '', available: false })}
+                variant="secondary"
+              >
+                <Icon name="x-mark" size="sm" className="mr-2" />
+                Limpiar filtros
+              </Button>
+            </div>
           ) : (
-            <MobileSpacing.Grid cols={{ mobile: 1, tablet: 2, desktop: 3 }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {doctors.map((doctor) => (
-                <Card
+                <div
                   key={doctor.user_id}
-                  className="group hover:shadow-lg hover:border-brand-300 transition-all duration-200 cursor-pointer"
+                  className="glass-card group hover:shadow-card-hover hover:scale-105 transition-all duration-300 cursor-pointer p-6 sm:p-8"
                   onClick={() => navigate(`/doctors/${doctor.user_id}`)}
                 >
                   {/* Doctor Header */}
-                  <div className="flex items-start gap-4 mb-4">
+                  <div className="flex items-start gap-4 mb-6">
                     <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-medical-500 to-medical-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                        {doctor.users?.name?.charAt(0) || 'D'}
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg">
+                        {doctor.full_name?.charAt(0) || 'D'}
                       </div>
                       {doctor.license_status === 'verified' && (
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success-500 border-2 border-white rounded-full flex items-center justify-center">
+                          <Icon name="check" size="xs" className="text-white" />
+                        </div>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h3 className="font-semibold text-ink-primary truncate">
-                          {doctor.users?.name || 'Dr. Sin Nombre'}
+                      <div className="flex items-center gap-2 mb-2">
+                        <h3 className="font-bold text-neutral-900 truncate text-lg">
+                          {doctor.full_name || 'Dr. Sin Nombre'}
                         </h3>
                         {doctor.license_status === 'verified' && (
-                          <svg className="w-5 h-5 text-brand-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
+                          <Icon name="shield-check" size="sm" className="text-success-600 flex-shrink-0" />
                         )}
                       </div>
-                      <p className="text-sm text-brand-600 font-medium">{doctor.specialties?.join(', ') || 'Especialidad no especificada'}</p>
+                      <div className="flex items-center gap-2">
+                        <Icon name="academic-cap" size="sm" className="text-primary-600" />
+                        <p className="text-sm text-primary-600 font-semibold">
+                          {doctor.specialties?.join(', ') || 'Especialidad no especificada'}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Bio */}
-                  <p className="text-sm text-ink-secondary line-clamp-2 mb-4">
-                    {doctor.bio || 'Doctor verificado disponible para consulta.'}
+                  <p className="text-sm text-neutral-600 line-clamp-3 mb-6 leading-relaxed">
+                    {doctor.bio || 'Doctor verificado disponible para consulta inmediata.'}
                   </p>
 
-                  {/* Trust Badges */}
-                  <div className="mb-4">
-                  </div>
-
                   {/* Stats */}
-                  <div className="flex items-center gap-4 text-xs text-ink-muted mb-4">
+                  <div className="flex items-center justify-between text-xs text-neutral-500 mb-6">
                     <div className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                      </svg>
-                      <span>{doctor.cedula || 'Ced. verificada'}</span>
+                      <Icon name="identification" size="sm" />
+                      <span>Cédula: {doctor.cedula || 'Verificada'}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>Resp. inmediata</span>
+                      <Icon name="star" size="sm" className="text-warning-500" />
+                      <span>{doctor.rating_avg || '4.8'}/5</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="clock" size="sm" />
+                      <span>Resp. rápida</span>
+                    </div>
+                  </div>
+
+                  {/* Price */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <span className="text-xs text-neutral-500">Consulta desde</span>
+                      <p className="text-lg font-bold text-primary-600">
+                        ${doctor.consultation_fees?.base_fee || '800'} MXN
+                      </p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-xs text-neutral-500">Telemedicina</span>
+                      <p className="text-sm font-semibold text-accent-600">
+                        ${doctor.consultation_fees?.telemedicine_fee || '640'} MXN
+                      </p>
                     </div>
                   </div>
 
@@ -237,14 +274,16 @@ export default function DoctorDirectory() {
                       e.stopPropagation();
                       navigate(`/doctors/${doctor.user_id}`);
                     }}
+                    className="group-hover:shadow-lg transition-all duration-200"
                   >
-                    Ver perfil
+                    <Icon name="eye" size="sm" className="mr-2" />
+                    Ver perfil completo
                   </Button>
-                </Card>
+                </div>
               ))}
-            </MobileSpacing.Grid>
+            </div>
           )}
-        </MobileSpacing.Container>
+        </div>
       </div>
     </Layout>
   );

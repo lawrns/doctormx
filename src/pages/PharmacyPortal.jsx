@@ -337,7 +337,12 @@ export default function PharmacyPortal() {
                     disabled={loading || !qrToken.trim()}
                     className="w-full py-4 bg-gradient-to-r from-medical-500 to-medical-600 text-white font-bold rounded-lg hover:from-medical-600 hover:to-medical-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loading ? 'Buscando...' : '🔍 Buscar receta'}
+                    {loading ? 'Buscando...' : (
+                      <>
+                        <Icon name="magnifying-glass" size="sm" className="mr-2" />
+                        Buscar receta
+                      </>
+                    )}
                   </button>
                 </div>
 

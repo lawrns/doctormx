@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
+import Icon from '../components/ui/Icon';
 
 export default function DoctorDashboard() {
   const navigate = useNavigate();
@@ -175,32 +176,31 @@ export default function DoctorDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-medical">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 shadow-sm">
+      <header className="glass-nav border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 bg-blue-600 rounded-lg">
-                  <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
+                <div className="flex items-center justify-center w-10 h-10 bg-primary-600 rounded-lg">
+                  <Icon name="heart" size="lg" className="text-white" />
                 </div>
-                <h1 className="text-xl font-bold text-gray-900">Doctor.mx</h1>
+                <h1 className="text-xl font-bold text-neutral-900">Doctor.mx</h1>
               </div>
-              <span className="text-gray-400">|</span>
-              <span className="text-gray-700">Dashboard Médico</span>
+              <span className="text-neutral-400">|</span>
+              <span className="text-neutral-700">Dashboard Médico</span>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-right">
-                <div className="font-semibold text-gray-900">{doctorData?.users?.name}</div>
-                <div className="text-sm text-gray-500">{doctorData?.specialties?.join(', ')}</div>
+                <div className="font-semibold text-neutral-900">{doctorData?.users?.name}</div>
+                <div className="text-sm text-neutral-500">{doctorData?.specialties?.join(', ')}</div>
               </div>
               <button
                 onClick={handleLogout}
-                className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+                className="px-4 py-2 text-sm text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors"
               >
+                <Icon name="arrow-right-on-rectangle" size="sm" className="mr-1" />
                 Cerrar sesión
               </button>
             </div>
@@ -214,30 +214,30 @@ export default function DoctorDashboard() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+            className="glass-card p-6"
           >
-            <div className="text-sm text-gray-600 mb-1">Consultas totales</div>
-            <div className="text-3xl font-bold text-gray-900">{stats.total_consults}</div>
+            <div className="text-sm text-neutral-600 mb-1">Consultas totales</div>
+            <div className="text-3xl font-bold text-neutral-900">{stats.total_consults}</div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+            className="glass-card p-6"
           >
-            <div className="text-sm text-gray-600 mb-1">Activas ahora</div>
-            <div className="text-3xl font-bold text-blue-600">{stats.active_consults}</div>
+            <div className="text-sm text-neutral-600 mb-1">Activas ahora</div>
+            <div className="text-3xl font-bold text-primary-600">{stats.active_consults}</div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+            className="glass-card p-6"
           >
-            <div className="text-sm text-gray-600 mb-1">Tiempo de respuesta</div>
-            <div className="text-3xl font-bold text-gray-900">
+            <div className="text-sm text-neutral-600 mb-1">Tiempo de respuesta</div>
+            <div className="text-3xl font-bold text-neutral-900">
               {Math.round(stats.avg_response_time / 60)}m
             </div>
           </motion.div>
@@ -246,7 +246,7 @@ export default function DoctorDashboard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg p-6 shadow-sm"
+            className="bg-gradient-to-br from-primary-600 to-accent-600 rounded-lg p-6 shadow-sm"
           >
             <div className="text-sm text-white/80 mb-1">Ganancias totales</div>
             <div className="text-3xl font-bold text-white">
