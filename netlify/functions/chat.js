@@ -65,7 +65,7 @@ export const handler = async (event, context) => {
       console.error('❌ Error checking free questions:', freeQuestionsError)
     }
 
-    const remainingFreeQuestions = freeQuestionsData?.remaining_questions || 5
+    const remainingFreeQuestions = freeQuestionsData?.questions_remaining || 5
     const canUseFreeQuestion = remainingFreeQuestions > 0
 
     if (!canUseFreeQuestion) {
@@ -159,8 +159,9 @@ IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la con
       const { error: updateError } = await supabase
         .from('user_free_questions')
         .update({
-          remaining_questions: remainingFreeQuestions - 1,
-          last_used_at: new Date().toISOString()
+          questions_remaining: remainingFreeQuestions - 1,
+          questions_used: (freeQuestionsData.questions_used || 0) + 1,
+          updated_at: new Date().toISOString()
         })
         .eq('user_id', userId)
 
@@ -172,8 +173,9 @@ IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la con
         .from('user_free_questions')
         .insert({
           user_id: userId,
-          remaining_questions: 4,
-          last_used_at: new Date().toISOString()
+          questions_remaining: 4,
+          questions_used: 1,
+          reset_date: new Date().toISOString().split('T')[0]
         })
 
       if (insertError) {

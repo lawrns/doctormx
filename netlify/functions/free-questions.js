@@ -58,8 +58,9 @@ export const handler = async (event, context) => {
         .from('user_free_questions')
         .insert({
           user_id: userId,
-          remaining_questions: 5,
-          last_used_at: null
+          questions_remaining: 5,
+          questions_used: 0,
+          reset_date: new Date().toISOString().split('T')[0]
         })
 
       if (insertError) {
@@ -87,7 +88,7 @@ export const handler = async (event, context) => {
     }
 
     // Check if user is eligible for free questions
-    const remaining = freeQuestionsData.remaining_questions || 0
+    const remaining = freeQuestionsData.questions_remaining || 0
     const eligible = remaining > 0
 
     console.log('✅ Free question eligibility:', {
