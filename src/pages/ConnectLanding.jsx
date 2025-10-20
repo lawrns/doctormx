@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
-import TrustIndicators from '../components/TrustIndicators';
-import ComplianceBadges from '../components/ComplianceBadges';
-import { SecurityBadges } from '../components/SecurityBadges';
 import Icon from '../components/ui/Icon';
 
 function Logo() {
@@ -443,11 +440,6 @@ export default function ConnectLanding() {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
-            <TrustIndicators />
-            <ComplianceBadges />
-            <SecurityBadges />
-          </div>
         </div>
       </section>
 

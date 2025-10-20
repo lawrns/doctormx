@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
-import TrustBadges from '../components/TrustBadges';
 import LoadingSpinner from '../components/ui/LoadingSpinner';
 import EmptyState, { NoResultsEmptyState } from '../components/ui/EmptyState';
 import Card from '../components/ui/Card';
@@ -212,7 +211,6 @@ export default function DoctorDirectory() {
 
                   {/* Trust Badges */}
                   <div className="mb-4">
-                    <TrustBadges doctorId={doctor.user_id} showAll={false} />
                   </div>
 
                   {/* Stats */}

@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
 import AnimatedChat from './components/AnimatedChat'
 import StatsBoard from './components/StatsBoard'
-import { TrustScore } from './components/SecurityBadges'
-import { LiveActivityIndicator, PatientTestimonials, DoctorOnlineStatus, TrustMetrics, VerificationProcess } from './components/SocialProof'
-import { TrustBadge, LiveActivityIndicator as LiveIndicator } from './components/MicroInteractions'
 
 function Logo() {
   return (
@@ -293,26 +290,35 @@ export default function App(){
               {/* Enhanced Trust indicators */}
               <div className="space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <TrustBadge 
-                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>}
-                    text="5 preguntas GRATIS"
-                    verified={true}
-                  />
-                  <TrustBadge 
-                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
-                    text="Segunda opinión médica"
-                    verified={true}
-                  />
-                  <TrustBadge 
-                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>}
-                    text="NOM-004 compliant"
-                    verified={true}
-                  />
+                  <div className="flex items-center gap-2 text-sm text-neutral-600">
+                    <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>5 preguntas GRATIS</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-neutral-600">
+                    <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Segunda opinión médica</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-neutral-600">
+                    <svg className="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>NOM-004 compliant</span>
+                  </div>
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <TrustScore score={4.8} className="text-sm" />
-                  <LiveIndicator activity="Consultas realizadas hoy: {count}" />
+                  <div className="flex items-center gap-1 text-sm text-neutral-600">
+                    <span className="font-semibold text-primary-600">4.8</span>
+                    <span>/5</span>
+                    <span className="text-neutral-500">(1090 reseñas)</span>
+                  </div>
+                  <div className="text-sm text-neutral-500">
+                    Consultas realizadas hoy: 0
+                  </div>
                 </div>
               </div>
             </div>
@@ -377,10 +383,6 @@ export default function App(){
               </div>
               <div className="lg:pl-8 space-y-6">
                 <StatsBoard />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <DoctorOnlineStatus />
-                  <LiveActivityIndicator />
-                </div>
               </div>
             </div>
           </div>
@@ -651,13 +653,6 @@ export default function App(){
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
-              <PatientTestimonials />
-              <div className="space-y-6">
-                <TrustMetrics />
-                <VerificationProcess />
-              </div>
-            </div>
           </div>
         </section>
 

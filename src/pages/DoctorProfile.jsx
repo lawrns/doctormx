@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
-import TrustBadges from '../components/TrustBadges';
 
 export default function DoctorProfile() {
   const { id } = useParams();
@@ -167,7 +166,6 @@ export default function DoctorProfile() {
                 {/* Trust Badges */}
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-ink-primary mb-3">Certificaciones y Verificaciones</h3>
-                  <TrustBadges doctorId={doctor.user_id} showAll={true} />
                 </div>
 
                 {/* Credentials */}
