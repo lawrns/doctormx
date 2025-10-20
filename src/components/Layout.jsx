@@ -228,19 +228,28 @@ export default function Layout({ children, variant = 'app' }) {
               {user ? (
                 <>
                   <GamificationHeader />
-                  <Link to="/dashboard" className="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors">
-                    Mi Dashboard
+                  <Link to="/dashboard" className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 hover:bg-primary-600 rounded-lg transition-colors">
+                    <Icon name="chart-bar" size="sm" className="mr-2" />
+                    Dashboard
                   </Link>
                   <div className="flex items-center space-x-3">
                     <div className="text-right">
                       <div className="text-sm font-medium text-neutral-900">
                         {user.user_metadata?.full_name || user.email}
                       </div>
+                      <div className="text-xs text-neutral-500">
+                        {user.role === 'doctor' ? 'Doctor' : 'Paciente'}
+                      </div>
+                    </div>
+                    <div className="relative">
+                      <button className="flex items-center justify-center w-8 h-8 bg-primary-100 text-primary-600 rounded-full hover:bg-primary-200 transition-colors">
+                        <Icon name="user" size="sm" />
+                      </button>
                     </div>
                     <button
                       onClick={handleLogout}
                       disabled={isLoggingOut}
-                      className="inline-flex items-center px-3 py-2 border border-neutral-300 text-sm font-medium rounded-md text-secondary-700 bg-white hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isLoggingOut ? (
                         <div className="flex items-center">

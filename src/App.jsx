@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
 import AnimatedChat from './components/AnimatedChat'
 import StatsBoard from './components/StatsBoard'
-import { SecurityHeader, SecurityFooter, TrustScore } from './components/SecurityBadges'
+import { TrustScore } from './components/SecurityBadges'
 import { LiveActivityIndicator, PatientTestimonials, DoctorOnlineStatus, TrustMetrics, VerificationProcess } from './components/SocialProof'
 import { TrustBadge, LiveActivityIndicator as LiveIndicator } from './components/MicroInteractions'
 
@@ -172,8 +172,6 @@ export default function App(){
     <div className="min-h-screen bg-gradient-medical overflow-x-hidden">
       <ScrollIndicator />
       
-      {/* Security Header */}
-      <SecurityHeader />
 
       {/* Top nav */}
       <header className="sticky top-0 z-40 glass-nav border-b border-white/20">
@@ -779,8 +777,6 @@ export default function App(){
 
       </main>
 
-      {/* Security Footer */}
-      <SecurityFooter />
       
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-primary-50/30 to-accent-50/20 border-t border-white/20">

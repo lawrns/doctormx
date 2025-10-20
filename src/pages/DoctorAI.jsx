@@ -12,11 +12,14 @@ export default function DoctorAI() {
   const [freeQuestionsRemaining, setFreeQuestionsRemaining] = useState(5);
   const [showFreeQuestionAlert, setShowFreeQuestionAlert] = useState(false);
   const [freeQuestionMessage, setFreeQuestionMessage] = useState('');
+  const [uploadedImages, setUploadedImages] = useState([]);
+  const [isUploading, setIsUploading] = useState(false);
   
   const { user } = useAuth();
 
   const chatContainerRef = useRef(null);
   const textareaRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   // Función para convertir **texto** en negritas HTML
   const formatTextWithBold = (text) => {
@@ -99,6 +102,57 @@ export default function DoctorAI() {
     }
   };
 
+  // Handle image upload
+  const handleImageUpload = async (event) => {
+    const files = Array.from(event.target.files);
+    if (files.length === 0) return;
+
+    setIsUploading(true);
+    
+    try {
+      const uploadPromises = files.map(async (file) => {
+        // Convert file to base64 for now (in production, upload to cloud storage)
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve({
+            id: Date.now() + Math.random(),
+            name: file.name,
+            size: file.size,
+            type: file.type,
+            data: reader.result
+          });
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      });
+
+      const uploadedFiles = await Promise.all(uploadPromises);
+      setUploadedImages(prev => [...prev, ...uploadedFiles]);
+      
+      // Add images to chat
+      const imageMessage = {
+        role: 'user',
+        content: `He subido ${files.length} imagen(es) para análisis`,
+        images: uploadedFiles
+      };
+      setHistory(h => [...h, imageMessage]);
+      
+    } catch (error) {
+      console.error('Error uploading images:', error);
+    } finally {
+      setIsUploading(false);
+      // Reset file input
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    }
+  };
+
+  // Remove uploaded image
+  const removeImage = (imageId) => {
+    setUploadedImages(prev => prev.filter(img => img.id !== imageId));
+  };
+
   // Auto-scroll to bottom when history changes
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -119,18 +173,31 @@ export default function DoctorAI() {
   }, [input]);
 
   async function send() {
-    if (!input.trim()) return;
+    if (!input.trim() && uploadedImages.length === 0) return;
     const msg = input.trim();
     setInput('');
     setLoading(true);
-    const newHist = [...history, { role: 'user', content: msg }];
+    
+    // Create user message with text and images
+    const userMessage = {
+      role: 'user',
+      content: msg || 'He subido imágenes para análisis',
+      images: uploadedImages.length > 0 ? uploadedImages : undefined
+    };
+    
+    const newHist = [...history, userMessage];
     setHistory(newHist);
+    
+    // Clear uploaded images after sending
+    setUploadedImages([]);
+    
     try {
       const data = await chatTurn({ 
-        message: msg, 
+        message: msg || 'Análisis de imágenes médicas', 
         history: newHist, 
         intake, 
-        userId: user?.id 
+        userId: user?.id,
+        images: uploadedImages.length > 0 ? uploadedImages : undefined
       });
       
       setHistory(h => [...h, { role: 'assistant', content: data.message }]);
@@ -436,6 +503,21 @@ export default function DoctorAI() {
                                 ? 'bg-gradient-to-r from-brand-600 to-brand-500 text-white'
                                 : 'bg-white border border-ink-border text-ink-primary'
                             }`}>
+                              {/* Show uploaded images */}
+                              {m.images && m.images.length > 0 && (
+                                <div className="mb-3">
+                                  <div className="flex flex-wrap gap-2">
+                                    {m.images.map((image) => (
+                                      <img
+                                        key={image.id}
+                                        src={image.data}
+                                        alt={image.name}
+                                        className="w-16 h-16 object-cover rounded-lg border border-white/20"
+                                      />
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
                               <div
                                 className="text-sm leading-relaxed whitespace-pre-wrap"
                                 dangerouslySetInnerHTML={{ __html: formatTextWithBold(m.content) }}
@@ -472,7 +554,49 @@ export default function DoctorAI() {
 
               {/* Input Area */}
               <div className="border-t border-ink-border bg-gradient-to-b from-white to-gray-50/50 p-4 md:p-6">
+                {/* Uploaded Images Preview */}
+                {uploadedImages.length > 0 && (
+                  <div className="mb-4">
+                    <div className="flex flex-wrap gap-2">
+                      {uploadedImages.map((image) => (
+                        <div key={image.id} className="relative group">
+                          <img
+                            src={image.data}
+                            alt={image.name}
+                            className="w-20 h-20 object-cover rounded-lg border border-gray-200"
+                          />
+                          <button
+                            onClick={() => removeImage(image.id)}
+                            className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs hover:bg-red-600 transition-colors opacity-0 group-hover:opacity-100"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
                 <div className="flex gap-3">
+                  {/* Image Upload Button */}
+                  <button
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={loading || isUploading}
+                    className="inline-flex items-center justify-center rounded-xl border border-gray-300 px-4 py-3 text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    title="Subir imágenes"
+                  >
+                    {isUploading ? (
+                      <svg className="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    ) : (
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                      </svg>
+                    )}
+                  </button>
+                  
                   <textarea
                     ref={textareaRef}
                     value={input}
@@ -493,7 +617,7 @@ export default function DoctorAI() {
                   />
                   <button
                     onClick={send}
-                    disabled={loading || !input.trim()}
+                    disabled={loading || (!input.trim() && uploadedImages.length === 0)}
                     className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-6 py-3 font-semibold text-white shadow-sm transition-all duration-200 hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {loading ? (
@@ -508,8 +632,19 @@ export default function DoctorAI() {
                     )}
                   </button>
                 </div>
+                
+                {/* Hidden file input */}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  onChange={handleImageUpload}
+                  className="hidden"
+                />
+                
                 <p className="text-xs text-ink-muted mt-3 text-center">
-                  Presiona Enter para enviar • Shift + Enter para nueva línea
+                  Presiona Enter para enviar • Shift + Enter para nueva línea • Sube imágenes para análisis
                 </p>
               </div>
             </div>
