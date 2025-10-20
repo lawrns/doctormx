@@ -194,7 +194,14 @@ INSTRUCCIONES GENERALES:
 - Si el usuario sube imágenes médicas, analízalas y proporciona orientación basada en lo que ves
 - Adapta el tono según la urgencia percibida
 
-IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la consulta médica profesional.`
+IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la consulta médica profesional.
+
+INSTRUCCIONES PARA OPCIONES INTERACTIVAS:
+- Para situaciones de emergencia, menciona explícitamente: "Puedes elegir una de las opciones abajo para continuar."
+- Para prescripciones o tratamientos, menciona: "Las opciones abajo te ayudarán a continuar con tu tratamiento."
+- Para derivaciones a especialistas, menciona: "Puedes usar las opciones para encontrar el especialista adecuado."
+- Para decisiones importantes de salud, menciona: "Revisa las opciones disponibles para tomar la mejor decisión."
+- En situaciones normales, NO menciones las opciones explícitamente para mantener la conversación natural.`
 
     // Prepare messages for OpenAI with conversation memory
     const messages = [
@@ -305,67 +312,96 @@ IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la con
 
     // Generate interactive response options based on conversation stage and content
     const generateResponseOptions = (reply, stage, message) => {
-      const options = [];
       const replyLower = reply.toLowerCase();
       const messageLower = message.toLowerCase();
+      
+      // Detect symptoms for adaptive actions
+      const symptomPatterns = {
+        respiratory: ['tos', 'respirar', 'falta de aire', 'asma', 'bronquitis', 'neumonía'],
+        cardiovascular: ['corazón', 'pecho', 'palpitaciones', 'presión', 'hipertensión'],
+        gastrointestinal: ['estómago', 'abdomen', 'nausea', 'vómito', 'diarrea', 'digestión'],
+        neurological: ['cabeza', 'migraña', 'mareo', 'convulsión', 'desmayo'],
+        dermatological: ['piel', 'erupción', 'sarpullido', 'picazón', 'manchas'],
+        musculoskeletal: ['dolor', 'articulación', 'músculo', 'hueso', 'espalda', 'cuello']
+      };
 
-      // Emergency options
+      const detectedSymptoms = Object.keys(symptomPatterns).filter(symptomType =>
+        symptomPatterns[symptomType].some(pattern => 
+          messageLower.includes(pattern) || replyLower.includes(pattern)
+        )
+      );
+
+      // Map symptoms to specialties
+      const specialtyMap = {
+        respiratory: 'Neumología',
+        cardiovascular: 'Cardiología',
+        gastrointestinal: 'Gastroenterología',
+        neurological: 'Neurología',
+        dermatological: 'Dermatología',
+        musculoskeletal: 'Ortopedia'
+      };
+
+      const suggestedSpecialty = detectedSymptoms.length > 0 ? 
+        specialtyMap[detectedSymptoms[0]] || 'Medicina General' : 'Medicina General';
+
+      // Build structured options
+      const primary = [];
+      const secondary = [];
+      const overflow = [];
+
+      // Baseline severity options (always available during exploration/analysis)
+      if (stage === 'exploration' || stage === 'analysis') {
+        primary.push(
+          { id: 'severity_mild', text: 'Leve', action: 'severity', value: 'mild', style: 'success', priority: 1 },
+          { id: 'severity_moderate', text: 'Moderado', action: 'severity', value: 'moderate', style: 'warning', priority: 2 },
+          { id: 'severity_severe', text: 'Severo', action: 'severity', value: 'severe', style: 'danger', priority: 3 }
+        );
+      }
+
+      // Emergency options (highest priority)
       if (replyLower.includes('urgencia') || replyLower.includes('emergencia') || replyLower.includes('911')) {
-        options.push({
-          id: 'emergency',
-          text: '🚨 Llamar Emergencias',
-          action: 'emergency',
-          style: 'danger'
+        primary.unshift({
+          id: 'emergency_call',
+          text: '🚨 Llamar 911',
+          action: 'emergency_call',
+          style: 'danger',
+          priority: 0
+        });
+        primary.unshift({
+          id: 'find_hospital',
+          text: '🏥 Buscar Hospital',
+          action: 'find_hospital',
+          style: 'danger',
+          priority: 0
         });
       }
 
-      // Symptom severity options
-      if (stage === 'exploration' || stage === 'analysis') {
-        options.push(
-          { id: 'mild', text: 'Leve', action: 'severity', value: 'mild', style: 'success' },
-          { id: 'moderate', text: 'Moderado', action: 'severity', value: 'moderate', style: 'warning' },
-          { id: 'severe', text: 'Severo', action: 'severity', value: 'severe', style: 'danger' }
-        );
-      }
-
-      // Common follow-up options
-      if (stage === 'exploration') {
-        options.push(
-          { id: 'duration', text: '¿Cuánto tiempo?', action: 'question', value: 'duration' },
-          { id: 'frequency', text: '¿Con qué frecuencia?', action: 'question', value: 'frequency' },
-          { id: 'triggers', text: '¿Qué lo empeora?', action: 'question', value: 'triggers' }
-        );
-      }
-
-      // Enhanced specialist referral options
+      // Specialist referral (adaptive based on symptoms)
       if (stage === 'analysis' || stage === 'conclusion') {
-        if (replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad')) {
-          // Extract specialty from reply
-          const specialtyMatch = reply.match(/especialista en (.*?)(?:\.|,|$)/i) || 
-                                reply.match(/especialidad.*?([a-záéíóúñ\s]+)/i);
-          const specialty = specialtyMatch ? specialtyMatch[1].trim() : 'general';
-          
-          options.push({
+        if (replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad') || detectedSymptoms.length > 0) {
+          primary.push({
             id: 'find_specialist',
-            text: `🔍 Buscar ${specialty}`,
+            text: `🔍 Buscar ${suggestedSpecialty}`,
             action: 'find_specialist',
-            value: specialty,
-            style: 'primary'
-          });
-          
-          options.push({
-            id: 'book_appointment',
-            text: '📅 Agendar Cita',
-            action: 'book_appointment',
-            value: specialty,
-            style: 'primary'
+            value: suggestedSpecialty,
+            style: 'primary',
+            priority: 4
           });
         }
       }
 
-      // Treatment options
+      // Follow-up questions for exploration stage
+      if (stage === 'exploration') {
+        secondary.push(
+          { id: 'duration', text: '¿Cuánto tiempo?', action: 'question', value: 'duration', style: 'secondary' },
+          { id: 'frequency', text: '¿Con qué frecuencia?', action: 'question', value: 'frequency', style: 'secondary' },
+          { id: 'triggers', text: '¿Qué lo empeora?', action: 'question', value: 'triggers', style: 'secondary' }
+        );
+      }
+
+      // Treatment and appointment options
       if (replyLower.includes('medicamento') || replyLower.includes('tratamiento')) {
-        options.push({
+        secondary.push({
           id: 'prescription',
           text: '💊 Solicitar Receta',
           action: 'prescription',
@@ -373,19 +409,19 @@ IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la con
         });
       }
 
-      // Appointment options
       if (stage === 'conclusion') {
-        options.push({
-          id: 'appointment',
+        secondary.push({
+          id: 'book_appointment',
           text: '📅 Agendar Cita',
-          action: 'appointment',
+          action: 'book_appointment',
+          value: suggestedSpecialty,
           style: 'primary'
         });
       }
 
-      // Image analysis options
-      if (messageLower.includes('imagen') || messageLower.includes('foto')) {
-        options.push({
+      // Image analysis option
+      if (messageLower.includes('imagen') || messageLower.includes('foto') || stage === 'exploration') {
+        secondary.push({
           id: 'upload_image',
           text: '📷 Subir Imagen',
           action: 'upload_image',
@@ -393,7 +429,22 @@ IMPORTANTE: Esta es una herramienta de orientación médica. No sustituye la con
         });
       }
 
-      return options.slice(0, 4); // Limit to 4 options
+      // Overflow menu options (always available)
+      overflow.push(
+        { id: 'second_opinion', text: 'Segunda Opinión', action: 'second_opinion', style: 'default' },
+        { id: 'save_conversation', text: 'Guardar Conversación', action: 'save_conversation', style: 'default' },
+        { id: 'share_with_doctor', text: 'Compartir con Doctor', action: 'share_with_doctor', style: 'default' }
+      );
+
+      // Sort primary options by priority
+      primary.sort((a, b) => (a.priority || 999) - (b.priority || 999));
+
+      // Limit primary to 3 options, secondary to 2, overflow unlimited
+      return {
+        primary: primary.slice(0, 3),
+        secondary: secondary.slice(0, 2),
+        overflow: overflow
+      };
     };
 
     const responseOptions = generateResponseOptions(aiReply, conversationStage, message);

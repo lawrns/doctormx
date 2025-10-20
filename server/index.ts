@@ -251,6 +251,145 @@ app.post('/api/chat', async (req, res) => {
       }
     }
     
+    // Generate interactive response options based on conversation stage and content
+    const generateResponseOptions = (reply, stage, message) => {
+      const replyLower = reply.toLowerCase();
+      const messageLower = message.toLowerCase();
+      
+      // Detect symptoms for adaptive actions
+      const symptomPatterns = {
+        respiratory: ['tos', 'respirar', 'falta de aire', 'asma', 'bronquitis', 'neumonía'],
+        cardiovascular: ['corazón', 'pecho', 'palpitaciones', 'presión', 'hipertensión'],
+        gastrointestinal: ['estómago', 'abdomen', 'nausea', 'vómito', 'diarrea', 'digestión'],
+        neurological: ['cabeza', 'migraña', 'mareo', 'convulsión', 'desmayo'],
+        dermatological: ['piel', 'erupción', 'sarpullido', 'picazón', 'manchas'],
+        musculoskeletal: ['dolor', 'articulación', 'músculo', 'hueso', 'espalda', 'cuello']
+      };
+
+      const detectedSymptoms = Object.keys(symptomPatterns).filter(symptomType =>
+        symptomPatterns[symptomType].some(pattern => 
+          messageLower.includes(pattern) || replyLower.includes(pattern)
+        )
+      );
+
+      // Map symptoms to specialties
+      const specialtyMap = {
+        respiratory: 'Neumología',
+        cardiovascular: 'Cardiología',
+        gastrointestinal: 'Gastroenterología',
+        neurological: 'Neurología',
+        dermatological: 'Dermatología',
+        musculoskeletal: 'Ortopedia'
+      };
+
+      const suggestedSpecialty = detectedSymptoms.length > 0 ? 
+        specialtyMap[detectedSymptoms[0]] || 'Medicina General' : 'Medicina General';
+
+      // Build structured options
+      const primary = [];
+      const secondary = [];
+      const overflow = [];
+
+      // Baseline severity options (always available during exploration/analysis)
+      if (stage === 'followup' || stage === 'detailed') {
+        primary.push(
+          { id: 'severity_mild', text: 'Leve', action: 'severity', value: 'mild', style: 'success', priority: 1 },
+          { id: 'severity_moderate', text: 'Moderado', action: 'severity', value: 'moderate', style: 'warning', priority: 2 },
+          { id: 'severity_severe', text: 'Severo', action: 'severity', value: 'severe', style: 'danger', priority: 3 }
+        );
+      }
+
+      // Emergency options (highest priority)
+      if (replyLower.includes('urgencia') || replyLower.includes('emergencia') || replyLower.includes('911')) {
+        primary.unshift({
+          id: 'emergency_call',
+          text: '🚨 Llamar 911',
+          action: 'emergency_call',
+          style: 'danger',
+          priority: 0
+        });
+        primary.unshift({
+          id: 'find_hospital',
+          text: '🏥 Buscar Hospital',
+          action: 'find_hospital',
+          style: 'danger',
+          priority: 0
+        });
+      }
+
+      // Specialist referral (adaptive based on symptoms)
+      if (stage === 'detailed' || stage === 'referral') {
+        if (replyLower.includes('especialista') || replyLower.includes('derivar') || replyLower.includes('especialidad') || detectedSymptoms.length > 0) {
+          primary.push({
+            id: 'find_specialist',
+            text: `🔍 Buscar ${suggestedSpecialty}`,
+            action: 'find_specialist',
+            value: suggestedSpecialty,
+            style: 'primary',
+            priority: 4
+          });
+        }
+      }
+
+      // Follow-up questions for followup stage
+      if (stage === 'followup') {
+        secondary.push(
+          { id: 'duration', text: '¿Cuánto tiempo?', action: 'question', value: 'duration', style: 'secondary' },
+          { id: 'frequency', text: '¿Con qué frecuencia?', action: 'question', value: 'frequency', style: 'secondary' },
+          { id: 'triggers', text: '¿Qué lo empeora?', action: 'question', value: 'triggers', style: 'secondary' }
+        );
+      }
+
+      // Treatment and appointment options
+      if (replyLower.includes('medicamento') || replyLower.includes('tratamiento')) {
+        secondary.push({
+          id: 'prescription',
+          text: '💊 Solicitar Receta',
+          action: 'prescription',
+          style: 'primary'
+        });
+      }
+
+      if (stage === 'referral') {
+        secondary.push({
+          id: 'book_appointment',
+          text: '📅 Agendar Cita',
+          action: 'book_appointment',
+          value: suggestedSpecialty,
+          style: 'primary'
+        });
+      }
+
+      // Image analysis option
+      if (messageLower.includes('imagen') || messageLower.includes('foto') || stage === 'followup') {
+        secondary.push({
+          id: 'upload_image',
+          text: '📷 Subir Imagen',
+          action: 'upload_image',
+          style: 'secondary'
+        });
+      }
+
+      // Overflow menu options (always available)
+      overflow.push(
+        { id: 'second_opinion', text: 'Segunda Opinión', action: 'second_opinion', style: 'default' },
+        { id: 'save_conversation', text: 'Guardar Conversación', action: 'save_conversation', style: 'default' },
+        { id: 'share_with_doctor', text: 'Compartir con Doctor', action: 'share_with_doctor', style: 'default' }
+      );
+
+      // Sort primary options by priority
+      primary.sort((a, b) => (a.priority || 999) - (b.priority || 999));
+
+      // Limit primary to 3 options, secondary to 2, overflow unlimited
+      return {
+        primary: primary.slice(0, 3),
+        secondary: secondary.slice(0, 2),
+        overflow: overflow
+      };
+    };
+
+    const responseOptions = generateResponseOptions(reply, conversationStage, message);
+
     console.log('✅ Returning successful response');
     res.json({ 
       reply: reply,
@@ -258,7 +397,7 @@ app.post('/api/chat', async (req, res) => {
       remainingFreeQuestions: freeQuestionUsed ? 4 : 5, // This should be calculated properly
       redFlagsTriggered: false,
       conversationStage: conversationStage,
-      responseOptions: [] // Add response options logic here
+      responseOptions: responseOptions
     });
   } catch (e) {
     console.error('❌ Chat endpoint error:', e);

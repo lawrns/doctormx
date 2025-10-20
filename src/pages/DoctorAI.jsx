@@ -14,6 +14,9 @@ export default function DoctorAI() {
   const [freeQuestionMessage, setFreeQuestionMessage] = useState('');
   const [uploadedImages, setUploadedImages] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [showOptions, setShowOptions] = useState(true);
+  const [showOverflowMenu, setShowOverflowMenu] = useState({});
+  const [showShareModal, setShowShareModal] = useState(false);
   
   const { user } = useAuth();
 
@@ -159,6 +162,34 @@ export default function DoctorAI() {
     setUploadedImages(prev => prev.filter(img => img.id !== imageId));
   };
 
+  // Stage-based suppression logic
+  const shouldShowOptions = (stage, redFlagsTriggered) => {
+    if (redFlagsTriggered) return 'critical_only';
+    if (stage === 'billing' || stage === 'consent') return 'explicit_and_reduced';
+    return 'full';
+  };
+
+  // Save conversation to localStorage
+  const saveConversationToStorage = (conversationHistory) => {
+    try {
+      const savedConversations = JSON.parse(localStorage.getItem('dr_simeon_conversations') || '[]');
+      const conversationData = {
+        id: Date.now().toString(),
+        timestamp: new Date().toISOString(),
+        history: conversationHistory,
+        userId: user?.id
+      };
+      savedConversations.unshift(conversationData);
+      // Keep only last 10 conversations
+      const limitedConversations = savedConversations.slice(0, 10);
+      localStorage.setItem('dr_simeon_conversations', JSON.stringify(limitedConversations));
+      return true;
+    } catch (error) {
+      console.error('Error saving conversation:', error);
+      return false;
+    }
+  };
+
   // Handle response option clicks
   const handleResponseOption = async (option) => {
     let message = '';
@@ -207,6 +238,23 @@ export default function DoctorAI() {
         // Trigger file input
         fileInputRef.current?.click();
         return;
+      case 'second_opinion':
+        message = 'Me gustaría obtener una segunda opinión sobre mi caso';
+        break;
+      case 'save_conversation':
+        // Implement save to local storage
+        const saved = saveConversationToStorage(history);
+        if (saved) {
+          // Show success message (you might want to use a toast library)
+          alert('Conversación guardada exitosamente');
+        } else {
+          alert('Error al guardar la conversación');
+        }
+        return;
+      case 'share_with_doctor':
+        // Generate shareable link or open share modal
+        setShowShareModal(true);
+        return;
       default:
         message = option.text;
     }
@@ -218,6 +266,52 @@ export default function DoctorAI() {
       send();
     }, 100);
   };
+
+  // Keyboard shortcuts for options
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // Only handle shortcuts when not typing in input
+      if (document.activeElement === textareaRef.current) return;
+      
+      const lastMessage = history[history.length - 1];
+      if (!lastMessage || lastMessage.role !== 'assistant' || !lastMessage.responseOptions) return;
+      
+      const options = lastMessage.responseOptions;
+      
+      switch (e.key) {
+        case '1':
+          if (options.primary && options.primary[0]) {
+            e.preventDefault();
+            handleResponseOption(options.primary[0]);
+          }
+          break;
+        case '2':
+          if (options.primary && options.primary[1]) {
+            e.preventDefault();
+            handleResponseOption(options.primary[1]);
+          }
+          break;
+        case '3':
+          if (options.primary && options.primary[2]) {
+            e.preventDefault();
+            handleResponseOption(options.primary[2]);
+          }
+          break;
+        case 'm':
+          if (options.overflow && options.overflow.length > 0) {
+            e.preventDefault();
+            setShowOverflowMenu(prev => ({
+              ...prev,
+              [lastMessage.id || 'last']: !prev[lastMessage.id || 'last']
+            }));
+          }
+          break;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [history]);
 
   // Auto-scroll to bottom when history changes
   useEffect(() => {
@@ -337,9 +431,9 @@ export default function DoctorAI() {
               Describe tus síntomas con detalle. Recibirás orientación médica inmediata y, si es necesario, referencias a especialistas cerca de ti.
             </p>
 
-            {/* Free Questions Counter */}
+            {/* Free Questions Counter and Options Toggle */}
             {user && (
-              <div className="mb-8">
+              <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg">
                   <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -351,6 +445,24 @@ export default function DoctorAI() {
                     }
                   </span>
                 </div>
+                
+                {/* Options Toggle */}
+                <button
+                  onClick={() => setShowOptions(!showOptions)}
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-200 ${
+                    showOptions 
+                      ? 'bg-primary-50 text-primary-700 border-primary-200 hover:bg-primary-100' 
+                      : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                  }`}
+                  title={showOptions ? 'Ocultar opciones rápidas' : 'Mostrar opciones rápidas'}
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
+                  </svg>
+                  <span className="text-sm font-medium">
+                    {showOptions ? 'Ocultar opciones' : 'Mostrar opciones'}
+                  </span>
+                </button>
               </div>
             )}
 
@@ -601,28 +713,96 @@ export default function DoctorAI() {
                                 dangerouslySetInnerHTML={{ __html: formatTextWithBold(m.content) }}
                               />
                               
-                              {/* Response Options */}
-                              {m.responseOptions && m.responseOptions.length > 0 && (
-                                <div className="mt-3 flex flex-wrap gap-2">
-                                  {m.responseOptions.map((option) => (
-                                    <button
-                                      key={option.id}
-                                      onClick={() => handleResponseOption(option)}
-                                      className={`px-3 py-2 text-xs font-medium rounded-lg transition-all duration-200 hover:scale-105 ${
-                                        option.style === 'danger' 
-                                          ? 'bg-red-100 text-red-700 hover:bg-red-200 border border-red-200' :
-                                        option.style === 'warning' 
-                                          ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 border border-yellow-200' :
-                                        option.style === 'success' 
-                                          ? 'bg-green-100 text-green-700 hover:bg-green-200 border border-green-200' :
-                                        option.style === 'primary' 
-                                          ? 'bg-primary-100 text-primary-700 hover:bg-primary-200 border border-primary-200' :
-                                        'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
-                                      }`}
-                                    >
-                                      {option.text}
-                                    </button>
-                                  ))}
+                              {/* Three-Tier Response Options */}
+                              {m.responseOptions && showOptions && (
+                                <div className="mt-3 space-y-2">
+                                  {/* Primary Options (Quick Replies) */}
+                                  {m.responseOptions.primary && m.responseOptions.primary.length > 0 && (
+                                    <div className="flex flex-wrap gap-2">
+                                      {m.responseOptions.primary.map((option, index) => (
+                                        <button
+                                          key={option.id}
+                                          onClick={() => handleResponseOption(option)}
+                                          aria-label={option.text}
+                                          data-keyboard-shortcut={index < 3 ? (index + 1).toString() : undefined}
+                                          className={`quick-reply-btn ${
+                                            option.style === 'danger' 
+                                              ? 'bg-red-100 text-red-700 hover:bg-red-200 border border-red-200' :
+                                            option.style === 'warning' 
+                                              ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 border border-yellow-200' :
+                                            option.style === 'success' 
+                                              ? 'bg-green-100 text-green-700 hover:bg-green-200 border border-green-200' :
+                                            option.style === 'primary' 
+                                              ? 'bg-primary-100 text-primary-700 hover:bg-primary-200 border border-primary-200' :
+                                            'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                                          }`}
+                                        >
+                                          {option.text}
+                                          {index < 3 && (
+                                            <span className="ml-1 text-xs opacity-60">({index + 1})</span>
+                                          )}
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  {/* Secondary Options */}
+                                  {m.responseOptions.secondary && m.responseOptions.secondary.length > 0 && (
+                                    <div className="flex flex-wrap gap-1">
+                                      {m.responseOptions.secondary.map((option) => (
+                                        <button
+                                          key={option.id}
+                                          onClick={() => handleResponseOption(option)}
+                                          className={`px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
+                                            option.style === 'primary' 
+                                              ? 'bg-primary-50 text-primary-600 hover:bg-primary-100 border border-primary-200' :
+                                            'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200'
+                                          }`}
+                                        >
+                                          {option.text}
+                                        </button>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  {/* Overflow Menu */}
+                                  {m.responseOptions.overflow && m.responseOptions.overflow.length > 0 && (
+                                    <div className="relative">
+                                      <button
+                                        onClick={() => setShowOverflowMenu(prev => ({
+                                          ...prev,
+                                          [m.id || 'last']: !prev[m.id || 'last']
+                                        }))}
+                                        className="px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-md transition-all duration-150 border border-gray-200"
+                                        aria-label="Más opciones"
+                                      >
+                                        Más opciones (M)
+                                        <svg className="inline w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                      </button>
+                                      
+                                      {showOverflowMenu[m.id || 'last'] && (
+                                        <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                                          {m.responseOptions.overflow.map((option) => (
+                                            <button
+                                              key={option.id}
+                                              onClick={() => {
+                                                handleResponseOption(option);
+                                                setShowOverflowMenu(prev => ({
+                                                  ...prev,
+                                                  [m.id || 'last']: false
+                                                }));
+                                              }}
+                                              className="w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors duration-150"
+                                            >
+                                              {option.text}
+                                            </button>
+                                          ))}
+                                        </div>
+                                      )}
+                                    </div>
+                                  )}
                                 </div>
                               )}
                             </div>
