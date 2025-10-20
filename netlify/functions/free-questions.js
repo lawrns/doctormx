@@ -41,6 +41,12 @@ export const handler = async (event, context) => {
       .eq('user_id', userId)
       .single()
 
+    console.log('🔍 Free questions query result:', { 
+      data: freeQuestionsData, 
+      error: freeQuestionsError,
+      userId 
+    })
+
     if (freeQuestionsError && freeQuestionsError.code !== 'PGRST116') {
       console.error('❌ Error getting free questions:', freeQuestionsError)
       return {
@@ -48,7 +54,7 @@ export const handler = async (event, context) => {
         headers: {
           'Access-Control-Allow-Origin': '*'
         },
-        body: JSON.stringify({ error: 'Database error' })
+        body: JSON.stringify({ error: 'Database error', details: freeQuestionsError.message })
       }
     }
 
