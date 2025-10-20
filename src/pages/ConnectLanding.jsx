@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import TrustIndicators from '../components/TrustIndicators';
 import ComplianceBadges from '../components/ComplianceBadges';
-import SecurityBadges from '../components/SecurityBadges';
+import { SecurityBadges } from '../components/SecurityBadges';
 import Icon from '../components/ui/Icon';
 
 function Logo() {

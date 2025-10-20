@@ -1,4 +1,4 @@
-import { supabaseAdmin } from '../config';
+import { supabaseAdmin } from '../lib/supabase.js';
 
 export interface DoctorReferral {
   id: string;

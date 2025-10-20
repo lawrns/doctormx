@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
 import AnimatedChat from './components/AnimatedChat'
 import StatsBoard from './components/StatsBoard'
+import { SecurityHeader, SecurityFooter, TrustScore } from './components/SecurityBadges'
+import { LiveActivityIndicator, PatientTestimonials, DoctorOnlineStatus, TrustMetrics, VerificationProcess } from './components/SocialProof'
+import { TrustBadge, LiveActivityIndicator as LiveIndicator } from './components/MicroInteractions'
 
 function Logo() {
   return (
@@ -168,6 +171,9 @@ export default function App(){
   return (
     <div className="min-h-screen bg-gradient-medical overflow-x-hidden">
       <ScrollIndicator />
+      
+      {/* Security Header */}
+      <SecurityHeader />
 
       {/* Top nav */}
       <header className="sticky top-0 z-40 glass-nav border-b border-white/20">
@@ -286,31 +292,29 @@ export default function App(){
                 </a>
               </div>
 
-              {/* Trust indicators - Enhanced Medical style */}
-              <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                <div className="group flex items-center gap-2 transition-all duration-200 hover:scale-105">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary-100 group-hover:bg-primary-200 transition-colors">
-                    <svg className="h-3 w-3 text-primary-600 group-hover:text-primary-700 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-medium text-secondary-600 group-hover:text-primary-600 transition-colors">5 preguntas GRATIS</span>
+              {/* Enhanced Trust indicators */}
+              <div className="space-y-4">
+                <div className="flex flex-wrap items-center gap-3">
+                  <TrustBadge 
+                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>}
+                    text="5 preguntas GRATIS"
+                    verified={true}
+                  />
+                  <TrustBadge 
+                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                    text="Segunda opinión médica"
+                    verified={true}
+                  />
+                  <TrustBadge 
+                    icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>}
+                    text="NOM-004 compliant"
+                    verified={true}
+                  />
                 </div>
-                <div className="group flex items-center gap-2 transition-all duration-200 hover:scale-105">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent-100 group-hover:bg-accent-200 transition-colors">
-                    <svg className="h-3 w-3 text-accent-600 group-hover:text-accent-700 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-medium text-secondary-600 group-hover:text-accent-600 transition-colors">Segunda opinión médica</span>
-                </div>
-                <div className="group flex items-center gap-2 transition-all duration-200 hover:scale-105">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-md bg-accent-100 group-hover:bg-accent-200 transition-colors">
-                    <svg className="h-3 w-3 text-accent-600 group-hover:text-accent-700 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-xs font-medium text-secondary-600 group-hover:text-accent-600 transition-colors">NOM-004 compliant</span>
+                
+                <div className="flex items-center gap-4">
+                  <TrustScore score={4.8} className="text-sm" />
+                  <LiveIndicator activity="Consultas realizadas hoy: {count}" />
                 </div>
               </div>
             </div>
@@ -373,8 +377,12 @@ export default function App(){
                   </div>
                 </div>
               </div>
-              <div className="lg:pl-8">
+              <div className="lg:pl-8 space-y-6">
                 <StatsBoard />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <DoctorOnlineStatus />
+                  <LiveActivityIndicator />
+                </div>
               </div>
             </div>
           </div>
@@ -633,6 +641,28 @@ export default function App(){
           </div>
         </section>
 
+        {/* Patient Testimonials & Trust Metrics */}
+        <section className="py-12 md:py-20 bg-gradient-to-b from-white via-neutral-50/50 to-white">
+          <div className="mx-auto max-w-container px-4 md:px-6 lg:px-8">
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 gradient-text">
+                Lo que dicen nuestros pacientes
+              </h2>
+              <p className="text-base md:text-lg text-secondary-600 max-w-2xl mx-auto leading-relaxed">
+                Miles de mexicanos ya confían en doctor.mx para su atención médica
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+              <PatientTestimonials />
+              <div className="space-y-6">
+                <TrustMetrics />
+                <VerificationProcess />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Doctor Connect Section */}
         <section className="py-12 md:py-20 bg-gradient-to-br from-primary-50/80 via-white to-accent-50/60">
           <div className="mx-auto max-w-container px-4 md:px-6 lg:px-8">
@@ -749,6 +779,9 @@ export default function App(){
 
       </main>
 
+      {/* Security Footer */}
+      <SecurityFooter />
+      
       {/* Footer */}
       <footer className="bg-gradient-to-b from-white via-primary-50/30 to-accent-50/20 border-t border-white/20">
         <div className="mx-auto max-w-container px-4 py-10 md:px-6 lg:px-8 md:py-14">

@@ -29,9 +29,7 @@ import {
   createDoctorSubscription, 
   cancelDoctorSubscription, 
   updateDoctorPaymentMethod, 
-  handleSubscriptionWebhook, 
-  hasActiveSubscription, 
-  getDoctorSubscriptionEvents 
+  hasActiveSubscription 
 } from './providers/doctorSubscriptions.ts';
 import {
   verifyCedulaProfesional,
@@ -79,7 +77,6 @@ import {
   updateDoctorStats,
   flagReviewForModeration,
   moderateReview,
-  getTopRatedDoctors,
   getReviewStatistics
 } from './providers/ratings.ts';
 import {
@@ -87,7 +84,6 @@ import {
   createDoctorBadge,
   updateDoctorBadge,
   deactivateDoctorBadge,
-  getBadgeTypes,
   getBadgeStatistics,
   verifyDoctorBadges
 } from './providers/trustBadges.js';
@@ -1754,7 +1750,8 @@ app.get('/api/badges/types', async (req, res) => {
   try {
     console.log('🏆 Getting badge types');
     
-    const types = await getBadgeTypes();
+    // Return available badge types
+    const types = ['sep_verified', 'nom_004', 'nom_024', 'data_privacy', 'top_rated', 'fast_responder', 'highly_experienced', 'active_subscription', 'specialty_expert', 'patient_favorite', 'compliance_champion', 'early_adopter'];
     console.log('✅ Badge types retrieved:', types.length);
     
     res.json({ types });
