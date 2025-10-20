@@ -264,7 +264,7 @@ export default function DoctorAI() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink-primary mb-4 leading-[1.1]">
               Consulta con tu{' '}
               <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">Doctor IA</span>
+                <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">Dr. Simeon</span>
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-brand-200/50 to-medical-200/50 -rotate-1"></span>
               </span>
             </h1>
@@ -332,7 +332,14 @@ export default function DoctorAI() {
                         </svg>
                       </div>
                     </div>
-                    <h3 className="text-2xl font-bold text-ink-primary mb-3">¡Hola! Soy tu Doctor IA</h3>
+                    <div className="flex items-center justify-center gap-3 mb-3">
+                      <img
+                        src="/images/simeon.webp"
+                        alt="Dr. Simeon"
+                        className="w-12 h-12 rounded-full object-cover border-4 border-white shadow-lg"
+                      />
+                      <h3 className="text-2xl font-bold text-ink-primary">¡Hola! Soy Dr. Simeon</h3>
+                    </div>
                     <p className="text-ink-secondary max-w-lg text-base leading-relaxed mb-6">
                       Describe tu situación médica con el mayor detalle posible. Esto me ayudará a brindarte la mejor orientación.
                     </p>
@@ -534,7 +541,16 @@ export default function DoctorAI() {
                           <div className={`text-xs text-ink-muted mt-1.5 ${
                             m.role === 'user' ? 'text-right' : 'text-left'
                           }`}>
-                            {m.role === 'user' ? 'Tú' : 'Doctor IA'}
+                            {m.role === 'user' ? 'Tú' : (
+                              <div className="flex items-center gap-2">
+                                <img
+                                  src="/images/simeon.webp"
+                                  alt="Dr. Simeon"
+                                  className="w-5 h-5 rounded-full object-cover border border-neutral-200"
+                                />
+                                <span>Dr. Simeon</span>
+                              </div>
+                            )}
                           </div>
                         </div>
                       </div>
@@ -551,7 +567,7 @@ export default function DoctorAI() {
                           <div className="w-2 h-2 bg-medical-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
                           <div className="w-2 h-2 bg-medical-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                         </div>
-                        <span className="text-xs text-ink-muted">Doctor IA está escribiendo...</span>
+                        <span className="text-xs text-ink-muted">Dr. Simeon está escribiendo...</span>
                       </div>
                     </div>
                   </div>
