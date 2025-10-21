@@ -39,7 +39,11 @@ export default function DoctorProfile() {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch(`/api/doctors/${id}`);
+               // Use local API for development, Netlify functions for production
+               const isLocal = window.location.hostname === 'localhost';
+               const endpoint = isLocal ? `/api/doctors/${id}` : `/.netlify/functions/doctor/${id}`;
+               
+               const response = await fetch(endpoint);
       const data = await response.json();
       
       if (!response.ok) {

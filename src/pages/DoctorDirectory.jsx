@@ -95,7 +95,11 @@ export default function DoctorDirectory() {
       params.append('limit', pagination.doctorsPerPage.toString());
       params.append('offset', offset.toString());
 
-      const response = await fetch(`/api/doctors?${params.toString()}`);
+      // Use local API for development, Netlify functions for production
+      const isLocal = window.location.hostname === 'localhost';
+      const endpoint = isLocal ? `/api/doctors?${params.toString()}` : `/.netlify/functions/doctors?${params.toString()}`;
+      
+      const response = await fetch(endpoint);
       if (!response.ok) {
         throw new Error('Error al cargar los doctores');
       }
