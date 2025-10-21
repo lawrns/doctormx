@@ -130,13 +130,41 @@ app.post('/api/chat', async (req, res) => {
       timestamp: new Date().toISOString() 
     });
 
-    const { message, history = [], intake, userId } = req.body || {};
+    const { message, history = [], intake, userId, images = [] } = req.body || {};
     if (!message || typeof message !== 'string') {
       console.log('❌ Invalid message:', { message, type: typeof message });
       return res.status(400).json({ error: 'message requerido' });
     }
 
     console.log('🔍 Processing message:', message.substring(0, 100) + '...');
+    console.log('📷 Images received:', images.length);
+
+    // Process images if provided
+    let imageAnalysis = null;
+    if (images && images.length > 0) {
+      try {
+        console.log('👁️ Analyzing images...');
+        let imageBase64 = images[0]; // Use first image for now
+        
+        // Remove data URL prefix if present
+        if (imageBase64.startsWith('data:')) {
+          imageBase64 = imageBase64.split(',')[1];
+        }
+        
+        imageAnalysis = await analyzeMedicalImage({
+          imageBase64,
+          imageType: 'general',
+          patientAge: intake?.age,
+          patientGender: intake?.sex,
+          symptoms: message,
+          medicalHistory: intake?.medicalHistory
+        });
+        console.log('✅ Image analysis completed:', { urgency: imageAnalysis.urgency, confidence: imageAnalysis.confidence });
+      } catch (error) {
+        console.error('❌ Error analyzing image:', error);
+        // Continue without image analysis if it fails
+      }
+    }
 
     // Check free question eligibility if userId is provided
     let freeQuestionUsed = false;
@@ -224,7 +252,8 @@ app.post('/api/chat', async (req, res) => {
         sex: userData?.sex,
         specialty: undefined // Could be determined from symptoms or user preferences
       },
-      conversationStage
+      conversationStage,
+      imageAnalysis
     });
     console.log('✅ AI reply generated:', reply.substring(0, 100) + '...');
     
@@ -385,7 +414,8 @@ app.post('/api/chat', async (req, res) => {
       remainingFreeQuestions: freeQuestionUsed ? 4 : 5, // This should be calculated properly
       redFlagsTriggered: false,
       conversationStage: conversationStage,
-      responseOptions: responseOptions
+      responseOptions: responseOptions,
+      imageAnalysis: imageAnalysis
     });
   } catch (e) {
     console.error('❌ Chat endpoint error:', e);

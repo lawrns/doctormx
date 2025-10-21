@@ -33,7 +33,30 @@ export default function BookingWidget({ doctor, onBookingComplete }) {
     'Zurich'
   ];
 
-  // Generate available time slots
+  // Fetch available time slots from API
+  const fetchAvailableSlots = async (date) => {
+    if (!date || !doctor?.user_id) return;
+    
+    try {
+      setLoading(true);
+      const response = await fetch(`/api/doctors/${doctor.user_id}/slots?date=${date}`);
+      if (response.ok) {
+        const slots = await response.json();
+        setAvailableSlots(slots);
+      } else {
+        // Fallback to generated slots if API fails
+        setAvailableSlots(generateTimeSlots());
+      }
+    } catch (error) {
+      console.error('Error fetching slots:', error);
+      // Fallback to generated slots
+      setAvailableSlots(generateTimeSlots());
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Generate available time slots (fallback)
   const generateTimeSlots = () => {
     const slots = [];
     const startHour = 9;
@@ -54,7 +77,7 @@ export default function BookingWidget({ doctor, onBookingComplete }) {
 
   useEffect(() => {
     if (selectedDate) {
-      setAvailableSlots(generateTimeSlots());
+      fetchAvailableSlots(selectedDate);
     }
   }, [selectedDate]);
 
@@ -68,30 +91,60 @@ export default function BookingWidget({ doctor, onBookingComplete }) {
     setError(null);
 
     try {
-      // Simulate booking process
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Call the onBookingComplete callback
-      if (onBookingComplete) {
-        onBookingComplete({
-          service: selectedService,
-          insurance: selectedInsurance,
-          isFirstVisit,
-          date: selectedDate,
-          time: selectedTime,
-          doctor: doctor.full_name
-        });
-      }
+      // Create booking via API
+      const bookingData = {
+        doctorId: doctor.user_id,
+        patientId: 'current-user-id', // This should come from auth context
+        appointmentTime: selectedTime,
+        appointmentDate: selectedDate,
+        duration: 30,
+        type: selectedService,
+        notes: `Seguro: ${selectedInsurance}, Primera visita: ${isFirstVisit ? 'Sí' : 'No'}`,
+        patientInfo: {
+          name: 'Usuario Actual', // This should come from auth context
+          email: 'user@example.com', // This should come from auth context
+          phone: '555-0123' // This should come from auth context
+        }
+      };
 
-      // Reset form
-      setSelectedService('');
-      setSelectedInsurance('');
-      setIsFirstVisit(true);
-      setSelectedDate('');
-      setSelectedTime('');
+      const response = await fetch('/api/bookings', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData)
+      });
+
+      if (response.ok) {
+        const booking = await response.json();
+        
+        // Call the onBookingComplete callback
+        if (onBookingComplete) {
+          onBookingComplete({
+            id: booking.id,
+            service: selectedService,
+            insurance: selectedInsurance,
+            isFirstVisit,
+            date: selectedDate,
+            time: selectedTime,
+            doctor: doctor.full_name
+          });
+        }
+
+        // Reset form
+        setSelectedService('');
+        setSelectedInsurance('');
+        setIsFirstVisit(true);
+        setSelectedDate('');
+        setSelectedTime('');
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || 'Error al procesar la reserva. Por favor intenta de nuevo.');
+      }
       
     } catch (error) {
-      setError('Error al agendar la cita. Intenta nuevamente.');
+      console.error('Booking error:', error);
+      setError('Error al procesar la reserva. Por favor intenta de nuevo.');
     } finally {
       setLoading(false);
     }

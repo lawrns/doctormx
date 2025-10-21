@@ -53,7 +53,7 @@ export async function analyzeMedicalImage(request: VisionAnalysisRequest): Promi
             {
               type: "image_url",
               image_url: {
-                url: `data:image/jpeg;base64,${request.imageBase64}`,
+                url: `data:image/png;base64,${request.imageBase64}`,
                 detail: "high"
               }
             }

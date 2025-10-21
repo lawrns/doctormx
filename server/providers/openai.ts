@@ -14,7 +14,8 @@ export async function doctorReply({
   history,
   redFlags,
   patientData,
-  conversationStage = 'initial'
+  conversationStage = 'initial',
+  imageAnalysis
 }: {
   history: { role: 'user' | 'assistant' | 'system'; content: string }[];
   redFlags: { triggered: boolean; action?: string; reasons: string[] };
@@ -24,6 +25,7 @@ export async function doctorReply({
     specialty?: string;
   };
   conversationStage?: 'initial' | 'followup' | 'detailed' | 'referral';
+  imageAnalysis?: any;
 }) {
       const sys = `
                       Eres DoctorIA, un asistente médico especializado en telemedicina para México. Tu función es proporcionar evaluaciones médicas preliminares de manera natural y conversacional, como un médico real.
@@ -81,6 +83,17 @@ export async function doctorReply({
                       - Usa lenguaje claro y accesible
                       - Respeta las creencias del paciente
                       - Sugiere opciones accesibles cuando sea posible
+
+                      ## Análisis de Imágenes
+                      ${imageAnalysis ? `
+                      - Se ha proporcionado análisis de imagen médica
+                      - Urgencia: ${imageAnalysis.urgency}
+                      - Confianza: ${imageAnalysis.confidence}%
+                      - Hallazgos: ${imageAnalysis.findings?.join(', ') || 'No específicos'}
+                      - Recomendaciones: ${imageAnalysis.recommendations?.join(', ') || 'Evaluación adicional'}
+                      - SIEMPRE menciona que has analizado la imagen y incluye los hallazgos en tu respuesta
+                      - Si los hallazgos están vacíos, explica que la imagen no muestra contenido médico claro
+                      ` : ''}
                   `;
 
 
