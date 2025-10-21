@@ -31,9 +31,10 @@ export default function DoctorDirectory() {
     currentPage: 1,
     totalPages: 1,
     totalDoctors: 0,
-    doctorsPerPage: 12
+    doctorsPerPage: 20
   });
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'map'
+  const [showFilters, setShowFilters] = useState(false);
   const navigate = useNavigate();
 
   const specialties = [
@@ -130,519 +131,408 @@ export default function DoctorDirectory() {
 
   return (
     <Layout>
-      <div className="relative bg-gradient-medical min-h-screen">
-        {/* Background decoration */}
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-100/40 to-accent-100/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-secondary-100/30 to-primary-100/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="bg-white min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {/* Header */}
-          <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-4">
-              Encuentra tu{' '}
-              <span className="gradient-text">
-                Doctor Ideal
-              </span>
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+              {filters.specialty && filters.specialty !== 'Todas las especialidades' 
+                ? `${filters.specialty}s en ${filters.location || 'México'}`
+                : 'Doctores en México'
+              }
             </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-6">
-              Doctores verificados y especializados disponibles para consulta inmediata
-            </p>
-            <div className="flex items-center justify-center gap-4 text-sm text-neutral-500">
-              <div className="flex items-center gap-2">
-                <Icon name="user-group" size="sm" />
-                <span>{pagination.totalDoctors || 1000}+ doctores verificados</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="map-pin" size="sm" />
-                <span>32 estados de México</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Icon name="clock" size="sm" />
-                <span>Disponibles 24/7</span>
-              </div>
+            <div className="flex items-center gap-4 text-sm text-gray-600">
+              <span>{pagination.totalDoctors || 1000}+ doctores verificados</span>
+              <span>•</span>
+              <span>32 estados de México</span>
+              <span>•</span>
+              <span>Disponibles 24/7</span>
             </div>
           </div>
 
-                   {/* Filters */}
-                   <div className="glass-card mb-8 sm:mb-12 p-6 sm:p-8">
-                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {/* Compact Filters */}
+          <div className="bg-gray-50 rounded-lg p-4 mb-6">
+            <div className="flex flex-wrap items-center gap-4">
               {/* Search */}
-              <div className="lg:col-span-2">
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="magnifying-glass" size="sm" className="inline mr-2" />
-                  Buscar doctor
-                </label>
+              <div className="flex-1 min-w-[300px]">
                 <div className="relative">
                   <input
                     type="text"
-                    placeholder="Nombre, especialidad o ubicación..."
+                    placeholder="especialidad, enfermedad o nombre"
                     value={filters.search}
                     onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-                    className="w-full px-4 py-3 pl-10 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
                   />
-                  <Icon name="magnifying-glass" size="sm" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400" />
+                  <Icon name="magnifying-glass" size="sm" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
                 </div>
               </div>
 
-              {/* Specialty */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="academic-cap" size="sm" className="inline mr-2" />
-                  Especialidad
-                </label>
-                <select
-                  value={filters.specialty}
-                  onChange={(e) => setFilters({ ...filters, specialty: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  {specialties.map((spec) => (
-                    <option key={spec} value={spec}>
-                      {spec}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
               {/* Location */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="map-pin" size="sm" className="inline mr-2" />
-                  Ubicación
-                </label>
-                <select
-                  value={filters.location}
-                  onChange={(e) => setFilters({ ...filters, location: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Todas las ubicaciones</option>
-                  <option value="Ciudad de México">Ciudad de México</option>
-                  <option value="Guadalajara">Guadalajara</option>
-                  <option value="Monterrey">Monterrey</option>
-                  <option value="Puebla">Puebla</option>
-                  <option value="Tijuana">Tijuana</option>
-                  <option value="León">León</option>
-                  <option value="Juárez">Juárez</option>
-                  <option value="Torreón">Torreón</option>
-                  <option value="Querétaro">Querétaro</option>
-                  <option value="San Luis Potosí">San Luis Potosí</option>
-                  <option value="Hermosillo">Hermosillo</option>
-                  <option value="Saltillo">Saltillo</option>
-                  <option value="Tampico">Tampico</option>
-                  <option value="Culiacán">Culiacán</option>
-                  <option value="Morelia">Morelia</option>
-                  <option value="Oaxaca">Oaxaca</option>
-                  <option value="Tuxtla Gutiérrez">Tuxtla Gutiérrez</option>
-                  <option value="Villahermosa">Villahermosa</option>
-                  <option value="Campeche">Campeche</option>
-                  <option value="Aguascalientes">Aguascalientes</option>
-                  <option value="Colima">Colima</option>
-                  <option value="Durango">Durango</option>
-                  <option value="Acapulco">Acapulco</option>
-                  <option value="Pachuca">Pachuca</option>
-                  <option value="Toluca">Toluca</option>
-                  <option value="Cuernavaca">Cuernavaca</option>
-                  <option value="Tepic">Tepic</option>
-                  <option value="Mérida">Mérida</option>
-                  <option value="Cancún">Cancún</option>
-                  <option value="Playa del Carmen">Playa del Carmen</option>
-                  <option value="Mexicali">Mexicali</option>
-                  <option value="Ensenada">Ensenada</option>
-                  <option value="Chihuahua">Chihuahua</option>
-                  <option value="Ciudad Obregón">Ciudad Obregón</option>
-                  <option value="Reynosa">Reynosa</option>
-                  <option value="Mazatlán">Mazatlán</option>
-                  <option value="Uruapan">Uruapan</option>
-                  <option value="Zacatecas">Zacatecas</option>
-                  <option value="Fresnillo">Fresnillo</option>
-                  <option value="Guadalupe">Guadalupe</option>
-                </select>
-              </div>
-
-              {/* Gender */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="user" size="sm" className="inline mr-2" />
-                  Género
-                </label>
-                <select
-                  value={filters.gender}
-                  onChange={(e) => setFilters({ ...filters, gender: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Cualquier género</option>
-                  <option value="male">Masculino</option>
-                  <option value="female">Femenino</option>
-                </select>
-              </div>
-
-              {/* Language */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="language" size="sm" className="inline mr-2" />
-                  Idioma
-                </label>
-                <select
-                  value={filters.language}
-                  onChange={(e) => setFilters({ ...filters, language: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Cualquier idioma</option>
-                  <option value="spanish">Español</option>
-                  <option value="english">Inglés</option>
-                  <option value="french">Francés</option>
-                  <option value="german">Alemán</option>
-                </select>
-              </div>
-
-              {/* Insurance */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="shield-check" size="sm" className="inline mr-2" />
-                  Aseguradora
-                </label>
-                <select
-                  value={filters.insurance}
-                  onChange={(e) => setFilters({ ...filters, insurance: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Cualquier aseguradora</option>
-                  <option value="particular">Particular</option>
-                  <option value="imss">IMSS</option>
-                  <option value="issste">ISSSTE</option>
-                  <option value="seguro-popular">Seguro Popular</option>
-                  <option value="gnp">GNP</option>
-                  <option value="axa">AXA</option>
-                </select>
-              </div>
-
-              {/* Price Range */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="currency-dollar" size="sm" className="inline mr-2" />
-                  Rango de Precio
-                </label>
-                <select
-                  value={filters.priceRange}
-                  onChange={(e) => setFilters({ ...filters, priceRange: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Cualquier precio</option>
-                  <option value="0-500">$0 - $500 MXN</option>
-                  <option value="500-1000">$500 - $1,000 MXN</option>
-                  <option value="1000-1500">$1,000 - $1,500 MXN</option>
-                  <option value="1500-2000">$1,500 - $2,000 MXN</option>
-                  <option value="2000+">$2,000+ MXN</option>
-                </select>
-              </div>
-
-              {/* Experience */}
-              <div>
-                <label className="block text-sm font-semibold text-neutral-700 mb-2">
-                  <Icon name="academic-cap" size="sm" className="inline mr-2" />
-                  Experiencia
-                </label>
-                <select
-                  value={filters.experience}
-                  onChange={(e) => setFilters({ ...filters, experience: e.target.value })}
-                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
-                >
-                  <option value="">Cualquier experiencia</option>
-                  <option value="0-5">0-5 años</option>
-                  <option value="5-10">5-10 años</option>
-                  <option value="10-20">10-20 años</option>
-                  <option value="20+">20+ años</option>
-                </select>
-              </div>
-
-              {/* Available */}
-              <div className="flex items-end">
-                <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-white/50 transition-colors duration-200">
+              <div className="min-w-[200px]">
+                <div className="relative">
                   <input
-                    type="checkbox"
-                    checked={filters.available}
-                    onChange={(e) => setFilters({ ...filters, available: e.target.checked })}
-                    className="w-5 h-5 rounded border-neutral-300 text-primary-600 focus:ring-2 focus:ring-primary-500"
+                    type="text"
+                    placeholder="p. ej. Guadalajara"
+                    value={filters.location}
+                    onChange={(e) => setFilters({ ...filters, location: e.target.value })}
+                    className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
                   />
-                  <span className="text-sm font-medium text-neutral-700">
-                    <Icon name="clock" size="sm" className="inline mr-1" />
-                    Solo disponibles ahora
-                  </span>
-                </label>
+                  <Icon name="map-pin" size="sm" className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+                </div>
+              </div>
+
+              {/* Filter Buttons */}
+              <div className="flex items-center gap-2">
+                <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                  <Icon name="video-camera" size="sm" />
+                  <span>Consulta en línea</span>
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                  <Icon name="calendar-days" size="sm" />
+                  <span>Fechas disponibles</span>
+                </button>
+                <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                  <Icon name="shield-check" size="sm" />
+                  <span>Seguro</span>
+                </button>
+                <button 
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  <Icon name="adjustments-horizontal" size="sm" />
+                  <span>Más filtros</span>
+                  <Icon name="chevron-down" size="sm" className={`transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+            </div>
+
+            {/* Expanded Filters */}
+            {showFilters && (
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {/* Specialty */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Especialidad</label>
+                    <select
+                      value={filters.specialty}
+                      onChange={(e) => setFilters({ ...filters, specialty: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    >
+                      {specialties.map((spec) => (
+                        <option key={spec} value={spec}>{spec}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Gender */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Género</label>
+                    <select
+                      value={filters.gender}
+                      onChange={(e) => setFilters({ ...filters, gender: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    >
+                      <option value="">Cualquier género</option>
+                      <option value="male">Masculino</option>
+                      <option value="female">Femenino</option>
+                    </select>
+                  </div>
+
+                  {/* Language */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Idioma</label>
+                    <select
+                      value={filters.language}
+                      onChange={(e) => setFilters({ ...filters, language: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    >
+                      <option value="">Cualquier idioma</option>
+                      <option value="spanish">Español</option>
+                      <option value="english">Inglés</option>
+                      <option value="french">Francés</option>
+                      <option value="german">Alemán</option>
+                    </select>
+                  </div>
+
+                  {/* Price Range */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Precio</label>
+                    <select
+                      value={filters.priceRange}
+                      onChange={(e) => setFilters({ ...filters, priceRange: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    >
+                      <option value="">Cualquier precio</option>
+                      <option value="0-500">$0 - $500 MXN</option>
+                      <option value="500-1000">$500 - $1,000 MXN</option>
+                      <option value="1000-1500">$1,000 - $1,500 MXN</option>
+                      <option value="1500-2000">$1,500 - $2,000 MXN</option>
+                      <option value="2000+">$2,000+ MXN</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Main Content Layout */}
+          <div className="flex gap-6">
+            {/* Doctors List */}
+            <div className="flex-1">
+              {/* Results Summary */}
+              {!loading && !error && (
+                <div className="mb-4 flex items-center justify-between">
+                  <div className="text-sm text-gray-600">
+                    {pagination.totalDoctors > 0 ? (
+                      <>
+                        Los <span className="font-semibold text-gray-900">{pagination.totalDoctors}</span> doctores más recomendados
+                        {filters.location && (
+                          <span> en <span className="font-semibold text-blue-600">{filters.location}</span></span>
+                        )}
+                      </>
+                    ) : (
+                      'No se encontraron doctores'
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-600">Ordenar por:</span>
+                    <select 
+                      value={sortBy}
+                      onChange={(e) => {
+                        setSortBy(e.target.value);
+                        fetchDoctors();
+                      }}
+                      className="text-sm border border-gray-300 rounded px-2 py-1 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="rating">Mejor calificados</option>
+                      <option value="price">Precio más bajo</option>
+                      <option value="availability">Más disponibles</option>
+                      <option value="distance">Más cercanos</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {/* Content Area */}
+              {error ? (
+                <div className="bg-white border border-gray-200 rounded-lg p-6 text-center">
+                  <Icon name="exclamation-triangle" size="lg" className="text-red-500 mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Error al cargar doctores</h3>
+                  <p className="text-gray-600 mb-4">{error}</p>
+                  <Button onClick={fetchDoctors} variant="primary">
+                    <Icon name="arrow-path" size="sm" className="mr-2" />
+                    Reintentar
+                  </Button>
+                </div>
+              ) : loading ? (
+                <div className="space-y-4">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <div key={i} className="bg-white border border-gray-200 rounded-lg p-6 animate-pulse">
+                      <div className="flex items-start gap-4">
+                        <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
+                        <div className="flex-1">
+                          <div className="h-5 bg-gray-200 rounded w-3/4 mb-2"></div>
+                          <div className="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                          <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
+                          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : doctors.length === 0 ? (
+                <div className="bg-white border border-gray-200 rounded-lg p-8 text-center">
+                  <Icon name="user-group" size="xl" className="text-gray-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No se encontraron doctores</h3>
+                  <p className="text-gray-600 mb-6">Intenta ajustar los filtros de búsqueda</p>
+                  <Button 
+                    onClick={() => setFilters({ specialty: '', search: '', available: false, location: '' })}
+                    variant="secondary"
+                  >
+                    <Icon name="x-mark" size="sm" className="mr-2" />
+                    Limpiar filtros
+                  </Button>
+                </div>
+              ) : (
+                /* Doctor List */
+                <div className="space-y-4">
+                  {doctors.map((doctor) => (
+                    <div
+                      key={doctor.user_id}
+                      className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow cursor-pointer"
+                      onClick={() => navigate(`/doctors/${doctor.user_id}`)}
+                    >
+                      <div className="flex items-start gap-4">
+                        {/* Doctor Image */}
+                        <div className="relative flex-shrink-0">
+                          <DoctorImage 
+                            doctorName={doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
+                            size="md"
+                          />
+                          {doctor.license_status === 'verified' && (
+                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center">
+                              <Icon name="check" size="xs" className="text-white" />
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Doctor Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-start justify-between mb-2">
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <h3 className="font-semibold text-gray-900 text-lg">
+                                  {doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
+                                </h3>
+                                {doctor.license_status === 'verified' && (
+                                  <Icon name="shield-check" size="sm" className="text-green-600 flex-shrink-0" />
+                                )}
+                              </div>
+                              <p className="text-sm text-blue-600 font-medium">
+                                {doctor.specialties?.join(', ') || 'Especialidad no especificada'}
+                              </p>
+                            </div>
+                            <div className="text-right">
+                              <div className="flex items-center gap-1 mb-1">
+                                <Icon name="star" size="sm" className="text-yellow-500" />
+                                <span className="text-sm font-medium">{doctor.rating_avg || '4.8'}</span>
+                                <span className="text-sm text-gray-500">({doctor.total_reviews || '0'} opiniones)</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Doctor Details */}
+                          <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                            <div className="flex items-center gap-1">
+                              <Icon name="map-pin" size="sm" />
+                              <span>{doctor.location?.city || 'Ciudad de México'}</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Icon name="clock" size="sm" />
+                              <span>Respuesta rápida</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Icon name="video-camera" size="sm" />
+                              <span>Consulta en línea</span>
+                            </div>
+                          </div>
+
+                          {/* Price and CTA */}
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <span className="text-xs text-gray-500">Primera visita</span>
+                              <p className="text-lg font-bold text-gray-900">
+                                ${doctor.consultation_fees?.base_fee || '800'} MXN
+                              </p>
+                            </div>
+                            <Button
+                              variant="primary"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/doctors/${doctor.user_id}`);
+                              }}
+                              className="px-6 py-2"
+                            >
+                              Ver perfil
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Google Maps Sidebar */}
+            <div className="w-96 flex-shrink-0">
+              <div className="sticky top-6">
+                <div className="bg-white border border-gray-200 rounded-lg p-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-semibold text-gray-900">Ubicaciones</h3>
+                    <button className="text-sm text-blue-600 hover:text-blue-700">
+                      Ampliar mapa
+                    </button>
+                  </div>
+                  <GoogleMaps
+                    doctors={doctors}
+                    center={{ lat: 19.4326, lng: -99.1332 }}
+                    zoom={10}
+                    height="400px"
+                    showSearch={false}
+                    onDoctorSelect={(doctorId) => navigate(`/doctors/${doctorId}`)}
+                    className="rounded-lg"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Results Summary */}
-          {!loading && !error && (
-            <div className="mb-6 flex items-center justify-between">
-              <div className="text-sm text-neutral-600">
-                {pagination.totalDoctors > 0 ? (
-                  <>
-                    Mostrando <span className="font-semibold text-neutral-900">{doctors.length}</span> de{' '}
-                    <span className="font-semibold text-neutral-900">{pagination.totalDoctors}</span> doctores
-                    {filters.specialty && filters.specialty !== 'Todas las especialidades' && (
-                      <span> en <span className="font-semibold text-primary-600">{filters.specialty}</span></span>
-                    )}
-                    {filters.location && (
-                      <span> en <span className="font-semibold text-primary-600">{filters.location}</span></span>
-                    )}
-                  </>
-                ) : (
-                  'No se encontraron doctores'
-                )}
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-neutral-600">Ordenar por:</span>
-                  <select 
-                    value={sortBy}
-                    onChange={(e) => {
-                      setSortBy(e.target.value);
-                      fetchDoctors();
-                    }}
-                    className="text-sm border border-neutral-200 rounded-lg px-3 py-1 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  >
-                    <option value="rating">Mejor calificados</option>
-                    <option value="price">Precio más bajo</option>
-                    <option value="availability">Más disponibles</option>
-                    <option value="distance">Más cercanos</option>
-                  </select>
-                </div>
-                
-                {/* View Mode Toggle */}
-                <div className="flex items-center gap-1 bg-neutral-100 rounded-lg p-1">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      viewMode === 'grid' 
-                        ? 'bg-white text-primary-600 shadow-sm' 
-                        : 'text-neutral-600 hover:text-neutral-800'
-                    }`}
-                  >
-                    <Icon name="squares-2x2" size="sm" className="mr-1" />
-                    Lista
-                  </button>
-                  <button
-                    onClick={() => setViewMode('map')}
-                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                      viewMode === 'map' 
-                        ? 'bg-white text-primary-600 shadow-sm' 
-                        : 'text-neutral-600 hover:text-neutral-800'
-                    }`}
-                  >
-                    <Icon name="map" size="sm" className="mr-1" />
-                    Mapa
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Content Area */}
-          {error ? (
-            <div className="glass-card p-6 sm:p-8 text-center">
-              <Icon name="exclamation-triangle" size="lg" className="text-error-500 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-neutral-900 mb-2">Error al cargar doctores</h3>
-              <p className="text-neutral-600 mb-4">{error}</p>
-              <Button onClick={fetchDoctors} variant="primary">
-                <Icon name="arrow-path" size="sm" className="mr-2" />
-                Reintentar
-              </Button>
-            </div>
-          ) : loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="glass-card p-6 animate-pulse">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-16 h-16 bg-neutral-200 rounded-full"></div>
-                    <div className="flex-1">
-                      <div className="h-5 bg-neutral-200 rounded w-3/4 mb-2"></div>
-                      <div className="h-4 bg-neutral-200 rounded w-1/2"></div>
-                    </div>
-                  </div>
-                  <div className="h-4 bg-neutral-200 rounded w-full mb-2"></div>
-                  <div className="h-4 bg-neutral-200 rounded w-5/6 mb-4"></div>
-                  <div className="h-10 bg-neutral-200 rounded"></div>
-                </div>
-              ))}
-            </div>
-          ) : doctors.length === 0 ? (
-            <div className="glass-card p-8 sm:p-12 text-center">
-              <Icon name="user-group" size="xl" className="text-neutral-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-neutral-900 mb-2">No se encontraron doctores</h3>
-              <p className="text-neutral-600 mb-6">Intenta ajustar los filtros de búsqueda</p>
-              <Button 
-                onClick={() => setFilters({ specialty: '', search: '', available: false, location: '' })}
-                variant="secondary"
-              >
-                <Icon name="x-mark" size="sm" className="mr-2" />
-                Limpiar filtros
-              </Button>
-            </div>
-          ) : viewMode === 'map' ? (
-            /* Map View */
-            <div className="glass-card p-6">
-              <GoogleMaps
-                doctors={doctors}
-                center={{ lat: 19.4326, lng: -99.1332 }}
-                zoom={10}
-                height="600px"
-                showSearch={true}
-                onDoctorSelect={(doctorId) => navigate(`/doctors/${doctorId}`)}
-                className="rounded-lg"
-              />
-            </div>
-          ) : (
-            /* Grid View */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {doctors.map((doctor) => (
-                <div
-                  key={doctor.user_id}
-                  className="bg-white border border-neutral-200 rounded-xl shadow-md group hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer p-6 sm:p-8"
-                  onClick={() => navigate(`/doctors/${doctor.user_id}`)}
-                >
-                  {/* Doctor Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="relative">
-                      <DoctorImage 
-                        doctorName={doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
-                        size="md"
-                      />
-                      {doctor.license_status === 'verified' && (
-                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success-500 border-2 border-white rounded-full flex items-center justify-center">
-                          <Icon name="check" size="xs" className="text-white" />
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-bold text-neutral-900 truncate text-lg">
-                          {doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
-                        </h3>
-                        {doctor.license_status === 'verified' && (
-                          <Icon name="shield-check" size="sm" className="text-success-600 flex-shrink-0" />
-                        )}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Icon name="academic-cap" size="sm" className="text-primary-600" />
-                        <p className="text-sm text-primary-600 font-semibold">
-                          {doctor.specialties?.join(', ') || 'Especialidad no especificada'}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Bio */}
-                  <p className="text-sm text-neutral-600 line-clamp-3 mb-6 leading-relaxed">
-                    {doctor.bio || 'Doctor verificado disponible para consulta inmediata.'}
-                  </p>
-
-                  {/* Stats */}
-                  <div className="flex items-center justify-between text-xs text-neutral-500 mb-6">
-                    <div className="flex items-center gap-1">
-                      <Icon name="identification" size="sm" />
-                      <span>Cédula: {doctor.cedula || 'Verificada'}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="star" size="sm" className="text-warning-500" />
-                      <span>{doctor.rating_avg || '4.8'}/5</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="clock" size="sm" />
-                      <span>Resp. rápida</span>
-                    </div>
-                  </div>
-
-                  {/* Price */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <span className="text-xs text-neutral-500">Consulta desde</span>
-                      <p className="text-lg font-bold text-primary-600">
-                        ${doctor.consultation_fees?.base_fee || '800'} MXN
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-xs text-neutral-500">Telemedicina</span>
-                      <p className="text-sm font-semibold text-accent-600">
-                        ${doctor.consultation_fees?.telemedicine_fee || '640'} MXN
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <Button
-                    variant="primary"
-                    fullWidth
-                    icon="eye"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/doctors/${doctor.user_id}`);
-                    }}
-                    className="group-hover:shadow-lg transition-all duration-200"
-                  >
-                    Ver perfil completo
-                  </Button>
-                </div>
-              ))}
-            </div>
-          )}
-
           {/* Pagination */}
           {!loading && !error && doctors.length > 0 && pagination.totalPages > 1 && (
-            <div className="glass-card mt-8 p-6">
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-neutral-600">
-                  Mostrando {((pagination.currentPage - 1) * pagination.doctorsPerPage) + 1} - {Math.min(pagination.currentPage * pagination.doctorsPerPage, pagination.totalDoctors)} de {pagination.totalDoctors} doctores
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setPagination(prev => ({ ...prev, currentPage: prev.currentPage - 1 }));
-                      fetchDoctors();
-                    }}
-                    disabled={pagination.currentPage === 1}
-                    className="px-3 py-2"
-                  >
-                    <Icon name="chevron-left" size="sm" />
-                  </Button>
+            <div className="mt-8 flex justify-center">
+              <nav className="flex items-center space-x-2">
+                <button
+                  onClick={() => {
+                    setPagination(prev => ({ ...prev, currentPage: prev.currentPage - 1 }));
+                    fetchDoctors();
+                  }}
+                  disabled={pagination.currentPage === 1}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Icon name="chevron-left" size="sm" />
+                </button>
+                
+                <div className="flex items-center space-x-1">
+                  {Array.from({ length: Math.min(7, pagination.totalPages) }, (_, i) => {
+                    const pageNum = Math.max(1, pagination.currentPage - 3) + i;
+                    if (pageNum > pagination.totalPages) return null;
+                    
+                    return (
+                      <button
+                        key={pageNum}
+                        onClick={() => {
+                          setPagination(prev => ({ ...prev, currentPage: pageNum }));
+                          fetchDoctors();
+                        }}
+                        className={`px-3 py-2 text-sm font-medium rounded-md ${
+                          pageNum === pagination.currentPage
+                            ? 'bg-blue-600 text-white'
+                            : 'text-gray-700 bg-white border border-gray-300 hover:bg-gray-50'
+                        }`}
+                      >
+                        {pageNum}
+                      </button>
+                    );
+                  })}
                   
-                  <div className="flex items-center space-x-1">
-                    {Array.from({ length: Math.min(5, pagination.totalPages) }, (_, i) => {
-                      const pageNum = Math.max(1, pagination.currentPage - 2) + i;
-                      if (pageNum > pagination.totalPages) return null;
-                      
-                      return (
-                        <Button
-                          key={pageNum}
-                          variant={pageNum === pagination.currentPage ? "primary" : "secondary"}
-                          onClick={() => {
-                            setPagination(prev => ({ ...prev, currentPage: pageNum }));
-                            fetchDoctors();
-                          }}
-                          className="px-3 py-2 min-w-[40px]"
-                        >
-                          {pageNum}
-                        </Button>
-                      );
-                    })}
-                  </div>
-                  
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setPagination(prev => ({ ...prev, currentPage: prev.currentPage + 1 }));
-                      fetchDoctors();
-                    }}
-                    disabled={pagination.currentPage === pagination.totalPages}
-                    className="px-3 py-2"
-                  >
-                    <Icon name="chevron-right" size="sm" />
-                  </Button>
+                  {pagination.totalPages > 7 && pagination.currentPage < pagination.totalPages - 3 && (
+                    <>
+                      <span className="px-3 py-2 text-sm text-gray-500">...</span>
+                      <button
+                        onClick={() => {
+                          setPagination(prev => ({ ...prev, currentPage: pagination.totalPages }));
+                          fetchDoctors();
+                        }}
+                        className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                      >
+                        {pagination.totalPages}
+                      </button>
+                    </>
+                  )}
                 </div>
-              </div>
+                
+                <button
+                  onClick={() => {
+                    setPagination(prev => ({ ...prev, currentPage: prev.currentPage + 1 }));
+                    fetchDoctors();
+                  }}
+                  disabled={pagination.currentPage === pagination.totalPages}
+                  className="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Icon name="chevron-right" size="sm" />
+                </button>
+              </nav>
             </div>
           )}
         </div>

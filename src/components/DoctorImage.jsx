@@ -4,7 +4,12 @@ export default function DoctorImage({ doctorName, className = '', size = 'md' })
   const [currentPathIndex, setCurrentPathIndex] = useState(0);
   const [imageError, setImageError] = useState(false);
   
-  const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
+  const imageName = 'dr_' + doctorName
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove accents
+    .replace(/[^a-zA-Z0-9\s]/g, '') // Remove special characters
+    .replace(/\s+/g, '_') // Replace spaces with underscores
+    .toLowerCase();
   
   const possiblePaths = [
     `/images/doctors/Nuevo León/Monterrey/${imageName}.webp`,
