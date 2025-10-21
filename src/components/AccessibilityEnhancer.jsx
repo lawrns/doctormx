@@ -8,47 +8,6 @@ export default function AccessibilityEnhancer() {
   const [highContrast, setHighContrast] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
-  useEffect(() => {
-    const observers = [];
-    let keyboardHandler = null;
-
-    // Check for accessibility preferences
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
-    
-    setReducedMotion(prefersReducedMotion);
-    setHighContrast(prefersHighContrast);
-
-    // Apply accessibility settings
-    applyAccessibilitySettings();
-
-    // Set up keyboard navigation
-    keyboardHandler = setupKeyboardNavigation();
-
-    // Add focus management
-    setupFocusManagement();
-
-    // Add screen reader announcements
-    setupScreenReaderAnnouncements(observers);
-
-    // Show accessibility panel in development
-    if (process.env.NODE_ENV === 'development') {
-      setIsVisible(true);
-    }
-
-    return () => {
-      // Cleanup
-      if (keyboardHandler) {
-        document.removeEventListener('keydown', keyboardHandler);
-      }
-      observers.forEach(observer => {
-        if (observer && typeof observer.disconnect === 'function') {
-          observer.disconnect();
-        }
-      });
-    };
-  }, []);
-
   const applyAccessibilitySettings = () => {
     const root = document.documentElement;
     
@@ -129,76 +88,108 @@ export default function AccessibilityEnhancer() {
         outline: 2px solid #3b82f6;
         outline-offset: 2px;
       }
-      
-      .high-contrast {
-        --primary-600: #000000;
-        --neutral-900: #000000;
-        --neutral-700: #000000;
-        --neutral-600: #000000;
-        --neutral-500: #000000;
-        --neutral-400: #000000;
-        --neutral-300: #000000;
-        --neutral-200: #000000;
-        --neutral-100: #ffffff;
-        --neutral-50: #ffffff;
-        --white: #ffffff;
-        --black: #000000;
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #3b82f6;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 1000;
       }
-      
-      .reduce-motion * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+      .skip-link:focus {
+        top: 6px;
       }
     `;
     document.head.appendChild(style);
 
-    // Add focus management for modals
-    const modals = document.querySelectorAll('[role="dialog"]');
-    modals.forEach(modal => {
-      const focusableElements = modal.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      
-      if (focusableElements.length > 0) {
-        focusableElements[0].focus();
-      }
-    });
+    // Add skip link
+    if (!document.querySelector('.skip-link')) {
+      const skipLink = document.createElement('a');
+      skipLink.href = '#main';
+      skipLink.textContent = 'Saltar al contenido principal';
+      skipLink.className = 'skip-link';
+      skipLink.id = 'skip-link';
+      document.body.insertBefore(skipLink, document.body.firstChild);
+    }
   };
 
   const setupScreenReaderAnnouncements = (observers) => {
-    // Create announcement region
-    const announcementRegion = document.createElement('div');
-    announcementRegion.setAttribute('aria-live', 'polite');
-    announcementRegion.setAttribute('aria-atomic', 'true');
-    announcementRegion.className = 'sr-only';
-    announcementRegion.id = 'announcements';
-    document.body.appendChild(announcementRegion);
+    // Create live region for announcements
+    if (!document.querySelector('#live-region')) {
+      const liveRegion = document.createElement('div');
+      liveRegion.id = 'live-region';
+      liveRegion.setAttribute('aria-live', 'polite');
+      liveRegion.setAttribute('aria-atomic', 'true');
+      liveRegion.style.position = 'absolute';
+      liveRegion.style.left = '-10000px';
+      liveRegion.style.width = '1px';
+      liveRegion.style.height = '1px';
+      liveRegion.style.overflow = 'hidden';
+      document.body.appendChild(liveRegion);
+    }
 
-    // Announce page changes
-    const observer = new MutationObserver((mutations) => {
+    // Observe form changes
+    const formObserver = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.type === 'childList') {
-          const newNodes = Array.from(mutation.addedNodes);
-          newNodes.forEach(node => {
-            if (node.nodeType === Node.ELEMENT_NODE) {
-              const heading = node.querySelector('h1, h2, h3');
-              if (heading) {
-                announcementRegion.textContent = `Nueva sección: ${heading.textContent}`;
-              }
-            }
-          });
+          const liveRegion = document.querySelector('#live-region');
+          if (liveRegion) {
+            liveRegion.textContent = 'Formulario actualizado';
+          }
         }
       });
     });
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      formObserver.observe(form, { childList: true, subtree: true });
     });
 
-    observers.push(observer);
+    observers.push(formObserver);
   };
+
+  useEffect(() => {
+    const observers = [];
+    let keyboardHandler = null;
+
+    // Check for accessibility preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
+    
+    setReducedMotion(prefersReducedMotion);
+    setHighContrast(prefersHighContrast);
+
+    // Apply accessibility settings
+    applyAccessibilitySettings();
+
+    // Set up keyboard navigation
+    keyboardHandler = setupKeyboardNavigation();
+
+    // Add focus management
+    setupFocusManagement();
+
+    // Add screen reader announcements
+    setupScreenReaderAnnouncements(observers);
+
+    // Show accessibility panel in development
+    if (process.env.NODE_ENV === 'development') {
+      setIsVisible(true);
+    }
+
+    return () => {
+      // Cleanup
+      if (keyboardHandler) {
+        document.removeEventListener('keydown', keyboardHandler);
+      }
+      observers.forEach(observer => {
+        if (observer && typeof observer.disconnect === 'function') {
+          observer.disconnect();
+        }
+      });
+    };
+  }, [fontSize, highContrast, reducedMotion]);
 
   const handleFontSizeChange = (newSize) => {
     setFontSize(newSize);
@@ -257,39 +248,32 @@ export default function AccessibilityEnhancer() {
 
         {/* High Contrast */}
         <div>
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex items-center gap-2">
             <input
               type="checkbox"
               checked={highContrast}
               onChange={handleHighContrastToggle}
-              className="w-4 h-4 text-primary-600 rounded border-neutral-300 focus:ring-2 focus:ring-primary-500"
+              className="rounded border-neutral-300"
             />
-            <span className="text-xs text-neutral-700">Alto contraste</span>
+            <span className="text-xs font-medium text-neutral-700">
+              Alto contraste
+            </span>
           </label>
         </div>
 
         {/* Reduced Motion */}
         <div>
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex items-center gap-2">
             <input
               type="checkbox"
               checked={reducedMotion}
               onChange={handleReducedMotionToggle}
-              className="w-4 h-4 text-primary-600 rounded border-neutral-300 focus:ring-2 focus:ring-primary-500"
+              className="rounded border-neutral-300"
             />
-            <span className="text-xs text-neutral-700">Reducir animaciones</span>
+            <span className="text-xs font-medium text-neutral-700">
+              Reducir animaciones
+            </span>
           </label>
-        </div>
-
-        {/* Keyboard Shortcuts */}
-        <div>
-          <h4 className="text-xs font-medium text-neutral-700 mb-2">Atajos de teclado</h4>
-          <div className="text-xs text-neutral-600 space-y-1">
-            <div>Tab: Navegar</div>
-            <div>Enter: Activar</div>
-            <div>Escape: Cerrar</div>
-            <div>Flechas: Menús</div>
-          </div>
         </div>
       </div>
     </div>
