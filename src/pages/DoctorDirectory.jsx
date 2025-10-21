@@ -474,13 +474,13 @@ export default function DoctorDirectory() {
                   <Button
                     variant="primary"
                     fullWidth
+                    icon="eye"
                     onClick={(e) => {
                       e.stopPropagation();
                       navigate(`/doctors/${doctor.user_id}`);
                     }}
                     className="group-hover:shadow-lg transition-all duration-200"
                   >
-                    <Icon name="eye" size="sm" className="mr-2" />
                     Ver perfil completo
                   </Button>
                 </div>

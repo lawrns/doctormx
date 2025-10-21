@@ -256,30 +256,30 @@ export default function DoctorProfile() {
                 <Button
                   variant="primary"
                   size="lg"
+                  icon="calendar-days"
                   onClick={() => setShowBookingModal(true)}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center"
                 >
-                  <Icon name="calendar" size="sm" />
                   Agendar Cita
                 </Button>
                 
                 <Button
                   variant="secondary"
                   size="lg"
+                  icon="video-camera"
                   onClick={() => navigate('/doctor')}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center"
                 >
-                  <Icon name="chat-bubble-left-right" size="sm" />
                   Consulta Telemedicina
                 </Button>
                 
                 <Button
                   variant="outline"
                   size="lg"
+                  icon="phone"
                   onClick={() => setActiveTab('contact')}
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center"
                 >
-                  <Icon name="phone" size="sm" />
                   Contactar
                 </Button>
               </div>
@@ -546,19 +546,19 @@ export default function DoctorProfile() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
                       variant="primary"
+                      icon="calendar-days"
                       onClick={() => setShowBookingModal(true)}
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center"
                     >
-                      <Icon name="calendar" size="sm" />
                       Agendar Cita Presencial
                     </Button>
                     
                     <Button
                       variant="secondary"
+                      icon="video-camera"
                       onClick={() => navigate('/doctor')}
-                      className="flex items-center justify-center gap-2"
+                      className="flex items-center justify-center"
                     >
-                      <Icon name="chat-bubble-left-right" size="sm" />
                       Consulta Telemedicina
                     </Button>
                   </div>

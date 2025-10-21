@@ -21,6 +21,7 @@ import {
   XMarkIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  ChevronLeftIcon,
   
   // Communication
   ChatBubbleLeftRightIcon,
@@ -51,6 +52,22 @@ import {
   ArrowLeftIcon,
   ArrowRightIcon,
   ArrowPathIcon,
+  
+  // Calendar & Time
+  CalendarDaysIcon,
+  CalendarIcon,
+  
+  // Video & Media
+  VideoCameraIcon,
+  CameraIcon,
+  
+  // Location & Maps
+  MapPinIcon,
+  MapIcon,
+  
+  // Identification & Documents
+  IdentificationIcon,
+  UserIcon,
   
   // Targets & Navigation
   AcademicCapIcon as TargetIcon,
@@ -244,6 +261,7 @@ const Icon = ({
       'XMarkIcon': XMarkIcon,
       'ChevronDownIcon': ChevronDownIcon,
       'ChevronRightIcon': ChevronRightIcon,
+      'ChevronLeftIcon': ChevronLeftIcon,
       'ChatBubbleLeftRightIcon': ChatBubbleLeftRightIcon,
       'PhoneIcon': PhoneIcon,
       'EnvelopeIcon': EnvelopeIcon,
@@ -266,6 +284,14 @@ const Icon = ({
       'ArrowLeftIcon': ArrowLeftIcon,
       'ArrowRightIcon': ArrowRightIcon,
       'ArrowPathIcon': ArrowPathIcon,
+      'CalendarDaysIcon': CalendarDaysIcon,
+      'CalendarIcon': CalendarIcon,
+      'VideoCameraIcon': VideoCameraIcon,
+      'CameraIcon': CameraIcon,
+      'MapPinIcon': MapPinIcon,
+      'MapIcon': MapIcon,
+      'IdentificationIcon': IdentificationIcon,
+      'UserIcon': UserIcon,
       'TargetIcon': TargetIcon,
       'RocketIcon': RocketIcon,
       'DocumentIcon': DocumentIcon,
