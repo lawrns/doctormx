@@ -105,15 +105,6 @@ export default function MobileOptimizer() {
       document.head.appendChild(viewportMeta);
     }
 
-    // Add touch event optimizations
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: true });
-    document.addEventListener('touchend', handleTouchEnd, { passive: true });
-
-    // Add mobile-specific event listeners
-    document.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleResize);
-
     // Add pull-to-refresh prevention
     let startY = 0;
     const handleTouchStart = (e) => {
@@ -146,6 +137,15 @@ export default function MobileOptimizer() {
       const isMobileDevice = window.innerWidth <= 768;
       setIsMobile(isMobileDevice);
     };
+
+    // Add touch event optimizations
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: true });
+    document.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    // Add mobile-specific event listeners
+    document.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleResize);
   };
 
   const showMobileOptimizations = () => {
