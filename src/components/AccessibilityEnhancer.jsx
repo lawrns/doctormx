@@ -10,6 +10,7 @@ export default function AccessibilityEnhancer() {
 
   useEffect(() => {
     const observers = [];
+    let keyboardHandler = null;
 
     // Check for accessibility preferences
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -22,7 +23,7 @@ export default function AccessibilityEnhancer() {
     applyAccessibilitySettings();
 
     // Set up keyboard navigation
-    setupKeyboardNavigation();
+    keyboardHandler = setupKeyboardNavigation();
 
     // Add focus management
     setupFocusManagement();
@@ -37,7 +38,9 @@ export default function AccessibilityEnhancer() {
 
     return () => {
       // Cleanup
-      document.removeEventListener('keydown', handleKeyboardNavigation);
+      if (keyboardHandler) {
+        document.removeEventListener('keydown', keyboardHandler);
+      }
       observers.forEach(observer => {
         if (observer && typeof observer.disconnect === 'function') {
           observer.disconnect();
@@ -115,6 +118,7 @@ export default function AccessibilityEnhancer() {
     };
 
     document.addEventListener('keydown', handleKeyboardNavigation);
+    return handleKeyboardNavigation;
   };
 
   const setupFocusManagement = () => {
