@@ -71,11 +71,8 @@ import {
   
   // Additional icons
   LanguageIcon,
-  CurrencyDollarIcon,
-  BrainIcon,
   HandThumbUpIcon,
   PaperAirplaneIcon,
-  ArrowPathIcon,
   HomeIcon,
   DevicePhoneMobileIcon,
   
@@ -303,11 +300,8 @@ const Icon = ({
       'IdentificationIcon': IdentificationIcon,
       'UserIcon': UserIcon,
       'LanguageIcon': LanguageIcon,
-      'CurrencyDollarIcon': CurrencyDollarIcon,
-      'BrainIcon': BrainIcon,
       'HandThumbUpIcon': HandThumbUpIcon,
       'PaperAirplaneIcon': PaperAirplaneIcon,
-      'ArrowPathIcon': ArrowPathIcon,
       'HomeIcon': HomeIcon,
       'DevicePhoneMobileIcon': DevicePhoneMobileIcon,
       'TargetIcon': TargetIcon,
