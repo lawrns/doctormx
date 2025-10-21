@@ -9,6 +9,8 @@ export default function AccessibilityEnhancer() {
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+    const observers = [];
+
     // Check for accessibility preferences
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const prefersHighContrast = window.matchMedia('(prefers-contrast: high)').matches;
@@ -26,7 +28,7 @@ export default function AccessibilityEnhancer() {
     setupFocusManagement();
 
     // Add screen reader announcements
-    setupScreenReaderAnnouncements();
+    setupScreenReaderAnnouncements(observers);
 
     // Show accessibility panel in development
     if (process.env.NODE_ENV === 'development') {
@@ -36,6 +38,11 @@ export default function AccessibilityEnhancer() {
     return () => {
       // Cleanup
       document.removeEventListener('keydown', handleKeyboardNavigation);
+      observers.forEach(observer => {
+        if (observer && typeof observer.disconnect === 'function') {
+          observer.disconnect();
+        }
+      });
     };
   }, []);
 
@@ -155,7 +162,7 @@ export default function AccessibilityEnhancer() {
     });
   };
 
-  const setupScreenReaderAnnouncements = () => {
+  const setupScreenReaderAnnouncements = (observers) => {
     // Create announcement region
     const announcementRegion = document.createElement('div');
     announcementRegion.setAttribute('aria-live', 'polite');
@@ -185,6 +192,8 @@ export default function AccessibilityEnhancer() {
       childList: true,
       subtree: true
     });
+
+    observers.push(observer);
   };
 
   const handleFontSizeChange = (newSize) => {

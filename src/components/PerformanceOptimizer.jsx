@@ -4,6 +4,8 @@ export default function PerformanceOptimizer() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const observers = [];
+
     // Preload critical images
     const preloadImages = [
       '/images/doctor.png',
@@ -36,7 +38,7 @@ export default function PerformanceOptimizer() {
     // Set up performance monitoring
     if ('performance' in window && 'PerformanceObserver' in window) {
       try {
-        const observer = new PerformanceObserver((list) => {
+        const performanceObserver = new PerformanceObserver((list) => {
           for (const entry of list.getEntries()) {
             if (entry.entryType === 'largest-contentful-paint') {
               console.log('LCP:', entry.startTime);
@@ -47,7 +49,8 @@ export default function PerformanceOptimizer() {
           }
         });
 
-        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+        performanceObserver.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+        observers.push(performanceObserver);
       } catch (error) {
         console.warn('PerformanceObserver not supported:', error);
       }
@@ -58,7 +61,7 @@ export default function PerformanceOptimizer() {
       const elements = document.querySelectorAll('[data-lazy]');
       
       if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
+        const intersectionObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const element = entry.target;
@@ -69,12 +72,13 @@ export default function PerformanceOptimizer() {
                 element.innerHTML = module.default;
               });
               
-              observer.unobserve(element);
+              intersectionObserver.unobserve(element);
             }
           });
         });
 
-        elements.forEach(element => observer.observe(element));
+        elements.forEach(element => intersectionObserver.observe(element));
+        observers.push(intersectionObserver);
       } else {
         // Fallback: load all components immediately if IntersectionObserver is not supported
         elements.forEach(element => {
@@ -95,10 +99,12 @@ export default function PerformanceOptimizer() {
     }
 
     return () => {
-      // Cleanup
-      if (observer) {
-        observer.disconnect();
-      }
+      // Cleanup all observers
+      observers.forEach(observer => {
+        if (observer && typeof observer.disconnect === 'function') {
+          observer.disconnect();
+        }
+      });
     };
   }, []);
 
