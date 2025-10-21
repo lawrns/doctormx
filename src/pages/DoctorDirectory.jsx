@@ -9,6 +9,7 @@ import Button from '../components/ui/Button';
 import Alert from '../components/ui/Alert';
 import Icon from '../components/ui/Icon';
 import GoogleMaps from '../components/GoogleMaps';
+import DoctorImage from '../components/DoctorImage';
 
 export default function DoctorDirectory() {
   const [doctors, setDoctors] = useState([]);
@@ -404,60 +405,10 @@ export default function DoctorDirectory() {
                   {/* Doctor Header */}
                   <div className="flex items-start gap-4 mb-6">
                     <div className="relative">
-                      {(() => {
-                        const doctorName = doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre';
-                        const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
-                        
-                        // Generate image path based on doctor name hash to distribute across locations
-                        const hash = doctorName.split('').reduce((a, b) => {
-                          a = ((a << 5) - a) + b.charCodeAt(0);
-                          return a & a;
-                        }, 0);
-                        const locationIndex = Math.abs(hash) % 20;
-                        
-                        const locations = [
-                          'Ciudad de México/ciudad-de-mexico',
-                          'Nuevo León/Monterrey', 
-                          'Jalisco/Guadalajara',
-                          'Puebla/Puebla',
-                          'Guanajuato/leon',
-                          'Quintana Roo/cancun',
-                          'Yucatán/merida',
-                          'Oaxaca/Oaxaca',
-                          'Michoacán/Morelia',
-                          'Sonora/Hermosillo',
-                          'Sinaloa/culiacan',
-                          'Tabasco/Villahermosa',
-                          'Tamaulipas/Tampico',
-                          'Veracruz/Xalapa',
-                          'Chihuahua/Chihuahua',
-                          'Coahuila/Saltillo',
-                          'Campeche/Campeche',
-                          'Chiapas/tuxtla-gutierrez',
-                          'Aguascalientes/Aguascalientes',
-                          'Baja California/Tijuana'
-                        ];
-                        
-                        const imagePath = `/images/doctors/${locations[locationIndex]}/${imageName}.webp`;
-                        
-                        return (
-                          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
-                            <img
-                              src={imagePath}
-                              alt={doctorName}
-                              className="w-full h-full object-cover"
-                              onError={(e) => {
-                                // Fallback to initials if image doesn't exist
-                                e.target.style.display = 'none';
-                                e.target.nextSibling.style.display = 'flex';
-                              }}
-                            />
-                            <div className="w-full h-full bg-gradient-to-br from-primary-500 to-accent-600 flex items-center justify-center text-white text-xl font-bold" style={{ display: 'none' }}>
-                              {doctorName.charAt(0)}
-                            </div>
-                          </div>
-                        );
-                      })()}
+                      <DoctorImage 
+                        doctorName={doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
+                        size="md"
+                      />
                       {doctor.license_status === 'verified' && (
                         <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-success-500 border-2 border-white rounded-full flex items-center justify-center">
                           <Icon name="check" size="xs" className="text-white" />

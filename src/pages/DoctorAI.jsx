@@ -34,11 +34,16 @@ export default function DoctorAI() {
 
   // Función para extraer especialidad de la respuesta del bot
   const extractSpecialty = (message) => {
-    if (!message || typeof message !== 'string') {
+    if (!message || typeof message !== 'string' || message === '') {
       return null;
     }
-    const derivacionMatch = message.match(/Especialidad Sugerida:\s*([^\n\.]+)/i);
-    return derivacionMatch ? derivacionMatch[1].trim() : null;
+    try {
+      const derivacionMatch = message.match(/Especialidad Sugerida:\s*([^\n\.]+)/i);
+      return derivacionMatch ? derivacionMatch[1].trim() : null;
+    } catch (error) {
+      console.warn('Error in extractSpecialty:', error);
+      return null;
+    }
   };
 
   // Función para buscar especialistas y agregar al chat

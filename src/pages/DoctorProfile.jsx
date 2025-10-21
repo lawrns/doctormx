@@ -10,6 +10,7 @@ import Badge from '../components/ui/Badge';
 import Icon from '../components/ui/Icon';
 import Alert from '../components/ui/Alert';
 import { DoctorLocationMap } from '../components/GoogleMaps';
+import DoctorImage from '../components/DoctorImage';
 
 export default function DoctorProfile() {
   const { id } = useParams();
@@ -129,41 +130,6 @@ export default function DoctorProfile() {
     }
   }
 
-  function getImagePath(doctorName) {
-    const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
-    
-    // Generate image path based on doctor name hash to distribute across locations
-    const hash = doctorName.split('').reduce((a, b) => {
-      a = ((a << 5) - a) + b.charCodeAt(0);
-      return a & a;
-    }, 0);
-    const locationIndex = Math.abs(hash) % 20;
-    
-    const locations = [
-      'Ciudad de México/ciudad-de-mexico',
-      'Nuevo León/Monterrey', 
-      'Jalisco/Guadalajara',
-      'Puebla/Puebla',
-      'Guanajuato/leon',
-      'Quintana Roo/cancun',
-      'Yucatán/merida',
-      'Oaxaca/Oaxaca',
-      'Michoacán/Morelia',
-      'Sonora/Hermosillo',
-      'Sinaloa/culiacan',
-      'Tabasco/Villahermosa',
-      'Tamaulipas/Tampico',
-      'Veracruz/Xalapa',
-      'Chihuahua/Chihuahua',
-      'Coahuila/Saltillo',
-      'Campeche/Campeche',
-      'Chiapas/tuxtla-gutierrez',
-      'Aguascalientes/Aguascalientes',
-      'Baja California/Tijuana'
-    ];
-    
-    return `/images/doctors/${locations[locationIndex]}/${imageName}.webp`;
-  }
 
   function renderStars(rating) {
     const stars = [];
@@ -232,18 +198,11 @@ export default function DoctorProfile() {
               {/* Doctor Image and Basic Info */}
               <div className="flex flex-col sm:flex-row lg:flex-col items-center lg:items-start gap-4 lg:gap-6">
                 <div className="relative">
-                           <img
-                             src={getImagePath(doctor.full_name)}
-                             alt={doctor.full_name}
-                    className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-lg"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'flex';
-                    }}
+                  <DoctorImage 
+                    doctorName={doctor.full_name}
+                    size="lg"
+                    className="border-4 border-white"
                   />
-                  <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ display: 'none' }}>
-                    {doctor.full_name.charAt(0)}
-                  </div>
                   {doctor.license_status === 'verified' && (
                     <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-success-500 border-4 border-white rounded-full flex items-center justify-center">
                       <Icon name="check" size="sm" className="text-white" />
