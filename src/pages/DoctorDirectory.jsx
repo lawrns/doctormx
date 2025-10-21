@@ -70,10 +70,6 @@ export default function DoctorDirectory() {
     'Dentista'
   ];
 
-  useEffect(() => {
-    fetchDoctors();
-  }, [filters]);
-
   async function fetchDoctors() {
     try {
       setLoading(true);
@@ -127,6 +123,10 @@ export default function DoctorDirectory() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    fetchDoctors();
+  }, [filters]);
 
   return (
     <Layout>

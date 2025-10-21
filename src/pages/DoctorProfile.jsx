@@ -34,11 +34,6 @@ export default function DoctorProfile() {
   const [reviews, setReviews] = useState([]);
   const [loadingReviews, setLoadingReviews] = useState(false);
 
-  useEffect(() => {
-    fetchDoctor();
-    fetchReviews();
-  }, [id]);
-
   async function fetchDoctor() {
     try {
       setLoading(true);
@@ -100,6 +95,11 @@ export default function DoctorProfile() {
       setLoadingReviews(false);
     }
   }
+
+  useEffect(() => {
+    fetchDoctor();
+    fetchReviews();
+  }, [id]);
 
   async function handleBooking() {
     if (!user) {
