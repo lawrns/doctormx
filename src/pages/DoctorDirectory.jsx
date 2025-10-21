@@ -8,6 +8,7 @@ import Badge from '../components/ui/Badge';
 import Button from '../components/ui/Button';
 import Alert from '../components/ui/Alert';
 import Icon from '../components/ui/Icon';
+import GoogleMaps from '../components/GoogleMaps';
 
 export default function DoctorDirectory() {
   const [doctors, setDoctors] = useState([]);
@@ -19,25 +20,48 @@ export default function DoctorDirectory() {
     available: false,
     location: ''
   });
+  const [sortBy, setSortBy] = useState('rating');
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
     totalDoctors: 0,
     doctorsPerPage: 12
   });
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'map'
   const navigate = useNavigate();
 
   const specialties = [
+    'Todas las especialidades',
     'Medicina General',
-    'Pediatría',
     'Cardiología',
     'Dermatología',
     'Ginecología',
+    'Pediatría',
     'Psiquiatría',
-    'Traumatología',
+    'Neurología',
     'Oftalmología',
+    'Otorrinolaringología',
+    'Traumatología',
+    'Urología',
+    'Gastroenterología',
     'Endocrinología',
-    'Neurología'
+    'Neumología',
+    'Oncología',
+    'Anestesiología',
+    'Cirugía General',
+    'Medicina Interna',
+    'Radiología',
+    'Medicina Familiar',
+    'Geriatría',
+    'Infectología',
+    'Nefrología',
+    'Reumatología',
+    'Hematología',
+    'Alergología',
+    'Inmunología',
+    'Nutriología',
+    'Psicología',
+    'Dentista'
   ];
 
   useEffect(() => {
@@ -62,6 +86,9 @@ export default function DoctorDirectory() {
       if (filters.location) {
         params.append('location', filters.location);
       }
+      
+      // Add sorting parameter
+      params.append('sort', sortBy);
       
       // Add pagination parameters
       const offset = (pagination.currentPage - 1) * pagination.doctorsPerPage;
@@ -160,7 +187,6 @@ export default function DoctorDirectory() {
                   onChange={(e) => setFilters({ ...filters, specialty: e.target.value })}
                   className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
                 >
-                  <option value="">Todas las especialidades</option>
                   {specialties.map((spec) => (
                     <option key={spec} value={spec}>
                       {spec}
@@ -191,6 +217,36 @@ export default function DoctorDirectory() {
                   <option value="Torreón">Torreón</option>
                   <option value="Querétaro">Querétaro</option>
                   <option value="San Luis Potosí">San Luis Potosí</option>
+                  <option value="Hermosillo">Hermosillo</option>
+                  <option value="Saltillo">Saltillo</option>
+                  <option value="Tampico">Tampico</option>
+                  <option value="Culiacán">Culiacán</option>
+                  <option value="Morelia">Morelia</option>
+                  <option value="Oaxaca">Oaxaca</option>
+                  <option value="Tuxtla Gutiérrez">Tuxtla Gutiérrez</option>
+                  <option value="Villahermosa">Villahermosa</option>
+                  <option value="Campeche">Campeche</option>
+                  <option value="Aguascalientes">Aguascalientes</option>
+                  <option value="Colima">Colima</option>
+                  <option value="Durango">Durango</option>
+                  <option value="Acapulco">Acapulco</option>
+                  <option value="Pachuca">Pachuca</option>
+                  <option value="Toluca">Toluca</option>
+                  <option value="Cuernavaca">Cuernavaca</option>
+                  <option value="Tepic">Tepic</option>
+                  <option value="Mérida">Mérida</option>
+                  <option value="Cancún">Cancún</option>
+                  <option value="Playa del Carmen">Playa del Carmen</option>
+                  <option value="Mexicali">Mexicali</option>
+                  <option value="Ensenada">Ensenada</option>
+                  <option value="Chihuahua">Chihuahua</option>
+                  <option value="Ciudad Obregón">Ciudad Obregón</option>
+                  <option value="Reynosa">Reynosa</option>
+                  <option value="Mazatlán">Mazatlán</option>
+                  <option value="Uruapan">Uruapan</option>
+                  <option value="Zacatecas">Zacatecas</option>
+                  <option value="Fresnillo">Fresnillo</option>
+                  <option value="Guadalupe">Guadalupe</option>
                 </select>
               </div>
 
@@ -231,19 +287,54 @@ export default function DoctorDirectory() {
                   'No se encontraron doctores'
                 )}
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-neutral-600">Ordenar por:</span>
-                <select className="text-sm border border-neutral-200 rounded-lg px-3 py-1 focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
-                  <option value="rating">Mejor calificados</option>
-                  <option value="price">Precio más bajo</option>
-                  <option value="availability">Más disponibles</option>
-                  <option value="distance">Más cercanos</option>
-                </select>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-neutral-600">Ordenar por:</span>
+                  <select 
+                    value={sortBy}
+                    onChange={(e) => {
+                      setSortBy(e.target.value);
+                      fetchDoctors();
+                    }}
+                    className="text-sm border border-neutral-200 rounded-lg px-3 py-1 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  >
+                    <option value="rating">Mejor calificados</option>
+                    <option value="price">Precio más bajo</option>
+                    <option value="availability">Más disponibles</option>
+                    <option value="distance">Más cercanos</option>
+                  </select>
+                </div>
+                
+                {/* View Mode Toggle */}
+                <div className="flex items-center gap-1 bg-neutral-100 rounded-lg p-1">
+                  <button
+                    onClick={() => setViewMode('grid')}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                      viewMode === 'grid' 
+                        ? 'bg-white text-primary-600 shadow-sm' 
+                        : 'text-neutral-600 hover:text-neutral-800'
+                    }`}
+                  >
+                    <Icon name="squares-2x2" size="sm" className="mr-1" />
+                    Lista
+                  </button>
+                  <button
+                    onClick={() => setViewMode('map')}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
+                      viewMode === 'map' 
+                        ? 'bg-white text-primary-600 shadow-sm' 
+                        : 'text-neutral-600 hover:text-neutral-800'
+                    }`}
+                  >
+                    <Icon name="map" size="sm" className="mr-1" />
+                    Mapa
+                  </button>
+                </div>
               </div>
             </div>
           )}
 
-          {/* Doctors Grid */}
+          {/* Content Area */}
           {error ? (
             <div className="glass-card p-6 sm:p-8 text-center">
               <Icon name="exclamation-triangle" size="lg" className="text-error-500 mx-auto mb-4" />
@@ -277,14 +368,28 @@ export default function DoctorDirectory() {
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">No se encontraron doctores</h3>
               <p className="text-neutral-600 mb-6">Intenta ajustar los filtros de búsqueda</p>
               <Button 
-                onClick={() => setFilters({ specialty: '', search: '', available: false })}
+                onClick={() => setFilters({ specialty: '', search: '', available: false, location: '' })}
                 variant="secondary"
               >
                 <Icon name="x-mark" size="sm" className="mr-2" />
                 Limpiar filtros
               </Button>
             </div>
+          ) : viewMode === 'map' ? (
+            /* Map View */
+            <div className="glass-card p-6">
+              <GoogleMaps
+                doctors={doctors}
+                center={{ lat: 19.4326, lng: -99.1332 }}
+                zoom={10}
+                height="600px"
+                showSearch={true}
+                onDoctorSelect={(doctorId) => navigate(`/doctors/${doctorId}`)}
+                className="rounded-lg"
+              />
+            </div>
           ) : (
+            /* Grid View */
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {doctors.map((doctor) => (
                 <div
@@ -297,11 +402,13 @@ export default function DoctorDirectory() {
                     <div className="relative">
                       {(() => {
                         const doctorName = doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre';
-                        const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
-                        const imagePath = `/images/doctors/Ciudad de México/Ciudad de México/${imageName}.webp`;
+                        const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
+                        const state = doctor.state || 'Ciudad de México';
+                        const city = doctor.city || 'Ciudad de México';
+                        const imagePath = `/images/doctors/${state}/${city}/${imageName}.webp`;
                         
                         return (
-                          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg">
+                          <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
                             <img
                               src={imagePath}
                               alt={doctorName}

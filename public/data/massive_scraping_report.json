@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "totalDoctors": 28,
+    "totalImages": 28,
+    "totalErrors": 4873,
+    "duration": "3266 seconds",
+    "processedSpecialties": 10,
+    "processedLocations": 122
+  },
+  "performance": {
+    "doctorsPerSecond": "0.01",
+    "imagesPerSecond": "0.01",
+    "errorRate": "99.43%"
+  }
+}

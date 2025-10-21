@@ -3,6 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
+import LoadingSpinner from '../components/ui/LoadingSpinner';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+import Badge from '../components/ui/Badge';
+import Icon from '../components/ui/Icon';
+import Alert from '../components/ui/Alert';
+import { DoctorLocationMap } from '../components/GoogleMaps';
 
 export default function DoctorProfile() {
   const { id } = useParams();
@@ -10,15 +17,28 @@ export default function DoctorProfile() {
   const { user } = useAuth();
   const [doctor, setDoctor] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [consultType, setConsultType] = useState('chat');
+  const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [showBookingModal, setShowBookingModal] = useState(false);
+  const [bookingData, setBookingData] = useState({
+    type: 'in-person',
+    date: '',
+    time: '',
+    reason: '',
+    urgency: 'routine'
+  });
+  const [reviews, setReviews] = useState([]);
+  const [loadingReviews, setLoadingReviews] = useState(false);
 
   useEffect(() => {
     fetchDoctor();
+    fetchReviews();
   }, [id]);
 
   async function fetchDoctor() {
     try {
       setLoading(true);
+      setError(null);
       const response = await fetch(`/api/doctors/${id}`);
       const data = await response.json();
       
@@ -29,12 +49,51 @@ export default function DoctorProfile() {
       setDoctor(data.doctor);
     } catch (error) {
       console.error('Error fetching doctor:', error);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
   }
 
-  async function startConsultation() {
+  async function fetchReviews() {
+    try {
+      setLoadingReviews(true);
+      // Simulate fetching reviews - in real implementation, this would come from API
+      const mockReviews = [
+        {
+          id: 1,
+          patient_name: 'María González',
+          rating: 5,
+          comment: 'Excelente atención, muy profesional y empático. Recomiendo ampliamente.',
+          date: '2024-01-15',
+          verified: true
+        },
+        {
+          id: 2,
+          patient_name: 'Carlos Rodríguez',
+          rating: 4,
+          comment: 'Muy buen doctor, explica todo claramente. La consulta fue muy útil.',
+          date: '2024-01-10',
+          verified: true
+        },
+        {
+          id: 3,
+          patient_name: 'Ana Martínez',
+          rating: 5,
+          comment: 'Profesional y atento. Resolvió mis dudas de manera clara y concisa.',
+          date: '2024-01-05',
+          verified: false
+        }
+      ];
+      setReviews(mockReviews);
+    } catch (error) {
+      console.error('Error fetching reviews:', error);
+    } finally {
+      setLoadingReviews(false);
+    }
+  }
+
+  async function handleBooking() {
     if (!user) {
       navigate('/login?redirect=/doctors/' + id);
       return;
@@ -42,42 +101,71 @@ export default function DoctorProfile() {
 
     try {
       const { data, error } = await supabase
-        .from('consults')
+        .from('bookings')
         .insert({
           patient_id: user.id,
-          doctor_id: doctor.id,
-          type: consultType,
-          status: 'pending',
-          triage: {}
-        })
-        .select()
-        .single();
+          doctor_id: id,
+          type: bookingData.type,
+          date: bookingData.date,
+          time: bookingData.time,
+          reason: bookingData.reason,
+          urgency: bookingData.urgency,
+          status: 'pending'
+        });
 
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
 
-      navigate(`/pay/checkout?consult=${data.id}`);
+      alert('Cita agendada exitosamente. Te contactaremos pronto para confirmar.');
+      setShowBookingModal(false);
     } catch (error) {
-      console.error('Error creating consultation:', error);
-      alert('Error al iniciar consulta. Intenta de nuevo.');
+      console.error('Error booking appointment:', error);
+      alert('Error al agendar la cita. Intenta nuevamente.');
     }
+  }
+
+  function getImagePath(doctorName, state = 'Ciudad de México', city = 'Ciudad de México') {
+    const sanitizedName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
+    return `/images/doctors/${state}/${city}/${sanitizedName}.webp`;
+  }
+
+  function renderStars(rating) {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<Icon key={i} name="star" size="sm" className="text-yellow-400" />);
+    }
+
+    if (hasHalfStar) {
+      stars.push(<Icon key="half" name="star-half" size="sm" className="text-yellow-400" />);
+    }
+
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<Icon key={`empty-${i}`} name="star" size="sm" className="text-gray-300" />);
+    }
+
+    return stars;
   }
 
   if (loading) {
     return (
       <Layout>
-        <div className="min-h-screen bg-gray-50 py-16">
-          <div className="mx-auto max-w-4xl px-6">
-            <div className="bg-white rounded-2xl border border-ink-border p-8 animate-pulse">
-              <div className="flex items-start gap-6 mb-6">
-                <div className="w-24 h-24 bg-gray-200 rounded-full"></div>
-                <div className="flex-1">
-                  <div className="h-8 bg-gray-200 rounded w-1/2 mb-4"></div>
-                  <div className="h-5 bg-gray-200 rounded w-1/3 mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="min-h-screen bg-gradient-medical flex items-center justify-center">
+          <LoadingSpinner size="lg" />
+        </div>
+      </Layout>
+    );
+  }
+
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen bg-gradient-medical flex items-center justify-center">
+          <Alert variant="error" title="Error" message={error} />
         </div>
       </Layout>
     );
@@ -86,16 +174,8 @@ export default function DoctorProfile() {
   if (!doctor) {
     return (
       <Layout>
-        <div className="min-h-screen bg-gray-50 py-16">
-          <div className="mx-auto max-w-4xl px-6 text-center">
-            <h2 className="text-2xl font-bold text-ink-primary mb-4">Doctor no encontrado</h2>
-            <button
-              onClick={() => navigate('/doctors')}
-              className="text-brand-600 hover:text-brand-700 font-medium"
-            >
-              Volver al directorio
-            </button>
-          </div>
+        <div className="min-h-screen bg-gradient-medical flex items-center justify-center">
+          <Alert variant="error" title="Doctor no encontrado" message="El doctor solicitado no existe." />
         </div>
       </Layout>
     );
@@ -103,168 +183,502 @@ export default function DoctorProfile() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 py-16">
-        <div className="mx-auto max-w-5xl px-6 md:px-8">
-          {/* Back button */}
-          <button
-            onClick={() => navigate('/doctors')}
-            className="inline-flex items-center gap-2 text-ink-secondary hover:text-brand-600 mb-6 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Volver al directorio
-          </button>
+      <div className="relative bg-gradient-medical min-h-screen">
+        {/* Background decoration */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-100/40 to-accent-100/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-secondary-100/30 to-primary-100/20 rounded-full blur-3xl"></div>
+        </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Profile */}
-            <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl border border-ink-border shadow-sm p-8 mb-6">
-                {/* Header */}
-                <div className="flex items-start gap-6 mb-6">
-                  <div className="relative">
-                    <div className="w-24 h-24 bg-gradient-to-br from-medical-500 to-medical-600 rounded-full flex items-center justify-center text-white text-3xl font-bold">
-                      {doctor.users?.name?.charAt(0) || 'D'}
-                    </div>
-                    {doctor.available && (
-                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-4 border-white rounded-full"></div>
-                    )}
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+          {/* Doctor Header */}
+          <div className="glass-card mb-8 p-6 sm:p-8">
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+              {/* Doctor Image and Basic Info */}
+              <div className="flex flex-col sm:flex-row lg:flex-col items-center lg:items-start gap-4 lg:gap-6">
+                <div className="relative">
+                  <img
+                    src={getImagePath(doctor.full_name, doctor.state, doctor.city)}
+                    alt={doctor.full_name}
+                    className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-lg"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-primary-500 to-accent-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg" style={{ display: 'none' }}>
+                    {doctor.full_name.charAt(0)}
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <h1 className="text-3xl font-bold text-ink-primary">
-                        {doctor.users?.name || 'Dr. Sin Nombre'}
-                      </h1>
-                      {doctor.license_status === 'verified' && (
-                        <svg className="w-7 h-7 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                      )}
+                  {doctor.license_status === 'verified' && (
+                    <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-success-500 border-4 border-white rounded-full flex items-center justify-center">
+                      <Icon name="check" size="sm" className="text-white" />
                     </div>
-                    <p className="text-lg text-brand-600 font-semibold mb-2">{doctor.specialties?.join(', ') || 'Medicina General'}</p>
-                    {doctor.available ? (
-                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Disponible ahora
+                  )}
+                </div>
+                
+                <div className="text-center lg:text-left">
+                  <h1 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-2">
+                    {doctor.full_name}
+                  </h1>
+                  <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
+                    <Icon name="academic-cap" size="sm" className="text-primary-600" />
+                    <span className="text-lg text-primary-600 font-semibold">
+                      {doctor.specialties?.join(', ') || 'Especialidad no especificada'}
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
+                    <div className="flex items-center gap-1">
+                      {renderStars(doctor.rating_avg || 4.5)}
+                      <span className="text-sm font-medium text-neutral-700 ml-1">
+                        {doctor.rating_avg || 4.5}/5
                       </span>
-                    ) : (
-                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">
-                        No disponible
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="chat-bubble-left-right" size="sm" className="text-neutral-500" />
+                      <span className="text-sm text-neutral-600">
+                        {doctor.total_reviews || 0} reseñas
                       </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Bio */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-ink-primary mb-3">Sobre mí</h3>
-                  <p className="text-ink-secondary leading-relaxed">
-                    {doctor.bio || 'Doctor verificado con experiencia en atención médica de calidad.'}
-                  </p>
-                </div>
-
-                {/* Trust Badges */}
-                <div className="mb-6">
-                  <h3 className="text-lg font-semibold text-ink-primary mb-3">Certificaciones y Verificaciones</h3>
-                </div>
-
-                {/* Credentials */}
-                <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-                    <svg className="w-6 h-6 text-brand-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                    </svg>
-                    <div>
-                      <p className="font-semibold text-ink-primary text-sm">Cédula profesional</p>
-                      <p className="text-ink-secondary text-sm">{doctor.cedula || 'Verificada'}</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Icon name="clock" size="sm" className="text-neutral-500" />
+                      <span className="text-sm text-neutral-600">
+                        Respuesta: {doctor.response_time_avg || 30} min
+                      </span>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl">
-                    <svg className="w-6 h-6 text-medical-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
+                  
+                  <div className="flex items-center justify-center lg:justify-start gap-2">
+                    <Icon name="map-pin" size="sm" className="text-neutral-500" />
+                    <span className="text-sm text-neutral-600">
+                      {doctor.location}, {doctor.state}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex-1 flex flex-col sm:flex-row lg:flex-col gap-4">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => setShowBookingModal(true)}
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Icon name="calendar" size="sm" />
+                  Agendar Cita
+                </Button>
+                
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  onClick={() => navigate('/doctor')}
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Icon name="chat-bubble-left-right" size="sm" />
+                  Consulta Telemedicina
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setActiveTab('contact')}
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Icon name="phone" size="sm" />
+                  Contactar
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Tabs */}
+          <div className="glass-card mb-8">
+            <div className="border-b border-neutral-200">
+              <nav className="flex space-x-8 px-6 pt-6">
+                {[
+                  { id: 'overview', label: 'Información General', icon: 'user' },
+                  { id: 'experience', label: 'Experiencia', icon: 'academic-cap' },
+                  { id: 'services', label: 'Servicios', icon: 'medical-symbol' },
+                  { id: 'reviews', label: 'Reseñas', icon: 'star' },
+                  { id: 'contact', label: 'Contacto', icon: 'phone' }
+                ].map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-2 py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                      activeTab === tab.id
+                        ? 'border-primary-500 text-primary-600'
+                        : 'border-transparent text-neutral-500 hover:text-neutral-700 hover:border-neutral-300'
+                    }`}
+                  >
+                    <Icon name={tab.icon} size="sm" />
+                    {tab.label}
+                  </button>
+                ))}
+              </nav>
+            </div>
+
+            <div className="p-6">
+              {/* Overview Tab */}
+              {activeTab === 'overview' && (
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Biografía</h3>
+                    <p className="text-neutral-600 leading-relaxed">
+                      {doctor.bio || 'Información biográfica no disponible.'}
+                    </p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <p className="font-semibold text-ink-primary text-sm">Doctor verificado</p>
-                      <p className="text-ink-secondary text-sm">Por Doctor.mx</p>
+                      <h4 className="font-semibold text-neutral-900 mb-2">Información Básica</h4>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Cédula:</span>
+                          <span className="font-medium">{doctor.cedula || 'Verificada'}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Experiencia:</span>
+                          <span className="font-medium">{doctor.experience_years || 'N/A'} años</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Idiomas:</span>
+                          <span className="font-medium">{doctor.languages?.join(', ') || 'Español'}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-neutral-900 mb-2">Tarifas</h4>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Consulta Presencial:</span>
+                          <span className="font-medium text-primary-600">
+                            ${doctor.consultation_fees?.base_fee || '800'} MXN
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Telemedicina:</span>
+                          <span className="font-medium text-accent-600">
+                            ${doctor.consultation_fees?.telemedicine_fee || '640'} MXN
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Seguimiento:</span>
+                          <span className="font-medium text-secondary-600">
+                            ${doctor.consultation_fees?.follow_up_fee || '500'} MXN
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              )}
 
-                {/* Languages */}
-                {doctor.languages && doctor.languages.length > 0 && (
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-ink-primary mb-3">Idiomas</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {doctor.languages.map((lang) => (
-                        <span key={lang} className="px-3 py-1 bg-brand-50 text-brand-700 rounded-full text-sm font-medium">
-                          {lang}
-                        </span>
+              {/* Experience Tab */}
+              {activeTab === 'experience' && (
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Educación</h3>
+                    <div className="bg-neutral-50 rounded-lg p-4">
+                      <p className="text-neutral-700">{doctor.education || 'Información educativa no disponible.'}</p>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Certificaciones</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {(doctor.certifications || []).map((cert, index) => (
+                        <Badge key={index} variant="success" className="justify-center">
+                          <Icon name="shield-check" size="sm" className="mr-2" />
+                          {cert}
+                        </Badge>
                       ))}
                     </div>
                   </div>
-                )}
-              </div>
-            </div>
-
-            {/* Booking Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-2xl border border-ink-border shadow-sm p-6 sticky top-24">
-                <h3 className="text-lg font-bold text-ink-primary mb-4">Iniciar consulta</h3>
-
-                {/* Consult type selector */}
-                <div className="space-y-3 mb-6">
-                  <label className="flex items-center gap-3 p-4 border-2 border-ink-border rounded-xl cursor-pointer hover:border-brand-500 transition-colors">
-                    <input
-                      type="radio"
-                      name="consultType"
-                      value="chat"
-                      checked={consultType === 'chat'}
-                      onChange={(e) => setConsultType(e.target.value)}
-                      className="w-5 h-5 text-brand-600 focus:ring-2 focus:ring-brand-500"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold text-ink-primary">Consulta por chat</p>
-                      <p className="text-sm text-ink-secondary">$79 MXN</p>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Aseguradoras Aceptadas</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {(doctor.insurance_providers || []).map((provider, index) => (
+                        <Badge key={index} variant="info" className="justify-center">
+                          {provider}
+                        </Badge>
+                      ))}
                     </div>
-                  </label>
-                  <label className="flex items-center gap-3 p-4 border-2 border-ink-border rounded-xl cursor-pointer hover:border-brand-500 transition-colors">
-                    <input
-                      type="radio"
-                      name="consultType"
-                      value="video"
-                      checked={consultType === 'video'}
-                      onChange={(e) => setConsultType(e.target.value)}
-                      className="w-5 h-5 text-brand-600 focus:ring-2 focus:ring-brand-500"
-                    />
-                    <div className="flex-1">
-                      <p className="font-semibold text-ink-primary">Videollamada</p>
-                      <p className="text-sm text-ink-secondary">$149 MXN</p>
-                    </div>
-                  </label>
-                </div>
-
-                <button
-                  onClick={startConsultation}
-                  disabled={!doctor.available}
-                  className="w-full py-3 bg-gradient-to-r from-brand-600 to-brand-500 text-white font-semibold rounded-xl hover:from-brand-700 hover:to-brand-600 transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {doctor.available ? 'Consultar ahora' : 'No disponible'}
-                </button>
-
-                <div className="mt-4 p-4 bg-medical-50 border border-medical-200 rounded-xl">
-                  <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-medical-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <p className="text-xs text-medical-800 leading-relaxed">
-                      Recibirás una respuesta en minutos. Si necesitas una receta, el doctor puede emitirla digitalmente.
-                    </p>
                   </div>
+                </div>
+              )}
+
+              {/* Services Tab */}
+              {activeTab === 'services' && (
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Servicios Ofrecidos</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {(doctor.services || []).map((service, index) => (
+                        <div key={index} className="flex items-center gap-3 p-3 bg-neutral-50 rounded-lg">
+                          <Icon name="check-circle" size="sm" className="text-success-600" />
+                          <span className="text-neutral-700">{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-3">Horarios de Atención</h3>
+                    <div className="bg-neutral-50 rounded-lg p-4">
+                      <div className="space-y-2">
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Días:</span>
+                          <span className="font-medium">
+                            {(doctor.availability?.days || []).join(', ')}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Horarios:</span>
+                          <span className="font-medium">
+                            {doctor.availability?.hours || 'Consultar disponibilidad'}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Telemedicina:</span>
+                          <span className="font-medium">
+                            {doctor.availability?.telemedicine ? 'Disponible' : 'No disponible'}
+                          </span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-neutral-600">Emergencias:</span>
+                          <span className="font-medium">
+                            {doctor.availability?.emergency ? 'Disponible' : 'No disponible'}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Reviews Tab */}
+              {activeTab === 'reviews' && (
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-lg font-semibold text-neutral-900">Reseñas de Pacientes</h3>
+                    <div className="flex items-center gap-2">
+                      {renderStars(doctor.rating_avg || 4.5)}
+                      <span className="text-lg font-semibold text-neutral-900">
+                        {doctor.rating_avg || 4.5}/5
+                      </span>
+                      <span className="text-sm text-neutral-600">
+                        ({doctor.total_reviews || 0} reseñas)
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {loadingReviews ? (
+                    <div className="flex justify-center py-8">
+                      <LoadingSpinner />
+                    </div>
+                  ) : (
+                    <div className="space-y-4">
+                      {reviews.map((review) => (
+                        <div key={review.id} className="bg-neutral-50 rounded-lg p-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <span className="font-medium text-neutral-900">{review.patient_name}</span>
+                              {review.verified && (
+                                <Icon name="check-circle" size="sm" className="text-success-600" />
+                              )}
+                            </div>
+                            <div className="flex items-center gap-1">
+                              {renderStars(review.rating)}
+                              <span className="text-sm text-neutral-600">{review.date}</span>
+                            </div>
+                          </div>
+                          <p className="text-neutral-700 text-sm">{review.comment}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Contact Tab */}
+              {activeTab === 'contact' && (
+                <div className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-neutral-900 mb-3">Información de Contacto</h3>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Icon name="phone" size="sm" className="text-primary-600" />
+                          <span className="text-neutral-700">{doctor.phone || 'No disponible'}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Icon name="envelope" size="sm" className="text-primary-600" />
+                          <span className="text-neutral-700">{doctor.email || 'No disponible'}</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Icon name="globe-alt" size="sm" className="text-primary-600" />
+                          <a href={doctor.website} className="text-primary-600 hover:text-primary-700">
+                            {doctor.website || 'No disponible'}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-lg font-semibold text-neutral-900 mb-3">Dirección del Consultorio</h3>
+                      <div className="flex items-start gap-3 mb-4">
+                        <Icon name="map-pin" size="sm" className="text-primary-600 mt-1" />
+                        <div>
+                          <p className="text-neutral-700">{doctor.clinic_address || 'Dirección no disponible'}</p>
+                          <p className="text-sm text-neutral-600 mt-1">
+                            {doctor.location}, {doctor.state}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      {/* Location Map */}
+                      {doctor.clinic_address && (
+                        <div className="mt-4">
+                          <DoctorLocationMap doctor={doctor} height="300px" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      variant="primary"
+                      onClick={() => setShowBookingModal(true)}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Icon name="calendar" size="sm" />
+                      Agendar Cita Presencial
+                    </Button>
+                    
+                    <Button
+                      variant="secondary"
+                      onClick={() => navigate('/doctor')}
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <Icon name="chat-bubble-left-right" size="sm" />
+                      Consulta Telemedicina
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Booking Modal */}
+        {showBookingModal && (
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="flex min-h-screen items-center justify-center p-4">
+              <div className="fixed inset-0 bg-black bg-opacity-50" onClick={() => setShowBookingModal(false)}></div>
+              <div className="relative bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+                <h3 className="text-lg font-semibold text-neutral-900 mb-4">Agendar Cita</h3>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      Tipo de Consulta
+                    </label>
+                    <select
+                      value={bookingData.type}
+                      onChange={(e) => setBookingData({ ...bookingData, type: e.target.value })}
+                      className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    >
+                      <option value="in-person">Consulta Presencial</option>
+                      <option value="telemedicine">Telemedicina</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      Fecha
+                    </label>
+                    <input
+                      type="date"
+                      value={bookingData.date}
+                      onChange={(e) => setBookingData({ ...bookingData, date: e.target.value })}
+                      className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      Hora
+                    </label>
+                    <select
+                      value={bookingData.time}
+                      onChange={(e) => setBookingData({ ...bookingData, time: e.target.value })}
+                      className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    >
+                      <option value="">Seleccionar hora</option>
+                      <option value="09:00">09:00</option>
+                      <option value="10:00">10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      Motivo de la Consulta
+                    </label>
+                    <textarea
+                      value={bookingData.reason}
+                      onChange={(e) => setBookingData({ ...bookingData, reason: e.target.value })}
+                      rows={3}
+                      className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      placeholder="Describe brevemente el motivo de tu consulta..."
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      Urgencia
+                    </label>
+                    <select
+                      value={bookingData.urgency}
+                      onChange={(e) => setBookingData({ ...bookingData, urgency: e.target.value })}
+                      className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    >
+                      <option value="routine">Rutina</option>
+                      <option value="urgent">Urgente</option>
+                      <option value="emergency">Emergencia</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div className="flex gap-3 mt-6">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowBookingModal(false)}
+                    className="flex-1"
+                  >
+                    Cancelar
+                  </Button>
+                  <Button
+                    variant="primary"
+                    onClick={handleBooking}
+                    className="flex-1"
+                  >
+                    Agendar Cita
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </Layout>
   );

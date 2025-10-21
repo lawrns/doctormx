@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "totalDoctors": 28822,
+    "totalImages": 0,
+    "totalErrors": 0,
+    "duration": "31540 seconds",
+    "processedSpecialties": 5280,
+    "processedLocations": 132
+  },
+  "performance": {
+    "doctorsPerSecond": "0.91",
+    "imagesPerSecond": "0.00",
+    "errorRate": "0.00%"
+  },
+  "recommendations": [
+    "Implement real Doctoralia scraping with Puppeteer/Playwright",
+    "Add image optimization and compression",
+    "Implement data validation and quality checks",
+    "Add progress persistence and resume capability",
+    "Implement comprehensive error handling and retry logic"
+  ]
+}

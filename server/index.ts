@@ -808,59 +808,77 @@ app.post('/api/payments/webhook', async (req, res) => {
 });
 
 // Doctor Directory endpoints
-app.get('/api/doctors', async (req, res) => {
-  try {
-    const { specialty, search, available, location, limit = 1000, offset = 0 } = req.query;
-    
-    let query = supabase
-      .from('doctors')
-      .select(`
-        *,
-        users!inner(
-          id,
-          name,
-          email,
-          phone
-        )
-      `)
-      .eq('license_status', 'verified')
-      .order('created_at', { ascending: false })
-      .range(parseInt(offset as string), parseInt(offset as string) + parseInt(limit as string) - 1);
-    
-    if (specialty && specialty !== 'Todas las especialidades') {
-      query = query.contains('specialties', [specialty]);
-    }
-    
-    if (search) {
-      query = query.or(`users.name.ilike.%${search}%,specialties.cs.{${search}}`);
-    }
-    
-    if (location) {
-      query = query.ilike('full_name', `%${location}%`);
-    }
-    
-    // Get total count for pagination
-    const { count: totalCount } = await supabase
-      .from('doctors')
-      .select('*', { count: 'exact', head: true })
-      .eq('license_status', 'verified');
-    
-    const { data: doctors, error } = await query.limit(parseInt(limit as string));
-    
-    if (error) {
-      console.error('Error fetching doctors:', error);
-      return res.status(500).json({ error: 'Error fetching doctors' });
-    }
-    
-    res.json({ 
-      doctors: doctors || [], 
-      totalCount: totalCount || 0 
-    });
-  } catch (error) {
-    console.error('Error in doctors endpoint:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
+        app.get('/api/doctors', async (req, res) => {
+          try {
+            const { specialty, search, available, location, sort = 'rating', limit = 1000, offset = 0 } = req.query;
+            
+            let query = supabase
+              .from('doctors')
+              .select(`
+                *,
+                users!inner(
+                  id,
+                  name,
+                  email,
+                  phone
+                )
+              `)
+              .eq('license_status', 'verified');
+            
+            // Apply sorting
+            switch (sort) {
+              case 'rating':
+                query = query.order('rating_avg', { ascending: false });
+                break;
+              case 'price':
+                query = query.order('consultation_fees->base_fee', { ascending: true });
+                break;
+              case 'availability':
+                query = query.order('response_time_avg', { ascending: true });
+                break;
+              case 'distance':
+                query = query.order('created_at', { ascending: false });
+                break;
+              default:
+                query = query.order('rating_avg', { ascending: false });
+            }
+            
+            query = query.range(parseInt(offset as string), parseInt(offset as string) + parseInt(limit as string) - 1);
+            
+            if (specialty && specialty !== 'Todas las especialidades') {
+              query = query.contains('specialties', [specialty]);
+            }
+            
+            if (search) {
+              query = query.or(`users.name.ilike.%${search}%,specialties.cs.{${search}}`);
+            }
+            
+            if (location) {
+              query = query.ilike('full_name', `%${location}%`);
+            }
+            
+            // Get total count for pagination
+            const { count: totalCount } = await supabase
+              .from('doctors')
+              .select('*', { count: 'exact', head: true })
+              .eq('license_status', 'verified');
+            
+            const { data: doctors, error } = await query.limit(parseInt(limit as string));
+            
+            if (error) {
+              console.error('Error fetching doctors:', error);
+              return res.status(500).json({ error: 'Error fetching doctors' });
+            }
+            
+            res.json({ 
+              doctors: doctors || [], 
+              totalCount: totalCount || 0 
+            });
+          } catch (error) {
+            console.error('Error in doctors endpoint:', error);
+            res.status(500).json({ error: 'Internal server error' });
+          }
+        });
 
 // Get single doctor by ID
 app.get('/api/doctors/:id', async (req, res) => {
