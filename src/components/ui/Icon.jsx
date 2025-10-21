@@ -75,6 +75,9 @@ import {
   BrainIcon,
   HandThumbUpIcon,
   PaperAirplaneIcon,
+  ArrowPathIcon,
+  HomeIcon,
+  DevicePhoneMobileIcon,
   
   // Targets & Navigation
   AcademicCapIcon as TargetIcon,
@@ -304,6 +307,9 @@ const Icon = ({
       'BrainIcon': BrainIcon,
       'HandThumbUpIcon': HandThumbUpIcon,
       'PaperAirplaneIcon': PaperAirplaneIcon,
+      'ArrowPathIcon': ArrowPathIcon,
+      'HomeIcon': HomeIcon,
+      'DevicePhoneMobileIcon': DevicePhoneMobileIcon,
       'TargetIcon': TargetIcon,
       'RocketIcon': RocketIcon,
       'DocumentIcon': DocumentIcon,

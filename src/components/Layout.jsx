@@ -6,6 +6,10 @@ import Icon from './ui/Icon';
 import SkipLink from './ui/SkipLink';
 import Announcer from './ui/Announcer';
 import CookieConsent from './CookieConsent';
+import PerformanceOptimizer from './PerformanceOptimizer';
+import AccessibilityEnhancer from './AccessibilityEnhancer';
+import Breadcrumb from './ui/Breadcrumb';
+import MobileOptimizer from './MobileOptimizer';
 
 function Logo() {
   return (
@@ -330,7 +334,16 @@ export default function Layout({ children, variant = 'app' }) {
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
       {/* Main content */}
-      <main id="main-content" className="flex-1" role="main">{children}</main>
+      <main id="main-content" className="flex-1" role="main">
+        {/* Breadcrumb Navigation */}
+        <div className="bg-white border-b border-neutral-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <Breadcrumb />
+          </div>
+        </div>
+        
+        {children}
+      </main>
 
       {/* Footer */}
       <footer className="bg-white border-t border-neutral-200" role="contentinfo">
@@ -349,6 +362,15 @@ export default function Layout({ children, variant = 'app' }) {
       
       {/* Cookie Consent */}
       <CookieConsent />
+      
+      {/* Performance Optimizer */}
+      <PerformanceOptimizer />
+      
+      {/* Accessibility Enhancer */}
+      <AccessibilityEnhancer />
+      
+      {/* Mobile Optimizer */}
+      <MobileOptimizer />
     </div>
   );
 }
