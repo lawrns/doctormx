@@ -12,27 +12,13 @@ if (!supabaseUrl || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export interface SEPVerificationResult {
-  valid: boolean;
-  data?: {
-    cedula: string;
-    name: string;
-    specialty: string;
-    institution: string;
-    graduationYear: number;
-    status: 'active' | 'expired' | 'suspended';
-    verifiedAt: string;
-  };
-  error?: string;
-}
-
 /**
  * Verifies a professional cédula with SEP's database
  * @param cedula - The professional cédula number
  * @param name - The doctor's full name for verification
  * @returns Promise<SEPVerificationResult>
  */
-export async function verifyCedulaSEP(cedula: string, name: string): Promise<SEPVerificationResult> {
+async function verifyCedulaSEP(cedula, name) {
   try {
     console.log(`🔍 Verifying cédula ${cedula} for ${name}...`);
 
@@ -55,7 +41,7 @@ export async function verifyCedulaSEP(cedula: string, name: string): Promise<SEP
       console.log(`✅ Cédula ${cedula} verified successfully`);
       
       // Store verification result in database
-      await storeVerificationResult(cedula, verificationResult.data!);
+      await storeVerificationResult(cedula, verificationResult.data);
       
       return verificationResult;
     } else {
@@ -76,7 +62,7 @@ export async function verifyCedulaSEP(cedula: string, name: string): Promise<SEP
  * Simulates SEP verification (replace with actual API implementation)
  * In production, this would make actual HTTP requests to SEP's API
  */
-async function simulateSEPVerification(cedula: string, name: string): Promise<SEPVerificationResult> {
+async function simulateSEPVerification(cedula, name) {
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000));
 
@@ -88,7 +74,7 @@ async function simulateSEPVerification(cedula: string, name: string): Promise<SE
       specialty: 'Medicina General',
       institution: 'Universidad Nacional Autónoma de México',
       graduationYear: 2015,
-      status: 'active' as const
+      status: 'active'
     },
     {
       cedula: '87654321',
@@ -96,7 +82,7 @@ async function simulateSEPVerification(cedula: string, name: string): Promise<SE
       specialty: 'Pediatría',
       institution: 'Instituto Politécnico Nacional',
       graduationYear: 2018,
-      status: 'active' as const
+      status: 'active'
     },
     {
       cedula: '11223344',
@@ -104,7 +90,7 @@ async function simulateSEPVerification(cedula: string, name: string): Promise<SE
       specialty: 'Cardiología',
       institution: 'Universidad Autónoma de Guadalajara',
       graduationYear: 2012,
-      status: 'expired' as const
+      status: 'expired'
     }
   ];
 
@@ -144,7 +130,7 @@ async function simulateSEPVerification(cedula: string, name: string): Promise<SE
 /**
  * Normalizes a name for comparison
  */
-function normalizeName(name: string): string {
+function normalizeName(name) {
   return name
     .toLowerCase()
     .trim()
@@ -160,7 +146,7 @@ function normalizeName(name: string): string {
 /**
  * Checks if two names match (fuzzy matching)
  */
-function nameMatch(recordName: string, inputName: string): boolean {
+function nameMatch(recordName, inputName) {
   const normalizedRecord = normalizeName(recordName);
   const normalizedInput = normalizeName(inputName);
 
@@ -180,7 +166,7 @@ function nameMatch(recordName: string, inputName: string): boolean {
 /**
  * Stores verification result in database
  */
-async function storeVerificationResult(cedula: string, data: SEPVerificationResult['data']) {
+async function storeVerificationResult(cedula, data) {
   try {
     const { error } = await supabase
       .from('doctor_verifications')
@@ -205,13 +191,9 @@ async function storeVerificationResult(cedula: string, data: SEPVerificationResu
 /**
  * Updates doctor record with verification status
  */
-export async function updateDoctorVerificationStatus(
-  doctorId: string, 
-  verified: boolean, 
-  verificationData?: SEPVerificationResult['data']
-) {
+async function updateDoctorVerificationStatus(doctorId, verified, verificationData) {
   try {
-    const updateData: any = {
+    const updateData = {
       sep_verified: verified,
       license_status: verified ? 'verified' : 'rejected',
       verification_date: new Date().toISOString(),
@@ -233,19 +215,6 @@ export async function updateDoctorVerificationStatus(
     }
 
     console.log(`✅ Doctor ${doctorId} verification status updated: ${verified ? 'verified' : 'rejected'}`);
-    
-    // Track verification event
-    await supabase
-      .from('onboarding_analytics')
-      .insert({
-        doctor_id: doctorId,
-        event_type: verified ? 'verification_completed' : 'verification_rejected',
-        event_data: {
-          verified: verified,
-          verification_data: verificationData
-        }
-      });
-    
     return true;
   } catch (error) {
     console.error('Error updating doctor verification status:', error);
@@ -253,54 +222,92 @@ export async function updateDoctorVerificationStatus(
   }
 }
 
-/**
- * Gets verification status for a doctor
- */
-export async function getDoctorVerificationStatus(doctorId: string) {
+export async function handler(event, context) {
+  // Only allow POST requests
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: JSON.stringify({ error: 'Method not allowed' }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
+  }
+
   try {
-    const { data, error } = await supabase
+    const { doctorId } = JSON.parse(event.body);
+    
+    if (!doctorId) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Missing required field: doctorId' }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      };
+    }
+
+    console.log('🔍 Starting verification for doctor:', doctorId);
+    
+    // Get doctor data
+    const { data: doctor, error: doctorError } = await supabase
       .from('doctors')
-      .select('sep_verified, license_status, verification_date, verification_data')
+      .select('cedula, users!inner(name)')
       .eq('user_id', doctorId)
       .single();
 
-    if (error) {
-      console.error('Error fetching doctor verification status:', error);
-      throw error;
+    if (doctorError || !doctor) {
+      return {
+        statusCode: 404,
+        body: JSON.stringify({ error: 'Doctor no encontrado' }),
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+      };
     }
 
-    return data;
+    const doctorName = doctor.users?.name || '';
+    
+    // Verify cédula using SEP provider
+    const verificationResult = await verifyCedulaSEP(doctor.cedula, doctorName);
+    
+    // Update doctor verification status
+    await updateDoctorVerificationStatus(doctorId, verificationResult.valid, verificationResult.data);
+    
+    console.log('✅ Doctor verification completed:', verificationResult.valid ? 'verified' : 'rejected');
+    
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        success: true,
+        verified: verificationResult.valid,
+        data: verificationResult.data,
+        error: verificationResult.error,
+        message: verificationResult.valid 
+          ? 'Verificación exitosa' 
+          : verificationResult.error || 'Verificación fallida'
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
+
   } catch (error) {
-    console.error('Error fetching doctor verification status:', error);
-    throw error;
-  }
-}
-
-/**
- * Gets all pending verifications
- */
-export async function getPendingVerifications() {
-  try {
-    const { data, error } = await supabase
-      .from('doctors')
-      .select(`
-        user_id,
-        cedula,
-        verification_status,
-        created_at,
-        users!inner(name, email)
-      `)
-      .eq('verification_status', 'pending')
-      .order('created_at', { ascending: true });
-
-    if (error) {
-      console.error('Error fetching pending verifications:', error);
-      throw error;
-    }
-
-    return data || [];
-  } catch (error) {
-    console.error('Error fetching pending verifications:', error);
-    throw error;
+    console.error('❌ Error verifying doctor:', error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ 
+        error: 'Error interno del servidor',
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
+    };
   }
 }

@@ -5,450 +5,331 @@ import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
 import Icon from '../components/ui/Icon';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import MobileSpacing from '../components/ui/MobileOptimized';
 
 export default function DoctorVerification() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [verificationStatus, setVerificationStatus] = useState('pending');
-  const [doctorData, setDoctorData] = useState(null);
-  const [sepVerificationResult, setSepVerificationResult] = useState(null);
-  const [autoVerifying, setAutoVerifying] = useState(false);
-  const [documents, setDocuments] = useState({
-    cedula_front: null,
-    cedula_back: null,
-    ine_front: null
+  const [doctor, setDoctor] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [notificationPreferences, setNotificationPreferences] = useState({
+    email: true,
+    whatsapp: true
   });
 
   useEffect(() => {
-    loadDoctorData();
+    fetchDoctorData();
   }, []);
 
-  const loadDoctorData = async () => {
+  const fetchDoctorData = async () => {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) {
-        navigate('/connect/signup');
+        navigate('/connect/login');
         return;
       }
 
-      const { data: doctor, error } = await supabase
+      const { data: doctorData, error } = await supabase
         .from('doctors')
-        .select('*, users!inner(*)')
+        .select('*')
         .eq('user_id', user.id)
         .single();
 
       if (error) throw error;
-
-      setDoctorData(doctor);
-      setVerificationStatus(doctor.license_status);
-
-      if (doctor.license_status === 'verified') {
-        navigate('/connect/dashboard');
-      }
+      setDoctor(doctorData);
     } catch (error) {
-      console.error('Error loading doctor data:', error);
-      toast.error('Error al cargar datos');
-    }
-  };
-
-  const handleFileChange = (field, file) => {
-    if (file && file.size > 5 * 1024 * 1024) {
-      toast.error('El archivo no debe superar 5MB');
-      return;
-    }
-
-    if (file && !['image/jpeg', 'image/png', 'image/jpg', 'application/pdf'].includes(file.type)) {
-      toast.error('Solo se aceptan imágenes (JPG, PNG) o PDF');
-      return;
-    }
-
-    setDocuments(prev => ({ ...prev, [field]: file }));
-  };
-
-  const uploadDocument = async (file, path) => {
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${path}_${Date.now()}.${fileExt}`;
-    const filePath = `doctor-docs/${doctorData.user_id}/${fileName}`;
-
-    const { error: uploadError } = await supabase.storage
-      .from('documents')
-      .upload(filePath, file);
-
-    if (uploadError) throw uploadError;
-
-    const { data: { publicUrl } } = supabase.storage
-      .from('documents')
-      .getPublicUrl(filePath);
-
-    return publicUrl;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setUploadProgress(0);
-
-    try {
-      if (!documents.cedula_front || !documents.cedula_back) {
-        toast.error('Por favor sube ambos lados de tu cédula profesional');
-        return;
-      }
-
-      const urls = {};
-      let progress = 0;
-
-      // Upload cedula front
-      if (documents.cedula_front) {
-        urls.cedula_front = await uploadDocument(documents.cedula_front, 'cedula_front');
-        progress += 25;
-        setUploadProgress(progress);
-      }
-
-      // Upload cedula back
-      if (documents.cedula_back) {
-        urls.cedula_back = await uploadDocument(documents.cedula_back, 'cedula_back');
-        progress += 25;
-        setUploadProgress(progress);
-      }
-
-      // Upload INE (optional)
-      if (documents.ine_front) {
-        urls.ine_front = await uploadDocument(documents.ine_front, 'ine_front');
-        progress += 25;
-        setUploadProgress(progress);
-      }
-
-      // Update doctor record with document URLs
-      const { error: updateError } = await supabase
-        .from('doctors')
-        .update({
-          kpis: {
-            ...doctorData.kpis,
-            documents: urls,
-            submitted_at: new Date().toISOString()
-          }
-        })
-        .eq('user_id', doctorData.user_id);
-
-      if (updateError) throw updateError;
-
-      // Log audit trail
-      await supabase.from('audit_trail').insert({
-        actor_user_id: doctorData.user_id,
-        entity: 'doctors',
-        entity_id: doctorData.user_id,
-        action: 'verification_submitted',
-        diff: { documents: Object.keys(urls) }
-      });
-
-      progress += 25;
-      setUploadProgress(progress);
-
-      // Trigger automated SEP verification
-      toast.info('Verificando cédula con la base de datos de la SEP...');
-      
-      setAutoVerifying(true);
-      const verificationResponse = await fetch('/api/doctors/verify-cedula', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          cedulaNumber: doctorData.cedula,
-          doctorName: doctorData.users.name
-        }),
-      });
-
-      const verificationResult = await verificationResponse.json();
-
-      if (verificationResult.isValid && verificationResult.status === 'verified') {
-        // Automatic approval
-        const { error: approveError } = await supabase
-          .from('doctors')
-          .update({
-            license_status: 'verified',
-            kpis: {
-              ...doctorData.kpis,
-              documents: urls,
-              submitted_at: new Date().toISOString(),
-              verified_at: new Date().toISOString(),
-              verification_method: 'automated_sep',
-              sep_details: verificationResult.details
-            }
-          })
-          .eq('user_id', doctorData.user_id);
-
-        if (approveError) throw approveError;
-
-        toast.success('¡Verificación completada automáticamente! Tu cuenta está lista para usar.');
-        setVerificationStatus('verified');
-        
-        // Redirect to dashboard after 2 seconds
-        setTimeout(() => {
-          navigate('/connect/dashboard');
-        }, 2000);
-      } else {
-        // Manual review required
-        toast.warning('Verificación automática no disponible. Tu solicitud será revisada manualmente en 24-48 horas.');
-        setVerificationStatus('pending');
-      }
-
-      setSepVerificationResult(verificationResult);
-
-    } catch (error) {
-      console.error('Verification error:', error);
-      toast.error(error.message || 'Error al enviar documentos');
+      console.error('Error fetching doctor data:', error);
+      toast.error('Error al cargar información del doctor');
     } finally {
       setLoading(false);
-      setUploadProgress(0);
-      setAutoVerifying(false);
     }
   };
 
-  if (!doctorData) {
+  const updateNotificationPreferences = async () => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) return;
+
+      await supabase
+        .from('doctors')
+        .update({
+          notification_preferences: notificationPreferences
+        })
+        .eq('user_id', user.id);
+
+      toast.success('Preferencias de notificación actualizadas');
+    } catch (error) {
+      console.error('Error updating preferences:', error);
+      toast.error('Error al actualizar preferencias');
+    }
+  };
+
+  if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-medical-500 mx-auto mb-4"></div>
-          <p className="text-gray-600">Cargando...</p>
+      <Layout variant="marketing">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">Cargando información...</p>
+          </div>
         </div>
-      </div>
+      </Layout>
+    );
+  }
+
+  if (!doctor) {
+    return (
+      <Layout variant="marketing">
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center justify-center">
+          <Card className="max-w-md mx-auto p-6 text-center">
+            <Icon name="exclamation-triangle" size="xl" className="text-red-500 mx-auto mb-4" />
+            <h2 className="text-xl font-bold text-gray-900 mb-2">Error</h2>
+            <p className="text-gray-600 mb-4">No se pudo cargar la información del doctor.</p>
+            <Button onClick={() => navigate('/connect/signup')} variant="primary">
+              Volver al registro
+            </Button>
+          </Card>
+        </div>
+      </Layout>
     );
   }
 
   return (
     <Layout variant="marketing">
-      <div className="min-h-screen bg-gradient-to-b from-medical-50 to-white py-12 px-4">
-        <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-2xl shadow-xl p-8"
-        >
-          {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold mb-2 text-gray-900">Verificación de documentos</h1>
-            <p className="text-gray-600">Sube tus documentos para completar tu registro</p>
-          </div>
-
-          {/* Status Badge */}
-          <div className="mb-8">
-            <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${
-              verificationStatus === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-              verificationStatus === 'verified' ? 'bg-green-100 text-green-800' :
-              'bg-red-100 text-red-800'
-            }`}>
-              {verificationStatus === 'pending' && (
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Verificación pendiente
-                </span>
-              )}
-              {verificationStatus === 'verified' && (
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Verificado
-                </span>
-              )}
-              {verificationStatus === 'rejected' && (
-                <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                  </svg>
-                  Verificación rechazada
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Cédula Front */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Cédula Profesional (Frente) *
-              </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-medical-400 transition-colors">
-                <input
-                  type="file"
-                  accept="image/*,.pdf"
-                  onChange={(e) => handleFileChange('cedula_front', e.target.files[0])}
-                  className="hidden"
-                  id="cedula_front"
-                  required
-                />
-                <label htmlFor="cedula_front" className="cursor-pointer">
-                  <div className="text-4xl mb-2">📄</div>
-                  {documents.cedula_front ? (
-                    <p className="text-sm font-medium text-gray-700">{documents.cedula_front.name}</p>
-                  ) : (
-                    <>
-                      <p className="text-sm font-medium text-gray-700">Haz clic para subir</p>
-                      <p className="text-xs text-gray-500">JPG, PNG o PDF (máx. 5MB)</p>
-                    </>
-                  )}
-                </label>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
+        <MobileSpacing.Container className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="py-8"
+          >
+            {/* Header */}
+            <div className="text-center mb-8">
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <Icon name="clock" size="xl" className="text-blue-600" />
               </div>
+              <MobileSpacing.Text variant="h1" className="mb-2 text-gray-900">
+                Verificación en Proceso
+              </MobileSpacing.Text>
+              <MobileSpacing.Text variant="body" className="text-gray-600">
+                Tu cuenta ha sido creada exitosamente. Estamos verificando tu cédula profesional.
+              </MobileSpacing.Text>
             </div>
 
-            {/* Cédula Back */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Cédula Profesional (Reverso) *
-              </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-medical-400 transition-colors">
-                <input
-                  type="file"
-                  accept="image/*,.pdf"
-                  onChange={(e) => handleFileChange('cedula_back', e.target.files[0])}
-                  className="hidden"
-                  id="cedula_back"
-                  required
-                />
-                <label htmlFor="cedula_back" className="cursor-pointer">
-                  <div className="text-4xl mb-2">📄</div>
-                  {documents.cedula_back ? (
-                    <p className="text-sm font-medium text-gray-700">{documents.cedula_back.name}</p>
-                  ) : (
-                    <>
-                      <p className="text-sm font-medium text-gray-700">Haz clic para subir</p>
-                      <p className="text-xs text-gray-500">JPG, PNG o PDF (máx. 5MB)</p>
-                    </>
-                  )}
-                </label>
-              </div>
-            </div>
-
-            {/* INE (optional) */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                INE / Identificación oficial (opcional)
-              </label>
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-medical-400 transition-colors">
-                <input
-                  type="file"
-                  accept="image/*,.pdf"
-                  onChange={(e) => handleFileChange('ine_front', e.target.files[0])}
-                  className="hidden"
-                  id="ine_front"
-                />
-                <label htmlFor="ine_front" className="cursor-pointer">
-                  <div className="text-4xl mb-2">🪪</div>
-                  {documents.ine_front ? (
-                    <p className="text-sm font-medium text-gray-700">{documents.ine_front.name}</p>
-                  ) : (
-                    <>
-                      <p className="text-sm font-medium text-gray-700">Haz clic para subir</p>
-                      <p className="text-xs text-gray-500">Ayuda a acelerar la verificación</p>
-                    </>
-                  )}
-                </label>
-              </div>
-            </div>
-
-            {/* Progress Bar */}
-            {uploadProgress > 0 && (
-              <div className="bg-gray-200 rounded-full h-2 overflow-hidden">
-                <div
-                  className="bg-medical-500 h-full transition-all duration-300"
-                  style={{ width: `${uploadProgress}%` }}
-                />
-              </div>
-            )}
-
-            {/* Info Box */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
-                <Icon name="bolt" size="sm" color="primary" />
-                <span>Verificación Automática</span>
-              </h3>
-              <ul className="text-sm text-blue-800 space-y-1">
-                <li>• Verificamos tu cédula automáticamente con la base de datos de la SEP</li>
-                <li>• Si la verificación es exitosa, tu cuenta se activa inmediatamente</li>
-                <li>• Si no podemos verificar automáticamente, revisión manual en 24-48 horas</li>
-                <li>• Te notificaremos por email y WhatsApp en ambos casos</li>
-                <li>• Una vez verificado, podrás empezar a atender pacientes</li>
-              </ul>
-            </div>
-
-            {/* SEP Verification Status */}
-            {autoVerifying && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                <div className="flex items-center gap-3">
-                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-yellow-600"></div>
-                  <div>
-                    <h3 className="font-semibold text-yellow-900">Verificando con SEP...</h3>
-                    <p className="text-sm text-yellow-800">Consultando la base de datos de la Secretaría de Educación Pública</p>
+            {/* Status Card */}
+            <Card className="mb-6">
+              <div className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name="identification" size="md" className="text-blue-600" />
                   </div>
-                </div>
-              </div>
-            )}
-
-            {sepVerificationResult && (
-              <div className={`border rounded-lg p-4 ${
-                sepVerificationResult.isValid 
-                  ? 'bg-green-50 border-green-200' 
-                  : 'bg-orange-50 border-orange-200'
-              }`}>
-                <div className="flex items-center gap-3">
-                  <Icon 
-                    name={sepVerificationResult.isValid ? "check-circle" : "exclamation-triangle"} 
-                    size="md" 
-                    color={sepVerificationResult.isValid ? "success" : "warning"} 
-                  />
-                  <div>
-                    <h3 className={`font-semibold ${
-                      sepVerificationResult.isValid ? 'text-green-900' : 'text-orange-900'
-                    }`}>
-                      {sepVerificationResult.isValid ? 'Verificación Exitosa' : 'Verificación Pendiente'}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Cédula Profesional: {doctor.cedula}
                     </h3>
-                    <p className={`text-sm ${
-                      sepVerificationResult.isValid ? 'text-green-800' : 'text-orange-800'
-                    }`}>
-                      {sepVerificationResult.isValid 
-                        ? 'Tu cédula fue verificada automáticamente con la SEP'
-                        : 'No pudimos verificar automáticamente. Tu solicitud será revisada manualmente.'
-                      }
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <span className="text-sm font-medium text-yellow-700">Verificación Pendiente</span>
+                    </div>
+                    <p className="text-sm text-gray-600">
+                      Estamos verificando tu cédula profesional con la base de datos de la SEP. 
+                      Este proceso normalmente toma hasta 24 horas.
                     </p>
-                    {sepVerificationResult.details && (
-                      <div className="mt-2 text-xs text-gray-600">
-                        <p><strong>Especialidad:</strong> {sepVerificationResult.details.specialty}</p>
-                        <p><strong>Institución:</strong> {sepVerificationResult.details.institution}</p>
-                        <p><strong>Estado:</strong> {sepVerificationResult.details.status}</p>
-                      </div>
-                    )}
                   </div>
                 </div>
               </div>
-            )}
+            </Card>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={loading || verificationStatus === 'verified'}
-              className="w-full py-4 bg-gradient-to-r from-medical-500 to-medical-600 text-white font-bold rounded-lg hover:from-medical-600 hover:to-medical-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
-            >
-              {loading ? 'Subiendo documentos...' : 'Enviar para verificación'}
-            </button>
-          </form>
+            {/* Timeline */}
+            <Card className="mb-6">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">¿Qué sigue?</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="check" size="sm" className="text-green-600" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">Cuenta creada</div>
+                      <div className="text-sm text-gray-600">Tu información ha sido registrada correctamente</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="clock" size="sm" className="text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">Verificación de cédula</div>
+                      <div className="text-sm text-gray-600">Verificando con la SEP (hasta 24 horas)</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="envelope" size="sm" className="text-gray-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-500">Notificación de aprobación</div>
+                      <div className="text-sm text-gray-500">Te enviaremos un email con el enlace para activar tu suscripción</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="credit-card" size="sm" className="text-gray-400" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-500">Configuración de suscripción</div>
+                      <div className="text-sm text-gray-500">Completa el pago y comienza a recibir pacientes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
 
-          {/* Help */}
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
-              ¿Necesitas ayuda?{' '}
-              <a href="mailto:verify@doctor.mx" className="text-medical-600 hover:underline">
-                Contáctanos
-              </a>
-            </p>
-          </div>
-        </motion.div>
-        </div>
+            {/* Subscription Plan Info */}
+            <Card className="mb-6">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Tu Plan Seleccionado</h3>
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border border-blue-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-semibold text-gray-900">
+                        {doctor.subscription_plan === 'yearly' ? 'Plan Anual' : 'Plan Mensual'}
+                      </div>
+                      <div className="text-sm text-gray-600">
+                        {doctor.subscription_plan === 'yearly' 
+                          ? '$4,999 MXN por año (2 meses gratis)'
+                          : '$499 MXN por mes'
+                        }
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-lg font-bold text-blue-600">
+                        {doctor.subscription_plan === 'yearly' ? '$4,999' : '$499'}
+                      </div>
+                      <div className="text-xs text-gray-500">MXN</div>
+                    </div>
+                  </div>
+                  <div className="mt-3 text-xs text-gray-600">
+                    ✓ 7 días de prueba gratuita • ✓ Cancela cuando quieras
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Notification Preferences */}
+            <Card className="mb-6">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">Preferencias de Notificación</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-gray-900">Email</div>
+                      <div className="text-sm text-gray-600">Recibir notificaciones por correo electrónico</div>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={notificationPreferences.email}
+                        onChange={(e) => setNotificationPreferences({
+                          ...notificationPreferences,
+                          email: e.target.checked
+                        })}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                  </div>
+                  
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="font-medium text-gray-900">WhatsApp</div>
+                      <div className="text-sm text-gray-600">Recibir notificaciones por WhatsApp</div>
+                    </div>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={notificationPreferences.whatsapp}
+                        onChange={(e) => setNotificationPreferences({
+                          ...notificationPreferences,
+                          whatsapp: e.target.checked
+                        })}
+                        className="sr-only peer"
+                      />
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                    </label>
+                  </div>
+                </div>
+                
+                <div className="mt-4">
+                  <Button 
+                    onClick={updateNotificationPreferences}
+                    variant="secondary"
+                    size="sm"
+                  >
+                    Guardar preferencias
+                  </Button>
+                </div>
+              </div>
+            </Card>
+
+            {/* Contact Info */}
+            <Card className="mb-6">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-4">¿Necesitas ayuda?</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Icon name="envelope" size="sm" className="text-gray-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">Email de soporte</div>
+                      <div className="text-sm text-gray-600">soporte@doctor.mx</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <Icon name="phone" size="sm" className="text-gray-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">WhatsApp</div>
+                      <div className="text-sm text-gray-600">+52 55 1234 5678</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <Icon name="clock" size="sm" className="text-gray-500" />
+                    <div>
+                      <div className="font-medium text-gray-900">Horario de atención</div>
+                      <div className="text-sm text-gray-600">Lunes a Viernes, 9:00 AM - 6:00 PM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => navigate('/connect/login')}
+                variant="secondary"
+                className="flex-1"
+              >
+                <Icon name="arrow-left" size="sm" className="mr-2" />
+                Volver al inicio de sesión
+              </Button>
+              
+              <Button
+                onClick={() => window.location.reload()}
+                variant="primary"
+                className="flex-1"
+              >
+                <Icon name="arrow-path" size="sm" className="mr-2" />
+                Actualizar estado
+              </Button>
+            </div>
+          </motion.div>
+        </MobileSpacing.Container>
       </div>
     </Layout>
   );

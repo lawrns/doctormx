@@ -101,7 +101,10 @@ export default function DoctorSignup() {
           user_id: authData.user.id,
           cedula: formData.cedula,
           specialties: formData.specialties,
-          license_status: 'pending'
+          license_status: 'pending',
+          verification_status: 'pending',
+          subscription_status: 'pending_verification',
+          subscription_plan: formData.subscriptionPlan
         });
 
       if (doctorError) throw doctorError;
@@ -116,8 +119,21 @@ export default function DoctorSignup() {
         });
       }
 
-      toast.success('¡Registro exitoso! Ahora configura tu suscripción para comenzar');
-      navigate('/connect/subscription');
+      // Track onboarding event
+      await supabase
+        .from('onboarding_analytics')
+        .insert({
+          doctor_id: authData.user.id,
+          event_type: 'signup_completed',
+          event_data: {
+            subscription_plan: formData.subscriptionPlan,
+            specialties: formData.specialties,
+            has_referral: !!formData.referralCode
+          }
+        });
+
+      toast.success('¡Registro exitoso! Verificaremos tu cédula en 24 horas y te contactaremos para activar tu suscripción.');
+      navigate('/connect/verify');
     } catch (error) {
       console.error('Signup error:', error);
       toast.error(error.message || 'Error al crear cuenta');
@@ -357,15 +373,15 @@ export default function DoctorSignup() {
               {loading ? 'Creando cuenta...' : 'Crear cuenta y continuar'}
             </MobileSpacing.Button>
             
-            {/* Subscription Note */}
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            {/* Verification Note */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
               <div className="flex items-start gap-3">
-                <Icon name="information-circle" size="md" color="success" />
+                <Icon name="information-circle" size="md" color="primary" />
                 <div>
-                  <div className="font-semibold text-green-800">Próximo paso: Suscripción</div>
-                  <div className="text-sm text-green-700 mt-1">
-                    Después de crear tu cuenta, te guiaremos para configurar tu suscripción de $499 MXN/mes 
-                    y comenzar a recibir pacientes referidos por IA.
+                  <div className="font-semibold text-blue-800">Próximo paso: Verificación</div>
+                  <div className="text-sm text-blue-700 mt-1">
+                    Después de crear tu cuenta, verificaremos tu cédula profesional en 24 horas. 
+                    Una vez verificada, te contactaremos para activar tu suscripción y comenzar a recibir pacientes.
                   </div>
                 </div>
               </div>

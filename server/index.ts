@@ -27,16 +27,16 @@ import {
   getDoctorSubscriptionPlans, 
   getDoctorSubscription, 
   createDoctorSubscription, 
+  createDoctorCheckoutSession,
   cancelDoctorSubscription, 
   updateDoctorPaymentMethod, 
   hasActiveSubscription 
 } from './providers/doctorSubscriptions.ts';
 import {
-  verifyCedulaProfesional,
+  verifyCedulaSEP,
   getDoctorVerificationStatus,
   updateDoctorVerificationStatus,
-  getVerificationStatistics,
-  cleanExpiredCache
+  getPendingVerifications
 } from './providers/sepVerification.ts';
 import {
   submitDoctorReview,
@@ -968,17 +968,22 @@ app.get('/api/doctors/:doctorId/subscription', async (req, res) => {
 
 app.post('/api/doctors/subscribe', async (req, res) => {
   try {
-    const { doctorId, planId, paymentMethodId, email, name } = req.body;
-    console.log('💳 Creating doctor subscription:', { doctorId, planId, email });
+    const { doctorId, subscriptionPlan, verificationToken } = req.body;
+    console.log('💳 Creating doctor subscription checkout:', { doctorId, subscriptionPlan });
     
-    const subscription = await createDoctorSubscription(doctorId, planId, paymentMethodId, email, name);
-    console.log('✅ Doctor subscription created:', subscription.id);
+    const checkoutSession = await createDoctorCheckoutSession(doctorId, subscriptionPlan, verificationToken);
+    console.log('✅ Doctor checkout session created:', checkoutSession.sessionId);
     
-    res.json(subscription);
+    res.json({
+      success: true,
+      checkoutUrl: checkoutSession.checkoutUrl,
+      sessionId: checkoutSession.sessionId,
+      expiresAt: checkoutSession.expiresAt
+    });
   } catch (error) {
-    console.error('❌ Error creating doctor subscription:', error);
+    console.error('❌ Error creating doctor subscription checkout:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: error.message || 'Error interno del servidor',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -1415,29 +1420,62 @@ app.get('/api/doctors/:doctorId/verification-status', async (req, res) => {
   }
 });
 
-app.post('/api/doctors/:doctorId/verify', async (req, res) => {
+app.post('/api/doctors/:doctorId/verify-cedula', async (req, res) => {
   try {
     const { doctorId } = req.params;
-    const { cedulaNumber, doctorName } = req.body;
     console.log('🔍 Starting verification for doctor:', doctorId);
     
-    // Verify cédula
-    const verificationResult = await verifyCedulaProfesional(cedulaNumber, doctorName);
+    // Get doctor data
+    const { data: doctor, error: doctorError } = await supabase
+      .from('doctors')
+      .select('cedula, users!inner(name)')
+      .eq('user_id', doctorId)
+      .single();
+
+    if (doctorError || !doctor) {
+      return res.status(404).json({ error: 'Doctor no encontrado' });
+    }
+
+    const doctorName = doctor.users?.name || '';
+    
+    // Verify cédula using new SEP provider
+    const verificationResult = await verifyCedulaSEP(doctor.cedula, doctorName);
     
     // Update doctor verification status
-    await updateDoctorVerificationStatus(doctorId, verificationResult);
+    await updateDoctorVerificationStatus(doctorId, verificationResult.valid, verificationResult.data);
     
-    console.log('✅ Doctor verification completed:', verificationResult.status);
+    console.log('✅ Doctor verification completed:', verificationResult.valid ? 'verified' : 'rejected');
     
     res.json({
       success: true,
-      verificationResult,
-      message: verificationResult.isValid 
+      verified: verificationResult.valid,
+      data: verificationResult.data,
+      error: verificationResult.error,
+      message: verificationResult.valid 
         ? 'Verificación exitosa' 
-        : 'Verificación fallida'
+        : verificationResult.error || 'Verificación fallida'
     });
   } catch (error) {
     console.error('❌ Error verifying doctor:', error);
+    res.status(500).json({ 
+      error: 'Error interno del servidor',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+app.get('/api/admin/pending-verifications', async (req, res) => {
+  try {
+    console.log('📋 Getting pending verifications');
+    
+    const pendingVerifications = await getPendingVerifications();
+    
+    res.json({
+      success: true,
+      data: pendingVerifications
+    });
+  } catch (error) {
+    console.error('❌ Error fetching pending verifications:', error);
     res.status(500).json({ 
       error: 'Error interno del servidor',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined

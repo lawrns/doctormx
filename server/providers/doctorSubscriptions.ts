@@ -44,6 +44,108 @@ export const DOCTOR_SUBSCRIPTION_PLANS = {
   }
 };
 
+// Create Stripe Checkout session for doctor subscription
+export async function createDoctorCheckoutSession(doctorId: string, planId: string, verificationToken?: string) {
+  try {
+    console.log('💳 Creating doctor checkout session:', { doctorId, planId });
+
+    // Get doctor details
+    const { data: doctor, error: doctorError } = await supabaseAdmin
+      .from('doctors')
+      .select('user_id, users(email, name), subscription_status, license_status')
+      .eq('user_id', doctorId)
+      .single();
+
+    if (doctorError || !doctor) {
+      throw new Error('Doctor not found');
+    }
+
+    // Verify doctor is verified and not already subscribed
+    if (doctor.license_status !== 'verified') {
+      throw new Error('Doctor must be verified before subscribing');
+    }
+
+    if (doctor.subscription_status === 'active') {
+      throw new Error('Doctor already has an active subscription');
+    }
+
+    const plan = DOCTOR_SUBSCRIPTION_PLANS[planId as keyof typeof DOCTOR_SUBSCRIPTION_PLANS];
+    if (!plan) {
+      throw new Error('Invalid subscription plan');
+    }
+
+    // Create Stripe customer if not exists
+    let customerId = await getStripeCustomerId(doctorId);
+    if (!customerId) {
+      const customer = await stripe.customers.create({
+        email: doctor.users.email,
+        name: doctor.users.name,
+        metadata: {
+          doctor_id: doctorId,
+          platform: 'doctor.mx'
+        }
+      });
+      customerId = customer.id;
+
+      // Store customer ID
+      await supabaseAdmin
+        .from('doctors')
+        .update({ stripe_customer_id: customerId })
+        .eq('user_id', doctorId);
+    }
+
+    // Create checkout session
+    const session = await stripe.checkout.sessions.create({
+      customer: customerId,
+      payment_method_types: ['card'],
+      line_items: [{
+        price_data: {
+          currency: plan.currency,
+          product_data: {
+            name: plan.name,
+            description: plan.description,
+          },
+          unit_amount: plan.price,
+          recurring: {
+            interval: plan.interval as 'month' | 'year',
+          },
+        },
+        quantity: 1,
+      }],
+      mode: 'subscription',
+      subscription_data: {
+        trial_period_days: 7, // 7-day free trial
+        metadata: {
+          doctor_id: doctorId,
+          plan_id: planId,
+          platform: 'doctor.mx',
+          trial_enabled: 'true'
+        }
+      },
+      success_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/connect/dashboard?subscription=success`,
+      cancel_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/connect/subscription-setup?doctorId=${doctorId}&token=${verificationToken}`,
+      metadata: {
+        doctor_id: doctorId,
+        plan_id: planId,
+        verification_token: verificationToken || '',
+        platform: 'doctor.mx'
+      }
+    });
+
+    console.log('✅ Doctor checkout session created:', session.id);
+
+    return {
+      sessionId: session.id,
+      checkoutUrl: session.url,
+      expiresAt: new Date(session.expires_at * 1000)
+    };
+
+  } catch (error) {
+    console.error('❌ Error creating doctor checkout session:', error);
+    throw error;
+  }
+}
+
 // Create Stripe subscription for doctor
 export async function createDoctorSubscription(doctorId: string, planId: string, paymentMethodId: string) {
   try {
@@ -97,7 +199,7 @@ export async function createDoctorSubscription(doctorId: string, planId: string,
       },
     });
 
-    // Create subscription
+    // Create subscription with 7-day trial
     const subscription = await stripe.subscriptions.create({
       customer: customerId,
       items: [{
@@ -113,13 +215,15 @@ export async function createDoctorSubscription(doctorId: string, planId: string,
           },
         },
       }],
+      trial_period_days: 7, // 7-day free trial
       payment_behavior: 'default_incomplete',
       payment_settings: { save_default_payment_method: 'on_subscription' },
       expand: ['latest_invoice.payment_intent'],
       metadata: {
         doctor_id: doctorId,
         plan_id: planId,
-        platform: 'doctor.mx'
+        platform: 'doctor.mx',
+        trial_enabled: 'true'
       }
     });
 
@@ -130,8 +234,11 @@ export async function createDoctorSubscription(doctorId: string, planId: string,
         subscription_status: 'active',
         subscription_id: subscription.id,
         subscription_start_date: new Date().toISOString(),
+        subscription_trial_end: new Date(subscription.trial_end * 1000).toISOString(),
         payment_provider: 'stripe',
-        subscription_plan: planId
+        subscription_plan: planId,
+        onboarding_completed: true,
+        onboarding_completed_at: new Date().toISOString()
       })
       .eq('user_id', doctorId);
 
@@ -142,6 +249,19 @@ export async function createDoctorSubscription(doctorId: string, planId: string,
       amount: plan.price,
       currency: plan.currency
     });
+
+    // Track onboarding event
+    await supabaseAdmin
+      .from('onboarding_analytics')
+      .insert({
+        doctor_id: doctorId,
+        event_type: 'subscription_created',
+        event_data: {
+          subscription_id: subscription.id,
+          plan_id: planId,
+          trial_enabled: true
+        }
+      });
 
     console.log('✅ Doctor subscription created:', subscription.id);
 

@@ -255,6 +255,81 @@ export default function DoctorDashboard() {
           </motion.div>
         </div>
 
+        {/* Onboarding Checklist */}
+        {!doctorData?.onboarding_completed && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200 mb-8"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <Icon name="clipboard-document-check" size="md" className="text-blue-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Progreso de Onboarding</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="check" size="sm" className="text-green-600" />
+                    </div>
+                    <span className="text-sm text-gray-700">Cuenta creada</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="check" size="sm" className="text-green-600" />
+                    </div>
+                    <span className="text-sm text-gray-700">Cédula verificada</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="check" size="sm" className="text-green-600" />
+                    </div>
+                    <span className="text-sm text-gray-700">Suscripción activa</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="clock" size="sm" className="text-yellow-600" />
+                    </div>
+                    <span className="text-sm text-gray-700">Configurar disponibilidad</span>
+                    <button className="ml-auto text-xs text-blue-600 hover:text-blue-700 font-medium">
+                      Configurar
+                    </button>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="clock" size="sm" className="text-yellow-600" />
+                    </div>
+                    <span className="text-sm text-gray-700">Completar perfil</span>
+                    <button className="ml-auto text-xs text-blue-600 hover:text-blue-700 font-medium">
+                      Completar
+                    </button>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Icon name="minus" size="sm" className="text-gray-400" />
+                    </div>
+                    <span className="text-sm text-gray-500">Primera consulta</span>
+                  </div>
+                </div>
+                
+                <div className="mt-4 p-3 bg-blue-100 rounded-lg">
+                  <div className="text-sm text-blue-800">
+                    <strong>¡Bienvenido!</strong> Tu onboarding está casi completo. 
+                    Configura tu disponibilidad y completa tu perfil para comenzar a recibir pacientes.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* Tabs */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="border-b border-gray-200">
