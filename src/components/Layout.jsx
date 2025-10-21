@@ -189,64 +189,82 @@ export default function Layout({ children, variant = 'app' }) {
             <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Navegación principal">
               {variant === 'marketing' ? (
                 <div className="flex items-center space-x-1">
-                  <Link to="/doctors" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="user-group" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Doctores
+                  <Link to="/doctors" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="user-group" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Doctores</span>
                   </Link>
-                  <Link to="/doctor" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="chat-bubble-left-right" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Consultar IA
+                  <Link to="/doctor" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="chat-bubble-left-right" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Consultar IA</span>
                   </Link>
-                  <Link to="/connect" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="user-plus" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Para Doctores
+                  
+                  <div className="h-6 w-px bg-neutral-200 mx-2"></div>
+                  
+                  <Link to="/connect" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="user-plus" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Para Doctores</span>
                   </Link>
-                  <Link to="/blog" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="document-text" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Blog
+                  <Link to="/blog" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="document-text" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Blog</span>
                   </Link>
-                  <Link to="/expert-qa" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="chat-bubble-left-right" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Preguntas
+                  <Link to="/expert-qa" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="chat-bubble-left-right" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Preguntas</span>
                   </Link>
-                  <Link to="/faq" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="question-mark-circle" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    FAQ
+                  <Link to="/faq" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="question-mark-circle" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>FAQ</span>
                   </Link>
                 </div>
               ) : (
                 <div className="flex items-center space-x-1">
-                  <Link to="/doctors" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                    <Icon name="user-group" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                    Doctores
+                  {/* Primary Navigation */}
+                  <Link to="/doctors" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="user-group" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Doctores</span>
                   </Link>
+                  <Link to="/doctor" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                    <Icon name="chat-bubble-left-right" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                    <span>Consultar IA</span>
+                  </Link>
+                  
                   {user && (
                     <>
+                      {/* Divider */}
                       <div className="h-6 w-px bg-neutral-200 mx-2"></div>
-                      <Link to="/vision" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                        <Icon name="camera" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                        Análisis de Imágenes
+                      
+                      {/* Services Menu */}
+                      <Link to="/vision" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                        <Icon name="camera" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                        <span>Imágenes</span>
                       </Link>
-                      <Link to="/ai-referrals" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                        <Icon name="arrow-right-circle" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                        Referencias IA
+                      <Link to="/ai-referrals" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                        <Icon name="arrow-right-circle" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                        <span>Referencias</span>
                       </Link>
-                      <Link to="/community" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                        <Icon name="users" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                        Comunidad
+                      
+                      {/* Divider */}
+                      <div className="h-6 w-px bg-neutral-200 mx-2"></div>
+                      
+                      {/* Community Menu */}
+                      <Link to="/community" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                        <Icon name="users" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                        <span>Comunidad</span>
                       </Link>
-                      <Link to="/marketplace" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                        <Icon name="shopping-bag" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                        Marketplace
+                      <Link to="/marketplace" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                        <Icon name="shopping-bag" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                        <span>Tienda</span>
                       </Link>
-                      <Link to="/gamification" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
-                        <Icon name="trophy" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
-                        Gamificación
+                      <Link to="/gamification" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
+                        <Icon name="trophy" size="sm" className="text-neutral-500 group-hover:text-primary-600" />
+                        <span>Puntos</span>
                       </Link>
+                      
                       {user.role === 'doctor' && (
                         <>
                           <div className="h-6 w-px bg-neutral-200 mx-2"></div>
-                          <Link to="/doctor-panel" className="flex items-center px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 group">
+                          <Link to="/doctor-panel" className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-neutral-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-colors group">
                             <Icon name="clipboard-document-list" size="sm" className="mr-2 text-neutral-500 group-hover:text-primary-600" />
                             Panel Doctor
                           </Link>
