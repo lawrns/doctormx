@@ -72,6 +72,9 @@ import {
   // Additional icons
   LanguageIcon,
   CurrencyDollarIcon,
+  BrainIcon,
+  HandThumbUpIcon,
+  PaperAirplaneIcon,
   
   // Targets & Navigation
   AcademicCapIcon as TargetIcon,
@@ -298,6 +301,9 @@ const Icon = ({
       'UserIcon': UserIcon,
       'LanguageIcon': LanguageIcon,
       'CurrencyDollarIcon': CurrencyDollarIcon,
+      'BrainIcon': BrainIcon,
+      'HandThumbUpIcon': HandThumbUpIcon,
+      'PaperAirplaneIcon': PaperAirplaneIcon,
       'TargetIcon': TargetIcon,
       'RocketIcon': RocketIcon,
       'DocumentIcon': DocumentIcon,

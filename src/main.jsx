@@ -25,6 +25,10 @@ import SubscriptionPlans from './components/SubscriptionPlans.jsx';
 import EnhancedDoctorPanel from './components/EnhancedDoctorPanel.jsx';
 import AIReferralSystem from './components/AIReferralSystem.jsx';
 import QABoard from './components/QABoard.jsx';
+import FAQ from './components/FAQ.jsx';
+import HealthBlog from './components/HealthBlog.jsx';
+import ExpertQA from './components/ExpertQA.jsx';
+import DoctorDashboardComponent from './components/DoctorDashboard.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
@@ -145,6 +149,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           {/* Q&A Board */}
           <Route path='/qa' element={<QABoard />} />
+
+          {/* Educational Content */}
+          <Route path='/faq' element={<FAQ type="patients" />} />
+          <Route path='/faq/doctors' element={<FAQ type="doctors" />} />
+          <Route path='/blog' element={<HealthBlog />} />
+          <Route path='/expert-qa' element={<ExpertQA />} />
+
+          {/* Enhanced Doctor Dashboard */}
+          <Route path='/doctor-dashboard' element={
+            <ProtectedRoute>
+              <DoctorDashboardComponent />
+            </ProtectedRoute>
+          } />
         </Routes>
         <ToastConfig />
       </AuthProvider>
