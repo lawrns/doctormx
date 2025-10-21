@@ -203,6 +203,7 @@ export default function DoctorProfile() {
                 <div className="relative">
                   <DoctorImage 
                     doctorName={doctor.full_name}
+                    doctorLocation={doctor.location}
                     size="lg"
                     className="border-4 border-white"
                   />

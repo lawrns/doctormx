@@ -364,17 +364,18 @@ export default function DoctorDirectory() {
                     >
                       <div className="flex items-start gap-4">
                         {/* Doctor Image */}
-                        <div className="relative flex-shrink-0">
-                          <DoctorImage 
-                            doctorName={doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
-                            size="md"
-                          />
-                          {doctor.license_status === 'verified' && (
-                            <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center">
-                              <Icon name="check" size="xs" className="text-white" />
-                            </div>
-                          )}
-                        </div>
+                               <div className="relative flex-shrink-0">
+                                 <DoctorImage 
+                                   doctorName={doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre'}
+                                   doctorLocation={doctor.location}
+                                   size="md"
+                                 />
+                                 {doctor.license_status === 'verified' && (
+                                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center">
+                                     <Icon name="check" size="xs" className="text-white" />
+                                   </div>
+                                 )}
+                               </div>
 
                         {/* Doctor Info */}
                         <div className="flex-1 min-w-0">
