@@ -11,7 +11,7 @@ export default function LoadingSpinner({ size = 'md', className = '' }) {
 
   return (
     <div className={`animate-spin ${sizeClasses[size]} ${className}`}>
-      <Icon name="arrow-path" size={size} className="text-primary-600" />
+      <Icon name="clock" size={size} className="text-primary-600" />
     </div>
   );
 }

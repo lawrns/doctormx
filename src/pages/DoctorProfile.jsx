@@ -248,7 +248,7 @@ export default function DoctorProfile() {
                   <div className="flex items-center justify-center lg:justify-start gap-2">
                     <Icon name="map-pin" size="sm" className="text-neutral-500" />
                     <span className="text-sm text-neutral-600">
-                      {doctor.location}, {doctor.state}
+                      {doctor.location?.city || 'Ciudad de México'}, {doctor.location?.state || 'CDMX'}
                     </span>
                   </div>
                 </div>
@@ -350,7 +350,7 @@ export default function DoctorProfile() {
                       <div className="flex items-center gap-2">
                         <Icon name="map-pin" size="sm" className="text-primary-600" />
                         <span className="text-neutral-600">Ubicación:</span>
-                        <span className="font-medium">{doctor.location || 'No especificada'}</span>
+                        <span className="font-medium">{doctor.location?.city || 'No especificada'}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <Icon name="clock" size="sm" className="text-primary-600" />
@@ -627,7 +627,7 @@ export default function DoctorProfile() {
                         <div>
                           <p className="text-neutral-700">{doctor.clinic_address || 'Dirección no disponible'}</p>
                           <p className="text-sm text-neutral-600 mt-1">
-                            {doctor.location}, {doctor.state}
+                            {doctor.location?.city || 'Ciudad de México'}, {doctor.location?.state || 'CDMX'}
                           </p>
                         </div>
                       </div>

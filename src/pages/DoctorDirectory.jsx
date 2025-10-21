@@ -500,7 +500,7 @@ export default function DoctorDirectory() {
               {doctors.map((doctor) => (
                 <div
                   key={doctor.user_id}
-                  className="glass-card group hover:shadow-card-hover hover:scale-105 transition-all duration-300 cursor-pointer p-6 sm:p-8"
+                  className="bg-white border border-neutral-200 rounded-xl shadow-md group hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer p-6 sm:p-8"
                   onClick={() => navigate(`/doctors/${doctor.user_id}`)}
                 >
                   {/* Doctor Header */}
