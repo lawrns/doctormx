@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../components/Layout';
 import Icon from '../components/ui/Icon';
+import TrustIndicators from '../components/TrustIndicators';
 
 function Logo() {
   return (
@@ -471,6 +472,7 @@ export default function ConnectLanding() {
             </p>
           </div>
           
+          <TrustIndicators type="homepage" />
         </div>
       </section>
 

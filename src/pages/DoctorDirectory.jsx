@@ -19,7 +19,12 @@ export default function DoctorDirectory() {
     specialty: '',
     search: '',
     available: false,
-    location: ''
+    location: '',
+    gender: '',
+    language: '',
+    insurance: '',
+    priceRange: '',
+    experience: ''
   });
   const [sortBy, setSortBy] = useState('rating');
   const [pagination, setPagination] = useState({
@@ -160,9 +165,9 @@ export default function DoctorDirectory() {
             </div>
           </div>
 
-          {/* Filters */}
-          <div className="glass-card mb-8 sm:mb-12 p-6 sm:p-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                   {/* Filters */}
+                   <div className="glass-card mb-8 sm:mb-12 p-6 sm:p-8">
+                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {/* Search */}
               <div className="lg:col-span-2">
                 <label className="block text-sm font-semibold text-neutral-700 mb-2">
@@ -252,6 +257,102 @@ export default function DoctorDirectory() {
                   <option value="Zacatecas">Zacatecas</option>
                   <option value="Fresnillo">Fresnillo</option>
                   <option value="Guadalupe">Guadalupe</option>
+                </select>
+              </div>
+
+              {/* Gender */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="user" size="sm" className="inline mr-2" />
+                  Género
+                </label>
+                <select
+                  value={filters.gender}
+                  onChange={(e) => setFilters({ ...filters, gender: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Cualquier género</option>
+                  <option value="male">Masculino</option>
+                  <option value="female">Femenino</option>
+                </select>
+              </div>
+
+              {/* Language */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="language" size="sm" className="inline mr-2" />
+                  Idioma
+                </label>
+                <select
+                  value={filters.language}
+                  onChange={(e) => setFilters({ ...filters, language: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Cualquier idioma</option>
+                  <option value="spanish">Español</option>
+                  <option value="english">Inglés</option>
+                  <option value="french">Francés</option>
+                  <option value="german">Alemán</option>
+                </select>
+              </div>
+
+              {/* Insurance */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="shield-check" size="sm" className="inline mr-2" />
+                  Aseguradora
+                </label>
+                <select
+                  value={filters.insurance}
+                  onChange={(e) => setFilters({ ...filters, insurance: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Cualquier aseguradora</option>
+                  <option value="particular">Particular</option>
+                  <option value="imss">IMSS</option>
+                  <option value="issste">ISSSTE</option>
+                  <option value="seguro-popular">Seguro Popular</option>
+                  <option value="gnp">GNP</option>
+                  <option value="axa">AXA</option>
+                </select>
+              </div>
+
+              {/* Price Range */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="currency-dollar" size="sm" className="inline mr-2" />
+                  Rango de Precio
+                </label>
+                <select
+                  value={filters.priceRange}
+                  onChange={(e) => setFilters({ ...filters, priceRange: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Cualquier precio</option>
+                  <option value="0-500">$0 - $500 MXN</option>
+                  <option value="500-1000">$500 - $1,000 MXN</option>
+                  <option value="1000-1500">$1,000 - $1,500 MXN</option>
+                  <option value="1500-2000">$1,500 - $2,000 MXN</option>
+                  <option value="2000+">$2,000+ MXN</option>
+                </select>
+              </div>
+
+              {/* Experience */}
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <Icon name="academic-cap" size="sm" className="inline mr-2" />
+                  Experiencia
+                </label>
+                <select
+                  value={filters.experience}
+                  onChange={(e) => setFilters({ ...filters, experience: e.target.value })}
+                  className="w-full px-4 py-3 border border-neutral-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 bg-white/80 backdrop-blur-sm"
+                >
+                  <option value="">Cualquier experiencia</option>
+                  <option value="0-5">0-5 años</option>
+                  <option value="5-10">5-10 años</option>
+                  <option value="10-20">10-20 años</option>
+                  <option value="20+">20+ años</option>
                 </select>
               </div>
 

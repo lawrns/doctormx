@@ -5,6 +5,7 @@ import GamificationHeader from './GamificationHeader';
 import Icon from './ui/Icon';
 import SkipLink from './ui/SkipLink';
 import Announcer from './ui/Announcer';
+import CookieConsent from './CookieConsent';
 
 function Logo() {
   return (
@@ -333,6 +334,9 @@ export default function Layout({ children, variant = 'app' }) {
           </div>
         </div>
       </footer>
+      
+      {/* Cookie Consent */}
+      <CookieConsent />
     </div>
   );
 }

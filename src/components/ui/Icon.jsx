@@ -69,6 +69,10 @@ import {
   IdentificationIcon,
   UserIcon,
   
+  // Additional icons
+  LanguageIcon,
+  CurrencyDollarIcon,
+  
   // Targets & Navigation
   AcademicCapIcon as TargetIcon,
   AcademicCapIcon as RocketIcon,
@@ -292,6 +296,8 @@ const Icon = ({
       'MapIcon': MapIcon,
       'IdentificationIcon': IdentificationIcon,
       'UserIcon': UserIcon,
+      'LanguageIcon': LanguageIcon,
+      'CurrencyDollarIcon': CurrencyDollarIcon,
       'TargetIcon': TargetIcon,
       'RocketIcon': RocketIcon,
       'DocumentIcon': DocumentIcon,
