@@ -407,9 +407,38 @@ export default function DoctorDirectory() {
                       {(() => {
                         const doctorName = doctor.full_name || doctor.users?.name || 'Dr. Sin Nombre';
                         const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
-                        const state = doctor.state || 'Ciudad de México';
-                        const city = doctor.city || 'Ciudad de México';
-                        const imagePath = `/images/doctors/${state}/${city}/${imageName}.webp`;
+                        
+                        // Generate image path based on doctor name hash to distribute across locations
+                        const hash = doctorName.split('').reduce((a, b) => {
+                          a = ((a << 5) - a) + b.charCodeAt(0);
+                          return a & a;
+                        }, 0);
+                        const locationIndex = Math.abs(hash) % 20;
+                        
+                        const locations = [
+                          'Ciudad de México/ciudad-de-mexico',
+                          'Nuevo León/Monterrey', 
+                          'Jalisco/Guadalajara',
+                          'Puebla/Puebla',
+                          'Guanajuato/leon',
+                          'Quintana Roo/cancun',
+                          'Yucatán/merida',
+                          'Oaxaca/Oaxaca',
+                          'Michoacán/Morelia',
+                          'Sonora/Hermosillo',
+                          'Sinaloa/culiacan',
+                          'Tabasco/Villahermosa',
+                          'Tamaulipas/Tampico',
+                          'Veracruz/Xalapa',
+                          'Chihuahua/Chihuahua',
+                          'Coahuila/Saltillo',
+                          'Campeche/Campeche',
+                          'Chiapas/tuxtla-gutierrez',
+                          'Aguascalientes/Aguascalientes',
+                          'Baja California/Tijuana'
+                        ];
+                        
+                        const imagePath = `/images/doctors/${locations[locationIndex]}/${imageName}.webp`;
                         
                         return (
                           <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">

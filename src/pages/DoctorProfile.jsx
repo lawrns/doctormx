@@ -129,9 +129,40 @@ export default function DoctorProfile() {
     }
   }
 
-  function getImagePath(doctorName, state = 'Ciudad de México', city = 'Ciudad de México') {
-    const sanitizedName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
-    return `/images/doctors/${state}/${city}/${sanitizedName}.webp`;
+  function getImagePath(doctorName) {
+    const imageName = doctorName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_').toLowerCase();
+    
+    // Generate image path based on doctor name hash to distribute across locations
+    const hash = doctorName.split('').reduce((a, b) => {
+      a = ((a << 5) - a) + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+    const locationIndex = Math.abs(hash) % 20;
+    
+    const locations = [
+      'Ciudad de México/ciudad-de-mexico',
+      'Nuevo León/Monterrey', 
+      'Jalisco/Guadalajara',
+      'Puebla/Puebla',
+      'Guanajuato/leon',
+      'Quintana Roo/cancun',
+      'Yucatán/merida',
+      'Oaxaca/Oaxaca',
+      'Michoacán/Morelia',
+      'Sonora/Hermosillo',
+      'Sinaloa/culiacan',
+      'Tabasco/Villahermosa',
+      'Tamaulipas/Tampico',
+      'Veracruz/Xalapa',
+      'Chihuahua/Chihuahua',
+      'Coahuila/Saltillo',
+      'Campeche/Campeche',
+      'Chiapas/tuxtla-gutierrez',
+      'Aguascalientes/Aguascalientes',
+      'Baja California/Tijuana'
+    ];
+    
+    return `/images/doctors/${locations[locationIndex]}/${imageName}.webp`;
   }
 
   function renderStars(rating) {
@@ -201,9 +232,9 @@ export default function DoctorProfile() {
               {/* Doctor Image and Basic Info */}
               <div className="flex flex-col sm:flex-row lg:flex-col items-center lg:items-start gap-4 lg:gap-6">
                 <div className="relative">
-                  <img
-                    src={getImagePath(doctor.full_name, doctor.state, doctor.city)}
-                    alt={doctor.full_name}
+                           <img
+                             src={getImagePath(doctor.full_name)}
+                             alt={doctor.full_name}
                     className="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-white shadow-lg"
                     onError={(e) => {
                       e.target.style.display = 'none';
