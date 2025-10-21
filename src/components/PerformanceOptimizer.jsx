@@ -34,41 +34,56 @@ export default function PerformanceOptimizer() {
     });
 
     // Set up performance monitoring
-    if ('performance' in window) {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          if (entry.entryType === 'largest-contentful-paint') {
-            console.log('LCP:', entry.startTime);
+    if ('performance' in window && 'PerformanceObserver' in window) {
+      try {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (entry.entryType === 'largest-contentful-paint') {
+              console.log('LCP:', entry.startTime);
+            }
+            if (entry.entryType === 'first-input') {
+              console.log('FID:', entry.processingStart - entry.startTime);
+            }
           }
-          if (entry.entryType === 'first-input') {
-            console.log('FID:', entry.processingStart - entry.startTime);
-          }
-        }
-      });
+        });
 
-      observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input'] });
+      } catch (error) {
+        console.warn('PerformanceObserver not supported:', error);
+      }
     }
 
     // Lazy load non-critical components
     const lazyLoadComponents = () => {
       const elements = document.querySelectorAll('[data-lazy]');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const element = entry.target;
-            const componentName = element.dataset.lazy;
-            
-            // Load component dynamically
-            import(`../components/${componentName}.jsx`).then(module => {
-              element.innerHTML = module.default;
-            });
-            
-            observer.unobserve(element);
-          }
+      
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              const componentName = element.dataset.lazy;
+              
+              // Load component dynamically
+              import(`../components/${componentName}.jsx`).then(module => {
+                element.innerHTML = module.default;
+              });
+              
+              observer.unobserve(element);
+            }
+          });
         });
-      });
 
-      elements.forEach(element => observer.observe(element));
+        elements.forEach(element => observer.observe(element));
+      } else {
+        // Fallback: load all components immediately if IntersectionObserver is not supported
+        elements.forEach(element => {
+          const componentName = element.dataset.lazy;
+          import(`../components/${componentName}.jsx`).then(module => {
+            element.innerHTML = module.default;
+          });
+        });
+      }
     };
 
     // Run lazy loading after initial render

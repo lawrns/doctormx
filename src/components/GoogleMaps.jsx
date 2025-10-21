@@ -54,24 +54,28 @@ export default function GoogleMaps({
 
   // Initialize map
   useEffect(() => {
-    if (!isLoaded || !mapRef.current) return;
+    if (!isLoaded || !mapRef.current || !window.google || !window.google.maps) return;
 
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: center,
-      zoom: zoom,
-      styles: [
-        {
-          featureType: 'poi',
-          elementType: 'labels',
-          stylers: [{ visibility: 'off' }]
-        }
-      ]
-    });
+    try {
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: center,
+        zoom: zoom,
+        styles: [
+          {
+            featureType: 'poi',
+            elementType: 'labels',
+            stylers: [{ visibility: 'off' }]
+          }
+        ]
+      });
 
-    mapInstanceRef.current = map;
+      mapInstanceRef.current = map;
 
-    // Add markers for doctors
-    addDoctorMarkers(map, filteredDoctors);
+      // Add markers for doctors
+      addDoctorMarkers(map, filteredDoctors);
+    } catch (error) {
+      console.error('Error initializing Google Maps:', error);
+    }
 
     return () => {
       // Cleanup markers
@@ -101,6 +105,8 @@ export default function GoogleMaps({
   }, [searchQuery, doctors]);
 
   const addDoctorMarkers = (map, doctorsList) => {
+    if (!window.google || !window.google.maps) return;
+    
     // Clear existing markers
     markersRef.current.forEach(marker => marker.setMap(null));
     markersRef.current = [];
@@ -108,11 +114,12 @@ export default function GoogleMaps({
     doctorsList.forEach((doctor, index) => {
       if (!doctor.clinic_address) return;
 
-      // Geocode address to get coordinates
-      const geocoder = new window.google.maps.Geocoder();
-      geocoder.geocode({ address: doctor.clinic_address }, (results, status) => {
-        if (status === 'OK' && results[0]) {
-          const location = results[0].geometry.location;
+      try {
+        // Geocode address to get coordinates
+        const geocoder = new window.google.maps.Geocoder();
+        geocoder.geocode({ address: doctor.clinic_address }, (results, status) => {
+          if (status === 'OK' && results[0]) {
+            const location = results[0].geometry.location;
           
           // Create custom marker icon
           const markerIcon = {
@@ -190,6 +197,9 @@ export default function GoogleMaps({
           markersRef.current.push(marker);
         }
       });
+      } catch (error) {
+        console.error('Error adding marker for doctor:', doctor.full_name, error);
+      }
     });
   };
 
