@@ -34,9 +34,11 @@ export const handler = async (event, context) => {
   }
 
   try {
-    const { id } = event.pathParameters || {};
+    // Extract ID from path - Netlify functions use event.path
+    const pathParts = event.path.split('/');
+    const id = pathParts[pathParts.length - 1];
     
-    if (!id) {
+    if (!id || id === 'doctor') {
       return {
         statusCode: 400,
         headers: {

@@ -16,6 +16,19 @@
   # Node.js version for functions
   node_bundler = "esbuild"
 
+# Static assets - serve directly
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
 # SPA fallback for client-side routing
 [[redirects]]
   from = "/*"
@@ -62,6 +75,11 @@
 
 [[headers]]
   for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

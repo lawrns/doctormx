@@ -3,6 +3,10 @@ import Icon from './ui/Icon';
 
 const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
+if (!GOOGLE_MAPS_API_KEY) {
+  console.warn('Google Maps API key not found. Maps will not load.');
+}
+
 export default function GoogleMaps({ 
   doctors = [], 
   center = { lat: 19.4326, lng: -99.1332 }, // Mexico City default
@@ -21,6 +25,11 @@ export default function GoogleMaps({
 
   // Load Google Maps script
   useEffect(() => {
+    if (!GOOGLE_MAPS_API_KEY) {
+      console.warn('Google Maps API key not available');
+      return;
+    }
+
     if (window.google && window.google.maps) {
       setIsLoaded(true);
       return;
@@ -31,10 +40,15 @@ export default function GoogleMaps({
     script.async = true;
     script.defer = true;
     script.onload = () => setIsLoaded(true);
+    script.onerror = () => {
+      console.error('Failed to load Google Maps API');
+    };
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 
@@ -282,6 +296,11 @@ export function DoctorLocationMap({ doctor, height = '300px' }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    if (!GOOGLE_MAPS_API_KEY) {
+      console.warn('Google Maps API key not available');
+      return;
+    }
+
     if (window.google && window.google.maps) {
       setIsLoaded(true);
       return;
@@ -292,10 +311,15 @@ export function DoctorLocationMap({ doctor, height = '300px' }) {
     script.async = true;
     script.defer = true;
     script.onload = () => setIsLoaded(true);
+    script.onerror = () => {
+      console.error('Failed to load Google Maps API');
+    };
     document.head.appendChild(script);
 
     return () => {
-      document.head.removeChild(script);
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
     };
   }, []);
 

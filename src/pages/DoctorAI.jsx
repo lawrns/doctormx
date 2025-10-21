@@ -372,9 +372,11 @@ export default function DoctorAI() {
       }
       
       // Detectar si hay derivación y buscar especialistas automáticamente
-      const specialty = extractSpecialty(data.reply);
-      if (specialty) {
-        await searchSpecialistsAndAddToChat(specialty);
+      if (data.reply) {
+        const specialty = extractSpecialty(data.reply);
+        if (specialty) {
+          await searchSpecialistsAndAddToChat(specialty);
+        }
       }
     } catch (error) {
       if (error.status === 402) {
