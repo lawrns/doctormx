@@ -8,12 +8,6 @@ export default function GamificationHeader() {
   const [loading, setLoading] = useState(true);
   const [showLevelUp, setShowLevelUp] = useState(false);
 
-  useEffect(() => {
-    if (user?.id) {
-      loadHealthPoints();
-    }
-  }, [user]);
-
   const loadHealthPoints = async () => {
     try {
       const response = await fetch(`/api/gamification/points/${user.id}`);
@@ -42,6 +36,12 @@ export default function GamificationHeader() {
     if (level >= 3) return 'from-green-500 to-green-600';
     return 'from-yellow-500 to-yellow-600';
   };
+
+  useEffect(() => {
+    if (user?.id) {
+      loadHealthPoints();
+    }
+  }, [user]);
 
   if (loading || !healthPoints) {
     return (
