@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Icon from './ui/Icon';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyCJD2boUXqXJ1ifBWTCOe5tw9izXBclB-o';
+const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export default function GoogleMaps({ 
   doctors = [], 
