@@ -11,6 +11,31 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Universal Icon + Text Alignment Fix */
+.icon-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
+.icon-text svg,
+.icon-text i,
+.icon-text img {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Ensure buttons with children (icon + text) use inline-flex */
+button > svg,
+button > img,
+a > svg,
+a > img {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
 /* Interactive Options Styles */
 .quick-reply-btn {
   @apply px-4 py-2.5 text-sm font-medium rounded-xl transition-all duration-150 ease-out;

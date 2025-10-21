@@ -300,5 +300,21 @@ export default {
       },
     }
   },
-  plugins: []
+  plugins: [
+    // Custom plugin for icon-text utilities
+    function({ addComponents }) {
+      addComponents({
+        '.icon-text': {
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          verticalAlign: 'middle',
+        },
+        '.icon-text svg, .icon-text i, .icon-text img': {
+          display: 'inline-block',
+          flexShrink: '0',
+        },
+      })
+    }
+  ]
 }
