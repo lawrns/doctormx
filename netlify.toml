@@ -9,6 +9,8 @@
 [build.environment]
   # Node.js version for builds
   NODE_VERSION = "18"
+  # Disable secrets scanning for Google Maps API key (public key)
+  SECRETS_SCAN_SMART_DETECTION_OMIT_VALUES = "AIzaSyCJD2boUXqXJ1ifBWTCOe5tw9izXBclB-o"
 
 [functions]
   # Functions directory
