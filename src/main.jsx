@@ -32,6 +32,7 @@ import DoctorDashboardComponent from './components/DoctorDashboard.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
+import DoctorSubscriptionSetup from './pages/DoctorSubscriptionSetup.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -58,6 +59,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/connect/subscription' element={
             <ProtectedRoute>
               <DoctorSubscriptionManagement />
+            </ProtectedRoute>
+          } />
+          <Route path='/connect/subscription-setup' element={
+            <ProtectedRoute>
+              <DoctorSubscriptionSetup />
             </ProtectedRoute>
           } />
           <Route path='/connect/dashboard' element={

@@ -364,15 +364,105 @@ export default function Layout({ children, variant = 'app' }) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-neutral-200" role="contentinfo">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-secondary-500 text-center md:text-left">
-              © 2025 Doctor.mx. Todos los derechos reservados.
-            </p>
-            <div className="flex items-center gap-2 text-sm text-secondary-500">
-              <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
-              <span>Sistema operativo</span>
+      <footer className="bg-neutral-900 text-neutral-300" role="contentinfo">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Company Info */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Icon name="heart" size="md" color="white" className="text-accent-500" />
+                <span className="font-bold text-white">Doctor.mx</span>
+              </div>
+              <p className="text-sm text-neutral-400">
+                Atención médica accesible desde WhatsApp para todos los mexicanos.
+              </p>
+              <div className="flex items-center gap-2 mt-4 text-xs text-neutral-500">
+                <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                <span>Sistema operativo</span>
+              </div>
+            </div>
+
+            {/* For Patients */}
+            <div>
+              <h3 className="font-semibold text-white mb-4">Para Pacientes</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/doctor" className="text-neutral-400 hover:text-white transition-colors">
+                    Consultar IA
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/doctors" className="text-neutral-400 hover:text-white transition-colors">
+                    Directorio Médico
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/vision" className="text-neutral-400 hover:text-white transition-colors">
+                    Análisis de Imágenes
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/community" className="text-neutral-400 hover:text-white transition-colors">
+                    Comunidad
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* For Doctors */}
+            <div>
+              <h3 className="font-semibold text-white mb-4">Para Doctores</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/connect" className="text-neutral-400 hover:text-white transition-colors">
+                    Únete al Equipo
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/connect/signup" className="text-neutral-400 hover:text-white transition-colors">
+                    Registrarse
+                  </Link>
+                </li>
+                <li>
+                  <a href="mailto:doctors@doctor.mx" className="text-neutral-400 hover:text-white transition-colors">
+                    Contactar
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Legal & More */}
+            <div>
+              <h3 className="font-semibold text-white mb-4">Legal</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/privacy" className="text-neutral-400 hover:text-white transition-colors">
+                    Privacidad
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/terms" className="text-neutral-400 hover:text-white transition-colors">
+                    Términos
+                  </Link>
+                </li>
+                <li>
+                  <a href="mailto:support@doctor.mx" className="text-neutral-400 hover:text-white transition-colors">
+                    Soporte
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-neutral-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-xs text-neutral-500">
+                © 2025 Doctor.mx. Todos los derechos reservados.
+              </p>
+              <p className="text-xs text-neutral-500">
+                Cumplimiento: NOM-004, NOM-024, LFPDPPP, CFDI 4.0
+              </p>
             </div>
           </div>
         </div>
