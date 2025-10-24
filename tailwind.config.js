@@ -314,6 +314,91 @@ export default {
           display: 'inline-block',
           flexShrink: '0',
         },
+        
+        // Severity Color System
+        '.severity-green': {
+          borderLeftColor: '#16a34a',
+          backgroundColor: '#f0fdf4',
+          color: '#166534',
+        },
+        '.severity-yellow': {
+          borderLeftColor: '#ca8a04',
+          backgroundColor: '#fefce8',
+          color: '#713f12',
+        },
+        '.severity-orange': {
+          borderLeftColor: '#ea580c',
+          backgroundColor: '#fff7ed',
+          color: '#7c2d12',
+        },
+        '.severity-red': {
+          borderLeftColor: '#dc2626',
+          backgroundColor: '#fef2f2',
+          color: '#7f1d1d',
+        },
+        
+        // Severity Badge Variants
+        '.badge-green': {
+          backgroundColor: '#dcfce7',
+          color: '#166534',
+          borderColor: '#86efac',
+        },
+        '.badge-yellow': {
+          backgroundColor: '#fef3c7',
+          color: '#713f12',
+          borderColor: '#fde047',
+        },
+        '.badge-orange': {
+          backgroundColor: '#fed7aa',
+          color: '#7c2d12',
+          borderColor: '#fb923c',
+        },
+        '.badge-red': {
+          backgroundColor: '#fee2e2',
+          color: '#7f1d1d',
+          borderColor: '#fca5a5',
+        },
+        
+        // Card Hierarchy
+        '.card-ai': {
+          '@apply flex justify-start': {},
+          '@apply bg-white': {},
+          '@apply border border-ink-border': {},
+          '@apply rounded-lg': {},
+          '@apply p-4': {},
+        },
+        '.card-user': {
+          '@apply flex justify-end': {},
+          '@apply bg-gradient-to-r from-brand-50 to-brand-100': {},
+          '@apply border border-brand-200': {},
+          '@apply rounded-lg': {},
+          '@apply p-4': {},
+        },
+        '.card-system': {
+          '@apply flex justify-center': {},
+          '@apply bg-neutral-50': {},
+          '@apply border border-neutral-200': {},
+          '@apply rounded-md': {},
+          '@apply p-3': {},
+        },
+        '.card-action': {
+          '@apply relative': {},
+          '@apply bg-white': {},
+          '@apply border-2 border-brand-200': {},
+          '@apply rounded-lg': {},
+          '@apply p-4': {},
+          '@apply shadow-sm': {},
+          '@apply hover:shadow-md': {},
+          '@apply transition-shadow': {},
+        },
+        '.card-referral': {
+          '@apply bg-gradient-to-br from-brand-50 via-white to-brand-50/30': {},
+          '@apply border-2 border-brand-200': {},
+          '@apply rounded-xl': {},
+          '@apply p-5': {},
+          '@apply shadow-lg': {},
+          '@apply hover:shadow-xl': {},
+        },
       })
     }
   ]
