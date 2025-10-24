@@ -9,8 +9,16 @@ import PrescriptionCard from '../components/PrescriptionCard';
 import FloatingDoctorFAB from '../components/FloatingDoctorFAB';
 import SmartReferralCard from '../components/SmartReferralCard';
 import TypingIndicator from '../components/TypingIndicator';
+// Import Hybrid-Guided Components
+import ChipBar from '../components/ChipBar';
+import SeverityScale from '../components/InlinePickers/SeverityScale';
+import DurationPicker from '../components/InlinePickers/DurationPicker';
+import SpecialtyPicker from '../components/InlinePickers/SpecialtyPicker';
+import SymptomLocation from '../components/InlinePickers/SymptomLocation';
+import AppointmentCard from '../components/AppointmentCard';
+import SummaryCard from '../components/SummaryCard';
 // Import Phase 5 Response Parser
-import { parseAIResponse, formatResponseForUI, matchDoctorsToSpecialty } from '../lib/aiResponseParser';
+import { parseAIResponse, formatResponseForUI, matchDoctorsToSpecialty, generateChipsForStage } from '../lib/aiResponseParser';
 
 export default function DoctorAI() {
   const [input, setInput] = useState('');
@@ -26,6 +34,18 @@ export default function DoctorAI() {
   const [showOptions, setShowOptions] = useState(true);
   const [showOverflowMenu, setShowOverflowMenu] = useState({});
   const [showShareModal, setShowShareModal] = useState(false);
+  
+  // Hybrid-Guided Chat State
+  const [conversationStage, setConversationStage] = useState('intake');
+  const [conversationMemory, setConversationMemory] = useState({
+    stage: 'intake',
+    collected_fields: {},
+    symptoms: [],
+    severity_detected: null,
+    recommended_specialty: null
+  });
+  const [showComposer, setShowComposer] = useState(false);
+  const [activeInlinePicker, setActiveInlinePicker] = useState(null);
   
   const { user } = useAuth();
 
@@ -279,13 +299,53 @@ export default function DoctorAI() {
         message = typeof option === 'string' ? '' : (option.text || '');
     }
     
-    if (message) {
-      setInput(message);
-      // Auto-send the message
-      setTimeout(() => {
-        send();
-      }, 100);
+      if (message) {
+        setInput(message);
+        // Auto-send the message
+        setTimeout(() => {
+          send();
+        }, 100);
+      }
+    };
+
+  // Handle inline picker selections
+  const handleInlinePickerSelect = (pickerType, value) => {
+    // Update conversation memory
+    setConversationMemory(prev => ({
+      ...prev,
+      collected_fields: {
+        ...prev.collected_fields,
+        [pickerType]: value
+      }
+    }));
+    
+    // Generate appropriate message based on picker type
+    let message = '';
+    switch (pickerType) {
+      case 'severity':
+        message = `La urgencia de mi condición es: ${value}`;
+        break;
+      case 'duration':
+        message = `Los síntomas comenzaron hace: ${value}`;
+        break;
+      case 'specialty':
+        message = `Me gustaría ser referido a: ${value}`;
+        setConversationMemory(prev => ({ ...prev, recommended_specialty: value }));
+        break;
+      case 'location':
+        message = `Estoy ubicado en: ${value}`;
+        break;
+      default:
+        message = `${pickerType}: ${value}`;
     }
+    
+    setInput(message);
+    setActiveInlinePicker(null);
+    
+    // Auto-send
+    setTimeout(() => {
+      send();
+    }, 100);
   };
 
   // Keyboard shortcuts for options
@@ -381,17 +441,36 @@ export default function DoctorAI() {
         images: uploadedImages.length > 0 ? uploadedImages : undefined
       });
       
+      // Generate chips based on conversation stage
+      const currentStage = data.conversationStage || conversationStage;
+      const parsedResponse = parseAIResponse(data.reply);
+      const chips = generateChipsForStage(currentStage, {
+        ...parsedResponse,
+        recommended_specialty: data.recommended_specialty || parsedResponse.recommended_specialty
+      });
+      
       setHistory(h => [...h, { 
         role: 'assistant', 
         content: data.reply,
-        conversationStage: data.conversationStage,
+        conversationStage: currentStage,
         responseOptions: data.responseOptions,
-        severity: data.severity, // Assuming severity is part of the parsed response
-        prescription: data.prescription, // Assuming prescription is part of the parsed response
-        lab_orders: data.lab_orders, // Assuming lab_orders is part of the parsed response
-        recommended_specialty: data.recommended_specialty, // Assuming recommended_specialty is part of the parsed response
-        nearby_doctors: data.nearby_doctors // Assuming nearby_doctors is part of the parsed response
+        severity: data.severity || parsedResponse.severity,
+        prescription: data.prescription || parsedResponse.prescription,
+        lab_orders: data.lab_orders || parsedResponse.lab_orders,
+        recommended_specialty: data.recommended_specialty || parsedResponse.recommended_specialty,
+        nearby_doctors: data.nearby_doctors,
+        chips: chips.length > 0 ? chips : undefined,
+        forms: data.forms || undefined
       }]);
+      
+      // Update conversation stage and memory
+      setConversationStage(currentStage);
+      setConversationMemory(prev => ({
+        ...prev,
+        stage: currentStage,
+        severity_detected: data.severity || parsedResponse.severity,
+        recommended_specialty: data.recommended_specialty || parsedResponse.recommended_specialty
+      }));
       
       // Handle free question usage feedback
       if (data.freeQuestionUsed && data.freeQuestionMessage) {
@@ -764,12 +843,66 @@ export default function DoctorAI() {
                                 </>
                               )}
                               
-                              {/* Phase 1: Quick Reply Options - now using new component */}
-                              {m.responseOptions && showOptions && (
+                              {/* Hybrid-Guided: ChipBar */}
+                              {m.chips && m.chips.length > 0 && (
+                                <ChipBar 
+                                  chips={m.chips}
+                                  onChipClick={handleResponseOption}
+                                  isLoading={loading}
+                                />
+                              )}
+                              
+                              {/* Fallback: Quick Reply Options */}
+                              {!m.chips && m.responseOptions && showOptions && (
                                 <QuickReplyOptions 
                                   onOptionSelect={handleResponseOption}
                                   isLoading={loading}
                                 />
+                              )}
+                              
+                              {/* Inline Pickers */}
+                              {m.forms && m.forms.length > 0 && (
+                                <div className="mt-3 space-y-3">
+                                  {m.forms.map((form) => {
+                                    if (form.type === 'severity') {
+                                      return (
+                                        <SeverityScale
+                                          key={form.id}
+                                          onSelect={(value) => handleInlinePickerSelect('severity', value)}
+                                          currentValue={conversationMemory.collected_fields.severity}
+                                        />
+                                      );
+                                    }
+                                    if (form.type === 'duration') {
+                                      return (
+                                        <DurationPicker
+                                          key={form.id}
+                                          onSelect={(value) => handleInlinePickerSelect('duration', value)}
+                                          currentValue={conversationMemory.collected_fields.duration}
+                                        />
+                                      );
+                                    }
+                                    if (form.type === 'specialty') {
+                                      return (
+                                        <SpecialtyPicker
+                                          key={form.id}
+                                          onSelect={(value) => handleInlinePickerSelect('specialty', value)}
+                                          currentValue={conversationMemory.collected_fields.specialty}
+                                        />
+                                      );
+                                    }
+                                    if (form.type === 'location') {
+                                      return (
+                                        <SymptomLocation
+                                          key={form.id}
+                                          onSelect={(value) => handleInlinePickerSelect('location', value)}
+                                          currentValue={conversationMemory.collected_fields.location}
+                                        />
+                                      );
+                                    }
+                                    return null;
+                                  })}
+                                </div>
                               )}
                             </div>
                           )}

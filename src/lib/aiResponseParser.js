@@ -1,14 +1,20 @@
 /**
  * AI Response Parser - Structures medical AI responses with severity, specialty, and recommendations
- * Supports both legacy text responses and new structured JSON format
+ * Supports both legacy text responses and new structured JSON format (Schema v2)
  */
 
 /**
- * Parse AI response and extract medical information
- * @param {string} content - AI response content
+ * Parse AI response and extract medical information (Schema v2 compatible)
+ * @param {string|Object} content - AI response content (string or Schema v2 object)
  * @returns {Object} Structured response object
  */
 export const parseAIResponse = (content) => {
+  // If content is already a Schema v2 object, return it
+  if (typeof content === 'object' && content !== null && content.reply) {
+    return content;
+  }
+  
+  // Legacy parsing for text responses
   const response = {
     content: content,
     severity: extractSeverity(content),
@@ -291,4 +297,74 @@ export const matchDoctorsToSpecialty = (specialty, doctors = []) => {
     count: matched.length,
     sample: matched.slice(0, 2),
   };
+};
+
+/**
+ * Generate chips based on conversation stage and content
+ * @param {string} stage - Conversation stage
+ * @param {Object} response - Parsed response
+ * @returns {Array} Array of chip objects
+ */
+export const generateChipsForStage = (stage, response) => {
+  const chips = [];
+  
+  // Always available chips
+  chips.push({
+    id: 'ask_follow_up',
+    label: 'Otra pregunta',
+    action: 'ask_follow_up',
+    icon: 'ask_follow_up',
+    variant: 'secondary'
+  });
+  
+  // Stage-specific chips
+  if (stage === 'clarify' || stage === 'assess_severity') {
+    chips.push({
+      id: 'severity_check',
+      label: 'Evaluar urgencia',
+      action: 'severity_check',
+      icon: 'severity_check',
+      variant: 'primary'
+    });
+  }
+  
+  if (stage === 'recommendations' || stage === 'actions') {
+    if (response.recommended_specialty) {
+      chips.push({
+        id: 'find_specialist',
+        label: 'Buscar doctor',
+        action: 'find_specialist',
+        icon: 'find_specialist',
+        variant: 'primary'
+      });
+    }
+    
+    chips.push({
+      id: 'book_appointment',
+      label: 'Agendar cita',
+      action: 'book_appointment',
+      icon: 'book_appointment',
+      variant: 'secondary'
+    });
+  }
+  
+  if (stage === 'wrap_up') {
+    chips.push({
+      id: 'save_conversation',
+      label: 'Guardar chat',
+      action: 'save_conversation',
+      icon: 'save_conversation',
+      variant: 'secondary'
+    });
+    
+    chips.push({
+      id: 'share_with_doctor',
+      label: 'Compartir',
+      action: 'share_with_doctor',
+      icon: 'share_with_doctor',
+      variant: 'secondary'
+    });
+  }
+  
+  return chips;
 };
