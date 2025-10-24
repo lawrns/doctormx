@@ -2,6 +2,15 @@ import { useEffect, useState, useRef } from 'react';
 import { chatTurn, findSpecialists, checkFreeQuestionsEligibility } from '../lib/api';
 import Layout from '../components/Layout';
 import { useAuth } from '../contexts/AuthContext';
+// Import Phase 1-3 Components
+import QuickReplyOptions from '../components/QuickReplyOptions';
+import SeverityWidget from '../components/SeverityWidget';
+import PrescriptionCard from '../components/PrescriptionCard';
+import FloatingDoctorFAB from '../components/FloatingDoctorFAB';
+import SmartReferralCard from '../components/SmartReferralCard';
+import TypingIndicator from '../components/TypingIndicator';
+// Import Phase 5 Response Parser
+import { parseAIResponse, formatResponseForUI, matchDoctorsToSpecialty } from '../lib/aiResponseParser';
 
 export default function DoctorAI() {
   const [input, setInput] = useState('');
@@ -365,7 +374,12 @@ export default function DoctorAI() {
         role: 'assistant', 
         content: data.reply,
         conversationStage: data.conversationStage,
-        responseOptions: data.responseOptions
+        responseOptions: data.responseOptions,
+        severity: data.severity, // Assuming severity is part of the parsed response
+        prescription: data.prescription, // Assuming prescription is part of the parsed response
+        lab_orders: data.lab_orders, // Assuming lab_orders is part of the parsed response
+        recommended_specialty: data.recommended_specialty, // Assuming recommended_specialty is part of the parsed response
+        nearby_doctors: data.nearby_doctors // Assuming nearby_doctors is part of the parsed response
       }]);
       
       // Handle free question usage feedback
@@ -717,97 +731,34 @@ export default function DoctorAI() {
                                 dangerouslySetInnerHTML={{ __html: formatTextWithBold(m.content) }}
                               />
                               
-                              {/* Three-Tier Response Options */}
+                              {/* Phase 1: Enhanced AI Response Components */}
+                              {m.role === 'assistant' && m.content && m.content !== 'specialists_list' && (
+                                <>
+                                  {/* Parse and display severity widget if present */}
+                                  {m.severity && <SeverityWidget severity={m.severity} message={m.content.substring(0, 100)} />}
+                                  
+                                  {/* Display prescription/lab cards if available */}
+                                  {(m.prescription?.available || m.lab_orders?.available) && (
+                                    <PrescriptionCard prescription={m.prescription} labOrders={m.lab_orders} />
+                                  )}
+                                  
+                                  {/* Display smart referral card when specialist recommended */}
+                                  {m.recommended_specialty && (
+                                    <SmartReferralCard 
+                                      specialty={m.recommended_specialty}
+                                      doctorCount={m.nearby_doctors?.count || 0}
+                                      doctors={m.nearby_doctors?.sample || []}
+                                    />
+                                  )}
+                                </>
+                              )}
+                              
+                              {/* Phase 1: Quick Reply Options - now using new component */}
                               {m.responseOptions && showOptions && (
-                                <div className="mt-3 space-y-2">
-                                  {/* Primary Options (Quick Replies) */}
-                                  {m.responseOptions.primary && m.responseOptions.primary.length > 0 && (
-                                    <div className="flex flex-wrap gap-2">
-                                      {m.responseOptions.primary.map((option, index) => (
-                                        <button
-                                          key={option.id}
-                                          onClick={() => handleResponseOption(option)}
-                                          aria-label={option.text}
-                                          data-keyboard-shortcut={index < 3 ? (index + 1).toString() : undefined}
-                                          className={`quick-reply-btn ${
-                                            option.style === 'danger' 
-                                              ? 'bg-red-100 text-red-700 hover:bg-red-200 border border-red-200' :
-                                            option.style === 'warning' 
-                                              ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 border border-yellow-200' :
-                                            option.style === 'success' 
-                                              ? 'bg-green-100 text-green-700 hover:bg-green-200 border border-green-200' :
-                                            option.style === 'primary' 
-                                              ? 'bg-primary-100 text-primary-700 hover:bg-primary-200 border border-primary-200' :
-                                            'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
-                                          }`}
-                                        >
-                                          {option.text}
-                                          {index < 3 && (
-                                            <span className="ml-1 text-xs opacity-60">({index + 1})</span>
-                                          )}
-                                        </button>
-                                      ))}
-                                    </div>
-                                  )}
-
-                                  {/* Secondary Options */}
-                                  {m.responseOptions.secondary && m.responseOptions.secondary.length > 0 && (
-                                    <div className="flex flex-wrap gap-1">
-                                      {m.responseOptions.secondary.map((option) => (
-                                        <button
-                                          key={option.id}
-                                          onClick={() => handleResponseOption(option)}
-                                          className={`px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100 ${
-                                            option.style === 'primary' 
-                                              ? 'bg-primary-50 text-primary-600 hover:bg-primary-100 border border-primary-200' :
-                                            'bg-gray-50 text-gray-600 hover:bg-gray-100 border border-gray-200'
-                                          }`}
-                                        >
-                                          {option.text}
-                                        </button>
-                                      ))}
-                                    </div>
-                                  )}
-
-                                  {/* Overflow Menu */}
-                                  {m.responseOptions.overflow && m.responseOptions.overflow.length > 0 && (
-                                    <div className="relative">
-                                      <button
-                                        onClick={() => setShowOverflowMenu(prev => ({
-                                          ...prev,
-                                          [m.id || 'last']: !prev[m.id || 'last']
-                                        }))}
-                                        className="px-3 py-1 text-xs font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded-md transition-all duration-150 border border-gray-200"
-                                        aria-label="Más opciones"
-                                      >
-                                        Más opciones (M)
-                                        <svg className="inline w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                      </button>
-                                      
-                                      {showOverflowMenu[m.id || 'last'] && (
-                                        <div className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
-                                          {m.responseOptions.overflow.map((option) => (
-                                            <button
-                                              key={option.id}
-                                              onClick={() => {
-                                                handleResponseOption(option);
-                                                setShowOverflowMenu(prev => ({
-                                                  ...prev,
-                                                  [m.id || 'last']: false
-                                                }));
-                                              }}
-                                              className="w-full px-3 py-2 text-left text-sm text-gray-700 hover:bg-gray-50 first:rounded-t-lg last:rounded-b-lg transition-colors duration-150"
-                                            >
-                                              {option.text}
-                                            </button>
-                                          ))}
-                                        </div>
-                                      )}
-                                    </div>
-                                  )}
-                                </div>
+                                <QuickReplyOptions 
+                                  onOptionSelect={handleResponseOption}
+                                  isLoading={loading}
+                                />
                               )}
                             </div>
                           )}
@@ -1003,31 +954,20 @@ export default function DoctorAI() {
           </div>
         </div>
       </div>
-
-      {/* Free Question Alert */}
-      {showFreeQuestionAlert && (
-        <div className="fixed top-4 right-4 z-50 max-w-sm">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 shadow-lg">
-            <div className="flex items-start gap-3">
-              <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <div className="flex-1">
-                <p className="text-sm font-medium text-green-800 mb-1">¡Pregunta gratuita utilizada!</p>
-                <p className="text-xs text-green-700">{freeQuestionMessage}</p>
-              </div>
-              <button
-                onClick={() => setShowFreeQuestionAlert(false)}
-                className="text-green-600 hover:text-green-800"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      
+      {/* Phase 2: Floating Doctor Finder FAB */}
+      <FloatingDoctorFAB 
+        recommendedSpecialty={
+          history.length > 0 && history[history.length - 1].recommended_specialty
+            ? history[history.length - 1].recommended_specialty
+            : null
+        }
+        doctorCount={
+          history.length > 0 && history[history.length - 1].nearby_doctors?.count
+            ? history[history.length - 1].nearby_doctors.count
+            : 0
+        }
+      />
     </Layout>
   );
 }
