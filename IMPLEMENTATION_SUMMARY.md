@@ -38,10 +38,11 @@
 - ✅ Conversation memory tracks collected fields
 - ✅ Stage transitions tracked automatically
 - ✅ Backward compatible with existing QuickReplyOptions
+- ✅ Chat orchestrator with Schema v2 support built
+- ✅ Stage machine implemented (intake → clarify → assess_severity → recommendations → actions → wrap_up)
 
-### What Needs Backend Support
-- ⚠️ Backend doesn't yet return Schema v2 format (chips[], forms[], next_state)
-- ⚠️ Stage machine logic not yet implemented in orchestrator
+### What Needs Integration
+- ⚠️ Chat orchestrator needs to be wired into chat endpoint
 - ⚠️ Conversation memory not persisted to backend
 - ⚠️ Additional endpoints not yet created (save, share, referral, appointment)
 
