@@ -68,3 +68,7 @@ vapi calls:create --to "+526141115056" --from "$FROM_NUMBER" --assistant "$ASSIS
 - **Invalid Phone Number:** Ensure FROM_NUMBER is registered with VAPI
 - **Call Failures:** Check VAPI dashboard for call logs and errors
 
+
+
+
+

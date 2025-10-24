@@ -331,3 +331,5 @@ export default function DoctorVerification() {
     </Layout>
   );
 }
+
+

@@ -118,3 +118,5 @@ The fix has been tested on:
 
 All icon + text combinations now properly display on a single horizontal line with appropriate spacing.
 
+
+

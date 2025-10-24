@@ -411,85 +411,86 @@ export default function DoctorAI() {
         </div>
 
         <div className={`transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-700 shadow-sm ring-1 ring-brand-200/50">
+          {/* Hero Section - OPTIMIZED */}
+          <div className="text-center mb-6">
+            {/* Inline status + heading row */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 mb-4">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-brand-700 shadow-sm ring-1 ring-brand-200/50 whitespace-nowrap">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-medical-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-medical-500"></span>
                 </span>
-                Conectado · IA médica activa
+                Conectado · IA activa
               </span>
+              
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-ink-primary leading-tight">
+                Consulta con{' '}
+                <span className="relative inline-block">
+                  <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">Dr. Simeon</span>
+                </span>
+              </h1>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-ink-primary mb-4 leading-[1.1]">
-              Consulta con tu{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-brand-600 to-medical-600 bg-clip-text text-transparent">Dr. Simeon</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-gradient-to-r from-brand-200/50 to-medical-200/50 -rotate-1"></span>
-              </span>
-            </h1>
-            <p className="text-lg text-ink-secondary max-w-2xl mx-auto leading-relaxed mb-8">
-              Describe tus síntomas con detalle. Recibirás orientación médica inmediata y, si es necesario, referencias a especialistas cerca de ti.
+            {/* Compact description */}
+            <p className="text-sm md:text-base text-ink-secondary max-w-2xl mx-auto leading-snug mb-4">
+              Describe tus síntomas. Recibirás orientación médica inmediata y referencias a especialistas cerca de ti.
             </p>
 
-            {/* Free Questions Counter and Options Toggle */}
+            {/* Compact controls - single row */}
             {user && (
-              <div className="mb-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg">
-                  <svg className="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex flex-col xs:flex-row items-center justify-center gap-2 mb-4 flex-wrap">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-md text-xs font-medium text-green-800">
+                  <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-medium text-green-800">
+                  <span>
                     {freeQuestionsRemaining > 0 
-                      ? `${freeQuestionsRemaining} preguntas GRATIS restantes este mes`
-                      : 'Preguntas gratuitas agotadas - se renuevan cada mes'
+                      ? `${freeQuestionsRemaining} GRATIS`
+                      : 'Sin preguntas gratuitas'
                     }
                   </span>
                 </div>
                 
-                {/* Options Toggle */}
                 <button
                   onClick={() => setShowOptions(!showOptions)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg border transition-all duration-200 ${
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-xs font-medium transition-all duration-200 ${
                     showOptions 
                       ? 'bg-primary-50 text-primary-700 border-primary-200 hover:bg-primary-100' 
                       : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
                   }`}
                   title={showOptions ? 'Ocultar opciones rápidas' : 'Mostrar opciones rápidas'}
                 >
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
                   </svg>
-                  <span className="text-sm font-medium">
-                    {showOptions ? 'Ocultar opciones' : 'Mostrar opciones'}
-                  </span>
+                  <span>{showOptions ? 'Ocultar' : 'Mostrar'}</span>
                 </button>
               </div>
             )}
 
-            {/* Quick actions */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-              <button className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-ink-border rounded-lg text-sm font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Dolor de cabeza
-              </button>
-              <button className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-ink-border rounded-lg text-sm font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Fiebre
-              </button>
-              <button className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-ink-border rounded-lg text-sm font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-                Dolor de pecho
-              </button>
-            </div>
+            {/* Quick action buttons - moved here but keep compact */}
+            {showOptions && (
+              <div className="flex flex-wrap items-center justify-center gap-2 mb-2">
+                <button onClick={() => handleResponseOption({ type: 'quick_symptom', value: 'Dolor de cabeza', text: 'Dolor de cabeza' })} className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-ink-border rounded-md text-xs font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Dolor cabeza</span>
+                </button>
+                <button onClick={() => handleResponseOption({ type: 'quick_symptom', value: 'Fiebre', text: 'Fiebre' })} className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-ink-border rounded-md text-xs font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Fiebre</span>
+                </button>
+                <button onClick={() => handleResponseOption({ type: 'quick_symptom', value: 'Dolor de pecho', text: 'Dolor de pecho' })} className="inline-flex items-center gap-1 px-3 py-1.5 bg-white border border-ink-border rounded-md text-xs font-medium text-ink-secondary hover:border-brand-500 hover:bg-brand-50/50 transition-all">
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  <span>Dolor pecho</span>
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Chat Container */}

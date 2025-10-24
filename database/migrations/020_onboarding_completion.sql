@@ -112,3 +112,7 @@ COMMENT ON COLUMN doctors.verification_data IS 'Data from SEP verification proce
 COMMENT ON TABLE subscription_events IS 'Tracks subscription-related events for doctors';
 COMMENT ON TABLE doctor_verifications IS 'Tracks SEP cédula verifications';
 COMMENT ON TABLE onboarding_analytics IS 'Tracks doctor onboarding conversion funnel events';
+
+
+
+
