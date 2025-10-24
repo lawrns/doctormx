@@ -205,12 +205,34 @@ export default function DoctorAI() {
   const handleResponseOption = async (option) => {
     let message = '';
     
-    switch (option.action) {
+    // Convert string action to object if needed
+    const action = typeof option === 'string' ? option : option.action;
+    
+    switch (action) {
+      case 'severity_check':
+        message = 'Necesito conocer la urgencia de mi condición';
+        break;
+      case 'find_specialist':
+        message = 'Necesito encontrar un especialista cerca de mí';
+        break;
+      case 'ask_follow_up':
+        message = '¿Puedes hacerme más preguntas para entender mejor mi condición?';
+        break;
+      case 'save_conversation':
+        // Implement save to local storage
+        const saved = saveConversationToStorage(history);
+        if (saved) {
+          // Show success message (you might want to use a toast library)
+          alert('Conversación guardada exitosamente');
+        } else {
+          alert('Error al guardar la conversación');
+        }
+        return;
       case 'severity':
-        message = `La intensidad es ${option.value}`;
+        message = `La intensidad es ${typeof option === 'string' ? 'media' : option.value}`;
         break;
       case 'question':
-        switch (option.value) {
+        switch (typeof option === 'string' ? '' : option.value) {
           case 'duration':
             message = '¿Cuánto tiempo llevas con estos síntomas?';
             break;
@@ -221,17 +243,14 @@ export default function DoctorAI() {
             message = '¿Qué factores lo empeoran o mejoran?';
             break;
           default:
-            message = option.text;
+            message = typeof option === 'string' ? '' : option.text;
         }
         break;
       case 'emergency':
         message = 'Necesito ayuda de emergencia inmediatamente';
         break;
-      case 'find_specialist':
-        message = `Necesito encontrar un especialista en ${option.value || 'medicina general'}`;
-        break;
       case 'book_appointment':
-        message = `Quiero agendar una cita con un especialista en ${option.value || 'medicina general'}`;
+        message = `Quiero agendar una cita con un especialista`;
         break;
       case 'prescription':
         message = 'Necesito una receta médica';
@@ -252,29 +271,21 @@ export default function DoctorAI() {
       case 'second_opinion':
         message = 'Me gustaría obtener una segunda opinión sobre mi caso';
         break;
-      case 'save_conversation':
-        // Implement save to local storage
-        const saved = saveConversationToStorage(history);
-        if (saved) {
-          // Show success message (you might want to use a toast library)
-          alert('Conversación guardada exitosamente');
-        } else {
-          alert('Error al guardar la conversación');
-        }
-        return;
       case 'share_with_doctor':
         // Generate shareable link or open share modal
         setShowShareModal(true);
         return;
       default:
-        message = option.text;
+        message = typeof option === 'string' ? '' : (option.text || '');
     }
     
-    setInput(message);
-    // Auto-send the message
-    setTimeout(() => {
-      send();
-    }, 100);
+    if (message) {
+      setInput(message);
+      // Auto-send the message
+      setTimeout(() => {
+        send();
+      }, 100);
+    }
   };
 
   // Keyboard shortcuts for options
