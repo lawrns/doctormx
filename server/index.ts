@@ -49,6 +49,7 @@ import {
   getReviewStatistics
 } from './providers/ratings.ts';
 import { findRelevantDoctors, getDoctorAvailability, createReferralRequest, getSpecialtyRecommendations } from './providers/doctorReferral.ts';
+import { orchestrateChatResponse } from './providers/chatOrchestrator.ts';
 import {
   trackOnboardingEvent,
   getOnboardingFunnelMetrics,
