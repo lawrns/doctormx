@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from '../lib/toast';
+import Layout from './Layout';
 
 export default function HealthMarketplace() {
   const [activeTab, setActiveTab] = useState('products');
@@ -278,6 +279,7 @@ export default function HealthMarketplace() {
 
   if (loading) {
     return (
+      <Layout>
       <div className="max-w-6xl mx-auto p-6">
         <div className="animate-pulse space-y-6">
           <div className="h-8 bg-gray-200 rounded w-1/3"></div>
@@ -288,7 +290,9 @@ export default function HealthMarketplace() {
           </div>
         </div>
       </div>
-    );
+    
+    </Layout>
+  );
   }
 
   return (

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from '../lib/toast';
 import { useAuth } from '../contexts/AuthContext';
+import Layout from './Layout';
 
 export default function AIReferralSystem() {
   const { user } = useAuth();
@@ -202,7 +203,8 @@ Los síntomas descritos (dolor de pecho y dificultad para respirar) son indicati
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <Layout>
+      <div className="max-w-4xl mx-auto p-6">
       <div className="bg-white rounded-2xl shadow-lg border border-gray-200">
         {/* Header */}
         <div className="p-6 border-b border-gray-200">
@@ -428,6 +430,8 @@ Los síntomas descritos (dolor de pecho y dificultad para respirar) son indicati
         </div>
       </div>
     </div>
+  
+    </Layout>
   );
 }
 

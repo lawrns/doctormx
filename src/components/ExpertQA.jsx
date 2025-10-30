@@ -3,6 +3,7 @@ import Icon from './ui/Icon';
 import Badge from './ui/Badge';
 import Button from './ui/Button';
 import Alert from './ui/Alert';
+import Layout from './Layout';
 
 export default function ExpertQA() {
   const [questions, setQuestions] = useState([]);
@@ -141,6 +142,7 @@ export default function ExpertQA() {
 
   if (loading) {
     return (
+      <Layout>
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="animate-pulse">
           <div className="h-8 bg-neutral-200 rounded w-1/3 mb-8"></div>
@@ -155,7 +157,9 @@ export default function ExpertQA() {
           </div>
         </div>
       </div>
-    );
+    
+    </Layout>
+  );
   }
 
   return (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from '../lib/toast';
 import { useAuth } from '../contexts/AuthContext';
+import Layout from './Layout';
 
 export default function QABoard() {
   const { user } = useAuth();
@@ -243,6 +244,7 @@ export default function QABoard() {
 
   if (selectedQuestion) {
     return (
+      <Layout>
       <div className="max-w-4xl mx-auto p-6">
         <div className="mb-6">
           <button
@@ -466,7 +468,9 @@ export default function QABoard() {
           </div>
         )}
       </div>
-    );
+    
+    </Layout>
+  );
   }
 
   return (

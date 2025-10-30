@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from './ui/Icon';
+import Layout from './Layout';
 
 export default function FAQ({ type = 'patients' }) {
   const [openItems, setOpenItems] = useState(new Set());
@@ -71,7 +72,8 @@ export default function FAQ({ type = 'patients' }) {
   const faqs = type === 'patients' ? patientFAQs : doctorFAQs;
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <Layout>
+      <div className="max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-neutral-900 mb-4">
           Preguntas Frecuentes
@@ -130,5 +132,7 @@ export default function FAQ({ type = 'patients' }) {
         </div>
       </div>
     </div>
+  
+    </Layout>
   );
 }
