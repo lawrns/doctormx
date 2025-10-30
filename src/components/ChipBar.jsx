@@ -99,3 +99,6 @@ export default function ChipBar({ chips = [], onChipClick, isLoading }) {
   );
 }
 
+
+
+

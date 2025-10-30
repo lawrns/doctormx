@@ -75,3 +75,6 @@ export default function AppointmentCard({ appointment, onBookNow }) {
   );
 }
 
+
+
+

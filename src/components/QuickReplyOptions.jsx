@@ -86,3 +86,6 @@ export default function QuickReplyOptions({ onOptionSelect, isLoading }) {
     </motion.div>
   );
 }
+
+
+

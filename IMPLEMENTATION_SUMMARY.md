@@ -40,11 +40,25 @@
 - ✅ Backward compatible with existing QuickReplyOptions
 - ✅ Chat orchestrator with Schema v2 support built
 - ✅ Stage machine implemented (intake → clarify → assess_severity → recommendations → actions → wrap_up)
+- ✅ Backend deployed to Fly.io at https://doctormx-api.fly.dev
+- ✅ Netlify environment variables configured with API_URL
 
 ### What Needs Integration
 - ⚠️ Chat orchestrator needs to be wired into chat endpoint
 - ⚠️ Conversation memory not persisted to backend
 - ⚠️ Additional endpoints not yet created (save, share, referral, appointment)
+
+## 🚀 Deployment Status
+
+### Backend
+- **Fly.io**: https://doctormx-api.fly.dev
+- **Status**: Deployed and running
+- **Environment**: Production
+- **Secrets**: All environment variables configured
+
+### Frontend
+- **Netlify**: https://doctor.mx
+- **API_URL**: Set to https://doctormx-api.fly.dev
 
 ## 🔄 Next Steps for Full Functionality
 

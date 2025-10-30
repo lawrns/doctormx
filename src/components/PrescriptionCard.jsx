@@ -95,3 +95,6 @@ export default function PrescriptionCard({ prescription, labOrders }) {
     </motion.div>
   );
 }
+
+
+

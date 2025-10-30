@@ -43,3 +43,6 @@ export default function SeverityScale({ onSelect, currentValue }) {
   );
 }
 
+
+
+

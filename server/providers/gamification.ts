@@ -85,7 +85,7 @@ export interface PointsTransaction {
 export async function getUserHealthPoints(userId: string): Promise<HealthPoints | null> {
   try {
     const supabaseClient = getSupabaseClient();
-    
+
     const { data, error } = await supabaseClient
       .from('health_scores')
       .select('*')
@@ -94,8 +94,24 @@ export async function getUserHealthPoints(userId: string): Promise<HealthPoints 
 
     if (error) {
       if (error.code === 'PGRST116') {
-        // User doesn't have health points yet, create them
-        return await createUserHealthPoints(userId);
+        // User doesn't have health points yet, try to create them
+        try {
+          return await createUserHealthPoints(userId);
+        } catch (createError: any) {
+          // If creation fails due to foreign key constraint, return default points
+          if (createError.code === '23503') {
+            console.log('User not in profiles table, returning default points');
+            return {
+              id: 'temp-' + userId,
+              user_id: userId,
+              score: 0,
+              level: 1,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString()
+            };
+          }
+          throw createError;
+        }
       }
       throw error;
     }

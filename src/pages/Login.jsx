@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { signInUser } from '../lib/supabase.js';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { showErrorToast, showSuccessToast } from '../lib/toast.js';
+import { motion } from 'framer-motion';
+import { pageTransition, fadeInUp, buttonSpring } from '../lib/motionVariants';
 
 function Logo() {
   return (
@@ -111,7 +113,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
+    <motion.div 
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50"
+      variants={pageTransition}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
@@ -154,7 +162,13 @@ const Login = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
+          <motion.div 
+            className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8"
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
             <form className="space-y-6" onSubmit={handleSubmit}>
               {/* Campo Email */}
               <div>
@@ -246,10 +260,11 @@ const Login = () => {
                 </div>
               </div>
 
-              <button
+              <motion.button
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full flex justify-center py-3.5 px-4 text-base font-semibold rounded-xl text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                {...buttonSpring}
               >
                 {isSubmitting ? (
                   <div className="flex items-center">
@@ -262,23 +277,22 @@ const Login = () => {
                 ) : (
                   'Iniciar Sesión'
                 )}
-              </button>
+              </motion.button>
             </form>
-
-            <div className="mt-6">
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">¿No tienes cuenta?</span>
-                </div>
+          </motion.div>
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300" />
               </div>
-              <div className="mt-6 text-center">
-                <a href="/register" className="w-full flex justify-center py-3 px-4 text-base font-semibold rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 border border-blue-200">
-                  Crear cuenta nueva
-                </a>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">¿No tienes cuenta?</span>
               </div>
+            </div>
+            <div className="mt-6 text-center">
+              <a href="/register" className="w-full flex justify-center py-3 px-4 text-base font-semibold rounded-xl text-blue-600 bg-blue-50 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 border border-blue-200">
+                Crear cuenta nueva
+              </a>
             </div>
           </div>
 
@@ -307,7 +321,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -91,3 +91,6 @@ export default function SeverityWidget({ severity = 'green', message = '' }) {
     </motion.div>
   );
 }
+
+
+

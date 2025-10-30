@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import DoctorAI from './pages/DoctorAI.jsx';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
@@ -34,11 +35,12 @@ import ProtectedRoute from './components/Auth/ProtectedRoute.jsx';
 import ToastConfig from './components/Toast/ToastConfig.jsx';
 import DoctorSubscriptionSetup from './pages/DoctorSubscriptionSetup.jsx';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthProvider>
-        <Routes>
+function AnimatedRoutes() {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
           <Route path='/' element={<App />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
@@ -169,6 +171,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </ProtectedRoute>
           } />
         </Routes>
+      </AnimatePresence>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <AnimatedRoutes />
         <ToastConfig />
       </AuthProvider>
     </BrowserRouter>

@@ -58,3 +58,6 @@ export default function TypingIndicator() {
     </motion.div>
   );
 }
+
+
+

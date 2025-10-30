@@ -72,3 +72,6 @@ vapi calls:create --to "+526141115056" --from "$FROM_NUMBER" --assistant "$ASSIS
 
 
 
+
+
+

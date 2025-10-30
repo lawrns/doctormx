@@ -55,3 +55,6 @@
 - Composer collapsed by default, expandable with "Escribir" button
 - Memory tracks collected fields to avoid redundant questions
 
+
+
+

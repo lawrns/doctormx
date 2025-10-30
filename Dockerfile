@@ -19,3 +19,5 @@ EXPOSE 3001
 CMD ["node", "--experimental-specifier-resolution=node", "--loader", "tsx/esm", "server/index.ts"]
 
 
+
+

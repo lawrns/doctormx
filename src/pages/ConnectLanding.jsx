@@ -1,8 +1,22 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useInView, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import Layout from '../components/Layout';
 import Icon from '../components/ui/Icon';
 import TrustIndicators from '../components/TrustIndicators';
+import { 
+  fadeInUp, 
+  fadeInLeft, 
+  fadeInRight, 
+  scaleIn, 
+  staggerContainer,
+  parallaxSlow,
+  parallaxMedium,
+  parallaxFast,
+  buttonSpring,
+  cardHover,
+  scrollReveal
+} from '../lib/motionVariants';
 
 function Logo() {
   return (
@@ -16,21 +30,33 @@ function Logo() {
 }
 
 export default function ConnectLanding() {
+  const { scrollYProgress } = useScroll()
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
+  const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95])
+  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, -50])
+  
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   return (
     <Layout variant="marketing">
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-teal-600">
+      <motion.div 
+        className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-teal-600"
+        style={{ opacity: heroOpacity, scale: heroScale, y: heroY }}
+      >
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
         <div className="absolute -right-20 -top-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute -left-20 -bottom-20 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.8 }}
             className="text-center"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-6">
@@ -124,27 +150,43 @@ export default function ConnectLanding() {
                 <div className="text-white/80 text-sm">tu horario</div>
               </div>
             </div>
+            <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          >
             <Link
               to="/connect/signup"
-              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-xl"
+              className="inline-block px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-xl"
             >
               Comenzar ahora
             </Link>
           </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* How It Works */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Cómo funciona</h2>
+      <motion.div 
+        ref={ref}
+        className="max-w-7xl mx-auto px-6 py-20"
+        variants={staggerContainer}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <motion.h2 
+          className="text-3xl font-bold text-center mb-12 text-gray-900"
+          variants={fadeInUp}
+        >
+          Cómo funciona
+        </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
             transition={{ delay: 0.1 }}
             className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            {...cardHover}
           >
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl font-bold text-blue-600">1</span>
@@ -157,11 +199,10 @@ export default function ConnectLanding() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
             transition={{ delay: 0.2 }}
             className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            {...cardHover}
           >
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl font-bold text-blue-600">2</span>
@@ -174,11 +215,10 @@ export default function ConnectLanding() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeInUp}
             transition={{ delay: 0.3 }}
             className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+            {...cardHover}
           >
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
               <span className="text-2xl font-bold text-blue-600">3</span>
@@ -190,10 +230,16 @@ export default function ConnectLanding() {
             </p>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Earnings Calculator */}
-      <div className="bg-gradient-to-br from-blue-600 to-teal-600 py-20">
+      <motion.div 
+        className="bg-gradient-to-br from-blue-600 to-teal-600 py-20"
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">¿Cuánto puedes ganar?</h2>
           <p className="text-white/90 mb-8">Calcula tu ingreso potencial con pacientes referidos por IA</p>
@@ -221,16 +267,31 @@ export default function ConnectLanding() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Benefits */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Beneficios para ti</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+      <motion.div 
+        className="max-w-7xl mx-auto px-6 py-20"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div className="text-center mb-16">
+          <motion.h2 
+            className="text-3xl font-bold mb-4 text-gray-900"
+            variants={fadeInUp}
+          >
+            Beneficios para ti
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            variants={fadeInUp}
+            transition={{ delay: 0.1 }}
+          >
             Herramientas diseñadas específicamente para médicos que buscan crecer con tecnología inteligente
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
@@ -267,11 +328,10 @@ export default function ConnectLanding() {
           ].map((benefit, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              variants={fadeInUp}
               transition={{ delay: i * 0.1 }}
               className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+              {...cardHover}
             >
               <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-4">{benefit.icon}</div>
               <h3 className="font-semibold text-lg mb-2 text-gray-900">{benefit.title}</h3>
@@ -279,7 +339,7 @@ export default function ConnectLanding() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Consultation Types */}
       <div className="bg-gray-50 py-20">

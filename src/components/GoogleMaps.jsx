@@ -1,11 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Icon from './ui/Icon';
-
-const GOOGLE_MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-
-if (!GOOGLE_MAPS_API_KEY) {
-  console.warn('Google Maps API key not found. Maps will not load.');
-}
+import { loadGoogleMapsAPI } from '../lib/googleMaps';
 
 export default function GoogleMaps({ 
   doctors = [], 
@@ -25,31 +20,11 @@ export default function GoogleMaps({
 
   // Load Google Maps script
   useEffect(() => {
-    if (!GOOGLE_MAPS_API_KEY) {
-      console.warn('Google Maps API key not available');
-      return;
-    }
-
-    if (window.google && window.google.maps) {
-      setIsLoaded(true);
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => setIsLoaded(true);
-    script.onerror = () => {
-      console.error('Failed to load Google Maps API');
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    loadGoogleMapsAPI(['places'])
+      .then(() => setIsLoaded(true))
+      .catch((error) => {
+        console.error('Failed to load Google Maps API:', error);
+      });
   }, []);
 
   // Initialize map
@@ -306,31 +281,11 @@ export function DoctorLocationMap({ doctor, height = '300px' }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    if (!GOOGLE_MAPS_API_KEY) {
-      console.warn('Google Maps API key not available');
-      return;
-    }
-
-    if (window.google && window.google.maps) {
-      setIsLoaded(true);
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => setIsLoaded(true);
-    script.onerror = () => {
-      console.error('Failed to load Google Maps API');
-    };
-    document.head.appendChild(script);
-
-    return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
-    };
+    loadGoogleMapsAPI()
+      .then(() => setIsLoaded(true))
+      .catch((error) => {
+        console.error('Failed to load Google Maps API:', error);
+      });
   }, []);
 
   useEffect(() => {

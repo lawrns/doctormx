@@ -79,3 +79,6 @@ export default function SymptomLocation({ onSelect, currentValue }) {
   );
 }
 
+
+
+

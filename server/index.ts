@@ -839,77 +839,69 @@ app.post('/api/payments/webhook', async (req, res) => {
 });
 
 // Doctor Directory endpoints
-        app.get('/api/doctors', async (req, res) => {
-          try {
-            const { specialty, search, available, location, sort = 'rating', limit = 1000, offset = 0 } = req.query;
-            
-            let query = supabase
-              .from('doctors')
-              .select(`
-                *,
-                users!inner(
-                  id,
-                  name,
-                  email,
-                  phone
-                )
-              `)
-              .eq('license_status', 'verified');
-            
-            // Apply sorting
-            switch (sort) {
-              case 'rating':
-                query = query.order('rating_avg', { ascending: false });
-                break;
-              case 'price':
-                query = query.order('consultation_fees->base_fee', { ascending: true });
-                break;
-              case 'availability':
-                query = query.order('response_time_avg', { ascending: true });
-                break;
-              case 'distance':
-                query = query.order('created_at', { ascending: false });
-                break;
-              default:
-                query = query.order('rating_avg', { ascending: false });
-            }
-            
-            query = query.range(parseInt(offset as string), parseInt(offset as string) + parseInt(limit as string) - 1);
-            
-            if (specialty && specialty !== 'Todas las especialidades') {
-              query = query.contains('specialties', [specialty]);
-            }
-            
-            if (search) {
-              query = query.or(`users.name.ilike.%${search}%,specialties.cs.{${search}}`);
-            }
-            
-            if (location) {
-              query = query.ilike('full_name', `%${location}%`);
-            }
-            
-            // Get total count for pagination
-            const { count: totalCount } = await supabase
-              .from('doctors')
-              .select('*', { count: 'exact', head: true })
-              .eq('license_status', 'verified');
-            
-            const { data: doctors, error } = await query.limit(parseInt(limit as string));
-            
-            if (error) {
-              console.error('Error fetching doctors:', error);
-              return res.status(500).json({ error: 'Error fetching doctors' });
-            }
-            
-            res.json({ 
-              doctors: doctors || [], 
-              totalCount: totalCount || 0 
-            });
-          } catch (error) {
-            console.error('Error in doctors endpoint:', error);
-            res.status(500).json({ error: 'Internal server error' });
-          }
-        });
+app.get('/api/doctors', async (req, res) => {
+  try {
+    const { specialty, search, available, location, sort = 'rating', limit = 1000, offset = 0 } = req.query;
+
+    let query = supabase
+      .from('doctors')
+      .select('*')
+      .eq('license_status', 'verified');
+    
+    // Apply sorting
+    switch (sort) {
+      case 'rating':
+        query = query.order('rating_avg', { ascending: false });
+        break;
+      case 'price':
+        query = query.order('consultation_fees->base_fee', { ascending: true });
+        break;
+      case 'availability':
+        query = query.order('response_time_avg', { ascending: true });
+        break;
+      case 'distance':
+        query = query.order('created_at', { ascending: false });
+        break;
+      default:
+        query = query.order('rating_avg', { ascending: false });
+    }
+    
+    query = query.range(parseInt(offset as string), parseInt(offset as string) + parseInt(limit as string) - 1);
+    
+    if (specialty && specialty !== 'Todas las especialidades') {
+      query = query.contains('specialties', [specialty]);
+    }
+    
+    if (search) {
+      query = query.or(`full_name.ilike.%${search}%,specialties.cs.{${search}}`);
+    }
+    
+    if (location) {
+      query = query.ilike('full_name', `%${location}%`);
+    }
+    
+    // Get total count for pagination
+    const { count: totalCount } = await supabase
+      .from('doctors')
+      .select('*', { count: 'exact', head: true })
+      .eq('license_status', 'verified');
+    
+    const { data: doctors, error } = await query.limit(parseInt(limit as string));
+    
+    if (error) {
+      console.error('Error fetching doctors:', error);
+      return res.status(500).json({ error: 'Error fetching doctors' });
+    }
+    
+    res.json({ 
+      doctors: doctors || [], 
+      totalCount: totalCount || 0 
+    });
+  } catch (error) {
+    console.error('Error in doctors endpoint:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 // Get single doctor by ID
 app.get('/api/doctors/:id', async (req, res) => {
@@ -2930,30 +2922,137 @@ app.get('/api/doctors/:doctorId/availability', async (req, res) => {
 
 app.post('/api/referrals/create', async (req, res) => {
   try {
-    const { patientId, doctorId, symptoms, urgency, message } = req.body;
-    console.log('📋 Creating referral request:', { patientId, doctorId, urgency });
+    const { 
+      patientId, 
+      doctorId, 
+      specialty, 
+      urgency, 
+      symptoms, 
+      notes, 
+      userId 
+    } = req.body;
 
-    if (!patientId || !doctorId || !symptoms || !urgency) {
-      return res.status(400).json({ error: 'Datos requeridos: patientId, doctorId, symptoms, urgency' });
+    if (!patientId || !specialty) {
+      return res.status(400).json({ error: 'patientId and specialty required' });
     }
 
-    const result = await createReferralRequest({
+    const referral = await createAIReferral({
       patientId,
       doctorId,
-      symptoms,
-      urgency: urgency as 'emergency' | 'urgent' | 'routine',
-      message
+      specialty,
+      urgency: urgency || 'medium',
+      symptoms: symptoms || '',
+      notes: notes || '',
+      userId
     });
 
-    if (!result.success) {
-      return res.status(500).json({ error: result.error });
+    res.json({
+      success: true,
+      referralId: referral.id,
+      referral
+    });
+  } catch (error) {
+    console.error('❌ Create referral error:', error);
+    res.status(500).json({ 
+      error: 'Error creating referral',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Create appointment endpoint
+app.post('/api/appointments/create', async (req, res) => {
+  try {
+    const {
+      doctorId,
+      patientId,
+      dateTime,
+      duration,
+      type,
+      notes,
+      userId
+    } = req.body;
+
+    if (!doctorId || !patientId || !dateTime) {
+      return res.status(400).json({ error: 'doctorId, patientId, and dateTime required' });
     }
 
-    console.log('✅ Referral request created:', result.referralId);
-    res.json({ success: true, referralId: result.referralId });
+    const appointment = await createBooking({
+      doctorId,
+      patientId,
+      dateTime: new Date(dateTime),
+      duration: duration || 30,
+      type: type || 'consultation',
+      notes: notes || '',
+      userId
+    });
 
+    res.json({
+      success: true,
+      appointmentId: appointment.id,
+      appointment
+    });
   } catch (error) {
-    console.error('❌ Error creating referral request:', error);
+    console.error('❌ Create appointment error:', error);
+    res.status(500).json({ 
+      error: 'Error creating appointment',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Get available appointment slots
+app.get('/api/appointments/available', async (req, res) => {
+  try {
+    const { doctorId, date } = req.query;
+
+    if (!doctorId || !date) {
+      return res.status(400).json({ error: 'doctorId and date required' });
+    }
+
+    const slots = await getAvailableSlots(doctorId, date);
+    
+    res.json({
+      success: true,
+      slots,
+      doctorId,
+      date
+    });
+  } catch (error) {
+    console.error('❌ Get available slots error:', error);
+    res.status(500).json({ 
+      error: 'Error retrieving available slots',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Schema v2 Chat endpoints
+app.post('/api/chat/turn', async (req, res) => {
+  try {
+    console.log('📝 Schema v2 chat turn received:', { 
+      hasMessage: !!req.body?.message, 
+      hasUserId: !!req.body?.userId,
+      timestamp: new Date().toISOString() 
+    });
+
+    const { message, history = [], memory = {}, userId, patientData } = req.body || {};
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'message requerido' });
+    }
+
+    // Use the new orchestrator for Schema v2 responses
+    const response = await orchestrateChatResponse({
+      message,
+      history,
+      memory,
+      patientData,
+      userId
+    });
+
+    res.json(response);
+  } catch (error) {
+    console.error('❌ Schema v2 chat turn error:', error);
     res.status(500).json({ 
       error: 'Error interno del servidor',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
@@ -2961,24 +3060,110 @@ app.post('/api/referrals/create', async (req, res) => {
   }
 });
 
-app.get('/api/specialties/recommendations', async (req, res) => {
+// Save conversation endpoint
+app.post('/api/chat/save', async (req, res) => {
   try {
-    const { symptoms } = req.query;
-    console.log('🎯 Getting specialty recommendations for:', symptoms);
-
-    if (!symptoms || typeof symptoms !== 'string') {
-      return res.status(400).json({ error: 'Síntomas requeridos' });
+    const { conversationId, messages, metadata } = req.body;
+    
+    if (!messages || !Array.isArray(messages)) {
+      return res.status(400).json({ error: 'messages array required' });
     }
 
-    const recommendations = await getSpecialtyRecommendations(symptoms);
-    console.log('✅ Specialty recommendations:', recommendations);
+    const { data, error } = await supabase
+      .from('conversations')
+      .upsert({
+        id: conversationId,
+        messages,
+        metadata,
+        updated_at: new Date().toISOString()
+      })
+      .select()
+      .single();
 
-    res.json({ specialties: recommendations });
+    if (error) throw error;
 
+    res.json({ 
+      success: true, 
+      conversationId: data.id,
+      savedAt: data.updated_at 
+    });
   } catch (error) {
-    console.error('❌ Error getting specialty recommendations:', error);
+    console.error('❌ Save conversation error:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error saving conversation',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Share conversation endpoint
+app.post('/api/chat/share', async (req, res) => {
+  try {
+    const { conversationId, shareWith, message } = req.body;
+    
+    if (!conversationId) {
+      return res.status(400).json({ error: 'conversationId required' });
+    }
+
+    // Generate shareable link
+    const shareToken = Math.random().toString(36).substring(2, 15);
+    const shareUrl = `${req.protocol}://${req.get('host')}/api/chat/shared/${shareToken}`;
+
+    const { data, error } = await supabase
+      .from('conversation_shares')
+      .insert({
+        conversation_id: conversationId,
+        share_token: shareToken,
+        shared_with: shareWith,
+        message: message,
+        expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    res.json({ 
+      success: true, 
+      shareUrl,
+      shareToken: data.share_token,
+      expiresAt: data.expires_at
+    });
+  } catch (error) {
+    console.error('❌ Share conversation error:', error);
+    res.status(500).json({ 
+      error: 'Error sharing conversation',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Get shared conversation
+app.get('/api/chat/shared/:token', async (req, res) => {
+  try {
+    const { token } = req.params;
+    
+    const { data, error } = await supabase
+      .from('conversation_shares')
+      .select('*, conversations(*)')
+      .eq('share_token', token)
+      .gt('expires_at', new Date().toISOString())
+      .single();
+
+    if (error || !data) {
+      return res.status(404).json({ error: 'Shared conversation not found or expired' });
+    }
+
+    res.json({
+      conversation: data.conversations,
+      sharedAt: data.created_at,
+      sharedBy: data.shared_by,
+      message: data.message
+    });
+  } catch (error) {
+    console.error('❌ Get shared conversation error:', error);
+    res.status(500).json({ 
+      error: 'Error retrieving shared conversation',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
