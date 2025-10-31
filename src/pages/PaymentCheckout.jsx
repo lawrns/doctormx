@@ -4,6 +4,7 @@ import { toast } from '../lib/toast';
 import { useAuth } from '../contexts/AuthContext';
 import { loadStripe } from '@stripe/stripe-js';
 import Icon from '../components/ui/Icon';
+import Layout from '../components/Layout';
 
 // Initialize Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
@@ -122,8 +123,9 @@ export default function PaymentCheckout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-2xl mx-auto px-4">
+    <Layout variant="marketing">
+      <div className="min-h-screen bg-gray-50 py-12">
+        <div className="max-w-2xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -282,7 +284,8 @@ export default function PaymentCheckout() {
             </p>
           </div>
         </motion.div>
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }

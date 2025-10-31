@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
 import { toast } from '../lib/toast';
 import Icon from '../components/ui/Icon';
+import Layout from '../components/Layout';
 
 export default function DoctorDashboard() {
   const navigate = useNavigate();
@@ -176,9 +177,10 @@ export default function DoctorDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-medical">
-      {/* Header */}
-      <header className="glass-nav border-b border-neutral-200">
+    <Layout>
+      <div className="min-h-screen bg-gradient-medical">
+        {/* Header */}
+        <header className="glass-nav border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
@@ -599,6 +601,7 @@ export default function DoctorDashboard() {
           </motion.div>
         </div>
       )}
-    </div>
+      </div>
+    </Layout>
   );
 }

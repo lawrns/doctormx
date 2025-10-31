@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { showErrorToast, showSuccessToast } from '../lib/toast.js';
 import { motion } from 'framer-motion';
 import { pageTransition, fadeInUp, buttonSpring } from '../lib/motionVariants';
+import Layout from '../components/Layout';
 
 function Logo() {
   return (
@@ -113,30 +114,16 @@ const Login = () => {
   };
 
   return (
-    <motion.div 
-      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50"
-      variants={pageTransition}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
-    >
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
-          <Logo />
-          <div className="flex items-center gap-4">
-            <a href="/register" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-              Crear cuenta
-            </a>
-            <a href="/" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors">
-              Volver al inicio
-            </a>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <div className="flex items-center justify-center py-12 px-6 sm:px-6 lg:px-8">
+    <Layout variant="marketing">
+      <motion.div
+        className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50"
+        variants={pageTransition}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+        {/* Main Content */}
+        <div className="flex items-center justify-center py-12 px-6 sm:px-6 lg:px-8">
         <div className="max-w-md w-full">
           {/* Trust Indicators */}
           <div className="text-center mb-8">
@@ -321,7 +308,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+      </motion.div>
+    </Layout>
   );
 };
 
