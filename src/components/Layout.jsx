@@ -7,7 +7,6 @@ import SkipLink from './ui/SkipLink';
 import Announcer from './ui/Announcer';
 import CookieConsent from './CookieConsent';
 import PerformanceOptimizer from './PerformanceOptimizer';
-import AccessibilityEnhancer from './AccessibilityEnhancer';
 import Breadcrumb from './ui/Breadcrumb';
 import MobileOptimizer from './MobileOptimizer';
 
@@ -474,8 +473,6 @@ export default function Layout({ children, variant = 'app' }) {
       {/* Performance Optimizer */}
       <PerformanceOptimizer />
       
-      {/* Accessibility Enhancer */}
-      <AccessibilityEnhancer />
       
       {/* Mobile Optimizer */}
       <MobileOptimizer />

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, lazy, Suspense } from 'react';
 import { chatTurn, findSpecialists, checkFreeQuestionsEligibility } from '../lib/api';
 import Layout from '../components/Layout';
 import { useAuth } from '../contexts/AuthContext';
@@ -19,6 +19,9 @@ import AppointmentCard from '../components/AppointmentCard';
 import SummaryCard from '../components/SummaryCard';
 // Import Phase 5 Response Parser
 import { parseAIResponse, formatResponseForUI, matchDoctorsToSpecialty, generateChipsForStage } from '../lib/aiResponseParser';
+
+// Lazy load VapiButton
+const LazyVapiButton = lazy(() => import('../components/VapiButton'));
 
 export default function DoctorAI() {
   const [input, setInput] = useState('');

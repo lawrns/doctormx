@@ -12,6 +12,7 @@ console.log('🔧 Environment check:', {
 
 import express from 'express';
 import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import { supabase } from './lib/supabase.js';
 import { doctorReply } from './providers/openai.ts';
 import { evaluateRedFlags } from './triage.ts';
@@ -80,8 +81,44 @@ import {
 } from './providers/trustBadges.ts';
 
 const app = express();
+
+// Rate limiting middleware
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: {
+    error: 'Demasiadas solicitudes desde esta IP, por favor intenta más tarde.',
+  },
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+});
+
+// Apply rate limiting to /api routes
+app.use('/api/', apiLimiter);
+
 app.use(cors());
 app.use(express.json());
+
+// Authentication middleware
+const authMiddleware = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'Token de autorización requerido' });
+  }
+
+  const token = authHeader.split(' ')[1];
+  try {
+    const { data: { user }, error } = await supabase.auth.getUser(token);
+    if (error || !user) {
+      return res.status(401).json({ error: 'Token inválido o expirado' });
+    }
+    req.user = user;
+    next();
+  } catch (error) {
+    console.error('Error verifying token:', error);
+    return res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
 
 // Basic health check
 app.get('/api/health', (req, res) => {
@@ -448,7 +485,7 @@ app.get('/api/free-questions/:userId/eligibility', async (req, res) => {
 });
 
 // AI Referral System endpoints
-app.post('/api/referrals', async (req, res) => {
+app.post('/api/referrals', authMiddleware, async (req, res) => {
   try {
     const { patientId, symptoms, additionalInfo } = req.body;
     console.log('📋 Creating AI referral:', { patientId, symptoms: symptoms?.substring(0, 50) + '...' });
@@ -514,7 +551,7 @@ app.post('/api/referrals', async (req, res) => {
   }
 });
 
-app.get('/api/referrals/:doctorId', async (req, res) => {
+app.get('/api/referrals/:doctorId', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     console.log('📋 Getting referrals for doctor:', doctorId);
@@ -532,7 +569,7 @@ app.get('/api/referrals/:doctorId', async (req, res) => {
   }
 });
 
-app.put('/api/referrals/:referralId/status', async (req, res) => {
+app.put('/api/referrals/:referralId/status', authMiddleware, async (req, res) => {
   try {
     const { referralId } = req.params;
     const { status, doctorId } = req.body;
@@ -552,7 +589,7 @@ app.put('/api/referrals/:referralId/status', async (req, res) => {
 });
 
 // Doctor Subscription endpoints
-app.post('/api/doctors/:doctorId/subscribe', async (req, res) => {
+app.post('/api/doctors/:doctorId/subscribe', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const { planId, paymentMethodId } = req.body;
@@ -588,7 +625,7 @@ app.get('/api/subscription-plans', async (req, res) => {
   }
 });
 
-app.get('/api/doctors/:doctorId/availability', async (req, res) => {
+app.get('/api/doctors/:doctorId/availability', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     console.log('📅 Getting doctor availability:', doctorId);
@@ -607,7 +644,7 @@ app.get('/api/doctors/:doctorId/availability', async (req, res) => {
 });
 
 // Booking System endpoints
-app.post('/api/bookings', async (req, res) => {
+app.post('/api/bookings', authMiddleware, async (req, res) => {
   try {
     const { referralId, doctorId, patientId, appointmentTime, appointmentDate, duration, type, notes, patientInfo } = req.body;
     console.log('📅 Creating appointment booking:', { referralId, doctorId, appointmentTime, appointmentDate });
@@ -629,13 +666,13 @@ app.post('/api/bookings', async (req, res) => {
   } catch (error) {
     console.error('❌ Error creating appointment booking:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error creating appointment',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/doctors/:doctorId/slots/:date', async (req, res) => {
+app.get('/api/doctors/:doctorId/slots/:date', authMiddleware, async (req, res) => {
   try {
     const { doctorId, date } = req.params;
     console.log('📅 Getting available slots:', { doctorId, date });
@@ -647,13 +684,13 @@ app.get('/api/doctors/:doctorId/slots/:date', async (req, res) => {
   } catch (error) {
     console.error('❌ Error getting available slots:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error retrieving available slots',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/doctors/:doctorId/bookings', async (req, res) => {
+app.get('/api/doctors/:doctorId/bookings', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const { startDate, endDate } = req.query;
@@ -670,13 +707,13 @@ app.get('/api/doctors/:doctorId/bookings', async (req, res) => {
   } catch (error) {
     console.error('❌ Error getting doctor bookings:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error retrieving doctor bookings',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/patients/:patientId/bookings', async (req, res) => {
+app.get('/api/patients/:patientId/bookings', authMiddleware, async (req, res) => {
   try {
     const { patientId } = req.params;
     const { upcoming } = req.query;
@@ -689,13 +726,13 @@ app.get('/api/patients/:patientId/bookings', async (req, res) => {
   } catch (error) {
     console.error('❌ Error getting patient bookings:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error retrieving patient bookings',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.put('/api/bookings/:bookingId/cancel', async (req, res) => {
+app.put('/api/bookings/:bookingId/cancel', authMiddleware, async (req, res) => {
   try {
     const { bookingId } = req.params;
     const { reason } = req.body;
@@ -708,14 +745,14 @@ app.put('/api/bookings/:bookingId/cancel', async (req, res) => {
   } catch (error) {
     console.error('❌ Error cancelling booking:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error cancelling booking',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
 // Payment System endpoints
-app.post('/api/payments/checkout', async (req, res) => {
+app.post('/api/payments/checkout', authMiddleware, async (req, res) => {
   try {
     const { amount, description, customerEmail, customerName, metadata, successUrl, cancelUrl } = req.body;
     console.log('💳 Creating checkout session:', { amount, description, customerEmail });
@@ -736,13 +773,13 @@ app.post('/api/payments/checkout', async (req, res) => {
   } catch (error) {
     console.error('❌ Error creating checkout session:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error creating checkout session',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.post('/api/payments/intent', async (req, res) => {
+app.post('/api/payments/intent', authMiddleware, async (req, res) => {
   try {
     const { amount, description, customerEmail, customerName, metadata } = req.body;
     console.log('💳 Creating payment intent:', { amount, description, customerEmail });
@@ -761,13 +798,13 @@ app.post('/api/payments/intent', async (req, res) => {
   } catch (error) {
     console.error('❌ Error creating payment intent:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error creating payment intent',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/payments/session/:sessionId', async (req, res) => {
+app.get('/api/payments/session/:sessionId', authMiddleware, async (req, res) => {
   try {
     const { sessionId } = req.params;
     console.log('💳 Retrieving checkout session:', sessionId);
@@ -779,13 +816,13 @@ app.get('/api/payments/session/:sessionId', async (req, res) => {
   } catch (error) {
     console.error('❌ Error retrieving checkout session:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error retrieving checkout session',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/payments/intent/:paymentIntentId', async (req, res) => {
+app.get('/api/payments/intent/:paymentIntentId', authMiddleware, async (req, res) => {
   try {
     const { paymentIntentId } = req.params;
     console.log('💳 Retrieving payment intent:', paymentIntentId);
@@ -797,7 +834,7 @@ app.get('/api/payments/intent/:paymentIntentId', async (req, res) => {
   } catch (error) {
     console.error('❌ Error retrieving payment intent:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error retrieving payment intent',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -832,7 +869,7 @@ app.post('/api/payments/webhook', async (req, res) => {
   } catch (error) {
     console.error('❌ Error processing webhook:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error processing webhook',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -941,7 +978,7 @@ app.get('/api/doctors/:id', async (req, res) => {
 });
 
 // Doctor Subscription endpoints
-app.get('/api/doctors/:doctorId/subscription', async (req, res) => {
+app.get('/api/doctors/:doctorId/subscription', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     console.log('💳 Getting doctor subscription:', doctorId);
@@ -959,7 +996,7 @@ app.get('/api/doctors/:doctorId/subscription', async (req, res) => {
   }
 });
 
-app.post('/api/doctors/subscribe', async (req, res) => {
+app.post('/api/doctors/subscribe', authMiddleware, async (req, res) => {
   try {
     const { doctorId, subscriptionPlan, verificationToken } = req.body;
     console.log('💳 Creating doctor subscription checkout:', { doctorId, subscriptionPlan });
@@ -982,7 +1019,7 @@ app.post('/api/doctors/subscribe', async (req, res) => {
   }
 });
 
-app.post('/api/doctors/:doctorId/subscription/cancel', async (req, res) => {
+app.post('/api/doctors/:doctorId/subscription/cancel', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const { reason } = req.body;
@@ -995,13 +1032,13 @@ app.post('/api/doctors/:doctorId/subscription/cancel', async (req, res) => {
   } catch (error) {
     console.error('❌ Error canceling doctor subscription:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error cancelling doctor subscription',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.put('/api/doctors/:doctorId/subscription/update-payment', async (req, res) => {
+app.put('/api/doctors/:doctorId/subscription/update-payment', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const { paymentMethodId } = req.body;
@@ -1014,13 +1051,13 @@ app.put('/api/doctors/:doctorId/subscription/update-payment', async (req, res) =
   } catch (error) {
     console.error('❌ Error updating payment method:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error updating payment method',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });
 
-app.get('/api/doctors/:doctorId/subscription/events', async (req, res) => {
+app.get('/api/doctors/:doctorId/subscription/events', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const { limit = 50 } = req.query;
@@ -1033,7 +1070,7 @@ app.get('/api/doctors/:doctorId/subscription/events', async (req, res) => {
   } catch (error) {
     console.error('❌ Error getting subscription events:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error getting subscription events',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -1051,7 +1088,7 @@ app.get('/api/doctors/:doctorId/subscription/status', async (req, res) => {
   } catch (error) {
     console.error('❌ Error checking subscription status:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error checking subscription status',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -1087,7 +1124,7 @@ app.post('/api/webhooks/doctor-subscriptions', async (req, res) => {
   } catch (error) {
     console.error('❌ Error processing doctor subscription webhook:', error);
     res.status(500).json({ 
-      error: 'Error interno del servidor',
+      error: 'Error processing doctor subscription webhook',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
@@ -1189,143 +1226,99 @@ app.get('/api/cedula/:cedulaNumber/status', async (req, res) => {
   }
 });
 
-app.get('/api/admin/verification-stats', async (req, res) => {
+// Admin endpoints with audit logging
+app.get('/api/admin/verification-stats', authMiddleware, async (req, res) => {
   try {
-    console.log('📊 Getting verification statistics');
-    
-    const stats = await getVerificationStats();
-    console.log('✅ Verification stats retrieved');
-    
-    res.json(stats);
-  } catch (error) {
-    console.error('❌ Error getting verification stats:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    // Log audit
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'get_verification_stats',
+      ip: req.ip,
+      details: { endpoint: '/api/admin/verification-stats' }
     });
+
+    const { data, error } = await getVerificationStats();
+    if (error) throw error;
+    res.json(data);
+  } catch (error) {
+    console.error('Error getting verification stats:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
-app.post('/api/admin/clear-verification-cache', async (req, res) => {
+app.post('/api/admin/clear-verification-cache', authMiddleware, async (req, res) => {
   try {
-    console.log('🧹 Clearing expired verification cache');
-    
-    await clearExpiredCache();
-    console.log('✅ Verification cache cleared');
-    
-    res.json({ success: true, message: 'Cache de verificación limpiado exitosamente' });
-  } catch (error) {
-    console.error('❌ Error clearing verification cache:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    // Log audit
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'clear_verification_cache',
+      ip: req.ip,
+      details: { endpoint: '/api/admin/clear-verification-cache' }
     });
+
+    const { error } = await clearExpiredCache();
+    if (error) throw error;
+    res.json({ success: true, message: 'Cache limpiado exitosamente' });
+  } catch (error) {
+    console.error('Error clearing cache:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
 // Medical Knowledge Base endpoints
-app.post('/api/admin/medical-knowledge/initialize', async (req, res) => {
+app.post('/api/admin/medical-knowledge/initialize', authMiddleware, async (req, res) => {
   try {
-    console.log('🏥 Initializing medical knowledge base');
-    
+    // Log audit
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'initialize_medical_knowledge',
+      ip: req.ip,
+      details: { endpoint: '/api/admin/medical-knowledge/initialize' }
+    });
+
     await initializeMedicalKnowledgeBase();
-    console.log('✅ Medical knowledge base initialized');
-    
-    res.json({ success: true, message: 'Base de conocimiento médico inicializada exitosamente' });
+    res.json({ success: true, message: 'Base de conocimiento inicializada' });
   } catch (error) {
-    console.error('❌ Error initializing medical knowledge base:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
+    console.error('Error initializing medical knowledge:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
-app.post('/api/medical-knowledge/retrieve', async (req, res) => {
+app.post('/api/admin/medical-knowledge/update', authMiddleware, async (req, res) => {
   try {
-    const { symptoms, patientData } = req.body;
-    console.log('🔍 Retrieving medical context:', { symptoms, patientData });
-    
-    const context = await retrieveMedicalContext(symptoms, patientData);
-    console.log('✅ Medical context retrieved:', context.total_results, 'documents');
-    
-    res.json(context);
-  } catch (error) {
-    console.error('❌ Error retrieving medical context:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    const { documentId, updates } = req.body;
+    // Log audit
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'update_medical_knowledge',
+      ip: req.ip,
+      details: { endpoint: '/api/admin/medical-knowledge/update', document_id: documentId, updates }
     });
+
+    await updateMedicalKnowledge(documentId, updates);
+    res.json({ success: true, message: 'Documento actualizado' });
+  } catch (error) {
+    console.error('Error updating medical knowledge:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
-app.get('/api/medical-knowledge/search', async (req, res) => {
+app.get('/api/admin/review-statistics', authMiddleware, async (req, res) => {
   try {
-    const { q: query, specialty, limit = 10 } = req.query;
-    console.log('🔍 Searching medical knowledge:', { query, specialty, limit });
-    
-    const results = await searchMedicalKnowledge(query as string, specialty as string, parseInt(limit as string));
-    console.log('✅ Medical knowledge search completed:', results.length, 'results');
-    
-    res.json(results);
-  } catch (error) {
-    console.error('❌ Error searching medical knowledge:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    // Log audit
+    await supabaseAdmin.from('audit_logs').insert({
+      user_id: req.user.id,
+      action: 'get_review_statistics',
+      ip: req.ip,
+      details: { endpoint: '/api/admin/review-statistics' }
     });
-  }
-});
 
-app.get('/api/medical-knowledge/specialty/:specialty', async (req, res) => {
-  try {
-    const { specialty } = req.params;
-    console.log('🔍 Getting documents by specialty:', specialty);
-    
-    const documents = await getDocumentsBySpecialty(specialty);
-    console.log('✅ Documents retrieved for specialty:', documents.length);
-    
-    res.json(documents);
+    const { data, error } = await getReviewStatistics();
+    if (error) throw error;
+    res.json(data);
   } catch (error) {
-    console.error('❌ Error getting documents by specialty:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
-  }
-});
-
-app.get('/api/admin/medical-knowledge/stats', async (req, res) => {
-  try {
-    console.log('📊 Getting medical knowledge statistics');
-    
-    const stats = await getMedicalKnowledgeStats();
-    console.log('✅ Medical knowledge stats retrieved');
-    
-    res.json(stats);
-  } catch (error) {
-    console.error('❌ Error getting medical knowledge stats:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
-  }
-});
-
-app.post('/api/admin/medical-knowledge/update', async (req, res) => {
-  try {
-    console.log('🔄 Updating medical knowledge base');
-    
-    await updateMedicalKnowledge();
-    console.log('✅ Medical knowledge base updated');
-    
-    res.json({ success: true, message: 'Base de conocimiento médico actualizada exitosamente' });
-  } catch (error) {
-    console.error('❌ Error updating medical knowledge base:', error);
-    res.status(500).json({ 
-      error: 'Error interno del servidor',
-      details: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
+    console.error('Error getting review statistics:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
 });
 
@@ -1495,14 +1488,14 @@ app.get('/api/admin/verification-statistics', async (req, res) => {
 
 app.post('/api/admin/clean-verification-cache', async (req, res) => {
   try {
-    console.log('🧹 Cleaning expired verification cache');
+    console.log('🧹 Clearing expired verification cache');
     
-    await cleanExpiredCache();
-    console.log('✅ Verification cache cleaned');
+    await clearExpiredCache();
+    console.log('✅ Verification cache cleared');
     
-    res.json({ success: true, message: 'Cache limpiado exitosamente' });
+    res.json({ success: true, message: 'Cache de verificación limpiado exitosamente' });
   } catch (error) {
-    console.error('❌ Error cleaning verification cache:', error);
+    console.error('❌ Error clearing verification cache:', error);
     res.status(500).json({ 
       error: 'Error interno del servidor',
       details: process.env.NODE_ENV === 'development' ? error.message : undefined
@@ -1511,7 +1504,7 @@ app.post('/api/admin/clean-verification-cache', async (req, res) => {
 });
 
 // Doctor Ratings and Reviews endpoints
-app.post('/api/doctors/:doctorId/reviews', async (req, res) => {
+app.post('/api/doctors/:doctorId/reviews', authMiddleware, async (req, res) => {
   try {
     const { doctorId } = req.params;
     const reviewData = req.body;

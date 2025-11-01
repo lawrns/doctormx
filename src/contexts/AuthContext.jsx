@@ -19,22 +19,23 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Obtener usuario actual al cargar la aplicación
     const getUser = async () => {
       try {
         const { user, error } = await getCurrentUser();
         if (error) {
-          // Only log error if it's not just a missing session (which is normal for logged-out users)
           if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
             console.error('Error obteniendo usuario:', error);
           }
-          // No user logged in is a valid state, just set user to null
           setUser(null);
         } else {
-          setUser(user);
+          // Add verified state (check email confirmed)
+          const verifiedUser = {
+            ...user,
+            isEmailVerified: user.confirmed_at ? true : false
+          };
+          setUser(verifiedUser);
         }
       } catch (error) {
-        // Only log unexpected errors that aren't related to missing sessions
         if (error.message !== 'Auth session missing!' && error.name !== 'AuthSessionMissingError') {
           console.error('Error inesperado obteniendo usuario:', error);
         }
@@ -46,25 +47,24 @@ export const AuthProvider = ({ children }) => {
 
     getUser();
 
-    // Escuchar cambios en el estado de autenticación
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        console.log('Auth state changed:', event, session?.user?.email);
-        
-        if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-          setUser(session?.user || null);
+      (event, session) => {
+        if (event === 'SIGNED_IN') {
+          const verifiedUser = {
+            ...session.user,
+            isEmailVerified: session.user.confirmed_at ? true : false
+          };
+          setUser(verifiedUser);
+          // Navigate based on user type if needed
         } else if (event === 'SIGNED_OUT') {
           setUser(null);
+          navigate('/login');
         }
-        
-        setLoading(false);
       }
     );
 
-    return () => {
-      subscription?.unsubscribe();
-    };
-  }, []);
+    return () => subscription.unsubscribe();
+  }, [navigate]);
 
   const logout = async () => {
     setIsLoggingOut(true);

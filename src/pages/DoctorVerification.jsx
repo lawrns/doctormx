@@ -8,10 +8,14 @@ import Icon from '../components/ui/Icon';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import MobileSpacing from '../components/ui/MobileOptimized';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function DoctorVerification() {
   const navigate = useNavigate();
-  const [doctor, setDoctor] = useState(null);
+  const { user } = useAuth();
+  const [status, setStatus] = useState('pending');
+  const [documents, setDocuments] = useState([]);
+  const [sepStatus, setSepStatus] = useState(null);
   const [loading, setLoading] = useState(true);
   const [notificationPreferences, setNotificationPreferences] = useState({
     email: true,
@@ -19,31 +23,81 @@ export default function DoctorVerification() {
   });
 
   useEffect(() => {
-    fetchDoctorData();
-  }, []);
+    if (!user) return;
 
-  const fetchDoctorData = async () => {
+    // Fetch initial status
+    fetchVerificationStatus();
+
+    // Real-time subscription
+    const subscription = supabase
+      .channel('doctor-verification')
+      .on('postgres_changes', 
+        { event: '*', schema: 'public', table: 'doctors', filter: `user_id=eq.${user.id}` },
+        (payload) => {
+          console.log('Verification status changed:', payload);
+          fetchVerificationStatus();
+        }
+      )
+      .subscribe();
+
+    return () => supabase.removeChannel(subscription);
+  }, [user]);
+
+  const fetchVerificationStatus = async () => {
+    setLoading(true);
     try {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
-        navigate('/connect/login');
-        return;
-      }
-
-      const { data: doctorData, error } = await supabase
+      const { data: doctor } = await supabase
         .from('doctors')
-        .select('*')
+        .select('verification_status, sep_verified, verification_date, verification_data')
         .eq('user_id', user.id)
         .single();
 
-      if (error) throw error;
-      setDoctor(doctorData);
+      if (doctor) {
+        setStatus(doctor.verification_status || 'pending');
+        setSepStatus(doctor.sep_verified ? 'verified' : 'pending');
+      }
+
+      // Fetch documents
+      const { data: docs } = await supabase
+        .from('doctor_documents')
+        .select('*')
+        .eq('doctor_id', user.id);
+
+      setDocuments(docs || []);
     } catch (error) {
-      console.error('Error fetching doctor data:', error);
-      toast.error('Error al cargar información del doctor');
+      console.error('Error fetching verification status:', error);
     } finally {
       setLoading(false);
     }
+  };
+
+  const uploadDocument = async (file) => {
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${user.id}-${Date.now()}.${fileExt}`;
+
+    const { data, error } = await supabase.storage
+      .from('doctor-docs')
+      .upload(fileName, file);
+
+    if (error) {
+      console.error('Error uploading document:', error);
+    } else {
+      // Save to database
+      await supabase.from('doctor_documents').insert({
+        doctor_id: user.id,
+        file_path: data.path,
+        type: file.type,
+        name: file.name,
+      });
+
+      fetchVerificationStatus(); // Refresh
+    }
+  };
+
+  const requestSEPVerification = async () => {
+    // Trigger SEP verification
+    const { error } = await supabase.rpc('trigger_sep_verification', { doctor_id: user.id });
+    if (error) console.error('Error requesting SEP verification:', error);
   };
 
   const updateNotificationPreferences = async () => {
@@ -78,7 +132,7 @@ export default function DoctorVerification() {
     );
   }
 
-  if (!doctor) {
+  if (!user) {
     return (
       <Layout variant="marketing">
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 flex items-center justify-center">
@@ -126,7 +180,7 @@ export default function DoctorVerification() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      Cédula Profesional: {doctor.cedula}
+                      Cédula Profesional: {user.id}
                     </h3>
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -197,10 +251,10 @@ export default function DoctorVerification() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-semibold text-gray-900">
-                        {doctor.subscription_plan === 'yearly' ? 'Plan Anual' : 'Plan Mensual'}
+                        {user.subscription_plan === 'yearly' ? 'Plan Anual' : 'Plan Mensual'}
                       </div>
                       <div className="text-sm text-gray-600">
-                        {doctor.subscription_plan === 'yearly' 
+                        {user.subscription_plan === 'yearly' 
                           ? '$4,999 MXN por año (2 meses gratis)'
                           : '$499 MXN por mes'
                         }
@@ -208,7 +262,7 @@ export default function DoctorVerification() {
                     </div>
                     <div className="text-right">
                       <div className="text-lg font-bold text-blue-600">
-                        {doctor.subscription_plan === 'yearly' ? '$4,999' : '$499'}
+                        {user.subscription_plan === 'yearly' ? '$4,999' : '$499'}
                       </div>
                       <div className="text-xs text-gray-500">MXN</div>
                     </div>

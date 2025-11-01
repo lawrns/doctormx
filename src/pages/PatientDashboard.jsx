@@ -4,6 +4,7 @@ import Layout from '../components/Layout';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import Icon from '../components/ui/Icon';
+import DashboardBanner from '../components/DashboardBanner';
 
 export default function PatientDashboard() {
   const { user } = useAuth();
@@ -78,10 +79,10 @@ export default function PatientDashboard() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-medical">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          {/* Header */}
-          <div className="mb-8">
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <header className="bg-white shadow">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
             <h1 className="text-3xl font-bold text-neutral-900 mb-2">
               <span className="gradient-text">Mi Dashboard</span>
             </h1>
@@ -89,7 +90,12 @@ export default function PatientDashboard() {
               Gestiona tus consultas, recetas y referencias médicas
             </p>
           </div>
+        </header>
 
+        {/* Add banner here */}
+        <DashboardBanner />
+
+        <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           {/* Quick Stats */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             <div className="glass-card p-6">
@@ -329,7 +335,7 @@ export default function PatientDashboard() {
               )}
             </div>
           </div>
-        </div>
+        </main>
       </div>
     </Layout>
   );

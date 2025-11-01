@@ -231,35 +231,28 @@ export async function chatWithImages(req: any, res: Response) {
       return res.status(400).json({ error: 'Mensaje requerido' });
     }
     
-    // Check free questions
-    const { data: user, error: userError } = await supabaseAdmin
-      .from('users')
-      .select('free_questions_remaining')
-      .eq('id', userId)
-      .single();
-    
-    if (userError || !user) {
-      return res.status(500).json({ error: 'Error al verificar usuario' });
+    if (!process.env.MEDICAL_ENCRYPTION_KEY) {
+      console.warn('MEDICAL_ENCRYPTION_KEY not set, skipping encryption');
     }
     
-    if (user.free_questions_remaining <= 0) {
-      return res.status(402).json({
-        error: 'Sin preguntas gratis',
-        needsPayment: true,
-        message: 'Has usado tus 5 preguntas gratuitas. Adquiere más consultas para continuar.',
-      });
-    }
+    const encryptionKey = process.env.MEDICAL_ENCRYPTION_KEY || '';
     
-    // Triage
+    // Encrypt the message
+    const encryptedMessage = encryptionKey ? await supabaseAdmin.rpc('encrypt_text', { input_text: message, encryption_key: encryptionKey }) : message;
+    
+    // Triage using original message
     const triage = triagePatient(message, severity);
     
     // If ER, return immediately
     if (triage.careLevel === 'ER') {
+      // Encrypt flag text
+      const encryptedFlagText = encryptionKey ? await supabaseAdmin.rpc('encrypt_text', { input_text: message.substring(0, 500), encryption_key: encryptionKey }) : message.substring(0, 500);
+      
       // Log red flag
       await supabaseAdmin.from('red_flags_detected').insert({
         user_id: userId,
         flag_type: 'emergency',
-        flag_text: message.substring(0, 500),
+        flag_text: encryptedFlagText,
         severity: 'critical',
         action_taken: 'emergency_alert_shown',
       });
@@ -275,7 +268,7 @@ Tus síntomas requieren atención médica urgente. Por favor:
 2. O ve a la sala de urgencias más cercana
 3. No esperes - busca ayuda ahora
 
-Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluación médica inmediata.`,
+`,
         emergency: true,
       });
     }
@@ -284,6 +277,9 @@ Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluació
     let currentConsultId = consultId;
     
     if (!currentConsultId) {
+      // Encrypt chief complaint
+      const encryptedChiefComplaint = encryptionKey ? await supabaseAdmin.rpc('encrypt_text', { input_text: message.substring(0, 200), encryption_key: encryptionKey }) : message.substring(0, 200);
+      
       const { data: newConsult, error: consultError } = await supabaseAdmin
         .from('consults')
         .insert({
@@ -291,7 +287,7 @@ Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluació
           care_level: triage.careLevel,
           status: 'active',
           severity: triage.severity,
-          chief_complaint: message.substring(0, 200),
+          chief_complaint: encryptedChiefComplaint,
         })
         .select()
         .single();
@@ -309,7 +305,7 @@ Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluació
       .insert({
         consult_id: currentConsultId,
         role: 'user',
-        content: message,
+        content: encryptedMessage,
       })
       .select()
       .single();
@@ -377,11 +373,14 @@ Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluació
     // Generate AI response
     const aiResponse = await generateAIResponse(message, visionAnalyses, triage.careLevel);
     
+    // Encrypt AI response
+    const encryptedAiResponse = encryptionKey ? await supabaseAdmin.rpc('encrypt_text', { input_text: aiResponse, encryption_key: encryptionKey }) : aiResponse;
+    
     // Save AI message
     await supabaseAdmin.from('messages').insert({
       consult_id: currentConsultId,
       role: 'assistant',
-      content: aiResponse,
+      content: encryptedAiResponse,
       metadata: {
         vision_analyses: visionAnalyses,
         care_level: triage.careLevel,
@@ -391,7 +390,7 @@ Este no es un diagnóstico, pero tus síntomas sugieren que necesitas evaluació
     // Decrement free questions
     await supabaseAdmin.rpc('decrement_free_questions', { user_id_param: userId });
     
-    // Return response
+    // Return response (use original for response)
     res.json({
       consultId: currentConsultId,
       messageId: userMessage.id,

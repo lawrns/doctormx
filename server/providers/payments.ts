@@ -1,4 +1,5 @@
 import Stripe from 'stripe';
+import crypto from 'crypto';
 
 let stripe: any = null;
 
@@ -57,7 +58,10 @@ export async function createCheckoutSession(paymentRequest: PaymentRequest): Pro
   try {
     const stripeClient = getStripeClient();
     
+    const idempotencyKey = crypto.randomUUID();
+    
     const session = await stripeClient.checkout.sessions.create({
+      idempotency_key: idempotencyKey,
       payment_method_types: ['card'],
       line_items: [
         {
@@ -106,7 +110,10 @@ export async function createPaymentIntent(paymentRequest: PaymentRequest): Promi
   try {
     const stripeClient = getStripeClient();
     
+    const idempotencyKey = crypto.randomUUID();
+    
     const paymentIntent = await stripeClient.paymentIntents.create({
+      idempotency_key: idempotencyKey,
       amount: paymentRequest.amount,
       currency: paymentRequest.currency.toLowerCase(),
       description: paymentRequest.description,
