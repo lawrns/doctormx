@@ -235,14 +235,18 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
   }
   
   // Create subscription record
+  const sub = subscription as any;
+  const currentPeriodStart = new Date((sub.current_period_start || 0) * 1000);
+  const currentPeriodEnd = new Date((sub.current_period_end || 0) * 1000);
+  
   const { error } = await supabaseAdmin
     .from('subscriptions')
     .insert({
       doctor_id: parseInt(doctorId),
       plan_id: plan.id,
       status: subscription.status,
-      current_period_start: new Date(subscription.current_period_start * 1000),
-      current_period_end: new Date(subscription.current_period_end * 1000),
+      current_period_start: currentPeriodStart,
+      current_period_end: currentPeriodEnd,
       provider: 'stripe',
       provider_sub_id: subscriptionId,
       provider_customer_id: session.customer as string,
@@ -273,12 +277,16 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
  * Handle subscription updates
  */
 async function handleSubscriptionUpdate(subscription: Stripe.Subscription) {
+  const sub = subscription as any;
+  const currentPeriodStart = new Date((sub.current_period_start || 0) * 1000);
+  const currentPeriodEnd = new Date((sub.current_period_end || 0) * 1000);
+  
   const { error } = await supabaseAdmin
     .from('subscriptions')
     .update({
       status: subscription.status,
-      current_period_start: new Date(subscription.current_period_start * 1000),
-      current_period_end: new Date(subscription.current_period_end * 1000),
+      current_period_start: currentPeriodStart,
+      current_period_end: currentPeriodEnd,
       cancel_at_period_end: subscription.cancel_at_period_end,
     })
     .eq('provider_sub_id', subscription.id);
@@ -316,7 +324,13 @@ async function handleInvoicePaid(invoice: Stripe.Invoice) {
  * Handle failed payment
  */
 async function handleInvoicePaymentFailed(invoice: Stripe.Invoice) {
-  const subscriptionId = invoice.subscription as string;
+  const inv = invoice as any;
+  const subscriptionId = typeof inv.subscription === 'string' ? inv.subscription : inv.subscription?.id;
+  
+  if (!subscriptionId) {
+    console.error('No subscription ID in invoice');
+    return;
+  }
   
   // Update subscription status to past_due
   await supabaseAdmin

@@ -16,7 +16,7 @@ const upload = multer({
     fileSize: 10 * 1024 * 1024, // 10MB
     files: 5, // Max 5 images per message
   },
-  fileFilter: (req, file, cb) => {
+  fileFilter: (req: any, file: any, cb: any) => {
     const allowedMimes = ['image/jpeg', 'image/png', 'image/heic', 'image/webp'];
     if (allowedMimes.includes(file.mimetype)) {
       cb(null, true);
@@ -216,7 +216,7 @@ Nivel de atención sugerido: ${careLevel}`;
 /**
  * Main chat endpoint with image support
  */
-export async function chatWithImages(req: Request, res: Response) {
+export async function chatWithImages(req: any, res: Response) {
   try {
     const userId = req.user?.id;
     
@@ -225,7 +225,7 @@ export async function chatWithImages(req: Request, res: Response) {
     }
     
     const { message, consultId, severity } = req.body;
-    const files = req.files as Express.Multer.File[];
+    const files = (req.files || []) as any[];
     
     if (!message || message.trim().length === 0) {
       return res.status(400).json({ error: 'Mensaje requerido' });

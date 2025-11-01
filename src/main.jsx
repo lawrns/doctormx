@@ -7,7 +7,7 @@ import { AnimatePresence } from 'framer-motion';
 import DoctorAI from './pages/DoctorAI.jsx';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login.jsx';
-import ConnectLanding from './pages/ConnectLanding.jsx';
+import ConnectLanding from './pages/ConnectLandingOptimized.jsx';
 import DoctorSignup from './pages/DoctorSignup.jsx';
 import DoctorVerification from './pages/DoctorVerification.jsx';
 import DoctorDashboard from './pages/DoctorDashboard.jsx';
