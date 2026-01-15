@@ -282,7 +282,7 @@ export default function PremiumMarketplacePage() {
       <header className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="text-xl font-bold text-gray-900">Doctory</h1>
+            <h1 className="text-xl font-bold text-gray-900">Doctor.mx</h1>
             <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
               Premium
             </span>

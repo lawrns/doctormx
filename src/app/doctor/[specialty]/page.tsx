@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { specialty } = await params
   const specialtyName = decodeURIComponent(specialty).replace(/-/g, ' ')
   
-  const title = `${capitalizeWords(specialtyName)} en México | Doctory`
+  const title = `${capitalizeWords(specialtyName)} en México | Doctor.mx`
   const description = `Directorio de especialistas en ${specialtyName} en México. Encuentra médicos verificados, lee reseñas y agenda tu consulta en línea.`
   
   return {
@@ -162,7 +162,7 @@ export default async function SpecialtyPage({ params }: PageProps) {
           </h2>
           <div className="mt-4 space-y-4 text-gray-600">
             <p>
-              Doctory es el directorio de médicos más completo de México. 
+              Doctor.mx es el directorio de médicos más completo de México. 
               Encuentra especialistas en {specialtyName.toLowerCase()} verificados 
               con cédula profesional y certificaciones.
             </p>

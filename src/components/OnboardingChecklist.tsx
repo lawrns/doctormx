@@ -153,7 +153,7 @@ export function WelcomeBanner({ patientName }: { patientName: string }) {
         <div className="flex items-start justify-between">
           <div>
             <h1 className="text-2xl font-bold mb-2">
-              Bienvenido a Doctory, {patientName}
+              Bienvenido a Doctor.mx, {patientName}
             </h1>
             <p className="text-primary-100 mb-4 max-w-lg">
               Tu plataforma de telemedicina de confianza. Encuentra doctores verificados, 

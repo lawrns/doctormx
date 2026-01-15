@@ -307,7 +307,7 @@ export async function markReferralSent(
 
   const pharmacy = referral.pharmacy as PharmacySponsor | undefined
 
-  const message = `🏥 *Referencia de Farmacia - Doctory*
+  const message = `🏥 *Referencia de Farmacia - Doctor.mx*
 
 Hola,
 
@@ -322,7 +322,7 @@ Tu médico te ha referido a ${pharmacy?.name || 'una farmacia asociada'}.
 
 Presenta este código en la farmacia para obtener tus medicamentos.
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
   const result = await sendPharmacyReferralWhatsApp(phone, message)
 

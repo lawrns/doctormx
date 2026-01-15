@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const specialtyName = decodeURIComponent(specialty).replace(/-/g, ' ')
   const cityName = decodeURIComponent(city).replace(/-/g, ' ')
   
-  const title = `${capitalizeWords(specialtyName)} en ${capitalizeWords(cityName)} | Doctory México`
+  const title = `${capitalizeWords(specialtyName)} en ${capitalizeWords(cityName)} | Doctor.mx México`
   const description = `Encuentra los mejores especialistas en ${specialtyName} en ${cityName}. Consulta perfiles verificados, lee reseñas y agenda tu cita en línea.`
   
   return {
@@ -181,11 +181,11 @@ export default async function SpecialtyCityPage({ params }: PageProps) {
           <div className="mt-4 text-gray-600">
             <p>
               Encuentra a los mejores especialistas en {specialtyName.toLowerCase()} en {cityName}. 
-              En Doctory conectamos pacientes con médicos verificados que ofrecen 
+              En Doctor.mx conectamos pacientes con médicos verificados que ofrecen 
               consultas presenciales y videoconsultas.
             </p>
             <h3 className="mt-4 font-medium text-gray-900">
-              ¿Por qué elegir Doctory?
+              ¿Por qué elegir Doctor.mx?
             </h3>
             <ul className="mt-2 list-inside list-disc">
               <li>Médicos verificados con cédula profesional</li>

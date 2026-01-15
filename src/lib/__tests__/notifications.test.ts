@@ -320,7 +320,7 @@ describe('Notifications System', () => {
       
       const html = getEmailTemplate('<p>Test content</p>', 'Test Patient')
       
-      expect(html).toContain('Doctory')
+      expect(html).toContain('Doctor.mx')
       expect(html).toContain('Test Patient')
       expect(html).toContain('Test content')
     })
@@ -331,7 +331,7 @@ describe('Notifications System', () => {
       const html = getEmailTemplate('', 'Test Patient')
       
       expect(html).toContain('©')
-      expect(html).toContain('Doctory')
+      expect(html).toContain('Doctor.mx')
     })
   })
 

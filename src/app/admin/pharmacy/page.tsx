@@ -30,7 +30,7 @@ export default async function AdminPharmacyPage() {
         <div className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Link href="/admin" className="text-2xl font-bold text-primary-600">
-              Doctory Admin
+              Doctor.mx Admin
             </Link>
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
               👑 Admin

@@ -125,7 +125,7 @@ export default function DoctorConsultationPage({ params }: DoctorConsultationPag
             <header className="bg-white shadow-sm">
                 <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <h1 className="text-xl font-bold text-gray-900">Doctory</h1>
+                        <h1 className="text-xl font-bold text-gray-900">Doctor.mx</h1>
                         <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">
                             Sala de Consulta
                         </span>

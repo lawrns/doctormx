@@ -186,7 +186,7 @@ export async function generatePrescriptionPDF(data: PrescriptionData): Promise<B
       doc.moveDown(2)
 
       doc.fontSize(8).fillColor('#999999')
-      doc.text('Este documento es una receta médica electrónica generada por Doctory.', 60, doc.y, { align: 'center' })
+      doc.text('Este documento es una receta médica electrónica generada por Doctor.mx.', 60, doc.y, { align: 'center' })
       doc.text('La autenticidad de este documento puede ser verificada escaneando el código QR.', 60, doc.y, { align: 'center' })
 
       doc.end()

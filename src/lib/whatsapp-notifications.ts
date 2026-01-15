@@ -54,7 +54,7 @@ function getWhatsAppPhone(phone: string): string {
 function formatTemplate(template: NotificationTemplate, ctx: NotificationContext): string {
   switch (template) {
     case 'appointment_confirmation':
-      return `📅 *Confirmación de Cita - Doctory*
+      return `📅 *Confirmación de Cita - Doctor.mx*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -70,10 +70,10 @@ Tu cita con el Dr.${ctx.doctorName ? ` ${ctx.doctorName}` : ''} ha sido confirma
 
 ❓ ¿Necesitas ayuda? Responde a este mensaje.
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'payment_receipt':
-      return `✅ *Pago Recibido - Doctory*
+      return `✅ *Pago Recibido - Doctor.mx*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -87,7 +87,7 @@ Hemos recibido tu pago por ${ctx.price || 'monto'} ${ctx.currency || 'MXN'}.
 
 Tu cita está confirmada. Te recordamos llegar 5 minutos antes.
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'consultation_reminder':
       return `⏰ *Recordatorio: Tu consulta es en 1 hora*
@@ -108,10 +108,10 @@ Tu consulta con el Dr.${ctx.doctorName || 'tu médico'} comienza en aproximadame
 
 ❓ ¿Problemas técnicos? Llama al: 55-DOCTORY
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'follow_up_24h':
-      return `🏥 *Doctory - Seguimiento Post-Consulta*
+      return `🏥 *Doctor.mx - Seguimiento Post-Consulta*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -130,10 +130,10 @@ Responde con:
 
 *Recuerda: Esta IA asiste, no diagnostica. Si tienes síntomas graves, busca atención médica.*
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'follow_up_7d':
-      return `📅 *Doctory - Seguimiento a 7 días*
+      return `📅 *Doctor.mx - Seguimiento a 7 días*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -148,10 +148,10 @@ Responde:
 
 *Recuerda agendar tu próxima cita si es necesario: ${ctx.bookingLink || 'doctory.mx/doctors'}*
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'prescription_ready':
-      return `💊 *Receta Lista - Doctory*
+      return `💊 *Receta Lista - Doctor.mx*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -165,10 +165,10 @@ Tu receta de la consulta con el Dr.${ctx.doctorName ? ` ${ctx.doctorName}` : ''}
 🏥 *Farmacias participantes:*
 Tu receta puede redenarse en cualquier farmacia del país.
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     case 'doctor_available':
-      return `👨‍⚕️ *Doctory - ¡Tu doctor está disponible!*
+      return `👨‍⚕️ *Doctor.mx - ¡Tu doctor está disponible!*
 
 Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
 
@@ -181,10 +181,10 @@ ${ctx.bookingLink || 'https://doctory.mx/doctors'}
 
 * Cupo limitado - Reserva tu espacio*
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
     default:
-      return 'Mensaje de Doctory'
+      return 'Mensaje de Doctor.mx'
   }
 }
 

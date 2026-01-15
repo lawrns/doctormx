@@ -64,7 +64,7 @@ export function TestimonialsSection() {
             Lo que dicen nuestros usuarios
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Miles de pacientes y doctores confían en Doctory para su atención médica
+            Miles de pacientes y doctores confían en Doctor.mx para su atención médica
           </p>
         </motion.div>
 

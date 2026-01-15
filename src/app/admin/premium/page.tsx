@@ -75,7 +75,7 @@ export default async function AdminPremiumPage() {
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">Doctory Admin</h1>
+          <h1 className="text-2xl font-bold text-gray-900">Doctor.mx Admin</h1>
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
               Premium Dashboard

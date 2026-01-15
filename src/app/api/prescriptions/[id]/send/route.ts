@@ -56,7 +56,7 @@ export async function POST(
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tu Receta Médica - Doctory</title>
+        <title>Tu Receta Médica - Doctor.mx</title>
       </head>
       <body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
         <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -65,7 +65,7 @@ export async function POST(
               <table role="presentation" style="width: 600px; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
                 <tr>
                   <td style="padding: 40px 40px 20px 40px; background-color: #0066cc; text-align: center;">
-                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Doctory</h1>
+                    <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Doctor.mx</h1>
                     <p style="margin: 10px 0 0 0; color: #ffffff; opacity: 0.9; font-size: 14px;">Tu plataforma de telemedicina</p>
                   </td>
                 </tr>
@@ -94,7 +94,7 @@ export async function POST(
                 <tr>
                   <td style="padding: 0 40px 40px 40px; border-top: 1px solid #e5e7eb;">
                     <p style="margin: 0; color: #9ca3af; font-size: 12px; text-align: center;">
-                      © ${new Date().getFullYear()} Doctory. Todos los derechos reservados.
+                      © ${new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
                     </p>
                   </td>
                 </tr>
@@ -107,9 +107,9 @@ export async function POST(
     `
 
     const emailResult = await resend.emails.send({
-      from: 'Doctory <noreply@doctory.com.mx>',
+      from: 'Doctor.mx <noreply@doctory.com.mx>',
       to: [patientEmail],
-      subject: 'Tu Receta Médica - Doctory',
+      subject: 'Tu Receta Médica - Doctor.mx',
       html: emailHtml,
       attachments: [
         {

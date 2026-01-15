@@ -43,7 +43,7 @@ function PaymentSuccessContent() {
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6">
           <Link href="/" className="text-2xl font-bold text-neutral-900">
-            Doctory
+            Doctor.mx
           </Link>
         </div>
       </header>

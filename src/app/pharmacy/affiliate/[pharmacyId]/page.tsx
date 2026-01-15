@@ -71,7 +71,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
       <header className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary-600">
-            Doctory
+            Doctor.mx
           </Link>
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
             🏥 Farmacia Asociada
@@ -123,7 +123,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
                     </p>
                     {pharmacy.discount_percentage && (
                       <p className="text-sm text-green-600 mt-1">
-                        🎉 {pharmacy.discount_percentage}% de descuento para pacientes Doctory
+                        🎉 {pharmacy.discount_percentage}% de descuento para pacientes Doctor.mx
                       </p>
                     )}
                   </div>
@@ -176,7 +176,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
                 {pharmacy.offers_delivery && pharmacy.whatsapp_number && (
                   <a
                     href={`https://wa.me/${pharmacy.whatsapp_number.replace(/\D/g, '')}?text=${encodeURIComponent(
-                      `Hola, tengo una referencia de Doctory. Código: ${referral.referral_code}. Me gustaría pedir delivery de mis medicamentos.`
+                      `Hola, tengo una referencia de Doctor.mx. Código: ${referral.referral_code}. Me gustaría pedir delivery de mis medicamentos.`
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -238,7 +238,7 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
 
             <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
               <p className="text-sm text-yellow-800">
-                <strong>Nota:</strong> Presenta este código de referencia <span className="font-mono font-bold">{referral.referral_code}</span> en la farmacia para validar tu descuento de Doctory.
+                <strong>Nota:</strong> Presenta este código de referencia <span className="font-mono font-bold">{referral.referral_code}</span> en la farmacia para validar tu descuento de Doctor.mx.
               </p>
               <p className="text-sm text-yellow-700 mt-1">
                 Válido hasta: {format(new Date(referral.expires_at), 'dd MMMM yyyy', { locale: es })}
@@ -262,14 +262,14 @@ export default async function PharmacyAffiliatePage({ params, searchParams }: Pa
 
         <div className="mt-8 text-center">
           <Link href="/" className="text-primary-600 hover:text-primary-700 font-medium">
-            Volver a Doctory
+            Volver a Doctor.mx
           </Link>
         </div>
       </main>
 
       <footer className="bg-white border-t border-border mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-ink-muted">
-          <p>© {new Date().getFullYear()} Doctory - Tu salud, simplificada</p>
+          <p>© {new Date().getFullYear()} Doctor.mx - Tu salud, simplificada</p>
         </div>
       </footer>
     </div>

@@ -11,7 +11,7 @@ type DashboardHeaderProps = {
 }
 
 export function DashboardHeader({
-  title = 'Doctory',
+  title = 'Doctor.mx',
   userName,
   badge
 }: DashboardHeaderProps) {

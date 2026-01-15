@@ -210,7 +210,7 @@ export async function sendMedicationReminder(
     return { success: false, error: 'Patient phone not found' }
   }
 
-  const message = `💊 *Recordatorio de Medicación - Doctory*
+  const message = `💊 *Recordatorio de Medicación - Doctor.mx*
 
 Hola${patient.full_name ? ` ${patient.full_name}` : ''},
 
@@ -226,7 +226,7 @@ Responde:
 
 *Recuerda: Esta IA asiste, no diagnostica. Consulta a tu médico si tienes dudas.*
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
   const result = await sendCustomWhatsAppNotification(patient.phone, message, 'medication_reminder')
 
@@ -269,7 +269,7 @@ export async function sendPrescriptionRefill(
     return { success: false, error: 'Patient phone not found' }
   }
 
-  const message = `💊 *Tu receta está por terminar - Doctory*
+  const message = `💊 *Tu receta está por terminar - Doctor.mx*
 
 Hola${patient.full_name ? ` ${patient.full_name}` : ''},
 
@@ -282,7 +282,7 @@ Está por terminarse.
 
 Responde *RENOVAR* para agendar ahora.
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
   const result = await sendCustomWhatsAppNotification(patient.phone, message, 'prescription_refill')
 
@@ -317,7 +317,7 @@ export async function sendChronicCareFollowUp(
     return { success: false, error: 'Patient phone not found' }
   }
 
-  const message = `🏥 *Doctory - Seguimiento de Cuidado Crónico*
+  const message = `🏥 *Doctor.mx - Seguimiento de Cuidado Crónico*
 
 Hola${patient.full_name ? ` ${patient.full_name}` : ''},
 
@@ -330,7 +330,7 @@ Responde:
 
 *Recuerda: Esta IA asiste, no diagnostica. Para emergencias, llama al 911.*
 
-— *Doctory: Tu salud, simplificada*`
+— *Doctor.mx: Tu salud, simplificada*`
 
   const result = await sendCustomWhatsAppNotification(patient.phone, message, 'chronic_care_check')
 

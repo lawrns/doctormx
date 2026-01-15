@@ -5,7 +5,7 @@ import { Resend } from 'resend'
 import { format } from 'date-fns'
 import { es } from 'date-fns/locale'
 
-const FROM_EMAIL = 'Doctory <noreply@doctory.com.mx>'
+const FROM_EMAIL = 'Doctor.mx <noreply@doctory.com.mx>'
 const SUPPORT_EMAIL = 'soporte@doctory.com.mx'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -33,7 +33,7 @@ export function getEmailTemplate(content: string, patientName: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doctory - Notificación</title>
+  <title>Doctor.mx - Notificación</title>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
   <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -42,7 +42,7 @@ export function getEmailTemplate(content: string, patientName: string): string {
         <table role="presentation" style="width: 600px; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
           <tr>
             <td style="padding: 40px 40px 20px 40px; background-color: #0066cc; text-align: center;">
-              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Doctory</h1>
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600;">Doctor.mx</h1>
               <p style="margin: 10px 0 0 0; color: #ffffff; opacity: 0.9; font-size: 14px;">Tu plataforma de telemedicina</p>
             </td>
           </tr>
@@ -58,7 +58,7 @@ export function getEmailTemplate(content: string, patientName: string): string {
                 ¿Tienes preguntas? Contáctanos en <a href="mailto:${SUPPORT_EMAIL}" style="color: #0066cc; text-decoration: none;">${SUPPORT_EMAIL}</a>
               </p>
               <p style="margin: 0; color: #9ca3af; font-size: 12px; text-align: center;">
-                © ${new Date().getFullYear()} Doctory. Todos los derechos reservados.
+                © ${new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
               </p>
             </td>
           </tr>
@@ -158,7 +158,7 @@ export async function sendAppointmentConfirmation(
 
   const result = await sendEmail({
     to: patientEmail,
-    subject: 'Confirmación de tu cita en Doctory',
+    subject: 'Confirmación de tu cita en Doctor.mx',
     html,
     tags: [
       { name: 'type', value: 'appointment_confirmation' },
@@ -398,7 +398,7 @@ ${followUpNotes ? `
 
   const result = await sendEmail({
     to: patientEmail,
-    subject: 'Gracias por tu consulta en Doctory',
+    subject: 'Gracias por tu consulta en Doctor.mx',
     html,
     tags: [
       { name: 'type', value: 'follow_up' },

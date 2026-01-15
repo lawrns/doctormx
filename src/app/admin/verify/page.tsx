@@ -20,7 +20,7 @@ export default async function AdminVerificationPage() {
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <Link href="/admin" className="text-2xl font-bold text-gray-900">
-            Doctory Admin
+            Doctor.mx Admin
           </Link>
         </div>
       </header>
