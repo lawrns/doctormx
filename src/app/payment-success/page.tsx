@@ -32,17 +32,17 @@ function PaymentSuccessContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-gray-600">Confirmando pago...</p>
+      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+        <p className="text-neutral-600">Confirmando pago...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6">
-          <Link href="/" className="text-2xl font-bold text-gray-900">
+          <Link href="/" className="text-2xl font-bold text-neutral-900">
             Doctory
           </Link>
         </div>
@@ -56,20 +56,20 @@ function PaymentSuccessContent() {
             </svg>
           </div>
 
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl font-bold text-neutral-900 mb-4">
             ¡Pago Exitoso!
           </h1>
 
-          <p className="text-gray-600 mb-8">
+          <p className="text-neutral-600 mb-8">
             Tu consulta ha sido agendada y confirmada
           </p>
 
           {appointment && (
-            <div className="bg-gray-50 p-6 rounded-lg mb-8 text-left">
-              <h3 className="font-semibold text-gray-900 mb-4">
+            <div className="bg-neutral-50 p-6 rounded-lg mb-8 text-left">
+              <h3 className="font-semibold text-neutral-900 mb-4">
                 Detalles de la consulta
               </h3>
-              <div className="space-y-2 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-neutral-600">
                 <p>
                   <strong>Fecha:</strong>{' '}
                   {new Date(appointment.start_ts).toLocaleDateString('es-MX')}
@@ -91,19 +91,19 @@ function PaymentSuccessContent() {
           <div className="space-y-3">
             <Link
               href="/app"
-              className="block w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-medium"
+              className="block w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 font-medium"
             >
               Ir a Mis Consultas
             </Link>
             <Link
               href="/doctors"
-              className="block w-full border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 font-medium"
+              className="block w-full border border-neutral-300 text-neutral-700 py-3 rounded-lg hover:bg-neutral-50 font-medium"
             >
               Buscar Otro Doctor
             </Link>
           </div>
 
-          <p className="text-sm text-gray-500 mt-6">
+          <p className="text-sm text-neutral-500 mt-6">
             📧 Recibirás un email de confirmación con los detalles de tu consulta
           </p>
         </div>
@@ -114,7 +114,7 @@ function PaymentSuccessContent() {
 
 export default function PaymentSuccessPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><p>Cargando...</p></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-neutral-50 flex items-center justify-center"><p>Cargando...</p></div>}>
       <PaymentSuccessContent />
     </Suspense>
   )
