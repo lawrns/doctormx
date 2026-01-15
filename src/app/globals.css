@@ -14,17 +14,17 @@
        Less variation, more consistency
        ============================================ */
 
-  /* Primary (Doctory Blue) - Healthcare professional blue */
-  --color-primary-50: #E6F0FF;
-  --color-primary-100: #CCE0FF;
-  --color-primary-200: #99C2FF;
-  --color-primary-300: #66A3FF;
-  --color-primary-400: #3385FF;
-  --color-primary-500: #0F5A9F;
-  --color-primary-600: #0052A3;
-  --color-primary-700: #003D7A;
-  --color-primary-800: #002952;
-  --color-primary-900: #001429;
+  /* Primary (Doctronic Blue) - Healthcare professional blue */
+  --color-primary-50: #f6f6ff;
+  --color-primary-100: #e9eeff;
+  --color-primary-200: #d4ddff;
+  --color-primary-300: #c0ccff;
+  --color-primary-400: #a0cdff;
+  --color-primary-500: #5588ff;
+  --color-primary-600: #446dcc;
+  --color-primary-700: #334d99;
+  --color-primary-800: #223266;
+  --color-primary-900: #111633;
 
   /* Accent (Cyan/Teal) - Complementary healthcare accent */
   --color-accent-50: #ecfeff;
@@ -35,10 +35,10 @@
   --color-info-500: #00B4A3;
   --color-info-600: #0891b2;
 
-  /* Semantic colors - Doctory palette */
-  --color-success-500: #00D99D;
-  --color-warning-500: #FF9A3D;
-  --color-error-500: #ef4444;
+  /* Semantic colors - Doctronic palette */
+  --color-success-500: #00eca1;
+  --color-warning-500: #ff9900;
+  --color-error-500: #ff4444;
 
   /* Neutrals - 6-step scale (Linear pattern) */
   --color-neutral-0: #ffffff;
@@ -72,7 +72,7 @@
   /* Font families */
   --font-display: "Inter Display", "Inter", -apple-system, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: "Crimson Text", Georgia, serif;
+  --font-serif: "Hedvig Letters Serif", Georgia, serif;
   --font-mono: "Menlo", "Monaco", "Courier New", monospace;
 
   /* Type scale */

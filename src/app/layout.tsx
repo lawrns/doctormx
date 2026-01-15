@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Crimson_Text } from "next/font/google";
+import { Geist, Geist_Mono, Hedvig_Letters_Serif } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/Toast";
 
@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const crimsonText = Crimson_Text({
-  variable: "--font-crimson-text",
-  weight: ["400", "600", "700"],
+const hedvigLettersSerif = Hedvig_Letters_Serif({
+  variable: "--font-hedvig-letters-serif",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimsonText.variable}`}>
+    <html lang="en" className={`${hedvigLettersSerif.variable}`}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
