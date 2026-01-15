@@ -2,31 +2,38 @@
 
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
+import { BadgeCheck, Star, MapPin } from 'lucide-react'
 
 const testimonials = [
   {
     name: 'María García',
-    role: 'Paciente',
-    location: 'Ciudad de México',
-    image: '/testimonials/maria.jpg',
+    role: 'Paciente verificado',
+    location: 'CDMX',
+    initials: 'MG',
+    gradient: 'from-rose-400 to-pink-500',
     content: 'Encontré un excelente cardiólogo en minutos. La videoconsulta fue muy profesional y me ahorraron tiempo y dinero.',
     rating: 5,
+    verified: true,
   },
   {
     name: 'Dr. Carlos Mendoza',
-    role: 'Cardiólogo',
+    role: 'Cardiólogo certificado',
     location: 'Guadalajara',
-    image: '/testimonials/carlos.jpg',
-    content: 'Como doctor, Doctory me ha permitido expandir mi práctica y llegar a más pacientes. La plataforma es intuitiva.',
+    initials: 'CM',
+    gradient: 'from-blue-400 to-indigo-500',
+    content: 'Como doctor, Doctor.mx me ha permitido expandir mi práctica y llegar a más pacientes. La plataforma es intuitiva.',
     rating: 5,
+    verified: true,
   },
   {
     name: 'Ana Rodríguez',
-    role: 'Paciente',
+    role: 'Paciente verificado',
     location: 'Monterrey',
-    image: '/testimonials/ana.jpg',
+    initials: 'AR',
+    gradient: 'from-emerald-400 to-teal-500',
     content: 'La segunda opinión que obtuve fue invaluable. Me dio la tranquilidad que necesitaba antes de mi cirugía.',
     rating: 5,
+    verified: true,
   },
 ]
 
@@ -86,10 +93,10 @@ export function TestimonialsSection() {
                   "
                 </div>
 
-                {/* Stars */}
+                {/* Stars - Using Lucide Star */}
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.svg
+                    <motion.div
                       key={i}
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
@@ -100,12 +107,9 @@ export function TestimonialsSection() {
                         stiffness: 400,
                         damping: 17
                       }}
-                      className="w-5 h-5 text-warning-500"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
                     >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </motion.svg>
+                      <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+                    </motion.div>
                   ))}
                 </div>
 
@@ -114,22 +118,24 @@ export function TestimonialsSection() {
                   "{testimonial.content}"
                 </p>
 
-                {/* Author */}
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center overflow-hidden">
-                    {testimonial.role === 'Paciente' ? (
-                      <svg className="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    ) : (
-                      <svg className="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    )}
+                {/* Author - With gradient avatar and verified badge */}
+                <div className="flex items-center gap-3 mt-auto">
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-white font-bold text-sm shadow-lg`}>
+                    {testimonial.initials}
                   </div>
                   <div>
-                    <p className="font-semibold text-text-primary">{testimonial.name}</p>
-                    <p className="text-sm text-text-muted">{testimonial.role} • {testimonial.location}</p>
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-semibold text-text-primary">{testimonial.name}</p>
+                      {testimonial.verified && (
+                        <BadgeCheck className="w-4 h-4 text-blue-500" />
+                      )}
+                    </div>
+                    <p className="text-sm text-text-muted flex items-center gap-1">
+                      {testimonial.role}
+                      <span className="text-neutral-300 mx-1">•</span>
+                      <MapPin className="w-3 h-3" />
+                      {testimonial.location}
+                    </p>
                   </div>
                 </div>
 

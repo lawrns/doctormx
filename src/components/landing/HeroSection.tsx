@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Zap, Shield, Sparkles, ArrowRight, BadgeCheck, Clock, Users } from 'lucide-react'
+import Image from 'next/image'
+import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -58,35 +59,38 @@ export function HeroSection() {
         initial="hidden"
         animate="visible"
       >
-        {/* Announcement Badge - Larger, More Prominent */}
+        {/* Dr. Simeon Avatar + Live Badge - Main Trust Signal */}
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-50 border border-primary-200 rounded-full text-primary-700 font-medium shadow-sm">
-            <Sparkles className="w-4 h-4" />
-            <span>Consultas médicas con IA • Disponible 24/7</span>
-          </div>
-        </motion.div>
-
-        {/* Doctor Avatars - Trust Signal */}
-        <motion.div variants={itemVariants} className="flex justify-center mb-6">
-          <div className="flex items-center">
-            <div className="flex -space-x-3">
-              {[
-                'bg-gradient-to-br from-blue-400 to-blue-600',
-                'bg-gradient-to-br from-emerald-400 to-emerald-600',
-                'bg-gradient-to-br from-purple-400 to-purple-600',
-                'bg-gradient-to-br from-amber-400 to-amber-600',
-              ].map((bg, i) => (
-                <div
-                  key={i}
-                  className={`w-10 h-10 ${bg} rounded-full border-2 border-white flex items-center justify-center text-white text-xs font-bold shadow-md`}
-                >
-                  {['Dr', 'Dra', 'Dr', 'Dra'][i]}
-                </div>
-              ))}
+          <div className="flex items-center gap-4">
+            {/* Dr. Simeon Photo */}
+            <div className="relative">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                <Image 
+                  src="/images/simeon.png" 
+                  alt="Dr. Simeon - Tu asistente médico IA"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+              {/* Online indicator */}
+              <span className="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full flex items-center justify-center">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              </span>
             </div>
-            <div className="ml-4 text-left">
-              <p className="text-sm font-semibold text-text-primary">+500 Doctores</p>
-              <p className="text-xs text-text-muted">Certificados en México</p>
+            
+            {/* Live status badge */}
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-1">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-medium text-emerald-700">En línea ahora</span>
+              </div>
+              <p className="text-sm font-semibold text-text-primary">Dr. Simeon</p>
+              <p className="text-xs text-text-muted">Asistente médico IA</p>
             </div>
           </div>
         </motion.div>
@@ -97,14 +101,15 @@ export function HeroSection() {
           className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-text-primary mb-6 leading-[1.1] tracking-tight"
           style={{ fontFamily: 'var(--font-serif)' }}
         >
-          Hola, soy{' '}
+          Tu médico virtual
+          <br />
           <span className="relative inline-block">
             <span className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent">
-              Dr. Simeon
+              disponible 24/7
             </span>
             {/* Animated underline */}
             <motion.span
-              className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
+              className="absolute -bottom-2 left-0 h-1.5 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
@@ -112,46 +117,45 @@ export function HeroSection() {
           </span>
         </motion.h1>
 
-        {/* Subheadline - Larger, More Readable */}
+        {/* Subheadline - Conversational */}
         <motion.p
           variants={itemVariants}
-          className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed"
+          className="text-xl sm:text-2xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Tu asistente médico con inteligencia artificial. Consultas gratuitas, 
-          segundas opiniones y conexión con especialistas certificados.
+          Describe tus síntomas, recibe orientación médica y conecta con especialistas certificados en México.
         </motion.p>
 
-        {/* Key Benefits - Lucide Icons, Better Styling */}
+        {/* Key Benefits - Lighter, Less Prominent (Fixed per analysis) */}
         <motion.div 
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-10 text-sm text-text-muted"
         >
-          {[
-            { icon: Zap, text: 'Respuestas en segundos', color: 'text-amber-500' },
-            { icon: Shield, text: 'Privado y seguro', color: 'text-emerald-500' },
-            { icon: Sparkles, text: 'Gratis para empezar', color: 'text-primary-500' },
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -2, scale: 1.02 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-white rounded-full border border-neutral-200 text-sm font-medium text-text-primary shadow-sm hover:shadow-md transition-all cursor-default"
-            >
-              <item.icon className={`w-4 h-4 ${item.color}`} />
-              {item.text}
-            </motion.div>
-          ))}
+          <span className="flex items-center gap-1.5">
+            <Zap className="w-4 h-4 text-amber-500" />
+            Respuestas en segundos
+          </span>
+          <span className="text-neutral-300">•</span>
+          <span className="flex items-center gap-1.5">
+            <Shield className="w-4 h-4 text-emerald-500" />
+            100% privado
+          </span>
+          <span className="text-neutral-300">•</span>
+          <span className="flex items-center gap-1.5">
+            <Gift className="w-4 h-4 text-primary-500" />
+            Gratis para empezar
+          </span>
         </motion.div>
 
-        {/* CTA Buttons - Larger, More Impact */}
+        {/* CTA Buttons - Single Dominant Action (Fixed per analysis) */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
         >
           <Link href="/app/second-opinion">
             <motion.button 
-              whileHover={{ scale: 1.04, y: -2 }} 
+              whileHover={{ scale: 1.03, y: -2 }} 
               whileTap={{ scale: 0.98 }}
-              className="group relative px-10 py-5 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-lg font-semibold rounded-2xl shadow-lg shadow-primary-500/30 hover:shadow-xl hover:shadow-primary-500/40 transition-all overflow-hidden"
+              className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg font-semibold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-3">
                 Iniciar Consulta Gratis
@@ -166,13 +170,14 @@ export function HeroSection() {
             </motion.button>
           </Link>
 
+          {/* Secondary CTA - Much more subtle (Fixed per analysis) */}
           <Link href="/doctors">
             <motion.button 
-              whileHover={{ scale: 1.04, y: -2 }} 
+              whileHover={{ scale: 1.02 }} 
               whileTap={{ scale: 0.98 }}
-              className="px-10 py-5 bg-white border-2 border-neutral-200 text-text-primary text-lg font-semibold rounded-2xl hover:border-primary-300 hover:bg-primary-50/30 transition-all shadow-sm"
+              className="px-6 py-3 text-text-secondary hover:text-text-primary font-medium transition-colors"
             >
-              Ver Especialistas
+              Ver Especialistas →
             </motion.button>
           </Link>
         </motion.div>
@@ -196,23 +201,38 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Floating Elements - Visual Interest */}
+      {/* Floating Chat Card with Dr. Simeon Face */}
       <motion.div
         className="absolute top-32 right-12 hidden xl:block"
         variants={floatVariants}
         animate="animate"
       >
-        <div className="bg-white rounded-2xl p-4 shadow-xl border border-neutral-100 w-64">
+        <div className="bg-white rounded-2xl p-4 shadow-2xl border border-neutral-100 w-72">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-100">
+              <Image 
+                src="/images/simeon.png" 
+                alt="Dr. Simeon"
+                width={48}
+                height={48}
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <p className="font-semibold text-sm text-text-primary">Dr. Simeon</p>
-              <p className="text-xs text-emerald-500">● En línea</p>
+              <p className="text-xs text-emerald-500 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                En línea
+              </p>
             </div>
           </div>
-          <p className="text-sm text-text-secondary">¿En qué puedo ayudarte hoy?</p>
+          <div className="bg-neutral-50 rounded-xl p-3 mb-2">
+            <p className="text-sm text-text-secondary">¡Hola! Soy tu asistente médico. ¿En qué puedo ayudarte hoy?</p>
+          </div>
+          <div className="flex items-center gap-2 text-xs text-text-muted">
+            <Lock className="w-3 h-3" />
+            <span>Conversación privada y segura</span>
+          </div>
         </div>
       </motion.div>
     </section>
