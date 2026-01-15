@@ -40,23 +40,23 @@
   --color-warning-500: #ff9900;
   --color-error-500: #ff4444;
 
-  /* Neutrals - 6-step scale (Linear pattern) */
+  /* Neutrals - 6-step scale (Doctronic pattern) */
   --color-neutral-0: #ffffff;
-  --color-neutral-50: #F8F9FB;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #E8EAED;
-  --color-neutral-500: #6B7589;
-  --color-neutral-900: #1A1F2E;
+  --color-neutral-50: #f9f7f4;
+  --color-neutral-100: #f5f2ee;
+  --color-neutral-200: #e8e3db;
+  --color-neutral-500: #9b9085;
+  --color-neutral-900: #0c0e12;
 
   /* Surface colors */
-  --color-surface: #ffffff;
-  --color-surface-elevated: #F8F9FB;
-  --color-surface-sunken: #f5f5f5;
+  --color-surface: #f9f7f4;
+  --color-surface-elevated: #ffffff;
+  --color-surface-sunken: #f5f2ee;
 
   /* Text colors */
-  --color-text-primary: #1A1F2E;
-  --color-text-secondary: #6B7589;
-  --color-text-muted: #94a3b8;
+  --color-text-primary: #0c0e12;
+  --color-text-secondary: #6b6560;
+  --color-text-muted: #9b9085;
 
   /* Borders - opacity-based (Stripe pattern) */
   --border-subtle: rgba(15, 23, 42, 0.06);
@@ -364,6 +364,37 @@ a > img {
   }
 }
 
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes soappulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes soapfade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Apply animations */
 .animate-fade-in {
   animation: fadeIn 200ms var(--ease-out);
@@ -375,6 +406,25 @@ a > img {
 
 .animate-slide-in-right {
   animation: slideInRight 300ms var(--ease-out);
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-500) 0%,
+    var(--color-primary-400) 50%,
+    var(--color-primary-500) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.animate-soap-pulse {
+  animation: soappulse 2s ease-in-out infinite;
+}
+
+.animate-soap-fade {
+  animation: soapfade 0.4s var(--ease-out);
 }
 
 /* ============================================

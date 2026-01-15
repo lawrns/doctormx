@@ -3,9 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -29,22 +28,25 @@ const itemVariants = {
   },
 }
 
-const searchBoxVariants = {
-  hidden: { opacity: 0, y: 40, scale: 0.95 },
-  visible: {
+const soapPulseVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: (i: number) => ({
     opacity: 1,
-    y: 0,
     scale: 1,
-    transition: { duration: 0.7, delay: 0.4, ease: 'easeOut' as const },
-  },
+    transition: {
+      delay: 0.4 + i * 0.1,
+      duration: 0.5,
+      ease: 'easeOut' as const,
+    },
+  }),
 }
 
 const floatingVariants = {
   initial: { y: 0 },
   animate: {
-    y: [-10, 10, -10],
+    y: [-12, 12, -12],
     transition: {
-      duration: 4,
+      duration: 5,
       repeat: Infinity,
       ease: 'easeInOut' as const,
     },
@@ -52,12 +54,12 @@ const floatingVariants = {
 }
 
 const specialties = [
-  { name: 'Cardiología', slug: 'cardiologia' },
-  { name: 'Dermatología', slug: 'dermatologia' },
-  { name: 'Ginecología', slug: 'ginecologia' },
-  { name: 'Pediatría', slug: 'pediatria' },
-  { name: 'Psicología', slug: 'psicologia' },
-  { name: 'Oftalmología', slug: 'oftalmologia' },
+  { name: 'Cardiología', emoji: '❤️' },
+  { name: 'Dermatología', emoji: '🧴' },
+  { name: 'Ginecología', emoji: '👩‍⚕️' },
+  { name: 'Pediatría', emoji: '👶' },
+  { name: 'Oftalmología', emoji: '👁️' },
+  { name: 'Neurología', emoji: '🧠' },
 ]
 
 export function HeroSection() {
@@ -74,255 +76,242 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+    <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-surface pt-24 pb-16">
+      {/* Doctronic Beige Background with Subtle Texture */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50" />
-        
-        {/* Animated Blobs */}
+        <div className="absolute inset-0 bg-surface" />
+
+        {/* Animated Gradient Blobs - Softer Doctronic colors */}
         <motion.div
-          className="absolute top-20 left-[10%] w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl"
+          className="absolute top-10 left-[5%] w-[600px] h-[600px] bg-primary-100/30 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 30, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-[10%] w-[400px] h-[400px] bg-cyan-200/40 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -40, 0],
-            y: [0, 30, 0],
+            scale: [1, 1.15, 1],
+            x: [0, 40, 0],
+            y: [0, -25, 0],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-100/30 rounded-full blur-3xl"
+          className="absolute -bottom-20 right-[8%] w-[500px] h-[500px] bg-primary-100/20 rounded-full blur-3xl"
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360],
+            scale: [1, 1.2, 1],
+            x: [0, -50, 0],
+            y: [0, 40, 0],
           }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
-      {/* Floating Elements */}
+      {/* Content Container */}
       <motion.div
-        className="absolute top-32 left-[15%] hidden lg:block"
-        variants={floatingVariants}
-        animate="animate"
+        className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-gray-100">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">Verificado</p>
-              <p className="text-xs text-gray-500">+500 doctores</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-40 right-[12%] hidden lg:block"
-        variants={floatingVariants}
-        animate="animate"
-        style={{ animationDelay: '1s' }}
-      >
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-gray-100">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
-              <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">4.9 Promedio</p>
-              <p className="text-xs text-gray-500">+10,000 reseñas</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        className="absolute top-1/2 right-[8%] hidden xl:block"
-        variants={floatingVariants}
-        animate="animate"
-        style={{ animationDelay: '2s' }}
-      >
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-gray-100">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center">
-              <svg className="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-semibold text-gray-900">Videoconsulta</p>
-              <p className="text-xs text-gray-500">Desde casa</p>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Badge */}
-          <motion.div variants={itemVariants}>
-            <Badge className="mb-6 bg-primary-50 text-primary-500 border-primary-200/50 px-4 py-2 text-sm font-medium">
-              <svg className="w-4 h-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-              Plataforma médica verificada por COFEPRIS
-            </Badge>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-6"
-          >
-            Consultas médicas{' '}
-            <span className="relative">
-              <span className="relative z-10 bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
-                privadas y seguras
-              </span>
-            </span>
-            <br />
-            con especialistas certificados
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            variants={itemVariants}
-            className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            Doctory conecta pacientes con médicos especialistas verificados en México. 
-            Agenda citas presenciales, videoconsultas o solicita una segunda opinión médica.
-          </motion.p>
-
-          {/* Search Box */}
-          <motion.form
-            variants={searchBoxVariants}
-            onSubmit={handleSearch}
-            className="max-w-3xl mx-auto"
-          >
-            <Card className="p-3 shadow-2xl shadow-blue-500/10 border-gray-200/80 bg-white/90 backdrop-blur-sm">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 relative group">
-                  <motion.div
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-primary-500 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </motion.div>
-                  <Input
-                    placeholder="Especialidad, síntoma o doctor"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-12 h-14 border-0 bg-gray-50/80 focus:bg-white transition-all text-base rounded-xl focus:ring-2 focus:ring-blue-500/20"
-                  />
-                </div>
-                <div className="flex-1 relative group">
-                  <motion.div
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-primary-500 transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </motion.div>
-                  <Input
-                    placeholder="Ciudad o código postal"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="pl-12 h-14 border-0 bg-gray-50/80 focus:bg-white transition-all text-base rounded-xl focus:ring-2 focus:ring-blue-500/20"
-                  />
-                </div>
-                <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button
-                    type="submit"
-                    className="h-14 px-10 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-base font-semibold shadow-lg shadow-primary-500/25 w-full sm:w-auto rounded-xl"
-                  >
-                    Buscar
-                    <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Button>
-                </motion.div>
-              </div>
-            </Card>
-          </motion.form>
-
-          {/* Quick Specialty Links */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap justify-center gap-3 mt-10"
-          >
-            {specialties.map((specialty, index) => (
-              <motion.div
-                key={specialty.slug}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link href={`/doctors?specialty=${specialty.slug}`}>
-                  <Badge
-                    variant="outline"
-                    className="px-4 py-2.5 text-sm font-medium hover:bg-white hover:shadow-md cursor-pointer border-gray-200 bg-white/50 backdrop-blur-sm transition-all"
-                  >
-                    {specialty.name}
-                  </Badge>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="mt-16 flex flex-wrap justify-center items-center gap-8 text-gray-500"
-          >
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm">Doctores verificados</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm">Sin costo de registro</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm">Citas en 24hrs</span>
-            </div>
-          </motion.div>
+        {/* Badge */}
+        <motion.div variants={itemVariants} className="flex justify-center mb-8">
+          <Badge className="bg-primary-50 text-primary-600 border border-primary-200 hover:bg-primary-100">
+            ✨ AI-Powered Medical Consultations
+          </Badge>
         </motion.div>
-      </div>
+
+        {/* Main Headline */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-center text-5xl sm:text-6xl lg:text-7xl font-serif text-text-primary mb-6 leading-tight"
+          style={{ fontFamily: 'var(--font-serif)' }}
+        >
+          Your{' '}
+          <span className="bg-gradient-to-r from-primary-500 via-primary-400 to-primary-600 bg-clip-text text-transparent">
+            personal AI doctor
+          </span>
+          , available 24/7
+        </motion.h1>
+
+        {/* Subheadline */}
+        <motion.p
+          variants={itemVariants}
+          className="text-center text-lg sm:text-xl text-text-secondary max-w-3xl mx-auto mb-12"
+        >
+          Get instant medical consultations, AI-powered second opinions, and connect with licensed specialists. All for a fraction of traditional healthcare costs.
+        </motion.p>
+
+        {/* CTA Buttons with Shimmer */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+        >
+          <Link href="/auth/register">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <button className="relative px-8 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-shadow overflow-hidden group">
+                <span className="relative z-10 flex items-center gap-2">
+                  Get Started Free
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                {/* Shimmer Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                  animate={{
+                    x: ['-100%', '100%'],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                />
+              </button>
+            </motion.div>
+          </Link>
+
+          <Link href="/app/second-opinion">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <button className="px-8 py-4 border-2 border-primary-300 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors">
+                Try AI Second Opinion
+              </button>
+            </motion.div>
+          </Link>
+        </motion.div>
+
+        {/* Search Box */}
+        <motion.form
+          variants={itemVariants}
+          onSubmit={handleSearch}
+          className="relative max-w-3xl mx-auto mb-16 bg-surface-elevated rounded-2xl shadow-lg overflow-hidden border border-neutral-200"
+        >
+          <div className="flex flex-col sm:flex-row gap-0">
+            <div className="flex-1 border-b sm:border-b-0 sm:border-r border-neutral-200 p-4 flex items-center gap-3">
+              <svg className="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="What specialty do you need?"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 bg-transparent outline-none text-text-primary placeholder-text-muted"
+              />
+            </div>
+            <div className="flex-1 p-4 flex items-center gap-3">
+              <svg className="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Location (optional)"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="flex-1 bg-transparent outline-none text-text-primary placeholder-text-muted"
+              />
+            </div>
+            <div className="p-4">
+              <button
+                type="submit"
+                className="w-full h-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-lg hover:shadow-lg transition-shadow px-6"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </motion.form>
+
+        {/* Stats with SOAP Animations */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+        >
+          {[
+            { label: 'Active Doctors', value: '500+' },
+            { label: 'Consultations', value: '50K+' },
+            { label: 'Patient Satisfaction', value: '98%' },
+            { label: 'Response Time', value: '< 2 min' },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={soapPulseVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-center p-4 rounded-xl bg-surface-elevated border border-neutral-200 hover:border-primary-300 transition-colors"
+            >
+              <p className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">{stat.value}</p>
+              <p className="text-sm text-text-secondary">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Feature Pills */}
+        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3 mb-12">
+          {specialties.map((specialty) => (
+            <motion.button
+              key={specialty.name}
+              whileHover={{ scale: 1.1, y: -2 }}
+              className="px-4 py-2 rounded-full bg-surface-elevated border border-neutral-200 text-text-primary font-medium hover:border-primary-300 transition-colors flex items-center gap-2"
+            >
+              <span>{specialty.emoji}</span>
+              {specialty.name}
+            </motion.button>
+          ))}
+        </motion.div>
+
+        {/* Trust Indicators */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-text-secondary font-medium">Licensed & Verified Doctors</span>
+          </div>
+          <div className="hidden sm:block w-px h-6 bg-neutral-300" />
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-text-secondary font-medium">HIPAA Compliant & Secure</span>
+          </div>
+          <div className="hidden sm:block w-px h-6 bg-neutral-300" />
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-success-500 rounded-full flex items-center justify-center text-white">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <span className="text-text-secondary font-medium">24/7 AI Support</span>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Floating Doctor Card - Right side */}
+      <motion.div
+        className="absolute top-32 right-8 hidden lg:block"
+        variants={floatingVariants}
+        animate="animate"
+      >
+        <div className="bg-surface-elevated rounded-2xl p-4 shadow-xl border border-neutral-200 w-80">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+              <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div>
+              <p className="font-semibold text-text-primary">Dr. Maria Lopez</p>
+              <p className="text-sm text-text-secondary">Cardiologist</p>
+            </div>
+          </div>
+          <p className="text-sm text-text-secondary mb-4">Available now for consultation</p>
+          <button className="w-full py-2 bg-primary-500 text-white rounded-lg font-medium hover:bg-primary-600 transition-colors">
+            Book Appointment
+          </button>
+        </div>
+      </motion.div>
     </section>
   )
 }
