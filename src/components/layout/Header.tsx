@@ -51,7 +51,7 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
               </svg>
             </div>
             <span className="text-xl font-bold text-gray-900">
-              Doctory
+              Doctor.mx
             </span>
           </Link>
 
@@ -64,16 +64,16 @@ export function Header({ variant = 'default', showAuth = true }: HeaderProps) {
               Buscar doctores
             </Link>
             <Link
+              href="/app/second-opinion"
+              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              Consulta IA
+            </Link>
+            <Link
               href="/specialties"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               Especialidades
-            </Link>
-            <Link
-              href="/segunda-opinion"
-              className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              Segunda opinión
             </Link>
             <Link
               href="/for-doctors"

@@ -205,7 +205,7 @@ function LoginContent() {
               <div className="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm transition-transform group-hover:scale-105">
                 <Heart className="w-5 h-5 text-white fill-white" />
               </div>
-              <span className="text-xl font-bold text-neutral-900">Doctory</span>
+              <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
             </Link>
           </div>
         </header>

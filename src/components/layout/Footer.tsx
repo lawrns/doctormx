@@ -25,7 +25,7 @@ export function Footer() {
                   />
                 </svg>
               </div>
-              <span className="text-xl font-bold text-gray-900">Doctory</span>
+              <span className="text-xl font-bold text-gray-900">Doctor.mx</span>
             </Link>
             <p className="text-sm text-gray-500 mb-4">
               La plataforma de salud digital más confiable de México.
@@ -101,7 +101,7 @@ export function Footer() {
                   href="/for-doctors"
                   className="text-sm text-gray-500 hover:text-gray-900"
                 >
-                  Únete a Doctory
+                  Únete a Doctor.mx
                 </Link>
               </li>
               <li>
@@ -208,7 +208,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} Doctory. Todos los derechos
+              © {new Date().getFullYear()} Doctor.mx. Todos los derechos
               reservados.
             </p>
             <div className="flex items-center gap-2">

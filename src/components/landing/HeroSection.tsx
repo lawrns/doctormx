@@ -189,7 +189,7 @@ export function HeroSection() {
         >
           {[
             { icon: BadgeCheck, text: 'Doctores verificados', value: '500+' },
-            { icon: Users, text: 'Consultas realizadas', value: '50,000+' },
+            { icon: Users, text: 'Consultas realizadas', value: '10,000+' },
             { icon: Clock, text: 'Disponible', value: '24/7' },
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-2 text-text-secondary">
