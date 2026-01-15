@@ -44,10 +44,9 @@ function RegisterContent() {
     }
 
     if (data.user) {
-      // Create user record in users table
-      const { error: userError } = await supabase.from('users').insert({
+      // Create user record in profiles table
+      const { error: userError } = await supabase.from('profiles').insert({
         id: data.user.id,
-        email: email,
         full_name: fullName,
         phone,
         role: isDoctor ? 'doctor' : 'patient',

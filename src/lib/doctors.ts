@@ -19,7 +19,7 @@ async function fetchApprovedDoctors() {
     .from('doctors')
     .select(`
       *,
-      profile:profiles (
+      profile:profiles!doctors_id_fkey (
         id,
         full_name,
         photo_url
@@ -58,7 +58,7 @@ async function fetchDoctorsBySpecialty(specialtySlug: string) {
     .from('doctors')
     .select(`
       *,
-      profile:profiles (
+      profile:profiles!doctors_id_fkey (
         id,
         full_name,
         photo_url
@@ -113,7 +113,7 @@ async function fetchDoctorById(id: string) {
     .from('doctors')
     .select(`
       *,
-      profile:profiles (
+      profile:profiles!doctors_id_fkey (
         id,
         full_name,
         photo_url,

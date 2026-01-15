@@ -77,7 +77,7 @@ async function fetchDoctors(filters?: DiscoveryFilters) {
         status,
         doctor_specialties (
           specialty_id,
-          specialties (
+          specialty:specialties (
             id,
             name,
             slug
@@ -219,7 +219,7 @@ async function fetchDoctorProfile(doctorId: string) {
         status,
         doctor_specialties (
           specialty_id,
-          specialties (
+          specialty:specialties (
             id,
             name,
             slug

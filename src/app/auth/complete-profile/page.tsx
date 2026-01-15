@@ -29,7 +29,7 @@ export default function CompleteProfilePage() {
 
             // Check if user record already exists
             const { data: existingUser } = await supabase
-                .from('users')
+                .from('profiles')
                 .select('id')
                 .eq('id', user.id)
                 .single()
@@ -37,7 +37,7 @@ export default function CompleteProfilePage() {
             if (existingUser) {
                 // User exists, update the record
                 const { error: updateError } = await supabase
-                    .from('users')
+                    .from('profiles')
                     .update({
                         full_name: fullName,
                         phone: phone || null,
@@ -51,10 +51,9 @@ export default function CompleteProfilePage() {
             } else {
                 // User doesn't exist, create new record
                 const { error: insertError } = await supabase
-                    .from('users')
+                    .from('profiles')
                     .insert({
                         id: user.id,
-                        email: user.email,
                         full_name: fullName,
                         phone: phone || null,
                         role: role,

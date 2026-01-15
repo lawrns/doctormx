@@ -91,7 +91,7 @@ export async function updateSession(request: NextRequest) {
 
   // Verificar rol del usuario
   const { data: userProfile } = await supabase
-    .from('users')
+    .from('profiles')
     .select('role')
     .eq('id', user.id)
     .single()

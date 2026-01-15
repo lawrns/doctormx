@@ -108,7 +108,7 @@ export default function SecondOpinionPage() {
       <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-[#0066CC] rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -121,7 +121,7 @@ export default function SecondOpinionPage() {
       <div className="py-8">
         <div className="mx-auto max-w-3xl px-4">
           <div className="mb-8">
-            <Badge className="mb-3 bg-blue-50 text-[#0066CC] border-blue-200">
+            <Badge className="mb-3 bg-blue-50 text-primary-500 border-blue-200">
               Segunda Opinión
             </Badge>
             <h1 className="text-3xl font-bold text-gray-900">
@@ -144,7 +144,7 @@ export default function SecondOpinionPage() {
                   <div
                     className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold transition-all ${
                       step >= s.num
-                        ? 'bg-[#0066CC] text-white shadow-lg shadow-blue-500/25'
+                        ? 'bg-primary-500 text-white shadow-lg shadow-blue-500/25'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                   >
@@ -156,14 +156,14 @@ export default function SecondOpinionPage() {
                       s.num
                     )}
                   </div>
-                  <span className={`mt-2 text-xs font-medium ${step >= s.num ? 'text-[#0066CC]' : 'text-gray-400'}`}>
+                  <span className={`mt-2 text-xs font-medium ${step >= s.num ? 'text-primary-500' : 'text-gray-400'}`}>
                     {s.label}
                   </span>
                 </div>
                 {i < 2 && (
                   <div
                     className={`mx-4 h-1 w-16 sm:w-24 rounded-full transition-all ${
-                      step > s.num ? 'bg-[#0066CC]' : 'bg-gray-200'
+                      step > s.num ? 'bg-primary-500' : 'bg-gray-200'
                     }`}
                   />
                 )}
@@ -208,7 +208,7 @@ export default function SecondOpinionPage() {
               ))}
             </div>
             <div className="mt-6 flex justify-end">
-              <Button onClick={() => setStep(2)} className="bg-[#0066CC] hover:bg-[#0052A3]">Continuar</Button>
+              <Button onClick={() => setStep(2)} className="bg-primary-500 hover:bg-primary-600">Continuar</Button>
             </div>
           </div>
         )}
@@ -298,7 +298,7 @@ export default function SecondOpinionPage() {
               <Button 
                 onClick={() => setStep(3)}
                 disabled={formData.chief_complaint.length < 10}
-                className="bg-[#0066CC] hover:bg-[#0052A3]"
+                className="bg-primary-500 hover:bg-primary-600"
               >
                 Continuar
               </Button>
@@ -363,7 +363,7 @@ export default function SecondOpinionPage() {
               <Button variant="outline" onClick={() => setStep(2)}>
                 Anterior
               </Button>
-              <Button onClick={handleSubmit} disabled={loading} className="bg-[#0066CC] hover:bg-[#0052A3]">
+              <Button onClick={handleSubmit} disabled={loading} className="bg-primary-500 hover:bg-primary-600">
                 {loading ? 'Creando...' : 'Crear Solicitud'}
               </Button>
             </div>

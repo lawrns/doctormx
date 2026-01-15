@@ -16,7 +16,7 @@ export default async function PatientDashboard() {
     const styles: Record<string, string> = {
       pending_payment: 'bg-yellow-50 text-yellow-700 border-yellow-200',
       confirmed: 'bg-green-50 text-green-700 border-green-200',
-      completed: 'bg-blue-50 text-[#0066CC] border-blue-200',
+      completed: 'bg-blue-50 text-primary-500 border-blue-200',
       cancelled: 'bg-red-50 text-red-700 border-red-200',
       no_show: 'bg-gray-50 text-gray-600 border-gray-200',
       refunded: 'bg-gray-50 text-gray-600 border-gray-200',
@@ -30,7 +30,7 @@ export default async function PatientDashboard() {
       <header className="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-[#0066CC] rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
@@ -40,7 +40,7 @@ export default async function PatientDashboard() {
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-blue-50 rounded-full flex items-center justify-center">
-                <svg className="w-4 h-4 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
@@ -80,7 +80,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Buscar Doctor</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Buscar Doctor</h3>
                   <p className="text-sm text-gray-500">Encuentra especialistas</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Mis Consultas</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mis Consultas</h3>
                   <p className="text-sm text-gray-500">Ver historial</p>
                 </div>
               </div>
@@ -107,12 +107,12 @@ export default async function PatientDashboard() {
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-7 h-7 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Mensajes</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mensajes</h3>
                   <p className="text-sm text-gray-500">Chatea con doctores</p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Mi Perfil</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mi Perfil</h3>
                   <p className="text-sm text-gray-500">Configuración</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Seguimientos</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Seguimientos</h3>
                   <p className="text-sm text-gray-500">Ver mensajes de doctores</p>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Subir Imagen</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Subir Imagen</h3>
                   <p className="text-sm text-gray-500">Análisis médico con IA</p>
                 </div>
               </div>
@@ -179,7 +179,7 @@ export default async function PatientDashboard() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-[#0066CC] transition-colors">Premium</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Premium</h3>
                   <p className="text-sm text-gray-500">Funciones IA avanzadas</p>
                 </div>
               </div>
@@ -191,12 +191,12 @@ export default async function PatientDashboard() {
         <Card className="overflow-hidden border-gray-200">
           <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
             <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-              <svg className="w-6 h-6 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Consultas Recientes
             </h2>
-            <Link href="/app/appointments" className="text-sm text-[#0066CC] hover:text-[#0052A3] font-medium transition-colors">
+            <Link href="/app/appointments" className="text-sm text-primary-500 hover:text-primary-600 font-medium transition-colors">
               Ver todas →
             </Link>
           </div>
@@ -211,7 +211,7 @@ export default async function PatientDashboard() {
                 <p className="text-gray-600 text-lg mb-2">No tienes consultas aún</p>
                 <Link
                   href="/doctors"
-                  className="inline-flex items-center gap-2 text-[#0066CC] hover:text-[#0052A3] font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium transition-colors"
                 >
                   Buscar un doctor
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -229,7 +229,7 @@ export default async function PatientDashboard() {
                     <div className="flex justify-between items-start">
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl flex items-center justify-center">
-                          <svg className="w-6 h-6 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-6 h-6 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
@@ -273,7 +273,7 @@ export default async function PatientDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#0066CC] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
