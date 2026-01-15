@@ -5,6 +5,9 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { stripe } from './stripe'
+import { sendPaymentReceipt } from './notifications'
+import { sendPaymentReceipt as sendWhatsAppReceipt, getPatientPhone, getDoctorName } from './whatsapp-notifications'
+import { logger } from '@/lib/observability/logger'
 
 export type PaymentRequest = {
   appointmentId: string
@@ -126,6 +129,17 @@ export async function confirmSuccessfulPayment(
   // Paso 3: Confirmar la cita
   const appointment = await confirmAppointment(appointmentId)
 
+  // Enviar email de recibo (no bloquea el flujo principal)
+  if (appointment?.patient_id) {
+    sendReceiptEmail(appointment.patient_id, appointmentId).catch((err: unknown) => {
+      logger.error('Failed to send receipt email:', { error: err })
+    })
+
+    sendReceiptWhatsApp(appointment.patient_id, appointment).catch((err: unknown) => {
+      logger.error('Failed to send WhatsApp receipt:', { error: err })
+    })
+  }
+
   return {
     success: true,
     appointment,
@@ -156,4 +170,200 @@ async function confirmAppointment(appointmentId: string) {
   if (error) throw error
 
   return data
+}
+
+/**
+ * Handle payment failure - release slot and optionally refund
+ * Input: appointmentId, reason
+ * Process: Cancel appointment → Release slot → Optionally refund
+ * Output: Cancelled appointment
+ */
+export async function handlePaymentFailure(
+  appointmentId: string,
+  reason: string = 'Payment failed'
+) {
+  const supabase = await createClient()
+
+  try {
+    // Get appointment details
+    const { data: appointment, error: appointmentError } = await supabase
+      .from('appointments')
+      .select('*')
+      .eq('id', appointmentId)
+      .single()
+
+    if (appointmentError || !appointment) {
+      throw new Error('Appointment not found')
+    }
+
+    // Cancel appointment
+    const { error: cancelError } = await supabase
+      .from('appointments')
+      .update({
+        status: 'cancelled',
+        cancellation_reason: reason,
+        cancelled_at: new Date(),
+      })
+      .eq('id', appointmentId)
+
+    if (cancelError) {
+      throw new Error(`Failed to cancel appointment: ${cancelError.message}`)
+    }
+
+    // Release any slot locks
+    await supabase
+      .from('slot_locks')
+      .delete()
+      .eq('doctor_id', appointment.doctor_id)
+      .gte('start_ts', appointment.start_ts)
+      .lte('end_ts', appointment.end_ts)
+
+    // Update payment status to failed
+    const { data: payment } = await supabase
+      .from('payments')
+      .select('*')
+      .eq('appointment_id', appointmentId)
+      .single()
+
+    if (payment) {
+      await supabase
+        .from('payments')
+        .update({ status: 'failed' })
+        .eq('id', payment.id)
+    }
+
+    return {
+      success: true,
+      appointment,
+    }
+  } catch (error) {
+    logger.error('Error handling payment failure:', { error })
+    throw error
+  }
+}
+
+/**
+ * Process refund for appointment
+ * Input: appointmentId, reason
+ * Process: Create refund → Update payment status
+ * Output: Refund record
+ */
+export async function processRefund(
+  appointmentId: string,
+  reason: string = 'Patient requested'
+) {
+  const supabase = await createClient()
+
+  try {
+    // Get payment
+    const { data: payment, error: paymentError } = await supabase
+      .from('payments')
+      .select('*')
+      .eq('appointment_id', appointmentId)
+      .eq('status', 'paid')
+      .single()
+
+    if (paymentError || !payment) {
+      throw new Error('No paid payment found for appointment')
+    }
+
+    // Create refund in Stripe
+    const refund = await stripe.refunds.create({
+      payment_intent: payment.provider_ref,
+      reason: 'requested_by_customer',
+      metadata: {
+        appointmentId,
+        reason,
+      },
+    })
+
+    // Store refund record
+    const { data: refundRecord, error: refundError } = await supabase
+      .from('refunds')
+      .insert({
+        payment_id: payment.id,
+        amount_cents: payment.amount_cents,
+        status: 'processing',
+        provider_ref: refund.id,
+        reason,
+      })
+      .select()
+      .single()
+
+    if (refundError) {
+      throw new Error(`Failed to store refund: ${refundError.message}`)
+    }
+
+    // Update payment status
+    await supabase
+      .from('payments')
+      .update({ status: 'refunded' })
+      .eq('id', payment.id)
+
+    return {
+      success: true,
+      refund: refundRecord,
+    }
+  } catch (error) {
+    logger.error('Error processing refund:', { error })
+    throw error
+  }
+}
+
+async function sendReceiptEmail(patientId: string, appointmentId: string) {
+  const supabase = await createClient()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('email, full_name')
+    .eq('id', patientId)
+    .single()
+
+  if (!profile?.email) {
+    logger.warn('No email found for patient:', { patientId })
+    return
+  }
+
+  await sendPaymentReceipt(
+    appointmentId,
+    profile.email,
+    profile.full_name || 'Paciente'
+  )
+}
+
+async function sendReceiptWhatsApp(patientId: string, appointment: { id: string; doctor_id: string; start_ts: string; price_cents: number; currency: string }) {
+  const supabase = await createClient()
+
+  const phone = await getPatientPhone(patientId)
+  if (!phone) {
+    logger.warn('No phone found for patient:', { patientId })
+    return
+  }
+
+  const doctorName = await getDoctorName(appointment.doctor_id)
+  if (!doctorName) {
+    logger.warn('No doctor found:', { doctorId: appointment.doctor_id })
+    return
+  }
+
+  const startTs = new Date(appointment.start_ts)
+  const dateStr = startTs.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })
+  const timeStr = startTs.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('full_name')
+    .eq('id', patientId)
+    .single()
+
+  await sendWhatsAppReceipt(
+    phone,
+    profile?.full_name || 'Paciente',
+    doctorName,
+    dateStr,
+    timeStr,
+    appointment.price_cents || 0,
+    appointment.currency || 'MXN',
+    `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/consultation/${appointment.id}`
+  )
 }

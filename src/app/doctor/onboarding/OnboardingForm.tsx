@@ -33,7 +33,6 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
     sunday: { enabled: false, start: '09:00', end: '14:00' },
   })
 
-  const hasAvailability = Object.values(availability).some(day => day.enabled)
   const isComplete = yearsExperience && bio && licenseNumber && price
   const isVerified = doctor?.status === 'approved'
 

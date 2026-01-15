@@ -6,6 +6,7 @@ export * from './config';
 export * from './types';
 export * from './prompts';
 export * from './client';
+export * from './vision';
 
 // Re-exportar constantes útiles
 export { AI_CONFIG, validateAIConfig, estimateCost } from './config';
@@ -18,3 +19,19 @@ export {
   fillTemplate,
   extractTemplateVariables
 } from './prompts';
+export {
+  analyzeMedicalImage,
+  getAnalysis,
+  getPatientAnalyses,
+  updateAnalysisWithDoctorReview,
+  getPendingDoctorReviews,
+  getUrgencyLabel,
+  getImageTypeLabel,
+  getUrgencyColor,
+  getStatusLabel,
+  type ImageType,
+  type UrgencyLevel,
+  type AnalysisStatus,
+  type MedicalImageAnalysis,
+  type AnalysisResult
+} from './vision';

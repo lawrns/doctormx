@@ -23,7 +23,6 @@ export async function POST(request: NextRequest) {
   const formData = await request.formData()
   const doctorId = formData.get('doctorId') as string
   const action = formData.get('action') as string
-  const reason = formData.get('reason') as string | null
 
   if (!doctorId || !action) {
     return NextResponse.json(

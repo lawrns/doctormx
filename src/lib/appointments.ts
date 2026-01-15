@@ -1,6 +1,7 @@
 // Sistema de citas - Simple y claro
 import { createClient } from '@/lib/supabase/server'
 import { getOccupiedSlots, getDoctorAvailability, generateTimeSlots } from './availability'
+import { markAppointmentCompleted } from './followup'
 
 // Helper: Obtener slots disponibles para una fecha específica
 export async function getAvailableSlots(doctorId: string, date: string) {
@@ -116,6 +117,23 @@ export async function confirmAppointmentPayment(appointmentId: string) {
     .single()
 
   if (error) throw error
+
+  return data
+}
+
+export async function completeAppointment(appointmentId: string) {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('appointments')
+    .update({ status: 'completed' })
+    .eq('id', appointmentId)
+    .select()
+    .single()
+
+  if (error) throw error
+
+  await markAppointmentCompleted(appointmentId)
 
   return data
 }

@@ -6,12 +6,23 @@ export async function POST(request: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
+  // Requirement 2.7, 15.5, 15.6: Authentication required, patient_id from session only
   if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json(
+      { error: 'Unauthorized', redirect: '/auth/login' },
+      { status: 401 }
+    )
   }
 
   const body = await request.json()
-  const { doctorId, date, time } = body
+  const { doctorId, date, time, patientId: bodyPatientId } = body
+
+  // Property 5: Booking Security - Session-Only Patient ID
+  // Explicitly ignore any patientId from request body for security
+  // Always use authenticated session user ID
+  if (bodyPatientId) {
+    console.warn('Security: Ignoring patientId from request body, using session user ID')
+  }
 
   if (!doctorId || !date || !time) {
     return NextResponse.json(
@@ -22,8 +33,9 @@ export async function POST(request: NextRequest) {
 
   try {
     // Sistema de reserva maneja todo: validación + creación
+    // Requirement 2.7: patient_id obtained exclusively from authenticated session
     const result = await reserveAppointmentSlot({
-      patientId: user.id,
+      patientId: user.id, // Always from session, never from body
       doctorId,
       date,
       time,

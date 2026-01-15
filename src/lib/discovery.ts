@@ -3,7 +3,9 @@
 // Proceso: Filtrar catálogo → Ordenar por relevancia
 // Output: Lista de doctores que cumplen criterios
 
-import { createClient } from '@/lib/supabase/server'
+import { createServiceClient } from '@/lib/supabase/server'
+import { cache } from '@/lib/cache'
+import { logger } from '@/lib/observability/logger'
 
 export type DiscoveryFilters = {
   specialtySlug?: string
@@ -13,107 +15,277 @@ export type DiscoveryFilters = {
   minRating?: number
 }
 
+// Type for the raw doctor data from Supabase
+type RawDoctor = {
+  id: string
+  bio: string | null
+  price_cents: number
+  rating_avg: number | null
+  rating_count: number | null
+  city: string | null
+  state: string | null
+  years_experience: number | null
+  languages: string[] | null
+  status: string
+  doctor_specialties: Array<{
+    specialty_id: string
+    specialties: {
+      id: string
+      name: string
+      slug: string
+    } | null
+  }> | null
+  profiles: {
+    id: string
+    full_name: string
+    photo_url: string | null
+  } | null
+  doctor_subscriptions: Array<{
+    id: string
+    status: string
+    current_period_end: string
+  }> | null
+}
+
 // Sistema completo: buscar doctores con filtros
 export async function discoverDoctors(filters?: DiscoveryFilters) {
-  const supabase = await createClient()
+  const cacheKey = `discover:${JSON.stringify(filters || {})}`
+  const cached = await cache.get(cacheKey)
+  if (cached) return cached
 
-  let query = supabase
-    .from('doctors')
-    .select(`
-      *,
-      profile:profiles (
+  const doctors = await fetchDoctors(filters)
+  await cache.set(cacheKey, doctors, 300)
+  return doctors
+}
+
+async function fetchDoctors(filters?: DiscoveryFilters) {
+  const supabase = createServiceClient()
+
+  try {
+    const { data: doctors, error } = await supabase
+      .from('doctors')
+      .select(`
         id,
-        full_name,
-        photo_url
-      ),
-      specialties:doctor_specialties (
-        specialty:specialties (
+        bio,
+        price_cents,
+        rating_avg,
+        rating_count,
+        city,
+        state,
+        years_experience,
+        languages,
+        status,
+        doctor_specialties (
+          specialty_id,
+          specialties (
+            id,
+            name,
+            slug
+          )
+        ),
+        profiles!doctors_id_fkey (
           id,
-          name,
-          slug
+          full_name,
+          photo_url
+        ),
+        doctor_subscriptions (
+          id,
+          status,
+          current_period_end
+        )
+      `)
+      .eq('status', 'approved')
+      .order('rating_avg', { ascending: false, nullsFirst: false })
+      .limit(50)
+
+    if (error) {
+      logger.error('Discovery error', { error: error.message, code: error.code })
+      return []
+    }
+
+    let filtered = (doctors || []) as unknown as RawDoctor[]
+
+    filtered = filtered.filter(doctor => {
+      const hasActiveSubscription = doctor.doctor_subscriptions?.some(
+        (sub: { status: string; current_period_end: string }) =>
+          sub.status === 'active' && new Date(sub.current_period_end) > new Date()
+      )
+      return doctor.status === 'approved' && hasActiveSubscription
+    })
+
+    // Apply filters
+    if (filters?.specialtySlug) {
+      filtered = filtered.filter(doctor =>
+        doctor.doctor_specialties?.some(
+          ds => ds.specialties?.slug === filters.specialtySlug
         )
       )
-    `)
-    .eq('status', 'approved') // Solo doctores aprobados en catálogo público
+    }
 
-  // Aplicar filtros
-  if (filters?.city) {
-    query = query.eq('city', filters.city)
+    if (filters?.city) {
+      filtered = filtered.filter(doctor => doctor.city === filters.city)
+    }
+
+    if (filters?.maxPrice !== undefined) {
+      filtered = filtered.filter(doctor => doctor.price_cents <= filters.maxPrice!)
+    }
+
+    if (filters?.minRating !== undefined) {
+      filtered = filtered.filter(doctor => (doctor.rating_avg || 0) >= filters.minRating!)
+    }
+
+    // Transform data
+    return filtered.map(doctor => ({
+      id: doctor.id,
+      status: doctor.status,
+      bio: doctor.bio,
+      languages: doctor.languages || ['es'],
+      years_experience: doctor.years_experience,
+      city: doctor.city,
+      state: doctor.state,
+      country: 'MX',
+      price_cents: doctor.price_cents,
+      currency: 'MXN',
+      rating_avg: doctor.rating_avg || 0,
+      rating_count: doctor.rating_count || 0,
+      profile: doctor.profiles ? {
+        id: doctor.profiles.id,
+        full_name: doctor.profiles.full_name,
+        photo_url: doctor.profiles.photo_url,
+      } : null,
+      specialties: doctor.doctor_specialties?.map(ds => ({
+        id: ds.specialty_id,
+        name: ds.specialties?.name,
+        slug: ds.specialties?.slug,
+      })) || [],
+    }))
+  } catch (error) {
+    logger.error('Discovery fetch error', { error: error instanceof Error ? error.message : 'unknown' })
+    return []
   }
-
-  if (filters?.state) {
-    query = query.eq('state', filters.state)
-  }
-
-  if (filters?.maxPrice) {
-    query = query.lte('price_cents', filters.maxPrice)
-  }
-
-  if (filters?.minRating) {
-    query = query.gte('rating', filters.minRating)
-  }
-
-  // Ordenar por rating
-  query = query.order('rating', { ascending: false, nullsFirst: false })
-
-  const { data, error } = await query
-
-  if (error) throw error
-
-  // Si hay filtro de especialidad, filtrar en memoria
-  // (porque es relación many-to-many)
-  if (filters?.specialtySlug && data) {
-    return data.filter((doctor: import('@/types').Doctor & { specialties?: { specialty: { slug: string } }[] }) =>
-      doctor.specialties?.some(
-        (s: { specialty: { slug: string } }) => s.specialty.slug === filters.specialtySlug
-      )
-    )
-  }
-
-  return data || []
 }
 
 // Bloque: Obtener especialidades disponibles
 export async function getAvailableSpecialties() {
-  const supabase = await createClient()
+  const supabase = createServiceClient()
 
-  const { data, error } = await supabase
-    .from('specialties')
-    .select('*')
-    .order('name', { ascending: true })
+  try {
+    // Get specialties from the specialties table
+    const { data: specialties, error } = await supabase
+      .from('specialties')
+      .select('*')
+      .order('name', { ascending: true })
 
-  if (error) throw error
+    if (!error && specialties && specialties.length > 0) {
+      return specialties
+    }
 
-  return data || []
+    // Fallback: return empty array
+    return []
+  } catch (error) {
+    logger.error('Error fetching specialties', { error: error instanceof Error ? error.message : 'unknown' })
+    return []
+  }
 }
 
 // Bloque: Obtener perfil completo del doctor
 export async function getDoctorProfile(doctorId: string) {
-  const supabase = await createClient()
+  const cached = await cache.getDoctorProfile(doctorId)
+  if (cached) return cached
 
-  const { data, error } = await supabase
-    .from('doctors')
-    .select(`
-      *,
-      profile:profiles (
+  const profile = await fetchDoctorProfile(doctorId)
+  if (profile) {
+    await cache.setDoctorProfile(doctorId, profile)
+  }
+  return profile
+}
+
+async function fetchDoctorProfile(doctorId: string) {
+  const supabase = createServiceClient()
+
+  try {
+    const { data: doctor, error } = await supabase
+      .from('doctors')
+      .select(`
         id,
-        full_name,
-        photo_url,
-        phone
-      ),
-      specialties:doctor_specialties (
-        specialty:specialties (
+        bio,
+        price_cents,
+        rating_avg,
+        rating_count,
+        city,
+        state,
+        years_experience,
+        languages,
+        status,
+        doctor_specialties (
+          specialty_id,
+          specialties (
+            id,
+            name,
+            slug
+          )
+        ),
+        profiles!doctors_id_fkey (
           id,
-          name,
-          slug
+          full_name,
+          photo_url,
+          phone
+        ),
+        doctor_subscriptions (
+          id,
+          status,
+          current_period_end
         )
-      )
-    `)
-    .eq('id', doctorId)
-    .eq('status', 'approved')
-    .single()
+      `)
+      .eq('id', doctorId)
+      .eq('status', 'approved')
+      .single()
 
-  if (error) throw error
+    if (error) {
+      logger.error('Doctor profile error', { error: error.message, code: error.code, doctorId })
+      return null
+    }
 
-  return data
+    if (!doctor) return null
+
+    // Cast to expected type
+    const typedDoctor = doctor as unknown as RawDoctor & {
+      profiles: {
+        id: string
+        full_name: string
+        photo_url: string | null
+        phone: string | null
+      } | null
+    }
+
+    // Transform to expected format
+    return {
+      id: typedDoctor.id,
+      status: typedDoctor.status,
+      bio: typedDoctor.bio,
+      languages: typedDoctor.languages || ['es'],
+      years_experience: typedDoctor.years_experience,
+      city: typedDoctor.city,
+      state: typedDoctor.state,
+      country: 'MX',
+      price_cents: typedDoctor.price_cents,
+      currency: 'MXN',
+      rating_avg: typedDoctor.rating_avg || 0,
+      rating_count: typedDoctor.rating_count || 0,
+      profile: typedDoctor.profiles ? {
+        id: typedDoctor.profiles.id,
+        full_name: typedDoctor.profiles.full_name,
+        photo_url: typedDoctor.profiles.photo_url,
+        phone: typedDoctor.profiles.phone,
+      } : null,
+      specialties: typedDoctor.doctor_specialties?.map(ds => ({
+        id: ds.specialty_id,
+        name: ds.specialties?.name,
+        slug: ds.specialties?.slug,
+      })) || [],
+    }
+  } catch (error) {
+    logger.error('Doctor profile fetch error', { error: error instanceof Error ? error.message : 'unknown', doctorId })
+    return null
+  }
 }

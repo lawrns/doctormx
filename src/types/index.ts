@@ -77,3 +77,41 @@ export interface Payment {
   fee_cents: number
   net_cents: number
 }
+
+export type ChatMessageType = 'text' | 'image' | 'file'
+
+export interface ChatConversation {
+  id: string
+  patient_id: string
+  doctor_id: string
+  appointment_id: string | null
+  last_message_preview: string | null
+  last_message_at: string | null
+  is_archived: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface ChatMessage {
+  id: string
+  conversation_id: string
+  sender_id: string
+  sender_type: 'patient' | 'doctor'
+  content: string
+  message_type: ChatMessageType
+  attachment_url: string | null
+  attachment_name: string | null
+  attachment_type: string | null
+  read_at: string | null
+  created_at: string
+}
+
+export interface ChatUserPresence {
+  id: string
+  user_id: string
+  conversation_id: string | null
+  status: 'online' | 'away' | 'offline'
+  last_seen_at: string
+  created_at: string
+  updated_at: string
+}

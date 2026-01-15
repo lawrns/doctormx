@@ -7,26 +7,33 @@ import type { UserRole } from '@/types'
 export async function requireAuth() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
-  
+
   if (!user) {
     redirect('/auth/login')
   }
-  
+
   return { user, supabase }
 }
 
 // Proceso simple: obtener perfil completo
 export async function getProfile(userId: string) {
   const supabase = await createClient()
-  
+
   const { data: profile, error } = await supabase
     .from('profiles')
     .select('*')
     .eq('id', userId)
     .single()
-  
-  if (error) throw error
-  
+
+  // If profile doesn't exist, return null instead of throwing
+  if (error) {
+    if (error.code === 'PGRST116') {
+      // No rows returned - profile doesn't exist yet
+      return null
+    }
+    throw error
+  }
+
   return profile
 }
 
@@ -34,7 +41,12 @@ export async function getProfile(userId: string) {
 export async function requireRole(role: UserRole) {
   const { user, supabase } = await requireAuth()
   const profile = await getProfile(user.id)
-  
+
+  // If no profile exists, redirect to complete registration
+  if (!profile) {
+    redirect('/auth/complete-profile')
+  }
+
   if (profile.role !== role) {
     const dashboards = {
       patient: '/app',
@@ -43,6 +55,6 @@ export async function requireRole(role: UserRole) {
     }
     redirect(dashboards[profile.role as UserRole])
   }
-  
+
   return { user, profile, supabase }
 }

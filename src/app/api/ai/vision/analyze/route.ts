@@ -1,0 +1,258 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabase/server'
+import { analyzeMedicalImage, saveAnalysis, ImageType } from '@/lib/ai/vision'
+
+export async function POST(req: NextRequest) {
+  const startTime = Date.now()
+  
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    
+    if (!user) {
+      return NextResponse.json(
+        { error: 'No autenticado' },
+        { status: 401 }
+      )
+    }
+
+    const formData = await req.formData()
+    const file = formData.get('file') as File | null
+    const imageType = formData.get('imageType') as string | null
+    const patientNotes = formData.get('patientNotes') as string | null
+
+    if (!file) {
+      return NextResponse.json(
+        { error: 'No se proporcionó imagen' },
+        { status: 400 }
+      )
+    }
+
+    if (!imageType) {
+      return NextResponse.json(
+        { error: 'Tipo de imagen requerido' },
+        { status: 400 }
+      )
+    }
+
+    const validTypes: ImageType[] = ['skin', 'xray', 'lab_result', 'wound', 'eye', 'other']
+    if (!validTypes.includes(imageType as ImageType)) {
+      return NextResponse.json(
+        { error: 'Tipo de imagen inválido' },
+        { status: 400 }
+      )
+    }
+
+    const { data: subscription } = await supabase
+      .from('doctor_subscriptions')
+      .select('plan_id, status, current_period_start, current_period_end')
+      .eq('doctor_id', user.id)
+      .eq('status', 'active')
+      .single()
+
+    if (!subscription) {
+      return NextResponse.json(
+        {
+          error: 'Esta funcionalidad requiere un plan Pro o Elite',
+          requiresUpgrade: true,
+          upgradeTo: 'pro',
+          currentTier: 'none',
+          message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
+        },
+        { status: 403 }
+      )
+    }
+    
+    const tier = subscription.plan_id || 'starter'
+    
+    const tierLimits: Record<string, number> = {
+      none: 0,
+      starter: 0,
+      pro: 5,
+      elite: 10,
+    }
+    
+    const limit = tierLimits[tier] || 0
+
+    if (tier !== 'pro' && tier !== 'elite') {
+      return NextResponse.json(
+        { 
+          error: 'Esta funcionalidad requiere un plan Pro o Elite',
+          requiresUpgrade: true,
+          upgradeTo: 'pro',
+          currentTier: tier,
+          message: 'Upgrade a Pro para acceder al análisis de imágenes con IA'
+        },
+        { status: 403 }
+      )
+    }
+
+    const { data: usageRecord } = await supabase
+      .from('premium_feature_usage')
+      .select('id, usage_count')
+      .eq('doctor_id', user.id)
+      .eq('feature_key', 'image_analysis')
+      .eq('period_start', subscription.current_period_start)
+      .single()
+
+    const currentUsage = usageRecord?.usage_count || 0
+    
+    if (currentUsage >= limit && limit > 0) {
+      return NextResponse.json(
+        {
+          error: 'Límite de análisis alcanzado',
+          requiresUpgrade: true,
+          upgradeTo: 'elite',
+          currentTier: tier,
+          currentUsage,
+          limit,
+          message: `Has usado ${currentUsage} de ${limit} análisis este mes. Upgrade a Elite para más análisis.`
+        },
+        { status: 403 }
+      )
+    }
+    
+    const fileBuffer = await file.arrayBuffer()
+    const fileName = `${user.id}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`
+    
+    const { error: uploadError } = await supabase
+      .storage
+      .from('medical-images')
+      .upload(fileName, fileBuffer, {
+        contentType: file.type,
+        upsert: false
+      })
+
+    if (uploadError) {
+      console.error('[VISION] Upload error:', uploadError)
+      return NextResponse.json(
+        { error: 'Error al subir imagen' },
+        { status: 500 }
+      )
+    }
+
+    const { data: { publicUrl } } = supabase
+      .storage
+      .from('medical-images')
+      .getPublicUrl(fileName)
+
+    const analysisResult = await analyzeMedicalImage({
+      imageUrl: publicUrl,
+      imageType: imageType as ImageType,
+      patientContext: patientNotes || undefined
+    })
+
+    const analysisRecord = await saveAnalysis(
+      user.id,
+      publicUrl,
+      imageType as ImageType,
+      {
+        imageUrl: publicUrl,
+        imageType: imageType as ImageType,
+        patientNotes: patientNotes || undefined
+      },
+      analysisResult
+    )
+
+    if (usageRecord) {
+      await supabase
+        .from('premium_feature_usage')
+        .update({
+          usage_count: currentUsage + 1,
+          updated_at: new Date().toISOString()
+        })
+        .eq('id', usageRecord.id)
+    } else {
+      await supabase
+        .from('premium_feature_usage')
+        .insert({
+          doctor_id: user.id,
+          feature_key: 'image_analysis',
+          usage_count: 1,
+          period_start: subscription.current_period_start,
+          period_end: subscription.current_period_end
+        })
+    }
+
+    console.log('[VISION] Analysis complete', {
+      analysisId: analysisRecord.id,
+      imageType,
+      urgency: analysisResult.urgencyLevel,
+      confidence: analysisResult.confidencePercent,
+      latencyMs: Date.now() - startTime,
+      tier,
+      usage: currentUsage + 1,
+      limit
+    })
+
+    return NextResponse.json({
+      success: true,
+      analysisId: analysisRecord.id,
+      imageUrl: publicUrl,
+      urgency: analysisResult.urgencyLevel,
+      confidence: analysisResult.confidencePercent,
+      status: 'completed',
+      usage: {
+        used: currentUsage + 1,
+        limit,
+        remaining: limit - currentUsage - 1
+      }
+    })
+  } catch (error) {
+    console.error('[VISION] Error in analyze route:', error)
+    
+    const errorMessage = error instanceof Error ? error.message : 'Error desconocido'
+    
+    return NextResponse.json(
+      { error: `Error analizando imagen: ${errorMessage}` },
+      { status: 500 }
+    )
+  }
+}
+
+export async function GET(req: NextRequest) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    
+    if (!user) {
+      return NextResponse.json(
+        { error: 'No autenticado' },
+        { status: 401 }
+      )
+    }
+
+    const { searchParams } = new URL(req.url)
+    const status = searchParams.get('status') || 'all'
+
+    let query = supabase
+      .from('medical_image_analyses')
+      .select('*')
+      .eq('patient_id', user.id)
+      .order('created_at', { ascending: false })
+
+    if (status !== 'all') {
+      query = query.eq('status', status)
+    }
+
+    const { data: analyses, error } = await query.limit(100)
+
+    if (error) {
+      console.error('[VISION] Error fetching analyses:', error)
+      return NextResponse.json(
+        { error: 'Error al obtener análisis' },
+        { status: 500 }
+      )
+    }
+
+    return NextResponse.json({
+      analyses: analyses || []
+    })
+  } catch (error) {
+    console.error('[VISION] Error in GET route:', error)
+    return NextResponse.json(
+      { error: 'Error interno del servidor' },
+      { status: 500 }
+    )
+  }
+}

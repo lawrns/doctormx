@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 // Configuración de rutas protegidas - Sistema centralizado
 const ROUTES = {
-  public: ['/auth/login', '/auth/register', '/', '/doctors'],
+  public: ['/auth/login', '/auth/register', '/auth/complete-profile', '/', '/doctors'],
   requiresAuth: ['/book', '/checkout'],  // Requieren login pero cualquier rol
   patient: ['/app'],
   doctor: ['/doctor'],
@@ -18,18 +18,27 @@ const DASHBOARDS = {
 
 // Proceso claro: 1) Autenticar, 2) Verificar acceso, 3) Redirigir si es necesario
 export async function updateSession(request: NextRequest) {
-  const response = NextResponse.next({ request })
+  const supabaseResponse = NextResponse.next({
+    request,
+  })
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        getAll: () => request.cookies.getAll(),
-        setAll: (cookies) => {
-          cookies.forEach(({ name, value }) => request.cookies.set(name, value))
-          cookies.forEach(({ name, value, options }) =>
-            response.cookies.set(name, value, options)
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, {
+              ...options,
+              sameSite: 'lax',
+              secure: process.env.NODE_ENV === 'production',
+              httpOnly: true,
+            })
           )
         },
       },
@@ -41,7 +50,7 @@ export async function updateSession(request: NextRequest) {
 
   // Rutas públicas - permitir acceso
   if (ROUTES.public.some(route => path === route || path.startsWith(route))) {
-    return response
+    return supabaseResponse
   }
 
   // Rutas que requieren autenticación (cualquier rol)
@@ -69,33 +78,33 @@ export async function updateSession(request: NextRequest) {
 
   // Si solo requiere auth (no rol específico), permitir
   if (requiresAuth && !isProtected) {
-    return response
+    return supabaseResponse
   }
 
   // Si no es protegida, permitir
   if (!isProtected) {
-    return response
+    return supabaseResponse
   }
 
   // Usuario debe existir aquí (verificado arriba)
-  if (!user) return response
+  if (!user) return supabaseResponse
 
   // Verificar rol del usuario
-  const { data: profile } = await supabase
-    .from('profiles')
+  const { data: userProfile } = await supabase
+    .from('users')
     .select('role')
     .eq('id', user.id)
     .single()
 
-  if (!profile) return response
+  if (!userProfile) return supabaseResponse
 
   // Redirigir al dashboard correcto si está en la ruta incorrecta
-  const correctDashboard = DASHBOARDS[profile.role as keyof typeof DASHBOARDS]
+  const correctDashboard = DASHBOARDS[userProfile.role as keyof typeof DASHBOARDS]
   if (correctDashboard && !path.startsWith(correctDashboard)) {
     const url = request.nextUrl.clone()
     url.pathname = correctDashboard
     return NextResponse.redirect(url)
   }
 
-  return response
+  return supabaseResponse
 }

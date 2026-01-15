@@ -52,7 +52,7 @@ export default function CheckoutForm({
 
       <button
         disabled={isLoading || !stripe || !elements}
-        className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-primary-500 text-white py-3 rounded-lg hover:bg-primary-600 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isLoading ? 'Procesando...' : 'Pagar ahora'}
       </button>

@@ -14,24 +14,30 @@ import type {
  * Cliente OpenAI singleton
  * Lazy-loaded para evitar errores en build
  */
-let openaiClient: unknown = null;
+import type OpenAI from "openai";
 
-async function getOpenAIClient() {
-  if (!openaiClient && typeof window === 'undefined') {
-    // Solo en servidor
+let openaiClient: OpenAI | null = null;
+
+async function getOpenAIClient(): Promise<OpenAI> {
+  if (!openaiClient && typeof window === "undefined") {
     try {
-      // Importación dinámica para evitar errores en cliente
-      const { default: OpenAI } = await import('openai');
+      const { default: OpenAI } = (await import("openai")) as typeof import("openai");
       openaiClient = new OpenAI({
         apiKey: AI_CONFIG.openai.apiKey,
       });
     } catch (error) {
-      console.error('Error al inicializar OpenAI client:', error);
-      throw new Error('OpenAI client no disponible');
+      console.error("Error al inicializar OpenAI client:", error);
+      throw new Error("OpenAI client no disponible");
     }
   }
+
+  if (!openaiClient) {
+    throw new Error("OpenAI client no inicializado");
+  }
+
   return openaiClient;
 }
+
 
 /**
  * Chat completion con retry logic
@@ -45,7 +51,8 @@ export async function chatCompletion(params: {
   response: string;
   usage: { inputTokens: number; outputTokens: number; cost: number };
 }> {
-  const client = getOpenAIClient();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const client = await getOpenAIClient() as unknown as any;
   const { messages, systemPrompt, maxTokens, temperature } = params;
 
   const apiMessages = [
@@ -110,7 +117,8 @@ export async function transcribeAudio(params: {
   duration: number;
   cost: number;
 }> {
-  const client = getOpenAIClient();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const client = await getOpenAIClient() as unknown as any;
   const { audioFile, language } = params;
 
   try {
@@ -154,7 +162,8 @@ export async function structuredAnalysis<T>(params: {
   userPrompt: string;
   schema?: string; // Descripción del schema esperado
 }): Promise<T> {
-  const client = getOpenAIClient();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const client = await getOpenAIClient() as unknown as any;
   const { systemPrompt, userPrompt, schema } = params;
 
   const messages = [

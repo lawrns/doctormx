@@ -1,0 +1,263 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { ImageUploader } from '@/components/ImageUploader'
+import { getUrgencyLabel, type UrgencyLevel } from '@/lib/ai/vision-types'
+
+interface UploadData {
+  url: string
+  analysisId: string
+  urgency: string
+  confidence: number
+}
+
+interface FullAnalysis {
+  findings: string
+  possibleConditions: Array<{ condition: string; probability: string }>
+  recommendations: string[]
+  followUpNeeded: boolean
+  imageType: string
+  imageTypeLabel: string
+  patientNotes: string | null
+  urgencyLevel: string
+  confidencePercent: number
+  createdAt: string
+}
+
+export default function UploadImagePage() {
+  const [uploadData, setUploadData] = useState<UploadData | null>(null)
+  const [fullAnalysis, setFullAnalysis] = useState<FullAnalysis | null>(null)
+  const [loading, setLoading] = useState(false)
+
+  const handleUploadComplete = async (data: UploadData) => {
+    setUploadData(data)
+    setLoading(true)
+    
+    try {
+      const response = await fetch(`/api/ai/vision/result/${data.analysisId}`)
+      
+      if (response.ok) {
+        const result = await response.json()
+        setFullAnalysis(result.analysis)
+      }
+    } catch (error) {
+      console.error('Error fetching full analysis:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <a href="/app" className="flex items-center gap-2 text-gray-600 hover:text-gray-900">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              <span>Volver</span>
+            </a>
+            <div className="h-6 w-px bg-gray-300" />
+            <h1 className="text-xl font-semibold text-gray-900">Análisis de Imágenes Médicas</h1>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900">Sube tu imagen médica</h2>
+              <p className="text-gray-600 mt-1">
+                Nuestra IA analizará tu imagen y te proporcionará una segunda opinión preliminar.
+                El análisis será revisado por un médico.
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-6">
+            <div className="flex gap-3">
+              <svg className="w-5 h-5 text-yellow-600 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <div className="text-sm text-yellow-800">
+                <p className="font-medium">Disclaimer médico</p>
+                <p className="mt-1">
+                  Este análisis es generado por IA y NO sustituye la evaluación de un médico certificado.
+                  Siempre consulta con un profesional de la salud para diagnóstico y tratamiento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 mb-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="font-medium text-amber-800">Función Premium</p>
+                <p className="text-sm text-amber-700">
+                  Esta funcionalidad está disponible para doctores con plan Pro o Elite.
+                </p>
+              </div>
+              <Link
+                href="/doctor/subscription"
+                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-medium rounded-lg hover:from-amber-600 hover:to-orange-600 transition-all"
+              >
+                Upgrade a Pro
+              </Link>
+            </div>
+          </div>
+
+          {!uploadData && <ImageUploader onUploadComplete={handleUploadComplete} />}
+        </div>
+
+        {(uploadData || loading) && (
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Resultado del Análisis</h3>
+            
+            {loading ? (
+              <div className="flex items-center justify-center py-12">
+                <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
+                <span className="ml-3 text-gray-600">Cargando análisis...</span>
+              </div>
+            ) : fullAnalysis ? (
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-500">Nivel de urgencia</p>
+                    <div className={`inline-flex px-3 py-1 rounded-full text-sm font-medium ${
+                      fullAnalysis.urgencyLevel === 'emergency' ? 'bg-red-100 text-red-800' :
+                      fullAnalysis.urgencyLevel === 'high' ? 'bg-orange-100 text-orange-800' :
+                      fullAnalysis.urgencyLevel === 'medium' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-green-100 text-green-800'
+                    }`}>
+                      {getUrgencyLabel(fullAnalysis.urgencyLevel as UrgencyLevel)}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-500">Confianza del análisis</p>
+                    <p className="text-lg font-semibold text-gray-900">{fullAnalysis.confidencePercent}%</p>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm text-gray-500">Tipo de imagen</p>
+                    <p className="text-lg font-semibold text-gray-900">{fullAnalysis.imageTypeLabel}</p>
+                  </div>
+                </div>
+
+                {fullAnalysis.patientNotes && (
+                  <div className="p-3 bg-gray-50 rounded-lg">
+                    <p className="text-sm text-gray-500">Tus notas</p>
+                    <p className="text-gray-700">{fullAnalysis.patientNotes}</p>
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Hallazgos</h4>
+                  <p className="text-gray-600 whitespace-pre-wrap">{fullAnalysis.findings}</p>
+                </div>
+
+                {fullAnalysis.possibleConditions.length > 0 && (
+                  <div>
+                    <h4 className="font-medium text-gray-900 mb-2">Posibles condiciones</h4>
+                    <ul className="space-y-2">
+                      {fullAnalysis.possibleConditions.map((condition, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                          <span className="text-gray-600">
+                            <span className="font-medium">{condition.condition}</span>
+                            <span className="text-gray-400 ml-2">({condition.probability})</span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div>
+                  <h4 className="font-medium text-gray-900 mb-2">Recomendaciones</h4>
+                  <ul className="space-y-2">
+                    {fullAnalysis.recommendations.map((rec, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-primary-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-gray-600">{rec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-4 border-t border-gray-200">
+                  <div className="flex gap-4">
+                    <button
+                      onClick={() => {
+                        setUploadData(null)
+                        setFullAnalysis(null)
+                      }}
+                      className="flex-1 px-4 py-3 border border-gray-300 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                    >
+                      Subir otra imagen
+                    </button>
+                    <Link
+                      href="/doctors"
+                      className="flex-1 px-4 py-3 bg-primary-500 text-white rounded-xl font-medium hover:bg-primary-600 transition-colors text-center"
+                    >
+                      Consultar un doctor
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <p className="text-gray-600 text-center py-8">No se pudo cargar el análisis completo</p>
+            )}
+          </div>
+        )}
+
+        <div className="mt-8 grid md:grid-cols-3 gap-4">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
+            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h4 className="font-medium text-gray-900">Rápido</h4>
+            <p className="text-sm text-gray-600 mt-1">Análisis en segundos con GPT-4 Vision</p>
+          </div>
+          
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
+            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h4 className="font-medium text-gray-900">Seguro</h4>
+            <p className="text-sm text-gray-600 mt-1">Tus imágenes son privadas y protegidas</p>
+          </div>
+          
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
+            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+              <svg className="w-5 h-5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h4 className="font-medium text-gray-900">Revisado</h4>
+            <p className="text-sm text-gray-600 mt-1">Un médico revisará tu análisis</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  )
+}

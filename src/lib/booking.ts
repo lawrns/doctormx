@@ -6,6 +6,8 @@
 import { createClient } from '@/lib/supabase/server'
 import { getAvailableSlots } from './availability'
 import { APPOINTMENT_CONFIG, STATUS } from '@/config/constants'
+import { sendAppointmentConfirmation } from './notifications'
+import { sendAppointmentConfirmation as sendWhatsAppConfirmation, getPatientPhone } from './whatsapp-notifications'
 
 export type ReservationRequest = {
   patientId: string
@@ -40,6 +42,16 @@ export async function reserveAppointmentSlot(
 
   // Paso 2: Crear la cita (esto bloquea el slot)
   const appointment = await createAppointmentRecord(request)
+
+  // Enviar email de confirmación (no bloquea el flujo principal)
+  sendConfirmationEmail(request.patientId, appointment.id).catch((err) => {
+    console.error('Failed to send confirmation email:', err)
+  })
+
+  // Enviar WhatsApp de confirmación (no bloquea el flujo principal)
+  sendWhatsAppNotification(request.patientId, appointment.id).catch((err) => {
+    console.error('Failed to send WhatsApp confirmation:', err)
+  })
 
   return {
     success: true,
@@ -100,4 +112,73 @@ export async function getAppointmentForBooking(appointmentId: string) {
   if (error) throw error
 
   return data
+}
+
+async function sendConfirmationEmail(patientId: string, appointmentId: string) {
+  const supabase = await createClient()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('email, full_name')
+    .eq('id', patientId)
+    .single()
+
+  if (!profile?.email) {
+    console.warn('No email found for patient:', patientId)
+    return
+  }
+
+  await sendAppointmentConfirmation(
+    appointmentId,
+    profile.email,
+    profile.full_name || 'Paciente'
+  )
+}
+
+async function sendWhatsAppNotification(patientId: string, appointmentId: string) {
+  const supabase = await createClient()
+
+  const phone = await getPatientPhone(patientId)
+  if (!phone) {
+    console.warn('No phone found for patient:', patientId)
+    return
+  }
+
+  const { data: appointment } = await supabase
+    .from('appointments')
+    .select(`
+      *,
+      doctor:doctors (
+        profile:profiles (full_name)
+      )
+    `)
+    .eq('id', appointmentId)
+    .single()
+
+  if (!appointment) {
+    return
+  }
+
+  const doctorName = appointment.doctor?.profile?.full_name || 'tu médico'
+  const startTs = new Date(appointment.start_ts)
+  const dateStr = startTs.toLocaleDateString('es-MX', { weekday: 'long', month: 'long', day: 'numeric' })
+  const timeStr = startTs.toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('full_name')
+    .eq('id', patientId)
+    .single()
+
+  await sendWhatsAppConfirmation(
+    phone,
+    profile?.full_name || 'Paciente',
+    doctorName,
+    'Medicina General',
+    dateStr,
+    timeStr,
+    appointment.price_cents || 0,
+    appointment.currency || 'MXN',
+    `${process.env.NEXT_PUBLIC_APP_URL || 'https://doctory.mx'}/checkout/${appointmentId}`
+  )
 }

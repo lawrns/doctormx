@@ -37,23 +37,23 @@ export default function CheckoutPage({
 
   if (loading || !clientSecret) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-gray-600">Preparando pago...</p>
+      <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+        <p className="text-neutral-600">Preparando pago...</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-neutral-50">
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-2xl font-bold text-gray-900">Doctory</h1>
+          <h1 className="text-2xl font-bold text-neutral-900">Doctory</h1>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-xl">
         <div className="bg-white rounded-lg shadow p-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-6">
+          <h1 className="text-2xl font-bold text-neutral-900 mb-6">
             Completar Pago
           </h1>
 

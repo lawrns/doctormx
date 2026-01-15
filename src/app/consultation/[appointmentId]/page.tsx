@@ -7,8 +7,9 @@ import { notFound } from 'next/navigation'
 export default async function ConsultationRoomPage({
   params,
 }: {
-  params: { appointmentId: string }
+  params: Promise<{ appointmentId: string }>
 }) {
+  const { appointmentId } = await params
   const { user, supabase } = await requireRole('patient')
 
   // Obtener cita
@@ -21,7 +22,7 @@ export default async function ConsultationRoomPage({
         profile:profiles (full_name)
       )
     `)
-    .eq('id', params.appointmentId)
+    .eq('id', appointmentId)
     .eq('patient_id', user.id)
     .single()
 
@@ -30,7 +31,7 @@ export default async function ConsultationRoomPage({
   }
 
   // Generar URL de videollamada
-  const videoRoom = await getOrCreateVideoRoom(params.appointmentId)
+  const videoRoom = await getOrCreateVideoRoom(appointmentId)
 
   return (
     <div className="min-h-screen bg-gray-50">

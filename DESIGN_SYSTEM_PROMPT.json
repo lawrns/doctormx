@@ -1,0 +1,463 @@
+{
+  "mission": "Transform Doctory into a premium, enterprise-grade healthcare platform with a cohesive, sophisticated design system inspired by Doctoralia.mx's elegance and professional aesthetic, while maintaining Doctory's blue brand identity. Leverage shadcn/ui for production-ready components with innovative micro-interactions and empty states.",
+  
+  "tech_stack": {
+    "component_library": "shadcn/ui",
+    "styling": "Tailwind CSS",
+    "animations": "Framer Motion",
+    "icons": "Lucide React",
+    "form_handling": "React Hook Form + Zod",
+    "state_management": "React Context + Zustand"
+  },
+
+  "design_philosophy": {
+    "core_principles": [
+      "Minimalist elegance with purposeful whitespace",
+      "Professional healthcare aesthetic without clinical coldness",
+      "Consistent visual hierarchy across all pages",
+      "Accessibility-first approach (WCAG 2.1 AA)",
+      "Performance-optimized with lazy loading and code splitting",
+      "Mobile-first responsive design",
+      "Dark mode support for reduced eye strain"
+    ],
+    "brand_guidelines": {
+      "primary_color": "#0066CC",
+      "primary_light": "#E6F0FF",
+      "primary_dark": "#004499",
+      "secondary_colors": {
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444",
+        "info": "#3B82F6"
+      },
+      "neutrals": {
+        "white": "#FFFFFF",
+        "gray_50": "#F9FAFB",
+        "gray_100": "#F3F4F6",
+        "gray_200": "#E5E7EB",
+        "gray_300": "#D1D5DB",
+        "gray_400": "#9CA3AF",
+        "gray_500": "#6B7280",
+        "gray_600": "#4B5563",
+        "gray_700": "#374151",
+        "gray_800": "#1F2937",
+        "gray_900": "#111827"
+      },
+      "typography": {
+        "font_family_primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "font_family_secondary": "Poppins, sans-serif",
+        "font_weights": {
+          "light": 300,
+          "regular": 400,
+          "medium": 500,
+          "semibold": 600,
+          "bold": 700
+        },
+        "scale": {
+          "xs": "12px",
+          "sm": "14px",
+          "base": "16px",
+          "lg": "18px",
+          "xl": "20px",
+          "2xl": "24px",
+          "3xl": "30px",
+          "4xl": "36px",
+          "5xl": "48px"
+        }
+      },
+      "spacing": {
+        "unit": "4px",
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "32px",
+        "2xl": "48px",
+        "3xl": "64px"
+      },
+      "border_radius": {
+        "none": "0px",
+        "sm": "4px",
+        "md": "8px",
+        "lg": "12px",
+        "xl": "16px",
+        "2xl": "20px",
+        "full": "9999px"
+      },
+      "shadows": {
+        "none": "none",
+        "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+        "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+        "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+        "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)"
+      }
+    }
+  },
+
+  "component_system": {
+    "buttons": {
+      "variants": ["primary", "secondary", "tertiary", "danger", "ghost"],
+      "sizes": ["sm", "md", "lg"],
+      "states": ["default", "hover", "active", "disabled", "loading"],
+      "specifications": {
+        "primary": {
+          "background": "#0066CC",
+          "text": "#FFFFFF",
+          "border": "none",
+          "padding": "12px 24px",
+          "border_radius": "8px",
+          "font_weight": 600,
+          "hover": {
+            "background": "#004499",
+            "box_shadow": "0 4px 12px rgba(0, 102, 204, 0.3)"
+          }
+        },
+        "secondary": {
+          "background": "#E6F0FF",
+          "text": "#0066CC",
+          "border": "1px solid #0066CC",
+          "padding": "12px 24px",
+          "border_radius": "8px",
+          "font_weight": 600,
+          "hover": {
+            "background": "#CCE0FF"
+          }
+        },
+        "tertiary": {
+          "background": "transparent",
+          "text": "#0066CC",
+          "border": "none",
+          "padding": "12px 24px",
+          "border_radius": "8px",
+          "font_weight": 600,
+          "hover": {
+            "background": "#E6F0FF"
+          }
+        }
+      }
+    },
+    "cards": {
+      "specifications": {
+        "background": "#FFFFFF",
+        "border": "1px solid #E5E7EB",
+        "border_radius": "12px",
+        "padding": "24px",
+        "box_shadow": "0 1px 3px rgba(0, 0, 0, 0.1)",
+        "hover": {
+          "box_shadow": "0 10px 25px rgba(0, 0, 0, 0.08)",
+          "border_color": "#D1D5DB"
+        }
+      }
+    },
+    "inputs": {
+      "specifications": {
+        "background": "#FFFFFF",
+        "border": "1px solid #D1D5DB",
+        "border_radius": "8px",
+        "padding": "12px 16px",
+        "font_size": "16px",
+        "focus": {
+          "border_color": "#0066CC",
+          "box_shadow": "0 0 0 3px rgba(0, 102, 204, 0.1)",
+          "outline": "none"
+        }
+      }
+    },
+    "badges": {
+      "variants": ["success", "warning", "error", "info", "neutral"],
+      "sizes": ["sm", "md", "lg"]
+    },
+    "navigation": {
+      "header": {
+        "height": "72px",
+        "background": "#FFFFFF",
+        "border_bottom": "1px solid #E5E7EB",
+        "sticky": true,
+        "z_index": 50
+      },
+      "sidebar": {
+        "width": "280px",
+        "background": "#F9FAFB",
+        "border_right": "1px solid #E5E7EB",
+        "collapsible": true
+      }
+    }
+  },
+
+  "page_templates": {
+    "landing_page": {
+      "sections": [
+        {
+          "name": "hero",
+          "layout": "full_width",
+          "background": "gradient",
+          "gradient_colors": ["#F9FAFB", "#FFFFFF"],
+          "content": {
+            "headline": "max 60 characters",
+            "subheadline": "max 120 characters",
+            "cta_buttons": 2,
+            "image_position": "right"
+          }
+        },
+        {
+          "name": "features",
+          "layout": "grid_3_columns",
+          "background": "#FFFFFF",
+          "cards_per_row": 3,
+          "card_style": "minimal"
+        },
+        {
+          "name": "testimonials",
+          "layout": "carousel",
+          "background": "#F9FAFB",
+          "items": "4-6"
+        },
+        {
+          "name": "cta_section",
+          "layout": "centered",
+          "background": "gradient",
+          "gradient_colors": ["#0066CC", "#004499"]
+        }
+      ]
+    },
+    "doctor_directory": {
+      "sections": [
+        {
+          "name": "search_filters",
+          "layout": "horizontal",
+          "sticky": true,
+          "filters": ["specialty", "location", "availability", "rating"]
+        },
+        {
+          "name": "results_grid",
+          "layout": "responsive_grid",
+          "columns": {
+            "mobile": 1,
+            "tablet": 2,
+            "desktop": 3
+          },
+          "card_style": "doctor_profile"
+        }
+      ]
+    },
+    "doctor_profile": {
+      "sections": [
+        {
+          "name": "header",
+          "layout": "flex",
+          "content": ["avatar", "name", "specialty", "rating", "cta_button"]
+        },
+        {
+          "name": "about",
+          "layout": "text_block",
+          "max_width": "800px"
+        },
+        {
+          "name": "services",
+          "layout": "grid_2_columns"
+        },
+        {
+          "name": "availability",
+          "layout": "calendar"
+        },
+        {
+          "name": "reviews",
+          "layout": "list"
+        }
+      ]
+    },
+    "dashboard": {
+      "sections": [
+        {
+          "name": "sidebar_navigation",
+          "layout": "vertical",
+          "width": "280px"
+        },
+        {
+          "name": "main_content",
+          "layout": "flex_column",
+          "max_width": "1400px"
+        },
+        {
+          "name": "widgets",
+          "layout": "grid",
+          "columns": 4
+        }
+      ]
+    }
+  },
+
+  "implementation_strategy": {
+    "phase_1_foundation": {
+      "duration": "1 week",
+      "tasks": [
+        "Create design tokens file (Tailwind config)",
+        "Build base component library (Button, Card, Input, Badge, etc.)",
+        "Create layout components (Header, Sidebar, Footer, Container)",
+        "Implement color system with CSS variables",
+        "Set up typography system with font scaling",
+        "Create responsive grid system"
+      ]
+    },
+    "phase_2_pages": {
+      "duration": "2 weeks",
+      "tasks": [
+        "Redesign landing page (page.tsx)",
+        "Redesign doctor directory pages",
+        "Redesign doctor profile pages",
+        "Redesign authentication pages",
+        "Redesign dashboard pages",
+        "Redesign second opinion pages",
+        "Redesign claim flow pages"
+      ]
+    },
+    "phase_3_refinement": {
+      "duration": "1 week",
+      "tasks": [
+        "Dark mode implementation",
+        "Animation and micro-interactions",
+        "Accessibility audit and fixes",
+        "Performance optimization",
+        "Cross-browser testing",
+        "Mobile responsiveness refinement"
+      ]
+    },
+    "phase_4_deployment": {
+      "duration": "3 days",
+      "tasks": [
+        "Staging environment testing",
+        "Production deployment",
+        "Monitoring and analytics",
+        "User feedback collection"
+      ]
+    }
+  },
+
+  "file_structure": {
+    "components": {
+      "ui": [
+        "Button.tsx",
+        "Card.tsx",
+        "Input.tsx",
+        "Badge.tsx",
+        "Avatar.tsx",
+        "Modal.tsx",
+        "Dropdown.tsx",
+        "Tabs.tsx",
+        "Pagination.tsx",
+        "Breadcrumb.tsx",
+        "Alert.tsx",
+        "Toast.tsx",
+        "Skeleton.tsx",
+        "Spinner.tsx"
+      ],
+      "layout": [
+        "Header.tsx",
+        "Sidebar.tsx",
+        "Footer.tsx",
+        "Container.tsx",
+        "Grid.tsx",
+        "Flex.tsx"
+      ],
+      "sections": [
+        "HeroSection.tsx",
+        "FeaturesSection.tsx",
+        "TestimonialsSection.tsx",
+        "CTASection.tsx",
+        "FAQSection.tsx"
+      ]
+    },
+    "styles": {
+      "globals.css": "Global styles and CSS variables",
+      "tailwind.config.ts": "Design tokens and theme configuration",
+      "animations.css": "Reusable animations and transitions"
+    }
+  },
+
+  "color_combinations_to_avoid": [
+    "Purple + Blue (creates visual confusion)",
+    "Multiple primary colors (use blue as primary, others as accents)",
+    "High contrast grays (use defined gray scale)"
+  ],
+
+  "inspiration_sources": {
+    "doctoralia_mx": "Professional healthcare aesthetic, clean typography, effective use of whitespace",
+    "linear_app": "Minimalist design, excellent micro-interactions, consistent spacing",
+    "stripe": "Premium feel, clear hierarchy, excellent documentation",
+    "notion": "Clean cards, effective use of icons, readable typography"
+  },
+
+  "success_metrics": {
+    "design": [
+      "100% consistent spacing across all pages",
+      "All components follow design system",
+      "Zero color conflicts or clashing combinations",
+      "Accessible contrast ratios (WCAG AA minimum)"
+    ],
+    "performance": [
+      "Lighthouse score > 90",
+      "First Contentful Paint < 1.5s",
+      "Cumulative Layout Shift < 0.1"
+    ],
+    "user_experience": [
+      "Mobile responsiveness on all devices",
+      "Dark mode fully functional",
+      "Smooth animations and transitions",
+      "Clear visual feedback on interactions"
+    ]
+  },
+
+  "tailwind_config_updates": {
+    "colors": {
+      "primary": {
+        "50": "#E6F0FF",
+        "100": "#CCE0FF",
+        "200": "#99C2FF",
+        "300": "#66A3FF",
+        "400": "#3385FF",
+        "500": "#0066CC",
+        "600": "#0052A3",
+        "700": "#003D7A",
+        "800": "#002952",
+        "900": "#001429"
+      },
+      "gray": {
+        "50": "#F9FAFB",
+        "100": "#F3F4F6",
+        "200": "#E5E7EB",
+        "300": "#D1D5DB",
+        "400": "#9CA3AF",
+        "500": "#6B7280",
+        "600": "#4B5563",
+        "700": "#374151",
+        "800": "#1F2937",
+        "900": "#111827"
+      }
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px",
+      "3xl": "64px"
+    },
+    "borderRadius": {
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "16px",
+      "2xl": "20px"
+    },
+    "boxShadow": {
+      "sm": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "md": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+      "lg": "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+      "xl": "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
+      "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+    }
+  }
+}

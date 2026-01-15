@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import type { Appointment, Doctor } from '@/types'
 
-export default function PaymentSuccessPage() {
+function PaymentSuccessContent() {
   const searchParams = useSearchParams()
   const [loading, setLoading] = useState(true)
   const [appointment, setAppointment] = useState<Appointment & { doctor: Doctor } | null>(null)
@@ -109,5 +109,13 @@ export default function PaymentSuccessPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 flex items-center justify-center"><p>Cargando...</p></div>}>
+      <PaymentSuccessContent />
+    </Suspense>
   )
 }

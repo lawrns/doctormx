@@ -1,0 +1,6 @@
+export { HeroSection } from './HeroSection'
+export { StatsSection } from './StatsSection'
+export { FeaturesSection } from './FeaturesSection'
+export { TestimonialsSection } from './TestimonialsSection'
+export { CTASection } from './CTASection'
+export { LandingPageClient } from './LandingPageClient'

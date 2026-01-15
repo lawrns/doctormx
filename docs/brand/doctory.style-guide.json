@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "name": "Doctory Style Guide",
+    "version": "1.0.0",
+    "date": "2025-12-17",
+    "owner": "Product",
+    "concept": "Abstracto clínico + futurismo blanco + humanidad discreta",
+    "guidingPhrase": "Doctory es la presencia tranquila de la tecnología médica"
+  },
+  "principles": {
+    "core": "Doctory no impresiona, tranquiliza",
+    "requiredQualities": [
+      "claridad",
+      "calma",
+      "precision"
+    ],
+    "validationRule": "Cada decision visual debe cumplir al menos 2 de 3 cualidades"
+  },
+  "personality": {
+    "is": [
+      "clinico",
+      "futurista cercano",
+      "silencioso",
+      "confiable",
+      "humano discreto"
+    ],
+    "isNot": [
+      "sci-fi",
+      "cyberpunk",
+      "cripto",
+      "gamer",
+      "startup llamativo",
+      "marketing emocional exagerado"
+    ]
+  },
+  "color": {
+    "background": {
+      "primary": "#FAFAFA",
+      "section": "#F4F6F8"
+    },
+    "text": {
+      "primary": "#2E3238",
+      "secondary": "#B8BDC6"
+    },
+    "border": {
+      "subtle": "#E6E8EB"
+    },
+    "accent": {
+      "blueSoft": "#E8F1F8",
+      "blueMain": "#4A7FB5",
+      "greenSoft": "#E6F3EE"
+    },
+    "rules": {
+      "accentMaxPercent": 15,
+      "allowPureWhiteDominance": false
+    }
+  },
+  "typography": {
+    "fontFamily": "Inter",
+    "weightsAllowed": [
+      400,
+      500,
+      600
+    ],
+    "hierarchy": {
+      "h1": {
+        "size": "48-56px",
+        "weight": 600
+      },
+      "h2": {
+        "size": "36-40px",
+        "weight": 600
+      },
+      "h3": {
+        "size": "24-28px",
+        "weight": 500
+      },
+      "body": {
+        "size": "16-18px",
+        "weight": 400
+      },
+      "small": {
+        "size": "14px",
+        "weight": 400
+      }
+    },
+    "forbidden": [
+      "decorative fonts",
+      "condensed fonts",
+      "excessive tracking"
+    ]
+  },
+  "abstractLanguage": {
+    "purpose": "Representar IA sin mostrarla explicitamente",
+    "allowed": [
+      "soft waves",
+      "organic forms",
+      "translucent layers",
+      "imperceptible gradients",
+      "subtle depth"
+    ],
+    "forbidden": [
+      "brains",
+      "neural networks",
+      "connected nodes",
+      "particles",
+      "tech grids",
+      "holograms"
+    ],
+    "usage": [
+      "hero",
+      "backgrounds",
+      "section separators"
+    ]
+  },
+  "futurism": {
+    "style": "white futurism",
+    "rules": {
+      "warmOffWhiteDominant": true,
+      "borderRadiusPx": [
+        8,
+        16
+      ],
+      "softShadowsOnly": true,
+      "highNegativeSpace": true
+    },
+    "mentalReference": "Hospital premium diseñado por Apple en el futuro cercano"
+  },
+  "photography": {
+    "role": "acompanar, no liderar",
+    "style": [
+      "editorial",
+      "natural light",
+      "desaturated tones",
+      "neutral backgrounds"
+    ],
+    "subjects": [
+      "real doctors",
+      "calm patients",
+      "authentic moments"
+    ],
+    "forbidden": [
+      "advertising smiles",
+      "exaggerated poses",
+      "stock photo look"
+    ],
+    "rules": {
+      "allowInHero": false
+    }
+  },
+  "ui": {
+    "principles": [
+      "ui_first",
+      "clarity_over_aesthetics",
+      "breathable_interfaces"
+    ],
+    "components": [
+      "lightly_elevated_cards",
+      "subtle_dividers",
+      "clear_states"
+    ],
+    "glassmorphism": {
+      "allowed": true,
+      "maxProminence": "subtle",
+      "minOpacityPercent": 80
+    }
+  },
+  "iconography": {
+    "style": "line",
+    "stroke": "uniform",
+    "corners": "rounded",
+    "fill": "none",
+    "colors": [
+      "gray_base",
+      "accent_for_states_only"
+    ]
+  },
+  "layout": {
+    "grid": "clean",
+    "sections": "wide",
+    "padding": "generous",
+    "rule": "Si cabe mas contenido, probablemente no debe ir"
+  },
+  "heroRules": {
+    "primaryHero": {
+      "background": "clinical_abstract",
+      "allowHumanPhoto": false,
+      "requiredElements": [
+        "headline",
+        "cta"
+      ]
+    }
+  },
+  "dos": [
+    "white_dominant",
+    "soft_abstracts",
+    "clear_ui",
+    "discrete_humanity"
+  ],
+  "donts": [
+    "neon",
+    "aggressive_future",
+    "cartoon_illustrations",
+    "crypto_or_gamer_aesthetic"
+  ],
+  "agentContract": {
+    "mustDeclare": [
+      "tokens_used",
+      "abstract_or_human_choice",
+      "accent_percentage_estimate"
+    ],
+    "mustVerify": [
+      "no_forbidden_elements",
+      "hero_rules_respected",
+      "guiding_phrase_alignment"
+    ]
+  }
+}

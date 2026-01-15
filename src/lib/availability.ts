@@ -5,6 +5,7 @@
 
 import { createClient } from '@/lib/supabase/server'
 import { APPOINTMENT_CONFIG } from '@/config/constants'
+import { cache } from '@/lib/cache'
 
 export type DoctorAvailability = {
   id: string
@@ -37,7 +38,7 @@ export async function setDoctorAvailability(
   const supabase = await createClient()
 
   // Eliminar disponibilidad existente
-  await supabase.from('doctor_availability').delete().eq('doctor_id', doctorId)
+  await supabase.from('availability_rules').delete().eq('doctor_id', doctorId)
 
   // Insertar nueva disponibilidad
   const records = availability.map((a) => ({
@@ -45,7 +46,7 @@ export async function setDoctorAvailability(
     doctor_id: doctorId,
   }))
 
-  const { error } = await supabase.from('doctor_availability').insert(records)
+  const { error } = await supabase.from('availability_rules').insert(records)
 
   if (error) throw error
 
@@ -75,10 +76,18 @@ export function generateTimeSlots(startTime: string, endTime: string) {
 
 // Helper: Obtener slots disponibles para una fecha específica
 export async function getAvailableSlots(doctorId: string, date: string) {
+  const cached = await cache.getAvailability(doctorId, date)
+  if (cached.length > 0) return cached
+
+  const slots = await fetchAvailableSlots(doctorId, date)
+  await cache.setAvailability(doctorId, date, slots)
+  return slots
+}
+
+async function fetchAvailableSlots(doctorId: string, date: string) {
   const dateObj = new Date(date)
   const dayOfWeek = dateObj.getDay()
 
-  // Obtener disponibilidad del doctor para ese día
   const availability = await getDoctorAvailability(doctorId)
   const dayAvailability = availability.filter(a => a.day_of_week === dayOfWeek)
 
@@ -86,15 +95,12 @@ export async function getAvailableSlots(doctorId: string, date: string) {
     return []
   }
 
-  // Generar todos los slots posibles
   const allSlots = dayAvailability.flatMap(slot =>
     generateTimeSlots(slot.start_time, slot.end_time)
   )
 
-  // Obtener slots ocupados
   const occupied = await getOccupiedSlots(doctorId, date)
 
-  // Filtrar slots disponibles
   return allSlots.filter(slot => !occupied.some(o => o.start === slot))
 }
 

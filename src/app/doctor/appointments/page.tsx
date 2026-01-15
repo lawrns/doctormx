@@ -1,9 +1,21 @@
 import { requireRole } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
+import { AppointmentCard, AppointmentFilters, EmptyState } from '@/components'
 
-export default async function DoctorAppointmentsPage() {
+type SearchParams = {
+  status?: string
+  time?: string
+  search?: string
+}
+
+export default async function DoctorAppointmentsPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>
+}) {
   const { user, profile, supabase } = await requireRole('doctor')
+  const params = await searchParams
 
   const { data: doctor } = await supabase
     .from('doctors')
@@ -18,6 +30,84 @@ export default async function DoctorAppointmentsPage() {
 
   // Si doctor es null (cache) o no está aprobado, mostrar como pending
   const isPending = !doctor || doctor.status !== 'approved'
+
+  // Fetch appointments with filters
+  let appointments: Array<{
+    id: string
+    patient_name: string
+    start_ts: string
+    end_ts: string
+    status: string
+    service_name: string | null
+  }> = []
+
+  if (!isPending) {
+    const now = new Date()
+    const statusFilter = params.status || 'all'
+    const timeFilter = params.time || 'upcoming'
+    const searchFilter = params.search?.toLowerCase().trim() || ''
+
+    let query = supabase
+      .from('appointments')
+      .select(`
+        id,
+        start_ts,
+        end_ts,
+        status,
+        patient:profiles!appointments_patient_id_fkey(full_name),
+        service:doctor_services(name)
+      `)
+      .eq('doctor_id', user.id)
+
+    // Apply status filter
+    if (statusFilter !== 'all') {
+      query = query.eq('status', statusFilter)
+    }
+
+    // Apply time filter
+    if (timeFilter === 'upcoming') {
+      query = query.gte('start_ts', now.toISOString())
+    } else if (timeFilter === 'past') {
+      query = query.lt('start_ts', now.toISOString())
+    } else if (timeFilter === 'today') {
+      const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).toISOString()
+      const endOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).toISOString()
+      query = query.gte('start_ts', startOfToday).lt('start_ts', endOfToday)
+    } else if (timeFilter === 'week') {
+      const startOfWeek = new Date(now)
+      startOfWeek.setDate(now.getDate() - now.getDay())
+      startOfWeek.setHours(0, 0, 0, 0)
+      const endOfWeek = new Date(startOfWeek)
+      endOfWeek.setDate(startOfWeek.getDate() + 7)
+      query = query.gte('start_ts', startOfWeek.toISOString()).lt('start_ts', endOfWeek.toISOString())
+    }
+
+    // Order by start time
+    const isAscending = timeFilter === 'upcoming' || timeFilter === 'today' || timeFilter === 'week'
+    query = query.order('start_ts', { ascending: isAscending })
+
+    const { data: appointmentsData } = await query.limit(100)
+
+    if (appointmentsData) {
+      let mapped = appointmentsData.map(apt => ({
+        id: apt.id,
+        patient_name: (apt.patient as unknown as { full_name: string } | null)?.full_name || 'Paciente',
+        start_ts: apt.start_ts,
+        end_ts: apt.end_ts,
+        status: apt.status,
+        service_name: (apt.service as unknown as { name: string } | null)?.name || null,
+      }))
+
+      // Apply client-side search filter (since Supabase can't filter on joined fields)
+      if (searchFilter) {
+        mapped = mapped.filter(apt =>
+          apt.patient_name.toLowerCase().includes(searchFilter)
+        )
+      }
+
+      appointments = mapped.slice(0, 50)
+    }
+  }
 
   return (
     <DoctorLayout profile={profile!} isPending={isPending} currentPath="/doctor/appointments">
@@ -41,18 +131,25 @@ export default async function DoctorAppointmentsPage() {
           </div>
         ) : (
           <div className="bg-white rounded-lg shadow border p-6">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">Próximas consultas</h3>
-            </div>
-            <div className="text-center py-16">
-              <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <h3 className="mt-4 text-sm font-medium text-gray-900">No hay consultas programadas</h3>
-              <p className="mt-2 text-sm text-gray-500">
-                Las citas aparecerán aquí cuando los pacientes reserven contigo.
-              </p>
-            </div>
+            <AppointmentFilters />
+
+            {appointments.length > 0 ? (
+              <div className="space-y-4">
+                {appointments.map((apt) => (
+                  <AppointmentCard key={apt.id} appointment={apt} />
+                ))}
+              </div>
+            ) : (
+              <EmptyState
+                title="No hay consultas"
+                description="No se encontraron citas con los filtros seleccionados."
+                icon={
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                }
+              />
+            )}
           </div>
         )}
       </div>

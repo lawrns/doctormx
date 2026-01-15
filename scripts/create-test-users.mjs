@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
-  'https://lbxfierdgiewuslpgrhs.supabase.co',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxieGZpZXJkZ2lld3VzbHBncmhzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NTgxODcxMywiZXhwIjoyMDgxMzk0NzEzfQ.OT4O2aDXsd23x7K138N_cgNT_YW60iT76XhfLCgyupo',
+  'https://oxlbametpfubwnrmrbsv.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0MDYyMDE2NCwiZXhwIjoyMDU2MTk2MTY0fQ.IZzt64ThZ3fIT3kaeukLa_BcPoulQozfqMGl96bTW-8',
   {
     auth: {
       autoRefreshToken: false,
@@ -16,15 +16,15 @@ async function createTestUsers() {
 
   const users = [
     {
-      email: 'paciente@test.com',
-      password: 'test123',
+      email: 'testpatient2026@doctory.com',
+      password: 'TestPass123!',
       full_name: 'Juan Pérez',
       phone: '5512345678',
       role: 'patient'
     },
     {
-      email: 'doctor@test.com',
-      password: 'test123',
+      email: 'testdoctor2026@doctory.com',
+      password: 'TestPass123!',
       full_name: 'Dra. María González',
       phone: '5587654321',
       role: 'doctor',
@@ -38,8 +38,8 @@ async function createTestUsers() {
       }
     },
     {
-      email: 'admin@test.com',
-      password: 'test123',
+      email: 'testadmin2026@doctory.com',
+      password: 'TestPass123!',
       full_name: 'Admin Sistema',
       phone: '5511223344',
       role: 'admin'
@@ -66,44 +66,44 @@ async function createTestUsers() {
 
     console.log(`✅ Auth user creado: ${authData.user.id}`)
 
-    // Create profile
-    const { error: profileError } = await supabase
-      .from('profiles')
+    // Create user record
+    const { error: userError } = await supabase
+      .from('users')
       .insert({
         id: authData.user.id,
+        email: user.email,
         full_name: user.full_name,
         phone: user.phone,
         role: user.role
       })
 
-    if (profileError) {
-      console.error(`❌ Error creando profile: ${profileError.message}`)
+    if (userError) {
+      console.error(`❌ Error creando user: ${userError.message}`)
       continue
     }
 
-    console.log(`✅ Profile creado`)
+    console.log(`✅ User record creado`)
 
     // If doctor, create doctor record
     if (user.role === 'doctor' && user.doctor_data) {
       const { error: doctorError } = await supabase
         .from('doctors')
         .insert({
-          id: authData.user.id,
+          user_id: authData.user.id,
+          full_name: user.full_name,
           bio: user.doctor_data.bio,
-          license_number: user.doctor_data.license_number,
-          years_experience: user.doctor_data.years_experience,
+          cedula: user.doctor_data.license_number,
+          specialty: user.doctor_data.specialty,
           city: user.doctor_data.city,
           state: user.doctor_data.state,
-          country: 'MX',
-          price_cents: 50000, // $500 MXN
-          currency: 'MXN',
-          status: 'approved'
+          verified: true,
+          verification_status: 'verified'
         })
 
       if (doctorError) {
         console.error(`❌ Error creando doctor: ${doctorError.message}`)
       } else {
-        console.log(`✅ Doctor creado y aprobado`)
+        console.log(`✅ Doctor creado y verificado`)
       }
     }
 
@@ -114,14 +114,14 @@ async function createTestUsers() {
   console.log('📋 CREDENCIALES:')
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')
   console.log('👤 Paciente:')
-  console.log('   Email: paciente@test.com')
-  console.log('   Pass:  test123\n')
+  console.log('   Email: testpatient2026@doctory.com')
+  console.log('   Pass:  TestPass123!\n')
   console.log('👨‍⚕️ Doctor:')
-  console.log('   Email: doctor@test.com')
-  console.log('   Pass:  test123\n')
+  console.log('   Email: testdoctor2026@doctory.com')
+  console.log('   Pass:  TestPass123!\n')
   console.log('👑 Admin:')
-  console.log('   Email: admin@test.com')
-  console.log('   Pass:  test123')
+  console.log('   Email: testadmin2026@doctory.com')
+  console.log('   Pass:  TestPass123!')
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n')
 }
 

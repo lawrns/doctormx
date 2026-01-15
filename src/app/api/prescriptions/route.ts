@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { createPrescription, updatePrescription, getPrescriptionByAppointment } from '@/lib/prescriptions'
 
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
@@ -23,7 +24,6 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    // Verificar que la cita pertenece al doctor
     const { data: appointment } = await supabase
       .from('appointments')
       .select('doctor_id')
@@ -34,32 +34,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
-    // Verificar si ya existe una receta
-    const { data: existing } = await supabase
-      .from('prescriptions')
-      .select('id')
-      .eq('appointment_id', appointmentId)
-      .single()
+    const existingPrescription = await getPrescriptionByAppointment(appointmentId)
 
-    if (existing) {
-      // Actualizar receta existente
-      await supabase
-        .from('prescriptions')
-        .update({
-          diagnosis,
-          medications,
-          instructions,
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', existing.id)
-    } else {
-      // Crear nueva receta
-      await supabase.from('prescriptions').insert({
-        appointment_id: appointmentId,
+    if (existingPrescription) {
+      await updatePrescription(existingPrescription.id, {
         diagnosis,
         medications,
         instructions,
       })
+    } else {
+      await createPrescription(
+        appointmentId,
+        diagnosis,
+        medications,
+        instructions
+      )
     }
 
     return NextResponse.redirect(new URL('/doctor', request.url))
