@@ -64,43 +64,34 @@ export default function CompleteProfilePage() {
                 }
             }
 
-            // If doctor, create or update doctor record
+            // If doctor, create doctor record (will be completed in onboarding)
             if (role === 'doctor') {
                 try {
                     // Check if doctor record already exists
                     const { data: existingDoctor } = await supabase
                         .from('doctors')
-                        .select('user_id')
-                        .eq('user_id', user.id)
+                        .select('id')
+                        .eq('id', user.id)
                         .single()
 
-                    if (existingDoctor) {
-                        // Doctor exists, update the record
-                        await supabase
-                            .from('doctors')
-                            .update({
-                                full_name: fullName,
-                                verified: false,
-                                verification_status: 'pending',
-                            })
-                            .eq('user_id', user.id)
-                    } else {
-                        // Doctor doesn't exist, create new record
-                        await supabase
+                    if (!existingDoctor) {
+                        // Doctor doesn't exist, create new record with defaults
+                        // The id references profiles.id directly
+                        const { error: doctorError } = await supabase
                             .from('doctors')
                             .insert({
-                                user_id: user.id,
-                                full_name: fullName,
-                                cedula: '', // Will be updated during onboarding
-                                specialties: [], // Will be updated during onboarding
-                                license_status: 'pending', // Will be verified by admin
-                                verified: false,
-                                verification_status: 'pending',
+                                id: user.id,
+                                price_cents: 50000, // Default $500 MXN
+                                status: 'draft',
                             })
+                        
+                        if (doctorError) {
+                            console.error('Doctor insert error:', doctorError)
+                        }
                     }
                 } catch (doctorError) {
                     console.error('Doctor record error (non-blocking):', doctorError)
-                    // Don't throw - doctor record is optional, user can complete onboarding
+                    // Don't throw - doctor record will be created in onboarding if needed
                 }
             }
 
