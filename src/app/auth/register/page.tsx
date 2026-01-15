@@ -201,15 +201,30 @@ function RegisterContent() {
           role: step1Data.accountType,
         })
 
-        // If user already exists (409 or 23505), that's okay - continue to profile completion
+        // If user already exists (409 or 23505), that's okay - continue
         if (userError && userError.code !== '23505' && userError.code !== '409') {
           setError(userError.message)
           setLoading(false)
           return
         }
 
-        // Redirect to profile completion page
-        router.push('/auth/complete-profile')
+        // If doctor, create doctor record
+        if (step1Data.accountType === 'doctor') {
+          const { error: doctorError } = await supabase.from('doctors').insert({
+            id: data.user.id,
+            price_cents: 50000, // Default $500 MXN
+            status: 'draft',
+          })
+          
+          // Ignore duplicate key errors
+          if (doctorError && doctorError.code !== '23505') {
+            console.error('Doctor insert error:', doctorError)
+          }
+        }
+
+        // Redirect directly to appropriate dashboard (skip complete-profile)
+        const destination = step1Data.accountType === 'doctor' ? '/doctor/onboarding' : '/app'
+        router.push(destination)
         router.refresh()
       }
     } catch {
