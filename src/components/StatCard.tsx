@@ -2,8 +2,35 @@
 
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
 
-interface StatCardProps {
+const statCardVariants = cva(
+  'bg-white rounded-xl border transition-all duration-200',
+  {
+    variants: {
+      elevation: {
+        none: 'border-neutral-200 shadow-sm',
+        sm: 'border-neutral-200 shadow-md hover:shadow-lg',
+        md: 'border-neutral-200 shadow-lg hover:shadow-xl hover:-translate-y-1',
+        lg: 'border-neutral-200 shadow-xl hover:shadow-2xl hover:-translate-y-2',
+      },
+      borderColor: {
+        primary: 'border-l-4 border-l-primary-500',
+        success: 'border-l-4 border-l-success-500',
+        warning: 'border-l-4 border-l-warning-500',
+        info: 'border-l-4 border-l-info-500',
+        neutral: '',
+      },
+    },
+    defaultVariants: {
+      elevation: 'sm',
+      borderColor: 'neutral',
+    },
+  }
+)
+
+interface StatCardProps extends VariantProps<typeof statCardVariants> {
   title: string
   value: string | number
   change?: number
@@ -23,6 +50,8 @@ export function StatCard({
   trend = 'neutral',
   format = 'number',
   className,
+  elevation = 'sm',
+  borderColor = 'neutral',
 }: StatCardProps) {
   const formattedValue = () => {
     if (typeof value === 'string') return value
@@ -42,11 +71,11 @@ export function StatCard({
   }
 
   return (
-    <div className={clsx('bg-white rounded-xl border border-gray-200 p-6', className)}>
+    <div className={cn(statCardVariants({ elevation, borderColor }), 'p-6', className)}>
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-sm font-medium text-gray-600">{title}</p>
-          <p className="mt-2 text-3xl font-bold text-gray-900">{formattedValue()}</p>
+          <p className="text-sm font-medium text-neutral-600">{title}</p>
+          <p className="mt-2 text-3xl font-bold text-neutral-900">{formattedValue()}</p>
           {change !== undefined && (
             <div className="mt-2 flex items-center gap-1">
               <span
@@ -54,7 +83,7 @@ export function StatCard({
                   'inline-flex items-center text-sm font-medium',
                   trend === 'up' && 'text-green-600',
                   trend === 'down' && 'text-red-600',
-                  trend === 'neutral' && 'text-gray-500'
+                  trend === 'neutral' && 'text-neutral-500'
                 )}
               >
                 {trend === 'up' && (
@@ -69,12 +98,12 @@ export function StatCard({
                 )}
                 {Math.abs(change).toFixed(1)}%
               </span>
-              {changeLabel && <span className="text-sm text-gray-500">{changeLabel}</span>}
+              {changeLabel && <span className="text-sm text-neutral-500">{changeLabel}</span>}
             </div>
           )}
         </div>
         {icon && (
-          <div className="p-3 bg-gray-100 rounded-lg">
+          <div className="p-3 bg-neutral-100 rounded-lg">
             {icon}
           </div>
         )}
@@ -92,18 +121,18 @@ type SimpleStatCardProps = {
 
 export function SimpleStatCard({ label, value, icon, color = 'blue' }: SimpleStatCardProps) {
   const colors = {
-    blue: 'bg-blue-100 text-blue-600',
-    green: 'bg-green-100 text-green-600',
-    purple: 'bg-purple-100 text-purple-600',
-    orange: 'bg-orange-100 text-orange-600',
+    blue: 'bg-primary-100 text-primary-600',
+    green: 'bg-success-100 text-success-600',
+    purple: 'bg-primary-100 text-primary-600',
+    orange: 'bg-warning-100 text-warning-600',
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow">
+    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm text-gray-600">{label}</p>
-          <p className="text-2xl font-bold text-gray-900">{value}</p>
+          <p className="text-sm text-neutral-600">{label}</p>
+          <p className="text-2xl font-bold text-neutral-900">{value}</p>
         </div>
         <div className={`w-12 h-12 ${colors[color]} rounded-lg flex items-center justify-center flex-shrink-0`}>
           {icon}
@@ -123,9 +152,9 @@ export function MetricCard({
   action?: ReactNode
 }) {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-      <div className="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+    <div className="bg-white rounded-xl border border-neutral-200 overflow-hidden">
+      <div className="px-6 py-4 border-b border-neutral-200 flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-neutral-900">{title}</h3>
         {action}
       </div>
       <div className="p-6">
@@ -138,10 +167,10 @@ export function MetricCard({
 export function EmptyMetricState({ message }: { message: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
-      <svg className="w-16 h-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg className="w-16 h-16 text-neutral-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
-      <p className="text-gray-500">{message}</p>
+      <p className="text-neutral-500">{message}</p>
     </div>
   )
 }
