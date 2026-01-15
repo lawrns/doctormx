@@ -30,7 +30,7 @@ export default async function DoctorsPage({
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span className="text-xl font-bold text-neutral-900">Doctory</span>
+            <span className="text-xl font-bold text-neutral-900">Doctor.mx</span>
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/auth/login">
@@ -92,13 +92,20 @@ export default async function DoctorsPage({
         {/* Doctors Grid */}
         {(doctors as typeof doctors[]).length === 0 ? (
           <Card className="text-center py-16 border-neutral-200">
-            <div className="w-16 h-16 bg-neutral-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
             </div>
-            <p className="text-neutral-600 text-lg">No hay doctores disponibles</p>
-            <p className="text-neutral-400 mt-2">Intenta con otra especialidad</p>
+            <h3 className="text-xl font-semibold text-neutral-900 mb-2">No encontramos doctores</h3>
+            <p className="text-neutral-500 max-w-sm mx-auto mb-6">
+              Intenta con otra especialidad o ubicación. También puedes consultar con Dr. Simeon mientras tanto.
+            </p>
+            <Link href="/app/second-opinion">
+              <Button variant="outline" className="border-blue-200 text-blue-600 hover:bg-blue-50">
+                Consultar con Dr. Simeon IA
+              </Button>
+            </Link>
           </Card>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -220,10 +227,10 @@ export default async function DoctorsPage({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <span className="text-lg font-semibold text-neutral-900">Doctory</span>
+              <span className="text-lg font-semibold text-neutral-900">Doctor.mx</span>
             </div>
             <p className="text-neutral-500 text-sm">
-              © {new Date().getFullYear()} Doctory. Todos los derechos reservados.
+              © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
             </p>
           </div>
         </div>
