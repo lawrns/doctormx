@@ -39,17 +39,17 @@ function LoginContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white flex flex-col">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <header className="bg-white/80 backdrop-blur-md border-b border-neutral-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-[#0066CC] rounded-xl flex items-center justify-center shadow-sm">
+            <div className="w-9 h-9 bg-primary-500 rounded-xl flex items-center justify-center shadow-sm">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span className="text-xl font-bold text-gray-900">Doctory</span>
+            <span className="text-xl font-bold text-neutral-900">Doctory</span>
           </Link>
         </div>
       </header>
@@ -57,16 +57,16 @@ function LoginContent() {
       {/* Main Content */}
       <main className="flex-1 flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <Card className="p-8 shadow-xl border-gray-200">
+          <Card className="p-8 shadow-xl border-neutral-200">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">Bienvenido de nuevo</h1>
-              <p className="text-gray-500 mt-2">
+              <h1 className="text-2xl font-bold text-neutral-900">Bienvenido de nuevo</h1>
+              <p className="text-neutral-500 mt-2">
                 Ingresa a tu cuenta para continuar
               </p>
             </div>
@@ -81,7 +81,7 @@ function LoginContent() {
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
                   Correo electrónico
                 </label>
                 <Input
@@ -99,10 +99,10 @@ function LoginContent() {
 
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                  <label htmlFor="password" className="block text-sm font-medium text-neutral-700">
                     Contraseña
                   </label>
-                  <Link href="/auth/forgot-password" className="text-sm text-[#0066CC] hover:text-[#0052A3]">
+                  <Link href="/auth/forgot-password" className="text-sm text-primary-500 hover:text-[#0052A3]">
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
@@ -122,7 +122,7 @@ function LoginContent() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full h-12 bg-[#0066CC] hover:bg-[#0052A3] font-semibold text-base"
+                className="w-full h-12 bg-primary-500 hover:bg-[#0052A3] font-semibold text-base"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">
@@ -140,9 +140,9 @@ function LoginContent() {
 
             {/* Divider */}
             <div className="my-6 flex items-center">
-              <div className="flex-1 border-t border-gray-200"></div>
+              <div className="flex-1 border-t border-neutral-200"></div>
               <span className="px-4 text-sm text-gray-400">o continúa con</span>
-              <div className="flex-1 border-t border-gray-200"></div>
+              <div className="flex-1 border-t border-neutral-200"></div>
             </div>
 
             {/* Social Login */}
@@ -165,9 +165,9 @@ function LoginContent() {
             </div>
 
             {/* Register Link */}
-            <p className="text-center text-gray-500 mt-6">
+            <p className="text-center text-neutral-500 mt-6">
               ¿No tienes cuenta?{' '}
-              <Link href="/auth/register" className="text-[#0066CC] hover:text-[#0052A3] font-medium">
+              <Link href="/auth/register" className="text-primary-500 hover:text-[#0052A3] font-medium">
                 Regístrate gratis
               </Link>
             </p>
@@ -175,7 +175,7 @@ function LoginContent() {
 
           {/* Back to Home */}
           <div className="text-center mt-6">
-            <Link href="/" className="text-gray-400 hover:text-[#0066CC] text-sm transition-colors inline-flex items-center gap-1.5">
+            <Link href="/" className="text-gray-400 hover:text-primary-500 text-sm transition-colors inline-flex items-center gap-1.5">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
@@ -191,7 +191,7 @@ function LoginContent() {
 export default function LoginPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-neutral-50 to-white flex items-center justify-center">
         <div className="animate-spin h-8 w-8 border-4 border-[#0066CC] border-t-transparent rounded-full"></div>
       </div>
     }>

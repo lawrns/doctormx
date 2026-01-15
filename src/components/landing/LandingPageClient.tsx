@@ -17,7 +17,7 @@ export function LandingPageClient() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100/50"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-neutral-100/50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
@@ -25,13 +25,13 @@ export function LandingPageClient() {
               <motion.div
                 whileHover={{ scale: 1.05, rotate: 5 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 bg-gradient-to-br from-[#0066CC] to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25"
+                className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25"
               >
                 <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </motion.div>
-              <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent tracking-tight">
+              <span className="text-xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent tracking-tight">
                 Doctory
               </span>
             </Link>
@@ -46,7 +46,7 @@ export function LandingPageClient() {
                 <Link key={link.href} href={link.href}>
                   <motion.span
                     whileHover={{ backgroundColor: 'rgba(0, 102, 204, 0.05)' }}
-                    className="text-sm font-medium text-gray-600 hover:text-[#0066CC] transition-colors px-4 py-2 rounded-lg inline-block"
+                    className="text-sm font-medium text-neutral-600 hover:text-primary-500 transition-colors px-4 py-2 rounded-lg inline-block"
                   >
                     {link.label}
                   </motion.span>
@@ -57,14 +57,14 @@ export function LandingPageClient() {
             <div className="flex items-center gap-3">
               <Link href="/auth/login">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button variant="ghost" className="text-sm font-medium text-gray-600 hover:text-[#0066CC] hidden sm:flex">
+                  <Button variant="ghost" className="text-sm font-medium text-neutral-600 hover:text-primary-500 hidden sm:flex">
                     Iniciar sesión
                   </Button>
                 </motion.div>
               </Link>
               <Link href="/auth/register">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="bg-gradient-to-r from-[#0066CC] to-blue-600 hover:from-[#0052A3] hover:to-blue-700 text-sm font-semibold shadow-lg shadow-blue-500/25 px-5">
+                  <Button className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-sm font-semibold shadow-lg shadow-primary-500/25 px-5">
                     Registrarse gratis
                   </Button>
                 </motion.div>
@@ -82,7 +82,7 @@ export function LandingPageClient() {
       <CTASection />
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className="bg-neutral-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2 md:col-span-1">
@@ -94,14 +94,14 @@ export function LandingPageClient() {
                 </div>
                 <span className="text-xl font-bold">Doctory</span>
               </Link>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-neutral-400 text-sm leading-relaxed">
                 La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas.
               </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Pacientes</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-neutral-400 text-sm">
                 <li><Link href="/doctors" className="hover:text-white transition-colors">Buscar doctores</Link></li>
                 <li><Link href="/specialties" className="hover:text-white transition-colors">Especialidades</Link></li>
                 <li><Link href="/app/second-opinion" className="hover:text-white transition-colors">Segunda opinión</Link></li>
@@ -111,7 +111,7 @@ export function LandingPageClient() {
 
             <div>
               <h4 className="font-semibold mb-4">Doctores</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-neutral-400 text-sm">
                 <li><Link href="/for-doctors" className="hover:text-white transition-colors">Únete como doctor</Link></li>
                 <li><Link href="/doctor" className="hover:text-white transition-colors">Portal de doctores</Link></li>
                 <li><Link href="/pricing" className="hover:text-white transition-colors">Planes y precios</Link></li>
@@ -120,7 +120,7 @@ export function LandingPageClient() {
 
             <div>
               <h4 className="font-semibold mb-4">Soporte</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
+              <ul className="space-y-2 text-neutral-400 text-sm">
                 <li><Link href="/help" className="hover:text-white transition-colors">Centro de ayuda</Link></li>
                 <li><Link href="/contact" className="hover:text-white transition-colors">Contacto</Link></li>
                 <li><Link href="/privacy" className="hover:text-white transition-colors">Privacidad</Link></li>
@@ -129,8 +129,8 @@ export function LandingPageClient() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+          <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-neutral-400 text-sm">
               © {new Date().getFullYear()} Doctory. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-4">
