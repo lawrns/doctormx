@@ -9,16 +9,30 @@ import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
+import { Stethoscope, Search, FileText, UserPlus, Sparkles } from 'lucide-react'
 
 export function LandingPageClient() {
   return (
-    <main className="min-h-screen bg-surface overflow-x-hidden">
+    <main className="min-h-screen bg-[#fdfaf6] overflow-x-hidden">
+      {/* Announcement Bar - Doctronic style */}
+      <motion.div
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-2.5 px-4 text-center text-sm font-medium"
+      >
+        <span className="inline-flex items-center gap-2">
+          <Sparkles className="w-4 h-4" />
+          🇲🇽 Atención médica 24/7 • Doctores certificados en México • Consulta gratis
+        </span>
+      </motion.div>
+
       {/* Animated Header */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-50 bg-surface-elevated/80 backdrop-blur-xl border-b border-neutral-200/50"
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+        className="sticky top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-neutral-200/50 shadow-sm"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-18">
@@ -28,27 +42,25 @@ export function LandingPageClient() {
                 whileTap={{ scale: 0.95 }}
                 className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25"
               >
-                <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+                <Stethoscope className="w-5 h-5 text-white" />
               </motion.div>
-              <span className="text-xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent tracking-tight">
-                Doctory
+              <span className="text-xl font-bold text-text-primary tracking-tight">
+                Doctor.mx
               </span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1">
               {[
-                { href: '/doctors', label: 'Buscar doctores' },
-                { href: '/specialties', label: 'Especialidades' },
-                { href: '/app/second-opinion', label: 'Segunda opinión' },
-                { href: '/for-doctors', label: 'Para doctores' },
+                { href: '/doctors', label: 'Buscar doctores', icon: Search },
+                { href: '/app/second-opinion', label: 'Consulta IA', icon: Sparkles },
+                { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
               ].map((link) => (
                 <Link key={link.href} href={link.href}>
                   <motion.span
-                    whileHover={{ backgroundColor: 'rgba(0, 102, 204, 0.05)' }}
-                    className="text-sm font-medium text-neutral-600 hover:text-primary-500 transition-colors px-4 py-2 rounded-lg inline-block"
+                    whileHover={{ backgroundColor: 'rgba(99, 102, 241, 0.08)' }}
+                    className="text-sm font-medium text-text-secondary hover:text-primary-600 transition-colors px-4 py-2 rounded-lg inline-flex items-center gap-2"
                   >
+                    <link.icon className="w-4 h-4" />
                     {link.label}
                   </motion.span>
                 </Link>
@@ -58,14 +70,14 @@ export function LandingPageClient() {
             <div className="flex items-center gap-3">
               <Link href="/auth/login">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button variant="ghost" className="text-sm font-medium text-neutral-600 hover:text-primary-500 hidden sm:flex">
+                  <Button variant="ghost" className="text-sm font-medium text-text-secondary hover:text-primary-600 hidden sm:flex">
                     Iniciar sesión
                   </Button>
                 </motion.div>
               </Link>
               <Link href="/auth/register">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-sm font-semibold shadow-lg shadow-primary-500/25 px-5">
+                <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.98 }}>
+                  <Button className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-sm font-semibold shadow-lg shadow-primary-500/25 px-6 py-2.5">
                     Registrarse gratis
                   </Button>
                 </motion.div>
@@ -90,14 +102,12 @@ export function LandingPageClient() {
             <div className="col-span-2 md:col-span-1">
               <Link href="/" className="flex items-center gap-2.5 mb-4">
                 <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                  </svg>
+                  <Stethoscope className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">Doctory</span>
+                <span className="text-xl font-bold">Doctor.mx</span>
               </Link>
               <p className="text-neutral-400 text-sm leading-relaxed">
-                La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas.
+                La plataforma de salud digital más confiable de México. Conectamos pacientes con los mejores especialistas certificados.
               </p>
             </div>
 
@@ -133,7 +143,7 @@ export function LandingPageClient() {
 
           <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-neutral-400 text-sm">
-              © {new Date().getFullYear()} Doctory. Todos los derechos reservados.
+              © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">

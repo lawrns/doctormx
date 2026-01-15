@@ -14,17 +14,21 @@
        Less variation, more consistency
        ============================================ */
 
-  /* Primary (Doctronic Blue) - Healthcare professional blue */
-  --color-primary-50: #f6f6ff;
-  --color-primary-100: #e9eeff;
-  --color-primary-200: #d4ddff;
-  --color-primary-300: #c0ccff;
-  --color-primary-400: #a0cdff;
-  --color-primary-500: #5588ff;
-  --color-primary-600: #446dcc;
-  --color-primary-700: #334d99;
-  --color-primary-800: #223266;
-  --color-primary-900: #111633;
+  /* Primary (Doctronic Blue) - Healthcare professional blue with gradient support */
+  --color-primary-50: #f0f4ff;
+  --color-primary-100: #e0eaff;
+  --color-primary-200: #c7d7fe;
+  --color-primary-300: #a4bcfd;
+  --color-primary-400: #8098f9;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  
+  /* Gradient variants for buttons */
+  --gradient-primary: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
 
   /* Accent (Cyan/Teal) - Complementary healthcare accent */
   --color-accent-50: #ecfeff;
@@ -40,23 +44,30 @@
   --color-warning-500: #ff9900;
   --color-error-500: #ff4444;
 
-  /* Neutrals - 6-step scale (Doctronic pattern) */
-  --color-neutral-0: #ffffff;
+  /* Neutrals - Warm Doctronic palette (NOT pure white) */
+  --color-neutral-0: #fdfaf6;
   --color-neutral-50: #f9f7f4;
-  --color-neutral-100: #f5f2ee;
+  --color-neutral-100: #f4f1ed;
   --color-neutral-200: #e8e3db;
+  --color-neutral-300: #d4cfc5;
+  --color-neutral-400: #b8b0a3;
   --color-neutral-500: #9b9085;
-  --color-neutral-900: #0c0e12;
+  --color-neutral-600: #7a7066;
+  --color-neutral-700: #5a5249;
+  --color-neutral-800: #3d3730;
+  --color-neutral-900: #1f1d1a;
 
-  /* Surface colors */
-  --color-surface: #f9f7f4;
+  /* Surface colors - Warm, inviting (NOT stark white) */
+  --color-surface: #fdfaf6;
   --color-surface-elevated: #ffffff;
-  --color-surface-sunken: #f5f2ee;
+  --color-surface-sunken: #f4f1ed;
+  --color-surface-overlay: rgba(253, 250, 246, 0.95);
 
-  /* Text colors */
-  --color-text-primary: #0c0e12;
-  --color-text-secondary: #6b6560;
-  --color-text-muted: #9b9085;
+  /* Text colors - Softer than pure black */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-inverted: #ffffff;
 
   /* Borders - opacity-based (Stripe pattern) */
   --border-subtle: rgba(15, 23, 42, 0.06);
@@ -131,30 +142,21 @@
        Minimalist, purposeful (Linear pattern)
        ============================================ */
 
-  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-sm:
-    0 1px 3px 0 rgba(15, 23, 42, 0.10), 0 1px 2px -1px rgba(15, 23, 42, 0.10);
-  --shadow-md:
-    0 4px 6px -1px rgba(15, 23, 42, 0.10), 0 2px 4px -2px rgba(
-    15,
-    23,
-    42,
-    0.10
-  );
-  --shadow-lg:
-    0 10px 15px -3px rgba(15, 23, 42, 0.10), 0 4px 6px -4px rgba(
-    15,
-    23,
-    42,
-    0.10
-  );
-  --shadow-xl:
-    0 20px 25px -5px rgba(15, 23, 42, 0.10), 0 8px 10px -6px rgba(
-    15,
-    23,
-    42,
-    0.10
-  );
+  /* Enhanced shadow system with card and hover variants */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.10), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  
+  /* Card shadows - subtle depth */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  
+  /* Colored shadows for buttons */
+  --shadow-primary: 0 4px 14px 0 rgba(99, 102, 241, 0.25);
+  --shadow-primary-hover: 0 8px 25px 0 rgba(99, 102, 241, 0.35);
 
   /* ============================================
        BORDER RADIUS
@@ -252,7 +254,46 @@ body {
 }
 
 .hover-lift:hover {
-  transform: translateY(-1px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Card hover effect - premium feel */
+.card-hover {
+  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Button primary with gradient and shadow */
+.btn-primary-gradient {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: var(--shadow-primary);
+  transition: all 200ms var(--ease-out);
+}
+
+.btn-primary-gradient:hover {
+  background: var(--gradient-primary-hover);
+  box-shadow: var(--shadow-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Pulse animation for CTAs */
+.pulse-subtle {
+  animation: pulseSubtle 2s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
 }
 
 .active-press:active {
