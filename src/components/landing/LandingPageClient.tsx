@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { HeroSection } from './HeroSection'
+import DrSimeonShowcase from './DrSimeonShowcase'
 import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
@@ -76,6 +77,7 @@ export function LandingPageClient() {
 
       {/* Page Sections */}
       <HeroSection />
+      <DrSimeonShowcase />
       <StatsSection />
       <FeaturesSection />
       <TestimonialsSection />
