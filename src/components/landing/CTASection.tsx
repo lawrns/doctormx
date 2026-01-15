@@ -7,30 +7,38 @@ import { Button } from '@/components/ui/button'
 export function CTASection() {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0066CC] via-blue-600 to-cyan-600" />
-      
-      {/* Animated shapes */}
+      {/* Softer animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-600 to-accent-600" />
+
+      {/* Subtle animated shapes with reduced intensity */}
       <motion.div
-        className="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl"
         animate={{
-          scale: [1, 1.2, 1],
-          x: [0, 30, 0],
+          scale: [1, 1.1, 1],
+          x: [0, 20, 0],
         }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: [0.4, 0, 0.2, 1]
+        }}
       />
       <motion.div
-        className="absolute bottom-10 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl"
         animate={{
-          scale: [1, 1.3, 1],
-          y: [0, -30, 0],
+          scale: [1, 1.15, 1],
+          y: [0, -20, 0],
         }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: [0.4, 0, 0.2, 1]
+        }}
       />
 
-      {/* Grid pattern overlay */}
-      <div 
-        className="absolute inset-0 opacity-10"
+      {/* Subtle grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '40px 40px',
@@ -42,39 +50,50 @@ export function CTASection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           className="text-center"
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-8"
+            transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
+            className="inline-flex items-center gap-2 glass-subtle rounded-full px-4 py-2 mb-8"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              border: '1px solid rgba(255, 255, 255, 0.15)'
+            }}
           >
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success-500 opacity-60"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-success-500"></span>
             </span>
-            <span className="text-white/90 text-sm font-medium">+100 doctores disponibles ahora</span>
+            <span className="text-white/95 text-sm font-medium">+100 doctores disponibles ahora</span>
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="hero-headline text-3xl sm:text-4xl lg:text-5xl text-white mb-6">
             Comienza a cuidar tu salud
             <br />
-            <span className="text-cyan-300">hoy mismo</span>
+            <span className="text-accent-50">hoy mismo</span>
           </h2>
-          
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+
+          <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
             Únete a miles de pacientes que ya disfrutan de atención médica de calidad desde cualquier lugar
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: [0, 0, 0.2, 1] }}
+            >
               <Link href="/auth/register">
                 <Button
                   size="lg"
-                  className="bg-white text-[#0066CC] hover:bg-gray-100 font-semibold px-8 h-14 text-base shadow-xl shadow-black/20"
+                  className="bg-white text-primary-600 hover:bg-neutral-50 font-semibold px-8 h-14 text-base interactive"
+                  style={{
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.10)'
+                  }}
                 >
                   Crear cuenta gratis
                   <svg className="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -83,12 +102,19 @@ export function CTASection() {
                 </Button>
               </Link>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: [0, 0, 0.2, 1] }}
+            >
               <Link href="/doctors">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-8 h-14 text-base backdrop-blur-sm"
+                  className="border-2 text-white hover:bg-white/10 font-semibold px-8 h-14 text-base glass-subtle interactive"
+                  style={{
+                    borderColor: 'rgba(255, 255, 255, 0.25)'
+                  }}
                 >
                   Buscar doctores
                 </Button>
@@ -101,8 +127,8 @@ export function CTASection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="mt-12 flex flex-wrap justify-center gap-8 text-white/70"
+            transition={{ delay: 0.3, duration: 0.5, ease: [0, 0, 0.2, 1] }}
+            className="mt-12 flex flex-wrap justify-center gap-8 text-white/75"
           >
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

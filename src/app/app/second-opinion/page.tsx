@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 import type { PreConsultaMessage } from '@/lib/ai/types'
 
 export default function SecondOpinionPage() {
-  const [isActive, setIsActive] = useState(true)
+  const [isActive] = useState(true)
   const [messages, setMessages] = useState<PreConsultaMessage[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)

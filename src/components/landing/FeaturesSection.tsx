@@ -12,8 +12,8 @@ const features = [
     ),
     title: 'Doctores Verificados',
     description: 'Todos nuestros especialistas están verificados con cédula profesional y credenciales médicas.',
-    color: 'from-emerald-500 to-teal-500',
-    bgColor: 'bg-emerald-50',
+    color: 'from-success-500 to-info-500',
+    bgColor: 'bg-primary-50',
   },
   {
     icon: (
@@ -23,8 +23,8 @@ const features = [
     ),
     title: 'Videoconsultas',
     description: 'Consulta con especialistas desde la comodidad de tu hogar con video HD seguro.',
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-50',
+    color: 'from-primary-500 to-accent-500',
+    bgColor: 'bg-primary-50',
   },
   {
     icon: (
@@ -34,8 +34,8 @@ const features = [
     ),
     title: 'Citas Inmediatas',
     description: 'Agenda citas en menos de 24 horas con disponibilidad en tiempo real.',
-    color: 'from-violet-500 to-purple-500',
-    bgColor: 'bg-violet-50',
+    color: 'from-primary-600 to-primary-400',
+    bgColor: 'bg-primary-50',
   },
   {
     icon: (
@@ -45,8 +45,8 @@ const features = [
     ),
     title: 'Segunda Opinión',
     description: 'Obtén una segunda opinión médica de especialistas certificados para mayor tranquilidad.',
-    color: 'from-amber-500 to-orange-500',
-    bgColor: 'bg-amber-50',
+    color: 'from-accent-500 to-info-500',
+    bgColor: 'bg-accent-50',
   },
   {
     icon: (
@@ -56,8 +56,8 @@ const features = [
     ),
     title: 'Seguridad Total',
     description: 'Tu información médica está protegida con encriptación de nivel bancario.',
-    color: 'from-rose-500 to-pink-500',
-    bgColor: 'bg-rose-50',
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-50',
   },
   {
     icon: (
@@ -67,77 +67,99 @@ const features = [
     ),
     title: 'Chat Médico',
     description: 'Comunícate directamente con tu doctor antes y después de tu consulta.',
-    color: 'from-indigo-500 to-blue-500',
-    bgColor: 'bg-indigo-50',
+    color: 'from-primary-400 to-accent-500',
+    bgColor: 'bg-primary-50',
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-neutral-0 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-      
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--border-subtle)] to-transparent" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0, 0, 0.2, 1] }}
           className="text-center mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 bg-blue-50 text-[#0066CC] text-sm font-semibold rounded-full mb-4"
+            transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
+            className="inline-block px-4 py-1.5 bg-primary-50 text-primary-500 text-sm font-semibold rounded-full mb-4"
           >
             ¿Por qué elegirnos?
           </motion.span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="section-headline text-3xl sm:text-4xl lg:text-5xl mb-4">
             Todo lo que necesitas para tu salud
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
             Una plataforma completa diseñada para conectarte con los mejores especialistas de forma rápida y segura
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+                ease: [0, 0, 0.2, 1]
+              }}
             >
-              <Card className="h-full p-6 lg:p-8 border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-300 group cursor-pointer relative overflow-hidden">
+              <Card className="h-full p-6 lg:p-8 hover:shadow-lg interactive group cursor-pointer relative overflow-hidden"
+                style={{
+                  borderColor: 'var(--border-subtle)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)'
+                }}
+              >
                 {/* Hover gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300`} />
-                
+                <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-[0.02] transition-opacity duration-200`} />
+
                 <motion.div
-                  className={`w-14 h-14 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
-                  whileHover={{ rotate: 5 }}
+                  className={`w-14 h-14 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-5 transition-transform duration-200`}
+                  whileHover={{
+                    scale: 1.08,
+                    rotate: 3,
+                    transition: {
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 17
+                    }
+                  }}
                 >
                   <div className={`bg-gradient-to-br ${feature.color} bg-clip-text text-transparent`}>
                     {feature.icon}
                   </div>
                 </motion.div>
-                
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#0066CC] transition-colors">
+
+                <h3 className="text-xl font-bold text-text-primary mb-3 group-hover:text-primary-500 transition-colors duration-200">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   {feature.description}
                 </p>
 
                 {/* Arrow indicator on hover */}
                 <motion.div
-                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity"
-                  initial={{ x: -10 }}
-                  whileHover={{ x: 0 }}
+                  className="absolute bottom-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  initial={{ x: -5 }}
+                  whileHover={{
+                    x: 0,
+                    transition: { duration: 0.2, ease: [0, 0, 0.2, 1] }
+                  }}
                 >
-                  <svg className="w-5 h-5 text-[#0066CC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </motion.div>
