@@ -2,20 +2,18 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { 
-  CheckCircle, 
-  Users, 
-  Calendar, 
-  Video, 
-  CreditCard, 
+import {
+  CheckCircle,
+  Users,
+  Calendar,
+  Video,
+  CreditCard,
   TrendingUp,
   Shield,
-  Clock,
   Star,
   ArrowRight
 } from 'lucide-react'

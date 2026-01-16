@@ -14,7 +14,7 @@ export interface Badge {
   badge_description: string;
   badge_icon: string;
   badge_color: string;
-  criteria_met: Record<string, any>;
+  criteria_met: Record<string, unknown>;
   earned_at: string;
   expires_at: string | null;
   is_active: boolean;

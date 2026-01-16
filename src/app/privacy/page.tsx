@@ -2,7 +2,7 @@
 
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Shield, Lock, Eye, FileText } from 'lucide-react'
+import { Shield, Lock, FileText } from 'lucide-react'
 
 export default function PrivacyPage() {
   return (

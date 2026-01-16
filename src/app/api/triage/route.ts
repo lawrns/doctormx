@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
-import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources } from '@/lib/triage'
+import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources, type TriageResult } from '@/lib/triage'
 
 export async function POST(request: NextRequest) {
   try {
@@ -53,8 +53,8 @@ export async function POST(request: NextRequest) {
 
 async function logTriageResult(
   message: string,
-  intake: any,
-  triageResult: any,
+  intake: Record<string, unknown> | null,
+  triageResult: TriageResult,
   sessionId?: string
 ) {
   try {

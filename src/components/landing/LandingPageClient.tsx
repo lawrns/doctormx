@@ -9,7 +9,7 @@ import { StatsSection } from './StatsSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
-import { Stethoscope, Search, FileText, UserPlus, Sparkles } from 'lucide-react'
+import { Stethoscope, Search, UserPlus, Sparkles } from 'lucide-react'
 
 export function LandingPageClient() {
   return (

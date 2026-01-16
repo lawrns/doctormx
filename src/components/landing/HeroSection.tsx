@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock, Sparkles } from 'lucide-react'
+import { Zap, Shield, Gift, ArrowRight, BadgeCheck, Clock, Users, Lock } from 'lucide-react'
 
 const containerVariants = {
   hidden: { opacity: 0 },

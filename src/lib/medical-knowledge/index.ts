@@ -44,6 +44,11 @@ export interface MedicalGuideline {
   keywords: string[];
 }
 
+// Type for RPC results with similarity score
+interface MedicalDocumentWithSimilarity extends MedicalDocument {
+  similarity?: number;
+}
+
 // Sample Mexican medical guidelines
 const SAMPLE_GUIDELINES: MedicalGuideline[] = [
   {
@@ -236,7 +241,7 @@ export async function retrieveMedicalContext(
     }
     
     return {
-      documents: data.map((doc: any) => ({
+      documents: (data as MedicalDocumentWithSimilarity[]).map((doc) => ({
         id: doc.id,
         content: doc.content,
         source: doc.source,
@@ -245,7 +250,7 @@ export async function retrieveMedicalContext(
         created_at: doc.created_at,
         updated_at: doc.updated_at,
       })),
-      relevance_scores: data.map((doc: any) => doc.similarity || 0.7),
+      relevance_scores: (data as MedicalDocumentWithSimilarity[]).map((doc) => doc.similarity || 0.7),
       total_results: data.length,
       query,
     };
@@ -259,7 +264,7 @@ export async function retrieveMedicalContext(
  * Fallback keyword search
  */
 async function keywordSearch(
-  supabase: any,
+  supabase: Awaited<ReturnType<typeof createClient>>,
   query: string,
   options?: { specialty?: string; limit?: number }
 ): Promise<RetrievedContext> {
@@ -315,7 +320,8 @@ export function generateAugmentedPrompt(
     .map((doc, index) => {
       const score = retrievedContext.relevance_scores[index];
       const title = doc.metadata?.title || doc.source;
-      return `📋 **${title}** (${doc.source}, ${doc.metadata?.year || 'N/A'})\n${doc.content.substring(0, 400)}...`;
+      const relevanceLabel = score >= 0.8 ? '⭐' : score >= 0.6 ? '✓' : '';
+      return `📋 **${title}** ${relevanceLabel} (${doc.source}, ${doc.metadata?.year || 'N/A'})\n${doc.content.substring(0, 400)}...`;
     })
     .join('\n\n');
   

@@ -5,14 +5,13 @@ import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
-import { 
-  Heart, 
-  Brain, 
-  Eye, 
+import {
+  Heart,
+  Brain,
+  Eye,
   Bone,
   Baby,
   Stethoscope,
-  Pill,
   Activity,
   Scissors,
   Smile,

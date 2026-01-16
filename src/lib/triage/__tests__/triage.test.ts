@@ -4,12 +4,11 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { 
-  evaluateRedFlags, 
-  getCareLevelInfo, 
+import {
+  evaluateRedFlags,
+  getCareLevelInfo,
   isMentalHealthCrisis,
-  getMentalHealthResources,
-  type CareLevel 
+  getMentalHealthResources
 } from '../index';
 
 describe('Triage System', () => {

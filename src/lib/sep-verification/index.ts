@@ -173,7 +173,6 @@ function calculateNameSimilarity(name1: string, name2: string): number {
   if (s1 === s2) return 100;
   
   const longer = s1.length > s2.length ? s1 : s2;
-  const shorter = s1.length > s2.length ? s2 : s1;
   
   if (longer.length === 0) return 100;
   

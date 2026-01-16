@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { Shield, CheckCircle, Star, ArrowRight } from 'lucide-react'
 
 export function CTASection() {

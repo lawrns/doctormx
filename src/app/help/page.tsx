@@ -7,17 +7,16 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { 
-  HelpCircle, 
-  MessageSquare, 
-  Phone, 
-  Mail, 
+import {
+  HelpCircle,
+  MessageSquare,
+  Phone,
+  Mail,
   ChevronDown,
   Calendar,
   CreditCard,
   Video,
   User,
-  Shield,
   Search
 } from 'lucide-react'
 

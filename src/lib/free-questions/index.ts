@@ -70,13 +70,15 @@ export async function getUserQuota(userId: string): Promise<FreeQuestionsQuota> 
   const isPremium = !!subscription;
   
   // Get or create quota record
-  let { data: quota, error } = await supabase
+  const quotaResult = await supabase
     .from('user_free_questions')
     .select('*')
     .eq('user_id', userId)
     .single();
-  
-  if (error || !quota) {
+
+  let quota = quotaResult.data;
+
+  if (quotaResult.error || !quota) {
     // Create new quota record
     const { data: newQuota, error: insertError } = await supabase
       .from('user_free_questions')
