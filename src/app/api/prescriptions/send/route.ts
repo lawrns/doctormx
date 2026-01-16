@@ -3,7 +3,21 @@ import { requireRole } from '@/lib/auth'
 import { generateAndStorePDF, markAsSent } from '@/lib/prescriptions'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy initialization of Resend client
+let resend: Resend | null = null
+
+function getResendClient(): Resend | null {
+  if (resend) return resend
+  
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.warn('Resend API key is missing; prescription emails will be skipped.')
+    return null
+  }
+  
+  resend = new Resend(apiKey)
+  return resend
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -144,25 +158,35 @@ export async function POST(request: NextRequest) {
       </html>
     `
 
-    const emailResult = await resend.emails.send({
-      from: 'Doctor.mx <noreply@doctory.com.mx>',
-      to: [patientEmail],
-      subject: 'Tu Receta Médica - Doctor.mx',
-      html: emailHtml,
-      attachments: [
-        {
-          filename: `receta-${prescriptionId.slice(0, 8)}.pdf`,
-          content: Buffer.from(pdfBuffer).toString('base64'),
-        },
-      ],
-    })
+    const client = getResendClient()
+    let emailId: string | undefined
+    
+    if (!client) {
+      console.warn(`Prescription email skipped (no Resend API key): ${prescriptionId}`)
+      // Continue without sending email
+    } else {
+      const emailResult = await client.emails.send({
+        from: 'Doctor.mx <noreply@doctory.com.mx>',
+        to: [patientEmail],
+        subject: 'Tu Receta Médica - Doctor.mx',
+        html: emailHtml,
+        attachments: [
+          {
+            filename: `receta-${prescriptionId.slice(0, 8)}.pdf`,
+            content: Buffer.from(pdfBuffer).toString('base64'),
+          },
+        ],
+      })
 
-    if (emailResult.error) {
-      console.error('Failed to send email:', emailResult.error)
-      return NextResponse.json(
-        { error: 'Failed to send prescription email' },
-        { status: 500 }
-      )
+      if (emailResult.error) {
+        console.error('Failed to send email:', emailResult.error)
+        return NextResponse.json(
+          { error: 'Failed to send prescription email' },
+          { status: 500 }
+        )
+      }
+      
+      emailId = emailResult.data?.id
     }
 
     await markAsSent(prescriptionId)
@@ -170,7 +194,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: 'Prescription sent successfully',
-      emailId: emailResult.data?.id,
+      emailId,
     })
   } catch (error) {
     console.error('Error sending prescription:', error)
