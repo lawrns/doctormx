@@ -8,7 +8,21 @@ import { es } from 'date-fns/locale'
 const FROM_EMAIL = 'Doctor.mx <noreply@doctory.com.mx>'
 const SUPPORT_EMAIL = 'soporte@doctory.com.mx'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazy initialization of Resend client
+let resend: Resend | null = null
+
+function getResendClient(): Resend | null {
+  if (resend) return resend
+  
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.warn('Resend API key is missing; email notifications will be skipped.')
+    return null
+  }
+  
+  resend = new Resend(apiKey)
+  return resend
+}
 
 export function formatMexicanDateTime(dateString: string): string {
   const date = new Date(dateString)
@@ -82,8 +96,15 @@ export async function sendEmail({
   html: string
   tags?: Array<{ name: string; value: string }>
 }) {
+  const client = getResendClient()
+  
+  if (!client) {
+    console.warn(`Email skipped (no Resend API key): ${subject} to ${to}`)
+    return { success: true, data: null }
+  }
+  
   try {
-    const result = await resend.emails.send({
+    const result = await client.emails.send({
       from: FROM_EMAIL,
       to: [to],
       subject,
