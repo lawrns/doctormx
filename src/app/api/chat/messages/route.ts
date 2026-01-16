@@ -1,6 +1,7 @@
 import { requireAuth } from '@/lib/auth'
 import { sendMessage } from '@/lib/chat'
 import { NextResponse } from 'next/server'
+import { evaluateRedFlags, getCareLevelInfo, isMentalHealthCrisis, getMentalHealthResources } from '@/lib/triage'
 
 export async function POST(request: Request) {
   try {
@@ -14,6 +15,28 @@ export async function POST(request: Request) {
         { error: 'Missing required fields: conversationId, content' },
         { status: 400 }
       )
+    }
+
+    // Evaluate triage for text messages
+    let triageAlert = null
+    if (type === 'text' || !type) {
+      const triageResult = evaluateRedFlags({ message: content })
+      
+      if (triageResult.triggered && triageResult.action) {
+        const careLevelInfo = getCareLevelInfo(triageResult.action)
+        const isMentalHealth = isMentalHealthCrisis(content)
+        
+        triageAlert = {
+          level: triageResult.action,
+          severity: triageResult.severity,
+          info: careLevelInfo,
+          reasons: triageResult.reasons,
+          recommendations: isMentalHealth 
+            ? [...getMentalHealthResources(), ...triageResult.recommendations]
+            : triageResult.recommendations,
+          isMentalHealthCrisis: isMentalHealth,
+        }
+      }
     }
 
     const message = await sendMessage({
@@ -33,7 +56,10 @@ export async function POST(request: Request) {
       )
     }
 
-    return NextResponse.json({ message })
+    return NextResponse.json({ 
+      message,
+      triageAlert, // Include triage alert if detected
+    })
   } catch (error) {
     console.error('Error sending message:', error)
     return NextResponse.json(

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { SPECIALTIES, PAYMENT_CONFIG } from '@/config/constants'
 import type { Doctor, Profile } from '@/types'
@@ -13,6 +13,14 @@ type OnboardingFormProps = {
 export default function OnboardingForm({ doctor, profile }: OnboardingFormProps) {
   const router = useRouter()
   const [submitting, setSubmitting] = useState(false)
+
+  // SEP Verification state
+  const [verifying, setVerifying] = useState(false)
+  const [verificationStatus, setVerificationStatus] = useState<{
+    verified: boolean;
+    message: string;
+    confidence?: number;
+  } | null>(null)
 
   // Todos los campos en un solo form
   const [specialty, setSpecialty] = useState(doctor?.specialty || '')
@@ -35,6 +43,66 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
   const isComplete = yearsExperience && bio && licenseNumber && price
   const isVerified = doctor?.status === 'approved'
+
+  // SEP Verification handler
+  const handleVerifyCedula = useCallback(async () => {
+    if (!licenseNumber || licenseNumber.length < 7) {
+      setVerificationStatus({
+        verified: false,
+        message: 'Ingresa una cédula válida (mínimo 7 dígitos)'
+      })
+      return
+    }
+
+    setVerifying(true)
+    setVerificationStatus(null)
+
+    try {
+      const res = await fetch('/api/doctor/verify-cedula', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cedula: licenseNumber,
+          fullName: profile?.full_name
+        })
+      })
+
+      const data = await res.json()
+
+      if (data.success && data.verification) {
+        setVerificationStatus({
+          verified: data.verification.verified,
+          message: data.verification.message,
+          confidence: data.verification.confidence
+        })
+
+        // Auto-fill data if verified
+        if (data.verification.verified && data.autoFillData) {
+          if (data.autoFillData.yearsExperience && !yearsExperience) {
+            setYearsExperience(data.autoFillData.yearsExperience.toString())
+          }
+          if (data.autoFillData.specialty && !specialty) {
+            const matchingSpec = SPECIALTIES.find(
+              s => s.name.toLowerCase().includes(data.autoFillData.specialty.toLowerCase())
+            )
+            if (matchingSpec) setSpecialty(matchingSpec.slug)
+          }
+        }
+      } else {
+        setVerificationStatus({
+          verified: false,
+          message: data.error || 'Error al verificar'
+        })
+      }
+    } catch {
+      setVerificationStatus({
+        verified: false,
+        message: 'Error de conexión al verificar'
+      })
+    } finally {
+      setVerifying(false)
+    }
+  }, [licenseNumber, profile?.full_name, yearsExperience, specialty])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -198,16 +266,83 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
 
                   <div className="md:col-span-2">
                     <label className="block text-sm font-medium text-gray-900 mb-2">
-                      Cédula profesional *
+                      Cédula profesional * 
+                      <span className="text-xs text-gray-500 font-normal ml-2">
+                        Verificamos con la SEP
+                      </span>
                     </label>
-                    <input
-                      type="text"
-                      value={licenseNumber}
-                      onChange={(e) => setLicenseNumber(e.target.value)}
-                      required
-                      placeholder="ej: 12345678"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900"
-                    />
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={licenseNumber}
+                        onChange={(e) => {
+                          setLicenseNumber(e.target.value)
+                          setVerificationStatus(null)
+                        }}
+                        required
+                        placeholder="ej: 12345678"
+                        className={`flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 text-gray-900 ${
+                          verificationStatus?.verified 
+                            ? 'border-green-500 bg-green-50' 
+                            : verificationStatus && !verificationStatus.verified
+                              ? 'border-red-300 bg-red-50'
+                              : 'border-gray-300'
+                        }`}
+                      />
+                      <button
+                        type="button"
+                        onClick={handleVerifyCedula}
+                        disabled={verifying || !licenseNumber}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
+                      >
+                        {verifying ? (
+                          <>
+                            <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                            </svg>
+                            Verificando...
+                          </>
+                        ) : (
+                          <>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            Verificar SEP
+                          </>
+                        )}
+                      </button>
+                    </div>
+                    {verificationStatus && (
+                      <div className={`mt-2 p-3 rounded-lg text-sm ${
+                        verificationStatus.verified 
+                          ? 'bg-green-100 text-green-800 border border-green-200' 
+                          : 'bg-red-100 text-red-800 border border-red-200'
+                      }`}>
+                        <div className="flex items-start gap-2">
+                          {verificationStatus.verified ? (
+                            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          ) : (
+                            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          )}
+                          <div>
+                            <p className="font-medium">
+                              {verificationStatus.verified ? '✓ Cédula verificada' : 'Verificación pendiente'}
+                            </p>
+                            <p className="text-xs mt-0.5 opacity-90">{verificationStatus.message}</p>
+                            {verificationStatus.confidence && (
+                              <p className="text-xs mt-1 opacity-75">
+                                Confianza: {verificationStatus.confidence}%
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="md:col-span-2">

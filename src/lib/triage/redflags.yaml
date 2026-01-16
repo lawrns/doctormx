@@ -1,0 +1,272 @@
+# Red Flags Triage Rules for Doctor.mx
+# Care Levels: ER (Emergency), URGENT (24h), PRIMARY (Routine), SELFCARE
+# Rules are evaluated in order - first match wins for each category
+
+rules:
+  # =====================================================
+  # EMERGENCY (ER) - Requires immediate medical attention
+  # =====================================================
+  - id: chest_pain_emergency
+    action: ER
+    reason: "Dolor de pecho puede indicar infarto - buscar atención de emergencia inmediatamente"
+    when:
+      any:
+        - symptom_contains: "dolor de pecho"
+        - symptom_contains: "dolor en el pecho"
+        - symptom_contains: "presión en el pecho"
+        - text_contains_any: ["infarto", "ataque al corazón", "heart attack"]
+
+  - id: breathing_emergency
+    action: ER
+    reason: "Dificultad para respirar severa es una emergencia médica"
+    when:
+      any:
+        - symptom_contains: "no puedo respirar"
+        - symptom_contains: "me ahogo"
+        - symptom_contains: "falta de aire severa"
+        - text_contains_any: ["ahogando", "asfixia", "no respiro"]
+
+  - id: stroke_signs
+    action: ER
+    reason: "Signos de derrame cerebral - cada minuto cuenta"
+    when:
+      any:
+        - symptom_contains: "parálisis facial"
+        - symptom_contains: "no puedo mover el brazo"
+        - symptom_contains: "no puedo hablar"
+        - text_contains_any: [
+            "derrame",
+            "embolia",
+            "stroke",
+            "cara caída",
+            "boca chueca",
+          ]
+
+  - id: severe_bleeding
+    action: ER
+    reason: "Sangrado severo requiere atención inmediata"
+    when:
+      any:
+        - symptom_contains: "sangrado abundante"
+        - symptom_contains: "no para de sangrar"
+        - text_contains_any: ["hemorragia", "sangre no para", "desangrando"]
+
+  - id: loss_of_consciousness
+    action: ER
+    reason: "Pérdida de consciencia es una emergencia"
+    when:
+      any:
+        - symptom_contains: "desmayo"
+        - symptom_contains: "perdió el conocimiento"
+        - text_contains_any: ["inconsciente", "no responde", "convulsiones"]
+
+  - id: severe_allergic_reaction
+    action: ER
+    reason: "Reacción alérgica severa (anafilaxia) es una emergencia"
+    when:
+      any:
+        - symptom_contains: "garganta cerrada"
+        - symptom_contains: "no puedo tragar"
+        - text_contains_any: [
+            "anafilaxia",
+            "alergia severa",
+            "hinchazón de garganta",
+          ]
+
+  - id: low_oxygen
+    action: ER
+    reason: "Saturación de oxígeno baja es una emergencia"
+    when:
+      vitals.spo2_lt: 90
+
+  - id: suicidal_ideation
+    action: ER
+    reason: "Pensamientos suicidas requieren apoyo inmediato - Línea de la Vida: 800 911 2000"
+    when:
+      any:
+        - text_contains_any: [
+            "quiero morir",
+            "suicidarme",
+            "matarme",
+            "no quiero vivir",
+            "acabar con mi vida",
+          ]
+
+  - id: pregnancy_emergency
+    action: ER
+    reason: "Emergencia obstétrica - buscar atención inmediata"
+    when:
+      all:
+        - isPregnant: true
+        - any:
+            - symptom_contains: "sangrado vaginal"
+            - symptom_contains: "contracciones fuertes"
+            - text_contains_any: [
+                "rompí fuente",
+                "bebé no se mueve",
+                "dolor abdominal severo",
+              ]
+
+  # =====================================================
+  # URGENT - Should see doctor within 24 hours
+  # =====================================================
+  - id: high_fever
+    action: URGENT
+    reason: "Fiebre alta persistente requiere evaluación médica pronto"
+    when:
+      any:
+        - text_contains_any: [
+            "fiebre alta",
+            "fiebre de 39",
+            "fiebre de 40",
+            "39 grados",
+            "40 grados",
+          ]
+
+  - id: severe_pain
+    action: URGENT
+    reason: "Dolor severo requiere evaluación médica"
+    when:
+      any:
+        - text_contains_any: [
+            "dolor insoportable",
+            "dolor muy fuerte",
+            "dolor intenso",
+            "dolor 10/10",
+            "dolor 9/10",
+          ]
+
+  - id: infection_signs
+    action: URGENT
+    reason: "Signos de infección que requieren antibióticos"
+    when:
+      any:
+        - symptom_contains: "pus"
+        - symptom_contains: "herida infectada"
+        - text_contains_any: [
+            "herida roja",
+            "herida caliente",
+            "fiebre con herida",
+          ]
+
+  - id: persistent_vomiting
+    action: URGENT
+    reason: "Vómito persistente puede causar deshidratación"
+    when:
+      any:
+        - text_contains_any: [
+            "vomitando todo el día",
+            "no puedo retener nada",
+            "vómito con sangre",
+          ]
+
+  - id: diabetic_emergency
+    action: URGENT
+    reason: "Complicaciones diabéticas requieren atención pronta"
+    when:
+      any:
+        - text_contains_any: [
+            "azúcar muy alta",
+            "azúcar muy baja",
+            "glucosa 300",
+            "glucosa 400",
+            "hipoglucemia",
+          ]
+
+  - id: mental_health_crisis
+    action: URGENT
+    reason: "Crisis de salud mental - buscar apoyo profesional"
+    when:
+      any:
+        - text_contains_any: [
+            "crisis de ansiedad",
+            "ataque de pánico",
+            "no puedo parar de llorar",
+            "crisis nerviosa",
+          ]
+
+  # =====================================================
+  # PRIMARY - Schedule routine appointment
+  # =====================================================
+  - id: chronic_symptoms
+    action: PRIMARY
+    reason: "Síntomas crónicos deben evaluarse en consulta regular"
+    when:
+      any:
+        - text_contains_any: [
+            "desde hace semanas",
+            "desde hace meses",
+            "crónico",
+            "siempre me pasa",
+          ]
+
+  - id: mild_pain
+    action: PRIMARY
+    reason: "Dolor leve a moderado puede evaluarse en consulta regular"
+    when:
+      any:
+        - text_contains_any: [
+            "dolor leve",
+            "molestia",
+            "dolor de cabeza",
+            "dolor de espalda",
+          ]
+
+  - id: skin_issues
+    action: PRIMARY
+    reason: "Problemas de piel no urgentes para consulta dermatológica"
+    when:
+      any:
+        - text_contains_any: [
+            "sarpullido",
+            "manchas en la piel",
+            "acné",
+            "resequedad",
+          ]
+
+  - id: digestive_issues
+    action: PRIMARY
+    reason: "Problemas digestivos para evaluación gastroenterológica"
+    when:
+      any:
+        - text_contains_any: [
+            "gastritis",
+            "reflujo",
+            "estreñimiento",
+            "diarrea leve",
+          ]
+
+  # =====================================================
+  # SELFCARE - Can be managed at home
+  # =====================================================
+  - id: common_cold
+    action: SELFCARE
+    reason: "Resfriado común puede manejarse en casa con reposo y líquidos"
+    when:
+      any:
+        - text_contains_any: [
+            "resfriado",
+            "nariz tapada",
+            "estornudos",
+            "gripa leve",
+          ]
+
+  - id: minor_injuries
+    action: SELFCARE
+    reason: "Lesiones menores pueden tratarse en casa"
+    when:
+      any:
+        - text_contains_any: [
+            "raspón",
+            "cortada pequeña",
+            "golpe leve",
+            "moretón",
+          ]
+
+  - id: mild_headache
+    action: SELFCARE
+    reason: "Dolor de cabeza leve puede tratarse con analgésicos de venta libre"
+    when:
+      all:
+        - text_contains_any: ["dolor de cabeza leve", "cefalea leve"]
+        - symptom_contains: "leve"
