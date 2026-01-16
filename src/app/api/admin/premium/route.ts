@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { INDIVIDUAL_PREMIUM_FEATURES, type PremiumFeature } from '@/lib/premium-features'
 import { requireRole } from '@/lib/auth'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
     const { supabase } = await requireRole('admin')
