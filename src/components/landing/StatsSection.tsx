@@ -2,13 +2,20 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
-function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string }) {
-  const [displayValue, setDisplayValue] = useState(0)
+function AnimatedNumber({ value, suffix = '', skipAnimation = false }: { value: number; suffix?: string; skipAnimation?: boolean }) {
+  const [displayValue, setDisplayValue] = useState(skipAnimation ? value : 0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
+    // Skip animation if user prefers reduced motion
+    if (skipAnimation) {
+      setDisplayValue(value)
+      return
+    }
+
     if (isInView) {
       const duration = 2000
       const startTime = Date.now()
@@ -42,10 +49,10 @@ function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string
 }
 
 const stats = [
-  { value: 500, suffix: '+', label: 'Doctores verificados', iconType: 'doctors' },
+  { value: 500, suffix: '+', label: 'Doctores con cédula verificada', iconType: 'doctors' },
   { value: 10000, suffix: '+', label: 'Consultas realizadas', iconType: 'consultations' },
-  { value: 50, suffix: '+', label: 'Especialidades', iconType: 'specialties' },
-  { value: 98, suffix: '%', label: 'Pacientes satisfechos', iconType: 'satisfaction' },
+  { value: 50, suffix: '+', label: 'Especialidades médicas', iconType: 'specialties' },
+  { value: 98, suffix: '%', label: 'Satisfacción de pacientes', iconType: 'satisfaction' },
 ]
 
 function StatIcon({ type }: { type: string }) {
@@ -80,6 +87,8 @@ function StatIcon({ type }: { type: string }) {
 }
 
 export function StatsSection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <section className="py-20 bg-gradient-to-b from-neutral-0 to-neutral-50 relative overflow-hidden">
       {/* Background Pattern */}
@@ -96,10 +105,10 @@ export function StatsSection() {
           className="text-center mb-16"
         >
           <h2 className="section-headline text-3xl sm:text-4xl mb-4">
-            La plataforma de salud más confiable de México
+            Números que respaldan nuestra misión
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Miles de pacientes confían en nosotros para conectar con los mejores especialistas
+            Datos actualizados • Enero 2025
           </p>
         </motion.div>
 
@@ -115,7 +124,7 @@ export function StatsSection() {
                 delay: index * 0.08,
                 ease: [0, 0, 0.2, 1]
               }}
-              whileHover={{ y: -2, transition: { duration: 0.2, ease: [0, 0, 0.2, 1] } }}
+              whileHover={prefersReducedMotion ? {} : { y: -2, transition: { duration: 0.2, ease: [0, 0, 0.2, 1] } }}
               className="text-center group"
             >
               <motion.div
@@ -123,7 +132,7 @@ export function StatsSection() {
                 style={{
                   boxShadow: '0 4px 6px -1px rgba(85, 136, 255, 0.05), 0 2px 4px -2px rgba(85, 136, 255, 0.05)'
                 }}
-                whileHover={{
+                whileHover={prefersReducedMotion ? {} : {
                   scale: 1.08,
                   rotate: 3,
                   boxShadow: '0 10px 15px -3px rgba(85, 136, 255, 0.1), 0 4px 6px -4px rgba(85, 136, 255, 0.1)',
@@ -137,12 +146,15 @@ export function StatsSection() {
                 <StatIcon type={stat.iconType} />
               </motion.div>
               <div className="text-4xl sm:text-5xl font-bold gradient-text mb-2">
-                <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+                <AnimatedNumber value={stat.value} suffix={stat.suffix} skipAnimation={prefersReducedMotion} />
               </div>
               <p className="text-text-secondary font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>
+        <p className="text-center text-sm text-text-muted mt-8">
+          Estadísticas basadas en datos internos de Doctor.mx. Satisfacción medida por encuestas post-consulta.
+        </p>
       </div>
     </section>
   )

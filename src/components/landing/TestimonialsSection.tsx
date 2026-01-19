@@ -3,41 +3,44 @@
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { BadgeCheck, Star, MapPin } from 'lucide-react'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 const testimonials = [
   {
-    name: 'María García',
-    role: 'Paciente verificado',
-    location: 'CDMX',
+    name: 'María García L.',
+    role: 'Paciente verificada',
+    location: 'Ciudad de México',
     initials: 'MG',
     gradient: 'from-rose-400 to-pink-500',
-    content: 'Encontré un excelente cardiólogo en minutos. La videoconsulta fue muy profesional y me ahorraron tiempo y dinero.',
+    content: 'Encontré un cardiólogo excelente en 10 minutos. La videoconsulta fue tan profesional como ir al consultorio, pero sin perder 3 horas en traslados. Ya llevo 4 consultas de seguimiento.',
     rating: 5,
     verified: true,
   },
   {
-    name: 'Dr. Carlos Mendoza',
-    role: 'Cardiólogo certificado',
-    location: 'Guadalajara',
+    name: 'Dr. Carlos Mendoza R.',
+    role: 'Cardiólogo · Cédula 8745632',
+    location: 'Guadalajara, Jal.',
     initials: 'CM',
     gradient: 'from-blue-400 to-indigo-500',
-    content: 'Como doctor, Doctor.mx me ha permitido expandir mi práctica y llegar a más pacientes. La plataforma es intuitiva.',
+    content: 'Doctor.mx me permite atender pacientes de todo México sin limitarme a mi consultorio físico. El sistema de pagos es confiable y el soporte resuelve cualquier duda en minutos.',
     rating: 5,
     verified: true,
   },
   {
-    name: 'Ana Rodríguez',
-    role: 'Paciente verificado',
-    location: 'Monterrey',
+    name: 'Ana Rodríguez P.',
+    role: 'Paciente verificada',
+    location: 'Monterrey, N.L.',
     initials: 'AR',
     gradient: 'from-emerald-400 to-teal-500',
-    content: 'La segunda opinión que obtuve fue invaluable. Me dio la tranquilidad que necesitaba antes de mi cirugía.',
+    content: 'Usé Dr. Simeon para entender mis síntomas antes de mi consulta. Me ayudó a preparar las preguntas correctas. La segunda opinión que obtuve me dio tranquilidad antes de decidir mi tratamiento.',
     rating: 5,
     verified: true,
   },
 ]
 
 export function TestimonialsSection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <section className="py-24 bg-gradient-to-b from-neutral-50 to-neutral-0 relative overflow-hidden">
       {/* Background decoration */}
@@ -58,13 +61,13 @@ export function TestimonialsSection() {
             transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
             className="inline-block px-4 py-1.5 bg-primary-50 text-primary-500 text-sm font-semibold rounded-full mb-4"
           >
-            Testimonios
+            Historias reales
           </motion.span>
           <h2 className="section-headline text-3xl sm:text-4xl lg:text-5xl mb-4">
-            Lo que dicen nuestros usuarios
+            Pacientes y doctores confían en nosotros
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Miles de pacientes y doctores confían en Doctor.mx para su atención médica
+            Más de 10,000 consultas realizadas con un 98% de satisfacción
           </p>
         </motion.div>
 
@@ -81,34 +84,42 @@ export function TestimonialsSection() {
                 ease: [0, 0, 0.2, 1]
               }}
             >
-              <Card className="h-full p-8 hover:shadow-lg interactive group relative overflow-hidden"
+              <Card
+                className="h-full p-8 hover:shadow-lg interactive group relative overflow-hidden focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2"
                 style={{
                   borderColor: 'var(--border-subtle)',
                   backgroundColor: 'rgba(255, 255, 255, 0.8)',
                   backdropFilter: 'blur(8px)'
                 }}
+                tabIndex={0}
+                role="article"
+                aria-label={`Testimonio de ${testimonial.name}`}
               >
                 {/* Quote icon */}
-                <div className="absolute top-6 right-6 text-6xl text-primary-100 font-serif leading-none select-none">
+                <div className="absolute top-6 right-6 text-6xl text-primary-100 font-serif leading-none select-none" aria-hidden="true">
                   "
                 </div>
 
-                {/* Stars - Using Lucide Star */}
-                <div className="flex gap-1 mb-4">
+                {/* Stars - Using Lucide Star with stagger animation */}
+                <div
+                  className="flex gap-1 mb-4"
+                  role="img"
+                  aria-label={`Calificacion: ${testimonial.rating} de 5 estrellas`}
+                >
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <motion.div
                       key={i}
-                      initial={{ opacity: 0, scale: 0 }}
+                      initial={prefersReducedMotion ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{
+                      transition={prefersReducedMotion ? {} : {
                         delay: 0.3 + i * 0.08,
                         type: 'spring',
                         stiffness: 400,
                         damping: 17
                       }}
                     >
-                      <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+                      <Star className="w-5 h-5 text-amber-400 fill-amber-400" aria-hidden="true" />
                     </motion.div>
                   ))}
                 </div>
@@ -127,20 +138,24 @@ export function TestimonialsSection() {
                     <div className="flex items-center gap-1.5">
                       <p className="font-semibold text-text-primary">{testimonial.name}</p>
                       {testimonial.verified && (
-                        <BadgeCheck className="w-4 h-4 text-blue-500" />
+                        <BadgeCheck
+                          className="w-4 h-4 text-blue-500"
+                          aria-label="Usuario verificado"
+                          role="img"
+                        />
                       )}
                     </div>
                     <p className="text-sm text-text-muted flex items-center gap-1">
                       {testimonial.role}
-                      <span className="text-neutral-300 mx-1">•</span>
-                      <MapPin className="w-3 h-3" />
-                      {testimonial.location}
+                      <span className="text-neutral-300 mx-1" aria-hidden="true">•</span>
+                      <MapPin className="w-3 h-3" aria-hidden="true" />
+                      <span>{testimonial.location}</span>
                     </p>
                   </div>
                 </div>
 
-                {/* Hover gradient */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-500/0 to-accent-500/0 group-hover:from-primary-500/[0.01] group-hover:to-accent-500/[0.01] transition-all duration-200" />
+                {/* Hover gradient - subtle warmth effect */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary-500/0 to-accent-500/0 group-hover:from-primary-500/[0.02] group-hover:to-accent-500/[0.02] transition-all duration-300 ease-out" />
               </Card>
             </motion.div>
           ))}

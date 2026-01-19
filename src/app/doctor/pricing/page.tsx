@@ -39,24 +39,24 @@ const ShieldIcon = () => (
 )
 
 const FEATURES = [
-    { name: 'Perfil público visible', starter: true, pro: true, elite: true },
-    { name: 'Recibir citas de pacientes', starter: true, pro: true, elite: true },
-    { name: 'Pacientes WhatsApp/mes', starter: '30', pro: '100', elite: 'Ilimitado' },
-    { name: 'Búsqueda prioritaria', starter: 'Estándar', pro: '+20% visibilidad', elite: '+50% visibilidad' },
+    { name: 'Perfil público en Doctor.mx', starter: true, pro: true, elite: true },
+    { name: 'Recibir solicitudes de cita', starter: true, pro: true, elite: true },
+    { name: 'Notificaciones WhatsApp/mes', starter: '30', pro: '100', elite: 'Ilimitado' },
+    { name: 'Posición en búsquedas', starter: 'Estándar', pro: '+20% visibilidad', elite: '+50% visibilidad' },
     { name: 'Recordatorios SMS', starter: false, pro: true, elite: true },
-    { name: 'Clinical Copilot', starter: false, pro: true, elite: true },
-    { name: 'Consultas Copilot/mes', starter: '0', pro: '50', elite: 'Ilimitado' },
-    { name: 'Análisis de imágenes/mes', starter: '0', pro: '0', elite: '10' },
-    { name: 'Destacado en homepage', starter: false, pro: false, elite: true },
-    { name: 'Badge exclusivo', starter: false, pro: false, elite: true },
-    { name: 'Acceso API', starter: false, pro: false, elite: true },
+    { name: 'Dr. Simeon Copilot (IA)', starter: false, pro: true, elite: true },
+    { name: 'Consultas con IA/mes', starter: '0', pro: '50', elite: 'Ilimitado' },
+    { name: 'Análisis de imágenes médicas/mes', starter: '0', pro: '0', elite: '10' },
+    { name: 'Perfil destacado en inicio', starter: false, pro: false, elite: true },
+    { name: 'Insignia Elite verificada', starter: false, pro: false, elite: true },
+    { name: 'Acceso API para integraciones', starter: false, pro: false, elite: true },
     { name: 'Soporte', starter: 'Email', pro: 'Chat', elite: 'Prioritario' },
 ]
 
 const FAQS = [
     {
         question: '¿Puedo cambiar de plan en cualquier momento?',
-        answer: 'Sí, puedes upgrade o downgrade de tu plan en cualquier momento. Los cambios se aplican de forma inmediata y Stripe prorateará la diferencia en tu próxima factura.'
+        answer: 'Sí, puedes upgrade o downgrade de tu plan en cualquier momento. Los cambios se aplican de forma inmediata y tu próxima factura se ajustará automáticamente.'
     },
     {
         question: '¿Qué pasa si excedo mis límites mensuales?',
@@ -77,6 +77,14 @@ const FAQS = [
     {
         question: '¿Qué incluye el análisis de imágenes?',
         answer: 'El análisis de imágenes permite subir radiografías, ecografías, dermatología y otras imágenes médicas para obtener un análisis preliminar con IA (Solo Elite).'
+    },
+    {
+        question: '¿Qué métodos de pago aceptan?',
+        answer: 'Aceptamos tarjetas de crédito y débito (Visa, Mastercard, American Express), transferencia bancaria SPEI, y OXXO Pay.'
+    },
+    {
+        question: '¿Emiten factura fiscal (CFDI)?',
+        answer: 'Sí, emitimos CFDI automáticamente. Configura tus datos fiscales en la sección de facturación de tu perfil.'
     },
 ]
 
@@ -189,10 +197,10 @@ export default function PricingPage() {
             <div className="bg-gradient-to-b from-blue-600 to-blue-800 text-white py-20">
                 <div className="max-w-6xl mx-auto px-4 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                        Planes para Médicos
+                        Planes diseñados para médicos mexicanos
                     </h1>
                     <p className="text-xl text-blue-100 mb-8">
-                        Elige el plan que mejor se adapte a tu práctica médica
+                        Elige el plan ideal para tu práctica. Sin contratos a largo plazo.
                     </p>
                     <div className="flex items-center justify-center gap-4 text-sm flex-wrap">
                         <span className="flex items-center gap-1">
@@ -375,19 +383,19 @@ export default function PricingPage() {
                         Nuestro equipo de soporte está disponible para ayudarte a elegir el plan ideal para tu práctica médica.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a 
-                            href="mailto:soporte@doctory.mx" 
+                        <a
+                            href="mailto:doctores@doctor.mx"
                             className="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition"
                         >
                             <PhoneIcon />
-                            Contactar Ventas
+                            Agendar llamada con ventas
                         </a>
-                        <a 
-                            href="/support" 
+                        <a
+                            href="/support"
                             className="flex items-center gap-2 border border-white/30 px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition"
                         >
                             <ShieldIcon />
-                            Centro de Ayuda
+                            Ver preguntas frecuentes
                         </a>
                     </div>
                 </div>

@@ -3,14 +3,26 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Shield, CheckCircle, Star, ArrowRight } from 'lucide-react'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 export function CTASection() {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800">
-      {/* Animated background orbs - no stripes */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
+      {/* Background orbs - positioned absolutely to prevent layout shifts, respect reduced motion */}
+      <div
+        className={`absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
+        style={{ willChange: 'opacity' }}
+      />
+      <div
+        className={`absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/30 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
+        style={{ animationDelay: prefersReducedMotion ? undefined : '1s', willChange: 'opacity' }}
+      />
+      <div
+        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl ${prefersReducedMotion ? '' : 'animate-pulse'}`}
+        style={{ animationDelay: prefersReducedMotion ? undefined : '0.5s', willChange: 'opacity' }}
+      />
 
       {/* Subtle plus pattern - medical theme */}
       <div 
@@ -21,7 +33,7 @@ export function CTASection() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Glassmorphism Card */}
+        {/* Glassmorphism Card with subtle hover effect */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,7 +41,14 @@ export function CTASection() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 sm:p-12 shadow-2xl">
+          <motion.div
+            className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 p-8 sm:p-12 shadow-2xl transition-colors duration-300"
+            whileHover={prefersReducedMotion ? {} : {
+              backgroundColor: 'rgba(255, 255, 255, 0.12)',
+              borderColor: 'rgba(255, 255, 255, 0.25)',
+              transition: { duration: 0.3 }
+            }}
+          >
             {/* Live badge */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -42,48 +61,57 @@ export function CTASection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
               </span>
-              +100 doctores disponibles ahora
+              Mas de 100 especialistas en linea ahora
             </motion.div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-              Comienza a cuidar tu salud
-              <span className="block text-blue-200">hoy mismo</span>
+              Tu salud merece
+              <span className="block text-blue-200">atencion inmediata</span>
             </h2>
 
             <p className="text-white/80 text-lg mb-8">
-              Únete a miles de pacientes que ya disfrutan de atención médica de calidad
+              Mas de 10,000 consultas realizadas. Unete a los mexicanos que ya cuidan su salud con Doctor.mx.
             </p>
 
             {/* Single dominant CTA */}
-            <Link href="/auth/register">
+            <Link href="/auth/register" className="block">
               <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full sm:w-auto px-10 py-4 bg-white text-blue-600 font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center gap-2"
+                whileHover={prefersReducedMotion ? {} : { scale: 1.02 }}
+                whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 min-h-[48px] bg-white text-blue-600 font-bold rounded-xl shadow-xl hover:shadow-2xl hover:shadow-white/20 transition-all flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
+                aria-label="Comenzar consulta gratuita - Registrate ahora"
               >
-                Crear cuenta gratis
-                <ArrowRight className="w-5 h-5" />
+                Comenzar consulta gratuita
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </motion.button>
             </Link>
 
+            {/* Secondary link for doctors */}
+            <Link
+              href="/for-doctors"
+              className="block mt-4 text-white/80 hover:text-white text-sm underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-indigo-700 rounded py-2 min-h-[44px] flex items-center justify-center sm:inline-block sm:min-h-0 sm:py-0"
+            >
+              Eres medico? Conoce como crecer tu practica
+            </Link>
+
             {/* Trust badges */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-white/60 text-sm">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 mt-8 text-white/60 text-sm">
               <span className="flex items-center gap-1.5">
-                <Shield className="w-4 h-4" /> SSL Seguro
+                <Shield className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Datos encriptados
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle className="w-4 h-4" /> Sin costo
+                <CheckCircle className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Sin tarjeta requerida
               </span>
               <span className="flex items-center gap-1.5">
-                <Star className="w-4 h-4 fill-current" /> 4.9 estrellas
+                <Star className="w-4 h-4 fill-current flex-shrink-0" aria-hidden="true" /> 4.9 de 2,500+ resenas
               </span>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Additional trust text */}
         <p className="text-center text-white/50 text-sm mt-8">
-          Sin tarjeta de crédito • Consulta gratis incluida • Cancela cuando quieras
+          Primera consulta gratis - Sin compromiso - Cancela cuando quieras
         </p>
       </div>
     </section>

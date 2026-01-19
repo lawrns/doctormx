@@ -21,41 +21,41 @@ import {
 const benefits = [
   {
     icon: Users,
-    title: 'Alcanza más pacientes',
-    description: 'Conecta con miles de pacientes que buscan atención médica de calidad en México.',
+    title: 'Pacientes de todo Mexico',
+    description: 'Tu perfil visible para miles de pacientes que buscan especialistas como tu. Verificacion de cedula incluida.',
   },
   {
     icon: Calendar,
-    title: 'Agenda inteligente',
-    description: 'Sistema de citas automatizado que se sincroniza con tu calendario existente.',
+    title: 'Agenda que trabaja por ti',
+    description: 'Sincronizacion con Google Calendar. Recordatorios automaticos. Cero citas perdidas.',
   },
   {
     icon: Video,
-    title: 'Videoconsultas HD',
-    description: 'Plataforma de telemedicina segura y fácil de usar para consultas remotas.',
+    title: 'Telemedicina de primer nivel',
+    description: 'Video HD cifrado, recetas digitales validas, y expediente clinico integrado.',
   },
   {
     icon: CreditCard,
-    title: 'Pagos seguros',
-    description: 'Recibe pagos directamente. Sin complicaciones, sin demoras.',
+    title: 'Cobra sin perseguir',
+    description: 'Pagos directos a tu cuenta en 48 horas. Tarjetas, SPEI, y OXXO Pay.',
   },
   {
     icon: TrendingUp,
-    title: 'Crece tu práctica',
-    description: 'Herramientas de marketing y análisis para hacer crecer tu consultorio.',
+    title: 'Analitica para crecer',
+    description: 'Dashboard con metricas de tu practica: pacientes nuevos, retencion, ingresos mensuales.',
   },
   {
     icon: Shield,
-    title: 'Respaldo legal',
-    description: 'Cumplimiento con normativas de salud y protección de datos.',
+    title: 'Cumplimiento garantizado',
+    description: 'Plataforma alineada con NOM y LFPDPPP. Tus datos y los de tus pacientes, protegidos.',
   },
 ]
 
 const stats = [
   { value: '500+', label: 'Doctores activos' },
-  { value: '50,000+', label: 'Consultas realizadas' },
-  { value: '98%', label: 'Satisfacción' },
-  { value: '24/7', label: 'Soporte' },
+  { value: '10,000+', label: 'Consultas realizadas' },
+  { value: '98%', label: 'Satisfaccion' },
+  { value: '48h', label: 'Tiempo de pago' },
 ]
 
 const testimonials = [
@@ -91,17 +91,16 @@ export default function ForDoctorsPage() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
                 <Star className="w-4 h-4 fill-blue-500" />
-                Únete a +500 doctores en México
+                Mas de 500 medicos ya crecen con nosotros
               </span>
-              
+
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Haz crecer tu práctica médica con{' '}
-                <span className="text-blue-600">Doctor.mx</span>
+                Mas pacientes. Menos administracion.{' '}
+                <span className="text-blue-600">Crece con Doctor.mx</span>
               </h1>
-              
+
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                La plataforma de telemedicina #1 en México. Conecta con pacientes, 
-                gestiona citas y recibe pagos de forma segura.
+                La plataforma de telemedicina #1 en Mexico. Conecta con pacientes de todo el pais, gestiona citas automaticamente, y recibe pagos seguros — sin complicaciones tecnicas.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -265,10 +264,10 @@ export default function ForDoctorsPage() {
       <section className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Comienza a crecer tu práctica hoy
+            Empieza a crecer hoy
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Únete a más de 500 doctores que ya confían en Doctor.mx
+            Crea tu perfil gratuito y comienza a recibir pacientes esta semana
           </p>
           <Link href="/auth/register?role=doctor">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-10 py-6">
@@ -277,7 +276,7 @@ export default function ForDoctorsPage() {
             </Button>
           </Link>
           <p className="text-blue-200 text-sm mt-6">
-            Sin tarjeta de crédito • Configuración en 5 minutos
+            Registro gratuito - Perfil listo en 10 minutos - Sin cuota mensual obligatoria
           </p>
         </div>
       </section>
