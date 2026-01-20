@@ -296,6 +296,20 @@ body {
   }
 }
 
+/* Pulsing glow ring for primary CTA buttons */
+@keyframes pulse-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
 .active-press:active {
   transform: scale(0.99);
 }

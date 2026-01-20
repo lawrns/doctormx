@@ -46,7 +46,7 @@ export function HeroSection() {
       {/* Warm Doctronic Background */}
       <div className="absolute inset-0 -z-10 bg-[#fdfaf6]">
         <div className="absolute inset-0 bg-gradient-to-b from-[#fdfaf6] via-[#fdfaf6] to-[#f4f1ed]" />
-        
+
         {/* Animated gradient orbs - respect reduced motion */}
         <motion.div
           className="absolute top-[10%] left-[5%] w-[600px] h-[600px] bg-gradient-to-br from-primary-200/40 to-primary-100/20 rounded-full blur-3xl"
@@ -73,8 +73,8 @@ export function HeroSection() {
             {/* Dr. Simeon Photo */}
             <div className="relative">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                <Image 
-                  src="/images/simeon.png" 
+                <Image
+                  src="/images/simeon.png"
                   alt="Dr. Simeon - Tu asistente médico IA"
                   width={80}
                   height={80}
@@ -91,7 +91,7 @@ export function HeroSection() {
                 <span className="w-2 h-2 bg-white rounded-full animate-pulse" aria-hidden="true" />
               </span>
             </div>
-            
+
             {/* Live status badge */}
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full mb-1">
@@ -158,7 +158,7 @@ export function HeroSection() {
           </span>
         </motion.div>
 
-        {/* CTA Buttons - Single Dominant Action (Fixed per analysis) */}
+        {/* CTA Buttons - Single Dominant Action with Pulsing Glow */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 w-full"
@@ -170,6 +170,9 @@ export function HeroSection() {
               className="group relative w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 min-h-[48px] bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-base sm:text-lg font-semibold rounded-2xl shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600"
               aria-label="Hablar con Dr. Simeon gratis - Iniciar consulta de orientacion medica"
             >
+              {/* Pulsing glow ring */}
+              <span className="absolute inset-0 rounded-2xl animate-pulse-ring" />
+
               <span className="relative z-10 flex items-center justify-center gap-3">
                 Hablar con Dr. Simeon — Gratis
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -207,20 +210,21 @@ export function HeroSection() {
           </Link>
         </motion.div>
 
-        {/* Trust Indicators - More Prominent */}
+        {/* Trust Indicators - Visual Grouping with Container */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm mb-4"
+          className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-neutral-200/50 shadow-sm"
         >
           {[
             { icon: BadgeCheck, text: 'Doctores con cedula verificada', value: '500+' },
             { icon: Users, text: 'Consultas realizadas', value: '10,000+' },
             { icon: Clock, text: 'Disponible', value: '24/7' },
           ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-text-secondary">
+            <div key={i} className="flex items-center gap-2 text-text-secondary text-sm">
+              {i > 0 && <div className="hidden sm:block w-px h-6 bg-neutral-300/50 -ml-2 mr-2" />}
               <item.icon className="w-5 h-5 text-primary-500 flex-shrink-0" aria-hidden="true" />
               <span className="font-semibold text-text-primary">{item.value}</span>
-              <span className="whitespace-nowrap">{item.text}</span>
+              <span className="hidden sm:inline whitespace-nowrap">{item.text}</span>
             </div>
           ))}
         </motion.div>
@@ -228,7 +232,7 @@ export function HeroSection() {
         {/* Compliance Note */}
         <motion.p
           variants={itemVariants}
-          className="text-xs text-text-muted max-w-md mx-auto"
+          className="text-xs text-text-muted max-w-md mx-auto mt-4"
         >
           Servicio de orientacion medica. No sustituye la consulta presencial.
         </motion.p>
@@ -244,8 +248,8 @@ export function HeroSection() {
         <div className="bg-white rounded-2xl p-4 shadow-2xl border border-neutral-100 w-72">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-100">
-              <Image 
-                src="/images/simeon.png" 
+              <Image
+                src="/images/simeon.png"
                 alt="Dr. Simeon"
                 width={48}
                 height={48}

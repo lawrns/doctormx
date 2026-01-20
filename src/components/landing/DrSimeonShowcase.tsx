@@ -7,29 +7,44 @@ import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CheckCircle, Clock, AlertTriangle, Stethoscope } from 'lucide-react'
 
-// Dr. Simeon Avatar Component - Now with real face!
+// Dr. Simeon Avatar Component - Now with real face and gradient ring!
 function DrSimeonAvatar({ size = 'default' }: { size?: 'default' | 'large' }) {
   const sizeClasses = size === 'large' ? 'h-14 w-14' : 'h-10 w-10'
-  
+  const ringSize = size === 'large' ? 'h-[60px] w-[60px]' : 'h-[44px] w-[44px]'
+
   return (
-    <motion.div
-      className={`relative ${sizeClasses} rounded-full overflow-hidden shadow-lg border-2 border-white`}
-      animate={{
-        scale: [1, 1.02, 1],
-      }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
-    >
-      <Image
-        src="/images/simeon.png"
-        alt="Dr. Simeon"
-        fill
-        className="object-cover"
+    <div className="relative">
+      {/* Animated gradient ring */}
+      <motion.div
+        className={`absolute -inset-[3px] ${ringSize} rounded-full bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 bg-[length:200%_100%]`}
+        animate={{
+          backgroundPosition: ['0% center', '200% center'],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: 'linear',
+        }}
       />
-    </motion.div>
+      <motion.div
+        className={`relative ${sizeClasses} rounded-full overflow-hidden shadow-lg border-2 border-white`}
+        animate={{
+          scale: [1, 1.02, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+      >
+        <Image
+          src="/images/simeon.png"
+          alt="Dr. Simeon"
+          fill
+          className="object-cover"
+        />
+      </motion.div>
+    </div>
   )
 }
 
