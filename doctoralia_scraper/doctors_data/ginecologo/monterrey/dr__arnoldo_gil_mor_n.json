@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arnoldo Gil Morán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/02ac64/02ac64ea478cdba3f9cd9fa09831982a_220_square.jpg",
+  "about": "El Dr. Arnoldo Gil es egresado de la carrera de Médico Cirujano Partero por la Facultad de Medicina de la Universidad Autónoma de Nuevo León. Realizó la especialidad en Ginecología y Obstetricia en el Programa Multicéntrico de Especialidades Médicas del Tecnológico de Monterrey. Posteriormente concluyó la subespecialidad en Biología de la Reproducción Humana en el Centro de Fertilidad IECH con aval de la Universidad Nacional Autónoma de México. Está certificado por el Consejo Mexicano de Ginecología y Obstetricia, y actualmente ejerce como profesor de cátedra en ciencias básicas médicas en el Tecnológico de Monterrey.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arnoldo-gil-moran/ginecologo/monterrey#address-id=1201&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:37.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__arnoldo_gil_mor_n.webp"
+}

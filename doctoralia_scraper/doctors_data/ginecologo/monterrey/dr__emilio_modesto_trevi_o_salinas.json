@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Emilio Modesto Treviño Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Benito Juarez 302 Pte,"
+    },
+    {
+      "full": "Carr. Nacional 6501,"
+    },
+    {
+      "full": "Av. Fco. I. Madero Esq. Gonzalitos S/N,"
+    },
+    {
+      "full": "Benito Juarez 302 Pte,"
+    },
+    {
+      "full": "Carr. Nacional 6501,"
+    },
+    {
+      "full": "Av. Fco. I. Madero Esq. Gonzalitos S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emilio-modesto-trevino-salinas/ginecologo/guadalupe#address-id=232000&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:46.827Z",
+  "localPhotoPath": null
+}

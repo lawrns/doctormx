@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Martha Alicia Ramírez Garnica",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Sauzales #222, Centro Comercial Pabellón Cuemanco,"
+    },
+    {
+      "full": "Avenida Sauzales #222, Centro Comercial Pabellón Cuemanco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-alicia-ramirez-garnica/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:59:59.188Z",
+  "localPhotoPath": null
+}

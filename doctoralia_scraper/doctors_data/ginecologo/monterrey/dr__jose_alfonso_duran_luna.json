@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Alfonso Duran Luna",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3705b/d3705b8559047be760657ee707a478c1_220_square.jpg",
+  "about": "Medico especialista en Ginecologoa y Obstetricia Con experiencia como Gineco-Obstetra, en el ambito Publico y privado Jefe de la division de Ginecologia y obstetricia Director del Hospital Matero-Infantil de 2015-2021 Actualmente en la Medicina Particular en Doctors Hospital Auna en Galerias MTY",
+  "addresses": [
+    {
+      "full": "Ecuador 2331 cons 809 colonia balcones de galerias ,"
+    },
+    {
+      "full": "Ecuador 2331 cons 809 colonia balcones de galerias ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfonso-duran-luna-2/ginecologo/nuevo-leon#address-id=535451&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:43.580Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jose_alfonso_duran_luna.webp"
+}

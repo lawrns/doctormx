@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Virginia Cortés Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 145,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/976365/976365f13afbade59a020b82fcbc291d_220_square.jpg",
+  "about": "Egresada UNAM, Médico Cirujano. Especialista en Ginecología y Obstetricia. Egresada de BUAP. Subespecialista en Urología Ginecológica. Egresada de UNAM . Certificada por Consejo Mexicano de Ginecología y Obstetricia. Certificado en tramite por Consejo Mexicano como subespecialista en Urología Ginecológica. Contamos con el equipamiento necesario en el consultorio para poder brindar una consulta integral.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de prolapso uretral y carúncula uretral",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/virginia-cortes-uribe/ginecologo/cuauhtemoc2#address-id=377945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:20.366Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__virginia_cort_s_uribe.webp"
+}

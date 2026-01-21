@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Tulio Héctor Moreno Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d312f304/d312f304-5a48-4e17-86ba-c31a7f1bf3a1_small_square.jpg",
+  "about": "Soy Ginecólogo y Obstetra, egresado del IMSS HGO CMO hace 42 años, dedicado a la medicina privada desde hace 40 años. Mi prioridad es la atención del embarazo de evolución normal o complicado y su resolución, ya se Parto o Cesárea.La atención ginecológica, tanto preventiva, como curativa forma parte de mi practica diaria.Me auxilio en la Colposcopia, y Ecosonografía, como parte diagnostica, para el tratamiento adecuado de la enfermedad encontrada, ya sea para tratamiento medico o quirúrgico",
+  "addresses": [
+    {
+      "full": "Calle Juárez 195,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tulio-hector-moreno-vargas/ginecologo/san-pedro-tlaquepaque",
+  "scrapedAt": "2026-01-21T03:22:39.638Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__tulio_h_ctor_moreno_vargas.webp"
+}

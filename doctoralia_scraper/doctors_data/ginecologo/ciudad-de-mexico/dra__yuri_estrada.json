@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yuri Estrada",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "20 años de experiencia en el Hospital de Ginecoobstetricia número 4 del IMSS.",
+  "addresses": [
+    {
+      "full": "Tizimin 191. Héroes de Padierna,"
+    },
+    {
+      "full": "Tizimin 191. Héroes de Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $488"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $488"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $488"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $488"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $488"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yuri-estrada/ginecologo/tlalpan#address-id=444443&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:23.898Z",
+  "localPhotoPath": null
+}

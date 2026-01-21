@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Vianey Ríos Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be392d/be392d07b0ba2f267d2f7aff04dd504a_220_square.jpg",
+  "about": "Comprometida con mis pacientes, porque ustedes son mi motivo y centro de mi actividad diaria. Mi objetivo, es que cada paciente reciba la atención precisa en el ámbito de la salud. Cuidar de las personas no sólo tratando enfermedades, sino atendiendo también la prevención, los hábitos de vida y su bienestar emocional. Mi propuesta, que recibas una atención excelente con la máxima calidad asistencial y la mejor accesibilidad.",
+  "addresses": [
+    {
+      "full": "Av. División del Norte. 3395, El Rosario, Coyoacán,"
+    },
+    {
+      "full": "Av. División del Norte. 3395, El Rosario, Coyoacán,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vianey-rios-cruz/ginecologo/ciudad-de-mexico#address-id=361863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:51.045Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vianey_r_os_cruz.webp"
+}

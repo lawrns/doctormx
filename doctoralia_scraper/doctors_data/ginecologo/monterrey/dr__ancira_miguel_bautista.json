@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ancira Miguel Bautista",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Andes 2720,"
+    },
+    {
+      "full": "Calle Andes 2720,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ancira-miguel-bautista/ginecologo/monterrey#address-id=57913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:54.536Z",
+  "localPhotoPath": null
+}

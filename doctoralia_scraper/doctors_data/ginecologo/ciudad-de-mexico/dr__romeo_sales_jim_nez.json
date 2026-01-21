@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Romeo Sales Jiménez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5d378e/5d378e212d7c648b348163077a913328_220_square.jpg",
+  "about": "Egresado de la Universidad Popular Autónoma de Puebla. Especialidad en Ginecología y Obstetricia por la Universidad Nacional Autónoma de México y por el Hospital General de México “Dr. Eduardo Liceaga”. Alta especialidad en Oncología por la Universidad Nacional Autónoma de México y por el Hospital General de México “Dr. Eduardo Liceaga”.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Ángel de Quevedo 1144,"
+    },
+    {
+      "full": "Calz. de la Viga 1174,"
+    },
+    {
+      "full": "Avenida Patriotismo 671,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Tumores mamarios",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/romeo-sales-jimenez/ginecologo-ginecologo-oncologico/iztapalapa#address-id=437015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:50.858Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__romeo_sales_jim_nez.webp"
+}

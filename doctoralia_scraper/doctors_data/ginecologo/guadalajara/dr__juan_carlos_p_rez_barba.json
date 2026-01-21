@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Pérez Barba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f75a6/6f75a6f7c17b143b4521650b337558cd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3422,"
+    },
+    {
+      "full": "Tarascos 3422,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-perez-barba/ginecologo/guadalajara#address-id=91637&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:21.794Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_carlos_p_rez_barba.webp"
+}

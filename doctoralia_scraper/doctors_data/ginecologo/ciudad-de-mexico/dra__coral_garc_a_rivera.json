@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Coral García Rivera",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f991d46e/f991d46e-adef-4596-94ea-7c98286c1b47_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Anillo Perif. 3332,"
+    },
+    {
+      "full": "Anillo Perif. 3332,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/coral-garcia-rivera/ginecologo/ciudad-de-mexico#address-id=541224&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:58.852Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__coral_garc_a_rivera.webp"
+}

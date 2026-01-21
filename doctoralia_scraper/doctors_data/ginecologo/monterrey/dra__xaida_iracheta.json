@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Xaida Iracheta",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/52505f95/52505f95-cdae-4ef9-8862-e338c0981451_small_square.jpg",
+  "about": "Red CAM Hospital Ave. Paseo de los Leones No 602, Plaza las Villas, Col Cumbres 2do sector, Monterrey NL Mexico",
+  "addresses": [
+    {
+      "full": "AV. PASEO DE LOS LEONES N°602,"
+    },
+    {
+      "full": "AV. PASEO DE LOS LEONES N°602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/xaida-iracheta/ginecologo/nuevo-leon#address-id=592162&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:29.169Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__xaida_iracheta.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Karen Pinto Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f54756/f54756c796a3efad02089d2d48f51307_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pablo Moncayo 117, Colinas de San Jerónimo,"
+    },
+    {
+      "full": "Av Paseo de los Leones 602,"
+    },
+    {
+      "full": "Pablo Moncayo 117, Colinas de San Jerónimo,"
+    },
+    {
+      "full": "Av Paseo de los Leones 602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-pinto-garcia/ginecologo/nuevo-leon#address-id=433437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:16.485Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/karen_pinto_garcia.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Roberto Antonio Cordova Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 789,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c36204/c36204892d47b7db783cdb2fc8cb6fa2_220_square.jpg",
+  "about": "Con más de 34 años de experiencia, capacitación y actualización continua brindo atención en: esterilidad, menopausia, embarazo de alto riesgo, colposcopia, cirugía ginecológica entre otras",
+  "addresses": [
+    {
+      "full": "Pino Suarez 640,"
+    },
+    {
+      "full": "Pino Suarez 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-antonio-cordova-gonzalez/ginecologo/nuevo-leon#address-id=70983&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:13.622Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_antonio_cordova_gonzalez.webp"
+}

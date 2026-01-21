@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Ángel German Heredia Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/3ba83ab8/3ba83ab8-d390-4138-b1b7-f99a50ecf3d4_large.jpg",
+  "about": "Hola! mucho gusto en saludarle. Me consideran un Profesional de la Salud comprometido con la Salud Femenina, competente y esmerado en el manejo cauto, respetuoso y ético de sus pacientes así como convencido con el hecho de que una paciente informada es una mejor paciente porque entiende el porqué de las acciones para recuperar o en su caso conservar su salud. De la misma manera promuevo e incentivo a que acudan acompañadas con alguien de su confianza si así lo consideran conveniente o deseable además de poner a su disposición diversos medios de comunicación directa para que dudas o preguntas posteriores a la consulta puedan ser aclaradas en caso de que no lo hayan sido en el transcurso de la mismo, o que surgiera una pregunta posterior. ¡Hasta pronto!",
+  "addresses": [
+    {
+      "full": "Monterrey 70, Roma Nte., Cuauhtémoc, 06500 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Doctor, Av. Carlos Canseco 6050,"
+    },
+    {
+      "full": "Felipe Neri 3, Emiliano Zapata, 62744 Cuautla, Mor.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $500"
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-german-heredia-caballero-3/ginecologo/sinaloa#address-id=565841&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:37.340Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr___ngel_german_heredia_caballero.webp"
+}

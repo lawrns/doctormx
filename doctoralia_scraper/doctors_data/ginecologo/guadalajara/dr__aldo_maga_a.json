@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Magaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bad1dc4a/bad1dc4a-b1c2-4a14-a48c-b3d75af2383d_small_square.jpg",
+  "about": "Con gusto te atenderé si buscas chequeos de rutina, control de embarazo, verrugas genitales y Virus de papiloma, menopausia y terapia de reemplazo hormonal, aplicación de Pellets, anticonceptivos, irregularidades menstruales u ovario poliquistico, miomas, fibrosis o nódulos en mama, infecciones vaginales o urinarias, incontinencia de orina y más! Un placer explicarte, que te vayas sin dudas y con el tratamiento correcto!",
+  "addresses": [
+    {
+      "full": "Calle Islote #2930; col. Bosques de la Victoria,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-magana/ginecologo/guadalajara#address-id=403303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:51.529Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__aldo_maga_a.webp"
+}

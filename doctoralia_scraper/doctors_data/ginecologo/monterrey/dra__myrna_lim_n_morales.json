@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Myrna Limón Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/337c9f/337c9ff4febfcbef766107e4594c8e42_220_square.jpg",
+  "about": "Nos encanta ayudar a las mujeres en todas las etapas de la vida , nuestra misión es que te sientas segura y tranquila . Tenemos una gran experiencia en embarazo de alto riesgo y asesoría preconcepcional , asì como en el manejo de aborto habitual .",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/myrna-limon-morales/ginecologo/nuevo-leon#address-id=23820&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:15.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__myrna_lim_n_morales.webp"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Rogelio Montemayor Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 102,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/16b82e/16b82e801a6f2c7e1d12dd3dc6935766_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828 (Consultorio 106),"
+    },
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828 - Poniente Col Obispado - Consultorio 404 ,"
+    },
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828,"
+    },
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828 (Consultorio 106),"
+    },
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828 - Poniente Col Obispado - Consultorio 404 ,"
+    },
+    {
+      "full": "Centro Médico de la Mujer - Av Hidalgo 1828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rogelio-montemayor-garza-2/ginecologo/nuevo-leon#address-id=582997&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:55.609Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__rogelio_montemayor_garza.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Alejandro Kumul Baak",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5cf48e/5cf48eb97ed08fa3e14a0ddb3f29d763_220_square.jpg",
+  "about": "Médico Militar con especialidad en Ginecología, Obstetricia y Biología de la Reproducción Humana. Adscrito al servicio de Infertilidad y Reproducción Asistida del Hospital Militar de Especialidades de la Mujer, con formación en el Instituto Nacional de Perinatología. Especialista en el estudio de las causas que provocan dificultad para lograr el embarazo. Experto en tratamientos de infertilidad de baja y alta complejidad (inseminación intrauterina y fertilización in vitro). Experto en el estudio y manejo de mujeres con abortos recurrentes, estudio y manejo de las mujeres con Síndrome de Ovario Poliquístico, trastornos tiroideos y alteraciones de la prolactina. Experto en el estudio y manejo del Climaterio, Menopausia y Osteoporosis. Tratamiento del sangrado uterino disfuncional. Experto en los métodos de Planificación familiar. Cirugía ginecológica abierta y laparoscópica. Atención Prenatal y Obstétrica (Parto humanizado).",
+  "addresses": [
+    {
+      "full": "Av.Gustavo Baz No. 177, colonia Hacienda Echegaray. Naucalpan de Juárez, Estado de México, CP 53300,"
+    },
+    {
+      "full": "Av.Gustavo Baz No. 177, colonia Hacienda Echegaray. Naucalpan de Juárez, Estado de México, CP 53300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-alejandro-kumul-baak/ginecologo/naucalpan-de-juarez2#address-id=27674&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:40.691Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_alejandro_kumul_baak.webp"
+}

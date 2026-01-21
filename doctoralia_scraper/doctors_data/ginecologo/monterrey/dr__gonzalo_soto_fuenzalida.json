@@ -1,0 +1,69 @@
+{
+  "name": "Dr. Gonzalo Soto Fuenzalida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 58,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c7824/9c78243b837a7ada05db31bef1e26590_220_square.jpg",
+  "about": "¿Te hiciste el Papanicolaou y tus resultados salieron anormales? Cuando tu médico dice que el resultado de la prueba es anormal, se refiere a que se encontraron algunas células en el cuello uterino que no están dentro del margen de lo habitual. En la mayoría de los casos, los cambios anormales en las células son ocasionados por algunos tipos de virus del papiloma humano (VPH). El VPH es una infección de transmisión sexual. Algunos tipos de VPH se han relacionado con el cáncer de cuello uterino, por eso es tan importante agendar en nuestras revisiones el Papanicolaou con un especialista. Recuerda, más vale prevenir.Cuide su salud... Ante una anormalidad, agenda para una COLPOSCOPIA Brindamos el servicio de Check Up ginecológico más completo, incluyendo Papanicolaou, Ultrasonido pélvico, Examen rápido de orina, Eploración de mama. Nuestro objetivo es la prevención, y la detección temprana de patologías para ofrecer tratamiento a tiempo. Dentro de nuestra misión como prevención, disponemos para nuestras pacientes y sus familias de todas las vacunas de la cartilla nacional de vacunación. Somos expertos en:. Check Up de la Mujer Chequeo anual de la paciente sana Papanicolaou (Citología cervical) Ultrasonido Pélvico Exploración de mamaExamen de orinaConsulta Cuidados del Embarazo Brindamos atención especializada del embarazo, en búsqueda de los mejores resultados al nacimiento Ultrasonido Genético Ultrasonido Anatómico Parto humanizado Ultrasonido 3D, 4D Colposcopía Experto en Virus del Papiloma Humano Vacuna para VPH Tratamiento de lesiones uterinas Ginecología y Obstetricia, Tecnológico de Monterrey Certificado por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Ave Morones Prieto 3000,"
+    },
+    {
+      "full": "Batallón San Patricio 112,"
+    },
+    {
+      "full": "I. Morones Prieto,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "TRATAMIENTO DE INCONTINENCIA URINARIA CON LASER CO2",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Drenaje de absceso glandula de Bartholin",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-soto-fuenzalida/ginecologo/nuevo-leon#address-id=2252&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:57.674Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gonzalo_soto_fuenzalida.webp"
+}

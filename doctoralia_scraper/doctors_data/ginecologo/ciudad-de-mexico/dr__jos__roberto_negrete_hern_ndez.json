@@ -1,0 +1,89 @@
+{
+  "name": "Dr. José Roberto Negrete Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 278,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/149e61/149e61c220b4470b2c445601be5ec3c1.jpg",
+  "about": "El doctor Negrete es Ginecólogo Obstetra certificado y Sub especialista en Medicina materno fetal, atiende a sus pacientes en su consultorio del Hospital H+, Torre 3, consultorio 504. El doctor esta enfocado en dar una adecuada y oportuna atención dirigida a la paciente y su bebé, para así tener su colaboración para las actividades que se requieran en la práctica clínica. El doctor Negrete está comprometido con la salud de sus pacientes se encuentra siempre actualizándose para brindarles la mejor atención tanto a la madre como al bebé en desarrollo por lo que se ha capacitado con los siguientes cursos: Institución: Asociación Mexicana de Medicina de la Reproducción A.C. Nombre del curso: El impacto de la programación materno-fetal neonatal Institución: Fundación Internacional de Medicina Materno Fetal. Nombre del curso: Fellow en Cardiología fetal - Ecocardiografía Fetal Avanzada Institución: Fundación Internacional de Medicina Materno Fetal. Nombre del curso: PMC Training: Diagnóstico prenatal de anomalías congénitas – 100 anomalías Hands on Institución: Medicina Fetal México. Nombre del curso: Curso de ecografía morfológica",
+  "addresses": [
+    {
+      "full": "Calle Privada Ignacio Zaragoza 16,"
+    },
+    {
+      "full": "Mier y Pesado 222, código 2, Col del Valle Nte, Benito Juárez, 03103 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "CALZADA DE LAS BOMBAS 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $5,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,650"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-roberto-negrete-hernandez-2/ginecologo/santiago-de-queretaro#address-id=437812&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:28.032Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__roberto_negrete_hern_ndez.webp"
+}

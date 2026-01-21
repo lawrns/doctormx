@@ -1,0 +1,25 @@
+{
+  "name": "Jose Alfredo Murguia Galvan",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 10 131,"
+    },
+    {
+      "full": "C. 10 131,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfredo-murguia-galvan/ginecologo/zapopan#address-id=212664&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:21.509Z",
+  "localPhotoPath": null
+}

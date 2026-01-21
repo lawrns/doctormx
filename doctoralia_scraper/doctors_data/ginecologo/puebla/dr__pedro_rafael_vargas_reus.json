@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Pedro Rafael Vargas Reus",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/23df1fba/23df1fba-9de7-47dd-8d98-3afe2eec81ac_small_square.jpg",
+  "about": "Dr. Pedro Rafael Vargas ReusGinecoobstetra | Más de 35 años de experienciaSoy médico ginecoobstetra con más de 35 años de trayectoria, y a lo largo de mi práctica me he distinguido por integrar la experiencia clínica, la visión hospitalaria y un trato humano, cercano y respetuoso hacia cada paciente.Durante mi carrera he participado tanto en la atención directa de pacientes como en la coordinación y gestión médica hospitalaria, lo que me ha permitido desarrollar un criterio clínico sólido y una comprensión integral de la atención gineco-obstétrica, especialmente en situaciones complejas del embarazo.Mi práctica se caracteriza por la calma en la toma de decisiones, el acompañamiento continuo de la paciente y un enfoque centrado en la seguridad, la confianza y la prevención, cualidades que he fortalecido a lo largo de décadas de experiencia médica.Actualmente brindo consulta ginecológica como parte del equipo médico del Centro Médico Orizabeño, dentro de un entorno médico integral y actualizado, donde combino una experiencia sólida con una atención moderna y organizada.Soy egresado del Hospital de la Mujer de la Ciudad de México.Orizaba, Veracruz",
+  "addresses": [
+    {
+      "full": "Oriente 3 714,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,350"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-rafael-vargas-reus/ginecologo/veracruz#address-id=618764&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:21.449Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__pedro_rafael_vargas_reus.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jose Guadalupe Andrade Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f70a8/5f70a81e9b4f00e1a5f413ac0256899c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pino Suarez 640 Norte,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Pino Suarez 640 Norte,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-guadalupe-andrade-zamora/ginecologo/monterrey#address-id=19826&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:08.885Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jose_guadalupe_andrade_zamora.webp"
+}

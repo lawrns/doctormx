@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Roxana Judith Torres Zapata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a17b9b/a17b9b4a49731c5b8091750ffb7fd1c4_220_square.jpg",
+  "about": "Mujer proactiva, madre y una hija amorosa dentro de una familia del área medica e humanista. Profesionista multidisciplinaria e inclusiva de alto nivel que se ha destacado por su trato, certeza y su basta experiencia en diversos casos difíciles y complejos. De mujer a mujer, ha sido en numerosos caso una sabia guía de salud con profesionalismo y empatía Ha tenido el privilegio de ser el puente de luz y conocimiento entre esa pequeña alma y esos corazones que con mucha fe y esperanza perseveran para cumplir con una entrega total de amor. Siéntase con la confianza de encontrar la respuesta y el acompañamiento profesional en su salud reproductiva.",
+  "addresses": [
+    {
+      "full": "Calle Miguel Hidalgo 1828 pte (Ginequito),"
+    },
+    {
+      "full": "Calle Miguel Hidalgo 1828 pte (Ginequito),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roxana-judith-torres-zapata/ginecologo/monterrey#address-id=103290&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:22.275Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__roxana_judith_torres_zapata.webp"
+}

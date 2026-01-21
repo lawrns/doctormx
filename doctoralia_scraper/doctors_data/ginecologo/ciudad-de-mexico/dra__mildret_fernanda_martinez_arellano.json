@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mildret Fernanda Martinez Arellano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 237,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e0e844/e0e8446331d9f5bdde1584a9fe139009_220_square.jpg",
+  "about": "Médica Cirujana. UNAM Médica Ginecóloga Obstetra. BUAP Médica Ginecóloga Infanto Juvenil. Universidad de la Plata, Argentina. Certificada por el Colegio Mexicano de Ginecología y Obstetricia Certificada por la Sociedad Argentina de Ginecología Infanto Juvenil.",
+  "addresses": [
+    {
+      "full": "Tuxpan 28, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mildret-fernanda-martinez-arellano/ginecologo/cuauhtemoc2#address-id=431942&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:38.977Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mildret_fernanda_martinez_arellano.webp"
+}

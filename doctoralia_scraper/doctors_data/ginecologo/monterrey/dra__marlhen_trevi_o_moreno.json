@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Marlhen Treviño Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed0a28/ed0a28f9437ae4504c5fb01e20c46314_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    },
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marlhen-trevino-moreno/ginecologo/monterrey#address-id=7606&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:24.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marlhen_trevi_o_moreno.webp"
+}

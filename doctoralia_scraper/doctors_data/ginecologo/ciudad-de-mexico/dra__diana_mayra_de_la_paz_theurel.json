@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Diana Mayra De la Paz Theurel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f300e/8f300e13a514c1110ba7a8c0041a0538_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia con más de cuatro años de experiencia. Enfocada en dar un mejor servicio a cada paciente y atención que se merecen.",
+  "addresses": [
+    {
+      "full": "Playa icacos #50,"
+    },
+    {
+      "full": "Playa icacos #50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-mayra-de-la-paz-theurel/ginecologo/ciudad-de-mexico#address-id=397017&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:05.849Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_mayra_de_la_paz_theurel.webp"
+}

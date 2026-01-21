@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Abel Edmundo Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Cordillera de los Andes 910, Residencial Las Puentes,"
+    },
+    {
+      "full": "Ave. Cordillera de los Andes 910, Residencial Las Puentes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abel-edmundo-alvarez/ginecologo/san-nicolas-de-los-garza#address-id=563010&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:19.726Z",
+  "localPhotoPath": null
+}

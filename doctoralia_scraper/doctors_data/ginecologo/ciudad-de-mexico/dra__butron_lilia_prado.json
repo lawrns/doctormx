@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Butron Lilia Prado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional 613,"
+    },
+    {
+      "full": "Ejercito Nacional 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/butron-lilia-prado/ginecologo/ciudad-de-mexico#address-id=58408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:16.647Z",
+  "localPhotoPath": null
+}

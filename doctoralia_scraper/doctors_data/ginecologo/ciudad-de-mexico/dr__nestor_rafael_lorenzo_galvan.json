@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Nestor Rafael Lorenzo Galvan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9b2ab0/9b2ab05f25898df0e3864da0c844dab9_220_square.jpg",
+  "about": "Soy el Dr. Nestor Rafael Lorenzo, ginecólogo y obstetra altamente capacitado, certificado por el Consejo Mexicano de Ginecología y Obstetricia. Mi formación se completó en el ISSSTE y obtuve el respaldo académico de la Universidad Anáhuac y UNAM. Así mismo con la subespecialidad de Ginecología Oncológica por el Hospital Juárez de México. Mi compromiso y pasión por la salud femenina son evidentes en mi dedicación a cada paciente. Mi objetivo es brindar cuidados excepcionales y contribuir al bienestar de las mujeres a lo largo de su vida, desde la salud ginecológica asi como el apoyo durante el embarazo y el parto, así como de padecimientos oncológicos en la mujer. Será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Flamingos 329,"
+    },
+    {
+      "full": "Flamingos 329,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nestor-rafael-lorenzo-galvan/ginecologo/nezahualcoyotl#address-id=30155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:37.466Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__nestor_rafael_lorenzo_galvan.webp"
+}

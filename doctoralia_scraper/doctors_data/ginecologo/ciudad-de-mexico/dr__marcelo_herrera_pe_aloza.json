@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Marcelo Herrera Peñaloza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40d7f8/40d7f89eeaf9ed4d14429f9092ad8ee2_220_square.jpg",
+  "about": "A lo largo de toda mi vida la Medicina fue y es parte de mi, iniciando desde mi niñez los deseos de dedicarme a la Salud por toda mi vida. El proceso del embarazo un evento tan puro y único me inclino a la Ginecología y Obstetricia, posteriormente las parejas que no lograban el embarazo buscado y añorado por largo tiempo despertaría en mi la verdadera pasión “El regalo de la VIDA” convirtiéndose de esta manera en un desafío de cada día. Soy médico extranjero de nacionalidad Boliviana realice mi formación académica de Medicina en la Universidad Mayor de San Andrés UMSA en La Paz Bolivia. Luego hice la mejor decisión en mi vida, la de venir a México considerado como una potencia de la medicina en Latino América a realizar la especialidad de Ginecología y Obstetricia en Centro Médico Nacional La Raza. El ver el desarrollo de la vida de un bebe despertó el deseo realizar la subespecialidad de Biología de la Reproducción en Centro Médico Nacional 20 de Noviembre. Tuve la oportunidad de realizar una Rotación Clínica en New York – USA para estar en la vanguardia de las Técnicas de Reproducción Asistida.",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97,"
+    },
+    {
+      "full": "AV DIVISION DEL NORTE 3398,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,150"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,150"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcelo-herrera-penaloza/ginecologo/ciudad-de-mexico#address-id=577645&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:28.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__marcelo_herrera_pe_aloza.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Georgina Morales Barbosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 467,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/011884/0118846746144f3135bd743463a26305_220_square.jpg",
+  "about": "La Dra Georgina Morales, se especializa en las principales enfermedades que aquejan a la mujer en todas las etapas de su vida, ofreciendo un servicio de calidad y calidez desde un control prenatal, enfermedades de transmisión sexual, prevención de cancer, anticoncepción entre otros. Con el único fin de hacerte sentir una mujer más saludable.",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2893,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU de Ultima generación de 19.5 mg",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/georgina-morales-barbosa/ginecologo/guadalajara#address-id=398581&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:01.321Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__georgina_morales_barbosa.webp"
+}

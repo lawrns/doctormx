@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Oscar Lamadrid Armenta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PABLO NERUDA NO. 3265-2 PLANTA BAJA, TORRE MEDICA PROVIDENCIA,"
+    },
+    {
+      "full": "Pablo Nenuda 3265 - 2,"
+    },
+    {
+      "full": "PABLO NERUDA NO. 3265-2 PLANTA BAJA, TORRE MEDICA PROVIDENCIA,"
+    },
+    {
+      "full": "Pablo Nenuda 3265 - 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-lamadrid-armenta/ginecologo/guadalajara#address-id=96320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:43.616Z",
+  "localPhotoPath": null
+}

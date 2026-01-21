@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Hernandez Rangel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9851d/f9851dfb89187691945c886a6e66a314_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Manuel Ávila Camacho 1643,"
+    },
+    {
+      "full": "Avenida Manuel Ávila Camacho 1643,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-hernandez-rangel/ginecologo/guadalajara#address-id=428777&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:16.102Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__fernando_hernandez_rangel.webp"
+}

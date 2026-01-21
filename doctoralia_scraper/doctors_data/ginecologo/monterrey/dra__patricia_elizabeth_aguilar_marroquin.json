@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Patricia Elizabeth Aguilar Marroquin",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/567cf90f/567cf90f-e1fd-4b6f-9874-21d4e9f0ed7e_small_square.jpg",
+  "about": "Soy la Dra. Patricia Aguilar, gineco obstetra, interesada en la salud integral de la mujer y su bienestar sexual. Mi enfoque es proporcionar una atención empática, personalizada y respetuosa, donde la confianza y el entendimiento mutuo son fundamentales para abordar todas las necesidades y preocupaciones que puedan surgir en el ámbito de la salud reproductiva y sexual.Áreas de especialización:Ginecología general: Prevención, diagnóstico y tratamiento de enfermedades ginecológicas, trastornos menstruales, menopausia, etc.Sexología: Asesoramiento y tratamiento de disfunciones sexuales, educación sexual, terapia de pareja, orientación sobre anticoncepción, entre otros.Salud reproductiva y bienestar: Consultas sobre fertilidad, planificación familiar, asesoramiento sobre métodos anticonceptivos, salud del embarazo, etc.En mi consulta, trato cada tema con la sensibilidad y la empatía que requiere, considerando siempre el bienestar físico, emocional y psicológico de mis pacientes. Mi objetivo es brindar un espacio donde puedas sentirte escuchada y acompañada en cada etapa de tu vida.Si tienes preguntas sobre tu salud sexual, ginecológica o reproductiva, no dudes en contactarme. Estoy aquí para ayudarte.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-elizabeth-aguilar-marroquin-2/ginecologo-sexologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:07.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__patricia_elizabeth_aguilar_marroquin.webp"
+}

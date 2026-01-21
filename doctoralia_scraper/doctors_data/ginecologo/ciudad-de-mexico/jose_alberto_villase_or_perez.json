@@ -1,0 +1,25 @@
+{
+  "name": "Jose Alberto Villaseñor Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango #33 Desp. 63,"
+    },
+    {
+      "full": "Durango #33 Desp. 63,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-villasenor-perez-2/ginecologo/cuauhtemoc#address-id=86853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:35.153Z",
+  "localPhotoPath": null
+}

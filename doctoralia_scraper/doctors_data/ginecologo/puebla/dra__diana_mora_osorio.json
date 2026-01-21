@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Mora Osorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2dc975/2dc975f99cee08d7745d2d12e8476a30_220_square.jpg",
+  "about": "Soy una especialista en Ginecología y Obstetricia, así como en Rehabilitación de Piso Pélvico. Me encuentro constantemente en actualización para poder brindar una excelente atención médica. No dudes en comentarme todas tus dudas e inquietudes. CERTIFICADA por el Consejo Mexicano de Ginecología y Obstetrica A.C. 911 y con Aviso de Publicidad COFEPRIS: 2421062002A00170 ATENCIÓN A PÚBLICO EN GENERAL",
+  "addresses": [
+    {
+      "full": "Boulevard Atlixcayotl 2210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-mora-osorio/ginecologo/san-andres-cholula#address-id=466877&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:35.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__diana_mora_osorio.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Alvarez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Kukulcan Km 13 1 Y 69, Col. Plaza Kukulcan Zona Hotelera, ,"
+    },
+    {
+      "full": "Kukulcan Km 13 1 Y 69, Col. Plaza Kukulcan Zona Hotelera, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-alvarez-martinez/ginecologo/benito-juarez#address-id=357554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:27.699Z",
+  "localPhotoPath": null
+}

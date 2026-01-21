@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Arturo Martínez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f13a8b/f13a8bbd7acf6a919d4e31dfc067524f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Álvaro Obregón 273,"
+    },
+    {
+      "full": "Av. Álvaro Obregón 273,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-arturo-martinez-torres/ginecologo/cuauhtemoc2#address-id=441732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:21.251Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jes_s_arturo_mart_nez_torres.webp"
+}

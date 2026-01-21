@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Gonzalo Esteban Pol Kippes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 174,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1679ba/1679bacaf0888032e506035bdad208b2_220_square.jpg",
+  "about": "Soy medico especialista en ginecología y obstetricia con subespecialidad en oncología ginecológica, con experiencia de mas de 20 años en el área de la mujer, embarazo, puerperio, patología ginecológica y diagnostico y tratamiento de cáncer relacionado con la, mujer, con adiestramientos en colposcopia, cirugía de mínima invasión, cirugía de mama, entre otras Egresado de la carrera de medicina de la universidad mayor de san Andrés, en Bolivia, especializado en ginecología y obstetricia en el Hospital General de México, y subespecialidad en oncología ginecológica y de la glándula mamaria en Hospital General de México, certificado en cirugía robóticos Da Vinci en Houston Texas, para cirugía de mínima invasión avanzada Labore por 14 años en el IMSS, en el servicio de ginecología oncológica en Centro Medico La Raza, actualmente jefe de servicio desde hace 12 años del servicio de Ginecología y Obstetricia del Hospital Obregon, y actualmente como Jefe de Servicio de ginecología y obstetricia del Hospital Ángeles Universidad en donde actualmente tengo mi consulta privada.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Insurgentes Sur 1677 Consul. 701,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Insurgentes Sur 1677 Consul. 701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-esteban-pol-kippes-2/ginecologo/benito-juarez#address-id=88095&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:23.191Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gonzalo_esteban_pol_kippes.webp"
+}

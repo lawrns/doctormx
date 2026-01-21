@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mauro Antonio Macedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 452,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fa424/5fa42419e6a4143a81aa57296cb2bc7d_220_square.jpg",
+  "about": "Egresado de la Universidad Autónoma de Nuevo León (UANL), con la carrera de Medico Cirujano y Partero en el año 2007, realice mi especialidad en el Hospital Universitario \"Dr. José Eleuterio González\" en la ciudad de Monterrey, Nuevo León, del 2009-2013 posterior al termino de mi especialidad, desarrolle un año de entrenamiento en la clínica de displasias de este mismo hospital. Actualmente laboro en la clínica de displasias del Hospital Universitario \"Dr. José Eleuterio González\", estando a cargo junto con el Dr. Lezmes Valdez Chapa de esta área.",
+  "addresses": [
+    {
+      "full": "Calle Bolivia #103A, Piso PH, Consultorio 1306, Col. Balcones de Galerías,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauro-antonio-macedo/ginecologo/nuevo-leon#address-id=98207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:40.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mauro_antonio_macedo.webp"
+}

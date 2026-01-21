@@ -1,0 +1,62 @@
+{
+  "name": "Angélica Figueiras López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/29683b/29683bfad751147b92b10ede95779834_220_square.jpg",
+  "about": "Hola, Soy Angelica Figueiras, Ginecologa y Obstetra. Mi propósito es ayudarte a mejorar tu salud femenina. Desde la primera consulta mi objetivo es conocerte, orientarte, prevenir y solucionar cualquier patología desde la adolescencia hasta la menopausia, así como llevar de la mano tu embarazo juntas.",
+  "addresses": [
+    {
+      "full": "Avenida Montevideo 303,"
+    },
+    {
+      "full": "Zacatecas 44,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    },
+    {
+      "full": "Zacatecas 44,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-figueiras-lopez-2/ginecologo/cuauhtemoc2#address-id=367612&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:02.832Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/ang_lica_figueiras_l_pez.webp"
+}

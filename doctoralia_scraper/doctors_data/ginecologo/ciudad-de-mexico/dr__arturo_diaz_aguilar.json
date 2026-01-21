@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Arturo Diaz Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/728b56/728b560fc0b1132daa86f0880dd0d0c0_220_square.jpg",
+  "about": "Paquete Ginecológico. Incluye: Consulta, ultrasonido, papanicolao, colposcopia, exploración mamaria por 1000 pesos . Paquete control prenatal . Incluye : Consulta, ultrasonido, examen de orina, y prueba de glucosa por 800. Al llevar el control prenatal conmigo recibe 20% de descuento al momento del parto o cesárea. Se reciben todas las aseguradoras. También al adquirir tu paquete de revisión ginecológica, recibe 20 % de descuento en todos los tratamientos que deriven de dicha revision. Quedo a tus órdenes",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-diaz-aguilar/ginecologo/cuauhtemoc#address-id=18225&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:30.350Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__arturo_diaz_aguilar.webp"
+}

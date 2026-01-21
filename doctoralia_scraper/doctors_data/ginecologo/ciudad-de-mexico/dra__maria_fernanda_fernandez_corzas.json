@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Fernanda Fernandez Corzas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5f8e1/f5f8e16bd923c04fc0b9ffb89792f041_220_square.jpg",
+  "about": "Licenciatura en médico cirujano ; avalado por la universidad la salle. Especialidad Ginecología y obstetricia avalado por la UNAM realizada en hospital Ángeles lomas, maestría en sexualidad humana y psicoterapia sexual en AMSSAC (asociación mexicana para la salud sexual A C). Colposcopia y patología vulvar , avalado por la Universidad Mesoamericana",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    },
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-fernandez-corzas/ginecologo-sexologo/huixquilucan#address-id=485062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:44.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_fernanda_fernandez_corzas.webp"
+}

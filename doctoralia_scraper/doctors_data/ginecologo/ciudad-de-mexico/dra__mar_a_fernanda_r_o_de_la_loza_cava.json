@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Fernanda Río de la Loza Cava",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c6eec/3c6eecd83b1488cd4d06480630764316_220_square.jpg",
+  "about": "Con más de 25 años avalando mi práctica profesional. A lo largo de mi carrera he sabido conjugar la práctica médica con la investigación y divulgación científica, lo que me ha llevado a crecer en conocimientos y como persona. \"Déjame ser tu acompañante y guía. Cuidémonos juntas\"",
+  "addresses": [
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-rio-de-la-loza-cava/ginecologo/naucalpan-de-juarez2#address-id=8164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:26.641Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_fernanda_r_o_de_la_loza_cava.webp"
+}

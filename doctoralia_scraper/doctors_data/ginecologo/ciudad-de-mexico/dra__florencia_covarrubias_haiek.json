@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Florencia Covarrubias Haiek",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4a419/a4a41908cd0913562003721d0dc94b82_220_square.jpg",
+  "about": "Dra. Florencia Covarrubias Haiek Especialista en Ginecología y Obstetricia Estudié la licenciatura en la Universidad Anáhuac Norte, donde me titulé como Médico Cirujano. Posteriormente hice 4 años de especialidad de Ginecología y Obstetricia en el Hospital Ángeles Lomas, teniendo la oportunidad de atender pacientes en el Hospital General de Zona 2 A, Hospital General de Zona La Quebrada, Instituto Nacional de Perinatología, Centro Oncológico Estatal ISSEMyM (Toluca), entre otros. Trabajé dos años en el Centro Especializado para la Atención de la Mujer (Hospital Angeles Lomas) participando en la clínica de Fertilidad. Amplia experiencia en anticoncepción, atención ginecológica para adolescentes, prevención de patologías ginecológicas, detección oportuna y tamizaje para cáncer cervico-uterino y cáncer de mama. Control prenatal para embarazo normal y de alto riesgo. Promovemos el parto humanizado de acuerdo a las preferencias de cada paciente, la lactancia materna exclusiva, apego inmediato y alojamiento conjunto.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/florencia-covarrubias-haiek/ginecologo/ciudad-de-mexico#address-id=7937&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:22.744Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__florencia_covarrubias_haiek.webp"
+}

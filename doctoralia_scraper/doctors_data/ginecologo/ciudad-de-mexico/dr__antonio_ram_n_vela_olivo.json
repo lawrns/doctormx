@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Antonio Ramón Vela Olivo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tercer Piso. Ala Sur. Miguel Hidalgo, 302 Ote. Esq. Con Ramón Corona. Col. Centro,"
+    },
+    {
+      "full": "Tercer Piso. Ala Sur. Miguel Hidalgo, 302 Ote. Esq. Con Ramón Corona. Col. Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-ramon-vela-olivo/ginecologo/culiacan#address-id=127909&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:05.943Z",
+  "localPhotoPath": null
+}

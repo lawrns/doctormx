@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Luis Felipe Maldonado Nájera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cd5463/cd5463e89c536776480b7d335c79f8d0_220_square.jpg",
+  "about": "Médico cirujano con especialidad en Ginecología y Obstetricia. Subespecialidad en Medicina Materno Fetal en Hospital General de México. Para mí, traer a un bebé sano, es hacer una nueva familia feliz, por eso la confianza que se genera entre el médico y el paciente es fundamental. Con un amplia experiencia, sé perfectamente cómo hacer que la incertidumbre natural de un embarazo se convierta en información actualizada para la familia. Ven a consulta y conoce a tu bebé desde el vientre.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Av. Bordo de Xochiaca A2-2B-N°3 Lt,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido de crecimiento más doppler (30-34 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural (18-24 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido de crecimiento más doppler (30-34 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-felipe-maldonado-najera/ginecologo/nezahualcoyotl#address-id=584437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:51.899Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_felipe_maldonado_n_jera.webp"
+}

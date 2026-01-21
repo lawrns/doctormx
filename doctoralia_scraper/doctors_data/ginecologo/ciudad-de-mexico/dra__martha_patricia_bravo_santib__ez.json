@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Martha Patricia Bravo Santibáñez",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ee324e/ee324e0015703b53083b273b2b633c5a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. Ignacio Zaragoza 189,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-patricia-bravo-santibanez/ginecologo/venustiano-carranza2",
+  "scrapedAt": "2026-01-21T02:40:32.866Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_patricia_bravo_santib__ez.webp"
+}

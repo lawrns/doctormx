@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Ruth Alejandra Rivera Reza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río Amazonas 50,"
+    },
+    {
+      "full": "Río Amazonas 50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruth-alejandra-rivera-reza-2/ginecologo/san-pedro-garza-garcia#address-id=461597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:29.687Z",
+  "localPhotoPath": null
+}

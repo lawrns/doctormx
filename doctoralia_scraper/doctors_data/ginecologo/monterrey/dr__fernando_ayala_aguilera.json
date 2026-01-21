@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fernando Ayala Aguilera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36e6af/36e6af8efa1ed93a23ddf427b9e7c8e2_220_square.jpg",
+  "about": "Soy el Dr. Fernando Ayala Aguilera, especializado en Ginecología en San Pedro Garza García. Soy egresado del Tecnológico de Monterrey y me dedico a atender a pacientes adultos y adolescentes en temas relacionados con reproducción, embarazo y salud de la mujer. Me apasiona mi trabajo y siempre me esfuerzo por estar actualizado en las últimas técnicas y tratamientos disponibles en mi campo de especialización. Me considero una persona empática y comprometida con mis pacientes, y me gusta brindarles un trato personalizado y de calidad. Estoy a su disposición para resolver cualquier duda o inquietud que puedan tener durante su proceso de atención médica.",
+  "addresses": [
+    {
+      "full": "Batallon de San Patricio 112, Col. Real de San Agustín,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-ayala-aguilera-2/ginecologo/san-pedro-garza-garcia#address-id=496556&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:21.462Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__fernando_ayala_aguilera.webp"
+}

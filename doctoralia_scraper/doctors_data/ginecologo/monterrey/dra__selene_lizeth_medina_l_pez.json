@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Selene Lizeth Medina López",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/93804bef/93804bef-8956-42ba-8fa3-1f6983f9c05f_small_square.jpg",
+  "about": "Ginecóloga Obstetra formada en la Unidad Médica de Alta Especialidad #23 del IMSS; en Monterrey, Nuevo León.Avalada por la Universidad de Monterrey Certificada por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Río Amazonas 110,"
+    },
+    {
+      "full": "Río Amazonas 110,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/selene-lizeth-medina-lopez/ginecologo/san-pedro-garza-garcia#address-id=624099&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:02.533Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__selene_lizeth_medina_l_pez.webp"
+}

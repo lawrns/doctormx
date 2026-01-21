@@ -1,0 +1,66 @@
+{
+  "name": "Claudia Nayely Paredes Palma",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be6549/be6549c15dc28f43ee95fe9077dd26e3_220_square.jpg",
+  "about": "Ginecóloga egresada del Hospital General de México, cuento con Alta Especialidad en Endoscopia ginecologica realizando cirugías de mínima invasión como laparoscopia para tratar miomatosis, quistes de ovario, así Tambien realizo cirugías de tipo histeroscopias. Cuento con experiencia en control prenatal de Embarazo normal y alto riesgo (realizando Ultrasonido Obstétrico en el consultorio, pruebas de embarazo, Cesáreas, partos y legrados. Presento una Alta Especialidad en Colposcopia, es decir somos expertos en tratar enfermedades de transmisión sexual, tipo infección por Virus del Papiloma Humano (condilomas, lesiones cervicales, lesiones a nivel del pene y testículos ) tratando a Mujeres y a Hombres. Se realiza en consultorio Papanicolaou, Colposcopia, Citología uretral, cultivos vaginales, Androscopia (Penescopia).",
+  "addresses": [
+    {
+      "full": "Avenida José María Morelos#136.,"
+    },
+    {
+      "full": "Puente de Piedra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-nayely-paredes-palma/ginecologo/xochimilco#address-id=33898&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:11.561Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/claudia_nayely_paredes_palma.webp"
+}

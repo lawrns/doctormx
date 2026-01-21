@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Julio Morfín Martín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d098bb/d098bbcf82d05444b8b05ddd09e17be5_220_square.jpg",
+  "about": "Gineco-Obstetra en Hospital y Clínica Santa Teresa Ciudad de México desde 1995 Miembro del Colegio Mexicano de Especialistas en Ginecología y Obstetricia Especialista en Climaterio y Menopausia nombrado por la Asociación Mexicana para el Estudio del Climaterio por la Federación Latini Americana de Sociedades de Climaterio y Menopausia Expresidente de la Asociación Mexicana para el Estudio del Climaterio Miembro0 se la Sociedad Mexicana de Nutrición y Endocrinología Miembro del American College of Obstetricians anf Gynecologistrs Mienmbro de la American Association of Clinical Endocrinologists",
+  "addresses": [
+    {
+      "full": "Avenida Paseo de las Palmas 765 504,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-morfin-martin/ginecologo-especialista-en-obesidad-y-delgadez/ciudad-de-mexico#address-id=436502&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:24.264Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__julio_morf_n_mart_n.webp"
+}

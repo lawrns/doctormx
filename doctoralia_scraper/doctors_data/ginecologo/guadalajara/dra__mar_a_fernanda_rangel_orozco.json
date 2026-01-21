@@ -1,0 +1,58 @@
+{
+  "name": "Dra. María Fernanda Rangel Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6dc294/6dc2947a924e6e541e4dc262329ec09d_220_square.jpg",
+  "about": "Médico egresada de la Universidad Autónoma de Guadalajara, Facultad de medicina con especialidad en Ginecología y Obstetricia, certificada por el Consejo Mexicano de Ginecología y obstetricia. Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "GINEMED EXPO / Calle Turquesa 3283 Col. Villa La Victoria,"
+    },
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido Doppler obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido tamízaje primer trimestre (11-14 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-rangel-orozco/ginecologo/guadalajara#address-id=566677&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:34.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__mar_a_fernanda_rangel_orozco.webp"
+}

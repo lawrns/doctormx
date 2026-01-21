@@ -1,0 +1,56 @@
+{
+  "name": "Dr. José Alberto Villarreal Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fa6dde/fa6ddea27e41326d668eeebbb8deb3ce_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "15 De Mayo Poniente 1822,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "15 De Mayo Poniente 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-villarreal-rodriguez/ginecologo/nuevo-leon#address-id=379396&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:57.030Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__alberto_villarreal_rodr_guez.webp"
+}

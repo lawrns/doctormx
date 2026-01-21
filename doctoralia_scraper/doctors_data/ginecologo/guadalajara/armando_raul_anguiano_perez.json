@@ -1,0 +1,31 @@
+{
+  "name": "Armando Raul Anguiano Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Niños Héroes 29,"
+    },
+    {
+      "full": "Cuauhtemoc 26,"
+    },
+    {
+      "full": "Av. Niños Héroes 29,"
+    },
+    {
+      "full": "Cuauhtemoc 26,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-raul-anguiano-perez/ginecologo/san-pedro-tlaquepaque#address-id=244683&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:10.649Z",
+  "localPhotoPath": null
+}

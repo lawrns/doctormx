@@ -1,0 +1,25 @@
+{
+  "name": "Raymundo Pedro Rivera Gil",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Refugio No 20,"
+    },
+    {
+      "full": "Calle Refugio No 20,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-pedro-rivera-gil/ginecologo/ciudad-de-mexico#address-id=148060&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:08.923Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. César Elí Cruz Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0b1dc67d/0b1dc67d-d969-4c7c-949e-02ffabf27e62_small_square.jpg",
+  "about": "Hola, soy el Dr. César Elí, médico especialista en Ginecología y Obstetricia, experto en Medicina Materno Fetal. Actualmente estoy enfocado en cuidar de tu salud y la de tu bebé durante el embarazo, por medio de consultas de control prenatal de bajo y alto riesgo, la realización de ultrasonidos especializados (11-14, estructural, crecimiento y Doppler), la atención del nacimiento así como la vigilancia del puerperio, siempre con calidez humana y profesionalismo.",
+  "addresses": [
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-eli-cruz-ruiz/ginecologo/ciudad-de-mexico#address-id=481194&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:08.401Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__c_sar_el__cruz_ruiz.webp"
+}

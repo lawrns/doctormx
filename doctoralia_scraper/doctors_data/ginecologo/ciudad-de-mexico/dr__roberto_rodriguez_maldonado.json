@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Roberto Rodriguez Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/856c37/856c372df1aa2e8f2858f6cfffe7ecb4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Tecamachalco Mz 3 L2,"
+    },
+    {
+      "full": "Miravalle 928-A,"
+    },
+    {
+      "full": "Ave. Tecamachalco Mz 3 L2,"
+    },
+    {
+      "full": "Miravalle 928-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-rodriguez-maldonado/ginecologo/benito-juarez#address-id=67843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:03.775Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__roberto_rodriguez_maldonado.webp"
+}

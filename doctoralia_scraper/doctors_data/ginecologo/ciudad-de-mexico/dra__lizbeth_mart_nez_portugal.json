@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lizbeth Martínez Portugal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/987116/98711635061e37697905cf2a61040e05_220_square.jpg",
+  "about": "Alta especialidad en Infertilidad y Reproducción Asistida Diplomado en Colposcopia y Papanicolau",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Acoxpa Consultorio 120,"
+    },
+    {
+      "full": "Hospital Angeles Acoxpa Consultorio 120,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizbeth-martinez-portugal/ginecologo/ciudad-de-mexico#address-id=366303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:50.130Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lizbeth_mart_nez_portugal.webp"
+}

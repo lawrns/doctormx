@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Magalhi Robledo Clemente",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/981366/9813662871be49359ff17b5e5ca6ad72_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59,"
+    },
+    {
+      "full": "Tlacotalpan 59,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magalhi-robledo-clemente/ginecologo-medico-general/ciudad-de-mexico#address-id=82033&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:39.684Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__magalhi_robledo_clemente.webp"
+}

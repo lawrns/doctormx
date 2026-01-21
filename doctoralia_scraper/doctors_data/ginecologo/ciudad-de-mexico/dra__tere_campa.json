@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Tere Campa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/710101/710101320340ea422b084381261ab8f5_220_square.jpg",
+  "about": "¡Hola y bienvenida! Me da mucho gusto tenerte por aquí. Mi nombre es Teresa Campa Mendoza y soy originaria de Monterrey, Nuevo León. Soy Médica Cirujano egresada de la Escuela de Medicina Ignacio Santos del Tecnológico de Monterrey (ITESM). Posteriormente, realicé mi especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología (UNAM), en la Ciudad de México. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia, lo que respalda mi compromiso con la calidad en la atención. A lo largo de mi carrera, he tenido el privilegio de participar en diversos cursos y congresos nacionales e internacionales de Ginecología y Obstetricia, incluyendo en prestigiosas instituciones como Harvard Medical School, la Universidad de la Columbia Británica (UBC), la Universidad Autónoma de Madrid y la Universidad de Chicago. Esto me ha permitido mantenerme al día con los últimos avances en el campo. Actualmente, me encuentro cursando un Diplomado en Colposcopía y Patología del Tracto Genital y Complejo Anoperineal en la UNAM, con el objetivo de ofrecerte una mejor asesoría y opciones terapéuticas en el tratamiento de Enfermedades de Transmisión Sexual. Estoy aquí para ayudarte en todo lo que necesites.",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Tuxpan 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tere-campa/ginecologo/cuauhtemoc2#address-id=537113&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:11.016Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__tere_campa.webp"
+}

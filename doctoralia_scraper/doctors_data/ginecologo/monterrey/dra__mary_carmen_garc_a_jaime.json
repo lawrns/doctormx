@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Mary Carmen García Jaime",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cordillera de los Andes 1152, Col. Jardines de Anahuac,"
+    },
+    {
+      "full": "Cordillera de los Andes 1152, Col. Jardines de Anahuac,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mary-carmen-garcia-jaime/ginecologo/san-nicolas-de-los-garza#address-id=613521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:45.538Z",
+  "localPhotoPath": null
+}

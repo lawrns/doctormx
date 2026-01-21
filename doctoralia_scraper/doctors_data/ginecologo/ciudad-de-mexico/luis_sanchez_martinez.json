@@ -1,0 +1,25 @@
+{
+  "name": "Luis Sanchez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Castorena,226,Cuajimalpa,,"
+    },
+    {
+      "full": "Jose Maria Castorena,226,Cuajimalpa,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-sanchez-martinez/ginecologo/cuajimalpa-de-morelos#address-id=355525&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:19.165Z",
+  "localPhotoPath": null
+}

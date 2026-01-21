@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodrigo Ayala Yáñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6f0bd/b6f0bd866818c933d39dda3334f6242c_220_square.jpg",
+  "about": "\"Hola, mi nombre es Rodrigo Ayala Yáñez y mi especialidad es Ginecología y Obstetricia. Como profesional en esta rama, mi vocación es escucharte, ayudarte y resolver todo lo relacionado con tu salud reproductiva. Te comento que soy un médico a favor del parto, me interesa mucho los problemas de infertilidad y tu salud fuera del embarazo como puede ser la prevención de problemas ginecológicos y el climaterio. Creo que es importante la consulta preventiva y con ello te ofrezco una revisión exhaustiva de tus antecedentes y con esto ver cuales son las soluciones más viables para ti. En verdad no hay problema que no tenga una solución y una opción para mejorar tu calidad de vida. Te invito a reservar una cita conmigo. Será un placer ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154- Consultorio 339,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154- Consultorio 339,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-ayala-yanez-2/ginecologo/cuajimalpa-de-morelos#address-id=327638&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:20.185Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodrigo_ayala_y__ez.webp"
+}

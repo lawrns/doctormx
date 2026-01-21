@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Arnoldo López Romo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/afad0d/afad0d65e86d3badbfca56bc86a2213c_220_square.jpg",
+  "about": "Soy el Dr. Arnoldo López Romo, especialista en Ginecólogo. Cuento con más de 14 de experiencia de formación médica para darte la mejor atención y asesorarte en tus problemas de salud femenina. ♀️⁣ Estudié la carrera de medicina en la Universidad de Monterrey (UDEM)⁣ y realicé mi especialidad en Ginecología y Obstetricia en el Hospital Christus Muguerza Conchita, avalado por la Universidad de Monterrey. ⁣ enfocándome en la salud de la mujer. Mi experiencia me permite ayudar a mis pacientes con diagnósticos y tratamientos acertados, encontrando la mejor opción para su caso y ayudándolos a recuperar su salud.",
+  "addresses": [
+    {
+      "full": "15 de Mayo 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arnoldo-lopez-romo/ginecologo/nuevo-leon#address-id=416272&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:44.791Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__arnoldo_l_pez_romo.webp"
+}

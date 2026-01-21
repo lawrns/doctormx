@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Diego González Oropeza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f1c4ec/f1c4ec979be74b4598984fee6c8d716d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    },
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diego-gonzalez-oropeza/ginecologo/san-pedro-garza-garcia#address-id=27859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:50.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__diego_gonz_lez_oropeza.webp"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dra. María Isabel Sánchez Lucio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 192,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4ea913/4ea913531fa6b91f0b963852a68f955a_220_square.jpg",
+  "about": "Soy Ginecóloga y Obstetra, colposcopista (me dedico a la colposcopia y el tratamiento de VPH y sus lesiones). Cuento con estudios en uroginecologia. Cuido de tu salud de una manera más humana e individualizada.",
+  "addresses": [
+    {
+      "full": "Calle de Durango 33,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-isabel-sanchez-lucio/ginecologo/cuauhtemoc2#address-id=94829&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:17.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_isabel_s_nchez_lucio.webp"
+}

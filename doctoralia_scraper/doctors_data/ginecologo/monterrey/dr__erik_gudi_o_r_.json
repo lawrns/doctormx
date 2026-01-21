@@ -1,0 +1,78 @@
+{
+  "name": "Dr. Erik Gudiño R.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6ce01d/6ce01d39f7d75edc0554af8a5641fde7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 1828,"
+    },
+    {
+      "full": "DOCTORS HOSPITAL, Ecuados 2331, piso 8 consultorio 802, Col Balcones de Galerias Monterrey, N.L.,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Hidalgo 1828,"
+    },
+    {
+      "full": "DOCTORS HOSPITAL, Ecuados 2331, piso 8 consultorio 802, Col Balcones de Galerias Monterrey, N.L.,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erik-gudino-r/ginecologo/monterrey#address-id=368640&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:45.805Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__erik_gudi_o_r_.webp"
+}

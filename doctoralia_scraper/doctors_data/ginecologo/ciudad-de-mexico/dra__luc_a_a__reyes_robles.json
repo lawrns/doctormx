@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lucía A. Reyes Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/81a3674f/81a3674f-5fff-4caa-b800-24bbf3d90627_large.jpg",
+  "about": "Sobre mí ¡Hola! Soy la Doctora Lucía Reyes, Especialista en Ginecología y Obstetricia. ¡Bienvenida! En mi consulta, la prioridad eres tú!. En nuestro espacio nos dedicaremos a cuidar de tu salud ginecológica con el cariño, la atención y confianza que te mereces. Quiero acompañarte en cada etapa de tu vida, brindándote el apoyo y el cuidado que necesitas. Desde la adolescencia hasta la menopausia. Personalmente tengo siempre el compromiso de \"Tratar como quiero que me traten\", es por eso que en conmigo encontrarás un ambiente cálido, empático y libre de prejuicios, en donde mi prioridad será hacerte sentir cómoda, escucharte, orientarte y explicarte todo acerca de tu salud ginecológica. ¡Será un gusto atenderte! Diplomado en \"Uso de laser en el. tracto genital inferior y ginecologia regenerativa\" Miembro del Colegio Mexicano de Ginecológos dedicados a la colposcopía A.C. Alta Especilidad en Colposcopía y patología del tracto genital inferior por UNAM Certificada por el Consejo Mexicano de Ginecología y Obstetricia Especialista en Ginecología y Obstetricia por UNAM ¿Por qué elegirme a mí? Soy una especialista que ama su trabajo y eso me permite disfrutar del mismo. Involucrandote en cada momento. Me gusta generar un ambiente de confianza y seguridad, libre de prejuicios. Regresandote el control de tu salud ginecologica. Principales áreas de tratamiento COLPOSCOPIA Y MANEJO Y CONTROL DE LESIONES POR VIRUS DE PAPILOMA HUMANO MANEJO Y SEGUIMIENTO DE EMBARAZO DE BAJO Y ALTO RIESGO ALTERACIONES ENDOCRINO-METABOLICAS- GINECOLOGICAS (SOP) Mi consulta y mi equipo Contamos con un espacio agradable con técnologia de la mas alta calidad para realizar tu diagnostico y tratamiento Otros servicios Atención de partos / cesáreas Rejuvenecimiento vaginal con laser Más sobre mí Alta especiliadad. en Patologia del tracto genital inferior Diplomado en Uso de laser en patologia del tracto genital inferior",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,250"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-a-reyes-robles/ginecologo/tlalnepantla-de-baz2#address-id=568393&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:27.812Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__luc_a_a__reyes_robles.webp"
+}

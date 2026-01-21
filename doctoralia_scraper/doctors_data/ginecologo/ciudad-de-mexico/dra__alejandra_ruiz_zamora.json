@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Ruiz Zamora",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 110,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e75ecc/e75ecccd9d8c3d125704796ec794649c_220_square.jpg",
+  "about": "Especialidad en Ginecología y Obstetricia. DIPLOMADO EN COLPOSCOPIA, DIPLOMADO EN GINECOLOGIA INFANTOJUVENIL, DIPLOMADO EN ENDOCRINOLOGIA GINECOLOGICA, DIPLOMADO EN LÁSER VAGINAL Y ESTÉTICA VULVAR Y VAGINAL. MAESTRÍA EN ENDOMETRIOSIS. Comprometida con mi profesión y con mi paciente, en constante preparación para ofrecer una atención siempre a la vanguardia, con calidez y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Avenida San Rafael 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-ruiz-zamora/ginecologo/tlalnepantla-de-baz2#address-id=502241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:22.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_ruiz_zamora.webp"
+}

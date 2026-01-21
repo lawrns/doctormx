@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Cesar Montiel Murguia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Especialista en embarazo de alto riesgo diplomado en colposcopia y patología de tracto vaginal inferior Adiestramiento en oncología ginecológica Profesor de cursos impartidos a nivel IMSS nacional de hemorragia obstétrica Profesor del curso en la secreteria de salud de Hermosillo Sonora sobre manejo integral de la hemorragia ginecobstetrica Investigador Tipo A en sirelsis IMSS 4 capítulos del libro rojo del hospital de ginecobstetricia del centro medico nacional La Raza en los capítulos de hemorragia obstétrica, embarazo prolongado, diabetes y embarazo y amenaza de parto pretermino. Asi mismo adiestro a todos los médicos a nivel IMSS a nivel nacional sobre hemorragia obstétrica que es la segunda causa de muerte materna en nuestro país asi como la tercera causa de muerte materna a nivel Mundial En el consultorio se tiene equipo medico de alta resolución como ultrasonido para llevar un control de embarazo adecuado asi como también a cierta edad se realizan pruebas de bienestar fetal tanto con ultrasonido como con un tococardiografo (como se realizara un electrocardiograma al producto) Se cuenta además con amplia experiencia en la detección del cáncer de cuello de la matriz asi como estudios especiales para la detección del virus del papiloma humano y su tipificación. actualmente contamos con una promocíon en donde la consulta para control de embarazo esta en $500 el cual consta de consulta ultrasonido y DVD fotos incluidas. Otra promoción que consta de consulta colposcopia papanicolauo en $500 pesos. Contamos además con 2 paquetes anticonceptivos que constan: 1 Consulta aseosoria y colocaion de implante subdermico en $2500 pesos. 2 Vasectomía sin bisturí en $7000 pesos.",
+  "addresses": [
+    {
+      "full": "Cuicuilco #62 ,"
+    },
+    {
+      "full": "Cuicuilco #62 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $550"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-montiel-murguia/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T02:55:32.894Z",
+  "localPhotoPath": null
+}

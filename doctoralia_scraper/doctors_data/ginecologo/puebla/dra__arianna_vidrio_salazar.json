@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Arianna Vidrio Salazar",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a806a8/a806a8ccd0e3d24562bee57d3374d7b1_220_square.jpg",
+  "about": "La Ginecología es la especialidad médica que se dedica al cuidado del sistema reproductor femenino por lo cual permite el diagnóstico y tratamiento de enfermedades como cáncer, prolapso de órganos pélvicos, amenorrea, dismenorrea, sangrados uterinos e infertilidad. La Obstetricia es el campo de la medicina que trata a la mujer durante el embarazo, parto y puerperio. Somos especialistas en estos ámbitos, estamos para ayudarte.",
+  "addresses": [
+    {
+      "full": "Blvrd 14 sur 4301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arianna-vidrio-salazar/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:43.200Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__arianna_vidrio_salazar.webp"
+}

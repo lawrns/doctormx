@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Hugo Cepeda López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Constitucion 1881 212,"
+    },
+    {
+      "full": "Ave. Constitucion 1881 212,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-cepeda-lopez/ginecologo/monterrey#address-id=50801&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:42.541Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Antonio Maldonado Balvanera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eddda3/eddda363dad32cc6297f767965cf2d66_220_square.jpg",
+  "about": "Soy médico Ginecoobstetra, apasionado de mi trabajo, y mi objetivo en la vida es que vivas plenamente cada una de las etapas de la tuya. Aquí es tu lugar seguro, donde no serás juzgada pero siempre serás escuchada, apoyada y tratada siempre con respeto, calidad, calidez y con un enfoque científico que genera confianza y buenos resultados",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-maldonado-balvanera/ginecologo/san-andres-cholula#address-id=508198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:55.651Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__antonio_maldonado_balvanera.webp"
+}

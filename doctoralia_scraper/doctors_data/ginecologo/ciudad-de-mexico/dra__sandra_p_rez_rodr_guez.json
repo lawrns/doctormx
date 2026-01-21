@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Sandra Pérez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e89c99/e89c9942044e7f796647cbbab7b33a4a_220_square.jpg",
+  "about": "Ginecóloga con 13 años de experiencia en la atención de la salud de la mujer. La consulta en ginecóloga que he desarrollado por mas de 13 años es centrada en una atención integral de la salud de la mujer, en las diferentes etapas de la vida. pues como ginecóloga no solo atiende a la mujer embarazada, si no que acompaño a mis pacientes desde edades pequeñas hasta la plenitud de la adulta mayor. Mi interés es centrarme en las necesidades de cada una de mis paciente y retribuir a la confianza de las pacientes, brindándoles la mejor atención, con calidez, honestidad y compromiso.",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier,"
+    },
+    {
+      "full": "Av. Juárez 80,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier,"
+    },
+    {
+      "full": "Av. Juárez 80,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-perez-rodriguez/ginecologo/guadalajara#address-id=570991&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:23.900Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sandra_p_rez_rodr_guez.webp"
+}

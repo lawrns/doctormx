@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Armando González Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3c1de/b3c1de208774c15d9138f43eb16bd912_220_square.jpg",
+  "about": "Especialista en Ginecólogia y Obstetricia, Certificado por el Consejo Mexicano, con 50 años de experiencia en el área de la medicina. Médico Cirujano egresado de la Universidad de Guadalajara en 1972, y su especialidad está avalada por el IMSS y la UNAM además de estar recertificado por el Consejo Mexicano de Ginecología y Obstetricia A. Diplomado en Colposcopia y Patología del Tracto Genital inferior. Diplomado en Sexualidad. Es miembro activo del Colegio de Médicos Gineco-Obstetras del Estado de Jalisco A.C. y Asociación Jalisciense para Estudio del Climaterio A.C. Autor del Libro de Ginecología. Libro de Texto de la Universidad de Guadalajara y otras Universidades. Atención durante el Embarazo, Tratamiento para Enfermedades de Transmisión Sexual,Anticoncepción, Cirugía para quistes ováricos o tumores uterinos, Embarazos Ectópicos, Histerectomía, Ultrasonido, Colposcopia y tratamiento de la patología del tracto genital inferior. Atención en Menopausia y Terapia de Reemplazo Hormonal.Mi enfoque se basa en brindar un trato empático y profesional, así como en mantenerme actualizado en las últimas técnicas y tecnologías en el campo de la ginecología y obstetricia. Siempre estoy disponible para cualquier emergencia y mi objetivo es proporcionar una atención médica de calidad y personalizada a cada uno de mis pacientes. Mis consultorios son cómodos y limpios, y me esfuerzo por explicar de manera clara cualquier procedimiento o tratamiento que se requiera. Si buscas un médico de confianza y con amplia experiencia, te recomiendo mi práctica médica con la seguridad de que recibirás la mejor atención.",
+  "addresses": [
+    {
+      "full": "Manuel M. Dieguez 126,"
+    },
+    {
+      "full": "Manuel M. Dieguez 126,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-armando-gonzalez-gutierrez/ginecologo/guadalajara#address-id=82078&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:57.616Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__luis_armando_gonz_lez_guti_rrez.webp"
+}

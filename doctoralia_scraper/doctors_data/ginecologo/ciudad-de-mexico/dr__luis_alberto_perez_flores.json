@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Luis Alberto Perez Flores",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 2 Esq C. 17 48,"
+    },
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Avenida 2 no 48, esquina calle 17 no 10, col. Campestre Guadalupana,"
+    },
+    {
+      "full": "Av. 2 Esq C. 17 48,"
+    },
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Avenida 2 no 48, esquina calle 17 no 10, col. Campestre Guadalupana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-alberto-perez-flores/ginecologo/nezahualcoyotl#address-id=199934&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:08.475Z",
+  "localPhotoPath": null
+}

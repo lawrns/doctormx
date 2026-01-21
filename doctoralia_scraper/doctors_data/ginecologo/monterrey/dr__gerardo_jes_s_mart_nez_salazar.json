@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gerardo Jesús Martínez Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1b7e94/1b7e94432726519f101e9df0bbe8c638_220_square.jpg",
+  "about": "Asistente a múltiples congresos, simposios y cursos del área de ginecología y obstetricia. Múltiples publicaciones en el área de medicina general, psiquiatría y ginecología y obstetricia. Perfil ORCID-ID: https://orcid.1rg 2504 Agenda tu cita",
+  "addresses": [
+    {
+      "full": "Calle Miguel Hidalgo 1910, Alterna Business Health Center, Piso 6, Consultorio 601,"
+    },
+    {
+      "full": "Calle Miguel Hidalgo 1910, Alterna Business Health Center, Piso 6, Consultorio 601,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-jesus-martinez-salazar/ginecologo/nuevo-leon#address-id=121849&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:19.734Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gerardo_jes_s_mart_nez_salazar.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ramon Ariztegui",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bolivia 103, col balcones de Galerias ,"
+    },
+    {
+      "full": "Bolivia 103, col balcones de Galerias ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-ariztegui/ginecologo/nuevo-leon#address-id=508486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:21.626Z",
+  "localPhotoPath": null
+}

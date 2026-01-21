@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Gabriela Pacheco Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 359,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0c86fbb7/0c86fbb7-3662-43f4-ba93-dc2fe01ddc7f_small_square.jpg",
+  "about": "Hola ! Soy la Dra Claudia Gabriela Pacheco Sánchez Medico Cirujano con posgrado en Ginecologia y Obstetricia realice la especialidad en Secretaría de Salud del Estado de México egresada de la Universidad Autónoma del Estado de México Mi objetivo principal es brindar una atención de mujer a mujer con calidad, profesionalismo y sobre todo empatía , que en tu consulta te sientas como en casa y tengas la libertad de resolver todas tus dudas y padecimientos. Siempre con el objetivo de brindar un tratamiento oportuno e individualizado. Contamos con Instalaciones adecuadas para el diagnóstico y tratamiento de patologías tanto ginecológicas como obstetricas. .",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica Tlalnepantla consultorio 812 Av Sor Juana Inés de La Cruz 280, Fracc. Industrial, San Lorenzo, 54033 Tlalnepantla, Méx.,"
+    },
+    {
+      "full": "Calle Planta Tingambato 15,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,450"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-pacheco-sanchez/ginecologo/tlalnepantla-de-baz2#address-id=624316&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:09.117Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_pacheco_s_nchez.webp"
+}

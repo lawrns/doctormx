@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Ibanez Jaime Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Tepeyac 1163,"
+    },
+    {
+      "full": "Ave. Tepeyac 1163,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ibanez-jaime-mora/ginecologo/guadalajara#address-id=44876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:02.756Z",
+  "localPhotoPath": null
+}

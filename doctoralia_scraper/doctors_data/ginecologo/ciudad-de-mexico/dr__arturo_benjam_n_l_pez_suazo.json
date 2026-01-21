@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Arturo Benjamín López Suazo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALLE CUAHUTEMOC NO. 40 COL. SAN JAVIER TLALNEPANTLA ,"
+    },
+    {
+      "full": "CALLE CUAHUTEMOC NO. 40 COL. SAN JAVIER TLALNEPANTLA ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-benjamin-lopez-suazo/ginecologo/tlalnepantla-de-baz#address-id=16044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:32.204Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Lester Vargas Santos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d5c10/1d5c10a4e6561a8a1fe5b989031dda82_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Guerrero Y Diaz Guerra,"
+    },
+    {
+      "full": "Morelos 340 -,"
+    },
+    {
+      "full": "Blvd. Guerrero Y Diaz Guerra,"
+    },
+    {
+      "full": "Morelos 340 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lester-vargas-santos-2/ginecologo/ciudad-acuna",
+  "scrapedAt": "2026-01-21T03:04:11.732Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__lester_vargas_santos.webp"
+}

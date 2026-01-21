@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Omar Gutierrez Vela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1c5615/1c56151d8abf48d68d7aab45daf35f38_220_square.jpg",
+  "about": "Soy el Dr. Omar Gutiérrez Vela. Egresado de la especialidad de Ginecología & Obstetricia del Tec de Monterrey, además realicé una alta especialidad en Laparoscopia Ginecológica en la misma institución, avalada por la Asociación American de Ginecología Laparoscópica. Desde mi entrenamiento he participado en mas de 600 cirugías ginecológicas de mínima invasión. Soy miembro activo del Colegio Mexicano de Especialistas en Ginecología & Obstetricia así como de la Federación Mexicana de Endoscopía Ginecológica y la Asociación Americana de Ginecología Laparoscopica.",
+  "addresses": [
+    {
+      "full": "Doctor Roberto J. Cantú 300,"
+    },
+    {
+      "full": "Doctor Roberto J. Cantú 300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-gutierrez-vela/ginecologo/nuevo-leon#address-id=403879&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:17.615Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__omar_gutierrez_vela.webp"
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Dr. David Herrera Hutterer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe 205 Int 402 ,"
+    },
+    {
+      "full": "Guadalupe 208 9,"
+    },
+    {
+      "full": "Guadalupe 205 Int 402 ,"
+    },
+    {
+      "full": "Guadalupe 208 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-herrera-hutterer/ginecologo/celaya#address-id=54424&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:14.887Z",
+  "localPhotoPath": null
+}

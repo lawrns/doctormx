@@ -1,0 +1,30 @@
+{
+  "name": "Dra. María Fernanda Reyna Camacho",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5672a5db/5672a5db-3b99-415c-9bde-c631cc175b6f_small_square.jpg",
+  "about": "Dra. María Fernanda H. Reyna CamachoGinecología, obstetricia y colposcopia | CDMX Mi compromiso es acompañarte en cada etapa de tu salud íntima y reproductiva con atención cálida, tecnología avanzada y medicina basada en evidencia.Especialista en:• Colposcopia y diagnóstico de VPH• Rejuvenecimiento y tensado vaginal con láser CO₂• Cirugía ginecológica mínimamente invasiva• Control prenatal y planificación familiarClínica Bajío #70 – Col. Cuauhtémoc, CDMX Agenda tu cita en Doctoralia y da el siguiente paso hacia tu bienestar.",
+  "addresses": [
+    {
+      "full": "Calle Bajío 70, Roma Sur, Cuauhtémoc, Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Calle Bajío 70, Roma Sur, Cuauhtémoc, Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-reyna-camacho/ginecologo/ciudad-de-mexico#address-id=610222&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:46.151Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_fernanda_reyna_camacho.webp"
+}

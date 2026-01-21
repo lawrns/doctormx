@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Jessica Contreras Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/781155c5/781155c5-19fa-4a67-bb43-62f653491d9b_small_square.jpg",
+  "about": "Soy la Dra. Ana Díaz, ginecóloga apasionada por transformar la experiencia de salud femenina con un enfoque moderno, empático y personalizado. Mi prioridad es acompañarte en cada etapa de tu vida, desde la adolescencia hasta la menopausia, ofreciéndote soluciones avanzadas y efectivas que prioricen tu bienestar. ¡Juntas podemos construir una vida llena de salud, confianza y plenitud! Tu bienestar comienza aquí.",
+  "addresses": [
+    {
+      "full": "Av. Ricardo Flores Magón 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-contreras-garcia/ginecologo/cuauhtemoc2#address-id=540429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:00.537Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jessica_contreras_garcia.webp"
+}

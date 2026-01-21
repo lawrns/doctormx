@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aída Janet Montalvo López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 677,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9af2e/f9af2e37d87551e9f24c50910677fa84_220_square.jpg",
+  "about": "MEDICO CIRUJANO PARTERO.- FACULTAD DE MEDICINA UANL ESPECIALIDAD EN GINECOLOGIA Y OBSTERICIA.- HOSPITAL CHRISTUS MUGERZA CONCHITA, UNIVERSIDAD DE MONTERREY DIPLOMADO EN COLPOSCOPIA - ITESM - UAP ADIESTRAMIENTO EN ESTERILIDAD - HOSPITAL VALL D´HEBRON, BARCELONA ESPAÑA INSTRUCTORA DE PARTO PSICOROFILACTICO Y PARTO HUMANIZADO INSTRUCTORA DE LACTANCIA Y APEGO MADRE E HIJO CERTIFICADA POR EL COLEGIO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA CEDULA PROFESIONAL 4980855 CEDULA PROFESIONAL ESPECIALISTA 8556496",
+  "addresses": [
+    {
+      "full": "15 De Mayo Poniente 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-janet-montalvo-lopez/ginecologo/nuevo-leon#address-id=2056&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:29.250Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__a_da_janet_montalvo_l_pez.webp"
+}

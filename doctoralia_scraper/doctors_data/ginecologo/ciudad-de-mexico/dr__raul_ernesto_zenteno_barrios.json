@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Raul Ernesto Zenteno Barrios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ejercito Nacional 650,"
+    },
+    {
+      "full": "Ave. Ejercito Nacional 650,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-ernesto-zenteno-barrios-2/ginecologo/ciudad-de-mexico#address-id=36481&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:12.602Z",
+  "localPhotoPath": null
+}

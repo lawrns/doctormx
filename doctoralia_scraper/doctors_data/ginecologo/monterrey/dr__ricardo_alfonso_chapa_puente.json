@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Ricardo Alfonso Chapa Puente",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d90c7d/d90c7d1a47a5f71a91d90da00980e454_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Roberto J Cantu 300 P7,"
+    },
+    {
+      "full": "Calle Roberto J. Cantu 300 P7,"
+    },
+    {
+      "full": "Calle Roberto J Cantu 300 P7,"
+    },
+    {
+      "full": "Calle Roberto J. Cantu 300 P7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-alfonso-chapa-puente/ginecologo/monterrey#address-id=120192&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:08.901Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ricardo_alfonso_chapa_puente.webp"
+}

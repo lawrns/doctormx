@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Norma Carolina González Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 313,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/122f5a/122f5abd2877cf4376a5ba8633dbdaa4_220_square.jpg",
+  "about": "Especialista en Colposcopia Diagnóstica y Terapéutica. Tratamiento de infección por Virus del Papiloma Humano, lesiones intraepiteliales de bajo y alto riesgo. Lesiones acuminadas del Virus del Papiloma Humano (verrugas genitales) y lesión por molusco contagioso. Retiro de implantes subdérmicos, DIU traslocado. Colocación de Dispositivo intrauterino. Manejo de sangrado uterino anormal por miomatosis uterina, adenomiosis, pólipos cervicales. Manejo de sangrado uterino disfuncional. Enfermedades benignas de la mama (fibroadenomas, abscesos mamarios, quiste de la mama) Tratamiento de cervicovaginitis, alteraciones de la glándula de Bartholini (quistes o abscesos) Cirugía ginecológica (histerectomías, quistes de ovario), Oclusión tubaria bilateral Cirugía obsétrica (cesáreas, legrado uterino instrumentado, aspiración mecánica endouterina -AMEU- , embarazo ectópico ) Control de embarazo Partos Manejo de amenaza de aborto , amenaza de parto pretérmino",
+  "addresses": [
+    {
+      "full": "Calle 23 101 B,"
+    },
+    {
+      "full": "Calle Tlaxcala 100-1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-carolina-gonzalez-miranda/ginecologo/tlaxcala#address-id=495068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:22.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__norma_carolina_gonz_lez_miranda.webp"
+}

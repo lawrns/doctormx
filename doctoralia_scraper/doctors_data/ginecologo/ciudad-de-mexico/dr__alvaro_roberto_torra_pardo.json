@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alvaro Roberto Torra Pardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d8ae897b/d8ae897b-be28-404f-97f2-eb061959e590_small_square.jpg",
+  "about": "Soy el Dr. Álvaro Torra, Ginecólogo en Satélite me especializo en ofrecer atención personalizada, enfocándome en la prevención, diagnóstico y tratamiento de condiciones ginecológicas, así como en la salud reproductiva. Mi compromiso es acompañar a mis pacientes en todas las etapas de su vida, desde la adolescencia hasta la menopausia, brindando un ambiente de confianza y apoyo. Mi objetivo es proporcionar un espacio seguro donde cada mujer se sienta escuchada y respetada. Estoy convencido de que una comunicación abierta y honesta es clave para lograr el bienestar de mis pacientes. Si estás buscando una atención médica ginecológica de calidad, con respeto y dedicación, estaré encantado de acompañarte en tu salud.",
+  "addresses": [
+    {
+      "full": "CIRCUITO INGENIEROS 15,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-roberto-torra-pardo/ginecologo/naucalpan-de-juarez2#address-id=9229&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:15.071Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alvaro_roberto_torra_pardo.webp"
+}

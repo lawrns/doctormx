@@ -1,0 +1,38 @@
+{
+  "name": "Dr. José Antonio Buenfil Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 495,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/47bf4f/47bf4fba16775af67c2c3592abaa37cc_220_square.jpg",
+  "about": "Soy el Dr. José Antonio Buenfil Lozano. Me gusta ofrecer un servicio de calidad, confianza y certero. Dar las diferentes opciones de tratamiento, el cual sea el mejor para ti. Estoy a su disposición.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,,"
+    },
+    {
+      "full": "Avenida Revolución 1999,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $901"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-buenfil-lozano/ginecologo/nuevo-leon#address-id=346519&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:55.791Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__antonio_buenfil_lozano.webp"
+}

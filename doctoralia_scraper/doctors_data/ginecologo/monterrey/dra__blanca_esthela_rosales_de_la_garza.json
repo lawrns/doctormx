@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Blanca Esthela Rosales De La Garza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 323,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1674cd/1674cd4c238cfaeaf4af7ef41bd84707_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Blanca Esthela Rosales De La Garza, especialista en Obstetricia, por el Instituto Tecnologico y de Estudios Superiores de Monterrey). El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso. Brindaré mi apoyo a cada paciente desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que mejore y se recupere. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-esthela-rosales-de-la-garza/ginecologo/nuevo-leon#address-id=7591&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:55.320Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__blanca_esthela_rosales_de_la_garza.webp"
+}

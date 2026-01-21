@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Salvador Berlanga Narro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48cd45/48cd4538fa3231a94986c0a88fdce3ae_220_square.jpg",
+  "about": "Ginecología y Obstetricia egresado del Programa Multicéntrico del Tecnológico de Monterrey Cirugía Ginecológica de Mínima Invasión egresado del Tecnológico de Monterrey, avalado por la American Association of Gynecologic Laparoscopists",
+  "addresses": [
+    {
+      "full": "Morones Prieto 3000 ote,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-berlanga-narro/ginecologo/nuevo-leon#address-id=386313&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:25.331Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__salvador_berlanga_narro.webp"
+}

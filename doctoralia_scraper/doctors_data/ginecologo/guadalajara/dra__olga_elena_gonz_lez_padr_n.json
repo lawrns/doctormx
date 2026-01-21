@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Olga Elena González Padrón",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 145,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8bce5167/8bce5167-6af4-4597-bfe4-e631cbc94e76_small_square.jpg",
+  "about": "Soy la Dra. Elena González. Regia de nacimiento, tapatía por elección. Soy ginecóloga y además me especializo en Uroginecología, Cirugía Reconstructiva y Rehabilitación de Piso Pélvico. Me formé además en los extremos de la vida reproductiva, con un diplomado en Ginecología Infantojuvenil, así como una maestría en Climaterio y Menopausia. Te espero en consulta, será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Cremona 1122,"
+    },
+    {
+      "full": "Calle Dr Delgadillo Araujo 182-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olga-elena-gonzalez-padron/ginecologo/ocotlan#address-id=479294&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:17.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__olga_elena_gonz_lez_padr_n.webp"
+}

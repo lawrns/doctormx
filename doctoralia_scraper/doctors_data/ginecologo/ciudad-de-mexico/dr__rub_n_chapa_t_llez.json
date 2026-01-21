@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rubén Chapa Téllez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68150d/68150dbbdb99772737f82822c919624c_220_square.jpg",
+  "about": "Mi desarrollo profesional lo he realizado casi en su totalidad en planteles militares, primero como enfermero militar en la Escuela Militar de Oficiales de Sanidad, posteriormente como Médico en la Escuela Médico Militar continuando como médico especialista en Ginecología y obstetricia en la Escuela Militar de Graduados de Sanidad, todas ellas dependientes de la Universidad del Ejército y Fuerza Aérea. Un paso crucial fue el Curso de posgrado en Medicina materno fetal en el Instituto Nacional de Perinatología, estudio avalado por la UNAM. Mi desempeño profesional lo realicé en el aquel entonces en la Clínica de Especialidades de la Mujer, ahora Hospital Militar de Especialidades de la Mujer y Neonatología donde fui jefe del servicio de Embarazo complicado. una vez retirado del servicio activo de las Fuerzas Armadas vengo ejerciendo en la práctica privada primordialmente en Ultrasonido obstétrico de primer trimestre, 11 - 13.6 sem. certificado por la Fetal Medicine Foundation desde 2010, Ultrasonido estructural y ecografía de tercer trimestre. estando también preparado para atención de pacientes con embarazo de alto riesgo y desde luego la atención de pacientes con trastorno ginecológico.",
+  "addresses": [
+    {
+      "full": "Circuito Puericultores 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $25,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $25,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-chapa-tellez/ginecologo/naucalpan-de-juarez2#address-id=82763&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:19.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rub_n_chapa_t_llez.webp"
+}

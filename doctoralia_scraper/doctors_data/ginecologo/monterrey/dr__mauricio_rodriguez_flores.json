@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mauricio Rodriguez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/45991b/45991bbce4691db095a11f0890fea658_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-rodriguez-flores/ginecologo/monterrey#address-id=23727&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:49.370Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mauricio_rodriguez_flores.webp"
+}

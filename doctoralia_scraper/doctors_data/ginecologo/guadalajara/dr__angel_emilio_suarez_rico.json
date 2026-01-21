@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Angel Emilio Suarez Rico",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bd20a/7bd20a38e9933a6b261905facecdc368_220_square.jpg",
+  "about": "Buen día, soy el Dr Angel Suarez, Ginecólogo con Subespecialidad en Biología de la Reproducción Humana (Fertilidad). Me encantaría ayudarte a que logres tu embarazo lo antes posible. Siéntete en confianza para que yo pueda resolver cualquier duda y poderte ayudar. Ánimo estoy para servirte!",
+  "addresses": [
+    {
+      "full": "Av. Copérnico 3817,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-emilio-suarez-rico/ginecologo/zapopan#address-id=449149&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:41.580Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__angel_emilio_suarez_rico.webp"
+}

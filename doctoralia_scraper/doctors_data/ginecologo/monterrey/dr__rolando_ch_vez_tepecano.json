@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rolando Chávez Tepecano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 215,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/921212/9212126c829f06756643e81ec746cf31_220_square.jpg",
+  "about": "Soy el Dr. Rolando Tepecano, ginecólogo y obstetra con más de 10 años de experiencia y alta especialidad en Urología Ginecológica y Ginecología Estética. Mi compromiso es ofrecer a cada paciente una atención cercana, profesional y con la confianza de que será escuchada y acompañada en todo momento. Atiendo en la Clínica de Especialidades Cerya, ubicada en Lic. José Benítez 2505, Col. Obispado, Monterrey, N.L., C.P. 64060, un espacio diseñado para cuidar integralmente la salud de la mujer.Muchas mujeres llegan a consulta por molestias como sangrados abundantes, dolor pélvico, presión en el abdomen o infecciones recurrentes, que pueden estar relacionadas con miomas, quistes o problemas en el cuello uterino.En mi práctica realizo una valoración integral y, cuando es necesario, procedimientos como histerectomías, colposcopias y cirugías de mínima invasión, que permiten tratar de manera precisa y con una recuperación más rápida.Además, cuento con formación en urología ginecológica y ginecología estética, lo que me permite ofrecer soluciones para problemas funcionales e íntimos de la mujer, siempre con un enfoque respetuoso y humano.Si presentas alguno de estos síntomas o deseas una valoración ginecológica, será un gusto atenderte. Puedes agendar tu cita enviando un mensaje de WhatsApp.También puedes seguirnos en Facebook, Instagram, TikTok y YouTube, donde compartimos información y consejos de salud.Tu salud es cosa Cerya",
+  "addresses": [
+    {
+      "full": "Licenciado José Benítez 2505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Desde $48,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rolando-chavez-tepecano-2/ginecologo/nuevo-leon#address-id=471195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:26.771Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__rolando_ch_vez_tepecano.webp"
+}

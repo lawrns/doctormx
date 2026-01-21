@@ -1,0 +1,39 @@
+{
+  "name": "Mary Carmen Rodríguez Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 357,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7835f6/7835f6603967a7448eeb595b563d94c9_220_square.jpg",
+  "about": "Estudie la licenciatura en medicina del año 1995 al año 2000. Realice mi año de internado de pregrado en el Hospital General Regional #36 San Alejandro del año 2000 al 2001. Servicio social en el municipio de Tepatlaxco de Hidalgo del año 2001 al 2002. Entre a la especialidad de Gineco - Obstetricia en el año 2005 , previo a haber pasado el Examen Nacional de Residencias Medicas, en el cual, para mi especialidad y en ese año competimos a nivel nacional aproximadamente 3000 médicos que buscabamos un lugar en esta especialidad, aceptando solo a 300 médicos, entre ellos, yo conseguí mi lugar. Realice la especialidad en Ginecología y Obstetricia del año 2005 al 2009, en el IMSS Centro Medico Nacional Ignacio García Téllez de Mérida Yucatán. Ingrese a laborar en el IMSS en Puebla en el HGR #36 San Alejandro en el año 2009ya como especialista, actualmente cuento con 16 años de antigüedad de laborar para tan noble institución. Inicié también mi atención a nivel privado desde año 2009 hasta la fecha ininterrumpídamente. Posterior a terminar la especialidad he continuado actualizándome, y preparándome, realice: Diplomado en Colposcopía y Patología del Tracto Genital Femenino del año 2010 al 2011, avalado por la Facultad de Medicina de La Universidad Autónoma de Coahuila y el Colegio de Colposcopía del Estado de Puebla, lo que me otorgó la acreditación por parte de la Dirección de Regulación Sanitaria y Fomento Sanitario de la SSA de puebla, para la practica como colposcopista. Diplomado en ultrasonido en Gineco - Obstetricia en el año 2015, avalado por la Benemérita Universidad Autónoma de Puebla. Adiestramiento en el Manejo Quirúrgico de la Disfunción del Piso Pélvico en el año 2021, avalado por el IMSS. Estoy Certificada y Re certificada por el Consejo Mexicano de Ginecología y Obstetricia desde el año 2012 hasta la fecha. Soy miembro federado y activo de la Federación Mexicana de Colegios de Ginecología y Obstetricia, (FEMECOG) Soy miembro activo del Colegio de Ginecologos y Obstetras del Estado de Puebla.",
+  "addresses": [
+    {
+      "full": "Calle 16 Sur 4304, Col. Anzures,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Colposcopia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mary-carmen-rodriguez-campos-2/ginecologo/puebla#address-id=411870&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:12.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/mary_carmen_rodr_guez_campos.webp"
+}

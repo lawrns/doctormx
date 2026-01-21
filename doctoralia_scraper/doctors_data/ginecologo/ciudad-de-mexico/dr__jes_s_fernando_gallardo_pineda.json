@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Fernando Gallardo Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0fff6c/0fff6c8c1c1a5fb3222fa8dc44a17f74_220_square.jpg",
+  "about": "Soy egresado de la especialidad en Ginecología y Obstetricia por el Hospital de la Mujer, SSA de México DF, un Hospital de concentración, donde se atiende una gran diversidad de enfermedades que afectan a la mujer mexicana, la subespecialidad en Reproducción Humana la realicé en el Hospital Español de México DF, en la clínica de reproducción asistida HISPAREP, complementando mi formación en Hospitales muy reconocidos tanto en México como en Europa. Mi atención está enfocada a las parejas con infertilidad o que necesiten de tratamientos como fertilización in vitro FIV, Inyección intracitoplasmática de espermatozoides ICSI, Ovodonación, preservación de la fertilidad, coito programado, inseminación intrauterina, detecciones de cáncer, sangrados uterinos anormales, alteraciones menstruales, planificación familiar, cirugía ginecológica y obstétrica, laparoscopía, histeroscopía, ultrasonido, control y atención del parto. Considerando la honestidad como prioridad y siempre dando el mejor esfuerzo, ofreciendo resultados claros, en el menor tiempo posible.",
+  "addresses": [
+    {
+      "full": "Dakota 204 Int. 302. Colo,"
+    },
+    {
+      "full": "Dakota 204 Int. 302. Colo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-fernando-gallardo-pineda/ginecologo/ciudad-de-mexico#address-id=94063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:48.667Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jes_s_fernando_gallardo_pineda.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Javier Gustavo Garza Camarena",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/191445/1914459c86b9394718e428afffea829d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-gustavo-garza-camarena/ginecologo/nuevo-leon#address-id=394263&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:33.171Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__javier_gustavo_garza_camarena.webp"
+}

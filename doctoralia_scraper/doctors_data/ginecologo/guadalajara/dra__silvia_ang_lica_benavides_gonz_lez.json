@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Silvia Angélica Benavides González",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4407f9/4407f9a66498fe6b0630497e0fbbecd5_220_square.jpg",
+  "about": "Buen dia! Soy la Dra. Silvia Benavides, médico especialista en Ginecología y Obstetricia, egresada del CMN La Raza. Es primordial para mi el bienestar de la mujer en las diferentes etapas de la vida, atendiendo las necesidades de cada una. Agenda tu cita! Revision Ginecológica: - Consulta especializada - Ultrasonido pelvico abdominal/endovaginal - Citologia cervicovaginal (Papanicolaou) - Revisión mamaria",
+  "addresses": [
+    {
+      "full": "Avenida N. Copérnico 3343,"
+    },
+    {
+      "full": "Avenida N. Copérnico 3343,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-angelica-benavides-gonzalez/ginecologo/zapopan#address-id=136367&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:27.940Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__silvia_ang_lica_benavides_gonz_lez.webp"
+}

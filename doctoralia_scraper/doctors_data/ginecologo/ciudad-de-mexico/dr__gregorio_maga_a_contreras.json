@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gregorio Magaña Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1beb5a/1beb5a992f4c8d259805fe21037074ad_220_square.jpg",
+  "about": "Estimadas pacientes, les doy la más cordial bienvenida. Explico brevemente, cual es mi forma de trabajo: En una primer entrevista, realizo un amplio interrogatorio sobre su motivo de consulta, antecedentes personales y familiares, posterior a una exploración física completa, integro el diagnóstico y le oriento sobre la necesidad de realizar estudios complementarios, ya sea de laboratorio y/o gabinete, para la confirmación del mismo y cual es la conducta médica o intervención que se requiere, dándole las opciones disponibles y orientándola sobre beneficios y desventajas de cada una de ellas. Todo ello en un marco de empatía, respeto, profesionalismo y dando suficiente tiempo en la entrevista para aclarar sus dudas. Quedo a sus apreciables órdenes.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134, (2° piso),"
+    },
+    {
+      "full": "Av. Universidad 1134, (2° piso),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gregorio-magana-contreras/ginecologo/benito-juarez#address-id=17093&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:28.050Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gregorio_maga_a_contreras.webp"
+}

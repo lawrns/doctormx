@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Felipe Garnica Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 147,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21dd28/21dd28e9f220432769f219f9c77afecf_220_square.jpg",
+  "about": "Yo soy un medico que primero obtuvo la formación de Ginecólogo y Obstetra, y así trabaje durante dos años en medio privado y publico pero después obtuve el grado de subespecialista en Urología Ginecológica, la razón de estudiar esta subespecialidad fue la de obtener los conocimientos para otorgar mejor calidad de vida y una solución a todas esas pacientes que adolecen de infección de vías urinarias, prolapso de vejiga, útero y recto, incontinencia urinaria, fistula urinaria, vejiga dolorosa (cistitis intersticial), vejiga hiperactiva, dificultad para el vaciamiento de la vejiga, resequedad vaginal, alteraciones sexuales, e incontinencia fecal entre otras, además tengo la capacidad de atender a pacientes que acuden a control de embarazo, ultrasonido, cistoscopia, alteraciones menstruales, infecciones vaginales, tumores mamarios, asesoría para métodos de planificación familiar, toma de Papanicolaou.",
+  "addresses": [
+    {
+      "full": "Tarascos 3469, (torre vieja) Colonia Monraz, piso 2, consultorio 216,"
+    },
+    {
+      "full": "Manuel Montero 4, Colonia Centro, San Juan de los Lagos, Jal.,"
+    },
+    {
+      "full": "Tarascos 3469, (torre vieja) Colonia Monraz, piso 2, consultorio 216,"
+    },
+    {
+      "full": "Manuel Montero 4, Colonia Centro, San Juan de los Lagos, Jal.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta por incontinencia urinaria",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta por incontinencia urinaria",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-felipe-garnica-ayala/ginecologo/san-juan-de-los-lagos#address-id=389017&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:31.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_felipe_garnica_ayala.webp"
+}

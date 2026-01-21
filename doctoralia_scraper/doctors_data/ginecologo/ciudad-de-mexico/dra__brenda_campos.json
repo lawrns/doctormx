@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Brenda Campos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5d4d7/a5d4d7483a958de8025eb7741658dafa_220_square.jpg",
+  "about": "Mi prioridad es brindarte una atención personalizada, asegurando que te sientas cómoda y confiada en cada consulta. Te ofrezco un espacio cálido, respetuoso y de confianza en el cuál puedas exponer tus preocupaciones con el objetivo de ayudarte a resolver todas tus dudas de manera clara y profesional. Considero que en la consulta se abre un canal libre de juicios y seguro, donde mis pacientes se sienten en confianza para contarme sus padecimientos, problemas, afecciones, inquietudes de tratamientos, dudas sobre sexualidad, etc: por lo que lejos de preocuparme por solicitarles que dejen una opinión acerca de mi trabajo, valoró más la confidencialidad extrema con la que quieren guardar sus temas más privados e íntimos. Agradezco de todo corazón las opiniones que me dejan, es muy bonito leer que disfrutan mi atención y que sientan que el consultorio es un lugar seguro para ser ellas mismas. Será un placer ser tu ginecóloga de confianza, esa persona a la que puedas hablarle sin tabúes, ni etiquetas. Permíteme acompañarte y te garantizo ser la mejor especialista para ti.",
+  "addresses": [
+    {
+      "full": "Calle Rio Bamba 639,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-campos/ginecologo/cuauhtemoc2#address-id=520834&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:00.027Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__brenda_campos.webp"
+}

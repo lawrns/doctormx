@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Rogelio Castillo Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 386,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5bbf88/5bbf881072409bfee68da3422f4ac13f_220_square.jpg",
+  "about": "Soy médico gineco-obstetra con subespecialidad en urología ginecológica, egresado del Instituto Nacional de Perinatología, cuento también con un diplomado en colposcopía y maestría en educación. El enfoque de mi atención médica son los embarazos de alto riesgo y la atención a la mujer en las diversas etapas de su vida. Como parte de la atención de urología ginecológica, los principales problemas que aquejan en esta área son: la incontinencia urinaria, el prolapso de órganos pélvicos, la infecciones urinarias de repetición y el dolor pélvico crónico. En cada consulta busco brindar la mejor atención a cada una de mis pacientes, explicando las complicaciones de cada patología, los tratamientos disponibles y de acuerda a las características de cada una de ellas, se elige el mejor tratamiento, siempre con la finalidad de que el desenlace sea satisfactorio.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143, Reserva Territorial Atlixcáyotl torre 1 consultorio 740,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Resultado de Citología",
+      "price": ""
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rogelio-castillo-luna/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:51:57.348Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rogelio_castillo_luna.webp"
+}

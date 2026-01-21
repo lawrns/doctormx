@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Eduardo Carmona López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8ec03108/8ec03108-ee87-4cf8-8e5a-104fd8b8c74f_small_square.jpg",
+  "about": "Atención de la salud ginecológica y embarazo, parto humanizado, cesárea, menopausia y climaterio, miomatosis, papanicolaou, ultrasonido obstétrico, quistes de ovario, métodos anticonceptivos, colocación de implante subdérmico y dispositivo intrauterino, interrupción voluntaria del embarazo",
+  "addresses": [
+    {
+      "full": "Avenida Álvaro Obregón 273, Consultorio 301,"
+    },
+    {
+      "full": "Avenida Álvaro Obregón 273, Consultorio 301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-eduardo-carmona-lopez/ginecologo/cuauhtemoc2#address-id=346789&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:30.851Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__eduardo_carmona_l_pez.webp"
+}

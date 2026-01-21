@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dora Catalina Barron Alvarez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/21a649fd/21a649fd-2115-4253-8c20-82eab6b8a586_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dora-catalina-barron-alvarez/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T02:40:40.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__dora_catalina_barron_alvarez.webp"
+}

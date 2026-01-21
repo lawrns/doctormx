@@ -1,0 +1,25 @@
+{
+  "name": "Salvador Tejeda Quintana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Dia 2740 Jardínes del Bosque,"
+    },
+    {
+      "full": "Dia 2740 Jardínes del Bosque,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-tejeda-quintana/ginecologo/guadalajara#address-id=132069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:08.358Z",
+  "localPhotoPath": null
+}

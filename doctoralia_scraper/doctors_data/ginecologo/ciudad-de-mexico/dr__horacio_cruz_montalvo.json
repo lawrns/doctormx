@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Horacio Cruz Montalvo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes X J. Siurob Ramrez S/N,"
+    },
+    {
+      "full": "Av. Plutarco Elías Calles 228,"
+    },
+    {
+      "full": "Cam. Real Al Ajusco S/N,"
+    },
+    {
+      "full": "Av. Insurgentes X J. Siurob Ramrez S/N,"
+    },
+    {
+      "full": "Av. Plutarco Elías Calles 228,"
+    },
+    {
+      "full": "Cam. Real Al Ajusco S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/horacio-cruz-montalvo/ginecologo/othon-p-blanco#address-id=220737&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:55.054Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan José Bazaldúa Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada Union 1111 Parque La Talaverna San Nicolás De Los Garza,"
+    },
+    {
+      "full": "Calzada Union 1111 Parque La Talaverna San Nicolás De Los Garza,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-bazaldua-cruz/ginecologo/monterrey#address-id=148247&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:47.825Z",
+  "localPhotoPath": null
+}

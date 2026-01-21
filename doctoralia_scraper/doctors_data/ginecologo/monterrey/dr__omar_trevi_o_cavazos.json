@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Omar Treviño Cavazos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 193,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5affa/f5affacb8af7e8f1d7ddd322779fd157_220_square.jpg",
+  "about": "Hola, soy el Dr. Omar Treviño Soy Ginecólogo con Subespecialidad en Urología Ginecológica y Cirugía Reconstructiva de Piso Pélvico, egresado del Centro Médico Nacional 20 de noviembre. Tengo experiencia en el manejo de todo tipo de enfermedades del área de Ginecología y Uroginecología y esta se expande ampliamente al manejo de todas las patologías del Piso Pélvico (incontinencia urinaria, incontinencia fecal, prolapso de órganos pélvicos, dolor pélvico crónico, infecciones urinarias de repetición, etc.) Estoy certificado en entrenamiento de cirugía Laparoscópica, así como en Cirugía Estética y Láser vaginal. Te puedo acompañar y ayudar a combatir esta enfermedad para que juntos logremos un estado de salud óptimo que te permita disfrutar al máximo con una mejor calidad de vida.",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2602,"
+    },
+    {
+      "full": "1a Avenida 903,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-trevino-cavazos/ginecologo/nuevo-leon#address-id=486398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:56.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__omar_trevi_o_cavazos.webp"
+}

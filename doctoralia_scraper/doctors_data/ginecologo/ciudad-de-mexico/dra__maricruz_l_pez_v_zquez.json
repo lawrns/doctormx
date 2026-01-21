@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maricruz López Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 716,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/10dc46/10dc46f1dbdf3a5e742e305c2bf6b1f7_220_square.jpg",
+  "about": "Soy un persona empatica comprometida con el bienestar de las pacientes , atencion perzonalida de mujer a mujer",
+  "addresses": [
+    {
+      "full": "Boulevard Bosque de Africa 144a,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maricruz-lopez-vazquez/ginecologo/nezahualcoyotl#address-id=422541&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:14.274Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maricruz_l_pez_v_zquez.webp"
+}

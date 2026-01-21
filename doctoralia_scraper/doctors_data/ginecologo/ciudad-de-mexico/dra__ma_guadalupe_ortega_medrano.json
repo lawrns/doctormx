@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ma Guadalupe Ortega Medrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 223,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4259d3/4259d3b433e3de40dae6841ca9524621_220_square.jpg",
+  "about": "Como experta Ginecóloga obstetra, mis pacientes valoran la cordialidad, integridad profesional y empatía que definen la atención médica que presto. Mi compromiso con mis pacientes se basa en conocer adecuadamente su estado de salud para que siempre estén informados a la hora de tomar decisiones importantes.",
+  "addresses": [
+    {
+      "full": "Cto. Circunvalacion Pte. F7 Consultorio 106 Zona Azul,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $900"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $900"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-guadalupe-ortega-medrano/ginecologo/naucalpan-de-juarez2#address-id=197722&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:37.950Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ma_guadalupe_ortega_medrano.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Lidia Elizabeth Santana Domínguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "PLINIO 142,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "PLINIO 142,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lidia-elizabeth-santana-dominguez-3/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:03:58.496Z",
+  "localPhotoPath": null
+}

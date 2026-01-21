@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Esteban Pacheco Alfonso",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb3e98/cb3e987bd944d7361947d11a476a64b7.jpg",
+  "about": "Soy el Dr. Hugo Esteban Pacheco Alfonso, especialista en Ginecología oncológica de la Ciudad de México. Estudié en el Instituto Politécnico Nacional de 2008 a 2015, y posteriormente en la Universidad Nacional Autónoma de México de 2015 a 2019 y de 2019 a 2022. Tengo experiencia en el tratamiento de diversos problemas ginecológicos como miomas uterinos, embarazo de alto riesgo y embarazo en general. Me considero un médico comprometido con la salud de mis pacientes, siempre buscando ofrecer la mejor atención y los tratamientos más adecuados para cada caso en particular. Me gusta explicar detalladamente a mis pacientes sobre su padecimiento y las opciones de tratamiento, para que puedan tomar decisiones informadas y participar activamente en su propia atención médica. Las opiniones de mis pacientes son muy importantes para mí, ya que me ayudan a mejorar mi práctica médica y ofrecer un servicio cada vez mejor. Agradezco a todos aquellos pacientes que han dejado comentarios positivos sobre mí y mi trabajo, y me comprometo a seguir trabajando duro para brindarles la mejor atención posible.",
+  "addresses": [
+    {
+      "full": "Riobamba 927,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Biopsia mamaria",
+      "price": "• $6,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Biopsia mamaria",
+      "price": "• $6,500"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esteban-pacheco-alfonso/ginecologo-oncologo-ginecologo/cuauhtemoc2#address-id=621106&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:18.404Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__esteban_pacheco_alfonso.webp"
+}

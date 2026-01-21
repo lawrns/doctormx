@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rodrigo Encarnacion Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/bba4be46/bba4be46-2f18-4c76-9d75-c93b585f9290_large.jpg",
+  "about": "Principales áreas de tratamiento Salud integral de la mujer. Embarazo de alto riesgo. Control prenatal. Atención del nacimiento (Parto, Cesárea) Ultrasonidos estructurales 3D y 4D Check up ginecologico (Ultrasonido de útero y ovarios, revisión de mama, toma de papnicolaou)",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-encarnacion-ibarra/ginecologo/ciudad-de-mexico#address-id=529151&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:32.437Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodrigo_encarnacion_ibarra.webp"
+}

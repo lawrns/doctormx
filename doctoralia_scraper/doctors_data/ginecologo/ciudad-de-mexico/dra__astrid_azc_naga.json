@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Astrid Azcúnaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/dd61983d/dd61983d-7167-4d1d-9e01-1f864c85994e_small_square.jpg",
+  "about": "Soy médico especialista en ginecología y obstetricia titulo obtenido por la UNAM y certificada por el Consejo Mexicano de Ginecología y Obstetricia. Tengo diplomado en colposcopía y patología del tracto genital femenino y cirugía de mínima invasión.Atiendo consulta de embarazo normal y alto riesgo, parto/ cesárea humanizada, métodos anticonceptivos, virus del papiloma humano, etc.Mi misión es hacer de la consulta un espacio seguro y cómodo libre de perjuicios.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/astrid-azcunaga/ginecologo/benito-juarez#address-id=542444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:33.387Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__astrid_azc_naga.webp"
+}

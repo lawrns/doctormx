@@ -1,0 +1,31 @@
+{
+  "name": "Carolina Castillo Giacoman",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 50, Cuauhtémoc, Col. Roma,"
+    },
+    {
+      "full": "Queretaro Num Ext 144 Num Int 512 Roma,"
+    },
+    {
+      "full": "Durango 50, Cuauhtémoc, Col. Roma,"
+    },
+    {
+      "full": "Queretaro Num Ext 144 Num Int 512 Roma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-castillo-giacoman-2/ginecologo/ciudad-de-mexico#address-id=128448&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:21.518Z",
+  "localPhotoPath": null
+}

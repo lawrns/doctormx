@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maricruz Barraza Solórzano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 342,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/09346bde/09346bde-a094-4193-bb54-e281441e831a_large.jpg",
+  "about": "Soy la Dra. Maricruz Barraza ginecóloga certificada por el Consejo Mexicano de Ginecología y Obstetricia. Mi principal objetivo como ginecóloga es su bienestar, por lo que contamos con los equipos sofisticados y especializados mediante los cuales se podrán detectar y prevenir a tiempo enfermedades ginecológicas que puedan afectar su salud.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 144, Consultorio 112, primer piso.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Despigmentación vaginal",
+      "price": "• Desde $7,500"
+    },
+    {
+      "name": "Labioplastia",
+      "price": "• $29,000"
+    },
+    {
+      "name": "Rejuvenecimiento vaginal con láser",
+      "price": "• $6,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maricruz-barraza-solorzano/ginecologo/cuauhtemoc2#address-id=75818&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:09.868Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maricruz_barraza_sol_rzano.webp"
+}

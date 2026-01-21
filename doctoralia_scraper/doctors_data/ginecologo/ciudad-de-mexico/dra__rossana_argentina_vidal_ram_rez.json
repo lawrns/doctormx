@@ -1,0 +1,65 @@
+{
+  "name": "Dra. Rossana Argentina Vidal Ramírez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 264,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba19dc/ba19dc691f2a60a6f47783124d5813ca.jpg",
+  "about": "Dra. Rossana Argentina VidalMédica Cirujana – Ginecóloga Obstetra – Ginecóloga OncólogaLa Dra. Rossana Argentina Vidal es Médica Cirujana por la Facultad de Medicina de la UNAM, especialista en Ginecología y Obstetricia por el Hospital de la Mujer de la Ciudad de México y subespecialista en Ginecología Oncológica por el Hospital Juárez de México.Se encuentra certificada por el:Consejo Mexicano de Ginecología y Obstetricia (CMGO)Consejo Mexicano de Oncología (CMO)Cuenta con formación avanzada en cirugía de mínima invasión: laparoscopia, histeroscopia diagnóstica y terapéutica, colposcopia y cirugía oncoplástica de mama. Además, tiene capacitación en láser ginecológico, enfocado en el manejo de lesiones precursoras por VPH, verrugas, tratamiento de atrofia vaginal, tensado vaginal y procedimientos de salud íntima funcional.Su práctica clínica se centra en el manejo integral de:Cáncer ginecológico (cérvix, ovario, endometrio, vulva).Tumores ginecológicos benignos: miomas, quistes de ovario, endometriosis.Cirugía oncológica y de mama.Lesiones por VPH y colposcopia avanzada.Cirugía laparoscópica e histeroscópica de alta precisión.Salud íntima y funcional femenina con tecnología láser.La Dra. Vidal combina su entrenamiento en hospitales de alta especialidad con una atención empática, respetuosa y centrada en la mujer, ofreciendo diagnósticos claros, acompañamiento seguro y tratamientos basados en evidencia.Actualmente atiende en la práctica privada dentro de la red hospitalaria Grupo Ángeles y Grupo Star Médica, brindando atención quirúrgica y consultas con un enfoque moderno, integral y personalizado.Su compromiso es ofrecer a cada paciente un espacio de confianza, profesionalismo y excelencia médica.",
+  "addresses": [
+    {
+      "full": "Av. Vicente Villada 649, Vicente Villada,"
+    },
+    {
+      "full": "Riobamba 639,"
+    },
+    {
+      "full": "Calle Querétaro 154 Col. Roma Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,550"
+    },
+    {
+      "name": "Primera visita ginecológica",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas ginecológicas",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,750"
+    },
+    {
+      "name": "Visita Ginecología",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas ginecológicas",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,750"
+    },
+    {
+      "name": "Primera visita ginecológica",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas ginecológicas",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rossana-argentina-vidal-ramirez/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=440727&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:19.789Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rossana_argentina_vidal_ram_rez.webp"
+}

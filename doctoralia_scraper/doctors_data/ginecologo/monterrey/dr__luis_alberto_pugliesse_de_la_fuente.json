@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Alberto Pugliesse de la Fuente",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de0331/de0331d84541185791e22b3b6106444c_220_square.jpg",
+  "about": "Soy Médico Ginecólogo, y especialista en medicina Materno Fetal, llevo el control prenatal en un embarazo sano y embarazos de alto riesgo, mujeres que padezca alguna enfermedad como Diabetes o Hipertensión o alguna enfermedad que requiera mucho cuidado durante su embarazo. Atiendo Parto y operación Cesárea en el hospital de su preferencia o donde adquiera su paquete de maternidad. Realizó ultrasonido de alta especialidad en el embarazo, Genético y Anatómico e incluye imágenes en 3D, 4D, HD live o como actualmente se le llama 5D. A demás de check in ginecológico, papanicolaou, y cirugía de miomas y sangrado anormal, tratamiento médico de sangrados anormales, endometriosis y miomatosis uterina. Tratamiento de enfermedades de transmisión sexual, tratamiento médico y quirúrgico de tumores de la mama y abscesos vulvares, vaginales y de la mama.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-alberto-pugliesse-de-la-fuente/ginecologo/nuevo-leon#address-id=23839&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:43.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_alberto_pugliesse_de_la_fuente.webp"
+}

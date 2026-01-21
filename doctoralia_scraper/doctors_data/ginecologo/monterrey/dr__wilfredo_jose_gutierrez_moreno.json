@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Wilfredo Jose Gutierrez Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cbbdc7/cbbdc7e21df3a382fb874e391fc2e858_220_square.jpg",
+  "about": "MEDICO CIRUJANO Y PARTERO - UNIVERSIDAD DE MONTERREY ESPECIALIDAD EN GINECOLOGIA Y OBSTETRICIA - CHRISTUS MUGUERZA HOSPITAL GENERAL CONCHITA, UNIVERSIDAD DE MONTERREY SUBESPECIALIDAD EN GINECOLOGIA PEDIATRICA - SOCIEDAD ARGENTINA DE GINECOLOGIA INFANTO JUVENIL, UNIVERSIDAD NACIONAL DE LA PLATA ADIESTRAMIENTO EN GINECOLOGIA ONCOLÓGICA - HOSPITAL MD ANDERSON, MADRID ESPAÑA CERTIFICADO COMO GINECOLOGO PEDIATRA POR LA FEDERACIÓN INTERNACIONAL DE GINECOLOGIA INFANTO JUVENIL CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA MIEMBRO DE LA NORTH AMERICAN SOCIETY OF PEDIATRIC AND ADOLESCENT GYNECOLOGY. CEDULA PROFESIONAL: 5290816 CEDULA DE ESPECIALISTA: 7840277",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wilfredo-jose-gutierrez-moreno/ginecologo/general-escobedo#address-id=382539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:13.305Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__wilfredo_jose_gutierrez_moreno.webp"
+}

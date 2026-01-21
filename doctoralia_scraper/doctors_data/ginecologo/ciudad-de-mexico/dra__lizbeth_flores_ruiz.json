@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lizbeth Flores Ruiz",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2116b1/2116b1876e70020de1e819591bfb7ed7_220_square.jpg",
+  "about": "Soy egresada de dos de las mejores universidades del país, de la carrera de medico cirujano y la subespecialidad de ginecología oncológica por la Universidad Nacional Autónoma de México, Facultad de Medicina y por la universidad de Guanajuato en la especialidad de Ginecología y Obstetricia. tengo el conocimiento y las habilidades para el tratamiento de las pacientes de edades adolescentes y adultas en las patologías mas importantes de la vida de la mujer, como tumores malignos y benignos de mama, útero, endometrio, ovarios y cervicouterino. Así como el conocimiento para la atención de embarazo, parto, parto humanizado y parto en agua, y el control prenatal durante el embarazo y sus complicaciones, con la experiencia en tratamiento y diagnóstico oportuno de enfermedades causadas por el virus del Papiloma Humano, con la atención humana y cálida que merecemos como mujeres.",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía ginecológica y obstetrica de alta complejidad",
+      "price": ""
+    },
+    {
+      "name": "Prueba de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizbeth-flores-ruiz/ginecologo-oncologico-ginecologo/cuauhtemoc#address-id=2745&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:03.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lizbeth_flores_ruiz.webp"
+}

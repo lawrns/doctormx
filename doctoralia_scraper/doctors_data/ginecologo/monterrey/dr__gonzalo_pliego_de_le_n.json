@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Gonzalo Pliego De León",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 93,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c8171/9c8171361a5dc81cd39f3f0da5f26c07_220_square.jpg",
+  "about": "GINECOLOGIA Y OBSTETRICIA ... drgonzalopliego.com trato humano y altamente especializado, cuidando tu salud en todas las etapas de tu vida como mujer. Certificado en SOP e Hipotiroidismo por el Instituto de Especialización en Medicina Funcional El Dr. Gonzalo Pliego De León es especialista en Ginecología y Obstetricia. Realizó sus estudios de post-grado en el Christus Muguerza Hospital General Conchita en Monterrey, NL, México, avalado por la Universidad de Monterrey. Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Miembro de la Sociedad Americana de Medicina Reproductiva (ASRM). En palabras del Dr. Pliego: “La salud de cada mujer, requiere de un trato único y especial, por lo que creo que es muy importante guiarlas en el cuidado de si mismas, de una forma personalizada, honesta, efectiva y amable, ofreciendo las mejores alternativas de manejo médico especializado para resolver cada una de las condiciones que pudieran alterar su calidad de vida ginecológica, obstétrica y reproductiva.”",
+  "addresses": [
+    {
+      "full": "Avenida Circuito Frida Kahlo 180,"
+    },
+    {
+      "full": "Avenida Circuito Frida Kahlo 180,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-pliego-de-leon/ginecologo/san-pedro-garza-garcia#address-id=437771&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:28.489Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gonzalo_pliego_de_le_n.webp"
+}

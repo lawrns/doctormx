@@ -1,0 +1,25 @@
+{
+  "name": "Maria De Los Angeles Soriano Vega",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ninos Heroes Esq. Av. Hidalgo,"
+    },
+    {
+      "full": "Ninos Heroes Esq. Av. Hidalgo,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-soriano-vega/ginecologo/milpa-alta#address-id=194309&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:17:32.097Z",
+  "localPhotoPath": null
+}

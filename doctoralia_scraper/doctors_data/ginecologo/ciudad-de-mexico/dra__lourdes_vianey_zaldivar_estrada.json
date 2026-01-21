@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lourdes Vianey Zaldivar Estrada",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/728f6d4f/728f6d4f-3815-4f16-9e31-99f2e371877d_small_square.jpg",
+  "about": "Desde siempre he sentido una profunda inclinación por acompañar y ayudar a las personas. Con el tiempo descubrí que mi vocación era la medicina, especialmente porque las ciencias de la salud no solo se me facilitaban, sino que me resultaban apasionantes por lo que estudié Medicina en la Facultad de Medicina de Ciudad Universitaria.Durante mi formación como médico general, comprendí que la atención médica de la mujer representa un reto único ya que aunque tratemos a la misma persona, sus necesidades diagnósticas cambian a lo largo de cada etapa de su vida. Esto me motivó a realizar la especialidad en Ginecología y Obstetricia en la Secretaría de Salud de la Ciudad de México, avalada por la UNAM.Después me di cuenta de que se puede influenciar de manera favorable incluso desde antes del nacimiento convencida de que el trabajo en esta área puede transformar la vida de una persona incluso antes de nacer po lo que decidí hacer la subespecialidad en Medicina Materno Fetal en el Instituto Nacional de Perinatología, de igual manera avalada por la UNAM.Las condiciones que enfrenta una mujer a lo largo de su vida pueden ser complejas, desde el inicio de la menstruación, el comienzo de la vida sexual, la planificación familiar, el embarazo, hasta el periodo posterior a la vida fértil.Mi objetivo es brindar acompañamiento integral a las mujeres, sus parejas y sus familias, ofreciendo información clara y orientación para fomentar un adecuado estado de salud ginecológica y reproductiva.Además de ser profundamente apasionada por mi carrera, disfruto pasar tiempo al aire libre, practicar deporte extremo me complementa y compartir momentos con mis seres queridos es lo que mas me reconforta.",
+  "addresses": [
+    {
+      "full": "C. Viveros de Asís 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lourdes-vianey-zaldivar-estrada/ginecologo/tlalnepantla-de-baz2#address-id=508849&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:01.752Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lourdes_vianey_zaldivar_estrada.webp"
+}

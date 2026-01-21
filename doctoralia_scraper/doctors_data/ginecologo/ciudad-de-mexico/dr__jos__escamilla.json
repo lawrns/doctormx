@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Escamilla",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b7bc7/0b7bc754d2caeca529c61796587ca336_220_square.jpg",
+  "about": "Médico Ginecologo Endoscopista",
+  "addresses": [
+    {
+      "full": "Tuxpan 54, Roma Sur,"
+    },
+    {
+      "full": "Tuxpan 54, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-escamilla/ginecologo/cuauhtemoc2#address-id=593241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:49.449Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__escamilla.webp"
+}

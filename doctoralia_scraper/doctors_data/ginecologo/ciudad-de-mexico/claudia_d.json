@@ -1,0 +1,34 @@
+{
+  "name": "Claudia D",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Ginecologa y Obstetra. Parto Humanizado.",
+  "addresses": [
+    {
+      "full": "Tuxpan 16 piso 9 consultorio 904 ,"
+    },
+    {
+      "full": "Tuxpan 16 piso 9 consultorio 904 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-d/ginecologo/ciudad-de-mexico#address-id=370186&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:46.998Z",
+  "localPhotoPath": null
+}

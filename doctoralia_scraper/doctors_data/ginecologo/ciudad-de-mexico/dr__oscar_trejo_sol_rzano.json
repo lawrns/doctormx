@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Oscar Trejo Solórzano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 139,"
+    },
+    {
+      "full": "Tehuantepec 139,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Crioterapia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-trejo-solorzano/ginecologo/cuauhtemoc",
+  "scrapedAt": "2026-01-21T02:55:29.591Z",
+  "localPhotoPath": null
+}

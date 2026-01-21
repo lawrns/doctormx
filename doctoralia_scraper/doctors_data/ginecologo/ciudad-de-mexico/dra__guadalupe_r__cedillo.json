@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Guadalupe R. Cedillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/09de04e2/09de04e2-3b07-4e0b-9c62-33a598277bd6_small_square.jpg",
+  "about": "Ginecóloga egresada de la UMAE N.4 \"Luis Castelazo Ayala\", IMSS; con formación en Cirugía Endoscopica y Colposcopia en el Hospital General de México \"Dr. Eduardo Liceaga\". Soy una doctora empática y comprometida con la salud ginecologica, sexual y reproductiva de mis pacientes. Mi objetivo es darte una atención con un enfoque integral y de calidad.",
+  "addresses": [
+    {
+      "full": "Rosa María Sequeira 227,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-r-cedillo/ginecologo/coyoacan#address-id=550006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:29.485Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__guadalupe_r__cedillo.webp"
+}

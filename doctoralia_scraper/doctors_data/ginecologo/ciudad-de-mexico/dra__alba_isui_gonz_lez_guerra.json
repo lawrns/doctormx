@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alba Isui González Guerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 498,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43969e/43969e2500ba795b4ea834b55c027d30.jpg",
+  "about": "CERTIFICACION VIGENTE ANTE EL COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA . Egresada de la Licenciatura de Médico Cirujano en la Facultad de Medicina de Ciudad Universitaria de la UNAM. Egresada de la Especialidad en Ginecología y Obstetricia de la UNAM. Diplomado en Patología del Tracto Genital Inferior y Colposcopia en el Hospital Adolfo López Mateos del ISSSTE. Diplomado Diplomado Uso del Laser en el Tracto Genital Inferior.COMEGIC-UNAM. CERTIFICACION Y RECERTIFICACION VIGENTE ANTE EL COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA Actividad quirúrgica en los hospitales: *Star Médica Centro *Star Medica El Vivo Jardin Bicentenario *San Ángel Inn Patriotismo Hospital Dalinde Hospital HMG Coyoacán Hospital Español",
+  "addresses": [
+    {
+      "full": "CECILIO ROBELO 415, COL. JARDIN BALBUENA, ALC. VENUSTIANO CARRANZA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alba-isui-gonzalez-guerra/ginecologo/ciudad-de-mexico#address-id=446638&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:11.228Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alba_isui_gonz_lez_guerra.webp"
+}

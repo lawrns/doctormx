@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alicia Silva Hernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d1bf2e/d1bf2e2c2f8c984b700e67cf28ac0aca_220_square.jpg",
+  "about": "Soy Ginecologa y Obstetra con subespecialidad en Medicina Materno Fetal, me especializo en consulta de control prenatal de embarazo normal y embarazo de alto riesgo y ultrasonido fetal avanzado genetico, anatómico y Doppler. Además de consulta de padecimientos ginecológicos.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador #2331 Col. Balcones de Galerías,"
+    },
+    {
+      "full": "Calle Ecuador #2331 Col. Balcones de Galerías,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-silva-hernandez/ginecologo/nuevo-leon#address-id=346228&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:34.310Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alicia_silva_hern_ndez.webp"
+}

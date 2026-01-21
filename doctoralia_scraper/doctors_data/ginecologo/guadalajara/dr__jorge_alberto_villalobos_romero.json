@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Jorge Alberto Villalobos Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a19f63/a19f63f795dd4c11cfe64624ff092ad0_220_square.jpg",
+  "about": "Soy el Dr. Jorge Alberto Villalobos Romero, graduado de la Universidad Autónoma de Guadalajara en la carrera de Medicina. Me especializo en Ginecología y Obstetricia, con un diplomado en colposcopia y Patología del Tracto Genital Inferior del Instituto Jalisciense de Cancerología. Me dedico a la atención de adultos, en particular a casos de embarazo, miomas uterinos y embarazos de alto riesgo. Para mí, lo más importante es brindar una atención de calidad y personalizada a mis pacientes, siempre explicando de manera clara y detallada los tratamientos y procedimientos a seguir. Me mantengo actualizado con las últimas técnicas y avances en mi especialidad, lo que me permite ofrecer una atención integral y efectiva. Si buscas un ginecólogo con experiencia y trato amable, no dudes en contactarme.",
+  "addresses": [
+    {
+      "full": "Av Espana 1854, Moderna,"
+    },
+    {
+      "full": "Avenida España 1854,"
+    },
+    {
+      "full": "Av Espana 1854, Moderna,"
+    },
+    {
+      "full": "Avenida España 1854,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Colocación de  DIU Kyleena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-villalobos-romero-2/ginecologo/guadalajara#address-id=570063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:06.948Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jorge_alberto_villalobos_romero.webp"
+}

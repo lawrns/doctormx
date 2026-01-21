@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Hermann Enrique Gorg Lechuga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e67da8/e67da83121a41074cd5e091890f67f5a.jpg",
+  "about": "Sobre mí Hola soy Hermann, médico cirujano egresado de la Universidad Anáhuac en el 2003, realicé mi especialidad den el Hospital General de México egresando el el 2010, desde entonces con experiencia en mi profesión a nivel privado en el Hospital Vivo y en el Hospital Ángeles Lomas, así como Médico Ginecólogo, Jefe de Servicio, Subdirector Médico y Director en el ISEM Principales áreas de tratamiento Ginecología es la especialidad en el cuidado de la mujer. Obstetricia es la especialidad en el cuidado del embarazo. Ginecología Estetica, Regenerativa y Funcional que es la rama de la Ginecología donde cuidamos tu bienestar íntimo estéticamente, funcional y regenerativo. Otros servicios Ginecología Check up ginecológico anual, citología cervicovaginal, colposcopia, exploración mamaria Alteraciones en el ritmo menstural Miomatosis uterina tratamiento Incontinencia urinaria Anticoncepción Infecciones vaginales (ETS) Obstetricia Vigilancia del embarazo Consulta preconcepcional Atención del parto o cesárea",
+  "addresses": [
+    {
+      "full": "Avenida Bordo De Xochiaca Lote A2-2B - Int 3,"
+    },
+    {
+      "full": "Avenida Bordo De Xochiaca Lote A2-2B - Int 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Ginecología estética",
+      "price": "• $800"
+    },
+    {
+      "name": "Ginecología láser, estética y funcional",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hermann-enrique-gorg-lechuga/ginecologo/nezahualcoyotl#address-id=96097&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:00.694Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hermann_enrique_gorg_lechuga.webp"
+}

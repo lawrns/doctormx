@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Elio Rafael Ponce Juarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 508,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/928a8b/928a8b6ce6fb8e556e3cd694fa44a5bd_220_square.jpg",
+  "about": "Ginecólogo con más de 10 años de experiencia. Brinda atención de vigilancia de Embarazo, Atención de Parto, Cesárea, Menopausia, Miomas uterinos, Cirugía Ginecológica Convencional y Laparoscópica. Lo que mas disfruto de mi especialidad es brinda una atención cálida, integral, generando la confianza y la empatía necesarias para poder dar seguimiento a los tratamiento de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida Carlos Fernández Graef 154-Int 330,"
+    },
+    {
+      "full": "Calle Querétaro 58 INT 305,"
+    },
+    {
+      "full": "Av. Universidad 1080 INT 4067,"
+    },
+    {
+      "full": "Avenida Río Churubusco 601 INT 933 TORRE 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elio-rafael-ponce-juarez/ginecologo/cuauhtemoc2#address-id=388679&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:32.991Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__elio_rafael_ponce_juarez.webp"
+}

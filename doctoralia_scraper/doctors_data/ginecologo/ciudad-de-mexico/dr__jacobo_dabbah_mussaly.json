@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jacobo Dabbah Mussaly",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cf5e2/9cf5e2b2bb976edc9fcfeb50e3a660f4_220_square.jpg",
+  "about": "Medico Gineco-Obstetra , con sub especialidad en Medicina Reproductiva. La duracion promedio de la consulta es de 30 min, donde realizamos una Historia clinica completa y detallada, examen fisico, contamos con ultrasonido 4° Dimension, laboraorio de estudios quimicos. Pacientes en etapa de Embarazo, se lleva control prenatal estricto, contamos con servicio de Materno fetal y nutricion durante el embarazo. Las pacientes que nos consultan por Infertilidad, desde la primera visita, llevan un diagnostico y diferentes alternativas de tratamiento reproductivo, Contamos con centro de reproduccion asistida. Formado como Medico y Gineco-Obstetra en Mexico, especialista en Reproduccion en España, miembro de Multiples asociaciones medicas en el campo Gineco-Obstetrico e Infertilidad tanto Nacionales como Internacionales. Miembro activo en trabajso de Investigacion",
+  "addresses": [
+    {
+      "full": "AV. DE LA PALM,"
+    },
+    {
+      "full": "AV. DE LA PALM,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jacobo-dabbah-mussaly/ginecologo/miguel-hidalgo#address-id=327046&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:24.426Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jacobo_dabbah_mussaly.webp"
+}

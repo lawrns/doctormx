@@ -1,0 +1,63 @@
+{
+  "name": "Dra. Andrea Rodriguez Alvarez de la Cuadra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 214,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b496c3/b496c3fca4c04a85d25a8c3f171b0758_220_square.jpg",
+  "about": "¡Hola! Mi nombre es Andrea Rodríguez, y te doy la bienvenida. Soy médico especialista en Ginecología y Obstetricia egresada del Hospital General de México avalada por la Universidad Nacional Autónoma de México. Hoy en día cuento con un Diplomado en Patología del Aparato Genital Inferior y Colposcopía, un certificado en Ecografía en Obstetricia, Ginecología y Mama. Soy una persona llena de energía y buena vibra que le gusta contagiar esa energía, doy lo mejor de mí en cada situación, me esfuerzo y lucho para conseguir mis metas mientras aprendo en el camino. Mi meta como Ginecóloga es seguir preparándome para poder llegar a más mujeres, y con esto lograr mi objetivo en crear consciencia de la importancia en la prevenir, identificar y tratar enfermedades del aparato reproductor femenino en un espacio cómodo y seguro para tus valoraciones quitando ese estereotipo de mala experiencia que es acudir al ginecólogo. ¡Te espero en tu cita, tu salud ginecológica sin complejos!",
+  "addresses": [
+    {
+      "full": "Av. Río Mixcoac 25, Piso 11-B, Crédito Constructor, Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Aplicación de vacuna contra VPH",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• $2,800"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-rodriguez-alvarez-de-la-cuadra/ginecologo/benito-juarez#address-id=429678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:20.366Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__andrea_rodriguez_alvarez_de_la_cuadra.webp"
+}

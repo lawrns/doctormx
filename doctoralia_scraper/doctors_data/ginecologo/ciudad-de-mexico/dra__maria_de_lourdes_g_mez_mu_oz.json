@@ -1,0 +1,98 @@
+{
+  "name": "Dra. Maria de Lourdes Gómez Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 176,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae483f/ae483f1178c393509069e5ae5c1430f3_220_square.jpg",
+  "about": "Soy egresada de la Especialidad de Ginecologío y Obstetricia del HGO 3 CMN La Raza en el año 2011; curse el curso de colposcopia y ultrasonido Obstétrico y Ginecológico ambos avalados por la facultad de medicina de la Salle. Me he desempeñado en la atención de pacientes tanteo en instituciones públicas como privadas.",
+  "addresses": [
+    {
+      "full": "Calle La Corona 160, Colonia Industrial,"
+    },
+    {
+      "full": "Boulevard Coacalco no. 83 Col. Villa de las Flores. Coacalco de Berriozabal. Edo.Mex,"
+    },
+    {
+      "full": "Calz de los Jinetes No 64, Col Las Arboledas. Atizapan de Zaragoza,"
+    },
+    {
+      "full": "Calle La Corona 160, Colonia Industrial,"
+    },
+    {
+      "full": "Boulevard Coacalco no. 83 Col. Villa de las Flores. Coacalco de Berriozabal. Edo.Mex,"
+    },
+    {
+      "full": "Calz de los Jinetes No 64, Col Las Arboledas. Atizapan de Zaragoza,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-gomez-munoz/ginecologo/gustavo-a-madero#address-id=349537&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:13.510Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_de_lourdes_g_mez_mu_oz.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rodriguez Leticia Munguia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Rep De Cuba 45,"
+    },
+    {
+      "full": "Calle Rep De Cuba 45,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodriguez-leticia-munguia/ginecologo/heroica-matamoros#address-id=54381&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:39.928Z",
+  "localPhotoPath": null
+}

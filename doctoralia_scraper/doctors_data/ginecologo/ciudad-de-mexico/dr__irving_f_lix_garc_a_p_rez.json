@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Irving Félix García Pérez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 189,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/87fefe/87fefe088b7112553b85dd6325b70783_220_square.jpg",
+  "about": "Soy el Dr. Irving Félix García Pérez, especialista en Ginecología Oncológica así como en Ginecología y Obstetricia con experiencia en el Hospital Juárez de México y Hospital Regional de Alta Especialidad Ixtapaluca, avalado por el Consejo Mexicano de Oncología así como por el Consejo Mexicano de Ginecológica y Obstetricia. Me dedico a tratar enfermedades ginecológicas oncológicas incluyendo cáncer de mama, cáncer de cuello uterino, útero, vagina, vulva, ovario y salpinges y cambios precancerosos de cualquiera de los mencionados; además de patologías ginecológicas como sangrado uterino, miomatosis, endometriosis, fibrosis mamaria, entre otras, sin olvidad el control, seguimiento y resolución del embarazo. Mi objetivo es brindar una atención médica de calidad y un diagnóstico adecuado a mis pacientes, siempre manteniendo un trato amable y respetuoso. Me enorgullece poder ayudar a mis pacientes a superar cualquier obstáculo en su salud y estoy comprometido en continuar mi formación y actualización médica para brindar siempre el mejor servicio posible.",
+  "addresses": [
+    {
+      "full": "Boulevard Luis Donaldo Colosio 212,"
+    },
+    {
+      "full": "Matagalpa 1077,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irving-felix-garcia-perez/ginecologo-oncologico-ginecologo/gustavo-a-madero#address-id=455128&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:29.013Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__irving_f_lix_garc_a_p_rez.webp"
+}

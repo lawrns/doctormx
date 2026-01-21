@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Octavio Pérez Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d70cae/d70cae218df76c9f1b12e43f0a905a80_220_square.jpg",
+  "about": "Experiencia de 35 años en la practica y enseñanza de la gineco-obstetricia en hospitales públicos como la practica privada. Ejerciendo como jefe de área quirúrgica y cirujano de ginecología tanto de cirugía programada como de urgencias. Con especial interés de cirugía vaginal tanto estética como funcional.",
+  "addresses": [
+    {
+      "full": "Calle de Durango 81-402,"
+    },
+    {
+      "full": "Calle de Durango 81-402,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-perez-hernandez/ginecologo/cuauhtemoc2#address-id=425877&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:11.840Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__octavio_p_rez_hern_ndez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "David Martinez Barragan",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nichupte Mza 55 Lt1 Ed23 Dep201, Col. Supmza 51 Torres Del Bosque Ii, ,"
+    },
+    {
+      "full": "Nichupte Mza 55 Lt1 Ed23 Dep201, Col. Supmza 51 Torres Del Bosque Ii, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-martinez-barragan/ginecologo/benito-juarez#address-id=356993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:13:51.694Z",
+  "localPhotoPath": null
+}

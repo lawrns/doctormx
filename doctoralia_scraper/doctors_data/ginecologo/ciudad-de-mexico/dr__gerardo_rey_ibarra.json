@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gerardo Rey Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1319ad/1319ad9692e528730cb77ae60976c092_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Independencia Mz.76 Lt. 62-B ,"
+    },
+    {
+      "full": "Av. Independencia Mz.76 Lt. 62-B ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-rey-ibarra/ginecologo/ecatepec-de-morelos#address-id=84095&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:26.950Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_rey_ibarra.webp"
+}

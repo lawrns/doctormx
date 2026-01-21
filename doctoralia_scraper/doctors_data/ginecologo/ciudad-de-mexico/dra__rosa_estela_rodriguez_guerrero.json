@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Rosa Estela Rodriguez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 248,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/596df0/596df034c16567a701598d09c628c485_220_square.jpg",
+  "about": "Mi misión es poder orientar, diagnosticar e informar a los pacientes sobre su estado de salud así como su trato integral para lograr dar el tratamiento oportuno y obtener la mejoría de los mismos. Mi visión es obtener que los pacientes mantengan su salud, con el diagnóstico y tratamiento certeros, aclarando sus inquietudes, con empatía, mediante el trato digno y humano que caracteriza a nuestra profesión.",
+  "addresses": [
+    {
+      "full": "Frontera 74,"
+    },
+    {
+      "full": "Toriello Guerra 150,"
+    },
+    {
+      "full": "Frontera 74,"
+    },
+    {
+      "full": "Toriello Guerra 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-estela-rodriguez-guerrero-2/ginecologo/cuauhtemoc2#address-id=399087&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:26.710Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rosa_estela_rodriguez_guerrero.webp"
+}

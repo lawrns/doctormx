@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Gabriela Ayala Montoya",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 339,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05f035/05f035c345dc4a6e087437c2aa2ce5a0_220_square.jpg",
+  "about": "Un gusto para mi poder atenderles en diversos temas de Ginecología, Obstetricia y Fertilidad. Soy la doctora Gabriela Ayala, Médico Cirujano por la UNAM, especialista en Ginecología y Obstetricia por la UAEM y con estudios de sub especialidad en Biología de la Reproducción Humana egresada del Hospital Ángeles del Pedregal, avalada por la UNAM. Avalada por el consejo Mexicano de Ginecología y Obstetricia y por el consejo Mexicano de Biología de la Reproducción Humana. Me apasiona mi trabajo y poder servirte en los temas de salud femenina más relevantes. En mi consulta médica podrás sentir la confianza para hablar de aquellos temas que te preocupan para juntas poder tener una solución practica y de certeza. Mi formación médica ha sido en el ámbito publico y privado, por lo que el enfoque que doy al resolver algún problema de salud femenina esta siempre actualizado y ligado desde lo más fácil a lo más complejo.",
+  "addresses": [
+    {
+      "full": "Avenida Veracruz 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• Desde $2,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-ayala-montoya/ginecologo/toluca-de-lerdo#address-id=456785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:54.206Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_ayala_montoya.webp"
+}

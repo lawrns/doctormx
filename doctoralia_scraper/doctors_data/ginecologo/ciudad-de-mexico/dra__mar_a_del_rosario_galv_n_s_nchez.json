@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María del Rosario Galván Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b5257/3b5257c07d37adc26ccc5cc6b6a9604b_220_square.jpg",
+  "about": "Ginecóloga con más de 22 años de experiencia.",
+  "addresses": [
+    {
+      "full": "Circunvalación Poniente #12 ,"
+    },
+    {
+      "full": "Circunvalación Poniente #12 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rosario-galvan-sanchez/ginecologo/naucalpan-de-juarez#address-id=19506&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:12.935Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_del_rosario_galv_n_s_nchez.webp"
+}

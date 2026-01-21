@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Roberto Argüello Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f01f90/f01f907b15a5a4e78caf27e60d2adc52_220_square.jpg",
+  "about": "¡Bienvenida! Soy el Dr. Roberto Argüello especialista en Ginecología, Obstetricia, Andrología, Colposcopia y tracto Genital Inferior y Cirugía Laparoscópica y mínima invasión acreditado por El Hospital General de México. Cuento con certificaciones por el Comité Normativo Nacional de Consejos de Especialidades Médicas (CONACEM) y el Consejo Mexicano de Ginecología y Obstetricia. Actualmente soy miembro del Colegio Mexicano de Ginecología y Obstetricia. Co-Fundador de la Clínica FEMPRO | Alta Especialidad de la Mujer. Mi lema es Seguridad y Amor en cada etapa de la Vida. ¡Te espero en consulta, será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Federico T de La Chica 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $700"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $3,800"
+    },
+    {
+      "name": "Checkup completo",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-roberto-arguello-lopez/ginecologo/ciudad-de-mexico#address-id=460939&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:19.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__roberto_arg_ello_lopez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rachel Fiszman Amora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 277,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce73f3/ce73f33ab88380b8d63ae756e366539a_220_square.jpg",
+  "about": "Soy medico cirujano egresada de la Facultad de Medicina de la UNAM, titulada con mención honorífica. Realicé mi especialidad en Ginecología y Obstetricia en el Hospital General de México y la sub especialidad en Biología de la Reproducción Humana en el Instituto Nacional de Perinatología. Cuento con una maestría en Ciencias de la Salud en Investigación Clínica por parte del IPN también titulada con mención honorífica y tuve el gusto de ser profesora titular del curso de Ginecología y Obstetricia I de la misma institución. Actualmente ejerzo la practica privada en el Hospital Ángeles México y en Torre Medica San Diego en Cuernavaca, soy profesora adjunta del curso de médicos residentes de Ginecología y Obstetricia en el Hospital Ángeles México. Cuento con un Diplomado en Educación Médica y de temas en la Salud. Soy speaker y líder de opinión para varias empresas farmacéuticas. Así mismo he sido profesora adjunta de varios cursos de educación médica continua. Me encuentro certificada y recertificada por el Colegio Mexicano de Ginecología y Obstetricia y soy miembro del Colegio Médico del Hospital Ángeles México.",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rachel-fiszman-amora/ginecologo/ciudad-de-mexico#address-id=361567&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:07.764Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rachel_fiszman_amora.webp"
+}

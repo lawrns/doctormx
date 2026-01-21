@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Inés Ramírez Marín",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f490c/8f490c291580923d18e86cffbc446cd6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tepic 139,"
+    },
+    {
+      "full": "Tepic 139,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ines-ramirez-marin-2/ginecologo/ciudad-de-mexico#address-id=416490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:19.302Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__in_s_ram_rez_mar_n.webp"
+}

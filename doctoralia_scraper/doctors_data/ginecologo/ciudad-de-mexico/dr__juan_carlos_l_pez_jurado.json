@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos López Jurado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93102d/93102d5dc5d0bdab8bc127a689456709_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chupicuaro 54-6,"
+    },
+    {
+      "full": "Chupicuaro 54-6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-lopez-jurado/ginecologo/miguel-hidalgo#address-id=134723&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:53.994Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_carlos_l_pez_jurado.webp"
+}

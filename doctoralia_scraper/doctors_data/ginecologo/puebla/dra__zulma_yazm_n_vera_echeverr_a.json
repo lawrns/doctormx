@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Zulma Yazmín Vera Echeverría",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 105,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bb689/7bb689d91722ac8ab29d2ce97abc96f3_220_square.jpg",
+  "about": "Consultas ginecologicas especialmente en temas de endocrinologia ginecologica Consultas obstetricas, adecuado control prenatal. Consultas sobre metodos anticonceptivos. Consultas sobre perimenopausia y climaterio. Realizacion de Colposcopias y toma de biopsias cervicales. Realizacion de papanicolaou Consultas sobre el área infanto juvenil, para ver temas relacionados con la etapa de la adolescencia.",
+  "addresses": [
+    {
+      "full": "Avenía 11 oriente. No 1817,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zulma-yazmin-vera-echeverria/ginecologo/puebla#address-id=453783&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:10.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__zulma_yazm_n_vera_echeverr_a.webp"
+}

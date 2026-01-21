@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Linet Ponce",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 690,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/def566/def566d6bff262570c7c08444728e1f4_220_square.jpg",
+  "about": "Soy la Dra. Linet Ponce, ginecóloga–obstetra egresada del Hospital General de México y avalada por la UNAM. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia.Cuento con formación en Tracto Genital Inferior y cirugía laparoscópica de mínima invasión, lo que me permite diagnosticar y tratar con precisión patologías como VPH, lesiones de cérvix, vagina y vulva, así como realizar procedimientos con rápida recuperación.Mi enfoque es claro y profesional: ofrecerte una atención humana, respetuosa y basada en evidencia para cuidar tu salud ginecológica en cada etapa de tu vida.I am Dr. Linet Ponce, Gynecologist–Obstetrician trained at the General Hospital of Mexico and endorsed by UNAM. I am certified by the Mexican Council of Gynecology and Obstetrics.I hold advanced training in Lower Genital Tract Pathology and Minimally Invasive Laparoscopic Surgery, allowing precise diagnosis and treatment of conditions such as HPV, cervical and vaginal lesions, and minimally invasive procedures with fast recovery.My approach is clear, professional, and patient-centered, offering respectful and evidence-based care for your gynecological health at every stage.",
+  "addresses": [
+    {
+      "full": "Sanatorio Durango, Durango 290 Roma Norte, consultorio 406, cuarto piso, CDMX,"
+    },
+    {
+      "full": "cto centro comercial 16, plaza samara satelite, Hospital San Angel Inn Torre A consultorio 1223, Cd Satelite,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Legrado uterino por aborto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linet-ponce/ginecologo/naucalpan-de-juarez2#address-id=126832&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:11.056Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__linet_ponce.webp"
+}

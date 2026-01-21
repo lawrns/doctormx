@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Dante Rafael Navarro Wallmark",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b0cb39/b0cb391fa4d467994908cee03a6b35a2_220_square.jpg",
+  "about": "Hola, soy Dante Navarro Wallmark, me especialicé en ginecología y obstetricia en 1987, sin embargo, la obstetricia de aquél entonces comparada con la actual es de la tierra al cielo. Claro aprendimos muy bien las técnicas quirúrgicas de urgencia obstétrica que ahora es difícil de obtener ( la experiencia) pero el compromiso con la actualización de conocimientos debe ser constante. Posteriormente me especialicé en Reproducción Humana con lo que dominé la consulta de fertilidad, la microcirugía, la laparoscopia de primer nivel, la consulta de menopausia, y sobre todo afiné la cirugía ginecológica. En resumen, traer un nuevo ser al mundo por parto humanizado, con apego, alojamiento conjunto y lactancia exclusiva forma parte de mi gran satisfacción.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador No. 2331, Balcones de Galerías cons. 1007,"
+    },
+    {
+      "full": "Calle Ecuador No. 2331, Balcones de Galerías cons. 1007,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dante-rafael-navarro-wallmark/ginecologo/nuevo-leon#address-id=390061&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:19.670Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__dante_rafael_navarro_wallmark.webp"
+}

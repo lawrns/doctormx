@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ixel Lorena Ruiz Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb7387/cb7387d3e3a9832474a1df6227741c06_220_square.jpg",
+  "about": "Soy egresada de la Facultad de Medicina de la Universidad Nacional Autónoma de México (UNAM), como Médico Cirujano, Profesional de Posgrado de especialización en Ginecología y Obstetricia en el Instituto Nacional de Perinatología “Isidro Espinosa de los Reyes” (UNAM), y formación en Medicina Materno Fetal en el Instituto Nacional de Perinatología. Soy miembro del Colegio Mexicano de Especialistas en Ginecología y Obstetricia, Certificada por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO) como especialista en Ginecología y Obstetricia y Medicina Materno Fetal, de igual manera estoy Certificada por la Fetal Medicine Foundation. En mi consultorio encontrarás una profesional siempre dispuesta a escucharte y a brindarte una atención con calidad y calidez.",
+  "addresses": [
+    {
+      "full": "Providencia 717,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita de Medicina Materno Fetal",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ixel-lorena-ruiz-cabrera/ginecologo/benito-juarez#address-id=455562&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:39.260Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ixel_lorena_ruiz_cabrera.webp"
+}

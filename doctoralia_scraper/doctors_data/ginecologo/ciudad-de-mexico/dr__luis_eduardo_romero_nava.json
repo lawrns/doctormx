@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Eduardo Romero Nava",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d7ef5c/d7ef5c1b427769e5efc461ef7473b65a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino de Sta. Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Estudio urodinámico",
+      "price": "• $13,000"
+    },
+    {
+      "name": "Rehabilitación pélvica",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-eduardo-romero-nava/ginecologo/magdalena-contreras#address-id=254131&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:42.537Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_eduardo_romero_nava.webp"
+}

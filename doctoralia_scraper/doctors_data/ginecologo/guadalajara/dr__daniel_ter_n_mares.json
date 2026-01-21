@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Daniel Terán Mares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4556d1/4556d103262dede19c7dbfc2fd1dbc77_220_square.jpg",
+  "about": "Unidad Quirúrgica Láser , con 20 años de experiencia Atendido por el Dr. Daniel Terán Mares. Con amplia experiencia en Lesiones provocadas por el Virus del Papiloma Humano (VPH) Tratamiento con Láser CO2. Mujeres y Varones Se Realiza una Exploración Integral: Colposcopía (cérvix, vagina y vulva) con reporte con fotos , descripción y diagnostico desde la primera visita. Rastreo ecográfico de útero, ovarios, hígado y riñones, que permite detectar alteraciones como hígado graso y tumores de dichos órganos en forma oportuna.",
+  "addresses": [
+    {
+      "full": "Manuel Acuña #1805,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,999"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-teran-mares/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:36.890Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__daniel_ter_n_mares.webp"
+}

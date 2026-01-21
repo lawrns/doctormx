@@ -1,0 +1,43 @@
+{
+  "name": "Dr. César Santiago Arreortúa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 279,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/78b7c4/78b7c4e0d1a90ce0de1847df9c09b7eb_220_square.jpg",
+  "about": "Ginecología en todas las etapas de la vida. Adolescensia, Etapa reproductiva. Postmenopausia. Especialista en Enfermedades y alteraciones del piso pélvico propias del postparto (desgarros del esfínter anal, incontinencia, dolor), Síndrome de Vejiga Dolorosa, Cistitis, Dolor pélvico Crónico. Infecciones Urinarias Recurrentes. Diagnóstico desde el punto de vista funcional y con especial enfasis en la mejora en la calidad de Vida. Las mujeres en la postmenopausia necesitan un manejo ginecológico integral, especialmente aquellas con problemas de incontinencia Urinaria y prolapso de órganos pélvicos (Cistocele/vejiga caida).",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $20,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-santiago-arreortua/ginecologo/naucalpan-de-juarez#address-id=10574&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:21.911Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__c_sar_santiago_arreort_a.webp"
+}

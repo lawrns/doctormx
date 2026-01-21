@@ -1,0 +1,150 @@
+{
+  "name": "Dr. Miguel Angel Ramos Borja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3fa05/a3fa05fd1d09c5ce4a07798355eb0029_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Dr. Javier Castellanos Coutiño 564,"
+    },
+    {
+      "full": "AV REFORMA,"
+    },
+    {
+      "full": "De los Insurgentes 258 - Fraccionamiento La Paz,"
+    },
+    {
+      "full": "BLVD TORRES LANDA 118A,"
+    },
+    {
+      "full": "AV MURANO 248 Colonia Las Heras,"
+    },
+    {
+      "full": "Dr. Javier Castellanos Coutiño 564,"
+    },
+    {
+      "full": "AV REFORMA,"
+    },
+    {
+      "full": "De los Insurgentes 258 - Fraccionamiento La Paz,"
+    },
+    {
+      "full": "BLVD TORRES LANDA 118A,"
+    },
+    {
+      "full": "AV MURANO 248 Colonia Las Heras,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $3,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-ramos-borja/ginecologo/irapuato#address-id=21859&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:55.851Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_angel_ramos_borja.webp"
+}

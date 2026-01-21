@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Tofic Saleh Montalvo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 1828 Pte,"
+    },
+    {
+      "full": "Hidalgo 1828 Pte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tofic-saleh-montalvo/ginecologo/monterrey#address-id=97444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:45.500Z",
+  "localPhotoPath": null
+}

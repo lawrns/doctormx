@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola Delgado Luciano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/68aef60d/68aef60d-760a-4779-b715-2ed474f3fb19_large.jpg",
+  "about": "Soy la Dra. Paola Delgado Luciano, Ginecóloga y Obstetra; con alta especialidad en Menopausia y Climaterio avaladas por la UNAM. Brindo atención integral a la salud femenina desde la empatía, la ciencia y el respeto. Escucho, entiendo y acompaño cada etapa con una visión inclusiva y libre de juicios. Soy aliada de la comunidad LGBTQ+ y promotora a decidir sobre el propio cuerpo. Estaré feliz de brindarte una atención de calidad, especializada en Ginecología avanzada, colposcopia, patología del tracto genital inferior, control prenatal, acompañamiento en el puerperio y la Peri- postmenopausia.",
+  "addresses": [
+    {
+      "full": "Calle Tehuantepec 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-delgado-luciano/ginecologo/cuauhtemoc2#address-id=616126&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:07.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paola_delgado_luciano.webp"
+}

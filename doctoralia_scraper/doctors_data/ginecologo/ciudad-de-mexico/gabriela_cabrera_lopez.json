@@ -1,0 +1,43 @@
+{
+  "name": "Gabriela Cabrera Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b2e56/6b2e562bc21856491168597aaf1f7617_220_square.jpg",
+  "about": "¡Hola! Soy el Dra. Gabriela Cabrera Lopez, especialista en Ginecologia y Obstretecia, por la UNAM. El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso. Brindaré mi apoyo a cada paciente desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que mejore y se recupere. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "HOSPITAL MEDICA SUR CONSULTORIO 207. Puente de Piedra No. 150 Torre 2 Col. Toriello Guerra, Tlalpan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-cabrera-lopez/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:44:05.944Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/gabriela_cabrera_lopez.webp"
+}

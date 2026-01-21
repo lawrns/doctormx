@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Sergio Estévez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4a25d/a4a25dcd76dd342b0120b62a443de20b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Juan Enrique Pestalozzi 1204,"
+    },
+    {
+      "full": "Nueva York 274,"
+    },
+    {
+      "full": "Calle Juan Enrique Pestalozzi 1204,"
+    },
+    {
+      "full": "Nueva York 274,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-estevez-gonzalez/ginecologo/benito-juarez#address-id=80495&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:07.423Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__sergio_est_vez_gonz_lez.webp"
+}

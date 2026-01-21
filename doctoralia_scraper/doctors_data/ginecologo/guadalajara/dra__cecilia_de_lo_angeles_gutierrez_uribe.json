@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cecilia de lo Angeles Gutierrez Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 345,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3209d8/3209d8a7c646ec80957dc3cc393334a6.jpg",
+  "about": "Mis horarios de Consultas son de Lunes a viernes de 10 a 14 hrs y de 16 a 20 hrs. ESTOY A SUS ORDENES. Atencion discreta, humana y respetuosa sabemos que tu intimidad es lo mas importante. Atencion las 24 hrs.",
+  "addresses": [
+    {
+      "full": "Av mariano otero 3601 colonia la calma entre patria Y boyero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $980"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-de-lo-angeles-gutierrez-uribe/ginecologo/guadalajara#address-id=94477&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:47.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__cecilia_de_lo_angeles_gutierrez_uribe.webp"
+}

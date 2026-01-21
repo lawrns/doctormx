@@ -1,0 +1,37 @@
+{
+  "name": "Maria Del Carmen Orozco Tovar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circ. S/N,"
+    },
+    {
+      "full": "Lazaro Cardenas 500,"
+    },
+    {
+      "full": "Reyna Cruz 100,"
+    },
+    {
+      "full": "Circ. S/N,"
+    },
+    {
+      "full": "Lazaro Cardenas 500,"
+    },
+    {
+      "full": "Reyna Cruz 100,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-orozco-tovar/ginecologo/guadalupe#address-id=193820&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:11.527Z",
+  "localPhotoPath": null
+}

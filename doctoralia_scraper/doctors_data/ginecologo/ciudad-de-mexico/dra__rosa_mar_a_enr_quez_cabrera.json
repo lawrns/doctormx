@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Rosa María Enríquez Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manzanillo 100 (Int 602),"
+    },
+    {
+      "full": "Manzanillo 100 (Int 602),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-enriquez-cabrera/ginecologo/-",
+  "scrapedAt": "2026-01-21T02:57:44.122Z",
+  "localPhotoPath": null
+}

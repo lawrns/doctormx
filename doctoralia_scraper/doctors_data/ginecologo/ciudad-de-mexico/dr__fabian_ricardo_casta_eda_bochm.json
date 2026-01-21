@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Fabian Ricardo Castañeda Bochm",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5069c/f5069c719b3a49a0eeff715c48b21fdb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Queretaro 144,"
+    },
+    {
+      "full": "Queretaro 144,"
+    },
+    {
+      "full": "Queretaro 144,"
+    },
+    {
+      "full": "Queretaro 144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabian-ricardo-castaneda-bochm/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T02:55:31.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fabian_ricardo_casta_eda_bochm.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria Victoria Marchese",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/98178d/98178d02e4909232bf11d093e2656053_220_square.jpg",
+  "about": "Estudió Medicina en la Universidad Nacional de Tucuman, en la República Argentina. La especialidad en Ginecología y Obstetricia la realizó en el Hospital Ángeles del Pedregal, Universidad de La Salle, en México DF. La sub-especialidad en Biología de la Reproducción Humana, (Infertilidad), en el Instituto Nacional de Perinatología, Universidad Autonoma de México, México DF. Actualmente trabaja en Insemer, clínica de Reproducción Asistida. Ha participado en varios trabajos de investigación, así como publicaciones en revistas de ginecología y de infertilidad.",
+  "addresses": [
+    {
+      "full": "Paseo de los Tamarindos 384 p9, col Bosques de las Lomas, cuajimalpa de morelos.,"
+    },
+    {
+      "full": "Paseo de los Tamarindos 384 p9, col Bosques de las Lomas, cuajimalpa de morelos.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-victoria-marchese/ginecologo/ciudad-de-mexico#address-id=74678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:04.899Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_victoria_marchese.webp"
+}

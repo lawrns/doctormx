@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Barincka Acosta Barajas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e9160bf9/e9160bf9-43c5-42a6-bb22-2c467e4c853a_small_square.jpg",
+  "about": "Dra. Barincka Acosta Barajas",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    },
+    {
+      "full": "Independencia 203. Col. Maria Esther Xalapa Veracruz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal - Corrección espina Bífida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/barincka-acosta-barajas/ginecologo/xalapa#address-id=540967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:13.122Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__barincka_acosta_barajas.webp"
+}

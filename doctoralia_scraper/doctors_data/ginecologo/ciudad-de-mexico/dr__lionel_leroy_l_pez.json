@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Lionel Leroy López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6039c/e6039c4fde48f0380a9b78407624046c_220_square.jpg",
+  "about": "Con 20 años de experiencia en GINECO-OBSTETRICA y más de 18 años en REPRODUCCION ASISTIDA y ENDOMETRIOSIS, Certificado en Cirugía ROBOTICA, Cirugía Laparoscópica, Cirugía Reproductiva. Atención de Embarazo de alto riesgo. Hospital Angeles Pedregal. Con un trato de calidad humana y profesional. Desde la PRIMERA CONSULTA de valoración de la Pareja con INFERTILIDAD, se puede tener un diagnóstico de la causa del problema y ofrecer los TRATAMIENTOS adecuados, desde lo más simple hasta lo más avanzado de la tecnología como es la FERTILIZACIÓN IN VITRO o la CIRUGÍA REPRODUCTIVA, para lograr un embarazo sano. La Primera Consulta consiste es la historia clínica, exploración, ultrasonido ginecológico y estudios específicos como HORMONALES, cultivos y espermatobioscopía. En un ambiente profesional y científico. EN CIRUGIA DE MINIMA INVASION, LAPAROSCOPICA y ROBÓTICA, ofrezco a usted la experiencia de 18 años en cirugía reproductiva (desde 2001) y de más de 12 años Cirugía Laparoscópica Avanzada (desde 2006). Como Jefe del Servicio de Laparoscopía Ginecológica del Instituto Nacional de Perinatología de 2009 a 2015 realicé más de 500 Cirugías Ginecológicas Avanzadas, entre Histerectomías, Miomectomías y Cirugías por Endometriosis. Cuento además con CERTIFICACIÓN en Cirugía ROBÓTICA, con más de 50 HISTERECTOMIAS ROBÓTICAS en el Centro Médico Nacional \"20 de Noviembre\" y en Hospital Angeles del Pedregal\". En relación al EMBARAZO DE ALTO RIESGO: como egresado del INSTITUTO NACIONAL DE PERINATOLOGIA, la atención del embarazo de ALTO RIESGO y del embarazo no complicado, es parte de la práctica diaria. Con un cuidado prenatal, perinatal y post natal estricto.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055 - S 19 (Hospital Angeles Pedregal),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lionel-leroy-lopez/ginecologo/ciudad-de-mexico#address-id=120275&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:25.135Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__lionel_leroy_l_pez.webp"
+}

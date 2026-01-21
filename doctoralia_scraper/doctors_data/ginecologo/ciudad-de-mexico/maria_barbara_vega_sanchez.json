@@ -1,0 +1,25 @@
+{
+  "name": "Maria Barbara Vega Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Congreso de la Union, 6208,"
+    },
+    {
+      "full": "Congreso de la Union, 6208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-barbara-vega-sanchez/ginecologo/gustavo-a-madero#address-id=75926&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:00.811Z",
+  "localPhotoPath": null
+}

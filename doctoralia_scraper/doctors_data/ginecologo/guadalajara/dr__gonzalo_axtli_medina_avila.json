@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Gonzalo Axtli Medina Avila",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Luis Pérez Verdia # 209 ,"
+    },
+    {
+      "full": "Luis Pérez Verdia # 209 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-axtli-medina-avila/ginecologo/guadalajara#address-id=118613&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:38.345Z",
+  "localPhotoPath": null
+}

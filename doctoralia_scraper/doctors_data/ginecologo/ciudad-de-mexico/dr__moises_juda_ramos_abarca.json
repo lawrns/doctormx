@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Moises Juda Ramos Abarca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494b8c/494b8cd40a38809bbac92ea7b387d89e_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstétricia, contamos con equipo para realizar Citología Cervical, Colposcopía, Vulvoscopía y Vaginoscopía con la finalidad de diagnósticar y tratar lesiones por Virus del Papiloma Humano, así como detectar Cáncer Cervicouterino. Realizamos Ultrasonido Ginecológico Pélvico o Endovaginal ayudando a diagnosticar: Quistes de Ovario, Miomas, así como ultrasonido Obstétrico donde valoramos el bienestar del Bebé, Líquido y Placenta . Todo esto lo podemos realizar durante su consulta, los procedimientos, no son dolorosos y se realizan con calidad y calidez, usted puede visualizar lo que estamos realizando ya que los equipos están conectados a una T.V. y paso a paso vamos explicando los hallazgos y lo que estamos realizando. Certificado por el COLEGIO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA, EGRESADO DEL HOSPITAL GENERAL DE MÉXICO.",
+  "addresses": [
+    {
+      "full": "Puente de Piedra,"
+    },
+    {
+      "full": "Avenida José María Morelos#136,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-juda-ramos-abarca/ginecologo/tlalpan#address-id=18649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:53.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__moises_juda_ramos_abarca.webp"
+}

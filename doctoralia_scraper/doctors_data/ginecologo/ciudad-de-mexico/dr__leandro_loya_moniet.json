@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Leandro Loya Moniet",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92cfde/92cfde3bd8de434503996a6015cc507c_220_square.jpg",
+  "about": "Ginecoobstetra, Perinatologo, Cirugía Laparoscopica, Esterilidad, Maestro en Ciencias de la Salud Miembro titular del COMEGO(Colegio Mexicano de GinecoObstetras) Fellow ACOG ( American College of Gynecologists and Obstetricians)) Profesor Facultad de Medicina UNAM Pregrado Profesor Post Grado Especialidad en GinecoObstetricia División estudios de posgrado UNAM Miembro titular de la Federacion Latinoamericana de GinecoObstetras",
+  "addresses": [
+    {
+      "full": "Manuel Izaguirre no.17 2do.piso,"
+    },
+    {
+      "full": "Manuel Izaguirre no.17 2do.piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leandro-loya-moniet-2/ginecologo/naucalpan-de-juarez2#address-id=253791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:49.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__leandro_loya_moniet.webp"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Maribel González Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 137,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb444/2cb4440d2804d4dfa207e0d6a734bded_220_square.jpg",
+  "about": "Cuento con 16 años de experiencia en colposcopia y patología del tracto genital inferior. Todo lo relacionado con infección por virus del papiloma humano, lesiones displásicas o precancerosas, cáncer in situ, infecciones de transmisión sexual, lesiones en vagina y vulva. Así como tratamiento médico, crioterapia, electrocirugía para tratar estas lesiones.",
+  "addresses": [
+    {
+      "full": "Avenida El Bordo 174, Vergel de Coyoacan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,050"
+    },
+    {
+      "name": "Paquete ginecológico",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maribel-gonzalez-espinosa/ginecologo/tlalpan#address-id=402487&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:48.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maribel_gonz_lez_espinosa.webp"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Víctor Manuel Escobar Galván",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 349,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f51e1/6f51e17d55af5c792951540e13bea2c9_220_square.jpg",
+  "about": "Médico con especialidad en Ginecobstetricia, recertificado por el Consejo Mexicano de Ginecología y Obstetricia con experiencia de 29 años, y diplomados en Colposcopía, Cirugía ginecológica laparoscópica avanzada y medicina maternofetal. Los servicios que se ofrecen en consultorio para la atención a los pacientes son: Vigilancia de embarazo de alto riesgo y atención de parto, estudio y tratamiento de esterilidad, Detección oportuna del cáncer de mama y cervicouterino, ultrasonido ginecológico, colposcopía, cirugía laparoscópica y genitourinaria",
+  "addresses": [
+    {
+      "full": "Federico T. De La Chica #2 int 1 Circuito Centro Comercial, Cd. Satélite,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-escobar-galvan/ginecologo/naucalpan-de-juarez2#address-id=138449&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:40.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__v_ctor_manuel_escobar_galv_n.webp"
+}

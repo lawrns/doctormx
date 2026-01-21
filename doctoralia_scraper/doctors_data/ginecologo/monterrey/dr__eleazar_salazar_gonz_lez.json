@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eleazar Salazar González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d11328/d113286556981189e978430b9d0735d1_220_square.jpg",
+  "about": "El Doctor Eleazar Salazar con más de 10 años de experiencia en su especialidad, estudió medicina en la Universidad Autónoma de Nuevo León y es médico certificado por el Consejo Mexicano de Ginecología y Obstetricia, A.C. Durante sus años en la máxima casa de estudios del estado, complementó su educación con talleres y cursos en temas de inteligencia emocional, equipos colaborativos, aspectos para una superación, además de cursos internacionales de medicina interna y cirugía general.Además, ha asistido a congresos nacionales e impartido cursos de actualización en ginecología y obstetricia. El Doctor Eleazar Salazar se distingue por su trato humano, respetuoso y digno a la paciente dando el espacio que requiera. La prioridad es la atención personalizada y honesta con todas sus pacientes.",
+  "addresses": [
+    {
+      "full": "Dr. Fernando Guajardo 155,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eleazar-salazar-gonzalez/ginecologo/nuevo-leon#address-id=22575&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:08.319Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eleazar_salazar_gonz_lez.webp"
+}

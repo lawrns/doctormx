@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Giovanni Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/12747258/12747258-b963-4ebc-a7b7-29c3c14943ce_small_square.jpg",
+  "about": "Dr. Giovanni Andrés Romero TlalpanEspecialista en Ginecología y Obstetricia | Puebla, MéxicoMi compromiso es brindar una atención médica humana, profesional y con calidez, acompañando a cada mujer en las diferentes etapas de su vida. Egresado de UPAEPEspecialista formado en el Hospital General de Zona Norte (BUAP)Certificado por el Consejo Mexicano de Ginecología y ObstetriciaDiplomado en Colposcopia y Cáncer en la MujerCuidar tu salud es mi prioridad.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de Urgencias",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/giovanni-romero/medico-general/san-andres-cholula#address-id=614068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:23.368Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__giovanni_romero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Víctor Hugo Ortega Pérez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Mi nombre es Víctor Hugo Ortega Pérez. Originario de Torreón, Coahuila. Actualmente tengo 35 años de edad. Dentro de mi formación académica, puedo destacar lo siguiente. Realice mi especialidad de Ginecología y Obstetricia en el Instituto Mexicano del Seguro Social UMAE #23 de Monterrey, Nuevo León, Acreditada por la Universidad de Monterrey. Realice la subespecialidad de Urologia Ginecologica en el Instituto Mexicano del Seguro Social CMN La Raza en Ciudad de México. Posteriormente realice una Alta especialidad en Laparoscopia y Cirugía Endoscopica Ginecologica en el Hospital Regional 1 de Octubre del Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado acreditado por la Universidad Autónoma de Mexico, siendo uno de los pioneros junto con mi profesor titular en la realización de cirugía de reconstrucción de piso pélvico de manera laparoscopica en dicho hospital. Actualmente me encuentro a cargo del departamento de Urologia Ginecologica del Hospital Regional 1 de Octubre del ISSSTE, donde soy profesor adjunto de la Alta Especialidad en Laparoscopia y cirugía endoscopica Ginecologica y profesor de Urologia Ginecologica de los residentes de Ginecología y Obstetricia de dicho hospital, además de encontrarme laborando en el Hospital General de Zona #2 del IMSS, siendo profesor adjunto de la residencia de Medicina Familiar. Actualmente soy miembro del Colegio Mexicano de Urología Ginecológica y de la Sociedad Médica del Hospital Ángeles Lindavista. Certificado por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Calle Río Bamba # 639 /4 Piso, Consultorio 471 B, colonia Magdalena de las Salinas,"
+    },
+    {
+      "full": "Calle Río Bamba # 639 /4 Piso, Consultorio 471 B, colonia Magdalena de las Salinas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-ortega-perez/ginecologo/ciudad-de-mexico#address-id=451967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:51.733Z",
+  "localPhotoPath": null
+}

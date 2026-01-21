@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Hermisenda Bermúdez Tapia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c26116/c26116bda2768730528ba366e389b5f6_220_square.jpg",
+  "about": "Soy la Dra. Hermisenda Bermúdez tapia especialista en Ginecología y Obstetricia, con la sub especialidad de Medicina Materno Fetal, mi objetivo es atenderte con calidad y empatía. Licenciatura: 4538002 Especialidad en Ginecologia y Obstetricia: 4584100, certificada por el Consejo Mexicano de Ginecologia y obstetricia, con la sub especialidad de Medicina Materno Fetal.",
+  "addresses": [
+    {
+      "full": "San Luis Potosí 143,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hermisenda-bermudez-tapia/ginecologo/cuauhtemoc2#address-id=1489&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:43.678Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__hermisenda_berm_dez_tapia.webp"
+}

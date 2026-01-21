@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mayra Yadira Briseño Quintanares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bd69a3/bd69a38de465ac3617579e83aa47c782_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Mayra Quintanares,( Mi Gine MTY ) y estoy aquí para brindarte el apoyo y la atención que necesitas en todas las etapas de tu vida como mujer. Como ginecóloga obstetra y especialista en colposcopia, me apasiona proporcionar cuidados compasivos y de alta calidad a mis pacientes. Mi enfoque: En mi consulta, no solo encontrarás un lugar donde resolver tus preocupaciones médicas, sino también un espacio donde sentirte escuchada, comprendida y apoyada. Mi objetivo es construir relaciones de confianza con mis pacientes, donde puedan sentirse cómodas compartiendo cualquier inquietud relacionada con su salud ginecológica y reproductiva. Servicios que ofrezco: Consultas ginecológicas completas y personalizadas, incluyendo exámenes físicos, pruebas de laboratorio y estudios de imagen según sea necesario. Atención integral durante el embarazo, desde la planificación hasta el parto y el posparto, brindando el apoyo emocional y médico necesario en cada etapa. Evaluación y tratamiento de trastornos ginecológicos comunes, como irregularidades menstruales, síndrome premenstrual, infecciones vaginales, entre otros. Colposcopias de alta precisión para la detección temprana y el tratamiento de lesiones cervicales. Asesoramiento en anticoncepción y opciones de planificación familiar, adaptadas a las necesidades individuales de cada paciente. ¿Por qué elegirme? Experiencia y especialización: Con años de formación y práctica en ginecología, obstetricia y colposcopia, tengo el conocimiento y la habilidad para proporcionar la mejor atención posible. Enfoque centrado en la paciente: Me comprometo a escuchar tus preocupaciones y responder a tus preguntas de manera comprensiva, brindándote la información que necesitas para tomar decisiones informadas sobre tu salud. Tecnología de vanguardia: Mi consulta está equipada con tecnología médica de última generación para garantizar diagnósticos precisos y tratamientos efectivos. Ambiente acogedor: Te recibiré en un entorno cálido y acogedor, donde te sentirás cómoda y segura durante todas tus visitas. ¡Agenda tu cita hoy mismo! No pospongas tu salud ginecológica y reproductiva. ¡Estoy aquí para ayudarte a sentirte en tu mejor forma y brindarte el cuidado que te mereces! Agenda tu cita hoy mismo mandando un mensaje. ¡Espero conocerte pronto! ¡Tu bienestar es mi prioridad! Dra. Mayra Quintanares",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo # 1910, Colonia Obispado,"
+    },
+    {
+      "full": "Avenida Miguel Hidalgo # 1910, Colonia Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-yadira-briseno-quintanares/ginecologo/nuevo-leon#address-id=486071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:08.764Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mayra_yadira_brise_o_quintanares.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aissé R. González Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 320,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5ed70b/5ed70b691077e454e84ebda5ea6536e9_220_square.jpg",
+  "about": "Soy una persona comprometida con mis principios éticos esenciales para el ejercicio de mi profesión, con una amplia vocación de servicio que me permite estar en contacto con las pacientes, atenderlas, escucharlas y ofrecerles el mejor tratamiento a su padecimiento. Soy un médico con un amplio sentido de responsabilidad, calidez, respeto, empatía y compromiso, que continuamente se actualiza en sus conocimientos con el único objetivo de ofrecerle a usted la mejor atención médica ginecológica y obstétrica. AMAVITA, CUIDAMOS DE TI, CUIDAMOS DE LO QUE AMAS. Sobre mi preparación académica básica: Posgrado en Ginecología y Obstetricia en el Hospital Dr. Ignacio Morones Prieto UMAE 23 IMSS con título avalado por la Universidad Autónoma de San Luis Potosí. Certificada por el Consejo Mexicano de Ginecología y Obstetricia Diplomado en Colposcopia y Enfermedades del Tracto Genital Femenino. Diplomado en Ultrasonido Obstétrico y Doppler Miembro del Colegio de Ginecólogos Oncólogos del Norte A. C. Miembro del Colegio de Ginecología y Obstetricia de Nuevo León Miembro del Colegio Mexicano de Ginecologos dedicados a la Colposcopia. Miembro de la Sociedad Americana de Colposcopia y Patología Cervical Médico del staff de Ginecólogos de los Hospitales Christus Muguerza (Alta Especialidad, Muguerza Sur y Hospital Conchita), Hospital OCA, Doctors Hospital, Hospital Ginequito, Hospital Angeles, Hospital Zambrano y San José Tec de Monterrey.",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2727,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Vacunación del adulto",
+      "price": "• Desde $4,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aisse-r-gonzalez-sosa/ginecologo/nuevo-leon#address-id=69390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:41.451Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__aiss__r__gonz_lez_sosa.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Arellano Eguiluz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12ebac/12ebac6a134e19fc9b972ef4f5a4e309_220_square.jpg",
+  "about": "Hola soy Arturo, el Dr. Arellano, comprometido con el cuidado de la salud de las mujeres en cada momento de su vida. Reconociendo, acompañando las diferentes etapas reproductivas, dando seguimiento desde la pubertad, la sexualidad, la prevención, el embarazo, al igual que los cambios que se tienen durante la edad madura, sabiendo que cada uno de estos momentos son determinantes para tu salud y cuidado. Juntos identificaremos tus inquietudes y miedos que estos procesos de vida generan en ti. Mi formación académica y empatía con las mujeres, me han llevado a diagnosticar y solucionar problemas de salud, siempre reconociendome humano como tú, para que, más que acudir a un médico, vayas con un especialista y confidente que genere certeza, seguridad, esperanza y alternativas para obtener lo mejor para ti.",
+  "addresses": [
+    {
+      "full": "Avenida Álvaro Obregón 273 consultorio 301,"
+    },
+    {
+      "full": "Avenida Álvaro Obregón 273 consultorio 301,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-arellano-eguiluz/ginecologo/cuauhtemoc2#address-id=398345&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:29.285Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__arturo_arellano_eguiluz.webp"
+}

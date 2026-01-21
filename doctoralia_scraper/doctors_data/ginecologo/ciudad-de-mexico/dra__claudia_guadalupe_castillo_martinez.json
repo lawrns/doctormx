@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Claudia Guadalupe Castillo Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b66b59/b66b59591af92fe73906d24318f98467_220_square.jpg",
+  "about": "La Dra. Claudia Castillo es originaria de Nicaragua donde se especializó en Biología de la Reproducción Humana, con mención honorífica por parte del Centro Médico Nacional 20 de Noviembre, además cuenta con un diplomado en Andrología Clínica realizado en el INPER. El compromiso de la Doctora Claudia es ofrecer la mejor estrategia para apoyar a las parejas que anhelan tener un bebé. Su satisfacción más grande es comunicar la noticia de que tendrán un bebé. Sus compañeros de trabajo y colegas la consideran dedicada, honesta y responsable. Para ella, la familia es el núcleo fundamental de los seres humanos. Es madre de dos niños y siempre procura la convivencia, estabilidad emocional y el aprendizaje: “disfruto el ver crecer a mis hijos, son el motor que me impulsa a seguir adelante e ir superando los retos que se me presentan y es también un impulso para lograr el deseo de otras personas para convertirse en padres”. La Dra. Claudia está plenamente convencida de su vocación, “es fascinante que gracias a la medicina generamos vida no solo aplicando los avances científicos, sino también el amor, esencial para cumplir muchos sueños”.",
+  "addresses": [
+    {
+      "full": "Carr. México-Toluca 5420, La Rosita, El Yaqui, Cuajimalpa de Morelos,"
+    },
+    {
+      "full": "Carr. México-Toluca 5420, La Rosita, El Yaqui, Cuajimalpa de Morelos,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-guadalupe-castillo-martinez/ginecologo/ciudad-de-mexico#address-id=328078&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:27.320Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_guadalupe_castillo_martinez.webp"
+}

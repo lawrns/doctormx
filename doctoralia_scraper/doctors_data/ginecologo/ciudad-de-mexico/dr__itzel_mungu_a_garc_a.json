@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Itzel Munguía García",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a737d8/a737d853a882d01cafdc6311db6f96f1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada Ignacio Zaragoza No. 189 Col. Jardín Balbuena,"
+    },
+    {
+      "full": "Calzada Ignacio Zaragoza No. 189 Col. Jardín Balbuena,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-munguia-garcia/ginecologo/ciudad-de-mexico#address-id=104965&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:28.497Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__itzel_mungu_a_garc_a.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Norma Paulina Pérez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c4c6b7/c4c6b729a8fec72886c6d3cc67b3e247_220_square.jpg",
+  "about": "Soy Biologo de la Reproducción, mi especialidad es atender a pacientes con problemas para lograr un embarazo. Tanto a pacientes que no han podido quedar embarazadas, como pacientes que han tenido varios abortos. También puedo ayudar a pacientes con trastornos hormonales. Como Ginecologa, cuido de pacientes embarazadas y mujeres con enfermedades del aparato reproductor (miomas, sangrado, quistes, etc). Creo en el derecho de cada mujer para decidir sobre su cuerpo, en especial al momento del parto para hacer de este una experiencia maravillosa.",
+  "addresses": [
+    {
+      "full": "Monterrey 70,"
+    },
+    {
+      "full": "Monterrey 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-paulina-perez-ramirez/ginecologo/ciudad-de-mexico#address-id=400798&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:15.949Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__norma_paulina_p_rez_ram_rez.webp"
+}

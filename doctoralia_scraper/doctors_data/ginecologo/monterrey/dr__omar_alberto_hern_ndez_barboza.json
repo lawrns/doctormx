@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Omar Alberto Hernández Barboza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 212,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4db3c/a4db3c0a424d312f569c7332d6d3b44a_220_square.jpg",
+  "about": "Soy el Dr. Omar Alberto, especialista en ginecología, por la Universidad Autónoma de Nuevo León. Como especialista en ginecología me dedico a acompañar a pacientes con problemas de quistes, miomas, prolapso uterino, entre otros, desde el diagnóstico, escuchando todas sus preocupaciones, hasta el tratamiento, brindándoles la atención adecuada para ayudarlos a recuperar su salud.",
+  "addresses": [
+    {
+      "full": "Belizario Domínguez 2439,"
+    },
+    {
+      "full": "Av. Aztlán,"
+    },
+    {
+      "full": "Avenida Francisco I. Madero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación (crioterapia de verrugas)",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Ecografía",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación, criocoagulación, termocoagulación de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Extirpación de la glándula de Bartholin",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-alberto-hernandez-barboza/ginecologo/nuevo-leon#address-id=21489&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:04.210Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__omar_alberto_hern_ndez_barboza.webp"
+}

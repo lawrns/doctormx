@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Baxter Aguirre",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2dee7a/2dee7aa47addde398844f730902fb82a.jpg",
+  "about": "Soy una doctora en Ginecologia y Obstetricia apasionada en el campo de la patología mamaria ,lo que me ha llevado a tener alta especialidad en SENOLOGIA (basada en muchos años de preparación académica internacionalmente en varios campos de la patología mamaria y la oncología ginecológica), comprometida con la educación medica continua ( ya que nuestra obligación como medicos es el constante e indefinido interés en adquirir nuevos conocimientos ) para ofrecer a los pacientes calidad y las mejores opciones siempre ( logrando que mis pacientes decidan de forma segura, libre y con conocimiento ) . Ademas el transmitir los conocimientos a través de tantos años me ha llevado a ser profesora titular de multiples postgrados en patología mamaria a nivel nacional (obteniendo grandes satisfacciones por parte de mis doctores/as alumnos)y todo esto me incentiva a seguir preparándome internacionalmente. Estoy convencida que mi profesión (asistencial, docente e investigación) no es un trabajo, es simplemente \"una forma de vida que disfruto cotidianamente y mis pacientes son la prioridad\".",
+  "addresses": [
+    {
+      "full": "CIRCUITO JUAN PABLO II, NUMERO 1936 , LOCAL 2 , LA NORIA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-baxter-aguirre/ginecologo/puebla#address-id=68592&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:08.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__diana_baxter_aguirre.webp"
+}

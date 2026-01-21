@@ -1,0 +1,72 @@
+{
+  "name": "Dr. José Juan Guerrero Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988162/98816224649cc76df8b13fb32d3800fb_220_square.jpg",
+  "about": "¡Hola!, soy el Dr. José Juan Guerrero y será un placer poder ayudarte a cuidar de ti y de lo que más quieres. Soy Gineco-obstetra, especialista en embarazo y salud integral de la mujer; soy además subespecialista en Reproducción asistida e infertilidad, por lo cual puedo ayudarte en: • Embarazo (Control prenatal). Te invito a llevar la mejor experiencia en tu control de embarazo y nacimiento, cuento con amplio conocimiento y preparación en parto humanizado y respetado, así como embarazo de alto riesgo, parto después de cesárea, parto gemelar, malas posiciones o posiciones complejas de tu bebé. Den la bienvenida a su bebé(s) conforme a sus deseos en un ambiente de seguridad, calidez y confianza. • Infertilidad y reproducción asistida. Si estas buscando embarazo, tienes problemas para lograrlo, necesitas una fertilización in vitro o deseas una opinión antes de llegar a ese paso, te invito a conocerme y lograr tu sueño con una atención y plan personalizado. • Prevención de enfermedades // Check up ginecológico. No hay mejor manera de atacar las enfermedades que previniendo y detectándolas tempranamente, te ofrezco el servicio de revisión integral donde utilizando la tecnología más avanzada y menos invasiva lograremos cuidar de ti en cada etapa de tu vida (revisión ginecológica, consulta de adolescencia, climaterio y menopausia). • Cirugía ginecológica y reproductiva (Laparoscopía). Ante la necesidad de un procedimiento quirúrgico es importante estar en las mejores manos y contar con las mejores herramientas disponibles, por ello me rodeo del mejor equipo y tecnología para ofrecerte la mejor alternativa logrando la máxima seguridad en tu procedimiento con la mínima invasión posible. Disfruto lo que hago y tengo la certeza que el cuidarte como me gustaría que trataran a mi familia, o a mí, es la clave para brindarte la mejor atención. Creo en la atención personalizada, profesional y humana, un doctor, tu ginecólogo, debe ser un experto, estar preparado y a la vanguardia, pero sobre todo debe ser alguien de confianza, empático y cercano a ti, por lo cual estaremos siempre en comunicación. Te invito a conocerme y tener la atención tal y como la mereces, como la exigiría yo mismo, será un placer ser tu especialista. ***Haz tu cita a través de la página o en el número asignado y nosotros nos comunicaremos contigo inmediatamente para más detalles :)***",
+  "addresses": [
+    {
+      "full": "Prolongacion Paseo De La Reforma 19, Santa Fe, Paseo De Las Lomas,"
+    },
+    {
+      "full": "Blvrd Bosque Real 85,"
+    },
+    {
+      "full": "Prolongacion Paseo De La Reforma 19, Santa Fe, Paseo De Las Lomas,"
+    },
+    {
+      "full": "Blvrd Bosque Real 85,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-juan-guerrero-vargas/ginecologo/cuajimalpa-de-morelos#address-id=148126&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:30.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__juan_guerrero_vargas.webp"
+}

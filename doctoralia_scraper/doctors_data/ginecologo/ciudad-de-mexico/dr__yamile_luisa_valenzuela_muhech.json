@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Yamile Luisa Valenzuela Muhech",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5532d63/f5532d63-bbc3-4644-ac83-f371bae3ee8c_small_square.jpg",
+  "about": "Soy la Dra. Yamile Luisa Valenzuela Muhech, ginecóloga y obstetra formada en el Hospital Español de México, con aval de la Universidad Nacional Autónoma de México (UNAM). Me gradué como Médico Cirujano en la Universidad Westhill, obteniendo mi titulación por la UNAM y el reconocimiento al segundo lugar en aprovechamiento académico.Durante mi formación he complementado mi práctica médica con un enfoque en la seguridad del paciente y la atención centrada en la persona y la familia, a través del diplomado del Institute for Healthcare Improvement (2016).He participado activamente en investigación médica, siendo autora principal en el Congreso Virtual COMEGO 2021, donde obtuve el tercer lugar con el trabajo “La presión arterial como tamiz precoz de preeclampsia: redefiniendo”, y coautora del artículo “Validación de la calculadora de la Fundación de Medicina Fetal para tamiz de preeclampsia adaptada a población mexicana”, publicado en Ginecología y Obstetricia de México (2021).Mi compromiso es ofrecer una atención ginecológica integral, empática y basada en la evidencia científica, acompañando a cada mujer en las diferentes etapas de su vida con respeto, confianza y calidez humana.",
+  "addresses": [
+    {
+      "full": "Blvd. Miguel de Cervantes Saavedra 161,"
+    },
+    {
+      "full": "Avenida Ejército Nacional 613, Granada, Ciudad de México.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yamile-luisa-valenzuela-muhech/ginecologo/miguel-hidalgo#address-id=416146&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:13.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__yamile_luisa_valenzuela_muhech.webp"
+}

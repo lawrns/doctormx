@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Jose Suarez Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fd7b73/fd7b734604048852c07d8cacae445481_220_square.jpg",
+  "about": "Médico especialista en ginecología y obstetricia certificado por el consejo mexicano de ginecología y obstetricia elegí esta maravillosa profesión enfocado en resolver problemas de infertilidad , ya que cada vez es más común y el desgaste emocional físico y en todos los aspectos de la pareja infertil es de suma importancia, es por eso mi compromiso para ayudar a mis pacientes a cumplir su sueño de ser padres así como cuidar la salud de la mujer antes durante y después del nacimiento de su bebé.",
+  "addresses": [
+    {
+      "full": "Av Lomas verdes 750 interior 105 ,"
+    },
+    {
+      "full": "Av Lomas verdes 750 interior 105 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-suarez-gutierrez/ginecologo/naucalpan-de-juarez#address-id=93434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:49.002Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_jose_suarez_gutierrez.webp"
+}

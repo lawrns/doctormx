@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Juan Enrique Guinto Balanzar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Lope De Vega 24 201,"
+    },
+    {
+      "full": "Calle Lope De Vega 24 201,44130 Arcos Vallarta,"
+    },
+    {
+      "full": "Calle Lope De Vega 24 201,"
+    },
+    {
+      "full": "Calle Lope De Vega 24 201,44130 Arcos Vallarta,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-enrique-guinto-balanzar/ginecologo/guadalajara#address-id=43014&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:14.322Z",
+  "localPhotoPath": null
+}

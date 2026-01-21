@@ -1,0 +1,25 @@
+{
+  "name": "Yasmin Miranda Aguila",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Canal de Miramontes 2755 Interior 101 Colonia Jardines de Coyoacan,"
+    },
+    {
+      "full": "Avenida Canal de Miramontes 2755 Interior 101 Colonia Jardines de Coyoacan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yasmin-miranda-aguila/ginecologo/coyoacan#address-id=107062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:13:30.801Z",
+  "localPhotoPath": null
+}

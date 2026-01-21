@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Selene Sam Soto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Blvd. Miguel De Cervantes Saavedra 233,"
+    },
+    {
+      "full": "Montes Urales 800,"
+    },
+    {
+      "full": "Blvd. Miguel De Cervantes Saavedra 233,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/selene-sam-soto/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-21T02:57:42.500Z",
+  "localPhotoPath": null
+}

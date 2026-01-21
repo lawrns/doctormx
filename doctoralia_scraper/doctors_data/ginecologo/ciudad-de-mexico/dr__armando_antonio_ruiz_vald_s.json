@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Armando Antonio Ruiz Valdés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7c29e4/7c29e401aa918b2355a672222230c9e9_220_square.jpg",
+  "about": "Más de 23 años de experiencia.",
+  "addresses": [
+    {
+      "full": "Tuxpan 39 CONSULTORIO 755,"
+    },
+    {
+      "full": "Tuxpan 39 CONSULTORIO 755,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-antonio-ruiz-valdes/ginecologo/ciudad-de-mexico#address-id=9983&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:32.084Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__armando_antonio_ruiz_vald_s.webp"
+}

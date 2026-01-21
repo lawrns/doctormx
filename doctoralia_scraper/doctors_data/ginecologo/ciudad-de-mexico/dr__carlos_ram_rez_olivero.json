@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Carlos Ramírez Olivero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1db3a2/1db3a22dde2c0cf9f0d4886fbee3d18b_220_square.jpg",
+  "about": "Ginecólogo con más de 32 años de experiencia. Mi número de colegiado: 0762853 / 3414303. Todas las consultas incluyen ultrasonido obstetrico o ginecologico sin costo en cualquiera de las dos ubicaciones de mis consultorios.",
+  "addresses": [
+    {
+      "full": "Continentes 11,"
+    },
+    {
+      "full": "Av. Cuautitlán Izcalli Mz. 29 Lt.8,"
+    },
+    {
+      "full": "Continentes 11,"
+    },
+    {
+      "full": "Av. Cuautitlán Izcalli Mz. 29 Lt.8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-ramirez-olivero/ginecologo/tlalnepantla-de-baz#address-id=112801&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:27.903Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_ram_rez_olivero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jonathan Valdez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/80c714/80c714b571f0aefde3918ca0e1588bd5_220_square.jpg",
+  "about": "Soy Ginecobstetra con subespecialidad en Medicina Materno Fetal (embarazos de alto riesgo, ecografía avanzada). Para poder disfrutar tu trabajo tiene que gustarte. NO es fácil por que los bebés no tienen hora de llegada. Sin embargo Me encanta mi trabajo, no hay nada mas satisfactorio que traer al mundo a los bebés. Me gusta llevar un control prenatal adecuado, identificando factores de riesgo que pudieran complicar el embarazo; iremos revisando que es importante en cada cita y asegurándome que no existan dudas. En cada consulta se realiza interrogatorio, exploración física y ecografía de bebé. También consultamos ginecología. Toma de papanicolaou, infecciones vaginales, sangrados anormales, que no baje la regla mes con mes, enfermedad de mamas. En cada consulta realizamos exploración física que incluye revisión vaginal y de mamas, así como ecografía pélvica (para valorar matriz y ovarios).",
+  "addresses": [
+    {
+      "full": "Ave. Constitución 1881 Pte. Centro Médico de la Mujer Constitución Piso 1 Consultorio 104,"
+    },
+    {
+      "full": "Ave. Constitución 1881 Pte. Centro Médico de la Mujer Constitución Piso 1 Consultorio 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-valdez-gonzalez/ginecologo/monterrey#address-id=117733&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:54.168Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jonathan_valdez_gonz_lez.webp"
+}

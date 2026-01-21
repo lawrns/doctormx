@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Irma Alyttet Balderas Cerda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo de los Leones 602, Cumbres 2do. Sector. Monterrey, Nuevo León, México,"
+    },
+    {
+      "full": "Paseo de los Leones 602, Cumbres 2do. Sector. Monterrey, Nuevo León, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-alyttet-balderas-cerda/ginecologo/nuevo-leon#address-id=345356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:45.206Z",
+  "localPhotoPath": null
+}

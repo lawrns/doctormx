@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Marcela Reyes Moyeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f4465/7f44651208abbf3626c701601cefa178_220_square.jpg",
+  "about": "Ginecóloga y obstetra con subespecialidad en Medicina Materno Fetal y diplomado en ecocardiografía fetal. Calificada para la atención y seguimiento del embarazo no complicado, así como embarazo de alto riesgo y diagnostico fetal avanzado realizando tamizaje de primer trimestre, ultrasonido anatómico, Doppler y 4D. De igual manera estoy capacitada para resolver problemas ginecológicos como irregularidades menstruales, patologías de ovario, orientación en métodos anticonceptivos, toma de papanicolau, etc. Estoy comprometida en dar una atención humana y de calidad.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-reyes-moyeda-2/ginecologo/monterrey#address-id=327662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:31.385Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marcela_reyes_moyeda.webp"
+}

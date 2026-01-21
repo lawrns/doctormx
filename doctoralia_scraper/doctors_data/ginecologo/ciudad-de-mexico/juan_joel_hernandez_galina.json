@@ -1,0 +1,25 @@
+{
+  "name": "Juan Joel Hernandez Galina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e27f88e8/e27f88e8-3ec3-497e-a6c2-99abec11c606_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De La Reforma 234,"
+    },
+    {
+      "full": "Paseo De La Reforma 234,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-joel-hernandez-galina/ginecologo/ciudad-de-mexico#address-id=205619&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:13.858Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/juan_joel_hernandez_galina.webp"
+}

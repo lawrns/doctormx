@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Cristina Alvarez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44aefe/44aefe4d8912dd5d905cf99b7e12b812_220_square.jpg",
+  "about": "Hola, Soy la Dra. Cristina Álvarez; soy medico ginecóloga- obstetra y colposcopista . Por lo que me especializo en la atención de pacientes embarazadas de alto y bajo riesgo ; asi como la resolucion del embarazo con enfoque humanizado. También en diagnóstico y tratamiento de enfermedades ginecológicas como infecciones de transmisión sexual , virus de papiloma, sangrados transvaginales anormales, miomatosis, síndrome de ovario poliquístico , etc. Realizamos tratamientos y diagnósticos de infecciones de virus de papiloma y seguimiento del mismo. Cualquier duda respecto a alguna situación podemos resolverla sin problema, espero conocerte pronto. Saludos.",
+  "addresses": [
+    {
+      "full": "Federico T de La Chica,"
+    },
+    {
+      "full": "monterrey 70,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-alvarez-hernandez/ginecologo/naucalpan-de-juarez2#address-id=455224&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:36.276Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cristina_alvarez_hernandez.webp"
+}

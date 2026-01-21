@@ -1,0 +1,25 @@
+{
+  "name": "Laura Gabriela Serrano Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 336,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9b879/a9b8791fa4f21a5ca2bbf372c86d7e63_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pino Suarez 640,"
+    },
+    {
+      "full": "Pino Suarez 640,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-gabriela-serrano-castro/ginecologo/monterrey#address-id=202483&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:48:50.799Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/laura_gabriela_serrano_castro.webp"
+}

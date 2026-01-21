@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Cecilia Sotelo Rubio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68a5e6/68a5e693d4432ef1dc93a8c50983378f_220_square.jpg",
+  "about": "Pregunta por los paquetes de atención ginecológica y para embarazo. Si no cuentas con seguro de gastos médicos mayores, tenemos planes de FINANCIAMIENTO para tu parto o cesárea. SI TIENES DUDAS SOBRE QUÉ ESTUDIO TE CONVIENE REALIZAR LLAMA O MANDA MENSAJE DE TEXTO AL 1tr1ng>",
+  "addresses": [
+    {
+      "full": "Tuxpan 6, 5° Piso, ,"
+    },
+    {
+      "full": "Tuxpan 6, 5° Piso, ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $7,008"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cecilia-sotelo-rubio/ginecologo/cuauhtemoc#address-id=24724&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:56.616Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_cecilia_sotelo_rubio.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan De Dios Maldonado Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada del Valle 260 Pte.,"
+    },
+    {
+      "full": "Calzada del Valle 260 Pte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía",
+      "price": ""
+    },
+    {
+      "name": "Ovariectomia u ooforectomia",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-de-dios-maldonado-alvarado/ginecologo/san-pedro-garza-garcia#address-id=93972&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:10.864Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Iliana Rebeca Zarate Torija",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdd304/cdd30453935e313b669b8de2ab592bd2_220_square.jpg",
+  "about": "Medico especialista mujer dedicada a la atención amable y confiable para mujeres en sus diferentes etapas durante la vida, en actualización constante y brindando un trato digno como lo merecemos cada una. Los hospitales en los que he brindado atención me han retroalimentado de gran experiencia con la que puedo manejar diferentes padecimientos de manera certera.",
+  "addresses": [
+    {
+      "full": "Sor Juana Inés de la Cruz 280,"
+    },
+    {
+      "full": "Sor Juana Inés de la Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-rebeca-zarate-torija/ginecologo/tlalnepantla-de-baz2#address-id=113405&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:38.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__iliana_rebeca_zarate_torija.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Amira Stephanie Enriquez Elvira",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 561,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ed470/8ed470dc9cb266406debeec94bcddb67_220_square.jpg",
+  "about": "Doctora Gineco- Obstetra egresada de la UAG como Medico- Cirujano, de la UAEM como especialista en ginecologia y obstetricia, certificada por el Consejo Mexicano de Ginecología & Obstetricia, para quien la comunicación es el lazo mas importante con las pacientes, por ello siempre tomare mi tiempo para resolver tus dudas y explicarlas de manera sencilla sincera, siempre buscando la mejor solución para cada caso.",
+  "addresses": [
+    {
+      "full": "Circuito Plaza Esmeralda #11, colonia Rancho Viejo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amira-stephanie-enriquez-elvira/ginecologo/atizapan-de-zaragoza#address-id=400540&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:31.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__amira_stephanie_enriquez_elvira.webp"
+}

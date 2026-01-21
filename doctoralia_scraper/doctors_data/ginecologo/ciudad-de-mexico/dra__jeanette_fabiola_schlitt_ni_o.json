@@ -1,0 +1,62 @@
+{
+  "name": "Dra. Jeanette Fabiola Schlitt Niño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/015dc7/015dc71dfca1e1f66868ccfdf242d565_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Riobamba 776,"
+    },
+    {
+      "full": "Cto. Circunvalacion Pte. 53,"
+    },
+    {
+      "full": "Av. Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Riobamba 776,"
+    },
+    {
+      "full": "Cto. Circunvalacion Pte. 53,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jeanette-fabiola-schlitt-nino/ginecologo/naucalpan-de-juarez2#address-id=516708&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:10.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jeanette_fabiola_schlitt_ni_o.webp"
+}

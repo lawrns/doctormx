@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dulce Rocío Medrano Roman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/cd8f2c57/cd8f2c57-840b-4f6d-93f9-9de9b66ef5c7_large.jpg",
+  "about": "\"Soy la Dra Dulce, especialista en Ginecología y Obstetricia, Subespecialidad en Medicina Materno Fetal, mi objetivo es brindar atención de la mejor calidad, con la mayor calidez humana, y brindarte esa confianza que toda mujer necesita en sus periodos de mayor vulnerabilidad. Enfoque en embarazo de alto riesgo, bienestar fetal, Ultrasonidos especializados para tu bebé (tamizaje de primer trimestre, estructural, Doppler fetal, entre otros), control prenatal, atención de partos, cesáreas; así como métodos de planificación familiar, problemas ginecológicos, para mujeres de todas las edades. Si estás interesada en encontrar a tu ginecóloga de confianza, estoy para ayudarte :)\"",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Ultrasonido estructural (18-24 semanas)",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-rocio-medrano-roman-2/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:39.534Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__dulce_roc_o_medrano_roman.webp"
+}

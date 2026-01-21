@@ -1,0 +1,37 @@
+{
+  "name": "Beatriz Castañeda Aguilera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Miguel Hidalgo Y Costilla 1362,"
+    },
+    {
+      "full": "C. Justo Sierra 2041,"
+    },
+    {
+      "full": "Ramon Corona 500,"
+    },
+    {
+      "full": "Av. Miguel Hidalgo Y Costilla 1362,"
+    },
+    {
+      "full": "C. Justo Sierra 2041,"
+    },
+    {
+      "full": "Ramon Corona 500,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/beatriz-castaneda-aguilera/ginecologo/guadalajara#address-id=243045&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:21.578Z",
+  "localPhotoPath": null
+}

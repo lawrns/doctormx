@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Victoria López León",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": ".,"
+    },
+    {
+      "full": ".,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victoria-lopez-leon/ginecologo/guadalajara#address-id=550739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:18.831Z",
+  "localPhotoPath": null
+}

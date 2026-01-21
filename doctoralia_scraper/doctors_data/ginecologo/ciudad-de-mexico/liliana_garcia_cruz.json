@@ -1,0 +1,66 @@
+{
+  "name": "Liliana Garcia Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 814,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b44455/b44455d84dbbd7f8aa5fbf1e350923ac.jpg",
+  "about": "Ginecoobstetra graduada de la UNAM, cuento con una maestría, diplomados y cursos para brindar una atención de calidad y así poder prevenir, diagnosticar y tratar las enfermedades que afectan a la mujer en cualquier etapa de su vida. Dentro del consultorio me apoyo de herramientas diagnósticas y de tratamiento como ultrasonido, electrocirugía, colposcopia, entre otros. Ofrezco paquetes de tamizaje que incluyen consulta, papanicolaou, colposcopia, exploración mamaria, detección de infección de vias urinarias y ultrasonido. En pacientes embarazadas la consulta incluye detección de infección de vías urinarias, ultrasonido 3D/4D y de ser necesario la monitorización fetal con tococardiografo. La atención que brindo es dentro de hospitales certificados que cuentan con lo necesario para resolver cualquier eventualidad durante tú embarazo o cirugía ginecológica que se pudiera presentar. Además tengo adiestramiento quirúrgico en hemorragia obstétrica y cirugía de mínima invasión. Para mi la información es vital, por lo que me mantengo en comunicación con mis pacientes por correo electrónico, teléfono, whatsapp y redes sociales. Mi objetivo es brindarte la atención médica que te mereces.",
+  "addresses": [
+    {
+      "full": "Riobamba 639. Torre 2. Consultorio 373-A,"
+    },
+    {
+      "full": "AV. Sor Juana Inés de La Cruz No. 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-garcia-cruz/ginecologo/gustavo-a-madero#address-id=351575&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:38.667Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/liliana_garcia_cruz.webp"
+}

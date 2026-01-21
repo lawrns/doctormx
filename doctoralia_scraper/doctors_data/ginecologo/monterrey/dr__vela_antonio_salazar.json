@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Vela Antonio Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Azteca 495,"
+    },
+    {
+      "full": "Ave. Azteca 495,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vela-antonio-salazar/ginecologo/monterrey#address-id=37314&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:02.419Z",
+  "localPhotoPath": null
+}

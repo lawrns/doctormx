@@ -1,0 +1,72 @@
+{
+  "name": "Linda Sánchez Zelayeta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1e7766/1e7766e2a33240c84b051ea9e944e0b3_220_square.jpg",
+  "about": "Hola, soy la Dra Linda Sánchez, ginecóloga especialista en atender mujeres que cursan la etapa de vida alrededor de la menopausia. Me caracterizo por ser una persona honesta, cálida, empática, dedicada. Siempre entregada al 100% con sus pacientes buscando siempre mejorarles su calidad de vida en diferentes esferas.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055-S,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 601,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linda-sanchez-zelayeta/ginecologo/ciudad-de-mexico#address-id=448411&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:00.730Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/linda_s_nchez_zelayeta.webp"
+}

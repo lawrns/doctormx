@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lillian Berenice Macias Cortes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1308,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a4156638/a4156638-04c1-40ce-8495-27d0597940a9_small_square.jpg",
+  "about": "- Especialista en Ginecología y Obstetricia. - Ginecóloga Certificada por el Consejo Mexicano de Ginecología y Obstetricia. - Colposcopista avalada por la Federación Mexicana de Colposcopía y Patología del Tracto Genital Inferior.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ablación cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lillian-berenice-macias-cortes/ginecologo/guadalajara#address-id=33512&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:45.746Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__lillian_berenice_macias_cortes.webp"
+}

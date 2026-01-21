@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Tirado Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Santa Teresa 1055- 950 Colonia Héroes De Padierna,"
+    },
+    {
+      "full": "Camino A Santa Teresa 1055- 950 Colonia Héroes De Padierna,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-tirado-chavez/ginecologo/ciudad-de-mexico#address-id=122571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:52.322Z",
+  "localPhotoPath": null
+}

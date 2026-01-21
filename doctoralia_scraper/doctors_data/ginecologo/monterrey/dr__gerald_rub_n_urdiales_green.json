@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gerald Rubén Urdiales Green",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3888f/e3888f90538181e553f5f85c4c067356_220_square.jpg",
+  "about": "Ex-Presidente del Colegio de Medicina Materno-Fetal de Nuevo Leon Re-Certificado por el Consejo Mexicano de Ginecologia y Obstetricia A.C. Servicios de Ginecología y Obstreticia de alto nivel. Mas de 25 años de experiencia en el cuidado de la salud femenina.",
+  "addresses": [
+    {
+      "full": "Calle Angel Martínez Villarreal 2813,"
+    },
+    {
+      "full": "Calle Angel Martínez Villarreal 2813,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerald-ruben-urdiales-green/ginecologo/nuevo-leon#address-id=99287&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:57.236Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gerald_rub_n_urdiales_green.webp"
+}

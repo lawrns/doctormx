@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mayi Mayret Mesquiti",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6867e267/6867e267-fd73-4b70-b662-beebe70a8397_small_square.jpg",
+  "about": "Mi formación médica, como bióloga de la reproducción humana, ginecobstetra y endoscopista con manejo de la cirugía de mínima invasión me ha dado como subespecialista un amplio panorama para identificar con exactitud y detalle los problemas que actualmente están enfrentando las mujeres. En la consulta médica de primera vez nos enfocamos a determinar el posible origen del problema para así dirigir el proceso de estudio y definir el mejor tratamiento, evitando demoras y estudios innecesarios. Todos los estudios médicos son realizados en consulta y contamos con equipo de alta especialidad para definir con precisión y detalle los problemas ginecológicos y reproductivos de las pacientes. He tenido la oportunidad de ofrecer muchas alternativas de tratamientos y manejos médicos muy favorables a muchas pacientes a las que previamente se les había indicado un único tratamiento.",
+  "addresses": [
+    {
+      "full": "Av. Rio Mayo 1306,"
+    },
+    {
+      "full": "Camino Santa Teresa 1055. Col. Heroes de Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayi-mayret-mesquiti/ginecologo/morelos#address-id=22159&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:37.249Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mayi_mayret_mesquiti.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Mario Alberto Godinez G.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b63c71/b63c7117e794a7b552dee15fa88efdb3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Santa Teresa 1055, Cons. 301. Col. Heroes De Padierna. ,"
+    },
+    {
+      "full": "Camino A Santa Teresa 1055, Cons. 301. Col. Heroes De Padierna. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alberto-godinez-g/ginecologo/magdalena-contreras#address-id=358944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:57.080Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/mario_alberto_godinez_g_.webp"
+}

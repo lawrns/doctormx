@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lissete Rodríguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4b38afdb/4b38afdb-adf6-4abd-85bf-8ada0543c05d_small_square.jpg",
+  "about": "Hola! Soy la Dra. Lissete Rodríguez especialista en Ginecóloga y Obstetricia con Diplomado en Colposcopia y lesiones del Tracto Genital Inferior, Diplomado en Medicina Estética y Ozonoterapia, así como, fellow en Terapia de Balance Hormonal por la Universidad Nacional Autónoma de México \"UNAM\", Universidad Autónoma de Nuevo León, COMEGIC, Instituto CODEC y Colegio en Medicina Funcional y Regenerativa S.C. Asi como diplomado en Ginecología Estética por la Universidad UVM.Como especialista en Ginecología y Obstetricia me dedico a acompañar y cuidar a las pacientes durante su embarazo, llevando un control prenatal, así como la salud reproductiva de la mujer en edad fértil no embarazada, así como acompañar y ayudar a mejorar sus cambios hormonales en las diversas etapas de la mujer durante la Pre Menopausia, Menopausia, y Post Menopausia; así como ayudar a restablecer sus niveles hormonales a cuando se es joven con un adecuado control y seguimiento, y apoyándolas en tratamiento para incontinencia urinaria preventiva y tratamiento, rejuvenecimiento vaginal y vulvar, tratamiento liquen y lesiones vulvares y vaginales. Desde el diagnóstico escuchando todas sus preocupaciones manteniendo un seguimiento cercano y estar contigo acompañándote en cada etapa, para mi, tu salud es mi prioridad y juntas eligiéremos la mejor forma para tu calidad de vida.Te invito a agendar cita conmigo. ¡Será un placer ser tu especialista!¿Por qué elegirme a mí?Soy una especialista que ama su trabajo, por lo que no se siente como tal.. Soy una persona que verdaderamente disfruta lo que hace y me llena mas el poder ayudar a mis pacientes a sobrellevar las distintas etapas de su vida y eso me permite realizar mi trabajo de una maravillosa manera, que mis pacientes lo puedan percibir al momento de su consulta, por lo que siempre estaré al pendiente en todo momento de tus dudas o estaré disponible, por que entendemos que somos parte importante de tu vida cuando de tu salud se trata.",
+  "addresses": [
+    {
+      "full": "Perif. Blvd. Manuel Ávila Camacho 3227,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lissete-rodriguez/ginecologo/tlalnepantla-de-baz2#address-id=585479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:04.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lissete_rodr_guez.webp"
+}

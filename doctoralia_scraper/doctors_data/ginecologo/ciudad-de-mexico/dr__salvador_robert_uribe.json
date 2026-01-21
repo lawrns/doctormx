@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Salvador Robert Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d014a9/d014a9a719770a9a4c170f3327c5b528_220_square.jpg",
+  "about": "Egresado de la Facultad de Medicina UNAM y residente en ginecobstetricia en el Centro Médico Nacional 20 de Noviembre del Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado. Certificado por el Consejo Mexicano en Ginecología y Obstetricia, diplomado en Colposcopia, Uro-Ginecología y Ultrasonido y Gineco-Estética. Mi compromiso es brindarte la mejor atención con la seguridad y confianza de tratarte con un profesional que pueda brindarte la información y diagnóstico que necesitas.​​​​​​​",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 682,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 682-Consultorio 304, Col Del Valle Nte, Benito Juarez,"
+    },
+    {
+      "full": "Insurgentes No.682,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 682,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 682-Consultorio 304, Col Del Valle Nte, Benito Juarez,"
+    },
+    {
+      "full": "Insurgentes No.682,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-robert-uribe/ginecologo/benito-juarez#address-id=173924&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:33.215Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__salvador_robert_uribe.webp"
+}

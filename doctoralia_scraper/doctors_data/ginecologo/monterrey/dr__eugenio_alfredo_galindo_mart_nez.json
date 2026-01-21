@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Eugenio Alfredo Galindo Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1c8284/1c8284ec9c79809c72266b3f9eca8056_220_square.jpg",
+  "about": "Nuestra consulta de primera vez dura 1 hora aproximadamente, y se le realiza una serie de preguntas completas, resolvemos todas sus dudas y se les realiza una exploración física y realizamos eco (vaginal o abdominal) para llegar a un diagnóstico completo.",
+  "addresses": [
+    {
+      "full": "Belisario dominguez, 2725 suite 201 colonia obispado.,"
+    },
+    {
+      "full": "Belisario dominguez, 2725 suite 201 colonia obispado.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eugenio-alfredo-galindo-martinez/ginecologo/nuevo-leon#address-id=337980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:18.010Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eugenio_alfredo_galindo_mart_nez.webp"
+}

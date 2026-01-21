@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Atieel Flores Morales",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/6f4b7f8c/6f4b7f8c-bbd2-4450-ad46-88a0eefd6639_large.jpg",
+  "about": "Sobre mí Soy médico egresado del IMSS por la UNAM. Soy OBSTETRA especializado en el manejo y resolución de EMBARAZO DE ALTO RIESGO; ginecólogo especializado en PADECIMIENTOS BENIGNOS de la mujer. soy oncólogo- ginecólogo especialista en PADECIMIENTO MALIGNOS como: cáncer de mama, cáncer de cérvix, cáncer de endometrio, cáncer de ovario, embarazo molar, mola metastásica cáncer de vagina y vulva. ¿Por qué elegirme a mí? Formación profesional Universidad: Centro de Estudios Superiores de Tepeaca. CEST Licenciado como Médico Cirujano y Partero (2002-2007) Cedula profesional No. 6873638 Especialidad en Medicina Universidad: Universidad Nacional Autónoma de México. UNAM Especialista en Medicina: Ginecología y Obstetricia Cedula profesional No. 11698842 Hospital sede de Residencia: “Unidad Médica de Alta Especialidad Hospital de Gineco- Obstetricia No. 3 Dr. Víctor Manuel Espinoza de los Reyes Sánchez Centro Medico Nacional LA RAZA- IMSS” Certificación: Consejo Mexicano de Ginecología y Obstetricia AC. No. 11084 Subespecialidad en Medicina Universidad: Universidad Nacional Autónoma de México. UNAM Subespecialidad en Medicina: Oncología Ginecológica (Tumores Ginecológicos y Mamarios) Cedula profesional No. 12890140 “Unidad Medica de Alta Especialidad Hospital de Oncología Centro Medico Nacional Siglo XXI -IMSS” Certificación: Consejo Mexicano de Oncología AC. No 2251 Principales áreas de tratamiento *EXPLORACION MAMARIA Y DE AXILA *COLPOSCOPIA, TOMA DE CULTIVO VAGINAL, TOMA DE PAPANICOLAU *BIOPSIA DE CÉRVIX Y ENDOMETRIO *BIOPSIA ABIERTA Y TRUCUT DE LA MAMA *CIRUGIA PARA TUMORES DE MAMA *CIRUGIA PARA TUMORES ABDOMINALES Y PÉLVICOS *CIRUGÍA PARA CÁNCER GINECOLÓGICO *EMBARAZO DE ALTO RIESGO **COLOCACIÓN Y RETIRO DE MÉTODOS DE PLANIFICACIÓN **OTB **VACUNAS PARA PAPILOMA HUMANO *HISTERECTOMÍA ABDOMINAL Y VAGINAL *CESÁREA CONVENCIONAL Y ESTÉTICA *ULTRASONIDO OBSTÉTRICO Mi consulta y mi equipo Consulta de embarazo con ultrasonido (si lo requiere) Exploración mamaria clínica y con ultrasonido (si lo requiere) Colposcopia con toma de cultivo vaginal, Papanicolau y biopsia de cuello uterino (si lo requiere) Biopsia de mama abierta y con aguja de corte (ambulatoria) Biopsia de endometrio (con cánula flexible) Otros servicios SEGUIMIENTO ONCOLÓGICO Valoración de resultados de mastografía y ultrasonido de mama Tratamiento de mastitis y abscesos de mama Valoración de resultados de Papanicolau y biopsias de cérvix Eliminación de verrugas, condilomas y lesiones genitales Vacuna para VPH Gardasil 4 y 9 Colocación y retiro de: DIU mirena, Cobre, Plata// implante subdérmico SEGUIMIENTO OBSTÉTRICO Control de embarazo con ultrasonido Resolución quirúrgica del embarazo (Cesárea) Embarazo ectópico, embarazo molar, embarazo anembrionico Amenaza de parto pretérmino, amenaza de aborto SEGUIMIENTO GINECOLÓGICO Tratamiento del Sangrado uterino anormal por miomatosis y otros Tratamiento de infecciones del tracto genital Más sobre mí Ginecología de la adulta mayor Ginecología pediátrica y del Adolescente Obstetricia de la mujer en edad de reproducción Tumores de mama en hombres y mujeres Puedo atender pacientes pediátricos y género masculino",
+  "addresses": [
+    {
+      "full": "Beatriz Paredes Rangel 36, Del Valle San Gabriel Cuautla, 90117 Tlaxcala, Tlax.,"
+    },
+    {
+      "full": "C. 2 Nte. 206, Barrio del Centro, 75200 Tepeaca, Pue.,"
+    },
+    {
+      "full": "Puebla - Xalapa, San Juan Acozac, 75410 Los Reyes de Juárez, Pue.,"
+    },
+    {
+      "full": "C. 11 Pte. 119, Morelos, 75770 Tehuacán, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Infección vaginal",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Colposcopía",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/atieel-flores-morales/ginecologo-oncologico-ginecologo-medico-general/puebla#address-id=389943&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:41.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__atieel_flores_morales.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Erik Alejandro Chávez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99de77/99de7754104b262b1d7d197932112557_220_square.jpg",
+  "about": "Soy el Dr. Erik Chávez, especialista en Ginecología y Obstetricia, con alta especialidad en Cirugía Ginecológica de Mínima Invasión. Mi objetivo es brindarte atención de calidad con tecnología de vanguardia vía laparoscópica, con menor dolor postquirúrgico y menor tiempo de hospitalización.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 1818,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erik-alejandro-chavez-garcia/ginecologo/nuevo-leon#address-id=578616&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:31.563Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__erik_alejandro_ch_vez_garc_a.webp"
+}

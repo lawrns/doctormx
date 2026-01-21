@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Emma Baltazar Guerrero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 494,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9506af1a/9506af1a-9c04-4021-91fb-b602984dea4b_small_square.jpg",
+  "about": "Dra. Emma C. Baltazar GuerreroEspecialidad en Medicina - Ginecología y ObstetriciaLa Dra. Emma Baltazar Guerrero ejerce la práctica privada en el Estado de México, con especialidad en Ginecología y Obstetricia.Realizó sus estudios de Licenciatura en Médico Cirujano en el Centro Cultural Universitario Justo Sierra. Posteriormente, cursó la especialidad en Ginecología y Obstetricia en el Hospital General “Dr. Enrique Cabrera Cosío”, perteneciente a la Secretaría de Salud de la Ciudad de México, con aval académico por parte de la Universidad Nacional Autónoma de México (UNAM). Durante su formación, realizó rotaciones en hospitales de referencia académica en la especialidad.Formación complementaria:Diplomado en Colposcopía y Patología del Tracto Genital Inferior, impartido en el Hospital General “Dr. Eduardo Liceaga”, reconocido por su liderazgo en la formación de ginecólogos colposcopistas. Avalado por la UNAM y el COMEGIC.Diplomado en Uso de Láser CO₂ en el Tracto Genital Inferior y Ginecología Regenerativa, con enfoque en tecnologías de vanguardia para el tratamiento de patologías ginecológicas. Reconocido por la UNAM y el COMEGIC.La Dra. Baltazar está recertificada por el Consejo Mexicano de Ginecología y Obstetricia, lo que respalda su compromiso con la actualización médica continua y la atención de calidad.",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial #20, Ciudad Satélite. Plaza comercial ¨Samara Satelite¨.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Biopsia de vagina",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emma-baltazar-guerrero-2/ginecologo/naucalpan-de-juarez2",
+  "scrapedAt": "2026-01-21T02:44:00.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__emma_baltazar_guerrero.webp"
+}

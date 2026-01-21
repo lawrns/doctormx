@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Gpe. Hernández Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1250,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/030765e8/030765e8-0526-4939-a045-6d8689e4710f_small_square.jpg",
+  "about": "Médico egresada de la Universidad Autónoma de Guadalajara, Facultad de medicina con especialidad en Ginecología y Obstetricia, certificada por el Consejo Mexicano de Ginecología y obstetricia. Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de Urgencia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-gpe-hernandez-saldana/ginecologo/guadalajara#address-id=166241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:39.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__mar_a_gpe__hern_ndez_salda_a.webp"
+}

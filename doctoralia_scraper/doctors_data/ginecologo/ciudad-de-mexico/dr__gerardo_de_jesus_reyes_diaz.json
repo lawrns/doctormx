@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Gerardo de Jesus Reyes Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 278,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f7c6d9/f7c6d9cd76b027c0c9fd26075b09fb80_220_square.jpg",
+  "about": "Soy el Dr. Gerardo de Jesús Reyes Diaz Medico cirujano por la Facultad Mexicana de Medicina de la Universidad La Salle (ULSA), especialista en Ginecología y Obstetricia por el Instituto Nacional de Perinatología México (UNAM) y especialista en Biología de la Reproducción Humana por el Instituto Nacional de Perinatología México. Me especializo en: - Histeroscopia, Cistectomía y Miomectomía. - Reproducción Asistida - Diagnostico y tratamiento avanzado de la infertilidad - Aplicación de técnicas de baja y alta complejidad - Endocrinología reproductiva - Cirugía laparoscópica diagnostica y quirúrgica - Endoscopia Ginecológica - Clínica de Endometriosis y dolor pélvico crónico con enfoque a la preservación de la fertilidad - Diagnostico y tratamiento de parejas con perdida Gestacional Recurrente. Para mi tú salud y tratamiento es lo más importante, te espero ¡ Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Lindavista 251,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-de-jesus-reyes-diaz/ginecologo/gustavo-a-madero",
+  "scrapedAt": "2026-01-21T02:44:01.240Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_de_jesus_reyes_diaz.webp"
+}

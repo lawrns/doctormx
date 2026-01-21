@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Nancy Sierra Lozada",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Acueducto Río Hondo No. 28 Consultorio 306. Col. Lomas Virreyes,"
+    },
+    {
+      "full": "Calle Acueducto Río Hondo No. 28 Consultorio 306. Col. Lomas Virreyes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nancy-sierra-lozada/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:57:43.165Z",
+  "localPhotoPath": null
+}

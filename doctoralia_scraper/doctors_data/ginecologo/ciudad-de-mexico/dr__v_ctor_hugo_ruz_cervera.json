@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Víctor Hugo Ruz Cervera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44e0be/44e0be30f7cc733bc20291ac5e074f9f_220_square.jpg",
+  "about": "Soy egresado del Hospital de la Mujer, México DF, con Diplomado en Colposcopía y en Metabolismo óseo (osteoporosis) Mi atención está enfocada a los padecimientos de la mujer como menopausia, infertilidad, embarazo, anticoncepción, miomatosis y Virus de Papiloma Humano. Será un honor para mi atenderle, mi preparación está enfocada en todos los problemas que afectan a la mujer. Es un orgullo el poder atenderle en el centro hospitalario de mayor prestigio en América Latina (Hospital Angeles Lomas). Nuestra preparación nos permite estar a la vanguardia en todos los tratamientos femeninos, brindando el mejor de los resultados en el menor tiempo posible. Podemos ayudar en diferentes áreas como control de embarazo, infertilidad, cirugía de útero, ovarios, miomas, tumores, con especial atención a los problemas del climaterio y menopausia. Nuestros servicios también se enfocan a todos los problemas relacionados con el cuello uterino y virus del papiloma humano (colposcopia). Ya contamos con INSTAPAP, una nueva manera de realizar el estudio del Papanicolaou (citología del cérvix o cuello uterino), el cual es un procedimiento menos incómodo que permite realizar una evaluación precisa, de alta calidad y con resultados inmediatos. Siempre en nuestra mente estará el bienestar de los pacientes y la honestidad como mayor virtud.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-ruz-cervera/ginecologo/huixquilucan#address-id=12605&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:52.506Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__v_ctor_hugo_ruz_cervera.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alejandra Guerra Frese",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3fe379/3fe379519c740a410a0cad712b5dd934_220_square.jpg",
+  "about": "Médico egresado de la Universidad Panamericana Médico Ginecólogo y obstetra egresado del Hospital Angeles México (UNAM) Fellowship Endocrinología y Reprodución (infertilidad) Instituto Ingenes México Título y cédulas correspondientes. Certificación en trámite. Múltiples cursos y diplomados: Colposcopía, Laparoscopía, Ultrasonido, Métodos de Reproducción Asistida.",
+  "addresses": [
+    {
+      "full": "Tuxpan N. 39- 705, Colonia Roma, México, D.F.A una cuadra de Avenida Insurgentes y de la parada de Metro y del Metrobus Ch,"
+    },
+    {
+      "full": "Tuxpan N. 39- 705, Colonia Roma, México, D.F.A una cuadra de Avenida Insurgentes y de la parada de Metro y del Metrobus Ch,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-guerra-frese/ginecologo/ciudad-de-mexico#address-id=94749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:24.032Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_guerra_frese.webp"
+}

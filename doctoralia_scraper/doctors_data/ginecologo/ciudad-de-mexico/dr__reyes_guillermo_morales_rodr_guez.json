@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Reyes Guillermo Morales Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Baja California #210-4piso,"
+    },
+    {
+      "full": "Av. Baja California #210-4piso,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyes-guillermo-morales-rodriguez/ginecologo/cuauhtemoc#address-id=23145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:10.961Z",
+  "localPhotoPath": null
+}

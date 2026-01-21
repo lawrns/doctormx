@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Laura Viñals Rodríguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aeb5a2df/aeb5a2df-4707-4089-a22c-85bf3d880ac6_small_square.jpg",
+  "about": "Medico de formación en Universidad de ciencias Medicas de la Habana . Cuba Especialista en Ginecología y Obstetricia . Universidad de Ciencias Medicas de la Habana .Cuba Diplomado en Afecciones del Tracto Genital Inferior y Colposcopia en Instituto Nacional de Cancerología México .Estudios revalidados en 24 de octubre del 2017 en Ciudad de México . Universidad de AnáhuacMe caracterizo por ser empática ,humana, directa ,honesta y practica en mi proceder como profesional de la salud",
+  "addresses": [
+    {
+      "full": "Av. de la Hacienda 186, Colonia Residencial Villa Coapa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $799"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $799"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $799"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $4,200"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $4,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-vinals-rodriguez/ginecologo/tlalpan#address-id=610394&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:45.085Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__laura_vi_als_rodr_guez.webp"
+}

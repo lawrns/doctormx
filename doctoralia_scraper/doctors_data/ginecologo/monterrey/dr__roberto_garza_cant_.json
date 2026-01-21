@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Roberto Garza Cantú",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ca5f8c/ca5f8cc6bf0de6b3d8c95655ec136510_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "(Centro Médico Christus Muguerza Sur), Carretera Nacional 6501 Col. la Estanzuela Monterrey, N.L.,"
+    },
+    {
+      "full": "(Centro Médico Christus Muguerza Sur), Carretera Nacional 6501 Col. la Estanzuela Monterrey, N.L.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-garza-cantu/ginecologo/monterrey#address-id=10676&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:02.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_garza_cant_.webp"
+}

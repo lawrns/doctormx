@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yolanda Reyes Villasana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/289ce7/289ce721eb0e2b355cb06aaec7e33bae_220_square.jpg",
+  "about": "En tu primera visita se realiza un interrogatorio completo, la revisión se realiza con respeto y con el mayor cuidado para disminuir la molestias, la exploración incluye una revisión mamaria, si lo requieres se tomara el papanicolaou y la colposcopia, ultrasonido endovaginal y pélvico, así como 3D y 4D en caso necesario. Se realizan mediciones de peso, talla y presión arterial. Al final se explica claramente el estado de salud y tratamientos requeridos. ¿ESTAS EMBARAZADA? Reserva tu cita para realizar el ULTRASONIDO 11-14 semanas, donde se descartan malformaciones mayores y datos en relación a Síndrome de Down, Edwards y Patau, se mide la longitud del cuello uterino, riesgos de preeclampsia, junto con pruebas sanguíneas especificas. De las 18-24 semanas tu ULTRASONIDO ESTRUCTURAL donde se observa la ANATOMÍA DETALLADA realizando un segundo chequeo completo de tú bebé, conocerás el sexo, la localización placentaria y estado del flujo de las arterias uterinas. PRUEBA DE PATERNIDAD En saliva, sangre, semen, cerilla, (varias muestras) precio desde $4900 pesos, entra a pruebadeadn.mx para más información.",
+  "addresses": [
+    {
+      "full": "Nueva York 7 consultorio 413, Napoles, Benito Juárez, Ciudad de México,"
+    },
+    {
+      "full": "Nueva York 7 consultorio 413, Napoles, Benito Juárez, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-reyes-villasana/ginecologo/benito-juarez#address-id=129136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:02.835Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yolanda_reyes_villasana.webp"
+}

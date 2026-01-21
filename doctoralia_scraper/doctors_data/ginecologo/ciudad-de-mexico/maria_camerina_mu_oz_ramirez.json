@@ -1,0 +1,25 @@
+{
+  "name": "Maria Camerina Muñoz Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Estrella 22,"
+    },
+    {
+      "full": "Estrella 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-camerina-munoz-ramirez/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:06:15.902Z",
+  "localPhotoPath": null
+}

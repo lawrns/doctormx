@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Taboada Cole",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/931537/93153717434e51567418c0bb48272b2c_220_square.jpg",
+  "about": "Hola. Soy especialista en Ginecología y Obstetricia, realicé un Fellow en Medicina Materno Fetal Hospital Clinic Barcelona España, realicé Master en Climaterio y Menopausia en la Universidad Menendez Pelayo de Santander España, soy Maestro en Ciencias Médicas e Investigador, con múltiples tesis dirigidas y publicaciones en revistas indexadas.",
+  "addresses": [
+    {
+      "full": "Calle 16 Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-taboada-cole/ginecologo/puebla#address-id=72207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:12.138Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejandro_taboada_cole.webp"
+}

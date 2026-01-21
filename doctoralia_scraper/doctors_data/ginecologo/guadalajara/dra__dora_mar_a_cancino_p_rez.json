@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dora María Cancino Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 556,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d41c2/0d41c215a7670dde2aae994c0a39c0d6_140_square.jpg",
+  "about": "La Dra. Cancino es Médico egresada de la Universidad Autónoma de Guadalajara, con Especialidad en Ginecología y Obstetricia por la Universidad de Guadalajara. Con diversos Diplomados afines tales como Biología de la Reproducción y Técnicas de Reproducción asistida, Colposcopia, Ultrasonido Obstétrico con enfoque en salud Peri-natal y Ultrasonido Doppler. Con la finalidad de ofrecerle a la paciente una atención de calidad y de vanguardia. Su labor como Médico, es brindar un trato respetuoso, cálido y eficiente para el Diagnóstico y Tratamiento de su Enfermedad. Su compromiso es una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "Avenida Central 911. Piso 10. Consultorio 213. Col. Residencial Poniente,"
+    },
+    {
+      "full": "Avenida Central 911. Piso 10. Consultorio 213. Col. Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dora-maria-cancino-perez-2/ginecologo/zapopan#address-id=371269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:29.889Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__dora_mar_a_cancino_p_rez.webp"
+}

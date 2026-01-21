@@ -1,0 +1,25 @@
+{
+  "name": "Miguel Ruva",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puerta De Hierro 5150 503 C. Col. Puerta De Hierro. ,"
+    },
+    {
+      "full": "Puerta De Hierro 5150 503 C. Col. Puerta De Hierro. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-ruva/ginecologo/zapopan#address-id=358973&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:25.143Z",
+  "localPhotoPath": null
+}

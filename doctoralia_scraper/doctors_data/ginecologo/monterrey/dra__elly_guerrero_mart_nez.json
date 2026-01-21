@@ -1,0 +1,98 @@
+{
+  "name": "Dra. Elly Guerrero Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8a02e/d8a02e1a88c27e4ef2282ac31aae2f4c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Periferico Sur # 3697 Consultorio 617,"
+    },
+    {
+      "full": "Plaza LR902 1er Avenida esquina Paseo de los Insurgentes,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Periferico Sur # 3697 Consultorio 617,"
+    },
+    {
+      "full": "Plaza LR902 1er Avenida esquina Paseo de los Insurgentes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elly-guerrero-martinez/ginecologo/nuevo-leon#address-id=404912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:51.255Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__elly_guerrero_mart_nez.webp"
+}

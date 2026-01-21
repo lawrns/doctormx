@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Carlos Alejandro Zendejas Andrade",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 55,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/ea0ae172/ea0ae172-2b0c-4d64-96e7-efd9e18edbde_large.jpg",
+  "about": "Soy el Dr. Carlos Alejandro Zendejas Andrade, Ginecólogo y Obstetra con subespecialidad en Uroginecología y alta especialidad en Cirugía Endoscópica Ginecológica, egresado del Instituto Nacional de Perinatología (INPer) por parte de la UNAM.Cuento con amplia experiencia en la atención de mujeres con problemas ginecológicos como:Sangrados menstruales abundantes o irregularesMiomas uterinos, endometriosis, quistes ováricosInfecciones recurrentes, dolor pélvico o al tener relacionesAlteraciones en el Papanicolaou o VPHRevisión ginecológica anual, planificación familiarEmbarazo de alto riesgoMe especializo en el diagnóstico y tratamiento de condiciones del piso pélvico, como:Incontinencia urinaria (pérdida involuntaria de orina)Prolapso de órganos pélvicos (vejiga caída, útero descendido)También realizo procedimientos quirúrgicos con técnicas de mínima invasión (laparoscopía, cirugía vaginal) para una recuperación más rápida y menos dolorosa.Me comprometo a brindarte una atención cercana, ética y basada en evidencia.",
+  "addresses": [
+    {
+      "full": "Av Lázaro Cárdenas 401,"
+    },
+    {
+      "full": "Avenida Ejército Nacional Mexicano 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Histerectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alejandro-zendejas-andrade/ginecologo/san-pedro-garza-garcia#address-id=609207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:46.898Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__carlos_alejandro_zendejas_andrade.webp"
+}

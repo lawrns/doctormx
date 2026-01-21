@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maleny Sánchez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/30e147d8/30e147d8-36f1-4ff5-90aa-d0d08f0d0b43_large.jpg",
+  "about": "¡Hola, soy la Dra. Maleny Sánchez Flores!. Especialista en Ginecología y Obstetricia. -Médica cirujana egresada de UNAM Ciudad Universitaria. -Técnico Auxiliar Laboratorista químico en la UNAM. -Técnico Urgencias Médicas UNAM -Técnico en Histopatología UNAM. -Realicé la especialidad de Ginecología y Obstetricia en La secretaria de Salud de la Ciudad de México. Con sede en Hospital Enrique Cabrera. -Cuento con cursos, congresos y educación médica continua de forma constante para poder ofrecerles lo mejor a mis pacientes. -He participado en protocolos de investigación, congresos y ponencias, así como en educación y la formación de nuevos médicos. Siempre una mujer que apoya a las otras mujeres. ¡Será un grato placer atenderte. !",
+  "addresses": [
+    {
+      "full": "Periférico sur 5246,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maleny-sanchez/ginecologo/coyoacan#address-id=523062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:18.524Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maleny_s_nchez.webp"
+}

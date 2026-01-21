@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José María Peña Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f210c/5f210cd82e1a8401d17aa0ee6f10d335_220_square.jpg",
+  "about": "Una consulta siempre será una oportunidad de interactuar con un ser humano, con calidad y calidez, con el específico fin de brindar un conocimiento del problema que le esté afectando buscando su pronta solución o lo mejor sería difundir los métodos de prevención para evitar llegar al proceso de enfermedad. Esto se logra, con el primer paso, que da el paciente, de acudir con el profesional de la salud y se conjuga con el conocimiento y experiencia de éste para orientarlo adecuadamente y lograr el objetivo buscado que es el de mantener la salud. Facebook - @drjosemariapena",
+  "addresses": [
+    {
+      "full": "Puente de Piedra,"
+    },
+    {
+      "full": "Puente de Piedra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-maria-pena-aguilar/ginecologo/tlalpan#address-id=34215&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:56.873Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__mar_a_pe_a_aguilar.webp"
+}

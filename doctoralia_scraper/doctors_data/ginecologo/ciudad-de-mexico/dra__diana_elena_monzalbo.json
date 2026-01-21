@@ -1,0 +1,92 @@
+{
+  "name": "Dra. Diana Elena Monzalbo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67a9f4/67a9f43a9d2b84d098cc9abead1289c1_220_square.jpg",
+  "about": "Ginecóloga con más de 10 años de experiencia especializada en control prenatal, embarazo de alto riesgo, infertilidad, ginecología, papanicolaou y colposcopia. Creo firmemente en el parto humanizado y en no realizar cesáreas innecesarias. Apoyo en la lactancia materna. Atención personalizada Disponible todos los días de la semana 24/7",
+  "addresses": [
+    {
+      "full": "Interlomas ,"
+    },
+    {
+      "full": "Interlomas,"
+    },
+    {
+      "full": "Interlomas ,"
+    },
+    {
+      "full": "Interlomas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-elena-monzalbo/ginecologo/huixquilucan#address-id=12701&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:18.296Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_elena_monzalbo.webp"
+}

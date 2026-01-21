@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jose Jesus Macias Duvignau",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c38dc9/c38dc9c305205939374d77572d47886a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Chapultepec #489 Cons. 509,"
+    },
+    {
+      "full": "Av. Chapultepec #489,"
+    },
+    {
+      "full": "Av. Chapultepec #489 Cons. 509,"
+    },
+    {
+      "full": "Av. Chapultepec #489,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-jesus-macias-duvignau/ginecologo/cuauhtemoc#address-id=5842&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:32.371Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_jesus_macias_duvignau.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ray Villarreal Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/665fac/665fac097392f156fe4a640ae0b10f77_220_square.jpg",
+  "about": "Especialidad en Medicina Materno Fetal Presidente Colegio de Medicina Materno Fetal de Nuevo León Especialista en Embarazos alto y bajo riesgo PAQUETE ESPECIAL ULTRASONIDO 4D HD Live más anatómico Contamos con la más sofisticada tecnología y somos expertos en todos los aspectos del embarazo y en el manejo de situaciones de alto riesgo tanto de la madre como del bebe y te brindamos atención médica de la más alta calidad, sin dejar a un lado la calidez y comprensión que necesitas en tu embarazo. Expertos en realizar ultrasonidos tanto en embarazos de alto riesgo así como de bajo riesgo. Aunque la mayoría de los embarazos son de bajo riesgo sabemos que más del 80% de las malformaciones congénitas se presentan en embarazos en los cuales la madre no presenta factores de alto riesgo. Estamos orgullosos en decir que contamos con una alta tasa de detección de defectos de nacimiento sin sobrestimar los riesgos. ULTRASONIDO 4ºD HD Live (alta definición) Detección de Malformaciones Fetales Ultrasonido Genético (Translucencia nucal, hueso nasal, ductus venoso) Ultrasonido Anatómico Fetal CIRUGÍA GINECOLÓGICA DE MÍNIMA INVASIÓN CIRUGÍA ESTÉTICA GINECOLÓGICA (Himenoplastía, Labioplastía)",
+  "addresses": [
+    {
+      "full": "Centro Médico de la Mujer Av. Constitución 1881 pte 2ºpiso consultorio 212,"
+    },
+    {
+      "full": "Centro Médico de la Mujer Av. Constitución 1881 pte 2ºpiso consultorio 212,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ray-villarreal-gonzalez/ginecologo/monterrey#address-id=108930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:23.440Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ray_villarreal_gonzalez.webp"
+}

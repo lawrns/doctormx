@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma Nayeli Hurtado Salcedo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91bf97/91bf97bd595f9ee5f2af4eb8229ca25d_220_square.jpg",
+  "about": "\"Mi misión es darle a mis pacientes la mejor atención y el mejor tratamiento, individualizando cada caso y lograr el mejor resultado en la salud y bienestar de ellas.\" Soy Egresada de la Universidad de Guadalajara. Realice mi especialidad en Ginecología y Obstetricia en el Centro Medico Nacional de Occidente, certificada por el Consejo Mexicano de Ginecología y Obstetricia. Además de mi especialidad, cuento con un Diplomado en Colposcopia y Patología del tracto genital inferior.",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra #2893, consultorio 5. Col. Vallarta Norte,"
+    },
+    {
+      "full": "Calle Justo Sierra #2893, consultorio 5. Col. Vallarta Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-nayeli-hurtado-salcedo/ginecologo/guadalajara#address-id=253836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:09.010Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__alma_nayeli_hurtado_salcedo.webp"
+}

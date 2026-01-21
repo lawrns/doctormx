@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Antonio García Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/493a2e/493a2ec3561062d4b68faccdf72954a4_220_square.jpg",
+  "about": "Soy el Dr. Juan Antonio García Zamora, ginecólogo y obstetra con más de 10 años de experiencia en la atención integral de la salud femenina. Egresé de la Facultad de Medicina de la UNAM y realicé mi especialidad en el Hospital de Ginecología y Obstetricia Luis Castelazo Ayala No. 4. Actualmente brindo atención en la Clínica Médico Quirúrgica, ofreciendo un servicio de calidad, calidez y accesible para mis pacientes.Mi enfoque está en la calidad y profesionalidad de mis pacientes en enfermedades como control de embarazo y seguimiento prenatal, atención ginecológica integral, procedimientos de colposcopia, manejo de irregularidades menstruales y ultrasonidos ginecológicos y obstétricos. Mi compromiso es proporcionar una atención profesional y humana, adaptada a las necesidades de cada paciente, utilizando tecnología de vanguardia para garantizar los mejores resultados.Si necesitás atención ginecológica integral, colposcopia, ultrasonidos o asesoría en planeación familiar, no esperes más.Agenda tu cita y permíteme ayudarte.",
+  "addresses": [
+    {
+      "full": "Calle Oriente 239 Número 171,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-garcia-zamora/ginecologo/iztacalco#address-id=166689&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:32.992Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_antonio_garc_a_zamora.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Angel Torres González",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3c992/b3c9925112ba19fc2021eba9e61e4d4b_220_square.jpg",
+  "about": "Control y atención de calidad de partos y cesáreas. Experto en fertilidad.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $12,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-angel-torres-gonzalez/ginecologo/general-escobedo#address-id=137673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:10.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__angel_torres_gonz_lez.webp"
+}

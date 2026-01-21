@@ -1,0 +1,31 @@
+{
+  "name": "Anabel Rivera Ayala",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Julio Aldama Esq.Marcela Rubial,"
+    },
+    {
+      "full": "C. Francisco García Salinas 19,"
+    },
+    {
+      "full": "Julio Aldama Esq.Marcela Rubial,"
+    },
+    {
+      "full": "C. Francisco García Salinas 19,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anabel-rivera-ayala/ginecologo/durango#address-id=246769&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:19.941Z",
+  "localPhotoPath": null
+}

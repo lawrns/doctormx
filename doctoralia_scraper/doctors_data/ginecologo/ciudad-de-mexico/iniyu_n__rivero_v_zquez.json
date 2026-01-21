@@ -1,0 +1,72 @@
+{
+  "name": "Iniyu N. Rivero Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04aa6f/04aa6ff72588b055bc1cda86eb4d748f_220_square.jpg",
+  "about": "Soy ginecóloga, certificada por el Consejo Mexicano de Ginecología y Obstetricia, mi especialidad es la atención a las mujeres, con un trato digno, con calidad, ética y profesionalismo. ¡Estoy a tus ordenes!",
+  "addresses": [
+    {
+      "full": "Bosques de Europa,"
+    },
+    {
+      "full": "Bosques de los Continentes 134,"
+    },
+    {
+      "full": "Bosques de Europa,"
+    },
+    {
+      "full": "Bosques de los Continentes 134,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iniyu-n-rivero-vazquez/ginecologo/nezahualcoyotl#address-id=372222&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:56.322Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/iniyu_n__rivero_v_zquez.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alfredo Cortes Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/85c1e79c/85c1e79c-6114-4ba0-ae51-0fac34d955e6_small_square.jpg",
+  "about": "Soy médico especialista en ginecología & obstetricia y biología de la reproducción, apasionado por la fertilidad humana, el manejo de climaterio y endocrinología ginecológica. Ayudo a parejas a #crearfamilias.",
+  "addresses": [
+    {
+      "full": "Av. Vialidad de la Barranca,"
+    },
+    {
+      "full": "Monterrey 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-cortes-vazquez/ginecologo/huixquilucan#address-id=591398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:06.860Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfredo_cortes_vazquez.webp"
+}

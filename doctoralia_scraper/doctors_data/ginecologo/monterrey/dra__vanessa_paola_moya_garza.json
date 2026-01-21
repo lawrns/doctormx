@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Vanessa Paola Moya Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 569,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/abc4f2/abc4f2690ca9bbb340f9b985fa3d948d.jpg",
+  "about": "Hola! :) Bienvenida ! Me gustaría contarles un poco acerca de mi trayectoria académica :) Soy la Dra. Vanessa Paola Moya Garza, realice la carrera de Medico Cirujano Partero en la UDEM ( Universidad de Monterrey) 2008-2013) , posteriormente realice mi Internado de Pregrado ( 2013-2014) en todas las sedes de Hospital Christus Muguerza con rotaciones en todas las especialidades, posteriormente culmine realizando mi servicio social en la UDEM ( 2014-2015) .y posteriormente realice mi especialidad en Ginecología y Obstetricia en la Universidad Autónoma de Coahuila (2015-2019), me destaque como jefa de residentes y obtuve mención honorífica. Cuento con un Diplomado en Patologías del tracto genital inferior y Colposcopia por la UAG. Así como diplomado en Ultrasonido Obstétrico y Ginecológico. Me encuentro con certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia y me gusta mantenerme actualizada para brindarles la mejor atención a mis pacientes. Me considero amante del parto y cesárea humanizadas. Recuerden que su salud es lo mas importante y lo que más nos importa a nosotros como médicos es brindar atención medica de excelente calidad y siempre actualizada. Quedo a sus ordenes :)",
+  "addresses": [
+    {
+      "full": "Av Nogalar Sur 412 Futuro Nogalar,"
+    },
+    {
+      "full": "Calle Ecuador 2331, Balcones de Galerias,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $900"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vanessa-paola-moya-garza-2/ginecologo/nuevo-leon#address-id=386673&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:32.743Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__vanessa_paola_moya_garza.webp"
+}

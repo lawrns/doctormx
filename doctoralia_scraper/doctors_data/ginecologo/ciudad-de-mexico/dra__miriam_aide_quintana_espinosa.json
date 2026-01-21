@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Miriam Aide Quintana Espinosa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ee6b6/2ee6b61ca86015d69b7b5c62f1bd246d_220_square.jpg",
+  "about": "Hola, soy la Dra. Miriam Quintana me especializo en ginecología, la cual es la encargada del cuidado de la salud femenina fuera del embarazo, es decir todos los aspectos de la salud y enfermedades específicos de la mujer, y por tanto relacionados con su sistema reproductivo o condición de género. También soy obstetra la cual se encarga específicamente de la vigilancia del embarazo, tanto de los cuidados, riesgos y complicaciones que puede tener la mujer durante el embarazo, trabajo de parto, o en el puerperio (después del nacimiento del bebé),así como de la salud fetal. Por la experiencia en mi formación de la especialidad en el INPer así como los años de ejercicio profesional cuento con habilidad y capacidad para la atención de embarazos en mujeres sanas y en embarazos de alto riesgo. Otra área de la ginecología que manejo desde 1996 es la colposcopía y el estudio sobre VPH (Virus del Papiloma Humano) el cual es el causante del cáncer cervicouterino y de todo el tracto genital, cáncer de colón, y cáncer de cabeza y cuello (específicamente garganta), de ahí la importancia de su detección oportuna y prevención. Lo que mi consulta te proporciona es asistencia a niñas, adolescentes, mujeres jóvenes, maduras y de la tercera edad con problemas obstétricos y ginecólogicos. Así también practico la medicina preventiva como hacer estudios necesarios para diagnósticos oportunos de enfermedades como la toma de Papanicolaou, brindo asesoría en método de planificación familiar, aplico vacunas contra VPH, oriento en autocuidado de la salud en todas las etapas de la vida. De ser necesario me apoyo en un grupo multidisciplinario de amigos y colegas con experiencia en especialidades y subespecialidades. Durante la consulta me gusta que mis pacientes se sientan en confianza conmigo para la realización de un diagnostico oportuno y dar atención personalizada. Para mi es importante tu salud tanto física como mental.",
+  "addresses": [
+    {
+      "full": "Paseo de las Palomas 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-aide-quintana-espinosa/ginecologo/atizapan-de-zaragoza#address-id=258482&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:18.610Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__miriam_aide_quintana_espinosa.webp"
+}

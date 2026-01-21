@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Horacio Javier Alvarado Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/35a3998f/35a3998f-56af-4731-a2bf-dd9491038331_small_square.jpg",
+  "about": "¡Hola qué tal! Soy el Dr. Horacio Javier Alvarado Delgado, ginecólogo con una profunda vocación por acompañar a las mujeres en cada etapa de su vida reproductiva. Me especialicé en Ginecología en el Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM) en 2010, y más adelante continué mi formación con una subespecialidad en Biología de la Reproducción Humana en la UNAM en 2013. En 2017, completé una especialización en Medicina Materno Fetal en la Universidad de Monterrey (UDEM), lo que me ha permitido ofrecer un enfoque integral tanto en salud reproductiva como en el cuidado del embarazo de alto riesgo. Mi compromiso es brindarte atención médica con empatía y profesionalismo, cuidando que siempre te sientas cómoda y segura en consulta. Tu bienestar es mi prioridad.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/horacio-javier-alvarado-delgado/ginecologo/nuevo-leon#address-id=119469&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:08.421Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__horacio_javier_alvarado_delgado.webp"
+}

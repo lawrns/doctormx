@@ -1,0 +1,22 @@
+{
+  "name": "Dra. Vanessa Elizabeth Pichardo Sosa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c2b8b197/c2b8b197-4950-4664-8559-f40f717e0fd3_small_square.jpg",
+  "about": "Soy la Dra. Vanessa Pichardo, ginecóloga apasionada por acompañar a cada mujer en sus diferentes etapas de vida. Con un trato cercano, empático y respetuoso, me enfoco en generar confianza y brindar atención personalizada que prioriza el bienestar físico y emocional en mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo 671,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vanessa-elizabeth-pichardo-sosa/ginecologo/benito-juarez#address-id=571947&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:43.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vanessa_elizabeth_pichardo_sosa.webp"
+}

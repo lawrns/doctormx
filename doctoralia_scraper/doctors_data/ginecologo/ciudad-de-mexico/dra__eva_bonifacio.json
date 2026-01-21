@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Eva Bonifacio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0be20f/0be20fc41cfc89e50d1da36360f84c65_220_square.jpg",
+  "about": "Médico en Biología de la Reproducción Humana egresada del Instituto Nacional de Perinatología “Isidro Espinosa de los Reyes” con 9 años de experiencia profesional. Orientada a procedimientos de reproducción asistida de baja y alta complejidad. Así como brindar una atención médica con calidad humana y trato digno al paciente. Con una conducta de alta responsabilidad profesional. Diplomado en Colposcopia avalado por la Benemérita Universidad Autónoma de Puebla.",
+  "addresses": [
+    {
+      "full": "cerro del Peñon numero 111,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $400"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• Desde $69,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eva-bonifacio/ginecologo/coyoacan#address-id=413961&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:23.848Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__eva_bonifacio.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Alfredo Lagunas Rios",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lago Patzcuaro,91 201, Col. Anahuac, ,"
+    },
+    {
+      "full": "Lago Patzcuaro,91 201, Col. Anahuac, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-lagunas-rios/ginecologo/miguel-hidalgo#address-id=355484&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:18.015Z",
+  "localPhotoPath": null
+}

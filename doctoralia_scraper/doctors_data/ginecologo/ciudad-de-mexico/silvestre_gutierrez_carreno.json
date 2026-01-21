@@ -1,0 +1,25 @@
+{
+  "name": "Silvestre Gutierrez Carreno",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de las naciones no. 1 5o p, Napoles,"
+    },
+    {
+      "full": "Av. de las naciones no. 1 5o p, Napoles,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvestre-gutierrez-carreno/ginecologo/benito-juarez#address-id=110797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:32.184Z",
+  "localPhotoPath": null
+}

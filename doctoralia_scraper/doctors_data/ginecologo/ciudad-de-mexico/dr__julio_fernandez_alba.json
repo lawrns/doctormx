@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Julio Fernandez Alba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hegel 120, (despacho 604),"
+    },
+    {
+      "full": "Hegel 120, (despacho 604),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-fernandez-alba/ginecologo/miguel-hidalgo#address-id=92956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:39.090Z",
+  "localPhotoPath": null
+}

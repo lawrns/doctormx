@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rigoberto Cerezo Reyes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 17 Oriente Num 2018 Col. Azcarate Frente A Parque Ecologico,"
+    },
+    {
+      "full": "Calle 17 Oriente Num 2018 Col. Azcarate Frente A Parque Ecologico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rigoberto-cerezo-reyes/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:57:42.498Z",
+  "localPhotoPath": null
+}

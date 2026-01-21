@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Carlos Guillermo Maquita Nakano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af7f40/af7f402f549c39322e6abcbcd3953cec_220_square.jpg",
+  "about": "Director General de Red Crea Fertilidad. Biología de la Reproducción, Ginecología y Obstetricia *Cuenta con más de 25 años de experiencia dedicados a tratar diagnósticos comunes de la salud femenina y de parejas con infertilidad. *Miembro activo de prestigiosas sociedades médicas en Europa, Estados Unidos, Latinoamérica y por supuesto México.",
+  "addresses": [
+    {
+      "full": "Managua 730,"
+    },
+    {
+      "full": "Av. Río Mixcoac #274,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biología de la reproducción",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-guillermo-maquita-nakano/ginecologo/gustavo-a-madero#address-id=563175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:30.481Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_guillermo_maquita_nakano.webp"
+}

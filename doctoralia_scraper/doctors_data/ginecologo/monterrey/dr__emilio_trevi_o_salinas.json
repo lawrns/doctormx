@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Emilio Treviño Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emilio-trevino-salinas/ginecologo/monterrey#address-id=19857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:12.642Z",
+  "localPhotoPath": null
+}

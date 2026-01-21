@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Judith Ramírez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b939a5/b939a5c2aa4733813b5f8e90cd0f95e5_220_square.jpg",
+  "about": "ESPECIALISTA EN EMBARAZO DE ALTO RIESGO, CON DETECCIÓN OPORTUNA DE PADECIMIENTOS EN EL BEBÉ. AMPLIA EXPERIENCIA EN LA ATENCIÓN DE PARTO HUMANIZADO, CON APEGO MATERNO Y LA REALIZACIÓN DE CONTACTO PIEL CON PIEL ENTRE MAMÁ Y BEBÉ",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/judith-ramirez-martinez/ginecologo/monterrey#address-id=23219&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:14.233Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__judith_ram_rez_mart_nez.webp"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Dra. Silvia Veronica Aguilar Bueno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Benito Juárez,"
+    },
+    {
+      "full": "Flores Mexicanas,"
+    },
+    {
+      "full": "Calle Benito Juárez,"
+    },
+    {
+      "full": "Flores Mexicanas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-veronica-aguilar-bueno-2/ginecologo/nezahualcoyotl#address-id=451793&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:55.453Z",
+  "localPhotoPath": null
+}

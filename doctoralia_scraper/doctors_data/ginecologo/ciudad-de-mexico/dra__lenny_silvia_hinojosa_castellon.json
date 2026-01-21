@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Lenny Silvia Hinojosa Castellon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1877,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9129e7/9129e7c9b20c4906d0d71b82b3f21f5c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jicote 176,"
+    },
+    {
+      "full": "Jicote 186,"
+    },
+    {
+      "full": "Jicote 176,"
+    },
+    {
+      "full": "Jicote 186,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lenny-silvia-hinojosa-castellon/ginecologo/ciudad-de-mexico#address-id=201978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:49.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lenny_silvia_hinojosa_castellon.webp"
+}

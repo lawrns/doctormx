@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María José Robles Menchero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b826c8/b826c8cc26ea36cba8557deb6e7e409e_220_square.jpg",
+  "about": "Soy María José, estudié medicina en la Facultad Mexicana de Medicina de la Universidad La Salle, con un Diplomado en Humanismo y Profesión. Posteriormente, me especialicé en Ginecología y Obstetricia en el Hospital Ángeles Lomas avalada por la Universidad Autónoma de México. Actualmente, ejerzo mi profesión ahí mismo, y estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles de las Lomas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-robles-menchero/ginecologo/huixquilucan#address-id=466500&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:21.480Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_jos__robles_menchero.webp"
+}

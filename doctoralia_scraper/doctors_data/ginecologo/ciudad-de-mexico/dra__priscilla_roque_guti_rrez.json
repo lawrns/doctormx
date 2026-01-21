@@ -1,0 +1,62 @@
+{
+  "name": "Dra. Priscilla Roque Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a34fd49a/a34fd49a-41de-448f-9296-5955519a24f5_small_square.jpg",
+  "about": "Soy Ginecóloga y Obstetra con Subespecialidad en Colposcopía y Biología de la Reproducción Humana, me dedico a tratar todas las enfermedades ginecológicas, diagnóstico y tratamiento de Virus de Papiloma Humano, así como diagnosticar y dar tratamiento a parejas con Infertilidad o que presentan pérdida gestacional recurrente ( aborto recurrente). Realizo tratamientos de infertilidad cuando son necesarios; como inducción de ovulación, inseminación o fecundación in vitro. Lograr el embarazo en parejas con infertilidad es una de mis mayores satisfacciones, así como llevar el control del embarazo y llegar a la meta: que es un bebé en casa. Lo más importante para mí, es tratar a la paciente como una persona única, con sensibilidad y humanismo, con ética profesional, incluyendo el respeto a la diversidad y con perspectiva de género. Ginecología, Obstetricia, Biología de la reproducción humana",
+  "addresses": [
+    {
+      "full": "Periferico Sur 5246,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/priscilla-roque-gutierrez-3/ginecologo/coyoacan#address-id=136909&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:27.201Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__priscilla_roque_guti_rrez.webp"
+}

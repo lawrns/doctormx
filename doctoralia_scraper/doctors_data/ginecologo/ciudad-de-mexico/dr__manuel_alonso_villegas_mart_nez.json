@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Manuel Alonso Villegas Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 939,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d137bd/d137bdef24df1cecb81ed350978f60ab.jpg",
+  "about": "Excelencia, humanismo, calidad y calidez en la prevención, diagnóstico oportuno y tratamiento eficaz de las enfermedades relacionadas con la especialidad y subespecialidad. Entrenamiento en algunos de los mejores centros hospitalarios de México y el mundo.",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    },
+    {
+      "full": "ANAHUAC 61. COL. ROMA SUR,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-alonso-villegas-martinez/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=10763&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:16.991Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_alonso_villegas_mart_nez.webp"
+}

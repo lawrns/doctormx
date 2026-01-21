@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sergio Rafael López Organista",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "203, Torre II, Segundo Piso, Puente de Piedra 150,"
+    },
+    {
+      "full": "203, Torre II, Segundo Piso, Puente de Piedra 150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-rafael-lopez-organista/ginecologo/tlalpan#address-id=132389&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:26.774Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Verónica Rodríguez Arámbula",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/692029/692029fb38baf92c4b2de12b81b09298_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital de San Vicente. Dirección: Ruperto Martínez No.1200. Consultorio No. 212,"
+    },
+    {
+      "full": "Hospital Christus Muguerza Sur. Dirección: Carretera Nacional No. 6501. Consultorio No. 405,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-rodriguez-arambula/ginecologo/nuevo-leon#address-id=118804&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:51.525Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ver_nica_rodr_guez_ar_mbula.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Raul Mata Gallardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Frida Khalo, 180 Cons. 406,"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    },
+    {
+      "full": "Avenida Frida Khalo, 180 Cons. 406,"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-mata-gallardo-2/ginecologo/san-pedro-garza-garcia#address-id=73325&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:16.303Z",
+  "localPhotoPath": null
+}}

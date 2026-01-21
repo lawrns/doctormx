@@ -1,0 +1,25 @@
+{
+  "name": "Sebastian Iris de la Cruz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango (Esq. Cordoba), 84, 2° Piso,"
+    },
+    {
+      "full": "Durango (Esq. Cordoba), 84, 2° Piso,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sebastian-iris-de-la-cruz/ginecologo/cuauhtemoc#address-id=75488&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:10.956Z",
+  "localPhotoPath": null
+}

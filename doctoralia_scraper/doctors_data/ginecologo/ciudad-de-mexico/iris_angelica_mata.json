@@ -1,0 +1,25 @@
+{
+  "name": "Iris Angelica Mata",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "12 Mza 134 Lote,21,Smza 96,,"
+    },
+    {
+      "full": "12 Mza 134 Lote,21,Smza 96,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iris-angelica-mata/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T03:05:59.729Z",
+  "localPhotoPath": null
+}

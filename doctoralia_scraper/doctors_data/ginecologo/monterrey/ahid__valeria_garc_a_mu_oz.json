@@ -1,0 +1,39 @@
+{
+  "name": "Ahidé Valeria García Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 714,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4e367b/4e367b0a3f93cd431c5e0ee0c43e8415_220_square.jpg",
+  "about": "Nuestra misión es cuidar de ti y de tu familia como máxima prioridad. Nuestra visión: tener familias seguras y felices 1er Ginecóloga con titulo de Medicina Crítica Obstétrica en Nuevo León",
+  "addresses": [
+    {
+      "full": "Prolongación Madero con, Av. las Americas Nte. No 6060, Libertad,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ahide-valeria-garcia-munoz/ginecologo/nuevo-leon#address-id=325743&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:28.949Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/ahid__valeria_garc_a_mu_oz.webp"
+}

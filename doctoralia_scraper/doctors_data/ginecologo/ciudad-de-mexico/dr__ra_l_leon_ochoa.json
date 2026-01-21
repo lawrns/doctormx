@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Raúl Leon Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b05bc8/b05bc87894c114e57a697d508cdd0c44_220_square.jpg",
+  "about": "Soy egresado de la universidad nacional autónoma de México ENEP iztacála ,curse la especialidad de ginecologia y obstetricia en el hospital regional primero de octubre del ISSSTE ,la sub especialidad en medicina materno fetal en el hospital regional Adolfo lópez mateos de ISSSTE ,curso de alta especialidad de patología del tracto genital inferior (colposcopia) en el mismo hospital, ultrasonografía diagnostica en el hospital Juárez de México ,maestría en administración de hospitales y salud publica en el IESAP . Profesor titular del curso de alta especialidad en colposcopia del tracto genital inferior. Actualmenete medico de base en el hospital regional primero de octubre con 26 años de antiguedad. mediico de base en el hospital san angel inn sur y angeles lindavista.",
+  "addresses": [
+    {
+      "full": "Riobamba 639, Magdalena de las Salinas, Ciudad de México,"
+    },
+    {
+      "full": "Av. México 2, Tizapán San Ángel, Ciudad de México,"
+    },
+    {
+      "full": "Riobamba 639, Magdalena de las Salinas, Ciudad de México,"
+    },
+    {
+      "full": "Av. México 2, Tizapán San Ángel, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-leon-ochoa/ginecologo/gustavo-a-madero#address-id=415641&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:49.258Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ra_l_leon_ochoa.webp"
+}

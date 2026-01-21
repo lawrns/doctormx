@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Soraya Maricela Méndez Tenorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre Médica de Hospital Ángeles Centro Médico del Potosí, calle Antonio Aguilar 155 interior 540,"
+    },
+    {
+      "full": "Antonio Aguilar 155 Int 540,"
+    },
+    {
+      "full": "Puente De Piedra 150. Col. Toriello Guerra; ,"
+    },
+    {
+      "full": "Torre Médica de Hospital Ángeles Centro Médico del Potosí, calle Antonio Aguilar 155 interior 540,"
+    },
+    {
+      "full": "Antonio Aguilar 155 Int 540,"
+    },
+    {
+      "full": "Puente De Piedra 150. Col. Toriello Guerra; ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/soraya-maricela-mendez-tenorio/ginecologo/san-luis-potosi#address-id=388600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:23.300Z",
+  "localPhotoPath": null
+}

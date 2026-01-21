@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Ignacio Topete Orozco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bea537/bea5374bec3965f0b0d108621c067ce4_220_square.jpg",
+  "about": "Medico egresado de La Universidad Nacional Autónoma de México con especialidad en Ginecologia y Obstetricia en el Centro Hospitalario 20 de Noviembre del ISSSTE. Con 41 años de experiencia como medico Ginecólogo, especializándome en la atención del embarazo complicado y no complicado, cirugía ginecologica (miomas, quiste y ovario), histerectomia y cirugía laparoscopica.",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa 1055. Col. Heroes de Padierna Consultorio 615,"
+    },
+    {
+      "full": "Camino Santa Teresa 1055. Col. Heroes de Padierna Consultorio 615,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-ignacio-topete-orozco-2/ginecologo/miguel-hidalgo#address-id=328369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:24.260Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__ignacio_topete_orozco.webp"
+}

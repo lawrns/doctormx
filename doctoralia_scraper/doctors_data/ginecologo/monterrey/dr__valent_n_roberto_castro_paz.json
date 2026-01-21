@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Valentín Roberto Castro Paz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50dce8/50dce88c5d2b4dc7714573c583bf0d09_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruperto Martinez 1203 pte., Col.Centro,Monterrey, Nuevo León.,"
+    },
+    {
+      "full": "Ruperto Martinez 1203 pte., Col.Centro,Monterrey, Nuevo León.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Nutrición",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valentin-roberto-castro-paz/ginecologo-nutricionista-especialista-en-obesidad-y-delgadez/monterrey#address-id=87854&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:09.951Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__valent_n_roberto_castro_paz.webp"
+}

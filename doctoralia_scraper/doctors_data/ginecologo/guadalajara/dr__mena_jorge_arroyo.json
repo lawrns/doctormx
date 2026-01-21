@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mena Jorge Arroyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Toltecas 3597,"
+    },
+    {
+      "full": "Calle Toltecas 3597,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mena-jorge-arroyo/ginecologo/guadalajara#address-id=46828&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:59.996Z",
+  "localPhotoPath": null
+}

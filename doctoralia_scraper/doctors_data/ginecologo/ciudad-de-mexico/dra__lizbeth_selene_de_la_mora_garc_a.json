@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Lizbeth Selene De la Mora García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e61a4c/e61a4c7a56f70f333a0b34cebf5677d5_220_square.jpg",
+  "about": "Soy médico egresada de la Facultad de Medicina C.U. de la UNAM, realice la especialidad en el Hospital Español de México avalada por la UNAM. Siempre me he preocupado por el bienestar de mis pacientes, tengo experiencia en el ámbito privado e institucional lo que me ha ayudado a mejorar día a día en todos los aspectos clínicos y quirúrgicos.",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174, EL triunfo, Iztapalapa,"
+    },
+    {
+      "full": "Calzada de la Viga 1174, EL triunfo, Iztapalapa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizbeth-selene-de-la-mora-garcia/ginecologo/iztapalapa#address-id=94900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:42.406Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lizbeth_selene_de_la_mora_garc_a.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Yamil Ernesto Ojeda Morales",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2e4e9f/2e4e9f8fcbb3c719ad9a1d80bf49e8a0_220_square.jpg",
+  "about": "Soy el Dr. Yamil Ernesto Ojeda Morales, especialista en Ginecología y Obstetricia. Cuento con más de 5 años de experiencia. Lo que más disfruto de mi especialidad es brindar certeza a mis pacientes acerca de su padecimiento y porporcionarles tranquilidad por medio del diagnostico y tratamiento a seguir.",
+  "addresses": [
+    {
+      "full": "Durango 64 Consultorio 501 Colonia Roma Norte,"
+    },
+    {
+      "full": "Durango 64 Consultorio 501 Colonia Roma Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yamil-ernesto-ojeda-morales/ginecologo/cuauhtemoc2#address-id=151014&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:05.078Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__yamil_ernesto_ojeda_morales.webp"
+}

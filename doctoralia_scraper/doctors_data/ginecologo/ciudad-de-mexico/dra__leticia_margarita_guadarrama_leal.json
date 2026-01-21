@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Leticia Margarita Guadarrama Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 464,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0fd469/0fd469ac7961cc742784bf42441cba60_220_square.jpg",
+  "about": "Cédula profesional: 5492897/ Cédula especialista: 8129444 / Cédula subespecialidad: 9641246 Profesionalismo, ética y empatía. Durante la consulta de Primera Vez, realizo una historia clínica completa, a través de la cual, obtenemos la mayor cantidad de antecedentes de importancia para tu estado general de salud y detectar áreas de oportunidad para mejorar tu calidad de vida. Si la consulta es ginecológica, te incluye: exploración mamaria, realización de rastreo ginecológico, educación para la autoexploración y recomendaciones generales de higiene ginecológica. En caso necesario, se te otorgará la receta con el tratamiento correspondiente así como indicaciones o solicitud de estudios complementarios para tu cita subsecuente. Si lo deseas podemos realizar tamizaje con papanicolaou. Otorgamos atención a adolescentes Si la consulta es obstétrica incluimos un rastreo ultrasonográfico de la evaluación de tu embarazo, calculamos edad gestacional y fecha probable de parto, en caso necesario, se te otorgará un reporte de los hallazgos, verificamos tu incremento de peso, evaluamos tu alimentación en la gestación, solicitamos exámenes prenatales, y en las fechas de evaluación prenatal, realizo TEST COMBINADO y/o DNA FETAL (previo asesoramiento), Ultrasonido Estructural y Ultrasonido avanzado con Doppler de tercer trimestre. En cada consulta de control prenatal, se te hará entrega de la evaluación ultrasonográfica de tu bebé, así como de su curva de crecimiento.",
+  "addresses": [
+    {
+      "full": "TEHUANTEPEC 251, 5o PISO, CONSULTORIO 507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-margarita-guadarrama-leal/ginecologo/cuauhtemoc2#address-id=106574&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:18.995Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__leticia_margarita_guadarrama_leal.webp"
+}

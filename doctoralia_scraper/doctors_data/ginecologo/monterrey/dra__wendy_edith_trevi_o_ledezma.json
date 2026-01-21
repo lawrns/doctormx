@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Wendy Edith Treviño Ledezma",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6efe21/6efe21a6a83a43993d5b91704c3fbcb0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 2016,"
+    },
+    {
+      "full": "Hidalgo 2016,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wendy-edith-trevino-ledezma/ginecologo/monterrey#address-id=26064&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:59.974Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__wendy_edith_trevi_o_ledezma.webp"
+}

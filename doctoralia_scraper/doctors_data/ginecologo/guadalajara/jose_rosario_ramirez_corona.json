@@ -1,0 +1,25 @@
+{
+  "name": "Jose Rosario Ramirez Corona",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rep.De Cuba 73,"
+    },
+    {
+      "full": "Rep.De Cuba 73,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-rosario-ramirez-corona/ginecologo/san-pedro-tlaquepaque#address-id=165716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:54.322Z",
+  "localPhotoPath": null
+}

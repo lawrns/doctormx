@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Villasenor Uribe Mario E.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe Victoria 53 A,"
+    },
+    {
+      "full": "Guadalupe Victoria 53 A,48900 Guadalupe,"
+    },
+    {
+      "full": "Guadalupe Victoria 53 A,"
+    },
+    {
+      "full": "Guadalupe Victoria 53 A,48900 Guadalupe,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/villasenor-uribe-mario-e/ginecologo/autlan-de-navarro#address-id=536291&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:45.501Z",
+  "localPhotoPath": null
+}

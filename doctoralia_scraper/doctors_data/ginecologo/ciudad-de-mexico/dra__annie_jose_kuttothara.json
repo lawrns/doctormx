@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Annie Jose Kuttothara",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f719d/1f719d2c5d4312d8e5bf11defb6a7b35_220_square.jpg",
+  "about": "- Más de 25 años de experiencia en Obstetricia y Ginecología. - Alto nivel de cuidado y atención médica, siempre personalizado y enfocado a la paciente. -Tratamiento integral desde previo a la concepción hasta el parto y la recuperación -Especialista en cirugía laparoscopica. -Miembro del Colegio Mexicano de Ginecología y Obstetricia (COMEGO) y el American College of Obstetrics and Gynecology (ACOG) - Atención medica bilingue (Ingles y Español).",
+  "addresses": [
+    {
+      "full": "Av. Carlos Graef Fernandez 154,"
+    },
+    {
+      "full": "Av. Carlos Graef Fernandez 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/annie-jose-kuttothara-2/ginecologo/cuajimalpa-de-morelos#address-id=162474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:07.939Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__annie_jose_kuttothara.webp"
+}

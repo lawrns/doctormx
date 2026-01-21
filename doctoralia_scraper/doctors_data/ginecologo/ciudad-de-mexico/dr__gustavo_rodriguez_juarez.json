@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo Rodriguez Juarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/913aef/913aefd14eb5af988cbedcd7619b9917_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "avenida toltecas 61 PB.,"
+    },
+    {
+      "full": "avenida toltecas 61 PB.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-rodriguez-juarez/ginecologo/tlalnepantla-de-baz#address-id=92767&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:59.927Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gustavo_rodriguez_juarez.webp"
+}

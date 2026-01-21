@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Emma Karina Cantu Segovia",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TUXPAN 29 COLONIA ROMA SUR TORRE DALINDE,"
+    },
+    {
+      "full": "TUXPAN 29 COLONIA ROMA SUR TORRE DALINDE,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emma-karina-cantu-segovia/ginecologo/cuauhtemoc#address-id=64576&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:21.603Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Orfelina Garza Reyna",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/534f558c/534f558c-f6f2-452f-bf9b-6d91a0107965_large.jpg",
+  "about": "Realicé mis estudios como Médico Cirujano y Partero en la Facultad de Medicina UANL, durante la cual tuve la oportunidad de realizar una rotación internacional en el servicio de Obstetricia del Hospital Belen en Trujillo, Perú.Continué mi formación como especialista en Ginecología y Obstetricia en el Hospital Universitario, UANL. Posteriormente cursé la Subespecialidad en Medicina Materno Fetal en el mismo Hospital, en donde tuve la oportunidad de rotar en Medicina Fetal México en Guadalajara para complementar mi conocimiento de la evaluación fetal.Certificada por el Consejo Mexicano de Ginecología y Obstetricia.Continúo en actualización constante mediante congresos y simposios nacionales.",
+  "addresses": [
+    {
+      "full": "Licenciado José Benítez 1816,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido genético",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-orfelina-garza-reyna/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:14.615Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__diana_orfelina_garza_reyna.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jose Antonio Martinez Gerardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 84 A 4746Col. Nueva Tenochtitlan,"
+    },
+    {
+      "full": "Norte 84 A 4746Col. Nueva Tenochtitlan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-martinez-gerardo/ginecologo/gustavo-a-madero#address-id=356586&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:06.151Z",
+  "localPhotoPath": null
+}

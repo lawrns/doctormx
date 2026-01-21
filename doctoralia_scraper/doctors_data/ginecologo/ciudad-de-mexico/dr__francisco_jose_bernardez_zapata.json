@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Jose Bernardez Zapata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 391,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6d1409/6d1409755e6a6591ab0197fefe24ca1c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ejército Nacional 613,"
+    },
+    {
+      "full": "Ave. Ejército Nacional 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-jose-bernardez-zapata/ginecologo/miguel-hidalgo#address-id=19167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:59.879Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_jose_bernardez_zapata.webp"
+}

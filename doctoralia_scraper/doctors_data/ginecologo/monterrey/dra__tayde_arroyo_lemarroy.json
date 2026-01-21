@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Tayde Arroyo Lemarroy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 159,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f708bd/f708bdc87ac0e775101199ff518af372_220_square.jpg",
+  "about": "Soy Ginecológa y Obstetra graduada del Tecnológico de Monterrey, además cuento con subespecialidad en Medicina Materno Fetal por lo que me especializo en Embarazo de Alto Riesgo y el diagnostico de Malformaciones Fetales.",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2725 suite 107,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tayde-arroyo-lemarroy/ginecologo/nuevo-leon#address-id=409857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:39.902Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__tayde_arroyo_lemarroy.webp"
+}

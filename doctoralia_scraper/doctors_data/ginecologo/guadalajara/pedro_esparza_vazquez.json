@@ -1,0 +1,25 @@
+{
+  "name": "Pedro Esparza Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Othon Blanco Caceres 3535,"
+    },
+    {
+      "full": "Othon Blanco Caceres 3535,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-esparza-vazquez/ginecologo/guadalajara#address-id=157981&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:14.917Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Ernesto Rodríguez Zenteno",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/598859/5988593aadf727fe894a6640ae72eeb3_220_square.jpg",
+  "about": "Residencia en HGO3 Centro Medico La Raza. 30 años laborando en la unidad Tocoquirurgica consulta privada desde 1985",
+  "addresses": [
+    {
+      "full": "Valparaiso 154 b-7,"
+    },
+    {
+      "full": "Valparaiso 154 b-7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-rodriguez-zenteno/ginecologo/gustavo-a-madero",
+  "scrapedAt": "2026-01-21T02:55:34.484Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ernesto_rodr_guez_zenteno.webp"
+}

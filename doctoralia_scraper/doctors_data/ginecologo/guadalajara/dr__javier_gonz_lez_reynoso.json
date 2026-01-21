@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Javier González Reynoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/630c2f/630c2f02718e2e9c6db1a6d0ab7d9a50_220_square.jpg",
+  "about": "Hola soy el Dr. Javier ! ,ginecólogo certificado por el Consejo mexicano de ginecología y Obstetricia, con alta especialidad en cirugía endoscópica-ginecológica avanzada (cirugía de mínima invasión)",
+  "addresses": [
+    {
+      "full": "Calle Jesús Urueta 1814,"
+    },
+    {
+      "full": "Calle Jesús Urueta 1814,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $30,000"
+    },
+    {
+      "name": "Histerectomía",
+      "price": "• $42,000"
+    },
+    {
+      "name": "Histerectomía por laparoscopia",
+      "price": "• $50,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-gonzalez-reynoso/ginecologo/guadalajara#address-id=532810&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:12.073Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__javier_gonz_lez_reynoso.webp"
+}

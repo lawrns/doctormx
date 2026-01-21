@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Francisco Jesús Sosa Bravo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e71aa/0e71aaf1bba1651edc72839a79442b9b_220_square.jpg",
+  "about": "Qué tal, soy el Dr. Francisco Jesús Sosa Bravo, a continuación te mencionaré algunos datos sobre mí: • Soy egresado de la carrera de Médico Cirujano y Partero en la Universidad de Monterrey (UDEM). • Realicé mi especialidad en Ginecología y Obstetricia en el Hospital Christus Muguerza (Avalada por la Universidad de Monterrey). • Hice un Fellow de Alta Especialidad en Endoscopía Ginecológica en el Hospital Universitario Dr. José Eleuterio González (Avalado por la Universidad Autónoma de Nuevo León). • Cuento además con un diplomado en Patología del Tracto Genital Inferior y Colposcopía (Avalado por la Universidad Anáhuac de México). • Algunos de los reconocimientos que tengo son: - CUM LAUDE por la Universidad de Monterrey - Premio Anual a la Excelencia Médica por la Academia Nacional de Medicina - Primer lugar en el festival de videos 2017 por la Academia Americana de Ginecología y Obstetricia • Asistente a múltiples congresos nacionales e internacionales dentro de la rama del cuidado de la salud femenina buscando siempre la actualización continua para ofrecer los mejores tratamientos para las pacientes ¡Me pongo a tu servicio!",
+  "addresses": [
+    {
+      "full": "15 De Mayo Poniente 1822, 64040 Monterrey, Nuevo León,"
+    },
+    {
+      "full": "torre de especialidades medicas hospital angeles 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-jesus-sosa-bravo/ginecologo/san-pedro-garza-garcia#address-id=515375&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:50.875Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__francisco_jes_s_sosa_bravo.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alan Arvizu Armenta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 973,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/46cff0/46cff0513e760bfe9082211e9b6094a1_220_square.jpg",
+  "about": "Soy médico cirujano egresado de la UNAM, además de especialista en Ginecología y Obstetricia de la Universidad La Salle. Me enfoco en atender a la mujer de forma respetada y con bases científicas resolviendo cualquier duda y necesidad ginecológica u obstétrica. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO) y formo parte del grupo de ginecólogos que se encuentran a favor del parto humanizado y respetado. Además, cuento con un diplomado en colposcopía avanzada y patología del tracto genital inferior para ofrecer una atención integral de la salud femenina.",
+  "addresses": [
+    {
+      "full": "Avenida Nuevo León 54, Consultorio 301, Hipodromo Condesa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Radiofrecuencia  Vaginal y Vulvar",
+      "price": "• Desde $7,500"
+    },
+    {
+      "name": "Tratamiento para síndrome de ovario poliqístico",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-arvizu-armenta/ginecologo/ciudad-de-mexico#address-id=258472&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:49.827Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alan_arvizu_armenta.webp"
+}

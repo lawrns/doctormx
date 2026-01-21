@@ -1,0 +1,38 @@
+{
+  "name": "Gabriela Angélica Zavala Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa570f/aa570f8091a7e126b45b4f26119c8c89_220_square.jpg",
+  "about": "Hola, soy la Dra Gabriela Angélica Zavala Acosta, soy Médico Cirujano General por la Universidad Nacional Autónoma de México, campus Ciudad Universitaria, y me especialicé en Ginecología y Obstetricia en la Unidad Médica de Alta Especialidad No. 4 \"Luis Castelazo Ayala\". Durante mi formación académica siempre mostré alto nivel de competencia y compromiso. Mi deber como ginecóloga esta en salvaguardar la salud de la mujer en todas las etapas de la vida, brindando una atención oportuna, humana, así como de calidad y calidez.",
+  "addresses": [
+    {
+      "full": "STAR MÉDICA TLALNEPANTLA Av Sor Juana Inés de la Cruz No. 280 , Fracc . Industrial San Lázaro,"
+    },
+    {
+      "full": "STAR MÉDICA TLALNEPANTLA Av Sor Juana Inés de la Cruz No. 280 , Fracc . Industrial San Lázaro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-angelica-zavala-acosta/ginecologo/tlalnepantla-de-baz2#address-id=382167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:00.306Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/gabriela_ang_lica_zavala_acosta.webp"
+}

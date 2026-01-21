@@ -1,0 +1,60 @@
+{
+  "name": "Dr. Saul Guzman Laguna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9b4a92/9b4a923ca6b6dbc34f7ad210be045feb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. División del Nte 3395, Colonia el Rosario Coyoacán,"
+    },
+    {
+      "full": "Prolongación I. Zaragoza 2, Cocotitlan, Estado de México,"
+    },
+    {
+      "full": "Av. División del Nte 3395, Colonia el Rosario Coyoacán,"
+    },
+    {
+      "full": "Prolongación I. Zaragoza 2, Cocotitlan, Estado de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $350"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $300"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/saul-guzman-laguna/ginecologo/coyoacan#address-id=109600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:48.037Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__saul_guzman_laguna.webp"
+}

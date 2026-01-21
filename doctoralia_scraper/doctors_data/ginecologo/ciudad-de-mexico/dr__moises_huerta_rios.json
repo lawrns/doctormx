@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Moises Huerta Rios",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50b7e5/50b7e5373ce49dac0db737060c06f276_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia con subespecialidad en Colposcopía. Cualquier duda o aclaración, quedo a sus órdenes.",
+  "addresses": [
+    {
+      "full": "Emiliano Zapata no. 209, Portales,"
+    },
+    {
+      "full": "Emiliano Zapata no. 209, Portales,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-huerta-rios/ginecologo/benito-juarez#address-id=114522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:42.844Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__moises_huerta_rios.webp"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Andrea Castillón González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6df99e/6df99e1a3beacf2f41391a2651f7835a_220_square.jpg",
+  "about": "Bienvenidas a mi página, soy la Dra. Andrea, ginecóloga apasionada y comprometida con la salud y bienestar de las mujeres. En mi consulta me dedico a proporcionar atención integral a mujeres de todas las edades, ofrezco servicios de calidad desde exámenes de rutina, consejería anticonceptiva así como el manejo de condiciones ginecológicas complejas. Estoy aquí para apoyarte a llevar una vida más saludable.",
+  "addresses": [
+    {
+      "full": "Dr. Fernando Guajardo 155,"
+    },
+    {
+      "full": "Av. Cto. Frida Kahlo,"
+    },
+    {
+      "full": "Dr. Fernando Guajardo 155,"
+    },
+    {
+      "full": "Av. Cto. Frida Kahlo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-castillon-gonzalez/ginecologo/san-pedro-garza-garcia#address-id=480005&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:22.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__andrea_castill_n_gonz_lez.webp"
+}

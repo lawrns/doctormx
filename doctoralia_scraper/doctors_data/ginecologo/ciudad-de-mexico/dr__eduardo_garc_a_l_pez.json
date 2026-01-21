@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Eduardo García López",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4eed8a/4eed8a3b2fc521911e35d27976c329fb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard Bosques De Las Naciones 106,"
+    },
+    {
+      "full": "Tuxpan 6, Roma Sur, Ciudad de México, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-garcia-lopez-2/ginecologo/nezahualcoyotl#address-id=568406&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:43.984Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eduardo_garc_a_l_pez.webp"
+}

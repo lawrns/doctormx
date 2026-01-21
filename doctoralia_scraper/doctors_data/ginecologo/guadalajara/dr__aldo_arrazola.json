@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Arrazola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e497a2/e497a231e12c3da02c2940dbbbbf0478_220_square.jpg",
+  "about": "** Gine Estetico Colposcopista ** (Hombres) Penescopias-Perianoscopias ** Terapia Laser Virus del Papiloma Humano ** Diseño Vaginal Láser ** Depilación Láser Venus Velocity",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Test VPH (Virus Papiloma Humano)",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento para virus del Papiloma Humano (VPH)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-arrazola/ginecologo/guadalajara#address-id=154800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:33.520Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__aldo_arrazola.webp"
+}

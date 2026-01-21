@@ -1,0 +1,25 @@
+{
+  "name": "Paredes Norberto Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Palo Solo 100,"
+    },
+    {
+      "full": "Palo Solo 100,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paredes-norberto-reyes/ginecologo/huixquilucan#address-id=75262&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:52.132Z",
+  "localPhotoPath": null
+}

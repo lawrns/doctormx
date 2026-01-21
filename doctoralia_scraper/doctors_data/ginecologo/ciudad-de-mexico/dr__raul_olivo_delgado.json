@@ -1,0 +1,73 @@
+{
+  "name": "Dr. Raul Olivo Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/876aa0/876aa0903e1f1d9c3ce39b9750cf2d34_220_square.jpg",
+  "about": "MEDICO GINECOLOGO, CON MAS DE 20 DE AÑOS DE EXPERIENCIA, CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA. BRINDANDO SIEMPRE CONSULTA PERSONALIZADA Y ETICA, PENSANDO SIEMPRE EN EL BIENESTAR Y SALUD DE LAS PACIENTES.",
+  "addresses": [
+    {
+      "full": "Av. México mz 59 LT 13 Col. Olimpica, Ecatepec Edo México,"
+    },
+    {
+      "full": "Hospital CAMI, CALZADA I. ZARAGOZA NO.185 COL. JARDIN BALBUENA,"
+    },
+    {
+      "full": "Calle Sur 58 No. 58, San Agustín 1 Sección, Ecatepec de Morelos, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación, criocoagulación, termocoagulación de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-olivo-delgado-2/ginecologo/ecatepec-de-morelos#address-id=614069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:37.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raul_olivo_delgado.webp"
+}

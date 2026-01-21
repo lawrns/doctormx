@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luis Eduardo Torres Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c90688/c906887a1393228ebb082a8e971c0428_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. Delicias 106,"
+    },
+    {
+      "full": "Calz. Delicias 106,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-eduardo-torres-estrada/ginecologo/san-pedro-tlaquepaque#address-id=199411&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:16.778Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__luis_eduardo_torres_estrada.webp"
+}

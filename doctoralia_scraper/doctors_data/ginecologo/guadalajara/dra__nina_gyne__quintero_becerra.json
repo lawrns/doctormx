@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nina Gyneé Quintero Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cf9f5a/cf9f5a1ed5895b028bd3749430ceed5f_220_square.jpg",
+  "about": "La calidad en la atención a mis pacientes es muy importante para mi, por lo que es mi prioridad que se sientan cómodas y en confianza durante la consulta médica, tratándolas con sumo respeto y cuidado, ya que comprendo que es un momento muy personal y sensible para cada mujer. Respaldada por mis conocimientos y mi amplia experiencia, mi objetivo es atender cada uno de los motivos por los que la paciente acude a la consulta médica, así mismo, realizar diagnósticos certeros y tratamientos adecuados que ayuden a resolver las afecciones de cada mujer en particular. Considero importante resaltar que mi especialidad de Ginecología y Obstetricia la realicé en el INSTITUTO NACIONAL DE PERINATOLOGIA (INPer) en la ciudad de México; así mismo tengo subespecialidad en CIRUGÍA LAPAROSCÓPICA, diplomado en COLPOSCOPIA y FISIOLOGÍA OBSTETRICA (ULTRASONIDO). Además estoy CERTIFICADA POR EL CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA.",
+  "addresses": [
+    {
+      "full": "Av. Moctezuma 193,"
+    },
+    {
+      "full": "Av. Moctezuma 193,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nina-gynee-quintero-becerra/ginecologo/zapopan#address-id=25315&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:55.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__nina_gyne__quintero_becerra.webp"
+}

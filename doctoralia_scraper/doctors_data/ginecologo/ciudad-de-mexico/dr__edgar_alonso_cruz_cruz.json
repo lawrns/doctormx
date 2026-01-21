@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Edgar Alonso Cruz Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ef3e2e/ef3e2ece97ff45837a1932d5c10cae64_220_square.jpg",
+  "about": "Soy ginecólogo y Biólogo de la Reproducción altamente experimentado, especializado en problemas Reproductivos y de infertilidad, así como tratamientos de Reproducción Asistida. Después de obtener su título de médico en la Universidad La Salle, completé una especialidad en Obstetricia y Ginecología, así como una subespecialidad en Biología de la Reproducción Humana, ambos con mención honorífica, en la Universidad Nacional Autónoma de México (UNAM). Continué mis estudios con una maestría en e-Heatlh: tecnología de la información y Gestión de la Salud de la Universidad Ramón Llull en Barcelona, ​​y actualmente está completando un programa de Doctorado en Ciencias de la Salud en la Universidad Rey Juan Carlos de Madrid. Como especialista en medicina reproductiva, he trabajado en el Instituto Valenciano de Infertilidad sedes Madrid y Alicante, España, así como en la Clínica de Reproducción Minifiv en Madrid. El doctor Edgar Cruz es miembro fundador de la Asociación Mexicana de Jóvenes Obstetras y Ginecólogos (AMEJOG), miembro del Colegio Americano de Obstetras y Ginecólogos (ACOG), la Sociedad Europea de Reproducción y Embriología Humana (ESHRE) y la Sociedad Española de Fertilidad (SEF). Como investigador, he publicado artículos en revistas indexadas de alto impacto mundial ha presentado conferencias a nivel nacional e internacional, participado en capítulos de libros nacionales e internacionales, también una amplia experiencia académica como profesor titular e invitado en programas de posgrado especializados y como académico de médicos en formación.",
+  "addresses": [
+    {
+      "full": "AVENIDA DIVISION DEL NORTE 3395 CONSULTORIO 608,"
+    },
+    {
+      "full": "AVENIDA DIVISION DEL NORTE 3395 CONSULTORIO 608,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-alonso-cruz-cruz/ginecologo/ciudad-de-mexico#address-id=395992&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:26.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_alonso_cruz_cruz.webp"
+}

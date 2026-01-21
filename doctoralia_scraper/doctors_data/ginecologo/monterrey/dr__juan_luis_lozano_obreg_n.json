@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Juan Luis Lozano Obregón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cf0777/cf077778b92f5d91b4acdc7f8af5895c_220_square.jpg",
+  "about": "Soy Dr. Juan Luis Lozano Obregón, especialista en Ginecología y Obstetricia hace 14 años que trabajamos por el bien de las mujeres en sus diferentes etapas y sobre todo favoreciendo bienestar para las mamas en esta etapa tan preciada de la maternidad, hemos contribuido en el nacimiento muchos niños, lo cual me enorgullece y me motiva a seguirme preparando para ofrecerte un mejor servicio cada día y siempre estar al pendiente de tu salud.",
+  "addresses": [
+    {
+      "full": "Prolongación Fco. I. Madero 6060,"
+    },
+    {
+      "full": "Paseo del Parque 122,"
+    },
+    {
+      "full": "Prolongación Fco. I. Madero 6060,"
+    },
+    {
+      "full": "Paseo del Parque 122,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-luis-lozano-obregon/ginecologo/nuevo-leon#address-id=437979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:17.186Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_luis_lozano_obreg_n.webp"
+}

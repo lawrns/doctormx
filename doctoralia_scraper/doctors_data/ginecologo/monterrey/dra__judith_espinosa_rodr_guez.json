@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Judith Espinosa Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f61a80/f61a8034174b18b082946d4e060934b8_220_square.jpg",
+  "about": "Soy Médico Materno Fetal GinecoObstetra Avalada por la U.N.A.M Con interés especial en embarazo normal y de alto riesgo. Tratamos al Embrión o Feto como paciente !!! Prenatal Diagnosis: Fetal DNA testing,Chorionic villus sampling (CVS), Amniocentesis and Ultrasound Doppler Fetal High-Risk Pregnancy Pre-birth preventive care Twin Gestation Multiple Gestations Fetal Anomaly Fetus with a birth defect Advanced Maternal Age Epilepsy and Women's Reproductive Health Asthma Cardiovascular disease Pregestational and Gestational Diabetes Diabetes Educator Chronic Hypertension Gestational Hypertension Preeclampsia Infectious disease HIV & Pregnancy Kidney disease Prior preterm labor Prior pregnancy loss Prior stillbirth Weight-related pregnancy complications Cervical Insufficiency Cervical cerclage (Vaginal) Benson's cerclage (Transabdominal) Obstetric hemorrhage: Ligation of the hypogastric arteries (HAL) Cesarean Hysterectomy Obstetrics hysterectomy",
+  "addresses": [
+    {
+      "full": "Av. Linda Vista #203, Col. Linda Vista,"
+    },
+    {
+      "full": "Av. Linda Vista #203, Col. Linda Vista,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/judith-espinosa-rodriguez-2/ginecologo/nuevo-leon#address-id=155261&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:43.367Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__judith_espinosa_rodr_guez.webp"
+}

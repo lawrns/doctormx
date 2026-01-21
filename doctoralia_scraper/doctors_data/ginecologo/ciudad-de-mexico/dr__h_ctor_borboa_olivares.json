@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Héctor Borboa Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71afa4/71afa49ae79411b47ebe8bb73470285b_220_square.jpg",
+  "about": "Médico Ginecólogo, especialista en embarazo de alto riesgo. Atención problemas del embarazo Alta experiencia en complicaciones del embarazo Detección de alteraciones o defectos en el bebe por medio de ultrasonido Realización de pruebas invasivas para diagnóstico prenatal (amnioncentesis / biopsia de vellosidades coriales) Ultrasonido en 4D",
+  "addresses": [
+    {
+      "full": "AV. Carlos Graef Fernández 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-borboa-olivares/ginecologo/cuajimalpa-de-morelos#address-id=137359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:51.621Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__h_ctor_borboa_olivares.webp"
+}

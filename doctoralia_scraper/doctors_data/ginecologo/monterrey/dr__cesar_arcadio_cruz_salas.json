@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Cesar Arcadio Cruz Salas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f4f56f/f4f56f2a78a28f739ec8116b078d2bbd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Constitución 1881 Poniente, interior 216,"
+    },
+    {
+      "full": "Av. Constitución 1881 Poniente, interior 216,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-arcadio-cruz-salas/ginecologo/monterrey#address-id=39832&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:53.495Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__cesar_arcadio_cruz_salas.webp"
+}

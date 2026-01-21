@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Victoria Margarita Cedeño Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 259,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4852cf/4852cf7dfe30d8dd04da00c49006581e_220_square.jpg",
+  "about": "Hola!! Soy la Dra. Victoria Cedeño, soy Ginecóloga y subespecialista en Medicina Materno Fetal, me especializo en tratar y seguir todas las enfermedades que aquejan a las mujeres, con especial enfoque en tratar y seguir embarazos de alto riesgo, y realizar diagnóstico prenatal en fetos para poder saber si presentan enfermedades o malformaciones cuando todavía están dentro del vientre materno. Te hablaré un poco de mi preparación académica, realice la carrera de Médico Cirujano y Partero y la especialidad de Ginecología y Obstetricia en la Universidad Autónoma de Nuevo León (UANL). Posteriormente cursé la sub especialidad en Medicina Materno Fetal en el Hospital Ginequito con aval académico de la Universidad de Monterrey (UDEM), durante mi subespecialidad curse una estancia formativa enfocandome en el diagnóstico prenatal en Buenos Aires, Argentina con el profesor Mario Palermo. Me encuentro certificada en Ginecología y Obstetricia así como Medicina Materno Fetal por el Colegio Mexicano de Ginecología y Obstetricia. Además certificada por Fetal Medicine Foundation de Londres, Inglaterra para la realización de ultrasonido de primer trimestre. Mi principal objetivo es que cuentes con mi apoyo como ginecóloga durante toda tu vida, acompañándote en las diferentes etapas que pasamos como mujeres, y preocupandome por tu bienestar tanto físico como emocional. Permiteme ser tu ginecóloga de cabecera.",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2725,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victoria-margarita-cedeno-morales/ginecologo/nuevo-leon#address-id=401618&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:49.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__victoria_margarita_cede_o_morales.webp"
+}

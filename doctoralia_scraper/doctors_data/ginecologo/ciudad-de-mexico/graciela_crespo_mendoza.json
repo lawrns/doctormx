@@ -1,0 +1,46 @@
+{
+  "name": "Graciela Crespo Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2d669b/2d669b5b5e1275b84f34e43a3e088ef1_220_square.jpg",
+  "about": "La Dra. Graciela Crespo Mendoza es ginecobstetra, y cuenta con la subespecialidad en Biología de la Reproducción. Con más de 25 años de experiencia, ha tratado con éxito diversos padecimientos, siempre centrándose en dar un seguimiento integral, así como en la claridad y seguridad en el trato con la paciente. Dentro de su especialidad y subespecialidad atiende el Embarazo y su resolución (Parto y Cesárea), Embarazos de Alto Riesgo, Miomatosis Uterina, Endometriosis, Alteraciones Menstruales en niñas y adolescentes, Menopausia, Planificación Familiar y Tratamiento de la Pareja Infértil, con técnicas como Fertilización In Vitro. Egresada del Instituto Nacional de Perinatología, la Dra. Graciela Crespo está certificada por el Colegio Mexicano de Especialistas en Ginecología y Obstetricia (COMEGO), pertenece a la Asociación de Médicos del Hospital Español y es afiliada a los hospitales Grupo Ángeles. Siempre me ha apasionado ser testigo de la satisfacción de mis pacientes al resolver sus padecimientos. Le invito a reservar un cita conmigo, y será todo un placer ser su especialista.",
+  "addresses": [
+    {
+      "full": "Avenida Baja California 281,"
+    },
+    {
+      "full": "Avenida Baja California 281,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $600"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/graciela-crespo-mendoza-3/ginecologo/ciudad-de-mexico#address-id=392920&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:54.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/graciela_crespo_mendoza.webp"
+}

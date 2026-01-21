@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Leticia Malagón Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b38905/b389056d631f8c0033ffe1ecfd0acfa2_220_square.jpg",
+  "about": "¡Hola! Soy tu Dra. Mónica Malagón Ginecóloga, Obstetra y Médico Materno Fetal, acreditada por la UNAM y el Hospital General de México. Siempre estoy mejorando para ti, por ello realicé mi último entrenamiento de Neurología Fetal en Israel. Cuento con certificados por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO), el Consejo Mexicano de Medicina Materno Fetal (CMGO), The Fetal Test de España y The Fetal Medicine Foundation de Londres. Soy miembro activo del Colegio Mexicano de Especialistas en Ginecología y Obstetricia, de la Fundación Internacional de Medicina Materno Fetal (FIMMF) y y del Comité Nacional de Bioética. También, soy profesora de la asignatura de \"Embriología\" en la Facultad de Medicina, Ciudad Universitaria, Universidad Autónoma de México (UNAM). Actualmente Co-Fundadora de Clínica FEMPRO | Alta Especialidad de la Mujer. Mi lema es \"Más amor, mejores resultados\". Mi mayor pasión es brindarte un diagnóstico preciso y una atención y cuidado humanizado. ¡Espero verte en consulta, será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Federico T de La Chica 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,800"
+    },
+    {
+      "name": "Checkup completo",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-leticia-malagon-gomez/ginecologo/naucalpan-de-juarez2#address-id=461189&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:02.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_leticia_malag_n_g_mez.webp"
+}

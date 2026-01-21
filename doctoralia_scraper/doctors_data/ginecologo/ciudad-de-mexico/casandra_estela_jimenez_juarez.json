@@ -1,0 +1,25 @@
+{
+  "name": "Casandra Estela Jimenez Juarez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De Los Jardines Mz 14 Lt 129, Col. Supmza 77 Jardines De Bonampak, ,"
+    },
+    {
+      "full": "De Los Jardines Mz 14 Lt 129, Col. Supmza 77 Jardines De Bonampak, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/casandra-estela-jimenez-juarez/ginecologo/benito-juarez#address-id=356836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:13:45.346Z",
+  "localPhotoPath": null
+}

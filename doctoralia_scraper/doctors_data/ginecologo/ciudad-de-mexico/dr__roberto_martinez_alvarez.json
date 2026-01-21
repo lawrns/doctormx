@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto Martinez Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d3752a5f/d3752a5f-312d-4cb1-bb4c-9218089e42cc_small_square.jpg",
+  "about": "Soy una persona proactiva, organizada y responsable, actúo conforme a los principios humanísticos y científicos de la medicina y la doctrina militar. Proporcionando siempre una atención de calidad, calidez, eficiencia, equidad y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-martinez-alvarez/ginecologo-medico-general/ciudad-de-mexico#address-id=540377&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:19.146Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__roberto_martinez_alvarez.webp"
+}

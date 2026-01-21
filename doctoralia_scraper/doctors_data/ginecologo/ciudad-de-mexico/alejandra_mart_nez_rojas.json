@@ -1,0 +1,34 @@
+{
+  "name": "Alejandra Martínez Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 84,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed4b3a/ed4b3aefa9029ff9b832aec5a39374c3_220_square.jpg",
+  "about": "Soy Alejandra Martínez Rojas, especialista en Ginecología en Ciudad de México. Me gradué en Universidad de la Salle y desde entonces he enfocado mi carrera en el cuidado de la salud de las mujeres.",
+  "addresses": [
+    {
+      "full": "Mollendo 617,"
+    },
+    {
+      "full": "Mollendo 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-martinez-rojas/ginecologo/ciudad-de-mexico#address-id=431984&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:59.218Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/alejandra_mart_nez_rojas.webp"
+}

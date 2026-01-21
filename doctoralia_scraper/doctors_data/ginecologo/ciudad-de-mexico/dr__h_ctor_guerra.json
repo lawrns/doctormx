@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Héctor Guerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a1939/6a1939cd2a5a4ab665a689ff785bded1_220_square.jpg",
+  "about": "Soy el Dr. Héctor Guerra, ginecólogo comprometido con la salud y bienestar integral de mis pacientes. Me apasiona educar y empoderar a las mujeres para que tomen decisiones informadas sobre su salud. Como profesional de la salud, valoro la confianza que depositan en mí mis pacientes. Mi objetivo es crear un ambiente cálido y acogedor en el que se sientan cómodas compartiendo sus inquietudes y preguntas.",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo 671,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-guerra/ginecologo/benito-juarez#address-id=433787&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:10.502Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__h_ctor_guerra.webp"
+}

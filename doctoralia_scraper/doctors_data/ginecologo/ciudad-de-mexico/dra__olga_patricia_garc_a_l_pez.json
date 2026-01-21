@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Olga Patricia García López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51ac9f/51ac9f86f8a7641fd1d789ea0acd8eb4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida San Diego 1203,"
+    },
+    {
+      "full": "Calzada Azcapotzalco la Villa 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olga-patricia-garcia-lopez-2/ginecologo/morelos#address-id=363671&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:50.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__olga_patricia_garc_a_l_pez.webp"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Ma Teresita Leis Márquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb222b/cb222bb5977daa61c3db8b298f1df48d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Homero No.1804-5,"
+    },
+    {
+      "full": "Ave. Homero 1804 (int 602),"
+    },
+    {
+      "full": "Homero No.1804-5,"
+    },
+    {
+      "full": "Ave. Homero 1804 (int 602),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": ""
+    },
+    {
+      "name": "Estudio para el embrión (PGS)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-teresita-leis-marquez/ginecologo/miguel-hidalgo#address-id=46905&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:44.799Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ma_teresita_leis_m_rquez.webp"
+}

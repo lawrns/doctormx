@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Liliana Morales Domínguez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 301,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db131c/db131c1abad5f117de4a9b2270e86722_220_square.jpg",
+  "about": "Soy ginecóloga obstetra, egresada del Hospital General \"Dr. Manuel Gea González\", así como alta especialidad en cirugía ginecológica de mínima invasión (laparoscopía e histeroscopía) y diplomado en colposcopía y patología del tracto genital inferior. Experiencia en el cuidado y tratamiento integral de la mujer en las diferentes etapas de la vida, control de embarazo, anticoncepción, infecciones de transmisión sexual, sangrado uterino anormal, entre otros. Certificada por el Colegio Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Querétaro 58,"
+    },
+    {
+      "full": "Querétaro 58,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-morales-dominguez-2/ginecologo/cuauhtemoc2#address-id=258001&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:37.879Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__liliana_morales_dom_nguez.webp"
+}

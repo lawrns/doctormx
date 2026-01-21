@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Griselda Reyes Torres",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 710,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/089be250/089be250-6245-4e62-a58e-028d1160bba9_small_square.jpg",
+  "about": "*HOLA , ANTES DE CONTARTE DE MI, SI NO ENCUENTRAS CITAS PRONTO, POR FAVOR LLAMA PARA DARTE EL ESPACIO ASIGNADO A URGENCIAS :)\"Estaremos contigo en cada paso del camino...\" ¡Hola! soy la Dra. Griselda Reyes , te platico un poco de mi y mi trayectoria profesional, soy ginecóloga con varias subespecialidades y altas especialidades en las diferentes ramas de las mujeres enfocadas en tratamientos y cirugías de mínima invasión , cirugía robótica, cirugía reproductiva, reproducción y problemas hormonales, me caracterizo por una formación de excelencia, en instituciones líderes de la rama, con diversos posgrados en el extranjero, en países pioneros del área especializada, con el objetivo de brindar a mis pacientes un servicio de alto nivel. Me encuentro en constante actualización a través de congresos y cursos nacionales e internaciones, realizo trabajos de investigación de índole internacional para seguir aportando al conocimiento científico; de igual forma soy profesora de diferentes cursos, con el objetivo de esparcir el conocimiento, pertenezco a distintas instituciones nacionales e internacionales líderes en ginecología y obstetricia, cirugía de mínima invasión, miomatosis uterina , endometriosis e infertilidad. Estoy certificada por el Consejo Mexicano de Ginecología y Reproducción Humana. Contamos con equipo médico con la tecnología más avanzada. Mi equipo está conformada por doctoras, enfermeras y asistentes quienes en conjunto tenemos la misión de cuidarlas en todas las etapas de su vida, ofreciendo medicina de alto nivel, siempre a la vanguardia, de una forma integral , siempre buscando la forma menos invasiva, sin olvidar el lado humano, la individualidad y discreción de cada paciente. Haremos todo lo posible porque tengas una experiencia tranquila y agradable.Bienvenida a este espacio que fue creado para cuidarte . :)*CIRUGÍA REPRODUCTIVA, MIOMATOSIS Y ENDOMETRIOSIS : The Woman´s Hospital of Texas, Estados Unidos de América *THE ENDOSCOPY COURSE & WORKSHOP - Laparoscopy and Hysteroscopy- Endoscopic Training Centre Antwerp Amberes, Bélgica*CIRUGÍA ENDOSCÓPICA GINECOLÓGICA. Instituto Nacional de Perinatología- UNAM*BIOLOGÍA DE LA REPRODUCCIÓN HUMANA. Hospital Ángeles del Pedregal- UNAM*GINECOLOGÍA Y OBSTETRICIA. Instituto Nacional de Perinatología-UNAM Céd. Prof. Esp:10643273, Consejo Mexicano de Ginecología y Obstetricia- Certificación: 9289 ​*MÉDICO CIRUJANO-UNAM- Campus: Ciudad UniversitariA- Miembro del Programa de Alta Exigencia Académica- Céd. Prof: 7932853",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080, Xoco, Benito Juárez,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna, Héroes de Padierna, La Magdalena Contreras,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/griselda-reyes-torres-2/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:59:54.649Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__griselda_reyes_torres.webp"
+}

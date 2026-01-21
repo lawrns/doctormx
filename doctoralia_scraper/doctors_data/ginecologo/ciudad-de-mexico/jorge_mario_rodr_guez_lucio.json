@@ -1,0 +1,25 @@
+{
+  "name": "Jorge Mario Rodríguez Lucio",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Madero 302 (76010) Santiago De Querétaro, Colónia Niños Héroes,"
+    },
+    {
+      "full": "Calle Madero 302 (76010) Santiago De Querétaro, Colónia Niños Héroes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-mario-rodriguez-lucio/ginecologo/ciudad-de-mexico#address-id=148199&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:22.688Z",
+  "localPhotoPath": null
+}

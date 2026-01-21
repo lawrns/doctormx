@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Silvia Daniela Olivas Cabral",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f57cfdb4/f57cfdb4-1a03-45d8-94da-b8fdd75d41d5_small_square.jpg",
+  "about": "Ginecóloga y obstetra certificada, comprometida con el cuidado integral de la salud femenina. Enfocada en la prevención, diagnóstico oportuno y bienestar en cada etapa de la vida de la mujer, con atención empática y basada en evidencia.",
+  "addresses": [
+    {
+      "full": "Boulevard América 216,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": ""
+    },
+    {
+      "name": "Revisión de DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-daniela-olivas-cabral/ginecologo/san-andres-cholula",
+  "scrapedAt": "2026-01-21T03:53:06.297Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__silvia_daniela_olivas_cabral.webp"
+}

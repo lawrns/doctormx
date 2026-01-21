@@ -1,0 +1,43 @@
+{
+  "name": "Mariana Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1216,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/53f9ec/53f9ece6768b99bf9555e26f48035da6_220_square.jpg",
+  "about": "Hola!, soy la Dra. Mariana Leal Treviño Soy egresada de la UANL donde realicé la especialidad en Ginecología y Obstetricia en el Hospital Universitario Dr. José Eleuterio González, así mismo realicé un Fellow en Endoscopía Ginecológica, por lo que puedo ofrecer tratamiento con cirugía de mínima invasión en la mayoría de los casos en los que se requiere una cirugía ginecológica. Actualmente certificada por el Consejo Mexicano de Ginecología y Obstetricia. Teniendo como objetivo principal, ofrecer atención médica especializada de alta calidad y con gran sentido ético en conocimiento actualizado y siguiendo las directrices que marcan las guías de atención clínica nacionales e internacionales, apoyándome en caso necesario de un equipo multidisciplinario para que el resultado final sea reconstituir o mejorar su calidad de vida. Su salud es lo más importante. Quedo a sus órdenes",
+  "addresses": [
+    {
+      "full": "Bolivia 103,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-leal/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:17.064Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/mariana_leal.webp"
+}

@@ -8,6 +8,7 @@ import {
   PRECONSULTA_URGENCY_PROMPT,
   AI_CONFIG
 } from '@/lib/ai';
+import { matchDoctorsForReferral } from '@/lib/ai/referral';
 import type { PreConsultaMessage, TriageResult } from '@/lib/ai/types';
 
 export async function POST(req: NextRequest) {
@@ -49,6 +50,7 @@ export async function POST(req: NextRequest) {
     const isComplete = userMessages.length >= 3;
 
     let summary: TriageResult | null = null;
+    let referrals: any[] = [];
 
     if (isComplete) {
       // Análisis final de urgencia
@@ -61,10 +63,23 @@ export async function POST(req: NextRequest) {
         userPrompt: PRECONSULTA_URGENCY_PROMPT.replace('{conversation}', conversationText),
       });
 
-    // Guardar sesión en DB
+      // Match real doctors
+      try {
+        referrals = await matchDoctorsForReferral({
+          symptoms: summary.redFlags || [],
+          urgency: summary.urgency,
+          specialty: summary.specialty,
+          sessionId,
+          patientId: user?.id || 'anonymous'
+        });
+      } catch (err) {
+        console.error('[REFERRAL ERROR]:', err);
+      }
+
+      // Guardar sesión en DB
       await supabase.from('pre_consulta_sessions').upsert({
         id: sessionId,
-        patient_id: user?.id || 'anonymous',
+        patient_id: user?.id || null,
         messages: messages,
         summary: {
           chiefComplaint: summary.specialty,
@@ -80,7 +95,7 @@ export async function POST(req: NextRequest) {
       // Guardar progreso
       await supabase.from('pre_consulta_sessions').upsert({
         id: sessionId,
-        patient_id: user?.id || 'anonymous',
+        patient_id: user?.id || null,
         messages: messages,
         status: 'active',
       });
@@ -92,7 +107,7 @@ export async function POST(req: NextRequest) {
       userId: user?.id || 'anonymous',
       userType: 'patient',
       input: { sessionId, messageCount: messages.length },
-      output: { response, summary },
+      output: { response, summary, referralCount: referrals.length },
       tokens: usage.inputTokens + usage.outputTokens,
       cost: usage.cost,
       latencyMs: Date.now() - startTime,
@@ -103,6 +118,7 @@ export async function POST(req: NextRequest) {
       response,
       completed: isComplete,
       summary: isComplete ? summary : null,
+      referrals: referrals.slice(0, 3)
     });
   } catch (error: unknown) {
     console.error('[PRE-CONSULTA ERROR]:', error);

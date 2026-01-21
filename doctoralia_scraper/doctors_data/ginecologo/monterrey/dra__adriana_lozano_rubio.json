@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Lozano Rubio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43703c/43703cdb1e0ff8a7930088eb5ce22615_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. La Clinica 2565,"
+    },
+    {
+      "full": "Av. La Clinica 2565,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-lozano-rubio/ginecologo/monterrey#address-id=5234&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:15.877Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__adriana_lozano_rubio.webp"
+}

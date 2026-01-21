@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Hugo Fernandez Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 245,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/05d9ff/05d9ff31fa5ba130cfb3b4a1952bcb96.jpg",
+  "about": "Egresado de la Universidad Autónoma de Guadalajara como Médico Cirujano y Partero Egresado de La Universidad Veracruzana cómo Especialista en Ginecología y Obstetricia. Diplomado en Ultrasonido Doppler Materno Fetal con Aval de la Universidad de Guadalajara Experiencia como Especialista desde el 2012",
+  "addresses": [
+    {
+      "full": "Agustín Yáñez,"
+    },
+    {
+      "full": "San Juan Bosco 4734,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-fernandez-perez/ginecologo/zapopan",
+  "scrapedAt": "2026-01-21T03:22:46.750Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__hugo_fernandez_perez.webp"
+}

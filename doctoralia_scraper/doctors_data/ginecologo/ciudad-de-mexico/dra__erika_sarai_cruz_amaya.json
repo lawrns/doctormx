@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Erika Sarai Cruz Amaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a8971a/a8971a15a2a2182b87891f7ad6670b75_220_square.jpg",
+  "about": "✅Ginecóloga y obstetra ✅Especialista en patología por virus del papiloma humano",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174,"
+    },
+    {
+      "full": "Calzada de la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-sarai-cruz-amaya/ginecologo/iztapalapa#address-id=494533&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:26.187Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_sarai_cruz_amaya.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alfredo Dolores De la Merced",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/53287d/53287d5d9291c53e56d6c84588962d59_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 154,"
+    },
+    {
+      "full": "Calle Querétaro 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-dolores-de-la-merced-2/ginecologo/cuauhtemoc2#address-id=1515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:42.428Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfredo_dolores_de_la_merced.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Luis Fernando Chaires Vela",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Emiliano Zapata 17, Cuautepec De Madero,"
+    },
+    {
+      "full": "Av Instituto Politécnico Nacional S/N , Magdalena De Las Salinas,"
+    },
+    {
+      "full": "Emiliano Zapata 17, Cuautepec De Madero,"
+    },
+    {
+      "full": "Av Instituto Politécnico Nacional S/N , Magdalena De Las Salinas,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-chaires-vela/ginecologo/gustavo-a-madero#address-id=331774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:02:29.434Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melissa Campos Zamora",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f0b8ae/f0b8aee20d14a25dffb806f6c7599ee3_220_square.jpg",
+  "about": "La Dra. Melissa Campos recibió una maestría en ciencias en educación médica de la Universidad de Harvard, completó su especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología en la Ciudad de México y previamente obtuvo el título de médico cirujano de la Universidad Nacional Autónoma de México. Además, fue técnico en urgencias médicas en la Ciudad de México durante cinco años. Como especialista, su prioridad es ofrecer una atención de calidad con calidez, basada en evidencia y segura. Ha trabajado siempre con la finalidad de acompañar a la mujer en todas las etapas de la vida. Trabajó en el Hospital Materno de Celaya, así como en diversas instituciones privadas y de asistencia social en la Ciudad de México. Actualmente se desempeña como consultora para la unidad de Servicios y Sistemas Clínicos de la Organización Mundial de la Salud (OMS) en Ginebra. En este rol, coordina las actividades de la unidad en la región de las Américas para promover el fortalecimiento de servicios de salud integrados en emergencia, cuidados críticos y operativos. Además, apoya una amplia gama de proyectos de educativos para fortalecer el desarrollo de recursos humanos. Además, se encuentra afiliada a la Facultad de Ciencias de la Salud de la Universidad Panamericana desarrollando proyectos de fortalecimiento para la educación de profesionales de la salud. Anteriormente, fue subdirectora de innovaciones curriculares para la unidad de Educación Médica de Posgrado en la Facultad de Medicina de la Universidad de Harvard, donde apoyó la transición al entorno en línea durante la pandemia de COVID-19. Tiene experiencia en la educación de profesionales de la salud en una amplia gama de entornos y niveles de atención médica. Como investigadora, cuenta con 11 artículos publicados en revistas indexadas internacionales, y sus temas de interés son los relacionados con la educación médica, educación interprofesional y desarrollo profesional continuo, la mortalidad materna y la salud materna en lugares con recursos limitados, la salud global en cuidados de emergencia, críticos y operativos y la seguridad del paciente.",
+  "addresses": [
+    {
+      "full": "Tuxpan 28,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melissa-campos-zamora/ginecologo/ciudad-de-mexico#address-id=610468&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:33.580Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__melissa_campos_zamora.webp"
+}

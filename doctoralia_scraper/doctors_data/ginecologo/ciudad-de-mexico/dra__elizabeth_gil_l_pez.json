@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Elizabeth Gil López",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/17111576/17111576-8abc-4f76-be1f-cf1bfec1df02_small_square.jpg",
+  "about": "Hola, soy la Dra. Elizabeth Gil López, ginecóloga y obstetra certificada por el Consejo Mexicano de Ginecología y Obstetricia, con más de 5 años de experiencia, cuento con una alta especialidad en Medicina Crítica en Obstetricia, me apasiona acompañar a las mujeres durante las etapas más importantes de su vida.Mi principal enfoque es el manejo integral del embarazo de alto riesgo, el control prenatal con enfoque preventivo y de riesgo, y la atención a condiciones obstétricas complejas con base científica y tecnológica. En AuraFem Health Care, impulsamos un modelo de atención centrado en la mujer, con calidez, profesionalismo y empatía, para que cada paciente se sienta acompañada, informada y segura. ¿Te preocupa tu embarazo o presentas factores de riesgo como hipertensión, diabetes o antecedentes obstétricos complicados?En mi consulta te acompaño desde la prevención hasta la atención crítica, brindando un seguimiento prenatal personalizado, atención especializada en embarazo de alto riesgo, y orientación sobre salud ginecológica integral. Mi objetivo es ayudarte a vivir esta etapa con tranquilidad y confianza, asegurando el bienestar tuyo y de tu bebé.Te invito a conocer más sobre mi trayectoria y sobre los servicios que ofrecemos en AuraFem Health Care. Si tienes dudas o deseas agendar una cita, puedes contactarme directamente por este medio o a través de nuestras redes.Estoy aquí para acompañarte y cuidar de ti en cada paso de tu salud femenina.¡Nos vemos en AuraFem!",
+  "addresses": [
+    {
+      "full": "Cantú 11, Piso 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $899"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $699"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• $5,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-gil-lopez/ginecologo/miguel-hidalgo#address-id=593490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:33.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elizabeth_gil_l_pez.webp"
+}

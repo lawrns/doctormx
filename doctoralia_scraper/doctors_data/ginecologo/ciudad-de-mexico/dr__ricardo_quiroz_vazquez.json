@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Quiroz Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Eugenio Sue 355 301,"
+    },
+    {
+      "full": "Calle Eugenio Sue 355 301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-quiroz-vazquez/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:06:06.660Z",
+  "localPhotoPath": null
+}

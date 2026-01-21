@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Enrique Marín Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f89c35fc/f89c35fc-82d4-4469-91ca-728f43e6db3d_small_square.jpg",
+  "about": "Soy médico gineco-obstetra egresado del Instituto Nacional de Perinatología, líder nacional en atención de embarazo de alto riesgo, poseo amplia experiencia en detección, seguimiento y tratamiento de cualquier complicación durante el embarazo, así mismo estoy capacitado para atender cualquier problema de origen ginecológico sea de origen anatómico, funcional o endocrinológico. También tengo alta especialidad en Cirugía Endoscópica Ginecológica para realizar cirugías por medios mínimamente invasivos así como en Infertilidad y Reproducción Asistida para ayudarte en el proceso de búsqueda de embarazo. Mi objetivo como especialista es brindar a mis pacientes una atención integral, profesional y con calidad humana ofreciendo siempre el mejor tratamiento y lo más actualizado por lo que siempre te daré una explicación suficiente sobre tu padecimiento y resolveré todas tus dudas. La cercanía con las pacientes es mi prioridad por lo que baso mi práctica en la confianza y la calidez.",
+  "addresses": [
+    {
+      "full": "AV. 1RO DE MAYO LT 34, MZ C-34-C,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-marin-acosta/ginecologo/cuautitlan-izcalli#address-id=541171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:23.268Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__enrique_mar_n_acosta.webp"
+}

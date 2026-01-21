@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Evit Rosado Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 533,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/cb218aab/cb218aab-3149-4b3e-8661-c928a0bb5d81_large.jpg",
+  "about": "Medico Especialista en Ginecología y Obstetricia, con enfoque en embarazos de alto riesgo; con seis años de experiencia egresado del Hospital De La Mujer del Estado de Puebla. Busco brindarte una atención especializada con base en nivel de evidencia científica en cualquier etapa de tu vida, a través de diagnósticos y tratamientos con respaldo científico e innovador con el fin de aliviar y tratar cualquier tipo de padecimiento relacionado en su etapa de adolescencia, reproductiva, perimenopausia y menopausia, además de si es el caso, acompañarte y guiarte en tu embarazo, parto y puerperio con calidez, humanidad y honradez.",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    },
+    {
+      "full": "Calle 2 Norte 304 numero interior 15 santa cruz temilco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Histeroscopia Diagnostica",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Histeroscopia Diagnostica",
+      "price": "• $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-evit-rosado-ramos/ginecologo/puebla#address-id=561021&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:22.725Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__evit_rosado_ramos.webp"
+}

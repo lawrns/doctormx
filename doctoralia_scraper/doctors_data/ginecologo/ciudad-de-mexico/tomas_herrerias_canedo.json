@@ -1,0 +1,25 @@
+{
+  "name": "Tomas Herrerias Canedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montes Urales 800 Street , Lomas - Virreyes, Lomas De Chapultepec Iv Secc,"
+    },
+    {
+      "full": "Montes Urales 800 Street , Lomas - Virreyes, Lomas De Chapultepec Iv Secc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-herrerias-canedo/ginecologo/ciudad-de-mexico#address-id=128436&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:43.895Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Mario Castillo Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miramontes no. 2781-203, Jardines de coyoacan,"
+    },
+    {
+      "full": "Miramontes no. 2781-203, Jardines de coyoacan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-castillo-ramirez/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-21T03:06:14.211Z",
+  "localPhotoPath": null
+}

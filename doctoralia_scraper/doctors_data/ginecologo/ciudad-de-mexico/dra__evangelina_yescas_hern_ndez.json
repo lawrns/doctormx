@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Evangelina Yescas Hernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb59f2/cb59f273e0737b2216283e8d8326cabf_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CLÍNICA CASA DE ÁNGELES Leona Vicario 1176, Santa María Aztahuacan ,"
+    },
+    {
+      "full": "CLÍNICA CASA DE ÁNGELES Leona Vicario 1176, Santa María Aztahuacan ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/evangelina-yescas-hernandez-2/ginecologo/ciudad-de-mexico#address-id=417288&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:15.853Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__evangelina_yescas_hern_ndez.webp"
+}

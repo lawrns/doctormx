@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Efrén Domínguez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/770707/7707074b4c56bffe4259981f5e03c5c6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/efren-dominguez-gonzalez/ginecologo/nuevo-leon#address-id=23848&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:23.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__efr_n_dom_nguez_gonz_lez.webp"
+}

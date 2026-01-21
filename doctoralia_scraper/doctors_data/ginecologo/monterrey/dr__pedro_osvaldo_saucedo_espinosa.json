@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Pedro Osvaldo Saucedo Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/34ebac/34ebacf83499c57c8dec7ac268a7fc42_220_square.jpg",
+  "about": "Mi objetivo como ginecólogo y obstetra consiste en brindarte un servicio de calidad, humano y respetuoso, atendiendo a las principales necesidades de salud en la vida de la mujer, como el adecuado control prenatal y sus potenciales complicaciones, infecciones de trasmisión sexual y consejería en métodos de planificación familiar, sangrados anormales, lesiones pre malignas del cuello de la matriz, climaterio y menopausia, detección oportuna de cáncer de mama y patología mamaria benigna. Miomas uterinos, tumores benignos del ovario y cirugías ginecólogas con tecnología de mínima invasión. Me gusta crear una conversación y trato amable, respetuoso, una consulta personalizada y sobretodo que la paciente se sienta en confianza, cómoda y confortable. Me permito así mismo estar disponible las 24 hrs del día para cualquier orientación o duda según se requiera. Mi compromiso con mi paciente es lo primero \"CUIDAMOS LO QUE MAS QUIERES)",
+  "addresses": [
+    {
+      "full": "Plaza La Salle Norte, local A6, Francisco Garza Sada, 2925,"
+    },
+    {
+      "full": "Plaza La Salle Norte, local A6, Francisco Garza Sada, 2925,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-osvaldo-saucedo-espinosa/ginecologo/monterrey#address-id=117750&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:36.218Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__pedro_osvaldo_saucedo_espinosa.webp"
+}

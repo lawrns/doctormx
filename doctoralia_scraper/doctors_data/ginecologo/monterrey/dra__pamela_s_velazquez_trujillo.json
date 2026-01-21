@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Pamela S Velazquez Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 198,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f6633/6f66337a10284c1f5706e666e4a47a68_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Roberto J Cantu 2626,"
+    },
+    {
+      "full": "I. Morones Prieto,"
+    },
+    {
+      "full": "Roberto J Cantu 2626,"
+    },
+    {
+      "full": "I. Morones Prieto,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pamela-s-velazquez-trujillo/ginecologo/nuevo-leon#address-id=138324&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:06.461Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__pamela_s_velazquez_trujillo.webp"
+}

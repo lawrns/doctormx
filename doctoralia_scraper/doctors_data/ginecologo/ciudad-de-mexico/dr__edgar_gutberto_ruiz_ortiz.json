@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Edgar Gutberto Ruiz Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d699b9/d699b9aeb0840d29d2589333d024a486_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periferico Sur # 5246 Cons-720 Colpedregal De Carrasco Cp4700,,"
+    },
+    {
+      "full": "Periferico Sur # 5246 Cons-720 Colpedregal De Carrasco Cp4700,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-gutberto-ruiz-ortiz/ginecologo/coyoacan#address-id=117699&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:14:11.905Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_gutberto_ruiz_ortiz.webp"
+}

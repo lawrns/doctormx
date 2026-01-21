@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Payá Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/360dcd5a/360dcd5a-97c5-4461-85c3-8363464ebdb1_small_square.jpg",
+  "about": "\"Entiendo que buscar al ginecólogo adecuado para tu embarazo puede ser abrumador. Tal vez has tenido experiencias previas donde te sentiste como 'un número más', donde las consultas eran apresuradas, o donde tus preocupaciones no fueron tomadas en serio. Mi compromiso es diferente.\" \"Mi enfoque está en el control prenatal personalizado con seguimiento cercano. Esto significa:- Consultas de 30-40 minutos donde TODAS tus preguntas son bienvenidas- Ultrasonidos frecuentes interpretados EN DETALLE (no solo 'ahí está el bebé')- Acceso directo para dudas entre consultas- YO estaré presente en tu parto/cesárea, no un doctor desconocido- Plan de parto/cesárea decidido JUNTOS, respetando tus deseos\" \"Cuento con Diplomado en Ultrasonido Obstétrico y Ginecológico, lo que me permite realizar e interpretar ultrasonidos de alta calidad durante tus consultas. He acompañado a decenas de mujeres en sus embarazos y partos/cesáreas, con especial experiencia en embarazos que requieren atención diferenciada.\" \"Si buscas un embarazo donde te sientas cuidada, informada y protagonista de tus decisiones, me encantaría ser tu aliado en estos 9 meses. Agenda tu primera consulta y conversemos sobre tus necesidades específicas.\"",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Asesoría para pacientes embarazadas con riesgo alto de hemorragia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-paya-garcia/ginecologo/ciudad-de-mexico#address-id=549854&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:50.927Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alejandro_pay__garcia.webp"
+}

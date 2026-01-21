@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Javier Hernández Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed50f2/ed50f256e93284f90fbdd6bc5ece47b2_220_square.jpg",
+  "about": "Hola, soy el Dr. Javier Hernández Torres, médico con especialidad en Ginecología y Obstetricia con especialización en Colposcopia clínica y quirúrgica, enfermedades del tracto genital inferior, enfermedades de transmisión sexual. Atendemos problemas como por ejemplo: La Ginecología es la rama de la medicina que estudia el sistema reproductor femenino (utero, ovarios, anexos, vagina) y sus enfermedades. por lo tanto atendemos cuestiones tales como Trastornos menstruales, menopausia, Miomatosis, Quistes de ovario, Infertilidad, Incontinencia, prolapsos, problemas hormonales, métodos anticonceptivos, etc. La Obstetricia es la ciencia que se encarga de todo el estudio del embarazo, parto y puerperio. Por lo que atendemos consulta de Embarazo normal y de Alto Riesgo, con el compromiso de llevar un control adecuado de su embarazo y llevar a buen término la resolución del mismo para cuidar la salud de la mujer y su bebé. La Colposcopia es el estudio que se realiza con la ayuda de un microscopio especial con la finalidad de reconocer transtornos específicos como infecciones de transmisión transmision sexual y sobretodo detección oportuna de Cancer Cervicouterino, vaginal, vulgar, anal. También realizamos estudios como Vulvoscopia, Vaginoscopia, Anoscopia y Penescopia. Se recomienda de manera preventiva acudir una vez al año a consulta ginecológica y de ser posible 6meses antes de planear el embarazo. La especialidad la realicé en el Hospital de la Mujer de la Secretaría de Salud en la Ciudad de México, con entrenamiento en Colposcopia en el Hospital Generalnde Mexico de la SSA. Estoy certificado por por el Consejo Mexicano de Ginecología y Obstetricia, y formo parte como Miembro Federado Titulas del Colegio Mexicano de Ginecología y Obstetricia (COMEGO) miembro de la Federacion Latinoamericana de Ginecología y Obstetricia (FLASOG), miembro de la International Federation of Gynecology and Obstetrics (FIGO), asistiendo frecuentemente a congresos nacionales e internacionales para mantenerme actualizado y a la vanguardia en los temas médicos de mi especialidad. Sera atendido de una manera humana, profesional, honesta, con dedicación, vocación con el único compromiso de que reciba una atención de calidad, la cual nos lleve a la resolución y manejo de sus problemas de salud. Agenda tu cita, o llámanos a los teléfonos antes mencionados y si necesita un horario especial, llámanos y con gusto nos podemos ajustar a sus necesidades. ESTAMOS A SUS ÓRDENES.",
+  "addresses": [
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Av. Miguel Hidalgo 5503, Choferes, Flamboyanes. Consultorio 150-160,"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Av. Miguel Hidalgo 5503, Choferes, Flamboyanes. Consultorio 150-160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-hernandez-torres/ginecologo/tlalnepantla-de-baz2#address-id=2837&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:28.956Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__javier_hern_ndez_torres.webp"
+}

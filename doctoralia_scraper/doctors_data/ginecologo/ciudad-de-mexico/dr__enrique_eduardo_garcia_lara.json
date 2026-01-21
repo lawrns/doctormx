@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Enrique Eduardo Garcia Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fa75e7/fa75e7cf825d63dacb31c642c3b79348_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 747,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 747,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-eduardo-garcia-lara/ginecologo/-#address-id=139359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:38:09.449Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__enrique_eduardo_garcia_lara.webp"
+}

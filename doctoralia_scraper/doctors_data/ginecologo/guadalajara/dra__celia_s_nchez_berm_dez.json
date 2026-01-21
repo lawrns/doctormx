@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Celia Sánchez Bermúdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 520,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f13a4108/f13a4108-2093-4c2f-95df-4ca6f86553cb_small_square.jpg",
+  "about": "SOY LA DRA CELIA SANCHEZ BERMUDEZ, SOY GINECO OBSTETRA EGRESADA DE LA UNIVERSIDAD AUTONOMA DE GUADALAJARA Y DE LA ESPECIALIDAD DEL HOSPITAL ANGEL LEAÑO , TENGO 26 AÑOS EJERCIENDO COMO ESPECIALISTA. Y MI ATENCION ES TOTALMENTE PERSONALIZADA A CADA PACIENTE BRINDANDOLE UNA CONSULTA DE 1 HORA. CUIDO DE TODOS LOS PADECIMIENTOS QUE NOS AFECTAN A LAS MUJERES DURANTE TODA NUESTRA VIDA, INICIANDO CON LA PUBERTAD, ANTICONCEPCION, EMBARAZO, CUIDADO ANUAL DE MAMAS, TOMA DE PAPANICULAOU BAJO COLPOSCOPIA, DESAJUSTES HORMONALES, PROBLEMAS DE ESTERILIDAD, INFERTILIDAD, QUISTES DE OVARIO, QUISTES DE MAMA, MIOMATOSIS UTERINA, MENOPAUSIA Y CLIMATERIO Y MAS.",
+  "addresses": [
+    {
+      "full": "Tarascos 3514 Int. 3. Frente al Hospital Angeles del Carmen,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia mamaria",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celia-sanchez-bermudez/ginecologo/guadalajara#address-id=81690&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:56.567Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__celia_s_nchez_berm_dez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Berenice Alvarado Quiroz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5281d9e/f5281d9e-c6d0-4dc0-999a-a717c35b15d6_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Berenice Alvarado Quiroz, médico cirujano con especialidad en Ginecología y Obstetricia. Mi formación profesional está basada en años de estudio y dedicación, buscando siempre ofrecer los mejores servicios a mis pacientes. A lo largo de mi carrera, me he especializado en brindar un tratamiento integral para cada etapa de la vida de la mujer, con un enfoque funcional, estético y regenerativo. Mi compromiso es ofrecerte soluciones que te ayuden a mejorar tu calidad de vida, optimizando tu bienestar físico y emocional. Si buscas una atención personalizada y especializada para cuidar de tu salud, no dudes en contactarme. Estoy aquí para acompañarte en tu bienestar y en cada etapa de tu vida.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-alvarado-quiroz/ginecologo/benito-juarez#address-id=541323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:44.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__berenice_alvarado_quiroz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nohemi Alejandre Blanco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 446,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d977f27f/d977f27f-ccf2-44db-8288-b40974136e3a_small_square.jpg",
+  "about": "Soy egresada de la Universidad Nacional Autónoma de México, mi especialidad la realicé en el Hospital Ángeles México, soy colposcopista. Estuve trabajando durante 11 años en los Servicios de Salud del Estado de Puebla. Actualmente me dedico a la medicina privada. Me gusta que mis pacientes reciban una atención personalizada en un ambiente cómodo y confortable. I am a graduate of the National Autonomous University of Mexico, my specialty is the Hospital Angeles Mexico, I am a colposcopist. I was working for 11 years in the Health Services of the State of Puebla. I am currently working in private medicine. I like that my patients receive personalized attention in a comfortable environment.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nohemi-alejandre-blanco-2/ginecologo/puebla#address-id=258868&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:53:28.843Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__nohemi_alejandre_blanco.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Karina Bautista Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/107aef/107aef03f01b5fe9e8cf425a80d9bb67_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Núcleo médico Baricare: Av. Hidalgo 2354, a 2 cuadras de la Glorieta Minerva ,"
+    },
+    {
+      "full": "Núcleo médico Baricare: Av. Hidalgo 2354, a 2 cuadras de la Glorieta Minerva ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karina-bautista-vazquez/ginecologo/guadalajara#address-id=81201&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:20.398Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__ana_karina_bautista_vazquez.webp"
+}

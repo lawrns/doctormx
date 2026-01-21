@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Natalia Dominguez Alfaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/83e6520c/83e6520c-449f-4912-bcad-335d373ad6ba_small_square.jpg",
+  "about": "Soy ginecóloga con enfoque en enfermedades de la vulva, con alta especialidad en colposcopia y patología del tracto genital inferior. Desde hace 6 años, he dedicado mi práctica y estudios a profundizar en el diagnóstico y tratamiento de las enfermedades vulvares, buscando siempre la mejor forma de abordar cada caso de manera integral y con un enfoque multidisciplinario. Mi compromiso es ofrecer una atención cercana, clara y empática, enfocada en el bienestar de mis pacientes y buscando soluciones efectivas para cada necesidad. Acepto pacientes que busquen un enfoque especializado y profesional en las enfermedades de la vulva.",
+  "addresses": [
+    {
+      "full": "Av. Blvd. Palmas Hill 2, CENTTRAL INTERLOMAS, Piso 19.,"
+    },
+    {
+      "full": "Av. Blvd. Palmas Hill 2, CENTTRAL INTERLOMAS, Piso 19.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/natalia-dominguez-alfaro-2/ginecologo/huixquilucan#address-id=569711&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:08.800Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__natalia_dominguez_alfaro.webp"
+}

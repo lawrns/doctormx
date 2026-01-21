@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Olivia Natividad López Adame",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 344,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5bf51c/5bf51cad230405a91d1edfe3fa8958b5_220_square.jpg",
+  "about": "¡Hola, soy la Dra. Olivia Natividad López Adame! Como especialista en Ginecología y Obstetricia, estoy comprometida con el cuidado de la salud femenina. Mi objetivo es brindar una atención integral, accesible y personalizada a cada una de mis pacientes. Me enfoco en la prevención, detección y atención oportuna de cualquier patología de la mujer en sus diferentes etapas y me mantengo constantemente actualizada a través de congresos y cursos de alta especialización en diferentes áreas de ginecología, obstetricia y ultrasonido. En mi consultorio, puedo ayudarte con servicios, como: evaluaciones ginecológicas y obstétricas, control prenatal, cirugía de mínima invasión, cirugía robótica, seguimiento y tratamiento de enfermedades ginecológicas y obstétricas, y planificación familiar. Si necesita atención médica especializada, no dudes en agendar una cita en mi consultorio en la Ciudad de México. Estoy comprometida con la atención integral de mis pacientes y estaré encantada de ayudarte.",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-natividad-lopez-adame/ginecologo/tlalpan#address-id=135200&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:10.263Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__olivia_natividad_l_pez_adame.webp"
+}

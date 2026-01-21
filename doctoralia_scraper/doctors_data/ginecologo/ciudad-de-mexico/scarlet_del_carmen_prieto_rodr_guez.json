@@ -1,0 +1,43 @@
+{
+  "name": "Scarlet del Carmen Prieto Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b83ce1/b83ce1f8e638c290694bf35204de0cef_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle de Durango 33,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/scarlet-del-carmen-prieto-rodriguez/ginecologo/cuauhtemoc2#address-id=368323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:02.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/scarlet_del_carmen_prieto_rodr_guez.webp"
+}

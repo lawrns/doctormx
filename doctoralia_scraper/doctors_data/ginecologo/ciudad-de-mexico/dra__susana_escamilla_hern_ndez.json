@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Susana Escamilla Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/659d8e/659d8eb080d6c4eec8410d32ecfc8a6a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Enrique Sada Murguerza 17 (Cto. Centro Comercial, CD Satelite),"
+    },
+    {
+      "full": "Enrique Sada Murguerza 17 (Cto. Centro Comercial, CD Satelite),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-escamilla-hernandez/ginecologo/naucalpan-de-juarez#address-id=818&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:10.161Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__susana_escamilla_hern_ndez.webp"
+}

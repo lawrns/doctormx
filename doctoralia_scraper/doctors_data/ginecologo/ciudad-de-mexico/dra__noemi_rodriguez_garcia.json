@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Noemi Rodriguez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. De Tlalpan 4585,"
+    },
+    {
+      "full": "C. Emiliano Zapata 13,"
+    },
+    {
+      "full": "Calz. De Tlalpan 4585,"
+    },
+    {
+      "full": "C. Emiliano Zapata 13,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noemi-rodriguez-garcia/ginecologo/tlalpan#address-id=184530&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:52.131Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Héctor Peña Dehesa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "DR. HECTOR PEÑA DEHESA, MEDICO ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA, CON SUBESPECIALIDAD EN MEDICINA MATERNO FETAL, INSTRUCTOR EN EL DIPLOMADO DE PROCEIDMIENTOS QUIRURGICOS EN EL MANEJO DE LA HEMORRAGIA OBSTETRICA Y DEL ACRETISMO PLACENTARIO ESPECIALISTA EN EMBARAZOS DE ALTO RIESGO, CONTROL Y SEGUIMIENTO PERSONALIZADO DE TU EMBARAZO, CON PRUEBAS DE DETECCION DE ANOMALIAS EN LOS BEBES, VIGILANCIA DEL PARTO CON ENFOQUE HUMANIZADO. SI HAS TENIDO UNA PERDIDA ENTRE LA SEMANA 14 A 20 EN UN EMBARAZO PREVIO SOMOS ESPECIALISTAS EN EL CONTROL PRENATAL EN TU SIGUIENTE EMBARAZO. ATENCION OPORTUNA Y DE CALIDAD A LA SALUD DE LA MUJER",
+  "addresses": [
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• Desde $8,000"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": "• Desde $8,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-pena-dehesa/ginecologo/gustavo-a-madero#address-id=3120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:32.077Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Rubin González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed8bdb/ed8bdb74421e135ba1fa7fac770f6d78_220_square.jpg",
+  "about": "Ginecólogo con más de 30 años de experiencia especializado en Biología de la Reproducción Humana, Infertilidad. Mi número de colegiado: 1502965.",
+  "addresses": [
+    {
+      "full": "Avenida Morenita Mia 1810,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-rubin-gonzalez/ginecologo/san-nicolas-de-los-garza#address-id=20168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:23.591Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jes_s_rubin_gonz_lez.webp"
+}

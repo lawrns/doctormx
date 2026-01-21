@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marisela Quintero Luzanilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 170,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/82e37b6c/82e37b6c-2ede-4a79-ad2f-6aed9a07cc88_small_square.jpg",
+  "about": "Para mis pacientes, y futuras pacientes , el deseo único en mi experiencia laboral es la curación, ofrecer mi experiencia y preparación para que desde la primera consulta, se tenga un diagnostico probable y empezar su tratamiento, con los recursos imagen ultrasonido vaginal, citología, papanicolaou , colposcopia, toma de biopsia, aplicación de tratamiento local según lo requiera cada paciente e iniciar el tratamiento. Además de dar el seguimiento y acompañamiento hasta la resolución de la patología.",
+  "addresses": [
+    {
+      "full": "Avenida Cuitláhuac 2906,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisela-quintero-luzanilla/ginecologo/azcapotzalco#address-id=46791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:41.850Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marisela_quintero_luzanilla.webp"
+}

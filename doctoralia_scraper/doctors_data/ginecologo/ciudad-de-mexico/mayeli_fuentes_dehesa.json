@@ -1,0 +1,46 @@
+{
+  "name": "Mayeli Fuentes Dehesa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a899a/1a899a2bdb55e884a36654aa0dfd729d_220_square.jpg",
+  "about": "Médico sub especialista en Medicina Materno Fetal Médico cirujano egresado UPAEP en PUEBLA Ginecologia y Obstetricia& Medicina Materno Fetal egresará del Instituto Nacional de Perinatología, estudios avalados por la UNAM",
+  "addresses": [
+    {
+      "full": "Av Cuauhtemoc Sin Numero, Segunda Seccion,"
+    },
+    {
+      "full": "Av Cuauhtemoc Sin Numero, Segunda Seccion,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayeli-fuentes-dehesa/ginecologo/oaxaca-de-juarez#address-id=359918&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:25.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/mayeli_fuentes_dehesa.webp"
+}

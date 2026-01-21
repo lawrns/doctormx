@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alma Amor Ojeda Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c92e4/3c92e41b612928d8ad27b5a4a4f9c703.jpg",
+  "about": "Ginecóloga certificada por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Avenida Ruiz Cortines 3035,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• Desde $3,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-amor-ojeda-villalobos-2/ginecologo/nuevo-leon#address-id=502092&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:12.870Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alma_amor_ojeda_villalobos.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Delia Calixto Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Canal de miramontes 2704-2do.p, Cipreses de coyoacan,"
+    },
+    {
+      "full": "Canal de miramontes 2704-2do.p, Cipreses de coyoacan,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delia-calixto-sanchez/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-21T03:04:08.617Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Gamaliel Valle Palma",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 96,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/00cc8f/00cc8f5a5a3a12ae9c417514d8ceb2ab_220_square.jpg",
+  "about": "Soy médico ginecólogo egresada del Hospital Militar Alejandro Dávila Bolaños En mi País natal Nicaragua. Decidí ser Médico Materno Fetal lo que me trajo a México realizando Ultrasonido obstétrico ginecológico y de mamas en el Instituto Nacional de Perinatologia Isidro Espinosa de los Reyes. Aplique para la sub especialidad quedando seleccionada en el Centro Médico Nacional 20 de Noviembre en dónde me gradué en el años 2016. Inicie a trabajar como Médico Materno Fetal en julio 2017 en Clínicas de la mujer Reina Madre en Toluca hasta el 12 de junio del presente año. Como Médico Materno Fetal mi compromiso es brindar a Ud una atención con calidad y calidez encaminada al nacimiento de un bebé sano. Detecto de forma oportuna defectos congénitos los cuales pueden, en muchos casos corregirse. Mi compromiso es con El binomio madre y feto. Así mismo cuento con un diplomado en Diabetologia,por lo que me encuentro capacitada para atender embarazos de alto riesgo Obstétrico.",
+  "addresses": [
+    {
+      "full": "Vasco de Quiroga 3800,"
+    },
+    {
+      "full": "Vasco de Quiroga 3800,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• Desde $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gamaliel-valle-palma/ginecologo/ciudad-de-mexico#address-id=459774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:33.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gamaliel_valle_palma.webp"
+}

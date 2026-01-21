@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Joseline Valadez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d95011/d95011d143f9772df73bbcdac581e306_220_square.jpg",
+  "about": "Hola! Soy la Dra. Joseline Valadez Ginecóloga y Obstetra, especializada en la atención a la mujer en todas las etapas de su vida. Mi principal objetivo es que te sientas cómoda, tranquila y que logres resolver todas tus dudas durante tu consulta conmigo. Siéntete libre de expresar tus preocupaciones y logremos juntas que tu salud íntima siempre se encuentre en las mejores condiciones. Quiero platicarte un poco sobre mi formación : Estudié Medicina General en la Universidad de Guadalajara Soy especialista en Ginecología y Obstetricia, egresada del Centro Médico Nacional de Occidente (Universidad de Guadalajara) Cuento con Entrenamiento de Alto Rendimiento en Ultrasonido Obstétrico con Enfoque Perinatal Actualmente cursando Diplomado en Menopausia y Osteoporosis ✨Certificada por el Consejo Mexicano de Ginecología y Obstetricia CMGO Agenda tu cita conmigo y permíteme resolver todas tus dudas",
+  "addresses": [
+    {
+      "full": "Calle 5 de Mayo 108,"
+    },
+    {
+      "full": "Calle 5 de Mayo 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joseline-valadez-gonzalez-2/ginecologo/tlaquepaque#address-id=459941&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:14.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__joseline_valadez_gonz_lez.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Claudia Martínez López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/97adee/97adeeba7d9d7d4c81d1e89e09926ddf_220_square.jpg",
+  "about": "Provisión de atención en salud reproductiva para la mujer o de pareja. Desde la pubertad hasta la pos-menopausia. Atención especializada a la pareja infértil o estéril con diagnósticos en corto tiempo y una amplia gama de tratamientos para lograr en bebé sano en casa. Se incluyen tratamientos de baja complejidad ( ej.: Inducción de ovulación, Inseminación artificial) hasta los de alta complejidad ( Fertilización in Vitro, donación de óvulos, ICSI). Orientación sobre métodos anticonceptivos modernos y seguros para mujeres que padecen de alguna enfermedad o mujeres sana. ( Inyecciones, Implante, Dispositivo intrauterino medicado y de cobre, píldoras anticonceptivas, parches, etc.). Especialista en salud reproductiva del adolescente. Además de brindar consulta y tratamiento de enfermedades ginecológicas (quistes, tumores, trastornos menstruales, infecciones vaginales, etc.) como atención obstétrica (control del embarazo en mujer sana o con alguna enfermedad, cesárea o parto humanizado).",
+  "addresses": [
+    {
+      "full": "Baja California 281, (Primer Piso),"
+    },
+    {
+      "full": "Calle 2 N° 101-B (Esq. Av. Cinco y Eje 3 Ote a 100mts de Av. Ermita Iztapalapa),"
+    },
+    {
+      "full": "Baja California 281, (Primer Piso),"
+    },
+    {
+      "full": "Calle 2 N° 101-B (Esq. Av. Cinco y Eje 3 Ote a 100mts de Av. Ermita Iztapalapa),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-martinez-lopez/ginecologo/benito-juarez#address-id=1889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:09.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_mart_nez_l_pez.webp"
+}

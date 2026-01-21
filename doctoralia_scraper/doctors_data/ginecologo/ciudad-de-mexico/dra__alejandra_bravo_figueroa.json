@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Bravo Figueroa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/dc7b3256/dc7b3256-5ab4-4cef-9470-a4bf79542f4c_small_square.jpg",
+  "about": "Hola! Soy la Dra Ale Bravo, realice mi especialidad en el HGO3 Centro Médico Nacional La Raza, avalado por la UNAM. Mi licenciatura en la Facultad de Medicina, UNAM, Ciudad Universitaria. Tengo diplomado de Colposcopia y patología del tracto genital inferior, realizado INPer. Experiencia en enfermedades desde la adolescencia hasta la vejez, desde el inicio de la menarca, menopausia, embarazo de alto u bajo riesgo, cirugía ginecología y obstetrica",
+  "addresses": [
+    {
+      "full": "Calzada la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-bravo-figueroa/ginecologo/iztapalapa#address-id=567460&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:45.840Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_bravo_figueroa.webp"
+}

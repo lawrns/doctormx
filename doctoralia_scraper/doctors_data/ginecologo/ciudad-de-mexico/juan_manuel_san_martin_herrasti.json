@@ -1,0 +1,37 @@
+{
+  "name": "Juan Manuel San Martin Herrasti",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6867e267/6867e267-fd73-4b70-b662-beebe70a8397_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Panuco 510,"
+    },
+    {
+      "full": "Cuauhtemoc 98,"
+    },
+    {
+      "full": "Enrique Sada Moguerza 17,"
+    },
+    {
+      "full": "Rio Panuco 510,"
+    },
+    {
+      "full": "Cuauhtemoc 98,"
+    },
+    {
+      "full": "Enrique Sada Moguerza 17,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-san-martin-herrasti/ginecologo/cuernavaca#address-id=204987&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:14.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/juan_manuel_san_martin_herrasti.webp"
+}

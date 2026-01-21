@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Luis Angel Trujillo Rizo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 665,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21ecd3/21ecd3217c174414cac1d8df9a143c93.jpg",
+  "about": "Hola! Bienvenid@ a mi perfil. Soy el Dr. Luis Angel Trujillo Rizo, médico especialista en Ginecología y Obstetricia en la ciudad de Puebla, orgullosamente egresado del Hospital de la Mujer de la ciudad de México. Avalado por la Universidad Nacional Autónoma de México. Cuento con más de 6 años de experiencia ejerciendo esta noble especialidad que me ha demostrado y confirmado cuan valiente e importante es la mujer en nuestra sociedad. Me he entrenado y capacitado en diversas áreas relacionadas a mi especialidad tales como Ultrasonido, Colposcopia y manejo de lesiones premalignas del tracto genital inferior, especialista en problemas ginecológicos en las diferentes etapas de la vida de la mujer: pubertad, adolescencia, edad reproductiva, premenopausia y postmenopausia. Gracias a mi hospital de formación y en los que he laborado, adquirí habilidad y experiencia en cirugía ginecológica/obstétrica, convencional y compleja. Por la parte obstétrica nos enfocamos en el control prenatal con seguimiento a embarazos de bajo y alto riesgo, acompañándote en una de las etapas más importantes de tu vida. Siempre ejerciendo mi profesión con cualidades humanas, ofreciéndote abordajes diagnósticos y tratamientos innovadores respaldados por la evidencia científica más actualizada. Soy un ser humano que persigue insistentemente la superación, con la finalidad de ser un especialista cada vez mejor preparado para brindarte la atención de calidad que te mereces; y teniendo como base en mi práctica médica el respeto, la confianza, la honestidad, la empatía y por supuesto el conocimiento. Para mi será una gran satisfacción atenderte!!!",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas #4,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $900"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": "• Desde $6,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $900"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": "• Desde $6,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-angel-trujillo-rizo/ginecologo/puebla#address-id=549591&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:48.413Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__luis_angel_trujillo_rizo.webp"
+}

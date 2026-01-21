@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Ledesma Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/e680529f/e680529f-70b4-478c-b1ff-07c9fa30b02d_large.jpg",
+  "about": "Experta en diagnóstico y tratamiento del virus del papiloma humano y otras ETS Experta en papanicolaou, colposcopía Trato empático, humano y personalizado",
+  "addresses": [
+    {
+      "full": "Riobamba 827,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación, criocoagulación, termocoagulación de cérvix",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-ledesma-estrada/ginecologo/gustavo-a-madero#address-id=19529&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:30.637Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_ledesma_estrada.webp"
+}

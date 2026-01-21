@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Oscar Mujica Calderon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4c5b35/4c5b35aec9d89d73d2362a7c88eb8912_220_square.jpg",
+  "about": "Especialidad de Ginecología y Obstetricia en el Hospital Español de México. Diplomado en Colposcopia Hospital López Mateos Miembro Titular del Colegio Mexicano de Ginecología y Obstetricia (COMEGO) Recertificado por el Consejo Mexicano de Ginecología y Obstetricia Socio Emérito de la Asociación Mexicana de Medicina de la Reproducción (AMMR) Socio Fundador de la Asociación Mexicana para el Estudio del Climaterio (AMEC) Socio del Colegio de Ginecólogos y Obstétras Dr Alfonso Alvarez Bravo.",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional Mexicano 613 (Cons. 903B, en torre nueva Antonino Fernandez),"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ejercito Nacional Mexicano 613 (Cons. 903B, en torre nueva Antonino Fernandez),"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-mujica-calderon/ginecologo/miguel-hidalgo#address-id=19044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:12.928Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__oscar_mujica_calderon.webp"
+}

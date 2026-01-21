@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Olga Camacho Coronel-Ciocca",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6953b7/6953b789c864e73f35371a43d227c755_220_square.jpg",
+  "about": "Ginecóloga y obstetra con suba especialidad en biología de la reproducción humana",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911, Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Seguimiento folicular",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olga-camacho-coronel-ciocca/medico-general/zapopan#address-id=583557&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:53.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__olga_camacho_coronel_ciocca.webp"
+}

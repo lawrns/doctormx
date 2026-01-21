@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Vicente Rodríguez Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9fe152/9fe152a54e58556a0502c483a43f1723_220_square.jpg",
+  "about": "Soy el Dr, Vicente Rodríguez Guzmán Ginecólogo-Oncólogo y Obstetra, experto en Virus del Papiloma Humano VPH, Criocirugía / Electrocirugía, Miomas, Pólipos, Cáncer de Mama, Adherencias Intrauterinas, Problemas con Dispositivos. Me formé como Médico Cirujano en la Universidad Michoacana de San Nicolás de Hidalgo, posteriormente concluí la especialidad de Ginecología y Obstetricia en la UNAM. Cuento con más de 25 años de experiencia en instituciones de prestigio como el Hospital Star Médica, soy Médico Certificado por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 154,"
+    },
+    {
+      "full": "Calle Querétaro 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vicente-rodriguez-guzman/ginecologo/cuauhtemoc2#address-id=76230&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:15.857Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__vicente_rodr_guez_guzm_n.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rogelio Guillén Serrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 299,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9b778/f9b778eeeb458b8f1f204f9a51c12374_220_square.jpg",
+  "about": "Ginecólogo",
+  "addresses": [
+    {
+      "full": "Calle 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Valoración ginecologica y/o obstétrica",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rogelio-guillen-serrano/ginecologo/tlalnepantla-de-baz2#address-id=480405&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:43.809Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rogelio_guill_n_serrano.webp"
+}

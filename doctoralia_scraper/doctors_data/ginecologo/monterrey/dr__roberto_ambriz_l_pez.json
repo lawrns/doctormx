@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto Ambriz López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 411,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e4b0c/8e4b0cee7a7b62a5f771d0e934ac44e5.jpg",
+  "about": "Hola, ¿qué tal? Bienvenida y ¡mucho gusto! Me presento, soy el Dr. Roberto Ambriz López, médico gineco-obstetra con más de 25 años de experiencia. Mi especialidad se centra en embarazos de alto riesgo y Medicina Materno-Fetal. Experiencia y Formación: Soy egresado de la Universidad Autónoma de San Luis Potosí como Médico Cirujano y Partero. Completé mi especialidad en Ginecología y Obstetricia en el Hospital Regional de Especialidades No. 23, Dr. Ignacio Morones Prieto en Monterrey, Nuevo León. Además, cuento con una subespecialidad en Medicina Materno-Fetal obtenida en el Instituto Nacional de Perinatología en la Ciudad de México. Actividad Profesional: Trabajo como maestro en el Hospital Universitario de Nuevo León, donde también soy catedrático de la especialidad de Medicina Materno-Fetal y Terapia Fetal en el Hospital de Ginecología y Obstetricia de Monterrey (Ginequito). En este hospital también ejerzo medicina privada, disfrutando de ayudar a mis pacientes con mi vasta experiencia en diagnóstico ecográfico genético y anatómico embrio-fetal. Áreas de Especialización: Medicina Materno-Fetal: Enfoque en cuidados especializados para embarazos de alto riesgo, monitoreo fetal y diagnóstico prenatal. Embarazos de Alto Riesgo: Atención y manejo de condiciones complejas durante el embarazo, asegurando el bienestar de la madre y del bebé. Ultrasonido Ginecológico y Obstétrico: Uso de tecnología avanzada para el diagnóstico y monitoreo de la salud reproductiva femenina. Control de Embarazo: Seguimiento integral y personalizado del embarazo, asegurando una experiencia segura y saludable. Colposcopia y Detección de Cáncer Cervicouterino: Evaluación y tratamiento de condiciones precancerosas y cancerosas del cuello uterino. Mi Compromiso: Estoy comprometido con brindar una atención médica de alta calidad, basada en el respeto, la empatía y la profesionalidad. Mi objetivo es ofrecer un cuidado integral a mis pacientes, garantizando que cada una de ellas reciba la mejor atención posible. Premios y Reconocimientos: He recibido numerosos premios y reconocimientos por mi trabajo en ginecología y obstetricia. Participo activamente en Congresos nacionales e internacionales y he contribuido como autor y coautor en múltiples trabajos científicos. Para mí, tu salud y bienestar son la prioridad. Gracias por confiar en mí para tu cuidado ginecológico y obstétrico. Gracias y a sus órdenes, Dr. Roberto Ambriz López",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-ambriz-lopez/ginecologo/nuevo-leon#address-id=368148&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:41.808Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_ambriz_l_pez.webp"
+}

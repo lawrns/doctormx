@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Pineda Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 56,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2354cd/2354cd129541fa261dd42aba7b9f95bd_220_square.jpg",
+  "about": "- Egresado de la Universidad Nacional Autónoma de México como Médico General. - Especialista en Ginecología y Obstetricia por el Hospital Español. - Postgrado en Uroginecología por el Hospital Español. - Maestría en Docencia y Educación por la Universidad Interamericana del Desarrollo. - Diplomado de Cirugía Laparoscópica por la Universidad Anáhuac. - Vocero de la Industria Farmacéutica con más de 20 años de experiencia enfocado en salud femenina.",
+  "addresses": [
+    {
+      "full": "Av. Patriotismo 67, San Juan, Benito Juárez,"
+    },
+    {
+      "full": "Av. Patriotismo 67, San Juan, Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-pineda-sanchez/ginecologo/benito-juarez#address-id=130631&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:08.081Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_pineda_s_nchez.webp"
+}

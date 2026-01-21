@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ramón Emmanuel Villanueva Otero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a16003/a16003eaced367747a0bc15ff9879c73.jpg",
+  "about": "Especialista en ginecología y obstetricia Egresado del Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)",
+  "addresses": [
+    {
+      "full": "Avenida Paseo de Los Leones 8001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-emmanuel-villanueva-otero/ginecologo/nuevo-leon#address-id=471860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:58.302Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ram_n_emmanuel_villanueva_otero.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Victor Antonio Moreno Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nuevo Mexico 50,"
+    },
+    {
+      "full": "Calz. De Tlalpan 4502,"
+    },
+    {
+      "full": "Nuevo Mexico 50,"
+    },
+    {
+      "full": "Calz. De Tlalpan 4502,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-antonio-moreno-espinosa/ginecologo/amecameca",
+  "scrapedAt": "2026-01-21T03:13:07.406Z",
+  "localPhotoPath": null
+}

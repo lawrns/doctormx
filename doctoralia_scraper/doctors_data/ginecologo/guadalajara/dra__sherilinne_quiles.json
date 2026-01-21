@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sherilinne Quiles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/232f3b/232f3bd8faeb33ae3169d417c97cbf21_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sherilinne-quiles/ginecologo/guadalajara#address-id=438517&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:50.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sherilinne_quiles.webp"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Dr. José de Jesús Guzmán Llamas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 171,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bfc7a4f1/bfc7a4f1-30bb-452d-bafa-e34f158dde3f_small_square.jpg",
+  "about": "Buscas cita urgente por sangrado, dolor u otro, cita el mismo día. - Embarazos tempranos sangrado vaginal - Urgencias de todo tipo ginecológicas",
+  "addresses": [
+    {
+      "full": "Curazao 1284,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-guzman-llamas/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:40.056Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jos__de_jes_s_guzm_n_llamas.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Pamela Bremer Plancarte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37fdb5/37fdb5cbdce3bf07f8a8a0c92527c0ce_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro Medico Zambrano- Hellion Batallon de San Patricio 112 Piso 10 Consultorio 5 y 6,"
+    },
+    {
+      "full": "Centro Medico Zambrano- Hellion Batallon de San Patricio 112 Piso 10 Consultorio 5 y 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pamela-bremer-plancarte/ginecologo/san-pedro-garza-garcia#address-id=132655&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:24.987Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__pamela_bremer_plancarte.webp"
+}

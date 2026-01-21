@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Bolivar de Marco Santoyo Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 280,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/58402b/58402b084407bc7ef5b5a47906c6eee9_220_square.jpg",
+  "about": "Soy el Dr. Bolívar de Marco Santoyo Herrera, Ginecólogo Especialista en Reproducción Humana, Ciurgía Laparoscópica, Láser vaginal y Colposcopía. Brindo una Atención Integral, complementando la medicina tradicional/alopática con medicina regenerativa y funcional. Así cuento con un gran asrenal de herramientas para tratar y prevenir enfermedades. Cada paciente vive la enfermedad de una manera diferente, por eso presto toda mi atención para entender tus necesidades y alcanzar un diagnóstico certero, Los 3 principios básicos de mi práctica médica: Calidez Humana , Atención Personalizada e Inclusión (respeto y equidad de género). Ofrezco Medicina de Vanguardia, con: - Ultrasonido - (4D Y 5D, ver carita del bebé en tiempo real) - Colposcopio - (Resección de Condilomas, tratamiento de lesiónes premalignas en cérvix y vagina) - Láser Vaginal/Cervical - (Rejuvenecimiento Vaginal, Tensado Vaginal) - Morpheus V - (Tratamiento contra incontinencia urinaria, Blanqueamiento Vaginal)",
+  "addresses": [
+    {
+      "full": "Quebec 631,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $799"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $599"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bolivar-de-marco-santoyo-herrera/ginecologo/guadalajara#address-id=449502&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:55.221Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__bolivar_de_marco_santoyo_herrera.webp"
+}

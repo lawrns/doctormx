@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Hugo Salazar Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/249a8c78/249a8c78-69e5-4320-bd81-c4fe245dd613_small_square.jpg",
+  "about": "Hola, Soy el Dr. Hugo Salazar Ramírez. soy especialista en Ginecología y Obstetricia avalado por la Universidad Nacional Autónoma de México UNAM y soy un médico certificado por el Consejo Mexicano de ginecología y Obstetricia. Tengo una alta especialidad en endoscopia ginecológica; es decir, realizo cirugía mínimamente invasiva (laparoscopia e histeroscopia) la cual te ayudara a tener menos dolor postoperatorio y una mejor y más rápida recuperación después de tu cirugía.También cuento con una alta especialidad en infertilidad y reproducción humana y en conjunto con la cirugía mínimamente invasiva tenemos una gran expertis y realizo cirugía endouterina y preservadora de la fertilidad.por otro lado, también tratamos control de embarazo sano hasta cualquier complicación que pudieras presentar durante tu embarazo, parto, cesárea o durante el puerperio, contamos con diplomados en ultrasonido obstétrico y colposcopia y patología del tracto inferior y vemos todo lo relacionado a infecciones genitales, infecciones o lesiones asociadas al virus del papiloma humano VPH.Para mí es vital brindarte una valoración con calidad, excelencia, con enfoque humano y basada en los más altos indices de seguridad y de vanguardia en la actualidad por lo que en estos momentos me encuentro en el proceso de certificación internacional en cirugía robótica.Me apasiona en demasiado mi trabajo, además la práctica médica y quirúrgica, realizo diversas actividades académicas de las cuales actualmente soy profesor de Ginecología y Obstetricia de alumnos de la carrera de medicina de la Escuela Nacional de Medicina y Homeopatía del Instituto Politécnico Nacional IPN, así como también de medicos residentes de 4to años de la espacialidad de ginecología y Obstetricia de múltiples hospitales de la ciudad de México y del país en la materia de Cirugía Mínimamente Invasiva en Ginecología. Mi experiencia y mi trabajo me han permitido ser profesor de cursos y congresos nacionales e internacionales en la cirugía de mínima invasión. Así mismo nuestro desempeño académico nos ha hecho acreedores a premios de 1er, 2do y 3er lugar en los congresos internacionales de endoscopia ginecológica de los años 2023 y 2024 organizados por la FEMEG.Te brindare todo mi apoyo desde la primera atención y te acompañare a lo largo de todo tu proceso, diagnostico, manejo médico y/o quirúrgico y recuperaciónPuedes sentirte con toda la tranquilidad de que tu salud estará en manos expertas, en un médico comprometido con la calidad y seguridad de la atención y con un enfoque completamente humanista; para mí, ¡será un honor ser tu médico especialista de confianza!",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-salazar-ramirez/ginecologo/tlalnepantla-de-baz2",
+  "scrapedAt": "2026-01-21T02:40:33.118Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hugo_salazar_ram_rez.webp"
+}

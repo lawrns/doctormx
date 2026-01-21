@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Daniela Turcios Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 141,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5e7ea6/5e7ea65c50f7fe1c68a8b6899a9facbc_220_square.jpg",
+  "about": "Estoy a tus órdenes para diagnosticar, tratar y acompañarte en el proceso de cualquier tema de salud relacionado con la mujer, en cualquiera de sus etapas , cuento con las habilidades tanto clínicas como quirúrgicas para atenderte.",
+  "addresses": [
+    {
+      "full": "Avenida Félix Galván 101,"
+    },
+    {
+      "full": "Carr Nacional 6501, La Estanzuela, 64988 Monterrey, N.L.,"
+    },
+    {
+      "full": "Avenida Félix Galván 101,"
+    },
+    {
+      "full": "Carr Nacional 6501, La Estanzuela, 64988 Monterrey, N.L.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-turcios-salinas-2/ginecologo/san-nicolas-de-los-garza#address-id=426393&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:03.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__daniela_turcios_salinas.webp"
+}

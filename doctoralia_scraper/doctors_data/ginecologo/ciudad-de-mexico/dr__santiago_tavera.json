@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Santiago Tavera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9633e68e/9633e68e-a345-4c52-980e-ed5d917cfb88_small_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con enfoque y preparación en infertilidad, así como formación en cirugía laparoscópica e histeroscopía, técnicas que permiten diagnósticos y tratamientos más precisos y menos invasivos. Acompaño a parejas que desean lograr un embarazo, brindando una atención integral y personalizada durante el estudio y el tratamiento de la fertilidad. Mi objetivo es escucharlos, resolver sus dudas y que se sientan acompañados en cada paso del proceso. También ofrezco atención durante el embarazo, cuidando tanto la salud de la madre como la del bebé, con seguimiento cercano y profesional desde la etapa preconcepcional hasta el nacimiento.Además brindo consulta en ginecología general, enfocada en la prevención, diagnostico oportuno y el tratamiento de las principales condiciones ginecológicas.",
+  "addresses": [
+    {
+      "full": "Santa Margarita 108,"
+    },
+    {
+      "full": "Calle 21 145,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": "• Desde $40,000"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": "• Desde $35,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de osteoporosis",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": "• Desde $40,000"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": "• Desde $35,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de osteoporosis",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/santiago-tavera/ginecologo/benito-juarez#address-id=617233&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:15.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__santiago_tavera.webp"
+}

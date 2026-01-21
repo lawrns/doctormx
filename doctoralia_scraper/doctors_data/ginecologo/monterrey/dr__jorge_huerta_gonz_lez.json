@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Huerta González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5dc8e/f5dc8e42036f3e13f20f56f7992d7996_220_square.jpg",
+  "about": "Las consultas incluyen la valoracion por medio de Ultrasonografia o Ecosonografia. Para el Papanicolau , se recomiendo solo la noche previa de abstinencia sexual, que no se encuentre en su periodo menstrual,solo su aseo personal( no duchas vaginales).Se realiza ecosonograma y exploracion del seno mamario,para descartar algun problema a ese nivel. Para el Control del Embarazo(Prenatal), a parte del Historial Clinico, se realiza y se graba en DVD ecosonograma ,donde se valora su producto(s), valorandose su desarrollo y su crecimiento, haciendo énfasis en la prevencion de Enfermedad hipertensiva del embarazo(pre-eclampsia), asi como Diabetes gestacional.",
+  "addresses": [
+    {
+      "full": "Ave. Sertoma 205 (Consultorio 200 2do. Piso, Hospital San Lucas),"
+    },
+    {
+      "full": "Ave. Sertoma 205 (Consultorio 200 2do. Piso, Hospital San Lucas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-huerta-gonzalez/ginecologo/monterrey#address-id=117260&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:22.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jorge_huerta_gonz_lez.webp"
+}

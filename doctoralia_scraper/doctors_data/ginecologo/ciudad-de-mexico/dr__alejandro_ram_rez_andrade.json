@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Ramírez Andrade",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 395,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/393f8c/393f8cc58611154887ee53094db0735b_220_square.jpg",
+  "about": "MEDICO ESPECIALISTA EN LA ATENCION INTEGRAL DE LA MUJER. CON ALTA CALIDEZ HUMANA, COMPROMETIDO CON LA SALUD FEMENINA.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes 20, Hospital MediMAC ,CONSULTORIO NO. 34. Fraccionamiento Las Americas, Ecatepec.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-ramirez-andrade/ginecologo/ecatepec-de-morelos#address-id=380921&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:01.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alejandro_ram_rez_andrade.webp"
+}

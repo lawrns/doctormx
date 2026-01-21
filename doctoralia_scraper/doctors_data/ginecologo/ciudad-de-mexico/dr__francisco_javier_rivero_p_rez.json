@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Javier Rivero Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 280,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bda33/7bda337ae4f77a685f1bf8efd725b265_220_square.jpg",
+  "about": "MÉDICO CIRUJANO • UNIVERSIDAD AUTÓNOMA DEL ESTADO DE MÉXICO ESPECIALISTA EN GINECOLOGÍA Y OBSTETRICIA • UNIVERSIDAD AUTÓNOMA DEL ESTADO DE MÉXICO • HOSPITAL DE GINECOLOGÍA Y OBSTETRICIA DEL INSTITUTO MATERNO INFANTIL DEL ESTADO DE MÉXICO • CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA DIPLOMADO DE COLPOSCOPIA • FACULTAD MEXICANA DE MEDICINA, UNIVERSIDAD LA SALLE DIPLOMADO DE ULTRASONIDO EN GINECOLOGÍA Y OBSTETRICIA • FACULTAD MEXICANA DE MEDICINA, UNIVERSIDAD LA SALLE • ASOCIACIÓN MEXICANA DE ULTRASONIDO EN MEDICINA GANADOR DE LA PRESEA “IGNACIO MANUEL ALTAMIRANO BASILIO” VERSIÓN 2020 AL MÉRITO UNIVERSITARIO DIPLOMADO EN MENOPAUSIA • FACULTAD MEXICANA DE MEDICINA, UNIVERSIDAD LA SALLE DIPLOMADO EN GINECOLOGÍA ENDOCRINA • FACULTAD MEXICANA DE MEDICINA, UNIVERSIDAD LA SALLE",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 2,"
+    },
+    {
+      "full": "Pafnuncio Padilla 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-rivero-perez/ginecologo/naucalpan-de-juarez2#address-id=379653&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:25.236Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_javier_rivero_p_rez.webp"
+}

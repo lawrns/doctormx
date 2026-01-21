@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Everardo Gonzalez Avendaño",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0c7067/0c706791358757d48d254000f7b19987_220_square.jpg",
+  "about": "Soy el Dr. Everardo Gonzalez Avendaño, especialista en Ginecología Oncológica de Zapopan. Soy Médico Cirujano y Partero graduado de la Universidad Regional del Sureste en Oaxaca de Juárez, Oaxaca. Además, obtuve mi especialización en Ginecología y Obstetricia en la Universidad Autónoma de Sinaloa y realicé mi formación en Ginecología Oncológica en la Universidad de Guadalajara en el Centro Médico Nacional de Occidente en Guadalajara, Jalisco. Mi enfoque se centra en mujeres adultas con cáncer de mama y cáncer ginecológico, así como enfermedades ginecológicas benignas. Brindo una consulta detallada y empática, explicando los diagnósticos y tratamientos de manera clara y comprensible. Me enorgullece ser reconocido por mi buen trato humanitario y por proporcionar información detallada y completa. Mis pacientes pueden sentirse seguros y tranquilos al confiar en mi experiencia y atención. Agradezco la confianza que me brindan mis pacientes y estoy comprometido en brindarles la mejor atención posible.",
+  "addresses": [
+    {
+      "full": "Avenida General Eulogio Parra 2979,"
+    },
+    {
+      "full": "C. Cantera Piñón, San Francisco, 45430 Zapotlanejo, Jal.,"
+    },
+    {
+      "full": "C. Puerto San Juan 3469,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/everardo-gonzalez-avendano/ginecologo-oncologico-ginecologo/zapotlanejo#address-id=459404&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:51.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__everardo_gonzalez_avenda_o.webp"
+}

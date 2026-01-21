@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Sergio Freeman Rechy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a8bef/2a8befaad4b0c2f1f00a22142560f437_220_square.jpg",
+  "about": "Soy una persona entregada a mi trabajo, ejerzo mi profesión con amor y pasión por la medicina, con disciplina, respeto y compromiso hacia mis pacientes. Me comprometo a brindarte atención altamente especializada, con ética profesional, y calidad basada en la investigación y los conocimientos más actualizados.",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena,"
+    },
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• Desde $1,850"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• Desde $1,850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-freeman-rechy/ginecologo/zapopan#address-id=389394&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:18.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__sergio_freeman_rechy.webp"
+}

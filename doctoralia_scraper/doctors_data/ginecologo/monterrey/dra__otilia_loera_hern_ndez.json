@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Otilia Loera Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/02a479/02a479f756a443069c25210814ffa99a_220_square.jpg",
+  "about": "La Dra. Otilia Loera es especialista en Cirugía Ginecológica de Mínima Invasión, utilizando tecnología de punta en Laparoscopía, con el respaldo de un equipo multidisciplinario, cuyo objetivo primordial es la seguridad y satisfacción de sus pacientes. Cuidamos la salud de la mujer en las diferentes etapas de su vida, a través de una consulta personalizada, en instalaciones acogedoras y aparatos de primer nivel, creando un ambiente de confianza en la relación médico-paciente, ofreciendo un servicio médico profesional y de calidad. La Cirugía de Mínima Invasión es la opción para pacientes que temen realizarse una cirugía abierta. Sus beneficios son: menor sangrado, menor dolor post operatorio, tiempos de estancia intrahospitalaria y de recuperación más cortos. Cuidando la estética femenina con cicatrices pequeñas, apenas perceptibles. Tienes dudas? Agenda tu cita!",
+  "addresses": [
+    {
+      "full": "Torre de especialidades Médicas Hospital Ángeles 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/otilia-loera-hernandez/ginecologo/san-pedro-garza-garcia#address-id=325383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:06.446Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__otilia_loera_hern_ndez.webp"
+}

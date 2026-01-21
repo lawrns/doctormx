@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Molina",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d81985/d81985d3d89ce2244bc74ece7e27556c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida San Fernando, Tlalpan, Ciudad de Mèxico,"
+    },
+    {
+      "full": "Avenida San Fernando, Tlalpan, Ciudad de Mèxico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $70"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $70"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $70"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $70"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-molina/ginecologo/ciudad-de-mexico#address-id=403414&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:14.038Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__arturo_molina.webp"
+}

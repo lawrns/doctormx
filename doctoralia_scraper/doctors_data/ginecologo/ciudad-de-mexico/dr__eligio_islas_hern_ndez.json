@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eligio Islas Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/57277b/57277bf41348610110a37cb31d78b5f3_220_square.jpg",
+  "about": "Mi objetivo principal es brindar al paciente una consulta, diagnóstico, tratamiento y atención personalizada ante cualquier situación, manteniendo siempre los estándares de calidad humana. Fomentó la prevención oportuna de enfermedades en mis pacientes, a través de revisiones periódicas y seguimiento presencial y vía remota. Cuento con la especialización en infertilidad, realizó valoraciones médicas tanto femeninas como masculinas una vez que conozco la causa de la infertilidad, brindo alternativas personalizadas estas pueden ser; fecundación in vitro, reproducción asistida, inseminación artificial por mencionar algunas. En los casos en donde las pacientes tengan salpingoclasia realizo un procedimiento para que continúen con su vida reproductiva y con ello tengan la oportunidad de embarazarse. Estoy en constante integración y formación de equipos de trabajo médicos, siempre cuidando que brinden la calidad y especialización que requiere el paciente de acuerdo con su padecimiento, lo anterior me permite ofrecer servicios integrales a cada uno de mis pacientes para que encuentren todo lo que necesita en un solo lugar sin tener que desplazarse y/o buscar alternativas. Cuento con el respaldo de instalaciones equipadas con tecnología de punta, y servicios integrales como son: • Estudios de gabinete: ultrasonidos materno fetal, 4D, estructurales, entre otros. • Especializados: pruebas de bienestar fetal, pruebas genéticas para descartar síndromes, registro cardiotocográfico. • Clínicos: tomas de laboratorio. Para conocer más sobre mis servicios te invito a consulta la página Maxmedic Clinica de Salud Integral",
+  "addresses": [
+    {
+      "full": "Callao 693,Lindavista,Cuidad de Mexico, CDMX,Mexico,"
+    },
+    {
+      "full": "Callao 693,Lindavista,Cuidad de Mexico, CDMX,Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eligio-islas-hernandez-2/ginecologo/gustavo-a-madero#address-id=2825&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:12.558Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eligio_islas_hern_ndez.webp"
+}

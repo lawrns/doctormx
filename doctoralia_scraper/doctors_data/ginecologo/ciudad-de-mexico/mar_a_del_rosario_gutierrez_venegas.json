@@ -1,0 +1,25 @@
+{
+  "name": "María del Rosario Gutierrez Venegas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tlacotalpan, 59 Cons. 515, Torre Diamante,"
+    },
+    {
+      "full": "Calle Tlacotalpan, 59 Cons. 515, Torre Diamante,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rosario-gutierrez-venegas/ginecologo/cuauhtemoc#address-id=96786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:39.450Z",
+  "localPhotoPath": null
+}

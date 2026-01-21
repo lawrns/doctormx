@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Pablo Gabriel Gutiérrez Escoto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vialidad de la Barranca S/N Cons. 280,"
+    },
+    {
+      "full": "Eugenio Sue 355,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca S/N Cons. 280,"
+    },
+    {
+      "full": "Eugenio Sue 355,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pablo-gabriel-gutierrez-escoto-2/ginecologo/ciudad-de-mexico#address-id=339447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:50.957Z",
+  "localPhotoPath": null
+}

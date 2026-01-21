@@ -1,0 +1,66 @@
+{
+  "name": "Gema García Coeto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a621b/2a621b62b230b0dcbbe20b18eff656cf_220_square.jpg",
+  "about": "Soy Médico Cirujano con posgrado en la especialidad de Ginecología y Obstetricia nacida y formada en la bella ciudad de Puebla, con diplomado Colposcopia, socio activo del Colegio Médico de Colposcopia del estado de Puebla, el cual tuve el honor de presidir. Mi enfoque profesional hacia las enfermedades que aquejan a la mujer es de la forma más conservadora posible y de mínima invasión. Soy experta en atención del parto basado en un modelo de atención humanizado, donde la mujer es la protagonista de ese proceso, en el caso de una cesárea implementamos el método papá canguro que cuenta con múltiples beneficios; entre ellos crear vinculo entre padre y bebé. En mi consulta reciben un trato cálido, amable, empático sin dejar de lado el profesionalismo. ¡Con gusto estoy para atenderte!",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. 15 de mayo No. 15 Colonia del maestro federal, esquina con montessori,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gema-garcia-coeto/ginecologo/puebla#address-id=94423&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:26.990Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/gema_garc_a_coeto.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Velasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c3c8b215/c3c8b215-f7e6-4563-9b2d-eda72acc2b1d_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Jorge Velasco, ginecólogo obstetra, avalado por la Universidad de Monterrey, con Diplomado en Colposcopía y patología del tracto genital inferior y certificado por el Colegio Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Monterrey 243,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-velasco/ginecologo/cuauhtemoc2#address-id=578174&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:18.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jorge_velasco.webp"
+}

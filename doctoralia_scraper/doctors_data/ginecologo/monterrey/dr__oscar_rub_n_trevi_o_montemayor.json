@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Oscar Rubén Treviño Montemayor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 221,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3ccb1ae6/3ccb1ae6-2ce0-47c9-89f8-7174165a9ccd_small_square.jpg",
+  "about": "Soy el Dr. Oscar Rubén Treviño Montemayor, ginecólogo con subespecialidad en Medicina Materno Fetal, dedicado al cuidado integral de la salud de la mujer en todas las etapas de su vida. Mi pasión es acompañar a mis pacientes con atención personalizada, basada en la más avanzada evidencia médica y con un enfoque humano y empático. Cuento con amplia experiencia en el manejo de embarazos de bajo y alto riesgo, brindando un seguimiento especializado para garantizar el bienestar de la madre y el bebé en cada etapa de la gestación. Mi compromiso es ofrecer diagnósticos precisos, tratamientos efectivos y orientación profesional para que cada paciente tenga una experiencia segura y tranquila durante su embarazo y en su salud ginecológica en general. En mi consulta, encontrarás un espacio de confianza donde resolveremos todas tus dudas con un trato cercano y respetuoso. Mi objetivo es que cada mujer reciba la mejor atención médica en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Paseo de Los Insurgentes 903,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-ruben-trevino-montemayor/ginecologo/nuevo-leon#address-id=365292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:18.487Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__oscar_rub_n_trevi_o_montemayor.webp"
+}

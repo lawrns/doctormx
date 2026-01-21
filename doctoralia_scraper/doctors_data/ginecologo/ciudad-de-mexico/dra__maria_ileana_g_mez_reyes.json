@@ -1,0 +1,44 @@
+{
+  "name": "Dra. Maria Ileana Gómez Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9a7c9/f9a7c9d0cd9d2f17f637f58636eb2911_220_square.jpg",
+  "about": "Especialidad en Ginecología y obstetricia certificada por en Colegio Mexicano de Ginecología y Obstetricia. Egresada del Hospital de Ginecología y Obstetricia No. 23 Monterrey N.L con Diplomado en Cirugía Endoscópica Avanzada, diplomado en ultrasonografía, diplomado en colposcopia, diplomado en ginecología laser funcional. Mi finalidad es brindar a las mujeres una atención oportuna, detectar factores de riesgo y prevenir problemas de salud en las diferentes etapas de su vida.",
+  "addresses": [
+    {
+      "full": "Rio Bamba 639-525,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    },
+    {
+      "full": "Rio Bamba 639-525,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-ileana-gomez-reyes-2/ginecologo/tlalnepantla-de-baz2#address-id=461320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:47.652Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_ileana_g_mez_reyes.webp"
+}

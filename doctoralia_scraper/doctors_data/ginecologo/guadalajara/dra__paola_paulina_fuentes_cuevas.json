@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola Paulina Fuentes Cuevas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67d70f/67d70fb5ac17685baef0d4b6f03239b7_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Paola Paulina Fuentes Cuevas, especialista en Ginecología y Obstetricia, certificada por la Universidad de Guadalajara y por el Consejo Mexicano de Ginecología y Obstetricia. Me dedico a cuidar de la salud femenina en todas sus etapas, desde la adolescencia hasta la madurez, con un enfoque integral y humano. A lo largo de mi carrera, he adquirido una amplia experiencia en el diagnóstico, tratamiento y prevención de las afecciones ginecológicas, así como en el acompañamiento durante el embarazo, el parto y el postparto. Mi principal objetivo es brindarte un espacio de confianza y apoyo, donde puedas expresarte con libertad y recibir la mejor atención personalizada. Para mí, cada paciente es única, por lo que te ofrezco un enfoque cercano y adaptado a tus necesidades, siempre respetando tus inquietudes y decisiones. Aquí, encontrarás un ambiente profesional y cálido, donde tu salud y bienestar son mi prioridad. Estoy comprometida a ofrecerte información clara, orientarte sobre las mejores opciones y acompañarte en cada paso de tu proceso de salud ginecológica. Te invito a que trabajemos juntas para cuidar de ti y de tu bienestar. ¡Estoy aquí para ayudarte!",
+  "addresses": [
+    {
+      "full": "Turquesa 3289,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-paulina-fuentes-cuevas-2/ginecologo/chapala#address-id=547729&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:18.439Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__paola_paulina_fuentes_cuevas.webp"
+}

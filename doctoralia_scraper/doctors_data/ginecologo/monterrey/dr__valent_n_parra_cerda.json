@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Valentín Parra Cerda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48e06b/48e06bce1ae2930b4af9bcb16931b777_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "INCA PONIENTE,"
+    },
+    {
+      "full": "INCA PONIENTE,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $10,000"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": "• $10,000"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de prolapso uretral y carúncula uretral",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valentin-parra-cerda/ginecologo/guadalupe#address-id=132788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:26.664Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__valent_n_parra_cerda.webp"
+}

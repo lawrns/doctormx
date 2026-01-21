@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Carlos López Aboytes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f8025f/f8025fe9ad25212f7e45198a6f1d6ee5_220_square.jpg",
+  "about": "Residencia médica HOSPITAL GENERAL ISSSTE MONTERREY AVALADO POR EL CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA A.C.",
+  "addresses": [
+    {
+      "full": "CENTRO MÉDICO HOSPITARIA. AVENIDA NEXXUS. 104 CONSULTORIO 512,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "CENTRO MÉDICO HOSPITARIA. AVENIDA NEXXUS. 104 CONSULTORIO 512,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $799"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $9,500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-lopez-aboytes/ginecologo/general-escobedo#address-id=27071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:13.866Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_carlos_l_pez_aboytes.webp"
+}

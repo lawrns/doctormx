@@ -1,0 +1,44 @@
+{
+  "name": "Dr. Jose Sixto Aguilar Gamboa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c43c80/c43c806ba289dc8f0ecbf7bbbdc2c767_220_square.jpg",
+  "about": "Colaborador Hospital Boutique Riobamba",
+  "addresses": [
+    {
+      "full": "Av. Rio Magdalena 289,"
+    },
+    {
+      "full": "Rio Bamba 927,"
+    },
+    {
+      "full": "Av. Rio Magdalena 289,"
+    },
+    {
+      "full": "Rio Bamba 927,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-sixto-aguilar-gamboa/ginecologo/gustavo-a-madero#address-id=207618&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:03.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_sixto_aguilar_gamboa.webp"
+}

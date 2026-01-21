@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Juan Duran Robles",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Santa Rita 12 No. 1,"
+    },
+    {
+      "full": "Ave. Santa Rita 12 No. 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-juan-duran-robles-2/ginecologo/ciudad-de-mexico#address-id=42783&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:17:10.417Z",
+  "localPhotoPath": null
+}

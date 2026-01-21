@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Milagros Pérez Quintanilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d955d2/d955d2ca4ac87ce120f85b1592a6ff45_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernandez 154 -342 (Tlaxala Santa Fe- Consultorio 342),"
+    },
+    {
+      "full": "Carlos Graef Fernandez 154 -342 (Tlaxala Santa Fe- Consultorio 342),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/milagros-perez-quintanilla/ginecologo-ginecologo-oncologico/cuajimalpa-de-morelos#address-id=109453&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:13.185Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__milagros_p_rez_quintanilla.webp"
+}

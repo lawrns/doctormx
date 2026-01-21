@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Adame Pinacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 673,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3719f5/3719f5af39a3ec7d4a069389f6570dc2_220_square.jpg",
+  "about": "Soy Ginecoobstetra egresado del Instituto Nacional de Perinatología, capacitado para el tratamiento de embarazo normal y de Alto Riesgo. Tengo la Subespecialidad de Biologia de la Reproducción Humana con 17 años de experiencia en casos dificiles de Infertilidad. Tengo capacidad para tratamientos que van desde Estimulacion Ovarica, Inseminación intrauterina, Fertilización in Vitro, Donación de Ovulos asi como para el tratamiento de enfermedades que dificultad la fertilidad como el Sindrome de Ovario Poliquistico, Hiperprolactinemia (elevación anormal de la prolactina), el Hipotiroidismo (disminución de la función de la Glandula Tiroides). Tambien estoy ampliamente entrenado para cirugias para mejorar la fertilidad como la reseccion de miomas uterinos desde pequeños hasta muy grandes con conservación del útero (matriz), la eliminación de quistes ovaricos, tratamiento de endometriosis, y todo esto tanto por cirugia abierta como por laparoscopia (cirugia con camaras que permite una minima invasión y una rapida recuperación). Soy de los pocos expertos en México en correcciones mayores de deformidades uterinas (malformaciones müllerianas). En la parte no relacionada con infertilidad tengo experiencia en Cesareas de alto riesgo, histerectomias abiertas y laparoscopicas, cirugias ovaricas, manejo del embarazo ectópico, entre otras. Actualmente soy vocero de productos para el manejo de hemorragias graves en la cirugia de la mujer por parte de la empresa Baxter. Fui Jefe del Servicio de Perdida Gestacional Recurrente, unico departamento en America Latina donde se estudiaban los casos de las pacientes que tenian abortos de repetición, actualmente quizas uno de los últimos 5 expertos en el país en este problema. Fui Jefe del Servicio de Infertilidad durante varios años siendo no solo el coordinador administrativo del area, sino el encargado de la resolución de los caso complicados de este departamento.",
+  "addresses": [
+    {
+      "full": "Camino a Sta. Teresa 1055-S Torre Angeles Piso 7 Consultorio 730,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-adame-pinacho/ginecologo/magdalena-contreras2#address-id=51152&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:56.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_adame_pinacho.webp"
+}

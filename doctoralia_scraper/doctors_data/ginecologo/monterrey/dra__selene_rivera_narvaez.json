@@ -1,0 +1,98 @@
+{
+  "name": "Dra. Selene Rivera Narvaez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9cd8c/f9cd8cc95bf5ea32edc5b6942237a5ff_220_square.jpg",
+  "about": "Dra.Selene Rivera Narváez. Originaria de Monterrey NL. Egresada como Médico Cirujano de la facultad de medicina de la UANL (Universidad Autónoma de Nuevo León) .Realizo sus estudios de posgrado en la especilidad de Ginecología y Obstetricia en el Hospital Universitario Dr. José Eleuterio González de la UANL del cual se otorgo la jefatura del Residentes y premio al residente distinguido de la especialidad en curso. Posteriormente realizo la subespecialidad en Esterilidad y Reproducción asistida en el Centro Universitario de Medicina Reproductiva (UANL) , al mismo tiempo cursó el Diplomado de Menopausia avalado por la Universidad Autónoma de Nuevo León. Actualmente Socia - Fundadora de la Clínica de Menopausia, así como de IECH ( instituto para el estudio de la concepción humana) Torreon, Coahuila. Certificada por el Consejo Mexicano de Ginecología y Obstetricia ( COMEGO) y de Biología de la Reproducción.Miembro activo de la Asociación Mexicana de Ginecología y Obstetricia (FEMECOG) , Colegio de Ginecologia y Obstetricia de Torreón y de la cd. De Monterrey, y Miembro activo de la Sociedad de Menopausia del Noreste.",
+  "addresses": [
+    {
+      "full": "CENTRO MEDICO CONCHITA. 15 de Mayo No. 1822 pte. 3er. piso consultorio 5. Colonia Maria Luisa. Monterrey,N.L ,"
+    },
+    {
+      "full": "Hospital Greencare. Avenida Allende 139 Oriente. Centro.,"
+    },
+    {
+      "full": "Avda. Miguel Hidalgo y Costilla 2525 poniente,"
+    },
+    {
+      "full": "CENTRO MEDICO CONCHITA. 15 de Mayo No. 1822 pte. 3er. piso consultorio 5. Colonia Maria Luisa. Monterrey,N.L ,"
+    },
+    {
+      "full": "Hospital Greencare. Avenida Allende 139 Oriente. Centro.,"
+    },
+    {
+      "full": "Avda. Miguel Hidalgo y Costilla 2525 poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/selene-rivera-narvaez/ginecologo/monterrey#address-id=13028&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:23.866Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__selene_rivera_narvaez.webp"
+}

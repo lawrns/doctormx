@@ -1,0 +1,25 @@
+{
+  "name": "Melisa Alejandra Serrano Rodas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44aefe/44aefe4d8912dd5d905cf99b7e12b812_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Francisco Diaz Cobarrubi 72 7, Col. San Rafael, ,"
+    },
+    {
+      "full": "Francisco Diaz Cobarrubi 72 7, Col. San Rafael, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melisa-alejandra-serrano-rodas/ginecologo/cuauhtemoc#address-id=355785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:38.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/melisa_alejandra_serrano_rodas.webp"
+}

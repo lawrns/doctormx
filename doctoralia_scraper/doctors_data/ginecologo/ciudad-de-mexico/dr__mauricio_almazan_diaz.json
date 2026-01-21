@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Mauricio Almazan Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8adfc/d8adfcb67848dd923c50014c65d4a3c5_220_square.jpg",
+  "about": "AL COMPLETAR MI CARRERA DE MEDICINA, SIGUIENDO LOS VALORES DE MI ABUELO Y MI PADRE QUE FUERON EXCELENTES MEDICOS Y CIRUJANOS, ME PROPUSE EFECTUAR ESTUDIOS DE POSTGRADO EN EL AREA CON MAS UNIVERSIDADES DEL PLANETA Y ESCOGI NUEVA INGLATERRA Y DESPUES DE RIVALIDAR MIS ESTUDIOS EN LA UNIVERSIDAD DE MIAMI Y APROBAR LOS EXAMENES CORRESPONDIENTES, CURSE LA ESPECIALIDAD DE GINECOLOGIA , OBSTETRICIA Y LAPAROSCOPIA, DURANTE 5 AÑOS EN NEW YORK Y BOSTON,AL TERMINAR, PRESENTE LA CERTIFICACION O BOARD DE LAS ESPECIALIDADES CORRESPONDIENTES EN CHICAGO Y EN LA CIUDAD DE MEXICO Y DESDE ENTONCES CON LA MEJOR PREPARACION COMO CIRUJANO ESPECIALISTA EN LOS MEJORES HOSPITALES CON LA SATISFACCION DE EJERCER MI PROFESION Y ESPECIALIDAD CON LA MAS ALTA CALIDAD Y RESULTADOS.",
+  "addresses": [
+    {
+      "full": "Ave. de las Palmas 745 Consultorio 904, Colonia Lomas de Chapultepec,"
+    },
+    {
+      "full": "Ave. de las Palmas 745 Consultorio 904, Colonia Lomas de Chapultepec,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-almazan-diaz/ginecologo/miguel-hidalgo#address-id=91842&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:44.581Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mauricio_almazan_diaz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raymundo Rodriguez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6666b551/6666b551-5d49-4be7-8880-b9fb69350977_small_square.jpg",
+  "about": "Soy médico ginecólogo y obstetra con más de 29 años de experiencia, dedicando mi vida profesional a cuidar la salud de la mujer con un enfoque cercano, humano y basado en la confianza. Durante 29 años colaboré en IMSS, etapa en la que fortalecí mi formación clínica y quirúrgica en ginecología y obstetricia.Desde hace 28 años tengo el honor de formar parte del Hospital Materno Infantil Inguarán, donde continúo trabajando con compromiso, vocación y profundo respeto por mis pacientes. A lo largo de mi carrera me he mantenido en preparación continua, con estudios en colposcopía, infertilidad conyugal, uroginecología, cirugía abdominal y vaginal, y gestión hospitalaria mediante un diplomado en dirección de hospitales.Creo firmemente que la medicina debe ejercerse con el corazón, por eso mi labor se distingue por escuchar con atención, acompañar con empatía y atender con ética y profesionalismo. Mi prioridad siempre ha sido ofrecer a cada paciente seguridad, confianza y un trato cálido, asegurando que la experiencia médica sea también un espacio de apoyo y bienestar.Porque para mí, la experiencia y la calidez humana siempre van de la mano.",
+  "addresses": [
+    {
+      "full": "Calzada de las Bombas 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-rodriguez-guerrero/ginecologo/coyoacan#address-id=178952&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:48.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raymundo_rodriguez_guerrero.webp"
+}

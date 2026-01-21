@@ -1,0 +1,31 @@
+{
+  "name": "Rosa Luz Castro Barrios",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Chapultepec 104,"
+    },
+    {
+      "full": "Yucalpeten Mz. 16 Lt. 10,"
+    },
+    {
+      "full": "Av. Chapultepec 104,"
+    },
+    {
+      "full": "Yucalpeten Mz. 16 Lt. 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-luz-castro-barrios/ginecologo/ciudad-de-mexico#address-id=175632&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:45.013Z",
+  "localPhotoPath": null
+}

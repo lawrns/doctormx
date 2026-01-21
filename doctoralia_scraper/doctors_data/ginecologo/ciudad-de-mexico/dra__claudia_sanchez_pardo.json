@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Claudia Sanchez Pardo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96249e/96249ea3ca8bcd3f246d3d83f7cc993f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $600"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-sanchez-pardo/ginecologo/ciudad-de-mexico#address-id=445917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:34.385Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_sanchez_pardo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juan José Brambila Horta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/44b0c3f5/44b0c3f5-62b0-4a4e-a2d7-b48847247e5d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "La Paz No. Ext.2475 Col. Arcos Sur Cp 44140,"
+    },
+    {
+      "full": "La Paz No. Ext.2475 Col. Arcos Sur Cp 44140,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-brambila-horta-2/ginecologo/guadalajara#address-id=358999&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:09.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/juan_jos__brambila_horta.webp"
+}

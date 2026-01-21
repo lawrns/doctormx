@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mayra Covarrubias Lima",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/22604f/22604f60b11e4726a3a31948a52325d8_220_square.jpg",
+  "about": "Ginecologia y obstetricia",
+  "addresses": [
+    {
+      "full": "Calzada de los Jinetes 52,"
+    },
+    {
+      "full": "Calzada de los Jinetes 52,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-covarrubias-lima/ginecologo/tlalnepantla-de-baz2#address-id=620041&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:38.634Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mayra_covarrubias_lima.webp"
+}

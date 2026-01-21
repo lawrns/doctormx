@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Cinthya Salinas García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/53494d/53494d519e143715c1ea3be6b0224011_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Cinthya Salinas García, una ginecóloga comprometida con ofrecer cuidado integral y especializado a mujeres de todas las edades. Mi misión es proporcionar una atención médica de calidad, centrándome en mis pacientes. Estoy comprometida a proporcionar información clara y respuestas a todas las preguntas que puedan surgir durante las consultas, fomentando así la toma de decisiones informada en el cuidado de la salud de mis pacientes. Siendo tu aliada en el cuidado ginecológico, estoy aquí para asegurarme de que te sientas respaldada y confiada en cada paso del camino.",
+  "addresses": [
+    {
+      "full": "Av. Ricardo Flores Magón 210,"
+    },
+    {
+      "full": "Pafnuncio Padilla 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthya-salinas-garcia-2/ginecologo/naucalpan-de-juarez2#address-id=579521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:40.743Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cinthya_salinas_garc_a.webp"
+}

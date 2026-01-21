@@ -1,3 +1,12 @@
+import { 
+  Search, 
+  Calendar, 
+  MessageCircle, 
+  User, 
+  ClipboardList, 
+  Image as ImageIcon, 
+  Sparkles 
+} from 'lucide-react'
 import { requireRole } from '@/lib/auth'
 import { getPatientAppointments } from '@/lib/appointments'
 import { PatientDashboardContent, HealthTips, QuickStats } from '@/components/PatientDashboardContent'
@@ -74,13 +83,11 @@ export default async function PatientDashboard() {
           <Link href="/doctors">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-cyan-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Search className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Buscar Doctor</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Buscar Doctor</h3>
                   <p className="text-sm text-gray-500">Encuentra especialistas</p>
                 </div>
               </div>
@@ -90,13 +97,11 @@ export default async function PatientDashboard() {
           <Link href="/app/appointments">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Calendar className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mis Consultas</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Mis Consultas</h3>
                   <p className="text-sm text-gray-500">Ver historial</p>
                 </div>
               </div>
@@ -106,13 +111,11 @@ export default async function PatientDashboard() {
           <Link href="/app/chat">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <MessageCircle className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mensajes</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Mensajes</h3>
                   <p className="text-sm text-gray-500">Chatea con doctores</p>
                 </div>
               </div>
@@ -122,13 +125,11 @@ export default async function PatientDashboard() {
           <Link href="/app/profile">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <User className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Mi Perfil</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Mi Perfil</h3>
                   <p className="text-sm text-gray-500">Configuración</p>
                 </div>
               </div>
@@ -141,13 +142,11 @@ export default async function PatientDashboard() {
           <Link href="/app/followups">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-yellow-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <ClipboardList className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Seguimientos</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Seguimientos</h3>
                   <p className="text-sm text-gray-500">Ver mensajes de doctores</p>
                 </div>
               </div>
@@ -157,13 +156,11 @@ export default async function PatientDashboard() {
           <Link href="/app/upload-image">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <ImageIcon className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Subir Imagen</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Subir Imagen</h3>
                   <p className="text-sm text-gray-500">Análisis médico con IA</p>
                 </div>
               </div>
@@ -173,13 +170,11 @@ export default async function PatientDashboard() {
           <Link href="/app/premium">
             <Card className="group p-6 border-gray-200 hover:shadow-lg hover:border-gray-300 transition-all h-full">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                  </svg>
+                <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-7 h-7 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-500 transition-colors">Premium</h3>
+                  <h3 className="font-semibold text-gray-900 text-lg group-hover:text-primary-600 transition-colors">Premium</h3>
                   <p className="text-sm text-gray-500">Funciones IA avanzadas</p>
                 </div>
               </div>

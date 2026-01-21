@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Raul Alejandro Pena Pelayo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Valentin Gomez Farias 307,"
+    },
+    {
+      "full": "Calle Valentin Gomez Farias 307,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-alejandro-pena-pelayo/ginecologo/guadalajara#address-id=54646&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:03.715Z",
+  "localPhotoPath": null
+}

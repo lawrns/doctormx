@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Angélica Mireles Garcia",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 520,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ddd9f30a/ddd9f30a-091f-4676-9e26-d7576ab708b0_small_square.jpg",
+  "about": "Hola! Soy la Dra Angélica Mireles García, egrese como médico cirujano y partero de la Facultad de Medicina de la Universidad Autónoma de Nuevo León, realice la especialidad de Ginecología y Obstetricia en el Programa de Residencias Médicas del Hospital Universitario \"Dr. José Eleuterio González\" avalado por la UANL. . Realice un entrenamiento en colposcopía, Virus del Papiloma Humano y Patología vulvovaginal en el Hospital General de Saltillo Coahuila. . Cuento con amplia experiencia en el manejo de patologías ginecológicas, infecciones vaginales, verrugas genitales, así como enfermedades de transmisión sexual. Una de mis areas favoritas es la obstetricia, llevar el control de embarazo, asi como la atencion del nacimiento, parto respetado, cesarea respetada. Disfruto mucho mi trabajo, acompañar a la mujer en todas sus etapas. Buscar las mejores opciones de tratamiento, y que te sientas cómoda y en confianza durante tus visitas, es mi prioridad. Gracias por tu confianza.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-mireles-garcia/ginecologo/nuevo-leon#address-id=349296&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:00.794Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ang_lica_mireles_garcia.webp"
+}

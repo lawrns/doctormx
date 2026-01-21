@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Eleazar I. Pérez Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c31508/c31508388ca2563d7402894cb6c02716_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Eleazar I. Pérez Velázquez, especialista en Ginecología, Obstetricia y Medicina Reproductiva e Infertilidad. Me dedico a cuidar la salud integral de la mujer, acompañarte durante todo el embarazo y ofrecer soluciones avanzadas en fertilidad. Cuento con experiencia en ecografías 4D y 5D, utilizando tecnología de última generación para valorar el desarrollo de tu bebé con precisión y detalle. Gracias a mi constante actualización en técnicas y protocolos internacionales, brindo tratamientos seguros, precisos y con la mayor tasa de éxito posible. Mi compromiso es estar a tu lado desde el diagnóstico hasta la recuperación, asegurando que tu bienestar y tranquilidad estén siempre en manos expertas. ¡Será un placer ser tu especialista!",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    },
+    {
+      "full": "Lomas de San Miguel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eleazar-i-perez-velazquez/ginecologo/nuevo-leon#address-id=582916&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:47.346Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eleazar_i__p_rez_vel_zquez.webp"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Marye Jose Gil Gimon",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9aaf5e/9aaf5ee0e440ad81a46ea91a828b2724_220_square.jpg",
+  "about": "Soy la Dra. Marye Gil, y mi dedicación a la salud de las mujeres y mi compromiso con la atención integral han marcado el rumbo de mi carrera profesional. Mi objetivo es crear un entorno acogedor y seguro donde todas mis pacientes se sientan cómodas. Mi enfoque se fundamenta en valores como la empatía, el respeto y la confianza mutua. Cada paciente es única, y me esfuerzo por escuchar atentamente sus inquietudes y necesidades, libre de juicios.",
+  "addresses": [
+    {
+      "full": "Matanzas 1013, Residencial Zacatenco, Ciudad de México, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marye-jose-gil-gimon/ginecologo/gustavo-a-madero#address-id=468949&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:38.559Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marye_jose_gil_gimon.webp"
+}

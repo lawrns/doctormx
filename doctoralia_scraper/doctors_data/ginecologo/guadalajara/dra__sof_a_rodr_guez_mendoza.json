@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sofía Rodríguez Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/688028/688028a1cddbabb730c067a9e5a1f662_220_square.jpg",
+  "about": "Hola! Soy la Dra. Laura Sofía Rodríguez, especialista en Ginecología y Obstetricia con Subespecialidad en Biología de la Reproducción Humana, dedicada a tu salud y bienestar. Me formé en la Universidad de Guadalajara y completé mi especialidad en Ginecología y Obstetricia en el Centro Médico Nacional de Occidente IMSS. Mi subespecialidad en Biología de la Reproducción Humana la realicé en el Instituto Nacional de Perinatología en Ciudad de México, con la UNAM. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia y ofrezco un enfoque integral en el tratamiento de la infertilidad con tratamientos avanzados e integrales, acompañándote en el proceso hacia la maternidad. Así mismo, realizo exámenes preventivos asegurando una atención completa y personalizada. Mi consulta se basa principalmente en la confianza mutua con mis pacientes, ofreciendo atención personalizada, asegurando que sea un espacio seguro y cálido para ti.",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sofia-rodriguez-mendoza/ginecologo/zapopan#address-id=486365&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:27.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sof_a_rodr_guez_mendoza.webp"
+}

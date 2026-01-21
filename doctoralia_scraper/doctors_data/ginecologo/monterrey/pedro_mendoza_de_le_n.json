@@ -1,0 +1,25 @@
+{
+  "name": "Pedro Mendoza De León",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paricutin Sur 1340, Nuevo Repueblo,,"
+    },
+    {
+      "full": "Paricutin Sur 1340, Nuevo Repueblo,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-mendoza-de-leon/ginecologo/monterrey#address-id=140608&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:47:07.729Z",
+  "localPhotoPath": null
+}

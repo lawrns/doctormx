@@ -1,0 +1,73 @@
+{
+  "name": "Dr. Dante Noè Hernàndez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 103,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f0d4b/5f0d4bbf1ea9fa2eda958f7bb3a24630.jpg",
+  "about": "Medico Ginecólogo Obstetra certificado por el consejo Mexicano de Ginecología y Obstetricia, Estoy para ayudarte y servirte ofrezco un servicio comprometido con la excelencia medica de alta calidad y enfocado a alcanzar el máximo bienestar de una manera profesional empática, ética, con una excepcional calidad humana, me especializo en cirugía ginecológica de alta complejidad, cirugía de mínima invasión; problemas como miomatosis uterina, rehabilitación del piso pélvico, incontinencia urinaria, síndrome de ovario poliquístico, climaterio menopausia, control prenatal, atención de embarazo, virus del papiloma humano, enfermedades de transmisión sexual, infertilidad, colposcopia, papanicolaou. Sera un gusto atenderte",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    },
+    {
+      "full": "Star Medica Calle Querétaro 144 Roma Norte,"
+    },
+    {
+      "full": "88 PONIENTE 550,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dante-noe-hernandez-torres/ginecologo/puebla#address-id=396706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:55:03.853Z",
+  "localPhotoPath": null
+}

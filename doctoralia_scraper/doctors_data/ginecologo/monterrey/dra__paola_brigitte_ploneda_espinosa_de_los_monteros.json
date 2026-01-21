@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Paola Brigitte Ploneda Espinosa de los Monteros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b31dd247/b31dd247-2f75-49b6-9978-8b7927e3001a_small_square.jpg",
+  "about": "Soy ginecóloga obstetra con amplia experiencia en el cuidado integral de la mujer. Como speaker en congresos y eventos médicos, me mantengo a la vanguardia en los últimos avances en salud femenina. Mi enfoque combina profesionalismo, calidez y tecnología de punta para brindarte la mejor atención. Miles de mujeres han confiado en mí, y sus recomendaciones en Google hablan por sí solas. ¡Te invito a leerlas y a agendar tu consulta!",
+  "addresses": [
+    {
+      "full": "José Santos Chocano #540,"
+    },
+    {
+      "full": "José Santos Chocano #540,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "ECO Anatómico",
+      "price": ""
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-brigitte-ploneda-espinosa-de-los-monteros/ginecologo/san-nicolas-de-los-garza#address-id=563793&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:58.204Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__paola_brigitte_ploneda_espinosa_de_los_monteros.webp"
+}

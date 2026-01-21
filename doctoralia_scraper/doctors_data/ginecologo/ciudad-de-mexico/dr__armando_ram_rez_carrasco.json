@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Armando Ramírez Carrasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d29033/d29033548eeb123030befb009a4535f5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 2 piso 10, Roma Sur,"
+    },
+    {
+      "full": "Tuxpan 2 piso 10, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-ramirez-carrasco/ginecologo/cuauhtemoc2#address-id=101144&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:40.699Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__armando_ram_rez_carrasco.webp"
+}

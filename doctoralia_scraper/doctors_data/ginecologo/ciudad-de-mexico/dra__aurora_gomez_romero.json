@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aurora Gomez Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4cd19c/4cd19c5e2cde0703d8e5c61f46593406_220_square.jpg",
+  "about": "Soy la Dra Aurora Gómez Romero soy egresado del Hospital Angeles Lomas con subespecialidad en Urología Ginecológica del Instituto Nacional de Perinatología (INPer). Atiendo pacientes en busca de planificación familiar, control prenatal, control de menopausia, sangrado uterino anormal, planificación y atención del nacimiento de tu bebé por: parto ó cesárea. Nos enfocamos en padecimientos como: Incontinencia urinaria (salida de orina) que se presenta con esfuerzos, risa, tos o después de sensación imperiosa de acudir al baño, tratamiento de prolapso de órganos pélvicos (vejiga, útero que sale a través de vagina), dolor pélvico crónico, Hipertrofia de labios, síndrome urogenital de la menopausia",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aurora-gomez-romero/ginecologo/huixquilucan#address-id=485051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:12.230Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__aurora_gomez_romero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nelly Cristina Ac Pérez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7344ad/7344add8ab536f0a175b0fc1699a5359_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Viveros De Uman 28,"
+    },
+    {
+      "full": "Viveros De Uman 28,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nelly-cristina-ac-perez/ginecologo/tlalnepantla-de-baz#address-id=6971&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:25.696Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nelly_cristina_ac_p_rez.webp"
+}

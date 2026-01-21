@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mercedes del Pilar Alvarez Goris",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fa75e7/fa75e7cf825d63dacb31c642c3b79348_220_square.jpg",
+  "about": "Soy Dra. Mercedes Álvarez Goris: Especialista en Ginecología y Obstetricia | Educadora en Salud Femenina | Autora Mi trayectoria: Líder de opinión: Especialista certificada con una destacada trayectoria en ginecología, conocida por su liderazgo y colaboración con expertos en su campo. Consulta privada: Dirijo una consulta especializada en ginecología, donde ofrece un servicio integral que incluye consulta y exploración, con un enfoque en la utilización de tecnología avanzada como el expediente electrónico, pruebas moleculares para detección de VPH, ITS, pruebas genéticas para tamízaje de riesgo de cáncer de mama y cáncer de ovario. Educadora y Comunicadora: Activa en la educación continua de sus pacientes y colegas, la Dra. Álvarez Goris también contribuye con cápsulas de radio enfocadas en salud femenina y es profesora conferencista en Congresos y Simposios. Colaboraciones: Colabora estrechamente con un patólogo líder en estudios ginecológicos, asegurando la máxima calidad en los diagnósticos. Colaboro con una empresa líder en la detección de patologia fetal y cáncer mediante pruebas Genéticas Ha colaborado como asesora medica externa en medios en Radio para Heraldo Tv. Radio Fórmula, Tv Azteca y Multimedios. Experiencia Profesional: Hospital Ángeles del Pedregal, Ciudad de México (2016 - Presente): Consulta Privada en Ginecología y Obstetricia. Bayer de México, Ciudad de México (2017 - 2023): Desde Medical Lead Sr. hasta STA Scientific Publication Manager, enfocada en salud femenina. Subsecretaría de Integración y Desarrollo del Sector Salud (SSA): Coordinadora de la Integración y Desarrollo de las Guías de Práctica Clínica de Ginecología y Obstetricia (2009 - 2017). Publicaciones y Ponencias: Autora y coordinadora de múltiples guías de práctica clínica y artículos científicos en revistas de renombre. Autora de capítulos de libros sobre el campo de la medicina critica obstetrica y de salud femenina Ponente en congresos nacionales e internacionales, abordando temas de vanguardia en ginecología y obstetricia. Reconocida educadora en temas de salud femenina, con enfoque en el empoderamiento a través del conocimiento. Asociaciones Profesionales: Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Miembro activo de COMEGO, FLASOG y The American College of Obstetricians and Gynecologists (ACOG). Facultada ALSO para México Voluntariado: Durante su formación médica fue voluntaria de Cruz Roja Veracruz como paramédico Participación en jornadas médicas altruistas y de UNICEF México. Idiomas: Inglés Intermedio.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1050,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mercedes-del-pilar-alvarez-goris/ginecologo/magdalena-contreras2#address-id=88304&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:06.480Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mercedes_del_pilar_alvarez_goris.webp"
+}

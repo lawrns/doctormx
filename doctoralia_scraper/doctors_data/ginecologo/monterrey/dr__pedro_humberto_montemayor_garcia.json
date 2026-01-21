@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Pedro Humberto Montemayor Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 371,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d12801ae/d12801ae-d40a-490f-902a-668892acf8a8_small_square.jpg",
+  "about": "Hola, soy el Dr. Pedro Humberto Montemayor García, ginecólogo. Creo firmemente que la base de una buena atención es saber escuchar a cada paciente y ofrecer un trato verdaderamente humano. Mi experiencia me permite acompañarlas con seguridad, ya sea en el tipo de parto que elijan —natural, en agua, a domicilio, con o sin anestesia— o en procedimientos especializados como la colposcopia, donde busco resolver cada caso con claridad, eficiencia y total disposición para responder sus dudas. Estoy aquí para cuidarte y acompañarte.",
+  "addresses": [
+    {
+      "full": "REAL DE CATORCE 301 COLONIA MI,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-humberto-montemayor-garcia/ginecologo/nuevo-leon#address-id=64050&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:24.336Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__pedro_humberto_montemayor_garcia.webp"
+}

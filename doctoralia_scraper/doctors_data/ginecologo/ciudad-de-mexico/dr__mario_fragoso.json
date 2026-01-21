@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Mario Fragoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 439,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8a3c9d/8a3c9d1d502f84e9537b64d5bce09090.jpg",
+  "about": "El Dr. Mario Alberto Fragoso se ha hecho meritorio de reconocimientos a lo largo de su formación por mantener estándares de excelencia. Su especialidad en Ginecología y Obstetricia la realizó en la Institución Gineco-Obstétrica y de Perinatología, donde publicó el capítulo: \"Estilo de vida: antes, durante y después del cáncer de mama\" del libro \"Cáncer de mama: Actualidades y controversias\", autoría del Dr. Ernesto Sánchez Forgach, reconocido mastólogo a nivel internacional . El Dr. Fragoso busca actualizar sus conocimientos constantemente, Acudiendo a distintos cursos, congresos y diplomados como : - Curso Internacional: \"Hemorragia Obstétrica: Cero muertes maternas\" en 2018. - Congreso Latinoamericano de Ginecología y Obstetricia en 2017. - Presentación del Cartel \"Melanoma Vulvar Maligno\" en La Federación Latinoamericana de Sociedades de Obstetricia y Ginecología. - Diagnostico Prenatal Temprano (Colegio Mexicano de Ginecología y Obstetricia). - Manejo Integral del Sangrado Uterino Anormal. - Tamizaje de preeclampsia: Su manejo actual. - Manejo Práctico de la Patología Vulvo-Vaginal. - Embarazo de Alto Riesgo. - Diagnóstico y tratamiento de la Amenaza de Parto Pretérmino. Para el Dr. Fragoso la información y tranquilidad de sus pacientes es esencial, motivo por el cual mantiene comunicación constante con sus pacientes.",
+  "addresses": [
+    {
+      "full": "Frontera 74, Roma Nte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-fragoso/ginecologo/cuauhtemoc2#address-id=410738&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:21.642Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mario_fragoso.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Felipe Bornios Galeana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 464,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8df26853/8df26853-9f31-4eee-a965-c7840427c12d_small_square.jpg",
+  "about": "Hola Soy Luis Felipe Bornios, soy medico Ginecólogo y Obstetra, además tengo una Alta Especialidad en Colposcopía y Enfermedades del Tracto Genital Inferior, cuento con experiencia, ética medica y profesionalismo así como constante actualización medica. Me considero confiable, amable y con amplio conocimiento de mis especialidades. Soy medico Certificado por el Consejo Mexicano de Ginecología y Obstetricia Mi deber es ofrecerte una consulta de calidad, sin prisas, donde aclares todas tus dudas, te sientas en confianza, se te otorgue un diagnostico certero y un excelente tratamiento.",
+  "addresses": [
+    {
+      "full": "Calle 14 Sur num. 4302, Piso 1 Consultorio 180, Jardines de San Manuel, Puebla, Puebla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,199"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-felipe-bornios-galeana/ginecologo/puebla#address-id=347246&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:10.803Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__luis_felipe_bornios_galeana.webp"
+}

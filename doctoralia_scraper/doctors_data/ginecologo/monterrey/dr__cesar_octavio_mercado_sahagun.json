@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Cesar Octavio Mercado Sahagun",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 157,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/21e7b8c8/21e7b8c8-780a-4024-b48c-2b52a9e96f39_large.jpg",
+  "about": "Te acompañamos durante todo tu control prenatal, resolveremos tus dudas y te ayudaremos a la atención de un recién nacido sano",
+  "addresses": [
+    {
+      "full": "Avenida Prolongación Francisco I. Madero 6060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-octavio-mercado-sahagun-2/ginecologo/nuevo-leon#address-id=502417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:59.775Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__cesar_octavio_mercado_sahagun.webp"
+}

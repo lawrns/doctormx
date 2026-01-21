@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Angel Iván Lozano Tovar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/69f6ec/69f6ecc2bbac1c244f221edae666250b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CENTRO MEDICO DE LA MUJER HIDALGO CONSULTORIO 202 ,"
+    },
+    {
+      "full": "CENTRO MEDICO DE LA MUJER HIDALGO CONSULTORIO 202 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $650"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $800"
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-ivan-lozano-tovar/ginecologo/monterrey#address-id=100588&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:26.813Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__angel_iv_n_lozano_tovar.webp"
+}

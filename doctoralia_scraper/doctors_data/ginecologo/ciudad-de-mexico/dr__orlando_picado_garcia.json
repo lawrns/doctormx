@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Orlando Picado Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ad2163/ad2163c8ee2ca1cff240981b24e97a09_220_square.jpg",
+  "about": "MEDICO ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA, MEDICINA MATERNO FETAL Y CIRUGÍA ENDOSCOPICA GINECOLOGICA",
+  "addresses": [
+    {
+      "full": "Hospital San Angel Inn Univercidad, AV.Churubusco. Col.Xoco, Alc. Benito Juarez,"
+    },
+    {
+      "full": "Hospital San Angel Inn Univercidad, AV.Churubusco. Col.Xoco, Alc. Benito Juarez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/orlando-picado-garcia/ginecologo/ciudad-de-mexico#address-id=508255&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:02.791Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__orlando_picado_garcia.webp"
+}

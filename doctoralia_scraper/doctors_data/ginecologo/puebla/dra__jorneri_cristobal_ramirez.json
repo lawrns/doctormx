@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jorneri Cristobal Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 344,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb200e/bb200ed684223c7baa970132278d2f84.jpg",
+  "about": "Cursé la licenciatura de medicina general en la Universidad Popular Autónoma del Estado de Puebla Posteriormente realicé mi especialidad como GINECÓLOGA y OBSTETRA en el Hospital de la Mujer Puebla Complementé mis estudios acreditando con éxito el diplomado en colposcopía Me encuentro acreditada en contención de hemorragia obstetrica, suturas compresivas y ligadura de arterias hipogástricas. Al término de mi especialidad , he realizado varios diplomados de actualización continua , en entre ellos : 1. Virus de papiloma humano y patología del tracto genital inferior 2. Endocrinología ginecológica Siéntete libre de escribirme por cualquier duda o sugerencia ! Estoy para ayudar! Bienvenidas (os)!",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorneri-cristobal-ramirez/ginecologo/puebla#address-id=422447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:33.725Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__jorneri_cristobal_ramirez.webp"
+}

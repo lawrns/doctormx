@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Carlos Gordillo González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/96137bfe/96137bfe-ef1e-40e1-8980-8e2de36dcd80_small_square.jpg",
+  "about": "Soy el Dr. Carlos Gordillo González, Especialista en Ginecología y Obstetricia. Mis estudios los realicé en instituciones de renombre y prestigio en la ciudad de México; avalados por la Facultad de Medicina, de la Universidad Nacional Autónoma de México. Mi enfoque profesional se basa en brindar una atención personalizada, ética y de calidad a mis pacientes. Actualmente ofrezco tratamientos ginecológicos-obstétricos de la más alta calidad. Considero una de las mayores satisfacciones en mi vida poder mejor la calidad de vida de mis pacientes. Será un gusto poder atenderte.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "P.º Opera 9-Local 109, Lomas de Angelópolis, Sonata, 72830 San Andrés Cholula, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-gordillo-gonzalez/ginecologo/puebla#address-id=543007&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:44.983Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_gordillo_gonz_lez.webp"
+}

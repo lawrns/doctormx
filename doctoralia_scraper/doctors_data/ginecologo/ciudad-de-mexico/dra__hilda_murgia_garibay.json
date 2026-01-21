@@ -1,0 +1,36 @@
+{
+  "name": "Dra. Hilda Murgia Garibay",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7ca4a6/7ca4a6418250bee9e6a6063911d2e8d3_220_square.jpg",
+  "about": "Colaborador en Clinica de Diagnostico Lindavista",
+  "addresses": [
+    {
+      "full": "Ote. 91 3009,"
+    },
+    {
+      "full": "Calle Riobamba # 752,"
+    },
+    {
+      "full": "Ote. 91 3009,"
+    },
+    {
+      "full": "Calle Riobamba # 752,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-murgia-garibay/ginecologo/ciudad-de-mexico#address-id=220888&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:52.198Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__hilda_murgia_garibay.webp"
+}

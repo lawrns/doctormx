@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cinthia Maciel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa1a03/aa1a03f162f7e837880d756285f4f91f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cto Misioneros 5,"
+    },
+    {
+      "full": "Cto Misioneros 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-maciel/ginecologo/naucalpan-de-juarez2#address-id=422298&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:21.152Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cinthia_maciel.webp"
+}

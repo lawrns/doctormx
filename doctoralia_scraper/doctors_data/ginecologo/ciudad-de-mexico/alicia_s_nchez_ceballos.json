@@ -1,0 +1,46 @@
+{
+  "name": "Alicia Sánchez Ceballos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4addd/a4addddadb2367c32563c1823d287c66_220_square.jpg",
+  "about": "\"Todo en el mundo comenzó con un SÍ. Una molécula dijo SÍ a otra molécula y nació la vida\" Clarice Lispector.",
+  "addresses": [
+    {
+      "full": "Lago Zurich 219,"
+    },
+    {
+      "full": "Lago Zurich 219,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-sanchez-ceballos/ginecologo/cuauhtemoc2#address-id=363035&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:02.522Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/alicia_s_nchez_ceballos.webp"
+}

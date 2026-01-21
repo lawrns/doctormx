@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Salcedo González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 221,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/42a24b0d/42a24b0d-455b-474a-8255-6fa26e332362_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Ale Salcedo Gineco-obstetra con Subespecialidad en Urología Ginecológica y Piso Pélvico. Realicé mis estudios de Médico Cirujano y la Especialidad de Ginecología y Obstetricia en el Tecnológico de Monterrey en Monterrey, Nuevo León. Posteriormente hice la subespecialidad en Urología Ginecológica y Cirugía Reconstructiva de Piso Pélvico en el Instituto Nacional de Perinatología en la Ciudad de México. Estoy certificada en entrenamiento físico prenatal y postnatal, así como en cirugía estética y láser vaginal. Me pongo a tu disposición para que juntas logremos un estado de salud óptimo que te permita disfrutar al máximo y con la mayor calidad tu día a día.",
+  "addresses": [
+    {
+      "full": "Avenida Batallon de San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Blanqueamiento genital",
+      "price": "• Desde $11,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Rehabilitación de piso pélvico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-salcedo-gonzalez/ginecologo/san-pedro-garza-garcia#address-id=444196&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:41.053Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alejandra_salcedo_gonz_lez.webp"
+}

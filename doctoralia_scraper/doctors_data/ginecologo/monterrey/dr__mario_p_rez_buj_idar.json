@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mario Pérez Bujáidar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bc2f86/bc2f8626eb05e50ffaf62375555decb0_220_square.jpg",
+  "about": "Egresado de la Universidad de Monterrey, con especialidad en Ginecología y Obstetricia. Con la principal motivación de tratar a la mujer el embarazo, así como en todas las etapas de su vida desde la pubertad hasta la menopausia. Mi interés genuino es otorgar el mejor servicio médico con un trato digno y empático.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 1910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-perez-bujaidar/ginecologo/nuevo-leon#address-id=441202&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:00.630Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mario_p_rez_buj_idar.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Vanessa Fernández Garcini",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 265,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3be2b4/3be2b47c3f33410cf6c0534b8ce0c6cc_220_square.jpg",
+  "about": "Te acompaño a vivir cada etapa de tu vida de una manera consciente, feliz y extraordinaria. Mi objetivo es ayudarte a entender tu cuerpo, tus hormonas y tus ciclos, para que puedas disfrutar al máximo la maravilla que es ser mujer.Creo firmemente que toda mujer merece una atención personalizada y profunda. Por ello, en cada consulta realizo una historia clínica completa, una revisión detallada y un análisis enfocado en tu etapa de vida: adolescencia, edad fértil, transición al climaterio, menopausia y postmenopausia.Soy especialista en Gineco - Endocrino , Medicina Funcional, Menopausia y Climaterio.Mi compromiso es que cada mujer viva con salud, vitalidad y calidad de vida, sin importar la etapa en la que se encuentre.Trabajo desde un enfoque integral, combinando ciencia médica, salud hormonal avanzada, medicina funcional, nutrición, estilo de vida y bienestar emocional para brindarte una experiencia clínica cálida, humana y transformadora. **** Si no encuentras un espacio disponible para agendar****Mi agenda suele estar solicitada debido a la profundidad y calidad de mis consultas.Si no ves un horario cercano disponible: Envíame un mensaje directo por Doctoralia o al Whats App y con gusto buscaremos un espacio anticipado o una cancelación para atenderte lo antes posible.",
+  "addresses": [
+    {
+      "full": "Avenida Xotepingo 48,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $3,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vanessa-fernandez-garcini/ginecologo/coyoacan#address-id=103790&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:45.546Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vanessa_fern_ndez_garcini.webp"
+}

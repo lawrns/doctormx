@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Patricia Mendoza Blas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0bd099/0bd099d604b2bff0fc779096806e9cbc_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    },
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-mendoza-blas/ginecologo/coyoacan#address-id=11854&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:59.293Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__patricia_mendoza_blas.webp"
+}

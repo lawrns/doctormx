@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jair A. Zavala Gallegos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/187b3da5/187b3da5-7981-4404-874a-3a41818a4b02_small_square.jpg",
+  "about": "Yo, el Dr. Jair A. Zavala Gallegos soy Ginecólogo. Especialista en: - Colposcopia - Ultrasonido - Ginecología y Obstetricia - Obstetricia La salud sexual y reproductiva es una prioridad, por lo que ayudarte a encontrar un bienestar físico y sexual, independientemente de la etapa en que te encuentres de tu vida, es parte de mi trabajo y mi compromiso. Me aseguro de que tengas una valoración inicial completa, con un trato humano y empático, sobre todo aclarando cualquier duda que exista en el camino. Te espero ¡ Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Avenida Sauzales 222,"
+    },
+    {
+      "full": "Alfredo del Mazo 1255,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita ginecológica",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita ginecológica",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jair-a-zavala-gallegos/ginecologo/valle-de-chalco-solidaridad#address-id=459734&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:36.169Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jair_a__zavala_gallegos.webp"
+}

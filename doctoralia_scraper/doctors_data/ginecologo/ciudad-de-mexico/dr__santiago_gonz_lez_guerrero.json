@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Santiago González Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/228ba2/228ba2108abeba883de6b4c6c0efd886_220_square.jpg",
+  "about": "Soy el Dr. Santiago González Guerrero, ginecólogo especializado en cirugía laparoscópica, comprometido con mejorar la salud y el bienestar de mis pacientes a través de un enfoque moderno, humano y basado en la evidencia científica. Mi pasión es ofrecer tratamientos precisos y efectivos, utilizando técnicas mínimamente invasivas que garantizan menos dolor, cicatrices más pequeñas y una recuperación más rápida.Me formé como médico en la Universidad Autónoma de Guadalajara y realicé mi especialidad en Ginecología y Obstetricia en la Universidad Autónoma del Estado de México. Con más de una década de experiencia en el campo de la medicina y cinco años enfocados en procedimientos laparoscópicos avanzados, me especializo en el diagnóstico y tratamiento de condiciones como endometriosis, miomas uterinos, quistes ováricos y otros trastornos ginecológicos.En mi consulta, priorizo la confianza, la empatía y la comunicación clara. Mi objetivo es que te sientas escuchada, informada y segura al tomar decisiones sobre tu salud. Ya sea que necesites una consulta preventiva, un diagnóstico detallado o un procedimiento quirúrgico especializado, estoy aquí para acompañarte con profesionalismo y dedicación.¡Agenda tu cita hoy y trabajemos juntos por tu salud y bienestar!",
+  "addresses": [
+    {
+      "full": "Avenida Lomas Verdes 825,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $1,250"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/santiago-gonzalez-guerrero/ginecologo/naucalpan-de-juarez2#address-id=350698&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:01.346Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__santiago_gonz_lez_guerrero.webp"
+}

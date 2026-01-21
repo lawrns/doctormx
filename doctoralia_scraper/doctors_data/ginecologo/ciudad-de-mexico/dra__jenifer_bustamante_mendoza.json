@@ -1,0 +1,63 @@
+{
+  "name": "Dra. Jenifer Bustamante Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1180,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/701d32/701d32021fa940c101c3fb469677e5e6_220_square.jpg",
+  "about": "Soy la Dra. Jenifer Bustamante, tengo amplia experiencia en el campo de Ginecología y Obstetricia, así como en Reproducción Asistida. En tu primera cita exploraremos los aspectos importantes de tu historia clínica, realizaremos ultrasonido para evualuar tu útero y ovarios, además de exploración mamaria, recibirás un diagnóstico y una amplia explicación de tu padecimiento, además de un tratamiento individualizado. CALIDEZ Y CONFIANZA DE MUJER A MUJER.",
+  "addresses": [
+    {
+      "full": "Calz. de la Viga 1174, El triunfo, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jenifer-bustamante-mendoza/ginecologo/iztapalapa#address-id=94934&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:23.333Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jenifer_bustamante_mendoza.webp"
+}

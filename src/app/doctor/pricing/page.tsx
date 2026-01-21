@@ -111,7 +111,7 @@ export default function PricingPage() {
         try {
             const { data: { user } } = await supabase.auth.getUser()
             if (!user) {
-                router.push('/auth/login')
+                setSubscription({ hasSubscription: false, isActive: false, subscription: null })
                 return
             }
 

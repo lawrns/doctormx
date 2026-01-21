@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Gerardo Domínguez Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a69bb/6a69bbdd5422fb4b0b0a26f04fe8a90d.jpg",
+  "about": "Me gusta poder ayudar a pacientes que no logran encontrar respuesta adecuada a su padecimiento o no están del todo convencidas con su tratamiento. Trato de llevar un trato cercano con ellas de modo que encuentren alguien en quien puedan confiar.",
+  "addresses": [
+    {
+      "full": "Privada 9c sur 4108.1ra secc Gabriel Pastor,"
+    },
+    {
+      "full": "Madero Norte 973,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-dominguez-lozano/ginecologo/veracruz",
+  "scrapedAt": "2026-01-21T03:53:49.524Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gerardo_dom_nguez_lozano.webp"
+}

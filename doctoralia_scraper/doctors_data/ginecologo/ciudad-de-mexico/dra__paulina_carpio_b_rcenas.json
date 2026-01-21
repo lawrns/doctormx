@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paulina Carpio Bárcenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a80447/a8044799435b6e179334352fdca94113.jpg",
+  "about": "Soy Médico cirujano, con especialidad en Ginecología y Obstetricia, egresada de la UNAM y certificada por el Consejo mexicano de Ginecología y Obstetricia (COMEGO). Me enfoco en atender los padecimientos de la mujer tanto ginecológicos como obstétricos de manera integral, con bases científicas y actualizadas, dentro de un ambiente respetuoso y cálido, siempre resolviendo todas sus dudas y manteniendo comunicación constante con mis pacientes para su mayor tranquilidad.",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-carpio-barcenas/ginecologo/benito-juarez#address-id=509141&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:13.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paulina_carpio_b_rcenas.webp"
+}

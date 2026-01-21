@@ -1,0 +1,31 @@
+{
+  "name": "Iram Barrera Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Algarrobo 5,"
+    },
+    {
+      "full": "Esteban Alat. 3053,"
+    },
+    {
+      "full": "Algarrobo 5,"
+    },
+    {
+      "full": "Esteban Alat. 3053,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iram-barrera-rodriguez/ginecologo/iztapalapa#address-id=219620&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:06.394Z",
+  "localPhotoPath": null
+}

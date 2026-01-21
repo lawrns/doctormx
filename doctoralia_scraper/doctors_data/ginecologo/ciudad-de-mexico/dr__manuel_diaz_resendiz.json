@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Manuel Diaz Resendiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bde937/bde93781690b04ec23f9beb24e2370fd_220_square.jpg",
+  "about": "Soy el Dr. Manuel Diaz Resendiz , gInecologo- colposcopista con 40 años de experiencia atiendo a pacientes con cualquier patología ginecólogo , especialmente patología relacionada con virus del papiloma y control de embarazo.",
+  "addresses": [
+    {
+      "full": "Manuel E. Izaguirre 2 Cons. 203 Ciudad Satelite,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 2 Cons. 203 Ciudad Satelite,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-diaz-resendiz/ginecologo/naucalpan-de-juarez2#address-id=196660&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:00.603Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_diaz_resendiz.webp"
+}

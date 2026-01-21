@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jimena Sakar Almirante",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4c83f137/4c83f137-fb3c-4d4e-baa0-da8906a68f17_small_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia, así como en Biología de la Reproducción Humana. Desde el 2010 me encuentro dando consulta de manera privada y he estado trabajando en distintas clínicas de reproducción, así como, en sector salud. Realizo cirugía de mínima invasión ( Histeroscopia y laparoscopia) y en mi consulta atiendo anticoncepción, problemas hormonales como Síndrome de ovarios poliquísticos, hipotiroidismo, y transición de la menopausia, ofreciéndoles los últimos tratamientos para su tratamiento. Endometriosis, control anual, control del embarazo, cirugía ginecológica y todo lo relacionado a infertilidad abarcando desde técnicas de baja complejidad hasta técnicas de reproducción asistida.",
+  "addresses": [
+    {
+      "full": "Boulevard Magnocentro 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jimena-sakar-almirante/ginecologo/naucalpan-de-juarez2#address-id=27784&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:22.281Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jimena_sakar_almirante.webp"
+}

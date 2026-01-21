@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Fabiola Brito Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/47cde1/47cde1a71648e720a550fa78aac25ea4_220_square.jpg",
+  "about": "Hola! soy Fabiola ginecóloga y obstetra con especialidad en reproducción asistida, infertilidad y cirugía de mínima invasión (laparoscopia e histeroscopia) Existen cirugías de mínima invasión que preservan la fertilidad y tienen una recuperación más rápida entre otros beneficios, que la cirugía abierta. Acude a valoración y conoce estas posibilidades",
+  "addresses": [
+    {
+      "full": "Zacapoaxtla, San Felipe de Jesús,"
+    },
+    {
+      "full": "Calle Nueva York 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-brito-sandoval/ginecologo/benito-juarez#address-id=335158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:05.598Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__fabiola_brito_sandoval.webp"
+}

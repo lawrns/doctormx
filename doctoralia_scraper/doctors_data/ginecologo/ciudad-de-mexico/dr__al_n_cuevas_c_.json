@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Alán Cuevas C.",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e6ef3e35/e6ef3e35-17ba-4961-8489-588bc2e1f1b7_small_square.jpg",
+  "about": "¡Hola! soy el Dr. Alán Cuevas C., médico Especialista en Ginecología y Obstetricia con Subespecialidad en Biología de la Reproducción Humana y Uro-Andrología Reproductiva (Infertilidad Masculina).Mi prioridad es que cada paciente se sienta escuchada, comprendida y acompañada en cada etapa de su salud ginecológica. En mi consulta, cada mujer es atendida con el tiempo, la paciencia y la calidez que merece. Me enfoco en ofrecer un servicio integral, resolviendo dudas con claridad y construyendo una relación médico-paciente basada en el respeto y la empatía.Será un gusto acompañarte y ayudarte a cuidar lo más valioso: tu bienestar.",
+  "addresses": [
+    {
+      "full": "Fernando Quiroz 522,"
+    },
+    {
+      "full": "Avenida Revolución 1225, Los Alpes, Álvaro Obregón, Ciudad de Mexico,,"
+    },
+    {
+      "full": "Fernando Quiroz 522,"
+    },
+    {
+      "full": "Avenida Revolución 1225, Los Alpes, Álvaro Obregón, Ciudad de Mexico,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-cuevas-c/ginecologo/ciudad-de-mexico#address-id=566830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:52.324Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__al_n_cuevas_c_.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Lourdes Aguilar Garay",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel Acuña 2844,"
+    },
+    {
+      "full": "Manuel Acuña 2844,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lourdes-aguilar-garay/ginecologo/guadalajara#address-id=63627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:26.555Z",
+  "localPhotoPath": null
+}

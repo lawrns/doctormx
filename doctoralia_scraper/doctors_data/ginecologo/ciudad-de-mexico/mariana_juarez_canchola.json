@@ -1,0 +1,25 @@
+{
+  "name": "Mariana Juarez Canchola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44aefe/44aefe4d8912dd5d905cf99b7e12b812_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Federico T. De La Chica,"
+    },
+    {
+      "full": "Federico T. De La Chica,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-juarez-canchola/ginecologo/naucalpan-de-juarez#address-id=125607&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:16:03.656Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/mariana_juarez_canchola.webp"
+}

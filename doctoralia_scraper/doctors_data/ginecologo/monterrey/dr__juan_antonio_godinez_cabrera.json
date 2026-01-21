@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Juan Antonio Godinez Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 504,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3c79a3f7/3c79a3f7-a6df-4011-8c87-66a9a59ed9aa_small_square.jpg",
+  "about": "Hola, mi nombre es Juan Antonio, lo más importante para mí siempre serán mis pacientes, cada caso es único, por lo que la atención será personalizada, con trato humano y ético, buscar todo lo posible que siempre te sientas cómoda, escuchando con profundidad tus molestias, explicándote hasta el último detalle para que no quede duda alguna … siempre ofreciéndote la información y tratamientos más actualizados, acompañado con los instrumentos y aparatos de última generación, sumada a la experiencia dada a través de los cientos de pacientes que me han dado la oportunidad y confianza, nos permitirán tener un mejor pronóstico en el manejo de tu padecimiento o embarazo. Entre cada consulta, se desinfecta con sales cuaternarias y alcohol todas las superficies, cama de exploración y ultrasonido. Se utiliza sábanas y batas desechables las cuales se solicita romper y tirar en la basura. Usamos mascarillas N95 sin válvula para mayor seguridad. Disponible alcohol en gel en todas las secciones. Se respeta y supervisa la sana distancia. Se cuenta con sala de espera independiente para mayor tranquilidad.",
+  "addresses": [
+    {
+      "full": "AV. CONCORDIA 526, BOSQUE REAL I APODACA,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-godinez-cabrera/ginecologo/nuevo-leon#address-id=411318&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:53.257Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_antonio_godinez_cabrera.webp"
+}

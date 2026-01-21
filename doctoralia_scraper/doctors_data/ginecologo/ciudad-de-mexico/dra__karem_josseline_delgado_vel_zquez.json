@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karem Josseline Delgado Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 111,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5262dd/5262dded1b4b9e7e6ab38a9da17282a2_220_square.jpg",
+  "about": "¡Hola! Soy la Dra Karem Delgado Velázquez. Especialista en ginecología y obstetricia. Mi prioridad es darte una atención de calidad e integral para que puedas disfrutar una vida plena. Cuidando de tu salud en cada etapa de la vida.",
+  "addresses": [
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz 280 Consultorio 715,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz 280 Consultorio 715,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karem-josseline-delgado-velazquez/ginecologo/tlalnepantla-de-baz#address-id=531171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:05.727Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karem_josseline_delgado_vel_zquez.webp"
+}

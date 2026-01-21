@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Fatima Maria Guzman Guevara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a299fa/a299fad9ccc87918079cb59e072b87e7_220_square.jpg",
+  "about": "Soy médico cirujano y partera graduada de la Universidad de Guadalajara en 2007. Ginecóloga y obstetra egresada del Centro Médico Nacional de Occidente en 2012. Certificada por el Consejo Mexicano de Ginecología y Obstetricia y miembro activo del Colegio de gineco-obstetras del estado de Jalisco. Proveedor certificado de parto en agua por Waterbirth International, experta en la atención del parto humanizado desde 2012.",
+  "addresses": [
+    {
+      "full": "A. De Los Maestros 1838, 44260 ,"
+    },
+    {
+      "full": "Pedro Antonio Buzeta 970,"
+    },
+    {
+      "full": "A. De Los Maestros 1838, 44260 ,"
+    },
+    {
+      "full": "Pedro Antonio Buzeta 970,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fatima-maria-guzman-guevara/ginecologo/guadalajara#address-id=392999&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:02.589Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__fatima_maria_guzman_guevara.webp"
+}

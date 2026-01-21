@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Militza Alcantara Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Una profesional comprometida con el bienestar de sus pacientes. Especialista en atención de embarazo de bajo y alto riesgo, parto humanizado, pinzamiento tardio del cordon, y apego inmediato. Por que la forma en la que inicia la vida determinara por completo el desarrollo de este nuevo ser. Atención de las patologias de la mujer a lo largo de la vida desde la adolescencia hasta el climaterio.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/militza-alcantara-rivera/ginecologo/nuevo-leon#address-id=23906&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:41.653Z",
+  "localPhotoPath": null
+}

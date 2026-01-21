@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Patricia Paola López Peláez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cb2f1/9cb2f10762b6fd6e2aecc534a5cf6006_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Patricia López Peláez, soy Ginecóloga y Obstetra, realicé esta especialidad en el Instituto Nacional de Perinatología, un lugar donde el Embarazo de Alto Riesgo es el pan de cada día y se resuelven casos interesantes y muy gratificantes y cuento con más de 6 años de experiencia como especialista en mi campo. Durante esta formación decidí realizar un entrenamiento en Cirugía de Mínima invasión y después una sub especialidad en Urología Ginecológica, que busca atender problemas como prolapso e incontinencia urinaria, problemas que habitualmente nos dicen que son \"normales\" o \"esperados\" o \"pequeñas molestias\" o \"sacrificios\" con los cuales se puede vivir. Mi experiencia me permite ayudar a mis pacientes con diagnósticos y a ofrecerles tratamientos acertados, encontrando la mejor opción para su caso y ayudándolos a mejorar su calidad de vida. Las mujeres somos poderosas y libres de decidir, pero aún somos un grupo vulnerable y necesitamos contar con opciones y guías sin sentirnos juzgadas, eso es lo que intento brindar en cada consulta, empoderar la salud de la mujer en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Viaducto Río Becerra 97,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $25"
+    },
+    {
+      "name": "Aplicación de pesarios",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-paola-lopez-pelaez-2/ginecologo/ciudad-de-mexico#address-id=470395&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:33.478Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__patricia_paola_l_pez_pel_ez.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mijares Robles Jose Luis De Jesos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente de Piedra 150 Toriello Guerra 14050 Ciudad de Mexico CDMX Mexico,"
+    },
+    {
+      "full": "Puente de Piedra 150 Toriello Guerra 14050 Ciudad de Mexico CDMX Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mijares-robles-jose-luis-de-jesos/ginecologo/ciudad-de-mexico#address-id=154290&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:33.389Z",
+  "localPhotoPath": null
+}

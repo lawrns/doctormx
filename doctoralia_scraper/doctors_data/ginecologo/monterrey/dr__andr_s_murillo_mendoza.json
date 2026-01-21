@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Andrés Murillo Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c9711e/c9711ed0fc2ee414351957f26c79495a_220_square.jpg",
+  "about": "Hola! Soy el Dr. Andrés Murillo, gineco-obstetra y Medicina Materno - Fetal. Soy un especialista en el control prenatal, en tu salud como futura madre y en la salud de tu bebé, como un nuevo paciente. Cuento con múltiples Diplomados en Ecocardiografía Fetal Avanzada y Patología fetal. Estoy certificado por la Fetal Medicine Foundation, UK. London Permíteme acompañarte a ti y a tu bebe en este viaje llamado embarazo y maternidad Estoy a tus órdenes para resolver todas tus dudas acerca de ti o tu bebé",
+  "addresses": [
+    {
+      "full": "Constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-murillo-mendoza/ginecologo/nuevo-leon#address-id=442052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:32.027Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__andr_s_murillo_mendoza.webp"
+}

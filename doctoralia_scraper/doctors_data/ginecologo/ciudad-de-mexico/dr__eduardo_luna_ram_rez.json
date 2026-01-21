@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Luna Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5ec43ca1/5ec43ca1-8efe-4fd0-a6fa-e46bba7cca15_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Riobamba 639,"
+    },
+    {
+      "full": "Riobamba 639,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-luna-ramirez/ginecologo/benito-juarez#address-id=609014&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:39.408Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eduardo_luna_ram_rez.webp"
+}

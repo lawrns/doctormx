@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lizbeth Beatriz Vazquez Godoy",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/94dfaa/94dfaa0cbfe4241bf88680648a54cfc7_220_square.jpg",
+  "about": "Medico Cirujano egresado de la Universidad Autónoma de Guadalajara Especialidad en Ginecología y Obstetrícia egresada de la Universidad Autónoma de Coahuila Certificada por el Consejo Mexicano de Ginecología y Obstetrícia",
+  "addresses": [
+    {
+      "full": "Pedro Garcia Conde 395,"
+    },
+    {
+      "full": "Pedro Garcia Conde 395,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizbeth-beatriz-vazquez-godoy/ginecologo/guadalajara#address-id=386322&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:35.389Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__lizbeth_beatriz_vazquez_godoy.webp"
+}

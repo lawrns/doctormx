@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Mariela Quiroz Loperena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 265,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5c504/a5c5044044642c0892115816f1f7e38d_220_square.jpg",
+  "about": "Ya son muchos los años de camino en el área de la salud, te cuento un poco acerca de toda mi trayectoria y experiencia, así como de mi entrenamiento en uno de los mejores institutos de salud de México. Licenciatura como Médico Cirujano. Egresado de la Escuela de Medicina Ignacio A. Santos del Instituto Tecnológico y de Estudios Superiores de Monterrey. Especialidad en Ginecología y Obstetricia Estudié en el Instituto Nacional de Perinatología ¨Isidro Espinosa de los Reyes¨ de la Universidad Nacional Autónoma de México. Master en Endocrinologia GInecologica Avalado por la Universidad de las Americas de Puebla Master en Colposcopia y VPH Avalado por la Universidad de las Americas de Puebla Congresos Asistidos 2012- XXVIII Congreso Internacional “Medicina en Catástrofes” 2012- Expositor con el proyecto Pharma Tech en la Muestra empresarial 2012 del ITESM Campus Monterrey 2015- Pre congreso de Gastroenterología “Medicina individualizada: de la evidencia a la práctica clínica” 2015 -Congreso de la Semana Nacional de Gastroenterología 2015- 4ta Reunión de Enfermedad Inflamatoria Intestinal 2016- PREM Diplomado de Preparación para el examen de Residencias Medicas 2018 Curso en linea del Instituto Nacional de Salud \"Manejo De Infecciones Respiratorias Agudas Y La Enfermedad Similar a la Influenza ” 2018 Curso en linea del Instituto Nacional de Perinatología ¨Comunicación de malas noticias en torno a la muerte fetal ¨ 2018 Curso en linea de la Organización Panamericana de la Salud ¨ Correcto llenado del certificado de Defunción ¨ 2018 Curso en linea de la Universidad Autonoma de México ¨ Seminario de educación médica ¨ 2018 Curso en linea de Fundación Carlos Slim ¨Experto MIDO adultos¨ 2019 Asistencia a Curso -Taller Metodología Diagnóstica en Urología Ginecológica 2019 Asistencia al 8° Congreso de Ginecología y Obstetricia del Hospital Angeles del Pedregal 2020 Curso en linea de la Universidad de Washington ¨Enfermedad Pelvica inflamatoria¨ 2021 Asistencia virtual en \"Lesión pancreática asociada a diagnósticos poco frecuentes\"",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143, Reserva Territorial Atlixcáyotl, 72190 Heroica Puebla de Zaragoza, Pue.,"
+    },
+    {
+      "full": "Lateral de la Recta 13,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariela-quiroz-loperena/ginecologo/san-andres-cholula#address-id=477713&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:33.359Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mariela_quiroz_loperena.webp"
+}

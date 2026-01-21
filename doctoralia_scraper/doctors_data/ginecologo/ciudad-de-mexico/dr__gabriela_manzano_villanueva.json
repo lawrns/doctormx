@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gabriela Manzano Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/25ab63/25ab63125874390d668582f24ccbadc9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sor Juana Ines de la Cruz 280 Fraccionamiento Industrial San Lorenzo ,"
+    },
+    {
+      "full": "Sor Juana Ines de la Cruz 280 Fraccionamiento Industrial San Lorenzo ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-manzano-villanueva/ginecologo/tlalnepantla-de-baz#address-id=437422&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:43.743Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gabriela_manzano_villanueva.webp"
+}

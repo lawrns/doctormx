@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Ricardo Sanchez Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e350bd3e/e350bd3e-7fa2-421e-8e5f-3b9ce2cfcf77_small_square.jpg",
+  "about": "Hola Soy el Dr. Ricardo Sánchez Zamora, soy ginecólogo y obstetra. Me especializo en Medicina Crítica en Obstetricia (control prenatal de embarazos de alto riesgo, asi como sus complicaciones), soy colposcopista (estudio, diagnóstico y tratamiento de las enfermedades del tracto genital), y soy cirujano de mínima invasión en ginecología (laparoscopia e histeroscopia), realizando procedimientos como histercetomia (retiro del utero), manejo de quistes de ovario; retiro de polipos del endometrio o miomas por histeroscopia y miomas por laparoscopia, dentro de los muchos procedimientos y tratamientos que hoy en día existen por estas tecnicas para las difrentes enfermedades o condiciones que afectan a la salud femenina. Así como me dedico al cuidado, diagnóstico y tratamiento de los padecimiento de la mujer en la etapa de la menopausia, buscando las mejores opciones personalizadas para cada una de mis pacientes, para que conserven y mejoren su vida en esta importante etapa de la vida de la mujer. También soy profesor universitario en la Universidad Panamericana y en los cursos de alta especialidad que preparan y capacitan a médicos ginecólogos en colposcopia y cirugía de mínima invasión, con aval universitario por la UNAM.Mi compromiso es brindarte una atención médica cercana, profesional y basada en la ciencia, pero sobre todo con empatía y respeto. Estoy aqui para acompñarte en cada etapa de tu salud ginecológica, con confianza y cuidado. Permiso de publicidad en redes COFEPRIS:2509092002A00063",
+  "addresses": [
+    {
+      "full": "Durango 64, PISO 4, CONSULTORIO 404. COLONIA ROMA NORTE,"
+    },
+    {
+      "full": "Calzada de la Viga,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-sanchez-zamora/ginecologo/cuauhtemoc2",
+  "scrapedAt": "2026-01-21T02:40:35.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_sanchez_zamora.webp"
+}

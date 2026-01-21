@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Francisco Servin Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 112,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac46ea/ac46eaeaa58637e85778cf6e5b1b93d2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periferico Sur 3697 - 730,"
+    },
+    {
+      "full": "Periferico Sur 3697 - 730,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-francisco-servin-ramirez/ginecologo/magdalena-contreras",
+  "scrapedAt": "2026-01-21T03:04:11.681Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jorge_francisco_servin_ramirez.webp"
+}

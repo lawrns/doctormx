@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gladys Arely Almaraz Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51df08/51df08406ced6ceb28a83313fe82ee32.jpg",
+  "about": "Soy medico especialista en Ginecología y Obstetricia egresada del hospital Dr. Manuel Gea González avalado por la UNAM -Realice estudios en Colposcopia y lesiones del tracto genital Inferior en el Instituto Nacional de Cancerología INCAN avalado por la UNAM-Entrenamiento de alto rendimiento en ultrasonido obstétrico con enfoque perinatal avalado por la universidad autónoma de Sinaloa.Medico fundador de clinica de colposcopia en la delegación tlalpan de la ciudad de mexico perteneciente a la secretaria de salud -Medico adscrito al servicio de Ginecología y obstetricia del hospital general Dr.Manuel Gea González",
+  "addresses": [
+    {
+      "full": "Avenida Sauzales 222, coapa, cuemanco, 14330,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gladys-arely-almaraz-ramirez/ginecologo/tlalpan#address-id=361711&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:59.771Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gladys_arely_almaraz_ramirez.webp"
+}

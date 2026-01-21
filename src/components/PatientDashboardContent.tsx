@@ -3,6 +3,13 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ReviewTrigger } from '@/components/ReviewTrigger'
+import { 
+  Droplets, 
+  Moon, 
+  Activity, 
+  Apple,
+  Lightbulb
+} from 'lucide-react'
 
 interface Appointment {
   id: string
@@ -85,42 +92,55 @@ export function PatientDashboardContent({ appointments }: PatientDashboardConten
 export function HealthTips() {
   const tips = [
     {
-      icon: '💧',
+      icon: Droplets,
       title: 'Mantente hidratado',
       description: 'Bebe al menos 8 vasos de agua al día para mantener tu cuerpo funcionando optimally.',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50'
     },
     {
-      icon: '😴',
+      icon: Moon,
       title: 'Duerme bien',
       description: '7-9 horas de sueño nocturno ayudan a tu sistema inmune y bienestar mental.',
+      color: 'text-indigo-600',
+      bgColor: 'bg-indigo-50'
     },
     {
-      icon: '🚶',
+      icon: Activity,
       title: 'Movimiento diario',
       description: '30 minutos de actividad física moderaday mejoran tu salud cardiovascular.',
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50'
     },
     {
-      icon: '🥗',
+      icon: Apple,
       title: 'Alimentación balanceada',
       description: 'Incluye frutas, verduras y proteínas en cada comida.',
+      color: 'text-rose-600',
+      bgColor: 'bg-rose-50'
     },
   ]
 
   return (
     <div className="bg-white rounded-2xl shadow-card border border-border p-6 mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg font-bold text-gray-900">💡 Tips de Salud</h2>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <Lightbulb className="w-5 h-5 text-amber-500" />
+          Tips de Salud
+        </h2>
         <Link href="/app/profile" className="text-sm text-primary-600 hover:text-primary-700 font-medium">
           Ver más →
         </Link>
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
         {tips.map((tip, index) => (
-          <div key={index} className="flex items-start gap-3 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-colors">
-            <span className="text-2xl">{tip.icon}</span>
+          <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-gray-50/50 hover:bg-gray-100/50 transition-colors border border-transparent hover:border-gray-100">
+            <div className={`w-12 h-12 rounded-xl ${tip.bgColor} flex items-center justify-center flex-shrink-0`}>
+              <tip.icon className={`w-6 h-6 ${tip.color}`} />
+            </div>
             <div>
-              <p className="font-medium text-gray-900">{tip.title}</p>
-              <p className="text-sm text-gray-600">{tip.description}</p>
+              <p className="font-semibold text-gray-900">{tip.title}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{tip.description}</p>
             </div>
           </div>
         ))}

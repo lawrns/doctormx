@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Maria Antonia Valdes Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4eed8a/4eed8a3b2fc521911e35d27976c329fb_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bosques De Cuba 1,"
+    },
+    {
+      "full": "Av. Morelos Sn Esq. Cuauhtemoc,"
+    },
+    {
+      "full": "Av. Congreso De La Union Y Ffcc,"
+    },
+    {
+      "full": "Bosques De Cuba 1,"
+    },
+    {
+      "full": "Av. Morelos Sn Esq. Cuauhtemoc,"
+    },
+    {
+      "full": "Av. Congreso De La Union Y Ffcc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-antonia-valdes-vargas/ginecologo/ciudad-de-mexico#address-id=195062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:37:52.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_antonia_valdes_vargas.webp"
+}

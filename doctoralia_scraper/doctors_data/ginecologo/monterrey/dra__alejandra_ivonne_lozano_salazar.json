@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alejandra Ivonne Lozano Salazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d71c67/d71c67a92ba50816652d1f87dce98b1e_220_square.jpg",
+  "about": "25 años de experiencia en Ginecologia y Obstetricia.",
+  "addresses": [
+    {
+      "full": "I. Morones Prieto Pte. 3000,"
+    },
+    {
+      "full": "I. Morones Prieto Pte. 3000,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-ivonne-lozano-salazar/ginecologo/nuevo-leon#address-id=5459&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:17.951Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alejandra_ivonne_lozano_salazar.webp"
+}

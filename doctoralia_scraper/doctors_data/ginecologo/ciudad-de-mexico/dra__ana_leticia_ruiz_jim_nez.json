@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ana Leticia Ruiz Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Adolfo López Mateos 98,"
+    },
+    {
+      "full": "Blvd. Adolfo López Mateos 98,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-leticia-ruiz-jimenez/ginecologo/atizapan-de-zaragoza#address-id=425521&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:49.095Z",
+  "localPhotoPath": null
+}

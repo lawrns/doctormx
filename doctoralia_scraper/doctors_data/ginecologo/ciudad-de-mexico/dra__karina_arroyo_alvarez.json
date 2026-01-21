@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Karina Arroyo Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 605,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 605,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-arroyo-alvarez/ginecologo/benito-juarez#address-id=203174&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:02.179Z",
+  "localPhotoPath": null
+}

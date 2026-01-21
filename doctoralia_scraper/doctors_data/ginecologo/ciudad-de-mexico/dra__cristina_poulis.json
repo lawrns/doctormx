@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cristina Poulis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc4892/cc4892869b3e80951b7f0df1dd1687ee_220_square.jpg",
+  "about": "Bienvenida. Soy la Dra. Cristina Poulis, ginecóloga obstetra, mi filosofía de trabajo es transmitir mis conocimientos y experiencia en un entorno de comodidad, confianza y empatía, teniendo siempre presente como pilares de mi ejercicio profesional compromiso, preocupación por la salud de mis pacientes y honestidad; mi prioridad es la salud de las mujeres en todas las etapas de la vida. Te ayudaré a aclarar todas tus dudas, espero verte pronto. Especialista en Ginecología Obstetricia. Hospital Central Norte de Pemex. Colposcopía y Patologia de Tracto Genital Inferior. UNAM. Licenciada en Médico Cirujano. Universidad Anáhuac.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca s/n,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-poulis/ginecologo/huixquilucan#address-id=405686&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:24.404Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cristina_poulis.webp"
+}

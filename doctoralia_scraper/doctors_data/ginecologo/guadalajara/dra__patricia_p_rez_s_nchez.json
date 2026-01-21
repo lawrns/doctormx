@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Patricia Pérez Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 383,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/28175f/28175f93306e3832018aa3998c40e0bb_220_square.jpg",
+  "about": "Médico egresada de la Universidad de Guadalajara, Centro Universitario de Ciencias de la SaludFacultad de medicina con especialidad en Ginecología y Obstetricia, certificada por el Consejo Mexicano de Ginecología y obstetricia. Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "GINEMED EXPO / Calle Turquesa 3283 Col. Villa La Victoria,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-perez-sanchez/ginecologo/guadalajara#address-id=515472&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:53.996Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__patricia_p_rez_s_nchez.webp"
+}

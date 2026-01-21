@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Manuel Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 61,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/66a6d4/66a6d4daa12a7833a74cb7074727f634_220_square.jpg",
+  "about": "Soy un médico especializado en ginecología y obstetricia con una subespecialidad en biología de la reproducción, además de contar con un diplomado en andrología clínica enfocado en el factor masculino. Mi formación académica incluye una maestría y un doctorado en ciencias médicas. Estoy comprometido en brindar una atención integral a las parejas que buscan formar la familia que siempre han soñado. En mi consulta, priorizamos el trato digno, la honestidad y un enfoque individualizado para que las parejas se sientan confiadas y seguras durante todo el proceso. Nuestra misión es ayudarles a alcanzar sus objetivos reproductivos y hacer realidad sus sueños de formar una familia.",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613 Piso 10 Int 1005,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-lozano/ginecologo/magdalena-contreras2",
+  "scrapedAt": "2026-01-21T02:44:08.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_lozano.webp"
+}

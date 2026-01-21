@@ -1,0 +1,25 @@
+{
+  "name": "Teresa Méndez Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0764895/e0764895-112b-4e76-bda4-85b768c04470_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 39, Roma Sur, Cuauhtémoc,"
+    },
+    {
+      "full": "Tuxpan 39, Roma Sur, Cuauhtémoc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresa-mendez-gomez/ginecologo/ciudad-de-mexico#address-id=528599&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:09:07.530Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/teresa_m_ndez_g_mez.webp"
+}

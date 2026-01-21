@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Jazmín Cortés Quiñonez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 277,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/08e36431/08e36431-f043-44c5-be50-4e9b599c8730_large.jpg",
+  "about": ".",
+  "addresses": [
+    {
+      "full": "Avenida Ignacio L Vallarta 3030,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-jazmin-cortes-quinonez/ginecologo/guadalajara#address-id=541155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:47.463Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__diana_jazm_n_cort_s_qui_onez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rubén D. Rojas Rebollo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel Acosta 35,"
+    },
+    {
+      "full": "Manuel Acosta 35,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-d-rojas-rebollo/ginecologo/tlalnepantla-de-baz#address-id=122434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:21.372Z",
+  "localPhotoPath": null
+}

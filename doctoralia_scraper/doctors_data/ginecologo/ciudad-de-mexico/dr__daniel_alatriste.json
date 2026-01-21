@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Daniel Alatriste",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 191,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2dace3/2dace39f99ad0d136e9491dadade86fa.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    },
+    {
+      "full": "Calzada Acoxpa 593,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $990"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $990"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,090"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,090"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-alatriste/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=425502&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:38.787Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__daniel_alatriste.webp"
+}

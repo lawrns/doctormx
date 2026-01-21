@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Indra Daniela Sainz de la Peña Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f2b42/6f2b428ced1ca21fa2619b80a2536e57.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "HOSPITAL PUEBLA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/indra-daniela-sainz-de-la-pena-rodriguez/ginecologo/puebla#address-id=117192&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:53:58.418Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__indra_daniela_sainz_de_la_pe_a_rodr_guez.webp"
+}

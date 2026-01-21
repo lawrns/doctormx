@@ -1,0 +1,43 @@
+{
+  "name": "Lucrecia Hernández Bolaños",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1eb550/1eb5503db24517d14b72efb890430536_220_square.jpg",
+  "about": "Soy Ginecóloga Obstetra, con 17 años de experiencia en la salud de las mujeres, durante mi trayecto me he especializado en diagnóstico y tratamiento de lesiones tempranas de cáncer cérvicouterino-uterino , cuento con diplomados en Colposcopía y Ultrasonido en Ginecoobstetricia para poder dar una consulta mas acertada , con una amplia experiencia en tumores de mama ya que tengo un adiestramiento de un año en cáncer de mama en Oncología , Centro Médico Nacional SXXI ,IMSS con experiencia laboral de mas de 10 años en patologías de mama . Mi consulta la enfoco en tener mas campos y herramientas para tener diagnósticos y tratamientos a corto plazo.",
+  "addresses": [
+    {
+      "full": "Avenida División del Norte 3395,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucrecia-hernandez-bolanos/ginecologo/coyoacan#address-id=112785&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:00.980Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/lucrecia_hern_ndez_bola_os.webp"
+}

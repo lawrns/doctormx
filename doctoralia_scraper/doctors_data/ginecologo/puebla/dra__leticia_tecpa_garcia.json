@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Leticia Tecpa Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d52d2e/d52d2ef542f1e9e8ce2c0903e987a6b8_220_square.jpg",
+  "about": "Soy ginecólogo y obstetra con diplomado en colposcopia diagnóstica y terapéutica; experiencia en cirugía ginecológica, lesiones precancerosas y tratamiento de vph, embarazo.",
+  "addresses": [
+    {
+      "full": "Justo Sierra 8a,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-tecpa-garcia/ginecologo/tlaxcala#address-id=451247&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:09.154Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__leticia_tecpa_garcia.webp"
+}

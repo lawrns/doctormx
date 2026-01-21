@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Alejandra Martínez Schulte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 64,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/08840a/08840a649083c10ebbc3ef4e064bb568_220_square.jpg",
+  "about": "Soy la Dra. Alejandra Martínez Schulte, te cuento sobre mi: -Soy ginecóloga y obstetra, egresada del Hospital Ángeles Lomas -Tengo un alta especialidad en cirugía oncológica de mama, egresada de FUCAM (Fundación de cáncer de mama) -Ofrezco consulta privada en el Hospital Ángeles Pedregal ¡Estoy para brindarte la mejor atención!",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa 1055-S,"
+    },
+    {
+      "full": "Boulevard Jesús Reyes Heroles 65,"
+    },
+    {
+      "full": "Camino Santa Teresa 1055-S,"
+    },
+    {
+      "full": "Boulevard Jesús Reyes Heroles 65,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-martinez-schulte/ginecologo/veracruz#address-id=450922&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:52.744Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_mart_nez_schulte.webp"
+}

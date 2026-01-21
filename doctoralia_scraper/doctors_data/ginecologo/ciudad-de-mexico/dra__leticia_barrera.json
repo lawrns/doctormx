@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Leticia Barrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/239c1f/239c1fd278dfbdd5b3c65bb6eeeb29e6_220_square.jpg",
+  "about": "Formación médica como especialista y sub especialista en Instituciones de prestigio a nivel nacional como el Centro Médico la Raza del IMSS y el Instituto Nacional de Cancerología (INCAN). Desde el termino de mi especialidad en 1998 he trabajado en la consulta privada, así como en el Hospital \"La Perla\". Profesora en La Escuela de Enfermería del Instituto Nacional de Cardiología por la UNAM.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 96, Roma Sur,"
+    },
+    {
+      "full": "Tlacotalpan 96, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-barrera-2/ginecologo/cuauhtemoc2#address-id=148171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:54.965Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__leticia_barrera.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Antonio Madrigal Andalón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01af66/01af66d68a1f926c02537f341ce334b8_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Rosario Castellanos 2413,"
+    },
+    {
+      "full": "Av Rosario Castellanos 2413,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-madrigal-andalon/ginecologo/guadalajara#address-id=97865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:51.398Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_antonio_madrigal_andal_n.webp"
+}

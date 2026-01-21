@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Carlos Lorenzo Gulias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-lorenzo-gulias/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-21T03:00:37.676Z",
+  "localPhotoPath": null
+}

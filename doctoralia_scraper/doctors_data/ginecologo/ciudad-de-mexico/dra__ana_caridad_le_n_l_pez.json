@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Caridad León López",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9ee392/9ee3927ad9b1f539904b04ff0ffe0931_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 13 ,"
+    },
+    {
+      "full": "Norte 13 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-caridad-leon-lopez/ginecologo/ciudad-de-mexico#address-id=257615&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:25.053Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_caridad_le_n_l_pez.webp"
+}

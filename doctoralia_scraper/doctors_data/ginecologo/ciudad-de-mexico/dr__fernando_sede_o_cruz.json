@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Fernando Sedeño Cruz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Colina De Los Aconitos 9,"
+    },
+    {
+      "full": "C. Salvador Díaz Mirón 374,"
+    },
+    {
+      "full": "Blvd. Manuel Ávila Camacho 3129,"
+    },
+    {
+      "full": "Colina De Los Aconitos 9,"
+    },
+    {
+      "full": "C. Salvador Díaz Mirón 374,"
+    },
+    {
+      "full": "Blvd. Manuel Ávila Camacho 3129,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-sedeno-cruz/ginecologo/naucalpan-de-juarez#address-id=228047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:02:07.202Z",
+  "localPhotoPath": null
+}

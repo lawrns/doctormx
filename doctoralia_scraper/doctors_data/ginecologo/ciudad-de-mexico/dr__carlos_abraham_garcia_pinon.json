@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Abraham Garcia Pinon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/409245/409245faeb4ed6751267b0f40a5b7b35_220_square.jpg",
+  "about": "Hola! Soy Carlos Piñón, médico especialista en Ginecología y Obstetricia, con alta especialidad en Menopausia y enfoque especial en problemas hormonales. Fui criado en un ambiente de respeto e igualdad, creo firmemente en el poder de la mujer y la capacidad de decidir sobre su salud y su cuerpo, me gusta impulsar y respetar la plenitud femenina. Inicié mi formación el Instituto Politécnico Nacional, donde participé en el programa de intercambio académico a la Universidad Autónoma de Barcelona, con beca por el Instituto durante mi estancia. Además fui galardonado con el premio Ceneval al desempeño sobresaliente en el examen de titulación. Realicé la especialidad de Ginecología y Obstetricia en el Hospital de la Mujer en la Ciudad de México, donde la cantidad de pacientes me permitió atender más de mil nacimientos por parto o por cesárea. Estudié una alta especialidad en Menopausia en el Hospital Regional Primero de Octubre, lo que me convierte en uno de los pocos especialistas en menopausia del país. Soy profesor de médicos internos y de estudiantes de la especialidad en ginecología y obstetricia en la UNAM, el IPN y otras universidades, me encanta la enseñanza, misma que me ayuda a estar a la vanguardia en conocimientos, me gusta estar el día y actualizarme asistiendo a cursos y congresos constantemente. Mi intención es que te sientas en un ambiente de confianza y seguridad, en mi consulta no se juzga, se comprende, se aconseja y se apoya.",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Tuxpan 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-abraham-garcia-pinon/ginecologo/cuauhtemoc2#address-id=469886&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:48.889Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_abraham_garcia_pinon.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Armando Buenfil Gudiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8c7517/8c7517e89c2efe7bf37a8055acdbaff0_220_square.jpg",
+  "about": "Soy el Dr. Armando Buenfil Gudiño, graduado en la UANL como Médico Cirujano y Partero con especialidad en Ginecología y Obstetricia en la UDEM. Mi enfoque se basa en brindar una atención personalizada y de calidad. Me esfuerzo por explicar de manera clara y detallada los procedimientos y tratamientos, así como en responder todas las dudas del paciente. Me considero un médico empático y respetuoso, siempre buscando el bienestar de mis pacientes. Mis instalaciones están equipadas con tecnología avanzada y me aseguro de que se mantengan limpias y en óptimas condiciones para brindar una atención segura y confortable. Me enfoco en mantener una buena comunicación con mis pacientes y respetar los horarios de las citas programadas. Me complace ser parte del proceso de cuidado y atención de mis pacientes, y me comprometo a brindar un servicio profesional y de calidad. Estoy a su disposición para cualquier consulta o tratamiento que necesite.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-buenfil-gudino/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:13.941Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__armando_buenfil_gudi_o.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Ma. Julieta Hernández Cummings",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 383,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/287995/287995b037fa2fb4614ed4ee825c154a_220_square.jpg",
+  "about": "Serás atendida, con respeto, calidez, con la elaboración de tu historia clínica , la cual es confidencial, me permites conocer tus antecedentes así como estilo de vida, y podré orientarte, en un plano general asi como tus necesidades especialmente en el área de ginecología y obstetricia. Efectuando una exploración completa en tu primera consulta, haciendo énfasis en tus cuidados para la detección oportuna de los canceres mas frecuentes en estas áreas. Efectuare los estudios que correspondan de acuerdo a tu edad y antecedentes tanto heredofamiliares como personales. Si requieres alguna orientación en el área sexual, siéntete en libertad de expresarlo. Esta primera cita se llevara aproximadamente entre 45-55 minutos, Te solicitare los estudios que requiera tu caso en especial de laboratorio o gabinete , en caso de requerirlos. En caso de requerir algunas opciones de medicina alternativa puedo ofrecerterlas.",
+  "addresses": [
+    {
+      "full": "Tepic 113,"
+    },
+    {
+      "full": "Roma Sur Tepic #113 consultorio 510,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-julieta-hernandez-cummings/ginecologo/ciudad-de-mexico#address-id=423078&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:55.248Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ma__julieta_hern_ndez_cummings.webp"
+}

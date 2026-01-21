@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Félix Muñuzuri Iñigue",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/es/badge/doctoralia-awards-nominees-2025.svg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Sur 136,"
+    },
+    {
+      "full": "Calle Sur 136,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-munuzuri-inigue/ginecologo/ciudad-de-mexico#address-id=39730&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:19.647Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__f_lix_mu_uzuri_i_igue.webp"
+}

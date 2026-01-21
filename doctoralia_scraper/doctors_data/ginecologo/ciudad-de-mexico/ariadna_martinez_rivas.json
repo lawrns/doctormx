@@ -1,0 +1,31 @@
+{
+  "name": "Ariadna Martinez Rivas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jaime Torres Bodet 187,"
+    },
+    {
+      "full": "Av Congreso De Chilpancingo Nort,"
+    },
+    {
+      "full": "Jaime Torres Bodet 187,"
+    },
+    {
+      "full": "Av Congreso De Chilpancingo Nort,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadna-martinez-rivas/ginecologo/ciudad-de-mexico#address-id=244889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:08:20.492Z",
+  "localPhotoPath": null
+}

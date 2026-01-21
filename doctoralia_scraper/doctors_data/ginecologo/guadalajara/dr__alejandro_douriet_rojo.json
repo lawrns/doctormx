@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Douriet Rojo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 236,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba19b1c1/ba19b1c1-8fa1-45b4-8245-5a96ec99839f_small_square.jpg",
+  "about": "Mi compromiso es con mis pacientes, soy médico Ginecólogo con una subespecialidad en Biología de la Reproducción Humana y Cirugía de mínima invasión Además de dar una atención en Ginecología en general y embarazo, me especializo en la fertilidad y es mi pasión ayudar a las parejas a lograr su sueño de ser padres. - Licenciatura en Médico cirujano - Universidad de Guadalajara - Especialista en Ginecología y Obstetricia - Hospital Civil Dr. Juan I Menchaca - Subespecialista en Biología de la reproducción Humana - Instituto Vida GDL- UNAM - Minimal Invasive Gynaecological Surgeon Certificate By the European Academy of Gynaecological Surgery. - Faculty in Gynaecological surgery courses- IRCAD LATIN AMERICA RIO DE JANEIRO BRASIL - Certificado por consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-douriet-rojo/ginecologo/zapopan#address-id=409196&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:24.436Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alejandro_douriet_rojo.webp"
+}

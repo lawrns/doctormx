@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Soledad Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sicomoro 1914,"
+    },
+    {
+      "full": "Medicina 922,"
+    },
+    {
+      "full": "Sicomoro 1914,"
+    },
+    {
+      "full": "Medicina 922,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/soledad-bernal/ginecologo/ciudad-de-mexico#address-id=349023&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:27.096Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Helga Pereznuñez Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c82b80/c82b80593f4e075c4d3142d89760265f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Medica Sur Puente de Piedra 150, Torre II, Consultorio 224,"
+    },
+    {
+      "full": "Hospital Medica Sur Puente de Piedra 150, Torre II, Consultorio 224,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/helga-pereznunez-zamora-2/ginecologo/tlalpan#address-id=85134&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:30.345Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__helga_pereznu_ez_zamora.webp"
+}

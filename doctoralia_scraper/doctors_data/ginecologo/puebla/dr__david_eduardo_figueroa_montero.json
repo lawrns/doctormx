@@ -1,0 +1,62 @@
+{
+  "name": "Dr. David Eduardo Figueroa Montero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ffb2ed9e/ffb2ed9e-612b-4a02-9e50-39b0655919f6_small_square.jpg",
+  "about": "Soy el Dr. David Figueroa. especialista en Ginecología, Obstetricia, Infertilidad y Reproducción Asistida. Soy egresado de la Licenciatura en Medicina por la Benemérita Universidad Autónoma de Puebla, y de la Especialidad por parte de la Universidad Nacional Autónoma de México y de la Alta especialidad en Infertilidad y reproducción Asistida por la Universidad Nacional Autónoma de México. Busco brindarte una atención humana y de excelencia médica, con evidencia científica en cualquier etapa de la vida de la mujer a través de diagnósticos certeros y tratamientos oportunos e innovadores. Mi objetivo, es que se sientan con la confianza en un ambiente cálido y humano, donde juntos podamos encontrar el mejor tratamiento a tus necesidades, ya sea en la busqueda de un embarazo, planificación familiar, en tratamiento de fertilidad y reproducción asistida, durante todo el camino del embarazo al nacimiento y puerperio así como tambien en otras etapas de la vida como en la menopausia. Sientete segura de que siempre encontraras un trato digno, humano y honrado.",
+  "addresses": [
+    {
+      "full": "Blvrd Atlixcayotl,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-eduardo-figueroa-montero/ginecologo/puebla#address-id=469429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:33.369Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__david_eduardo_figueroa_montero.webp"
+}

@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Diana Guzmán Pantoja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 930,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/513343/513343b67d866d877adcd82c48bbd62e.jpg",
+  "about": "Ginecoobstetra certificada, muy bien capacitada y en donde ademas tendrás la seguridad de ser atendida con una alta calidad y calidez los aspectos de la vida ginecologica de las mujeres como lo son la sexualidad responsable desde la adolescencia, así como durante la gran etapa del embarazo y una de las mejores etapas de la vida de las mujeres como lo es la menopausia y el climaterio, en donde procuro contar con el ambiente adecuado para tratar cualquier tema que sea de tu interés sin que te gane el pudor, así que seras siempre bienvenida a mi consulta.",
+  "addresses": [
+    {
+      "full": "Av. Historiadores 3472,"
+    },
+    {
+      "full": "Salvador Orozco Loreto 1201A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-guzman-pantoja/ginecologo/guadalajara#address-id=257574&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:04.062Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__diana_guzm_n_pantoja.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Angel Zistecatl Meza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Miguel Aleman. 57, Parque Industrial Lerma Hospital Medica Mia, Torre 57, Segundo Piso, Consultorio 219 Toluca De Lerdo Lerma De Villada,"
+    },
+    {
+      "full": "Blvd. Miguel Aleman. 57, Parque Industrial Lerma Hospital Medica Mia, Torre 57, Segundo Piso, Consultorio 219 Toluca De Lerdo Lerma De Villada,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-zistecatl-meza-2/ginecologo/ciudad-de-mexico#address-id=504111&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:23.480Z",
+  "localPhotoPath": null
+}

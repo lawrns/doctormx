@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Natalia Cerda Corona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 383,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e95957/e9595792a78e5d6f9fbcba6a00242deb_220_square.jpg",
+  "about": "Soy medico cirujano egresada de la Facultad de Medicina UNAM, con posgrado en Ginecología y Obstetricia avalado por la UNAM. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Cuento con CINCO diplomados. -Patologia del tracto genital inferior realizado en el Hospital General de Mexico. - Climaterio y Menopusia realizado en Instituto Nacional de Perinatologia - Endocrino Ginecologia y Andrologia realizado en Asociacion Mexicana de Reproduccion -Uso de laser en el Tracto Genital Inferior y Ginecologia Regenerativa. Avalado por Colegio Mexicano de Colposcopia -Ecografia en Ginecologia y obstetricia avalado por. Universidad la Salle Mexico y Colegio Nacional de Médicos Militares Los pacientes que acuden a mi consulta reciben atención ginecológica de calidad, mi objetivo en la consulta es brindar siempre información clara y entendible, en un ambiente cómodo para que juntas podamos. tener un adecuado diagnostico y tratamiento.",
+  "addresses": [
+    {
+      "full": "Zacatecas 36,"
+    },
+    {
+      "full": "Calle Gabriel Mancera 704,"
+    },
+    {
+      "full": "Zacatecas 36,"
+    },
+    {
+      "full": "Calle Gabriel Mancera 704,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/natalia-cerda-corona/ginecologo/ciudad-de-mexico#address-id=491853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:48.000Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__natalia_cerda_corona.webp"
+}

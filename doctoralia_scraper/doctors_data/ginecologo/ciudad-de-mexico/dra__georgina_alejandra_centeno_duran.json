@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Georgina Alejandra Centeno Duran",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 55,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b7fb76/b7fb7664e4877162052b1d30a9378592_220_square.jpg",
+  "about": "Ser ginecóloga es cuidar la salud de las mujeres, por lo tanto mi deber no sólo es curar enfermedades, sino también ayudar a prevenirlas, detectar oportunamente el cáncer genital y mamario. Me gusta formar parte de cada etapa y circunstancia de la vida de la mujer, durante los inicios de la adolescencia, el parto, la lactancia y el climaterio. Me llena de satisfacción compartir la evolución de un embarazo y atender el parto, dar mi mayor esfuerzo para evitar complicaciones durante el mismo y posteriormente observar la emoción de la familia con la llegada de un hijo. Así mismo comparto la emoción de la pareja que logró embarazo posterior de una larga espera. De la misma manera, me estimula ofrecer la oportunidad a las pacientes de quitar el dolor incapacitante de una endometriosis, curar los sangrados abundantes menstruales, o realizar tratamientos quirúrgicos en caso de tumores que causaban dolor, quitar infecciones tan molestas para nosotras las mujeres y orientarlas para que vivan su sexualidad de manera sana. Reconozco el valor que tenemos como mujeres y el valor y amor propio que nos debemos tener, por lo tanto creo que merecemos ginecólogas comprometidos con respetar nuestra feminidad y decisiones propias.Mi compromiso es dar un servicio adecuado para cuidar su salud y atender sus preocupaciones así como vivir paso a paso cada etapa de la vida de la mujer.",
+  "addresses": [
+    {
+      "full": "Hospital San Ángel Inn Universidad, Torre 2, Consultorio 739, Calle Mayorazgo 130, Colonia Xoco, Alcaldía Benito Juárez,"
+    },
+    {
+      "full": "Hospital San Ángel Inn Universidad, Torre 2, Consultorio 739, Calle Mayorazgo 130, Colonia Xoco, Alcaldía Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/georgina-alejandra-centeno-duran/ginecologo/ciudad-de-mexico#address-id=104356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:11.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__georgina_alejandra_centeno_duran.webp"
+}

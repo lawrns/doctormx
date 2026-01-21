@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dulce Paulina Gómez Peñuñuri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 147,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a8f195/a8f195d6da118b7b561ce4694ca39cc1_220_square.jpg",
+  "about": "Soy la Dra. Paulina Gómez Peñuñuri, ginecóloga obstetra con más de 10 años de experiencia, certificada por el consejo de ginecología y obstetricia. Tengo adiestramiento en cirugía laparoscópica e histeroscopia diagnostica quirúrgica, donde podemos tratar problemas de miomas, pólipos, sangrado uterino anormal, así como realizar cirugías de quistes de ovario, miomectomías o histerectomía. Realice adiestramiento en colposcopia y manejo de virus del papiloma humano, así como diplomado en laser bioregenerativo y funcional donde podemos tratar resequedad, dolor en el acto sexual conocido como dispareunia, incontinencia urinaria de esfuerzo, alteraciones vaginales por parto. Sin dejar atrás la parte obstétrica donde puedo llevar el control prenatal hasta la atención del parto o cesárea.",
+  "addresses": [
+    {
+      "full": "Avenida Río Mixcoac 25 PISO 7,"
+    },
+    {
+      "full": "Avenida Río Mixcoac 25 PISO 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control de dolor postoperatorio",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-paulina-gomez-penunuri/ginecologo/benito-juarez#address-id=470670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:33.817Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__dulce_paulina_g_mez_pe_u_uri.webp"
+}

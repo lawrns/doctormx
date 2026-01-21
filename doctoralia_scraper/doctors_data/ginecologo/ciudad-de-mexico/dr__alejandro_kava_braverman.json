@@ -1,0 +1,92 @@
+{
+  "name": "Dr. Alejandro Kava Braverman",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/72562a/72562a10afe3cdfdc68b651c93e78488_220_square.jpg",
+  "about": "Médico especialista en Ginecología, Obstetricia, Endocrinología ginecológica y Reproducción Humana. Lo más importante siempre serán los pacientes, cada caso es único por lo que la atención debe de ser personalizada y con trato humano, enfocados en proponer los tratamientos más adecuado para cada paciente. Experiencia en medicina reproductiva, incluyendo todo el proceso previo a lograr un embarazo, tratamientos reproductivos y seguimiento de embarazo, con un perspectiva humana y profesional. Experto en síndrome de ovarios poliquisticos, climaterio y menopausia, métodos anticonceptivos, miomatosis uterina y endocrinología ginecológica. A favor de un adecuado seguimiento de embarazo y parto.",
+  "addresses": [
+    {
+      "full": "(Hospital Bité Médica) Prolongación Paseo de la Reforma 19 (interior 601),"
+    },
+    {
+      "full": "Prolongacion Paseo de la Reforma 19, Santa Fe, Paseo de las Lomas, 01330 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "(Hospital Bité Médica) Prolongación Paseo de la Reforma 19 (interior 601),"
+    },
+    {
+      "full": "Prolongacion Paseo de la Reforma 19, Santa Fe, Paseo de las Lomas, 01330 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-kava-braverman/ginecologo/huixquilucan#address-id=89353&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:34.623Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alejandro_kava_braverman.webp"
+}

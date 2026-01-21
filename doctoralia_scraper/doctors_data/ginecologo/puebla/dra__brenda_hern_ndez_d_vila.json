@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Hernández Dávila",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 277,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f41413/f41413c1082a20b639c9340b2a224eba.jpg",
+  "about": "Soy la Dra. Brenda Hernández Dávila, especialista en Ginecología en Puebla. Mi atención se enfoca en mujeres desde la adolescencia hasta la menopausia, tratando condiciones como lesiones por virus de papiloma humano (VPH) y su tratamiento, retiro de condilomas genitales, infecciones de transmisión sexual, infecciones vaginales de repetición, infección de vías urinarias, síndrome de ovario poliquistico, alteraciones menstruales, métodos anticonceptivos con y sin hormonas, toma de papanicolaou y Colposcopia, Climaterio, menopausia, control prenatal, amenaza de aborto, prolapso uterino, sangrado uterino anormal, mastopatia fibroquistica, etc… Me preocupo por la salud y bienestar de mis pacientes, ofreciendo una atención detallada y explicaciones cuidadosas durante las revisiones. Soy la ginecóloga de cabecera para muchos de mis pacientes, y me enorgullece ofrecerles la mejor atención posible. Estoy comprometida con mi profesión y la educación continua, siempre buscando la manera de mejorar mis habilidades y conocimientos para brindar una atención cada vez mejor.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507, torre 1, piso 15, consultorio 1506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-hernandez-davila/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:06.649Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__brenda_hern_ndez_d_vila.webp"
+}

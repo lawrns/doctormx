@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ofelia Sordia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/151397/151397b70c41ac4eead433421f9dcb1f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965 Colonia Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ofelia-sordia/ginecologo/nuevo-leon#address-id=439856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:11.636Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ofelia_sordia.webp"
+}

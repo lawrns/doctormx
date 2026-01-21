@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Luis Rodrigo Sánchez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 822,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f6630/4f663015802bfd3e6f1211dde6364df5.jpg",
+  "about": "Como médico especialista certificado en Gineco-Obstetricia, Fertilidad y Menopausia, y Cirugía Laparoscópica, mi objetivo es ofrecer los mejores servicios médicos para mis pacientes. He estudiado mucho para proporcionar una excelente atención médica, puedo garantizarle que su salud está en buenas manos.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-rodrigo-sanchez-gonzalez-2/ginecologo/nuevo-leon#address-id=404018&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:31.373Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_rodrigo_s_nchez_gonz_lez.webp"
+}

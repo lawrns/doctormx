@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Renato Martin Venegas Flores",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 21,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Soy el Dr. Renato Venegas Gineco-Obstetra, Biólogo de la reproducción, Colposcopista certificado, Laparoscopista e histeroscopista Actualmente Profesor del curso de Medicina Bio-Regenerativa cirugía Laser Femenina, para rejuvenecimiento vaginal, incontinencia urinaria, armonización de labios mayores y menores. Master in Health Science, Laser, Hormones and Wellness. Profesor Asociado del curso de ozonoterapia de COINOTER. Miembro de diversas sociedad nacionales e internacionales: COMEGO, ACOG, ASRM, AMMR, AGLS, COMEGIC,COMEGICO, SEGERF COINOTER. Cuento con más de 30 años de experiencia en práctica Institucional y Privada.",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional 613, consultorio 802,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca s/n, consultorio 205,"
+    },
+    {
+      "full": "Ejercito Nacional 613, consultorio 802,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca s/n, consultorio 205,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/renato-martin-venegas-flores/ginecologo/huixquilucan#address-id=57978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:04.145Z",
+  "localPhotoPath": null
+}

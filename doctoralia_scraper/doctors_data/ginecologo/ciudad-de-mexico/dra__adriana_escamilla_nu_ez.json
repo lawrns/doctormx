@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Adriana Escamilla Nuñez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d5c10/1d5c10a4e6561a8a1fe5b989031dda82_220_square.jpg",
+  "about": "Soy Médico Cirujano egresada de la Facultad de Medicina. UNAM.Ginecóloga y Obstetra egresada del Hospital Juarez de México . UNAM.Realice los adiestramientos en Colposcopia y Patología del Tracto Inferior en el Hospital Juárez de Mexico.Ultrasonido Ginecológico en AMUSEM. Control de Hemorragia Obstétrica. Climaterio, Menopausia y Osteoporosis. INPer. Láser Ginecológico y Rejuvenecimiento Vaginal. UNAMMáster en Menopausia. INPer. Abordaje en Terapéutica para el Abordaje del Sobrepeso y Obesidad.Estoy certificada por Consejo Mexicano de Ginecología y Obstetricia. Cuento con 15 años de experiencia en salud ginecológica y reproductiva tanto en la medicina pública como privada. Asistente de Dirección durante 10 años en Hospital Materno Infantil Vicente Guerrero“Estoy comprometida en brindarte atención médica ginecológica de alta calidad con tratamientos de tecnología avanzada, seguros y eficaces” Permíteme acompañarte en cada etapa de tu vida.",
+  "addresses": [
+    {
+      "full": "Avenida Lopez Mateos R1 MZ 26 L7,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    },
+    {
+      "name": "Ginecología estética",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-escamilla-nunez/ginecologo/ecatepec-de-morelos#address-id=616138&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:03.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__adriana_escamilla_nu_ez.webp"
+}

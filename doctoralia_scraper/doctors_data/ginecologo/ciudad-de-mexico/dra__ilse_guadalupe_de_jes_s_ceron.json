@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Ilse Guadalupe De Jesús ceron",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 64,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/bd03f879/bd03f879-9f07-4829-b6ae-6c60ea2dc999_large.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada de los Jinetes 56, Col. Las Arboledas,"
+    },
+    {
+      "full": "sin número,"
+    },
+    {
+      "full": "Avenida Río Consulado 858,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ilse-guadalupe-de-jesus-ceron/ginecologo/azcapotzalco#address-id=620554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:19.389Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ilse_guadalupe_de_jes_s_ceron.webp"
+}

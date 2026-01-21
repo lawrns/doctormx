@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alfredo Manuel Hernández Ávila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86fc55/86fc55e1e3de25ed5e4e03ab8953d7ab_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-manuel-hernandez-avila/ginecologo/ciudad-de-mexico#address-id=9629&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:24.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfredo_manuel_hern_ndez__vila.webp"
+}

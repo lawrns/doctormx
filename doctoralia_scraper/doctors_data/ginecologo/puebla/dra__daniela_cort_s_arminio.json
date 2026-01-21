@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Daniela Cortés Arminio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 512,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2bf79b/2bf79bbdf13747e08563a85438002a33.jpg",
+  "about": "Mi nombre es Dra. Daniela Cortés Arminio y soy ginecóloga en la ciudad de Puebla. Soy egresada de la Universidad Autónoma del Estado de Puebla (UPAEP) donde me gradué como medico general, posteriormente me mude a la Ciudad de México y entré al Hospital de la Mujer (SSA) donde hice mi especialidad de ginecologia y obstetricia, al termino realicé una alta especialidad en Cirugía Endoscópica Ginecológica en el Hospital General Dr. Manuel Gea González. Además, tengo un diplomado en colposcopía. realizado en del Instituto Nacional de Cancerología (INCAN) . En mi consultorio atiendo a pacientes adultos y niños mayores de 12 años. Me preocupo por ofrecer un trato amable y profesional a mis pacientes, escuchando sus dudas y explicando detalladamente los diagnósticos y tratamientos. Mi consultorio se encuentra en el Hospital Puebla, en un ambiente moderno, limpio y cómodo para los pacientes. Ofrezco servicios de ultrasonido y colposcopía en el mismo consultorio, lo que ahorra tiempo y comodidad para mis pacientes. Me actualizo constantemente en mi especialidad para ofrecer los mejores tratamientos y diagnósticos a mis pacientes. Si buscas una ginecóloga profesional y dedicada en Puebla, no dudes en contactarme.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Privada de las Ramblas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-cortes-arminio/ginecologo/puebla#address-id=455737&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:58.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__daniela_cort_s_arminio.webp"
+}

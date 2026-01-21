@@ -1,0 +1,30 @@
+{
+  "name": "Dr. David De La Fuente Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Miguel Hgo 2425,"
+    },
+    {
+      "full": "Calle Miguel Hgo 2425,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-de-la-fuente-villarreal/ginecologo/monterrey#address-id=42761&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:06.260Z",
+  "localPhotoPath": null
+}

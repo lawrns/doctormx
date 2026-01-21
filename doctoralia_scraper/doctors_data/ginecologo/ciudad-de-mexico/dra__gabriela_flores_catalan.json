@@ -1,0 +1,64 @@
+{
+  "name": "Dra. Gabriela Flores Catalan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6541c0/6541c0147d4062a86751d0340a16c0bb_220_square.jpg",
+  "about": "Hola, soy la Dra Gabriela Flores Catalán. Estudié Medicina en la Universidad Nacional Autónoma de México Facultad de Medicina C.U. Realicé mi especialidad en Mérida Yucatán avalada por la Universidad Autónoma de Yucatán. Cuento con Diplomado en Colposcopia avalado por Universidad La Salle Mi meta como Ginecóloga y Obstetra es guiarte y resolver tus dudas sobre todas las etapas en la vida de una mujer.",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    },
+    {
+      "full": "Avenida Universidad 989,"
+    },
+    {
+      "full": "Av. Montevideo 303,"
+    },
+    {
+      "full": "Avenida Universidad 989,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-flores-catalan/ginecologo/benito-juarez#address-id=514691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:18.291Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_flores_catalan.webp"
+}

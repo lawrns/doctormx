@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Omar Francisco Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/79392a/79392a5661ebcb34e8ee1006dc82e132_220_square.jpg",
+  "about": "•Médico Cirujano egresado de la UNAM. •Médico Especialista en Ginecología y Obstetricia egresado del Hospital de la Mujer y certificado por la UNAM. •Médico con Alta Especialidad en Peri-Post Menopausia y Metabolismo Óseo egresado del Hospital Regional 1°de Octubre ISSSTE y certificado por la UNAM. •Certificado por el Colegio Mexicano de Ginecología y Obstetricia. •Profesor titular del curso de internado en investigación grupo MEDICI de FES IZTACALA UNAM.",
+  "addresses": [
+    {
+      "full": "Av. Río bamba # 639 col. Magdalena de las Salinas. Consultorio 440, 4to piso,"
+    },
+    {
+      "full": "Av. Río bamba # 639 col. Magdalena de las Salinas. Consultorio 440, 4to piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-omar-francisco-rodriguez/ginecologo/ciudad-de-mexico#address-id=416301&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:20.333Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_omar_francisco_rodriguez.webp"
+}

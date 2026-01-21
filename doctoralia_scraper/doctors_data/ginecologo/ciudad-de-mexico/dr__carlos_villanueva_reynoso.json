@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Carlos Villanueva Reynoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Estaño 307,"
+    },
+    {
+      "full": "Calle Eduardo Molina 457 20,"
+    },
+    {
+      "full": "Estaño 307,"
+    },
+    {
+      "full": "Calle Eduardo Molina 457 20,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-villanueva-reynoso/ginecologo/ciudad-de-mexico#address-id=39786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:35.664Z",
+  "localPhotoPath": null
+}

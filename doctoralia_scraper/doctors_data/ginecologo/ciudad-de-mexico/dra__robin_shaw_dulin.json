@@ -1,0 +1,110 @@
+{
+  "name": "Dra. Robin Shaw Dulin",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a741bf/a741bff02cdac31203f3ef6a05bb23e4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Carlos Graef Fernandez 154,"
+    },
+    {
+      "full": "Avenida Carlos Graef Fernández 154 (Centro Medico ABC Santa Fe Consultorio 334),"
+    },
+    {
+      "full": "Av. San Fernando 22,"
+    },
+    {
+      "full": "Prolongación Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Carlos Graef Fernandez 154,"
+    },
+    {
+      "full": "Avenida Carlos Graef Fernández 154 (Centro Medico ABC Santa Fe Consultorio 334),"
+    },
+    {
+      "full": "Av. San Fernando 22,"
+    },
+    {
+      "full": "Prolongación Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/robin-shaw-dulin/ginecologo/cuajimalpa-de-morelos#address-id=7371&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:39.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__robin_shaw_dulin.webp"
+}

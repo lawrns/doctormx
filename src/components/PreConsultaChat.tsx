@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import type { PreConsultaMessage } from '@/lib/ai/types';
+import type { DoctorMatch } from '@/lib/ai/referral';
 
 type PreConsultaChatProps = {
   isOpen: boolean;
@@ -10,7 +11,7 @@ type PreConsultaChatProps = {
     chiefComplaint: string;
     urgencyLevel: 'low' | 'medium' | 'high' | 'emergency';
     suggestedSpecialty: string;
-  }) => void;
+  }, referrals?: DoctorMatch[]) => void;
 };
 
 export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteAction }: PreConsultaChatProps) {
@@ -18,12 +19,22 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId] = useState(() => crypto.randomUUID());
+  const [referrals, setReferrals] = useState<DoctorMatch[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll al final
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [messages]);
+
+  // Scroll to top when opened
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo(0, 0);
+    }
+  }, [isOpen]);
 
   // Mensaje inicial
   useEffect(() => {
@@ -79,8 +90,11 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
 
       // Si la conversación está completa
       if (data.completed && data.summary) {
+        if (data.referrals && data.referrals.length > 0) {
+          setReferrals(data.referrals);
+        }
         setTimeout(() => {
-          onCompleteAction(sessionId, data.summary);
+          onCompleteAction(sessionId, data.summary, data.referrals);
         }, 1500);
       }
     } catch (error) {
@@ -149,6 +163,35 @@ export default function PreConsultaChat({ isOpen, onCloseAction, onCompleteActio
               </div>
             </div>
           ))}
+
+          {/* Recommended Doctors */}
+          {referrals.length > 0 && (
+            <div className="space-y-3 animate-fade-in">
+              <h3 className="text-sm font-semibold text-gray-900 px-2">Especialistas recomendados:</h3>
+              <div className="grid gap-3">
+                {referrals.map((match) => (
+                  <div key={match.doctorId} className="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-blue-200">
+                        <span className="text-lg">👨‍⚕️</span>
+                      </div>
+                      <div>
+                        <p className="text-sm font-bold text-gray-900">{match.doctor?.profile?.full_name || 'Especialista'}</p>
+                        <p className="text-xs text-blue-600">{match.reasons[0]}</p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => window.location.href = `/book/${match.doctorId}`}
+                      className="bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Agendar
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {isLoading && (
             <div className="flex justify-start">
               <div className="bg-gray-100 rounded-lg px-4 py-2">

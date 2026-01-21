@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Luis Lorenzana Rosete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a62be1/a62be1121e60ab4c50ee322c03307520_220_square.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia, Colposcopia, Cirugía de Mínima Invasión en Ginecología. Partos/Cesáreas, Menopausia y Climaterio.",
+  "addresses": [
+    {
+      "full": "Avenida Adolfo Ruiz Cortines mz.1 Consultorios Medicos,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280, Fracc. Industrial, San Lorenzo,"
+    },
+    {
+      "full": "Avenida Adolfo Ruiz Cortines mz.1 Consultorios Medicos,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280, Fracc. Industrial, San Lorenzo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-luis-lorenzana-rosete/ginecologo/ciudad-lopez-mateos#address-id=522264&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:46.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_luis_lorenzana_rosete.webp"
+}

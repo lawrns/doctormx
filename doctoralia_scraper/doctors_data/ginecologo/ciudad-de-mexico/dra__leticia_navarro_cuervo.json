@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Leticia Navarro Cuervo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Montecito 38, 1er piso, Local 1, Consultorio 16,"
+    },
+    {
+      "full": "Montecito 38, 1er piso, Local 1, Consultorio 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-navarro-cuervo/ginecologo/benito-juarez#address-id=17689&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:48.907Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. César Alejandro López Lee",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/356c17/356c17591411178017ef7c57d72c4e63_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Pedregal Consultorio 502 Torre Starbucks. Camino a Santa Teresa 1055 ,"
+    },
+    {
+      "full": "Hospital Angeles Pedregal Consultorio 502 Torre Starbucks. Camino a Santa Teresa 1055 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-alejandro-lopez-lee-2/ginecologo/ciudad-de-mexico#address-id=530846&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:51.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__c_sar_alejandro_l_pez_lee.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Maria Soledad Lopez Rosales",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Adolfo López Mateos Nte. 624,"
+    },
+    {
+      "full": "Copernico 2384,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos Nte. 624,"
+    },
+    {
+      "full": "Copernico 2384,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-soledad-lopez-rosales/ginecologo/guadalajara#address-id=191092&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:21.722Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Alberto Castillo Guerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d4dac0/d4dac096287a2a841b30b809797e6c0b_220_square.jpg",
+  "about": "Hola soy el Dr. Luis Castillo, ginecólogo obstetra, experto en el tema de hemorragia obstétrica y ayudo a mujeres embarazadas que han tenido una complicación relacionada con hemorragia en un embarazo previo o que tienen mayor riesgo de sangrado excesivo en el embarazo actual, a prevenir, diagnosticar y tratar de forma oportuna la hemorragia obstétrica y que ésta no vuelva a presentarse. Todas las pacientes tendrán la tranquilidad de que en caso de ser necesario, se utilizará un tratamiento conservador mediante control vascular avanzado. Evitando de esta manera una complicación potencialmente mortal, sin la necesidad de quitar el útero, disminuyendo el riesgo de transfusión, de ingresos a la unidad cuidados intensivos, de gastos hospitalarios excesivos, pero sobre todo disminuyendo la mortalidad materna y conservando su deseo de embarazos futuros. Actualmente soy médico certificado por el Consejo Mexicano de Ginecología y Obstetricia con vigencia hasta el 2024. No. De certificación por el Consejo Mexicano de Ginecología y Obstetricia: 6726 Cédula de médico cirujano y partero: 5053322 Cédula de especialista: 7308461",
+  "addresses": [
+    {
+      "full": "Dr. Guajardo 155,"
+    },
+    {
+      "full": "Dr. Guajardo 155,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-alberto-castillo-guerra/ginecologo/nuevo-leon#address-id=94294&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:53.850Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_alberto_castillo_guerra.webp"
+}

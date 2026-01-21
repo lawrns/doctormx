@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Gabriel García Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 145,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c65f1/6c65f15215a55c9748ad0cca2e5bce05_220_square.jpg",
+  "about": "CONTAMOS CON CONVENIO CON LA MAYORIA DE LAS ASEGURADORAS POR EJEMPLO.. GNP, AXA, METLIFE, SEGUROS MONTERREY, ETC. TENEMOS 25 AÑOS DE EXPERIENCIA EN EL MANEJO Y TRATAMIENTO DE PACIENTES GINECOLOGICAS Y OBSTETRICAS. Especialista en detección oportuna de cáncer cervico uterino, cáncer vaginal y vulvar. Tratamiento efectivo del virus del papiloma humano, (Displasias y condiloma genital (verrugas genitales) ). Control de embarazo normoevolutivo y de alto riesgo, toma de biopsia mamaria endometrio, cervical, vaginal y vulvar. Tratamiento de enfermedades infecciosas propias de la mujer y enfermedades de transmisión sexual. Manejo de endometriosis, enfermedades mamarias, planificación familiar. Manejo y diagnostico de varones por virus del papiloma humano, ABSOLUTA DISCRESION. MANEJO INTEGRAL PARA VARONES, ENFERMEDADES DE TRANSMISION SEXUAL Y CONDILOMAS",
+  "addresses": [
+    {
+      "full": "Av Juárez 2318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-gabriel-garcia-diaz/ginecologo/puebla#address-id=93237&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:15.926Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__gabriel_garc_a_d_az.webp"
+}

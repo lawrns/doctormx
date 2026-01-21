@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rosalio Valderrama Téllez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a3027/2a302776947dec656e02818a576cdc3e_220_square.jpg",
+  "about": "GINECO-OBSTETRA CON MAS DE 30 AÑOS DE EXPERIENCIA EN LA CONSULTA DE PACIENTES PRIVADOS , EN LA ATENCIOS DE CONTROL PRENATAL Y EMBARAZO DE ALTO RIESGO PADECIEMIENTOS GINECOLOGICOS EN EGNERAL CON DETECCION OPORTUNA DE CANCER, MANEJO DEL VPH, INFERTILIDAD. CONTAMOS CON HORUS CLINICA PARA LA ATENCION DE NUESTRAS PACIENTES QUE CON EL ESFUERZOS DE UN GRUPO DE COLEGAS FUE POSIBLE LA CONSTRUCCION DE ESTE CENTRO DE ATENCION DE ESPECIALIDADES. CUENTO CON CERETIFICACION PARA PODER ASITIR A TODOS LO CENTROS HOSPITALARIOS YA QUE TENGO CONVENIO CON LAS PRINCIPALES ASEGURADORA DE GASTOS MEDICOS MAYORES",
+  "addresses": [
+    {
+      "full": "Calz. Ignacio Zaragoza No. 66, Col.Moctezuma Primera Sección,"
+    },
+    {
+      "full": "Calz. Ignacio Zaragoza No. 66, Col.Moctezuma Primera Sección,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalio-valderrama-tellez/ginecologo/venustiano-carranza2#address-id=33483&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:46.343Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rosalio_valderrama_t_llez.webp"
+}

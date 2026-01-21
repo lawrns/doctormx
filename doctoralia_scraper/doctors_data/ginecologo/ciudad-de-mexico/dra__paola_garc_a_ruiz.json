@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola García Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1660,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c847d1/c847d124e466a2bfb551917ee5c31593.jpg",
+  "about": "El compromiso de proporcionar a todas mis pacientes la gama más completa de servicios de Ginecologia y Obstetricia en la mas alta calidad y profesionalismo a nivel Internacional. Desde el asesoramiento previo a la concepción hasta el parto y la recuperación así como el cuidado ginecológico de todas las mujeres. Brindo asistencia médica sofisticada a las mujeres durante toda su vida. Además enfocando en cada etapa de la mujer con una especialización en el cuidado ginecológico como lo es cirugía ginecológica de mínima invasión, colposcopia , ultrasonido ginecológico y obstétrico, Ultrasonido Ginecologico y Obstetrico así como en la etapa de Climatérico y Menopausia.",
+  "addresses": [
+    {
+      "full": "Dr. José María Vertiz 995, Narvarte Oriente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-garcia-ruiz/ginecologo/benito-juarez#address-id=89863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:13.064Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paola_garc_a_ruiz.webp"
+}

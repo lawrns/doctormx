@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosa Berenice Gomez Mendiola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 403,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/43fa95f0/43fa95f0-3eea-4cd2-b2fd-cc0a326ec9f9_small_square.jpg",
+  "about": "Soy la Dra. Rosa Berenice Gómez Mendiola, ginecóloga y obstetra con especialidad en colposcopia y tratamientos con láser ginecológico. Mi práctica combina la medicina tradicional con un enfoque moderno en salud íntima, tanto funcional como estética. Me especializo en procedimientos de estética vaginal y en ofrecer soluciones personalizadas que ayuden a cada paciente a sentirse bien consigo misma. Brindo un espacio seguro y de confianza, donde las mujeres pueden hablar abiertamente sobre su bienestar y recibir atención empática y efectiva.",
+  "addresses": [
+    {
+      "full": "Calle Chilpancingo 51,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-berenice-gomez-mendiola/ginecologo/cuauhtemoc2#address-id=417728&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:57.861Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rosa_berenice_gomez_mendiola.webp"
+}

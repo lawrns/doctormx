@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Cintia Elizabet Abrego Mendarosqueta",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df74a3/df74a328a4253c45daa4eb427f27a12f_220_square.jpg",
+  "about": "\"Soy la Dra. Cintia Abrego, especialista en Ginecología y Obstetricia y con subespecialidad en Biología de la Reproducción Humana (Infertilidad). Conmigo encontrarás un trato empático, humano y lleno de conocimiento actualizado. La consulta se desarrollará en instalaciones limpias y que cuentan con el instrumental completo para tu atención y cuidado. ¡Visítame hoy mismo!",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca S/N,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cintia-elizabet-abrego-mendarosqueta-2/ginecologo/benito-juarez#address-id=499421&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:36.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cintia_elizabet_abrego_mendarosqueta.webp"
+}

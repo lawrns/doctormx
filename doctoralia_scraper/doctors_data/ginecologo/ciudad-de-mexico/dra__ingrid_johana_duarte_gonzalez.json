@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Ingrid Johana Duarte Gonzalez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 78,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/019c4e/019c4e0a99045783e5a9bed02c004b18_220_square.jpg",
+  "about": "Hola soy Ingrid Duarte Gonzalez una mujer alegre, humana, empática y apasionada por el cuidado y entendimiento de la mujer. Soy egresada de La Universidad del Valle en Cali Colombia como Ginecóloga y Obstetra, continué mi preparación académica en La Universidad Autónoma de México en el Hospital General de México en donde me titulé como Ginecóloga Oncóloga. Mi objetivo es conocer a mis pacientes, aclarar, solucionar y explicar todas las dudas y sobre todo generar claridad y confianza para poder cuidar, prevenir, manejar y acompañarlas en las diferentes situaciones y etapas de la vida.",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055 Heroes de Padierna, Héroes de Padierna, La Magdalena Contreras,"
+    },
+    {
+      "full": "Hospital San Angeles Pedregal, Camino Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055 Heroes de Padierna, Héroes de Padierna, La Magdalena Contreras,"
+    },
+    {
+      "full": "Hospital San Angeles Pedregal, Camino Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ingrid-johana-duarte-gonzalez/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=573101&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:10.331Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ingrid_johana_duarte_gonzalez.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Juan José Nuncio Díaz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b310a037/b310a037-a4b7-4672-89dc-cba07442a0ee_small_square.jpg",
+  "about": "Ginecólogo con amplia experiencia en embarazo de alto riesgo y cirugía ginecológica.Control prenatal guiado por ultrasonido.",
+  "addresses": [
+    {
+      "full": "Clinica Ntra Sra Socorro, Santa Clara,"
+    },
+    {
+      "full": "Clinica Ntra Sra Socorro, Santa Clara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de mastología",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-nuncio-diaz/ginecologo/ecatepec-de-morelos#address-id=607552&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:44.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_jos__nuncio_d_az.webp"
+}

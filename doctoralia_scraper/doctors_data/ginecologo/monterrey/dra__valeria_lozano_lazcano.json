@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Valeria Lozano Lazcano",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e72906/e729065d69e67222aeb66394cddebcc5_220_square.jpg",
+  "about": "Soy ginecóloga y acompaño a las mujeres en el cuidado de su salud en cada etapa, desde la prevención y el embarazo, hasta el diagnóstico y tratamiento de enfermedades ginecológicas como el VPH. Mi enfoque es cercano, respetuoso y personalizado.",
+  "addresses": [
+    {
+      "full": "Av Hidalgo 1828, Colonia Obispado,"
+    },
+    {
+      "full": "Jesús Solis 1626,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $490"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valeria-lozano-lazcano/ginecologo/san-nicolas-de-los-garza#address-id=588078&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:00.481Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__valeria_lozano_lazcano.webp"
+}

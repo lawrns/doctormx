@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Susana Ibarra Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f37b7c/f37b7cdf6a0d1fe329b065fc99271f1d_220_square.jpg",
+  "about": "A lo largo de más de 15 años hemos realizado jornadas médicas en comunidades de tierra caliente guerrero en coordinación con Mex. Fam. Y con el sistema municipal DIF de Coacalco y Tultitlan, por tal motivo me siento honrada de que pacientes de otros estados y municipios e incluso de otros países bienes a realizarse su control anual.",
+  "addresses": [
+    {
+      "full": "Blvd. Ecatepec Mz. 15 Lt. 2,"
+    },
+    {
+      "full": "Alamos 265,"
+    },
+    {
+      "full": "Blvd. Ecatepec Mz. 15 Lt. 2,"
+    },
+    {
+      "full": "Alamos 265,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-ibarra-martinez/ginecologo/coacalco-de-berriozabal#address-id=170956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:36.845Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__susana_ibarra_mart_nez.webp"
+}

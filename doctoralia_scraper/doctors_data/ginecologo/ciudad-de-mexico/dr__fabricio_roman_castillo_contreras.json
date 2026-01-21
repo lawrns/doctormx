@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Fabricio Roman Castillo Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALLE BRAVO 1130 Local B,"
+    },
+    {
+      "full": "CALLE BRAVO 1130 Local B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabricio-roman-castillo-contreras/ginecologo/reynosa#address-id=119688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:50.904Z",
+  "localPhotoPath": null
+}

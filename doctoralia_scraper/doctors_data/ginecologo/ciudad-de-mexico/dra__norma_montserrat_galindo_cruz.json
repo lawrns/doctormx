@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Norma Montserrat Galindo Cruz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f4417c/f4417c5e909f90bdcb3dfc72f08aa0f4_220_square.jpg",
+  "about": "Hola, soy la Dra. Mont Galindo, especialista en Ginecología y Obstetricia. Soy médica cirujana y partera egresada de la BUAP, en la ciudad de Puebla, de donde soy originaria. En 2013, realicé el internado de pre grado en el Hospital General de Zona No. 1 IMSS, de la ciudad de San Luis Potosí, en donde me enamoré de la obstetricia y la ginecología. Así que, en 2017 inicié la especialidad en CDMX, en la UMAE Hospital de Gineco Obstetricia No. 4 “Luis Castelazo Ayala” IMSS, avalada por UNAM. Realicé un Alta especialidad en cirugía laparoscópica en el Hospital 1ro de Octubre del ISSSTE, la cual amo y estoy convencida es indispensable en el manejo actual de la patología ginecológica. También realicé un diplomado de Endocrinología ginecológica, avalada por la UDLAP y cuento con un diplomado en colposcopia y patología del tracto genital inferior, avalado por UNAM. Me dedico al cuidado de la salud de mujeres como TÚ y me encantaría poder atenderte y demostrarte, que la visita al gine, no tiene por qué ser una pesadilla.",
+  "addresses": [
+    {
+      "full": "Ricarte 192,"
+    },
+    {
+      "full": "Ricarte 192,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-montserrat-galindo-cruz/ginecologo/ciudad-de-mexico#address-id=445830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:45.488Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__norma_montserrat_galindo_cruz.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Brenda Mayela Cantu Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 283,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/421b5873/421b5873-ed3a-4556-9a03-7a34ecfe8f02_small_square.jpg",
+  "about": "Hola a todas!!! Estoy a tus ordenes; será para mi un placer atenderte en cualquier situación; si estas embarazada y deseas iniciar tu control de manera adecuada cuidando de ti y de tu bebe realizando ultrasonidos en cada visita que nos permitirán ver su crecimiento, así como su nacimiento ya sea por parto o cesárea, considerando la opción que mas te convenga. No podemos olvidar que todas las mujeres debemos realizar una revisión anual, en ella valoro que tus órganos internos (útero o matriz, y ovarios) estén bien mediante la exploración y un ultrasonido vaginal; ademas de la toma de papanicolaou que es de suma importancia para detección de cáncer cérvicouterino. También puedo apoyarte con cualquier anormalidad en tu ciclo menstrual, asesoría sobre métodos de planificación familiar como hormonales, dispositivos o salpingoclasia \"ligadura\". Otro grupo de edad en mujeres que no podemos olvidar son las chicas adolescentes, Si eres una de ellas, tienes dudas sobre tu ciclo, irregularidades; o si tienes dudas o inquietudes sobre el desarrollo en tu hija, si ha presentado menstruación antes de los 9 años o si tiene 15 y aun no la presenta, no dudes en contactarme. Tengo experiencia en realizar las cirugías mas comúnes de ginecología como Histerectomía(extraer el útero), salpingoclasia (ligadura de trompas) o quistes de ovario mediante cirugía de minina invasión (laparoscopia). Será un gusto poder ayudarte. Saludos!",
+  "addresses": [
+    {
+      "full": "Calle Miguel Hidalgo Y Costilla 1910. Obispado, Monterrey, Nuevo León,"
+    },
+    {
+      "full": "Calle Miguel Hidalgo Y Costilla 1910. Obispado, Monterrey, Nuevo León,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-mayela-cantu-ibarra/ginecologo/nuevo-leon#address-id=335090&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:24.618Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__brenda_mayela_cantu_ibarra.webp"
+}

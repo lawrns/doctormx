@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Enrique Rodríguez Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d6ff75/d6ff75636ed8306210fed7178423da17_220_square.jpg",
+  "about": "Mi especialidad y preparación profesional esta enfocada a mantener, y preservar la salud femenina, iniciando desde el punto de vista preventivo para evitar la instalación evolución y complicaciones de las enfermedades que pueden afectar a la mujer tanto desde el punto de vista ginecólogo ( fuera del embarazo), así como estando embarazada, desde el momento de la fecundación, evolución del mismo con el control prenatal, llevándolo a feliz termino mediante la atención del termino del mismo, sea por parto o cesárea según cada caso. Posteriormente continuar con la vigilancia del puerperio que dura los primeros cuarenta días, y a partir de entonces el inicio y cuidado de algún método anticonceptivo evitando embarazos no deseados antes del tiempo de intervalo ideal de dos años entre una y otra nueva gestación. O incluso ayudar a tomar la decisión de tomar un método definitivo en caso de no desear tener más hijos. En cuanto al control ginecológico se resalta la importancia de hacer un chequeo semestral y/o anual dependiendo de cada caso con la toma de un papnicolau, a partir de los 40 años complementando con una mastografía y ultrasonido mamario para detección oportuna del cáncer del cuello del útero y de mama que son los más frecuentes que afectan a nuestras mujeres especialmente en países subdesarrollados, o incluso este ultimo en países desarrollados, que detectados a tiempo son totalmente curables. A fin de cuentas esta es la función de mi especialidad, la prevención pues el mayor porcentaje de nuestras pacientes son mujeres jóvenes, generalmente sanas en edad reproductiva, o que acaban de superar esta etapa pasando a la etapa climatérica, y menopausica, en la que la prevención seguira siendo la base de una vida mejor y mas sana.",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 10,"
+    },
+    {
+      "full": "Pafnuncio Padilla 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-enrique-rodriguez-aguirre/ginecologo-medico-general/naucalpan-de-juarez2#address-id=432602&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:49.950Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__enrique_rodr_guez_aguirre.webp"
+}

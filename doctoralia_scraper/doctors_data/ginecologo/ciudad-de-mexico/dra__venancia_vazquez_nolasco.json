@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Venancia Vazquez Nolasco",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TLACOTALPAN 59, TORRE PALTINO 3ER PISO, CONSULTORIO 1301 COL. ROMA SUR. DEL CUAUHTEMOC.,"
+    },
+    {
+      "full": "TLACOTALPAN 59, TORRE PALTINO 3ER PISO, CONSULTORIO 1301 COL. ROMA SUR. DEL CUAUHTEMOC.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/venancia-vazquez-nolasco-2/ginecologo/cuauhtemoc",
+  "scrapedAt": "2026-01-21T03:00:33.126Z",
+  "localPhotoPath": null
+}

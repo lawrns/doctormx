@@ -1,0 +1,25 @@
+{
+  "name": "Lopez Guzmán Harumy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 108,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0b3d2d3/e0b3d2d3-962e-4e78-ba0a-0518e0726947_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mexico No. Ext.2490 Col. Ladron De Guevara Cp 44680,"
+    },
+    {
+      "full": "Mexico No. Ext.2490 Col. Ladron De Guevara Cp 44680,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lopez-guzman-harumy/ginecologo/guadalajara#address-id=358990&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:07.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/lopez_guzm_n_harumy.webp"
+}

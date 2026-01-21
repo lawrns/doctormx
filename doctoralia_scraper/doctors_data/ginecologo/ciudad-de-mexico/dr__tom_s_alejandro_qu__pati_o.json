@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Tomás Alejandro Qué Patiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/181869/1818691a0670a9ddbdd6d9845ff10e6c_220_square.jpg",
+  "about": "Soy médico especialista en ginecología y obstetricia certificado, con capacitación especial en laparoscopia, histeroscopia y colposcopia (enfermedades del tracto genital femenino) recibida en los mejores hospitales de atención ginecológica de la ciudad de México (Hospital de la Mujer, Instituto Nacional Perinatología y Hospital General de México). Nuestro servicio es profesional, integral y empático, comprometido con tu salud femenina con un enfoque preventivo pero también resolutivo de acuerdo a las necesidad de cada paciente. Hacemos todo a nuestro alcance para ayudarte a mejorar tu salud femenina, y así lograr una mejor calidad de vida en tu día a día. Contamos con atención en tu control de embarazo de bajo y alto riesgo, atención del nacimiento mediante parto ó cesárea. Manejo de trastornos menstruales (Hemorragia uterina), quistes de ovario. Colposcopia y toma de papanicolaou (VPH, condilomas y lesiones precursoras de cáncer cervicouterino por papiloma), aplicación vacuna contra VPH (Tetravalente), infecciones genitales. Estudio de infertilidad, endometriosis, dolor pélvico crónico, menopausia, incontinencia urinaria, nódulos mamarios. Orientación y aplicación de métodos anticonceptivos. Resolución de padecimientos que requieran cirugía tales como: histerectomía abdominal, vaginal o laparoscópica. Miomectomía por laparoscopia o histeroscopia. Reseccion de pólipos endometriales por histeroscopia, Biopsia de endometrio, ademas de retiro de DIU´s traslocados (DIU \"encarnado\"). Endometriosis y tumores de ovario vía laparoscópica o por laparotomía (Cirugía abierta) Cirugía para tratamiento de lesiones de VPH (Virus del Papiloma Humano): ASA diatérmica (Cono electroquirúrgico), Criocirugia y Cirugía Láser. Ofrecemos la Vacuna Tetravalente (vacuna contra VHP 6, 11, 16 y 18) en 3,500. Se puede aplicar tanto en hombres como en mujeres a casi cualquier edad!! CONTAMOS CON PAQUETES DE CHECK-UP GINECOLÓGICO: Paquete 1: Consulta de Especialidad + Colposcopia + Papanicolaou: $1200 Paquete 2: Lo incluido en paquete 1 + Exploración mamaria+ Examen de Orina (Prueba rápida): $1300 Paquete 3: Lo incluido en paquete 1 + Ultrasonido pélvico (o endovaginal) + exploración mamaria+ Examen de Orina (Prueba rápida): $1500 Paquete 4: Consulta de Especialidad + Colposcopia + Papanicolaou+ PCR para IVPH (14 gentipos): $2700 Vacuna Tetravalente Contra Virus del Papiloma Humano (VPH 6,11 16 y 18): 3700 cada aplicación* (pregunte por descuentos). Precios preferenciales para pacientes con membresia VRIM y Medical Group! ---Paquete checkup ginecológico con membresia ¡VRIM! $850!!: Consulta+ Colposcopia+ Papanicolaou + Exámen de orina (prueba rápida) + exploración mamaria.---",
+  "addresses": [
+    {
+      "full": "Durango 33, piso 5. Consultorio 52. Roma Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tomas-alejandro-que-patino-2/ginecologo/ciudad-de-mexico#address-id=116628&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:24.582Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__tom_s_alejandro_qu__pati_o.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. David Israel Olivares Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1639e6/1639e6e9eee886876dc79c915252d505_220_square.jpg",
+  "about": "Promotor del nacimiento respetado, lactancia materna y apego materno inmediato. Respeto y honestidad. Calidad y calidez.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles Valle Oriente. Lázaro Cárdenas 401 (consultorio 1407),"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    },
+    {
+      "full": "Hospital Ángeles Valle Oriente. Lázaro Cárdenas 401 (consultorio 1407),"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-israel-olivares-rosales/ginecologo/san-pedro-garza-garcia#address-id=33604&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:06.766Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__david_israel_olivares_rosales.webp"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Hildegardo Christopher Bacilio Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/894d28/894d2835bc923195c229ad76073c10f6_220_square.jpg",
+  "about": "Ginecólogo",
+  "addresses": [
+    {
+      "full": "Av. Adolfo Lopez Mateos 46,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hildegardo-christopher-bacilio-perez/ginecologo/naucalpan-de-juarez2#address-id=618253&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:23.413Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hildegardo_christopher_bacilio_p_rez.webp"
+}

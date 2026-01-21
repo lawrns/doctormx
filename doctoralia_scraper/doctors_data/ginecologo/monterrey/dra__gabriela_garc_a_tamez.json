@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gabriela García Tamez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b5f1961e/b5f1961e-b39a-4c13-a89a-6d043bb2527d_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Palenque 412,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-garcia-tamez/ginecologo/nuevo-leon#address-id=560956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:03.816Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__gabriela_garc_a_tamez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jocelyn Arias Alarcón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4db820/4db82069bb026bd3d9ef2d0584d69673_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    },
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jocelyn-arias-alarcon/ginecologo/coyoacan#address-id=11872&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:38.360Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jocelyn_arias_alarc_n.webp"
+}

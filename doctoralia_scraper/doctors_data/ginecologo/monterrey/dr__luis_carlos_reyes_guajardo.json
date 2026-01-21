@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Carlos Reyes Guajardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31c665/31c665dfcaf9c96755a624828a243859_220_square.jpg",
+  "about": "Soy Luis Carlos Reyes Guajardo, médico ginecoobstetra con subespecialidad en Medicina Materno-Fetal, tengo un enfoque humanista y lo trato de reflejar en mi practica. Me dedico a la salud de la mujer de forma integral en las diferentes etapas de la vida, viendo en particular el embarazo como uno de los acontecimientos mas importantes, privilegiando en todo momento el proceso mas natural posible (parto) y aplicando el conocimiento mas actualizado en la resolución de los problemas que se pudieran presentar, siempre involucrando a la pareja en el proceso de toma de decisiones. Considero que la honestidad y el compromiso con mis pacientes son algunos de los valores que mas me representan, pienso que cada persona tenemos diferentes circunstancias y como tal merecemos atención personalizada. Soy miembro certificado de la COMEGO y del Colegio de Medicina Materno Fetal de Nuevo Leon, lo cual me permite mantenerme en constante actualización con la intención de brindar el mejor servicio.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828, Obispado (GINEQUITO, 2to piso cons. 206),"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828, Obispado (GINEQUITO, 2to piso cons. 206),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-carlos-reyes-guajardo/ginecologo/nuevo-leon#address-id=79585&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:41.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_carlos_reyes_guajardo.webp"
+}

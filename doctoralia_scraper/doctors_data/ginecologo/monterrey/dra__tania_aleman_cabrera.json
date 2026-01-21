@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Tania Aleman Cabrera",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/84534748/84534748-efd2-4cbd-841a-44ae9002e082_small_square.jpg",
+  "about": "Hola, soy la Dra. Tania Alemán, especialista en Ginecología y Obstetricia. Cuento con Diplomado en Colposcopía además de un Diplomado en Menopausia.Atendemos desde una valoración ginecológica o check up anual, hasta problemas mas complejos como infecciones, quistes ováricos, cirugía ginecológica y cuento además con el diplomado en Colposcopia lo que me permite tratar lesiones causadas por el VPH en el cuello del útero.Ademas llevamos el control del embarazo, desde la consulta preconcepcional, hasta el control mes con mes, y la resolución del mismo con cesárea o parto humanizado. Ninguna mujer debe de vivir con dudas sobre su propio cuerpo, con dolor relacionado a la menstruación o con miedo por la incertidumbre de tener algún diagnóstico que no comprendemos. Permíteme ayudarte y explicarte todas las dudas.",
+  "addresses": [
+    {
+      "full": "C. Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-aleman-cabrera/medico-general/nuevo-leon#address-id=610481&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:52.262Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__tania_aleman_cabrera.webp"
+}

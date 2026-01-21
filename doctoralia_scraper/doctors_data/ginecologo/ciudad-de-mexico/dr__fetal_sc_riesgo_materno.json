@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Fetal Sc Riesgo Materno",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Nicolas S/n Juan 806,"
+    },
+    {
+      "full": "Calle Nicolas S/n Juan 806,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fetal-sc-riesgo-materno/ginecologo/ciudad-de-mexico#address-id=60873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:59.618Z",
+  "localPhotoPath": null
+}

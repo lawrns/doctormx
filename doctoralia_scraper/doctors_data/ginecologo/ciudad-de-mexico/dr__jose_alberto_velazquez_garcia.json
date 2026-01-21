@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jose Alberto Velazquez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 52,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a94681/a9468196e3ae808e8c9bd82a81fbe306_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Enrique Sada Muguerza 17,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-velazquez-garcia/ginecologo/naucalpan-de-juarez2#address-id=494412&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:31.914Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_alberto_velazquez_garcia.webp"
+}

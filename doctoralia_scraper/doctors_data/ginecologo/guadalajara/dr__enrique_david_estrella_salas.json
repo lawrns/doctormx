@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Enrique David Estrella Salas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9e8575/9e8575a5636a591400885ae6d637242f_220_square.jpg",
+  "about": "2004-2010. Médico Cirujano y Partero. Universidad de Guadalajara. Centro Universitario de Ciencias de la Salud. Cédula profesional: 6889750. 2011-2015. Especialidad en Ginecología y Obstetricia. Instituto Mexicano del Seguro Social. Centro Médico Nacional de Occidente. Certificación en Ginecología y Obstetricia por el Consejo Mexicano de Ginecología y Obstetricia. 2017 -2022 Universidad de Guadalajara. Cédula profesional: 10700827. 2015-2017. Sub Especialidad en Urología Ginecológica. Instituto Mexicano del Seguro Social. Centro Médico Nacional de Occidente. Certificación en Urología Ginecológica por el Consejo Mexicano de Ginecología y Obstetricia. 2017-2022. Universidad de Guadalajara. Cédula profesional: 11272664",
+  "addresses": [
+    {
+      "full": "José María Vigil 2889,"
+    },
+    {
+      "full": "José María Vigil 2889,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-david-estrella-salas/ginecologo/guadalajara#address-id=155352&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:48.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__enrique_david_estrella_salas.webp"
+}

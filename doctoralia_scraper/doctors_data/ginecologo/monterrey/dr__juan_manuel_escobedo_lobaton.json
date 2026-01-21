@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Juan Manuel Escobedo Lobaton",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/78b8d9/78b8d9e7ec534da7dfb76d48abaf5bc2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    },
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $850"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-escobedo-lobaton/ginecologo/nuevo-leon#address-id=72986&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:47.795Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_manuel_escobedo_lobaton.webp"
+}

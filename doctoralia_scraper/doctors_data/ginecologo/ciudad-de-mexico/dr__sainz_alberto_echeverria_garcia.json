@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sainz Alberto Echeverria Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Gabriel Mancera Eje 2 Poniente 1556,"
+    },
+    {
+      "full": "Ave. Gabriel Mancera Eje 2 Poniente 1556,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sainz-alberto-echeverria-garcia/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:06:05.633Z",
+  "localPhotoPath": null
+}

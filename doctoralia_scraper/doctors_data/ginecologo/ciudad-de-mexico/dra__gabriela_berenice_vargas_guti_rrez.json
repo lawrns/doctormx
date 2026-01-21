@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gabriela Berenice Vargas Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a3c432c3/a3c432c3-d4b1-4356-a9e9-e5f2594c22bf_small_square.jpg",
+  "about": "Soy la Dra. Gabriela Berenice Vargas Gutiérrez, ginecóloga especialista y certificada por el Colegio Mexicano de Ginecólogos y Obstetras. Estudié medicina general en la Universidad Anáhuac y realicé mi especialidad en Hospital Regional Tlalnepantla ISSEMYM avalado por Universidad Autónoma del Estado de México, donde adquirí los conocimientos y habilidades necesarias para brindar una atención médica de calidad a mis pacientes. Mi principal objetivo es ofrecer un trato cercano y profesional a todas las pacientes que acuden a mi consultorio. Me aseguro de que todas las explicaciones sean claras y detalladas para que comprendan su diagnóstico y tratamiento. Además, me preocupo por mantener un ambiente cómodo y seguro en el que se sientan en confianza. También estoy especializada y certificada en hemorragia obstétrica, colposcopia y cirugía de mínima invasión conocidas como técnicas reconocidas y de vanguardia para ofrecer a mis pacientes los mejores resultados. Me gusta mantenerme actualizada en mi especialidad, por lo que asisto regularmente a cursos y congresos para estar al tanto de los últimos avances médicos. En mi consultorio, ofrezco una atención personalizada y de calidad, siempre con el objetivo de mejorar la salud y bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Calzada de los Jinetes 56,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-berenice-vargas-gutierrez/ginecologo/tlalnepantla-de-baz2#address-id=438756&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:14.893Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_berenice_vargas_guti_rrez.webp"
+}

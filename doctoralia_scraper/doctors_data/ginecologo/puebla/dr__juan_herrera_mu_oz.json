@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Juan Herrera Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1d432ee9/1d432ee9-6ee4-4279-8fce-d0fda41f9e56_small_square.jpg",
+  "about": "Especialista ginecoobstetra postgraduado en Hospital General de León Gto con amplia experiencia en manejo de embarazó de alto riesgo y patología ginecológica así como obstetrica",
+  "addresses": [
+    {
+      "full": "Calle 2 oriente num 508 Col. centro,"
+    },
+    {
+      "full": "Calle 2 Oriente 508,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-herrera-munoz/ginecologo/tehuacan#address-id=480403&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:07.494Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_herrera_mu_oz.webp"
+}

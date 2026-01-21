@@ -1,0 +1,31 @@
+{
+  "name": "Garza Moreno Carlos Alberto De La",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Dr. Guajardo 155,"
+    },
+    {
+      "full": "Calle Dr. Guajardo 155,"
+    },
+    {
+      "full": "Dr. Guajardo 155,"
+    },
+    {
+      "full": "Calle Dr. Guajardo 155,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garza-moreno-carlos-alberto-de-la/ginecologo/monterrey#address-id=33822&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:52.528Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Nicolas Rosas Rubalcaba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43c1fa/43c1faf354126408cada358c6cc3e240_220_square.jpg",
+  "about": "la experiencia marca la diferencia tengo 32 años como ginecólogo y obstetra ademas cuento con un diplomado en ecosonografia en obstetricia de mas de 25 años realizando estudios ecosonograficos la ética y mi moral mas mi humanismo me permiten, ofrecerle una atención y una asesoría medica de calidad excelente, y a la vez que usted mi paciente se sienta bien atendida",
+  "addresses": [
+    {
+      "full": "BATALLON DE SAN PATRICIO 493,"
+    },
+    {
+      "full": "BATALLON DE SAN PATRICIO 493,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-nicolas-rosas-rubalcaba/ginecologo/guadalajara#address-id=120383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:32.212Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__arturo_nicolas_rosas_rubalcaba.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Napoleón Antonio Huesca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 338,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a7403/2a74038c2bf228ea962eb98586bc8b5b_220_square.jpg",
+  "about": "Trabajo como Ginecólogo Especialista en: Obstetricia, Detección y tratamiento de Virus del Papiloma Humano, Sangrado uterino disfuncional, Embarazo, Tratamiento de Lesiones de Vulva/ Tumoraciones y Condilomas.",
+  "addresses": [
+    {
+      "full": "Belisario Dominguez 2602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/napoleon-antonio-huesca/ginecologo/nuevo-leon#address-id=148792&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:28.872Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__napole_n_antonio_huesca.webp"
+}

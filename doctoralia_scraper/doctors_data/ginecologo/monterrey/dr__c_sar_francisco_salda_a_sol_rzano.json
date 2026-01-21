@@ -1,0 +1,46 @@
+{
+  "name": "Dr. César Francisco Saldaña Solórzano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/27e76f/27e76f60be8b733eba1a0143c7f2b3d8_220_square.jpg",
+  "about": "¡Hola! Soy César Saldaña, ginecólogo y obstetra. Me dedico al cuidado de la salud de las mujeres en todas sus etapas. No hay nada mejor para mí que ver a mis pacientes desarrollarse plenamente, sabiendo que contribuí con mi granito de arena. En mi consultorio, todo el personal hacemos todo lo necesario para brindarte un ambiente de confianza y centrado en la paciente.",
+  "addresses": [
+    {
+      "full": "Corpus Christi 2320,"
+    },
+    {
+      "full": "Corpus Christi 2320,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-francisco-saldana-solorzano/ginecologo/nuevo-leon#address-id=370762&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:37.375Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__c_sar_francisco_salda_a_sol_rzano.webp"
+}

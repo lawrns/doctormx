@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Perez Negrete",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 41,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4d4958/4d49581a5e15b6deb5ace87d40a73431_220_square.jpg",
+  "about": "Nacido en la Ciudad de México, Medico Especialista en Ginecología Obstetricia centro medico nacional la Raza, Colposcopia y patologias del tracto genital inferior hospital juarez de Mexico, Cirugía Laparoscopica Ginecologica en hospital angeles londres, hospital español, Ultrasonido Avanzado con Doppler centro medico nacional la raza. Experto en el tratamiento quirúrgico de la patologia ginecologica por minima invasion (laparoscopia) histerectomia laparoscopica, miomectomia laparoscopica, quistes ovaricos con preservacion de ovario por laparoscopia, experto en el tratamiento de la hemorragia Obstetrica con curso avanzado de ligadura de arterias hipogastricas, procedimientos de histeroscopia para retiro de cuerpos extraños de cavidad uterina, miomectomia por histeroscopia, polipos, pongo a tu disposición un consultorio de vanguardia en la zona norte, hospital star medica tlalnepantla, con equipos de ultima generación para brindarte la mejor atención y dando certeza diagnostica y terapéutica para tu enfermedad, mas del 95% de nuestras cirugias son via laparoscopica. Especialidad en la Unidad Medica de Alta Especialidad y Centro Medico Nacional La RAZA. labore en el Hospital General de Zona 194 como medico Ginecólogo y Obstetra del 2010 a 2019 Practico la medicina privada desde 2009 a la fecha.",
+  "addresses": [
+    {
+      "full": "Calle Sor Juana Inés de La Cruz 280,"
+    },
+    {
+      "full": "Calle Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $2,800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-perez-negrete/ginecologo/tlalnepantla-de-baz2#address-id=139025&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:06.032Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_carlos_perez_negrete.webp"
+}

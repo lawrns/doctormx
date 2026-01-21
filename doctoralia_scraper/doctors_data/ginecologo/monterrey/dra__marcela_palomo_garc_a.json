@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marcela Palomo García",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d951b7/d951b726d3ff386ba650d298b171a853_220_square.jpg",
+  "about": "Mi principal objetivo es brindarte la mejor atención en el cuidado de tu salud íntima en las diferentes etapas de tu vida, con la plena confianza de que estás en manos de una profesional.",
+  "addresses": [
+    {
+      "full": "Alterna Torre Constitución, Piso 10, Cons 1003,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-palomo-garcia/ginecologo/nuevo-leon#address-id=487850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:11.131Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marcela_palomo_garc_a.webp"
+}

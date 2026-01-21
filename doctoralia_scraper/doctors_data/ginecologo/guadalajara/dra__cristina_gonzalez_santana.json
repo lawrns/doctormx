@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cristina Gonzalez Santana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/30cd04/30cd0427912454dc020d6578a307ac60_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Aurelio L. Gallardo 426,"
+    },
+    {
+      "full": "Calle Aurelio L. Gallardo 426,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Exploración Mamaria",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-gonzalez-santana/ginecologo/guadalajara#address-id=391264&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:23.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__cristina_gonzalez_santana.webp"
+}

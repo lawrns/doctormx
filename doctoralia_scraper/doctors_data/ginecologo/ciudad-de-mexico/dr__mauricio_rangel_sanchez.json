@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mauricio Rangel Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de37da/de37dab0e6d22e8e4c846fdb3fea832a_220_square.jpg",
+  "about": "Soy un médico ginecólogo con años de experiencia en Interrupción Legal del Embarazo. Realizo aborto legal a partir de la semana 1 a la semana 12 con opción al tratamiento por medicamento o Aspiración Manual Endouterina (AMEU). Me formé como Médico Cirujano en la Universidad La Salle (ULSA). Después realicé la Subespecialidad en Biología de la Reproducción Humana en el Instituto Nacional de Ciencias Médicas y Nutrición Salvador Zubirán (INCMNSZ).",
+  "addresses": [
+    {
+      "full": "Venturina 28, Col. estrella, Alcaldía G.A.M., c.p. 07810, CDMX,"
+    },
+    {
+      "full": "Venturina 28, Col. estrella, Alcaldía G.A.M., c.p. 07810, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Legrado uterino ginecológico diagnóstico o terapéutico. Urgente o programado",
+      "price": ""
+    },
+    {
+      "name": "Legrado uterino por aborto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-rangel-sanchez-2/ginecologo/ciudad-de-mexico#address-id=447195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:43.581Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mauricio_rangel_sanchez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raúl Enrique Vargas Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 211,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6dd8f68c/6dd8f68c-cb46-473a-a7d6-474b0126535d_small_square.jpg",
+  "about": "• Especialista en Ginecología y Obstetricia por la Unidad Médica de Alta Especialidad No. 23 IMSS, centro de referencia para atención especializada del norte del país. • Reproducción Humana por el Instituto Valenciano de Infertilidad en Valencia, España. Institución líder y reconocida a nivel mundial por sus aportaciones en medicina reproductiva. • Diplomados en: o Ultrasonido con Enfoque Perinatal o Colposcopia y Patología del tracto genital inferior. En mi práctica profesional hago uso de los conocimientos adquiridos para poder ofrecer la mejor calidad de atención y ética profesional, para así lograr los mejores resultados a mis pacientes.",
+  "addresses": [
+    {
+      "full": "TORRES MEDICAS ANGELOPOLIS 2, Anillo Periferico Ecologico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-enrique-vargas-martinez/ginecologo/puebla#address-id=120386&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:11.834Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ra_l_enrique_vargas_mart_nez.webp"
+}

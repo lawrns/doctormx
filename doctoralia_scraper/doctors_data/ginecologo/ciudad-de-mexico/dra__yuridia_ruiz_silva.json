@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Yuridia Ruiz Silva",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60ad11/60ad110a2c4be21f704c2f94873155d6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acueducto Rio Hondo 28 consultorio 306,"
+    },
+    {
+      "full": "Acueducto Rio Hondo 28 consultorio 306,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yuridia-ruiz-silva/ginecologo/miguel-hidalgo#address-id=21076&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:17.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yuridia_ruiz_silva.webp"
+}

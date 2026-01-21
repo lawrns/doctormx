@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Daniela Burciaga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 250,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a1f7e1/a1f7e16a31301670d136fa3de4987820_220_square.jpg",
+  "about": "Soy la Dra. Daniela Burciaga, especialista en ginecología y subespecialista en uroginecología en la ciudad de Torreón. Soy graduada de la Universidad de Monterrey. Mi objetivo es brindar una atención médica personalizada y de alta calidad a todas mis pacientes. Me esfuerzo por establecer una buena comunicación con ellas para que se sientan cómodas y seguras durante sus consultas. Siempre estoy dispuesta a responder preguntas y aclarar cualquier duda que puedan tener. Me encanta mi trabajo y estoy comprometida con la salud y el bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Paseo del Tecnológico 909, Residencial Tecnológico,"
+    },
+    {
+      "full": "Boulevard General Pedro Verona Rodríguez Triana 652,"
+    },
+    {
+      "full": "Hospital puerta de hierro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía vejiga caída",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta por incontinencia urinaria",
+      "price": ""
+    },
+    {
+      "name": "Histerectomia por laparoscopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Histerectomia vaginal reconstructiva",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-burciaga/ginecologo/zapopan#address-id=446531&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:41.195Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__daniela_burciaga.webp"
+}

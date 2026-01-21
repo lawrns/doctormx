@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Anna Lucia Sepulveda Salinas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fae3c3/fae3c3da975914a81e87305298a0b4ed_220_square.jpg",
+  "about": "Mi nombre es Anna Lucia Sepúlveda Salinas. Soy egresada de la Escuela de Medicina y Ciencias de la Salud TEC de Mty de Médico Cirujano. Posteriormente realicé la especialidad de Ginecología y Obstetricia en Christus Muguerza Hospital Conchita - UDEM. Ademas cuento con una maestria en Administración y Dirección en Salud de la UNIR España. Uno de mis compromisos principales es promover el empoderamiento de la mujer en la sociedad por medio de mi especialidad, acompañandolas en las distintas etapas de la vida, brindando una atención integral y personalizada, enfocadome en resolver las dudas o inquietudes que puedan surgir brindando siempre un espacio seguro. Además de mi trabajo soy corredora y me apasiona el hacer ejercicio buscando implementar un estilo de vida saludable en mi dia a dia.",
+  "addresses": [
+    {
+      "full": "Avenida Lázaro Cárdenas & Avenida Circuito Frida Kahlo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anna-lucia-sepulveda-salinas/ginecologo/san-pedro-garza-garcia#address-id=523354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:01.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__anna_lucia_sepulveda_salinas.webp"
+}

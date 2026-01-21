@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Víctor Alfonso Batiza Reséndiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8bb9ff/8bb9ff0b49546b79603d13fe15b08794_220_square.jpg",
+  "about": "Trato personalizado, humanizado, individualizado de la paciente y la pareja, tanto en obstetricia como en ginecología.",
+  "addresses": [
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    },
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-alfonso-batiza-resendiz/ginecologo/monterrey#address-id=7522&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:02.498Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__v_ctor_alfonso_batiza_res_ndiz.webp"
+}

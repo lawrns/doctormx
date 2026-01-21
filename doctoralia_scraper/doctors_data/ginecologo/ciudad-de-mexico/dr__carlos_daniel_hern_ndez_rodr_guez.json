@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Carlos Daniel Hernández Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/014c1d15/014c1d15-553c-41c9-8903-5d2d14f6f2c6_small_square.jpg",
+  "about": "Soy Médico Militar, Ginecólogo y Obstetra y Ginecólogo Oncólogo con amplia experiencia en salud femenina. Mi enfoque se centra en brindar atención personalizada y de alta calidad en cada etapa de la vida de mis pacientes. Servicios que Ofrezco: * Exámenes Ginecológicos: Realizo check up, pruebas de Papanicolau y exámenes de mamas, asegurando que cada paciente esté informada sobre su salud. * Atención Obstétrica: Ofrezco cuidado prenatal completo, seguimiento de embarazos y atención durante el parto, proporcionando un acompañamiento constante para garantizar la salud de la madre y el bebé. * Tamizaje y diagnóstico de enfermedades benignas y malignas * Ofrezco un enfoque integral para diagnosticar entidades malignas y cuento con los mejores aliados en el área de Oncología para un abordaje integral y en su caso una oportuna referencia Por qué Elegirme: Creo en la importancia de construir una relación de confianza con mis pacientes. Mi objetivo es ofrecer un ambiente cómodo y seguro donde cada mujer se sienta escuchada y apoyada en sus decisiones de salud. Contáctame: Si tienes alguna pregunta o deseas agendar una cita, no dudes en contactarme. Estoy aquí para ayudarte en cada paso de tu camino hacia una mejor salud.",
+  "addresses": [
+    {
+      "full": "Calle 26, No. 199, Colonia Altabrisa,"
+    },
+    {
+      "full": "Avenida Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-daniel-hernandez-rodriguez/ginecologo/naucalpan-de-juarez2#address-id=530853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:55.166Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_daniel_hern_ndez_rodr_guez.webp"
+}

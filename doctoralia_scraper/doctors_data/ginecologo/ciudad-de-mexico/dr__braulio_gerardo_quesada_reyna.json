@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Braulio Gerardo Quesada Reyna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/braulio-gerardo-quesada-reyna/ginecologo/tlalpan#address-id=11719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:10.171Z",
+  "localPhotoPath": null
+}

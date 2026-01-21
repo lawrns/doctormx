@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Nicolas Ramirez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494b8c/494b8cd40a38809bbac92ea7b387d89e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Mariano Matamoros 70 1,"
+    },
+    {
+      "full": "Calle Mariano Matamoros 70 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nicolas-ramirez-gomez/ginecologo/puruandiro#address-id=103742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:11.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__nicolas_ramirez_gomez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maria Amparo Olivera Amezcua",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 15,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3435,"
+    },
+    {
+      "full": "Tarascos 3435,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-amparo-olivera-amezcua/ginecologo/guadalajara#address-id=8501&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:28.145Z",
+  "localPhotoPath": null
+}

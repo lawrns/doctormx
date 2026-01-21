@@ -1,0 +1,25 @@
+{
+  "name": "Leslie Reyes Castelán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e4959a/e4959a41d676415824a87cb623854d12_220_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia Certificado por el Consejo Mexicano de Ginecología y Obstetricia. En la prácitica médica, cuento con amplia experiencia en el manejo de Embarazo y embarazo de alto riesgo, contando con un equipo multidisciplinario formado por médicos especialistas y subespecialistas enfocado a la mejor valoración , seguimiento y atención de las pacientes en esta importante etapa de sus vidas. De la misma forma, la consulta ginecológica se enfoca de manera individualizada a la resolución de los principales problemas femeninos en las distintas etapas de la vida de la mujer, siempre con un enfoque humano en un ambiente seguro y profesional.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 142,"
+    },
+    {
+      "full": "Calle Querétaro 142,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leslie-reyes-castelan/ginecologo/cuauhtemoc2#address-id=112797&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:52.585Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/leslie_reyes_castel_n.webp"
+}

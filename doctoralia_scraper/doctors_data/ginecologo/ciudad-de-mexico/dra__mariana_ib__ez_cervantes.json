@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Ibáñez Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d4bacf/d4bacff589980636b1b7e9298b62979c_220_square.jpg",
+  "about": "Mariana busca resolver todas tus dudas, ya sea que tengas una enfermedad o solo quieras cuidar tu salud, siempre en confianza y sin prejuicios. Es egresada de la Facultad de Medicina de la UNAM. Realizó la especialidad en el Hospital General Dr. Enrique Cabrera. Cuenta con una subespecialista en Medicina Crítica en Obstetricia en el Hospital Materno Infantil ISSEMYM. Cuenta también con un diplomado en colposcopia avalado por la Universidad La Salle. Su actividad favorita, fuera de la práctica médica, la encuentra en la natación, pues le brinda tranquilidad y bienestar",
+  "addresses": [
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    },
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up básico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,549"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $949"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $949"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-ibanez-cervantes/ginecologo/alvaro-obregon#address-id=470408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:17.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mariana_ib__ez_cervantes.webp"
+}

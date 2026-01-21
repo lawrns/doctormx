@@ -1,0 +1,25 @@
+{
+  "name": "Fhelipe Caldiño Soto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santa Teresa 1055 Consultorio 1015 Col. Héroes De Padierna ,"
+    },
+    {
+      "full": "Santa Teresa 1055 Consultorio 1015 Col. Héroes De Padierna ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fhelipe-caldino-soto/ginecologo/magdalena-contreras",
+  "scrapedAt": "2026-01-21T03:06:02.211Z",
+  "localPhotoPath": null
+}

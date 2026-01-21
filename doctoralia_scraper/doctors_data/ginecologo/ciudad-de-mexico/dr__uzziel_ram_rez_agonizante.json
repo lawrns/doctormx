@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Uzziel Ramírez Agonizante",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1e310392/1e310392-52c3-4fd5-b3e1-96122fc7a34d_small_square.jpg",
+  "about": "Tu salud, mi compromiso. Con años de experiencia en el cuidado de la salud femenina, me dedico a acompañar a mujeres en cada etapa de su vida, especialmente durante el embarazo y el parto, para que vivan esta experiencia única con confianza, seguridad y tranquilidad. ¿Qué me distingue? Atención personalizada y empática. Uso de tecnología de vanguardia para el diagnóstico y seguimiento. Un enfoque humano para resolver tus dudas y priorizar tu bienestar. - Servicios que ofrezco: - Control prenatal. - Atención integral de partos naturales y cesáreas. - Consultas ginecológicas y seguimiento de salud femenina. Estoy aquí para cuidarte y guiarte en cada paso del camino. Porque cuidar de ti es cuidar de lo más importante. Estudié la carrera de médico cirujano en la FacMed de la Universidad Nacional Autonoma de México y la especialidad en el Hospital de Gineco-Obstetricia No. 4 \"Luis Castelazo Ayala\" del IMSS. Certificado por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Av. Toluca, número 506, Colonia Olivar de los padres, Álvaro Obregón, C.P. 01780,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/uzziel-ramirez-agonizante/ginecologo/alvaro-obregon#address-id=516256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:06.134Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__uzziel_ram_rez_agonizante.webp"
+}

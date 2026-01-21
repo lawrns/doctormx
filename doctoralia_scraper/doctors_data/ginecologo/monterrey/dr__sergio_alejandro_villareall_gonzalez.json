@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Sergio Alejandro Villareall Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Batallon de San Patricio 112 (Piso 10 Consultorio 7),"
+    },
+    {
+      "full": "Batallon de San Patricio 112 (Piso 10 Consultorio 7),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-alejandro-villareall-gonzalez/ginecologo/san-pedro-garza-garcia#address-id=42755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:24.900Z",
+  "localPhotoPath": null
+}

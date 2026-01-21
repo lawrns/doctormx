@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Álvarez Ahumada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 72,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b6d77/6b6d77e32eed9ab1275630ff339e9032_220_square.jpg",
+  "about": "DR. GUILLERMO ALVAREZ ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA CON MAS DE 20 AÑOS DE EXPERIENCIA, EGRESADO DE LA UNIVERSIDAD AUTONOMA DE GUADALAJARA Y DEL INSTITUTO NACIONAL DE PERINATOLOGIA EN LA CD. DE MEXICO.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 930,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 930,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-alvarez-ahumada/ginecologo/zapopan#address-id=68317&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:25.515Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__guillermo__lvarez_ahumada.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Kiyoshi Arturo Macotela Nakagaki",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6bbbf3/6bbbf324ab0b6197c82608f1bf225aa9_220_square.jpg",
+  "about": "El objetivo es brindar la mejor atención a la mujer y a la pareja para encontrar el camino adecuado a sus necesidades personales, mediante una atención personalizada y oportuna en embarazo, ginecología e infertilidad con tratamientos de alta y baja complejidad. En relación con los tratamientos de infertilidad, mi experiencia como director del laboratorio de In-Vitro me ha permitido ofrecer a las pacientes una expectativa más real, con mayor conocimiento de sus posibilidades en los tratamientos. Se cuenta en el consultorio con personal capacitado para ofrecer la mejor atención desde el inicio hasta el final de la consulta.",
+  "addresses": [
+    {
+      "full": "Av. Vasco de Quiroga 4299 piso 14,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Vasco de Quiroga 4299 piso 14,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kiyoshi-arturo-macotela-nakagaki/ginecologo/ciudad-de-mexico#address-id=93704&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:02.093Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__kiyoshi_arturo_macotela_nakagaki.webp"
+}

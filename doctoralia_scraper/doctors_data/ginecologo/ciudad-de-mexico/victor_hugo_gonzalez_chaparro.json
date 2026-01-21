@@ -1,0 +1,25 @@
+{
+  "name": "Victor Hugo Gonzalez Chaparro",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Herreros 68,"
+    },
+    {
+      "full": "Herreros 68,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-gonzalez-chaparro/ginecologo/venustiano-carranza",
+  "scrapedAt": "2026-01-21T03:13:06.275Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Elizabeth Cruz López",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4477a4cc/4477a4cc-2547-4a9c-8111-7b227f4b301b_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz n 280,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz n 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-cruz-lopez/ginecologo/tlalnepantla-de-baz2#address-id=522665&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:05.346Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elizabeth_cruz_l_pez.webp"
+}

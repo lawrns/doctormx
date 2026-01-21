@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Roberto Guadalupe Guzman Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d2f3e5/d2f3e5227bf52054285fdbc3c5eea366_220_square.jpg",
+  "about": "Atención a nuestras pacientes en: Control prenatal, cuidando la salud de la madre y el estado fetal, con visitas prenatales mensuales, supervisando ganancia de peso y nutrición adecuada, presión arterial, ultrasonido y apoyado por estudios de laboratorio. Diagnóstico y Tratamiento de las Lesiones premalignas del tracto genital inferior asociadas a infección por Virus del Papiloma Humano, a nivel de cérvix, vagina, vulva, región perineal y sitios adyacentes. Diagnóstico y tratamiento de enfermedades ginecológicas como son enfermedades infecciosas del tracto genital como vaginitis, vaginosis bacteriana. Tumores benignos como Miomatosis Uterina, enfermedades como Endometriosis, quistes ováricos, Sangrado Genital Anormal, Trastornos del Ciclo Menstrual, trastornos asociados a Climaterio y Menopausia. Cirugía Laparoscópica Avanzada: Miomectomia, histerectomía, resección de quistes ováricos, adherensiolisis. Tratamientos para trastornos de vagina y vulva con técnicas de Gineco-Cosmética.",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-guadalupe-guzman-martinez/ginecologo/zapopan#address-id=362936&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:03.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__roberto_guadalupe_guzman_martinez.webp"
+}

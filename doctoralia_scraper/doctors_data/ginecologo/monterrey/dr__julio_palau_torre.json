@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Julio Palau Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 59,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5e527/a5e52798e83a7f36f78cab6abea96f89_220_square.jpg",
+  "about": "Hola, soy el Dr. Julio Palau Torre. Ginecólogo y Obstetra. Apasionado por la salud de mis pacientes! Agenda tu cita para cualquier consulta.",
+  "addresses": [
+    {
+      "full": "Av. Manuel Gómez Morín 300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-palau-torre/ginecologo/san-pedro-garza-garcia#address-id=486174&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:01.199Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__julio_palau_torre.webp"
+}

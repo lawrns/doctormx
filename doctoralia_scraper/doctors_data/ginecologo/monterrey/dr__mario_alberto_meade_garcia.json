@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mario Alberto Meade Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3f84af/3f84aff53236443a5cfcbe752c77bcbf_220_square.jpg",
+  "about": "DR. MARIO ALBERTO MEADE GARCÍA Especialista en Ginecología y Obstetricia. ☑️ Egresado de la especialidad de Ginecología y Obstetricia del Hospital Regional ISSSTE de Monterrey. ☑️Avalado por la Universidad Autónoma de Nuevo León. ☑️Certificado por el Consejo Mexicano de Ginecología y Obstetricia. ☑️Cuenta con diferentes cursos y diplomados en Ecografía Obstétrica y Colposcopia. ☑️Fundador de LEMAVI y parte del equipo de especialistas de este centro.",
+  "addresses": [
+    {
+      "full": "Calle Guadalupe 439,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alberto-meade-garcia/ginecologo/nuevo-leon#address-id=455408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:18.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mario_alberto_meade_garcia.webp"
+}

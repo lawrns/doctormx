@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Evelio Luis Cabezas Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208 (Hospital Angeles México, Torre A, Cons. 601),"
+    },
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208 (Hospital Angeles México, Torre A, Cons. 601),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/evelio-luis-cabezas-garcia/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-21T03:04:15.531Z",
+  "localPhotoPath": null
+}

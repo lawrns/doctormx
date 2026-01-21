@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Raul Barreto Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/28de08/28de08aab04b5a3bf3d02ddfd9e9bafb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sn Alejandro,"
+    },
+    {
+      "full": "Sn Alejandro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-barreto-villanueva/ginecologo/coyoacan#address-id=123183&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:28.481Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raul_barreto_villanueva.webp"
+}

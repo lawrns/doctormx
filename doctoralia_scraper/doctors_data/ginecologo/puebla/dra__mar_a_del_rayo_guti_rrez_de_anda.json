@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María del Rayo Gutiérrez de Anda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b28acd/b28acd5421821c25d69e8d90efe67e79_220_square.jpg",
+  "about": "IMSS HGR36. Hospital de la Mujer. Certificada por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Mártires del 2 de Octubre 4355 San Baltazar Campeche,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-rayo-gutierrez-de-anda/ginecologo/puebla#address-id=79531&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:59.146Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_del_rayo_guti_rrez_de_anda.webp"
+}

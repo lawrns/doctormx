@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luz Elena Amezcua Llauger",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/643c07/643c076dc3c4d9df33893a4c1971f995_220_square.jpg",
+  "about": "Comprometida con la salud de la mujer",
+  "addresses": [
+    {
+      "full": "Retorno 33 de Avenida del Taller 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-elena-amezcua-llauger/ginecologo/venustiano-carranza2#address-id=77517&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:28.456Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__luz_elena_amezcua_llauger.webp"
+}

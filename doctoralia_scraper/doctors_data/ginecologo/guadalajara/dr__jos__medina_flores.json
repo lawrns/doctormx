@@ -1,0 +1,31 @@
+{
+  "name": "Dr. José Medina Flores",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Guadalupe 284,"
+    },
+    {
+      "full": "AV. MANUEL J.CLOUTHIER #669, 2DO PISO, INTERIOR 16 ,"
+    },
+    {
+      "full": "Av Guadalupe 284,"
+    },
+    {
+      "full": "AV. MANUEL J.CLOUTHIER #669, 2DO PISO, INTERIOR 16 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-medina-flores/ginecologo/zapopan#address-id=26348&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:54.132Z",
+  "localPhotoPath": null
+}

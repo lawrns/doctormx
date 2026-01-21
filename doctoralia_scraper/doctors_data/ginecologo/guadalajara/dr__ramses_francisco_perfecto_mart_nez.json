@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ramses Francisco Perfecto Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e4f723/e4f7239e192bc6f07d6ff36f88ff7668_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circunvalación norte 135 Colonia Independencia,"
+    },
+    {
+      "full": "Circunvalación norte 135 Colonia Independencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramses-francisco-perfecto-martinez/ginecologo/guadalajara#address-id=30445&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:31.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ramses_francisco_perfecto_mart_nez.webp"
+}

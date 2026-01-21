@@ -1,0 +1,56 @@
+{
+  "name": "Dra. Leslie Marcel Leyva Sotelo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce9dd2/ce9dd22cfcdd9f488aa8674441789b3f_220_square.jpg",
+  "about": "Leslie ofrece una consulta con enfoque incluyente y trato humanizado. Es Médica Cirujana por la UNAM, tiene un máster en Gestión Hospitalaria y Servicios de Salud avalado por la Universidad Cardenal Herrera en España. Cuenta con la especialidad en Ginecología en el hospital Español de México avalado por la UNAM, donde fue jefa de residentes y obtuvo mención honorífica en el examen profesional. Actualmente está haciendo una alta especialidad en Cirugía endoscópica ginecológica. Entre sus intereses se encuentran hacer ejercicio, escuchar audiolibros, así como el cine y la música.",
+  "addresses": [
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    },
+    {
+      "full": "Av. de la Paz 21,"
+    },
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    },
+    {
+      "full": "Av. de la Paz 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up básico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,549"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $949"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $949"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leslie-marcel-leyva-sotelo/ginecologo/alvaro-obregon#address-id=492939&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:01.718Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__leslie_marcel_leyva_sotelo.webp"
+}

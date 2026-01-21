@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Fernando Urquiza y Conde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/303411/3034111e0c3bf157849fcd8f59b18c58_220_square.jpg",
+  "about": "Soy médico egresado de la Universidad Panamericana, Ginecólogo Obstetra pro vida católico. Realicé cirugía endoscópica ginecológica en el Centro Médico Nacional 20 de Noviembre. Soy Medical Consultant en el Modelo Creighton y Naprotecnología en Ciudad de México. Practico medicina restaurativa de la fertilidad, es decir, les ayudamos a embarazarse sin sustituir el acto sexual (Medicina reproductiva pro vida).",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $300"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-urquiza-y-conde/ginecologo/ciudad-de-mexico#address-id=448352&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:32.368Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_urquiza_y_conde.webp"
+}

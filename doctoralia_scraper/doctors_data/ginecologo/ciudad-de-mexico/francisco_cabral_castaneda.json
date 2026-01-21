@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Cabral Castaneda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo no. 208-a-8vo.piso, Escandon,"
+    },
+    {
+      "full": "Agrarismo no. 208-a-8vo.piso, Escandon,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-cabral-castaneda/ginecologo/miguel-hidalgo#address-id=113715&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:39.200Z",
+  "localPhotoPath": null
+}

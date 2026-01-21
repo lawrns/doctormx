@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Ortega Martínez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8bfff/c8bfff3a2a322de55fc6e56bb6e167e7_220_square.jpg",
+  "about": "Medico ginecólogo fundador de clinica promujer estamos dentro un dispensario medico para apoyar a la gente y a las mujeres que no cuenten con muchos recursos económicos, por lo que somos un grupo multidisciplinario el fin de apoyar a mucha gente que así lo requiera y solicite con precios muy accesibles.Contamos con CHECK UPS GINECOLOGICOS a precios accesibles S",
+  "addresses": [
+    {
+      "full": "Calle Cuauhtemoc num 41 col.Valle del Sur Iztapalapa,"
+    },
+    {
+      "full": "Calle Cuauhtemoc num 41 col.Valle del Sur Iztapalapa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-ortega-martinez/ginecologo/iztapalapa#address-id=409303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:06.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_ortega_mart_nez.webp"
+}

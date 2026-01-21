@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raul Armas Sahagun",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mar Marmara 1979,"
+    },
+    {
+      "full": "Alvarez Del Castillo 1542,"
+    },
+    {
+      "full": "Mar Marmara 1963,"
+    },
+    {
+      "full": "Mar Marmara 1963,"
+    },
+    {
+      "full": "Mar Marmara 1979,"
+    },
+    {
+      "full": "Alvarez Del Castillo 1542,"
+    },
+    {
+      "full": "Mar Marmara 1963,"
+    },
+    {
+      "full": "Mar Marmara 1963,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-armas-sahagun-2/ginecologo/guadalajara#address-id=36543&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:54.534Z",
+  "localPhotoPath": null
+}

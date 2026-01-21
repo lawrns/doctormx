@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Paulina Yancor Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "La Dra. Paulina Yancor es una profesional de la salud con especialidad en Ginecología y Obstetrica, egresada del Hospital de la Mujer, avalada por la Universidad Nacional Autónoma de México. Cuenta con estudios adicionales de posgrado como: * Climaterio y Menopausia en el Instituto Nacional de Perinatología * Colposcopía y Patología del Tracto Inferior en el Hospital General de México * Uso de Láser en el Tracto Genital Inferior en el Colegio Mexicano de Ginecólogos Dedicados a la Colposcopia Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Está consciente que lo más importante en la consulta médica es el paciente y sus necesidades, así como explicar a detalle la naturaleza del padecimiento, las opciones de tratamiento y lo que se puede esperar a futuro. La consulta ginecológica no es grata en todos los casos, por lo que trata de favorecer un ambiente cálido para que juntas puedan encontrar la mejor opción de padecimientos tales como: - Enfermedades por infección por Virus de Papiloma Humano y otras enfermedades de transmisión sexual. - Prevención de Check - Up Anual con toma de Papanicolaou y Colposcopia. - Infecciones vaginales. - Información y orientación sobre los métodos de planificación familiar.",
+  "addresses": [
+    {
+      "full": "Tehuantepec, 251 cons 506,"
+    },
+    {
+      "full": "Tehuantepec, 251 cons 506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-yancor-sandoval/ginecologo/cuauhtemoc2#address-id=257988&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:15.782Z",
+  "localPhotoPath": null
+}

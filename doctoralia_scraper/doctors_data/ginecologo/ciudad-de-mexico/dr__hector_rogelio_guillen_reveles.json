@@ -1,0 +1,78 @@
+{
+  "name": "Dr. Hector Rogelio Guillen Reveles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be1c41/be1c413606e345688bc2fafb17db067d_220_square.jpg",
+  "about": "Ginecólogo y obstetra, especialista en cirugía endoscopica, 9 años de experiencia clinica. En constante preparación y superación para entregar los mejores resultados a los pacientes que depositan su confianza en mi.",
+  "addresses": [
+    {
+      "full": "Av. San Rafael 7,,"
+    },
+    {
+      "full": "Calle 2 nº.52,"
+    },
+    {
+      "full": "Ateneas No. 106 Loc.31-C Plaza Comercial Valle Dorado,"
+    },
+    {
+      "full": "Av. San Rafael 7,,"
+    },
+    {
+      "full": "Calle 2 nº.52,"
+    },
+    {
+      "full": "Ateneas No. 106 Loc.31-C Plaza Comercial Valle Dorado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-rogelio-guillen-reveles/ginecologo/tlalnepantla-de-baz2#address-id=23096&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:55.688Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hector_rogelio_guillen_reveles.webp"
+}

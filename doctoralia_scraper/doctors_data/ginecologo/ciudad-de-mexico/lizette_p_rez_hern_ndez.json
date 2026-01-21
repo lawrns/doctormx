@@ -1,0 +1,46 @@
+{
+  "name": "Lizette Pérez Hernández",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "RECIBIMOS PACIENTES DE PRIMERA VEZ Y SUBSECUENTES, DONDE EN LA PRIMERA CONSULTA SE REALIZA EXPLORACIÓN BÁSICA, TOMA DE SIGNOS VITALES, PESO, EXPLORACIÓN MAMARIA, EXPLORACIÓN GINECÓLOGA Y DE REQUERIRSE SE TOMA PAPANICOLAU, COLPOSCOPIA. SIEMPRE CON ATENCIÓN RESPETUOSA Y EMPATICA A NUESTROS PACIENTES ASIMISMO CON ATENCIÓN AMIGABLE.",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa No. 430 ( Hospital Angeles acoxpa consultorio 240),"
+    },
+    {
+      "full": "Calzada Acoxpa No. 430 ( Hospital Angeles acoxpa consultorio 240),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizette-perez-hernandez-2/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=125750&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:45.804Z",
+  "localPhotoPath": null
+}

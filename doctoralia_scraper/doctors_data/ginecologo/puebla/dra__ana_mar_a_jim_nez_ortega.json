@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana María Jiménez Ortega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 121,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f960a6/f960a6e1661311354a39174f811bac0e_220_square.jpg",
+  "about": "Soy la Dra. Ana María Jiménez Ortega, Médico Especialista en Ginecología y Obstetricia. Me especializo en: - Papanicolaou - Colposcopia - Detección de ETS - Detección de VPH y tratamiento. - Vacuna de VPH - Detección de cáncer cérvico uterino - Embarazo normal y de alto riesgo - Parto humanizado - Cesárea humanizada - Miomas uterinos - Histerectomía - Atención ginecológica - Sangrado uterino anormal - Alteraciones menstruales - Planificación Familiar (Colocación y retiro de DIU y colocación de implante subdérmico) - Detección de cáncer (Cervicouterino, ovario, endometrio, mama) Te facturo y cuento con estacionamiento privado para consultas muy noche. Te espero, ¡ Agenda tu cita por doctoralia !",
+  "addresses": [
+    {
+      "full": "CALLE 2 PONIENTE 3919 COLONIA AQUILES SERDÁN,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-jimenez-ortega/ginecologo/puebla#address-id=345199&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:13.931Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ana_mar_a_jim_nez_ortega.webp"
+}

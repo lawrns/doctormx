@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Montserrat Gisela Arana Murillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 820,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f65f8/6f65f8be4073ac875081131a43d9e8b0_220_square.jpg",
+  "about": "Soy egresada de la Universidad de Guadalajara, orgullosamente formada en el Hospital Civil Nuevo \" Dr. Juan I. Menchaca\" en la especialidad de Ginecología y Obstetricia, me encuentro realizando actualizaciones medicas continuas para tu mejor atención. Para mi lo más importante es ponerme en los zapatos de mis pacientes, agradezco la confianza que tienen al venir y platicar sus problemas de salud, así como llevar su control del embarazo. Me gusta que te sientas como en una plática de amigas al momento de tu consulta, por eso procuro la plática y la confianza al momento de cada valoración. Soy especialista en enfermedades del tracto genital inferior, como infecciones por Virus de Papiloma Humano (VPH), y otra enfermedades de transmisión sexual, con actualizaciones continuas en este tema para brindarte una mejor atención y manejo. Doy atención a partos y cesáreas, de manera respetada con asesorías para las parejas, enfocándome en lo primordial que es la madre y el nuevo bebé, apoyo a la Lactancia, asesoro en cuanto a ejercicios e indicaciones para un parto o cesárea respetada, para una Lactancia exitosa, cuidados en el embarazo y en los primeros meses post parto.",
+  "addresses": [
+    {
+      "full": "Avenida Sebastian Bach 4806,"
+    },
+    {
+      "full": "Quintana Roo 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-gisela-arana-murillo/ginecologo/zapopan#address-id=94493&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:50.347Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__montserrat_gisela_arana_murillo.webp"
+}

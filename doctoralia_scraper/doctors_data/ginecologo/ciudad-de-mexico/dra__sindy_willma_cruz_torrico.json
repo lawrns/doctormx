@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Sindy Willma Cruz Torrico",
+  "specialty": "Urología Ginecológica",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d3aa47f1/d3aa47f1-ed12-4266-8759-a0e23b3acd4f_small_square.jpg",
+  "about": "Soy la Dra. Sindy Cruz, ginecóloga dedicada al cuidado de la salud femenina con un enfoque humano y de confianza. Me gusta brindar consultas en un ambiente cómodo y respetuoso, donde puedas sentirte tranquila para hablar de tu salud y resolver todas tus dudas. Acompaño a cada mujer de manera personalizada, desde la prevención hasta el tratamiento, siempre buscando tu bienestar y tranquilidad. Mi objetivo es que te sientas escuchada, cuidada y segura en cada visita.",
+  "addresses": [
+    {
+      "full": "Periferico Sur 5550,"
+    },
+    {
+      "full": "Periferico Sur 5550,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sindy-willma-cruz-torrico/ginecologo/coyoacan#address-id=620317&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:45.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sindy_willma_cruz_torrico.webp"
+}

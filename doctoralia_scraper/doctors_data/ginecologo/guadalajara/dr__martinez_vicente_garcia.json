@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Martinez Vicente Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Patria 172 1c,"
+    },
+    {
+      "full": "Ave. Patria 172-1C,"
+    },
+    {
+      "full": "Patria 172 1c,"
+    },
+    {
+      "full": "Ave. Patria 172-1C,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martinez-vicente-garcia-2/ginecologo/zapopan#address-id=339351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:44.704Z",
+  "localPhotoPath": null
+}

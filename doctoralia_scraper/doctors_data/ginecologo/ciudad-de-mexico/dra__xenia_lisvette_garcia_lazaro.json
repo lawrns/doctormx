@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Xenia Lisvette Garcia Lazaro",
+  "specialty": "Ginecóloga Oncóloga",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8be26e7d/8be26e7d-fa6a-4851-a2d7-ee39a9496fcd_small_square.jpg",
+  "about": "Soy Ginecóloga Oncóloga, egresada del Hospital General de MéxicoEspecialista en las enfermedades benignas y malignas de la mujer, en cada una de las etapas de su vida. Especialista en Cirugía de mínima invasión (Laparoscopía)Especialista en Colposcopia y Patología del tracto genital inferior Mi objetivo es brindarte atención personalizada, empática, que te haga sentir cómoda y cuidada en todo momento, mi equipo y yo estamos para ofrecerte calidad y seguridad durante tu tratamiento.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": "• $10,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/xenia-lisvette-garcia-lazaro/ginecologo-oncologico-ginecologo/benito-juarez#address-id=576986&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:11.144Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__xenia_lisvette_garcia_lazaro.webp"
+}

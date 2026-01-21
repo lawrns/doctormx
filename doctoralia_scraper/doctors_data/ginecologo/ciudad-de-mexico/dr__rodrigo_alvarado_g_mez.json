@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodrigo Alvarado Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c97e59/c97e59b698dc2211bbd9a321b8c959f0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada de Tlalpan 4477, Colonia Toriello Guerra,"
+    },
+    {
+      "full": "Calzada de Tlalpan 4477, Colonia Toriello Guerra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-alvarado-gomez/ginecologo/tlalpan#address-id=153814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:19.545Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodrigo_alvarado_g_mez.webp"
+}

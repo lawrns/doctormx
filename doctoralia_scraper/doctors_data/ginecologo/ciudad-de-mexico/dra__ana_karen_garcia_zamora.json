@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Karen Garcia Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 337,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ce3ce6/ce3ce6cd60ff9e25f76c18fe49e270e6_220_square.jpg",
+  "about": "Soy la Doctora Ana Karen, Médico egresada de la Universidad Autónoma de México, especialista en Ginecología y Obstétrica por el Hospital General de México. Especialista en Colposcopia y enfermedades de tracto genital, avalado por Universidad La Salle. El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Xola 1902,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karen-garcia-zamora/ginecologo/iztacalco",
+  "scrapedAt": "2026-01-21T02:44:08.344Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_karen_garcia_zamora.webp"
+}

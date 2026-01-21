@@ -1,0 +1,31 @@
+{
+  "name": "Cuauhtemoc Campos Baranda",
+  "specialty": "Cirujano general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zacatecas no. 124 p.b., Roma,"
+    },
+    {
+      "full": "Zacatecas No.36-1,"
+    },
+    {
+      "full": "Zacatecas no. 124 p.b., Roma,"
+    },
+    {
+      "full": "Zacatecas No.36-1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cuauhtemoc-campos-baranda/cirujano-general-ginecologo/colima#address-id=113692&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:08.864Z",
+  "localPhotoPath": null
+}

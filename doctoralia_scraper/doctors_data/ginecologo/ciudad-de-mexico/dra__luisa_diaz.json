@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luisa Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9d34c5c8/9d34c5c8-cccf-4687-b0d2-1681ea8cc43a_small_square.jpg",
+  "about": "Hola soy la Dra. Maria Luisa Díaz. Soy médica ginecóloga y obstetra formada en la Escuela Médico Militar y especializada en Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad , con un enfoque especializado en colposcopia certificado por la FES Zaragoza . Mi práctica profesional abarca la atención integral de la salud femenina, con especial énfasis en el manejo de embarazos de alto riesgo , garantizando un cuidado cercano y preciso para proteger la salud tanto de la madre como del bebé. Además, trata diversas patologías ginecológicas como miomas uterinos sangrado uterino anormal y otras condiciones que afectan la salud reproductiva de la mujer. Mi compromiso es brindar atención médica de alta calidad, siempre respaldada por las más recientes investigaciones y avances en ginecología, y asegurar que cada paciente reciba un cuidado personalizado y profesional.",
+  "addresses": [
+    {
+      "full": "Avenida Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisa-diaz/ginecologo/naucalpan-de-juarez2#address-id=426735&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:56.159Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__luisa_diaz.webp"
+}

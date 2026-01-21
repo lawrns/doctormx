@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jorge Pérez Zapata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/29a38f/29a38fa826da896d44abc72f4398379e_220_square.jpg",
+  "about": "Trabajamos brindando una consulta con calidad y calidez, respondiendo todas sus dudas y dando opciones en tratamiento ya sea médico ó quirúrgico; 22 años de experiencia nos respaldan así como tener un gran equipo de trabajo. Ser profesor titular de la residencia de Ginecología y Obstetricia en la Unidad Médica de Alta especialidad me hace estar en constante actualización participando en la formación de nuevos ginecólogos. Contamos con equipo médico como Ultrasonido 4D, registro cardiotocográfico para valorar el bienestar del bebé; crioterapia para algunas enfermedades ginecológicas. Agenda una cita, te podemosa ayudar.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-perez-zapata/ginecologo/general-escobedo#address-id=27178&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:07.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jorge_p_rez_zapata.webp"
+}

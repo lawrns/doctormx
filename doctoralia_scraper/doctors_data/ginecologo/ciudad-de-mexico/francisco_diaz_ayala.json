@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Diaz Ayala",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 290,"
+    },
+    {
+      "full": "Durango 290,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-diaz-ayala/ginecologo/ciudad-de-mexico#address-id=226571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:08:52.576Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Diana Isabel Martínez Mejía",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e69d22/e69d22502d6220b385785f812c3222cd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Cruz del Sur #94,"
+    },
+    {
+      "full": "Avenida Cruz del Sur #94,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-isabel-martinez-mejia/ginecologo/ciudad-de-mexico#address-id=381214&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:51.724Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_isabel_mart_nez_mej_a.webp"
+}

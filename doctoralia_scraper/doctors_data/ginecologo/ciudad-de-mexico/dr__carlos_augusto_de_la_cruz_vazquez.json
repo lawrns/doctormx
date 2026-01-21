@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Carlos Augusto De la Cruz Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c713e4/c713e4ffc17e215794b7ae038e3c686e_220_square.jpg",
+  "about": "egresado: unida medica de alta espescialidad Gineco 4, IMSS. EXPERIENCIA LABORAL: LUIS CASTELAZO AYALA UMAE. HOSPITAL DE ESPECIALIDADES BELISARIO DOMINGUEZ.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-augusto-de-la-cruz-vazquez/ginecologo/ciudad-de-mexico#address-id=32195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:12.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_augusto_de_la_cruz_vazquez.webp"
+}

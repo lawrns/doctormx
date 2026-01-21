@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Alinne Colin",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f6385b/f6385b06834cdc4e1e51a2c783059423_220_square.jpg",
+  "about": "Egresada del Instituto Nacional de Perinatología, como Ginecologa y Obstetra. Realizó estudios de Posgrado en el área de Fertilidad y Reproducción Asistida. Maestría en Ciencias Médicas ha realizado y publicado investigación original en el área de Ginecología y Biología de la Reproducción Humana. Algunos de los trabajos realizados incluyen los siguientes: Bases Biológicas y Terapéuticas de la fertilización asistida. Reproducción Asistida. Editorial Instituto de Investigaciones Jurídica Endocrinología reproductiva e infertilidad. Editorial Prado Libro 12: Enfermedades de la Mujer Programa de Actualización Continua Medicina General-5. Editorial Intersistemas The effect of age on the expression of apoptosis biomarkers in human spermatozoaFertil Steril 2010; 94(7): 2609-2614 Efecto de la merocianina-540 en la capacidad fertilizante del Espermatozoide correlacionada con la expresión de fragmentos 3 OH terminales Ginecol Obstet Mex. 2010; 78(12):685-691 Impacto del envejecimiento masculino en la capacidad funcional del epermatozoide a través de la expression de fosfatidilserina y oligonucleosomas Ginecol Obstet Mex. 2010 78(12):669-676 The impact of M-540 bodies on the Measurement of DNA fragmentation as a late apoptotic marker. Fertil Steril 2010, S134:140. Acardia fetal y fertilización in vitro Ginecol Obstet 2011;79(7). Efecto de la aplicación de columnas de anexina en los resultados reproductivos de parejas infértiles Ginecol Obstet Mex 2012; 80(1):16-21 The apoptotic pathway in fertile and subfertile men: a case-control and prospective study to examine the impact of merocy Fertil Steril 2013; 99(5):1242-1248 A simplified collapsing technique usging trehalose does not compromise vitrification outcomes Fertil Steril 2013; 100(3):S108 Improving Implantation phenomena in patients with endometrial cavity fluid (EFC): methyl-ergonovin maleate a new alternative in art Fertil Steril 2013; 100(3):S389 Human fertilization and pre-implantatory embryo quiality enhacement applying anexin V magnetic binding columns (MACS) on IVF/ICSI infertile couples Fertil Steril 2013; 100(3):S428",
+  "addresses": [
+    {
+      "full": "paseo de los tamarindos 90, torre 1, piso 2,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "paseo de los tamarindos 90, torre 1, piso 2,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• $95,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alinne-colin/ginecologo/cuajimalpa-de-morelos#address-id=7569&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:37.432Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alinne_colin.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Fernanda Vera Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 547,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/565d40/565d408557478a9237fc18151e74b77d.jpg",
+  "about": "Soy la Dra. Fernanda Vera Arellano, estudie medicina en la Universidad Popular Autónoma del Estado de Puebla (UPAEP), luego continué mi formación como especialista en Ginecología y Obstetricia con enfoque en embarazos de alto riesgo, así como una Alta Especialidad en Cirugía Endoscópica Ginecológica (laparoscopia e histeroscopia) ambas en el Instituto Nacional de Perinatología (INPer). Actualmente tengo mis consultorio en Hospital San Ángel Inn Chapultepec y en Hospital Punta Medica, donde abordó casos de obstetricia, embarazo de alto riesgo, ginecología, colposcopia, cirugía ginecologica y cirugía de mínima invasión (laparoscopia e histeroscopia). Cuento con amplia experiencia para brindar la mejor atención a mis pacientes en las diferentes etapas de su vida. Estoy comprometida con la salud de las mujeres.",
+  "addresses": [
+    {
+      "full": "Avenida Chapultepec 489,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-vera-arellano/ginecologo/cuauhtemoc2#address-id=436383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:20.451Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__fernanda_vera_arellano.webp"
+}

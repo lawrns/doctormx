@@ -1,0 +1,46 @@
+{
+  "name": "Dr. David Ramos González",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8d51ad/8d51ad47cba0ce53538d19b97002a7b5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Corpus Christi 2320,,"
+    },
+    {
+      "full": "Corpus Christi 2320,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-ramos-gonzalez-2/ginecologo/monterrey#address-id=23876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:44.571Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__david_ramos_gonz_lez.webp"
+}

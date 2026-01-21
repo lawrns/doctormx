@@ -1,0 +1,35 @@
+{
+  "name": "Dr. José Eusebio Ordóñez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e27f88e8/e27f88e8-3ec3-497e-a6c2-99abec11c606_small_square.jpg",
+  "about": "Soy médico cirujano, especialista en ginecología y Obstetricia egresado del Hospital General de México avalado por la UNAM. Colposcopia y patología genital y del complejo ano-perineal por la UNAM. Cirugía endoscópica ginecológica en el Hospital General de México.",
+  "addresses": [
+    {
+      "full": "Calle Liverpool 109,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-eusebio-ordonez-flores/ginecologo/cuauhtemoc2#address-id=540437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:18.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__eusebio_ord__ez_flores.webp"
+}

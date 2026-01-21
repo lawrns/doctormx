@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alfonso Duran Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c3153b/c3153b2dacb83d689416b56764858941_220_square.jpg",
+  "about": "Egresado de la Facultad de Medicina de la Universidad Autónoma de Nuevo León. Especialista en Ginecología y Obstetricia en el Instituto Tecnológico de Monterrey. Certificado en Laparoscopia Ginecologica en UANL Experiencia y actualización para ti",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331, Colonia Balcones de Galerias, Monterrey Nuevo Leon,"
+    },
+    {
+      "full": "Avenida Circuito Frida Kahlo 180,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-duran-moreno/ginecologo/nuevo-leon#address-id=424356&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:38.138Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alfonso_duran_moreno.webp"
+}

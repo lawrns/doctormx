@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Sergio Martín Velasco Alva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cozumel 62,"
+    },
+    {
+      "full": "Cozumel No. 62 Col. Roma Nte.,"
+    },
+    {
+      "full": "Cozumel 62,"
+    },
+    {
+      "full": "Cozumel No. 62 Col. Roma Nte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-martin-velasco-alva-2/ginecologo/cuauhtemoc#address-id=339591&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:25.074Z",
+  "localPhotoPath": null
+}

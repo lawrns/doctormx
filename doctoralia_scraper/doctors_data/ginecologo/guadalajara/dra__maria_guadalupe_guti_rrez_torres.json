@@ -1,0 +1,40 @@
+{
+  "name": "Dra. Maria Guadalupe Gutiérrez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3435,"
+    },
+    {
+      "full": "Verona 7412 (Consultorio 106),"
+    },
+    {
+      "full": "Tarascos 3435,"
+    },
+    {
+      "full": "Verona 7412 (Consultorio 106),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-gutierrez-torres/ginecologo/zapopan#address-id=8968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:26.938Z",
+  "localPhotoPath": null
+}

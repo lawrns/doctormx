@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto Sifuentes Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a390a667/a390a667-b904-465e-b229-63c3fed714be_small_square.jpg",
+  "about": "Hola! Me dedico a tratar enfermedades de la mujer en todas sus etapas, sera un gusto para mi poder ayudarte!",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $999"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $999"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $999"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $999"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-sifuentes-ruiz/ginecologo/nuevo-leon#address-id=564145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:44.843Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_sifuentes_ruiz.webp"
+}

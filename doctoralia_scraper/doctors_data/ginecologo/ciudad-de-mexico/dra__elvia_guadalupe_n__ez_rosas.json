@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elvia Guadalupe Núñez Rosas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d83693/d836932191b90f5dad4ce28d71303edd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Juarez #154 (entre Fco. Villa y Reforma),"
+    },
+    {
+      "full": "Avenida Juarez #154 (entre Fco. Villa y Reforma),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elvia-guadalupe-nunez-rosas/ginecologo/huatabampo#address-id=135006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:24.667Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elvia_guadalupe_n__ez_rosas.webp"
+}

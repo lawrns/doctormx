@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Angel Vázquez Pacheco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 156,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d11803/d118033715a8ab6cd39fc18011aefd5c_220_square.jpg",
+  "about": "Soy un especialista certificado por el Consejo Mexicano de Ginecología y Obstetricia con más de 15 años de experiencia. Realizo cirugía laparoscopica avanzada de mínima invasión y cirugía robótica. Me dedico a la detección oportuna del cáncer de mama avalado por la Universidad la Salle en conjunto con el Hospital Vall d' Hebron de Barcelona, España. Soy máster en climaterio y menopausia por la Universidad de Madrid, España.",
+  "addresses": [
+    {
+      "full": "Av. Chapultepec 489 (int 309),"
+    },
+    {
+      "full": "Av. 16 de Septiembre 140,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-vazquez-pacheco/ginecologo/cuajimalpa-de-morelos#address-id=362477&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:48.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__angel_v_zquez_pacheco.webp"
+}

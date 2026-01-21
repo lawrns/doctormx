@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Jose Gorostizaga Lezama",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dea5c6/dea5c61a76734cc07329b45e76ca9ba5_220_square.jpg",
+  "about": "Estoy convencido de que la labor del ginecólogo actualmente es empoderar a sus pacientes mediante información y jamás mediante desinformación o ignorancia. Me gusta que mis pacientes participen en su tratamiento, que entiendan sus diagnósticos y que construyamos un vínculo de confianza que les permita mejorar su salud. Formé una red de médicos de diversas especialidades al cuidado de la mujer para un tratamiento multidisciplinario acertado. No encontrarás en mis redes fotos de mis pacientes ni de sus hijos. Estoy en contra de objetivizar las enfermedades y embarazos de mis pacientes para promocionar mi trabajo.",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional Mexicano 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,250"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,250"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-gorostizaga-lezama/ginecologo/miguel-hidalgo#address-id=576612&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:53.277Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_jose_gorostizaga_lezama.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Antonio Salcido Francisco",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Doctor Guajardo 160 101 Col. Col. Los Doctores ,"
+    },
+    {
+      "full": "Doctor Guajardo 160 101 Col. Col. Los Doctores ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-salcido-francisco/ginecologo/monterrey#address-id=358687&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:48:17.845Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Virginia Molina Hernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/505468/505468455fbebc911de9642cd7324ad3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "GUTEMBERG 61 A-1,"
+    },
+    {
+      "full": "GUTEMBERG 61 A-1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/virginia-molina-hernandez/ginecologo/miguel-hidalgo#address-id=21494&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:35.288Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__virginia_molina_hern_ndez.webp"
+}

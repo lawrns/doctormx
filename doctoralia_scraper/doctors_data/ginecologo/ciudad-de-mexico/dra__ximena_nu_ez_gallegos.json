@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ximena Nuñez Gallegos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f192d/7f192dc776d59b75f388e84c8346e957_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Ximena Núñez Gallegos, especialista en ginecología y obstetricia. Mi pasión es brindar atención integral a las mujeres en todas las etapas de su vida, desde la adolescencia hasta la menopausia. Con una atención personalizada y empática, me comprometo a cuidar de tu salud integral femenina y brindarte las mejores opciones para tu bienestar. Mi enfoque es ofrecerte un acompañamiento cercano y seguro, tanto en la prevención como en el tratamiento de enfermedades ginecológicas, así como en la atención durante el embarazo y el parto.",
+  "addresses": [
+    {
+      "full": "Calle de Tlaxcala 161 - 501,"
+    },
+    {
+      "full": "Calle Tlaxcala 161 - 501,"
+    },
+    {
+      "full": "Calle de Tlaxcala 161 - 501,"
+    },
+    {
+      "full": "Calle Tlaxcala 161 - 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ximena-nunez-gallegos/ginecologo/ciudad-de-mexico#address-id=522724&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:56.467Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ximena_nu_ez_gallegos.webp"
+}

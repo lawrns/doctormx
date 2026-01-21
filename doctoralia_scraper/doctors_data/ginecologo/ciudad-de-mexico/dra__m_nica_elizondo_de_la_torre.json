@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mónica Elizondo de la Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 80,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f3d0c8/f3d0c8c271360bb283af538a1f12b7d4_220_square.jpg",
+  "about": "Estudie la carrera de Medicina en la Facultad de Medicina C.U UNAM. La especialidad en la Secretaría de Salud de la Ciudad de México, avalada por la UNAM Diplomado de colposcopía y patología del tracto vaginal inferior en el Colegio Mexicano de Capacitación Médica Contínua avalada por La Salle",
+  "addresses": [
+    {
+      "full": "Calle José María Velasco 110 colonia San José insurgentes. Benito Juárez,"
+    },
+    {
+      "full": "Calle José María Velasco 110 colonia San José insurgentes. Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-elizondo-de-la-torre/ginecologo/ciudad-de-mexico#address-id=383966&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:33.702Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_elizondo_de_la_torre.webp"
+}

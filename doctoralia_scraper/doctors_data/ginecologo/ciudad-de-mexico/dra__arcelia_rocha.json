@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Arcelia Rocha",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cf61c3/cf61c3f633661d16f9d8c41cc9518f25_220_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arcelia-rocha-2/ginecologo/tlalnepantla-de-baz2#address-id=431031&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:17.117Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__arcelia_rocha.webp"
+}

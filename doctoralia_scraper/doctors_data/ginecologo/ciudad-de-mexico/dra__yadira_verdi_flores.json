@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yadira Verdi Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Anillo Periferico 184,"
+    },
+    {
+      "full": "Anillo Periferico 184,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $560"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $15,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $20,000"
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yadira-verdi-flores-2/ginecologo/iztapalapa#address-id=19336&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:01.669Z",
+  "localPhotoPath": null
+}

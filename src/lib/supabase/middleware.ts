@@ -3,7 +3,16 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 // Configuración de rutas protegidas - Sistema centralizado
 const ROUTES = {
-  public: ['/auth/login', '/auth/register', '/auth/complete-profile', '/', '/doctors'],
+  public: [
+    '/auth/login', 
+    '/auth/register', 
+    '/auth/complete-profile', 
+    '/', 
+    '/doctors', 
+    '/specialties',
+    '/for-doctors',
+    '/doctor/pricing'
+  ],
   requiresAuth: ['/book', '/checkout'],  // Requieren login pero cualquier rol
   patient: ['/app'],
   doctor: ['/doctor'],

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Michelle Lilly Rojas Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 206,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43f880/43f8804f931de40da44e4ec580d16d10_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Manzanillo 83,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/michelle-lilly-rojas-arellano/ginecologo-ginecologo-oncologico/cuauhtemoc2#address-id=400342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:55.532Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__michelle_lilly_rojas_arellano.webp"
+}

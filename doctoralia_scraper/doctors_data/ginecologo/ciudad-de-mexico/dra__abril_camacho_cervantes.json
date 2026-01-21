@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Abril Camacho Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EJERCITO NACIONAL 613 1004,"
+    },
+    {
+      "full": "EJERCITO NACIONAL 613 1004,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abril-camacho-cervantes/ginecologo/-#address-id=338516&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:00.063Z",
+  "localPhotoPath": null
+}

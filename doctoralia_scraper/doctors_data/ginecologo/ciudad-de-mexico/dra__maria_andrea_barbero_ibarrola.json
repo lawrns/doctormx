@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Maria Andrea Barbero Ibarrola",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro medico ABC Santa Fe consultorio 340 Av carlos graef fernandez No. 154 Col Santa Fe,"
+    },
+    {
+      "full": "Centro medico ABC Santa Fe consultorio 340 Av carlos graef fernandez No. 154 Col Santa Fe,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cirugía ginecológica y obstetrica de alta complejidad",
+      "price": ""
+    },
+    {
+      "name": "Cirugía vascular pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-andrea-barbero-ibarrola/ginecologo-oncologico-ginecologo/cuajimalpa-de-morelos#address-id=253889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:50.404Z",
+  "localPhotoPath": null
+}

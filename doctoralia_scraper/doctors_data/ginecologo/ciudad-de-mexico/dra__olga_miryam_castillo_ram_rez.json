@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Olga Miryam Castillo Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f89aa5/f89aa51374af1b3eaa49b47d4840fa0b_220_square.jpg",
+  "about": "Hola, soy la Doctora Olga Castillo, tengo especialidad en Ginecología y Obstetricia y subespecialidad en Medicina Materno Fetal. Mi objetivo es satisfacer las necesidades de salud de las pacientes en relación al cuidado de la mujer, así como el acompañamiento durante la etapa del embarazo. Consciente de que cada embarazo es único, ofrezco las herramientas necesarias para lograr diagnósticos oportunos, que permitan realizar los cuidados y las intervenciones indispensables, para obtener los mejores resultados, garantizando una atención de calidad y calidez tanto para la mujer como para el bebé.",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olga-miryam-castillo-ramirez/ginecologo/tlalpan#address-id=502699&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:12.423Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__olga_miryam_castillo_ram_rez.webp"
+}

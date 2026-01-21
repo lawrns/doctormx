@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Olivia Piña Ballesteros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c1df01/c1df01044cb2d650dd7e1d32b49cc498_220_square.jpg",
+  "about": "Hola, soy Ginecóloga obstetra con experiencia de más de 20 años en el campo de la salud sexual reproductiva, en las diferentes etapas de la vida. Con experiencia en parto humanizado y cirugía ginecológica",
+  "addresses": [
+    {
+      "full": "Durango 290 -708 Colonia Roma Norte,"
+    },
+    {
+      "full": "Durango 290 -708 Colonia Roma Norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-pina-ballesteros/ginecologo/cuauhtemoc2#address-id=78580&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:57.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__olivia_pi_a_ballesteros.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luis Angel Meraz Rios",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Garibaldi 880 2,"
+    },
+    {
+      "full": "Calle Garibaldi 880 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-angel-meraz-rios-2/ginecologo/guadalajara#address-id=58661&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:52.310Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Paloma Tejeda Martínez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/537df8/537df850432be7d9bcc3d070ff499655_220_square.jpg",
+  "about": "Hola soy la Dra. Karla y estoy comprometida con brindar atención ginecologica y obstetrica de alta calidad con enfoque integral en la salud y bienestar de la mujer en todas las etapas de su vida",
+  "addresses": [
+    {
+      "full": "Hospita MAC Interlomas, Consultorio 322 Pje. Interlomas 16, Bosque De Las Palmas, Naucalpan de Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-paloma-tejeda-martinez/medico-general/ciudad-de-mexico#address-id=574140&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:59.875Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_paloma_tejeda_mart_nez.webp"
+}

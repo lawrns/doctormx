@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Cecilia X. Flores Granados",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5d451d/5d451def7dec926a477c3861a5b0dd3b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 1 número 210,"
+    },
+    {
+      "full": "Calle 1 número 210,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-x-flores-granados/ginecologo/nezahualcoyotl#address-id=166506&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:07.128Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cecilia_x__flores_granados.webp"
+}

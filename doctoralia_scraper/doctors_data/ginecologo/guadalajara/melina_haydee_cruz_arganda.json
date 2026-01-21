@@ -1,0 +1,43 @@
+{
+  "name": "Melina Haydee Cruz Arganda",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 664,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea3f00/ea3f00e99cf060217597b26615d9d604_220_square.jpg",
+  "about": "CONTAMOS CON PAQUETES MUY ECONOMICOS : CONSULTA CON ECO PÉLVICO O VAGINAL 900 PESOS. CONSULTA DE EMBARAZO CON ECO PELVICO 600. CONSULTA, PAPANICOLAOU, COLPOSCOPIA Y EXPLORACION MAMARIA MANUAL 1000 PESOS. CONSULTA PAPNICOLAOU COLPOSCOPIA EXPLORACION MAMARIA MANUAL Y ULTRASONIDO PELVICO O VAGINAL CON FOTOS 1250 PESOS. DGP 4016453 CEDULA DE ESPECIALIDAD 6145556 EGRESADA DE CENTRO MEDICO NACIONAL DE GUADALAJARA. SOY LA DRA MELINA CRUZ, UNA DRA CON VOCACIÓN Y TRATO HUMANO, ME DESTACO ENTRE OTRAS COSAS POR LLEGAR A PARTO VAGINAL A MIS PACIENTES Y EVITAR CESÁREAS CUANDO NO SE REQUIEREN, ADEMAS DE UN TRATO AMABLE Y HUMANO, SIEMPRE DISPONIBLE ANTE LAS DUDAS DE MIS PACIENTES. ADEMAS DE CONTAR CON ACTUALIZACIONES CONTINUAS. VISITA MI PAGINA DE FACE, AHI ENCONTRARAS OPINIONES, FOTOS Y RESULTADOS QUE HAN OBTENIDO MIS PACIENTES.",
+  "addresses": [
+    {
+      "full": "Calle Reforma 279, Tlaquepaque, Jalisco, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Laparoscopia por embarazo ectópico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melina-haydee-cruz-arganda/ginecologo/tlaquepaque#address-id=347258&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:27.974Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/melina_haydee_cruz_arganda.webp"
+}

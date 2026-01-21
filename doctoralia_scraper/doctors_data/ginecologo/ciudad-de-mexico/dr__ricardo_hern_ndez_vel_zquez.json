@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Hernández Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4bccf2/4bccf2f86ba8775486b2589ac20d05cc_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Ricardo Hernández, especialista en Ginecología y Obstetricia y subespecialista en Urología Ginecológica, puedo atender tu salud desde el embarazo hasta los procedimientos posteriores al mismo, devolviendo tu salud y tranquilidad en un espacio seguro y confidencial. Mi principal objetivo es mejorar la salud y calidad de vida de mis pacientes, con tratamiento médico, ejercicios y en caso de ser necesario, procedimiento quirúrgico. Me gusta mucho escuchar a mis pacientes, entender todo lo que pasan con sus síntomas y acompañarlas en todo su proceso hasta devolverles la confianza, salud y autoestima que en muchos casos perdieron. Te espero en consulta con mucho gusto. Ahora un breve resumen de mi trayectoria profesional. Médico Cirujano por la Universidad Nacional Autónoma de México del 2006 al 2012. Cédula profesional 7401192. Facultad de Medicina, Ciudad Universitaria; Ciudad de México Especialidad en Ginecología y Obstetricia del 2012 al 2016 en la Unidad Médica de Alta Especialidad Nº 23 del IMSS. Universidad Autónoma de San Luis Potosí Subespecialidad en Urología Ginecológica del 2016 al 2018 en la Unidad Médica de Alta Especialidad Nº 23 del IMSS. Universidad Nacional Autónoma de México Certificado por el Consejo Mexicano de Ginecología y Obstetricia, A.C. en Urología Ginecológica, vigente. Certificado por el Consejo Mexicano de Ginecología y Obstetricia, A.C., en Ginecología y Obstetricia, vigente. Maestría en Administración de Hospitales y Salud Pública. Instituto de Estudios Superiores en Administración Pública Profesor Adjunto Subespecialidad en Urología Ginecológica Centro Médico Nacional \"20 de noviembre\" ISSSTE Entre otros cursos y congresos de actualización.",
+  "addresses": [
+    {
+      "full": "Mier y Pesado 222,"
+    },
+    {
+      "full": "Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-hernandez-velazquez-2/ginecologo/benito-juarez#address-id=580501&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:03.072Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_hern_ndez_vel_zquez.webp"
+}

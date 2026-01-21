@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Miguel Angel Estrada Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/af7f3ed2/af7f3ed2-9a8e-42bf-aae5-692efa4d1de9_small_square.jpg",
+  "about": "Soy el Dr. Miguel Estrada Maldonado, biólogo de la reproducción, especializado en el diagnóstico y tratamiento integral de la fertilidad humana. Mi enfoque se centra en brindar una atención personalizada, humana y basada en evidencia científica, acompañando a cada paciente y pareja en su camino hacia lograr un embarazo.Cuento con experiencia en el estudio de la fertilidad femenina y masculina, evaluación hormonal, asesoría reproductiva y apoyo en tratamientos de reproducción asistida. Mi prioridad es ofrecer información clara, confianza y un trato cercano, diseñando estrategias adecuadas a las necesidades de cada caso, siempre con el objetivo de ayudar a cumplir el deseo de formar una familia.",
+  "addresses": [
+    {
+      "full": "Calle Liverpool 109,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Biología de la reproducción",
+      "price": "• Desde $1,150"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-estrada-maldonado/ginecologo/cuauhtemoc2",
+  "scrapedAt": "2026-01-21T02:40:43.019Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_angel_estrada_maldonado.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Mario Matute González",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 48,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Medico de Base en el Hospital de Ginecología y Obstetricia No. 3, Centro Medico Nacional \"La Raza\" Jefe de Servicio Unidad Toco Quirúrgica y Ginecología en el Hospital de Ginecología y Obstetricia No. 3, Centro Medico Nacional \"La Raza\". Jefe de División de Educación en Salud en el Hospital de Ginecología y Obstetricia No. 3, Centro Médico Nacional \"La Raza\". Jefe de Área Médica, Coordinación de Educación en Salud. IMSS, hasta el 30 de noviembre del 2018. Socio titular del Colegio Mexicano de Ginecologia y Obstetricia. Socio Emérito de la Asociación Mexicana de Medicina de la Reproducción. Fellow de American College Obstetrics an Gynecology. Fellow de American Society of Reproductive Medicine.",
+  "addresses": [
+    {
+      "full": "Bolivar No 256.,"
+    },
+    {
+      "full": "Bolivar No 256.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-mario-matute-gonzalez/ginecologo/ciudad-de-mexico#address-id=48825&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:19.898Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Daniel Palencia Fernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periferico Sur, 3707, Cons. 1182,"
+    },
+    {
+      "full": "Periferico Sur, 3707, Cons. 1182,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-palencia-fernandez/ginecologo/-#address-id=338600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:14:57.564Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__daniel_palencia_fern_ndez.webp"
+}

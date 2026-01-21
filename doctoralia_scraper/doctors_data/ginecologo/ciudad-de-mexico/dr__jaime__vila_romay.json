@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jaime Ávila Romay",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/es/badge/doctoralia-awards-nominees-2025.svg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134,"
+    },
+    {
+      "full": "Av. Universidad 1134,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-avila-romay-2/ginecologo/ciudad-de-mexico#address-id=30709&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:43.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jaime__vila_romay.webp"
+}

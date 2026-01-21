@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mariana Elizondo Treviño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 582,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bf81fb/bf81fb7c533ed3a3dca051157be47bf3_220_square.jpg",
+  "about": "Certificada por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Alemán 6060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Paquete embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-elizondo-trevino/ginecologo/nuevo-leon#address-id=450696&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:36.371Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mariana_elizondo_trevi_o.webp"
+}

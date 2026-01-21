@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Acosta Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e4184d/e4184d38ac9e9938179c3e1037c6f04b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AV. SEBASTIAN BACH 4927,"
+    },
+    {
+      "full": "AV. SEBASTIAN BACH 4927,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-acosta-aguilar/ginecologo/zapopan#address-id=74029&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:25.225Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alejandro_acosta_aguilar.webp"
+}

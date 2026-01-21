@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Verónica Capriles Villarroel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 197,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e00cc5/e00cc597e1307522710cbd6b5d36ca25_220_square.jpg",
+  "about": "Nací en Caracas Venezuela, donde y me formé como Médico General, GinecoObstetra y Colposcopista en la Universidad Central de Venezuela. Viví y ejercí en Madrid y Cádiz (España) y Bogotá (Colombia); sin embargo, fue en la Ciudad de México donde encontré mi hogar y resido desde hace 5 años con mi familia. Me formé en Laparoscopía e Histeroscopía en el Centro de Enseñanza Médica en Simuladores (CEMS) del Colegio Mexicano de Especialistas en Ginecología y Obstetricia (COMEGO) y sigo en constante aprendizaje. Amo la salud femenina y estar a cargo del bienestar de la mujer y de su bebé en el embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Monterrey 70,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Monterrey 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-capriles-villarroel/ginecologo/cuauhtemoc2#address-id=442483&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:38.702Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ver_nica_capriles_villarroel.webp"
+}

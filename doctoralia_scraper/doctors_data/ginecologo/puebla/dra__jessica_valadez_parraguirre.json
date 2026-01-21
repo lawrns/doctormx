@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Jessica Valadez Parraguirre",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fe3fb476/fe3fb476-210b-4d82-8af8-b1a176f05ca7_small_square.jpg",
+  "about": "Hola! Soy la Dra. Jessica Valadez Parraguirre Quiero compartirte un poco sobre mí y mi trayectoria. Me gradué como Médica Cirujana y Partera de la Facultad de Medicina de la Benemérita Universidad Autónoma de Puebla (BUAP), y posteriormente realicé mi especialidad en Ginecología y Obstetricia en la Universidad Nacional Autónoma de México (UNAM). Cuento con diplomado en Cirugía de Mínima Invasión y Colposcopía avalados por la UNAM. Certificada por el Consejo Mexicano de Ginecología y Obstetricia, A.C.Estoy aquí para acompañarte en cada etapa de tu vida con experiencia, calidez y profesionalismo, así como los tratamientos más actualizados.",
+  "addresses": [
+    {
+      "full": "Calle 17 Sur 1305,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-valadez-parraguirre/ginecologo/puebla#address-id=590486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:44.997Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__jessica_valadez_parraguirre.webp"
+}

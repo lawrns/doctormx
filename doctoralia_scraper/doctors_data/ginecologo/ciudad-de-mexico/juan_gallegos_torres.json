@@ -1,0 +1,25 @@
+{
+  "name": "Juan Gallegos Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan no. 45-a-p.h., Roma sur,"
+    },
+    {
+      "full": "Tuxpan no. 45-a-p.h., Roma sur,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gallegos-torres/ginecologo/iztacalco#address-id=111565&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:50.894Z",
+  "localPhotoPath": null
+}

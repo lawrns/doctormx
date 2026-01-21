@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Roberto Carlos Manríquez Angulo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De Chapultepec 489,"
+    },
+    {
+      "full": "Av. De Chapultepec 489,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-carlos-manriquez-angulo/ginecologo/cuauhtemoc#address-id=72593&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:58.700Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mayte Arizaid Islas Tellez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/76014f8f/76014f8f-e809-48b3-a91d-918fa45e9b29_small_square.jpg",
+  "about": "Hola, te platico sobre mi formación médica:Estudié la carrera de Médico Cirujano en el Tecnológico de Monterrey.Hice la especialidad en Ginecología y Obstetricia en el Programa Multicéntrico de Especialidades Médicas del Tecnológico de Monterrey - Secretaría de Salud de Nuevo León.Soy Ginecóloga Certificada por el Consejo Mexicano de Ginecología y Obstetricia.Soy ginecóloga comprometida con la salud integral de la mujer. Mi objetivo es brindar una atención médica de calidad, con calidez, empatía y respeto en cada consulta. Estoy capacitada para acompañar a mis pacientes en todas las etapas de su vida, resolviendo dudas y ofreciendo un espacio de confianza donde se sientan escuchadas y bienvenidas.",
+  "addresses": [
+    {
+      "full": "Av Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayte-arizaid-islas-tellez/ginecologo/nuevo-leon#address-id=591685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:52.447Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mayte_arizaid_islas_tellez.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. José Carlos López Pineda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 105,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a82c91/a82c91836196642577213695d8f2996f_220_square.jpg",
+  "about": "Medico especialista en Ginecología y obstetricia capaz de resolver los problemas de salud de la población femenina en todas las etapas de la vida, desde la adolescencia, etapa adulta, etapa reproductiva, con atención cálida y enfocada al binomio (madre y feto) así como en la etapa de climaterio y menopausia, basado en evidencia científica, actualizada y con equipos médicos a la vanguardia, excelente instalaciones, trato ético y profesional creando empatía y confianza con los pacientes brindando una atención de calidad y con excelentes resultados. La salud es lo mas importante de la vida, permíteme ser parte del cuidado de tu mas grande tesoro.",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-lopez-pineda/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:10.670Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jos__carlos_l_pez_pineda.webp"
+}

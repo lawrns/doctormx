@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Minerva Huerta Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1320,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d45c0d/d45c0d71e4f8d24fe28072a84f9e0c11.jpg",
+  "about": "Egresada de la carrera de Médico Cirujano y Partero en la Universidad de Guadalajara. Especialidad en Ginecología y Obstetricia en el Hospital Civil Nuevo \" Dr. Juan I. Menchaca\" y certificada por el Consejo Mexicano de Ginecología y Obstetricia. El objetivo es acompañarte en las diferentes etapas de la mujer, brindando una atención médica de calidad, basada en la confidencialidad y respeto haciendo hincapié en la prevención de la salud. Entre los servicios que se manejan son: Control prenatal Métodos anticonceptivos Evaluación de la pareja infértil Atención del parto o cesárea Check up ginecologico Agenda una cita para aclarar todas tus dudas. Consultas de Lunes a Sábado y Urgencias 24/7.",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/minerva-huerta-robles/ginecologo/zapopan#address-id=91590&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:02.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__minerva_huerta_robles.webp"
+}

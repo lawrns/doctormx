@@ -1,0 +1,63 @@
+{
+  "name": "Dra. Fernanda Villalobos",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4c7b53/4c7b5301d03b7aefea244faed9494277_220_square.jpg",
+  "about": "Hola soy la doctora Fer Villalobos, ginecóloga con alta especialidad en cirugía de mínima invasión (laparoscopia e histeroscopia), estaré acompañándote para cuidar lo más importante: TU SALUDEstoy para resolver tus dudas, preevenir y tratar enfermedades del útero, cérvix, ovarios y mamas, aconsejarte acerca de métodos anticonceptivos, identificar y planear cirugías que pueden realizarse por mínima invasión. Contactame para ayudarte en lo que necesites.",
+  "addresses": [
+    {
+      "full": "Av Revolución 1225, Capital Medical Center, Piso 7 Consultorio 1 , Los Alpes, Alvaro Obregon,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,350"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-villalobos/ginecologo/ciudad-de-mexico#address-id=580679&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:46.215Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__fernanda_villalobos.webp"
+}

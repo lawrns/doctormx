@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Enrique Cervantes Bravo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de6f49/de6f49bf0dffb640447c5a7ad06b31c3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prolongación Paseo De La Reforma 2693 Torre B Piso 10,"
+    },
+    {
+      "full": "Prolongación Paseo De La Reforma 2693 Torre B Piso 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-cervantes-bravo/ginecologo/miguel-hidalgo#address-id=109287&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:49.998Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__enrique_cervantes_bravo.webp"
+}

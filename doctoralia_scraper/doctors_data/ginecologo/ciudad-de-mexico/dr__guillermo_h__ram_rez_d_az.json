@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo H. Ramírez Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dee03f/dee03f714cc55a40d767e5a556f36816_220_square.jpg",
+  "about": "Ginecólogo obstetra certificado por el Consejo Mexicano de Ginecología y obstetricia. Especialidad de Ginecología y obstetricia en Hospital General de México “Dr. Eduardo Liceaga¨. Diplomado como médico colposcopista con aval de Universidad La Salle.",
+  "addresses": [
+    {
+      "full": "Av Hacienda de Rancho Seco 35,,"
+    },
+    {
+      "full": "Av Hacienda de Rancho Seco 35,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-h-ramirez-diaz/ginecologo/nezahualcoyotl#address-id=7361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:28.662Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_h__ram_rez_d_az.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Felipe Díaz Puga Y Colmenares",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Queretaro, 147, Cons. 901,"
+    },
+    {
+      "full": "Queretaro, 147, Cons. 901,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita domiciliaria Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-diaz-puga-y-colmenares/ginecologo/cuauhtemoc#address-id=76359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:21.145Z",
+  "localPhotoPath": null
+}

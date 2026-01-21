@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Alberto Rodriguez Pezino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 431,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/727332d9/727332d9-6bf4-4965-95fb-b65b42ca850b_large.jpg",
+  "about": "Soy el Dr. Jorge Alberto especialista en Ginecología y Obstetricia. Cuento con más de 20 años de experiencia en la práctica médica privada, así como formación internacional en cirugía laparoscópica avanzada, colposcopia y manejo del virus del papiloma humano. Durante estos años me he dedicado al cuidado integral de la mujer, enfocándome en embarazos normales y de alto riesgo, endometriosis, infertilidad, síndrome de ovarios poliquísticos, embarazos múltiples, tratamientos de reproducción asistida e in vitro, control de la menopausia y colposcopia.Mi experiencia me permite ofrecer diagnósticos y tratamientos actuales y efectivos, atendiendo a la paciente y su pareja desde un enfoque humano y empático. Considero fundamental dedicar el tiempo necesario para resolver todas sus dudas, asegurando que cada visita sea productiva y su tiempo bien aprovechado.",
+  "addresses": [
+    {
+      "full": "Belisario Dominguez No. 2602 colonia Jardin 4to piso cons. 401-402,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alberto-rodriguez-pezino/ginecologo/nuevo-leon#address-id=1841&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:31.762Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jorge_alberto_rodriguez_pezino.webp"
+}

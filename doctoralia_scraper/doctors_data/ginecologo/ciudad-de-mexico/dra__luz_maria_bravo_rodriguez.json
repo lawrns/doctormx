@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Luz Maria Bravo Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/77db3a/77db3a332ad6231915a514063c0d540e_220_square.jpg",
+  "about": "Ginecólogo certificado por el Colegio Mexicano de Ginecología y Obstetricia. Laboro en el Centro Médico Nacional 20 de Noviembre. Servicio de Ginecología de alta especialidad en Cirugía de mínima invasión Sub-especialidad en Embarazo de Alto riesgo por el Hospital Lic. Adolfó López Mateos ISSSTE. Diplomado en Colposcopia y Patología del Tracto Genital Femenino Diplomado en Laparoscopía Ginecologica . Hosp. Manuel Gea Gonzalez. Diplomado en Histeroscopía Hosp. Manuel Gea Gonzalez Alta especialidad en Endoscopia Ginecologica . Centro Médico Nacional 20 de Noviembre. Vicepresidente de la Asociación Mexicana para el estudio del Climaterio. Diplomado en Medicina Estetica y Anti-envejecimiento. Cursos de Ozonoterapia Aplicación de Toxina Botulinica",
+  "addresses": [
+    {
+      "full": "Calzada de las Bombas 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopía del Tracto Genital Inferior del Hombre y la Mujer",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-maria-bravo-rodriguez/ginecologo/coyoacan#address-id=577236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:14.007Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__luz_maria_bravo_rodriguez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dennise Salazar",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d07ead/d07ead2dbf046df317dfe051c76fb4ec_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial no. 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dennise-salazar/ginecologo/naucalpan-de-juarez2#address-id=619009&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:55.176Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__dennise_salazar.webp"
+}

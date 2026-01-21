@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eduardo Perez Figueroa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ebbb65/ebbb655b37c2ea47c114a48543503d30_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, con más de 35 años de experiencia en el cuidado y atención de la Salud reproductiva de las mujeres; incluyendo la atención de Embarazos y el parto",
+  "addresses": [
+    {
+      "full": "Tuxpan 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-perez-figueroa-2/ginecologo/cuauhtemoc2",
+  "scrapedAt": "2026-01-21T02:40:39.216Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eduardo_perez_figueroa.webp"
+}

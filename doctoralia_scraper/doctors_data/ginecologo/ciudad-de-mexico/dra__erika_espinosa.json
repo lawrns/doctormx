@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Erika Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8c46d2/8c46d2e779c3b4d0208926556776fcf9_220_square.jpg",
+  "about": "Soy la Dra Erika Espinosa Gonzalez especialista en Ginecologia y Obstetricia me encuentro certificada por el Consejo Mexicano de Ginecologia y Obstetricia, brindo atencion medica completa; mis servicios como ginecologa y obstetra son integrales, puedo ayudarte a atender tu embarazo con un control prenatal adecuado ademas ofrezco atencion humana y profesional para cuidado y prevencion en salud sexual y reproductiva; empátizo con mis pacientes ya que para algunas mujeres puede ser dificil acudir al ginecologo tratamos siempre de comprenderlas y hacerlas sentir tranquilas y felices, tengo una basta experiencia en clinica y atencion quirurgica, por lo cual soy capaz de atenderte de manera profesional y humana. Porque lo primero para mi siempre sera tu salud y bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Alfredo del Mazo 2004,"
+    },
+    {
+      "full": "Avenida Alfredo del Mazo 2004,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-espinosa-3/ginecologo/valle-de-chalco-solidaridad#address-id=469091&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:54.496Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_espinosa.webp"
+}

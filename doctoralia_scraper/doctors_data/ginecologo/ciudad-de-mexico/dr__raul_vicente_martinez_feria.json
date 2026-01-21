@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Raul Vicente Martinez Feria",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CIRCUITO DE INGENIEROS 64 B,"
+    },
+    {
+      "full": "CIRCUITO DE INGENIEROS 64 B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-vicente-martinez-feria/ginecologo/naucalpan-de-juarez#address-id=121212&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:27.160Z",
+  "localPhotoPath": null
+}

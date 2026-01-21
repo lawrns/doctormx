@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Osvaldo Rodriguez Wyler Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Especialidad en Ginecología y Obstetricia, Hospital Central Norte Petroleos Mexicanos avalado por la UNAM Egresado Médico Cirujano en Universidad la Salle",
+  "addresses": [
+    {
+      "full": "Vasco de Quiroga 4001,"
+    },
+    {
+      "full": "Vasco de Quiroga 4001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/osvaldo-rodriguez-wyler-martinez/ginecologo/cuajimalpa-de-morelos#address-id=514054&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:41.910Z",
+  "localPhotoPath": null
+}

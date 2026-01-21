@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Germán Martínez Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/28fb73/28fb730b1fdc603c4f468072898af19a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bolivia 103-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-martinez-garza/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:14.932Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__germ_n_mart_nez_garza.webp"
+}

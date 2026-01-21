@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Higinio Hernández Castañeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 263,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b0ff56/b0ff5613e8ce70fa80b66f13914a8bf5_220_square.jpg",
+  "about": "Nuestra formación se llevo a cabo en el Hospital de Alta Especialidad de Veracruz lugar donde forjamos el compromiso que debemos a nuestras pacientes, nos comprometimos al 100 % motivo por el cual somos una clínica especializada en salud de la mujer contamos con la preparación adecuada para tu atención y solución a tus problemas ginecológicos y Obstétricos . Cuidamos de lo que mas amas !",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/higinio-hernandez-castaneda/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:03.036Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__higinio_hern_ndez_casta_eda.webp"
+}

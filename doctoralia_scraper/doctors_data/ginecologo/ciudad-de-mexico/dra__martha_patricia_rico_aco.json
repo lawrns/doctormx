@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Patricia Rico Aco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e311e695/e311e695-a9d4-466c-b382-7ec9200e1092_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Insurgentes 20, Fraccionamiento , Las Americas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-patricia-rico-aco/ginecologo/ecatepec-de-morelos#address-id=502285&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:59.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_patricia_rico_aco.webp"
+}

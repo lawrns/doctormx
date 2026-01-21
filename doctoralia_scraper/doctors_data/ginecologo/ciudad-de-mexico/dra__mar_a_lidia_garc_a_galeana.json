@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Lidia García Galeana",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a3a3b/1a3a3be27a386593314a3712ed75ba19_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ignacio Lopez rayón 25,"
+    },
+    {
+      "full": "Ignacio Lopez rayón 25,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-lidia-garcia-galeana/ginecologo/san-juan-del-rio#address-id=88138&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:34.912Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_lidia_garc_a_galeana.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Montserrat Cuevas Zúñiga",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a5724/1a57240e844be48c86389969595c3c85_220_square.jpg",
+  "about": "Soy la Dra Montserrat Cuevas, Médico Cirujano por la Universidad West Hill y con posgrado en Ginecología y Obstetricia que realice en el Instituto Nacional de Perinatología. Certificada en Ginecología Infanto-JuvenilCertificada en Gineco-endocrinologíaColposcopia y Láser de Tracto Genital InferiorSea cual sea la etapa de tu vida me gustaría apoyarte para conservar tu salud ginecológica,ofreciéndote atención de calidad, profesional y empática para acompañarte en tu proceso de diagnóstico y tratamiento. Cada consulta será una oportunidad para construir confianza, resolver dudas sin juicio y brindarte orientación clara. Trabajo con calidez y perspectiva integral para que vivas tu salud ginecológica. Además tengo especial formación y experiencia en el cuidado de la salud ginecológica de niñas y adolescentes. Acompaño a mis pacientes en cada etapa de su desarrollo, desde la infancia hasta la adolescencia, adaptando el enfoque a cada etapa del desarrollo. Me especializo en temas como pubertad, menstruación, salud sexual y reproductiva, siempre con un enfoque cálido, respetuoso y en equipo con las familiasMi prioridad es que te sientas cómoda, escuchada y segura.",
+  "addresses": [
+    {
+      "full": "Avenida Doctor Gustavo Baz 309,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-cuevas-zuniga/ginecologo-oncologico/tlalnepantla-de-baz2#address-id=580064&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:53.151Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__montserrat_cuevas_z__iga.webp"
+}

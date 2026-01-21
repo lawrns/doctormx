@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nancy Contreras Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 40,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/539d82/539d82469a33db24a8fc45637892208a_220_square.jpg",
+  "about": "- Médico Cirujano y Partero en la Facultad de Medicina de la Universidad Autónoma de Nuevo León, graduada con mención honorífica de excelencia. - Especialidad en Ginecología y obstetricia avalada por el Tecnológico de Monterrey, con reconocimiento como jefa de residentes y mención honorífica de excelencia académica. - Alta especialidad en Climaterio y Menopausia, avalada por el Tecnológico de Monterrey.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    },
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nancy-contreras-garza/ginecologo/nuevo-leon#address-id=496102&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:32.874Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__nancy_contreras_garza.webp"
+}

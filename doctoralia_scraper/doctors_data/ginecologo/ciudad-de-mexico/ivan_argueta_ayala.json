@@ -1,0 +1,25 @@
+{
+  "name": "Ivan Argueta Ayala",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Morena 1 5 0 8,14, Col. Narvarte, ,"
+    },
+    {
+      "full": "Morena 1 5 0 8,14, Col. Narvarte, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-argueta-ayala/ginecologo/benito-juarez#address-id=355392&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:24.398Z",
+  "localPhotoPath": null
+}

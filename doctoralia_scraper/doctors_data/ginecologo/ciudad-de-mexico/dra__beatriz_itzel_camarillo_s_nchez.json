@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Beatriz Itzel Camarillo Sánchez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f39c19ff/f39c19ff-f5fb-40b8-9f9f-b55d3a5dccbe_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Camarillo Sánchez. Especialista en Ginecología y Obstetricia egresada del Hospital General de México, avalado por la UNAM, además de un certificado en Colposcopia avalado por la Universidad La Salle. Me enfoco en brindar la mejor expertis y satisfacción a mis pacientes, busco solucionar cualquier cuestionamiento relacionado a la mujer, con confianza y profesionalismo para darte la mejor experiencia.",
+  "addresses": [
+    {
+      "full": "Xola 1011,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/beatriz-itzel-camarillo-sanchez/ginecologo/benito-juarez#address-id=471387&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:20.092Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__beatriz_itzel_camarillo_s_nchez.webp"
+}

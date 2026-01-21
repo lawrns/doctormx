@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Juan Manuel Escobedo Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fa486/5fa486d04ddeaad1fae04380d58ca998_220_square.jpg",
+  "about": "Hola soy el Dr Juan Manuel Escobedo Garza, ginecoobstetra. Egresado de la Universidad de Monterrey de la carrera de médico, cirujano y partero. Posteriormente realicé la especialidad de Ginecología y Obstetricia en la Universidad Autónoma de Tamaulipas. Certificado por el consejo de ginecología y obstetricia 2023-2028. Realicé un entrenamiento adicional en Colposcopía y patología vulvovaginal. Me desarrollo tanto en el ámbito clínico como en lo quirúrgico en la detección y tratamiento oportuno de las diferentes patologías que afectan a la salud de la mujer.",
+  "addresses": [
+    {
+      "full": "Av. Pino Suárez 640,"
+    },
+    {
+      "full": "Av. Pino Suárez 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-escobedo-garza/ginecologo/nuevo-leon#address-id=467347&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:24.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_manuel_escobedo_garza.webp"
+}

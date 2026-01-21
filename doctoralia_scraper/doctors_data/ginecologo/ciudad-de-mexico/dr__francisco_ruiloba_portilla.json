@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Ruiloba Portilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 84,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5e211a/5e211a220d9f67aae3860e7468f1a869_220_square.jpg",
+  "about": "Queridas pacientes: Al momento me encuentro realizando un postgrado en el extranjero para continuarles brindando la mejor atención.",
+  "addresses": [
+    {
+      "full": "Av Observatorio 354, Miguel Hidalgo,"
+    },
+    {
+      "full": "Av Observatorio 354, Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-ruiloba-portilla/ginecologo/ciudad-de-mexico#address-id=410219&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:42.253Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_ruiloba_portilla.webp"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Raul de Jesus Moreno López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5f8c0/a5f8c05b6d00aa1e5a95ecc3c482654e_220_square.jpg",
+  "about": "Egresado del Hospital de la Mujer SSA. Especialidad de Ginecologia y Obstetricia 30 Años de experiencia en Maternidad.",
+  "addresses": [
+    {
+      "full": "PROSPERO GARCIA 22,"
+    },
+    {
+      "full": "PROSPERO GARCIA 22,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $250"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $250"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-de-jesus-moreno-lopez/ginecologo/iztapalapa#address-id=338853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:27.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raul_de_jesus_moreno_l_pez.webp"
+}

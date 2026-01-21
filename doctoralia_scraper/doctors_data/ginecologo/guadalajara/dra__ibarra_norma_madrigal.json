@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Ibarra Norma Madrigal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3473 610 B,"
+    },
+    {
+      "full": "Pablo Casal 590,"
+    },
+    {
+      "full": "Quebec 631,"
+    },
+    {
+      "full": "Tarascos 3473 610 B,"
+    },
+    {
+      "full": "Pablo Casal 590,"
+    },
+    {
+      "full": "Quebec 631,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ibarra-norma-madrigal/ginecologo/guadalajara#address-id=57551&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:11.075Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Laura Sotomayor Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cholula no. 85, Condesa,"
+    },
+    {
+      "full": "Cholula no. 85, Condesa,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-sotomayor-alvarado/ginecologo/cuauhtemoc#address-id=111768&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:05.411Z",
+  "localPhotoPath": null
+}

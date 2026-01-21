@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Emmanuel Rodríguez Yee",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 196,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ac15294f/ac15294f-5d67-4cd1-8d2d-5c74d89b457f_small_square.jpg",
+  "about": "Soy Emmanuel Rodríguez Yee, bienvenidos a mi perfil de Doctoralia, desde esta plataforma ayudamos a nuestros pacientes para valorar su estado de salud y fertilidad en una consulta ginecológica. Con el paso de los años mi misión como médico se ha convertido en eso, ayudar a mis pacientes a mejorar su salud, su calidad de vida o apoyar con mis conocimientos y la aplicación de los tratamientos correctos su deseo de convertirse en padres.",
+  "addresses": [
+    {
+      "full": "Atlixcáyotl 3248 Interior 111D, Ex Hacienda, San Martinito, Tlaxcalancingo, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emmanuel-rodriguez-yee/ginecologo/puebla#address-id=410508&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:19.106Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__emmanuel_rodr_guez_yee.webp"
+}

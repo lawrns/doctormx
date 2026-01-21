@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ramon Javier Godoy Muzquiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 125,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/661950/6619505778bc93522116e6fc6e6bcb20_220_square.jpg",
+  "about": "Soy el Dr. Ramón, colposcopista y especialista en Virus del Papiloma Humano. Mi labor se centra en brindarte atención integral y personalizada en cada etapa de tu vida. Me especializo en: Seguimiento y cuidado del embarazo, asegurándome de que tú y tu bebé estén siempre en las mejores condiciones. Atención a mujeres en la menopausia, ayudándolas a manejar esta etapa de forma saludable y con calidad de vida. Procedimientos avanzados como laparoscopias y ultrasonidos en 4ta dimensión, para diagnósticos más precisos. Si buscas un trato profesional, humano y cercano, estoy aquí para acompañarte. Te invito a visitarme y descubrir cómo puedo ayudarte a cuidar tu salud. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Avenida Manuel J. Clouthier 669 Hospital Jardines Guadalupe 3er Piso Consultorio 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-javier-godoy-muzquiz/ginecologo/zapopan#address-id=540809&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:57.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ramon_javier_godoy_muzquiz.webp"
+}

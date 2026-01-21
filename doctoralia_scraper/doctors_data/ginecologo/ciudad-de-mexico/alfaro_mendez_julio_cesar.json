@@ -1,0 +1,25 @@
+{
+  "name": "Alfaro Mendez Julio Cesar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Margaritas 56, Jardines Del Molinito,"
+    },
+    {
+      "full": "Circuito Margaritas 56, Jardines Del Molinito,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfaro-mendez-julio-cesar/ginecologo/naucalpan-de-juarez#address-id=330814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:02:29.434Z",
+  "localPhotoPath": null
+}

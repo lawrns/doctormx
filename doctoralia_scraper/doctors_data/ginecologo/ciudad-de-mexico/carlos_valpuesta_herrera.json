@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Valpuesta Herrera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Niños Heroes 125 303,"
+    },
+    {
+      "full": "Calle Niños Heroes 125 303,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-valpuesta-herrera/ginecologo/zamora#address-id=102628&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:46.427Z",
+  "localPhotoPath": null
+}

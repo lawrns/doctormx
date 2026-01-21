@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Izmir Hernández Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 365,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4d1b66/4d1b662bfdb81267442a06acb0968c64.jpg",
+  "about": "Mi objetivo principal es brindar atención cálida con informacion útil y veraz. Minimizar la incomodidad que representa una visita al ginecologo. Y mejorar comunicacion médico-paciente.",
+  "addresses": [
+    {
+      "full": "Calzada de los jinetes 61, 1er piso, local 104, las arboledas, Tlanepantla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Consulta por fallo de método anticonceptivo",
+      "price": ""
+    },
+    {
+      "name": "Tensado vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/izmir-hernandez-torres/ginecologo/tlalnepantla-de-baz2#address-id=578780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:29.992Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__izmir_hern_ndez_torres.webp"
+}

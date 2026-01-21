@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Andrés González de la Rosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5d65662e/5d65662e-9d05-434b-b032-7c83c4c5ff62_small_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia. Alta especialidad en laparoscopia ginecológica.",
+  "addresses": [
+    {
+      "full": "Av. Lázaro Cárdenas 401, Valle Oriente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-gonzalez-de-la-rosa-2/ginecologo/san-pedro-garza-garcia#address-id=521977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:02.587Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__andr_s_gonz_lez_de_la_rosa.webp"
+}

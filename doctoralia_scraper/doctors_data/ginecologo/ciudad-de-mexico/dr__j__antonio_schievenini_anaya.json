@@ -1,0 +1,72 @@
+{
+  "name": "Dr. J. Antonio Schievenini Anaya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dccdbf/dccdbf670506a6d5063c1b3bd44e8f32_220_square.jpg",
+  "about": "Egresado de la Facultad de Estudios Superiores Iztacala Especialización en Ginecología y Obstetricia en el Hospital General de México Diplomado en Patología y Colposcopía del Tracto Inferior Femenino en el Hospitla General De México Certificado por el Consejo Mexicano de Ginecología y Obstetricia Curso Teórico Práctico en Ligadura de Arterias Uterina por el Instituto de Salud del Estado de México 10 años de experiencia en la practica medica",
+  "addresses": [
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    },
+    {
+      "full": "Blvd. Manuel Ávila Camacho 3227, Multiplaza Valle Dorado Local 45,46 y 50, Colonia Valle Dorado Tlalnepantla de Baz CP 54020,"
+    },
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    },
+    {
+      "full": "Blvd. Manuel Ávila Camacho 3227, Multiplaza Valle Dorado Local 45,46 y 50, Colonia Valle Dorado Tlalnepantla de Baz CP 54020,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/j-antonio-schievenini-anaya/ginecologo/cuautitlan-izcalli#address-id=27583&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:37.721Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__j__antonio_schievenini_anaya.webp"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Luis Antonio Azamar Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0a5bc6/0a5bc6dff7b6a7bd9a7d8af36aee8e80_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Xicoténcatl 1266,"
+    },
+    {
+      "full": "Calle Juan Sánchez Azcona 1323,"
+    },
+    {
+      "full": "Xicoténcatl 1266,"
+    },
+    {
+      "full": "Calle Juan Sánchez Azcona 1323,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Parto humanizado",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-antonio-azamar-vazquez/ginecologo/ciudad-de-mexico#address-id=412588&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:54.075Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_antonio_azamar_v_zquez.webp"
+}

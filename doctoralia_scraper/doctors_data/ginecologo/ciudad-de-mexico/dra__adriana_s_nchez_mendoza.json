@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Sánchez Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c7ec3f/c7ec3f38762891c0846d0680920e7753_220_square.jpg",
+  "about": "Ginecóloga y obstetra. Colposcopia y patología del tracto genital inferior. Endocrinología ginecológica.",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 318,"
+    },
+    {
+      "full": "Avenida Río Churubusco 318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-sanchez-mendoza/ginecologo/coyoacan#address-id=540579&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:07.601Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__adriana_s_nchez_mendoza.webp"
+}

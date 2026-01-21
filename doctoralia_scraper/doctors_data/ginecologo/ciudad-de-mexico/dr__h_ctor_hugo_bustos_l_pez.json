@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Héctor Hugo Bustos López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/462251/462251fe7a2281c6eb650d26dd278552_220_square.jpg",
+  "about": "Médico Cirujano Universidad Nacional Autónoma de México UNAM Hospital General “Lic. Adolfo López Mateos” ISSSTE Subespecialidad Biología de la Reproducción Maestría en Ciencias Médicas. Área Biología de la Reproducción Universidad Nacional Autónoma de México UNAM Especialidad en psicoterapia corporal y terapia no-dual, Instituto Core Energetic Nueva York. 4 libros publicados y más de 40 premios de investigación. Premio de Excelencia en cirugía laparoscopica 2019 por La Federación Mexicana de Colegios y Asociaciones de Endoscopía Ginecológica Vicepresidente y Presidente Electo de la Federación Mexicana de Endoscopía Ginecológica Profesor titular curso “Cirugía Endoscópica Avanzada” 2009 UNAM Consejo Mexicano de Ginecología y Obstetricia Director Ejecutivo Bioscan Apizaco, Bioscan San Martín y Bioscan Hospital Regional, Tlaxcala Profesor titular de Ginecología y Obstetricia facultad de Medicina de la UNAM American British Cowdray Medical Center AP Hospital ABC 2007 Expresidente Asociación Mexicana de Microcirugía y Endoscopía Ginecologica (AMEGM) Staff Clínica Lomas Altas y Hospital ABC México Ex Presidente de la Asociación de Médicos Residentes y ex residentes del Instituto Nacional de Perinatología INPER",
+  "addresses": [
+    {
+      "full": "Paseo de la Reforma 2608 Piso 9,"
+    },
+    {
+      "full": "Francisco Sarabia 405. Col Centro,"
+    },
+    {
+      "full": "Paseo de la Reforma 2608 Piso 9 ,"
+    },
+    {
+      "full": "Paseo de la Reforma 2608 Piso 9,"
+    },
+    {
+      "full": "Francisco Sarabia 405. Col Centro,"
+    },
+    {
+      "full": "Paseo de la Reforma 2608 Piso 9 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-hugo-bustos-lopez/ginecologo/miguel-hidalgo#address-id=92702&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:16.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__h_ctor_hugo_bustos_l_pez.webp"
+}

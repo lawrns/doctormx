@@ -1,0 +1,98 @@
+{
+  "name": "Dr. Esteban Lizárraga Cepeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70e6de/70e6dedcda703276d38de879e4ca822c_220_square.jpg",
+  "about": "MEDICO ESPECIALISTA EN MEDICINA MATERNOFETAL DEDICADO AL DIAGNOSTICO PRENATAL Y A LA VIGILANCIA DEL DESARROLLO Y EVOLUCION DEL EMBARAZO. INTEGRANDO LA MEDICINA FETAL COMO PARTE DEL CONTROL PRENATAL.. EL OBEJTIVO DE LA UNIDAD Y DEL DEPARATAMENTO DE MEDICINA MATERNOFETAL ES OFRECER ATENCION MEDICA DE EXCELENCIA PARA EL FETO Y LA MUJER EMBARAZADA CON LA FINALIDAD DE PREVENIR RESULTADOS PERINATALES ADVERSOS. SOMOS UN SERVICIO TRATANTE E INTERCONSULTANTE CON LA FINALIDAD DE OTORGAR Y BRINDAR UNA ATENCION DE ALTA CALIDAD A TRAVES DE LOS DIFERENTES DEPARTAMENTOS Y CLINICAS CON EL MAS ALTO NIVEL DE RECURSOS DISPONIBLES PROMOVIENDO LA PREVENCION, EDUCACION, ASESORIA Y EL DIAGNOSTICO OPORTUNO COMO PARTE DE UNA NUEVA CULTURA DURANTE EL CONTROL DEL EMBARAZO.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Dr. Guajardo 155,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Dr. Guajardo 155,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "ECO Anatómico",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "ECO Anatómico",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "ECO Anatómico",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esteban-lizarraga-cepeda/ginecologo/monterrey#address-id=23208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:19.436Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__esteban_liz_rraga_cepeda.webp"
+}

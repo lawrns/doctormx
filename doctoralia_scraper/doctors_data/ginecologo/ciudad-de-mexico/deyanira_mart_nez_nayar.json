@@ -1,0 +1,43 @@
+{
+  "name": "Deyanira Martínez Nayar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 189,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c709d1/c709d1410f6d2e58b864772c8f7b3899_220_square.jpg",
+  "about": "Soy la Dra. Deyanira Martínez Nayar, realicé mis estudios como médico general en la Facultad de medicina de la UNAM y posteriormente mi especialidad en ginecología y obstetricia avalada por la UNAM. Estoy certificada por el Consejo mexicano de ginecología y obstetricia. Tengo el Curso de Posgrado de Alta Especialidad en Cirugía Endoscópica Ginecológica avalado por la UNAM. Me dedico a tratar y prevenir las enfermedades ginecológicas, desde la adolescencia hasta la menopausia. Así como también el control y resolución de la maravillosa etapa que es el embarazo. Como mujer entiendo que necesitamos sentirnos cómodas en nuestra consulta y como ginecóloga ofrezco una atención cálida, profesional y de alta calidad, donde podrás exponer todas tus dudas e inquietudes y por mi parte sabré proponerte el mejor tratamiento para ti.",
+  "addresses": [
+    {
+      "full": "Avenida Montevideo no. 303, colonia Lindavista,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/deyanira-martinez-nayar/ginecologo/gustavo-a-madero",
+  "scrapedAt": "2026-01-21T02:44:06.207Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/deyanira_mart_nez_nayar.webp"
+}

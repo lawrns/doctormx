@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melissa Astrid López Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 167,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0ef351/0ef35179f61992f33ebd0d1662de9e5a_220_square.jpg",
+  "about": "La base de todo tratamiento es la confianza en el trabajo óptimo y eficiente, me he preparado para que tengan la plena confianza en el servicio que les ofrezco, generando ambientes de tranquilidad al recibir la mejor atención. Soy la Dra. Melissa Astrid López García especialista en Ginecología y Obstetricia y con subespecialidad en Biología de la Reproducción, me he actualizado a nivel nacional e internacional. Tengo la fortuna de ser mujer lo que me permite ser empática con mis pacientes y comprender cada situación desde la misma visión o perspectiva. Amo mi labor y estoy a sus servicios, para que en forma conjunta busquemos la mejor y más viable solución a cada situación que se presente. Me pongo a sus órdenes, será un placer atenderlas.",
+  "addresses": [
+    {
+      "full": "Constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melissa-astrid-lopez-garcia/ginecologo/nuevo-leon#address-id=486894&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:30.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__melissa_astrid_l_pez_garcia.webp"
+}

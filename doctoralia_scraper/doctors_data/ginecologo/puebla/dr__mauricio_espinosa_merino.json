@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mauricio Espinosa Merino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c64715/c64715483531b1513381fa963c707a3f.jpg",
+  "about": "Soy médico cirujano egresado de la Universidad Popular Autónoma del Estado de Puebla y especialidad de Ginecología y Obstetricia avalada por la Benemérita Universidad Autónoma de Puebla, certificado por el Consejo Mexicano de Ginecología y Obstetricia (CMGO). Soy experto en el cuidado integral de la salud femenina, mi compromiso es brindarte la mejor experiencia en cada consulta, ofreciendo soluciones a tus inquietudes para tu bienestar y tu salud. Ya sea que necesites una valoración ginecológica de rutina, una atención obstétrica durante el embarazo o un diagnóstico preciso acerca de un síntoma en particular. Será un gusto atenderte.",
+  "addresses": [
+    {
+      "full": "Boulevard 14 Sur 4302, Jardines de San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-espinosa-merino/ginecologo/puebla#address-id=445559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:40.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mauricio_espinosa_merino.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Celia Ivonne Gamboa Altúzar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 424,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/580149/5801492ab9f2577ac46a03228c8a94fb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 de mayo 1822, Col. María Luisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celia-ivonne-gamboa-altuzar/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:12.963Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__celia_ivonne_gamboa_alt_zar.webp"
+}

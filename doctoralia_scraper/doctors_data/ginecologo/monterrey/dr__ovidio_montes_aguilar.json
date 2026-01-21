@@ -1,0 +1,68 @@
+{
+  "name": "Dr. Ovidio Montes Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Médico Especialista con más de 15 años de experiencia. Maestro y Tutor Académico de Ginecología en UDEM (para Christus Muguerza Alta Especialidad). Con estudios en Nutrición Clinica y manejo de Obesidad Mórbida en la paciente Ginecológica.",
+  "addresses": [
+    {
+      "full": "Hidalgo 2480 poniente,"
+    },
+    {
+      "full": "Carretera monterrey-colombia #409,"
+    },
+    {
+      "full": "Hidalgo 2480 poniente,"
+    },
+    {
+      "full": "Carretera monterrey-colombia #409,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $300"
+    },
+    {
+      "name": "Citología y microtomía endometrial",
+      "price": "• Desde $3,000"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $250"
+    },
+    {
+      "name": "Citología y microtomía endometrial",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ovidio-montes-aguilar/ginecologo/general-escobedo#address-id=2150&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:56.217Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Alma Gabriela Consuelo Cárcamo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Morelos 159 - 103,"
+    },
+    {
+      "full": "Avenida Morelos 159 - 103,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-gabriela-consuelo-carcamo/ginecologo/venustiano-carranza",
+  "scrapedAt": "2026-01-21T03:00:30.990Z",
+  "localPhotoPath": null
+}

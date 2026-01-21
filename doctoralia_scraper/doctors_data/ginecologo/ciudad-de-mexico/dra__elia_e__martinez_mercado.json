@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elia E. Martinez Mercado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Licenciatura: (2001-2007) Escuela Latinoamericana de Medicina. La Habana, Cuba Facultad “Comandante Manuel Fajardo” Título Obtenido: Doctor en Medicina (Titulo de oro) Revalidado en México como: Médico Cirujano Posgrado: (2009- 2013) Residencia Medica en Ginecologia y Obstetricia. Hospital General “Manuel Gea González” Facultad de Medicina. UNAM. Certificación por el Consejo Mexicano de Ginecología y Obstetricia. 2013 (vigente) Curso de Alta Especialidad: (2013-2014) Cirugía Endoscópica Ginecológica. Hospital General “Manuel Gea González” Facultad de Medicina. UNAM. Experiencia laboral: Abril 2013: Médico Especialista. Médicina Privada. Hospital Sedna. Junio 2013: Médico Especialista Adscrito del Hospital General Ajusco Medio. Actualmente laborando Mayo 2014: Médico Especialista, Coberturas Hospital Médica Lomas. Actualmente laborando",
+  "addresses": [
+    {
+      "full": "Periferico sur 5246,"
+    },
+    {
+      "full": "Periferico sur 5246,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elia-e-martinez-mercado/ginecologo/coyoacan#address-id=14744&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:24.464Z",
+  "localPhotoPath": null
+}

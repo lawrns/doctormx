@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Fernanda Sanjuan Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d0d25c/d0d25cae1f9f360eb5ddef1c5adc6fdc_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 1524,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 1524,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-sanjuan-fuentes/ginecologo/benito-juarez#address-id=397213&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:22.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_fernanda_sanjuan_fuentes.webp"
+}

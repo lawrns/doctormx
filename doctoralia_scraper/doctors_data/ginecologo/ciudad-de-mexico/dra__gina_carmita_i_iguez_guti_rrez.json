@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Gina Carmita Iñiguez Gutiérrez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f6be6841/f6be6841-0775-48dc-9047-051847f6ceae_small_square.jpg",
+  "about": "Soy Gina, me apasiona cuidar la salud de la mujer en sus diferentes etapas, el consultorio no es solo mi lugar para despejar sus dudas y entregarles la mejor atención, también es un espacio en donde puedo cumplir el sueño de cuidarte mejor. Empoderar a las mujeres a través de la salud en importante, y enseñarles a prevenir o detectar oportunamente algunas enfermedades.Me encanta ser tu ginecóloga.",
+  "addresses": [
+    {
+      "full": "Del Roble 226,"
+    },
+    {
+      "full": "Boulevard Luis Donaldo Colosio 212,"
+    },
+    {
+      "full": "Riobamba 642,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gina-carmita-iniguez-gutierrez/ginecologo/pachuca-de-soto#address-id=616768&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:52.068Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gina_carmita_i_iguez_guti_rrez.webp"
+}

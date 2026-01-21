@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sam-Yong Gisela Kang Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dac9aa/dac9aab65e514d4b13a51ec4548d56c2_220_square.jpg",
+  "about": "Soy una especialista joven, certificada por el consejo Mexicano de Ginecología y Obstetricia. Miembro del Colegio de Gineco-obstetras del estado de Jalisco Misión: Salvaguardar la salud de la mujer, con una atención humana, empática y responsable. Visión: Que toda mujer viva con una buena calidad de vida sin importar la edad, raza u orientación sexual.",
+  "addresses": [
+    {
+      "full": "calle el sol 2904,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sam-yong-gisela-kang-vazquez/ginecologo/guadalajara#address-id=522387&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:02.768Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sam_yong_gisela_kang_v_zquez.webp"
+}

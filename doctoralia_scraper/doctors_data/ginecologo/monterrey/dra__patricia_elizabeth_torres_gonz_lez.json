@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Patricia Elizabeth Torres González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 97,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/66e76b/66e76b9428b9b0322442181ec039c888_220_square.jpg",
+  "about": "Hola! Mi nombre es Patricia Torres Soy egresada de la UDEM y realicé la especialidad en Ginecología y Obstetricia en el Hospital Regional ISSSTE de Monterrey. Mi objetivo principal es ofrecer atención médica especializada de alta calidad, con ética en conocimiento actualizado y siguiendo las directrices que marcan las guías de atención clínica nacionales e internacionales; de ser necesario apoyándome en caso necesario de un equipo multidisciplinario para que el resultado final sea reconstituir o mejorar su calidad de vida.",
+  "addresses": [
+    {
+      "full": "Av. Pino Suárez 645,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-elizabeth-torres-gonzalez/ginecologo/nuevo-leon#address-id=461321&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:33.609Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__patricia_elizabeth_torres_gonz_lez.webp"
+}

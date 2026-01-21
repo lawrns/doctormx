@@ -1,0 +1,31 @@
+{
+  "name": "Emma Elizabeth Marsal Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Carr Fed Mexico Toluca 5420,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Carr Fed Mexico Toluca 5420,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emma-elizabeth-marsal-martinez/ginecologo/cuajimalpa-de-morelos#address-id=231929&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:41.181Z",
+  "localPhotoPath": null
+}

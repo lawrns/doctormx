@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Yadira Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fc67ec/fc67ec8ee605fcf1e566226b32b73b93_220_square.jpg",
+  "about": "Soy una persona apasionada, amante de la vida, responsable, proactiva, pro mujer y con muchas ganas de seguir creciendo. Tengo experiencia en consultas y urgencias ginecológicas y obstétricas; tratamientos de reproducción asistida de alta y baja complejidad; así como cirugía ginecológica, colposcopia e histerocopia.",
+  "addresses": [
+    {
+      "full": "Tuxpan 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": "• $8,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yadira-flores/ginecologo/cuauhtemoc2#address-id=541814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:52.889Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yadira_flores.webp"
+}

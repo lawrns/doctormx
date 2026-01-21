@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Luis Miguel Bedia Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9ad0df/9ad0dfad850ad060fbf629b09b4c8139_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-miguel-bedia-sanchez/ginecologo/gustavo-a-madero#address-id=2575&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:44.773Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_miguel_bedia_s_nchez.webp"
+}

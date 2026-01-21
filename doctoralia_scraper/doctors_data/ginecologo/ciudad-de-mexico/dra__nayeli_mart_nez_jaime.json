@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nayeli Martínez Jaime",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 77,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4d1481/4d1481ea05664054315abef1176c5e23_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Matanzas 715, Lindavista, Gustavo A Madero, CDMX,"
+    },
+    {
+      "full": "Matanzas 715, Lindavista, Gustavo A Madero, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nayeli-martinez-jaime/ginecologo/ciudad-de-mexico#address-id=89025&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:47.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nayeli_mart_nez_jaime.webp"
+}

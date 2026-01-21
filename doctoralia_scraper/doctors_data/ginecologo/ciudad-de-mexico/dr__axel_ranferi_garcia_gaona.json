@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Axel Ranferi Garcia Gaona",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Ginecólogo con especialización en cirugía laparoscópica, estética vaginal, manejo de VPH y trastornos hormonales con experiencia, egresado de la Universidad Anáhuac México como médico cirujano y formado como especialista en el Hospital General de México “Dr. Eduardo Liceaga”. Mi objetivo es ofrecer una atención integral que combine resultados médicos de calidad con una experiencia de consulta cercana y segura.Creo firmemente en el respeto, la honestidad y la profesionalidad como pilares de mi práctica clínica, estaré contigo en cada paso de tu atención ginecológica.",
+  "addresses": [
+    {
+      "full": "Anillo Periférico 3617,"
+    },
+    {
+      "full": "Anillo Periférico 3617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/axel-ranferi-garcia-gaona/ginecologo/magdalena-contreras#address-id=619277&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:04.112Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Gunther José Schmilinsky Scandela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d0fd3/9d0fd3395d228621cb6f45eef116dc79_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 290 (consultorio 204),"
+    },
+    {
+      "full": "Durango 290 (consultorio 204),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gunther-jose-schmilinsky-scandela/ginecologo/colima#address-id=84410&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:09.597Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gunther_jos__schmilinsky_scandela.webp"
+}

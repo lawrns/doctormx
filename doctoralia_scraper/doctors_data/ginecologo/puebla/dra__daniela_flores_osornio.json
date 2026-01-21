@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Daniela Flores Osornio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 158,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48968f/48968f11072a5e0608ae7b639b20ed57_220_square.jpg",
+  "about": "Ginecóloga Obstetra, Certificada por el Consejo Mexicano de Ginecología y Obstetricia Diplomado en Colposcopía y patología en tracto genital inferior Diplomado en endoscopía ginecológica Diplomado en endocrinología ginecológica \"Cuidar de la salud de la mujer en cada etapa de la vida, es mi prioridad\"",
+  "addresses": [
+    {
+      "full": "Avenida San diego 1203,"
+    },
+    {
+      "full": "Anillo periferico Ecologico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-flores-osornio/ginecologo/puebla#address-id=561484&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:04.471Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__daniela_flores_osornio.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Erika Marcela Dueñas De La Rosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c97ed796/c97ed796-55c6-4f5c-ae4a-293d57063b88_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Mariano Jiménez 748,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 1000,"
+    },
+    {
+      "full": "C. Mariano Jiménez 748,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 1000,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-marcela-duenas-de-la-rosa/ginecologo/guadalajara#address-id=230881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:48.157Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/erika_marcela_due_as_de_la_rosa.webp"
+}

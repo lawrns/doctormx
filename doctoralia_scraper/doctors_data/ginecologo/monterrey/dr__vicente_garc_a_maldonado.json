@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Vicente García Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 659,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/bef2d08f/bef2d08f-f2c5-4a5b-81da-91d92eb8ef82_large.jpg",
+  "about": "Especialista en Ginecologia y Obstetricia Certificado por el Consejo Mexicano de Ginecologia y Obstetricia Miembro de Federacion Mexicana de Ginecologia ny Obstetricia Miembro del Colegio de ginecologos de Monterrey Mas de 20 años de experiencia en ginecologia y obstetricia",
+  "addresses": [
+    {
+      "full": "Granadillo 325 Jardines de Casa Blanca,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vicente-garcia-maldonado/ginecologo/san-nicolas-de-los-garza#address-id=117149&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:24.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__vicente_garc_a_maldonado.webp"
+}

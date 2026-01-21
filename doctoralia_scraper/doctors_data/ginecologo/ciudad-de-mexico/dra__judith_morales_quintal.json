@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Judith Morales Quintal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c63cf0/c63cf0a5a48d9e6143e7fb78a608773c_220_square.jpg",
+  "about": "HOLA, SOY LA DOCTORA JUDITH TENGO 20 AÑOS DEDICADA ALA GINECOLOGIA, SOLO ME DEDICO A LA MEDICINA PRIVADA , LA ATENCIÓN ES GINECÓLOGICA Y OBSTÉTRICA , TE ACOMPAÑARE DESDE LA INFANCIA HASTA LA VEJEZ.",
+  "addresses": [
+    {
+      "full": "Avenida Madero #185 Colonia Francisco I Madero,"
+    },
+    {
+      "full": "Avenida Madero #185 Colonia Francisco I Madero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/judith-morales-quintal/ginecologo/yucatan#address-id=107848&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:04.381Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__judith_morales_quintal.webp"
+}

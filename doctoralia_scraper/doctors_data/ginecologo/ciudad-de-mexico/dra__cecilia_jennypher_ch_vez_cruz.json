@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cecilia Jennypher Chávez Cruz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4547b5/4547b5620482f5aeb82a995e5ce2808a_220_square.jpg",
+  "about": "Ginecóloga especialista en virus del papiloma humano certificada con tratamientos de vanguardia diagnósticos rápidos amo mi trabajo y lo hago con calidez humana",
+  "addresses": [
+    {
+      "full": "Avenida 519 no 48 ,"
+    },
+    {
+      "full": "Avenida 519 no 48 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-jennypher-chavez-cruz/ginecologo/gustavo-a-madero#address-id=22313&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:52.478Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cecilia_jennypher_ch_vez_cruz.webp"
+}

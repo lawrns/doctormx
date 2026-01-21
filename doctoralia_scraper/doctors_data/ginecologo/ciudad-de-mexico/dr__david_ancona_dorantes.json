@@ -1,0 +1,43 @@
+{
+  "name": "Dr. David Ancona Dorantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 210,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b71fc5/b71fc57742f58cbc56e945d43692e8dc_220_square.jpg",
+  "about": "Ingrese a la Escuela Médico Militar (universidad del Ejército y Fuerza Aérea Mexicanos) en 1984 graduándome en 1990. Realicé mi Internado por 2 años (1990-1992) en el Hospital Central Militar. Me enviaron como Jefe de la sección sanitaria primero en el 17/o Batallón de Infantería en la ciudad de Villahermosa, Tabasco por un año y posteriormente en el 75/o Batallón de Infantería en la Ciudad de México por 2 años. Posteriormente realicé mi Especialidad en Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad, haciendo mis prácticas dentro del Hospital Central Militar de 1995 a 1998. Al finalizar fui Jefe de Ginecología además de Jefe de Enseñanza en el Hospital Militar de Oaxaca. en el 2002 realicé mi Diplomado en Colposcopia en el Hospital General de México, Ciudad de México. Y Diplomado en Ultrasonido en el Hospital de la Raza, IMSS, Ciudad de México. En el 2003 empecé a dar mis servicios en el Hospital Militar de Especialidades de la Mujer y Neonatología perteneciente a la SEDENA, Ciudad de México donde trabaje por 16 años desempeñando los siguientes cargos: adscrito en el Departamento de Ginecología, en Subjefe de Sala de Ginecología, y Jefe de Consulta Externa, así como Jefe de Clínica de Colposcopía, Jefe de Sala de Obstetricia y finalmente Jefe de Sala de Cuartos Combinados (Labor). Posteriormente Jefe de Ginecología en el Hospital Militar de Zona \"el Vergel\", Ciudad de México. Y después de cumplir 36 años en el activo en el Ejército me jubile. En mi práctica privada, he tenido diferentes consultorios, tanto fuera de hospitales como dentro. Hospitales: DIF de Santa Mónica Atizapán, DIF de Cuautitlán izcalli, Hospital Bacilio Gómez, Corporativo Hospital Satélite y desde hace 14 años, Hospital Star Médica Lomas Verdes. Puedo operar en casi cualquier hospital que guste o necesite la paciente. Acepto todo tipo de Aseguradoras. Veo todo tipo de padecimiento gineco obstétricos. En caso necesario, se busca apoyo de otros Colegas.",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-ancona-dorantes/ginecologo/naucalpan-de-juarez2#address-id=561790&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:26.297Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__david_ancona_dorantes.webp"
+}

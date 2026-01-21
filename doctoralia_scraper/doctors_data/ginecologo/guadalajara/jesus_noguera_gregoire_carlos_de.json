@@ -1,0 +1,25 @@
+{
+  "name": "Jesus Noguera Gregoire Carlos De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 164,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/52bf88/52bf8866fd657155d5858a4a606ff407_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pedro Buzeta No. Ext.870-A Col. Chapultepec Country Cp 44620,"
+    },
+    {
+      "full": "Pedro Buzeta No. Ext.870-A Col. Chapultepec Country Cp 44620,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-noguera-gregoire-carlos-de-2/ginecologo/guadalajara#address-id=358993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:07.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/jesus_noguera_gregoire_carlos_de.webp"
+}

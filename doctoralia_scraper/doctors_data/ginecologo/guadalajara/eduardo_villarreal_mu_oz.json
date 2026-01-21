@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Villarreal Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Antonio Flores 34,"
+    },
+    {
+      "full": "Antonio Flores 34,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-villarreal-munoz/ginecologo-urologo/zapopan#address-id=233465&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:44.501Z",
+  "localPhotoPath": null
+}

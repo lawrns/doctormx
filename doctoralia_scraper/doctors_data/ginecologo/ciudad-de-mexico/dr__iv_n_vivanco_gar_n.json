@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Iván Vivanco Garín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cd298d/cd298dfe2887a0dc8c3966363b2f8f60.jpg",
+  "about": "Medicina - Universidad La Salle, Ced. Profesional: 9461756 Ginecología y Obstetricia - U.N.A.M, Ced. Especialidad: 12224179 Medicina Materno Fetal - U.N.A.M, Ced. Subespecialidad: 12839889 Certiﬁcado por el Consejo Mexicano de Ginecología y Obstetricia Certificado por la Fetal Medicine Foundation",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 613,"
+    },
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• $12,500"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-vivanco-garin/ginecologo/miguel-hidalgo#address-id=485354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:42.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__iv_n_vivanco_gar_n.webp"
+}

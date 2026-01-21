@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Florecita Flores Martínez",
+  "specialty": "Ginecóloga",
+  "rating": 0,
+  "reviewCount": 29,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2c194374/2c194374-7cfb-4724-ac2d-006f10ff6a33_small_square.jpg",
+  "about": "Todo comenzó con la pasión por el cuidado de la salud femenina. Soy una Ginecóloga Certificada por el Consejo Mexicano de Ginecología y Obstetrícia, dedicada y comprometida para brindar atención personalizada y de alta calidad a los pacientes.Cuento con experiencia en mi Especialidad y en diferentes Diplomados en el ámbito ginecológico y diversos cursos para ofrecer certeza y confianza.Me enorgullece dar un enfoque centrado a las pacientes, garantizando diagnósticos precisos.",
+  "addresses": [
+    {
+      "full": "Calle Rio Bamba 804,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/florecita-flores-martinez/ginecologo/gustavo-a-madero#address-id=623977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:39.844Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__florecita_flores_mart_nez.webp"
+}

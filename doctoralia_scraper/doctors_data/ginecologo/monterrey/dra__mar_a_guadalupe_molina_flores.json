@@ -1,0 +1,65 @@
+{
+  "name": "Dra. María Guadalupe Molina Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 409,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ff907/1ff907f13991f58573566ddaedd3f4bb_220_square.jpg",
+  "about": "Más de 25 años de experiencia ejerciendo con pasión la ginecología y la obstetricia, con profesionalismo y empatía hacia las pacientes, dando la mejor opción de tratamiento para su padecimiento. Atención de mujer a mujer.",
+  "addresses": [
+    {
+      "full": "Av Lerdo de Tejada 535, Centro,,"
+    },
+    {
+      "full": "Av. Las Puentes 222, las puedes,"
+    },
+    {
+      "full": "Murcia 530, Virrarreal, San Nicolás de los Garza.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-molina-flores-2/ginecologo/san-nicolas-de-los-garza#address-id=369252&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:45.579Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_guadalupe_molina_flores.webp"
+}

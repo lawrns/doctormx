@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fernando Garcia Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 133,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b66d4/3b66d4699dcea417cb24c848f887d30f_220_square.jpg",
+  "about": "Mi formación profesional de la Licenciatura en Medicina la realice en la Universidad Popular Autónoma del Estado de Puebla (UPAEP), cuento con la Especialidad en Ginecología y Obstetricia, a la par de la especialidad realice el diplomado en colposcopia para detección y tratamiento de lesiones pre-cancerígenas en el cuello de la matriz, fui profesor del grupo piloto de la Faculta de Medicina de la BUAP en la materia de obstetricia. Realice la especialidad en Reproducción Asistida en el Instituto Valenciano de Infertilidad (IVI), España, el cual se considera el mejor centro de reproducción del mundo ya que han sido pioneros en diferentes temas de reproducción y cirugía reproductiva innovando en el área de investigación. Realice un fellow en cirugía reproductiva en el centro de cirugía reproductiva en Valencia,España, en cual acuden pacientes de diferentes partes del mundo para el tratamiento de patología uterina asociada con fertilidad como; malformaciones uterinas, miomas, polipos, endometriosis etc. La formación que he tenido me permite valorar a mis pacientes de una forma integral para llegar a un diagnóstico y poder indicar el mejor tratamiento.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-garcia-vargas/ginecologo/puebla#address-id=6536&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:28.343Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__fernando_garcia_vargas.webp"
+}

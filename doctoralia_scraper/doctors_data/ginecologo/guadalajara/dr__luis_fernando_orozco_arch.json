@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Fernando Orozco Arch",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7bb6d0/7bb6d0df0692de6ed6fcae6b1517b615_220_square.jpg",
+  "about": "Especialidad en el Hospital Civil Nuevo Guadalajara. MIEMBRO EMÉRITO del Colegio de Médicos Gineco-Obstetras del Estado de Jalisco A.C. Miembro de la Sociedad de Medicina Materno Fetal del Estado de Jalisco, A.C. Miembro de la Sociedad Mexicana de Urología-Ginecológica A.C. Miembro de la Federación Mexicana de Ginecología y Obstetricia A.C. Miembro de la Federación Latinoamericana de Sociedades de Obstetricia y Ginecología. Recertificado por el Consejo Mexicano de Ginecología y Obstetricia. Miembro de la Asociación Jaliscience de Colposcopía A.C. Miembro del American Congress of Obstetricians & Gynecologist. Miembro de la International Federacion Of Gynecology & Obstetrics.",
+  "addresses": [
+    {
+      "full": "Av. Tepeyac 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Desde $25,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": "• Desde $25,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-orozco-arch/ginecologo/guadalajara#address-id=90741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:16.750Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__luis_fernando_orozco_arch.webp"
+}

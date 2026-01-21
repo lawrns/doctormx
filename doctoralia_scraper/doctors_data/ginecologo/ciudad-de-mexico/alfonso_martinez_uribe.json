@@ -1,0 +1,31 @@
+{
+  "name": "Alfonso Martinez Uribe",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bajio, 203, Cons. 202,"
+    },
+    {
+      "full": "Montecito, 38, Piso 12, Cons. 9 y 10,"
+    },
+    {
+      "full": "Bajio, 203, Cons. 202,"
+    },
+    {
+      "full": "Montecito, 38, Piso 12, Cons. 9 y 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-martinez-uribe/ginecologo/benito-juarez#address-id=77445&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:12.985Z",
+  "localPhotoPath": null
+}

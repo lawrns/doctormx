@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Cristobal Gerardo Rodríguez Valero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b86623/b8662306bec3346d745d9771dba8c79e_220_square.jpg",
+  "about": "El Dr. Cristóbal Gerardo Rodríguez Valero es egresado de la especialidad de Ginecología y Obstetricia de la Universidad Autónoma de Nuevo León (UANL) y posteriormente realizó un fellowship de cirugía ginecológica de mínima invasión en el Tecnológico de Monterrey. Durante su entrenamiento participó en más de 200 cirugías laparoscópicas, realizando diversos trabajos en congresos nacionales e internacionales, además de múltiples cirugías en vivo. Es miembro activo de la Asociación de Endoscopia Ginecológica de Nuevo León (AEGNL) además de pertenecer al cuerpo de médicos de la Asociación Endometriosis México y recientemente nombrado profesor clínico de Ginecología y Obstetricia en la Escuela de Medicina Ignacio Santos (EMIS) en el Tecnológico de Monterrey.",
+  "addresses": [
+    {
+      "full": "I. Morones Prieto,"
+    },
+    {
+      "full": "I. Morones Prieto,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristobal-gerardo-rodriguez-valero/ginecologo/monterrey#address-id=2604&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:39.405Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__cristobal_gerardo_rodr_guez_valero.webp"
+}

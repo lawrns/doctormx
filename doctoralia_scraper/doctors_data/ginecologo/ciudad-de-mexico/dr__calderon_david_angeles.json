@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Calderon David Angeles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb1f11/bb1f116eef93ed0c2e64ef741e630f13_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Chiclayo 676,"
+    },
+    {
+      "full": "Calle Chiclayo 676,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/calderon-david-angeles/ginecologo/ciudad-de-mexico#address-id=62209&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:58.480Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__calderon_david_angeles.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Jorge De La Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d908c9/d908c9bd0959a528d2a94571be796ee3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hector Victoria 15,"
+    },
+    {
+      "full": "Veracruz 6,"
+    },
+    {
+      "full": "Hector Victoria 15,"
+    },
+    {
+      "full": "Veracruz 6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-de-la-cruz/ginecologo/cuajimalpa-de-morelos#address-id=213512&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:13.874Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/jorge_de_la_cruz.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Rodolfo Leonel Vargas Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 115,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a599e3/a599e37954349e4c3ec5091820225783.jpg",
+  "about": "Soy Médico Ginecoobstetra, con subespecialidad en Medicina Materno Fetal, con más de 16 años de experiencia tanto en institución pública como en medicina privada. He mantenido actualización continua, así mismo participo como profesor de dos universidades en el área de ginecoobstetricia y medicina materno fetal. Dedicado a la atención de la mujer en embarazos complicados y diagnostico problemas fetales. El interés por el área de ginecología y obstetricia surge desde mi formación escolar desde hace más de 20 años que atendí mi primer parto el cual hasta la fecha ha sido una de mis grandes pasiones, la atención de la mujer embarazada con complicaciones influyó para la realización de mi segunda especialidad en medicina materno fetal, la cual el enfoque es la mujer con complicaciones médicas maternas y fetales. La perspectiva de atención es a mujeres con complicaciones del embarazo (embarazo de alto riesgo), pero también en mujeres sanas quienes al tener o no factores de riesgo o antecedentes para ciertas complicaciones estén interesadas en llevar un control y seguimiento estrecho donde prevenir y obtener los mejores resultados sea lo mas importante; pensando que esta etapa “el embarazo y nacimiento” es vital el cuidado para el futuro desarrollo y bienestar de un nuevo ser. La implementación del ultrasonido como una de nuestras herramientas indispensable en la realización de diagnóstico y seguimiento prenatal, el tener la tecnología de punta en nuestros equipos y sobre todo la experiencia adecuada para la utilización e interpretación de este nos han distinguido y destacado.",
+  "addresses": [
+    {
+      "full": "Ave. Ejército Nacional 613,"
+    },
+    {
+      "full": "Manzanas 8-401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodolfo-leonel-vargas-ruiz/ginecologo/benito-juarez#address-id=75705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:25.103Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodolfo_leonel_vargas_ruiz.webp"
+}

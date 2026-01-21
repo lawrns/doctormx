@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Noemi Marcelo Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/446a6e/446a6ea668f73e3caff2cfa7432c3de5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ferrocarril Hidalgo 1404. Y calle Moreno delegación Gustavo A Madero. Condominio Spazio Tepeyac. ,"
+    },
+    {
+      "full": "Ferrocarril Hidalgo 1404. Y calle Moreno delegación Gustavo A Madero. Condominio Spazio Tepeyac. ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noemi-marcelo-romero/ginecologo/ciudad-de-mexico#address-id=346006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:10.751Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__noemi_marcelo_romero.webp"
+}

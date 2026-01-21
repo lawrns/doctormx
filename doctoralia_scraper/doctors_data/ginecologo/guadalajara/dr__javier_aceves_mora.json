@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Javier Aceves Mora",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/58672e/58672ed648414ee8b690cc9aa4271e8f_220_square.jpg",
+  "about": "Estudie en la Universidad Autónoma De Guadalajara la Carrera de Medicina me Gradué como Médico Cirujano y Partero en el año de 1983, Realice el Internado de pregrado en el hospital Militar de Mazatlán Sinaloa en el año de 1984, el Servicio Social fue en Sanidad Internacional en el Aeropuerto Internacional Miguel Hidalgo de la Ciudad De Guadalajara en 1985-1986 de la Ciudad de Guadalajara. Realice la Especialidad de ginecología y Obstetricia en el Hospital Regional Lic. Adolfo López mateos del ISSSTE de la Ciudad De México en los años 1988 a 1991 presentando el examen de especialidad y con resultado aprobado por unanimidad y felicitación especial. Teniendo amplia experiencia en el Trato y Atención de la Paciente embarazada y sus patologías En el año 2000 realice el Diplomado en Colposcopia y Patología del Tracto Genital Inferior en la Clínica estatal de Displasia del estado de jalisco y estuve como encargado de la clínica de colposcopia en el hospital la Luz de la ciudad de Guadalajara y de los Servicios de salud de Banrural, en el año 2005 fui vicepresidente del colegio de colposcopias del Estado de Jalisco, Presidente del mismo en el año 2006, realizando cursos en esta gestión , teniendo amplia experiencia en las patologías referente al tracto genital inferior así como sus tratamientos , detección de virus de papiloma humano cirugía Laser En el año 2006 tomo el curso teórico practico de rejuvenecimiento vaginal y labioplastía en la ciudad de Veracruz avalada por la Universidad Veracruzana. Mejorando la zona intima de la mujer En el 2016 tomo el cargo de Jefe de Servicio de Ginecología y Obstetricia del Hospital General de Zapopan Menopausia Síntomas más comunes en la Menopausia: Periodos Irregulares, Sofocos, insomnio, disminución en el interés sexual, o en la respuesta, dolores de cabeza, cambios en el estado de animo (irritabilidad, depresión ansiedad), resequedad vaginal,palpitaciones entre otros. El tratamiento es la Terapia De Remplazo Hormonal, la falta de las hormonas es una gran causa de Envejecimiento, una alternativa es el tratamiento con Hormonas Bio-Identicas estas se individualiza para cada paciente de acuerdo a sus requerimientos Con la aplicación subdermica de estas en forma de Pellet con duración de 5 a 6 meses",
+  "addresses": [
+    {
+      "full": "Av. Marcelino Garcia Barragan esquina Dr Perez Arce ,"
+    },
+    {
+      "full": "Av. Marcelino Garcia Barragan esquina Dr Perez Arce ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-aceves-mora/ginecologo/guadalajara#address-id=116384&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:23.013Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__javier_aceves_mora.webp"
+}

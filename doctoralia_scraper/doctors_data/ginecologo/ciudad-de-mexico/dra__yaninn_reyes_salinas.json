@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yaninn Reyes salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a2d1ea/a2d1ea033a3dfa707738c7038d18809c_220_square.jpg",
+  "about": "Formación académica - Médico Cirujano , UNAM, 2015. Cédula profesional 9631296 - Especialidad en medicina, Ginecología y obstetricia, UNAM, 2021 Certificación por el Consejo Mexicano de Ginecología y obstetricia, A.C. 2021-2026",
+  "addresses": [
+    {
+      "full": "Avenida central 43, valle de aragon ,"
+    },
+    {
+      "full": "Avenida central 43, valle de aragon ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yaninn-reyes-salinas/ginecologo/ecatepec-de-morelos#address-id=451925&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:18.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yaninn_reyes_salinas.webp"
+}

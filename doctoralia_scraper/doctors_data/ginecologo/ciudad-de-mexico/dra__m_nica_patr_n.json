@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mónica Patrón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5b882/c5b88212fcc30b515df669088e163188_220_square.jpg",
+  "about": "Soy la Dra. Mónica Patrón, gineco-obstetra certificada con más de 10 años de experiencia trabajando en el sector salud, hoy en día tengo mi consultorio privado en la Ciudad de México y amo lo que hago. Sé lo incómodas que pueden sentirse algunas pacientes al abordar sus problemas ginecológicos o incluso al acudir a exámenes de rutina, pero también sé lo importante que es realizarse estudios preventivos y el adecuado acompañamiento durante el embarazo para evitar complicaciones. Mi objetivo es ayudar a mantenerte sana y es mi misión apoyar, acompañar, y educar a las mujeres sobre las decisiones médicas que necesitan tomar a lo largo de toda su vida.",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1655,"
+    },
+    {
+      "full": "Calzada de la Viga 1655,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-patron/ginecologo/ciudad-de-mexico#address-id=371557&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:03.685Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_patr_n.webp"
+}

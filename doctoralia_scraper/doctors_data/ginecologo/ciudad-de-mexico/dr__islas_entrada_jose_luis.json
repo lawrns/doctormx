@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Islas Entrada Jose Luis",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave Insurgentes 1194 603, Insurgentes San Borja, Mexico,"
+    },
+    {
+      "full": "Ave Insurgentes 1194 603, Insurgentes San Borja, Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/islas-entrada-jose-luis/ginecologo/ciudad-de-mexico#address-id=107414&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:34.911Z",
+  "localPhotoPath": null
+}

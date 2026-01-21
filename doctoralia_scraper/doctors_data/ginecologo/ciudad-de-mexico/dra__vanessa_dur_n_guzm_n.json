@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Vanessa Durán Guzmán",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb1f11/bb1f116eef93ed0c2e64ef741e630f13_220_square.jpg",
+  "about": "Hola, soy la Dra Vanessa Durán, Ginecóloga y Obstetra. Me alegra conocerte y estar aquí para cuidarte en todas las etapas de tu vida. Mi objetivo es brindarte atención médica de alta calidad, con respeto y confidencialidad, para que puedas tomar decisiones informadas sobre tu salud reproductiva y bienestar. Estoy aquí para escucharte, cuidarte y responder a tus preguntas y trabajar contigo para encontrar la mejor solución para tus necesidades.",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vanessa-duran-guzman/ginecologo/gustavo-a-madero#address-id=621730&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:53.430Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vanessa_dur_n_guzm_n.webp"
+}

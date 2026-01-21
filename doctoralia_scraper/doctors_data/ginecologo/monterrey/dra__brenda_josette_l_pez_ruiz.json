@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Brenda Josette López Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4155654f/4155654f-7ceb-48ed-b8bb-e6e837c26b20_small_square.jpg",
+  "about": "Bienvenida, soy la Dra. Brenda Josette López, mi misión es ofrecer atención médica de la más alta calidad, centrándome en la compresión y el respeto hacia las necesidades individuales de cada una de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Hidalgo 1910, Col. Obispado en Alterna business & amp; consultorio 602,"
+    },
+    {
+      "full": "Francisco I. Madero Piso 11 consultorio 1107,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-josette-lopez-ruiz/ginecologo/nuevo-leon#address-id=566233&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:53.935Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__brenda_josette_l_pez_ruiz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Moisés Rivera Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 362,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f7fd90/f7fd905d54a50f2f4560770a0a688c83_220_square.jpg",
+  "about": "Soy el Dr. Moisés Rivera Ruiz, un médico especialista en Ginecología comprometido con el cuidado integral de la salud de mis pacientes. Con una amplia experiencia y formación académica, ofrezco tres servicios principales: diagnóstico y tratamiento de enfermedades ginecológicas, atención prenatal y asesoramiento en planificación familiar. Mi enfoque se basa en brindar un trato cálido y humano, priorizando la confianza y la comodidad de cada persona que visita mi consultorio en Puebla. Estoy aquí para escuchar y responder a todas tus inquietudes, proporcionando un cuidado personalizado y soluciones efectivas para tu bienestar. Agenda tu cita hoy mismo y comienza a recibir la atención de calidad que mereces.",
+  "addresses": [
+    {
+      "full": "Avenida Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/moises-rivera-ruiz/ginecologo/puebla#address-id=589967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:11.120Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__mois_s_rivera_ruiz.webp"
+}

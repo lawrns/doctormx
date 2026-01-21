@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mariano Díaz Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/016ae9/016ae948d768b96b1dd27382e3606153_220_square.jpg",
+  "about": "Cuento con más de 30 años de experiencia como Ginecólogo y estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia. A lo largo de mi trayectoria he ayudado a muchas mujeres a cuidar de su embarazo y salud lo cual me hace querer tanto esta profesión, En mi clínica Femsdi realizo el único chequeo general totalmente completo que se puede encontrar dentro de la zona ya que incluye ultrasonido para analizar glándulas tiroides y mamarias, hígado, vesícula,bazo,riñones, utero y ovarios así como Papanicoalo y Colposcopia para detectar Cáncer Cervicouterino o virus del Papiloma Humano.",
+  "addresses": [
+    {
+      "full": "Avenida Presidente Juárez 5, Tlanepantla,"
+    },
+    {
+      "full": "Avenida Presidente Juárez 5, Tlanepantla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariano-diaz-perez/ginecologo/tlalnepantla-de-baz#address-id=31351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:40.804Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mariano_d_az_p_rez.webp"
+}

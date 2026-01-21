@@ -3,6 +3,7 @@
 import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { Mail } from 'lucide-react'
 import type { Appointment, Doctor } from '@/types'
 
 function PaymentSuccessContent() {
@@ -103,8 +104,9 @@ function PaymentSuccessContent() {
             </Link>
           </div>
 
-          <p className="text-sm text-neutral-500 mt-6">
-            📧 Recibirás un email de confirmación con los detalles de tu consulta
+          <p className="text-sm text-neutral-500 mt-6 flex items-center justify-center gap-2">
+            <Mail className="w-4 h-4 text-primary-500" />
+            Recibirás un email de confirmación con los detalles de tu consulta
           </p>
         </div>
       </main>

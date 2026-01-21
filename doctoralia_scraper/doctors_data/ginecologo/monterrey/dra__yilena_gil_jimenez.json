@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yilena Gil Jimenez",
+  "specialty": "Médica general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/02f190/02f190964e20174eb32866c7e41a6812_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fundadores del Ejido 5050,"
+    },
+    {
+      "full": "Fundadores del Ejido 5050,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yilena-gil-jimenez/medico-general/nuevo-leon#address-id=469242&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:55.590Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__yilena_gil_jimenez.webp"
+}

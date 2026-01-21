@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Armando Verduzco Nieto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a3a908/a3a908a9e8f5dce78f3bb915acd2052a_220_square.jpg",
+  "about": "Ginecólogo y Obstetra con Sub especialidad en Medicina Materno Fetal",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-verduzco-nieto-2/ginecologo/monterrey#address-id=327718&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:30.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__armando_verduzco_nieto.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Heidi Gómez Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b25847/b25847d6928df46e1023067cfc0671a6_220_square.jpg",
+  "about": "Cédula Profesional: 5273313 Cédula de Especialidad: 6568487 Certificada por el Consejo Mexicano de Ginecología y Obstetricia: 6308",
+  "addresses": [
+    {
+      "full": "(DOCTORS HOSPITAL, CONSULTORIO 1114) Calle Ecuador 2331,"
+    },
+    {
+      "full": "(DOCTORS HOSPITAL, CONSULTORIO 1114) Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heidi-gomez-juarez/ginecologo/monterrey#address-id=68739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:37.259Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__heidi_g_mez_ju_rez.webp"
+}

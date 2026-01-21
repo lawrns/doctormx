@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Ana Victoria De Alba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1080,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/79b906/79b9063546d5ceef46717a94eca1f5ed_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia , ademas de Subespecialidad en Oncología Ginecológica ambas realizadas en Centro Medico Nacional La Raza ; certificada por el Consejo Mexicano de Ginecología y Obstetricia como por el Consejo Mexicano de Oncología.",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-victoria-de-alba/ginecologo-ginecologo-oncologico/tlalnepantla-de-baz2#address-id=373373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:50.793Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_victoria_de_alba.webp"
+}

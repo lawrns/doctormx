@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Rey David Nuñez Alvar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Nogalar Sur #412,"
+    },
+    {
+      "full": "Av. Nogalar 412,"
+    },
+    {
+      "full": "Av. Nogalar Sur #412,"
+    },
+    {
+      "full": "Av. Nogalar 412,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rey-david-nunez-alvar/ginecologo/san-nicolas-de-los-garza#address-id=364407&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:55.273Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Odila Isaura De Lira Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43f1d1/43f1d179df879a0c38ead458aec509d3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Santa Teresa 1055 - 940,"
+    },
+    {
+      "full": "Camino A Santa Teresa 1055 - 940,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/odila-isaura-de-lira-ramirez/ginecologo/magdalena-contreras#address-id=95964&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:12.345Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__odila_isaura_de_lira_ram_rez.webp"
+}

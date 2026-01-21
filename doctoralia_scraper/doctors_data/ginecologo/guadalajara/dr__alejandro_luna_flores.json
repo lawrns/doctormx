@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alejandro Luna Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 131,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/370cbde8/370cbde8-39bf-45dd-9c19-251183158770_large.jpg",
+  "about": "Sobre mí Hola, soy el Dr. Alejandro Luna! Médico ginecoobstetra y subespecialista en Medicina Materno Fetal. Mi misión es ofrecerte atención médica de forma integral, con calidad y calidez para cuidar tu salud y la de tu bebé desde su primer latido y hasta el nacimiento. Sé lo importante que es el cuidado de tu salud en todas las etapas de tu vida, por eso me mantengo actualizado de forma continua para ofrecerte una atención de la mas alta calidad. ¿Por qué elegirme a mí? Soy especialista en el cuidado integral de la salud materno y fetal. Me mantengo actualizado de forma continua para ofrecerte la atención médica que tu mereces. Mi misión es acompañarte de forma cercana y resolver todas tu dudas para que juntos cuidemos de tu salud. Principales áreas de tratamiento Control prenatal y embarazo de alto riesgo. Medicina materno fetal. Consulta integral ginecológica. Mi consulta y mi equipo Cuidar tu salud merece un espacio acogedor y equipado con la tecnología para ofrecerte la mejor atención. Utilizamos la tecnología Voluson GE que nos ofrece la mejor calidad de imagen para cuidar de tu salud y la de tu bebé. Otros servicios Control prenatal y embarazo de alto riesgo. Evaluación fetal por ultrasonido. Tamizaje materno y fetal. Ultrasonido pélvico. Consulta ginecológica. Check-up ginecológico.",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Calle Juan Gil Preciado 8920,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-luna-flores/ginecologo/guadalajara#address-id=508160&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:20.703Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alejandro_luna_flores.webp"
+}

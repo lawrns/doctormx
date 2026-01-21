@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Vanessa Calvo Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 61,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5d4db33d/5d4db33d-1ce9-4fa0-9139-06db181dfb8f_small_square.jpg",
+  "about": "Soy la Dra. Vanessa Calvo Jiménez, especialista en ginecología con subespecialidad de Medicina Materno Fetal. con amplia experiencia en embarazos de alto riesgo así como atención integral para la mamá. Egresada de Medicina general de la Universidad Popular Autónoma del Estado de Puebla. Egresada de Ginecologìa y Obstetricia de la Universidad Autónoma de Yucatán Y formada en Medicina Materno Fetal en el Centro Médico Nacional La Raza. Si eres ginecólogo y necesitas apoyo especializado, podemos hacer equipo.",
+  "addresses": [
+    {
+      "full": "Calle Nueva York 7,"
+    },
+    {
+      "full": "Calle Nueva York 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vanessa-calvo-jimenez/ginecologo/benito-juarez#address-id=568702&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:00.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vanessa_calvo_jimenez.webp"
+}

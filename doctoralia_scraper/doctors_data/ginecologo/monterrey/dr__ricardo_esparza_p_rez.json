@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Ricardo Esparza Pérez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-esparza-perez/ginecologo/monterrey#address-id=23195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:43.311Z",
+  "localPhotoPath": null
+}

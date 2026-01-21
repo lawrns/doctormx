@@ -1,0 +1,25 @@
+{
+  "name": "Emmaria Dinorah Cruz Gaytan",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 160,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be6549/be6549c15dc28f43ee95fe9077dd26e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada De Huertas 7 Col. Santa Cecilia Tepetlapa ,"
+    },
+    {
+      "full": "Privada De Huertas 7 Col. Santa Cecilia Tepetlapa ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emmaria-dinorah-cruz-gaytan/ginecologo/xochimilco#address-id=358931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:50.139Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/emmaria_dinorah_cruz_gaytan.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Marbella Leyva Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 813,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d85aa1/d85aa1e38700c88919b98160812e3aad_220_square.jpg",
+  "about": "Soy la doctora Marbella Leyva Delgado, Ginecóloga y Obstetra, con subespecialidad en Medicina Materno Fetal y Alta especialidad en Colposcopia y Patología de tracto genital inferior. Mi prioridad son las mujeres, en todas las etapas de la vida, desde niñas, adolescentes, mujeres adultas, embarazadas, y mujeres en periodo de climaterio y posmenopausia. Me considero una mujer afortunada al poder brindar atención de calidad a todas las mujeres, ya que soy capaz de comprender cada una de las etapas en las que se puedan encontrar y ayudarles a solucionar dudas o incluso afecciones que estas puedan presentar. Amo la vida y cuido de ella en toda la extensión de la palabra, en el caso de las mujeres embarazadas mi objetivo siempre es obtener una madre y un bebe sano, en el caso de las mujeres no embarazadas mi objetivo siempre será que cada una de las pacientes que acudan a mi consulta se sientan felices, en confianza y seguras.",
+  "addresses": [
+    {
+      "full": "Rosas de Mayo 82,"
+    },
+    {
+      "full": "Avenida Nezahualcóyotl 255,"
+    },
+    {
+      "full": "Rosas de Mayo 82,"
+    },
+    {
+      "full": "Avenida Nezahualcóyotl 255,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $350"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $550"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marbella-leyva-delgado/ginecologo/nezahualcoyotl#address-id=389573&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:53.978Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marbella_leyva_delgado.webp"
+}

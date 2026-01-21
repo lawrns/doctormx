@@ -1,0 +1,25 @@
+{
+  "name": "Jose Carlos Diaz Esponda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acapulco, 35-303,"
+    },
+    {
+      "full": "Acapulco, 35-303,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-diaz-esponda/ginecologo/cuauhtemoc#address-id=77469&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:12.683Z",
+  "localPhotoPath": null
+}

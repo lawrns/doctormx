@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Laura Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e43f20a9/e43f20a9-dcde-4b06-965a-7f0cd8b359ac_small_square.jpg",
+  "about": "Mi pasión es atenderte y poder ser tu ginecóloga de confianza y hacer la experiencia de la salud más cercana!",
+  "addresses": [
+    {
+      "full": "Monterrey 70,"
+    },
+    {
+      "full": "Monterrey 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-laura-garcia/ginecologo/cuauhtemoc2#address-id=540726&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:58.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_laura_garcia.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Delia V. Cruz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 395,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9276a84e/9276a84e-a530-47e4-ab4a-b8884b2df66a_small_square.jpg",
+  "about": "Soy la Dra. Delia V. Cruz, especialista en Ginecologia Oncologica con experiencia en el manejo de patología mamaria, así como en la atención especializada en miomas uterinos, lesiones de cervix ., colposcopia, climaterio y menopausia. Mi compromiso es brindar un acompañamiento cercano, humano y profesional para cuidar tu salud en cada etapa de tu vida.Cuento con un posgrado en la universidad nacional autónoma de méxico (UNAM), universidad autónoma del estado de México (UAEM), estoy certificada por el consejo mexicano de ginecología y obstetricia (COMEGO), certificada por el consejo mexicano de oncología (CMO), tengo un diplomado en Colposcopia y patología del tracto inferior por la UNAM y un diplomado en cirugía laparoscópica del Hospital Juárez de México.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles México, Agrarismo 208, Escandon I Seccion TORRE A CONSULTORIO 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delia-v-cruz/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=399481&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:49.259Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__delia_v__cruz.webp"
+}

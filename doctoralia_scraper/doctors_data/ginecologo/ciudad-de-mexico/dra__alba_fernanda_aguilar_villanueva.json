@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Alba Fernanda Aguilar Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 137,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec589b/ec589bd15f3fcfe617bbcbf79785c6f6_220_square.jpg",
+  "about": "¡Hola a todas! Espero brindarles el apoyo que estaban buscando de una forma agradable, de confianza y con ética profesional. Permíteme conocerte y acompañarte en todos los procesos que conlleva ser mujer y en alguna de ustedes ser madre. Me especializo en cirugías de mínima invasión (Laparoscopia e Histeroscopia) sin necesidad de abrir a la paciente con una recuperacion más rápida, menos sangrado y cicatrices más pequeñas y esteticas, solucionando problemas ginecológicos (sangrados anormales, miomas uterinas, endometriosis, quistes ováricos, retirar útero, etc...) siempre y cuando los tratamientos alternativos no han funcionado. Siempre personalizando tu caso. Espero conocerlas, Dra. Alba Aguilar Villanueva",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna,"
+    },
+    {
+      "full": "Santa Teresa 1055, Heroes De Padierna,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna,"
+    },
+    {
+      "full": "Santa Teresa 1055, Heroes De Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alba-fernanda-aguilar-villanueva-2/ginecologo/magdalena-contreras2#address-id=425945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:57.330Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alba_fernanda_aguilar_villanueva.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Rosa Elena Herdocia Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Patricio Sanz 738,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Patricio Sanz 738,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-elena-herdocia-espinosa/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T03:04:06.447Z",
+  "localPhotoPath": null
+}

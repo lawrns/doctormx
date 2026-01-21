@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Victor Salvador Garcia Escoto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65f362/65f362711034c39cd7bae3afa96e5ad4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "GDL,"
+    },
+    {
+      "full": "GDL,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-salvador-garcia-escoto/ginecologo/guadalajara#address-id=410891&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:21.792Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__victor_salvador_garcia_escoto.webp"
+}

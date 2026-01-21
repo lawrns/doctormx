@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lucrecia García Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5af242/5af242fbb059f8634ea470a77f4902c7_220_square.jpg",
+  "about": "Profesional de Pregrado: Instituto Politécnico Nacional: Médico Cirujano y Partero -Profesional de Posgrado: Universidad Autónoma de México. Especialidad en Ginecología y Obstetricia -Profesional de Posgrado: Instituto de Estudios Superiores en Administración Pública: Maestria en Administración de Hospitales y Salud Pública -Diplomado en Colposcopia III. CERTIFICACIONES -Certificación: Colegio Mexicano de Ginecología y Obstetricia -Certificación en Técnicas Quirurgicas Avanzadas TEQUIAV -Certificado: en ALSO (Advanced Life Support in Obstetrics) ACTIVIDADES PROFESIONALES DOCENTES - Profesor titular de pregrado UNAM en Hospial General Tlahuac 2014- Actual - Profesor titual de internado de pregrado UNAM en Hospital General Tlahuac 2021- Actual - Profesor titular de pregrado Universidad Saint Luke -Profesor adjunto de la residencia de Ginecología y Obstetricia en Hospital General de Tlahuac SSA. 2012-actual UNAM.",
+  "addresses": [
+    {
+      "full": "TORRE MEDICA ESPECIALIDADES ACORA SAN ANGEL INN CONSULTORIO 660, COL NARVARTE PONIENTE,"
+    },
+    {
+      "full": "TORRE MEDICA ESPECIALIDADES ACORA SAN ANGEL INN CONSULTORIO 660, COL NARVARTE PONIENTE,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucrecia-garcia-hernandez/ginecologo/benito-juarez#address-id=453342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:39.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lucrecia_garc_a_hern_ndez.webp"
+}

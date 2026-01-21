@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eugenio Isaías Aguayo Samaniego",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9afd23/9afd234db1c1a4d511b8146d8a36abda_220_square.jpg",
+  "about": "Soy el Dr. Eugenio Isaías Aguayo Samaniego, ginecólogo y obstetra con diplomado en Patología Genital Femenina y Colposcopia. Me dedico a acompañarte en cada etapa de tu vida, brindando una atención cercana, empática y basada en la confianza.Atiendo consultas de check up ginecológico, anticoncepción, salud reproductiva, control de embarazo, ultrasonido 3D y 4D, menopausia, infecciones urinarias, sangrados anormales, miomas y lesiones por VPH.Mi compromiso es ofrecerte un trato humano y actualizado, en un espacio donde puedas sentirte cómoda, escuchada y segura.",
+  "addresses": [
+    {
+      "full": "Av. Anillo Periferico 1319,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eugenio-isaias-aguayo-samaniego/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:10.978Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eugenio_isa_as_aguayo_samaniego.webp"
+}

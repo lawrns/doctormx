@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Victoria De Koster Silva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 419,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bd1607/bd16071b8d01291bdc94cfa4b9160f90_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia en constante actualización con más de 25 años de experiencia.",
+  "addresses": [
+    {
+      "full": "Avenida Raúl Salinas Lozano 241,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-victoria-de-koster-silva/ginecologo/general-escobedo#address-id=430209&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:22.770Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__maria_victoria_de_koster_silva.webp"
+}

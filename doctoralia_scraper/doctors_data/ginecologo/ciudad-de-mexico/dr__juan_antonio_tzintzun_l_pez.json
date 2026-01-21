@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Antonio Tzintzun López",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Alvaro Obregon 1773,"
+    },
+    {
+      "full": "Alvaro Obregon 1773,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-antonio-tzintzun-lopez/ginecologo/nogales#address-id=125867&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:48.817Z",
+  "localPhotoPath": null
+}

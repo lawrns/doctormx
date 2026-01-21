@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ivon Giselle Sánchez Pons",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c3564f86/c3564f86-869d-43ea-8f87-ebfb140cd184_small_square.jpg",
+  "about": "Soy médica especialista en Ginecología y Obstetricia, con subespecialidad en Medicina Materno Fetal, dedicada al cuidado integral del embarazo y a la evaluación detallada de la salud de tu bebé.Cuento con una amplia experiencia en la realización de estudios como: -Ultrasonido genético (para detectar riesgos y alteraciones en etapas tempranas).-Ultrasonido anatómico ( evaluación detallada de la estructura y desarrollo del bebé).-Doppler fetal (análisis del flujo sanguíneo y bienestar del bebé).-Evaluación del crecimiento fetal (seguimiento personalizado del desarrollo durante el embarazo).Mi compromiso es brindar una atención cálida y profesional, resolviendo tus dudas y acompañandote en cada etapa con información clara y confiable.",
+  "addresses": [
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivon-giselle-sanchez-pons/ginecologo-medico-general/ciudad-de-mexico#address-id=594342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:27.725Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ivon_giselle_s_nchez_pons.webp"
+}

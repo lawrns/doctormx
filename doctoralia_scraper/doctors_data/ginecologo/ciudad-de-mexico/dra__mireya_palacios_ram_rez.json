@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Mireya Palacios Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92458d/92458d9df5e877ca6f93018872950bcd_220_square.jpg",
+  "about": "Soy la Dra. Mireya Palacios Ramírez, especialista en Ginecología y Obstetricia. Realicé mis estudios de Medicina General en la Benemérita Universidad Autónoma de Puebla y posteriormente mi especialidad en el Hospital de Gineceo-Obstetricia 4 \"Luis Castelazo Ayala\" IMSS avalado por la Universidad Nacional Autónoma de México. Atiendo a pacientes adultos y también a niños a partir de 15 años. Mi experiencia profesional se centra en el manejo del embarazo, miomas uterinos y menopausia. Me apasiona mi trabajo y siempre me esfuerzo por brindar a mis pacientes la mejor atención médica posible, basada en el respeto, la empatía y la calidad humana. Además de mi labor médica, disfruto mucho de actividades como la lectura, el cine y la gastronomía. Para mí, es importante mantener un equilibrio entre mi vida profesional y personal, y siempre trato de transmitir este valor a mis pacientes. Estoy comprometida con la salud y el bienestar de mis pacientes, y espero poder ayudarles en todo lo que necesiten.",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1655,"
+    },
+    {
+      "full": "Tlacotalpan 59,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mireya-palacios-ramirez/ginecologo/iztapalapa#address-id=4930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:00.047Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mireya_palacios_ram_rez.webp"
+}

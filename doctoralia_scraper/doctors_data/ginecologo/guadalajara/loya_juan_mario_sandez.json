@@ -1,0 +1,25 @@
+{
+  "name": "Loya Juan Mario Sandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pablo Neruda No. 3265, Providencia, 44630,"
+    },
+    {
+      "full": "Av. Pablo Neruda No. 3265, Providencia, 44630,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/loya-juan-mario-sandez/ginecologo/guadalajara#address-id=359000&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:09.594Z",
+  "localPhotoPath": null
+}

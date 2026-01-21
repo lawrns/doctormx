@@ -1,0 +1,25 @@
+{
+  "name": "Olivia Marin Romero",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prolongacion Paseo de la Reforma 19, Santa Fe, Paseo de las Lomas, 01330 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Prolongacion Paseo de la Reforma 19, Santa Fe, Paseo de las Lomas, 01330 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-marin-romero/ginecologo/alvaro-obregon#address-id=30649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:15.685Z",
+  "localPhotoPath": null
+}

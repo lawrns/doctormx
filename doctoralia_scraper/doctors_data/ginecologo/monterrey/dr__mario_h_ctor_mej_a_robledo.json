@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Mario Héctor Mejía Robledo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/794cbaa8/794cbaa8-d216-4abf-8a81-521d8ca93a81_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "FRIDA KAHLO 180 314,"
+    },
+    {
+      "full": "FRIDA KAHLO 180 314,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-hector-mejia-robledo/ginecologo/nuevo-leon#address-id=48873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:09.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mario_h_ctor_mej_a_robledo.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. David Alejandro Laguna Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e2eb1/0e2eb1c39f828f381d7ad2bed76f86c7_220_square.jpg",
+  "about": "Concluí con éxito mis estudios como Médico Cirujano en el Tecnológico de Monterrey, en la ciudad de Monterrey, NL. Durante mi formación académica, llevé a cabo una estancia en el Hospital de Sanchinarro en Madrid, España. Posteriormente, continué con mi preparación realizando la Especialidad en Ginecología & Obstetricia y una Subespecialidad en Biología de la Reproducción Humana en el Hospital Español en la Ciudad de México (UNAM). He participado en artículos médicos en investigación clínica y estoy en constante actualización para ofrecer la mejor calidad y atención a mis pacientes, tendrás la certeza de tener a un profesional altamente capacitado al cuidado de tu salud ginecológica y reproductiva.",
+  "addresses": [
+    {
+      "full": "Vasco de Quiroga 4299,"
+    },
+    {
+      "full": "Vasco de Quiroga 4299,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-alejandro-laguna-perez/ginecologo/cuajimalpa-de-morelos#address-id=510537&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:42.382Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__david_alejandro_laguna_perez.webp"
+}

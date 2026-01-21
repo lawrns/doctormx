@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jaime Cevallos Bustillos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d1c83f/d1c83f7333ba022ceb683a8a87756eb8_220_square.jpg",
+  "about": "-Profesional de Pregrado: Universidad Anáhuac: Licenciatura de Médico Cirujano General -Profesional de Posgrado: HAL: Universidad Autónoma de México. Especialidad en Ginecología y Obstetricia -Profesional de Posgrado: INPer: Universidad Autónoma de México. Especialidad en Urología Ginecológica -Profesional de Posgrado: INPer: Universidad Autónoma de México. Diplomado en Colposcopia III. CERTIFICACIONES -Certificación: Colegio Mexicano de Ginecología y Obstetricia -Certificación: Colegio Mexicano de Urología Ginecológica -Certificado: en ALSO (Advanced Life Support in Obstetrics) ACTIVIDADES PROFESIONALES DOCENTES -Profesor de Cursos Formativos: -Profesor asociado de la residencia de Ginecología y Obstetricia del Hospital Ángeles Lomas 2010-2012, 2014-actual UNAM. -Profesor asociado de la residencia de Ginecología y Obstetricia en Hospital General de Tlahuac SSA. 2014-actual UNAM.",
+  "addresses": [
+    {
+      "full": "HOSPITAL ANGELES LOMAS:Cons 125. Vialidad de la barranca S/N, HOSPITAL ÁNGELES ACOXPA: CONS 335,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-cevallos-bustillos/ginecologo/huixquilucan#address-id=72457&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:29.185Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jaime_cevallos_bustillos.webp"
+}

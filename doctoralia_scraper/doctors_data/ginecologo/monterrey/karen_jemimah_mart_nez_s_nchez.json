@@ -1,0 +1,43 @@
+{
+  "name": "Karen Jemimah Martínez Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 790,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e08549/e0854948294b245a0e33abbb3baa7b11_220_square.jpg",
+  "about": "Estudios Profesionales: • Especialidad; Institución: Instituto Mexicano del Seguro Social. Periodo: 2013-2017. Subsede en Durango, sede en Torreón, Coahuila. • Licenciatura; Institución: Facultad de Medicina de UANL. Carrera Médico Cirujano y Partero. Periodo: 2005-2011. En Monterrey, Nuevo León. • Diplomado en Colposcopia y cáncer en la mujer. Institución que lo Avala: Universidad Autónoma de Guerrero. Periodo 27 enero al 22 de julio del 2018. En Monterrey NL. • Certificada por el Consejo Mexicano de Ginecología y Obstetricia, A.C • Miembro del Colegio de Ginecología y Obstetricia de Monterrey",
+  "addresses": [
+    {
+      "full": "Avenida Eugenio Garza Sada 6221,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-jemimah-martinez-sanchez/ginecologo/nuevo-leon#address-id=370881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:55.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/karen_jemimah_mart_nez_s_nchez.webp"
+}

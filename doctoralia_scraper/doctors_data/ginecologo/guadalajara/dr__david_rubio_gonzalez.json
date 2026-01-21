@@ -1,0 +1,48 @@
+{
+  "name": "Dr. David Rubio Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 2,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Guadalupe 4970,"
+    },
+    {
+      "full": "Manuel J Clouthier 505,"
+    },
+    {
+      "full": "Av Guadalupe 4970,"
+    },
+    {
+      "full": "Manuel J Clouthier 505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Urología",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Urología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-rubio-gonzalez/ginecologo/zapopan#address-id=34670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:03.262Z",
+  "localPhotoPath": null
+}

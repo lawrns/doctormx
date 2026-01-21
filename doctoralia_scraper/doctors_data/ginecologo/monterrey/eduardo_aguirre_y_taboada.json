@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Aguirre Y Taboada",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De La Clinica 2565,"
+    },
+    {
+      "full": "Av. De La Clinica 2565,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-aguirre-y-taboada/ginecologo/monterrey#address-id=158176&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:43.345Z",
+  "localPhotoPath": null
+}

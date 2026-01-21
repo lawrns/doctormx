@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Aristides Zamudio Andrade",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/778dffe7/778dffe7-7451-4c20-bba8-aaa631b16c3d_small_square.jpg",
+  "about": "Formación en la Universidad Autónoma Metropolitana Especialidad en Ginecología y obstetricia en el Hospital central norte de PEMEXDiplomado en Medicina Regenerativa Diplomado en Medicina Estética Diplomado y Máster en climaterio y menopausia Cirugía laparoscopica en el Hospital Central su de PEMEX",
+  "addresses": [
+    {
+      "full": "Av Convento de Sta Monica 119,"
+    },
+    {
+      "full": "Avenida Lomas Verdes 2165-piso 11,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aristides-zamudio-andrade/ginecologo/naucalpan#address-id=616040&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:10.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__aristides_zamudio_andrade.webp"
+}

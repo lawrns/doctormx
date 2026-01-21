@@ -1,0 +1,25 @@
+{
+  "name": "Gustavo Rodriguez Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Alvaro Obregon 419 Nte.,"
+    },
+    {
+      "full": "Alvaro Obregon 419 Nte.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-rodriguez-alvarado/ginecologo-medico-de-familia/monterrey#address-id=166152&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:36.927Z",
+  "localPhotoPath": null
+}

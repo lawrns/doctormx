@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Villeda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e0764895/e0764895-112b-4e76-bda4-85b768c04470_small_square.jpg",
+  "about": "Con 25 años de experiencia y más de 500 embarazos logrados, acompaño a cada paciente en su camino hacia la maternidad y la salud reproductiva con un enfoque personalizado, humano y honesto. Para mí, ser parte del proceso de concebir un hijo no es solo una especialidad, sino un honor. Mi compromiso es acompañarte hasta lograrlo, sin presiones ni intereses económicos, sino con la certeza de que tu bienestar es lo más importante. Si buscas atención con honestidad, calidez y compromiso, estaré encantada de acompañarte en este hermoso camino. Entiendo lo que es entrar a una clinica de reproducción y que solo te vean como un ingreso más y sin considerar toda la esperanza que hay detrás de ese dolor guardado. Trabajemos juntas para que lo logres de manera honesta y sin eternizarte en años de consulta.",
+  "addresses": [
+    {
+      "full": "Tuxpan 39,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-villeda/ginecologo/cuauhtemoc2#address-id=562687&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:35.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_villeda.webp"
+}

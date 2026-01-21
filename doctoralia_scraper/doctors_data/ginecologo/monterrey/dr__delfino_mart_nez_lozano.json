@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Delfino Martínez Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d08fe7/d08fe7beda1a1723f065866f8337a533_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Frio 410,"
+    },
+    {
+      "full": "Rio Frio 410,"
+    },
+    {
+      "full": "Rio Frio 410,"
+    },
+    {
+      "full": "Rio Frio 410,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delfino-martinez-lozano/ginecologo/monterrey#address-id=42743&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:17.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__delfino_mart_nez_lozano.webp"
+}

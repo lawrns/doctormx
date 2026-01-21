@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Edith Angélica Serna Reyna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 217,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21897b/21897b5c8e30fc6eac7a40ba93d74366_220_square.jpg",
+  "about": "Soy la Dra. Edith Angélica Serna Reyna, egresada de la Universidad de Guadalajara y especializada en Ginecología y Obstetricia en el Centro Médico de Occidente. Además, tengo un diplomado en Menopausia y soy miembro activo de la Sociedad de Ginecología y Obstetricia del Estado de Jalisco, participando constantemente en cursos de actualización en temas relacionados con la ginecoobstetricia. También soy miembro activo en la Sociedad Maternofetal y Menopausia del Estado de Jalisco y he realizado cursos y talleres de ginecología láser. Mi enfoque principal es brindar una atención de calidad a mis pacientes en temas como el embarazo, los miomas uterinos y el embarazo de alto riesgo. Me esfuerzo por crear un ambiente de confianza y comodidad para mis pacientes, explicando todo de manera clara y detallada. Me encanta ayudar a las mujeres a cuidar de su salud y bienestar, y siempre estoy disponible para responder cualquier tipo de duda o pregunta. Mi objetivo es brindar un servicio completo y de calidad a mis pacientes, y estoy comprometida en seguir actualizándome en los últimos avances en la medicina ginecológica y obstétrica. Si estás buscando una ginecóloga en Guadalajara, no dudes en contactarme. ¡Será un placer atenderte!",
+  "addresses": [
+    {
+      "full": "Av. Niño Obrero 476, Camino Real,,"
+    },
+    {
+      "full": "Av. de los Científicos 517 Colinas de La Normal,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asesoría para pacientes embarazadas con riesgo alto de hemorragia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edith-angelica-serna-reyna/ginecologo/guadalajara#address-id=53999&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:56.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__edith_ang_lica_serna_reyna.webp"
+}

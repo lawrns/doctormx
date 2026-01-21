@@ -1,0 +1,25 @@
+{
+  "name": "María Juana Gaona Fernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 2425,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 2425,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-juana-gaona-fernandez/ginecologo/monterrey#address-id=7068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:43.886Z",
+  "localPhotoPath": null
+}

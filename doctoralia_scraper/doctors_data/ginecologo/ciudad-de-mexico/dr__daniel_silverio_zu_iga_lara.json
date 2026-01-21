@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Silverio Zuñiga Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/661b6a/661b6a3b130dffc1b8bf27998a12fa10_220_square.jpg",
+  "about": "Profesor asociado, adjunto y titular en la especialidad de Ginecología y Obstetricia en el Hospital Ángeles del Pedregal avalado por la Universidad La Salle. Profesor titular de Ginecología y Obstetricia en el internado de pregrado en el Hospital Ángeles del Pedregal avalado por la Universidad La Salle. Vocal de Ginecología y Obstetricia en la Sociedad Médica del Hospital Ángeles del Pedregal. Miembro activo del Colegio Mexicano de Especialistas en Ginecología y Obstetricia. Certificado vigente por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa #1055 Cons. 640,"
+    },
+    {
+      "full": "Camino Santa Teresa #1055 Cons. 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• Desde $5,500"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-silverio-zuniga-lara-2/ginecologo/magdalena-contreras#address-id=87167&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:46.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__daniel_silverio_zu_iga_lara.webp"
+}

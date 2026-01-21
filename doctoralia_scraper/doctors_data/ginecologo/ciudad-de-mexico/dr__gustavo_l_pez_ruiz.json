@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo López Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Especialista en Ginecología y Obstetricia por la Facultad de Medicina de la UNAM con sede hospitalaria en el Hospital de la Mujer CDMX. Adscrito del servicio de ginecología y obstetricia del Hospital Regional de Alta Especialidad de Zumpango y del Hospital General Cuautitlán. Certificado por el Consejo Mexicano de Ginecología y Obstetricia y Junior Fellow del American College of Obstetricians and Gynecologists.",
+  "addresses": [
+    {
+      "full": "Nuevo León 213 int 401,"
+    },
+    {
+      "full": "Nuevo León 213 int 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $12,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Desde $15,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-lopez-ruiz/ginecologo/ciudad-de-mexico#address-id=148677&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:27:38.031Z",
+  "localPhotoPath": null
+}

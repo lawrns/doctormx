@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Erick Isaías Phillips Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 86,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/534074/534074ac554aa543f1388e4a7e941eed_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PLAZA LR902 1A AVENIDA , PASEO DE LOS INSURGENTES 903,"
+    },
+    {
+      "full": "PLAZA LR902 1A AVENIDA , PASEO DE LOS INSURGENTES 903,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erick-isaias-phillips-esparza/ginecologo/nuevo-leon#address-id=437421&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:43.040Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__erick_isa_as_phillips_esparza.webp"
+}

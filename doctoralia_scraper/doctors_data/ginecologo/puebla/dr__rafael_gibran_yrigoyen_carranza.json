@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rafael Gibran Yrigoyen Carranza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37f5c0/37f5c042c879367a5227944bef5e6a8b_220_square.jpg",
+  "about": "Especialidad en Medicina Materno Fetal con reconocimiento Mención Honorifica del Hospital Reg. Lic. Adolfo López Mateos, ISSSTE, avalada por UNAM Especialidad en Ginecología y Obstetricia con reconocimiento Mención Honorifica del Hospital Reg. Lic. Adolfo López Mateos, ISSSTE, Avalada por UNAM Titulo como medico cirujano por UPAEP. Diplomado en Ultrasonografía medica avalado por SEP y colegio Nacional de Médicos Militares. Certificado por Fetal Medicine Foundation ID:154746 Certificado por Fetal Test. Certificado como Especialista en Medicina Materno Fetal por el Consejo Mexicano de Ginecología y Obstetricia. Certificado como Especialista en Ginecología y Obstetricia por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-gibran-yrigoyen-carranza/ginecologo/puebla#address-id=420396&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:38.958Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rafael_gibran_yrigoyen_carranza.webp"
+}

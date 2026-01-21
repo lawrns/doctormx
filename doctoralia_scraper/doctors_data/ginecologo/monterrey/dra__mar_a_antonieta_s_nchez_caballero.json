@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Antonieta Sánchez Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e0de39/e0de39ca5fc4ed666c849ba3be238fd6_220_square.jpg",
+  "about": "Urgencias Dentales a Domicilio 24/7 Odontología en la comodidad y tranquilidad de tu espacio. Consulta programada. Urgencias odontologicas 24 hrs. Trasladamos el consultorio al domicilio particular, asilos, centros de día, oficinas, industria. Excelente alternativa cuando la accesibilidad/movilidad es complicada, por causas de autonomía disminuía, falta de tiempo o solo por comodidad.",
+  "addresses": [
+    {
+      "full": "Consultorio: Av de la Cima 120 (L-10) (a una cuadra de Av. Paseo de los leones),"
+    },
+    {
+      "full": "Consultorio: Av de la Cima 120 (L-10) (a una cuadra de Av. Paseo de los leones),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-antonieta-sanchez-caballero/ginecologo/monterrey#address-id=84398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:19.831Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_antonieta_s_nchez_caballero.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Jose Manuel Madrazo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rodriguez Saro 613 Col. Del Valle ,"
+    },
+    {
+      "full": "Rodriguez Saro 613 Col. Del Valle ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-madrazo/ginecologo/benito-juarez#address-id=358898&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:39.627Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alfonso Gerardo Carrera Riva Palacio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0076c/a0076c7b6e3fead5e43028d57f9f5146_220_square.jpg",
+  "about": "Certificado y recertificado por el Consejo Mexicano de Ginecologia y Obstetricia Miembro Titular del Colegio Mexicano de Ginecologia y Obstetricia Miembro de la Asociación Mexicana de Medicina de la reproducción Consultor de diferentes organizaciones nacionales e internacionales Profesor Titular de Ginecologia y Obstetricia UAEM durante 7 años Investigador en el Instituto Nacional de Perinatologia durante 3 años Profesor de Ginecologia y Obstetricia UNAM, Justo Sierra, Universidad Anahuac Postdoctoral Fellow University Of Pennsylvania",
+  "addresses": [
+    {
+      "full": "Rosas 328,"
+    },
+    {
+      "full": "Rosas 328,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-gerardo-carrera-riva-palacio/ginecologo/naucalpan-de-juarez2#address-id=55232&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:40.048Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfonso_gerardo_carrera_riva_palacio.webp"
+}

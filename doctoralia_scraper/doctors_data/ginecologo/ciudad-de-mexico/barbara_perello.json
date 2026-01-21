@@ -1,0 +1,25 @@
+{
+  "name": "Barbara Perello",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Tlahuac 1577 Local 94 Y 96 Col. Los Mirasoles ,"
+    },
+    {
+      "full": "Av. Tlahuac 1577 Local 94 Y 96 Col. Los Mirasoles ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/barbara-perello/ginecologo/iztapalapa#address-id=358960&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:48.682Z",
+  "localPhotoPath": null
+}

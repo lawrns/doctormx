@@ -1,0 +1,108 @@
+{
+  "name": "Dr. Roberto Hernández Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 86,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4deaa8/4deaa8c10db83e1204abca8456e5cacd_220_square.jpg",
+  "about": "Mi formación profesional en el Instituto Nacional de Perinatología \"Isidro Espinosa de los Reyes\", ha sido un regalo de conocimientos científicos, humanismo y calidad en la atención médica, que comparto con mis pacientes. La ética, la honestidad, y el servicio las cualidades personales que rigen mi actuar personal y profesional.",
+  "addresses": [
+    {
+      "full": "Prolongacion Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Vialidad de la Barranca s/n, Hacienda de las Palmas,"
+    },
+    {
+      "full": "Carr. México Toluca 5420-piso 23, la Rosita, El Yaqui,"
+    },
+    {
+      "full": "Blvrd Bosque Real 85,"
+    },
+    {
+      "full": "Prolongacion Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Vialidad de la Barranca s/n, Hacienda de las Palmas,"
+    },
+    {
+      "full": "Carr. México Toluca 5420-piso 23, la Rosita, El Yaqui,"
+    },
+    {
+      "full": "Blvrd Bosque Real 85,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,150"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-hernandez-ramos-2/ginecologo/huixquilucan#address-id=447410&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:17.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__roberto_hern_ndez_ramos.webp"
+}

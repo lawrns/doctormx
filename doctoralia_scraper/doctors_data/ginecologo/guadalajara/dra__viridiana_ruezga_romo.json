@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Viridiana Ruezga Romo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 184,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac3a8a/ac3a8a2c7bbf65e064dd3e1e92111d8d_220_square.jpg",
+  "about": "Soy la Dra. Viridiana Ruezga, medico Gineco-Obstetra egresada de la Universidad de Colima, Certificada por el Consejo Mexicano de Ginecología y Obstetricia, con Diplomado en Colposcopia y Patología del Tracto Genital Inferior Femenino. Cuidamos de Tu Salud femenina en las diferentes etapas de su vida, enfocados a la promoción de la Salud, Prevención, Diagnostico y Tratamiento de la enfermedades de la Mujer, con el Objetivo de conseguir una Mejor Calidad de vida en la Mujer, desde el punto de vista Ginecológico.",
+  "addresses": [
+    {
+      "full": "Calle Egipto 3176,"
+    },
+    {
+      "full": "Calle José María Heredia 2960,"
+    },
+    {
+      "full": "Calle Egipto 3176,"
+    },
+    {
+      "full": "Calle José María Heredia 2960,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Displasia cervical",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/viridiana-ruezga-romo/ginecologo/guadalajara#address-id=433383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:23.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__viridiana_ruezga_romo.webp"
+}

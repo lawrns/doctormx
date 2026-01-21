@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jesús Fernando Solorzano Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f5cf6/4f5cf6aaaa506df8c2ce0e52a2308e88.jpg",
+  "about": "Apasionado de mi profesión. Honestidad, trato humano, paciencia y disponibilidad para mis pacientes. Siempre tratarlos como quisiera que trataran a mis seres queridos. Ellos depositan su confianza en su médico. Dar lo mejor de mi para ayudarlos a mantener y recuperar la salud. En constante actualización y preparación para aplicar las mejores practicas médicas.",
+  "addresses": [
+    {
+      "full": "Temístocles 210,"
+    },
+    {
+      "full": "Av. México 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Check up básico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-fernando-solorzano-vazquez/ginecologo/miguel-hidalgo#address-id=12339&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:00.080Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jes_s_fernando_solorzano_v_zquez.webp"
+}

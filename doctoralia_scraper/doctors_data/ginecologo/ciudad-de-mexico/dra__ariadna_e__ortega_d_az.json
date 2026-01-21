@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ariadna E. Ortega Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0d214e/0d214e476ead8a4c9b067eaa65110070_220_square.jpg",
+  "about": "Soy medico cirujano y medico especialista en ginecología y obstetricia por parte de la UNAM. Soy médico porque tengo la fuerte creencia de que la mayoría de las enfermedades así como los dolores o malestares físicos se pueden prevenir y una vez que se presenten son curables o tratables de alguna forma y ante cualquier estado debemos lograr generar calidad de vida en cada persona. Me especialice en ginecología y obstetricia ya que siempre me ha maravillado la fuerza de las mujeres durante el embarazo , el parto , el puerperio, y todos los cambios que presentan durante toda su vida . Considero que el ser mujer es una gran ventaja al ejercer mi especialidad pues al tener el cuerpo propio de nuestro género con sus cambios físicos, hormonales y psicológicos conozco de primera mano la sintomatología que mis pacientes pudieran llegar a experimentar, y eso genera mayor empatía para entender como estos cambios pueden llegar a afectar nuestro ser y de nuestra vida. Al igual que durante mi experiencia me he dado cuenta que tanto el embarazo, parto y puerperio son momentos mágicos y trascendentales en la vida toda mujer; la cuál merece vivir estás etapas plenamente y en conciencia; siendo ella la protagonista de esta historia tan importante en su vida, por lo cuál es importante brindarle asesoría, información verídica y herramientas útiles para que esta experiencia sea agradable y mágica, llegando a un desenlace en las mejores condiciones posibles, dónde la mujer pueda conocer y elegir las mejores opciones y oportunidades que a ella y su bebé tienen.",
+  "addresses": [
+    {
+      "full": "Avenida Mayorazgo 130,"
+    },
+    {
+      "full": "Real Mayorazgo 130,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadna-e-ortega-diaz/ginecologo/coyoacan#address-id=563997&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:41.600Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ariadna_e__ortega_d_az.webp"
+}

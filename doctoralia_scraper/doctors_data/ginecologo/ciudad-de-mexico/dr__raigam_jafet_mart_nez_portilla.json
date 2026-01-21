@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Raigam Jafet Martínez Portilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 965,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ab0f3f/ab0f3f825007b8b3ca10e98ff6f2bedf_220_square.jpg",
+  "about": "Mi nombre es Raigam Jafet Martinez Portilla, soy Gineco-obstetra subespecialista en Medicina Materno-Fetal (Parinatología) y Cirugía Fetal. Estudié la subespecialidad en Medicina Fetal y un Doctorado en Medicina Fetal en el Hospital Clinic de Barcelona en España y en la Universidad de Oxford en Reino Unido. Aparte de hacer mi trabajo clínico, también soy investigador en Ginecología y Obstetricia, soy editor de las más prestigiosas revistas científicas del mundo en Gincología y Obstetricia, tengo más de 80 artículos científicos publicados y múltiples premios mundiales incluido la mejor investigación en Ginecología y Obstetricia en 2022 por la Sociedad Internacional de Ultrasonido en Ginecología y Obstetricia. Para mi es muy importante apoyarte durante este proceso tan bonito del embarazo, así como hacer diagnósticos complejos mediante ultrasonido e incluso realizar cirugía fetal en casos necesarios.",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    },
+    {
+      "full": "Independencia 203. Col. Maria Esther Xalapa Veracruz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raigam-jafet-martinez-portilla/ginecologo/xalapa#address-id=436084&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:58.870Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raigam_jafet_mart_nez_portilla.webp"
+}

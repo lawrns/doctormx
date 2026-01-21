@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Salomón Atala Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eded57/eded5720e2977cd83df87d8cdff7e5fa_220_square.jpg",
+  "about": "Socio Titular de la Asociación Mexicana de Ginecología y Obstetricia Socio de la Asociación Médica del grupo Angeles México Socio de la Asociación Mexicana para estudio del Climaterio Certificado por el Consejo Mexicano de Ginecologíoa y Obstetricia Título profesional de Médico General y de Ginecólogo expedido por la U.N.A.M. Especialidad realizada en el Hospital de Gineco-Obstetricia #4 \"Luis Castelazo Ayala Ejercicio Médico como Médico Cirujano General : 43 años Ejercicio Médico como Ginecología y Obstyetricia: 37 años Experiencia Hospitalaria como Ginecólogo de base: 28 años",
+  "addresses": [
+    {
+      "full": "Sargento 2o. Miguel Ángel Preciat # 28 Fracc. Los Cipreses,"
+    },
+    {
+      "full": "Sargento 2o. Miguel Ángel Preciat # 28 Fracc. Los Cipreses,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Certificado Médico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-salomon-atala-olivares-2/ginecologo-medico-general/coyoacan#address-id=78417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:56.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__salom_n_atala_olivares.webp"
+}

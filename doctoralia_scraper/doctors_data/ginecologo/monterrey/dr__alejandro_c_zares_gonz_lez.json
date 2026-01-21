@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alejandro Cázares González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c9f6f/3c9f6f07ff9955c4fe5198ef87bf38f5_220_square.jpg",
+  "about": "Hola, soy Dr. Alejandro Cázares González . Como mi vocación es ayudarte, por eso en la primera consulta nos enfocaremos exclusivamente a entender tu problema y cómo solucionarlo paso a paso, usando las herramientas más adecuadas que tenemos a nuestro alcance para conseguirlo. Desde que empecé mi carrera profesional, no me he encontrado con nada que no podamos atender y buscar la solución mas ideal. Ha sido el aprecio por la salud femenina y el formar parte del cuidado de un nuevo integrante en tu familia lo que me motivó estudiar ginecología-obstetricia; Mis principales tratamientos son: control prenatal, estudio y tratamiento de las anormalidades menstruales, la detección oportuna de cáncer ginecológico entre otros . Te invito a reservar una cita conmigo. Será un placer ser tu especialista. .\"",
+  "addresses": [
+    {
+      "full": "José María Morelos y Pavón 209,"
+    },
+    {
+      "full": "José María Morelos y Pavón 209,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-cazares-gonzalez/ginecologo/nuevo-leon#address-id=431538&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:45.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alejandro_c_zares_gonz_lez.webp"
+}

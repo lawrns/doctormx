@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Zárate Xochimatzi",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d6056/7d60567c80d9fd5bf3806bd717dd2a12_220_square.jpg",
+  "about": "¡Bienvenidos!Soy el Dr. Edgar Zárate Xochimatzi, Subespecialista en Medicina Materno Fetal y Especialista en Ginecología y Obstetricia. Además, cuento con formación en Colposcopia, una Maestría en Administración de Instituciones de Salud y soy Médico Cirujano.En mi consulta encontrarás un espacio de atención cálida y profesional, enfocado en:El cuidado integral del embarazo, tanto de bajo como de alto riesgo.Estudios fetales avanzados y detección oportuna de malformaciones.Pruebas de bienestar fetal y estudios genéticos prenatales especializados.Atención del aparato genital femenino y tratamiento de infecciones de transmisión sexual.Asesoría preconcepcional y métodos de planificación familiar.Mis estudios están avalados por UPAEP, IEU y UNAM, con cédulas profesionales verificables en la Dirección General de Profesiones, y certificaciones registradas en CONACEM.Mi compromiso es brindarte una atención integral, científica y con un enfoque profundamente humanista, porque para mí, tu salud y la de tu bebé son lo más importante.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-zarate-xochimatzi/ginecologo/san-andres-cholula#address-id=442346&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:11.759Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__edgar_z_rate_xochimatzi.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lorena Padilla García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 199,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba3f6f/ba3f6f1af595131a8a6ce98376ef32f1_220_square.jpg",
+  "about": "Soy la Dra. Lorena Padilla García, especializada en ginecología y obstetricia. Me gradué de la Facultad de Medicina de la UNAM y realicé mi especialización en el Hospital Gineco Obstetricia Número 3 La Raza IMSS. Además realicé un diplomado en colposcopia en la Clínica de Displasias del Hospital General de México. Mi experiencia abarca pacientes de todas las edades, desde niñas hasta adultas. Me especializo en el control y seguimiento de embarazo normal y de alto riesgo , tratamiento de lesiones asociadas al virus del papiloma humano (electrocirugia, crioterapia, laserterapia, vacunas) miomas uterinos, cirugia ginecológica, detección oportuna de Cáncer de mama. Cáncer cervicouterino, tumores de ovario. Climaterio y menopausia. además de brindar atención ginecológica en general. Mi enfoque es siempre brindar una atención personalizada y de calidad a mis pacientes. Me aseguro de mantenerme actualizada en los últimos avances y técnicas en mi campo de especialización. Siempre estoy comprometida a brindar el mejor cuidado posible a mis pacientes y trabajar en colaboración con ellos para lograr los mejores resultados.",
+  "addresses": [
+    {
+      "full": "Hermosillo 26,"
+    },
+    {
+      "full": "Hermosillo 26,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-padilla-garcia-3/ginecologo/cuauhtemoc2#address-id=567359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:55.275Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lorena_padilla_garc_a.webp"
+}

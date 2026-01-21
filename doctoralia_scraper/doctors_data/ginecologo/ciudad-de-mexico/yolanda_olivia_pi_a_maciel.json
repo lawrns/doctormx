@@ -1,0 +1,37 @@
+{
+  "name": "Yolanda Olivia Piña Maciel",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 2,"
+    },
+    {
+      "full": "Carr. Mexico Toluca 5420,"
+    },
+    {
+      "full": "Juan Salvador Agraz 40,"
+    },
+    {
+      "full": "Tuxpan 2,"
+    },
+    {
+      "full": "Carr. Mexico Toluca 5420,"
+    },
+    {
+      "full": "Juan Salvador Agraz 40,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-olivia-pina-maciel/ginecologo/cuajimalpa-de-morelos#address-id=167445&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:13.223Z",
+  "localPhotoPath": null
+}

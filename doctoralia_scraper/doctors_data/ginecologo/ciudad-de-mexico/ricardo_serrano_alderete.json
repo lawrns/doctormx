@@ -1,0 +1,31 @@
+{
+  "name": "Ricardo Serrano Alderete",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bordo De Xochiaca S/N -,"
+    },
+    {
+      "full": "Calzada Acoxpa No. 430 Col. Ex Hacienda Coapa,"
+    },
+    {
+      "full": "Bordo De Xochiaca S/N -,"
+    },
+    {
+      "full": "Calzada Acoxpa No. 430 Col. Ex Hacienda Coapa,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-serrano-alderete-2/ginecologo/ciudad-de-mexico#address-id=107979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:10.450Z",
+  "localPhotoPath": null
+}

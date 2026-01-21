@@ -1,0 +1,25 @@
+{
+  "name": "Daniel Sanchez M.",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zacatecas 124 Col. Roma ,"
+    },
+    {
+      "full": "Zacatecas 124 Col. Roma ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-sanchez-m/ginecologo/cuauhtemoc#address-id=358786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:13:14.058Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Karla Judith Delgado Arévalo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 222,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ebeb4/8ebeb4e6f59ca18a9a259e3e7d492723_220_square.jpg",
+  "about": "Hola a todos! Soy la Dra. Karla Delgado interesarte en mi perfil.. Soy Ginecóloga y Obstetra egresada de la Universidad de Monterrey, hice un curso de ultrasonido ginecólogico en el hospital Dexeus en Barcelona, España. Me considero una persona comprometida con la salud y amante de mantenerme siempre actualizada. Mi experiencia profesional en su mayoría a sido en el sector privado, sin embargo el hospital Univeristario fue la sede de mi carrera. En mi vida mi padre tuvo y continúa teniendo problemas de salud, lo que me llevo a pasar la gran parte de mi vida en los hospitales. Logrando interesarme en la carrera de medicina, y durante la cual tuve la oportunidad de conocer el área de obstetricia y ginecología Descubriendo así el seguimiento, desarrollo y crecimiento de un embarazo, y su desenlace en parto o cesárea. Sin embargo en ocasiones hay complicaciones que me hicieron ver que es un área muy compleja, requiriendo de varias especialidades más. Así es como me di cuenta que a lo que me quería dedicar era al estudio completo de la mujer De esta manera he logrado que amigas y familiares me permitan atenderlas Tal es el caso de Blanca esposa de mi maestro de box a quien lleve control del embarazo terminado en el nacimiento de un hermoso y saludable Niño, Leonardo También el caso de Esthela amiga de la infancia quien acudió para realización de papanicolao, donde demostró una lesión localizada, logrando el tratamiento con éxito, ahora continúa en seguimiento. Agradezco a la vida por poder trabajar en lo que más amo! y espero que así sea por muchos años más.",
+  "addresses": [
+    {
+      "full": "Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-judith-delgado-arevalo/ginecologo/nuevo-leon#address-id=363760&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:06.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/karla_judith_delgado_ar_valo.webp"
+}

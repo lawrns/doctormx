@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ivan Matzumoto Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92458d/92458d9df5e877ca6f93018872950bcd_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carr. Cordoba-Veracruz Km 341.5,"
+    },
+    {
+      "full": "C. 2 1113,"
+    },
+    {
+      "full": "C. 13 1212,"
+    },
+    {
+      "full": "Calle 2 1113 18,"
+    },
+    {
+      "full": "Carr. Cordoba-Veracruz Km 341.5,"
+    },
+    {
+      "full": "C. 2 1113,"
+    },
+    {
+      "full": "C. 13 1212,"
+    },
+    {
+      "full": "Calle 2 1113 18,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-matzumoto-benitez/ginecologo/cordoba#address-id=126383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:37.022Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ivan_matzumoto_benitez.webp"
+}

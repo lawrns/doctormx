@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Filiberto Martinez Cabrales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62e70a/62e70ac4f89a55d1ea2079a3a07d0cc5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Lázaro Cárdenas 401,"
+    },
+    {
+      "full": "Av Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/filiberto-martinez-cabrales/ginecologo/san-pedro-garza-garcia#address-id=63245&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:38.238Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__filiberto_martinez_cabrales.webp"
+}

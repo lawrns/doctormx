@@ -1,0 +1,46 @@
+{
+  "name": "Vania Santoveña Santoveña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8dcf84/8dcf84a71e0969102a7d0da6f46a6527_220_square.jpg",
+  "about": "Médico cirujano egresada de la Escuela de Medicina del Tecnológico de Monterrey. Especialista en Ginecología y Obstetricia egresada del Tecnológico de Monterrey. Subespecialista en Biología de la Reproducción Humana egresada del IECH - UNAM Estancia formativa de Endocrinología ginecológica e Infertilidad por el Hospital Vall d´Hebron Barcelona España Certificada por el Consejo de Ginecología y Obstetricia y en Biología de la Reproducción Humana.",
+  "addresses": [
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    },
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vania-santovena-santovena/ginecologo/san-pedro-garza-garcia#address-id=27816&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:34.768Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/vania_santove_a_santove_a.webp"
+}

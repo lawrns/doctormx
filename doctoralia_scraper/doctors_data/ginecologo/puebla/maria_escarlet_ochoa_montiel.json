@@ -1,0 +1,43 @@
+{
+  "name": "Maria Escarlet Ochoa Montiel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 194,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37bc32/37bc32e017dc57801f032b0585c4011d_220_square.jpg",
+  "about": "Hola a todas! Mi nombre es Escarlet Ochoa, mi compromiso es entenderte y ofrecerte un espacio en donde te sientas segura y cómoda para platicarme en qué te puedo ayudar. Tengo experiencia en medicina institucional y en medicina privada. Así como también preparo a futuras generaciones de médicos y ginecólogos impartiendo clases en UPAEP e IMSS Mi historial académico es el siguiente: - Médico general: UPAEP - Especialista en ginecología y obstetricia egresada de IMSS - Máster en Climaterio y Menopausia titulada por la Universidad de Madrid. - Diplomado en cirugía endoscópica ginecológica (laparoscopia e histeroscopia) avalado por Universidad Anáhuac. - Diplomado de colposcopia y VPH avalado por Universidad Anáhuac. - Diplomado en endocrinología ginecológica avalado por el Hospital Italiano de Buenos Aires. SERVICIOS: CONTROL PRENATAL, PARTO Y CESÁREA HUMANIZADOS PAPANICOLAOU, COLPOSCOPIA E INFECCIONES GENITALES. LESIONES POR VIRUS DEL PAPILOMA HUMANO (VPH) VACUNAS CONTRA VPH MENOPAUSIA CIRUGÍA DE MÍNIMA INVASIÓN (LAPAROSCOPIA E HISTEROSCOPIA) PATOLOGÍA DE MAMA (TUMORES) HEMORRAGIAS UTERINAS ANORMALES, TRASTORNOS MENSTRUALES MIOMAS UTERINOS Y TUMORES DE OVARIO METODOS ANTICONCEPTIVOS TRATAMIENTOS HORMONALES Y NO HORMONALES",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-escarlet-ochoa-montiel/ginecologo/puebla#address-id=372559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:18.735Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/maria_escarlet_ochoa_montiel.webp"
+}

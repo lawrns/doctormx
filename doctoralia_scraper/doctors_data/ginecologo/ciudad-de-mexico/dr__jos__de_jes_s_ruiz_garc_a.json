@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José de Jesús Ruiz García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "MEDICO CIRUJANO Y PARTERO I.P.N. 1984-1991 ESPECIALIDAD EN GINECOLOGIA Y OBSTETRICIA U.N.A.M. 1992-1995. DIPLOMADO EN COLPOISCOPIA Y PATOLOGIA TRACTO GENITAL INFERIOR. ISSTE 2002 MEDICO ADSCRITO A CLINICA DE DISPLASIAS ,C.S. BEATRIZ VELASCO DE ALEMAN S.S. 2010 A LA FECHA. ACREDITACION EN COLPOSCOPIA AVANZADA OTORGADO POR FEDERACION INTERNACIONAL DE PATOLOGIA CERVICAL Y COLPOSCOPIA ,FEDERACION EUROPEA DE COLPOSCOPIA ,FEDERACION LATINOAMERICANA DE PATOLOGIA DEL TRACTO GENITAL INFERIORY COLPOSCOPIA,UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO, 2010. MIEMBRO ACTIVO DEL COLEGIO NACIONAL DE DOCENCIA E INVESTIGACION EN COLPOSCOPIA A.C. 2014",
+  "addresses": [
+    {
+      "full": "Camino de la Unión ,num 51, Colonia campestre Aragón. Delegación Gustavo A. Madero,"
+    },
+    {
+      "full": "Camino de la Unión ,num 51, Colonia campestre Aragón. Delegación Gustavo A. Madero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $15,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $15,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-ruiz-garcia/ginecologo/gustavo-a-madero#address-id=33360&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:53.823Z",
+  "localPhotoPath": null
+}

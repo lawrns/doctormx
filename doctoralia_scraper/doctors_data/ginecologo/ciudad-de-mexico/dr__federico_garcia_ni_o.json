@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Federico Garcia Niño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5172c/c5172cd395e50d83c73f1c16fe2908ac_220_square.jpg",
+  "about": "Soy un medico egresado de la universidad La Salle en el año1986, hice un año de residencia rotatoria en el Hospital Español posteriormente hice mi residencia en el Hospital Ingles durante 3 años así como un diplomado en esterilidad en el Instituto Nacional de Perinatología. desde entonces me dedico a la practica privada en las cual hemos manejado diferentes pacientes logrando en la mayoría de las ocasiones mucho éxito y satisfacciones personales muy importantes.",
+  "addresses": [
+    {
+      "full": "Sierravista 112,colonia lindavista,, ciudad de mexico,,cdmx, mexico,"
+    },
+    {
+      "full": "Sierravista 112,colonia lindavista,, ciudad de mexico,,cdmx, mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/federico-garcia-nino-2/ginecologo/gustavo-a-madero#address-id=415684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:22.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__federico_garcia_ni_o.webp"
+}

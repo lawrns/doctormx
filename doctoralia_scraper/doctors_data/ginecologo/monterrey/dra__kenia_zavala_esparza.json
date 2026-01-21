@@ -1,0 +1,73 @@
+{
+  "name": "Dra. Kenia Zavala Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ae9b8ba1/ae9b8ba1-70bd-419c-b270-feac02362850_small_square.jpg",
+  "about": "Ginecóloga y Obstetra |UANL. Diplomado en Colposcopía , Patología Vulvovaginal y VPH. Cuidado integral de la salud femenina Certificada por el Consejo Mexicano de Ginecología y Obstetricia AGENDA: Monterrey y Santiago N.L.",
+  "addresses": [
+    {
+      "full": "Carretera Nacional 4946,"
+    },
+    {
+      "full": "Dr. Fernando Guajardo 155,"
+    },
+    {
+      "full": "Miguel Hidalgo 2277,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,310"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,000"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $2,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,310"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,000"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $2,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kenia-zavala-esparza/ginecologo/nuevo-leon#address-id=562237&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:06.018Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__kenia_zavala_esparza.webp"
+}

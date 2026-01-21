@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Patricia Perez Bailon",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Barranca Del Muerto 490,"
+    },
+    {
+      "full": "Barranca Del Muerto 490,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-perez-bailon/ginecologo/-#address-id=138462&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:11.730Z",
+  "localPhotoPath": null
+}

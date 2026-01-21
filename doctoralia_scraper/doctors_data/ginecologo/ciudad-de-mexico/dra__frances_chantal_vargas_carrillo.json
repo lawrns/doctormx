@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Frances Chantal Vargas Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d2be8dde/d2be8dde-b07e-44a1-8786-b5e0ac193741_small_square.jpg",
+  "about": "¡Hola! Soy la doctora Chantal Vargas Carrillo, Ginecóloga y Obstetra especialista en Cirugía Endoscópica ginecológica, también conocida como Cirugía de Mínima Invasión. Me formé en el Hospital General Dr. Manuel Gea González tanto para la especialidad como alta especialidad. Mi compromiso contigo es guiarte y tratar todos los padecimientos que se presentan en cada etapa de tu vida. Ponte en contacto para agendar tu cita en la Ciudad de México o Cuernavaca.",
+  "addresses": [
+    {
+      "full": "Hera 66,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/frances-chantal-vargas-carrillo/ginecologo/benito-juarez#address-id=532269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:28.225Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__frances_chantal_vargas_carrillo.webp"
+}

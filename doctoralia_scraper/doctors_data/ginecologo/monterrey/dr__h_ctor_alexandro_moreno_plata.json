@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Héctor Alexandro Moreno Plata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 75,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c4309/6c4309ead5881af0bd10b4e203d41839_220_square.jpg",
+  "about": "El Dr. Héctor A. Moreno Plata es originario de Monterrey N.L. y cursó sus estudios profesionales en la Facultad de Medicina de la UANL, donde se graduó con Mención Honorífica el 19 de Mayo de 2005. Cursó la Especialidad de Ginecología y Obstetricia en el Programa Multicéntrico de Residencias Médicas del ITESM entre los años 2006 y 2010, teniendo como Hospitales sedes el Hospital San José Tec de Monterrey y el Hospital Metropolitano de Monterrey. Posteriormente, entre los años 2010 y 2012, realizó la Subespecialidad en Medicina Materno Fetal en el Hospital de Ginecología y Obstetricia de Monterrey, avalado por la Universidad de Monterrey. Obtuvo la Certificación del Consejo Mexicano de Ginecología y Obstetricia en Noviembre de 2011. Durante sus estudios Profesionales y sus estudios de Postgrado realizó rotaciones clínicas en el extranjero, en países como Holanda, Austria y España. Ha sido autor y coautor de trabajos de investigación y de capítulos de libros. Ha participado como ponente en múltiples cursos y congresos a nivel local y regional. Actualmente desempeña su práctica profesional privada en los Hospitales más importantes de la ciudad de Monterrey. Asimismo participa como Profesor Clínico de la Especialidad de Ginecología y Obstetricia del Tecnológico de Monterrey.",
+  "addresses": [
+    {
+      "full": "Batallón San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-alexandro-moreno-plata/ginecologo/san-pedro-garza-garcia#address-id=9895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:29.394Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__h_ctor_alexandro_moreno_plata.webp"
+}

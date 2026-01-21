@@ -1,0 +1,25 @@
+{
+  "name": "Angela Arias Rosado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chichen Con Caba M 5,L5,Supermanzana 60 Zona 1C,,"
+    },
+    {
+      "full": "Chichen Con Caba M 5,L5,Supermanzana 60 Zona 1C,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angela-arias-rosado/ginecologo/benito-juarez#address-id=357843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:39.406Z",
+  "localPhotoPath": null
+}

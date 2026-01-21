@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Alberto Nájar López",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9e27ef/9e27efbd05cbd83b7e3084e3017fe370_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro Médico Puerta de Hierro Av. Empresarios 150, Torre Elite, Piso 11- Int 04 45116 Zapopan,"
+    },
+    {
+      "full": "Hidalgo 930,"
+    },
+    {
+      "full": "Centro Médico Puerta de Hierro Av. Empresarios 150, Torre Elite, Piso 11- Int 04 45116 Zapopan,"
+    },
+    {
+      "full": "Hidalgo 930,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-najar-lopez/ginecologo/zapopan#address-id=3071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:46.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alberto_n_jar_l_pez.webp"
+}

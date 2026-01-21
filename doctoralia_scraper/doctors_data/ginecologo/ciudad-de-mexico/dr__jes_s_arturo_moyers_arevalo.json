@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Arturo Moyers Arevalo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 931,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8cb5d9/8cb5d90c044020e221c02a8da394b74b_220_square.jpg",
+  "about": "Ginecoobstetra graduado de la UNAM, con maestría en menopausia y diplomado en sexualidad humana. Me dedico a atender, diagnosticar, tratar y prevenir enfermedades que afecten a mujeres de cualquier edad. Las pacientes que acuden a mi consulta reciben atención ginecológica de alta calidad con tecnología de punta y sobre todo viven la mejor experiencia posible de atención médica. Uso la tecnología en favor de las pacientes. Ofrezco un paquete de estudios de vigilancia ginecológica que incluye colposcopía, papanicoloau, ultrasonidos y consulta. Utilizo aparatos de diagnóstico de última tecnología y entrego reporte digital de los estudios. Pues es importante que te quedes con evidencia escrita. No hay costo extra. Si en tu vigilancia normal requieres algún ultrasonido, está incluido dentro de la consulta y además, siempre te doy reporte. Mi filosofía es la atención integral. Así que dentro del consultorio tengo muchas herramientas diagnósticas y de tratamiento, como electrocirugía, láser, criocirugía, histeroscopía, colposcopio, y ultrasonido 4D. Todo con el fin de que dentro de la misma visita se pueda atender y resolver cualquier eventualidad. Además acepto los tabuladores de cualquier aseguradora.Para mí la información es vital. Mantengo comunicación con mis pacientes utilizando cualquier medio disponible, teléfono, correo electrónico, whatsapp y redes sociales. Pues sé que estar en contacto con tu médico es importante para tu tranquilidad.Tenemos sólo un objetivo. No medimos el éxito con la cuenta de banco, sino con el número de pacientes contentas.",
+  "addresses": [
+    {
+      "full": "Circuito Plaza Esmeralda no. 11-101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-arturo-moyers-arevalo/ginecologo-sexologo/atizapan-de-zaragoza#address-id=98163&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:18.220Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jes_s_arturo_moyers_arevalo.webp"
+}

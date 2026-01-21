@@ -1,0 +1,25 @@
+{
+  "name": "Mantey Jose Luis De La Fuente",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Street Of Temixco, Col. Echegaray 44,,"
+    },
+    {
+      "full": "Street Of Temixco, Col. Echegaray 44,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mantey-jose-luis-de-la-fuente/ginecologo/naucalpan-de-juarez#address-id=125993&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:30.373Z",
+  "localPhotoPath": null
+}

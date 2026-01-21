@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Armen Stankov Dragan",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. De Las Bombas 128,"
+    },
+    {
+      "full": "Av. San Fernando 22,"
+    },
+    {
+      "full": "107, Torre II, Primer Piso, Puente de Piedra 150,"
+    },
+    {
+      "full": "Calz. De Las Bombas 128,"
+    },
+    {
+      "full": "Av. San Fernando 22,"
+    },
+    {
+      "full": "107, Torre II, Primer Piso, Puente de Piedra 150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armen-stankov-dragan/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=244340&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:31.739Z",
+  "localPhotoPath": null
+}

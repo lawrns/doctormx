@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Allan Lozoya Lara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f19f0e/f19f0e487d2b8941af61cdf5824ce7fb_220_square.jpg",
+  "about": "Licenciatura en Médico Cirujano y Partero, Facultad De Medicina, UANL 2009-2015. Especialidad en Ginecología y Obstetricia, Unidad Médica De Alta Especialidad #23 Monterrey Nuevo León 2017-2021, Avalado por la Universidad Autónoma De San Luis Potosí Sub especialidad en Ginecología Oncológica y Colposcopia, Unidad Médica De Alta Especialidad #4 Luis Castelazo Ayala, IMSS, Ciudad De México 2021-2024, avalado por la Universidad Autónoma De México. Miembro Activo de la Sociedad Internacional De Ginecología Oncológica. Avalado por el Consejo Mexicano de Ginecología. Avalado por el Consejo Mexicano De Oncología.",
+  "addresses": [
+    {
+      "full": "av revolucion 3834,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-allan-lozoya-lara/ginecologo/nuevo-leon#address-id=549699&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:28.849Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__edgar_allan_lozoya_lara.webp"
+}

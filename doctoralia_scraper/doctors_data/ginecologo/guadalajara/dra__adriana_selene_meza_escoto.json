@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Adriana Selene Meza Escoto",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 755,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5a6ac6/5a6ac6f0a31b377e143be19fb1070c00.jpg",
+  "about": "Cuando nos enfermamos, primero nos llega el miedo de que no sabemos qué hacer, y luego viene la pregunta de con quién voy a ir, si ese médico estará lo suficientemente capacitado para tratar mi problema, si sabrá explicarme de forma clara lo que tengo... Desde el momento en que me otorgas la confianza para ser yo la que te ayude a resolver tu problema, puedes estar segura que recibirás un trato amable en un ambiente que te dará confianza. Hablaremos de qué es lo que te está doliendo, del cómo te hace sentir, de tus preocupaciones, responderé todas tus dudas. Haré una historia clínica de ti, donde haré preguntas relacionadas con las enfermedades que existen en tu familia, las enfermedades que tú padezcas, hábitos que tengas que puedan afectar tu salud, y nos adentraremos un poco en tu historia ginecológica, para poder llegar más certeramente al diagnóstico de la enfermedad que tú estás padeciendo, y darte el tratamiento más adecuado para ti... porque cada persona es un mundo diferente.",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2893,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-selene-meza-escoto/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:26:36.037Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__adriana_selene_meza_escoto.webp"
+}

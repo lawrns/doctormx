@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Magdalena Cruz Luna",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a390b900/a390b900-bdcf-4a9b-8eb3-dcf86c6053ac_small_square.jpg",
+  "about": "Soy la Dra. Magdalena Cruz Luna, .Egresada de la Facultad de Medicina de la UNAM como médica cirujana, médica especialista en Ginecología y Obstetricia, egresada del Hospital General Dr. Enrique Cabrera de la Secretaría de Salud. donde aprendi a resolver casos complejos en obstetricia. Al concluir mi especialidad, realicé una Alta Especialidad en Peri y Postmenopausia, donde profundicé en el abordaje integral de la salud hormonal femenina, el envejecimiento saludable y la calidad de vida de la mujer durante esta etapa.Posteriormente, completé un Fellow en Laparoscopía Ginecológica en el Hospital General de México “Dr. Eduardo Liceaga”, donde perfeccioné técnicas quirúrgicas de mínima invasión con enfoque en precisión, seguridad y rápida recuperación.Continué mi formación con la Subespecialidad en Biología de la Reproducción Humana en el Hospital Ángeles del Pedregal, donde me especialicé en el diagnóstico y tratamiento de la infertilidad, la preservación de la fertilidad y las técnicas de reproducción asistida.Finalmente, realicé un Fellow en Histeroscopía en el Hospital “Dr. Manuel Gea González ya que es utilizada como método diagnóstico y terapéutico de elección, para tratar de forma segura y ambulatoria condiciones como pólipos endometriales, miomas submucosos, adherencias, alteraciones congénitas o sangrados anormales, permitiendo una recuperación rápida y conservando la función reproductiva.Mi práctica integra la medicina basada en evidencia, la empatía y la innovación tecnológica para ofrecer una atención personalizada que acompañe a cada mujer en todas las etapas de su vida: desde la adolescencia, la fertilidad y la maternidad, hasta la menopausia y el bienestar integral.“La salud femenina no solo se atiende, se acompaña.”",
+  "addresses": [
+    {
+      "full": "Anillo Periférico 3580,"
+    },
+    {
+      "full": "Anillo Periférico 3580,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magdalena-cruz-luna/ginecologo/ciudad-de-mexico#address-id=613546&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:01.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__magdalena_cruz_luna.webp"
+}

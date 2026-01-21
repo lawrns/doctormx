@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Karlo Alberto Mojica Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 169,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/72b6e2/72b6e25d9da7962c639ab889bced4871_220_square.jpg",
+  "about": "Educación: Instituto Mexicano del Seguro Social ( UDEM) Laparoscopia Ginecológica (2011) UABC Biología de la Reproducción Humana 2009-2011 UNAM Endocrinología y Biología de la Reproducción Humana ( 2017-2019 ) Universidad Autónoma de Nuevo León UANL Especialidad en Ginecología y Obstetricia ( 2005- 2009). Universidad Autónoma de Nuevo León, Facultad de Medicina Médico Cirujano y Partero ( 1996-2003)",
+  "addresses": [
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    },
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $23,000"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $23,000"
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karlo-alberto-mojica-martinez/ginecologo/san-pedro-garza-garcia#address-id=100047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:29.273Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__karlo_alberto_mojica_mart_nez.webp"
+}

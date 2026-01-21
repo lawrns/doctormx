@@ -1,0 +1,46 @@
+{
+  "name": "Amira Sanchez Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f8e24d/f8e24d0976cfbfdb024cef4c9c73fcee_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 5,"
+    },
+    {
+      "full": "Norte 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amira-sanchez-hernandez/ginecologo/ecatepec-de-morelos#address-id=253372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:36.172Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/amira_sanchez_hernandez.webp"
+}

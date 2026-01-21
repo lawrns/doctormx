@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lucía Muradas Gil",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db6f8c/db6f8c44d62c5175f0e009cd39121a23_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-muradas-gil/ginecologo/miguel-hidalgo#address-id=19346&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:50.548Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__luc_a_muradas_gil.webp"
+}

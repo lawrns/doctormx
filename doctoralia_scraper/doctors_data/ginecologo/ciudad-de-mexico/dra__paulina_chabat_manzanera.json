@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Paulina Chabat Manzanera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/540169/5401699ba7b925fe6e7d56d0b0ee719e_220_square.jpg",
+  "about": "Estudié Medicina general en la Universidad Nacional Autónoma de México Ciudad Universitaria y decidí especializarme en Ginecología y Obstetricia en el Hospital ABC avalado por la UNAM y tengo un Diplomado de Ultrasonido Ginecológico y Obstétrico avalado por la Universidad La Salle y el Colegio Militar, a parte de haber atendido a múltiples congresos y cursos.",
+  "addresses": [
+    {
+      "full": "Centro Médico ABC Santa Fe, Av. Carlos Graef Fernandez 154 Consultorio 342,"
+    },
+    {
+      "full": "Centro Médico ABC Santa Fe, Av. Carlos Graef Fernandez 154 Consultorio 342,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-chabat-manzanera/ginecologo/cuajimalpa-de-morelos#address-id=258446&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:50.806Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paulina_chabat_manzanera.webp"
+}

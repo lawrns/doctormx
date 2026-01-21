@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Daysi Guadalupe Peralta Joachin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 181,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/25ec6a/25ec6a15ee191e230b9e3949fd01e0f7.jpg",
+  "about": "Soy medico cirujano egresada de la Benemérita Universidad Autónoma de Puebla, con Especialidad en Ginecologia y Obstetricia en la Secretaria de Salud de la ciudad de México y avalada por la Universidad Nacional Autónoma de México , certificada por el Consejo Mexicano de Ginecologia y Obstetricia ,así mismo cuento con diplomados y cursos enfocados en mejorar la calidad y atención a mis pacientes tales como : Diplomado en colposcopia diagnostica y terapéutica en Fundación Cruz Talonia y avalado por la Universidad Nacional Autónoma de México . Diplomado en ecografia en Ginecologia y Obstetricia avalado por la Universidad La Salle México y Colegio Nacional de Médicos Militares . Curso de actualizacion continua Soporte Vital Avanzado en obstetricia ALSO . Atención clínica en salud reproductiva y atención del aborto seguro IPAS México y Atención de Modelo de Parteria profesional y parto Humanizado .Diplomado internacional FEMECOG climaterio y menopausia.Diplomado de laser medico quirúrgico en patología del tracto genital inferior y ginecología estética funcional y regenerativa. Las pacientes que acuden a mi consulta reciben atención ginecologica de calidad , mi objetivo en la atención es brindar siempre información clara y entendible en un ámbito de confianza para que juntas podamos tener un mejor diagnostico y tratamiento .",
+  "addresses": [
+    {
+      "full": "Boulevard 14 Sur 4302 Jardines de San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daysi-guadalupe-peralta-joachin/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:07.001Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__daysi_guadalupe_peralta_joachin.webp"
+}

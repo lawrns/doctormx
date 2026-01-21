@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Olvera Farriols",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Médico egresado de la Universidad Autónoma de Guadalajara con más de veinte años de expericiencia en el sector público y privado; con especialidades en Ginecología y Obstetricia, Enfermedades de Transmición Sexual, Métodos Anticonceptivos, Colposcopia, Laparoscopia, Embarazo de Alto Riesgo, entre otras. Perito autorizado por el Consejo General del Poder Judicial del Estado de Jalisco. Trabajo con todas las aseguradoras y estoy disponible para urgencias las 24 horas del día los 7 días de la semana.",
+  "addresses": [
+    {
+      "full": "Jose Maria Heredia 2880,"
+    },
+    {
+      "full": "Jose Maria Heredia 2880,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-olvera-farriols/ginecologo/guadalajara#address-id=138818&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:35.483Z",
+  "localPhotoPath": null
+}

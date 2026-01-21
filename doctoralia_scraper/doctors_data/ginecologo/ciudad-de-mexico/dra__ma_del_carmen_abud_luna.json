@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Ma Del Carmen Abud Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Queretaro 157 pb,"
+    },
+    {
+      "full": "Queretaro 157 pb,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-del-carmen-abud-luna/ginecologo/cuauhtemoc#address-id=58051&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:17.750Z",
+  "localPhotoPath": null
+}

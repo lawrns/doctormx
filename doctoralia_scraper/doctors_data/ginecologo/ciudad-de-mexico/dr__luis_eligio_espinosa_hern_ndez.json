@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Eligio Espinosa Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 153,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/326164/326164060deadcdcb06edcefc94b7b7a_220_square.jpg",
+  "about": "Mi principal área de interés profesional es el diagnóstico prenatal y la atención del nacimiento, estoy seguro que la manera mas saludable para nacer es a través del parto y que los partos son mas seguros cuando no se medicalizan, es decir cuándo se evitan las intervenciones médicas innecesarias. Si logramos evitar la medicalización del nacimiento al mismo tiempo que priorizamos la lactancia, tendremos familias mas sanas y mas felices",
+  "addresses": [
+    {
+      "full": "Juan de la Barrera 120,"
+    },
+    {
+      "full": "Juan de la Barrera 120,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-eligio-espinosa-hernandez/ginecologo/cuauhtemoc2#address-id=28052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:36.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_eligio_espinosa_hern_ndez.webp"
+}

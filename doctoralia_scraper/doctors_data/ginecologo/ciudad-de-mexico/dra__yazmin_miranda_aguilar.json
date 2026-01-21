@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Yazmin Miranda Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 266,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2b0d5b/2b0d5b3ab0ccd74b1f714143036f62d5_220_square.jpg",
+  "about": "TELEFONO DE CONTACTO: 56781876 Ginecología y Obstetricia, esta especialidad requiere respeto y discreción, se refiere a todas las enfermedades femeninas, y aún con buen estado de salud, así como también a todos los cambios en el embarazo o el tema de asistencia para concebir un bebé, cuando exista infertilidad; la revisión médica que ofrezco es cuidadosa y delicada, así como la explicación clara, sencilla y profesional para los pacientes. Siempre tratando de que se sientan escuchados y atendidos en todo, desde la primera consulta llegaremos a un diagnóstico presuntivo e iniciaremos tratamiento, cuando solo requiere estudios en el consultorio, yo puedo practicarlos (porque soy médico certificado para serlo) en colposcopia y ultrasonido ginecológico y obstétrico. Siempre ofreciendo imágenes de alta calidad que recibirás de manera impresa y digital en un disco, ya sea de imagen o video. Tengo entrenamiento y años de experiencia en tema de infertilidad con una elevada tasa de éxito en los embarazo. La atención del parto o cesárea siempre es con la presencia del esposo, si así lo desea la paciente. También manejo temas ginecológico como: cáncer cérvico uterino o lesiones por el virus de papiloma humano, contando con tecnología de primera para diversos procedimientos como lo son la electrocirugía criocirugía, biopsias, entre otros. En el tema de colposcopia siempre con dx certeros y con imágenes que entregamos a la paciente. Soy experta en temas comunes como son menopausia y osteoporosis, para mejorar el estado de salud y llegar a un bienestar físico y por ende mental, sin riesgos; y con tratamientos de vanguardia y personalizado pues cada caso es único. Otros temas que atiendo son relacionados con la afección común en la mujer joven, desde endometriosis hasta el uso y manejo de anticonceptivos (que se recomiendan dependiendo de las necesidades de cada paciente), siempre con ética, claridad y profesionalismo. En caso de urgencias, te atiendo a la brevedad posible ya que me encuentro en la zona sur en Coyoacan, Coapa, estando disponibilidad las 24 horas los siete días de la semana.",
+  "addresses": [
+    {
+      "full": "Avenida Canal de Miramontes 2755 (Interior 102),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yazmin-miranda-aguilar/ginecologo-medico-general/coyoacan#address-id=127220&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:02.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yazmin_miranda_aguilar.webp"
+}

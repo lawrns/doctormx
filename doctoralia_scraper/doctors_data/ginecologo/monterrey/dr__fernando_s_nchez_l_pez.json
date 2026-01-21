@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Sánchez López",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Médico Ginecólogo, egresado de la Universidad de Monterrey, con especialidad en Ginecología & Obstetricia por parte de del hospital Christus Muguerza Conchita (UdeM), con subespecialidad en Laparoscopia ginecológica. La atención prenatal durante el embarazo es muy importante. Por amor a ti y a tu bebé, es indispensable mantener un cuidado especial de ti misma durante el embarazo. Así mismo ponemos a tu disposición nuestros servicios de laparoscopia ginecológica, olvídate de la cirugía abierta y dolorosa, la cirugía de mínima invasión es la primera elección. Siempre buscando la mejor atención para ti y tu bebe. Estamos a tus ordenes en Clínica CERYA Especialidades Médicas. Dr. Fernando Sánchez Ginecología & obstetricia Laparoscopia Ginecológica Cedula Médico cirujano: 6835598 Cedula especialista: 9029632 No. De certificación por el Consejo Mexicano de Ginecología y Obstetricia: 8168",
+  "addresses": [
+    {
+      "full": "José Benítez 2505,"
+    },
+    {
+      "full": "José Benítez 2505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-sanchez-lopez-2/ginecologo/nuevo-leon#address-id=425662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:58.968Z",
+  "localPhotoPath": null
+}

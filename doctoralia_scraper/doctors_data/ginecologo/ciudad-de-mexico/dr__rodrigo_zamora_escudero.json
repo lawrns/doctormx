@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rodrigo Zamora Escudero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca 22,"
+    },
+    {
+      "full": "Vialidad de la Barranca 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-zamora-escudero/ginecologo/huixquilucan#address-id=121956&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:35.036Z",
+  "localPhotoPath": null
+}

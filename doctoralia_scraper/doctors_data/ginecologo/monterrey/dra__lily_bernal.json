@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Lily Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 377,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c7b924/c7b9245c006beb70f061e681f8d538da.jpg",
+  "about": "Atención médica ginecológica y de embarazo en centro y sur de la ciudad de Monterrey",
+  "addresses": [
+    {
+      "full": "Carr Nacional 6501,"
+    },
+    {
+      "full": "Calle Doctor Julián Villarreal 230A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de Kyleena",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lily-bernal/ginecologo/nuevo-leon#address-id=438577&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:53.632Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__lily_bernal.webp"
+}

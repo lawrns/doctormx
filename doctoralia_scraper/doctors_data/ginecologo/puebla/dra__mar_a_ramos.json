@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f5092ad3/f5092ad3-f823-430d-b153-9fd33a06ab14_small_square.jpg",
+  "about": "Empatía, respeto, amplia y clara explicación durante la consulta. Formación académica de excelencia. Conocimiento, destreza, habilidad en mi profesión y gran trayectoria profesional.",
+  "addresses": [
+    {
+      "full": "Avenida Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $3,800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-ramos-3/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:04.502Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_ramos.webp"
+}

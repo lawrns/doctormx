@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Abril Isaias Preciado",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a67f8458/a67f8458-eb0c-4436-be56-e368463e935d_small_square.jpg",
+  "about": "GINECOLOGIA Y OBSTETRICIA ( CERTIFICADA) BIOLOGIA DE LA REPRODUCCION HUMANA ( CERTIFICADA). COLPOSCOPIA REPRODUCCION HUMANA Y ASISTIDA FERTILIZACION INVITRO INSEMINACION INTRAUTERINA INFERTILIDAD OVODONACION CLIMATERIO Y MENOPAUSIA SANGRADO UTERINO ANORMAL ENDOMETRIOSIS CONTROL DE EMBARAZO",
+  "addresses": [
+    {
+      "full": "Rio Bamba 639 (Consultorio 555),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abril-isaias-preciado/ginecologo/gustavo-a-madero#address-id=95980&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:31.273Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__abril_isaias_preciado.webp"
+}

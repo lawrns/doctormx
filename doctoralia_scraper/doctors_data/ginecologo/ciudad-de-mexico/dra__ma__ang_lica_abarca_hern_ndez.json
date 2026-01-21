@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Ma. Angélica Abarca Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga, 1756,"
+    },
+    {
+      "full": "Calzada de la Viga, 1756,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-angelica-abarca-hernandez/ginecologo/iztapalapa#address-id=78158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:23.033Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Cecilia Fernanda Ortega Landivar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 719,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/212c3c/212c3cb7d70db0e9a6596bd3f86ee1b5_220_square.jpg",
+  "about": "Soy ginecóloga obstetra con casi 15 años de experiencia como especialista y lo más importante para mí son mis pacientes y sus familias.",
+  "addresses": [
+    {
+      "full": "Av Bordo de Xochiaca 3 Lt. A2-2B, Ciudad Jardín Bicentenario,"
+    },
+    {
+      "full": "Avenida División del Norte 3395, Séptimo piso, consultorio 706,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-fernanda-ortega-landivar/ginecologo/nezahualcoyotl#address-id=334908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:31.085Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/cecilia_fernanda_ortega_landivar.webp"
+}

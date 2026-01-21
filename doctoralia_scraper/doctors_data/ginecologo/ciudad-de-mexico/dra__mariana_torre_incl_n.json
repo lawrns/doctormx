@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Torre Inclán",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/04ad5c/04ad5cb59d2106cecc259292f455fc26_220_square.jpg",
+  "about": "Mariana admira la capacidad de los cuerpos de las mujeres y personas menstruantes. Estudió medicina en la Universidad Anáhuac del Norte donde se enamoró de la complejidad y perfección de cómo somos y funcionamos las mujeres. Realizó su especialidad en el Hospital Español, su meta como ginecóloga es que todas sus pacientes se sientan escuchadas, entendidas y apoyadas. Es médico y paramédico. Le encanta poder compartir conocimientos y por eso uno de sus pasatiempos es dar cursos certificados para médicos de reanimación cardiopulmonar o RCP. Le encantan los animales y disfruta tomar un café viendo una peli.",
+  "addresses": [
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    },
+    {
+      "full": "Plenna San Ángel. Av. de la Paz 21,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up básico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,249"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,549"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $949"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $949"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-torre-inclan/ginecologo/alvaro-obregon#address-id=486750&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:32.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mariana_torre_incl_n.webp"
+}

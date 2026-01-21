@@ -1,0 +1,43 @@
+{
+  "name": "Guadalupe Gómez Zúñiga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f766c3/f766c36a538e7545b4a84040e71fae04_220_square.jpg",
+  "about": "La ginecología se encarga del cuidado de la salud femenina fuera del embarazo, es decir todos los aspectos de la salud y enfermedad específicos de la mujer, y por tanto relacionados con su sistema reproductivo o con su condición de genero. La obstetricia se encarga específicamente de la vigilancia del embarazo, tanto de los cuidados, riesgos y complicaciones que puede tener la mujer durante el embarazo, trabajo de parto o en el puerperio (después del nacimiento del bebé). Como de la salud del feto. El bienestar de la mujer no puede disociarse de su vida cotidiana y del papel que desempeña en la sociedad. Cuando la mujer cambia sus hábitos básicos: alimentación, manejo de estrés, actividad física, manejo de emociones así como el desarrollo de la vida espiritual, sana mas de prisa y con menos intervenciones médicas. Mi consulta proporciona asistencia a niñas, adolescentes, mujeres jóvenes, maduras y de la tercera edad con problemas obstétricos y ginecológicos. Así también practico la medicina preventiva, con asesoría en métodos de planificación familiar, aplicación de vacuna contra VPH, orientación en el autocuidado de la salud en todas las etapas de la vida. De ser necesario me apoyo en un grupo multidisciplinario de amigos y colegas con experiencia en el área de Nutrición, Psicología, Asesoría de Acondicionamiento Físico. Sugiero la asesoría de los cursos profilactico así como el trabajo con Dulas para el acompañamiento durante el trabajo de parto y la atención de este. Por la experiencia en mi formación de la especialidad en el INPer así como los años ejercicio profesional cuento con habilidad y capacidad para la atención de embarazos en mujeres sanas y en embarazos de alto riesgo. Otra área de la ginecología que manejo desde 1995 es la colposcopía y el estudio sobre el VPH, he realizado talleres con mis pacientes adolescentes, jóvenes y madres de adolescentes con la finalidad de proporcionar una información confiable y oportuna para ayudar al ejercicio responsable y consciente de su sexualidad. Participe como directora de tesis sobre un tema relacionado al VPH, así como asesora en otro trabajo de tesis de dos alumnas de Psicología sobre el impacto del Virus en el Área psicológica y emocional en la paciente y los cambios en diversas áreas de su vida.",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional 678, Col Polanco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Colocación de DIU de Ultima generación de 19.5 mg",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-gomez-zuniga/ginecologo/miguel-hidalgo#address-id=353057&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:24.853Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/guadalupe_g_mez_z__iga.webp"
+}

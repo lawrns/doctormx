@@ -1,0 +1,30 @@
+{
+  "name": "Dra. María Eugenia López López",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente De Piedra 150,"
+    },
+    {
+      "full": "Puente De Piedra 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-eugenia-lopez-lopez/ginecologo/tlalpan",
+  "scrapedAt": "2026-01-21T03:00:36.505Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yovana Marisol Gutierrez Arias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/95df58/95df586ee2018cd7db751235273c365e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Mexico 2472,"
+    },
+    {
+      "full": "Ave. Mexico 2472,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yovana-marisol-gutierrez-arias/ginecologo/guadalajara#address-id=6264&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:50.457Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__yovana_marisol_gutierrez_arias.webp"
+}

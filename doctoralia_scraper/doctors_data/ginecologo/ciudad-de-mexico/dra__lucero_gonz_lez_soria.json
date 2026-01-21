@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lucero González Soria",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fe3d20/fe3d201b8280c04ef0ff3e5b26b7f588_220_square.jpg",
+  "about": "Soy la Dra. Lucero González Soria, especialista en ginecología de adultos y niños a partir de 15 años en la ciudad de Gustavo A Madero. Me enorgullece ofrecer una atención médica de calidad y humanizada a todos mis pacientes. Me aseguro de explicar detalladamente los procedimientos y tratamientos, y escucho atentamente cualquier duda o inquietud que puedan tener. Me encanta trabajar en conjunto con mis pacientes para encontrar el mejor plan de tratamiento personalizado para cada uno de ellos. Agradezco las opiniones positivas que me han brindado mis pacientes, lo cual me motiva a seguir brindando una atención de calidad y excelencia.",
+  "addresses": [
+    {
+      "full": "Av Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucero-gonzalez-soria/ginecologo/gustavo-a-madero#address-id=455952&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:29.255Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lucero_gonz_lez_soria.webp"
+}

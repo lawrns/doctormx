@@ -1,0 +1,53 @@
+{
+  "name": "Dr. Luis A. Hernández López",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 141,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92bf75/92bf7548a69b123f3eee2624c1839476_220_square.jpg",
+  "about": "Cirugía de cáncer ginecológico, cirugía laparoscópica de cáncer ginecológico, endometriosis severa. Cirugía conservadora de cáncer mamario. Accidentes y complicaciones de cirugía ginecológica.",
+  "addresses": [
+    {
+      "full": "Camino a Sta. Teresa 1170,"
+    },
+    {
+      "full": "Av. Puente de Piedra No. 150, Col. Toriello Guerra,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-a-hernandez-lopez/ginecologo-oncologico-ginecologo/magdalena-contreras2#address-id=413116&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:35.466Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_a__hern_ndez_l_pez.webp"
+}

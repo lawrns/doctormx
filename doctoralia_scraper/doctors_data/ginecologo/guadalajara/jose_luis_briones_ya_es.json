@@ -1,0 +1,25 @@
+{
+  "name": "Jose Luis Briones Yañes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puerto Melaque 1099,"
+    },
+    {
+      "full": "Puerto Melaque 1099,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-briones-yanes/ginecologo/guadalajara#address-id=209669&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:11.091Z",
+  "localPhotoPath": null
+}

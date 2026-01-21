@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Gonzalo Eugui",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8ac3edde/8ac3edde-a626-4c2b-ae0c-0f7f4ced5e18_small_square.jpg",
+  "about": "Soy el Dr. Gonzalo Eugui, Médico con especialidad en Ginecología y Obstetrricia egresado del Centro Médico ABC. Mi formacion en medicina general la realicé en la Universidad Anáhuac México Norte. Mi enfoque profesional se centra en brindar un trato humano y honesto a mis pacientes, abordando de manera integral los aspectos biológicos, psicológicos y espirituales que afectan su salud. Enfoque Mi objetivo es optimizar la calidad de vida de las mujeres, corrigiendo patologías que afectan los órganos reproductivos femeninos como Sangrados anormales, endometriosis, miomas uterinos, polipos uterinos, abordando problemas hormonales como ciclos irregulares, síndrome de ovario poliquistico, Menopausia, Cirugía laparoscopica, así como acompañándolas durante el embarazo, parto y puerperio. Creo firmemente en la importancia de una atención médica personalizada y de excelencia, donde cada paciente se sienta escuchada, comprendida y apoyada en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Carlos Greaef Fernandez 154, edificio CEGOB Consultorio 332,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-eugui/ginecologo/cuajimalpa-de-morelos#address-id=566088&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:35.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gonzalo_eugui.webp"
+}

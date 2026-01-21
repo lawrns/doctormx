@@ -1,0 +1,37 @@
+{
+  "name": "Juan Daniel Garcia Perez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Blvd. Jesús Reyes Heroles 31,"
+    },
+    {
+      "full": "Coronel Ontañon 153,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Blvd. Jesús Reyes Heroles 31,"
+    },
+    {
+      "full": "Coronel Ontañon 153,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-daniel-garcia-perez/ginecologo/miguel-hidalgo#address-id=206117&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:54.966Z",
+  "localPhotoPath": null
+}

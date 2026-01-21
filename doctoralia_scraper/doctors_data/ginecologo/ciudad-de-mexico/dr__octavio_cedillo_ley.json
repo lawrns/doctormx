@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Octavio Cedillo Ley",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208 Conultorio 752,"
+    },
+    {
+      "full": "Agrarismo 208 Conultorio 752,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-cedillo-ley/ginecologo/miguel-hidalgo#address-id=70576&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:23.512Z",
+  "localPhotoPath": null
+}

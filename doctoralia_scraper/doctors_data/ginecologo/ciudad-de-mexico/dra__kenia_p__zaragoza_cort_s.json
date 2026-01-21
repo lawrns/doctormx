@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Kenia P. Zaragoza Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/08e57274/08e57274-b71f-4d2c-b65d-07591bfc92f9_large.jpg",
+  "about": "Mi compromiso es brindar atención médica de calidad, enfocada en mejorar el bienestar de mis pacientes a través de un trato humano, empático y respetuoso. Les acompaño en cada etapa de la vida, ofreciendo diagnósticos precisos y soluciones personalizadas para su salud.Mi prioridad es que cada persona que acude a consulta se sienta escuchada, comprendida y segura en su proceso de atención médica, en un espacio libre de juicios, donde todas las personas, incluyendo aquellas de la comunidad LGBTQ+, pueden recibir atención con respeto.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Interrupción legal del embarazo",
+      "price": ""
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kenia-p-zaragoza-cortes/ginecologo/benito-juarez#address-id=561006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:33.386Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__kenia_p__zaragoza_cort_s.webp"
+}

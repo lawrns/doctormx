@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Jhonathan R.Palafox",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 75,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a7591f0d/a7591f0d-2092-4ca2-9fce-aaab3304ef0c_small_square.jpg",
+  "about": "Soy El Doctor Jhonathan Romero Palafox Ginecologo Obstetra Ginecologo Oncologo Y Con Alta Especialidad En Mastologia Y Manejo De La Enfermedad mamaria De cualquier Indole. Asi Como Colposcopista y Experto En Patologia Vulvo Vaginal. Certificado Ante CONACEM",
+  "addresses": [
+    {
+      "full": "Turín 2926,"
+    },
+    {
+      "full": "Av. Alcalde 2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jhonathan-r-palafox/ginecologo/guadalajara#address-id=549575&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:00.714Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jhonathan_r_palafox.webp"
+}

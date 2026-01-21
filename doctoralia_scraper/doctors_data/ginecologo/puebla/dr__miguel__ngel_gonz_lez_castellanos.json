@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Ángel González Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 561,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e1c659/e1c659cde4371c87aec53b90d2d18130.jpg",
+  "about": "Soy el Dr. Miguel Ángel González Castellanos, curse la carrera de médico general en la universidad veracruzana en la ciudad de Poza Rica, Veracruz, para posterior realizar la especialidad de Ginecología y Obstetricia en el Hospital de la Mujer de Puebla así como el diplomado patología de tracto genital inferior y colposcopia, en experto en el manejo del embarazo de bajo y alto riesgo así como en la atención Ginecológica. Para mí, la atención y el bienestar de mis pacientes son mi principal prioridad. Siempre estoy disponible para ayudar y brindar atención de calidad, incluso en emergencias. Me esfuerzo por explicar de manera clara y sencilla los tratamientos y procedimientos, y siempre estoy dispuesto a responder cualquier pregunta o inquietud que puedan tener mis pacientes. Me enorgullece ofrecer un servicio personalizado y de calidad en instalaciones de primer nivel. Es un privilegio para mí ayudar a mis pacientes a cuidar su salud y a tener una experiencia positiva en cada visita.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Check up intermedio",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-gonzalez-castellanos-2/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:07.002Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel__ngel_gonz_lez_castellanos.webp"
+}

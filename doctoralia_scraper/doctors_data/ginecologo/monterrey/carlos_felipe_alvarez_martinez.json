@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Felipe Alvarez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. General Pablo González Garza 709 S,"
+    },
+    {
+      "full": "Av. General Pablo González Garza 709 S,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-felipe-alvarez-martinez/ginecologo/monterrey#address-id=158475&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:43.518Z",
+  "localPhotoPath": null
+}

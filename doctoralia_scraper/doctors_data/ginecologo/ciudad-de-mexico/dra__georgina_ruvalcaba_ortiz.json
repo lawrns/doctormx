@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Georgina Ruvalcaba Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 31,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91a38e/91a38e3c10cf9ecd3bba0ea3256900b8_220_square.jpg",
+  "about": "Soy es médico especialista en el cuidado integral de la salud femenina, egresada del Instituto Nacional de Perinatología. Estudie esta carrera con la idea de ofrecer a las pacientes un servicio médico confiable,de calidad y con calidez. Además de tener la posibilidad de acompañar a las mujeres en las diferentes etapas de su vida para proveer de vigilancia integral de su salud, ofrecer asesoría y orientación durante la adolescencia, a lo largo de la vida reproductiva, climaterio y menopausia.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,100"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Diagnóstico de fertilidad",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,600"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Diagnóstico de fertilidad",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/georgina-ruvalcaba-ortiz/ginecologo/benito-juarez#address-id=129063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:45.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__georgina_ruvalcaba_ortiz.webp"
+}

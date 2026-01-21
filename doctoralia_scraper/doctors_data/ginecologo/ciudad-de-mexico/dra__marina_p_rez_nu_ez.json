@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Marina Pérez Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Hola soy la Dra. Marina Pérez Nuñez, me especializo en atender embarazo de alto riesgo, además de utilizar ultrasonido estructural y de 3D y 4D Hd live. Cuento con 30 años de experiencia y e en constante actualización.",
+  "addresses": [
+    {
+      "full": "Tepic 139 consultorio 304,Roma sur,"
+    },
+    {
+      "full": "Tepic 139 consultorio 304,Roma sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dra-marina-perez-nunez/ginecologo/ciudad-de-mexico#address-id=484625&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:26.502Z",
+  "localPhotoPath": null
+}

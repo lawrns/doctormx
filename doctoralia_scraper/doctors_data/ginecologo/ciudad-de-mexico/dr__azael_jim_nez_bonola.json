@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Azael Jiménez Bonola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 127,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bc30d2/bc30d2934776b08807701e1fc36d4c26_220_square.jpg",
+  "about": "Hola, somos expertos en salud femenina en todas las etapas de la vida con la mejor excelencia en medicina , quiero ayudarte a resolver todas tus dudas y mejorar tu salud de la manera más empática, amable y comprensiva posible. Cuento con amplia experiencia en la atención médica hacia la mujer en los hospitales privados más importantes , así como los dos centros médicos nacionales mas importantes en México. He sido participe en conferencias como profesor en México y el extranjero , la última en Paris Francia. contamos con 3 especialidades: -SubEspecialidad: Biología de la Reproducción Humana Centro Médico Nacional 20 de noviembre Avalado por la Universidad Nacional Autónoma de México -Alta Especialidad: Cirugía Mínimamente Invasiva : Laparoscópica e Histeroscopia Ginecológica Hospital 1ro de Octubre -Especialidad en Ginecología y Obstetricia Hospital de la Mujer de la Cuidad de México Avalado por la Universidad Nacional Autónoma de México Certificado por el Consejo Mexicano de Ginecología y Obstetricia -Licenciatura en Médico Cirujano y Partero Instituto Politecnico Nacional Miembro del Colegio de Ginecólogos y Obstetras Dr. Alfonso Álvarez Bravo del Hospital Español Miembro de la American Association of Gynecologic Laparoscopist (AAGL). Miembro de la European Society of Human Reproduction and Embryology (ESHRE) Muchas Gracias por visitarnos envienos su mensaje y en breve nos comunicamos con usted para los detalles de la cita médica.",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/azael-jimenez-bonola/ginecologo/ciudad-de-mexico#address-id=373273&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:35.776Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__azael_jim_nez_bonola.webp"
+}

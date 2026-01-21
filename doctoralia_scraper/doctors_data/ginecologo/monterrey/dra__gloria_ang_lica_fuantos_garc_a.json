@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gloria Angélica Fuantos García",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "Más de 30 años de experiencia. Interés en particular en embarazo de alto riesgo y Menopausia. Atención integral.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Alemán 205-106, Colonia Lindavista,"
+    },
+    {
+      "full": "Av. Miguel Alemán 205-106, Colonia Lindavista,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-angelica-fuantos-garcia-2/ginecologo/nuevo-leon#address-id=525152&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:36.889Z",
+  "localPhotoPath": null
+}

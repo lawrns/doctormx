@@ -1,0 +1,58 @@
+{
+  "name": "Claudia Roxana Amurrio Barrón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0bedc/a0bedccbd2fecac0f569d74fa3c358e3_220_square.jpg",
+  "about": "Me dedico basicamente a la deteccion temprana del cancer cervicouterino con el estudio de papanicoloau y colposcopia y otros canceres o patologias genitales. Tambien se realiza el diagnostico y tratamiento de virus del papiloma humano.",
+  "addresses": [
+    {
+      "full": "CALLE MANZANILLO 123. CONSULTORIO 103. ESQUINA BAJA CALIFORNIA,"
+    },
+    {
+      "full": "Av. Sor Juana Inés de La Cruz 404,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Vacunas virus del papiloma humano",
+      "price": "• Desde $3,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $650"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-roxana-amurrio-barron-2/ginecologo/benito-juarez#address-id=406093&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:30.943Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/claudia_roxana_amurrio_barr_n.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Pablo Alberto Gutiérrez Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1c50bb/1c50bb0b04b9a4221cee2d572a5a9df5_220_square.jpg",
+  "about": "MEDICO MILITAR , CON RESIDENCIA Y CURSO DE ESPECIALIZACION EN GINECOLOGIA Y OBSTETRICIA EN LA ESCUELA MILITAR DE GRADUADOS DE SANIDAD, HOSPITAL CENTRAL MILITAR EN EL AÑO 1995-1998, EN LA CIUDAD DE MEXICO , FORMACION DE POSTGRADO EN GINECOLOGIA ONCOLOGICA Y PATOLOGIA DE LA MAMA EN EL HOSPITAL MATERNO INFANTIL VALL D´HEBRON DE 1999-2001 EN LA CIUDAD DE BARCELONA, ESPAÑA. EXPERIENCIA PROFESIONAL COMO MEDICO ADJUNTO Y JEFE DE SERVICIO DE DIFERENTES AREAS (GINECOLOGIA ONCOLOGICA, ASISTENCIA INTERNA DE GINECOLOGIA, JEFATURA DE QUIROFANO, ETC) DEL HOSPITAL MILITAR DE ESPECIALIDADES DE LA MUJER Y NEONATOLOGIA (SEDENA) DE LA CIUDAD DE MEXICO. CARRERA COMO MEDICO MILITAR EN EL ACTIVO DE 1984 AL AÑO 2015 (31 AÑOS), PASANDO A LA SITUACION DE MEDICO MILITAR RETIRADO EL 15 DE OCTUBRE DEL 2015. ACTIVIDAD ASISTENCIAL PRIVADA EN MULTIPLES HOSPITALES DE LA CIUDAD DE MEXICO Y CUERNAVACA MORELOS (HOSPITAL ESPAÑOL DE MEXICO,HOSPITALES GRUPO ANGELES, HOSPITALES GRUPO STAR MEDICA, HOSPITALES GRUPO SAN ANGEL INN, CORPORATIVO HOSPITAL SATELITE, HOSPITAL SANATORIO DURANGO, HOSPITAL CENTRO QUIRURGICO SATELITE, HOSPITAL SAN JOSE SATELITE, HOSPITAL RIO DE LA LOZA, HOSPITAL MEDICA SUR, HOSPITAL HENRI DUNANT, ETC) AMPLIA EXPERIENCIA EN EL CUIDADO DE LA SALUD DE LA MUJER, CUIDADO Y ATENCION DE LA MUJER EMBARAZADA, DEL CLIMATERIO, LA PREVENCION, DIAGNOSTICO, TRATAMIENTO QUIRURGICO, SEGUIMIENTO DEL CANCER GINECOLOGICO, ETC. MIEMBRO DE DIFERENTES SOCIEDADES MEDICAS.",
+  "addresses": [
+    {
+      "full": "TORRE DE CONSULTORIOS ROSARIO GUERRERO DE DIEZ HOSPITAL ESPAÑOL. CONSULTORIO 206 EJERCITO NAC. 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pablo-alberto-gutierrez-vega-2/ginecologo/ciudad-de-mexico#address-id=118539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:02.936Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__pablo_alberto_guti_rrez_vega.webp"
+}

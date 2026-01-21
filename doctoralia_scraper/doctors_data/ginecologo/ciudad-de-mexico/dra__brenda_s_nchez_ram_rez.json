@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Sánchez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 317,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/26b390/26b3908070c4e018e32c4ebad223aca2_220_square.jpg",
+  "about": "TU GINECÓLOGO SERÁ EL ENCARGADO DE CUIDAR TU SALUD DURANTE MUCHOS AÑOS DE TU VIDA Y TE ACOMPAÑARÁ EN LAS DIFERENTES ETAPAS POR LAS QUE CURSA UNA MUJER.LA PREVENCIÓN ES LA MEJOR HERRAMIENTA PARA MANTENERNOS SALUDABLES Y PODER ALCANZAR NUESTROS OBJETIVOS. EL CÁNCER DE MAMA Y CERVICOUTERINO SON LAS PRINCIPALES CAUSAS DE MUERTE EN NUESTRO PAÍS, ASÍ QUE EL ESTUDIO OPORTUNO ES ELEMENTAL SIEMPRE EVITANDO LLEGAR AL SOBRETRATAMIENTO. EXISTEN MÚLTIPLES ENFERMEDADES A LAS CUALES NO SE LE DA IMPORTANCIA, DISMINUYEN LA CALIDAD DE VIDA Y TIENEN MUCHAS OPCIONES DE TRATAMIENTO. EL NACIMIENTO DE UN HIJO ES EL MOMENTO MÁS IMPORTANTE EN LA VIDA Y DESDE ANTES DE LA CONCEPCIÓN DEBEMOS ESTAR PREPARADOS. LA ASESORÍA PRENATAL ES PUNTO CLAVE Y EL CONTINUAR CON UN CONTROL DE EXCELENCIA DURANTE EL EMBARAZO Y EL NACIMIENTO FAVORECE UN DESENLACE IDÓNEO Y FELIZ. LA INFERTILIDAD ES UNA REALIDAD EN NUESTRA SOCIEDAD, UNA DE DE CADA 4 PAREJAS PRESENTA PROBLEMAS DE FERTILIDAD Y MÉXICO NO ES LA EXCEPCIÓN, CON 1.5 MILLONES DE PAREJAS CON ESTE PROBLEMA Y MENOS DE LA MITAD ACUDE CON EL EXPERTO PARA BUSCAR SOLUCIONES Y PIERDEN MUCHOS AÑOS RECIBIENDO MÚLTIPLES TRATAMIENTOS SIN ÉXITO. LOS SUBESPECIALISTAS EN BIOLOGÍA DE LA REPRODUCCIÓN SOMOS LOS EXPERTOS PARA MANEJAR TODOS LO PROBLEMAS RELACIONADOS CON LA REPRODUCCIÓN, TRASTORNOS HORMONALES, ENDOMETRIOSIS Y OTRAS ENFERMEDADES QUE PUDIERAN TENER UNA REPERCUSIÓN NEGATIVA EN TU SALUD.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles Santa Mónica Temístocles #210, torre de consultorios, tercer piso, consultorio 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-sanchez-ramirez/ginecologo/miguel-hidalgo#address-id=85592&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:43.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__brenda_s_nchez_ram_rez.webp"
+}

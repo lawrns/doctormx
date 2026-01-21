@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Karla Elizabeth Rosas Tejeda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dea22d/dea22d2ec82533035e2453e37bddc2e7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Herrera I Cairo No. 104 Local 15 ,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Herrera I Cairo No. 104 Local 15 ,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-elizabeth-rosas-tejeda/ginecologo/zapopan",
+  "scrapedAt": "2026-01-21T03:26:52.568Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__karla_elizabeth_rosas_tejeda.webp"
+}

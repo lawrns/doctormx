@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Marcelo Garza Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 184,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2288ce/2288cef9a59ee3ba385c38924e31c8ef.jpg",
+  "about": "Hola!! soy el Dr. Luis Marcelo Garza Ayala, egresado de la Universidad Autónoma de Nuevo León en donde realice mis estudios como médico general. Realice la especialidad de Ginecología y Obstetricia en el Hospital Universitario \"José Eleuterio González\" en Monterrey N.L. Realicé un postgrado de Alta Especialidad Cirugía Ginecológica de Mínima Invasión (laparoscopía Avanzada) en el Tecnológico de Monterrey,, el cual se encuentra avalado por la [American Association of Gynecologic Laparoscopists] (AAGL). Asociación internacional, de Estados Unidos. He llevado diferentes cursos de actualización y estoy certificado-avalado por el Consejo Mexicano de Ginecología y Obstetricia. Mi objetivo es poder servir con responsabilidad, llevar tu control ginecológico-obstétrico, libre de incertidumbres o dudas. Llevando tu experiencia de embarazo y atención del nacimiento de manera personalizada, de manera humanizada, ofrecer la mejor atención medica de alta calidad, con conocimiento actualizado y guiado por guías nacionales e internacionales. Poder siempre transmitir esa confianza y enlace en relación médico/paciente, poder explicar y dar esa tranquilidad al salir del consultorio y siempre que su salud sea la prioridad.",
+  "addresses": [
+    {
+      "full": "Av. Ignacio Morones Prieto 3000, Colonia Los Doctores,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-marcelo-garza-ayala-2/ginecologo/nuevo-leon#address-id=350532&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:22.278Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_marcelo_garza_ayala.webp"
+}

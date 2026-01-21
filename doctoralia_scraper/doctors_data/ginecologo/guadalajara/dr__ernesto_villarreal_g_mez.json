@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ernesto Villarreal Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/71844398/71844398-4870-483d-aa5e-9dc5bc96432c_small_square.jpg",
+  "about": "Soy egresado de la Universidad Autónoma de Guadalajara, realice mis estudios de especialidad en el hospital Regional Valentín Gómez Farías de ISSSTE, tengo adiestramiento en cirugía laparoscópica de alta y baja complejidad así como en histeroscopia, diplomado en colposcopia y patología genital inferior, diplomado en infertilidad y biología de la reproducción. Estoy para servirte.",
+  "addresses": [
+    {
+      "full": "Avenida Niño Obrero 476 Plaza los Candados Piso 2 Consultorio 214,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-villarreal-gomez/ginecologo/guadalajara#address-id=13857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:44.465Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ernesto_villarreal_g_mez.webp"
+}

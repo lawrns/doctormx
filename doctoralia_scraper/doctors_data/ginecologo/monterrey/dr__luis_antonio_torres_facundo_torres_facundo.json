@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Luis Antonio Torres Facundo Torres Facundo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Magnolia 2006,"
+    },
+    {
+      "full": "Magnolia 2006,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-antonio-torres-facundo-torres-facundo/ginecologo/monterrey#address-id=17355&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:55.670Z",
+  "localPhotoPath": null
+}

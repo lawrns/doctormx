@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lorena Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/427bb1b4/427bb1b4-6341-4063-b587-8ad02e18c130_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Lorena, especialista en Ginecología y Obstetricia certificada por el Consejo Mexicano de Ginecología y Obstetricia con Diplomado en Colposcopia y Patología vulvovaginal. Estoy preparada para atenderte en todas las etapas de tu vida, dentro de un espacio seguro y confiable donde puedas expresar tus inquietudes y recibir orientación y tratamiento de alta calidad. No dudes en contactarme, estoy aquí para ayudarte Hello! I'm Dr Lorena, OB/Gyn specialist certified by the Mexican Council of Gynecology and Obstetrics with a certificate in Colposcopy and Vulvovaginal Pathology. I'm prepared to help you at all stages of your life, within a safe and reliable space where you can express your concerns and receive high-quality guidance and treatment. Don't hesitate to contact me.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $650"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-delgado-2/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:14.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__lorena_delgado.webp"
+}

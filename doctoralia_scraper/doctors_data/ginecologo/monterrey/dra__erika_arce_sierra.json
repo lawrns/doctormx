@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Erika Arce Sierra",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 309,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/482826/4828260de39e1889d1bba9d2a6f73a3c_220_square.jpg",
+  "about": "Hola! Bienvenida a mi portal, soy especialista en ginecología y obstetricia. Permíteme ofrecerte las mejores opciones para sentirte bien y mejorar tu calidad de vida en cualquiera de las etapas femeninas. Cuento con amplia experiencia en el cuidado del embarazo y temas ginecológicos como métodos anticonceptivos, miomatosis, endometriosis, quistes ováricos y virus de papiloma humano. Soy tu mejor opción para atención integral de padecimientos hormonales como ovario poliquístico, climaterio y menopausia, excelentes resultados día a día, así como una maestría en climaterio y menopausia me respaldan. Cuento además con gran práctica en la atención de parto natural, cesárea, parto después de una cesárea y cirugía ginecológica - laparoscópica. Estoy para servirte. Permíteme ayudarte. Contamos con estrictas medidas de prevención para cuidarte y cuidarnos de la COVID-19.",
+  "addresses": [
+    {
+      "full": "Ecuador 2331 (Doctors Hospital, Consultorio 902),"
+    },
+    {
+      "full": "Ecuador 2331 (Doctors Hospital, Consultorio 902),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-arce-sierra/ginecologo/nuevo-leon#address-id=80467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:14.346Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__erika_arce_sierra.webp"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Araceli Montaño Roman",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 378,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67eafe/67eafec777c927a2b6991db65fe54493_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/araceli-montano-roman-2/ginecologo/ciudad-de-mexico#address-id=437439&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:29.067Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__araceli_monta_o_roman.webp"
+}

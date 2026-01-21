@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Domingo Castro Jacobo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/394341b6/394341b6-0cb9-4d8d-9ca4-713419af3c5b_small_square.jpg",
+  "about": "Mi compromiso es acompañarte en cada etapa de tu salud femenina con cercanía, empatía y un trato verdaderamente humano.Aquí encontrarás un espacio seguro, donde podrás hablar con libertad, resolver tus dudas y recibir una atención basada en evidencia, pero también en calidez y respeto.Mi objetivo es que te sientas escuchada, cuidada y acompañada —no solo como paciente, sino como persona.Estoy aquí para ayudarte a tomar decisiones informadas sobre tu bienestar, tu embarazo, tu salud ginecológica y cada momento importante de tu vida.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Alemán 5391-5,"
+    },
+    {
+      "full": "Av. Miguel Alemán 5391-5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-domingo-castro-jacobo/ginecologo/nuevo-leon#address-id=112668&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:09.506Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jose_domingo_castro_jacobo.webp"
+}

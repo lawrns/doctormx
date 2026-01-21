@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Dolores Marysol Galindo Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/157514/157514cec192783869a07f2597c7914f_220_square.jpg",
+  "about": "Me dedico a la atención del área de ginecología y obstetricia con enfoque en tratamiento laser de patología del tracto genital inferior , infecciones por virus de papiloma humano y disfunción del piso pélvico como prolapsos de útero, vagina y vejiga . Cuento con preparación en el campo de la uro dinamia, así como colposcopía y asesoría en lactancia materna. Aviso de publicidad ante COFEPRIS: 2309152002A00228",
+  "addresses": [
+    {
+      "full": "Zacatecas 36 interior 401,"
+    },
+    {
+      "full": "Zacatecas 36 interior 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Androscopia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dolores-marysol-galindo-villarreal/ginecologo/ciudad-de-mexico#address-id=258944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:04.390Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__dolores_marysol_galindo_villarreal.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jaime G. Rios",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c2d44e/c2d44ee2804c8eb4e2d2e74232d9d7e3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Belisario Dominguez,"
+    },
+    {
+      "full": "Belisario Dominguez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-g-rios/ginecologo/nuevo-leon#address-id=507709&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:20.173Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jaime_g__rios.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Gladyz Cruz García",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 297,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/26f4241a/26f4241a-8b0c-4aae-b521-79f0867dd181_small_square.jpg",
+  "about": "Actualmente con especialidad en Ginecología y Obstetricia, con mas de 17 años en atención medica general. Cuento con equipo de Ultrasonido y Colposcopía para realizar estudios como complemento al diagnostico adecuado, además de prevención a patologías, así como realización de múltiples procedimientos acordes a la necesidad terapéutica. Mi premisa de vida es la procuración de la salud mediante la práctica de una medicina más humana, más empática, e integral. El desarrollo y la actualización profesional son dos pilares de mi profesión, puesto que reconozco en ellos una manera muy acertada de atender todas las dimensiones de la persona que es el móvil de acción y la razón primera de todo servidor de la salud. Considero la actitud ética como fundamento primero de todo médico, atributo que me ha conducido en todo momento a un ejercicio profesional serio, asertivo, discreto y comprometido con mis pacientes.",
+  "addresses": [
+    {
+      "full": "Dalia 23,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Urgencias",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Medicina General",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": "• $1,650"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-gladyz-cruz-garcia/ginecologo-medico-general/tultitlan#address-id=478068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:48.488Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_gladyz_cruz_garc_a.webp"
+}

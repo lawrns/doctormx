@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Leda Minerva Vargas Alarcón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/69b636/69b63692a2fbb4ab8de174ba81306938_220_square.jpg",
+  "about": "Actualmente estoy especializada en",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303, Lindavista.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leda-minerva-vargas-alarcon-2/ginecologo/gustavo-a-madero#address-id=339885&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:00.095Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__leda_minerva_vargas_alarc_n.webp"
+}

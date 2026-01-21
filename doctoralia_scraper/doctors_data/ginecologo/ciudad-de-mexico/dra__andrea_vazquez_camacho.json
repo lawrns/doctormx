@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Andrea Vazquez Camacho",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 373,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dac001/dac0014b64bee1b34f2d0ddaa9ff8cac_220_square.jpg",
+  "about": "Soy la Dra. Andrea, ginecóloga y obstetra certificada. me especializo en resolver problemas ginecológicos desde niñas, adolescentes hasta adultas. tengo una especialidad en ginecología pediátrica y de la adolescencia y cuento con certificación internacional, así como un Alta especialidad en Cirugía Endoscópica Ginecológica ( mínima invasion) te puedo ayudar a resolver problemas como irregularidades hormonales, ovarios poliquísticos, retrasos en la menstruación, todo tipo de sangrados anormales, menstruaciones dolorosas, tumores del ovario, métodos de planificación familiar, tratamiento de VPH, vacunación, deseo de embarazo, cirugías ginecológicas ( miomatosis, histerectomías, endometriosis) y por supuesto control de embarazo normal y de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Tuxpan 6, séptimo piso, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ginecología Pediátrica",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-vazquez-camacho-2/ginecologo/pachuca-de-soto",
+  "scrapedAt": "2026-01-21T03:00:28.978Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__andrea_vazquez_camacho.webp"
+}

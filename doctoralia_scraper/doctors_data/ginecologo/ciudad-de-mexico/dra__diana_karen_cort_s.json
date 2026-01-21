@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Karen Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d699b9/d699b9aeb0840d29d2589333d024a486_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periférico Sur 5246, Colonia Pedregal de Carrasco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Tratamiento de lesiones por el virus del papiloma humano",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-karen-cortes/ginecologo/coyoacan#address-id=388843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:08.777Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_karen_cort_s.webp"
+}

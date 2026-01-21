@@ -1,0 +1,43 @@
+{
+  "name": "Dr. René Antonio González Barreto",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9e0564fe/9e0564fe-f835-43c8-800c-d2db410f2a0a_small_square.jpg",
+  "about": "Hola, Soy el Dr. René González Barreto, especialista en Ginecología y Obstetricia, con subespecialidad en Ginecología Oncológica; para atender cualquier tipo de cáncer Ginecológico. Mi principal objetivo es atenderte con calidad y en un ambiente de armonía y respeto, siéntete con la confianza y sobre todo con la libertad de aclarar tus dudas. Estamos conscientes que tu principal preocupación es tu salud por eso te atenderemos de una manera integral, nuestra prioridad es hacerte sentir cómoda al momento de tu interrogatorio y revisión medica.",
+  "addresses": [
+    {
+      "full": "Calzada la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-antonio-gonzalez-barreto/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=396348&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:21.826Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ren__antonio_gonz_lez_barreto.webp"
+}

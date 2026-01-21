@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Yaletzy Sarahi Ramos Chávez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Álvaro Obregón 273,"
+    },
+    {
+      "full": "Avenida Álvaro Obregón 273,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yaletzy-sarahi-ramos-chavez/ginecologo/alvaro-obregon#address-id=562044&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:58.353Z",
+  "localPhotoPath": null
+}

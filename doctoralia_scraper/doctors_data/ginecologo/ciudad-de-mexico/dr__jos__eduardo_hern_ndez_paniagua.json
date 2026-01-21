@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Eduardo Hernández Paniagua",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 52,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a9c91/6a9c9109650ccebe81edfb86718fda7b_220_square.jpg",
+  "about": "Hola, Soy Dr José Eduardo, Medico Materno fetal egresado de la Universidad Nacional Autónoma de México, realice mis estudios de Ginecología y Obstetricia durante 4 años en el Hospital Ángeles México y después realice una subespecialidad en Medicina Materno Fetal en el Instituto Nacional de Perinatología. Los conocimientos que adquirí durante estos 6 años de especialización, me dan las herramientas para poder vigilarte a ti y a tu bebé durante tu embarazo asi como la toma de decisiones en patología materno y fetal.",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": ""
+    },
+    {
+      "name": "Doble y triple marcador de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-eduardo-hernandez-paniagua/ginecologo/ciudad-de-mexico#address-id=541068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:23.012Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__eduardo_hern_ndez_paniagua.webp"
+}

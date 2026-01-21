@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Juana Elena Ugalde Parra",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c16e63/c16e63caba908f543c0f0e79d9d1dfc8_220_square.jpg",
+  "about": "Soy egresada de la carrera de Medicina de la UNAM y 2 años después pude realizar la Especialidad de Ginecología y Obstetricia , me he capacitado en áreas de ginecología y obstetricia como son colposcopía, uso del laser CO 2 esta capacitación me permitió ser responsable de la clínica de colposcopia SSPDF, participe en jornadas médicas que se realizaban en algunos estados de la Republica mexicana llegando a la Costa Chica de Guerrero y Oaxaca ,realizando colposcopias y electrocirugías ,toma de biopsias de cérvix , y citologías , ultrasonido en ginecología y obstetricia , actualmente laboro en el Hospital de la Mujer de la Secretaria de Salud México como médico adscrito en Ginecología y Obstetricia y como profesor adjunto de los residentes de la especialidad en el Hospital Materno Infantil Guadalupe Victoria Atizapan de Zaragoza..",
+  "addresses": [
+    {
+      "full": "Calle Rio bamba 639 col. Magdalena de las Salinas,"
+    },
+    {
+      "full": "Calle Rio bamba 639 col. Magdalena de las Salinas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juana-elena-ugalde-parra/ginecologo/ciudad-de-mexico#address-id=401528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:00.847Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__juana_elena_ugalde_parra.webp"
+}

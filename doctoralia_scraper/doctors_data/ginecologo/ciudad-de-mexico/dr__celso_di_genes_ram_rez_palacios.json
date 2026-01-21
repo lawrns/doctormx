@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Celso Diógenes Ramírez Palacios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d52caf/d52caf320ecbd314c8aa873669d13223_220_square.jpg",
+  "about": "Médico Cirujano Especialista en Ginecología y Obstetricia, con segunda especialización en Ginecología Oncológica y Maestría en Ciencias de la Salud. Mi actividad profesional por más de tres décadas la he desarrollado en el ámbito de hospitales públicos y privados, en los campos de la consulta y la cirugía. Actualización constante, avalada por el Consejo Mexicano de Ginecología y Obstetricia (CMGO). Miembro del Colegio Mexicano de Especialistas en Ginecología y Obstetricia (COMEGO) y de la Federación Mexicana de Colegios de Obstetricia y Ginecología (FEMECOG).",
+  "addresses": [
+    {
+      "full": "Tuxpan, 6, 6to Piso,"
+    },
+    {
+      "full": "tuxpan 6, roma sur, cuauhtemoc,"
+    },
+    {
+      "full": "Tuxpan, 6, 6to Piso,"
+    },
+    {
+      "full": "tuxpan 6, roma sur, cuauhtemoc,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celso-diogenes-ramirez-palacios/ginecologo/cuauhtemoc#address-id=76816&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:15.366Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__celso_di_genes_ram_rez_palacios.webp"
+}

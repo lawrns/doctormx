@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raul Garcia Cortes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/967585/96758562f74ec67e703a7e7fc412cfcf_220_square.jpg",
+  "about": "SERVICIOS: CIRUGIA DE OBESIDAD, BANDA GASTRICA, GASTROENTEROLOGIA, ENDOSCOPIA, NEUROCIRUGIA, PEDIATRIA, OTORRINOLARINGOLOGIA, TRAUMATOLOGIA, GINECO-OBSTETRICIA, ODONTOLOGIA, PSICOLOGIA, CIRUGIA PLASTICA, GERIATRIA, CARDIOLOGIA. PAQUETES DE PARTO Y CESAREA ECONOMICOS ECOSONOGRAMAS VIDEOENDOSCOPIAS Y COLONCOPIAS CIRUGIA LAPAROSCOPICA DE VESICULA",
+  "addresses": [
+    {
+      "full": "Francisco frejes #735,"
+    },
+    {
+      "full": "Francisco frejes #735,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-garcia-cortes/ginecologo/guadalajara#address-id=120084&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:05.575Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__raul_garcia_cortes.webp"
+}

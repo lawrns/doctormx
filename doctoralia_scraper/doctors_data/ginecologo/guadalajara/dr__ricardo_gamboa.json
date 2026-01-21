@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Gamboa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 170,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1f026919/1f026919-2cd9-460a-99db-a51d7036ddd0_small_square.jpg",
+  "about": "Hola, soy egresado de la Facultada de Medicina, Universidad de Guadalajara, graduandome como segundo mejor promedio de mi generación. Realize mi especialidad en Ginecología y Obstetricia, Nuevo Hospital Civil de Guadalajara (Hospital Juan I menchaca), graduandome con mejor residente de mi especialidad. Laboro actualmente como Médico adscrito en el hospital de Ginecología y Obstetricia UMAE Centro Médico nacional de Occidente, Soy Profesor del Centro Universitario Ciencias de la salud, Facultad de Medicina, en la Universidad de Guadalajara. Cuento con adiestramiento en Colposcopia y patología del tracto genital inferior y adiestramiento en Ultrasonografía Obstétrica y Ginecológica y Tococardiografía fetal. He publicado de 9 trabajos de investigación en la revista de Ginecología y Obstetricia de México. Actualmente soy : Fellow of American College Obstetrician and Ginecologist. Certificado por el Colegio Mexicano de Ginecología y Obstetricia. Miembro de la Colegio de Ginecología y Obstetricia de Guadalajara AC. Miembro del Colegio de Colposcopia de Guadalajara AC.",
+  "addresses": [
+    {
+      "full": "Avenida Juan Palomar y Arias 646,"
+    },
+    {
+      "full": "Avenida Juan Palomar y Arias 646,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-gamboa/ginecologo/guadalajara#address-id=118933&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:11.163Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ricardo_gamboa.webp"
+}

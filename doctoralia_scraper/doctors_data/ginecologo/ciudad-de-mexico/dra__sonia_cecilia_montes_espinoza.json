@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sonia Cecilia Montes Espinoza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f1b9bd/f1b9bd2f070cf716c03864feb1937997_220_square.jpg",
+  "about": "Soy Sonia Ginecóloga con 25 años de experiencia en el campo de la Ginecología, obstetricia y Endocrinología, actualmente con un enfoque integral y funcional, realizo un balance hormonal natural desde la adolescencia hasta la menopausia, me especializo en el área de Gineco Endocrino y terapia regenerativa con láser. He desarrollado un manejo exitoso en casos de ovario poliquístico, resistencia a la insulina, control de peso y menopausia desde una perspectiva natural y respetuosa con el propósito de favorecer una vida más sana y plena de mis pacientes. Me especializo en cirugía laser abarcando desde lesiones para VPH, laser regenerativo para atrofia vaginal, incontinencia urinaria y rejuvenecimiento vaginal. Realizo control prenatal de alto riesgo. Colposcopía, con especial enfoque en virus de papiloma humano, ultrasonido ginecológico, manejo de hormonas bioidénticas , planificación familiar , enfermedades de transmisión sexual y vacunación siempre interesada en un trato humano y respetuoso a las mujeres , acompañándolas través de todas las etapas de la vida,Pensando en un manejo integral realizo el tratamiento a la pareja en casos de infección por virus de papiloma humano e infecciones de transmisión sexual .Estoy convencida que una mujer es más empática y sensible con otra mujeres, de ahí la convicción de la frase \"Mujeres al cuidado de mujeres \" con la cual me identifico plenamente.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 427,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 427,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $3,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sonia-cecilia-montes-espinoza-2/ginecologo/benito-juarez#address-id=523390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:24.573Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sonia_cecilia_montes_espinoza.webp"
+}

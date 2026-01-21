@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Alberto Alvarado Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4a0c27c0/4a0c27c0-da36-4439-b39e-dfb8653225f4_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Serafín Olarte 88,"
+    },
+    {
+      "full": "Serafín Olarte 88,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-alvarado-garcia-2/ginecologo/benito-juarez#address-id=548308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:54.348Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alberto_alvarado_garcia.webp"
+}

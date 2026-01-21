@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Carlos Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fe385b/fe385b545e03f481f6d9c247a4ca6f4f_220_square.jpg",
+  "about": "Ginecología y Obstetricia Atención prenatal Atención ginecológica Planificación familiar Ginecólogo certificado",
+  "addresses": [
+    {
+      "full": "San Marcos Evangelista,"
+    },
+    {
+      "full": "Andres Bello 3120,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Atención prenatal",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• Desde $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-torres-4/ginecologo-medico-general/san-pedro-tlaquepaque#address-id=579144&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:24.767Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__carlos_torres.webp"
+}

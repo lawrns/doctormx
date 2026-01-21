@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yolanda Franco Tostado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle El Rosario 679-A,"
+    },
+    {
+      "full": "Calle El Rosario 679-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Desbridamiento y drenaje de mastitis supurada",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-franco-tostado/ginecologo/guadalajara#address-id=115024&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:52.154Z",
+  "localPhotoPath": null
+}

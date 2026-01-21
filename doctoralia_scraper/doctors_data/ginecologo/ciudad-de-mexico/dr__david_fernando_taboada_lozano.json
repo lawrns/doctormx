@@ -1,0 +1,66 @@
+{
+  "name": "Dr. David Fernando Taboada Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/66fd41/66fd416cb68990172a891c51063efe3f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cañaverales #222,"
+    },
+    {
+      "full": "Puente de Piedra 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Primera visita a uroginecología",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-fernando-taboada-lozano/ginecologo/tlalpan#address-id=617641&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:21.488Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__david_fernando_taboada_lozano.webp"
+}

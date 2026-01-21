@@ -1,0 +1,25 @@
+{
+  "name": "Héctor De La Fuente Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8ac3edde/8ac3edde-a626-4c2b-ae0c-0f7f4ced5e18_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Carlos Graef Fernandez 154. Col. Tlaxcala Santa Fe. ,"
+    },
+    {
+      "full": "Av. Carlos Graef Fernandez 154. Col. Tlaxcala Santa Fe. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-de-la-fuente-valdez/ginecologo/miguel-hidalgo#address-id=358923&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:50.163Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/h_ctor_de_la_fuente_valdez.webp"
+}

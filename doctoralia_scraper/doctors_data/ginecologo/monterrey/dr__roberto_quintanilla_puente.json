@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Roberto Quintanilla Puente",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6fa0cd/6fa0cd3611e4664091e6cf562e516d82_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Belisario Dominguez #2439,"
+    },
+    {
+      "full": "Belisario Dominguez #2439,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-quintanilla-puente/ginecologo/monterrey#address-id=85314&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:59.785Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_quintanilla_puente.webp"
+}

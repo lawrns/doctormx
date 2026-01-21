@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cynthia Judith Mercado Loredo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90f7d9/90f7d9882991e45f0e0adc96e9cf065d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Belizario Domínguez 2439,"
+    },
+    {
+      "full": "Belizario Domínguez 2439,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cynthia-judith-mercado-loredo/ginecologo/monterrey#address-id=28985&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:54.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__cynthia_judith_mercado_loredo.webp"
+}

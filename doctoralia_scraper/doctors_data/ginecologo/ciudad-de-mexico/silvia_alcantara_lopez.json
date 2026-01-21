@@ -1,0 +1,31 @@
+{
+  "name": "Silvia Alcantara Lopez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gustavo Jimenez S/N,"
+    },
+    {
+      "full": "General Benjamín Hill 14,"
+    },
+    {
+      "full": "Gustavo Jimenez S/N,"
+    },
+    {
+      "full": "General Benjamín Hill 14,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-alcantara-lopez/ginecologo/ciudad-de-mexico#address-id=171674&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:25.457Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Silvia Fabiola Estrada Rivera",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/39fb63/39fb6301d888b6abcef310e15f5d7bdb_220_square.jpg",
+  "about": "Especialista en prevención, detección oportuna de lesiones precursoras de cáncer en la mujer, así como diagnóstico, tratamiento y seguimiento de cáncer ginecológico (cáncer de mama, cáncer de útero, cáncer de endometrio, cáncer de cuello uterino, cáncer de vulva y vagina, cáncer de ovario, neoplasia trofoblástica).",
+  "addresses": [
+    {
+      "full": "Periferico Sur 5246,"
+    },
+    {
+      "full": "Periferico Sur 5246,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-fabiola-estrada-rivera/ginecologo-oncologico-ginecologo/coyoacan#address-id=362740&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:12.089Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__silvia_fabiola_estrada_rivera.webp"
+}

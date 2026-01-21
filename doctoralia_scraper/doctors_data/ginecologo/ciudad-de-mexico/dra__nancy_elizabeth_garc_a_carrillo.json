@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Nancy Elizabeth García Carrillo",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea33ac/ea33ac0ccab0c23fb24fc8a8d5690b39_220_square.jpg",
+  "about": "Soy la Dra. Nancy García Especialidad en Ginecología y Obstetricia avalada por la UAC Subespecialidad en Ginecología Oncológica avalada por la UNAM- CMN Siglo XXI Hospital de Oncología Diplomado en Cirugía Laparoscópica Avanzada. Hospital Juárez de México Cirugía Oncoplástica de mama Certificada por el Consejo Mexicano de Ginecología y Obstetricia Certificada por el Consejo Mexicano de Oncología Miembro activo de la Sociedad Mexicana de Mastología Miembro activo de la Sociedad Mexicana de Oncología Especialista en la prevención, diagnóstico, tratamiento y seguimiento de cáncer y de lesiones premalignas del sistema reproductor femenino, así como lesiones benignas. Estos incluyen cáncer de mama, cáncer de cérvix, cáncer de ovario, cáncer de útero, cáncer vaginal y cáncer vulvar. Lo anterior con el objetivo brindarte atención médica actualizada y de calidad para orientarte y acompañarte en el transcurso y tratamiento de tu enfermedad.",
+  "addresses": [
+    {
+      "full": "Av. Contreras 300, San Jerónimo Lídice, La Magdalena Contreras, 10200 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Atarjea 6,"
+    },
+    {
+      "full": "Av. Contreras 300, San Jerónimo Lídice, La Magdalena Contreras, 10200 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Atarjea 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de mastología",
+      "price": ""
+    },
+    {
+      "name": "Consulta oncología",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nancy-elizabeth-garcia-carrillo/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=485782&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:05.719Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nancy_elizabeth_garc_a_carrillo.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto G. López Solano",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 305,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c95740/c957400339010309c157038a3a0ab3ca.jpg",
+  "about": "Medico Sub especialista en Oncología Ginecológica comprometido con la salud femenina, soy experto en el diagnostico y tratamiento de enfermedades malignas que afectan a la mujer, como el cáncer de mama, cáncer cervicouterino, cáncer de ovario, cáncer de endometrio, así como patología benigna por ejemplo; tumores de mama, tumores de ovario, miomatosis uterina, sangrados uterinos anormales, displasia cervicales asociadas a infección por el virus del VPH. Atención integral, profesional, ética y con calidad humana. Nos distingue la preparación y actualización medica continua y altos estándares de calidad !",
+  "addresses": [
+    {
+      "full": "Boulervard del maestro 1504,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $700"
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Cirugia por cáncer de útero",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-g-lopez-solano/ginecologo-oncologico-ginecologo/tlaxcala#address-id=396983&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:45.199Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__roberto_g__l_pez_solano.webp"
+}

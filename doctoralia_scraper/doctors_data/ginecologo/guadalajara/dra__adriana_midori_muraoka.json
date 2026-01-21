@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Midori Muraoka",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a7cfe9a/5a7cfe9a-8589-4053-b6f6-d3e7c935025f_small_square.jpg",
+  "about": "Hola! Soy la Dra. Adriana Midori Muraoka Ginecóloga con alta especialidad en Mastología (enfermedades mamarias), Agenda cita vía WhatsApp al Visita mis redes sociales IG y FB gine.midori y agenda cita vía DM o mensaje directo.Mi prioridad es que en la consulta mis pacientes se sientan en un ambiente tranquilo, cómodas y sean libres de expresar sus dudas y lograr resolverlas.Soy Médico egresado de Medicina general por la Universidad Del Valle de México Especialista en Ginecología y Obstetricia egresada de Nuevo Hospital Civil Juan I. Menchaca avalada por la Universidad de Guadalajara, Certificada por el Consejo Mexicano de Ginecología y Obstetricia CMGO, Cuento con alta especialidad cursada en FUCAM en cirugía oncológica de la mama (Mastología) avalado por la UNAM",
+  "addresses": [
+    {
+      "full": "Blvd.Gral Marcelino García Barragán 1176,"
+    },
+    {
+      "full": "Blvd.Gral Marcelino García Barragán 1176,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-midori-muraoka/ginecologo/guadalajara#address-id=471687&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:58.034Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__adriana_midori_muraoka.webp"
+}

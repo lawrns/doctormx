@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Mónica Melissa Guajardo Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62a2da/62a2da62d46824138aeffc1da8c0e053_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Ecuador 2331,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-melissa-guajardo-zamora/ginecologo/nuevo-leon#address-id=355124&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:54.827Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__m_nica_melissa_guajardo_zamora.webp"
+}

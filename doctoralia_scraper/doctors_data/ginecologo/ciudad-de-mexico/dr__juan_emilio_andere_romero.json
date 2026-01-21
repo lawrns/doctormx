@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Juan Emilio Andere Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e8e0d0/e8e0d0128e8c9ab73e03e86e5f19fa37_220_square.jpg",
+  "about": "Curso en la Especialidad de Ginecología y Obstetricia: Hospital General de México, S S A. 1982-1984 Médico Gineco-obstetra Hospital Xoco Ciudad de México.1987-1991 Actualmente Ginecólogo Obstetra Hospital M Jiquipilco, Estado de México, I S E M. 2010 a la Fecha. Y Consultorio Privado",
+  "addresses": [
+    {
+      "full": "Cefeo # 11,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    },
+    {
+      "full": "Cefeo # 11,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-emilio-andere-romero/ginecologo/coyoacan#address-id=1454&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:18.400Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_emilio_andere_romero.webp"
+}

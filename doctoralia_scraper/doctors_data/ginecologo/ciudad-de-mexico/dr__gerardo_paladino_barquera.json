@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Gerardo Paladino Barquera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/04c62f76/04c62f76-3a47-4afc-b55b-016a3717adc3_small_square.jpg",
+  "about": "Soy el Dr. Gerardo Paladino Barquera, Ginecólogo y Biologo de la Reproduccion, enfocado en incluir la experiencia y las actualizaciones para poder ayudar a las pacientes en el campo de la salud femenina, siempre de la mano de la calidad humana que en todo profesional debe caber siempre que nos brindan la oportunidad de poder atenderlos. Tengo formación para poder ayudarte en temas de infertilidad, endocrinología femenina (Síndrome de ovario Poliquístico), andrología, cirugía de minima invasion (Miomatosis uterina, pólipos,etc). Miembro de la Asociación Europea de Reproducción Humana y Embriología (ESHRE).",
+  "addresses": [
+    {
+      "full": "Avenida Homero 655,"
+    },
+    {
+      "full": "Hospital Ángeles de las Lomas Torre Especialidades. Piso 12. Consultorio 1250,"
+    },
+    {
+      "full": "Avenida Homero 655,"
+    },
+    {
+      "full": "Hospital Ángeles de las Lomas Torre Especialidades. Piso 12. Consultorio 1250,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-paladino-barquera/ginecologo/ciudad-de-mexico#address-id=541800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:57.071Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_paladino_barquera.webp"
+}

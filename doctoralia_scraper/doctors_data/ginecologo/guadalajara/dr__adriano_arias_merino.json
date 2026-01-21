@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Adriano Arias Merino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a05ed3/a05ed318adb1fe4f1bc7cf48a71124f0_220_square.jpg",
+  "about": "Atender al paciente femenino con una visión integral, desde la prevención de enfermedades, su diagnóstico oportuno, tratamiento médico/quirúrgico, limitación del daño, rehabilitación; buscando la conservación de la Salud en la Mujer, considerando el bienestar en lo Biológico, Psicológico y Social, relacionado con la Salud Reproductiva, apoyando con la consejería, toma de decisiones y aplicación de Métodos Modernos de Planificación Familiar, Consultoría Pregestacional para la detección de posibles riesgos que compliquen futuros embarazos y su manejo. Vigilancia Prenatal del curso del embarazo de bajo y alto riesgo, mediante el apoyo de tecnología basada en el uso del Ultrasonido Doppler. Atención personalizada del Parto, priorizando la No intervención en el proceso natural del parto. Atención con un enfoque integral de la paciente en edad reproductiva que no desea estar embarazada, previniendo las afectaciones relacionadas con el Ciclo Menstrual, las cuales pueden alterar la Salud General de la paciente y de su familia, tales como Síndrome Premenstrual, Dismenorrea, Sangrados Uterinos de origen no Anatómico. Atención de la paciente en el Climaterio.",
+  "addresses": [
+    {
+      "full": "Quebec 631,"
+    },
+    {
+      "full": "Quebec 631,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriano-arias-merino/ginecologo/guadalajara#address-id=251432&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:11.906Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__adriano_arias_merino.webp"
+}

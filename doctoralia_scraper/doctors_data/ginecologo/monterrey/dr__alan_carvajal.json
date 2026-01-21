@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Alan Carvajal",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2eb9c9cf/2eb9c9cf-09e3-4674-8762-9d9f803277f1_small_square.jpg",
+  "about": "•Especialista en Ginecología y Obstetricia. •Sub especialidad en Biología de la Reproducción (Fertilidad). ¡Hola!, bienvenidos a su espacio para cuidar de ti, tu embarazo y salud hormonal. Nuestra meta es brindar orientación a los distintas parejas que se encuentran en la búsqueda de formar un familia y otorgar atención integral durante cualquier etapa de su vida reproductiva. Desde la adolescencia, búsqueda de embarazo y menopausia.",
+  "addresses": [
+    {
+      "full": "Av. Cto. Frida Kahlo 180, Valle Oriente, 66260 San Pedro Garza García, N.L. Privado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1910, Obispado, 64060 Monterrey, N.L.,"
+    },
+    {
+      "full": "Av. Cto. Frida Kahlo 180, Valle Oriente, 66260 San Pedro Garza García, N.L. Privado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1910, Obispado, 64060 Monterrey, N.L.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Coito Programado",
+      "price": ""
+    },
+    {
+      "name": "Congelación de óvulos",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-carvajal/ginecologo/san-pedro-garza-garcia#address-id=569643&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:12.918Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alan_carvajal.webp"
+}

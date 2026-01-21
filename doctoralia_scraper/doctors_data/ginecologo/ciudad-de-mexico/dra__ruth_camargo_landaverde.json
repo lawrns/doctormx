@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ruth Camargo Landaverde",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/916763d0/916763d0-78b3-4fc1-8008-993f369227d3_small_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia egresada de la Universidad Nacional Autónoma de México.Alta especialidad en cirugía de mínima invasión Ginecológica.Especialista en Colposcopia y Láser regenerativo.",
+  "addresses": [
+    {
+      "full": "P.º de Atizapán 14-interior 9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruth-camargo-landaverde/ginecologo/atizapan-de-zaragoza",
+  "scrapedAt": "2026-01-21T02:40:27.189Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ruth_camargo_landaverde.webp"
+}

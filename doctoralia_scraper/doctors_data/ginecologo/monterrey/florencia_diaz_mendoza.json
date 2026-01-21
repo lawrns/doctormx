@@ -1,0 +1,43 @@
+{
+  "name": "Florencia Diaz Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 296,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1306b2/1306b28a223f0122491ed3c95f6bf92d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/florencia-diaz-mendoza/ginecologo/nuevo-leon#address-id=370199&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:48.954Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/florencia_diaz_mendoza.webp"
+}

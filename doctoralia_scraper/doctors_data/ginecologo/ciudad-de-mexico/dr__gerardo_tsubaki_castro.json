@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gerardo Tsubaki Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. Desierto De Los Leones 4886,"
+    },
+    {
+      "full": "Calz. Desierto De Los Leones 4886,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-tsubaki-castro/ginecologo/ciudad-de-mexico#address-id=224640&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:45.309Z",
+  "localPhotoPath": null
+}

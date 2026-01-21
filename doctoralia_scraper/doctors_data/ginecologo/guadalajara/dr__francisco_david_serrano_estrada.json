@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Francisco David Serrano Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9b734/a9b7344378c4dc8d1b51a7ec4d1317f8_220_square.jpg",
+  "about": "Soy ginecólogo con un enfoque profundamente humano, comprometido con el bienestar integral de mis pacientes. Mi prioridad es acompañar a la mujer en cada etapa de su vida reproductiva, con especial dedicación en la salud materna y fetal. Brindo atención cercana, basada en evidencia, respeto y empatía, cuidando tanto de la futura mamá como de su bebé.",
+  "addresses": [
+    {
+      "full": "Monte Ajusco 557,"
+    },
+    {
+      "full": "Centro los naranjos,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-david-serrano-estrada/ginecologo/chiapas#address-id=620048&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:39.734Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__francisco_david_serrano_estrada.webp"
+}

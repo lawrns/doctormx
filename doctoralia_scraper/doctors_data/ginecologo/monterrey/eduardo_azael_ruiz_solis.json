@@ -1,0 +1,25 @@
+{
+  "name": "Eduardo Azael Ruiz Solis",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Estambul 1082, Col. El Refugio 2 Sector, ,"
+    },
+    {
+      "full": "Estambul 1082, Col. El Refugio 2 Sector, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-azael-ruiz-solis/ginecologo/san-nicolas-de-los-garza#address-id=357252&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:47:40.960Z",
+  "localPhotoPath": null
+}

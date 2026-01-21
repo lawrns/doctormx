@@ -1,0 +1,66 @@
+{
+  "name": "Iliana Colin Garduño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1573,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c3ab8/6c3ab857fa495bac51984db7fdb0d879_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Iliana Colin Garduño, especialista en Ginecología y Obstetricia. Mi lema de vida es \"Trata como te gustaría que te traten o que trataran a alguien de tu familia\" es por ello que mi principal objetivo es hacerte sentir cómoda y en confianza dentro de un espacio tan íntimo como lo es la consulta ginecológica. Me dedico principalmente a la consulta de ginecología como son: sangrados anormales, miomatosis uterina, quistes ováricos, menopausia y climaterio, incontinencia urinaria y prolapso uterino, patología benigna de mama, malformaciones müllerianas y síndrome de Rokitansky. Al control prenatal en embarazos de bajo y alto riesgo, embarazo múltiple y manejo de diabetes gestacional y patologías asociadas al embarazo. A la orientación y colocación de métodos anticonceptivos y a la prevención, detección y tratamiento de VPH. ¡Agenda conmigo, te quiero conocer!",
+  "addresses": [
+    {
+      "full": "Sinaloa 149, Tercer piso, Int 304,"
+    },
+    {
+      "full": "Fray Pedro De Gante Nte 320,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-colin-garduno/ginecologo/texcoco#address-id=355276&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:03.874Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/iliana_colin_gardu_o.webp"
+}

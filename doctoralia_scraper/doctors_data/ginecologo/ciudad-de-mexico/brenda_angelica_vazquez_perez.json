@@ -1,0 +1,25 @@
+{
+  "name": "Brenda Angelica Vazquez Perez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1134,"
+    },
+    {
+      "full": "Av. Universidad 1134,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-angelica-vazquez-perez-2/ginecologo/benito-juarez#address-id=75805&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:14.097Z",
+  "localPhotoPath": null
+}

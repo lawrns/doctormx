@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Alejandro Nieves Lima",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9f9f52d4/9f9f52d4-3249-45fb-ac02-a98f132eb7ea_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Edgar Alejandro Nieves Lima, Médico especialista en Ginecología y obstetricia, con Subespecialidad en Medicina Materno Fetal, ambos avalados por la Universidad Nacional Autónoma de México. Me dedico a acompañarte y cuidarte en cada etapa de tu embarazo, procurando lo que más amas, mi prioridad siempre será el bienestar tuyo y de tu bebé, dando una atención empática, de calidad y excelencia. Te invito a agendar cita; nos vemos pronto.",
+  "addresses": [
+    {
+      "full": "Liras 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-alejandro-nieves-lima/ginecologo/venustiano-carranza2#address-id=574732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:09.573Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_alejandro_nieves_lima.webp"
+}

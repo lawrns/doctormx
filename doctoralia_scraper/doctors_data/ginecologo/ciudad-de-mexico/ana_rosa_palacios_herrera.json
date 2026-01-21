@@ -1,0 +1,25 @@
+{
+  "name": "Ana Rosa Palacios Herrera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Progreso 214, Col. Escandon, ,"
+    },
+    {
+      "full": "Progreso 214, Col. Escandon, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-rosa-palacios-herrera/ginecologo/miguel-hidalgo#address-id=357158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:00.942Z",
+  "localPhotoPath": null
+}

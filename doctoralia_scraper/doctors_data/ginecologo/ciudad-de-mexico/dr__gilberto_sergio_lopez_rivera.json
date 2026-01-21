@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gilberto Sergio Lopez Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/51ce2f/51ce2f3dd41c088b0ef499befcaca503_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quito, 874,"
+    },
+    {
+      "full": "Quito, 874,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-sergio-lopez-rivera/ginecologo/gustavo-a-madero#address-id=77388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:32.358Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gilberto_sergio_lopez_rivera.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Indira Jiménez Radilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/950bf9/950bf9ad99e7f94569a73c4eee327bac_220_square.jpg",
+  "about": "Medico especialista en Ginecología, obstetricia y procedimientos colposcópicos. Atendemos los padecimientos propios de la mujer, desde la adolescencia hasta la el climaterio y cuidamos del embarazo y sus etapas.",
+  "addresses": [
+    {
+      "full": "Filadelfia 119,"
+    },
+    {
+      "full": "Filadelfia 119,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/indira-jimenez-radilla/ginecologo/ciudad-de-mexico#address-id=351987&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:36.380Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__indira_jim_nez_radilla.webp"
+}

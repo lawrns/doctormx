@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Berenice Velázquez Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d1a05/9d1a0563378997e15ff982eaa004a916_220_square.jpg",
+  "about": "Soy Médico Materno Fetal, con 25 años ininterrumpidos de dedicarme de lleno a evaluar Mamás y bebés antes de nacer y procurar su bienestar, formar nuevos especialistas en Medicina Materno Fetal y realizar investigación de utilidad para mejorar calidad de atención de nuestros pacientes (bebés y mamás) que se publican en revistas académicas nacionales e internacionales, además de difundir el conocimiento en esta área en diferentes foros nacionales e internacionales. Las evaluaciones realizadas son: tamiz 1er trimestre, USG estructural, evaluación de crecimiento, pruebas de bienestar fetal, procedimientos invasivos, perfil biofísico y hemodinámico, tamiz parto pretérmino etc. Siempre actuando con honestidad, ética, legalidad y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Desde $2,100"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-velazquez-torres/ginecologo/ciudad-de-mexico#address-id=148275&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:11.499Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__berenice_vel_zquez_torres.webp"
+}

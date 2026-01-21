@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Carlos Chapa Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3bc472/3bc4726efb20f46e0eecd4fb752bf83c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 de Mayo 1614 2,"
+    },
+    {
+      "full": "15 de Mayo 1614 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-chapa-gutierrez-2/ginecologo/nuevo-leon#address-id=454177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:31.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jose_carlos_chapa_gutierrez.webp"
+}

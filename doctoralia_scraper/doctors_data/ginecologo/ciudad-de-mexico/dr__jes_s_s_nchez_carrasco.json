@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Sánchez Carrasco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 337,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4dafe2/4dafe222d3a9ff8457fa2f9e0bc81f0e.jpg",
+  "about": "Sobre mí ¡Hola! Soy el Dr. Jesús Sánchez Carrasco, ginecólogo especializado en ayudar a las familias en las etapas más emocionantes y, a veces, desafiantes de sus vidas. Mi enfoque abarca desde la biología de la reproducción humana hasta la medicina perinatal, lo que me permite acompañar a mis pacientes en cada paso del camino hacia la maternidad. ¿Por qué elegirme a mí? Con experiencia en laparoscopia e histeroscopia, utilizo técnicas mínimamente invasivas para brindar soluciones efectivas y reducir el tiempo de recuperación. Mi objetivo es siempre ofrecer una atención cercana, accesible y basada en la confianza, para que cada paciente se sienta acompañada y apoyada en su salud reproductiva. Principales áreas de tratamiento Cirugía Laparoscopica e Histeroscopia avanzadas: Endometriosis, miomas, quistes, Histerectomía Cuidados y atención de Embarazo normal y crítico: Diabetes, Hipertensión, Tiroides Reproducción Asistida : Infertilidad, Perdidas de la Gestación, Criopreservación (congelación) óvulos, embriones Otros servicios Papanicolaou, Colposcopia, Cauterización de Virus Papiloma. Ultrasónido Ginecológico y ultrasónido para Embarazo",
+  "addresses": [
+    {
+      "full": "Calle Riobamba 639, Consultorio 235,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-sanchez-carrasco/ginecologo/gustavo-a-madero#address-id=85712&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:42.557Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jes_s_s_nchez_carrasco.webp"
+}

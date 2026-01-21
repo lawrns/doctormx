@@ -1,0 +1,86 @@
+{
+  "name": "Dr. Felipe López Galicia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 78,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e7fc34/e7fc348188f1d11d71612ba73d2afc1d_220_square.jpg",
+  "about": "Soy médico especialista en ginecología y obstetricia, apasionado de mi profesión, con gran vocación de servicio. Cuento con amplia experiencia en el manejo de padecimientos ginecológicos y obstétricos que afectan las diferentes etapas en la vida de la mujer. Experto en colposcopía y enfermedades de transmisión sexual, así como en el manejo de tecnologías láser, ultrasonido, terapia hormonal de la menopausia, síndrome genitourinario, estética ginecológica, etc.",
+  "addresses": [
+    {
+      "full": "Hacienda de Santa Ana, mz 829 lt 39,"
+    },
+    {
+      "full": "Hacienda de Santa Ana, mz 829 lt 39,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía total",
+      "price": ""
+    },
+    {
+      "name": "Tensado vaginal",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-lopez-galicia/ginecologo/naucalpan-de-juarez2#address-id=426965&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:03.623Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__felipe_l_pez_galicia.webp"
+}

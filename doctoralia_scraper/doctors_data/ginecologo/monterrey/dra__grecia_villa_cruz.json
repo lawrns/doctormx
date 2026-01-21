@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Grecia Villa Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6108b6/6108b69827d2805b173277af4b09ef3f_220_square.jpg",
+  "about": "Soy especialista enfocada en brindar atención integral a la mujer en todas sus etapas. Me gusta mantenerme actualizada y en constante certificación por las principales sociedades de ginecología, busco siempre la excelencia para brindar la mejor atención a mis pacientes. Me gusta apoyarme de mis colegas ginecólogos y de otras especialidades para ofrecer el manejo más completo e íntegro. En lo personal disfruto mucho lo que hago, me encanta viajar y conocer nuevos lugares. Me encantan los animales y mi pasatiempo favorito es ver películas y series.",
+  "addresses": [
+    {
+      "full": "Av. Revolución 3834,"
+    },
+    {
+      "full": "Av. Revolución 3834,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/grecia-villa-cruz-2/ginecologo/nuevo-leon#address-id=406530&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:41.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__grecia_villa_cruz.webp"
+}

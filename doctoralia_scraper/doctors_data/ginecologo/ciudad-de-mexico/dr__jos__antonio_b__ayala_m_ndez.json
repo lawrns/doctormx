@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Antonio B. Ayala Méndez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente de Piedra (Hospital Medica Sur), 150, Torre 2, 221,"
+    },
+    {
+      "full": "Puente de Piedra (Hospital Medica Sur), 150, Torre 2, 221,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-b-ayala-mendez/ginecologo/tlalpan",
+  "scrapedAt": "2026-01-21T03:00:29.196Z",
+  "localPhotoPath": null
+}

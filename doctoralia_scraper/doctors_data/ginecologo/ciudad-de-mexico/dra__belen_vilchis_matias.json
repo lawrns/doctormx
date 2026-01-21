@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Belen Vilchis Matias",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/85153e/85153ec7df0f9e10cac5824413af246e_220_square.jpg",
+  "about": "Soy ginecóloga con 10 años de experiencia, egresada del Hospital de la Mujer en Aguascalientes. Con experiencia en embarazo de alto y bajo riesgo, tratamiento de enfermedades de transmisión sexual, diplomado en colposcopia y ultrasonido ginecológico y obstetricia.",
+  "addresses": [
+    {
+      "full": "Enrique Sada Muguerza No 17, Cd. Satélite, Naucalpan de Juárez, Méx.,"
+    },
+    {
+      "full": "Avenida Del Molinito,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/belen-vilchis-matias/ginecologo/naucalpan-de-juarez2#address-id=590191&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:11.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__belen_vilchis_matias.webp"
+}

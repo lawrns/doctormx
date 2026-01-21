@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis G. Sentíes Cortina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 347,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7f547a/7f547a11f0c0a2ac8c2d81fc8d6d6c8c_220_square.jpg",
+  "about": "Ginecólogo con más de 35 años de experiencia especializado en Urología Ginecológica. - Premio al Mérito Académico \"Luis Castelazo Ayala\" durante la especialización 1984 - 1987 - Práctica profesional privada desde 1987 - Práctica institucional en Hospital Luis Castelazo Ayala IMSS 1987 - 1993 - Profesor Examinador del Consejo Mexicano de GInecología y Obstetricia desde 1994 a la fecha - Miembro de la Junta de Gobierno del Consejo Mexicano de Ginecología y Obstetricia desde 2003 a la fecha - Presidente del Colegio Mexicano de Especialistas en Ginecología y Obstetricia 2011 y 2012 - Coordinador de la División de Ginecología y Obstetricia del Hospital Angeles Metropolitano 2008 -2010 - Fellow del American College of Obstetricians and Gynecologists",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59 (Hospital Ángeles Metropolitano, Torre Diamante, Consultorio 710),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-g-senties-cortina/ginecologo/cuauhtemoc2#address-id=94125&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:45.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_g__sent_es_cortina.webp"
+}

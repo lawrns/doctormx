@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edelmiro Garza Padilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/566fb8/566fb8d52841da8faef247172b0c7195_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia con subespecialidad en Biología de la Reproducción Humana. Certificado en ambas por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO).",
+  "addresses": [
+    {
+      "full": "Estelaris #500,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edelmiro-garza-padilla/ginecologo/nuevo-leon#address-id=393476&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:45.755Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__edelmiro_garza_padilla.webp"
+}

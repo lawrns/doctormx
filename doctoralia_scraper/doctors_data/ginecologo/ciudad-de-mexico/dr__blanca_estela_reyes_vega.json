@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Blanca Estela Reyes Vega",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Enrique Sada Morguerza 13 - 102,"
+    },
+    {
+      "full": "Enrique Sada Morguerza 13 - 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-estela-reyes-vega/ginecologo/naucalpan-de-juarez#address-id=96413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:16.372Z",
+  "localPhotoPath": null
+}

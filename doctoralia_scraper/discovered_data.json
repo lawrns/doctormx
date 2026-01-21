@@ -1,0 +1,159 @@
+{
+  "specialties": [
+    {
+      "slug": "ginecologo",
+      "name": "Ginecólogo"
+    },
+    {
+      "slug": "dermatologo",
+      "name": "Dermatólogo"
+    },
+    {
+      "slug": "cardiologo",
+      "name": "Cardiólogo"
+    },
+    {
+      "slug": "psicologo",
+      "name": "Psicólogo"
+    },
+    {
+      "slug": "pediatra",
+      "name": "Pediatra"
+    },
+    {
+      "slug": "oftalmologo",
+      "name": "Oftalmólogo"
+    },
+    {
+      "slug": "urologo",
+      "name": "Urólogo"
+    },
+    {
+      "slug": "neurologo",
+      "name": "Neurólogo"
+    },
+    {
+      "slug": "traumatologo",
+      "name": "Traumatólogo"
+    },
+    {
+      "slug": "endocrinologo",
+      "name": "Endocrinólogo"
+    },
+    {
+      "slug": "gastroenterologo",
+      "name": "Gastroenterólogo"
+    },
+    {
+      "slug": "nutriologo",
+      "name": "Nutriólogo"
+    },
+    {
+      "slug": "psiquiatra",
+      "name": "Psiquiatra"
+    },
+    {
+      "slug": "ortopedista",
+      "name": "Ortopedista"
+    },
+    {
+      "slug": "oncologo",
+      "name": "Oncólogo"
+    },
+    {
+      "slug": "otorrinolaringologo",
+      "name": "Otorrinolaringólogo"
+    },
+    {
+      "slug": "medico-general",
+      "name": "Médico General"
+    },
+    {
+      "slug": "cirujano-plastico",
+      "name": "Cirujano Plástico"
+    },
+    {
+      "slug": "reumatologo",
+      "name": "Reumatólogo"
+    },
+    {
+      "slug": "nefrologo",
+      "name": "Nefrólogo"
+    }
+  ],
+  "cities": [
+    {
+      "slug": "ciudad-de-mexico",
+      "name": "Ciudad de México"
+    },
+    {
+      "slug": "guadalajara",
+      "name": "Guadalajara"
+    },
+    {
+      "slug": "monterrey",
+      "name": "Monterrey"
+    },
+    {
+      "slug": "puebla",
+      "name": "Puebla"
+    },
+    {
+      "slug": "tijuana",
+      "name": "Tijuana"
+    },
+    {
+      "slug": "merida",
+      "name": "Ginecólogos Mérida"
+    },
+    {
+      "slug": "miguel-hidalgo",
+      "name": "Ginecólogos Miguel Hidalgo"
+    },
+    {
+      "slug": "benito-juarez",
+      "name": "Ginecólogos Benito Juárez"
+    },
+    {
+      "slug": "leon",
+      "name": "Ginecólogos León"
+    },
+    {
+      "slug": "santiago-de-queretaro",
+      "name": "Ginecólogos Santiago de Querétaro"
+    },
+    {
+      "slug": "zapopan",
+      "name": "Ginecólogos Zapopan"
+    },
+    {
+      "slug": "san-luis-potosi",
+      "name": "Ginecólogos San Luis Potosi"
+    },
+    {
+      "slug": "chihuahua",
+      "name": "Ginecólogos Chihuahua"
+    },
+    {
+      "slug": "culiacan",
+      "name": "Ginecólogos Culiacan"
+    },
+    {
+      "slug": "morelia",
+      "name": "Ginecólogos Morelia"
+    },
+    {
+      "slug": "hermosillo",
+      "name": "Ginecólogos Hermosillo"
+    },
+    {
+      "slug": "toluca",
+      "name": "Ginecólogos Toluca"
+    },
+    {
+      "slug": "aguascalientes",
+      "name": "Ginecólogos Aguascalientes"
+    }
+  ],
+  "timestamp": "2026-01-19T21:26:53.835Z"
+}

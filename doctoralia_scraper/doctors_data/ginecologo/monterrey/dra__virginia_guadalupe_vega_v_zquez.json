@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Virginia Guadalupe Vega Vázquez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 55,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f6fa4/2f6fa454a578199c09d97469f3d50656_220_square.jpg",
+  "about": "Hola, soy la Dra. Virginia Vega, especialista en Ginecología y Obstetricia, mi compromiso es ofrecer una atención de calidad y calidez y acompañarte en todas las etapas de tu salud femenina Tu salud es prioridad",
+  "addresses": [
+    {
+      "full": "Alterna torre constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/virginia-guadalupe-vega-vazquez/ginecologo/nuevo-leon#address-id=585413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:31.593Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__virginia_guadalupe_vega_v_zquez.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Celina Salas Castro",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/004d72/004d72fbf93863ddf8ba95d8524aacb2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Batallon De San Patricio 112,"
+    },
+    {
+      "full": "Batallon De San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celina-salas-castro/ginecologo/san-pedro-garza-garcia#address-id=96649&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:57.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__celina_salas_castro.webp"
+}

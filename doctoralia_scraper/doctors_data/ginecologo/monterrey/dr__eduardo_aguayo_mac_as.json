@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Aguayo Macías",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7aec84/7aec84315a9402a33ce92ec1c2b1b300_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ecuador 2331,"
+    },
+    {
+      "full": "Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-aguayo-macias/ginecologo/monterrey#address-id=121129&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:26.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eduardo_aguayo_mac_as.webp"
+}

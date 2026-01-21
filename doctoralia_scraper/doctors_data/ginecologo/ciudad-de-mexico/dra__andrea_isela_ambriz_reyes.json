@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Andrea Isela Ambriz Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1dabdf/1dabdf3e3a4428634e7c6b4d7a8e2e8f_220_square.jpg",
+  "about": "Soy la Dra. Andrea I. Ambriz Reyes, soy Médico Ginecoobstétra, subespecialista en Medicina Crítica en Obstetricia con experiencia en embarazo complicado y de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Hospital HMG-Coyoacán, Torre de Especialidades 5to piso, consultorio 506,"
+    },
+    {
+      "full": "Hospital HMG-Coyoacán, Torre de Especialidades 5to piso, consultorio 506,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-isela-ambriz-reyes/ginecologo/ciudad-de-mexico#address-id=414072&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:37.467Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__andrea_isela_ambriz_reyes.webp"
+}

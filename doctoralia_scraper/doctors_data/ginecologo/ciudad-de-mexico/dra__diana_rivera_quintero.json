@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Diana Rivera Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/86a21eab/86a21eab-be4a-4328-b22a-17b08d137d5d_small_square.jpg",
+  "about": "Soy ginecóloga y obstetra con enfoque cálido y personalizado. Mi objetivo es acompañar a cada mujer en las distintas etapas de su vida, desde la adolescencia hasta la menopausia, brindando atención integral basada en evidencia y en la confianza médico-paciente.La Dra. Diana Rivera realizó sus estudios de Licenciatura en Médico Cirujano en Universidad Popular Autonóma del Estado de Puebla (UPAEP).Posteriormente, cursó la especialidad en Ginecología y Obstetricia en el Hospital General “Dr.Maximiliano Ruíz Castañeda”, perteneciente a la Secretaría de Salud del Estado de México, con aval académico por parte de la Universidad Autónoma del Estado de México (UAMex). Durante su formación, realizó rotaciones en hospitales de referencia académica en la especialidad.Formación complementaria:• Diplomado en Colposcopía y Patología del Tracto Genital Inferior, impartido en el Hospital del Universitario de Puebla, reconocido por su liderazgo en la formación de ginecólogos colposcopistas. Avalado por la UPAEP y el Colegio Médico de Colposcopia del Estado de Puebla A. C.• Diplomado en Ultrasonido Obstétrico. Reconocido por la UAQ y Medicina Fetal México. La Dra. Diana Rivera está recertificada por el Consejo Mexicano de Ginecología y Obstetricia, lo que respalda su compromiso con la actualización médica continua y la atención de calidad.",
+  "addresses": [
+    {
+      "full": "Circunvalación Poniente 12,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-rivera-quintero/ginecologo/naucalpan-de-juarez2#address-id=615688&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:50.973Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_rivera_quintero.webp"
+}

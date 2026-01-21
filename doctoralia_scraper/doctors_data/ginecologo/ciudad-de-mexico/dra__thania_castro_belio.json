@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Thania Castro Belio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 230,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7745b9/7745b98f9828413c2793b6e53f08e5a6.jpg",
+  "about": "Ginecóloga con doble especialidad, enfocada en el diagnóstico y tratamiento especializado en enfermedades benignas de la mujer como: lesiones sospechosas de la mama, quistes ováricos, miomatosis uterina, endometriosis, infección por virus del papiloma humano, detección oportuna de cáncer de mama y cérvicouterino. Al contar con una segunda especialidad en Oncologia, cuento con la preparación y experiencia, para brindarte la mejor atención en enfermedades malignas como: cáncer de mama, cáncer cérvicouterino, cáncer de ovario, cáncer de vagina y vulva.Por qué asistir conmigo:-Ginecóloga con doble certificación, enfocada el diagnóstico y tratamiento especializado en enfermedades malignas y benignas de la mujer.-Muchas de las enfermedades que aquejan a la mujer son prevenibles y curables si se realiza una detección oportuna.-Realizo los procedimientos adecuados para un diagnóstico y tratamiento correcto y oportuno.-Te ofrezco los procedimientos quirúrgicos más avanzados, como: cirugía de mínima invasión.Si tienes un diagnóstico de cáncer o alguna lesión sospechosa, te brindaré la atención médica especializada acorde a lo que tu caso requiera. No estas sola en este proceso, tu salud siempre es mi prioridad.",
+  "addresses": [
+    {
+      "full": "Puente de Piedra 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/thania-castro-belio/ginecologo-ginecologo-oncologico/tlalpan#address-id=507072&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:45.535Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__thania_castro_belio.webp"
+}

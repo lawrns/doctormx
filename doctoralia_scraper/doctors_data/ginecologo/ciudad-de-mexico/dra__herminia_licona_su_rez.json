@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Herminia Licona Suárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 302,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cc8e82/cc8e820db83a41eaefc0e98d3ee475d0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "General Juan Cano 94 Consultorio 101,"
+    },
+    {
+      "full": "General Juan Cano 94 Consultorio 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/herminia-licona-suarez/ginecologo/miguel-hidalgo#address-id=69173&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:13.543Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__herminia_licona_su_rez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Julieta Gutiérrez Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 585,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5e9fb/f5e9fb1dbf8969fe1b9be0d2f7f0570f_220_square.jpg",
+  "about": "Soy la doctora Julieta Gutiérrez Zamora, especialista en Ginecología y Obstetricia, cuento con el gran privilegio de haberme preparado académicamente en los mejores hospitales del país. Tengo diversas especializaciones principalmente en Endoscopia Ginecológica e Infertilidad así como en Colposcopia y Patología de Tracto Genital Inferior y Enfermedades Vulvares. Mi objetivo es poder brindar una medicina ginecológica de vanguardia, así como restaurar la salud de las mujeres desde un enfoque humano y empático, en donde cada paciente se sienta con la confianza y seguridad de que su salud está en las mejores manos.",
+  "addresses": [
+    {
+      "full": "Tuxpan 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• Desde $2,250"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-gutierrez-zamora/ginecologo/cuauhtemoc2#address-id=365330&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:28.351Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__julieta_guti_rrez_zamora.webp"
+}

@@ -1,0 +1,80 @@
+{
+  "name": "Dr. Gustavo Nazik Cadena Alfaro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59f47b/59f47b9aa482fedf6d2cc58ad5220885_220_square.jpg",
+  "about": "El Dr. Cadena Alfaro es un experimentado Ginecólogo especialista en el tratamiento de infertilidad (estudio de la pareja infértil), climaterio, menopausia, Gineco-endocrinología y Osteoporosis Cursó la licenciatura de Médico Cirujano en la UNAM, donde obtuvo el primer lugar de aprovechamiento de su generación, posteriormente cursó las especialidades de Ginecología y Obstetricia y Biología de la Reproducción Humana (de la cual obtuvo el promedio más alto en el examen de programa único de especialidades médicas) en el Hospital Juárez de México. Asimismo se especializa en el control de embarazo normal y de alto riesgo, atención de parto y operación cesárea, diagnóstico y tratamiento del VPH, tratamiento de miomatosis uterina, alteraciones tiroideas y de glándulas suprarrenales y síndrome de ovarios poliquísticos, entre otros. Su consulta se encuentra en el Hospital San Ángel Inn Universidad y en FertyGest Se encuentra certificado por el Consejo mexicano de Ginecología y Obstetricia y por el consejo mexicano de Biología de la reproducción humana. Pertenece a la IMS (International Menopause Society), NAMS (North American Menopause Society), FLASOG (Federación latinoamericana de ginecología y obstetricia), asi como al Colegio de Médicos militares. El Dr. Cadena es Medico de Base en el Instituto mexicano del seguro social y tiene una subdirección a su cargo en el Instituto de salud del estado de México. Trato excelente, lenguaje claro y preciso, empatia y cordialidad.",
+  "addresses": [
+    {
+      "full": "Av. Nezahualcóyotl 253 (En torre Domezy) 3er Piso,"
+    },
+    {
+      "full": "Av. Bordo de Xochiaca N°3 Lt. A2-2B, Ciudad Jardin Bicentenario,"
+    },
+    {
+      "full": "CAMINO A LA CRUZ LT. 12 y 14 Frente a la Cruz de Zicatela, Colonia Zicatela,"
+    },
+    {
+      "full": "Av. Ejercito del Trabajo 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Osteoporosis y metabolismo oseo",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-nazik-cadena-alfaro/ginecologo/ecatepec-de-morelos#address-id=597603&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:39.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gustavo_nazik_cadena_alfaro.webp"
+}

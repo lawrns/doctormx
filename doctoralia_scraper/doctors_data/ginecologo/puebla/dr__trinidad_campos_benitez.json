@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Trinidad Campos Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/651610/651610d72d173b5861496a5797e31f03_220_square.jpg",
+  "about": "Soy el Dr. Trinidad Campos Benítez, especializado en Ginecología y Obstetricia, con mas de 27 años de Experincia en Cirugía Laparoscópica. Efectué mi Primera Histerectomía Laparoscópica en el Hospital Betania en Diciembre de 1998. Me gradué de la Benemérita Universidad Autónoma de Puebla y tengo experiencia en el tratamiento de pacientes adultos con una variedad de afecciones ginecológicas. Me especializo en el tratamiento de embarazos normales y de alto riesgo. En especial atiendo pacientes con tumores uterinos y quistes de ovario. Mi primera linea de tratamiento es ofrecer cirugía laparoscópica evitando grandes heridas en abdomen para favorecer una más rápida recuperación. Mi enfoque es brindar una atención integral a mis pacientes, con un trato humano y comprensivo. Realizo ultrasonidos en consulta de seguimiento de embarazo y siempre estoy atento y en contacto con mis pacientes. Es un honor atender a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida 11 Oriente 1817,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/trinidad-campos-benitez-2/ginecologo/puebla#address-id=73035&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:30.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__trinidad_campos_benitez.webp"
+}

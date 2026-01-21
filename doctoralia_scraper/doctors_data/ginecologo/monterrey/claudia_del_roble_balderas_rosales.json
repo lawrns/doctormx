@@ -1,0 +1,66 @@
+{
+  "name": "Claudia del Roble Balderas Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 40,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e97a9e/e97a9e67d115f7e51d426e20964b2414_220_square.jpg",
+  "about": "Más de 20 años de experiencia, en el cuidado de la salud de la mujer en todas sus etapas reproductivas, además de ser subespecialista en el estudio y tratamiento de aquellas mujeres que presentas dificultad en conseguir el deseo de convertirse en mamás. Experta en la realización de cirugías como Laparoscópicas e Histerocopias en problemas de miomatosis, endometriosis, infertilidad, etc. Diplomados en medicina funcional y manejo de la menopausia y su sintomatología.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    },
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-del-roble-balderas-rosales/ginecologo/san-pedro-garza-garcia#address-id=580140&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:05.789Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/claudia_del_roble_balderas_rosales.webp"
+}

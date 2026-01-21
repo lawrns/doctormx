@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mireya Ovando Tapia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 128,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f6406/6f6406a5199a931f0d69aff908e94af7_220_square.jpg",
+  "about": "Soy tu Dra. Mireya Ovando Tapia, Ginecóloga – Obstetra egresada del Hospital de Petroleos Mexicanos y Médico Materno Fetal egresada del Hospital General de México, acreditada por la UNAM Certificada por el Consejo Mexicano de Ginecología y Obstetricia (COMEGO), el Consejo Mexicano de Medicina Materno Fetal (CMGO) y The Fetal Medicine Foundation de Londres. Dedica al cuidado integral de mujeres embarazadas y sus fetos, abordando tanto aspectos médicos como emocionales del embarazo. Mi trabajo se centra en la vigilancia y manejo de embarazos de alto riesgo, que pueden incluir condiciones preexistentes en la madre, como diabetes o hipertensión, o complicaciones que surgen durante el embarazo, como preeclampsia o retraso en el crecimiento fetal. Realizo exámenes detallados, como ultrasoidos avanzados (genético, estructural, ultrasonido de crecimiento y Doppler) y pruebas de monitoreo fetal, para evaluar el bienestar del feto y la salud de la madre. Además realizo pruebas invasivas como biopsia de vellosidades coriales, amniocentesis y cordocentesis. Interpreto resultados de pruebas diagnósticas complejas y elaboro planes de tratamiento personalizados. Mi objetivo es proporcionar una atención de alta calidad y mejorar tanto la salud materna como fetal, optimizando el proceso del embarazo y el parto.",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mireya-ovando-tapia-2/ginecologo/naucalpan-de-juarez2#address-id=477689&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:25.199Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mireya_ovando_tapia.webp"
+}

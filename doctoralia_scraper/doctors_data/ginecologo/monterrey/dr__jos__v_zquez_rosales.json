@@ -1,0 +1,72 @@
+{
+  "name": "Dr. José Vázquez Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d7392/1d73922bf8f9cde66baea172258ec4a2_220_square.jpg",
+  "about": "La dinámica de mi consulta consiste en la entrevista personal, exploración clínica, toma del papanicolau y valoración por ultrasonido de genitales internos y/o del embarazo. Todo esto incluido en el mismo costo.El propósito de la consulta es el diagnostico oportuno para poder restablecer lo mas pronto posible el bienestar de la paciente y disminuir en lo posible la posibilidad de daño posterior. Con la certeza de nuestra experiencia, la capacidad profesional y con su consentimiento: nuestra función es servirle.",
+  "addresses": [
+    {
+      "full": "calle Hidalgo 1828 poniente colonia obispado ,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    },
+    {
+      "full": "calle Hidalgo 1828 poniente colonia obispado ,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amnioscopia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amnioscopia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-vazquez-rosales/ginecologo/monterrey#address-id=798&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:45.292Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__v_zquez_rosales.webp"
+}

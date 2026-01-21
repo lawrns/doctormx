@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Areli Crystal Gonzalez Delgadillo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/37387a/37387aba06f6d4bf259e91b72898b379_220_square.jpg",
+  "about": "Soy Ginecóloga-Obstetra, especialista en Colposcopia, Ginecología Estética -Regenerativa, Menopausia y Climaterio, dedicada a ofrecerte un cuidado integral y especializado en cada etapa de tu vida. Dentro de los servicios que ofrecemos, destacan: Diagnóstico oportuno, prevención y tratamiento de Virus de Papiloma Humano, brindándote opciones con tecnología avanzada de Láser Co2, con el cual podemos realizar diversos procedimientos como vaporización de lesiones causadas por este virus, rejuvenecimiento íntimo y facial, tratamiento de incontinencia urinaria, eliminación de estrías, aclaramiento vulvar, entre otros. Además, te ofrezco asesoría en elección de métodos anticonceptivos, salud sexual, así como cirugías ginecológicas y obstétricas, desde las más sencillas hasta las más complejas, para que siempre tomes decisiones informadas y seguras, ayudándote a sentirte cómoda y confiada en cada aspecto de tu bienestar. Si te encuentras embarazada o soñando con ese momento tan especial, contamos con la más alta gama en tecnología de ultrasonido 2D, 3D y 4D para capturar cada detalle. Te ofrezco un espacio donde verás a tu bebé crecer y moverse, conectándote con su vida desde las primeras etapas. Quiero que cada consulta sea una experiencia emocionante y mágica, en la que cada latido y cada pequeño movimiento te llenen de ilusión y amor. Quiero que en mi consulta te sientas segura, en un espacio de confianza y calidez, donde cuidamos de ti y de tu bienestar con el respaldo de un equipo de especialistas en salud femenina en cada etapa de la vida, psicológica y nutricional. Aquí, tu privacidad y tu tranquilidad son nuestra prioridad. Al final del día, mi misión es que cada consulta te dé la seguridad y la tranquilidad de estar cuidando de ti misma de la mejor forma posible.",
+  "addresses": [
+    {
+      "full": "Calle Efraín González Luna 2523,"
+    },
+    {
+      "full": "Calle Efraín González Luna 2523,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $2,650"
+    },
+    {
+      "name": "Check up premium",
+      "price": "• $3,650"
+    },
+    {
+      "name": "Colocación de  DIU Kyleena",
+      "price": "• $5,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/areli-crystal-gonzalez-delgadillo/ginecologo/guadalajara#address-id=530166&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:34.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__areli_crystal_gonzalez_delgadillo.webp"
+}

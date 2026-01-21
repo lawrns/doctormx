@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Karla Lorena Oliva Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/894d28/894d2835bc923195c229ad76073c10f6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Luis Tlatilco 10,"
+    },
+    {
+      "full": "San Luis Tlatilco 10,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-lorena-oliva-sanchez/ginecologo/naucalpan-de-juarez",
+  "scrapedAt": "2026-01-21T03:04:11.733Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_lorena_oliva_sanchez.webp"
+}

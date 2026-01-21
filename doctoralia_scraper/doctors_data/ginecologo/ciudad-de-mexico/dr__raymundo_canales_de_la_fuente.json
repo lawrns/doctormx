@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raymundo Canales de la Fuente",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1565ff/1565ff6a122be87fa541618d8cc96d1c_220_square.jpg",
+  "about": "El Dr. Canales fue médico del Instituto Nacional de Perinatología durante muchos años y actualmente del Hospital Ángeles del Pedregal con amplia experiencia en la especialidad, en temas como embarazo de alto riesgo y cirugía laparoscópica. Ha sido miembro de las clínicas de Alto Riesgo y de cirugía endoscópica del INPer, Presidente del Comité de Ética en Investigación del mismo instituto. Estuvo a cargo de la Dirección de Salud Materna y Perinatal de la Secretaría de Salud federal, es miembro del Colegio de Bioética así como editorialista del periódico Excelsior. Actualmente coordina la clínica de atención a la mujer con mejor funcionamiento en el Hospital Ángeles Pedregal. La visita ginecológica y prenatal incluye valoración con ultrasonido sin costo. Contamos con las mejores opciones para tratamiento no quirúrgico de la miomatosis uterina como histerocopía o medicamentos y si usted lo necesita le podemos tomar los exámenes de laboratorio en el curso de la consulta. Trabajamos en una red de hospitales de diversos costos, así que nos podemos adaptar a su presupuesto.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055 (Hospital Angeles del Pedregal consultorio 15 del sótano),"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055 (Hospital Angeles del Pedregal consultorio 15 del sótano),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raymundo-canales-de-la-fuente/ginecologo/magdalena-contreras2#address-id=76296&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:43.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raymundo_canales_de_la_fuente.webp"
+}

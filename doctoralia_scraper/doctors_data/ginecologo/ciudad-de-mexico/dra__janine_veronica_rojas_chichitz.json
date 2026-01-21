@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Janine Veronica Rojas Chichitz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e22e97/e22e97b7e6590d36e15384abc0fb625a_220_square.jpg",
+  "about": "Sobre mí Viví en la Ciudad de Salamanca Gto. me fui a hacer la carrera de medicina a la Universidad Autónoma de Guadalajara UAG, después me fui a la CDMX a realizar mi especialidad de Ginecobstetricia avalada por la Universidad La Salle , me apasiona la ginecología y la obstetricia, me encanta poder ayudar a las pacientes y orientarlas. ¿Por qué elegirme a mí? SOY UN MEDICO SERIO, COMPROMETIDO CON MI PRACTICA MEDICA , ME GUSTA ATENDER LO MEJOR POSIBLE A MIS PACIENTES Principales áreas de tratamiento Control del embarazo llamado control prenatal es el cuidado de la madre y el bebé hasta que nace, y se resolverá como parto o cesárea. Detección y tratamiento del virus del papiloma humano, es una enfermedad de transmisión sexual que en la mujer nos puede causar cáncer cervicouterino y también hay que vacunarse . Valoración y tratamiento de sangrados anormales, tumores en la matriz o en ovarios, síndrome de ovario poliquístico Mi consulta y mi equipo Es un consultorio que cuenta con buena ubicación, tiene elevador, trabajamos de lunes a sabado . Otros servicios vacunación contra el virus del papiloma humano , hombres y mujeres colposcopia, criocirugía de cuello de la matriz, papanicolaou , PCR prueba para detectar virus del papiloma humano de alto riesgo .control prenatal, cesáreas partos, histerectomías (ósea quitar la matriz) tumoraciones de ovarios , salpingoclasia ( ligar las trompas para cuando ya no desean embarazo ) métodos de planificación familiar",
+  "addresses": [
+    {
+      "full": "Calle Gobernador Gregorio V. Gelati 33,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/janine-veronica-rojas-chichitz/ginecologo/miguel-hidalgo#address-id=108948&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:02.897Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__janine_veronica_rojas_chichitz.webp"
+}

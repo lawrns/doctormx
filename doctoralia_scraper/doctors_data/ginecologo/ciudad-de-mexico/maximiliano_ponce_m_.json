@@ -1,0 +1,25 @@
+{
+  "name": "Maximiliano Ponce M.",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de la Mancha 703-21, Lomas de Zapopan, 45130 Zapopan, Jal., Mexico,"
+    },
+    {
+      "full": "Av. de la Mancha 703-21, Lomas de Zapopan, 45130 Zapopan, Jal., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maximiliano-ponce-m/ginecologo/ciudad-de-mexico#address-id=152979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:49.747Z",
+  "localPhotoPath": null
+}

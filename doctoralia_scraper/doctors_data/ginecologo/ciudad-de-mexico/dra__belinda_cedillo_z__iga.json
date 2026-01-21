@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Belinda Cedillo Zúñiga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9efcd3/9efcd33b943c73b0429f41eb31277e77_220_square.jpg",
+  "about": "Soy Belinda Cedillo, egresada de la licenciatura de médico cirujano de la Universidad Anahuac, posteriormente realice la especialidad de Ginecologia y Obstetricia en el Hospital Angeles Lomas avalada por la UNAM",
+  "addresses": [
+    {
+      "full": "Av. Vialidad de la Barranca s/n,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca s/n,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/belinda-cedillo-zuniga/ginecologo/miguel-hidalgo#address-id=138207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:55.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__belinda_cedillo_z__iga.webp"
+}

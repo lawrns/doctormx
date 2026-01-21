@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Olimpia Azpeitia Mercado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a0e675f4/a0e675f4-dcfa-41b7-af1c-c13609e09399_small_square.jpg",
+  "about": "Soy la Dra Olimpia Azpeitia Mercado, ginecóloga con más de 10 años de experiencia tanto en medio privado, como institucional, siempre en continua actualización para brindarte el mejor tratamiento individualizado para ti. Mi consultorio es un espacio pensado en tí, donde me caracterizo por brindarte seguridad, confianza, comodidad y calidez en cada consulta",
+  "addresses": [
+    {
+      "full": "Calle Luis Pérez Verdía 574,"
+    },
+    {
+      "full": "Calle Luis Pérez Verdía 574,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olimpia-azpeitia-mercado/ginecologo/guadalajara#address-id=92348&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:00.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__olimpia_azpeitia_mercado.webp"
+}

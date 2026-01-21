@@ -1,0 +1,52 @@
+{
+  "name": "Dra. María Cecilia Calderón Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99bbd5/99bbd53f5002dc1006ad61090ed95014_220_square.jpg",
+  "about": "La esterilidad tiene tratamiento, aún para las parejas no tradicionales y las mujeres solteras. En la primera consulta se les hará una evaluación completa de su estado de salud por lo que es conveniente que traiga TODOS los resultados de laboratorio y gabinete que tenga de los últimos 5 años. Esto es con el fin de ahorrarles tiempo y dinero. La consulta reproductiva incluye la valoración de la pareja. Un problema ginecológico debe ser parte de la atención integral de la salud femenina, para proporcionar una vida satisfatoria libre de enfermedades. Para ello elaboraremos en forma conjunta un programa de detección de patologías crónico degenerativas para desarrollar en los años siguientes.",
+  "addresses": [
+    {
+      "full": "Baja California 181 Col. Roma,"
+    },
+    {
+      "full": "Cerrada Talara 192,"
+    },
+    {
+      "full": "Baja California 181 Col. Roma,"
+    },
+    {
+      "full": "Cerrada Talara 192,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-cecilia-calderon-saldana/ginecologo/cuauhtemoc#address-id=122319&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:41.273Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_cecilia_calder_n_salda_a.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Martin Arroyo Alonso",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Monterrey 100,"
+    },
+    {
+      "full": "Ave. Monterrey 100,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-arroyo-alonso/ginecologo/general-escobedo#address-id=114863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:17:41.501Z",
+  "localPhotoPath": null
+}

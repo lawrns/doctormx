@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Fausto Guillermo Reynaga Herrmann",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cosmos 2673,"
+    },
+    {
+      "full": "Av. Hidalgo 1351,"
+    },
+    {
+      "full": "Cosmos 2673,"
+    },
+    {
+      "full": "Av. Hidalgo 1351,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fausto-guillermo-reynaga-herrmann/ginecologo/guadalajara#address-id=229308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:14.361Z",
+  "localPhotoPath": null
+}

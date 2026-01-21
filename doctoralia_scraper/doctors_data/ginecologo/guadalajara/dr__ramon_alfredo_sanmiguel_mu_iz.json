@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ramon Alfredo Sanmiguel Muñiz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Edison 124,"
+    },
+    {
+      "full": "Edison 124,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-alfredo-sanmiguel-muniz/ginecologo/guadalajara#address-id=180120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:54.131Z",
+  "localPhotoPath": null
+}

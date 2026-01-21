@@ -1,0 +1,25 @@
+{
+  "name": "Edith Berlanga Garza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Palmares,518,Paseo De Las Palmas 4 Sec,,"
+    },
+    {
+      "full": "Palmares,518,Paseo De Las Palmas 4 Sec,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edith-berlanga-garza/ginecologo/apodaca#address-id=355520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:53.612Z",
+  "localPhotoPath": null
+}

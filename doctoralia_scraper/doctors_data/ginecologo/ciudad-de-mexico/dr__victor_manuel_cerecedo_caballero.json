@@ -1,0 +1,82 @@
+{
+  "name": "Dr. Victor Manuel Cerecedo Caballero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 148,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ed10fd/ed10fd98c95c21f55ff4281ad73932b8_220_square.jpg",
+  "about": "La consulta ginecológica, en algunos casos puede ser incómoda para algunas pacientes por muchas razones, sin embargo siempre hago lo posible por crear una atmósfera cálida y de confianza, con el trato amable desde que entran al consultorio, hasta la explicación detallada acerca de sus padecimientos y las pautas en el tratamiento. Especialista en: - Obstetricia - Colposcopia - Laparoscopia - Cirugía Endoscópica Las exploraciones las realizo con el más amplio cuidado y respeto a su privacidad, todos los datos que la paciente proporciona se guardan en el expediente clínico con absoluta confidencialidad. Cuento con una preparación profesional reconocida y avalada por importantes instituciones nacionales, públicas y privadas, además de estar registrado ante los organismos legales competentes como la dirección general de profesiones. Te espero, ¡ Agenda tu cita por Doctoralia !",
+  "addresses": [
+    {
+      "full": "Avenida de las Torres, No. 22, Loc. 3 y 4, Col. Lomas de San Agustin, Naucálpan de Juárez, Estado de,"
+    },
+    {
+      "full": "Calle Salto del agua 52,"
+    },
+    {
+      "full": "Morelos 14, San Miguel Coatlinchán,"
+    },
+    {
+      "full": "Avenida de las Torres, No. 22, Loc. 3 y 4, Col. Lomas de San Agustin, Naucálpan de Juárez, Estado de,"
+    },
+    {
+      "full": "Calle Salto del agua 52,"
+    },
+    {
+      "full": "Morelos 14, San Miguel Coatlinchán,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-cerecedo-caballero/ginecologo/chimalhuacan#address-id=90769&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:00.888Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__victor_manuel_cerecedo_caballero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Lorenzo González Berchelmann",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a68c85/a68c852da0ac3de6b9a3ad223a1c0de3_220_square.jpg",
+  "about": "Médico subespecialista en el manejo y tratamiento de la pareja infertil. Mis mayores intereses están en el campo de la pareja infértil, cirugía reproductiva, fertilización in vitro, manejo del síndrome del ovário poliquístico y la preservación de la fertilidad.",
+  "addresses": [
+    {
+      "full": "Doctors Hospital Monterrey,"
+    },
+    {
+      "full": "Doctors Hospital Monterrey,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorenzo-gonzalez-berchelmann/ginecologo/monterrey#address-id=74015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:39.202Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__lorenzo_gonz_lez_berchelmann.webp"
+}

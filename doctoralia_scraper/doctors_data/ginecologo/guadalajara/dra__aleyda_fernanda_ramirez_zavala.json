@@ -1,0 +1,34 @@
+{
+  "name": "Dra. ALEYDA FERNANDA RAMIREZ ZAVALA",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/abb3a359/abb3a359-d7c6-4915-9256-d56832af1e84_small_square.jpg",
+  "about": "Hola! soy la Dra Aleyda Ramirez, ginecóloga y obstetra, egresada de la Universidad de Guadalajara y certificada ante el Consejo mexicano de Ginecología y Obstetricia, con enfoque integral en la salud de la mujer. Acompaño a mis pacientes en cada etapa de su vida, brindando atención humana, respetuosa y sin juicios. Mi practica se centra en la prevención, diagnóstico y tratamiento de enfermedades ginecológicas, así como el acompañamiento del embarazo y la atención del parto.",
+  "addresses": [
+    {
+      "full": "Calle Paseo de los Filósofos 1439,"
+    },
+    {
+      "full": "Calle Paseo de los Filósofos 1439,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $899"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aleyda-fernanda-ramirez-zavala/ginecologo/guadalajara#address-id=623613&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:26.929Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__aleyda_fernanda_ramirez_zavala.webp"
+}

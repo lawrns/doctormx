@@ -1,0 +1,25 @@
+{
+  "name": "Arguello Paola",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Churubusco 601 Col. Xoco ,"
+    },
+    {
+      "full": "Avenida Churubusco 601 Col. Xoco ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arguello-paola/ginecologo/benito-juarez#address-id=358718&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:36.966Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Flores Rogelio Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Pino Suarez 640 NTE,"
+    },
+    {
+      "full": "Sudamerica 401,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Av Pino Suarez 640 NTE,"
+    },
+    {
+      "full": "Sudamerica 401,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/flores-rogelio-garcia/ginecologo/monterrey#address-id=19684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:54.863Z",
+  "localPhotoPath": null
+}

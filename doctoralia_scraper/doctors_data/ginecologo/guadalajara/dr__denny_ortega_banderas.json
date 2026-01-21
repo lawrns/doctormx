@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Denny Ortega Banderas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6d37cccd/6d37cccd-cb64-43fc-a997-169c70885fab_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Urraca 1548,"
+    },
+    {
+      "full": "Calle Urraca 1548,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denny-ortega-banderas/ginecologo/guadalajara#address-id=89551&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:46.736Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__denny_ortega_banderas.webp"
+}

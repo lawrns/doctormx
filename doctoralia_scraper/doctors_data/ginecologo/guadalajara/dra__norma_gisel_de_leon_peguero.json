@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Norma Gisel De Leon Peguero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 183,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a80c1565/a80c1565-7f2c-40cc-94a7-161b49c01a33_small_square.jpg",
+  "about": "Somos un equipo multidisciplinario conformado por más de 20 especialistas capacitados y certificados por colegios y consejos médicos locales y nacionales, comprometidos en brindar una atención médica profesional de calidad e innovadora a nuestros pacientes.Profesionales CalificadosAtención PersonalizadaUtilizamos tecnología médica de vanguardia",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2432, Ladron De Guevara,"
+    },
+    {
+      "full": "Justo Sierra 2432, Ladron De Guevara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cita de complemento",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-gisel-de-leon-peguero/ginecologo/guadalajara#address-id=423927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:51.293Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_gisel_de_leon_peguero.webp"
+}

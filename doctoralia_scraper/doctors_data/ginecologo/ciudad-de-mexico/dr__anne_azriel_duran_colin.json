@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Anne Azriel Duran Colin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/07d9a0/07d9a0a1545502091e3d768da5339f66_220_square.jpg",
+  "about": "Medicina Materno-Fetal Cirugía de Mínima Invasión",
+  "addresses": [
+    {
+      "full": "Calle Sur 132, 108,"
+    },
+    {
+      "full": "Calle Sur 132, 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anne-azriel-duran-colin/ginecologo/ciudad-de-mexico#address-id=324490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:03.251Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__anne_azriel_duran_colin.webp"
+}

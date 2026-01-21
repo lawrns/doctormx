@@ -1,0 +1,43 @@
+{
+  "name": "Ana Karen Peña Montemayor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1317,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/62821b/62821b9be2965136fff4aca48a9ac2bf_220_square.jpg",
+  "about": "Hola soy la Dra. Ana Karen Peña Montemayor soy egresada de la Facultad de Medicina de la Universidad Autónoma de Nuevo León en el 2012 y estoy especializada en Ginecología y Obstetricia. Realice mi entrenamiento en el Hospital Universitario Dr. José Eleuterio González del 2014 al 2018. Cuento con diplomados en Ultrasonido obstétrico y ginecológico avalado por la Universidad Autónoma de Nuevo León y por el Hospital Ginequito, también cuento con un diplomado en Patología del tracto genital inferior y Colposcopia avalado por la Universidad Anáhuac. Me gusta estar actualizada y cuento con diferentes talleres como el de Hemorragia obstétrica, Laparoscopia integral interactiva, Patología vulvar y Patología mamaria benigna. Soy Asesora de Lactancia Prolactar y me considero amante del parto y cesárea respetado, pinzamiento tardío del cordón umbilical y apego inmediato.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1910, Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Urgencias",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-karen-pena-montemayor/ginecologo/nuevo-leon#address-id=247331&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:38.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/ana_karen_pe_a_montemayor.webp"
+}

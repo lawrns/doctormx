@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Deanda González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 265,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ab44e7/ab44e7e1897a62fef00922e0ca158b1e_220_square.jpg",
+  "about": "Diplomado en Ultrasonido Obstetrico Adiestramiento en Rehabilitación del piso pélvico",
+  "addresses": [
+    {
+      "full": "Otomíe 206,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-deanda-gonzalez/ginecologo/nuevo-leon#address-id=94568&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:24.081Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__diana_deanda_gonz_lez.webp"
+}

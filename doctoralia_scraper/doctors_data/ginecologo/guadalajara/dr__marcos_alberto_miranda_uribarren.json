@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Marcos Alberto Miranda Uribarren",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/abb116/abb116b0ffcd1fbbf58db6bfaff2cbb1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. San Luis Gonzaga 5148,"
+    },
+    {
+      "full": "Av. San Luis Gonzaga 5148,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcos-alberto-miranda-uribarren/ginecologo/zapopan#address-id=43398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:07.817Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__marcos_alberto_miranda_uribarren.webp"
+}

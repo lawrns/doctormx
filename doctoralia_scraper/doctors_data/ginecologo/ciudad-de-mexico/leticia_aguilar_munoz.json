@@ -1,0 +1,25 @@
+{
+  "name": "Leticia Aguilar Munoz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Ahuehuetes, 8 Es . Clavel,"
+    },
+    {
+      "full": "Calle Ahuehuetes, 8 Es . Clavel,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leticia-aguilar-munoz/ginecologo/tlalnepantla-de-baz#address-id=112242&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:51.420Z",
+  "localPhotoPath": null
+}

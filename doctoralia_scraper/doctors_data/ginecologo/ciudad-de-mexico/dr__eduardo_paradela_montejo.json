@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Eduardo Paradela Montejo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5f2d5/a5f2d5c2202f82f1ff8b86a9504faca6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-paradela-montejo/ginecologo/tlalnepantla-de-baz#address-id=8123&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:46.945Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eduardo_paradela_montejo.webp"
+}

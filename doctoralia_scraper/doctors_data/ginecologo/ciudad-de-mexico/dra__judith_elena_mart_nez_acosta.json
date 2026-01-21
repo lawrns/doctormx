@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Judith Elena Martínez Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b9fb3/0b9fb327cfb649b5076f0a2023795604_220_square.jpg",
+  "about": "La Dra. Judith Elena Martínez Acosta es médico cirujano egresada de la Universidad Autónoma del Estado de Morelos, siendo reconocida con el primer lugar en aprovechamiento ciclo 2004-2008. Realizó la ESPECIALIDAD en GINECOLOGÍA y OBSTETRICIA en la Unidad Médica de Alta Especialidad No. 4 Hospital de Ginecoobstetricia “Luis Castelazo Ayala”, obteniendo a su egreso, el PREMIO AL MÉRITO ACADÉMICO “Luis Castelazo Ayala”. Permanece en constante preparación y actualización mediante cursos y diplomados de educación médica continua en Ginecología y Obstetricia. Médica altamente calificada en la atención de las principales afecciones de la mujer desde un punto de vista ginecológico, así como el control del embarazo normal y complicado.",
+  "addresses": [
+    {
+      "full": "Oaxaca 69 4to piso,"
+    },
+    {
+      "full": "Oaxaca 69 4to piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/judith-elena-martinez-acosta/ginecologo/coyoacan#address-id=31844&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:06.068Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__judith_elena_mart_nez_acosta.webp"
+}

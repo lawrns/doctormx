@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Monica Ramirez G.",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bernardo De Balbuena #91-302 Entre Hidalgo Y Justo Sierra,"
+    },
+    {
+      "full": "Bernardo De Balbuena #91-302 Entre Hidalgo Y Justo Sierra,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-ramirez-g/ginecologo/guadalajara#address-id=106675&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:44.611Z",
+  "localPhotoPath": null
+}

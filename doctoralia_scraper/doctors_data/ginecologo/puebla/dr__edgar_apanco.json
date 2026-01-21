@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Apanco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/photos/4f338ca9/4f338ca9-dc40-4cb9-9afe-a65fec4088e9_large.jpg",
+  "about": "* Médico comprometido con la salud de cada uno de sus pacientes, ofrezco servicios de salud en Medicina General, Ginecología y Obstetricia, Colposcopia, además de Nutrición Clínica, siempre de manera profesional, responsable y cuidando cada aspecto de mis pacientes, * Siempre en capacitación médica continua y trabajando con los mejores especialistas y en los hospitales mas reconocidos de Puebla, Tlaxcala y Texmelucan. * Brindo atención de calidad, humanismo y sobre todo excelentes resultados.",
+  "addresses": [
+    {
+      "full": "Miguel Nájera 12,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-apanco/ginecologo/san-martin-texmelucan#address-id=435376&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:22.272Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__edgar_apanco.webp"
+}

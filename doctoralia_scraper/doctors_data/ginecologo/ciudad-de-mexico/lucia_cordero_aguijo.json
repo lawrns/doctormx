@@ -1,0 +1,25 @@
+{
+  "name": "Lucia Cordero Aguijo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 8. Col. Roma Sur. ,"
+    },
+    {
+      "full": "Tuxpan 8. Col. Roma Sur. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-cordero-aguijo/ginecologo/cuauhtemoc#address-id=358965&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:50.330Z",
+  "localPhotoPath": null
+}

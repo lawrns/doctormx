@@ -1,0 +1,31 @@
+{
+  "name": "Eduardo Ignacio Eguiarte Calderon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 2,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-ignacio-eguiarte-calderon/ginecologo/naucalpan-de-juarez#address-id=233957&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:40.846Z",
+  "localPhotoPath": null
+}

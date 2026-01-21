@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Adriana Elizabeth Arceo Caballero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 256,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d3924e0a/d3924e0a-0952-47c4-bf1e-16c6a2c4792f_small_square.jpg",
+  "about": "Sobre míSoy Ginecóloga con 13 años de experiencia. Certificada por el Colegio Mexicano de Ginecología y Obstetricia. Especializada en la salud integral de la mujer , con un enfoque en la prevención, diagnóstico y tratamiento de enfermedades ginecológicas en todas las etapas de la vida de la mujer. Soy egresada de la carrera de Medicina por la Facultad de Medicina. Universidad Nacional Autónoma de México. Especialidad en Ginecología y Obstetricia en unos de los Hospital con mayor prestigio por su alta concentración de pacientes, con amplia experiencia en manejo de Patología compleja en la Unidad Medica de Alta Especialidad No. 3. Centro Médico Nacional \" La Raza \". Postgrado en Colposcopia y estudio del tracto Genital Inferior en Hospital \"Lic. Adolfo López Mateos \" con amplia experiencia en el manejo de lesiones causadas por el virus del Papiloma Humano (VPH) mediante tecnología láser.Múltiples Diplomados en Ultrasonografía Obstétrica y Ginecológica por la Asociación Mexicana de Ultrasonido en Medicina. AMUSEM . Asimismo tuve la oportunidad de realizar un diplomado de Ginecología láser y medicina funcional por lo que te podemos ofrecer técnicas innovadoras para mejorar la salud ginecológica en padecimientos muy frecuentes tales como incontinencia urinaria y resequedad funcional, labioplastia así como tratamientos para darle más seguridad a mis pacientes como el blanqueamiento del área genital. Con todo esto te ofrecemos una consulta integral en cada etapa de la vida de mis pacientes.Cuento con una Especialidad en atención Integral de la Menopausia, orientado al bienestar físico y emocional de la mujer en esta etapa.En el consultorio ofrecemos todos estos servicios . Y control de ;Check Up Ginecológico (Papanicolaou, colposcopia , ultrasonido endovaginal ) Tratamiento de lesiones por Virus del papiloma humanoGinecología Estetica y regenerativaAtención integral de la MenopausiaTratamiento láser para incontinencia urinariaEmbarazo de alto riesgoSindrome de ovario poliquístico Tratamiento de resistencia a la insulina Miomatosis uterina Agendado una cita o escríbeme un mensaje si tienes alguna duda",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-elizabeth-arceo-caballero/ginecologo/tlalpan#address-id=11652&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:25.872Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__adriana_elizabeth_arceo_caballero.webp"
+}

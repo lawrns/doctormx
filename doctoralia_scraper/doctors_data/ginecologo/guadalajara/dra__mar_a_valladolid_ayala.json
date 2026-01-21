@@ -1,0 +1,40 @@
+{
+  "name": "Dra. María Valladolid Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Rio Nilo #7783 Int. 101 Col. Tonala,"
+    },
+    {
+      "full": "Ave. Rio Nilo 7783 101,"
+    },
+    {
+      "full": "Ave. Rio Nilo #7783 Int. 101 Col. Tonala,"
+    },
+    {
+      "full": "Ave. Rio Nilo 7783 101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-valladolid-ayala/ginecologo/guadalajara#address-id=62264&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:42.412Z",
+  "localPhotoPath": null
+}

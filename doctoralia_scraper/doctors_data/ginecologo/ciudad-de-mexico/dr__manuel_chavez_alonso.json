@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Chavez Alonso",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae9233/ae92338830f6a6d514691e814f84d609_220_square.jpg",
+  "about": "Medico matetno Fetal. Con enfoque en embarazo de alto riesgo, embarazo gemelar, riesgo alto de cromosomopatias, restriccion del crecimiento, diabetes hipertension. Rh negativo, lupus, enfermedad tiroidea",
+  "addresses": [
+    {
+      "full": "Av. Rio consulado 858 el arenal azcapotzalco,"
+    },
+    {
+      "full": "Av. Rio consulado 858 el arenal azcapotzalco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-chavez-alonso/ginecologo/ciudad-de-mexico#address-id=422463&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:01.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_chavez_alonso.webp"
+}

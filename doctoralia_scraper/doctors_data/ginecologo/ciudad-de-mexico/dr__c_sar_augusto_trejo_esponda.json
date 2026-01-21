@@ -1,0 +1,52 @@
+{
+  "name": "Dr. César Augusto Trejo Esponda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f3f73/1f3f73a19e00fa0bfd0d11f691b5d1c9_220_square.jpg",
+  "about": "Médico Ginecoobstetra, Profesor Examinador, Certificado y Recertificado por el Consejo Mexicano de Ginecología y Obstetricia, Profesor y Socio Titular de COMEGO, ex-jefe de Ginecología y Embarazo de alto riesgo 4o. Piso UMAE Gineco 4 IMSS.",
+  "addresses": [
+    {
+      "full": "C. J. Enrique Pestalozzi 1204,"
+    },
+    {
+      "full": "Jose Enrique Pestalozzi 1204 Despa 204,"
+    },
+    {
+      "full": "C. J. Enrique Pestalozzi 1204,"
+    },
+    {
+      "full": "Jose Enrique Pestalozzi 1204 Despa 204,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-augusto-trejo-esponda-2/ginecologo/xochimilco#address-id=427598&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:49.092Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__c_sar_augusto_trejo_esponda.webp"
+}

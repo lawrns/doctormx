@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Diana Gabriela Ruales Silva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6aced/b6aced03e177e3f53b9dedd0ea4cbba1_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Diana Ruales; mi pasión por la salud de las mujeres y mi compromiso con la atención integral me han llevado a dedicar mi vida profesional a esta especialidad. En mi consulta, comprendo que la salud ginecológica es un aspecto esencial de la vida de cada mujer, y me esfuerzo por crear un ambiente acogedor y seguro para todas mis pacientes. Mi enfoque se basa en la empatía, el respeto y la confianza mutua. Entiendo que cada paciente es única, y siempre escucho sus preocupaciones y necesidades de manera atenta y sin prejuicios. Mi objetivo es brindar una atención de la más alta calidad, utilizando las últimas investigaciones y tecnologías disponibles. Además, estoy comprometida a educar a mis pacientes sobre su salud ginecológica para que puedan tomar decisiones informadas sobre su bienestar.",
+  "addresses": [
+    {
+      "full": "Av. Juárez, C. 23 Sur 2301, Zona Esmeralda, 72090 Puebla, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-gabriela-ruales-silva/ginecologo/puebla#address-id=453605&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:08.463Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__diana_gabriela_ruales_silva.webp"
+}

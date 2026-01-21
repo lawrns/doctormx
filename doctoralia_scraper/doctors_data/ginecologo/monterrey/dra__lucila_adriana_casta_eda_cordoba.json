@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Lucila Adriana Castañeda Cordoba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a336ca/a336ca5780723bd37d9e155ddaa0c5cc_220_square.jpg",
+  "about": "Te brindamos un servicio de calidad y calidez, nos especializamos en embarazo de bajo y alto riesgo, planificación familiar, menopausia, detección oportuna de cáncer ginecológico, incontinencia urinaria, enfermedades de la mujer. Atención del nacimiento, parto o cesárea y te acompañamos durante el proceso del mismo. Vigilancia estrecha y visitas postoperatorias. Te ofrecemos métodos de planifiación familiar temporales y definitivos, te recomendamos el que mejor se ajuste a tu estilo de vida y estado de salud. Ven y visitanos, estamos a tus órdenes. Página de Facebook Dra. Lucila Adriana Castañeda Córdoba.",
+  "addresses": [
+    {
+      "full": "Av. Nexxus #100 consultorio 415,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Av. Nexxus #100 consultorio 415,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucila-adriana-castaneda-cordoba/ginecologo/general-escobedo#address-id=94909&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:01.135Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__lucila_adriana_casta_eda_cordoba.webp"
+}

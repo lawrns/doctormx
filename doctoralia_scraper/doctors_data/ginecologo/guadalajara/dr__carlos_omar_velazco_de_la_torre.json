@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Omar Velazco de la Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c2f4f/9c2f4f7712507cfe5123e9c98990d8dd_220_square.jpg",
+  "about": "Formación académica: Médico Cirujano/Universidad Autónoma de Guadalajara. Especialidad Ginecología y Obstetricia/ Hospital General de Occidente / Universidad de Guadalajara. Diplomado en Biología de la Reproducción, Reproducción Asistida y Endocrinología Ginecológica/ Instituto VIDA/ Hospital Puerta de Hierro. Aval UdeG. Diplomado en Colposcopia y Patología del Tracto Genital Inferior / Hospital Esperanza López Mateos. Aval UdeG Diplomado en Ecosonografía. Aval Universidad de Barcelona. Experiencia Laboral: Médico Adscrito IMSS / Centro Médico Nacional de Occidente/UMAE Práctica Privada/ GINE FEMELLE/ Centro Hospitalario Oblatos.",
+  "addresses": [
+    {
+      "full": "Centro Hospitalario Oblatos Avenida Belisario Domínguez 288 para cualquier cambio de cita comunicarse al 3801-9660,"
+    },
+    {
+      "full": "Centro Hospitalario Oblatos Avenida Belisario Domínguez 288 para cualquier cambio de cita comunicarse al 3801-9660,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-omar-velazco-de-la-torre/ginecologo/guadalajara#address-id=149372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:07.112Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__carlos_omar_velazco_de_la_torre.webp"
+}

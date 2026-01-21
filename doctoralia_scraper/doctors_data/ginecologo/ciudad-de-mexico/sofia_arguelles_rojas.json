@@ -1,0 +1,25 @@
+{
+  "name": "Sofia Arguelles Rojas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Sur 132 108,"
+    },
+    {
+      "full": "C. Sur 132 108,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sofia-arguelles-rojas/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:13:11.536Z",
+  "localPhotoPath": null
+}

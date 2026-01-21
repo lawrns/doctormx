@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Javier Rivero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 110,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/873c41/873c41ff3003768fc23c335b89a554a3_220_square.jpg",
+  "about": "Ginecología En Reina Madre contamos con atención médica integral en Ginecología y Obstetricia. En nuestras clínicas encontrarás todo en un solo lugar: Consultas Ginecológicas y de embarazo, Check ups Ginecológicos, Ultrasonidos especializados y 4D, Laboratorios y Farmacia. Contamos con médicos especialistas y subespecialistas que te entienden y te apoyan en cada etapa de tu vida; brindándote atención segura y personalizada para ti y para los que más amas. Promovemos el parto humanizado y la cesárea respetada. Favorecemos el apego inmediato y la lactancia materna por lo que contamos con asesoras que te ayudarán a lograr una lactancia materna exitosa.",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-rivero/ginecologo/naucalpan-de-juarez2#address-id=433777&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:24.469Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__javier_rivero.webp"
+}

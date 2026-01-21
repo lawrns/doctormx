@@ -1,0 +1,18 @@
+{
+  "name": "Dra. Carolina Navarro Venegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f7bb6/4f7bb63ac74702f86623209e23fbe668_140_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-navarro-venegas/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:04:12.922Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_navarro_venegas.webp"
+}

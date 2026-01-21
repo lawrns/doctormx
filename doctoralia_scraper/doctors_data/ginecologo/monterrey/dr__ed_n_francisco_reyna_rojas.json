@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edén Francisco Reyna Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 679,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ac3efd/ac3efd0d4d32595f0d240c8db52a54d0_220_square.jpg",
+  "about": "Soy médico especialista certificado en Ginecología y experto en Medicina Materno Fetal, mi finalidad es ofrecerte la mejor atención para darte tranquilidad durante este momento del embarazo. Te ofrecemos un control de embarazo de la mejor calidad, así como los estudios y la tecnología de vanguardia para llevar tu embarazo a un feliz término. Puedo garantizarte que tu salud está en buenas manos.",
+  "addresses": [
+    {
+      "full": "Ave. Nexxus 100 (PARQUE IND. Y DE NEGOCIOS NEXXUS),"
+    },
+    {
+      "full": "15 de Mayo 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $900"
+    },
+    {
+      "name": "Ecografía anatómica y genética",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eden-francisco-reyna-rojas/ginecologo/nuevo-leon#address-id=2138&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:23.317Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ed_n_francisco_reyna_rojas.webp"
+}

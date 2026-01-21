@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cinthya Verver Moreno",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 532,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/167d57/167d576507b28ba9451dc6c08aafee55.jpg",
+  "about": "Soy Médico Cirujano egresada de la Facultad de Medicina de la Universidad Nacional Autónoma de México, cursé mis estudios de especialidad en la Universidad Autónoma del Estado de México específicamente en el Hospital Materno Infantil del ISSEMYM. Diplomada en Colposcopía en la Clínica de Displasias del Hospital General de México. Soy médico certificada y recertificada por el Consejo Mexicano de Especialista en Ginecología y Obstetricia, así como miembro de la Federación Mexicana de Colegios de Obstetricia y Ginecología, A.C. Miembro activo del Colegio Médico del Hospital Ángeles México además de haber ocupado el cargo de Primer Secretario Suplente en el Consejo Directivo del mismo Colegio. Involucrada en la preparación de los futuros médicos y especialistas, soy profesora de cátedra en la Escuela de Medicina y Ciencias de la Salud del Instituto Tecnológico y de Estudios Superiores de Monterrey además de ser coordinadora de la materia en el Campus CCM, participo como profesora adjunta para la Universidad Nacional Autónoma de México en Posgrado en la Especialidad de Ginecología y Obstetricia. He tenido la oportunidad de laborar tanto a nivel institucional público como a nivel privado así como hacer labor asistencial con diversas fundaciones y asociaciones sin fines de lucro en pro de la salud de la mujer. Constantemente me actualizo en cursos nacionales e internacionales. Fuera del ámbito médico soy fanática de diversos deportes así como de la música y la lectura.Permiso COFEPRIS: 2409145036X00960",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthya-verver-moreno/ginecologo/miguel-hidalgo#address-id=535241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:45.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cinthya_verver_moreno.webp"
+}

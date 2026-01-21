@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Silvia Córdova Jarero",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 52,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Bordo de Xochiaca N°3, Av. Ciudad Jdn. 2B, Bicentenario, 57205 Nezahualcóyotl, Méx.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $2,200"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Ultrasonido avanzado del tercer trimestre (A partir de la semana 32)",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Ultrasonido para marcadores de Síndrome de Down",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-cordova-jarero/ginecologo/ciudad-de-mexico#address-id=10907&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:57.802Z",
+  "localPhotoPath": null
+}

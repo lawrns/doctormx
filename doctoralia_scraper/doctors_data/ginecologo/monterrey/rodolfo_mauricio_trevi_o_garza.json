@@ -1,0 +1,37 @@
+{
+  "name": "Rodolfo Mauricio Treviño Garza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Condominio Morelos Esq. Juarez 133,"
+    },
+    {
+      "full": "Av. Benito Juarez S/N,"
+    },
+    {
+      "full": "Av. Batallon De San Patricio 112,"
+    },
+    {
+      "full": "Condominio Morelos Esq. Juarez 133,"
+    },
+    {
+      "full": "Av. Benito Juarez S/N,"
+    },
+    {
+      "full": "Av. Batallon De San Patricio 112,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodolfo-mauricio-trevino-garza/ginecologo/monterrey#address-id=176703&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:33.399Z",
+  "localPhotoPath": null
+}

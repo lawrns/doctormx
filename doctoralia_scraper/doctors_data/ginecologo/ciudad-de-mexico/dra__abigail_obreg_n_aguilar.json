@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Abigail Obregón Aguilar",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/eb6d9844/eb6d9844-b4ee-4b47-8c77-1a845dcd2a58_small_square.jpg",
+  "about": "Soy la doctora Abigail Obregón Aguilar, ginecóloga y obstetra. Estudie medicina en la Facultad de medicina de la UNAM y posteriormente realice la especialidad de ginecología y obstetricia en la Unidad Médica de Alta Especialidad Luis Castelazo Ayala Número 4. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia y me encuentro en actualización continua para poder brindar una atención médica de calidad. Me caracterizo por acompañar con empatía, experiencia y calidez a mujeres en cada etapa de su vida, brindando un espacio de confianza, prevención y cuidado integral de la salud femenina. Mi formación me permite ayudar a mis pacientes en el diagnóstico de enfermedades como sangrado uterino anormal, síndrome climatérico,menopausia,enfermedades de transmisión sexual,métodos anticonceptivos,síndrome de ovario poliquístico, dar seguimiento a embarazo mediante el control prenatal, atención de parto y cesárea, además de realizar cirugías ginecológicas como histerectomía.",
+  "addresses": [
+    {
+      "full": "Tuxpan 16, Colonia Roma sur, Cuauhtémoc,"
+    },
+    {
+      "full": "Tuxpan 16, Colonia Roma sur, Cuauhtémoc,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $350"
+    },
+    {
+      "name": "Ultrasonido obstétrico (vía transvaginal)",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abigail-obregon-aguilar-2/ginecologo/ciudad-de-mexico#address-id=592843&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:58.973Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__abigail_obreg_n_aguilar.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nadia Lizeth Rubio Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "//platform.docplanner.com/img/es/badge/doctoralia-awards-nominees-2018.svg",
+  "about": "Hola¡¡ Me pongo a sus ordenes para control de embarazo normal y de alto riesgo, mi subespecialidad me permite realizar ecografia de control prenatal como tamizaje del primer trimestre (traslucencia nucal) ultrasonido anatomico y 4D, ultrasonido doppler; los cuales son cortesía en consulta para mis pacientes en control prenatal. También para cualquier tipo de consulta ginecologica: Irregularidades menstruales, metodos de planificacion familiar, check up anual, toma de papanicolau, etc.",
+  "addresses": [
+    {
+      "full": "Calle HIDALGO 1910 poniente , 4to piso, consultorio 7,"
+    },
+    {
+      "full": "Calle HIDALGO 1910 poniente , 4to piso, consultorio 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nadia-lizeth-rubio-fernandez/ginecologo/nuevo-leon#address-id=83071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:41.599Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__nadia_lizeth_rubio_fernandez.webp"
+}

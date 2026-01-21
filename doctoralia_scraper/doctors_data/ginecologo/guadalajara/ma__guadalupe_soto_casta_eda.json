@@ -1,0 +1,37 @@
+{
+  "name": "Ma. Guadalupe Soto Castañeda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    },
+    {
+      "full": "Av. Plan De San Luis 1805,"
+    },
+    {
+      "full": "Jorge Alvarez Del Castillo 1467,"
+    },
+    {
+      "full": "Av. Belisario Dominguez 771,"
+    },
+    {
+      "full": "Av. Plan De San Luis 1805,"
+    },
+    {
+      "full": "Jorge Alvarez Del Castillo 1467,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-guadalupe-soto-castaneda/ginecologo/guadalajara#address-id=197355&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:51.032Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jorge Lopez Bonilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/aeb5a2df/aeb5a2df-4707-4089-a22c-85bf3d880ac6_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tenorios no. 192, Hacienda coapa,"
+    },
+    {
+      "full": "Tenorios no. 192, Hacienda coapa,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-lopez-bonilla/ginecologo/tlalpan#address-id=110412&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:24.187Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jorge_lopez_bonilla.webp"
+}

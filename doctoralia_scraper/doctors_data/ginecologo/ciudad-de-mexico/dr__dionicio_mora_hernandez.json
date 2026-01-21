@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Dionicio Mora Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b294d5/b294d50a67a52b7651a4755f0051f4e8_220_square.jpg",
+  "about": "Sobre mí Soy médico especialista en Ginecología, obstetricia y colposcopía; La licenciatura de Medico Cirujano realizada en Universidad Autónoma de Campche, especialidad en Hospital O´Horán de Mérida Yuc. y avalado por la Universidad Autónoma de Yucatán. Diplomado en Colposcopía en Hospital General de Occidente, Zapopan, Jal. y Diplomado en endocrinología ginecológica avalado por la Universidad de la Salle. Mi propósito otorgar atención médica a las mujeres, enfocado en la prevención y tratamiento médico o quirúrgico. ¿Por qué elegirme a mí? Ofezco atención con calidad; ofrezco explicación detallada con lenguaje comprensible para los pacientes. Tengo la experiencia y equipo necesario para tratamiento de infección por virus papiloma humano y lesiones precancerosas del cuello uterino. Principales áreas de tratamiento Me dedico a la atención de enfermedades propias de la mujer (ginecología) y a la atención del embarazo y su resolución (parto, cesárea). Entre las enfermedades ginecológicas que atiendo: sangrado uterino anormal, miomatosis uterina, estado hiperandrogénicos como el síndrome de ovario poliquístico; infección por virus papiloma humano. Servicio de planificación familiar. Mi consulta y mi equipo Dado que la consulta ginecológica siempre genera ansiedad y preocupación en casi todas las pacientes; siempre trato de generar y cultivar la confianza en la relación médico-paciente; con la finalidad que al término de la consulta, la paciente salga satisfecha con el servicio y confianza en su tratamiento a seguir. Otros servicios otros servicios que se otorgan son: Prueba de virus papiloma humano por PCR, Panel de enfermedades de transmisión sexual; Papanicolaou. Vacunación contra virus papiloma humano. Toma de biopsia de cérvix y de endometrio. Más sobre mí Mi experiencia laboral institucional: 20 años de servicio en Hospitales de la Secretaría de Marina.",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174,"
+    },
+    {
+      "full": "Calzada de la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dionicio-mora-hernandez/ginecologo/iztapalapa#address-id=91312&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:40.315Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__dionicio_mora_hernandez.webp"
+}

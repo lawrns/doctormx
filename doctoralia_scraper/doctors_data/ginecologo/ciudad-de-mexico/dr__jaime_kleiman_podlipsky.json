@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jaime Kleiman Podlipsky",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 99,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3dbc03/3dbc0379a133772d5f892e169b8959bd_220_square.jpg",
+  "about": "Especialista con más de 20 años de experiencia, recertificado por el consejo de la especialidad, con especial atención en menopausia, cirugía por laparoscopia, virus de papiloma humano (VPH) embarazo de alto riesgo. En la primera consulta se realiza la historia clínica completa, exploración física completa, ultrasonografía (Sin costo adicional), y toma de muestras (en su caso). ,",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca 240 Hacienda de las Palmas - 201,"
+    },
+    {
+      "full": "Avenida Ejército Nacional 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-kleiman-podlipsky/ginecologo/huixquilucan#address-id=54182&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:40.926Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jaime_kleiman_podlipsky.webp"
+}

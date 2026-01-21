@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Benjamín Castañeda Valdivia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 387,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1a32b2e5/1a32b2e5-0ce6-48f7-bb8d-b724714906a6_small_square.jpg",
+  "about": "Soy el Dr. Carlos Benjamín Castañeda Valdivia, originario de Aguascalientes, y con una sólida formación en Ginecología y Obstetricia en la Ciudad de México. A lo largo de mi carrera, he tenido la fortuna de realizarme profesionalmente en diversos ámbitos de la salud, incluyendo diplomados en áreas especializadas como Colposcopia, Laparoscopia y Patología del Tracto Genital Inferior. Mi experiencia abarca tanto el sector público como privado, habiendo trabajado en instituciones de renombre como el IMSS, ISSSTE, y el STC, así como en hospitales de alto nivel. Esto me ha permitido enriquecer mi práctica y ofrecer a cada paciente una atención basada en la experiencia, el respeto y la confianza. Mi compromiso es brindarte una atención de calidad, cercana y humana. Mi principal objetivo es que te sientas respaldada en cada momento, con la certeza de que tu bienestar es lo más importante para mí. A lo largo de los años, me he dedicado no solo a ofrecer tratamientos médicos de vanguardia, sino a acompañarte con calidez y empatía en cada etapa de tu salud.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 58,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-benjamin-castaneda-valdivia-3/ginecologo/ciudad-de-mexico#address-id=15572&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:02.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_benjam_n_casta_eda_valdivia.webp"
+}

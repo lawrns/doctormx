@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Felipe Soto Ornelas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Historiadores S-44 Cd. Satélite.,,"
+    },
+    {
+      "full": "Circuito Historiadores S-44 Cd. Satélite.,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-soto-ornelas/ginecologo/naucalpan-de-juarez#address-id=25745&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:57.370Z",
+  "localPhotoPath": null
+}

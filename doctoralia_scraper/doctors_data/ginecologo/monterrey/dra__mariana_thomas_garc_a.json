@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mariana Thomas García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 111,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/258522/2585223d138c5e697ed03d5a875f5601_220_square.jpg",
+  "about": "Busco brindar atención certera y especializada a la mujer en todas las etapas de la vida. Enfocada en dar atención oportuna en embarazos de alto riesgo tanto por patología materna como fetal. Diagnóstico prenatal y pronóstico perinatal.",
+  "addresses": [
+    {
+      "full": "Avenida Revolución 1999,"
+    },
+    {
+      "full": "Avenida Constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ecografía anatómica y genética",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ecografía anatómica y genética",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-thomas-garcia/ginecologo/nuevo-leon#address-id=515674&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:18.123Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mariana_thomas_garc_a.webp"
+}

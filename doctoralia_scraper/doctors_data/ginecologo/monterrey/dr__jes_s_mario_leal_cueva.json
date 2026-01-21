@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Mario Leal Cueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4cc791/4cc7915b6f380d6c486290c5127715c6_220_square.jpg",
+  "about": "SOY UN MÉDICO CON LA ESPECIALIDAD DE GINECOLOGÍA Y OBSTETRICIA, CERTIFICADO, CON EXPERIENCIA PROFESIONAL DE 28 AÑOS EN HOSPITALES PÚBLICOS Y PRIVADOS Y MAESTRO DE PREGRADO Y POSTGRADO. ENFOCADO PROFESIONALMENTE EN LA ATENCIÓN DE LA PACIENTE EMBARAZADA EVALUANDO SU NIVEL DE RIESGO Y REALIZANDO LAS MEDIDAS PREVENTIVAS Y DE MANEJO PARA LLEGAR A UN FELIZ TÉRMINO CON UNA MAMA SANA Y UN BEBE SALUDABLE. ADEMAS CUENTO CON LA EXPERIENCIA PARA RESOLVER CON MANEJO MÉDICO O QUIRÚRGICO LOS PROBLEMAS GINECOLÓGICOS TALES COMO SANGRADO UTERINO ANORMAL, TUMORES UTERINOS, TUMORES DE OVARIO, LESIONES PRE-CANCEROSAS DE CÉRVIX, ASÍ COMO EL MANEJO DE LA PACIENTE EN EL CLIMATERIO Y MENOPAUSIA, PLANIFICACIÓN FAMILIAR, Y CON INFECCIONES GENITALES, ETC.",
+  "addresses": [
+    {
+      "full": "ECUADOR 2331-1007A,"
+    },
+    {
+      "full": "ECUADOR 2331-1007A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-mario-leal-cueva/ginecologo/nuevo-leon#address-id=18344&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:01.304Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jes_s_mario_leal_cueva.webp"
+}

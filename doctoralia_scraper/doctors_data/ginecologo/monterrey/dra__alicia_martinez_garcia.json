@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alicia Martinez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 602,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/97ea2393/97ea2393-afd3-4795-a20f-06a09b071c0c_large.jpg",
+  "about": "Especialista certificada en Ginecologia y Obstetricia, Colposcopia Ginecológica, Electrocirugîa cervical, atención VPH y diplomado de climaterio y menopausia, consulta personalizada , atención humanizada y confidencial. HOSPITAL HOSPITARIA 6 PISO CONST 618",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $5,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Láser Co2 para tensado vaginal (monalisa)",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-martinez-garcia/ginecologo/general-escobedo#address-id=334988&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:06.470Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alicia_martinez_garcia.webp"
+}

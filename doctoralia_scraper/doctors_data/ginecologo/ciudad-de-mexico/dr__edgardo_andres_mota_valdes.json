@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Edgardo Andres Mota Valdes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a69b48/a69b48af679654689d685beea36c3025_220_square.jpg",
+  "about": "Soy el Dr. Edgardo Andres Mota Valdes y me especializo en ginecología. Me dedico a atender a adultos y niños a partir de 2 años, con especial atención en casos de embarazo normal y de alto riesgo así como colposcopía, con atención infecciones vaginales y VPH. Además, me apasiona mi trabajo y siempre busco estar actualizado en los últimos avances médicos y tecnológicos para brindar la mejor atención a mis pacientes. En cada consulta, me tomo el tiempo para explicar detalladamente y resolver todas las dudas de mis pacientes, y siempre busco ofrecer un trato amable y profesional. Me enorgullece que mis pacientes confíen en mí y me recomienden ampliamente. Si buscas un ginecólogo comprometido y con experiencia, no dudes en contactarme. Estaré encantado de atenderte y ayudarte en todo lo que necesites.",
+  "addresses": [
+    {
+      "full": "Av. Central 266,"
+    },
+    {
+      "full": "Av. Central 266,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Electrocirugía",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgardo-andres-mota-valdes-2/ginecologo/azcapotzalco#address-id=327165&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:29.591Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgardo_andres_mota_valdes.webp"
+}

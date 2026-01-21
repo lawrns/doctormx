@@ -1,0 +1,40 @@
+{
+  "name": "Dra. Danae Plauchu Rosales",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99d741/99d7416e433276560fe03ebb27d16ea2_220_square.jpg",
+  "about": "Hola! Soy la Dra Danae Plauchu, Ginecóloga y obstetra con una subespecialidad en Medicina Materno Fetal, la cual se encarga de llevar los embarazos de alto riesgo, así como realizar ultrasonidos para diagnosticar o descartar diferentes tipos de síndromes y malformaciones en el feto o riesgos de enfermedades en el embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad #234 piso 4 cm 9A,"
+    },
+    {
+      "full": "privada,"
+    },
+    {
+      "full": "Avenida Universidad #234 piso 4 cm 9A,"
+    },
+    {
+      "full": "privada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/danae-plauchu-rosales/ginecologo/ciudad-de-mexico#address-id=455134&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:03.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__danae_plauchu_rosales.webp"
+}

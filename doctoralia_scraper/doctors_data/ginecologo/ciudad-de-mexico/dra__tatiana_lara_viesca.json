@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Tatiana Lara Viesca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/407127/4071275e3c12eabf7c8d7db6507fb73a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida San Agustin No. 2, (Clínica La Jolla, Consultorio 10B).,"
+    },
+    {
+      "full": "Avenida San Agustin No. 2, (Clínica La Jolla, Consultorio 10B).,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia en malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tatiana-lara-viesca/ginecologo/naucalpan-de-juarez#address-id=75968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:34.389Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__tatiana_lara_viesca.webp"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Itzell S. Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 340,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3ed2c/b3ed2c7fc6d44d20df98a22ee3ca3caa_220_square.jpg",
+  "about": "Soy especialista en ginecología y obstetricia, egresada de la Facultad Mexicana de Medicina de la Universidad La Salle, con subespecialidad en Medicina Materno-Fetal en el Hospital Regional Lic. Adolfo López Mateos del ISSSTE en la Ciudad de México, avalada por la UNAM. He realizado diversas publicaciones relacionadas a embarazo ectópico y preeclampsia, así como cursos de educación continua tanto en México como en España. Mi pasión son mis pacientes, poder acompañarlas en las diferentes etapas de su vida. Me caracterizo por mi gran profesionalismo y calidez humana, así como la empatía por todas mis pacientes ya que no solo es mi profesión sino mi pasión.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzell-s-martinez/ginecologo/iztacalco#address-id=252834&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:53.512Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__itzell_s__mart_nez.webp"
+}

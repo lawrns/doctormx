@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Cinthya Salazar Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5a9216/5a9216262db49e13073c27f66d5c3fb8_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Miguel de Cervantes Saavedra 233,"
+    },
+    {
+      "full": "Blvd. Miguel de Cervantes Saavedra 233,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthya-salazar-jimenez-2/ginecologo/ciudad-de-mexico#address-id=400371&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:23.308Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cinthya_salazar_jim_nez.webp"
+}

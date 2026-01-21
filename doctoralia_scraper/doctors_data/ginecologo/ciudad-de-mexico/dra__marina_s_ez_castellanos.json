@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marina Sáez Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ba92c248/ba92c248-322f-453f-813f-499bc67ea348_small_square.jpg",
+  "about": "Con 36 años de trayectoria, he tenido experiencias de múltiples casos tan complejos que se convirtieron en vivencias únicas muy gratificantes, con la resolución de embarazos con mínimas posibilidades de éxito. Para mí, es una gran satisfacción ayudar a mis pacientes, en el reto de un embarazo de alto riesgo, o de resolver toda una gama de problemas en salud femenina. Hoy día en esas pacientes ahora disfruto la me- ta de lograr calidad de vida a largo plazo, trabajando la terapia antienvejecimiento.",
+  "addresses": [
+    {
+      "full": "Av. Coyoacán 1058 desp A 502, Colonia del Valle Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marina-saez-castellanos/ginecologo/benito-juarez#address-id=53678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:42.113Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marina_s_ez_castellanos.webp"
+}

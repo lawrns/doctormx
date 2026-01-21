@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Oscar Zamorate Covarrubias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/94206f/94206f8f418e5e860da410b76bb3108d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Margarita Maza de Juarez No 6 Primer Piso,"
+    },
+    {
+      "full": "Margarita Maza de Juarez No 6 Primer Piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $450"
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-zamorate-covarrubias/ginecologo/xochimilco#address-id=93571&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:54.140Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__oscar_zamorate_covarrubias.webp"
+}

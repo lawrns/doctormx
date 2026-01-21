@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Indhira García Banda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d5ae59/d5ae5967168d893ab5bae304944334e6_220_square.jpg",
+  "about": "Hola soy la Dra. Indhira García Banda, estudie medicina en la Universidad Autónoma de Puebla y posteriormente decidí especializarme en ginecología y obstetricia, realizando mis estudios en uno de los mejores lugares del país La Gineco 4 en CDMX. Estoy comprometida con mi profesión y constantemente estoy actualizándome en distintas áreas y técnicas de mi especialidad para ofrecerte lo mejor de la medicina actual. Cuento con los siguientes diplomados: -Diplomado de colposcopia y patologías del tracto genital inferior. UNAM. Hospital General de México -Diplomado de ultrasonido especializado en ginecología y obstetricia. Universidad La Salle. Medicacapacitación -Diplomado de cirugía de mínima invasión en ginecología. UNAM. Hospital Angeles Universidad -Diplomado de endocrinología ginecológica. Asociación mexicana de ginecología endocrinológica (AMEGIN). UDLAP Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. La Ginecología y obstetricia es mi pasión y mi enfoque para preservar tu salud es siempre conservador, limitándome a realizar procedimientos cuando son absolutamente necesarios para conservar tu salud. El consultorio de ginecología debe ser siempre un lugar seguro donde te sientas libre de expresarte; yo sé que ir al médico, en particular al ginecólogo puede generar en muchas mujeres angustia, temor, vergüenza, entre otros sentimientos negativos que pueden llevarnos a posponer o cancelar nuestras visitas al médico. Por ello mi objetivo es ayudarte, hacerte sentir segura y en confianza para que puedas compartir conmigo todas tus inquietudes y acompañarte en todas las etapas de tu vida.",
+  "addresses": [
+    {
+      "full": "Avenida División del Norte #3395, colonia El Rosario.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/indhira-garcia-banda/ginecologo/coyoacan#address-id=484895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:27.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__indhira_garc_a_banda.webp"
+}

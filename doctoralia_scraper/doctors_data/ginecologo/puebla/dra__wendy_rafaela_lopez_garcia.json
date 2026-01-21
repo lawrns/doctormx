@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Wendy Rafaela Lopez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/242eebbb/242eebbb-fae8-48d2-8b4c-05de9ad233a1_small_square.jpg",
+  "about": "Somos una red de clínicas para la mujer con presencia en el Estado de México y Ciudad de México. Nuestro modelo de atención está centrado en el paciente y le brinda todo lo que necesita desde un solo lugar.",
+  "addresses": [
+    {
+      "full": "Av. Juárez, C. 23 Sur 2301, Zona Esmeralda, 72090 Puebla, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wendy-rafaela-lopez-garcia/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:04.806Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__wendy_rafaela_lopez_garcia.webp"
+}

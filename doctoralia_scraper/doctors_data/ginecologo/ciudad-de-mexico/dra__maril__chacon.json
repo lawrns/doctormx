@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marilú Chacon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/38c7e1/38c7e1a4639511588b02d305cd251571_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia , egresada de la Universidad Central de Venezuela, certificada por el Consejo Mexicano de Ginecología y Obstetricia, con más de 25 años de experiencia profesional, que incluye colposcopia, (CON DIPLOMADO REALIZADO EN MEXICO)VPH, citologías, estudio de fertilidad, manejo de embarazos de alto riesgo, ginecología endocrina, menopausia , cirugía ginecológica y Obstétrica. AMPLIA RELACION MEDICO PACIENTE",
+  "addresses": [
+    {
+      "full": "Calzada de las Bombas 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,900"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Ecografía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marilu-chacon/ginecologo/coyoacan#address-id=378742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:26.648Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maril__chacon.webp"
+}

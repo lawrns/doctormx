@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maribel Campos Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4c6284/4c62843b2417e2d0a94d14573bdc465e_220_square.jpg",
+  "about": "la atención integra en el área de ginecología y obstetricia, siendo esta una especialidad que estudia el aparato reproductor femenino, embarazo y enfermedades que se presentan a lo largo de la vida de la mujer, muchas de estas enfermedades actualmente pueden ser prevenibles y curables con una detección oportuna, visitando al profesional, esto es lo que te puedo brindar como especialista de esta area",
+  "addresses": [
+    {
+      "full": "Boulevard Adolfo Lopez Mateos 1201 (poniente, esquina con leonardo da vinci)EN HOSPITAL DE JESÚS,"
+    },
+    {
+      "full": "Boulevard Adolfo Lopez Mateos 1201 (poniente, esquina con leonardo da vinci)EN HOSPITAL DE JESÚS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maribel-campos-ramirez/ginecologo/celaya#address-id=127236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:02.905Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maribel_campos_ramirez.webp"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Dra. Itzel Vázquez Ferrero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 391,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c79ea/6c79ea30d6259392cdb99798e053e17a.jpg",
+  "about": "Soy la Dra. Itzel Vázquez Ferrero especialista en Ginecología y Obstetricia con más de 12 años de experiencia, con subespecialidad en Medicina Materno‑Fetal egresada del Instituto Nacional de Perinatología, y cuento con práctica clínica en el Hospital Militar de Especialidades en la Mujer y Neonatología.Mi principal interés está enfocado en la salud de la mujer durante el embarazo, incluyendo aquellos casos con condiciones de base como hipertensión, diabetes, lupus o endocrinología, así como en la salud del feto como paciente. Busco desde el control prenatal hasta la detección temprana de complicaciones, para mejorar la calidad de vida en la etapa adulta del bebé.Me especializo en el manejo integral de embarazos de alto riesgo, perinatología, prevención de preeclampsia, diabetes gestacional, diagnóstico de anomalías fetales y acompañamiento en casos de infertilidad, pérdida gestacional recurrente o aborto terapéutico.Mi enfoque combina rigor médico con atención humana y empática, brindando un espacio de confianza donde la paciente es escuchada, informada y acompañada durante todo su proceso. Creo firmemente que la prevención y el diagnóstico oportuno pueden marcar la diferencia en el desarrollo del embarazo y en el bienestar de madre e hijo.",
+  "addresses": [
+    {
+      "full": "Gobernador Gregorio V. Gelati 29 San miguel Chapultepec I Sección consultorio 105,"
+    },
+    {
+      "full": "Puente de Piedra 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $2,300"
+    },
+    {
+      "name": "ULTRASONIDO DE REVISION ESTRUCTURAL 11-13.6 SEMANAS (PRIMER TRIMESTRE)",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-vazquez-ferrero/ginecologo/tlalpan#address-id=387619&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:53.576Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__itzel_v_zquez_ferrero.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Ximena Montes de Oca Meza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 75,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bbfdcc/bbfdcc29c9ded0662700b32832339306_220_square.jpg",
+  "about": "Permítanme presentarme.Soy médico egresado de la Universidad Anáhuac Mayab en Mérida, Yucatán. Posteriormente, realicé mi internado y servicio social en Cancún, en el Instituto Mexicano del Seguro Social (IMSS).Decidí especializarme en Ginecología y Obstetricia en el Hospital Ángeles Pedregal, uno de los hospitales más reconocidos de la Ciudad de México, donde descubrí las ventajas de la cirugía de mínima invasión. Durante mi especialidad, tuve la oportunidad de viajar a Miami para adquirir y perfeccionar habilidades en cirugía robótica ginecológica.Mi pasión por la cirugía de mínima invasión me llevó a cursar una alta especialidad en Cirugía Endoscópica Ginecológica en el mismo hospital.En la actualidad, estoy en proceso de certificación en cirugía robótica ginecológica.En mi consulta, adopto un enfoque integral en la salud de la mujer, evitando el pesocentrismo. Evalúo a mis pacientes desde su primera menstruación, a lo largo de su etapa reproductiva y durante la menopausia, brindando un acompañamiento constante y personalizado.¡Soy Xime tu Gine y estoy aquí para ayudarte!",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055s,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-ximena-montes-de-oca-meza/ginecologo/magdalena-contreras#address-id=579913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:19.556Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_ximena_montes_de_oca_meza.webp"
+}

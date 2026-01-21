@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Santiago Castelazo Alatorre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/000297/0002970d6a43d94d01fb19e7b9a93c27_220_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia, egresado del Hospital Ángeles Lomas, avalado por la Universidad Nacional Autónoma de México, en 2017. Subespecialista en Medicina Materno-Fetal, egresado del Hospital Clínic Barcelona, en la ciudad de Barcelona, España, en 2020.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas, Consultorio 240,"
+    },
+    {
+      "full": "Hospital Angeles Lomas, Consultorio 240,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/santiago-castelazo-alatorre/ginecologo/huixquilucan#address-id=12674&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:39.222Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__santiago_castelazo_alatorre.webp"
+}

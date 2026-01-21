@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Stephanie Ríos Mena González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d28bd/3d28bdd2acdf79092ef8ed52027a7afe_220_square.jpg",
+  "about": "“Ginecóloga y obstetra en Monterrey, formada en el Hospital Universitario UANL. Atención cálida, profesional para cada etapa de tu vida.”Dra. Stephanie Ríos MenaGinecología y Obstetricia – Monterrey, N.L.Soy ginecóloga y obstetra en Monterrey, formada en el Hospital Universitario “Dr. José Eleuterio González” de la Facultad de Medicina de la UANL, con sólida experiencia en la atención integral de la salud femenina. Atiendo desde la adolescencia hasta la menopausia, brindando un trato profesional, humano y personalizado.Cuento con formación y práctica en: • Control prenatal y atención de parto y cesárea. • Planificación familiar y métodos anticonceptivos. • Manejo de trastornos menstruales, endometriosis, miomas, quistes ováricos e infecciones. • Tratamiento integral de síntomas de menopausia y climaterio.Cirugia ginecologica.En mi consulta lo más importante es tu seguridad, bienestar y comodidad. Busco que cada paciente se sienta escuchada y acompañada en todas las decisiones sobre su salud.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    },
+    {
+      "full": "Avenida Nogalar Sur 412,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-rios-mena-gonzalez/ginecologo/nuevo-leon#address-id=590709&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:00.414Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__stephanie_r_os_mena_gonz_lez.webp"
+}

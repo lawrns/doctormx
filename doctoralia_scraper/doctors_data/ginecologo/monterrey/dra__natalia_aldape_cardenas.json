@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Natalia Aldape Cardenas",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 39,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67d712/67d71216695c97b933bcad92c201baec_220_square.jpg",
+  "about": "GRADUADA DE LA UNIDAD MEDICA DE ALTA ESPECIALIDAD NO.23 DEL IMSS EN FEBRERO DEL 2012, AVALADA POR LA UNIVERSIDAD DE MONTERREY. CERTIFICADA POR EL COLEGIO DE GINECOLOGIA Y OBSTETRICIA DESDE EL 2012. DIPLOMADO EN MASTOLOGIA EN LA UNIDAD MÉDICA DE ALTA ESPECIALIDAD No. 23 DEL IMSS EN EL 2016",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $9,000"
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/natalia-aldape-cardenas/ginecologo/general-escobedo#address-id=27319&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:34.534Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__natalia_aldape_cardenas.webp"
+}

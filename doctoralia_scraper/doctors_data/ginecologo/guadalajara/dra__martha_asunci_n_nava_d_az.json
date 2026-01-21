@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Martha Asunción Nava Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da4eeb/da4eeb3b826f8da160615e312bf63c0a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pompeya 2942,"
+    },
+    {
+      "full": "Pompeya 2942,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-asuncion-nava-diaz/ginecologo/guadalajara#address-id=116911&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:12.442Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__martha_asunci_n_nava_d_az.webp"
+}

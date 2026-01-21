@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Marcela Romero Badillo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo De Las Americas 100,"
+    },
+    {
+      "full": "Paseo De Las Americas 1881,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 4600,"
+    },
+    {
+      "full": "Paseo De Las Americas 1881 104,"
+    },
+    {
+      "full": "Paseo De Las Americas 100,"
+    },
+    {
+      "full": "Paseo De Las Americas 1881,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 4600,"
+    },
+    {
+      "full": "Paseo De Las Americas 1881 104,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-marcela-romero-badillo/ginecologo/guadalupe#address-id=185635&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:07.038Z",
+  "localPhotoPath": null
+}

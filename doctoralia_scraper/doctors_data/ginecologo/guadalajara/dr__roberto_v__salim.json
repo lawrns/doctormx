@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Roberto V. Salim",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 823,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/eeb21cc7/eeb21cc7-e6c4-4dcb-b0a0-5a03284b4f65_large.jpg",
+  "about": "Soy ginecólogo certificado con 30 años de experiencia, especialista en reemplazo hormonal, natural, bioidéntico para tratamiento de Climaterio y Menopausia, atendemos problemas de la pareja como Andropausia. Mi consulta ginecologica incluye ademas del chequeo, colposcopia, toma del pap y eco pélvico. Estoy certificado, aceptamos todas las tarjetas crédito, incluido American Express.",
+  "addresses": [
+    {
+      "full": "Av. Empresarios #150, Piso 15, Consultorio 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Terapia de Reemplazo Hormonal (TRH)",
+      "price": "• $9,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-v-salim/ginecologo/zapopan#address-id=87581&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:52.236Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__roberto_v__salim.webp"
+}

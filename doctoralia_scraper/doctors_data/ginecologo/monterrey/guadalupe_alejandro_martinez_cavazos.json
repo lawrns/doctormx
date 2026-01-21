@@ -1,0 +1,37 @@
+{
+  "name": "Guadalupe Alejandro Martinez Cavazos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel L. Barragan 4850,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 4600,"
+    },
+    {
+      "full": "Av. Constitución 1881,"
+    },
+    {
+      "full": "Manuel L. Barragan 4850,"
+    },
+    {
+      "full": "Av. Adolfo López Mateos 4600,"
+    },
+    {
+      "full": "Av. Constitución 1881,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guadalupe-alejandro-martinez-cavazos/ginecologo/monterrey#address-id=223465&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:48:29.823Z",
+  "localPhotoPath": null
+}

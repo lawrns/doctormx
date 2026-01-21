@@ -1,0 +1,43 @@
+{
+  "name": "Celestina González Frias",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 360,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67704e/67704e717e3329573542b3111e5c8205.jpg",
+  "about": "La infección por virus del papiloma humano se ha incrementado de forma alarmante en los últimos años, las tasas de mayor prevalencia es en mujeres jóvenes menores de 24 años de edad. Las adolescentes que inician su vida sexual activa a edad temprana tiene mayor riesgo de adquirir la infección. Las displasía cervical leve, es habitualmente la manifestación de la infección por virus de papiloma humano y tiene un potencial maligno muy bajo, por lo que rara mente un NIC 1, también llamada lesión intraepitelial de bajo grado ó displasía cervical leve y no debe ser considerada como una lesión precancerosa. Las lesiones intraepiteliales generadas por la infección por VPH, normalizara espontáneamente en un periodo de tres años, siempre y cuando el sistema inmunológico este en condiciones óptimas. PARA QUE NUESTRO SISTEMA INMUNOLÓGICO SEA CAPAZ DE ELIMINAR LA INFECCIÓN POR VPH, SE REQUIERE DE: 1.-.Mantener una alimentación saludable( Dieta baja en carbohidratos y abundante en vegetales y proteínas). 2.-Efectuar ejercicio, mínimo 30 minutos al día. 3.-Dormir , mínimo 8 hrs al día. 4.-Promover el uso de métodos de barrera( preservativo) , durante la relación sexual. 5.-Disminuir el número de parejas sexuales. 6.-Evitar infecciones de transmisión sexual concomitantes( infeccioón por Chlamydia Trachomatis, Trichomoniasis, asi como infección por Gardnerella Vaginalis). Es necesario llevar vigilancia con papanicolaou y colposcopia y evitar tratamiento quirúrgico invasivo( que es considerado como un sobre tratatamiento). La clave en la prevención futura de cáncer cervico uterino es la vacunación congtra el virus del Papiloma humano, apartir de los 9 años de edad. Se recomienda la Vacunación contra el VPH( A las mujeres que no han iniciado su vida sexual activa, asi como las pacientes que ya presentaron la infección por este virus o lesiones premalignas vs cáncer cervicouterino). También es necesario efectuar pruebas de tamizaje contra el vph( por ejemplo toma de: papanicolaou, pruebas moleculares contra el vph, asi como estudio de colposcopia, para evaluar integralmente el tracto genital inferior de la mujer). El cáncer cervicouterino , es una enfermedad, que sigue cobrando vidas y que debe ser prevenible.",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celestina-gonzalez-frias/ginecologo/puebla#address-id=100043&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:55.957Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/celestina_gonz_lez_frias.webp"
+}

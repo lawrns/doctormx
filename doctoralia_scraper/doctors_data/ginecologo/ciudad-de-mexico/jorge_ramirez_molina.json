@@ -1,0 +1,31 @@
+{
+  "name": "Jorge Ramirez Molina",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calz. San Juan De Aragon 285,"
+    },
+    {
+      "full": "C. 313 421,"
+    },
+    {
+      "full": "Calz. San Juan De Aragon 285,"
+    },
+    {
+      "full": "C. 313 421,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-ramirez-molina/ginecologo/ciudad-de-mexico#address-id=213195&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:17.968Z",
+  "localPhotoPath": null
+}

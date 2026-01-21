@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cd648/2cd648f1e8c93f27e7b1a850a1274ab0_220_square.jpg",
+  "about": "Ginecólogo y Obstetra Certificado",
+  "addresses": [
+    {
+      "full": "Av 7 Pte 705,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-uribe/ginecologo/puebla#address-id=582124&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:51.312Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jes_s_uribe.webp"
+}

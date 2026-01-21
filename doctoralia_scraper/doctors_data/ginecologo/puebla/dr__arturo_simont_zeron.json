@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Arturo Simont Zeron",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 119,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8b9a8/d8b9a8e027abe9c0fa28132e6a1c442b.jpg",
+  "about": "\"Somos el grupo Gineco-obstetrico mas completo en la ciudad de Puebla, formado por destacados médicos, certificados para la atención de la mujer. Comprometidos con brindar a cada una de nuestras pacientes, un excelente servicio de salud de alta calidad humana basada en a confianza y empatía.\"",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-simont-zeron/ginecologo-medico-general/puebla#address-id=5435&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:44.865Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__arturo_simont_zeron.webp"
+}

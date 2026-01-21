@@ -1,0 +1,46 @@
+{
+  "name": "Dr. César Tawney Serrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4cbf5f/4cbf5fc9f05c7c09f90588765cb2a79b_220_square.jpg",
+  "about": "Nuestra visión es ofrecer un servicio de control de embarazo cercano y humanizado, respetando las normatividades y estándares nacionales e internacionales vigentes.",
+  "addresses": [
+    {
+      "full": "Domingo Sarmiento 2822-18,"
+    },
+    {
+      "full": "Domingo Sarmiento 2822-18,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-tawney-serrano/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:26:40.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__c_sar_tawney_serrano.webp"
+}

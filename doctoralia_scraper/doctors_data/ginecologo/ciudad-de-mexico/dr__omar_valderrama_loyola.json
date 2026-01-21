@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Omar Valderrama Loyola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1707,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b62ef/6b62ef937cc538fd81416ff35456d9fa.jpg",
+  "about": "Hola! Yo soy el Dr. Omar Valderrama OB / GYN, cursé mi educación universitaria en la Universidad Anáhuac México Norte, donde obtuve mi título de Médico Cirujano, con calificación sobresaliente en el examen de general para egreso de licenciatura (EGEL). Realicé mi curso de especialización médica en la Institución Gineco-Obstétrica y de Perinatología. Obtuve posgrado en medicina fetal por la Universidad Autónoma de Querétaro (2022-2023) y por Medicina Fetal México. Mis publicaciones incluyen \"Hierro carboximaltosa por vía intravenosa para el tratamiento de la anemia ferropénica en pacientes con hemorragia uterina anormal\" y \"El cirujano general frente al embarazo heterotópico roto. Presentación de un caso y revisión de la literatura”. Miembro de International Society of Ultrasound in Obstetrics and Gynecology y cursos de ¨Medicina fetal y diagnóstico prenatal¨ COMEGO y Curso Advanced Life Support in Obstetrics¨ de American Academy of Family Physicians. Las necesidades de salud de mis pacientes son lo primero. Mi práctica ofrece un alto nivel de servicio a la paciente con conocimientos en el campo de la obstetricia y ginecología. Si mi paciente llega con síntomas, recibe una evaluación exhaustiva y es posible que se le realicen pruebas de diagnóstico como análisis de sangre o imágenes de ultrasonido durante la consulta. La instalación de última generación es un consultorio de obstetricia / ginecología de servicio completo y ofrece atención médica y quirúrgica para las mujeres, incluida la atención prenatal, la atención ginecológica, el tratamiento de la menopausia, la cirugía mínimamente invasiva y cirugía mayor. Cuando mis pacientes acuden con problemas de salud de la mujer, ofrezco exámenes completos y atención personalizada enfocada. Mi práctica tiene una amplia experiencia en el tratamiento de afecciones como miomas uterinos, síndrome premenstrual, sangrado anormal, endometriosis, enfermedad inflamatoria pélvica y más. También ofrezco servicios especializados que incluyen colposcopia digital para prevención de cáncer cervino uterino y manejo de virus del papiloma human. Para la atención prenatal cuento cartdiotocografía y ultrasonido de alta gama para la evaluación del bienestar fetal. Entiendo que las pacientes pueden requerir atención de emergencia y ofrecen citas de emergencia el mismo día, incluidas las horas de la noche y los fines de semana. Si está buscando un consultorio de obstetricia / ginecología de servicio completo, reserve una cita.",
+  "addresses": [
+    {
+      "full": "Avenida del Taller 636,"
+    },
+    {
+      "full": "Avenida del Taller 636,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $999"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $999"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-valderrama-loyola/ginecologo/venustiano-carranza2#address-id=390563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:48.326Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__omar_valderrama_loyola.webp"
+}

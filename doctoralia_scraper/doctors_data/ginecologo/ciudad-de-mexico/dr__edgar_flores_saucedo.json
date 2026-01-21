@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Edgar Flores Saucedo",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 53,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ed6c3bcd/ed6c3bcd-c7e5-4d1b-9fa2-2e9b86a0c8f0_small_square.jpg",
+  "about": "Mi nombre es Edgar Flores Saucedo, soy ginecólogo, oncólogo y obstetra, y mi mayor compromiso es cuidar la salud integral de la mujer en cada etapa de su vida.Sé que acudir al médico muchas veces puede generar dudas, temores o incertidumbre. Por eso, mi objetivo es ofrecerte no solo un tratamiento médico de calidad, sino también un espacio de confianza, respeto y escucha.Mi labor no se limita a la prevención, diagnóstico y tratamiento de enfermedades ginecológicas y oncológicas; también acompaño a cada mujer en los momentos más importantes de su vida, como el embarazo y la maternidad. Creo firmemente que una atención médica empática y humana marca la diferencia en el bienestar físico y emocional de mis pacientes.En cada consulta encontrarás dedicación, profesionalismo y un compromiso profundo con tu salud. Mi propósito es caminar contigo, brindándote información clara, apoyo constante y las mejores alternativas de cuidado para que tomes decisiones seguras y con tranquilidad.Especialidad en Ginecología y ObstetriciaSubespecialidad en Ginecología OncológicaGinecología Oncológica. Universidad Nacional Autónoma de México. Cédula profesional 14146644Ginecología y Obstetricia. Universidad Nacional Autónoma de México. Cédula profesional 13272297",
+  "addresses": [
+    {
+      "full": "Avenida de la Herradura 030,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-flores-saucedo/ginecologo-oncologico-ginecologo/naucalpan-de-juarez2#address-id=593995&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:29.141Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_flores_saucedo.webp"
+}

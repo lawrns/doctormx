@@ -1,0 +1,25 @@
+{
+  "name": "Julieta Morales Mariscal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 192,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4ea913/4ea913531fa6b91f0b963852a68f955a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Morelos 2,"
+    },
+    {
+      "full": "C. Morelos 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-morales-mariscal/ginecologo/tlalnepantla-de-baz#address-id=203840&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:13.874Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/julieta_morales_mariscal.webp"
+}

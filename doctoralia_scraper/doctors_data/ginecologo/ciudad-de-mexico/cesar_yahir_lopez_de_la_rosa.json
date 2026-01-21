@@ -1,0 +1,37 @@
+{
+  "name": "Cesar Yahir Lopez De La Rosa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Tiber 100,"
+    },
+    {
+      "full": "Querétaro 144,"
+    },
+    {
+      "full": "Tabachin 123,"
+    },
+    {
+      "full": "Rio Tiber 100,"
+    },
+    {
+      "full": "Querétaro 144,"
+    },
+    {
+      "full": "Tabachin 123,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-yahir-lopez-de-la-rosa/ginecologo/ciudad-de-mexico#address-id=238778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:22.982Z",
+  "localPhotoPath": null
+}

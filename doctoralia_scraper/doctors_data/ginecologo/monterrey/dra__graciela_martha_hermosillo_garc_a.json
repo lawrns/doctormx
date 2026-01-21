@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Graciela Martha Hermosillo García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 92,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f42f9a/f42f9ad23144e589b9ace577d5ba19a2_220_square.jpg",
+  "about": "Graduada de la Carrera de Medico Cirujano y Partero. UDEM (2004-2011) Especialidad: Ginecología y Obstetricia, Universidad Autónoma de Coahuila (UadeC). 2014-2018 Alta especialidad: Colposcopía y Patología del Tracto Genital Inferior Diplomado en Menopausia y Climaterio Certificada por el Consejo Mexicano de Ginecología y Obstetricia A.C. UDEM: Profesora de Planta",
+  "addresses": [
+    {
+      "full": "Avenida Paseo de los Leones 3417 Local 319,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/graciela-martha-hermosillo-garcia/ginecologo/nuevo-leon#address-id=455496&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:31.231Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__graciela_martha_hermosillo_garc_a.webp"
+}

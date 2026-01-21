@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Diana Cuevas Velásquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0fadb2/0fadb2b7ca08c64699942a59256413dd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 1524, Piso 10, PO-05,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 1524, Piso 10, PO-05,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-cuevas-velasquez/ginecologo/ciudad-de-mexico#address-id=478127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:55.302Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_cuevas_vel_squez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alexia Alvarez Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d20d94/d20d9472917e5711cb6be322506a20c3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PASEO DE LOS TAMARINDOS 90 T1 P2, BOSQUES DE LAS LOMAS,"
+    },
+    {
+      "full": "PASEO DE LOS TAMARINDOS 90 T1 P2, BOSQUES DE LAS LOMAS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexia-alvarez-lozano/ginecologo/cuajimalpa-de-morelos#address-id=18597&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:54.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alexia_alvarez_lozano.webp"
+}

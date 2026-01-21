@@ -1,0 +1,66 @@
+{
+  "name": "Ana Cristina Salazar Melchor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 600,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a1b66/2a1b667296b4a25bc485647862467710_220_square.jpg",
+  "about": "¿Sabes que es un Check up Ginecológico? - Evaluación clínica Donde se investiga factores de riesgo, causas y damos seguimiento y tratamiento a tus padecimientos como mujer -Ultrasonido ginecológico Con su ayuda podemos detectar alteraciones anatómicas - Toma de Papanicolau Diseñado para detectar el cáncer cervicouterino, se realiza cuando la vida sexual ya está activa - Colposcopía Con ayuda de un microscopio y una luz potente se revisa el cuello uterino, vagina y genital externo en busca de lesiones, manchas o áreas anormales hasta con 10 años de anticipación de convertirse en cáncer - Revisión de Mastografía Necesaria anualmente a partir de los 40 años, este examen es vital. Permite detectar tumores difícil de encontrar en una autoexploración o revisión clínica TODO ESTO Y MAS SE INCLUYE EN TU CONSULTA Comunícate a nuestros teléfonos y comenta que nos viste en doctoralia, contamos con precios especiales Has tu cita ya y checate; recuerda que tu salud es primero!!!",
+  "addresses": [
+    {
+      "full": "TEMISTOCLES 210,"
+    },
+    {
+      "full": "Soledad 31 Amecameca Estado de Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cristina-salazar-melchor/ginecologo/ciudad-de-mexico#address-id=93121&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:42.481Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/ana_cristina_salazar_melchor.webp"
+}

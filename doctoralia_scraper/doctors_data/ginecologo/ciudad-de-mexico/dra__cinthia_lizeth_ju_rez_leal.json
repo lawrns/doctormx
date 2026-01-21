@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Cinthia Lizeth Juárez Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5e4fa0/5e4fa076c86cc608d414710662919230_220_square.jpg",
+  "about": "Soy la Dra. Cinthia Lizeth Juarez Leal, egresada como Médico Cirujano de la Universidad Autónoma del Estado de Guerrero, realice mis estudios de especialidad en Ginecología y Obstetricia avalada por la Universidad Autónoma del Estado de México, con sede en el Hospital Regional ISSEMyM Tlalnepantla, cuento con:Diplomado en Colposcopia y patología del tracto genital inferior avalado por la UNAM Diplomado en Histeroscopia avalado por la UNAMDiplomado en endoscopia ginecológica, Hospital Español, Universidad AnahuacCertificada por el Consejo Mexicano de Ginecología y Obstetricia y miembro del Colegio Mexicano de Ginecología y Obstetricia. Mi compromiso es ayudar a la mujer a tratar y prevenir las enfermedades ginecológicas, orientación sobre métodos de planificación familiar, en el área de Obstetricia apoyar y guiar juntas un adecuado control prenatal en embarazos de bajo y alto riesgo, todo en un ambiente seguro, tranquilo y en confianza donde puedan expresar sus inquietudes.",
+  "addresses": [
+    {
+      "full": "Avenida 3-A No. 60,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz No. 280,"
+    },
+    {
+      "full": "Avenida 3-A No. 60,"
+    },
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz No. 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-lizeth-juarez-leal/ginecologo/gustavo-a-madero#address-id=401742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:37.909Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cinthia_lizeth_ju_rez_leal.webp"
+}

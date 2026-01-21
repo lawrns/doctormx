@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Raquel Ariani Toledo Cadario",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/00edf7/00edf76b796aa10d05df097c918b193f_220_square.jpg",
+  "about": "Soy la Doctora Raquel Ariani Toledo Cadario, especialista en Ginecología y Obstetricia y Cirugía Ginecológica de mínima invasión. Me especializo en atender a las mujeres en todas las etapas de su vida, ofreciéndoles una atención de calidad y sobre todo humanizada, con mucho respeto hacia todas. Mi prioridad es que creemos un ambiente propicio para resolver todas las dudas y detalles que vayan surgiendo durante la consulta, así como explicar detalladamente el padecimiento y el tratamiento a seguir, tomando en cuenta las prioridades de la paciente para poder personalizar el mismo y así lograr excelentes resultados. Agradezco a todas las que depositaron y siguen depositando su confianza en mí, eso me motiva a seguir mejorando y sobre todo a mantenerme aún más actualizada por el beneficio de ustedes. Las espero pronto! :)",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-ariani-toledo-cadario/ginecologo/gustavo-a-madero#address-id=455940&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:25.623Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__raquel_ariani_toledo_cadario.webp"
+}

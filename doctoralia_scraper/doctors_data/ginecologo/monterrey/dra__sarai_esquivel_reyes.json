@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sarai Esquivel Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 133,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8dd8f9/8dd8f91df776274425604b63ee610351.jpg",
+  "about": "Soy la Dra. Sarai Esquivel Reyes, especialista en Ginecología y Obstetricia y Subespecialista en Medicina Materno Fetal. Egresada de la subespecialidad Médica en Medicina Materno Fetal en la Unidad Médica de Alta Especialidad No. 23 en Monterrey, Nuevo León. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Avalada por The Fetal Medicine Foundation",
+  "addresses": [
+    {
+      "full": "Av. Miguel Alemán 386,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ecografía",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Ecografía anatómica y genética",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sarai-esquivel-reyes/ginecologo/nuevo-leon#address-id=522747&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:52.148Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__sarai_esquivel_reyes.webp"
+}

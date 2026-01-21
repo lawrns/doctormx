@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Verónica Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 302,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/1c48c82d/1c48c82d-39e3-4c1f-b29c-45efdc641cd5_large.jpg",
+  "about": "¡Hola! Soy la Dra. Verónica Moreno Hernández, cuento con posgrado en Ginecología y Obstetricia avalado por la Universidad de Monterrey, certificada por el Consejo Mexicano de Ginecología y Obstetricia. Alta Especialidad en Colposcopia y patología del tracto genital inferior y VPH.",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-moreno-2/ginecologo/gustavo-a-madero#address-id=431437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:26.853Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ver_nica_moreno.webp"
+}

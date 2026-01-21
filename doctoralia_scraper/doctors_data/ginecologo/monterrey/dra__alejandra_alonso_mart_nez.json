@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Alonso Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/60328d/60328d2a6a118e22957d0e549f8e5fa3_220_square.jpg",
+  "about": "Soy la Dra Alejandra Alonso, especialista en Ginecología y Obstetricia por la UANL y con subespecialidad en Medicina Materno Fetal con formación en el Hospital Universitario de la UANL Me dedico a brindar atención personalizada y de alta calidad a todas mis pacientes. Mi objetivo es proporcionarles la mejor atención posible durante su embarazo y parto.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-alonso-martinez/ginecologo/nuevo-leon#address-id=583871&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:29.363Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alejandra_alonso_mart_nez.webp"
+}

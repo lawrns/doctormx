@@ -1,0 +1,31 @@
+{
+  "name": "Fernando Taboada Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes 26,"
+    },
+    {
+      "full": "Viena 17,"
+    },
+    {
+      "full": "Insurgentes 26,"
+    },
+    {
+      "full": "Viena 17,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-taboada-garcia/ginecologo/ciudad-de-mexico#address-id=228032&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:47.521Z",
+  "localPhotoPath": null
+}

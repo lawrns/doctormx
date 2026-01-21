@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Pedro Tonda Ribó",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5bdcaa/5bdcaac6df02c6e99cb6b9f9937cb51f_220_square.jpg",
+  "about": "Actualmente soy Gineco-obstetra especializado en Medicina materno fetal y cirugía ginecológica de mínima invasión con mas de 40 años de trayectoria",
+  "addresses": [
+    {
+      "full": "Av. Frida Kalho 180 desp. 301 B,"
+    },
+    {
+      "full": "Av. Frida Kalho 180 desp. 301 B,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": "• Desde $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-tonda-ribo/ginecologo/san-pedro-garza-garcia#address-id=108121&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:53.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__pedro_tonda_rib_.webp"
+}

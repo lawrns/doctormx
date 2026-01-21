@@ -1,0 +1,30 @@
+{
+  "name": "Dra. María Alicia Hernández Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Terranova 676 (int 103),"
+    },
+    {
+      "full": "Terranova 676 (int 103),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-alicia-hernandez-ramirez/ginecologo/guadalajara#address-id=55884&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:51.083Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Atziri Ramírez Negrín",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c9f7c/6c9f7c8b6b55552b8097893b0640d4d7_220_square.jpg",
+  "about": "La consulta ginecológica suele ser incómoda. En mi consulta trato de crear un ambiente de confianza donde puedas ser tú misma y ofrecer respuestas a tus inquietudes. Veo desde controles ginecológicos anuales hasta casos más complicados como infecciones vaginales crónicas, dolor pélvico de larga evolución y problemas por incontinencia después del embarazo. También doy terapia para fortalecer tus músculos después del parto. Acude conmigo y platicamos.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/atziri-ramirez-negrin/ginecologo/ciudad-de-mexico#address-id=9825&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:16.012Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__atziri_ram_rez_negr_n.webp"
+}

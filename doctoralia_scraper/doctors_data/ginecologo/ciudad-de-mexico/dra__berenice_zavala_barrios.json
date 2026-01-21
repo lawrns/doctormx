@@ -1,0 +1,23 @@
+{
+  "name": "Dra. Berenice Zavala Barrios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/670846/670846240e02f58a610b648d38322a7d_220_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-zavala-barrios/ginecologo/cuauhtemoc#address-id=2308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:03.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__berenice_zavala_barrios.webp"
+}

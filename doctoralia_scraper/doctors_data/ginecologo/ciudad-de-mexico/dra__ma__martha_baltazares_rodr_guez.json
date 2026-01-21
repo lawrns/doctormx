@@ -1,0 +1,98 @@
+{
+  "name": "Dra. Ma. Martha Baltazares Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0a3889/0a3889de3503063a266f31723ed6c6c7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De las Torres 22,"
+    },
+    {
+      "full": "Calle 2 # 15 Colonia Reforma Social Del Miguel Hidalgo Cd de Mx.,"
+    },
+    {
+      "full": "Av. Reforma #4 ,"
+    },
+    {
+      "full": "Av. De las Torres 22,"
+    },
+    {
+      "full": "Calle 2 # 15 Colonia Reforma Social Del Miguel Hidalgo Cd de Mx.,"
+    },
+    {
+      "full": "Av. Reforma #4 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $350"
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-martha-baltazares-rodriguez/ginecologo/naucalpan-de-juarez#address-id=17097&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:28.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ma__martha_baltazares_rodr_guez.webp"
+}

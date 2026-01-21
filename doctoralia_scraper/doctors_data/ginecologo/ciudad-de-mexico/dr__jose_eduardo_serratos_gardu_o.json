@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Eduardo Serratos Garduño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5c9b4/c5c9b4f9ff7d1782d82efb769b855285_220_square.jpg",
+  "about": "Medico Gineco Obstetra con un enfoque humanizado, con atención de parto respetado. Embarazos de alto riesgo. Con experiencia y alta especialidad en patología mamaria. Manejo de hormonas bioidenticas.",
+  "addresses": [
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-eduardo-serratos-garduno/ginecologo/miguel-hidalgo#address-id=325573&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:40.671Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_eduardo_serratos_gardu_o.webp"
+}

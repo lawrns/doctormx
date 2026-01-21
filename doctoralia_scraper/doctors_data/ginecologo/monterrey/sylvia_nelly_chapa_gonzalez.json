@@ -1,0 +1,25 @@
+{
+  "name": "Sylvia Nelly Chapa Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carretera Nacional 6501 La Estanzuela,"
+    },
+    {
+      "full": "Carretera Nacional 6501 La Estanzuela,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sylvia-nelly-chapa-gonzalez/ginecologo/monterrey#address-id=126895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:01.429Z",
+  "localPhotoPath": null
+}

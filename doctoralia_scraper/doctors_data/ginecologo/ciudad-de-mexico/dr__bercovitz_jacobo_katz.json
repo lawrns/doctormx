@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Bercovitz Jacobo Katz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Newton 186 404,"
+    },
+    {
+      "full": "Calle Newton 186 404,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bercovitz-jacobo-katz/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:55:31.815Z",
+  "localPhotoPath": null
+}

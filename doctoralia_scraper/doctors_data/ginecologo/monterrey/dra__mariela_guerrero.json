@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Mariela Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/200d2f/200d2f58a8f220a186fc9faf5c1e2fef_220_square.jpg",
+  "about": "Ginecologia , Obstetricia y Colposcopia",
+  "addresses": [
+    {
+      "full": "Doctor Fernando Guajardo 155, Los Doctores .,"
+    },
+    {
+      "full": "Av. Rómulo Garza 1100, Hacienda los Morales 3er Sector,"
+    },
+    {
+      "full": "Doctor Fernando Guajardo 155, Los Doctores .,"
+    },
+    {
+      "full": "Av. Rómulo Garza 1100, Hacienda los Morales 3er Sector,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariela-guerrero/ginecologo/san-nicolas-de-los-garza#address-id=328570&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:33.699Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mariela_guerrero.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Adriana Tapia Nañez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 327,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c5158e/c5158e62f72993c441434410f869e4a5.jpg",
+  "about": "Estudie medicina en la UANL Realice 4 años de ginecología y obstetricia en el Hospital Universitario de la UANL Realice diplomado en colposcopia, patología vulvar y VPH avalado por la Universidad Mesoamericana (2022-2023) Actualmente ofrezco consulta privada en Hospital ginequito y trabajo en secretaría de salud. Valoración ginecológica y obstétrica con equipos de máxima tecnología. Investigación en área de ginecología y obstetricia. Realicé un Diplomado en Colposcopia y Patología Vulvovaginal de 2022 a 2023 avalado por la Universidad Mesoamericana de San Cristobal de las Casas. Diplomado en ultrasonido obstétrico para control de embarazo, 3D y 4D de 2023 a 2024 por la academia de Medicina Fetal México.",
+  "addresses": [
+    {
+      "full": "Bolivia 103a,"
+    },
+    {
+      "full": "Hidalgo 1842,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": "• $7,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $3,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-tapia-nanez/ginecologo/nuevo-leon#address-id=407075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:41.033Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__adriana_tapia_na_ez.webp"
+}

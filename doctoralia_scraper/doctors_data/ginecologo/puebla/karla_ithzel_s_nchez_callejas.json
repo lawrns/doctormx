@@ -1,0 +1,43 @@
+{
+  "name": "Karla Ithzel Sánchez Callejas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4c453/a4c453952171ce74f3932e0c62ca3626_220_square.jpg",
+  "about": "Hola mi nombre es Karla soy Ginecobstetra, pero antes de ser tu Doctora soy hija, hermana, y madre de dos pequeños, mi gusto por la Ginecobstetricia nace de mi asombro por lo espectacular del fenómeno de la vida, ver formarse y crecer un ser así como los profundos y maravillosos cambios que presentamos como mujeres. Mi formación como medico especialista lo realice en el Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado de Puebla, donde tuve la oportunidad de prepararme con prestigiados especialistas, y tener a mi lado maravillosos y exitosos compañeros, adquiriendo basta experiencia y conocimientos teóricos y prácticos de los diferentes estados y procesos que experimentan las mujeres. Posteriormente tuve la oportunidad de trabajar y compartir mis conocimientos a las nuevas generaciones en esta y otras instituciones. A si mismo logre desarrollarme en la campo de la docencia como profesor titular, siendo esta otra gran misión que tenemos como médicos al contribuir a la transmisión del conocimiento a las nuevas generaciones. Actualmente me encuentro enfocada en brindarte atención especializada con calidad y calidez en un ambiente cómodo, respetuoso y empático, donde lo mas importante eres tu. Confio plenamente en que la diferencia radica en el amor y empeño que pones en las cosas, me siento afortunada de que mi trabajo sea lo que mas disfruto hacer.",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-ithzel-sanchez-callejas/ginecologo/puebla#address-id=6087&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:31.401Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/karla_ithzel_s_nchez_callejas.webp"
+}

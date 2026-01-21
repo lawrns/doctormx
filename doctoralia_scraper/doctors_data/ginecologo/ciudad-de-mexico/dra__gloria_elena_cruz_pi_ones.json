@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gloria Elena Cruz Piñones",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 474,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50b5e3/50b5e3235eab55971202d61e1640e849_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia. Brindo atención al más mínimo detalle, de forma profesional y humanitaria a cada paciente, logrando solucionar su enfermedad, tratamiento o procedimiento ideal.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gloria-elena-cruz-pinones/ginecologo/cuauhtemoc2#address-id=363134&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:30.859Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gloria_elena_cruz_pi_ones.webp"
+}

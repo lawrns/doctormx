@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Cristina Ortiz Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 230,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93384f/93384f9f7cbeb23e34c664fa2825b435_220_square.jpg",
+  "about": "Ginecóloga y obstetra con amplia experiencia, trato personalizado, una inmejorable formación académica y tratamientos de vanguardia y excelencia en enfermedades de la mujer , menopausia, infertilidad, virus del papiloma humano, vacunas contra virus del papiloma humano, partos, cesáreas quistes de ovario, histerectomia, LAPAROSCOPIA , infecciones, anticonceptivos TRATAMIENTOS LÁSER DE VANGUARDIA PARA INCONTINENCIA URINARIA Y REJUVENECIMIENTO VAGINAL, INCREMENTAR PLACER SEXUAL Y LIFTING VAGINAL",
+  "addresses": [
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    },
+    {
+      "full": "STAR MÉDICA TLALNEPANTLA 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía láser para vph",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Cirugía láser para vph",
+      "price": ""
+    },
+    {
+      "name": "Cirugía vaginal y reconstructiva",
+      "price": ""
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-ortiz-diaz/ginecologo/tlalnepantla-de-baz2#address-id=349764&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:59.023Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cristina_ortiz_d_az.webp"
+}

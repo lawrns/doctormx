@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rubén Alejandro Avendaño Barroeta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AVENIDA CARLOS GRAEF FERNANDEZ 154,"
+    },
+    {
+      "full": "AVENIDA CARLOS GRAEF FERNANDEZ 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-alejandro-avendano-barroeta/ginecologo/ciudad-de-mexico#address-id=121767&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:16.159Z",
+  "localPhotoPath": null
+}

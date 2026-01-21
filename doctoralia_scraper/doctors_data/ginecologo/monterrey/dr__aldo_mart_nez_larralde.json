@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Martínez Larralde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 253,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/073290/0732902677acb4b2ce49188a8a97a463_220_square.jpg",
+  "about": "El Dr. Aldo Martínez Larralde es un especialista en Ginecología y Obstetricia en Monterrey, Nuevo León. Se formó en la Universidad de Monterrey (UDEM) como Médico Cirujano, más tarde concluye la especialidad en Ginecología y Obstetricia en la Universidad de Valparaíso (UV) en Chile. Cuenta con un Fellowship en Medicina Reproductiva Endoscópica, y una subespecialidad en Biología de la Reproducción, ambas realizadas en el Instituto de Investigaciones Materno Infantil (IDIMI).",
+  "addresses": [
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $6,500"
+    },
+    {
+      "name": "Monitoreo de ovulación",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-martinez-larralde-2/ginecologo/nuevo-leon#address-id=508712&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:20.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__aldo_mart_nez_larralde.webp"
+}

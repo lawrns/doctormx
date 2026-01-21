@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Eduardo Lowenberg Favela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0bedc/a0bedccbd2fecac0f569d74fa3c358e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tehuantepec 139,"
+    },
+    {
+      "full": "Tehuantepec 139,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-lowenberg-favela/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:04:11.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__eduardo_lowenberg_favela.webp"
+}

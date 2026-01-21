@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Yedyd Duque Secundino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 200,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/563036/563036e6bc7c67c24b8853d839947555_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bosque De Perales Casaa 38,"
+    },
+    {
+      "full": "Bosque De Perales Casaa 38,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yedyd-duque-secundino/ginecologo/coacalco-de-berriozabal#address-id=128719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:14:54.323Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yedyd_duque_secundino.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Daniela Sauceda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 555,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c74066/c7406622abf94d6ab8265e20dad2a6ed_220_square.jpg",
+  "about": "Soy la doctora Daniela Sauceda, Ginecóloga Obstetra con subespecialidad en Medicina Materno Fetal Como Ginecóloga mi objetivo es acompañar de las mujeres en cada una de sus etapas, desde la adolescencia hasta menopausia, ya sea durante las revisiones anuales o en consulta por algún síntoma, escuchando todas sus preocupaciones y asesorándolas de manera oportuna en busca de su salud y bienestar Además el haber realizado la sub especialidad en Medicina Materna Fetal me permite tratar a mujeres con embarazo de alto riesgo, ya sea por patología previa, o por alguna complicación durante el embarazo o en el bebé, acompañandolas de principio a fin.",
+  "addresses": [
+    {
+      "full": "Toltecas, 3597 Colonia Rinconada Santa Rita,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-sauceda/ginecologo/guadalajara#address-id=389884&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:03.761Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__daniela_sauceda.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. David Omar Puente Villarreal",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104 Parque industria Nexxus Planta Baja,"
+    },
+    {
+      "full": "Avenida Nexxus 104 Parque industria Nexxus Planta Baja,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-omar-puente-villarreal/ginecologo/general-escobedo#address-id=26475&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:04.707Z",
+  "localPhotoPath": null
+}

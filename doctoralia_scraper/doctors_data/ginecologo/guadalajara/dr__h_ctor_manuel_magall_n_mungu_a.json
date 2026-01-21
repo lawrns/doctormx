@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Héctor Manuel Magallón Munguía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez),"
+    },
+    {
+      "full": "Hidalgo 149 (esquina Pino Suarez),"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-manuel-magallon-munguia/ginecologo/-#address-id=338847&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:34.656Z",
+  "localPhotoPath": null
+}

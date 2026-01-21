@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nelly Alicia Alonso Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "ECUADOR # 2331 (DOCTORS HOSPITAL),"
+    },
+    {
+      "full": "ECUADOR # 2331 (DOCTORS HOSPITAL),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $18,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nelly-alicia-alonso-reyes/ginecologo/monterrey#address-id=53911&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:28.040Z",
+  "localPhotoPath": null
+}

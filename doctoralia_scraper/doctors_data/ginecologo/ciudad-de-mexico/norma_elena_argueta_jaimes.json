@@ -1,0 +1,37 @@
+{
+  "name": "Norma Elena Argueta Jaimes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Alvaro Obregon 123,"
+    },
+    {
+      "full": "Medellin 273,"
+    },
+    {
+      "full": "Tehuantepec 86,"
+    },
+    {
+      "full": "Av. Alvaro Obregon 123,"
+    },
+    {
+      "full": "Medellin 273,"
+    },
+    {
+      "full": "Tehuantepec 86,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-elena-argueta-jaimes/ginecologo/ciudad-de-mexico#address-id=184210&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:16.353Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dr. David Jesus Napoles Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 200,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/c178ba5c/c178ba5c-f009-40d7-95c4-93d528cc2af9_large.jpg",
+  "about": "Soy el Dr. David Nápoles y les quiero contar un poco sobre mí. Curse la carrera de médico cirujano en la Universidad la Salle, desde el principio de mi carrera supe que quería ser Ginecólogo, ya que me apasiona y me llena de alegría poder ayudar a las futuras mamás y papás a conocer a sus bebes, posteriormente, realicé mi especialidad en ginecología y obstetricia en el Hospital Español de México, en donde me enseñaron a tratar todas las enfermedades relacionadas con el embarazo y la salud de la mujer. Posteriormente realice un Alta especialidad en cirugía de mínima invasión y un diplomado en colposcopia, para poder ayudar a mis pacientes a prevenir el cáncer de cuello del útero y también realicé un Fellow de Alta Especialidad en cirugía de endometriosis en Brasil, todo esto con el fin de poder ofrecer a mis pacientes una consulta especializada de calidad que les ayude a recuperar su calidad de vida",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial 20,"
+    },
+    {
+      "full": "Antiguo Camino a Zumpango Km 3.8,"
+    },
+    {
+      "full": "Av. de las Aves 105-1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-jesus-napoles-garcia/ginecologo/pachuca-de-soto#address-id=428328&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:46.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__david_jesus_napoles_garcia.webp"
+}

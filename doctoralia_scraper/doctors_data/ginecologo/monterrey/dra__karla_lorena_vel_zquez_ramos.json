@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Karla Lorena Velázquez Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/79c425/79c425b002f83a95e59ca5d2204fda98_220_square.jpg",
+  "about": "Soy Ginecóloga y obstetra , certificada por el Consejo Mexicano de mi especialidad. Me pongo a sus órdenes para la atención de temas relacionado con la salud de la mujer. Desde dudas sobre anticonceptivos, enfermedades de transmisión sexual, VPH , control prenatal, síndrome de ovario poliquistico, hasta climaterio y menopausia. Siempre tratando de brindar información clara con un lenguaje sencillo para mi paciente. Ofreciendo en cada consulta la confianza y empatía que tú te mereces.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1842,"
+    },
+    {
+      "full": "Argentina 86 7010,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-lorena-velazquez-ramos/ginecologo/nuevo-leon#address-id=624052&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:57.952Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__karla_lorena_vel_zquez_ramos.webp"
+}

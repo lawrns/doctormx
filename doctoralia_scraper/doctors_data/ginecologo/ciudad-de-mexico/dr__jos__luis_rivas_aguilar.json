@@ -1,0 +1,42 @@
+{
+  "name": "Dr. José Luis Rivas Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/533f01/533f01923cd3cfa74f40c5608b1caae0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carretera Federal La Cruz de Huenacaxtle - Punta de Mita,"
+    },
+    {
+      "full": "Av. Ejercito Nacional 617,"
+    },
+    {
+      "full": "Carr Federal 200 Km 19 1,"
+    },
+    {
+      "full": "Carretera Federal La Cruz de Huenacaxtle - Punta de Mita,"
+    },
+    {
+      "full": "Av. Ejercito Nacional 617,"
+    },
+    {
+      "full": "Carr Federal 200 Km 19 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-rivas-aguilar-2/ginecologo/bahia-de-banderas#address-id=346237&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:38.105Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__luis_rivas_aguilar.webp"
+}

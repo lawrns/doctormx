@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Oscar David Serna Coronel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d7337a/d7337a0fa7f7daf42497cee2724c3d58_220_square.jpg",
+  "about": "Cédula Profesional: 10232083 Cédula Especialidad: 14363634 Certificado del Consejo Mexicano de Ginecología y Obstetricia: 14519 Diplomado Colposcopia y Patología del Tracto Genital Inferior Virus del Papiloma Humano",
+  "addresses": [
+    {
+      "full": "Paseo de los Cipreses 3, Mz 2, Lote 24,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-david-serna-coronel/ginecologo/tlalnepantla-de-baz2#address-id=536362&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:59.553Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__oscar_david_serna_coronel.webp"
+}

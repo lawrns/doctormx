@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Guede Valverde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 644,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/71b0cf7e/71b0cf7e-9cf2-42b6-94df-e1b5f4378fcb_large.jpg",
+  "about": "Hola, soy el Dr. Jorge Guede Valverde, me he preparado durante muchos años para ofrecerte una consulta actualizada, resolutiva y empática. Siempre mi objetivo es brindar una consulta de calidad y calidez, atender nacimientos con amor y contribuir a la salud de todas las mujeres. Me especializado en: - Colposcopia - Ginecología y Obstetricia - Ginecología Estética, Funcional y Regenerativa - Cirugía de Mínima Invasión Estos son algunos de los certificados y diplomados en los que he seguido nutriendo mi especialidad Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Fellow American College of Obstetricians and Gynecologists Miembro del Colegio Mexicano de Especialistas en Ginecología y Obstetricia, A.c. Diplomado en Colposcopia y Cáncer en la Mujer. Diplomado en Ginecología Infanto-Juvenil avalado por Flasog. Diplomado en Ultrasonido Obstétrico Avanzado Gineología estética y funcional avalada por SOLAGEF y SEGERF Diplomado en Cirugía de Mínima Invasión Ginecológica ANAHUAC Hosp. Español * Gineco Endocrino UDLAP",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-guede-valverde/ginecologo/puebla#address-id=389275&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:55:04.640Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__jorge_guede_valverde.webp"
+}

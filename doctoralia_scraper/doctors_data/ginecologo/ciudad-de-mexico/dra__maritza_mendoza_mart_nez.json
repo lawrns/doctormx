@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Maritza Mendoza Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 191,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d4bd6/1d4bd663481b8aabd14410d085f6afa5_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino Real al Ajusco 514 Sanatorio Medico Santa Maria Tepepan,"
+    },
+    {
+      "full": "Camino Real al Ajusco 514 Sanatorio Medico Santa Maria Tepepan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maritza-mendoza-martinez/ginecologo/xochimilco#address-id=99241&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:00:13.118Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maritza_mendoza_mart_nez.webp"
+}

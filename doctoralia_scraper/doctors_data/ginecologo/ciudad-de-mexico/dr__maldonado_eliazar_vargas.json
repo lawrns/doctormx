@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Maldonado Eliazar Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 8,"
+    },
+    {
+      "full": "Tuxpan 8,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maldonado-eliazar-vargas/ginecologo/ciudad-de-mexico#address-id=66977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:30.547Z",
+  "localPhotoPath": null
+}

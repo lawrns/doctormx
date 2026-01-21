@@ -1,0 +1,112 @@
+{
+  "name": "Dr. Luis Fernando Rojas Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f637ff/f637ff206992481055f39639d01577e1.jpg",
+  "about": "Soy Luis, Médico Especialista en Ginecología y Obstetricia, me formé como Médico General en la Facultad Mexicana de Medicina de la Universidad La Salle y como especialista en el Instituto Nacional de Perinatología (Institución líder en México y Latinoamérica). Me dedico exclusivamente a ejercer esta especialidad desde hace más de 10 años, trabajando para distintos hospitales del sector publico donde tuve la oportunidad de desempeñarme como médico jefe de servicio y participando activamente en la formación de médicos especialistas, de igual forma soy profesor de diferentes cursos de actualización médica con la finalidad de compartir mi experiencia y conocimiento. Mi misión es cuidar y acompañar a la mujer en las distintas etapas de su vida, ofreciendo siempre una atención personalizada, ética, y priorizando el trato humano con la finalidad de proponer el tratamiento más adecuado para cada paciente. Me apasiona mi profesión y mi objetivo en cada consulta es que cada una de mis pacientes comprenda de forma clara y detallada su padecimiento, juntos resolveremos todas las dudas e inquietudes para que encontremos la mejor solución.",
+  "addresses": [
+    {
+      "full": "Sor Juana Ines de la Cruz No. 280, Fracc. Industrial San Lorenzo. Consultorio 607,"
+    },
+    {
+      "full": "Av. 1o de Mayo,"
+    },
+    {
+      "full": "Av. Adolfo Ruiz Cortines mz.1 Lt 8, Lomas de Atizapan,"
+    },
+    {
+      "full": "Avenida Juan Diego 14, Tlatempa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $900"
+    },
+    {
+      "name": "Histerectomia por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $450"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $450"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-rojas-perez/ginecologo/cuautitlan-izcalli#address-id=415030&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:25.982Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_fernando_rojas_p_rez.webp"
+}

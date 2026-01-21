@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Casas Godoy",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 129,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4a084b/4a084bbccd0bae5e057fa70237ff678f_220_square.jpg",
+  "about": "Soy Dr. Arturo Casas, Médico Ginecólogo y Obstetra con más de 10 años de experiencia, con subespecialidad en Reproducción Humana, experto en atención de enfermedades de la mujer, atención del embarazo, infertilidad y en técnicas de reproducción asistida. Egresado como Médico Cirujano de la Universidad de Guadalajara, especialista en Ginecoobstetricia donde fuí Jefe de Residentes de su especialidad y del hospital, egresado con Mención honorífica. Cuento con subespecialidad en Biología de la Reproducción Humana avaladas por la UNAM y el instituto Nacional de Perinatología, INPer. Además, he participado como escucha y ponente en congresos nacionales e internacionales, como el 53 Congreso de la AMRR en Ixtapa y el 6to Congreso Internacional IVI en Alicante, España; ejercí como Subdirector del Instituto INGENES de Fertilidad, y fui profesor del Diplomado de Ultrasonido avalado por la Universidad de Oaxaca.",
+  "addresses": [
+    {
+      "full": "Tarascos 3469,"
+    },
+    {
+      "full": "Tarascos 3469,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": "• Desde $52,000"
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-casas-godoy/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:26:42.003Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__arturo_casas_godoy.webp"
+}

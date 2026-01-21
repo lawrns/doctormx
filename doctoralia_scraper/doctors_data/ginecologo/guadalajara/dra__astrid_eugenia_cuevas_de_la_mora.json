@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Astrid Eugenia Cuevas De La Mora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 526,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8189f8/8189f8319d3e4be0555dade93294d893_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Patria Sur Num Ext 138 Col Prados Guadalupe,,"
+    },
+    {
+      "full": "Av Patria Sur Num Ext 138 Col Prados Guadalupe,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/astrid-eugenia-cuevas-de-la-mora/ginecologo/zapopan#address-id=135368&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:58.109Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__astrid_eugenia_cuevas_de_la_mora.webp"
+}

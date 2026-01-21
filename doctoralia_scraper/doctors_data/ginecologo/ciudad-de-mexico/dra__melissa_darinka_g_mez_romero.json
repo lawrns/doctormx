@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melissa Darinka Gómez Romero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/529ef2fc/529ef2fc-ed98-46a0-824d-aca57ec8470b_small_square.jpg",
+  "about": "Soy ginecóloga avalada por la UNAM.Mi objetivo es brindar atención de calidad a las mujeres en cada etapa de sus vidas.",
+  "addresses": [
+    {
+      "full": "Iztaccihuatl 189 Alvaro Obregón,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Colposcopia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de Urgencias",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melissa-darinka-gomez-romero/ginecologo/ciudad-de-mexico#address-id=609166&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:21.501Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__melissa_darinka_g_mez_romero.webp"
+}

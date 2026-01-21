@@ -1,0 +1,46 @@
+{
+  "name": "Eloisa Lopez Manriquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/abe1a6/abe1a66461b571e83c477a1440197a37_220_square.jpg",
+  "about": "Realicé mi carrera de medicina en la Universidad Autonoma de Mexico Enep Izatacala , y posteriormente. Internado de Pregrado en Piedras Negras Coahuila en el IMSS. Servicio social en Huatabampo Sonora en SSA. Un año de Práctica Médica en Cruz Roja Tlalnepantla . Realización de Especialidad de Ginecologia y Obstetricia en Monterrey Nuevo León, donde actualmente laboro .",
+  "addresses": [
+    {
+      "full": "Hospital Sierra Madre Belisario Domínguez 2439 pte,"
+    },
+    {
+      "full": "Hospital Sierra Madre Belisario Domínguez 2439 pte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eloisa-lopez-manriquez/ginecologo/nuevo-leon#address-id=73292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:10.028Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/eloisa_lopez_manriquez.webp"
+}

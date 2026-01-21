@@ -1,0 +1,25 @@
+{
+  "name": "Castillo Maria Fernanda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/44aefe/44aefe4d8912dd5d905cf99b7e12b812_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 10 Col. Roma Sur ,"
+    },
+    {
+      "full": "Tuxpan 10 Col. Roma Sur ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/castillo-maria-fernanda/ginecologo/cuauhtemoc#address-id=358930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:49.348Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/castillo_maria_fernanda.webp"
+}

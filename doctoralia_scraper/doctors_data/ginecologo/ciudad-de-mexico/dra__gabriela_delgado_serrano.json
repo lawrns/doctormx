@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Gabriela Delgado Serrano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 257,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ff9c3ad/7ff9c3ad-3d79-4ef5-95ca-263539e3dea2_small_square.jpg",
+  "about": "Soy Gineco -Obstetra enfocada en el cuidado de la mujer durante el embarazo, con experiencia en enfermedades que afectan esta etapa de la vida y ponen en riesgo el curso del embarazo. Cuento con subespecialidad en medicina materno fetal, donde mi principal objetivo es vigilar de manera estrecha el desarrollo del bebé",
+  "addresses": [
+    {
+      "full": "CEDPRE CUERNAVACA Av. San Diego 1203 Consultorio 310 Col Delicias.,"
+    },
+    {
+      "full": "TORRE DE ESPECIALIDADES SAN ANGEL INN ACORA DEL VALLE Av. Cuauhtémoc 1040 CONSULTORIO 1151-3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-delgado-serrano/ginecologo/morelos#address-id=436559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:03.251Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_delgado_serrano.webp"
+}

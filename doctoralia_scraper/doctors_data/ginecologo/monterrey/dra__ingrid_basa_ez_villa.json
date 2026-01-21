@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ingrid Basañez Villa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48b612/48b6122aa2fc9d4cd795662ff6139944_220_square.jpg",
+  "about": "Hola Qué tal soy la Dra. Ingrid Basañez soy especialista en Ginecología y Obstetricia avalada por la UNAM, con diplomado en Colposcopia, patología vulvar y tratamiento con Láser Ginecológico, Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Bienvenida a mi perfil.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ingrid-basanez-villa/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:09.791Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ingrid_basa_ez_villa.webp"
+}

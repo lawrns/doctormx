@@ -1,0 +1,25 @@
+{
+  "name": "Arturo Teodoro Gamboa Ivankovich",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5c648b/5c648bfeb9ddedc0866dc25907cfa553_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santa Margarita 795 Residencial Poniente,"
+    },
+    {
+      "full": "Santa Margarita 795 Residencial Poniente,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-teodoro-gamboa-ivankovich/ginecologo/guadalajara#address-id=119623&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:43.740Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/arturo_teodoro_gamboa_ivankovich.webp"
+}

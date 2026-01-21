@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Miguel Ángel Rosales Castro",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/341dd2/341dd2ed57626c8c9b22f6f0edcf35ba_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Pablo Valdez 3843,"
+    },
+    {
+      "full": "Calle Pablo Valdez 3843,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $390"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $390"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Visita domiciliaria Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-rosales-castro/ginecologo/guadalajara#address-id=29873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:55.814Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__miguel__ngel_rosales_castro.webp"
+}

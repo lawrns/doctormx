@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ana Cecilia Durand Castro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Treviño 2411,"
+    },
+    {
+      "full": "Treviño 2411,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cecilia-durand-castro-2/ginecologo/monterrey#address-id=73596&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:48.910Z",
+  "localPhotoPath": null
+}

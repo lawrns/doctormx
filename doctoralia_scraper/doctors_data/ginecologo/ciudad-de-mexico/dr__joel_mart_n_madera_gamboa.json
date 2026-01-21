@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Joel Martín Madera Gamboa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo López Portillo 872 y 874 (SM. 59 M. 37),"
+    },
+    {
+      "full": "Ave. Lopez Portillo Mz 37 L 2 2 Con 301,"
+    },
+    {
+      "full": "Paseo López Portillo 872 y 874 (SM. 59 M. 37),"
+    },
+    {
+      "full": "Ave. Lopez Portillo Mz 37 L 2 2 Con 301,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joel-martin-madera-gamboa/ginecologo/benito-juarez#address-id=51025&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:16.175Z",
+  "localPhotoPath": null
+}

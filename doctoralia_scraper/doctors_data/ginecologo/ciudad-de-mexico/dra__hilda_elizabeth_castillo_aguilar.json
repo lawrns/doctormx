@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Hilda Elizabeth Castillo Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/781155c5/781155c5-19fa-4a67-bb43-62f653491d9b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Salvador Díaz Mirón 18,"
+    },
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Francisco Pimentel 63,"
+    },
+    {
+      "full": "C. Salvador Díaz Mirón 18,"
+    },
+    {
+      "full": "Seris Y Zaachila S/N,"
+    },
+    {
+      "full": "Francisco Pimentel 63,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hilda-elizabeth-castillo-aguilar/ginecologo/azcapotzalco#address-id=220944&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:16:02.132Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__hilda_elizabeth_castillo_aguilar.webp"
+}

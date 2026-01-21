@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Cecilia Gabriela Andrade Villicaña",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d0760e22/d0760e22-b07d-444a-9e55-fe8f08c85ea4_small_square.jpg",
+  "about": "Dra. Cecilia Gabriela Andrade VillicañaGinecología • Obstetricia • Colposcopia Creo que cada mujer merece sentirse escuchada, acompañada y segura en cada etapa de su vida.Mi misión es ayudarte a cuidar tu salud íntima, resolver tus dudas sin juicios y, si lo deseas, acompañarte en el sueño de convertirte en mamá.¿Cómo puedo ayudarte?-Revisión y cuidado ginecológico-Tratamiento de irregularidades menstruales y hormonales-Diagnóstico y control del embarazo-Resolución de tu embarazo (parto o cesárea)-Atención a infecciones y sangrados anormales-Cirugía laparoscópica mínimamente invasivaMi compromiso es darte confianza y claridad, con un trato humano y profesional, porque sé que detrás de cada consulta hay una historia, un sueño o una preocupación importante.Tu salud, tu bienestar y tu proyecto de vida son mi prioridad.",
+  "addresses": [
+    {
+      "full": "Avenida Contreras 300,"
+    },
+    {
+      "full": "Avenida Contreras 300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-gabriela-andrade-villicana/ginecologo/ciudad-de-mexico#address-id=592225&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:48.037Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cecilia_gabriela_andrade_villica_a.webp"
+}

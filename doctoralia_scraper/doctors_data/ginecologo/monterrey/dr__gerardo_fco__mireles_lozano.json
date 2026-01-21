@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Gerardo Fco. Mireles Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/24dfc8/24dfc8058bd8506436beefed45027e09_220_square.jpg",
+  "about": "-Profesor de cátedra ITESM-Tec Salud -Ex presidente de la Asociación de Endoscopia Ginecologica de Nuevo León - Re-Certificado por el Consejo mexicano de Ginecología y Obstetricia A.C. -Miembro activo de la Association of Gynecologic Laparoscopists (AAGL).",
+  "addresses": [
+    {
+      "full": "torre de especialidades medicas hospital angeles 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía Laparoscópica",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-fco-mireles-lozano/ginecologo/san-pedro-garza-garcia",
+  "scrapedAt": "2026-01-21T03:39:14.272Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gerardo_fco__mireles_lozano.webp"
+}

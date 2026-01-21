@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alejandro Labastida Avilés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/228ba2/228ba2108abeba883de6b4c6c0efd886_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-labastida-aviles/ginecologo/naucalpan-de-juarez#address-id=8122&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:35.019Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alejandro_labastida_avil_s.webp"
+}

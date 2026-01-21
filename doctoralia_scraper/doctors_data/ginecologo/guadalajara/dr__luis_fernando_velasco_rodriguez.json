@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Luis Fernando Velasco Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Zoquipan 1050,"
+    },
+    {
+      "full": "Av. Palmeras 1033,"
+    },
+    {
+      "full": "Eulogio Parra 1700,"
+    },
+    {
+      "full": "Av. Zoquipan 1050,"
+    },
+    {
+      "full": "Av. Palmeras 1033,"
+    },
+    {
+      "full": "Eulogio Parra 1700,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-fernando-velasco-rodriguez/ginecologo/zapopan#address-id=199147&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:28.950Z",
+  "localPhotoPath": null
+}

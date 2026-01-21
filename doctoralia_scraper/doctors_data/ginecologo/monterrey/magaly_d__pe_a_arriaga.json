@@ -1,0 +1,46 @@
+{
+  "name": "Magaly D. Peña Arriaga",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d4d375/d4d375787ecd0d3ee4f7da910eba5226_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Andador Hidalgo 1910,"
+    },
+    {
+      "full": "Andador Hidalgo 1910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magaly-d-pena-arriaga/ginecologo/nuevo-leon#address-id=441336&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:39.518Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/magaly_d__pe_a_arriaga.webp"
+}

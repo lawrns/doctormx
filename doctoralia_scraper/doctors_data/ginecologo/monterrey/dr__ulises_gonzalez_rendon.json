@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ulises Gonzalez Rendon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/61e6e290/61e6e290-cad5-44a5-80bf-ffcddab2f12f_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Ulises González, ginecólogo y obstetra. Con mucho gusto me presento para acompañarte en el cuidado de tu salud. Soy egresado de la Universidad Autónoma de Nuevo León como Médico Cirujano Partero, y me especialicé en Ginecología y Obstetricia. Mi objetivo es ofrecerte una atención cálida, profesional y cercana. ¿Cómo puedo ayudarte? Si necesitas una cirugía para tratar miomas, quistes o una histerectomía, tanto de manera convencional (abierta) como por laparoscopia, te guiaré en todo el proceso. La opción laparoscópica es menos invasiva, lo que permite una recuperación más rápida, pero la cirugía abierta también es una opción cuando se requiere un enfoque más extenso. Además, estoy aquí para ofrecerte segundas opiniones y ayudarte con tus consultas de rutina, siempre con el mismo compromiso de cuidar tu bienestar. Mi prioridad es que te sientas acompañada y segura en todo momento. ¡Estoy aquí para ti!",
+  "addresses": [
+    {
+      "full": "Licenciado José Benítez 2505,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Desde $48,900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ulises-gonzalez-rendon/ginecologo-medico-general/nuevo-leon#address-id=68012&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:07.556Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ulises_gonzalez_rendon.webp"
+}

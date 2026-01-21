@@ -1,0 +1,30 @@
+{
+  "name": "Claudia Victoria Meléndez González",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d5bff3/d5bff39541a1f32155241a910d3e477d_220_square.jpg",
+  "about": "Me apasiona siempre tratar de ser un médico con alta competitividad, pensamiento crítico, juicio clínico y excelentes habilidades clínicas y quirúrgicas para mis pacientes. Me gusta contribuir al avance de mi profesión participando en protocolos de investigación. Además de la docencia de las futuras generaciones de médicos y ginecólogos obstetras.",
+  "addresses": [
+    {
+      "full": "Revolución 2703 (Centro Empresarial Nuevo Sur Torre 1, Piso 8), Ladrillera,"
+    },
+    {
+      "full": "Revolución 2703 (Centro Empresarial Nuevo Sur Torre 1, Piso 8), Ladrillera,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-victoria-melendez-gonzalez/ginecologo/san-pedro-garza-garcia#address-id=383225&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:50.749Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/claudia_victoria_mel_ndez_gonz_lez.webp"
+}

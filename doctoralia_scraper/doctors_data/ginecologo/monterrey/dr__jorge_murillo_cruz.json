@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Jorge Murillo Cruz",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/21e986/21e98629bd18f91bb3d4554f2c3eaa24_220_square.jpg",
+  "about": "SOY EGRESADO DE LA FACULTAD DE MEDICINA DE UANL REALIZE ESTUDIOS GINECOLOGIA Y OBSTETRICIA EN HOSP UMAE #23 MONTERREY N.L. CURSO EMBARAZO DE ALTO RIESGO EN UMAE #23 MONTERREY N.L CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA DESDE 2011 Y RECERTIFICADO EN EL 2016 ACTUALMENTE REALIZO LA PRACTICA LA CONSULTA PRIVADA EN HOSPITAL SIERRA MADRE COL OBISPADO MONTERREY N.L. ATENCION DE CIRUGIAS PARTOS CESAREAS EN CUALQUIER INSTITUCION DEL AREA METROPOLITANA",
+  "addresses": [
+    {
+      "full": "Belizario Domínguez 2439,"
+    },
+    {
+      "full": "Belizario Domínguez 2439,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-murillo-cruz/ginecologo/nuevo-leon#address-id=29006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:42.893Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jorge_murillo_cruz.webp"
+}

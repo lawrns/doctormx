@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Flavio Maldonado Salgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/cfa212b6/cfa212b6-9fea-4cb3-bedc-68093dc3dd0f_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Reforma Sur no. 3101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-flavio-maldonado-salgado/ginecologo/puebla#address-id=123377&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:55.037Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__aldo_flavio_maldonado_salgado.webp"
+}

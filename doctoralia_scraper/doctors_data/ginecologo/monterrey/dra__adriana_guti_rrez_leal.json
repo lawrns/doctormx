@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Adriana Gutiérrez Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4d3457/4d345748ff1dcedc2252f41e68d893de_220_square.jpg",
+  "about": "Apasionada de la vida, la música y la medicina humanizada Fan de hipócrates y de los gatos Ginecóloga de las Estrellas Practico la ginecología natural y la obstetricia respetadas, con sentido humano e integrando la nutrición conciente Misión: Ofrecer atención médica integral de la más alta calidad a mujeres de cualquier edad, respetando en todo momento el valor humano de cada una de ellas. Egresada de UAdeC, con especialidad en Tec Salud, ITESM FB: Dra. Adriana Gutiérrez Leal, Gineconciencia IG: @gineconciencia, @adrianagutierrezleal Youtube: draadriana69",
+  "addresses": [
+    {
+      "full": "Paseo de los Leones 602, Cumbres 2do. Sector. Monterrey, Nuevo León, México,"
+    },
+    {
+      "full": "Paseo de los Leones 602, Cumbres 2do. Sector. Monterrey, Nuevo León, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-gutierrez-leal-2/ginecologo/nuevo-leon#address-id=345373&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:28.098Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__adriana_guti_rrez_leal.webp"
+}

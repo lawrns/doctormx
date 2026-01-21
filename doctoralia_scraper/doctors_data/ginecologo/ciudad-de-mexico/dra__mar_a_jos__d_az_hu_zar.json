@@ -1,0 +1,39 @@
+{
+  "name": "Dra. María José Díaz Huízar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Medicina General - Universidad Anáhuac Especialista en Métodos de Investigación en Ciencias Médicas - Universidad Anáhuac Ginecología y Obstetricia - Hospital Español, UNAM",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-diaz-huizar/ginecologo/ciudad-de-mexico#address-id=433860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:51.097Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Adalberto Padilla Ailhaud",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b088/63b088f8506ecdaf2d31768d3bab9a77_220_square.jpg",
+  "about": "Soy Ginecólogo con Sub especialidad en Infertilidad entrenado en Endocrinología Ginecológica, Microcirugía y Laparoscopía. Además tengo entrenamiento con reconocimiento oficial de la Secretaria de Salud en Colposcopía y Patología del Tracto Genital Inferior, estando certificado como experto desde el año 2000 por la Sociedad Americana de Colposcopía y Patología Cervical. Para ofrecer el mejor servicio a mis pacientes me he interesado en capacitarme en medicina Regenerativa o Anti envejecimiento y en tratamiento con Hormonas Bio idénticas, además de terapias de apoyo para disminuir los efectos negativos del envejecimiento y mejorar la salud con calidad de vida como es la Ozonoterapia y otras técnicas con tecnología de punta como el láser y otras novedades que me permiten ofrecerles a mis pacientes una mejor calidad de vida para verse bien y sentirse bien además de prevenir enfermedades y resolver sus padecimientos. Siempre he buscado los tratamientos menos agresivos que respeten la integridad de mis pacientes y les brinden seguridad en los resultados con bajo riego de complicaciones o efectos secundarios. A diferencia de muchos médicos no estoy de acuerdo en realizar cirugías radicales para prevenir enfermedades que a la mejor nunca se presentarán, por lo que ofrezco opciones seguras sin secuelas para no cambiar la vida de forma negativa a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Luis Pérez Verdía #117,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adalberto-padilla-ailhaud/ginecologo/guadalajara#address-id=60930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:30.077Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__adalberto_padilla_ailhaud.webp"
+}

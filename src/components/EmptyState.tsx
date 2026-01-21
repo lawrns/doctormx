@@ -1,12 +1,15 @@
-import { Button } from './Button'
-import Link from 'next/link'
+'use client'
 
-type EmptyStateVariant = 'default' | 'success' | 'warning' | 'error' | 'info'
+import { motion } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { LucideIcon, Sparkles, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
 interface EmptyStateProps {
-  icon?: React.ReactNode
+  icon?: LucideIcon
   title: string
-  description?: string
+  description: string
   action?: {
     label: string
     href?: string
@@ -17,101 +20,111 @@ interface EmptyStateProps {
     href?: string
     onClick?: () => void
   }
-  variant?: EmptyStateVariant
-  tips?: string[]
-}
-
-const subtleIcons: Record<EmptyStateVariant, React.ReactNode> = {
-  default: (
-    <svg className="w-12 h-12 text-[var(--color-text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-    </svg>
-  ),
-  success: (
-    <svg className="w-12 h-12 text-[#16a34a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
-  warning: (
-    <svg className="w-12 h-12 text-[#ca8a04]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-  ),
-  error: (
-    <svg className="w-12 h-12 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
-  info: (
-    <svg className="w-12 h-12 text-[var(--color-accent-500)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-  ),
+  className?: string
+  variant?: 'default' | 'subtle' | 'ai'
 }
 
 export function EmptyState({
-  icon,
+  icon: Icon,
   title,
   description,
   action,
   secondaryAction,
+  className,
   variant = 'default',
-  tips
 }: EmptyStateProps) {
+  const isAI = variant === 'ai'
+
   return (
-    <div className="text-center py-16 px-6">
-      {/* Subtle icon - no colored backgrounds */}
-      <div className="mx-auto w-16 h-16 flex items-center justify-center mb-4">
-        {icon || subtleIcons[variant]}
-      </div>
+    <div className={cn(
+      "flex flex-col items-center justify-center p-12 text-center rounded-[2.5rem] border transition-all duration-500",
+      variant === 'subtle' ? "bg-transparent border-transparent" : "bg-white/50 backdrop-blur-sm border-neutral-100 shadow-sm",
+      isAI ? "bg-neutral-900 border-white/10" : "",
+      className
+    )}>
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        className={cn(
+          "w-20 h-20 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500",
+          isAI ? "bg-blue-600/10 text-blue-400" : "bg-primary-50 text-primary-500"
+        )}
+      >
+        {Icon ? <Icon className="w-10 h-10" /> : <Sparkles className="w-10 h-10" />}
+      </motion.div>
 
-      <h3 className="text-xl font-semibold text-[var(--color-text-primary)] mb-2">
+      <motion.h3
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.1 }}
+        className={cn(
+          "text-2xl font-bold mb-3 tracking-tight",
+          isAI ? "text-white" : "text-neutral-900"
+        )}
+      >
         {title}
-      </h3>
+      </motion.h3>
 
-      {description && (
-        <p className="mt-2 text-[var(--color-text-secondary)] max-w-md mx-auto mb-6">
-          {description}
-        </p>
-      )}
+      <motion.p
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className={cn(
+          "text-lg mb-10 max-w-md mx-auto leading-relaxed",
+          isAI ? "text-neutral-400" : "text-neutral-500"
+        )}
+      >
+        {description}
+      </motion.p>
 
-      {tips && tips.length > 0 && (
-        <div className="max-w-md mx-auto mb-6 text-left bg-[var(--color-surface-elevated)] rounded-lg p-4">
-          <p className="text-sm font-medium text-[var(--color-text-primary)] mb-2">
-            💡 Consejos:
-          </p>
-          <ul className="text-sm text-[var(--color-text-secondary)] space-y-1">
-            {tips.map((tip, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <span className="text-[var(--color-accent-500)] mt-1">•</span>
-                {tip}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4">
         {action && (
           action.href ? (
             <Link href={action.href}>
-              <Button variant="primary">
+              <Button className={cn(
+                "h-12 px-8 rounded-xl font-semibold flex items-center gap-2 transition-all",
+                isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : "bg-primary-600 hover:bg-primary-700 text-white"
+              )}>
                 {action.label}
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
           ) : (
-            <Button onClick={action.onClick} variant="primary">
+            <Button
+              onClick={action.onClick}
+              className={cn(
+                "h-12 px-8 rounded-xl font-semibold flex items-center gap-2 transition-all",
+                isAI ? "bg-blue-600 hover:bg-blue-500 text-white shadow-xl shadow-blue-600/20" : "bg-primary-600 hover:bg-primary-700 text-white"
+              )}
+            >
               {action.label}
+              <ArrowRight className="w-4 h-4" />
             </Button>
           )
         )}
 
-        {secondaryAction && secondaryAction.href && (
-          <Link href={secondaryAction.href}>
-            <Button variant="secondary">
+        {secondaryAction && (
+          secondaryAction.href ? (
+            <Link href={secondaryAction.href}>
+              <Button variant="outline" className={cn(
+                "h-12 px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all",
+                isAI ? "border-white/10 text-white hover:bg-white/5" : ""
+              )}>
+                {secondaryAction.label}
+              </Button>
+            </Link>
+          ) : (
+            <Button
+              variant="outline"
+              onClick={secondaryAction.onClick}
+              className={cn(
+                "h-12 px-8 rounded-xl font-semibold border-neutral-200 hover:bg-neutral-50 transition-all",
+                isAI ? "border-white/10 text-white hover:bg-white/5" : ""
+              )}
+            >
               {secondaryAction.label}
             </Button>
-          </Link>
+          )
         )}
       </div>
     </div>

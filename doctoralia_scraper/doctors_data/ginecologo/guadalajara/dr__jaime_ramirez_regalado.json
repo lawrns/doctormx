@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jaime Ramirez Regalado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "AV. Lopez Mateos Nte. 745,"
+    },
+    {
+      "full": "AV. Lopez Mateos Nte. 745,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-ramirez-regalado/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:26:40.501Z",
+  "localPhotoPath": null
+}

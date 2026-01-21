@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Castellanos Alfredo Castanon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Bajio 203,"
+    },
+    {
+      "full": "Calle Bajio 203,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/castellanos-alfredo-castanon/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:06:12.948Z",
+  "localPhotoPath": null
+}

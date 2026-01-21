@@ -1,0 +1,25 @@
+{
+  "name": "Maria Teresa Del Socorro Rivera Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Benito Juarez 109,"
+    },
+    {
+      "full": "Blvd. Benito Juarez 109,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-del-socorro-rivera-garcia/ginecologo/general-escobedo#address-id=165981&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:36.622Z",
+  "localPhotoPath": null
+}

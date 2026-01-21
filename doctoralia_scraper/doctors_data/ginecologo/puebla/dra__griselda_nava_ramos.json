@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Griselda Nava Ramos",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 689,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48f658/48f658dee4045523e0a6427205c4990f.jpg",
+  "about": "Especialista en la salud femenina, con enfoque en el cuidado integral en todas las etapas de la vida de la mujer. El respeto, apoyo, confidencialidad y calidez son mis prioridades hacia contigo para brindarte una excelente atención.",
+  "addresses": [
+    {
+      "full": "Avenida 7 Poniente,"
+    },
+    {
+      "full": "Avenida Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/griselda-nava-ramos-3/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:16.854Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__griselda_nava_ramos.webp"
+}

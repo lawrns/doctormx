@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Verónica Martínez Ramirez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/baaaf6/baaaf6f8c9c4d0a52e5ed51aa59d9b80_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Árbol del Fuego 80,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-martinez-ramirez/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-21T02:40:35.842Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ver_nica_mart_nez_ramirez.webp"
+}

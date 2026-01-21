@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Ignacio Najar Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eulogio Parra 3022,"
+    },
+    {
+      "full": "CARNERO 5385,"
+    },
+    {
+      "full": "Eulogio Parra 3022,"
+    },
+    {
+      "full": "CARNERO 5385,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-najar-fuentes/ginecologo/guadalajara#address-id=39809&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:54.973Z",
+  "localPhotoPath": null
+}

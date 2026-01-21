@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Norma A Yescas Macias",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Soy la Dra. Angelica Yescas Macìas, ginecologìa obstetra con más de 30 años de experiencia dedicada a la salud integral de la mujer. Mi compromiso es birndar atenciòn profesional, cálida y personalizda, acompañando a cada paciente con responsabilidad y empatía.",
+  "addresses": [
+    {
+      "full": "Oriente 119,"
+    },
+    {
+      "full": "Oriente 119 4302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-a-yescas-macias/ginecologo/ciudad-de-mexico#address-id=60755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:38.456Z",
+  "localPhotoPath": null
+}

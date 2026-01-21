@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura Villar Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01f18e/01f18eaa099b910f73fa2d1b2480fd86_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303, Lindavista,,"
+    },
+    {
+      "full": "Av. Montevideo 303, Lindavista,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-villar-torres/ginecologo/gustavo-a-madero#address-id=397467&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:25.768Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__laura_villar_torres.webp"
+}

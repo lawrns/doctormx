@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Iván Jiménez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 778,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/d68d9cb6/d68d9cb6-ee45-4814-b270-2ae42c10e256_large.jpg",
+  "about": "¡Hola! Soy el Dr. Iván Jiménez Martínez, ginecólogo certificado por la Facultad de Medicina de la UNAM y con formación en el Hospital de la Mujer de la Ciudad de México. Me desempeño como profesor titular de Ginecología en la UNAM y como miembro del equipo del Hospital de Gineco‑Pediatría 3‑A del IMSS, lo que me mantiene siempre actualizado y comprometido con la excelencia académica y clínica. En consulta combino tecnología de vanguardia con empatía, escucha activa y respeto, porque creo que cada mujer merece atención integral, basada en evidencia y con calidez humana.¿Cómo puedo ayudarte?- Prevención y diagnóstico: chequeos ginecológicos integrales, papanicolau y colposcopía, ultrasonidos y detección temprana de enfermedades como endometriosis o miomas.- Suelo pélvico e incontinencia: manejo conservador y tratamientos con láser CO₂ para fortalecer el suelo pélvico y controlar la incontinencia urinaria de esfuerzo.- Ginecología regenerativa y funcional: rejuvenecimiento vaginal, tratamiento de atrofia genital y molestias de la menopausia con láser fraccionado, plasma rico en plaquetas y otros procedimientos mínimamente invasivos.- Cirugía de mínima invasión: laparoscopía e histeroscopía para miomas, quistes ováricos, endometriosis y otros padecimientos; técnicas que permiten menos dolor y recuperación más rápida.- Tratamientos hormonales y acompañamiento: terapia de reemplazo hormonal, manejo del climaterio/menopausia, síndrome de ovario poliquístico e infertilidad, con seguimiento cercano y personalizado.",
+  "addresses": [
+    {
+      "full": "Avenida Mario Colin,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-jimenez-martinez-2/ginecologo/gustavo-a-madero#address-id=371341&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:25.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__iv_n_jim_nez_mart_nez.webp"
+}

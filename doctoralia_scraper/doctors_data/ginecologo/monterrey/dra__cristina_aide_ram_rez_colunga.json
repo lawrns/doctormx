@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Cristina Aide Ramírez Colunga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 561,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c9fe7f/c9fe7f46a9014609a16022288c1ab012_220_square.jpg",
+  "about": "¡Bienvenidos! En este espacio me gustaría contarles acerca de mi trayectoria académica. Me formé como Médico Cirujano y Partero en la Facultad de Medicina, UANL, durante esta etapa, realicé una rotación en el extranjero al departamento de Ginecología y Obstetricia en el Policlínico G. B. Rossi, en Verona, Italia. Posteriormente, fui médico pasante del servicio social en el departamento de Biología de la Reproducción del Hospital Universitario, UANL, donde me enfoque en el área de investigación. Lleve a cabo mi especialidad de Ginecología y Obstetricia en el Hospital Universitario \"Dr. José Eleuterio González\", seguido de una subespecialidad en Biología de la Reproducción en la misma institución, donde por dos años me entrené en el diagnostico y tratamiento de baja y alta complejidad de parejas con deseos de ser padres, así como el manejo de mujeres que se encuentran en la etapa de transición a la menopausia y en menopausia. Durante mi subespecialidad recibí el nombramiento de estudiante de postgrado distinguido, siendo Jefa de residentes en el área de investigación. Actualmente soy miembro activo de la Sociedad Europea de Reproducción Humana y Embriología (ESHRE),de la Federación Mexicana de Asociaciones y Colegios de Endoscopía ginecológica (FEMEG), y de la Asociación de endoscopía ginecológica de Nuevo León (AEGNL) que me permiten mantenerme actualizada para brindarles la mejor atención a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla #1910,"
+    },
+    {
+      "full": "Av. Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-aide-ramirez-colunga/ginecologo/nuevo-leon#address-id=431791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:46.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__cristina_aide_ram_rez_colunga.webp"
+}

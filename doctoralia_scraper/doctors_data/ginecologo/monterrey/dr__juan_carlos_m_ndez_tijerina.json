@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Carlos Méndez Tijerina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d40da151/d40da151-1ad6-4c3c-ac75-ab21be18a812_small_square.jpg",
+  "about": "Buen día, le habla el Dr. Juan Carlos médico especialista en ginecologia y obstetricia, certificado por el consejo mexicano de ginecologia y obstetricia. Siempre dispuesto a servir y acompañar a mis pacientes en todas etapas de su vida con experiencia, entrega y dedicación haré de su atención médica una experiencia positiva.",
+  "addresses": [
+    {
+      "full": "Avenida Adolfo López Mateos 218,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-mendez-tijerina/ginecologo/nuevo-leon#address-id=514489&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:01.205Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_carlos_m_ndez_tijerina.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Claudia De La Sierra",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sanchez Colin 75 Col. Granjas Valle De Guadalupe ,"
+    },
+    {
+      "full": "Sanchez Colin 75 Col. Granjas Valle De Guadalupe ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-de-la-sierra/ginecologo/ecatepec-de-morelos#address-id=357809&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:58.306Z",
+  "localPhotoPath": null
+}

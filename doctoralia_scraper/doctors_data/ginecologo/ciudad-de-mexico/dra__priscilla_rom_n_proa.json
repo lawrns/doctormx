@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Priscilla Román Proa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 203,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5981ab8b/5981ab8b-2931-42e8-867d-14ac895c26e3_small_square.jpg",
+  "about": "Soy ginecóloga y mi misión es acompañar a cada paciente con sensibilidad, respeto y confianza. Creo en la importancia de escuchar sin juicios, brindar información clara y crear un espacio seguro donde puedas expresar tus dudas y necesidades. Mi objetivo es ayudarte a cuidar tu salud integral, acompañarte en cada etapa de tu vida y ofrecerte una atención cercana, humana y personalizada.",
+  "addresses": [
+    {
+      "full": "Avenida Revolución 1225,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/priscilla-roman-proa/ginecologo/alvaro-obregon#address-id=456696&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:33.508Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__priscilla_rom_n_proa.webp"
+}

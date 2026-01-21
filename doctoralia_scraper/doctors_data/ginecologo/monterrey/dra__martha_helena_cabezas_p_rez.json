@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Helena Cabezas Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1240,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/12a5c6/12a5c6ab995c96236e725f9082dcd126.jpg",
+  "about": "Sobre mí Siempre busque las mejores instituciones para mi entrenamiento profesional, aunado a la atención personalizada y el mantenerme actualizada en los tratamientos, me permite ofrecer sin lugar a duda, un servicio de calidad y excelencia. ¿Por qué elegirme a mí? 20 años de experiencia de medicina privada, actualización médica continua, seriedad , respeto y empatía. Principales áreas de tratamiento Embarazo normal y de alto riesgo, infertilidad, laparoscopia colposcopia ( virus del papiloma humano) y menopausia. Otros servicios criocirugia, histerosocopia, terapia de remplazo hormonal. check up ginecologico",
+  "addresses": [
+    {
+      "full": "Belisario Dominguez No- 2602 Colonia Jardin, 4to piso con. 401-402,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-helena-cabezas-perez-2/ginecologo/nuevo-leon#address-id=69487&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:11.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__martha_helena_cabezas_p_rez.webp"
+}

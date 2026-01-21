@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rene Obscura Guizar",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8372c/d8372cb7499192db4bef0dc6a0839e1e_220_square.jpg",
+  "about": "Soy un médico joven con más de 15 años de experiencia en la práctica médica privada, que tuvo la fortuna de realizar la mayor parte de su formación académica en instituciones de gran valor ético, moral y prestigio nacional. Durante tu consulta siempre estarás rodeada de un gran equipo de salud, Integrado por 3 mujeres muy capaces que en todo momento te harán sentir cómoda y segura. El equipo esta integrado por: una doctora que siempre me asiste en todos los procedimientos quirúrgicos, una enfermera muy amable y cálida que te acompaña paso a paso durante tu revisión y una asesora que te apoyara en toda la cuestión de logística, citas, tramites con aseguradoras programación de cirugías y/o tratamiento ) Además contamos con equipo de ultrasonido y colposcopía de tal forma que siempre saldrás del consultorio con un diagnóstico.",
+  "addresses": [
+    {
+      "full": "Tlaxcala 80 (torre de consultorios Trinidad 1er piso consultorio 16),"
+    },
+    {
+      "full": "Tlaxcala 80 (torre de consultorios Trinidad 1er piso consultorio 16),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-obscura-guizar/ginecologo/cuauhtemoc#address-id=118423&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:46.202Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rene_obscura_guizar.webp"
+}

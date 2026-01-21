@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Salvador Correu Reza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional 613 consultorio 801 Hospital Español,"
+    },
+    {
+      "full": "Ejercito Nacional 613 consultorio 801 Hospital Español,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-correu-reza/ginecologo/miguel-hidalgo#address-id=71011&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:38.671Z",
+  "localPhotoPath": null
+}

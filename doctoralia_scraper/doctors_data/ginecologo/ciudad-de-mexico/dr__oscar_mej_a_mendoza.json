@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Oscar Mejía Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f2bec/2f2bec62946599aa92cb24b9f22237fe_220_square.jpg",
+  "about": "Nuestra prioridad es escucharte, atender tus dudas y apoyarte en mantenerte saludable. Me especializo en Cirugía de Mínima invasión en ginecología, histeroscopia y cirugía intrauterina Realize el Máster en Histeroscopia y cirugía intrauterina por la Universidad Europea de Madrid España.",
+  "addresses": [
+    {
+      "full": "Av. Dr Gustavo Baz 309, TR A1, La Loma.,"
+    },
+    {
+      "full": "Av. Dr Gustavo Baz 309, TR A1, La Loma.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-mejia-mendoza-2/ginecologo/tlalnepantla-de-baz2#address-id=507869&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:13.547Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__oscar_mej_a_mendoza.webp"
+}

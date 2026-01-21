@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Abraham Morones García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a95f8c/a95f8c239e69e2297f98274e3a5eaf1f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 3-A no. 60,"
+    },
+    {
+      "full": "Avenida 3-A no. 60,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-morones-garcia/ginecologo/ciudad-de-mexico#address-id=413681&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:22.606Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__abraham_morones_garc_a.webp"
+}

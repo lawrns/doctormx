@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karen Angélica Romero Pérez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8ac007/8ac0077b0fc08bd4999b3f0107b862dc_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Boulevard 22 Sur 5314,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-angelica-romero-perez/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:03.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__karen_ang_lica_romero_p_rez.webp"
+}

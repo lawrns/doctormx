@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Hector D. Navarro Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 132,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3aeb12/3aeb123d00e8a9f6a0da927bc6a8bc14_220_square.jpg",
+  "about": "Nos dedicamos al cuidado de la Mujer con más de 20 años de experiencia en Cirugía Ginecológica de Mínima Invasión, realizando Histerectomías, Miomectomías, resección de Quistes Ováricos, entre otros procedimientos por Laparoscopia e Histeroscopía.",
+  "addresses": [
+    {
+      "full": "Carretera Nacional 6501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-d-navarro-perez/ginecologo/nuevo-leon#address-id=10741&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:05.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__hector_d__navarro_perez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alexis Tejeida Wong",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e04cf/0e04cfb51453d0284fd7b545626e4b4b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,,"
+    },
+    {
+      "full": "Avenida Nexxus 104,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexis-tejeida-wong/ginecologo/general-escobedo#address-id=19009&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:13.630Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alexis_tejeida_wong.webp"
+}

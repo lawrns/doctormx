@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Monserrat Ancira",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f8c75/2f8c755f924d26643672aedd17b4b6e5_220_square.jpg",
+  "about": "Hola, soy la doctora Monse Ancira, ginecóloga en Guadalajara, con una especialidad en medicina materno fetal. Me especializo en la atención a mujeres en sus diferentes etapas (control ginecológico, toma de papanicolaou, ultrasonido de útero y ovarios, control de embarazo, atención de partos y cesáreas, embarazo de alto riesgo y ultrasonidos especializados). Mi enfoque es brindar una atención personalizada y de calidad a mis pacientes, ya sea en mi consultorio o en línea. Creo en la importancia de escuchar a mis pacientes y entender sus preocupaciones, en la búsqueda de un tratamiento individualizado que se adapte a sus necesidades. Si estás buscando un ginecólogo en Guadalajara, no dudes en contactarme, estaré feliz de poder atenderte.",
+  "addresses": [
+    {
+      "full": "Cremona 1122,"
+    },
+    {
+      "full": "Cremona 1122,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monserrat-ancira/ginecologo/guadalajara#address-id=500210&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:54.199Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__monserrat_ancira.webp"
+}

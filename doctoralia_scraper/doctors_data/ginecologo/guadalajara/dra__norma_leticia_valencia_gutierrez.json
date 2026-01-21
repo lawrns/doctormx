@@ -1,0 +1,62 @@
+{
+  "name": "Dra. Norma Leticia Valencia Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1811ad/1811ad02e658f765e4b044205c5e1546_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eulogio Parra 2954 Int 1,"
+    },
+    {
+      "full": "Eulogio parra 2954 int 1 ,"
+    },
+    {
+      "full": "EULOGIO PARRA 2954-1,"
+    },
+    {
+      "full": "Eulogio Parra 2954 Int 1,"
+    },
+    {
+      "full": "Eulogio parra 2954 int 1 ,"
+    },
+    {
+      "full": "EULOGIO PARRA 2954-1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Terapia de hormonas bioidénticas",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Terapia de hormonas bioidénticas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-leticia-valencia-gutierrez-2/ginecologo/guadalajara#address-id=344809&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:44.026Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_leticia_valencia_gutierrez.webp"
+}

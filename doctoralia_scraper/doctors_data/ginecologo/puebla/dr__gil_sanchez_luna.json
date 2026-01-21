@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Gil Sanchez Luna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5f06534/a5f06534-28f6-456a-8268-6bd2e89e12cb_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Morelos 6A, San Jerónimo Caleras,"
+    },
+    {
+      "full": "Avenida 7 Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $800"
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gil-sanchez-luna/medico-general-ginecologo/puebla#address-id=506626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:10.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gil_sanchez_luna.webp"
+}

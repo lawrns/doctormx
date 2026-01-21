@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Taymi Hernández Soto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c075a0/c075a05bb6c9ad6cd16ad74b67a2983d_220_square.jpg",
+  "about": "Ginecóloga y Obstetra con enfoque funcional y en terapia hormonal bioidéntica . Graduada en Universidad de Ciencias Médicas de la Habana, Cuba y certificada por el Colegio Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Calle Nueva York 32 #1004,Colonia Nápoles,"
+    },
+    {
+      "full": "Calle Nueva York 32 #1004,Colonia Nápoles,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/taymi-hernandez-soto/ginecologo/ciudad-de-mexico#address-id=405104&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:01.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__taymi_hern_ndez_soto.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melissa Ignacio García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 179,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9d5a637e/9d5a637e-5268-4e31-8210-cb0e42354ec2_small_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia. Cuento con diplomado en Colposcopia capacitada para tratar y valorar lesiones por Virus del Papiloma Humano. Realicé Diplomado en Fisioterapia Obstétrica, por lo que me encuentro capacitada para la preparación del periné previo al trabajo de parto y el cuidado y rehabilitación del mismo.",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cono cervical",
+      "price": "• $6,000"
+    },
+    {
+      "name": "ESFEROLISIS",
+      "price": "• $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melissa-ignacio-garcia/ginecologo/puebla#address-id=480228&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:53:00.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__melissa_ignacio_garc_a.webp"
+}

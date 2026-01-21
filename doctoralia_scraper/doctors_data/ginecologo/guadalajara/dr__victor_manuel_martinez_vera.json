@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Victor Manuel Martinez Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e6c10/8e6c106b96b0a6abe856a0483a283291_220_square.jpg",
+  "about": "Soy un medico preocupado por la salud de nuestras mexicanas, año tras año aumentan las enfermedades, las complicaciones secundarias al embarazo y/o enfermedades ginecologicas, soy medico egresado orgullosamente de la Universidad de guadalajara, Ginecobstetra egresado de Leon, Guanajuato, egresado de la Subespecialidad de Medicina Materno Fetal en Centro medico Nacional de Occidente en Guadalajara, Jalisco, he pisado infinidad de hospitales, afortunadamente he trabajado en múltiples estados y en todos los lugares la preocupación por un embarazo es la misma, y mi atención especializada es de calidad y calidez en todos lugares, te veo en consulta",
+  "addresses": [
+    {
+      "full": "Calle Tarascos #3469, Colonia Monraz, Consultorio 407,"
+    },
+    {
+      "full": "Calle Tarascos #3469, Colonia Monraz, Consultorio 407,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-martinez-vera/ginecologo/guadalajara#address-id=516053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:11.906Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__victor_manuel_martinez_vera.webp"
+}

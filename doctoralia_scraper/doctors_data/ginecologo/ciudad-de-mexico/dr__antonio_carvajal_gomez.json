@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Antonio Carvajal Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 165,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/63b901/63b901529397ae4fdffba7438bbccde2_220_square.jpg",
+  "about": "Soy médico, egresado de la Escuela Médico Militar en 1992, realice el internado de medicina general de 1992 a 1994, en el Hospital Central Militar, la especialidad de Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad con prácticas en el Hospital Central Militar y el Hospital Militar de Especialidades de la Mujer y Neonatología de 1997 al 2000, la Subespecialidad en Medicina Crítica en Obstetricia en el Instituto Materno Infantil del Estado de México, avalada por la UAEM, de 2001 a 2002, Cirugía Laparoscópica Avanzada avalada por la Universidad de Kiel de Alemania, Certificado desde Noviembre del 2016 como Cirujano de Consola, Cirugía Robótica Da vinci. Fui jefe del servicio de Gineco-obstetricia en el Hospital Regional de Mexicali, B.C, En el Hospital Militar de la Mujer, Sub-jefe de la sala de Alojamiento conjunto, jefe de la misma, jefe de Cuartos Combinados, jefe de Recuperación y Terapia Intensiva, jefe de departamento de tococirugía, de enseñanza e investigación, jefe el área de Ginecología y Obstetricia. Jefe del Curso de especialización y residencia de la especialidad de Ginecología y Obstetricia. 23 años en la práctica institucional y privada de la gineco-obstetricia. Director del Hospital Militar Regional de Tampico, Tamaulipas de Agosto del 2022 a enero del 2024, De febrero del 2024 a la fecha director del Hospital militar Regional de Especialidades de Mérida, Yucatán.",
+  "addresses": [
+    {
+      "full": "Calle 22 x 29 y 31, número 238, colonia México Oriente,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-carvajal-gomez/ginecologo-especialista-en-medicina-critica-y-terapia-intensiva/yucatan#address-id=10593&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:17.489Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__antonio_carvajal_gomez.webp"
+}

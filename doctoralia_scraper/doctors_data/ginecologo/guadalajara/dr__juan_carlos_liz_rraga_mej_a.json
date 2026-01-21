@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Juan Carlos Lizárraga Mejía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/98d5ee0f/98d5ee0f-da9a-4aa4-94a5-42f0f3d4afdf_small_square.jpg",
+  "about": "Yo con mucho gusto los atiendo soy especialista en gineco-obstetricia y haré lo imposible para resolver tus problemas de salud, cuento con 30 años de experiencia en el ámbito de la salud femenina",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier 596,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier 596,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $800"
+    },
+    {
+      "name": "Test VPH (Virus Papiloma Humano)",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamiento de lesiones por el virus del papiloma humano",
+      "price": "• $3,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-lizarraga-mejia/ginecologo/zapopan#address-id=541897&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:52.756Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_carlos_liz_rraga_mej_a.webp"
+}

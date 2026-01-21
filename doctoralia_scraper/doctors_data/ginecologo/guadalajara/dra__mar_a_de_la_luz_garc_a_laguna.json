@@ -1,0 +1,58 @@
+{
+  "name": "Dra. María de la Luz García Laguna",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/28fe74/28fe7441e91a056e1f0f8e0098766c6a_220_square.jpg",
+  "about": "Especialista en embarazo de alto riesgo y enfermedades de la mujer. Brindo atención cordial y con experiencia de mujer a mujer",
+  "addresses": [
+    {
+      "full": "Venustiano Carranza 1230 A,"
+    },
+    {
+      "full": "San Isaías 321, Fracc, San Pablo,"
+    },
+    {
+      "full": "Calle Manuel Doblado 189,47610 La Nueva Cruz,"
+    },
+    {
+      "full": "Venustiano Carranza 1230 A,"
+    },
+    {
+      "full": "San Isaías 321, Fracc, San Pablo,"
+    },
+    {
+      "full": "Calle Manuel Doblado 189,47610 La Nueva Cruz,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-la-luz-garcia-laguna-2/ginecologo/tepatitlan-de-morelos#address-id=339533&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:03.263Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__mar_a_de_la_luz_garc_a_laguna.webp"
+}

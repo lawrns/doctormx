@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Jesus González Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93c515/93c51575052fc362435e593bb053f1c0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle buen tono 163,"
+    },
+    {
+      "full": "Calle buen tono 163,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-gonzalez-rodriguez/ginecologo/gustavo-a-madero#address-id=89978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:03.437Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jesus_gonz_lez_rodr_guez.webp"
+}

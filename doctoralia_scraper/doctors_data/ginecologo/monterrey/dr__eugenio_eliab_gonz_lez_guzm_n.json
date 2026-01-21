@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Eugenio Eliab González Guzmán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 427,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/837ba5/837ba506c9063b708078a93444d2c9d9.jpg",
+  "about": "PROFESIONAL 2002 - 2008 Facultad de Medicina Universidad Autónoma De Nuevo León, Monterrey, NL, México Título obtenido: Médico Cirujano Y Partero POSGRADO 2010 - 2014 Especialidad de Ginecología y Obstetricia Programa Multicéntrico de Residencias Médicas TEC de Monterrey Maestría en Sexualidad y terapia de pareja por la UDIMACertificado por el Consejo Mexicano de Ginecología y Obstetricia Rotación académica y formativa Internacional en Medicina Fetal y Ecografía Obstétrica Nivel 3 Departamento de Ginecología y Obstetricia, Servicio de Medicina Materno Fetal, Hospital Vall d’ Hebrón Barcelona, España, Marzo - Mayo 2012",
+  "addresses": [
+    {
+      "full": "Carretera Nacional 6501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $3,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $18,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eugenio-eliab-gonzalez-guzman/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:16.888Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eugenio_eliab_gonz_lez_guzm_n.webp"
+}

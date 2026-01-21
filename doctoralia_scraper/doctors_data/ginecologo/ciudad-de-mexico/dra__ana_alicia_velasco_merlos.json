@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ana Alicia Velasco Merlos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. División del Norte 3398 Coyoacán, El Rosario,"
+    },
+    {
+      "full": "Av. División del Norte 3398 Coyoacán, El Rosario,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-alicia-velasco-merlos-2/ginecologo/ciudad-de-mexico#address-id=339889&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:48.906Z",
+  "localPhotoPath": null
+}

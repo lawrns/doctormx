@@ -1,0 +1,31 @@
+{
+  "name": "Ramon Antonio Esquivel Herrera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ermita Iztapalapa, 272,"
+    },
+    {
+      "full": "Nuevo Leon 230 PB,"
+    },
+    {
+      "full": "Ermita Iztapalapa, 272,"
+    },
+    {
+      "full": "Nuevo Leon 230 PB,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramon-antonio-esquivel-herrera-2/ginecologo/iztapalapa#address-id=68697&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:30.975Z",
+  "localPhotoPath": null
+}

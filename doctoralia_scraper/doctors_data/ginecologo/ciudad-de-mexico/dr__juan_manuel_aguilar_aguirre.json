@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Manuel Aguilar Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ezequiel Montes 18,"
+    },
+    {
+      "full": "Ezequiel Montes 18,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-aguilar-aguirre-2/ginecologo/ciudad-de-mexico#address-id=42602&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:39.238Z",
+  "localPhotoPath": null
+}

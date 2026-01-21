@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo López Monsalvo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 68,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4cb426/4cb4264a576005959750a593fd82f94c_220_square.jpg",
+  "about": "\"Pasión por tu Salud\" es la filosofía que nos mueve para brindarte la mejor atención médica, humana, profesional, de calidad y con la calidez que estabas buscando.",
+  "addresses": [
+    {
+      "full": "Circuito Historiadores S-44, (Acceso D, Consultorio 301),"
+    },
+    {
+      "full": "Circuito Historiadores S-44, (Acceso D, Consultorio 301),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-lopez-monsalvo/ginecologo/naucalpan-de-juarez2#address-id=79315&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:52.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__arturo_l_pez_monsalvo.webp"
+}

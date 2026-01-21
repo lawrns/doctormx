@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Carlos Salgado Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Benito Juarez Garcia Nte. 341,"
+    },
+    {
+      "full": "Adolfo Prieto 1316,"
+    },
+    {
+      "full": "Paseo Alexander Von Humbold 88,"
+    },
+    {
+      "full": "Av. Benito Juarez Garcia Nte. 341,"
+    },
+    {
+      "full": "Adolfo Prieto 1316,"
+    },
+    {
+      "full": "Paseo Alexander Von Humbold 88,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de ácido hialurónico",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cutánea, subcutánea o mucosa",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de uña encarnada",
+      "price": ""
+    },
+    {
+      "name": "Cirugía molusco contagioso",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-salgado-jimenez/ginecologo/naucalpan-de-juarez2#address-id=239848&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:52.338Z",
+  "localPhotoPath": null
+}

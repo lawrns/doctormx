@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Ángel Cortés Reyna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 477,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4751aa/4751aaf67a5f3ab41bcec4e24734706f_220_square.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia, con Subespecialidad en Medicina Materno-Fetal. Titulo como Médico General expedido por La Universidad Autónoma de Coahuila el día 4 de diciembre de 2009, con Mención Honorífica. Cedula Profesional como Médico General: 6428582 expedida el 14 de abril de 2010. Titulo como Médico Especialista en Ginecología y Obstetricia expedido por la Universidad Nacional Autónoma de México el día 14 de agosto de 2014, con Mención Honorífica. Cedula Profesional como Médico Especialista en Ginecología y Obstetricia 09109940 expedida el 13 de enero de 2015. Certificado por el Consejo Mexicano de Ginecología y Obstetricia 7839. Titulo como Médico Especialista en Medicina Materno Fetal expedido por la Universidad Nacional Autónoma de México el día 07 de enero de 2016, con Mención Honorífica. Cedula Profesional de Medicina Materno Fetal: 9982807 expedida el15 de Agosto 2016 Certificado por el Consejo Mexicano de Ginecología y Obstetricia en Medicina Materno Fetal 148",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 188,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-angel-cortes-reyna-2/ginecologo/iztapalapa#address-id=384295&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:08.645Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos___ngel_cort_s_reyna.webp"
+}

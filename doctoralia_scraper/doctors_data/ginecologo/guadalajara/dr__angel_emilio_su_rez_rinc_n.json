@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Angel Emilio Suárez Rincón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Nicolas Coopernico #3817 int 12 ,"
+    },
+    {
+      "full": "Av. Nicolas Coopernico #3817 int 12 ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-emilio-suarez-rincon/ginecologo/zapopan#address-id=31648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:16.133Z",
+  "localPhotoPath": null
+}

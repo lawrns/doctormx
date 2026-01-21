@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Yvette K. León Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/10f3fb/10f3fb5c1a2f12cf520d47b49eeed7be_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Corpus Christi 2320 Piso 1 Consultorio 3 y 4,"
+    },
+    {
+      "full": "Privada Corpus Christi 2320 Piso 1 Consultorio 3 y 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yvette-k-leon-camacho/ginecologo/monterrey#address-id=111545&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:41.566Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__yvette_k__le_n_camacho.webp"
+}

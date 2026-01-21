@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Josué Miguel Amador Carranza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 205,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5e4164/5e41642609635d08d8298f793dab0228_220_square.jpg",
+  "about": "Mi nombre es Josué Miguel Amador Carranza. Soy Ginecólogo con subespecialidad en Biología de la Reproducción Humana. Atiendo parejas que desean un embarazo y cuido del embarazo hasta el momento del nacimiento. La biología de la reproducción humana es una especialidad en la que se tratan problemas ginecológicos como Endometriosis, Miomas, Pólipos, Quistes en Ovarios, obstrucción de trompas de Falopio por cirugías y problemas espermáticos. Para lograr un embarazo y cuidar de él hasta el momento del nacimiento. Mi compromiso es que conozcas ampliamente tu enfermedad, sepas tus diferentes opciones de tratamiento y resuelvas todas tus dudas. Para tomar desiciones bien informadas.",
+  "addresses": [
+    {
+      "full": "C. José María Heredia 2960,"
+    },
+    {
+      "full": "Hidalgo 331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/josue-miguel-amador-carranza/ginecologo/guadalajara#address-id=453069&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:10.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__josu__miguel_amador_carranza.webp"
+}

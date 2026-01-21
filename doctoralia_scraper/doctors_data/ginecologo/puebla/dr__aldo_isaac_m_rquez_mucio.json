@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Aldo Isaac Márquez Mucio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e65d76/e65d7607296bb156698e8b3177fa975b_220_square.jpg",
+  "about": "Médico Cirujano con especialidad en Ginecología y Obstetricia, con formación en Colposcopía y electrocirugía del aparato genital. Maestro en Administración Hospitalaria.",
+  "addresses": [
+    {
+      "full": "Calle 4 Poniente 117,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aldo-isaac-marquez-mucio/ginecologo/tehuacan",
+  "scrapedAt": "2026-01-21T03:52:04.822Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__aldo_isaac_m_rquez_mucio.webp"
+}

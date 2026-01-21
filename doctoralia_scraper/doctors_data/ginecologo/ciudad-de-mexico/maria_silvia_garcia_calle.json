@@ -1,0 +1,25 @@
+{
+  "name": "Maria Silvia Garcia Calle",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Norte 92 A 10 Edif A Dep,302,La Esmeralda 1A Seccion,,"
+    },
+    {
+      "full": "Norte 92 A 10 Edif A Dep,302,La Esmeralda 1A Seccion,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-silvia-garcia-calle/ginecologo/gustavo-a-madero#address-id=355530&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:19.968Z",
+  "localPhotoPath": null
+}

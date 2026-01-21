@@ -1,0 +1,31 @@
+{
+  "name": "Justo Cárdenas Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "De La Clínica 2520, Sertoma,,"
+    },
+    {
+      "full": "Rio Brenta 22,"
+    },
+    {
+      "full": "De La Clínica 2520, Sertoma,,"
+    },
+    {
+      "full": "Rio Brenta 22,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/justo-cardenas-ochoa/ginecologo/monterrey#address-id=140615&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:47:05.772Z",
+  "localPhotoPath": null
+}

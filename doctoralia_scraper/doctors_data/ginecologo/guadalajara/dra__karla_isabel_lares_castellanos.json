@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Karla Isabel Lares Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1146d2/1146d2eda0aad950cbeab501283d9a9e_220_square.jpg",
+  "about": "Especialidad en Ginecología y Obstetricia Unidad Medica de Alta Especialidad Centro Médico Nacional de Occidente Instituto Mexicano del Seguro Social Subespecialidad en Medicina Materno Fetal Instituto Nacional de Perinatología \"Isidro Espinosa de los Reyes\" Certificada como Especialista en Ginecología y Obstetricia ante el Consejo Mexicano de Ginecología y Obstetricia A. C. Certificada como Especialista en Medicina Materno Fetal ante el Consejo Mexicano de Ginecología y Obstetricia A. C.",
+  "addresses": [
+    {
+      "full": "Guadalupe 4083 (c),"
+    },
+    {
+      "full": "Guadalupe 4083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-isabel-lares-castellanos/ginecologo/guadalajara#address-id=68501&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:13.882Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__karla_isabel_lares_castellanos.webp"
+}

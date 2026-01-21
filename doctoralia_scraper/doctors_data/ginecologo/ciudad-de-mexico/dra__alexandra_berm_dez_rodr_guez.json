@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Alexandra Bermúdez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71afa4/71afa49ae79411b47ebe8bb73470285b_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154-333,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 115,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154-333,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. 115,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alexandra-bermudez-rodriguez-3/ginecologo/-#address-id=256902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:25.072Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alexandra_berm_dez_rodr_guez.webp"
+}

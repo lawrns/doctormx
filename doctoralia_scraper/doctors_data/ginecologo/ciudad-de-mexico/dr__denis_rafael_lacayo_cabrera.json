@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Denis Rafael Lacayo Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 153,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b79806/b798060614379642f9d2c28b18c64ac5_220_square.jpg",
+  "about": "HOLA, SOY EL DR. DENIS RAFAEL LACAYO CABRERA, EGRESADO DE LA FACULTAD DE MEDICINA DE LA UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO, ESPECIALIDAD EN GINECOLOGIA Y OBSTETRICIA EN EL HOSPITAL DE ALTA ESPECIALIDAD \" LUIS CASTELAZO AYALA \" DEL IMSS, DIPLOMADO EN COLPOSCOPIA EN EL INSTITUTO DE CANCEROLOGIA, HISTEROSCOPIA Y LAPAROSCOPIA EN EL HOSPITAL GENERAL \" MANUEL GEA GONZALEZ \", CON MAS DE 25 AÑOS DE EXPERIENCIA. MI COMPROMISO ES DARLE A MIS PACIENTES ATENCION MEDICA DE PRIMER NIVEL, CON TRATO HUMANO, CON CALIDAD Y CALIDEZ EN UN AMBIENTE AMABLE DE REPSETO Y CREDIBILIDAD, CON UN ENFOQUE HONESTO, ETICO Y PROFESIONAL.",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Crioterapia",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación (crioterapia de verrugas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denis-rafael-lacayo-cabrera-2/ginecologo/cuauhtemoc2#address-id=73327&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:50.526Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__denis_rafael_lacayo_cabrera.webp"
+}

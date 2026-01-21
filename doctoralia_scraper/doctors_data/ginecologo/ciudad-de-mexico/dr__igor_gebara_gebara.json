@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Igor Gebara Gebara",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 198,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d3c90/1d3c9047346262ff8e1b190fc20c253c_220_square.jpg",
+  "about": "Soy el Dr. Igor Gebara Gebara, especialista en Ginecología, con sede en Ciudad de México. Me gradué de la Universidad LaSalle y he estado practicando durante varios años. Mi enfoque principal es la atención médica para adultos, con un enfoque particular en el cáncer de mama, diagnóstico prevención y tratamiento de virus del papiloma humano. Me enorgullece ofrecer la mejor atención médica posible a mis pacientes, utilizando las últimas técnicas y tecnologías disponibles. Me esfuerzo por crear un ambiente cálido y acogedor en mi consultorio, y siempre trato a mis pacientes con el respeto y la compasión que se merecen. Si está buscando un ginecólogo experimentado y dedicado en Ciudad de México, ¡no dude en ponerse en contacto conmigo!",
+  "addresses": [
+    {
+      "full": "Av Ejército Nacional 613 consultorio 1001 piso 10, colonia Granada,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $3,800"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $9,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/igor-gebara-gebara/ginecologo/ciudad-de-mexico#address-id=39306&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:29.202Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__igor_gebara_gebara.webp"
+}

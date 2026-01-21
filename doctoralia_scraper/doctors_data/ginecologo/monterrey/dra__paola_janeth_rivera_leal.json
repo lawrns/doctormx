@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola Janeth Rivera Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/45d490/45d49051f9729161263bf7c69e1b0962_220_square.jpg",
+  "about": "Especialista en Ginecología y obstetricia (ITESM) Subespecialista en Medicina Materno Fetal (UDEM) Dra. Paola Rivera, con ejercicio activo en la medicina privada como institucional. Con más de 19 años de experiencia en la institución pública y 15 años en medicina privada. Certificada por el consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "C. Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-janeth-rivera-leal-2/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:13.796Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__paola_janeth_rivera_leal.webp"
+}

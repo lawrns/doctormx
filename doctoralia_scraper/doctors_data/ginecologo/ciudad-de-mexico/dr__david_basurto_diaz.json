@@ -1,0 +1,66 @@
+{
+  "name": "Dr. David Basurto Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 161,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9b9f44/9b9f4468bc835bde81cc8ee5d44b8273_220_square.jpg",
+  "about": "Soy un especialista en Medicina Fetal y Cirugía fetal. Mi pasión es garantizarte una atención humana, honesta y de la máxima calidad mundial. Realicé Ginecología y Obstetricia en el TEC de Monterrey, después fui premiado con una beca del gobierno europeo para realizar el doctorado internacional FetalMed PhD del Erasmus Mundus por las universidades KU Leuven (Bélgica), Universitat de Barcelona (España) y Lund (Suecia). Durante cinco años trabajé en el centro de Cirugía Fetal de Leuven (Bélgica), centro líder en cirugía fetal a nivel mundial. Ahí tuve la oportunidad de tener como mentor al profesor Jan Deprest MD. PhD, considerado el padre de la cirugía fetal moderna. He contribuido a mejorar y desarrollar nuevas técnicas de cirugía fetal. Actualmente soy parte del equipo de medicina y cirugía fetal del Instituto Nacional de Perinatología en CDMX, profesor de la Universidad de Leuven en Bélgica y del Tec de Monterrey. Soy revisor de revistas médicas internacionales de prestigio, he publicado múltiples artículos científicos y capítulos de libro de mi especialidad.",
+  "addresses": [
+    {
+      "full": "Viad. Río Becerra 97, Nápoles sexto piso Consultorio 601-607,"
+    },
+    {
+      "full": "Av. Circuito Nuevo Veracruz 835,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/david-basurto-diaz/ginecologo/ciudad-de-mexico#address-id=435287&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:31.131Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__david_basurto_diaz.webp"
+}

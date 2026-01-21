@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Dan Maya Goldsmit",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Vialidad De La Barranca, S/N 265,"
+    },
+    {
+      "full": "Avenida Vialidad De La Barranca, S/N 265,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dan-maya-goldsmit-2/ginecologo/huixquilucan#address-id=109661&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:44.117Z",
+  "localPhotoPath": null
+}

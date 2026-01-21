@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lourdes Inzunza Gallardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 374,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/d4d12d3a/d4d12d3a-2846-44f5-b78c-f1f8933e60a6_large.jpg",
+  "about": "Estudié Medicina General, posteriormente me especialice en Ginecología y Obstetricia en la Unidad Médica de Alta Especialidad en Centro Médico Nacional de Occidente en Jalisco avalada por el Consejo Mexicano de Ginecología y Obstetricia, donde descubrí mi pasión por la ciencia atrás del difícil proceso de lograr un embarazo para algunas parejas, por lo que me decidí continuar mi preparación con una subespecialidad en Biología de la Reproducción Humana para poder estar a la vanguardia y ofrecer los tratamientos más innovadores en el acompañamiento del duro camino de la infertilidad, no solo medicamente si no también emocionalmente hasta lograr la meta de tener un recién nacido sano en casa. Sin dejar de lado la atención integral de la mujer, que comprende la revisión anual de rutina y enfermedades del aparato reproductor femenino. Cuento con trece años de haber incursionado en el ámbito de la medicina atendiendo más partos, cesáreas y tratamientos especializados en la mujer que los que puedo contar logrando una experiencia profesional confiable.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lourdes-inzunza-gallardo/ginecologo-medico-general/zapopan#address-id=386232&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:30.802Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__lourdes_inzunza_gallardo.webp"
+}

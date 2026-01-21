@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rodrigo Gómez Cardoso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 112,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8fb3b9/8fb3b90ac2f2f8bde4f7b43353f46920_220_square.jpg",
+  "about": "Actualmente > Práctica Profesional en Hospital Ángeles del Pedregal. > Profesor Asociado de la Especialidad en Ginecología y Obstetricia. Hospital Ángeles del Pedregal. > Certificado por el Consejo Mexicano de Ginecología y Obstetricia. > Miembro de la Asociación Americana de Laparoscopía Ginecológica -- AAGL -- ______________________________________________ SOMOS UN GRUPO ESPECIALIZADO EN LA ATENCIÓN INTEGRAL DE LA MUJER ASÍ COMO EN CIRUGÍA GINECOLÓGICA DE MÍNIMA INVASIÓN _________________________________",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055. Heroes de Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-gomez-cardoso/ginecologo/magdalena-contreras2#address-id=346704&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:22.005Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodrigo_g_mez_cardoso.webp"
+}

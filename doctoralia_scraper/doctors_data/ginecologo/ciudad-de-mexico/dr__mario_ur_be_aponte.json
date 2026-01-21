@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Uríbe Aponte",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ef781/2ef781508c64160db33f11e51057fb78_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Jose Maria Morelos 182 (Despacho 3),"
+    },
+    {
+      "full": "Ave. Jose Maria Morelos 182 (Despacho 3),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-uribe-aponte/ginecologo/cuernavaca#address-id=54609&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:18.714Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mario_ur_be_aponte.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Lorena Balladares Macedo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b63c71/b63c7117e794a7b552dee15fa88efdb3_220_square.jpg",
+  "about": "80007300 ext. 7058 Directo 54243128 Medico especialista, certificado por el Consejo Mexicano de Ginecología, La importancia en la empatía, conocer y escuchar a el paciente es el pilar fundamental. Cuento con el adiestramiento en colposcopía, toma de Papanicolaou, ultrasonido, manejo de lesiones por virus de papiloma humano, histeroscopía, control prenatal de embarazo bajo y alto riesgo, cirugía laparoscópica. Acudir a una consulta de Ginecología y Obstetricia donde encontraras un consultorio con equipo y médico especializado, todo esto para que no tengas que acudir a laboratorios para complementar estudios. Lo más importante es ofrecer calidad en el servicio y tener a nuestros pacientes satisfechos en la atención.",
+  "addresses": [
+    {
+      "full": "SUCURSAL HOSPITAL ANGELES DEL PEDREGAL CONSULTORIO 815 TORRE ANGELESmino a Santa Teresa 1055-S,"
+    },
+    {
+      "full": "SUCURSAL MEDICA SAN PEDRO Avenida José Morelos 136 Barrio de San Pedro Xochimilco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $2,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-balladares-macedo/ginecologo/ciudad-de-mexico#address-id=8669&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:02.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lorena_balladares_macedo.webp"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Oscar Manuel Aguilar Arambula",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b03d6a/b03d6a5483cc7aae3827ebd55d24f242_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca s/n, Hacienda de las Palmas, 52763 Jesús del Monte, Méx.,"
+    },
+    {
+      "full": "Av Río Moctezuma 176,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Cirugía por cáncer de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Cirugía por cáncer de ovario",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-manuel-aguilar-arambula/ginecologo/huixquilucan#address-id=438614&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:00.572Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__oscar_manuel_aguilar_arambula.webp"
+}

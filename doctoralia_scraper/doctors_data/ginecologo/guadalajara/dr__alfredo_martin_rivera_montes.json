@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Alfredo Martin Rivera Montes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea6b4a/ea6b4a39c7c9fe8f75756035beb33f36_220_square.jpg",
+  "about": "El destacado Ginecólogo y Obstetra Alfredo Martín Rivera Montes con Subespecialidad en Biología De La Reproducción Humana es experto en Infertilidad femenina y masculina Fecundación in vitro, Embriología, Reproducción asistida y cuenta con más de 10 años de experiencia. es parte del equipo profesional de Ingenes y está certificado por el Consejo Mexicano de Ginecología y Obstetricia y el Consejo Mexicano de Biología de la Reproducción Humana. Además ocupó el cargo de Coordinador Médico del Instituto y dirigió el programa de Maestría en Endocrinología Ginecológica e Infertilidad desarrollada por Ingenes. El Dr. Martín Rivera cursó además la Maestría en Ciencias Médicas en la Universidad Autónoma de México (UNAM) y actualmente crea protocolos de investigación a nivel seminal y desarrollo embrionario. Ha participado en la realización de publicaciones médicas y actividades de formación continua y está siempre al tanto de los últimos avances en el campo de la infertilidad.",
+  "addresses": [
+    {
+      "full": "Mar del Sur 2014,"
+    },
+    {
+      "full": "Mar del Sur 2014,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-martin-rivera-montes-2/ginecologo/guadalajara#address-id=258711&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:30.326Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alfredo_martin_rivera_montes.webp"
+}

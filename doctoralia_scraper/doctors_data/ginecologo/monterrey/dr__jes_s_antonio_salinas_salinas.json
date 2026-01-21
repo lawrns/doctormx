@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesús Antonio Salinas Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3c6cd/e3c6cd85084c44b1ad3a8b9306bbe527_220_square.jpg",
+  "about": "Soy el Dr. Antonio Salinas, soy Uroginecólogo certificado y soy especialista en el manejo integral de las patologías Ginecológicas y Uroginecólogicas dsde la adolesencia hasta la posmenopausia. Mi compromiso con mis pacientes es brindarles acompañamiento y atención médica ética, personalizada y de calidad. Formación Acádemica: - Médico Cirujano y Partero, Universidad Autónoma de Nuevo León (UANL) - Especialidad en Ginecología Y Obstetricia, ISSSTE Hospital Regional Monterrey, UANL - Subespecialidad en Urología Ginecológica, Instituno Nacional de Perinatología «Dr. Isidro Espinosa de los Reyes» (INPer), Universidad Nacional Autónoma de México (UNAM) - Diplomado en Cirugía Laparoscópica, Universidad Anáhuac - Estancia clínica en el Hospital «Carl Gustav Carus», Dresdén, Alemania",
+  "addresses": [
+    {
+      "full": "Av Paseo de los Leones 2508,"
+    },
+    {
+      "full": "Av Paseo de los Leones 2508,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-antonio-salinas-salinas/ginecologo/nuevo-leon#address-id=414075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:49.963Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jes_s_antonio_salinas_salinas.webp"
+}

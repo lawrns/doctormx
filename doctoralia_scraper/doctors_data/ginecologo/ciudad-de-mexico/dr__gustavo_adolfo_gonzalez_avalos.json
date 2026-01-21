@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gustavo Adolfo Gonzalez Avalos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 383,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/287995/287995b037fa2fb4614ed4ee825c154a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tepic 113,"
+    },
+    {
+      "full": "Tepic 113,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-adolfo-gonzalez-avalos/ginecologo/ciudad-de-mexico#address-id=222566&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:16:02.417Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gustavo_adolfo_gonzalez_avalos.webp"
+}

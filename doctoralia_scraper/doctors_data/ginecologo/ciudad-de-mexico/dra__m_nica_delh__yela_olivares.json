@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Mónica Delhí Yela Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3b603ae4/3b603ae4-b011-4a1c-bd36-df85aad9b331_small_square.jpg",
+  "about": "Soy la Dra. Mónica Yela, médica especialista en Ginecología y Obstetricia, egresada del Hospital General de México “Dr. Eduardo Liceaga”, y certificada por el Consejo Mexicano de Gineco-obstetricia. Cuento con un diplomado en Colposcopía y lesiones del tracto genital inferior por el Instituto Blackwell, avalado por la Universidad Autónoma de Guerrero.Brindo atención ginecológica integral con un enfoque humano, cercano y respetuoso, orientado al cuidado de la salud preventiva de la mujer en todas las etapas de la vida. Me apasiona acompañar a mis pacientes a través de la consulta ginecológica, la planificación familiar, el control prenatal personalizado y el seguimiento durante el embarazo, siempre ofreciendo información clara para una toma de decisiones informada.Mi práctica médica se basa en la empatía, el respeto y el profesionalismo, creando un espacio de confianza donde cada paciente se sienta escuchada, comprendida y segura. Ofrezco detección oportuna de enfermedades ginecológicas, colposcopía y manejo de lesiones del tracto genital inferior, así como orientación integral para el bienestar femenino.Te espero en consulta, será un gusto acompañarte con atención médica de calidad y calidez humana",
+  "addresses": [
+    {
+      "full": "Cantú 11, Piso 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $899"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $600"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $3,999"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $699"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• $5,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-delhi-yela-olivares/ginecologo/ciudad-de-mexico#address-id=593492&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:01.571Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_delh__yela_olivares.webp"
+}

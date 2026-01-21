@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Coco Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MONTIEL 206,"
+    },
+    {
+      "full": "MONTIEL 206,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/coco-gonzalez/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:00:00.671Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Paulina Correa García",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/82d74d/82d74df73d1f74143b2ab7d5f47ff008_220_square.jpg",
+  "about": "EMPATICA CON UNA ATENCION PROFESIONAL , A LA VANGUARDIA EN GINECOLOGIA Y OBSTETRICIA , COLPOSCOPIA , CONTROL PRENATAL , MENOPAUSIA , CIRUGIA , ABDOMINAL , VAGINAL , SOP , NEOVAGINA .",
+  "addresses": [
+    {
+      "full": "Gabriel Mancera 704 ,colonia Del Valle,"
+    },
+    {
+      "full": "Gabriel Mancera 704 ,colonia Del Valle,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-correa-garcia/ginecologo/benito-juarez#address-id=166305&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:56.913Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paulina_correa_garc_a.webp"
+}

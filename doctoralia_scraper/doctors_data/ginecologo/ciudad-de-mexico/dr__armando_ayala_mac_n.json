@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Armando Ayala Macín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/63826368/63826368-df77-4f63-b0db-64c5570147ee_small_square.jpg",
+  "about": "Hola!! Soy el Dr. Armando Ayala, realice mis estudios de medicina general en la Universidad Anáhuac, posteriormente egresado de la Universidad Autónoma del Estado de México como Ginecólogo-Obstetra, actualmente con certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia. Cuento con Diplomado en Colposcopía y Patología del tracto genital inferior avalado por la Universidad La Salle. Dentro de mi profesión atiendo, diagnóstico y ayudo a prevenir enfermedades que afectan a las mujeres en cualquier edad con base a las guías de manejo mas actuales. Mi objetivo es que todas las pacientes que acudan a mi consulta, reciban atención ginecológica de alta calidad acompañada de una buena comunicación a todo momento, con información veraz y confiable, que les permita vivir la mejor experiencia posible de atención médica.",
+  "addresses": [
+    {
+      "full": "Hospital Star Médica Tlalnepantla consultorio 812 Av Sor Juana Inés de La Cruz 280, Fracc. Industrial, San Lorenzo, 54033 Tlalnepantla, Méx.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,350"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-ayala-macin/ginecologo/tlalnepantla-de-baz2#address-id=421438&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:35.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__armando_ayala_mac_n.webp"
+}

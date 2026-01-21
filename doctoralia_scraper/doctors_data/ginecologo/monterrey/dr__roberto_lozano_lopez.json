@@ -1,0 +1,48 @@
+{
+  "name": "Dr. Roberto Lozano Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 230,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cd9ce7/cd9ce74b4789f9858c1f258df0cedb02_220_square.jpg",
+  "about": "\"Mi mayor interés es dar a conocer a mis pacientes la alternativa de la Cirugía de Mínima Invasión para la realización de cualquier procedimiento quirúrgico ginecológico, así como sus ventajas y virtudes respecto a la cirugía abierta convencional. Cuento con un equipo multidisciplinario con las capacidades y certificaciones necesarias para lograr la mejor atención de las pacientes, siempre optando por el máximo bienestar, el mejor resultado y sobre todo el restablecimiento de la salud”. El Dr. Lozano obtuvo su grado de Médico Cirujano y Partero en la Facultad de Medicina de la Universidad Autónoma de Nuevo León (UANL). Desde sus inicios como estudiante de medicina mostró interés por la Ginecología y Obstetricia, pues realizó el servicio social en dicho departamento, en el Centro Universitario de Medicina Reproductiva del Hospital Universitario \"Dr. José Eleuterio González\" de la Universidad Autónoma de Nuevo León. Realizó su entrenamiento en el Programa de Especialidades Médicas de la Universidad de Monterrey (UDEM) en Ginecología y Obstetricia en Christus Muguerza Hospital General Conchita. Cuenta además con un Adiestramiento de Alta Especialidad en el Antiguo Hospital Civil de Guadalajara \"Fray Antonio alcalde\" en Endoscopía Ginecológica Avanzada (Laparoscopía e Histeroscopía), avalado por la Universidad de Guadalajara (UdeG). Está Certificado por el Consejo Mexicano de Ginecología y Obstetricia A. C. (COMEGO). Tiene un diplomado en Colposcopía y cáncer de la mujer a cargo de Capacitación médica CMIN. S. C. Campus Monterrey, Nuevo León. Universidad Autónoma de Guerrero. Actualmente está cursando una maestría en educación basada en competencias avalada por la Universidad del Valle de México. Hoy en día es miembro activo de la Asociación de Endoscopía Ginecológica de Nuevo León, A. C. y de la Federación Mexicana de Asociaciones y Colegios de Endoscopía Ginecológica, A. C. (FEMEG). El Dr. Lozano ofrece su consulta privada en Wellmedic Health Centers, en la ciudad de Monterrey y San Pedro Garza García, Nuevo León, pero cuenta con privilegios para valorar y operar pacientes en todos los hospitales privados de la ciudad y trabaja con todos los seguros de gastos médicos.",
+  "addresses": [
+    {
+      "full": "Doctor Fernando Guajardo 155, interior 17 B. Col. Los Doctores,"
+    },
+    {
+      "full": "Avenida Rómulo garza 1100,"
+    },
+    {
+      "full": "Doctor Fernando Guajardo 155, interior 17 B. Col. Los Doctores,"
+    },
+    {
+      "full": "Avenida Rómulo garza 1100,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $870"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $870"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-lozano-lopez/ginecologo/san-nicolas-de-los-garza#address-id=345022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:26.007Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__roberto_lozano_lopez.webp"
+}

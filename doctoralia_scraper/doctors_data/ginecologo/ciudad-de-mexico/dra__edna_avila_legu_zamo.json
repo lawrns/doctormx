@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Edna Avila Leguízamo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 378,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8bf8f2/8bf8f22e8e092b5100326d2c400c873f_220_square.jpg",
+  "about": "Otros servicios Inicia campaña de vacunación contra la INFLUENZA a pacientes del Banco de México y particulares. SOLICÍTALA.",
+  "addresses": [
+    {
+      "full": "San Luis Potosí 124 consultorio 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edna-avila-leguizamo/ginecologo/cuauhtemoc2#address-id=439857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:43.895Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__edna_avila_legu_zamo.webp"
+}

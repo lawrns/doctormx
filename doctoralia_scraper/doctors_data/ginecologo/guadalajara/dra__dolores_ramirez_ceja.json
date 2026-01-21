@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dolores Ramirez Ceja",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 310,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68750f/68750f4a8161a8b910e6bb14181e102e_220_square.jpg",
+  "about": "Estudie en la carrera de medicina en la Universidad de Guadalajara, posteriormente ingrese a la especialidad de Ginecología y Obstetricia en el Hospital Civil Nuevo, al terminar mi especialidad, ingrese a la subespecialidad de Medicina Materno Fetal, rama de Ginecología que especializa en embarazos de alto riesgo y en el diagnostico de malformaciones fetales.",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1525,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dolores-ramirez-ceja-2/ginecologo/guadalajara#address-id=445323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:56.256Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__dolores_ramirez_ceja.webp"
+}

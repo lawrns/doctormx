@@ -1,0 +1,43 @@
+{
+  "name": "Aida Fabiola González Zimbrón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 691,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b1f0fb/b1f0fbdeb4f8c91ba596fac661993bd5.jpg",
+  "about": "Soy la Dra. Aida Fabiola González Zimbrón, Especialista en Ginecología, médico laparocopista, Especialista en Colposcopía y Ultrasonido. Cuento con más de 7 años de experiencia. Lo que más disfruto de mi especialidad es brindar un diagnóstico acertado de acuerdo a el padecimiento que tiene cada una de mis pacientes para con ello acompañarlas durante el tratamiento y resolución del mismo.",
+  "addresses": [
+    {
+      "full": "Homero 1425 Consultorio 1001 Colonia Polanco,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-fabiola-gonzalez-zimbron/ginecologo/miguel-hidalgo#address-id=407709&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:59.050Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/aida_fabiola_gonz_lez_zimbr_n.webp"
+}

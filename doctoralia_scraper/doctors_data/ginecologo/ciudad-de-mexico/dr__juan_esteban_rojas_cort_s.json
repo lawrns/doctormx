@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Esteban Rojas Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cdf5d9/cdf5d937cae4b382b9cf7642cb8bd1da_220_square.jpg",
+  "about": "Soy el Dr. Juan Esteban Rojas Cortés, cuento con 27 años de experiencia siendo especialista en Ginecología y Obstetricia con Alta Especialidad en Colposcopia para detección oportuna y tratamiento de lesiones del cuello del útero causadas por el Virus del Papiloma Humano. Mi objetivo es brindar atención y cuidado integral a la salud de las mujeres de manera cálida y respetuosa",
+  "addresses": [
+    {
+      "full": "Avenida 499 #102 San Juan Aragón 7a sección,"
+    },
+    {
+      "full": "Avenida 499 #102 San Juan Aragón 7a sección,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-esteban-rojas-cortes-2/ginecologo/gustavo-a-madero#address-id=420775&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:44.316Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_esteban_rojas_cort_s.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Maria Del Carmen Sandoval Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bilbao 487 Edif D Dep,101, Col. San Nicolas Tolentino, ,"
+    },
+    {
+      "full": "Bilbao 487 Edif D Dep,101, Col. San Nicolas Tolentino, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-sandoval-torres/ginecologo/iztapalapa#address-id=355408&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:14.781Z",
+  "localPhotoPath": null
+}

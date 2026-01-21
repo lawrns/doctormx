@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rubén Albertos Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 492,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/df46f79b/df46f79b-a4f5-4080-8361-586c764cfabf_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Ruben Mi objetivo es resolver con honestidad la problemática por la que acude cada paciente, resolver todas las dudas con las que llegan a consulta, explicando a detalle el padecimiento, tratamiento y vigilancia. Todas mis pacientes saldrán con la tranquilidad de haber resuelto dudas en un ambiente de confianza y ética. Contamos con paquete” check up ginecológico” para una revisión integral con un costo de $1550 Consulta de control de embarazo $800 donde se incluye su ultrasonido en 2D y se hace llegar imágenes vía digital, así como visualización al momento en pantalla. Detección y tratamiento para VPH (virus de papiloma humano), detección y tratamiento de verrugas. Prevención con aplicación de vacunas (gardasil 4, gardasil 9) Laparotomía, quistes y tumoraciones, resección de miomas, histerectomía, criocirugía de cervix, cono de cérvix, legrado, colposuspensión tipo Burch, reconstrucción vaginal, corrección de prolapso de órganos pélvicos, resección quistes mamarios, oclusión tubarica bilateral (OTB). Cirugía obstétrica: atención del parto, cesárea estética, laparotomía por embarazo ectópico, oclusión tubarica bilateral (OTB), aspiración manual endouterina (AMEU) o legrado. Cualquier duda no dudes en ponerte en contacto. Te esperamos.",
+  "addresses": [
+    {
+      "full": "Calle 11 Sur 5513-2, Prados Agua Azul,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-albertos-castillo/ginecologo/puebla#address-id=82866&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:38.959Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rub_n_albertos_castillo.webp"
+}

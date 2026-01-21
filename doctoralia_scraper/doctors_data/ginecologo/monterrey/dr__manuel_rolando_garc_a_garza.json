@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Rolando García Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/979655/9796557eacd2ea63c1ec4574a3575689_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Batallón de San Patricio 112, Colonia Real de San Agustín. Piso 10 Consultorio 5,"
+    },
+    {
+      "full": "Avenida Batallón de San Patricio 112, Colonia Real de San Agustín. Piso 10 Consultorio 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-rolando-garcia-garza/ginecologo/san-pedro-garza-garcia#address-id=117159&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:45.482Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__manuel_rolando_garc_a_garza.webp"
+}

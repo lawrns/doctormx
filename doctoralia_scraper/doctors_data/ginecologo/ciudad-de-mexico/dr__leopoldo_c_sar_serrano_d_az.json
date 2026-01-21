@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Leopoldo César Serrano Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/518858f5/518858f5-b63b-40c3-b2ec-92015c4b9a0f_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zaragoza Num Ext 603 Col Centro,"
+    },
+    {
+      "full": "Zaragoza Num Ext 603 Col Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leopoldo-cesar-serrano-diaz/ginecologo/aguascalientes#address-id=119762&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:45.875Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__leopoldo_c_sar_serrano_d_az.webp"
+}

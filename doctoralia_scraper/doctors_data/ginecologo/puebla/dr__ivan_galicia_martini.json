@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ivan Galicia Martini",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 313,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06eb25b1/06eb25b1-b963-4d77-a4c9-2b1263309a3e_small_square.jpg",
+  "about": "Terapia hormonal bioidéntica, menopausia, VPH, embarazo, rejuvenecimiento vaginal, cirugías estéticas íntimas, histeroscopia y laparoscopia.",
+  "addresses": [
+    {
+      "full": "Anillo Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $800"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-galicia-martini/ginecologo/puebla#address-id=486249&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:49.496Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__ivan_galicia_martini.webp"
+}

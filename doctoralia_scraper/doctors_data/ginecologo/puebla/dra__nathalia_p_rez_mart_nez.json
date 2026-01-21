@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nathalia Pérez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 567,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a7cc01/a7cc0132b2cebd96f37adbb42ab6eac7_220_square.jpg",
+  "about": "Mi formación profesional la realice en esta maravillosa ciudad de puebla, dentro de destacados centros hospitalarios, he tenido el honor de formar parte del grupo directivo dentro de las subdirecciones medicas hospitalarias y en la jefatura del servicio de Ginecología y obstetricia del Hospital ISSSTEP. En la practica privada hemos formado un grupo de mujeres profesionales de la salud enfocadas en el bienestar y el cuidado de la mujer en todas sus etapas , con gran empatía y entendimiento de su sentir físico y emocional. Apoyamos la libertad de elección de la mujer en su vida reproductiva, con un profundo respeto por la vida desde sus inicios. Tenemos una filosofía de trabajo espiritual, basada en el respeto, el empoderamiento de la mujer y una gran criterio y apertura de pensamiento para el manejo de cualquier patología, por lo que nuestra pacientes se encontraran en un ambiente agradable y seguro para expresarse y sentirse cómodas. La primera consulta es la mas importante pues es en donde se forma un vinculo con la paciente y podemos realizar un adecuado diagnostico, tratamiento y seguimiento.",
+  "addresses": [
+    {
+      "full": "Privada de las Ramblas 4,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nathalia-perez-martinez/ginecologo/puebla#address-id=6763&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:02.018Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__nathalia_p_rez_mart_nez.webp"
+}

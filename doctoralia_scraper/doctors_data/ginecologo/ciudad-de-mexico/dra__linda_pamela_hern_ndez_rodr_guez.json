@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Linda Pamela Hernández Rodríguez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a200232d/a200232d-9833-43a6-9342-9f7b9c8c934c_small_square.jpg",
+  "about": "Hola Bienvenidas a este espacio que es creado para ustedes. Soy la Dra. Linda Pamela Hernández -Ginecología -Obstetricia -Ultrasonografia Ginecologica y Obstetrica -Endocrinología Ginecológica Es un honor para mí acompañarte en el cuidado de tu salud. Como ginecóloga, mi prioridad es ofrecerte un espacio de confianza donde puedas sentirte escuchada, comprendida y atendida de manera profesional y cálida. Estoy aquí para responder tus dudas, apoyarte en cada etapa de tu vida y trabajar juntas por tu bienestar integral. Gracias por confiar en mí. Tu salud es lo más importante",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/linda-pamela-hernandez-rodriguez/ginecologo/benito-juarez#address-id=548208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:51.931Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__linda_pamela_hern_ndez_rodr_guez.webp"
+}

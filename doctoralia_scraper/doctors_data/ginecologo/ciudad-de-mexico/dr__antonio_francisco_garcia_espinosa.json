@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Antonio Francisco Garcia Espinosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 36,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f4e59/5f4e59c0fd01824a244810bc6fe3cb6e_220_square.jpg",
+  "about": "Hola a todas y todos. Soy el Dr. Antonio Fco. García Espinosa, Especialista en Ginecología y Obstetricia formado en Hospital General de México y el I.S.S.S.T.E. por parte de la U.N.A.M., así como con Especialidad en Cirugía Endoscópica Ginecológica y otra Especialidad en Patología Tracto Inferior y Colposcopia, dichos adiestramientos me han formado y capacitado para tratar lesiones por Virus Papiloma Humano, así como de enfermedades propias de la mujer y embarazo alto riesgo tanto en área clínica como Quirúrgica. Algo importante a mencionar es que el manejo de las patologías femeninas no solo debe ser con conocimiento de ellas, también debe ser acompañado de alto grado de humanidad, veracidad, ética y empatía, a lo cual hago mi mayor esfuerzo, siempre informando y acompañando a las pacientes durante su proceso cualquiera que sea dentro de mi área de expertis y competencia. Si deseas un Especialista comprometido y que este presente durante tu proceso cualquiera que sea, deseo ponerme a tu servicio. Agradecido siempre con los pacientes que me han dado oportunidad de ayudar. Honestidad siempre. Concluyo con: La salud es el mayor bien que podemos tener, por ello la prevención siempre es lo mas importante. Primum non nocere.",
+  "addresses": [
+    {
+      "full": "Giotto 49a, Insurgentes Mixcoac,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna, Héroes de Padierna, consultorio 990,"
+    },
+    {
+      "full": "Giotto 49a, Insurgentes Mixcoac,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna, Héroes de Padierna, consultorio 990,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-francisco-garcia-espinosa-2/ginecologo/magdalena-contreras#address-id=477935&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:57.567Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__antonio_francisco_garcia_espinosa.webp"
+}

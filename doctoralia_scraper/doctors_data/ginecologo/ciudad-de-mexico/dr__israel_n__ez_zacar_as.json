@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Israel Núñez Zacarías",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/db1ad5/db1ad58d2b64f3ba0e04ab620e3dff23_220_square.jpg",
+  "about": "TODO EL MES DE FEBRERO REALIZATE TU REVISIÓN ANUAL PAPANICOLAU, COLPOSCOPIA, REVISIÓN DE MAMAS Y ULTRASONIDO...COSTOS ACCESIBLES",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "PLINIO 128,"
+    },
+    {
+      "full": "Ejercito Nacional No. 613, Col. Granada,"
+    },
+    {
+      "full": "PLINIO 128,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/israel-nunez-zacarias-2/ginecologo/ciudad-de-mexico#address-id=339401&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:08.819Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__israel_n__ez_zacar_as.webp"
+}

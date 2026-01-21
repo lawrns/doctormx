@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Luis Arturo Ruvalcaba Castellón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puerta De Hierro 5150 Tc 5 O,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Blvd. Puerta de Hierro #5150,"
+    },
+    {
+      "full": "Puerta De Hierro 5150 Tc 5 O,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Blvd. Puerta de Hierro #5150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-arturo-ruvalcaba-castellon/ginecologo/guadalajara#address-id=18&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:55.764Z",
+  "localPhotoPath": null
+}

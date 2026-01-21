@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Manuel Arriola Zamarripa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 656,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f40e69/f40e693175850fc05c9dd3d1aabf6f3d.jpg",
+  "about": "Soy el Dr. Manuel Arriola Zamarripa, ginecólogo y obstetra con posgrados en colposcopía, ecografía, mastología, cirugia ginecologica minimamente invasiva, patología del tracto genital inferior y ginecología estética, regenerativa y funcional.Me especializo en ayudarte a sentirte bien, segura y plena en cada etapa de tu vida. Desde un chequeo preventivo hasta procedimientos avanzados, mi enfoque es siempre el mismo: atención humana, trato respetuoso y resultados que mejoran tu salud y tu calidad de vida.Combino experiencia médica con tecnología de vanguardia para ofrecer soluciones efectivas y personalizadas. Aquí no eres solo una paciente: eres una mujer que merece ser escuchada, cuidada y tratada con excelencia. Agenda tu cita y descubre una nueva forma de vivir tu salud íntima: con confianza, claridad y el respaldo de un especialista que está contigo en cada paso.",
+  "addresses": [
+    {
+      "full": "Calle Riobamba 639,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Desde $6,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Desde $6,000"
+    },
+    {
+      "name": "Check up",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-arriola-zamarripa/ginecologo/ciudad-de-mexico#address-id=360435&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:47.122Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_arriola_zamarripa.webp"
+}

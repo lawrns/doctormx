@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando González Arjona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/54b107/54b107f336ac67c503fa1b3834cca7a0_220_square.jpg",
+  "about": "Ginecólogo con Subespecialidad en Endoscopia Ginecológica con enfoque a Histeroscopias, Egresado del hospital Hillel Yaffe de Hadera, Israel. Idiomas: Español, Inglés y Hebreo. רופא נשים מבית חולים הלל יפה (2011 - 2017). תת התמחות על אי פריון כירורגית. שנתיים אחראי באשפוז יום גינקולוגית. שנה עם פרופסור שגי חיימוביץ בקליניקה של היסטרוסקופיה בחלל יפה",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-gonzalez-arjona/ginecologo/nuevo-leon#address-id=154979&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:15.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__fernando_gonz_lez_arjona.webp"
+}

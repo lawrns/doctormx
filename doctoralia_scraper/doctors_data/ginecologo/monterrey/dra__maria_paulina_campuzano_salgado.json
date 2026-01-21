@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria Paulina Campuzano Salgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 188,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/839fdb/839fdb6bd3f248b2f1d3b6233e3711a6.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-paulina-campuzano-salgado/ginecologo/general-escobedo#address-id=328835&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:42.329Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__maria_paulina_campuzano_salgado.webp"
+}

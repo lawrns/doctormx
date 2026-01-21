@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maria de los Ángeles Madrigal de la Campa",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 159,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d50c51/d50c5181db514e0b2272c1a60c1ac1ac_220_square.jpg",
+  "about": "Soy cuidadosa, atenta y empática con mis pacientes",
+  "addresses": [
+    {
+      "full": "Circuito Circunvalación Oriente 131,"
+    },
+    {
+      "full": "Circuito Circunvalación Oriente 131,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-madrigal-de-la-campa-2/ginecologo/naucalpan-de-juarez2#address-id=393999&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:50.097Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_de_los__ngeles_madrigal_de_la_campa.webp"
+}

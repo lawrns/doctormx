@@ -1,0 +1,42 @@
+{
+  "name": "Carolina Carrillo Nuñez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 508,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fe5db8/fe5db8a4ffccee8747e3c850e3bdd3fd_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia con subespecialidad en Urología Ginecológica certificada en ambas, experta en diagnostico y tratamiento de disfunciones de piso pélvico y del tracto genitourinario. Completamente avalada para brindar atención integral a la mujer.",
+  "addresses": [
+    {
+      "full": "Calle Ignacio Sandoval 1699,"
+    },
+    {
+      "full": "20 de Noviembre, 460,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-carrillo-nunez/ginecologo/colima#address-id=349878&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:51.774Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/carolina_carrillo_nu_ez.webp"
+}

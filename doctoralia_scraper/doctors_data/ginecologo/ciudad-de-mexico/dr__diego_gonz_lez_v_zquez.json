@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Diego González Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1f0216/1f0216b2cb00594576a51877d87b3410_220_square.jpg",
+  "about": "Médico general formado en la Universidad Autónoma de Coahuila, Ginecólogo y Obstetra por el Instituto Nacional de Perinatología con Alta Especialidad en Endoscopia Ginecológica y Cirugía de Mínima Invasión por el INPer",
+  "addresses": [
+    {
+      "full": "Tuxpan 6 503 roma,"
+    },
+    {
+      "full": "Av Observatorio 354,"
+    },
+    {
+      "full": "Tuxpan 6 503 roma,"
+    },
+    {
+      "full": "Av Observatorio 354,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de  DIU Kyleena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diego-gonzalez-vazquez-2/ginecologo/cuauhtemoc2#address-id=509047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:33.711Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__diego_gonz_lez_v_zquez.webp"
+}

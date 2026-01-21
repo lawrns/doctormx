@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Haidee Gomez Garcia",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/de755388/de755388-a1b6-49e4-8fd8-290bae1150aa_small_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia, egresada de la UNAM, con más de 10 años de experiencia acompañando a mujeres en cada etapa de su vida. Brindo atención cálida, respetuosa y basada en evidencia científica para el cuidado integral de la salud femenina, desde el control prenatal y la planificación familiar, hasta el tratamiento de alteraciones hormonales, salud menstrual y menopausia. Mi compromiso es ofrecer un espacio seguro y de confianza, donde cada paciente se sienta escuchada y atendida con profesionalismo y empatía.",
+  "addresses": [
+    {
+      "full": "Costa Rica 12,"
+    },
+    {
+      "full": "Costa Rica 12,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/haidee-gomez-garcia/ginecologo/ecatepec-de-morelos#address-id=620305&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:40.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__haidee_gomez_garcia.webp"
+}

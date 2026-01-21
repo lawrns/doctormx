@@ -1,0 +1,25 @@
+{
+  "name": "Rafael Dario Zavaleta Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida 20 De Noviembre No. 1074, Colonia Centro,"
+    },
+    {
+      "full": "Avenida 20 De Noviembre No. 1074, Colonia Centro,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-dario-zavaleta-garcia/ginecologo/veracruz#address-id=124767&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:16:08.000Z",
+  "localPhotoPath": null
+}

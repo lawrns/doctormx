@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Roberto De Jesús Infante Salinas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Frida Khalo 180,"
+    },
+    {
+      "full": "Ave. Linda Vista 200,"
+    },
+    {
+      "full": "Frida Khalo 180,"
+    },
+    {
+      "full": "Ave. Linda Vista 200,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-de-jesus-infante-salinas/ginecologo/monterrey#address-id=66928&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:26.846Z",
+  "localPhotoPath": null
+}

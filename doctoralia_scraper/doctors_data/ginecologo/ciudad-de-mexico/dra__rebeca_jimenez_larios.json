@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rebeca Jimenez Larios",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/306b0e/306b0e210ed9d004102a846f6651c7fd_220_square.jpg",
+  "about": "Manejo las alteraciones hormonales desde adolescentes hasta mujeres adultas. Llevo control del embarazo y atención de partos y cesáreas. Realizo cirugías ginecológicas. Tratamiento de infecciones vaginales, menopausia. Manejo anticonceptivos, aplicación de DIU.",
+  "addresses": [
+    {
+      "full": "Jose Espinosa Fuentes # 602, Col. Escuadrón 201,"
+    },
+    {
+      "full": "Jose Espinosa Fuentes # 602, Col. Escuadrón 201,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rebeca-jimenez-larios/ginecologo/iztapalapa#address-id=161528&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:50.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rebeca_jimenez_larios.webp"
+}

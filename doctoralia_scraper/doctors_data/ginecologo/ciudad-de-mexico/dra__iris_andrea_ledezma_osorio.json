@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Iris Andrea Ledezma Osorio",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3e132056/3e132056-2448-4069-8ee5-01d1e1cf6d2b_small_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, dedicada al cuidado integral de la salud femenina en todas las etapas de la vida. Mi práctica se enfoca en el acompañamiento de la mujer desde la adolescencia hasta la madurez, con especial interés en la salud hormonal, el control ginecológico preventivo, el embarazo, puerperio y el bienestar ginecológico integral.Me caracterizo por ofrecer una atención empática, cercana, respetuosa y profesional, donde cada paciente puede sentirse escuchada y comprendida. Creo firmemente que una consulta médica debe ser un espacio de confianza, sin juicios y con información clara, para que cada mujer pueda tomar decisiones informadas sobre su cuerpo y su saludAtiendo a mujeres en diferentes etapas de la vida, desde jóvenes que inician su vida sexual, mujeres en edad reproductiva y pacientes que atraviesan cambios hormonales como el climaterio y la menopausia. Mi objetivo es brindar un acompañamiento médico humano, ético y actualizado, combinando el rigor científico con una visión centrada en la paciente. Creo en la medicina basada en evidencia, las decisiones compartidas y la atención centrada en la mujer como pilares para lograr resultados reales y duraderos.Mi compromiso es que cada paciente se sienta segura, comprendida y acompañada desde la primera consulta, ofreciendo no solo diagnóstico y tratamiento, sino también orientación y tranquilidad en cada etapa de su proceso de salud",
+  "addresses": [
+    {
+      "full": "Avenida Xotepingo 48,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $450"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iris-andrea-ledezma-osorio/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-21T02:40:40.081Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__iris_andrea_ledezma_osorio.webp"
+}

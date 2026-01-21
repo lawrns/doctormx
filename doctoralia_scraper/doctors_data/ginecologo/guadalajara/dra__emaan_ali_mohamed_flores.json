@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Emaan Ali Mohamed Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 95,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/23b64e/23b64e547d2b256c2e12b45dfdccb341_220_square.jpg",
+  "about": "Médico especialista en Ginecología y Obstetricia con subespecialidad en Medicina Materno Fetal. Amplia experiencia en el cuidado integral de la salud de la mujer gestante, diagnóstico y tratamiento de patologías obstétricas y asesoramiento prenatal. Comprometido con la mejora continua y la atención centrada en la paciente",
+  "addresses": [
+    {
+      "full": "Calzada Lazaro Cardenas 3859,"
+    },
+    {
+      "full": "Calzada Lazaro Cardenas 3859,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emaan-ali-mohamed-flores/ginecologo/zapopan#address-id=497132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:12.828Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__emaan_ali_mohamed_flores.webp"
+}

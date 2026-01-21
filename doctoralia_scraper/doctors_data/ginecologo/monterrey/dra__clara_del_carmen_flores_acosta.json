@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Clara del Carmen Flores Acosta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 526,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a7e016/a7e01682207ad96172d5a7e7bda14553.jpg",
+  "about": "Medico Cirujano y Partero, Especialidad en Ginecología y Subespecialidad en Perinatología (Embarazo de alto riesgo)",
+  "addresses": [
+    {
+      "full": "P.º de Los Insurgentes, Cumbres 1º Sector, Monterrey, N.L.,"
+    },
+    {
+      "full": "Pablo Moncayo 117,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/clara-del-carmen-flores-acosta/ginecologo/nuevo-leon#address-id=334831&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:19.949Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__clara_del_carmen_flores_acosta.webp"
+}

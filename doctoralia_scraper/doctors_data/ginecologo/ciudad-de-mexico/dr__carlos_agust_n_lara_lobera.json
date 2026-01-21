@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Carlos Agustín Lara Lobera",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 6 piso7 colonia Roma Sur CDMX,"
+    },
+    {
+      "full": "Tuxpan 6 piso7 colonia Roma Sur CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-agustin-lara-lobera/ginecologo/cuauhtemoc2#address-id=122852&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:07.265Z",
+  "localPhotoPath": null
+}

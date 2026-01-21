@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Emanuel García Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1500ea/1500ead60afc77c024a5067044ce5098_220_square.jpg",
+  "about": "Amplia experiencia en cirugía ginecológica (miomas, quistes ) y embarazo de alto riesgos, así como cirugía obstetrica (cesárea ). Además procedimientos de mínima invasión ( laparoscopia )",
+  "addresses": [
+    {
+      "full": "Calzada de las Bombas 128,"
+    },
+    {
+      "full": "Calzada de las Bombas 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emanuel-garcia-jimenez/ginecologo/coyoacan#address-id=155712&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:37.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__emanuel_garc_a_jim_nez.webp"
+}

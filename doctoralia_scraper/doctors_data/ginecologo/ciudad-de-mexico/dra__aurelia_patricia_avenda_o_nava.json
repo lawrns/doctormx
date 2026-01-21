@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Aurelia Patricia Avendaño Nava",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. 5 61,"
+    },
+    {
+      "full": "C. 5 61,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aurelia-patricia-avendano-nava/ginecologo/ciudad-de-mexico#address-id=243487&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:46.085Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Vásquez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9c6b3de4/9c6b3de4-ca80-4108-89f4-7a1ef4080196_small_square.jpg",
+  "about": "Cuánto con un Alta de Ginecología Endoscopica y Diplomado de Colposcopia",
+  "addresses": [
+    {
+      "full": "Merida 19,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-vasquez/medico-general/ciudad-de-mexico#address-id=598175&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:47.541Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_v_squez.webp"
+}

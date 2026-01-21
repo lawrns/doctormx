@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Sharon Urbina Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 101,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/6d37cccd/6d37cccd-cb64-43fc-a997-169c70885fab_small_square.jpg",
+  "about": "Mi nombre es Sharon Urbina Martinez y soy Medico Especialista en Ginecología y Obstetricia graduada en la Universidad de Guadalajara. Me considero una profesional comprometida con la salud de mis pacientes, brindando siempre un trato cálido y respetuoso. Mi enfoque se basa en la atención buscando entender las necesidades individuales de cada persona para ofrecer un tratamiento adecuado y efectivo. Si buscas un especialista en Ginecología y Obstetricia que te brinde una atención personalizada, no dudes en contactarme . Estoy aquí para ayudarte.",
+  "addresses": [
+    {
+      "full": "Av. Fray Andrés de Urdaneta 2045,"
+    },
+    {
+      "full": "Venustiano Carranza 30,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sharon-urbina-martinez/ginecologo/guadalajara#address-id=460112&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:23.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sharon_urbina_martinez.webp"
+}

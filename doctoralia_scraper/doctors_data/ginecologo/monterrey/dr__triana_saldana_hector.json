@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Triana Saldana Hector",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carretera Nacional #6501 col. La Estanzuela Centro Medico Christus Muguerza Sur. Consultorio 706,"
+    },
+    {
+      "full": "Carretera Nacional #6501 col. La Estanzuela Centro Medico Christus Muguerza Sur. Consultorio 706,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/triana-saldana-hector/ginecologo/monterrey#address-id=44840&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:03.148Z",
+  "localPhotoPath": null
+}

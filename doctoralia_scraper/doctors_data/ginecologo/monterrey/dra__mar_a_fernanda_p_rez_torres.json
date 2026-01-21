@@ -1,0 +1,30 @@
+{
+  "name": "Dra. María Fernanda Pérez Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d4fe2507/d4fe2507-8df6-44fb-8495-aa4ea3725ad0_small_square.jpg",
+  "about": "¡Hola! Soy la Dra. Fernanda Torres. Me apasiona el cuidado integral de la salud de la mujer, en especial durante la etapa del climaterio y la menopausia. Creo profundamente en el impacto que un adecuado equilibrio hormonal tiene en nuestra calidad de vida y por eso me he especializado en ofrecer tratamientos tanto hormonales como no hormonales, siempre personalizados, seguros y basados en evidencia. - Soy egresada como Médico Cirujano por la Escuela de Medicina del Tecnológico de Monterrey y especialista en Ginecología y Obstetricia por el Programa Multicéntrico de Especialidades Médicas del Tecnológico de Monterrey y Servicios de Salud de Nuevo León. - Además, realicé una Alta Especialidad en Climaterio y Menopausia en el Centro Médico Zambrano Hellion - TecSalud. - Estoy acreditada por el Consejo Mexicano de Ginecología y Obstetricia, y formo parte de importantes asociaciones internacionales como The Menopause Society y la International Menopause Society (IMS). Cada mujer merece sentirse escuchada y comprendida por una experta que la acompañe en esta etapa. Estoy aquí para acompañarte y ayudarte a vivirla de forma plena, informada y con total bienestar.",
+  "addresses": [
+    {
+      "full": "Batallón de San Patricio 112,"
+    },
+    {
+      "full": "Batallón de San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-perez-torres/ginecologo/san-pedro-garza-garcia#address-id=572040&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:14.040Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_fernanda_p_rez_torres.webp"
+}

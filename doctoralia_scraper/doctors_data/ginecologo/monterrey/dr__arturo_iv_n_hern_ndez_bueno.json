@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Arturo Iván Hernández Bueno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b79570/b795702b71376bd45713e4ffce941e96_220_square.jpg",
+  "about": "Muy buen día me pongo a sus ordenes con la única finalidad de brindarle atención medica con calidad y calidez humana, en la primer consulta ofrezco una exploración física y la elaboración de su historia clínica ginecológica , toma de papanicolaou, colposcopia y rastreo ultrasonografico de utero, el costo de la primer consulta es de 600 pesos e incluye lo antes mencionado. Estudie la carrera de medicina general en la Escuela Medico Militar y la especialidad en Ginecología y Obstetricia en la escuela Militar de Graduados de Sanidad. Como parte de mi preparación he acudido a cursos nacionales e internacionales en diferentes temas propios de mi especialidad como: cirugía laparoscopica, colposcopia , rejuvenecimiento vaginal, embarazo normal y de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Paseo tecnologico 909,"
+    },
+    {
+      "full": "Paseo tecnologico 909,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Histerectomía total con anexectomía",
+      "price": "• $700"
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-ivan-hernandez-bueno/ginecologo/torreon#address-id=434229&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:41.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__arturo_iv_n_hern_ndez_bueno.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raul Dorbeker Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/574da0/574da0f0c4c80cfbc7bc655e51e0fb1d_220_square.jpg",
+  "about": "Médico con 33 años de experiencia en la atención en las enfermedades de la mujer. Me caracterizo por una atención personalizada y humana en los problemas que aquejan a las mujeres de todas las edades. Experto en el control de embarazo normal y alto riesgo. Amplia experiencia en las cirugías como la atención de parto normal, operación cesárea y otras cirugías ginecológicas como la histerectomía. Defensor de la lactancia materna. He trabajado como jefe de Ginecología y Obstetricia en al Secretaría de Salud en el Estado de Veracruz y en el Estado de México. Asimismo he sido profesor titular de Posgrado en Ginecología y Obstetricia de la Universidad Autónoma del Estado de México.",
+  "addresses": [
+    {
+      "full": "Circuito Médicos 29 entre Circuito Centro Comercial y Ángel Gaviño Consultorio 302.,"
+    },
+    {
+      "full": "Circuito Médicos 29 entre Circuito Centro Comercial y Ángel Gaviño Consultorio 302.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": "• $8,000"
+    },
+    {
+      "name": "Amnioscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-dorbeker-castillo/ginecologo/naucalpan-de-juarez#address-id=77788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:21.252Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raul_dorbeker_castillo.webp"
+}

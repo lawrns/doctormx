@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Nancy L. Roman Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 967,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eb9b82/eb9b826031908a7ebf7e75c59ddd006c_220_square.jpg",
+  "about": "Egresado de la Escuela Superior de Medicina del IPN Ginecóloga y Obstetra egresada del Hospital de la Mujer. (Especialidad Médica avala por la Universidad Nacional Autónoma de México) Alta especialidad en Cirugía Endoscópica Ginecológica (Histeroscopia y Laparoscopia Ginecológica) Hospital Gea Gonzalez avalada ante la Universidad Nacional Autónoma de México. Diplomado en Colposcopia y Patologia del tracto genital inferior en el Hospital General de México avalado por la Universidad Nacional Autónoma de México",
+  "addresses": [
+    {
+      "full": "Riobamba 639,"
+    },
+    {
+      "full": "Chilpancingo 105,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nancy-l-roman-estrada/ginecologo/morelos#address-id=446444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:43.761Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nancy_l__roman_estrada.webp"
+}

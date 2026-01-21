@@ -1,0 +1,46 @@
+{
+  "name": "Aída Uribe López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f60142/f6014246cd5e0478c83c197cfeea812b_220_square.jpg",
+  "about": "Ginecologia y Obstetricia. Unidad Medica de Alta Especialidad Gineco-obstetricia Centro medico Nacional de Occidente IMSS Subespecialidad en Medicina Materno- Fetal Instituto Nacional de Perinatología \"INPer\" Medico Certificado por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Manuel J. Clouthier 669 ,"
+    },
+    {
+      "full": "Manuel J. Clouthier 669 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aida-uribe-lopez/ginecologo/guadalajara#address-id=10890&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:32.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/a_da_uribe_l_pez.webp"
+}

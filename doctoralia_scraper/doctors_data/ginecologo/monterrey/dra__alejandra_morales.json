@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Morales",
+  "specialty": "Ginecóloga",
+  "rating": 4.5,
+  "reviewCount": 9,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/47dd9ffa/47dd9ffa-cc6c-440c-acb9-7a5c3838555b_large.jpg",
+  "about": "Egresada de la Universidad Autónoma de Nuevo León como Médico Cirujano y Partero, realicé mi especialidad en el Tecnológico de Monterrey en el programa Multicéntrico de Residencias Médicas con el que obtuve mi título como Ginecóloga y Obstetra. Durante mi residencia hice una rotación internacional en Orlando Florida con un equipo de expertos en Laparoscopía y Cirugía Robótica ginecológica en los hospitales Advent Health. Actualmente realizo un máster por parte de la Universidad de España en Menopausia y Climaterio y estoy certificada por el Consejo Mexicano de Ginecólogos y obstetras CMGO. Me encanta que mis pacientes se sientan seguras en mi consulta, resolver todas sus dudas y que puedan sentir la confianza de ser ellas mismas. Que nada las detenga de tener una vida increíble y lograr todo lo que se propongan. Si algo relacionado a su salud afecta su calidad de vida, estamos para resolverlo. Me encanta recibir mujeres en todas las etapas de su vida. Nunca es tarde para disfrutar de una buena salud femenina.Amo que mis pacientes me permitan vivir uno de los momentos más increíbles de la vida, que es el nacimiento. Acompañarlas desde el inicio de un embarazo hasta el final es uno de los privilegios maravillosos de mi especialidad. Me encanta estar a su lado para resolver sus dudas y acompañarlas en su cuidado prenatal.",
+  "addresses": [
+    {
+      "full": "Avenida Circuito Frida Kahlo #180,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• Desde $5,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-morales-3/ginecologo/nuevo-leon#address-id=589604&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:16.548Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alejandra_morales.webp"
+}

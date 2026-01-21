@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sharon Violeta Romero Pardave",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4638cc/4638ccce7155e9bf584d58a80a7bf5a8_220_square.jpg",
+  "about": "Ginecóloga obstetra desde hace 9 años, quiero acompañar a mis pacientes en todas sus etapas de vida y necesidades, desde planificación familiar, prevención, salud reproductiva y menopausia.",
+  "addresses": [
+    {
+      "full": "Calle General Eulogio Parra 2983,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sharon-violeta-romero-pardave/ginecologo/guadalajara#address-id=484191&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:13.238Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sharon_violeta_romero_pardave.webp"
+}

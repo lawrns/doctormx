@@ -83,10 +83,8 @@ export default function BookingForm({ doctor, currentUser }: BookingFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!currentUser) {
-      const currentUrl = new URL(window.location.href)
-      currentUrl.searchParams.set('date', selectedDate)
-      if (selectedTime) currentUrl.searchParams.set('time', selectedTime)
-      router.push(`/auth/login?redirect=${encodeURIComponent(currentUrl.pathname + currentUrl.search)}`)
+      const redirectPath = window.location.pathname + window.location.search
+      router.push(`/auth/login?redirect=${encodeURIComponent(redirectPath)}`)
       return
     }
     if (AI_CONFIG.features.preConsulta && !preConsultaCompleted) { setShowPreConsulta(true); return }

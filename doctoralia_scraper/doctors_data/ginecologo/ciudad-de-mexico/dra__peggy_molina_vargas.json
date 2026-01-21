@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Peggy Molina Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 147,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Carlos Graef Fernández 154,"
+    },
+    {
+      "full": "Av. Carlos Graef Fernández 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/peggy-molina-vargas-2/ginecologo/cuajimalpa-de-morelos#address-id=327850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:15.557Z",
+  "localPhotoPath": null
+}

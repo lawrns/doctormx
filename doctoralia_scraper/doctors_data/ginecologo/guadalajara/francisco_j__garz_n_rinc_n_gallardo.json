@@ -1,0 +1,25 @@
+{
+  "name": "Francisco J. Garzón Rincón Gallardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 117,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo No. Ext.1911 No. Int.14 Col. Ladron De Guevara Cp 44600,"
+    },
+    {
+      "full": "Hidalgo No. Ext.1911 No. Int.14 Col. Ladron De Guevara Cp 44600,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-j-garzon-rincon-gallardo/ginecologo/guadalajara#address-id=358998&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:07.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/francisco_j__garz_n_rinc_n_gallardo.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Cruz Lopez Villaverde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 207,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2749f0/2749f0a8ff0257d56a8d82b804f10760_220_square.jpg",
+  "about": "Experiencia en IMSS 28 años Experiencia en ISEM 30 años",
+  "addresses": [
+    {
+      "full": "Valle del Vístula no.23,Col Valle de Aragón, 2a sección,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cruz-lopez-villaverde-2/ginecologo/nezahualcoyotl#address-id=359722&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:34.613Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__cruz_lopez_villaverde.webp"
+}

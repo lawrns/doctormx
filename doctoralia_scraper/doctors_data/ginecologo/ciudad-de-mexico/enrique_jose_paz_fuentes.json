@@ -1,0 +1,31 @@
+{
+  "name": "Enrique Jose Paz Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Cam. De Sta. Teresa 1055,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-jose-paz-fuentes/ginecologo/huixquilucan#address-id=231641&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:00.752Z",
+  "localPhotoPath": null
+}

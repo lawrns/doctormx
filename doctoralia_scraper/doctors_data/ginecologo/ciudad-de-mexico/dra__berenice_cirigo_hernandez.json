@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Berenice Cirigo Hernandez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 73,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7ef17a02/7ef17a02-98b8-4fb3-9db8-d12dab802df5_small_square.jpg",
+  "about": "Ginecóloga especializada en diagnóstico, vigilancia en el embarazo, puerperio y lactancia, así como prevención, deteccion y vigilancia de lesiones intraepiteliales. Orientación sobre diferentes métodos anticonceptivos",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 601,"
+    },
+    {
+      "full": "Avenida Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-cirigo-hernandez/ginecologo/benito-juarez#address-id=609372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:02.835Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__berenice_cirigo_hernandez.webp"
+}

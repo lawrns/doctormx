@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Patricia Ines Velazques Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 246,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b990f114/b990f114-659c-407d-90b6-d0096a28053a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Terranova 679 202,"
+    },
+    {
+      "full": "Ave. Terranova 679 202,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-ines-velazques-castellanos/ginecologo/guadalajara#address-id=60719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:19.446Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__patricia_ines_velazques_castellanos.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Eréndira Olazarán Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 664,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/16a559/16a559972c9b885adfc1c6d7b32d01ee_220_square.jpg",
+  "about": "Soy la Dra. Eréndira, especialista en Ginecología, por la Universidad de Monterrey. Como Ginecóloga me dedico a acompañar a pacientes en su embarazo, problemas menstruales,ginecología estética, etc. desde el diagnóstico, escuchando todas sus preocupaciones, hasta el tratamiento, brindándoles la atención adecuada para ayudarlos a recuperar su salud.",
+  "addresses": [
+    {
+      "full": "CARRETERA NACIONAL 6501,"
+    },
+    {
+      "full": "CARRETERA NACIONAL 6501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erendira-olazaran-rodriguez-2/ginecologo/nuevo-leon#address-id=116954&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:05.694Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/er_ndira_olazar_n_rodr_guez.webp"
+}

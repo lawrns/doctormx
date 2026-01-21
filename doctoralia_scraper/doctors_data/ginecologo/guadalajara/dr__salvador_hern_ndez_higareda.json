@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Salvador Hernández Higareda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Vigil 2929,"
+    },
+    {
+      "full": "Jose Maria Vigil 2929,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-hernandez-higareda/ginecologo/guadalajara#address-id=50756&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:40.990Z",
+  "localPhotoPath": null
+}

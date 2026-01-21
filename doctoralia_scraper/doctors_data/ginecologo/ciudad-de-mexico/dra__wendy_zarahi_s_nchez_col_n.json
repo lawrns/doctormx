@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Wendy Zarahi Sánchez Colín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 123,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31b4da/31b4dad1a41585131e3a50335441d94f_220_square.jpg",
+  "about": "Soy Medico gineco-obstetra con subespecialidad en Medicina Materno fetal por lo cual soy experta en ultrasonido estructural y Doppler fetal, así como el diagnostico de patología fetal. Y trato complicaciones propias del embarazo.",
+  "addresses": [
+    {
+      "full": "Boulevard Bosque de Africa 144a,"
+    },
+    {
+      "full": "Avenido profesor, Carlos hank González 50, 3ra sección, ciudad Azteca,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido estructural (18-24 semanas)",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/wendy-zarahi-sanchez-colin/ginecologo/ecatepec-de-morelos#address-id=508236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:58.070Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__wendy_zarahi_s_nchez_col_n.webp"
+}

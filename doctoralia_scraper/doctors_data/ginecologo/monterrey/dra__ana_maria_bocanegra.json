@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana Maria Bocanegra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 238,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/f6cbe407/f6cbe407-6bef-4220-8985-9eba7704d95d_large.jpg",
+  "about": "Medico Especialista en Ginecología y Obstetricia Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Especialista en atender padecimientos de la mujer, desde la etapa de adolescencia hasta la menopausia.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-bocanegra-2/ginecologo/nuevo-leon#address-id=430029&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:48.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ana_maria_bocanegra.webp"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Lauro Manuel Loria Casanova",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2ed37620/2ed37620-7951-476e-b954-b3cf5353f9ac_small_square.jpg",
+  "about": "Soy médico Ginecólogo egresado de Universidad La Salle.Estuve en el Instituto Nacional de Perinatología muchos años, en el departamento de reproducción, lugar y tiempo que me formaron como experto en esterilidad e infertilidad.Soy experto cirujano en casos difíciles de histerectomías, tumores de ovario.Soy médico del Hospital Starmédica Roma.He sido presidente de la Asociación Médica de dicho hospital.",
+  "addresses": [
+    {
+      "full": "Calle Querétaro 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lauro-manuel-loria-casanova/ginecologo/cuauhtemoc2#address-id=580053&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:16.745Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__lauro_manuel_loria_casanova.webp"
+}

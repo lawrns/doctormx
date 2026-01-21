@@ -1,0 +1,82 @@
+{
+  "name": "Paulett Bayona Soriano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 836,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb6d38/cb6d38c0ee55847b06bad57b6005d19d_220_square.jpg",
+  "about": "¡Hola! Soy el Dra. Paulett Bayona Soriano, especialista en Ginecología y Obstetricia, por la UNAM. El bienestar de mi paciente es mi prioridad, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso. Brindaré mi apoyo a cada paciente desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que mejore y se recupere. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601, Xoco, Benito Juárez, Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $35,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulett-bayona-soriano/ginecologo/ciudad-de-mexico#address-id=32247&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:46.027Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/paulett_bayona_soriano.webp"
+}

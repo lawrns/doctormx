@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Stuarth Kenneth Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b785e/6b785e43f54807ac45fb0a6d0aa79309_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "MONTECITO 38, PISO 27 OFICINA 7, WORLD TRADE CENTER ,MEXICO DF DELEGACION BENITO JUAREZ ,"
+    },
+    {
+      "full": "MONTECITO 38, PISO 27 OFICINA 7, WORLD TRADE CENTER ,MEXICO DF DELEGACION BENITO JUAREZ ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $750"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stuarth-kenneth-gonzalez/ginecologo/benito-juarez#address-id=97710&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:27.857Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__stuarth_kenneth_gonzalez.webp"
+}

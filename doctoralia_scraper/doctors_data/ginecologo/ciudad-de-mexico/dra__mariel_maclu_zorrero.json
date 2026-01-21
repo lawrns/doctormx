@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Mariel Maclu Zorrero",
+  "specialty": "Urología Ginecológica",
+  "rating": 5,
+  "reviewCount": 37,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9efa34/9efa349fef609b8592247cac701b2bad_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Plaza Esmeralda Consultorio 620,"
+    },
+    {
+      "full": "Temístocles 210, Polanco, Polanco IV Secc, 11560 Ciudad de México, CDMX Consultorio 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariel-maclu-zorrero/ginecologo/ciudad-lopez-mateos#address-id=508232&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:38.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mariel_maclu_zorrero.webp"
+}

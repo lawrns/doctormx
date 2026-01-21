@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Martha Patricia Morales Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/27eced/27ecede4486c01e206cde4c13875a7e5_220_square.jpg",
+  "about": "ATENCION Y CONTROL DEL EMBARAZO NORMAL Y COMPLICADO",
+  "addresses": [
+    {
+      "full": "Tlaxcala 127 despacho 501,"
+    },
+    {
+      "full": "Tlaxcala 127 despacho 501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-patricia-morales-morales/ginecologo/cuauhtemoc#address-id=90545&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:53.069Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_patricia_morales_morales.webp"
+}

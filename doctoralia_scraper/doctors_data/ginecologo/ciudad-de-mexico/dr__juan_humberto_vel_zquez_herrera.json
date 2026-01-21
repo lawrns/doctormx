@@ -1,0 +1,92 @@
+{
+  "name": "Dr. Juan Humberto Velázquez Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 125,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9bd0b7/9bd0b7c671fc421f9ae8218cb2e6ffcf_220_square.jpg",
+  "about": "Médico Cirujano por la Universidad Autónoma del Estado de Morelos; realicé la especialidad de Ginecología y Obstetricia en el Hospital Ángeles Lomas, avalada por la Universidad Nacional Autónoma de México. Fellow de American College of Obstetricians and Gynecologists Profesor asociado a la especialidad de Ginecología y Obstetricia del Hospital Ángeles Lomas 2018-2020 Ponente de cursos de actualización en Ginecología y Obstetricia para el médico general. Autor de publicaciones científicas en revisas indexadas así como en libros avalados por la UNAM. Cursos de actualización científica: embarazo de alto riesgo, emergencias obstétricas, endocrinología ginecológica, osteoporosis, entre otros. Toda mi práctica profesional la he ejercido a nivel privado lo que me ha permitido actualizarme en múltiples áreas de la especialidad y adquirir las competencias necesarias para poder ofrecer una atención integral y poder ayudar a mis pacientes en las diferentes etapas de su vida. Estoy muy comprometido con ofrecer un servicio con la mayor calidad y calidez, así como velar por los mejores intereses de mis pacientes. Algunos de los aspectos en los que te acompañaré son: - Parto humanizado - Cesárea humanizada - Menopausia - Ginecología de la Infancia y de la Adolescencia - Patología del Tracto Genital Inferior - Anticoncepción - Diagnóstico Ginecológico por la Imagen - Ultrasonido ginecológico y ultrasonido obstétrico - Embarazo de alto riesgo - Síndrome de ovario poliquístico - Obesidad y Alteraciones Hormonales - Osteoporosis - Endocrinopatías ginecológicos - Etc.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca 240, Hacienda de las Palmas,"
+    },
+    {
+      "full": "Calle Mirador número 55,"
+    },
+    {
+      "full": "Vereda 29 A, Coapa Col. Narciso Mendoza,"
+    },
+    {
+      "full": "Avenida la Colmena 1,"
+    },
+    {
+      "full": "Vialidad de la Barranca 240, Hacienda de las Palmas,"
+    },
+    {
+      "full": "Calle Mirador número 55,"
+    },
+    {
+      "full": "Vereda 29 A, Coapa Col. Narciso Mendoza,"
+    },
+    {
+      "full": "Avenida la Colmena 1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-humberto-velazquez-herrera/ginecologo/nicolas-romero#address-id=411558&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:28.765Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_humberto_vel_zquez_herrera.webp"
+}

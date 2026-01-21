@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Montiel Salomon Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Lazaro Cardenas Eje 1083,"
+    },
+    {
+      "full": "Calzada Nino Perdido 1083,"
+    },
+    {
+      "full": "Calle Lazaro Cardenas Eje 1083,"
+    },
+    {
+      "full": "Calzada Nino Perdido 1083,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montiel-salomon-garcia/ginecologo/ciudad-de-mexico#address-id=40158&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:00.610Z",
+  "localPhotoPath": null
+}

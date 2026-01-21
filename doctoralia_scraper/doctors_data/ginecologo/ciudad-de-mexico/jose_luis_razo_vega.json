@@ -1,0 +1,31 @@
+{
+  "name": "Jose Luis Razo Vega",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Adolfo Lopez Mateos 438,"
+    },
+    {
+      "full": "Av. Convento De Sta. Monica S/N,"
+    },
+    {
+      "full": "Av. Adolfo Lopez Mateos 438,"
+    },
+    {
+      "full": "Av. Convento De Sta. Monica S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-razo-vega/ginecologo/nezahualcoyotl",
+  "scrapedAt": "2026-01-21T03:14:47.033Z",
+  "localPhotoPath": null
+}

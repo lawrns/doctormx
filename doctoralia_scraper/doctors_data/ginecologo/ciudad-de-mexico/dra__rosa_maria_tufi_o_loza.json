@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rosa Maria Tufiño Loza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 133,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8af5c0/8af5c009f5aca6fb1f9dd5badcdfecd2_220_square.jpg",
+  "about": "Hola que tal mi nombre es Rosa María Tufiño Loza, Médico Cirujano y Partero Egresada de la Escuela Superior de Medicina del IPN, estudié la especialidad en Ginecología y Obstetricia en el Departamento del Distrito Federal avalada por la UNAM, estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia, realicé el diplomado de colposcopía en el Hospital General de México y cuento con el diplomado de Ultrasonido Obstértrico realizado en la Fundación Medicina Fetal México. Actualmente estoy cursando el diplomado de Ultrasonido Ginecológico y Obstétrico. Soy una médico comprometida con su profesión que busca siempre estar a la vanguardia, para poder ofrecer a mis pacientes siempre lo mejor. Procuro siempre dar un trato completamente humanizado y personalizado a mis pacientes. Te espero en tu próxima consulta, gracias.",
+  "addresses": [
+    {
+      "full": "Av. Montevideo #303 7o. piso Consultorio 716,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Biopsia de vagina",
+      "price": "• $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-maria-tufino-loza/ginecologo/gustavo-a-madero#address-id=494950&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:22.444Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rosa_maria_tufi_o_loza.webp"
+}

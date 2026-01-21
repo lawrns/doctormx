@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Melissa Giselle Rodríguez Montemayor",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 304,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/aacf59d3/aacf59d3-6db4-43a4-834c-51fd758de97d_large.jpg",
+  "about": "Ginecóloga con enfoque integral en salud femenina, comprometida con brindar atención médica basada en la ciencia, la empatía y la escucha activa. Acompaño a mis pacientes en todas las etapas de su vida desde una visión clínica y humana, ofreciendo espacios seguros, información clara y tratamientos respetuosos. Mi práctica combina técnica quirúrgica, atención preventiva y una mirada consciente del bienestar emocional.",
+  "addresses": [
+    {
+      "full": "Esq. con Av. Paseo de los Leones, Av. Valle de Cumbres, 80001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Check up",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melissa-giselle-rodriguez-montemayor/ginecologo/garcia#address-id=449152&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:52.559Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__melissa_giselle_rodr_guez_montemayor.webp"
+}

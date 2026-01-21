@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Alejandro Sandoval Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/688acb/688acb0ddc9656fcf9daffc8c18540e2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TOLTECAS 3597 (a espaldas del Hosp Ángeles del Carmen),"
+    },
+    {
+      "full": "TOLTECAS 3597 (a espaldas del Hosp Ángeles del Carmen),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alejandro-sandoval-martinez/ginecologo/guadalajara#address-id=101830&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:30.357Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__carlos_alejandro_sandoval_mart_nez.webp"
+}

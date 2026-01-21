@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Carlos Humberto Montemayor Villalon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 233,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ffc985/ffc9851a88c62a590875a113f2783a59_220_square.jpg",
+  "about": "Especialistas en histeroscopia, colposcopia y láser para tratamiento de lesiones pre y cancerosas, ademas de regenerativa y funcional tratando alteraciones del piso Pelvico como incontinencia urinaria, miomas y polipos, evita cirugías! Contamos también con atención de embarazo normal y de alto riesgo por parto o cesárea , cirugías de quistes, miomas, cerclajes, cancer de cervix, mama y utero. Si realiza una cita en horario nocturno, tiene que tener en cuenta que las agendas tardan en sincronizar y en algunas ocasiones puede aparecer que hay espacio cuando no es así. Nos encargaremos de contactarle para realizar un cambio. En caso de que usted cambie la cita, le pedimos moderación en sus cambios o comunicarse para hacer el mismo con tiempo ya que afecta el organigrama.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Avenida Santa Rosa de Lima 1714,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-humberto-montemayor-villalon/ginecologo/nuevo-leon#address-id=399739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:13.800Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__carlos_humberto_montemayor_villalon.webp"
+}

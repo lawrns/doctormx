@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Angelica Chavarría Beltrán",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb3c6a/cb3c6a65bd49110f7cb937bf97a4e7ea_220_square.jpg",
+  "about": "Mi nombre es Angélica Chavarría, tengo 8 años de experiencia como médico ginecóloga, egresada de la Universidad Nacional Autónoma de México y el Hospital General \"Dr Manuel Gea González\", con formación en Endoscopia Ginecológica.",
+  "addresses": [
+    {
+      "full": "Cañaverales 222,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• Desde $200"
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": "• Desde $3,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-chavarria-beltran/ginecologo/tlalpan#address-id=456547&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:12.652Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__angelica_chavarr_a_beltr_n.webp"
+}

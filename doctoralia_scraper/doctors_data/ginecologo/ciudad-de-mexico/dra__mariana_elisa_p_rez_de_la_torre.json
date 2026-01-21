@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mariana Elisa Pérez de la Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Médicos 55 (Planta baja 2) ,"
+    },
+    {
+      "full": "Circuito Médicos 55 (Planta baja 2) ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $110"
+    },
+    {
+      "name": "Electrocoagulación, criocoagulación, termocoagulación de cérvix",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-elisa-perez-de-la-torre/ginecologo/naucalpan-de-juarez#address-id=124878&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:28.636Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Miguel Corres Molina",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 760,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bac968/bac968daef8728e1adf2af69e9219f35_220_square.jpg",
+  "about": "DR. MIGUEL CORRES MOLINA GINECÓLOGO ONCÓLOGO CERTIFICADO El Dr. Miguel Corres, estudió Medicina General en la prestigiada Facultad de Medicina de la UNAM en los grupos de Alta Exigencia Académica (NUCE). Posteriormente realizó la residencia médica en Ginecología y Obstetricia, en el Centro Médico ABC (Hospital Inglés), hospital líder de atención privada en México y Latinoamérica. Al termino de su especialidad su interés por el manejo de pacientes con Cáncer lo motivaron a continuar sus estudios en el Hospital Juárez de México perteneciente a la secretaria de Salud, donde obtuvo el grado de especialista en Ginecología Oncológica. Participa además de forma activa en proyectos de investigación en cáncer de mama y tumores de origen ginecológico, así como cirugía de mínima invasión, incluyendo la cirugía robótica. Cuenta además con una Maestría en Ciencias Médicas, avalada por la Universidad Nacional Autónoma de México. Cabe mencionar que posee los títulos y cedulas respectivas para cada uno de los estudios realizados así como certificación vigente por los consejos de Ginecología y Oncología. Actualmente se desempeña como Ginecólogo Oncólogo en el servicio de Oncología quirúrgica del CENTRO MEDICO NAVAL, perteneciente a la Secretaria de Marina y Armada de México. En la medicina privada cuenta con privilegios para prestar servicios médicos y quirúrgicos dentro de la red de hospitales del Grupo Ángeles, Grupo Star Médica y en el Centro Médico ABC en ambos campus.",
+  "addresses": [
+    {
+      "full": "Sur 136 No. 116,"
+    },
+    {
+      "full": "Frontera 74 (interior 720-3),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-corres-molina/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=120902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:41.025Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_corres_molina.webp"
+}

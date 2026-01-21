@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos A. Serrano Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 508,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/caf699/caf6998824578f0dafb67a3ab5787540_220_square.jpg",
+  "about": "Me caracterizo por el gran compromiso que tengo para resolver tus problemas de salud atendiéndote con gran calidez, profesionalismo, Ética y sentido humano. Me formé como Ginecólogo y obstetra en el Centro Médico Nacional Manuel Ávila Camacho IMSS Puebla, posteriormente realice un Fellowship en Laparoscopía Ginecológica HGR 36 IMSS Puebla, con gran entusiasmo de mejorar mis habilidades concluí un segundo Fellowship en Laparoscopía Ginecológica Avanzada en el Hospital Juárez de México y más adelante Microcirugía en el Instituto Nacional de Cancerología, he tenido la oportunidad de formarme en centros internacionales de alto nivel como Centro Avançado de Cirurgia Ginecológica en Brasil, dónde realice endoscopia Ginecológica, así como en el IRCAD en Río de Janeiro en dónde perfeccione el manejo de Endometriosis, cuento con una certificación en Endometriosis avalada por la Sociedad Argentina de Endometriosis y pertenezco al Mapa Federado de la misma sociedad. Me especialice en Medicina Reproductiva en uno de los mejores centros de fertilidad en México de la mano de especialistas de renombre internacional. Realice un Fellowship en Histeroscopia diagnostica y quirurgica en el mejor centro de histeroscopia de Latinoamérica ubicado en el Hospital General Dr. Manuel Gea González a lado de uno de los mejores histeroscopistas del mundo el Dr. Jose Alanis Fuentes. Actualmente me desempeño como Profesor asistente en esa misma clinica. Acudo frecuentemente a cursos nacionales e internacionales para poder tratar las enfermedades de la mujer con la mejor evidencia científica disponible y la más alta tecnología. Pertenezco a las siguientes sociedades médicas: 1. Colegio Mexicano de Especialistas en Ginecología y Obstetricia 2. Asociación Mexicana de Medicina de la Reproducción 3. American College of Obstetricians and Gynecologists 4. American Society of Reproductive Medicine 5. European Society of Human Reproduction and Embryology. 6. American Association of Gynecologic Laparoscopists AAGL 7. MAFE Sociedad Argentina de Endometriosis",
+  "addresses": [
+    {
+      "full": "Cerrada de la Princesa 12, 72830 San Bernardino Tlaxcalancingo, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-a-serrano-flores/ginecologo/puebla#address-id=346867&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:55:07.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_a__serrano_flores.webp"
+}

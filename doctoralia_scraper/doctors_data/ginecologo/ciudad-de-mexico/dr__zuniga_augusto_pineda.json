@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Zuniga Augusto Pineda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Queretaro 147,"
+    },
+    {
+      "full": "Calle Queretaro 147,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zuniga-augusto-pineda/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:06:08.060Z",
+  "localPhotoPath": null
+}

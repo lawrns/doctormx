@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jorge Latif García González",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 593,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/de849e/de849e333ebf6ac08c32059a847f0d21.jpg",
+  "about": "Soy el Dr. Jorge Latif García, médico apasionado por el cuidado integral de la salud femenina. Me formé en la Universidad de Guadalajara como médico cirujano, con especialidad en Ginecología y Obstetricia en el Hospital Fray Antonio Alcalde, y más adelante realicé la subespecialidad en Ginecología Oncológica en el Instituto Jalisciense de Cancerología. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, y por el Consejo Mexicano de Oncología. Mi vocación es acompañar a cada mujer con empatía, profesionalismo y un enfoque humano en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-latif-garcia-gonzalez/ginecologo-oncologico-ginecologo/zapopan#address-id=620149&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:04.784Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jorge_latif_garc_a_gonz_lez.webp"
+}

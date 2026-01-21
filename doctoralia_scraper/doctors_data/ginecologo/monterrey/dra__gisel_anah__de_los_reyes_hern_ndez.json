@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gisel Anahí De los Reyes Hernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c259d9/c259d9fc4d49e19d7bc5a71119a11b77_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gisel-anahi-de-los-reyes-hernandez-2/ginecologo/general-escobedo#address-id=418646&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:01.011Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__gisel_anah__de_los_reyes_hern_ndez.webp"
+}

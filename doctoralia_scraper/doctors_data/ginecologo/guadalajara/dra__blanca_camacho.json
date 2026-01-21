@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Blanca Camacho",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/73b016/73b0165452fdcf937ff77e3f64e76385_220_square.jpg",
+  "about": "SOY EGRESADA DE LA ESPECIALIDAD DE GINECÓLOGIA Y OBSTETRICIA EN EL AÑO 2015 DE CENTRO MÉDICO NACIONAL DE OCCIDENTE, UNIDAD MÉDICA DE ALTA ESPECIALIDAD DE GUADALAJARA, FECHA DESDE LA CUAL ME HE ACATUALIZADO AÑO CON AÑO EN LAS NUEVAS GUÍAS DE PRÁCTICA CLÍNICA Y LINEAMIENTOS SOBRE TEMAS DE GINECÓLOGIA Y OBSTETRICIA POR LO QUE CUENTO CON LA CERTIFICACIÓN OTORGADA POR EL COLEGIO MEXICANO DE GINECÓLOGIA Y OBSTETRICIA, AMO LO QUE HAGO Y LA GINECÓLOGIA ES MI PASIÓN!!",
+  "addresses": [
+    {
+      "full": "José Maria Vigil 2889,"
+    },
+    {
+      "full": "Cristobal Colon 265 Int 205,"
+    },
+    {
+      "full": "José Maria Vigil 2889,"
+    },
+    {
+      "full": "Cristobal Colon 265 Int 205,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $16,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-camacho/ginecologo/michoacan#address-id=154805&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:00.633Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__blanca_camacho.webp"
+}

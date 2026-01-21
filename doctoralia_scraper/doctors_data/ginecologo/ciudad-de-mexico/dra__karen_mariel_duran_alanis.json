@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karen Mariel Duran Alanis",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/18c18b/18c18bf952b5115b282db546a3c3f4d7_220_square.jpg",
+  "about": "Soy egresada de la carrera Médico Cirujano en la UNAMEgresada de UAEM de la Especialidad de Ginecología y Obstetricia Soy especialista en Enfermedades del sistema reproductivo femenino, (utero, ovarios, cuello uterino y vagina). Especialista en control del Embarazo y la salud general de la mujer en todas las etapas de su vida.",
+  "addresses": [
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-mariel-duran-alanis/ginecologo/tlalnepantla-de-baz2#address-id=203282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:14.275Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karen_mariel_duran_alanis.webp"
+}

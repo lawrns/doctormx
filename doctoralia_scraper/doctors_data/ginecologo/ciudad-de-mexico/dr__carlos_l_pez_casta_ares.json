@@ -1,0 +1,73 @@
+{
+  "name": "Dr. Carlos López Castañares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b176c/3b176c67042f77f281a5006fec5e649c_220_square.jpg",
+  "about": "Soy Medico Cirujano egresado de la UNAM.Ginecólogo Obstetra egresado del Hospital Santa Teresa avalado por la Universidad Anáhuac,Certificado y Recertificado por el Consejo Mexicano de Ginecologia y Obstetricia y Ex profesor del mismo, Socio Hemerito de la Asociación Mexicana de Medicina de la Reproducción, Socio Hemerito de la Asociación Mexicana del Estudio del Climaterio, Fellow del American College Obstetricians and Gynecologits , Socio Titular de COMEGO.Socio activo del Colegio de Ginecólogos y Obstetras del Hospital Español de México. Tengo mas de 30 años ejerciendo en Medicina Privada ,actualmente como Socio Externo de los Hospitales Angeles y del Hospital Español de México , así mismo Acreditado en múltiples Hospitales Privados donde laboro actualmente. Tengo experiencia en temas Ginecológicos , Obstetricos y Embarazo de Alto Riesgo, así como situaciones de Infertilidad, Inseminación Artificial Intrauterina, Congelamiento de óvulos y embriones.En consulta ginecológica se realiza exploración mamaria y pélvica, colposcopia ,Papaanicolaou, Ultrasonido transvaginal y Pelvico, y se manejan diversos temas como:Planificación Familiar, Asesoría en Anticonceptivos DIU, pastillas, Implantes, Inserción y retiro de Dispositivos .Diagnostico y Tratamiento de Infecciones Vaginales. Detección oportuna de Cancer Cervicouterino, toma de muestras ,citología cervical, biopsia cervical; realización de criocirugía y electrocirugía por ulceras cervicales o por VPH.Detección de VPH,ITS ( Clamidia, gonorrea, VIH), así como el manejo de la misma y aplicación de vacunas de VPHTratamiento de endometriosis, miomatosis uterina, quistes ováricos, síndrome de Ovario Poliquístico, detección de patologías de mama , de Ovarios y problemas de Endometriosis.Control Prenatal Atención de Partos y Cesáreas,Realización de AMEU y / o Legrado Intrauterino por problemas de perdidas Fetales .Interpretación de Ultrasonidos, seguimiento postparto inmediato.Atención en cirugías de labioplastias de reducción, Vaginoplastia.Consejería sobre Sexualidad para Adolescentes así como enfermedades de transmisión sexual.Atención de Cirugías Ginecológicas Laparoscópica en Histerectomía , Miomectomía, Quistes de Ovario, salpingoclasia y embarazo ectópico.Atención a la Menopausia, terapias Hormonales, control de síntomas de Climaterio, Aplicación de pellets ( Hormonas Bioidénticas) y Salud Ósea",
+  "addresses": [
+    {
+      "full": "Manuel E. Izaguirre 10-104,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 10-104,"
+    },
+    {
+      "full": "Manuel E. Izaguirre 10-104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-lopez-castanares/ginecologo/naucalpan-de-juarez2#address-id=586544&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:43.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_l_pez_casta_ares.webp"
+}

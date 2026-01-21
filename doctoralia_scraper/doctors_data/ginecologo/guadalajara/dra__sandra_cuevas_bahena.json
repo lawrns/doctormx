@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Sandra Cuevas Bahena",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 12,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3eabb798/3eabb798-dd47-45fa-a2a3-907c6cec93fa_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Febrero 86,"
+    },
+    {
+      "full": "5 De Febrero 86,"
+    },
+    {
+      "full": "Perif. Nte. Manuel Gomez Morin 430,"
+    },
+    {
+      "full": "5 De Febrero 86,"
+    },
+    {
+      "full": "5 De Febrero 86,"
+    },
+    {
+      "full": "Perif. Nte. Manuel Gomez Morin 430,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-cuevas-bahena-2/ginecologo/guadalajara#address-id=58432&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:26.973Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__sandra_cuevas_bahena.webp"
+}

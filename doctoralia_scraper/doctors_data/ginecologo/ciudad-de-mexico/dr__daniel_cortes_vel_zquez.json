@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Cortes Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aacf31/aacf31000c851e32f445709d44f373d6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-cortes-velazquez/ginecologo/naucalpan-de-juarez#address-id=10490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:23.439Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__daniel_cortes_vel_zquez.webp"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Dr. Ivan Madrazo Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d85e27/d85e2760a962fdbf0bac0d5c563a03a5_220_square.jpg",
+  "about": "Me gradué con honores en la Facultad de Medicina de la Universidad Guanajuato en 2013. Luego me especialicé en Ginecología y Obstetricia en UMAE 48 del Instituto Mexicano del Seguro Social ese mismo año, y en 2015 realicé una especialidad en Biología de la Reproducción Humana en el Institutito Nacional de Perinatología \"Isidro Espinosa de los Reyes\". Durante los últimos 8 años, he trabajado como Ginecólogo y Obstetra en algunos de los mejores hospitales y centros de maternidad de México, como la Unidad Médica de Alta Especialidad #48 del IMSS, el Hospital Ángeles y el Hospital Materno Infantil Magdalena Contreras, entre otros. Además, soy miembro de la Sociedad Americana de Medicina Reproductiva (ASRM) y también tengo el título de Junior Fellow del Colegio Americano de Ginecología y Obstetricia (ACOG). Mi enfoque principal se centra en el bienestar materno y reproductivo, así como en el tratamiento de problemas ginecológicos. Me enorgullezco de brindar un cuidado personalizado y compasivo, basado en la evidencia científica más actualizada. Siempre me mantengo al día con los avances médicos en mi campo y me encanta ayudar a las mujeres a alcanzar su mejor salud. Además, tengo amplia experiencia en histeroscopia quirúrgica y diagnóstica para el manejo de patologías intrauterinas. Esta técnica me permite detectar y tratar diversas condiciones dentro del útero de forma mínimamente invasiva, lo que permite una recuperación más rápida y menos molestias para las pacientes. ¡Espero tener la oportunidad de conocerte y brindarte la atención médica que necesitas!",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-madrazo-rodriguez/ginecologo/cuauhtemoc2#address-id=443667&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:32.447Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ivan_madrazo_rodriguez.webp"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Jose Luis Antonio Martinez Castro",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Querétaro 147,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    },
+    {
+      "full": "C. De Durango 50,"
+    },
+    {
+      "full": "Querétaro 147,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    },
+    {
+      "full": "C. De Durango 50,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-luis-antonio-martinez-castro/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:14:49.284Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Diaz Diaz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Patriotismo No.159,"
+    },
+    {
+      "full": "Patriotismo No.159,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-diaz-diaz/ginecologo/benito-juarez#address-id=115547&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:35.768Z",
+  "localPhotoPath": null
+}

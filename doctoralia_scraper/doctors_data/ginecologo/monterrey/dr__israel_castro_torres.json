@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Israel Castro Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/08645c/08645ce9a9448b3c57ec8fde4ffcfe46_220_square.jpg",
+  "about": "Atencion especializada a la mujer: problemas ginecologicos control de embarazo normal y alto riesgo atencion de parto o cesárea ultrasonido de embarazo y de organos pelvicos deteccion oportuna de cancer (Papanicolaou) Sangrados anormales e infecciones vaginales atencion a la mujer en menopausia atencion a problemas de fertilidad cirugia ginecologica: Utero y ovarios",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 603b, Cabecera Municipal (Apodaca), Centro,"
+    },
+    {
+      "full": "Miguel Hidalgo 603b, Cabecera Municipal (Apodaca), Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/israel-castro-torres/ginecologo/nuevo-leon#address-id=452390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:50.928Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__israel_castro_torres.webp"
+}

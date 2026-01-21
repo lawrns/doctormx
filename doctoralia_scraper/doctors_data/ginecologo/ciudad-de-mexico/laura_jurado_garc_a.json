@@ -1,0 +1,72 @@
+{
+  "name": "Laura Jurado García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 138,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f4a8f1/f4a8f1da381cadbb32aa25ef1cc6fe7a_220_square.jpg",
+  "about": "Ginecología funcional y regenerativa Láserterapia en Ginecologia Balance hormonal Cirugia de minima invasion (Histeroscopia , Laparoscopia)",
+  "addresses": [
+    {
+      "full": "Calle Heriberto Jara Corona 576,"
+    },
+    {
+      "full": "Centro Médico ABC campus Observatorio. Sur 136 Num 116 ,"
+    },
+    {
+      "full": "Calle Heriberto Jara Corona 576,"
+    },
+    {
+      "full": "Centro Médico ABC campus Observatorio. Sur 136 Num 116 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-jurado-garcia/ginecologo/veracruz#address-id=129190&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:38.699Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/laura_jurado_garc_a.webp"
+}

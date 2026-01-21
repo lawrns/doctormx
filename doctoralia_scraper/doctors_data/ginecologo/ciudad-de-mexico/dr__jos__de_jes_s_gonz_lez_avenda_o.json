@@ -1,0 +1,82 @@
+{
+  "name": "Dr. José de Jesús González Avendaño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 76,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99c79d/99c79d7908ff38f1306feec70c01c8c7_220_square.jpg",
+  "about": "Calidad y calidez en la atención integral de los padecimientos oncologicos de la mujer, desde la prevención y manejo oportuno. Así como el control prenatal de pacientes embarazadas.",
+  "addresses": [
+    {
+      "full": "Fresnos 1,"
+    },
+    {
+      "full": "Av. Lomas verdes No.2165, Piso 8,Consultorio 802,"
+    },
+    {
+      "full": "Riobamba 639,"
+    },
+    {
+      "full": "Fresnos 1,"
+    },
+    {
+      "full": "Av. Lomas verdes No.2165, Piso 8,Consultorio 802,"
+    },
+    {
+      "full": "Riobamba 639,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Oncología",
+      "price": "• Desde $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-gonzalez-avendano/ginecologo-ginecologo-oncologico/gustavo-a-madero#address-id=467010&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:33.491Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__de_jes_s_gonz_lez_avenda_o.webp"
+}

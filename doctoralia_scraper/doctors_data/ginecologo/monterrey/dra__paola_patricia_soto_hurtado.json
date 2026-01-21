@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Paola Patricia Soto Hurtado",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8deda0/8deda0cd6fa735f17dd45659dffeff20_220_square.jpg",
+  "about": "Hola! Soy la Dra Paola Soto, Ginecóloga Obstetra y estoy aquí para cuidar tu salud. Certificada por el Consejo mexicano de Ginecología y obstetricia. Alta especialidad en Cirugía Ginecológica de Mínima Invasión avalada por Tec Salud y American Association of Gynecologic Laparoscopists (AAGL) Diplomado en Sexualidad Humana",
+  "addresses": [
+    {
+      "full": "Río Amazonas 50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-patricia-soto-hurtado/ginecologo/san-pedro-garza-garcia#address-id=521940&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:24.697Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__paola_patricia_soto_hurtado.webp"
+}

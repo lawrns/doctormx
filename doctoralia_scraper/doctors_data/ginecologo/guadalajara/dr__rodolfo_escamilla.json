@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Rodolfo Escamilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 159,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/89bb79/89bb79d8e84a23609080a1c17323a5fd_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tarascos 3435,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodolfo-escamilla/ginecologo/zapopan#address-id=404236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:37.573Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__rodolfo_escamilla.webp"
+}

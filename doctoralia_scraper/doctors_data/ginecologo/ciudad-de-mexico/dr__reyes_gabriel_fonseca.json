@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Reyes Gabriel Fonseca",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Canal De Miramontes No.2781-201,"
+    },
+    {
+      "full": "Canal De Miramontes No.2781-201,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyes-gabriel-fonseca/ginecologo/coyoacan",
+  "scrapedAt": "2026-01-21T03:13:05.283Z",
+  "localPhotoPath": null
+}

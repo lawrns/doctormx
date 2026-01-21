@@ -1,0 +1,25 @@
+{
+  "name": "Maria Magdalena Arizpe Suarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ruperto Martinez Pte. 1203,"
+    },
+    {
+      "full": "Ruperto Martinez Pte. 1203,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-magdalena-arizpe-suarez/ginecologo/monterrey#address-id=68949&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:03.528Z",
+  "localPhotoPath": null
+}

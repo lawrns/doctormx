@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Alicia Loeza Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 267,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6caba/e6cabada8f73ea6cea775007a972800e_220_square.jpg",
+  "about": "Egresada de Universidad Michoacana San Nicolas de Hidalgo como Medico Cirujano y Partero Egresada de Universidad Autonoma de Mexico como Ginecología y Obstetricia en Hospital Juárez de Mexico Certificada por en Consejo Mexicano de Ginecología y Obstetricia A.C. Alta especialidad en Endoscopia Ginecológica avalado por Universidad Autónoma de Hidalgo Diplomado en Colposcopia e infecciones del tracto inferior femenino avalado por Universidad La Salle Diplomado en Ultrasonido Ginecológico avalado por Universidad La Salle Diplomado en Endocrinología Ginecológica avalado por Universidad La Salle",
+  "addresses": [
+    {
+      "full": "Manuel E. Izaguirre numero 13, ciudad Satelite, Naucalpan de Juarez, Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-alicia-loeza-martinez/ginecologo/naucalpan-de-juarez2#address-id=405545&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:50.846Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_alicia_loeza_mart_nez.webp"
+}

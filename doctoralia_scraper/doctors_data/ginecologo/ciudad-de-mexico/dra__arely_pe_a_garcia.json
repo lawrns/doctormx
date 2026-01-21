@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Arely Peña Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f4f1b6/f4f1b656d619e6aa1e79743d2c618a28_220_square.jpg",
+  "about": "Desde el 2011 me dedico en forma privada al cuidado, atención, vigilancia y dar soluciones a las mujeres en diferentes etapas de su vida reproductiva desde la adolescencia hasta la menopausia, pero podría decir que mi mayor pasión es todo lo relacionado a la búsqueda de embarazo, a veces iniciando desde lo más sencillo, pasando por aquellas mujeres que desean congelar óvulos hasta los casos más complejos donde requerimos tratamientos de reproducción asistida con el único objetivo de lograr el mayor anhelo de muchas mujeres de convertirse en \"mamás\"",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arely-pena-garcia/ginecologo/magdalena-contreras#address-id=448002&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:54.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__arely_pe_a_garcia.webp"
+}

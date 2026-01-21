@@ -1,0 +1,31 @@
+{
+  "name": "Julieta Rosas Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1022,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa0b50/aa0b5084c5aa1aae353d51fc64cfb224_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. I. P. N. 5160,"
+    },
+    {
+      "full": "Av. Ticoman 258,"
+    },
+    {
+      "full": "Av. I. P. N. 5160,"
+    },
+    {
+      "full": "Av. Ticoman 258,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julieta-rosas-medina/ginecologo/ciudad-de-mexico#address-id=203827&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:13.873Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/julieta_rosas_medina.webp"
+}

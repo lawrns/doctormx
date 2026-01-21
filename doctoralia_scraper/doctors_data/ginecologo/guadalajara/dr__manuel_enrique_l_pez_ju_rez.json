@@ -1,0 +1,56 @@
+{
+  "name": "Dr. Manuel Enrique López Juárez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86cd18/86cd181462e2e1ff78bf03f7f02f0743_220_square.jpg",
+  "about": "Soy el Dr. Manuel Enrique Lòpez Juàrez especialista en Ginecologìa y obstetricia, con diplomado en colposcopia y patologìa genital inferior. Con 12 años de ejercicio en esta especialidad. Brindo un servicio especializado en la atenciòn a mujeres desde la pubertad hasta el climaterio y menopausia, Comprometido con la calidad y la satisfacciòn de la paciente . Brindo atencion de seguridad , sentido ètico humanìstico, respeto en diferencias culturales, costumbres y creencias. Cuento con la mejor tecnologìa como el ultrasonido 3D y 4D para realizar ecografìa fetal y asi llevar un adecuado control prenatal. Tambièn lo necesario para la clinica de displasias y realizar una mejor exploraciòn ginecològica completa. Ademàs de atenciòn femenina integral. En la primera visita realizaremos una historia clìnica detallada para identificar factores de riesgo y tener un mejor diagnòstico y, aunado a la exploraciòn fìsica, poder determinar el tratamiento que mejor convenga a la paciente. Soy mèdico certificado por el Colegio Mexicano de Ginecologìa y Obstetricia (CONACEM). Profesor en la carrera de Medicina en la Universidad de Guadalajara , materia en Ginecologìa y obstetricia.",
+  "addresses": [
+    {
+      "full": "Av Manuel J. Clouthier 596, Jardines de Guadalupe, Zapopan , Jalisco Mexico,"
+    },
+    {
+      "full": "Simon Bolivar #71, colonia Centro.,"
+    },
+    {
+      "full": "Av Manuel J. Clouthier 596, Jardines de Guadalupe, Zapopan , Jalisco Mexico,"
+    },
+    {
+      "full": "Simon Bolivar #71, colonia Centro.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-enrique-lopez-juarez/ginecologo/guadalajara#address-id=93807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:57.616Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__manuel_enrique_l_pez_ju_rez.webp"
+}

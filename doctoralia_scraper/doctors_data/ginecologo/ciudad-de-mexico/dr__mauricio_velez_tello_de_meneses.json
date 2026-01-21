@@ -1,0 +1,78 @@
+{
+  "name": "Dr. Mauricio Velez Tello de Meneses",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4a47ba/4a47bac969127de547981bafa4a0f65b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan De Dios Robledo 678. Col. Centro. ,"
+    },
+    {
+      "full": "Quintana Roo 49,"
+    },
+    {
+      "full": "Londres No.32-3,"
+    },
+    {
+      "full": "Juan De Dios Robledo 678. Col. Centro. ,"
+    },
+    {
+      "full": "Quintana Roo 49,"
+    },
+    {
+      "full": "Londres No.32-3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-velez-tello-de-meneses/ginecologo/colima#address-id=84647&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:41.323Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mauricio_velez_tello_de_meneses.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Verónica Barragán Interial",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3cf1da/3cf1da1e7a68cd69278d9787c3f18100_220_square.jpg",
+  "about": "Especialidad Ginecología y Obstetricia avalada por la Universidad de Monterrey, en Hospital Christus Muguerza, fungiendo como Jefa de Residentes. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Socia activa del Colegio Mexicano de Ginecología y Obstetricia. Socia activa del Colegio de Ginecología y Obstetricia de Monterrey. Entrenamiento en Ultrasonido Ginecológico Avanzado. Hospital Dexeus Barcelona, España. Diplomado Calidad de la Atención Médica. ITESM. Curso Internacional Atención Integral de la Mujer en Menopausia. COMEGO. Curso Internacional de Colposcopia. COMEGO. Cursos avalados por la Sociedad Argentina de Medicina Estética. Especialista en Patología Ginecológica y Ultrasonido Ginecológico Avanzado, Reconstrucción 3D. Síndrome de Ovario Políquisto y trastornos hormonales. Menopausia y Climaterio. Miomas uterinos. Endometriosis. Virus Papiloma Humano. Embarazo.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-barragan-interial/ginecologo/nuevo-leon#address-id=370429&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:24.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/ver_nica_barrag_n_interial.webp"
+}

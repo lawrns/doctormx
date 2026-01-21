@@ -1,0 +1,46 @@
+{
+  "name": "Maria Angelica Mejia Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/68b71e/68b71e0bf3dd9afcd191f7928e27ffdf_220_square.jpg",
+  "about": "Estoy reconocida por el CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA, y llevo laborando 19 años como Gineco-Obstetra. Durante la consulta te realizo una serie de preguntas para conocer tus antecedentes de enfermedades, antecedentes gineco-obstetricos, etc. La consulta incluye la exploración de glándulas mamarias, abdomen y genitales (cuando es necesario). Puedo realizar Papanicolaou y colposcopia si así lo deseas(costo extra) y también realizo Ultrasonido Gineco-obstetrico (costo extra) estos; de preferencia solicitarlo al reservar la cita. Contamos con todos los métodos anticonceptivos (pastillas, parches, implante, DIU cobre y Mirena, etc. Control , manejo y resolución de embarazo normal y de alto riesgo. Cirugía Ginecológica y Obstetrica ( parto, cesáreas) y tratamiento de Virus de Papiloma humano. Recibirás un trato cordial, respetuoso y ético como tu lo mereces. Así como responder y aclarar todas tus dudas sobre tu padecimiento y hallazgos.",
+  "addresses": [
+    {
+      "full": "Prolongación Avenida Juarez Poniente No. 21,local B-9(a 1 cuadra de la Delegación),"
+    },
+    {
+      "full": "Prolongación Avenida Juarez Poniente No. 21,local B-9(a 1 cuadra de la Delegación),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-angelica-mejia-jimenez/ginecologo/cuajimalpa-de-morelos#address-id=82819&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:42.176Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/maria_angelica_mejia_jimenez.webp"
+}

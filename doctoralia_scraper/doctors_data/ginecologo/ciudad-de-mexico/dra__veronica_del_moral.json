@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Veronica Del Moral",
+  "specialty": "Ginecóloga",
+  "rating": 4.5,
+  "reviewCount": 65,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/6327b4d8/6327b4d8-34c0-4e4d-82fd-2b5c81cfa569_large.jpg",
+  "about": "La Dra. Verónica del Moral Estrada se formó como Médico Cirujano y Partero en la Universidad Michoacana de San Nicolás de Hidalgo (UMSNH). Posteriormente, cursó las especialidades en Ginecología y Obstetricia y Medicina Materno Fetal en la Universidad Nacional Autónoma de México (UNAM). Se especializó en el Diagnóstico del Cáncer Cervicouterino, así como en procedimientos para el Papanicolau y Colposcopía. De igual manera da consultas sobre Métodos de Planificación Familiar y ofrece Terapias de Sustitución Hormonal durante la Menopausia. Actualmente, la Dra. Del Moral Estrada atiende a sus pacientes en Hospital San Ángel Inn Universidad. Si deseas agendar una consulta con la especialista, sólo tienes que dar click en LLAMAR o RESERVAR.",
+  "addresses": [
+    {
+      "full": "Avenida Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-del-moral-2/ginecologo/ciudad-de-mexico#address-id=615881&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:43.610Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__veronica_del_moral.webp"
+}

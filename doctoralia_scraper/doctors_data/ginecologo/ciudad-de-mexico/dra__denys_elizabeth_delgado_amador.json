@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Denys Elizabeth Delgado Amador",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/504684/5046841d9f1364eac24bbb8b007228b6_220_square.jpg",
+  "about": "Soy Ginecóloga Oncóloga con experiencia en manejo de los tumores ginecológicos benignos y malignos, procedimientos oncológicos preservadores de la fertilidad, cáncer y embarazo, cirugía conservadora en mama. Así como en el seguimiento y prevención de los cánceres ginecológicos y de mama.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denys-elizabeth-delgado-amador/ginecologo-oncologico-ginecologo/huixquilucan",
+  "scrapedAt": "2026-01-21T02:40:35.992Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__denys_elizabeth_delgado_amador.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Enrique Rodriguez Villasana",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91c62a/91c62aa250575ee5a04311b378a31782_220_square.jpg",
+  "about": "El Dr. Enrique Rodríguez Villasana es un Ginecólogo y Obstetra de Alto Nivel egresado de la Universidad Nacional Autónoma de México. Es experto en Infertilidad, Infertilidad Femenina y Masculina, Fecundación In Vitro, Embriología y Reproducción Asistida. Se formó en la Universidad Veracruzana como Médico Cirujano, posteriormente realizó la especialidad en Ginecología y Obstetricia en la UNAM y la Maestría en Ginecología e Infertilidad en la Universidad de Sonora. Cuenta con más de 15 años de experiencia en diversas instituciones de prestigio entre ellas Instituto Ingenes donde es miembro destacado del equipo de profesionistas siendo Director Médico del Instituto Ingenes Monterrey donde ha participado en más de 2 mil ciclos de Fertilización In Vitro. Estuvo a cargo del programa de Ovulación, además de realizar importantes investigaciones sobre Síndrome de Ovarios Poliquístico y Donación de Óvulos. El Dr. Rodríguez Villasana es reconocido como uno de los mejores Ginecólogos y Obstetras en Monterrey.",
+  "addresses": [
+    {
+      "full": "Revolución 2703 (Centro Empresarial Nuevo Sur Torre 1, Piso 8), Ladrillera,"
+    },
+    {
+      "full": "Revolución 2703 (Centro Empresarial Nuevo Sur Torre 1, Piso 8), Ladrillera,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-rodriguez-villasana-2/ginecologo/nuevo-leon#address-id=257913&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:30.296Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__enrique_rodriguez_villasana.webp"
+}

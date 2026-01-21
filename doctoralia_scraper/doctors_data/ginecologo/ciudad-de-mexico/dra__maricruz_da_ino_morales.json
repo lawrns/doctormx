@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Maricruz Dañino Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec1be9/ec1be92eeabeddcbfbcf9370647c5ba0_220_square.jpg",
+  "about": "Hola, soy la Dra. Maricruz Dañino Morales, estudié en la Facultad de Medicina de la UNAM, posteriormente, realice mi especialidad en Ginecología y Obstetricia también en la UNAM, en la Ciudad de México, tengo una Alta Especialidad en Peri-Posmenopausia y Metabolismo Óseo avalada por la UNAM, he sido profesora en la Faculta de Medicina de la UNAM y en la Facultad Mexicana de Medicina de la Universidad Lasalle, me encanta lo que hago y me encanta enseñar y poder brindar una atención de calidad, confortabilidad y confianza.",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc no 1040,"
+    },
+    {
+      "full": "Av. Cuauhtémoc no 1040,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maricruz-danino-morales/ginecologo/benito-juarez#address-id=495189&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:07.243Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maricruz_da_ino_morales.webp"
+}

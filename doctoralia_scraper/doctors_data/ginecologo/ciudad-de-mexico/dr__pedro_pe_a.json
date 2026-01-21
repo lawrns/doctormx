@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Pedro Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/92848d/92848d3290f6fac92606196706201a05_220_square.jpg",
+  "about": "Soy un médico especializado en la salud femenina, abarcando la adolescencia, etapa reproductiva, menopausia y etapa post-menopáusica, brindo atención integral, personalizada y confiable basada en conocimientos actuales, con enfoque en el respeto y la privacidad de las pacientes.",
+  "addresses": [
+    {
+      "full": "Calzada Taxqueña 1479 Colonia Petrolera Taxqueña,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pedro-pena/ginecologo/coyoacan#address-id=366129&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:54.797Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__pedro_pe_a.webp"
+}

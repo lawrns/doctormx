@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nallely Moreno Uribe",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 628,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/023bfd/023bfd95138d7cc40022cd2e34b1d438_220_square.jpg",
+  "about": "Como los hijos de médicos, crecí en el consultorio. Comprendo fácilmente a las personas, soy empática y resiliente. Medico Cirujano desde el 2005, posteriormente Ginecología y Obstetricia en Centro Médico Nacional La Raza, avanzando por la Medicina Fetal y Medicina Crítica en Obstetricia en el Instituto Nacional de Perinatología. Miembro de sociedades científicas mexicanas e internacionales. Apasionada del estudio, ahora Maestría en Ciencias. Todo para brindarte la atención que el Primer Mundo propone, a tu alcance y con humanidad. Te atendemos con el cerebro, te cuidamos con el corazón, si estás comprometida y quieres cuidar tu embarazo, somos la mejor opción. Siempre trataremos de estar un paso adelante de lo que pueda venir.",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $2,900"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $2,900"
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• $2,900"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $5,000"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nallely-moreno-uribe/ginecologo/naucalapan",
+  "scrapedAt": "2026-01-21T02:40:36.825Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nallely_moreno_uribe.webp"
+}

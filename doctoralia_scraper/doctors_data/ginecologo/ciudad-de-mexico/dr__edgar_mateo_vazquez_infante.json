@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Edgar Mateo Vazquez Infante",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 49,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c49cc3/c49cc3c0d711b757388553c38b65b3f3_220_square.jpg",
+  "about": "Hola, soy el Dr. Edgar Mateo Vazquez Infante, como GINECÓLOGO y OBSTETRA he dedicado mi carrera profesional al diagnóstico y resolución de los diferentes transtornos de salud femenina, tanto médica como quirúrgicamente y al acompañamiento y atención final de embarazos normales y de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Merida 170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-mateo-vazquez-infante-2/ginecologo/cuauhtemoc2#address-id=451276&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:16.356Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_mateo_vazquez_infante.webp"
+}

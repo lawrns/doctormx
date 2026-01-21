@@ -1,0 +1,25 @@
+{
+  "name": "Carlos Montes Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "1Er De Remedios Valle,5 B, Col. U Hab Ctm Culhuacan, ,"
+    },
+    {
+      "full": "1Er De Remedios Valle,5 B, Col. U Hab Ctm Culhuacan, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-montes-hernandez/ginecologo/coyoacan#address-id=357466&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:27.236Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Dr. César Reynaldo Chapa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40cdcf/40cdcfca01692a36a26e1e4a9a84765e_220_square.jpg",
+  "about": "Soy un médico especializado en problemas de fertilidad, embarazo y enfermedades propias de la mujer. Nuestra meta principal es que usted y su pareja puedan gozar el milagro de tener un hijo sano en casa. Nuestro objetivo es esforzarnos cada día por brindar a nuestros pacientes un servicio de primerísimo nivel, asertivo, lleno de comprensión y con la mayor calidez , ya que estamos conscientes de la confianza que depositan en nosotros.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Hidalgo 1842 Poniente 3er Piso Hospital Ginequito .,"
+    },
+    {
+      "full": "Praderas 130, Salinas Victoria,"
+    },
+    {
+      "full": "Avenida Nexxus 104,,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Hidalgo 1842 Poniente 3er Piso Hospital Ginequito .,"
+    },
+    {
+      "full": "Praderas 130, Salinas Victoria,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Estudio para el embrión (PGS)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-reynaldo-chapa/ginecologo/general-escobedo#address-id=52&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:22.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__c_sar_reynaldo_chapa.webp"
+}

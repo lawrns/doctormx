@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Jacqueline Aceves",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b6c1a3/b6c1a3e519381f5506bb1b647e3c8228_220_square.jpg",
+  "about": "Articulos Publicados Tratamiento conservador del hematoma hepático subcapsular en preeclampsia y síndorme de HELLP coexistentes: reporte de caso y revisión de la literatura. Ginecol Obstet Mex 2013; 81: 414-420. Knowledge of ischemic stroke among a Mexico City population J Stroke Cerebrovasc Dis 2009 May-Jun; 18(3) 208-13 Reconocimientos Por su participación en el proyecto denominado \"La otra parte de las comunidades autónomas\" obteniendo el tercer lugar en la categoria comunitaria en el premio la mejor experiencia en servicio social 2006.",
+  "addresses": [
+    {
+      "full": "Tuxpan 8 (consultorio 402),"
+    },
+    {
+      "full": "Gustavo Gómez Azcárate 204, consultorio 110, lomas de la selva,"
+    },
+    {
+      "full": "Tuxpan 8 (consultorio 402),"
+    },
+    {
+      "full": "Gustavo Gómez Azcárate 204, consultorio 110, lomas de la selva,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jacqueline-aceves/ginecologo/morelos#address-id=31539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:23.652Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jacqueline_aceves.webp"
+}

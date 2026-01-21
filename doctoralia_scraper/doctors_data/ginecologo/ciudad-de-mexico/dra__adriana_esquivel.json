@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Adriana Esquivel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 54,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/159d86/159d8620d7e3570b7115860a39e2af85_220_square.jpg",
+  "about": "ESTUDIÉ LA CARRERA DE MÉDICO CIRUJANO Y PARTERO EN EL INSTITUTO POLITECNICO NACIONAL, LA RESIDENCIA EN GINECOLOGÍA Y OBSTETRICIA EN EL HOSPITAL GENERALD E ZONA NO. 16 DEL IMSS AVALADO POR LA UNIVERSIDAD AUTÓNOMA DE COAHUILA, LA SUBESPECIALIDAD EN ONCOLOGÍA GINECOLÓGICA EN LA UMAE HOSPITAL DE GINECOOBSTETRICIA NO 3 CENTRO MÉDICO NACIONAL LA RAZA AVALADA POR LA UNIVERSIDAD AUTÓNOMA NACIONAL, DIPLOMADO EN LAPAROSCOPÍA AVANZADA EN EL HOSPITAL JUÁREZ DE MÉXICO AVALADO POR LA UNIVERSIDAD AUTÓNOMA NACIONAL. ACTUALMENTE DESEMPEÑO MI PRÁCTICA INSTITUCIONAL ELLA UMAE HOSPITAL DE GINECOOBSTETRICIA NO 3 CENTRO MÉDICO NACIONAL LA RAZA EN EL SERVICIO DE ONCOLOGÍA, Y MI PRÁCTICA PRIVADA LA DESEMPEÑO EL EL HOSPITAL STAR MÉDICA TLALNEPANTLA.",
+  "addresses": [
+    {
+      "full": "SOR JUANA INÉS DE LA CRUZ 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adriana-esquivel/ginecologo/tlalnepantla-de-baz2#address-id=421760&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:16.539Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__adriana_esquivel.webp"
+}

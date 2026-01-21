@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Héctor Eduardo Tello Guitiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 1828 PTE,"
+    },
+    {
+      "full": "Av. Constitución 1828 Pte C,"
+    },
+    {
+      "full": "Hidalgo 1828 PTE,"
+    },
+    {
+      "full": "Av. Constitución 1828 Pte C,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-eduardo-tello-guitierrez/ginecologo/monterrey#address-id=352710&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:04.964Z",
+  "localPhotoPath": null
+}

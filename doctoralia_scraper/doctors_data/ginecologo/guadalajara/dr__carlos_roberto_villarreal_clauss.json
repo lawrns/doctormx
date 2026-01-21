@@ -1,0 +1,40 @@
+{
+  "name": "Dr. Carlos Roberto Villarreal Clauss",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3514,"
+    },
+    {
+      "full": "Calle Tarascos 3514 7,"
+    },
+    {
+      "full": "Tarascos 3514,"
+    },
+    {
+      "full": "Calle Tarascos 3514 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-roberto-villarreal-clauss/ginecologo/guadalajara#address-id=44789&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:13.978Z",
+  "localPhotoPath": null
+}

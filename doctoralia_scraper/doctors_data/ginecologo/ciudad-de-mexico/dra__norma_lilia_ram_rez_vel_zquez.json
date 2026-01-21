@@ -1,0 +1,54 @@
+{
+  "name": "Dra. Norma Lilia Ramírez Velázquez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 105,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43fee9/43fee93365cb173b84a57a0277f9efa4_220_square.jpg",
+  "about": "Soy la Dra. Norma Ramírez, especialista en ginecología y obstetricia, egresada del Hospital de la Mujer de la Ciudad de México.Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia, A.C.Mi formación me permite ayudar a mis pacientes en el diagnóstico y tratamiento de enfermedades que se pueden presentar en diferentes etapas de la vida de una mujer. El bienestar de mi paciente es mi prioridad, por ello es importante acompañar a mis pacientes con un trato amable y respetuoso. Juntas elegiremos la forma de mejorar tu salud, manteniendo un seguimiento cercano y te acompañaré en cada etapa de tu vida. Agenda tu cita, será un gusto recibirte en mi consultorio.",
+  "addresses": [
+    {
+      "full": "Calle Rio Bamba 639,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $550"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-lilia-ramirez-velazquez/ginecologo/ciudad-de-mexico#address-id=609022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:06.628Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__norma_lilia_ram_rez_vel_zquez.webp"
+}

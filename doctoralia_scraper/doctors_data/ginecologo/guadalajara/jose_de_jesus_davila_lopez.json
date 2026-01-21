@@ -1,0 +1,25 @@
+{
+  "name": "Jose De Jesus Davila Lopez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hda Los Laureles 3153, Col. Tetlan Rio Verde, ,"
+    },
+    {
+      "full": "Hda Los Laureles 3153, Col. Tetlan Rio Verde, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-de-jesus-davila-lopez/ginecologo/guadalajara#address-id=356193&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:14.878Z",
+  "localPhotoPath": null
+}

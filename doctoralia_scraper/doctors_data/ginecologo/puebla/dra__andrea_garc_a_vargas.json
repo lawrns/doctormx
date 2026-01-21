@@ -1,0 +1,47 @@
+{
+  "name": "Dra. Andrea García Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 77,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e000b4/e000b41aecfec7e56002b85a424b1f66_220_square.jpg",
+  "about": "Hola a todas, mi nombre es Andrea García Vargas y les platicare un poco de mi. - Formación de medicina general en la ciudad de Puebla (BUAP) -Especialista en Ginecología y obstetricia, egresada del Instituto Nacional de Perinatología en la ciudad de México, hospital de tercer nivel y líder nacional en embarazo de alto riesgo. A lo largo de mi vida profesional he tenido claro que lo más importante es brindar atención integral de primera calidad a la mujer. Actualmente ofrezco servicios de Ginecología y Obstetricia en el Hospital mas importante de la Ciudad de Puebla Hospital Ángeles Puebla.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143, Reserva Territorial Atlixcáyotl, Puebla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-garcia-vargas/ginecologo/puebla#address-id=468954&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:30.176Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__andrea_garc_a_vargas.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria De Los Angeles Perez Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-perez-ramirez/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:04:06.478Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Francis Leticia Cuellar Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 1.5,
+  "reviewCount": 1,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d12801ae/d12801ae-d40a-490f-902a-668892acf8a8_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jordan 2365,"
+    },
+    {
+      "full": "Gerardo T. Diaz 3541,"
+    },
+    {
+      "full": "Jordan 2365,"
+    },
+    {
+      "full": "Gerardo T. Diaz 3541,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francis-leticia-cuellar-lopez/ginecologo/monterrey#address-id=227616&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:48:52.341Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/francis_leticia_cuellar_lopez.webp"
+}

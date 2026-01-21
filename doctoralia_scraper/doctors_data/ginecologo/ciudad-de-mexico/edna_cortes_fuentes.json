@@ -1,0 +1,46 @@
+{
+  "name": "Edna Cortes Fuentes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/900f2c/900f2ccc39fd0c2774638a336fa77a74_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Prolongación Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Prolongación Paseo de la Reforma 19,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Cirugía del enterocele",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edna-cortes-fuentes/ginecologo/alvaro-obregon#address-id=14917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:24.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/edna_cortes_fuentes.webp"
+}

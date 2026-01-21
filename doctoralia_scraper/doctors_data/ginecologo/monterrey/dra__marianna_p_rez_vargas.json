@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Marianna Pérez Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e19ea7/e19ea78230bb7ad5a0952d11d6865f0c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 1910,"
+    },
+    {
+      "full": "Calle Hidalgo 1910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Toma de papanicolaou base liquida",
+      "price": "• $1,650"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marianna-perez-vargas-2/ginecologo/nuevo-leon#address-id=493670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:11.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marianna_p_rez_vargas.webp"
+}

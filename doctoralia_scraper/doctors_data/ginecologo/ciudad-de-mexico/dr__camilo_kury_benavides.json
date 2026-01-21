@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Camilo Kury Benavides",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejercito Nacional No.650-1,"
+    },
+    {
+      "full": "Ejercito Nacional No.650-1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/camilo-kury-benavides/ginecologo/miguel-hidalgo#address-id=115992&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:11.071Z",
+  "localPhotoPath": null
+}

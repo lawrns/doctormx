@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mayra Santibañez Alejos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b10bf/4b10bf1617581cf8fa5ba3aadd6d9afc_220_square.jpg",
+  "about": "Medico por vocación, dedicada a la salud y bienestar de las pacientes, brindando un trato digno y humano. Bajo constante actualización para brindar identificar diagnósticos y dar el tratamientos asertivos.",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Ángel de Quevedo 1144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-santibanez-alejos/ginecologo/coyoacan#address-id=495903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:48.238Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mayra_santiba_ez_alejos.webp"
+}

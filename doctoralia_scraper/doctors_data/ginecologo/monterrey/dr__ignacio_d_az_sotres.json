@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ignacio Díaz Sotres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2dec90/2dec90254b2543c3ed4311ad65b5a271_220_square.jpg",
+  "about": "Tratamientos de reproducción asistida: . 1.Coito programado: Conciste en buscar los días más fértiles en la mujer para buscar un embarazo. Se realiza mediante monitoreo de la ovulación. 2. Inseminación artificial. Mediante este tratamiento se coloca el esperma preparado dentro de la matriz de la mujer cuando está se encuentra con mayor fertilidad. 3. Tratamiento de Fertilización in vitro. Este método de reproducción conciste en unir el óvulo de la mujer con el espermatozoide del hombre mediante una técnica de laboratorio. Posteriormente el pequeño bebé o embrion producto de está unión se coloca dentro de la matriz de la mujer por medio de un pequeño tubo de transferencia. Control del embarazo de alto riesgo. Atención del parto Natural y Cesárea. Laparoscopia: Mediante este método se coloca una cámarita dentro de la pelvis de la mujer y permite hacer un diagnóstico de causas de infertilidad, resección de quistes de ovario, endometriosis, entre otros. Recanalización tubaria: Conciste en reunir las Trompas de Falopio cuando estás han sido cortadas previamente con la realización de la salpingoclasia. Es una microcirugia que se realiza por via abdominal. Manejo de la Terapia Hormonal de Reemplazo en la menopausia y perimenopausia. Tratamiento del Virus del Papiloma Humano por biopsia, tratamiento a base de medicinas o retiro de verrugas.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    },
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-diaz-sotres/ginecologo/nuevo-leon#address-id=116955&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:19.678Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ignacio_d_az_sotres.webp"
+}

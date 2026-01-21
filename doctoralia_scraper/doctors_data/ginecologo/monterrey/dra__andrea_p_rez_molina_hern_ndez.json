@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Andrea Pérez Molina Hernández",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/310da7ea/310da7ea-9479-4d52-8ead-a0452d2b27e2_small_square.jpg",
+  "about": "Soy la Dra. Andrea Pérez Molina, ginecóloga y obstetra. Acompaño a mujeres en todas las etapas de su vida con una atención cálida, respetuosa y basada en evidencia. Mi prioridad es que cada paciente se sienta escuchada, segura y con confianza para tomar decisiones sobre su salud.",
+  "addresses": [
+    {
+      "full": "Av. Dr. José Eleuterio González 206,"
+    },
+    {
+      "full": "5 de Mayo 1822,"
+    },
+    {
+      "full": "Av. Dr. José Eleuterio González 206,"
+    },
+    {
+      "full": "5 de Mayo 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-perez-molina-hernandez/ginecologo/nuevo-leon#address-id=615874&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:08.269Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__andrea_p_rez_molina_hern_ndez.webp"
+}

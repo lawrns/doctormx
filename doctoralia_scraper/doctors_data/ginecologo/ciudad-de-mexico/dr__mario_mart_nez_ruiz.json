@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mario Martínez Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c3ced4/c3ced476142339c7b7dbea1e70dd4c8f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    },
+    {
+      "full": "Hospital Ángeles México,consultorio 651B,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-martinez-ruiz-2/ginecologo/cuajimalpa-de-morelos#address-id=339609&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:42.725Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mario_mart_nez_ruiz.webp"
+}

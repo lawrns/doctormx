@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Antonio Helue Mena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 550,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e04617/e0461758a4b309b4b704e91a4358b544_220_square.jpg",
+  "about": "Un grupo de especialistas en Medicina Materno Fetal, encargados de cuidar y vigilar el desarrollo y crecimiento de tu bebé durante el embarazo",
+  "addresses": [
+    {
+      "full": "Hospital Español Av. Ejército Nacional Mexicano 613, Torre Antonino Fernández, Piso 6 consultorio 605,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• $11,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-helue-mena/ginecologo/miguel-hidalgo#address-id=432265&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:14.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__antonio_helue_mena.webp"
+}

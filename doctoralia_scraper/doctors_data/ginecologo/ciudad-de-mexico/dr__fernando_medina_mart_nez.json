@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Fernando Medina Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8fa27c/8fa27cb0f3ba366aae0a09ba3e9d229b_220_square.jpg",
+  "about": "Dr. Fernando Medina MartínezGinecólogo–Obstetra | Especialista en ColposcopíaSoy ginecólogo graduado de la Universidad Nacional Autónoma de México (UNAM), con formación en el Hospital Central Norte PEMEX, donde adquirí una sólida base clínica en la atención integral de la salud femenina.Me especializo en colposcopía y en el manejo de lesiones premalignas del tracto genital inferior, formación que realicé en el Instituto Nacional de Cancerología (INCan). El INCan es la institución de referencia en México para el diagnóstico, prevención e investigación del cáncer, y contar con preparación en este centro me permite abordar cada caso con un enfoque altamente preciso, actualizado y orientado a la prevención del cáncer cervicouterino.Mi práctica se centra en ofrecer evaluaciones claras, diagnósticos oportunos y tratamientos basados en los estándares más altos de calidad y seguridad, siempre priorizando la confianza y tranquilidad de mis pacientes. Mi compromiso es brindar una atención profesional, cercana y fundamentada en la mejor evidencia médica disponible.",
+  "addresses": [
+    {
+      "full": "Ébano 127, Colonia Petrolera.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-medina-martinez/ginecologo/azcapotzalco#address-id=431945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:27.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_medina_mart_nez.webp"
+}

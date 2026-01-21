@@ -1,0 +1,57 @@
+{
+  "name": "Dra. Gianelly Garcia Manzano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 78,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/71552c/71552cbe8748ab1e92317058ef8255af_220_square.jpg",
+  "about": "Curse la Carrera de Médico Cirujano en La Facultad de Medicina CU de la Universidad Nacional Autónoma de México, posteriormente hice la especialidad de Ginecología y Obstetricia en del Hospital Juárez de México, realicé Diplomado en Colposocopia y Enfermedades del Tracto Genital Inferior (VPH), en la Universidad La Salle, además de realizar Alta especialidad de Laparoscopia Ginecológica e Hoseteroscopia en el Hospital Gea González. Por lo que puedo encargarme de padecimientos ginecologicos, como sangrados anormales, miomas, endometriosis, quistes de ovario, sindrome de ovario poliquistico, temas ralaicones con infeccion por Virus de Papiloma. Y además de dar seguimiento a embarazos normales y de alto riesgo Temas relacionados con metodos de planificacion familiar",
+  "addresses": [
+    {
+      "full": "Av Progreso 231,"
+    },
+    {
+      "full": "Av. Baja California,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 1524,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gianelly-garcia-manzano/ginecologo/benito-juarez#address-id=536286&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:14.717Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gianelly_garcia_manzano.webp"
+}

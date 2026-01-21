@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alfonso Godínez Burgos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6e9919/6e99195eb946460646d0ff57ad929715_220_square.jpg",
+  "about": "Ginecólogo con especialidad en Colposcopía Tutor Clínico en Especialidad de Ginecología y Obstetricia en Hospital Christus Muguerza Conchita / UDEM Profesor de Pregrado en Facultad de Medicina UDEM Profesor en Laboratorio de Simulación Clínica UDEM Calidez humana, profesionalismo y empatía con la finalidad de servirle de la mejor manera. Contamos con tecnología y recursos para diagnóstico y tratamiento de infecciones (urinarias, vaginales, VPH, VIH, Clamidia, herpes, etc.), vacunas (VPH, influenza, Hepatitis, DTPa, etc.), tratamientos ginecológicos y el mejor equipo médico para el cuidado del embarazo. Estamos para servirle, nuestra mayor satisfacción es su bienestar.",
+  "addresses": [
+    {
+      "full": "PRIVADA CORPUS CHRISTI 2320, PISO 1 INT 3-4 (ASPEN MEDICAL CENTER),"
+    },
+    {
+      "full": "PRIVADA CORPUS CHRISTI 2320, PISO 1 INT 3-4 (ASPEN MEDICAL CENTER),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-godinez-burgos/ginecologo/monterrey#address-id=84923&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:33.303Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alfonso_god_nez_burgos.webp"
+}

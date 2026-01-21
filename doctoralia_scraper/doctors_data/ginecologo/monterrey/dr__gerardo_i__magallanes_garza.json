@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Gerardo I. Magallanes Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5197c9/5197c900e317848357d9521382649d65_220_square.jpg",
+  "about": "Soy médico especialista enfocado y comprometido con la salud y el bienestar de mis pacientes. Me mantengo actualizado y en constante comunicación con mis colegas ginecólogos y de otras especialidades con el fin de ofrecer un manejo integro y completo. Pienso que la comunicación y una adecuada y buena relación medico paciente es fundamental para el éxito en los tratamientos. Me comprometo con mis pacientes a encontrar el mejor tratamiento disponible para mis pacientes y si así es necesario los refiero con algún otro colega, esto con la finalidad de que los pacientes reciban el mejor tratamiento disponible actualmente. En lo personal disfruto de mi trabajo y me gusta hacer investigación. Dentro de mis pasatiempos se encuentra pasar el rato con la familia, lectura de literatura y practico deportes, en la actualidad me preparo para triatlones.",
+  "addresses": [
+    {
+      "full": "(Centro de Cáncer de Mama Hospital Zambrano Hellion) Av. Batallon de San Patricio 112,"
+    },
+    {
+      "full": "(Centro de Cáncer de Mama Hospital Zambrano Hellion) Av. Batallon de San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-i-magallanes-garza/ginecologo/monterrey#address-id=122271&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:06.693Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gerardo_i__magallanes_garza.webp"
+}

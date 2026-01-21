@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesus Carlos Lavin Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/523449/523449550c40907f0af8fd925217415f_220_square.jpg",
+  "about": "Medico ginecólogo con 22 años de experiencia. En tu primera visita hablamos de tu caso en una amena charla, abrimos tu historial clínico y procedemos a una exploración física y a la toma de una ecografía pélvica, con un trato profesional y respetuoso, contando con discreción absoluta para que te sientas en confianza desde tu primera visita. ¡Siéntase en confianza y notará la diferencia!",
+  "addresses": [
+    {
+      "full": "Av. Sertoma 205 (Interior 311),"
+    },
+    {
+      "full": "Av. Sertoma 205 (Interior 311),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-carlos-lavin-rodriguez/ginecologo/monterrey#address-id=85788&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:49.068Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jesus_carlos_lavin_rodriguez.webp"
+}

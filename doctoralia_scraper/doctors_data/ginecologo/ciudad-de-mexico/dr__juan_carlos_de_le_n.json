@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Juan Carlos De León",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 150,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d0254/3d0254e981659e5518e73ee4ca32d8f0_220_square.jpg",
+  "about": "Cirujano Fetal del Hospital General de Mexico y Pedregal, Especialista en Ginecología y Obstetricia Sub especialista en Medicina Materno Fetal (embarazo de alto riesgo) Alta especialidad en Terapia y Cirugía Fetal Diplomado en Cardiología y Neurología Fetal. mas de 12 años de experiencia, con estudios realizados en México y el extranjero.",
+  "addresses": [
+    {
+      "full": "Manzanillo 83,"
+    },
+    {
+      "full": "Avenida Universidad 1080 - Hospital Angeles Universidad - Coyoacan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-de-leon/ginecologo/benito-juarez#address-id=448544&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:01.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_carlos_de_le_n.webp"
+}

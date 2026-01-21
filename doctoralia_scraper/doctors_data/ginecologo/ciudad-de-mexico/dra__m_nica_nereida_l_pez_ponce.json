@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mónica Nereida López Ponce",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e2877f/e2877f051f017762c719e40ab64a1c35_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Cruz del Sur #94 Colonia Prado Churubusco Coyoacán,"
+    },
+    {
+      "full": "Avenida Cruz del Sur #94 Colonia Prado Churubusco Coyoacán,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-nereida-lopez-ponce/ginecologo/ciudad-de-mexico#address-id=382282&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:15.918Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_nereida_l_pez_ponce.webp"
+}

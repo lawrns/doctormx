@@ -1,40 +1,19 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { HeroSection } from './HeroSection'
 import DrSimeonShowcase from './DrSimeonShowcase'
 import { StatsSection } from './StatsSection'
-import { PressSection } from './PressSection'
 import { FeaturesSection } from './FeaturesSection'
 import { TestimonialsSection } from './TestimonialsSection'
 import { CTASection } from './CTASection'
-import { Stethoscope, Search, UserPlus, Sparkles, Menu, X } from 'lucide-react'
-
-const navLinks = [
-  { href: '/doctors', label: 'Buscar doctores', icon: Search },
-  { href: '/app/second-opinion', label: 'Consulta IA', icon: Sparkles },
-  { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
-]
+import { Stethoscope, Search, UserPlus, Sparkles } from 'lucide-react'
 
 export function LandingPageClient() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-  const closeMenu = () => setIsMenuOpen(false)
-
   return (
-    <>
-      {/* Skip to main content link for keyboard users */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-primary-600 focus:rounded-lg focus:shadow-lg focus:ring-2 focus:ring-primary-500"
-      >
-        Saltar al contenido principal
-      </a>
-      <main id="main-content" className="min-h-screen bg-[#fdfaf6] overflow-x-hidden">
+    <main className="min-h-screen bg-[#fdfaf6] overflow-x-hidden">
       {/* Announcement Bar - Doctronic style */}
       <motion.div
         initial={{ y: -40, opacity: 0 }}
@@ -43,8 +22,8 @@ export function LandingPageClient() {
         className="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-2.5 px-4 text-center text-sm font-medium"
       >
         <span className="inline-flex items-center gap-2">
-          <Sparkles className="w-4 h-4" aria-hidden="true" />
-          Atencion medica 24/7 - Doctores certificados en Mexico - Consulta gratis
+          <Sparkles className="w-4 h-4" />
+          Atención médica 24/7 • Doctores certificados en México • Consulta gratis
         </span>
       </motion.div>
 
@@ -63,7 +42,7 @@ export function LandingPageClient() {
                 whileTap={{ scale: 0.95 }}
                 className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/25"
               >
-                <Stethoscope className="w-5 h-5 text-white" aria-hidden="true" />
+                <Stethoscope className="w-5 h-5 text-white" />
               </motion.div>
               <span className="text-xl font-bold text-text-primary tracking-tight">
                 Doctor.mx
@@ -71,13 +50,17 @@ export function LandingPageClient() {
             </Link>
 
             <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
+              {[
+                { href: '/doctors', label: 'Buscar doctores', icon: Search },
+                { href: '/app/second-opinion', label: 'Consulta IA', icon: Sparkles },
+                { href: '/for-doctors', label: 'Para doctores', icon: UserPlus },
+              ].map((link) => (
                 <Link key={link.href} href={link.href}>
                   <motion.span
                     whileHover={{ backgroundColor: 'rgba(99, 102, 241, 0.08)' }}
                     className="text-sm font-medium text-text-secondary hover:text-primary-600 transition-colors px-4 py-2 rounded-lg inline-flex items-center gap-2"
                   >
-                    <link.icon className="w-4 h-4" aria-hidden="true" />
+                    <link.icon className="w-4 h-4" />
                     {link.label}
                   </motion.span>
                 </Link>
@@ -85,28 +68,14 @@ export function LandingPageClient() {
             </nav>
 
             <div className="flex items-center gap-3">
-              {/* Mobile menu button */}
-              <button
-                onClick={toggleMenu}
-                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg hover:bg-neutral-100 transition-colors"
-                aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
-                aria-expanded={isMenuOpen}
-              >
-                {isMenuOpen ? (
-                  <X className="w-6 h-6 text-text-primary" />
-                ) : (
-                  <Menu className="w-6 h-6 text-text-primary" />
-                )}
-              </button>
-
-              <Link href="/auth/login" className="hidden sm:block">
+              <Link href="/auth/login">
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button variant="ghost" className="text-sm font-medium text-text-secondary hover:text-primary-600">
+                  <Button variant="ghost" className="text-sm font-medium text-text-secondary hover:text-primary-600 hidden sm:flex">
                     Iniciar sesión
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/auth/register" className="hidden sm:block">
+              <Link href="/auth/register">
                 <motion.div whileHover={{ scale: 1.04, y: -1 }} whileTap={{ scale: 0.98 }}>
                   <Button className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-sm font-semibold shadow-lg shadow-primary-500/25 px-6 py-2.5">
                     Registrarse gratis
@@ -116,69 +85,24 @@ export function LandingPageClient() {
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu Dropdown */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
-              className="lg:hidden bg-white border-t border-neutral-200/50 overflow-hidden"
-            >
-              <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={closeMenu}
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-text-secondary hover:text-primary-600 hover:bg-primary-50 transition-colors min-h-[44px]"
-                  >
-                    <link.icon className="w-5 h-5" aria-hidden="true" />
-                    <span className="font-medium">{link.label}</span>
-                  </Link>
-                ))}
-
-                <div className="border-t border-neutral-200 my-3 pt-3 space-y-2">
-                  <Link
-                    href="/auth/login"
-                    onClick={closeMenu}
-                    className="flex items-center justify-center w-full px-4 py-3 rounded-lg text-text-secondary hover:text-primary-600 hover:bg-neutral-50 transition-colors font-medium min-h-[44px]"
-                  >
-                    Iniciar sesión
-                  </Link>
-                  <Link
-                    href="/auth/register"
-                    onClick={closeMenu}
-                    className="flex items-center justify-center w-full px-4 py-3 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold shadow-lg shadow-primary-500/25 min-h-[44px]"
-                  >
-                    Registrarse gratis
-                  </Link>
-                </div>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </motion.header>
 
       {/* Page Sections */}
       <HeroSection />
       <DrSimeonShowcase />
       <StatsSection />
-      <PressSection />
       <FeaturesSection />
       <TestimonialsSection />
       <CTASection />
 
       {/* Footer */}
-      <footer className="bg-neutral-900 text-white py-16" role="contentinfo">
+      <footer className="bg-neutral-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-2 md:col-span-1">
-              <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="Doctor.mx - Ir a inicio">
+              <Link href="/" className="flex items-center gap-2.5 mb-4">
                 <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                  <Stethoscope className="w-5 h-5 text-white" aria-hidden="true" />
+                  <Stethoscope className="w-5 h-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">Doctor.mx</span>
               </Link>
@@ -222,30 +146,18 @@ export function LandingPageClient() {
               © {new Date().getFullYear()} Doctor.mx. Todos los derechos reservados.
             </p>
             <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
-                aria-label="Facebook - Doctor.mx"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
-                aria-label="Instagram - Doctor.mx"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
-                aria-label="Twitter - Doctor.mx"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
                 </svg>
               </a>
@@ -254,6 +166,5 @@ export function LandingPageClient() {
         </div>
       </footer>
     </main>
-    </>
   )
 }

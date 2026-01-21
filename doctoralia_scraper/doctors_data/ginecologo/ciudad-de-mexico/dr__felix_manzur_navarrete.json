@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Felix Manzur Navarrete",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circ. Historiadores 44,"
+    },
+    {
+      "full": "Sierra Mojada 340,"
+    },
+    {
+      "full": "Circ. Historiadores 44,"
+    },
+    {
+      "full": "Sierra Mojada 340,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felix-manzur-navarrete/ginecologo/naucalpan-de-juarez",
+  "scrapedAt": "2026-01-21T03:04:16.229Z",
+  "localPhotoPath": null
+}

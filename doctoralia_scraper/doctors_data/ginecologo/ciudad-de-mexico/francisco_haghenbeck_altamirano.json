@@ -1,0 +1,31 @@
+{
+  "name": "Francisco Haghenbeck Altamirano",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154 - 339,"
+    },
+    {
+      "full": "Calle Acueducto, 26,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154 - 339,"
+    },
+    {
+      "full": "Calle Acueducto, 26,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-haghenbeck-altamirano/ginecologo/cuajimalpa-de-morelos#address-id=327096&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:09.181Z",
+  "localPhotoPath": null
+}

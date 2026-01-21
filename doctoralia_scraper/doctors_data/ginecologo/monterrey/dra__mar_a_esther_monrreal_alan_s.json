@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Esther Monrreal Alanís",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 543,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/46f26c/46f26ccc3a3353db74880e375410aa54_220_square.jpg",
+  "about": "Estudié en el Hospital Universitario de la UANL complementando mi educación profesional en la Universidad de Zaragoza, España. Cursé la especialidad en el Hospital Christus Muguerza Conchita de la Universidad de Monterrey y realicé una rotación al Hospital 12 de Octubre de la Universidad Complutense de Madrid, España. Mis tesis han abordado temas relacionados a diagnóstico oportuno de virus de papiloma humano así como técnicas para aumenta las tasas de éxito en reproducción asistida. He colaborado en la realización de varios libros publicados en México y en España. Será un honor ser tu especialista =)",
+  "addresses": [
+    {
+      "full": "Av. Sendero Divisorio 104, Joyas De Anahuac,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-esther-monrreal-alanis/ginecologo/general-escobedo#address-id=347098&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:36.374Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_esther_monrreal_alan_s.webp"
+}

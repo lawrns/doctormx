@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Cesar Alberto Ochoa Ruíz Esparza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/88e692/88e692ccd8413b370a58904a8143a559_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo 2527 504 Col. Obispado ,"
+    },
+    {
+      "full": "Calle Virrey De Mendoza 1998 612,"
+    },
+    {
+      "full": "Hidalgo 2527 504 Col. Obispado ,"
+    },
+    {
+      "full": "Calle Virrey De Mendoza 1998 612,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-alberto-ochoa-ruiz-esparza/ginecologo/morelia#address-id=363292&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:21.560Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__cesar_alberto_ochoa_ru_z_esparza.webp"
+}

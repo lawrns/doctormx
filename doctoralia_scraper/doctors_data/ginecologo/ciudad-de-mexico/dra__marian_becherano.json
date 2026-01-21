@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Marian Becherano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 86,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba0d07/ba0d07cc491688216e42481f42a26fc3_220_square.jpg",
+  "about": "Egresada de la Universidad Anáhuac con la licenciatura en Médico Cirujano, realicé mi residencia en Ginecología y Obstetricia en el Hospital Ángeles Lomas. Mi pasión es atender a mujeres desde la adolescencia hasta la menopausia, centrándome en hormonas, síndrome de ovario poliquístico, anticoncepción y salud sexual y reproductiva. Mi enfoque es integral, inclusivo y no centrado en un peso específico. Me he formado por medio de cursos en alta especialidad en adolescencia.",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    },
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marian-becherano/ginecologo/huixquilucan#address-id=485049&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:24.651Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marian_becherano.webp"
+}

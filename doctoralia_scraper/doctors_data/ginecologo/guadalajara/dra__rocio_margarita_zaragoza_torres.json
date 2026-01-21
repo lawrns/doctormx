@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Rocio Margarita Zaragoza Torres",
+  "specialty": "Urología Ginecológica",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/064bc4/064bc44a5d6e4d97fa99fef823792fe7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle José María Vigil 2889,"
+    },
+    {
+      "full": "Antonio Rosales 204,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-margarita-zaragoza-torres/ginecologo-urologo/guadalajara#address-id=16163&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:15.690Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__rocio_margarita_zaragoza_torres.webp"
+}

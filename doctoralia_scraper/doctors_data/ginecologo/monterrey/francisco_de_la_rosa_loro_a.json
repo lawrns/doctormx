@@ -1,0 +1,25 @@
+{
+  "name": "Francisco De La Rosa Loroña",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalupe 54, Col. Las Margaritas, ,"
+    },
+    {
+      "full": "Guadalupe 54, Col. Las Margaritas, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-de-la-rosa-lorona/ginecologo/guadalupe#address-id=355619&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:32.278Z",
+  "localPhotoPath": null
+}

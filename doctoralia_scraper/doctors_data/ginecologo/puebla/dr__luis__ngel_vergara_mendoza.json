@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Ángel Vergara Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8f9330/8f9330a5fca8a8d179a91a84e79c9405_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "PRIVADA DE LAS RAMBLAS 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-angel-vergara-mendoza/ginecologo/puebla#address-id=581492&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:42.147Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__luis__ngel_vergara_mendoza.webp"
+}

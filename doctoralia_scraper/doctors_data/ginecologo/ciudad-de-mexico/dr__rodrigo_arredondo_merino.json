@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Rodrigo Arredondo Merino",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 147,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59a56e/59a56e264adbfae0a5fa0e49c5f506f7_220_square.jpg",
+  "about": "Atención privada, delicada, ética, personal, humana, respaldada por el profesionalismo y conocimiento de la medicina. Experto en el tratamiento por minima invasión (laparoscopía de Miomas, endometriosis y quistes en ovarios) Dr. Raúl Rodrigo Arredondo Merino Ginecólogo y Obstetra ha colaborado en los mejores hospitales tanto en la medicina pública como en el sector privado. Con alta especialidad en Laparoscopía Endoscópica Ginecológica y Laparoscopía Ginecológica avanzada en el Hospital Clinic de Barcelona España. Actualmente ejerce medicina privada como ginecólogo y obstetra en el Centro Ginecologico y de cirugía laparoscópica en Hospital Ángeles del Pedregal en México, Distrito Federal.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rodrigo-arredondo-merino/ginecologo/magdalena-contreras#address-id=493942&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:51.134Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rodrigo_arredondo_merino.webp"
+}

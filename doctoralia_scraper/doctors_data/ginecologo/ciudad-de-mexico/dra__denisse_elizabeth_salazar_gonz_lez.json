@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Denisse Elizabeth Salazar González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 57,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Actualmente estoy especializada en enfermedades propias de la mujer",
+  "addresses": [
+    {
+      "full": "Avenida Convento de Santa Monica 119 Jardines de Santa Monica, Hab Jardines de Santa Monica,,"
+    },
+    {
+      "full": "Privada 18,"
+    },
+    {
+      "full": "consultorio 21, TORRE MEDICA MULTIMEDICA, Av Convento de Sta Monica 119, Hab Jardines de Santa Monica,"
+    },
+    {
+      "full": "Avenida Convento de Santa Monica 119 Jardines de Santa Monica, Hab Jardines de Santa Monica,,"
+    },
+    {
+      "full": "Privada 18,"
+    },
+    {
+      "full": "consultorio 21, TORRE MEDICA MULTIMEDICA, Av Convento de Sta Monica 119, Hab Jardines de Santa Monica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/denisse-elizabeth-salazar-gonzalez/ginecologo/tlalnepantla-de-baz2",
+  "scrapedAt": "2026-01-21T02:55:27.881Z",
+  "localPhotoPath": null
+}

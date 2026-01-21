@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel Luna Macías",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 28,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/35f115/35f1158272c2b4bf3422795300459bf2_220_square.jpg",
+  "about": "Experto en Cáncer de Mama, como también todo cáncer ginecológico",
+  "addresses": [
+    {
+      "full": "Av. Paseo de los Leones 8001, Valle de Cumbres,"
+    },
+    {
+      "full": "Av. Paseo de los Leones 8001, Valle de Cumbres,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-luna-macias/ginecologo-ginecologo-oncologico/nuevo-leon#address-id=502495&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:31.291Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__miguel__ngel_luna_mac_as.webp"
+}

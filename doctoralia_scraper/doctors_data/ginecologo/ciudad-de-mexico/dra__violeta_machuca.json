@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Violeta Machuca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 67,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcc5d6/dcc5d642d0a72abe16309c674af0b8d7_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $3,800"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/violeta-machuca/ginecologo/tlalnepantla-de-baz2#address-id=532799&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:11.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__violeta_machuca.webp"
+}

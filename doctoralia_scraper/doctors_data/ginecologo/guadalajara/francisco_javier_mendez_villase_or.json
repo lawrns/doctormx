@@ -1,0 +1,25 @@
+{
+  "name": "Francisco Javier Mendez Villaseñor",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rubén Dario 989, Prados Providencia,"
+    },
+    {
+      "full": "Rubén Dario 989, Prados Providencia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-mendez-villasenor/ginecologo/guadalajara#address-id=125359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:42.891Z",
+  "localPhotoPath": null
+}

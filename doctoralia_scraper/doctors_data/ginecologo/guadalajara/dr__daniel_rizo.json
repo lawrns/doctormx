@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Daniel Rizo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/904a02/904a02e4c27bdccbaea42674c1556ae6_220_square.jpg",
+  "about": "Certificado Especialista en Ginecología y Obstetricia por el Consejo Mexicano de Ginecología y Obstetricia AC. # 8629 Miembro del American College of Obstetricians and Gynecologists (ACOG) desde 2015 Experiencia en Parto Humanizado. Laparoscopia",
+  "addresses": [
+    {
+      "full": "Niño Obrero 650D,"
+    },
+    {
+      "full": "Niño Obrero 650D,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-rizo/ginecologo/zapopan#address-id=88908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:44.206Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__daniel_rizo.webp"
+}

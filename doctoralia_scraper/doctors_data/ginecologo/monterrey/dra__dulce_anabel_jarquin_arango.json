@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Dulce Anabel Jarquin Arango",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 272,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/86d00c88/86d00c88-773c-431c-81e1-443db0e70688_small_square.jpg",
+  "about": "SOY LA DRA DULCE ANABEL JARQUIN ARANGO ESPECIALISTA ACTUALIZADA EN GINECOLOGIA Y OBSTETRICIA PUEDO AYUDARTE SI PRESENTAS ALGUN PROBLEMA DE SALUD , Y ACOMPAÑARTE DURANTE TU EMBARAZO Y EN EL NACIMIENTO DE TU BEBE. ADEMAS ESTOY CAPACITADA Y ACTUALIZADA EN : -REVISION ANUAL DE RUTINA QUE INCLUYE: PAPANICOLAU , ULTRASONIDO Y CONSULTA. -METODOS DE PLANIFICACION FAMILIAR -TRATAMIENTO SI PRESENTAS ALGUNA INFECCION VAGINAL -O SI PRESENTAS ALTERACIONES EN EL CICLO MENSTRUAL -SI DESEAS UN EMBARAZO - ULTRASONIDOS VAGINALES Y OBSTETRICOS - ATENCION DE PARTOS Y CESAREAS - ASI COMO OTROS PROCEDIMIENTOS PARA TRATAR (MIOMAS, POLIPOS, VERRUGAS ETC ). ACUDE TE ATENDERE CON CLARIDAD, CONFIDENCIALIDAD, RESPETO, AMABILIDAD Y EMPATIA .",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 603,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dulce-anabel-jarquin-arango/ginecologo/nuevo-leon#address-id=453857&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:33.270Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__dulce_anabel_jarquin_arango.webp"
+}

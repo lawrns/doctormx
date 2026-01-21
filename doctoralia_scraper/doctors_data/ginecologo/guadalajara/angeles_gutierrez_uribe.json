@@ -1,0 +1,25 @@
+{
+  "name": "Angeles Gutierrez Uribe",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Mariano Otero 3601. Col. La Calma Zapopan. ,"
+    },
+    {
+      "full": "Av. Mariano Otero 3601. Col. La Calma Zapopan. ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angeles-gutierrez-uribe/ginecologo/guadalajara#address-id=358978&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:26.664Z",
+  "localPhotoPath": null
+}

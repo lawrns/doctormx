@@ -1,0 +1,31 @@
+{
+  "name": "Evelia Camargo Neri",
+  "specialty": "Radiólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mexico City,"
+    },
+    {
+      "full": "Jalapa 161,"
+    },
+    {
+      "full": "Mexico City,"
+    },
+    {
+      "full": "Jalapa 161,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/evelia-camargo-neri/radiologo-pediatra/ciudad-de-mexico#address-id=144344&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:37.252Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,94 @@
+{
+  "name": "Dr. Carlos Alberto Zapico Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0de496a4/0de496a4-621a-4da0-8477-375e8524a54d_small_square.jpg",
+  "about": "Soy gineco-obstetra militar especializado en medicina pélvica femenina y cirugía reconstructiva del piso pélvico, que abarca la incontinencia urinaria femenina, vejiga hiperactiva, incontinencia anal, fístulas genitourinarias, cistitis intersticial, infección de vías urinarias, cirugía para corrección de prolapso de órganos pélvicos, cirugía anti-incontinencia, cirugía estética vulvo-vaginal, así como la rehabilitación del piso pélvico para mejorar la calidad de vida de las mujeres con disfunción de piso pélvico.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca S/N,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Cto Centro Comercial,"
+    },
+    {
+      "full": "Vialidad de la Barranca S/N,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Cto Centro Comercial,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-zapico-ortiz/ginecologo/naucalpan-de-juarez2#address-id=537457&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:40.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_alberto_zapico_ortiz.webp"
+}

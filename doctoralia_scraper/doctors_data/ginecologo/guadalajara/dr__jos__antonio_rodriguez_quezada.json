@@ -1,0 +1,74 @@
+{
+  "name": "Dr. José Antonio Rodriguez Quezada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c901b5/c901b54beb1ed81b2dd397e386ccf65e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Joaquin Amaro 2270 (frente al Templo de Santa Cecilia),"
+    },
+    {
+      "full": "Javier Mina 1236 (esquina calle 50),"
+    },
+    {
+      "full": "Sanatorio San Gerónimo,"
+    },
+    {
+      "full": "Avenida Joaquin Amaro 2270 (frente al Templo de Santa Cecilia),"
+    },
+    {
+      "full": "Javier Mina 1236 (esquina calle 50),"
+    },
+    {
+      "full": "Sanatorio San Gerónimo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Urodinamia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Urodinamia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Urodinamia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-rodriguez-quezada/ginecologo/guadalajara#address-id=10796&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:15.675Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jos__antonio_rodriguez_quezada.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Omar Valencia Elizalde",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chulavista N° 48. Esq. Talara, Col. Tepeyac Insurgentes,"
+    },
+    {
+      "full": "Chulavista N° 48. Esq. Talara, Col. Tepeyac Insurgentes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-valencia-elizalde/ginecologo/ciudad-de-mexico#address-id=140537&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:05.942Z",
+  "localPhotoPath": null
+}

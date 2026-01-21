@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Elena Maricela Ríos Cuéllar",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pino Suarez 640,"
+    },
+    {
+      "full": "Pino Suarez 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• Desde $650"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elena-maricela-rios-cuellar/ginecologo/nuevo-leon#address-id=365067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:21.884Z",
+  "localPhotoPath": null
+}

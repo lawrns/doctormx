@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Hugo Mauricio Vázquez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 27,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9160bb/9160bb8073f46d6eaa246e912854292b_220_square.jpg",
+  "about": "Soy el Dr. Hugo Vázquez. Hablando un poco sobre mí preparación. Terminé la especialidad de Ginecología y Obstetricia en el Hospital Christus Muguerza en Monterrey, N.L. Posteriormente realice la sub-especialidad de Ginecología Oncológica en el Instituto Nacional de Cancerología de México en CdMx. Interesado en el campo de la cirugía de mínima invasión para la mujer, me he certificado en cirugía robótica y laparoscopía avanzada para el cáncer ginecológico, endometriosis infiltrativa y ginecología de alta complejidad en diferentes instituciones de prestigio de México, E.U.A, Brasil y Colombia. Con esto, puedo hoy otorgar a mis pacientes una atención especializada y de actualidad del cáncer en la mujer. Y así, resolver su problemática de manera integral ya sea por mínima invasión ó de manera tradicional, GARANTIZANDO la misma seguridad oncológica. En la actualidad mi práctica profesional es exclusiva y dirigida al cáncer femenino, cáncer de mama, enfermedades benignas y malignas de glándula mamaria, endometriosis infiltrativa y lesiones premalignas de cérvix. Esto me ha dado la oportunidad de ofrecer a mis pacientes oncológicas y no oncológicas, múltiples opciones quirúrgicas de vanguardia y que son empleadas internacionalmente para el tratamiento de su enfermedad (cirugía robótica, cirugía laparoscópica, cirugía vaginal y cirugía tradicional). Gracias por su confianza",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla 2525 Pte. Colonia Obispado. Consultorio 200-B Torre de Consultorios,"
+    },
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla 2525 Pte. Colonia Obispado. Consultorio 200-B Torre de Consultorios,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-mauricio-vazquez-garcia/ginecologo-ginecologo-oncologico/nuevo-leon#address-id=593451&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:47.314Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hugo_mauricio_v_zquez_garc_a.webp"
+}

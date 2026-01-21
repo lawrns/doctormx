@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Luis Alberto Vasquez Olivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 155,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/743b60/743b60d2fcee13b8aeb528d09cdb30d1_220_square.jpg",
+  "about": "QUIEN SOY… *HOLA SOY EL DR LUIS A.VÀSQUEZ OLIVERA *EGRESADO DE LA FACULTAD DE MEDICINA DE LA BENEMÈRITA UNIVERSIDAD AUTÒNOMA DE PUEBLA CON EL TÌTULO DE MÈDICO CIRUJANO Y PARTERO *TENGO LA ESPECIALIDAD DE GINECOLOGÌA Y OBSTETRICIA REALIZADA EN EL HOSPITAL GENERAL REGIONAL No.36 DEL IMSS “SAN ALEJANDRO” *ESTOY CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGÌA Y OBSTETRICIA *CUENTO CON: *DIPLOMADO EN COLPOSCOPIA Y PATOLOGÌA DEL TRACTO GENITAL INFERIOR AVALADO POR LA UNIVERSIDAD DE QUERETARO *DIPLOMADO EN ULTRASONIDO OBSTÈTRICO AVALADO POR LA UNIVERSIDAD DE QUERETARO *DIPLOMADO EN HISTEROSCOPIA *CURZO AVANZADO DE HEMORRAGIA OBSTÈTRICA, MANEJO QUIRÙRGICO Y REPARACIÒN DE LESIONES",
+  "addresses": [
+    {
+      "full": "Calle 10 Oriente #111,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-alberto-vasquez-olivera/ginecologo/tehuacan",
+  "scrapedAt": "2026-01-21T03:53:22.836Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__luis_alberto_vasquez_olivera.webp"
+}

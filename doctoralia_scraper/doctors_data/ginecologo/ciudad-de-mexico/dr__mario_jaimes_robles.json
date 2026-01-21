@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mario Jaimes Robles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "av cuauhtemoc 1174 colonia Letràn Valle,"
+    },
+    {
+      "full": "av cuauhtemoc 1174 colonia Letràn Valle,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-jaimes-robles/ginecologo/benito-juarez#address-id=25871&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:33.500Z",
+  "localPhotoPath": null
+}

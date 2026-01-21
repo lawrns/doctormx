@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Graciela Noren Madrigal",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 385,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96c299/96c29965d0616b14dad30378edfddeb5_220_square.jpg",
+  "about": "Medico Universidad AnahúacEspecialista en Ginecología y Obstetricia Centro Médico ABC/UNAMCirugía de Mínima Invasion. BélgicaMaestría en Educación",
+  "addresses": [
+    {
+      "full": "Sur 136 No. 116,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,850"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,900"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/graciela-noren-madrigal/ginecologo/ciudad-de-mexico#address-id=109329&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:00.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__graciela_noren_madrigal.webp"
+}

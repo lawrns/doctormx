@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Blanca Aner Barroso Sierra",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a5fea4fe/a5fea4fe-6c45-4ba0-a94d-5de632d44a09_small_square.jpg",
+  "about": "Me especializo en la atención a las mujeres en edad fértil, y las que ya están en la peri menopausia, menopausia y post menopausia. He hecho diversos diplomados y cursos que me mantienen actualizada para dar a mis pacientes seguridad y certeza diagnóstica. Trato digno y respetuoso hacia las mujeres, comprendiendo sus padecimientos desde mi ángulo como mujer y médico.",
+  "addresses": [
+    {
+      "full": "Calzada de la Viga 1174,"
+    },
+    {
+      "full": "Calle de Melchor Ocampo 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/blanca-aner-barroso-sierra-2/ginecologo/iztacalco#address-id=620547&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:33.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__blanca_aner_barroso_sierra.webp"
+}

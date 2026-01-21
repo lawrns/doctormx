@@ -1,0 +1,25 @@
+{
+  "name": "Lara Maria Yolanda Montalvo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/757490/757490d3fae22dd28d846749b6d0585c_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Otavalo 32,"
+    },
+    {
+      "full": "Otavalo 32,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lara-maria-yolanda-montalvo/ginecologo/ciudad-de-mexico#address-id=131136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:16:03.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/lara_maria_yolanda_montalvo.webp"
+}

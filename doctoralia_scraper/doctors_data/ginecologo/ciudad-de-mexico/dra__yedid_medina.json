@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Yedid Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 282,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/43b470/43b470f495f418cd009ca1bf4a6da137_220_square.jpg",
+  "about": "Te comparto un poco de mi recorrido... Médica Cirujana, especialista en Giencología y Obstetricia, subespecialista en Medina Materno Fetal. Colposcopista. Máster en cirugía de mínima invasión. Soy egresada con Mención Honorífica como Médica Cirujana de la Universidad Autónoma del Estado de México (7 años), con especialidad en Ginecología y Obstetricia (4 años) por Instituto Materno Infantil del Estado de México avalada por la misma Universidad, unidad hospitalaria de alta concentración donde estuve en contacto y aprendí sobre los padecimientos de embarazos de alto riesgo, me entrené con técnicas de control en hemorragía obstetrica. Soy Proveedora e instructora del curso de Atención Avanzada Obstétrica (ALSO) impartido por PACE MD, avalado por la Academia Americana de Medicina Familiar de E.U.A., el cual se enfoca en la atención de las principales enfermedades médico quirúrgicas en la mujer embarazada como son: hemorragia obstétrica en todos los trimestres del embarazo y posparto, distocia de hombros, interpretación de monitorización fetal intraparto, parto operatorio. Proveedora de cursos de emergencia como ACLS, reanimación neonatal, ATLS. Realicé un Master en Endoscopia Ginecológica por la Universidad Autónoma de Barcelona, España (1 año), altamente capacitada para atención de padecimientos benignos por mínima invasión y además cuento con un adiestramiento en laparoscopia (Cirugía de Mínima Invasión) por el Hospital Militar de Especialidades de la Mujer y Neonatología, Secretaría de la Defensa Nacional. Tengo un Diplomado en Metodología de la Investigación Clínica por la Universidad Anáhuac, donde realicé trabajos de investigación de temas de relevancia en Ginecología y Obstetricia, actualizándome con los conocimientos científicos válidos y aportando nuevo conocimiento en el área. Cuento con un Diplomado en Colposcopía y tracto genital inferior por la Univerisad Anáhuac, así que sientete segura al tratar todo lo relacionado con Virus de Papiloma Humano Me apasiona el área de obstetricia (mujer y embarazo) por lo que hice una segunda especialidad en Medicina Materno Fetal (2 años) en el Hospital General de México avalado por la Universidad Nacional Autónoma de México y cuento con un Diplomado de Ultrasonido en Medicina Materno Fetal por la Universidad Autónoma de Querétaro. Por lo que me encuentro totalmente capacitada para la atención de embarazos de alto riesgo complicados con diabetes gestacional, alteraciones tiroideas, preeclampsia, lupus eritematoso sistémico, por mencionar algunos. Me especializo en diagnóstico fetal para que cuidemos desde el incio a lo que más amas. Realicé una formación avanzada en Ecocardiografía Fetal Avanzada en el Hospital de Vall de Hebron, Barcelona, España. Además de un adiestramiento en el mismo rubro por la Fundación Internacional de Medicina Materno Fetal. Soy miembro de The Fetal Medicine Foundation y Fetal Medicine Barcelona y del American College of Obstetricians and Gynecologists (ACOG). Estoy certificada como ginecóloga y obstetra y medica materno fetal por el Consejo Mexicano de Ginecología y Obstetricia. Mi orgullo es atenderle con la mayor calidad y calidez humana que se merece, basada en criterios médicos actualizados y ética profesional, tomando en conjunto las mejores decisiones para tu salud. ¡Te espero en Consultorio!",
+  "addresses": [
+    {
+      "full": "Av Lomas Verdes 2165. Los Alamos.,"
+    },
+    {
+      "full": "Cto Centro Comercial 20, Cd. Satélite, 53100 Naucalpan de Juárez, Méx.,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yedid-medina/ginecologo/naucalpan#address-id=461548&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:11.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yedid_medina.webp"
+}

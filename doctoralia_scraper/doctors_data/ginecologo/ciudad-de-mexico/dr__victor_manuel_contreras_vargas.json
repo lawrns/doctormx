@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Victor Manuel Contreras Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6079ec/6079ec4672361b7beafbd9c821e4a07e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida riobamba 827. Entrada B,"
+    },
+    {
+      "full": "Riobamba 827-B D.F., Lindavista,"
+    },
+    {
+      "full": "Avenida riobamba 827. Entrada B,"
+    },
+    {
+      "full": "Riobamba 827-B D.F., Lindavista,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-manuel-contreras-vargas/ginecologo/gustavo-a-madero#address-id=327075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:29.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__victor_manuel_contreras_vargas.webp"
+}

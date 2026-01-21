@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Sergio Javier Fonseca Velazquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/34e420/34e42037d842cdddfd0fd425916cd48c_220_square.jpg",
+  "about": "Soy Sergio Fonseca, médico especialista en Ginecología y Obstetricia, con subespecialidad en Urología Ginecológica. Me dedico a la atención integral de la salud femenina en todas las etapas de la vida, con especial interés en el diagnóstico y tratamiento de trastornos del piso pélvico, incontinencia urinaria y otras afecciones ginecológicas que impactan la calidad de vida de las mujeres.Mi enfoque está centrado en brindar una atención respetuosa, empática y personalizada, buscando siempre que cada paciente se sienta escuchada, acompañada y con la confianza necesaria para tomar decisiones informadas sobre su salud.",
+  "addresses": [
+    {
+      "full": "Avenida Cubilete 106,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-javier-fonseca-velazquez/ginecologo/zapopan#address-id=568142&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:09.098Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__sergio_javier_fonseca_velazquez.webp"
+}

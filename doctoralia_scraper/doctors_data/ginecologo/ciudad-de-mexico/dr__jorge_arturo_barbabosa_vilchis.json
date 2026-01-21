@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jorge Arturo Barbabosa Vilchis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TUXPAN 10 INTERIOR 604,"
+    },
+    {
+      "full": "TUXPAN 10 INTERIOR 604,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-arturo-barbabosa-vilchis/ginecologo/cuauhtemoc#address-id=99908&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:22.439Z",
+  "localPhotoPath": null
+}

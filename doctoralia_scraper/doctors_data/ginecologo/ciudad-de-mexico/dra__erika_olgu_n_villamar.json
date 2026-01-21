@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Erika Olguín Villamar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 355,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e0e40c/e0e40c8a4652692ef4e8be85de9e9e9c_220_square.jpg",
+  "about": "Soy una medico ginecóloga altamente capacitada, especializada en atender y prevenir las enfermedades que aquejan a mujeres de cualquier edad, dentro de un ambiente de cordialidad, tranquilidad y confianza. Esto lo logro manteniendo un equilibrio entre la atención personalizada y el uso de recursos tecnológicos de punta para la explicación, interrogatorio y exploración y diagnóstico de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Avenida Mexico 37,"
+    },
+    {
+      "full": "Primero de Mayo lote 34,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-olguin-villamar/ginecologo/naucalpan-de-juarez2#address-id=141463&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:11.122Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_olgu_n_villamar.webp"
+}

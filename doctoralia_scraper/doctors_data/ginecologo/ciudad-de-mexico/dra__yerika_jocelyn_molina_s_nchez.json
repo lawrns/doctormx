@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Yerika Jocelyn Molina Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e68407/e684070068eea2753c12a8212dd6ec13_220_square.jpg",
+  "about": "Soy la Dra Yerika Molina, originaria del sur de la Ciudad de México, realice mis estudios universitarios como medico general en la Facultad de Medicina de la UNAM, posteriormente me especialice en Ginecología y Obstetricia en la Ciudad de Mérida Yucatán en el Hospital General Regional \"Ignacio Garcia Tellez\". Actualmente me encuentro certificada como miembro del Consejo Mexicano de Ginecología y Obstetricia. Ademas cuento con un diplomado en Ultrasonografía Gineco-obstétrica avalado por La Salle, y con un diplomado en Colposcopia y patología de tracto genital inferior. Sera un placer atenderte y cuidar de tu salud, ayudarte a resolver tus dudas y ofrecerte las mejores opciones de tratamiento, de a cuerdo a los mejores y mas actuales estándares de calidad.",
+  "addresses": [
+    {
+      "full": "Patricio Sanz 1025, Insurgentes San Borja,"
+    },
+    {
+      "full": "Avenida Universidad 989,"
+    },
+    {
+      "full": "Patricio Sanz 1025, Insurgentes San Borja,"
+    },
+    {
+      "full": "Avenida Universidad 989,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yerika-jocelyn-molina-sanchez/ginecologo/ciudad-de-mexico#address-id=453102&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:09.720Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yerika_jocelyn_molina_s_nchez.webp"
+}

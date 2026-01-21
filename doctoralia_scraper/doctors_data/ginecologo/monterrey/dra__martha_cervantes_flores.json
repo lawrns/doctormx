@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Cervantes Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 575,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8d5c4/c8d5c4a0525495246203c7d3ab6d74fb_220_square.jpg",
+  "about": "Nuestro objetivo es solucionar tus dudas y lograr tu bienestar. Lo que es importante para ti, para mi lo es también. ENTRE MUJERES NOS ENTENDEMOS. Realicé mi formación de médico general en la Universidad autónoma de nuevo león, continuando con la especialidad de ginecología y obstetricia, en el hospital universitario Dr. José Eleuterio González “. He llevado diferentes cursos de actualización y estoy certificada por el consejo Mexicano de Ginecología y Obstetricia. Me encanta mi profesión, como mujer y madre entiendo perfectamente sus sentimientos y dudas, en nuestras diferentes etapas de la vida. Desde nuestros cambios en la pubertad, las dudas al iniciar y descubrir nuestra sexualidad, en nuestro embarazo como es increíble que empiezas a amar a tu hijo desde que sabes de su existencia. Y las etapas posteriores como lo son la menopausia y plenitud. Mi meta en la vida es servir, amar, trabajar con responsabilidad y esmero. Tener una vida plena de dicha, paz y autorrealización. Atendemos tu parto o cesárea en el hospital de tu preferencia. de una manera personalizada, profesional y pensando en tu salud y de tu bebé. Estoy dada de alta en todos los hospitales de la región para cualquier evento o cirugía ginecológica",
+  "addresses": [
+    {
+      "full": "Ecuador 2331, col Balcones de Galerias, Monterrey, Nuevo Leon,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-cervantes-flores/ginecologo/nuevo-leon#address-id=80513&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:35.880Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__martha_cervantes_flores.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Stephanie Galicia López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 215,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fecaff/fecaff682ef13e9defba76566c93dc7e.jpg",
+  "about": "Sobre mí ¿Quién soy? Soy la Dra. Stephanie Galicia, médico cirujano graduada de la Universidad Autónoma Metropolitana. Obtuve mi especialización en Ginecología y Obstetricia por la UNAM realizando mi residencia en la Unidad Médica de Alta Especialidad #4 Luis Castelazo Ayala. Cuento con un Diplomado en Colposcopía y patología del tracto genital inferior, también con un adiestramiento en histeroscopía de consultorio y un curso de especialización en menopausia por la International Menopause Society y Diplomado en Ginecología endocrinológica, entre otras actualizaciones. Con una amplia experiencia en el diagnóstico y tratamiento de diversas patologías ginecológicas, he dedicado mi carrera a mejorar la calidad de vida de mis pacientes. Mi misión es mejorar la calidad de vida y salud de mis pacientes a través de un manejo ético, de excelencia, confidencial y sin prejuicios. Su bienestar es mi máxima prioridad. ¿Por qué elegirme a mí? Brindamos atención libre de prejuicios, con empatía y siempre buscando que te sientas cómoda. Para mi tu salud es lo mas importante Principales áreas de tratamiento Amplia experiencia en control prenatal de embarazos de bajo y alto riesgo Consulta ginecológica completa con diplomados y cursos de especialización en las principales patologías ginecológicas como VPH, estética ginecológica, histeroscopía, trastornos hormonales y menopausia Interrupción legal del embarazo de forma segura y sin prejuicios Mi consulta y mi equipo Mi equipo está conformado por un grupo de especialistas y subespecialistas, para brindarte la mejor atención durante los procedimientos quirúrgicos obstétricos y ginecologícos.",
+  "addresses": [
+    {
+      "full": "Calz Acoxpa 430,"
+    },
+    {
+      "full": "Avenida División del Norte 3395,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Biopsia cervical",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,499"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,799"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/stephanie-galicia-lopez/ginecologo/tlalpan#address-id=584090&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:56.855Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__stephanie_galicia_l_pez.webp"
+}

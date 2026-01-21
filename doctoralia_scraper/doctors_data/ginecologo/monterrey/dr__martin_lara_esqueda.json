@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Martin Lara Esqueda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f76467/f76467bfc350fdb86bfd8744ce46e39a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Dr. Roberto J. Cantú,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cáncer de mama",
+      "price": ""
+    },
+    {
+      "name": "Colocación de  DIU Kyleena",
+      "price": ""
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martin-lara-esqueda/ginecologo-cirujano-oncologo/nuevo-leon#address-id=470855&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:10.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__martin_lara_esqueda.webp"
+}

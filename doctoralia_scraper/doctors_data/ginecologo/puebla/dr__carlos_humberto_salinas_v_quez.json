@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Humberto Salinas Víquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 616,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/814c9d/814c9d262240d4f5856722a5c1de9add_220_square.jpg",
+  "about": "Como médico sub-especialidad en oncología ginecológica y especialidad en ginecología y obstetricia, soy experto en el diagnóstico, tratamiento y seguimiento de cáncer y enfermedades propias de la mujer, así como, en la realización de papanicolaou, biopsias, colposcopía, histerectomía, laparoscopía y cirugía de mama. Soy egresado de la Facultad de Medicina de la Universidad Benemérita Universidad Autónoma de Puebla con cédula profesional 7179387 con especialidad en Ginecología y Obstetricia en el Instituto Mexicano del Seguro Social, Centro Médico Nacional del Noroeste cédula de especialidad 9830680 Además, cuento con estudios como médico Sub-especialista en Ginecología Oncológica en la UMAE Hospital de Oncología del Centro Médico Nacional Siglo XXI por la Universidad Nacional Autónoma de México en la Ciudad de México con cédula de subespecialidad 13025064, Recertificado por el Consejo Mexicano de Oncología (CMO) por el periodo 2024-2029 (No. 1901). ¡Medicina de Alta Especialidad y Experiencia en la Atención Ginecológica y Cáncer en la Mujer! Dr. Carlos H. Salinas Víquez Ginecólogo Oncólogo UNAM · Centro Médico Nacional Siglo XXI Certificado por el CMO · No. 1901 Hospital Ángeles Puebla",
+  "addresses": [
+    {
+      "full": "Av. Kepler #2143, Consultorio 985, Reserva Territorial Atlixcáyotl,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Consulta de mastología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-humberto-salinas-viquez-2/ginecologo-ginecologo-oncologico/puebla#address-id=141644&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:32.894Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__carlos_humberto_salinas_v_quez.webp"
+}

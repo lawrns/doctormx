@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Pilar Arroyo Tenorio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 454,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/849ba1/849ba1378870f29c10e3c4e34df1ebc4_220_square.jpg",
+  "about": "Hola soy Pilar Arroyo Ginecóloga egresada del Hospital General de México, con experiencia en control prenatal de Embarazo (realizando Ultrasonido Obstetrico en el consultorio). Presento un diplomado en Colposcopia y láser especializada en enfermedades de transmisión sexual, INFECCION POR VIRUS DEL PAPILOMA HUMANO (condilomas, lesiones cervicales, lesiones a nivel del pene y testículos ) tratando a Mujeres y a Hombres con tratamiento a base de Láser y Electrocirugia. Se realiza en consultorio Papanicolao, Colposcopia, Citología uretral, Androscopia (Penescopia). Diplomado en Colposcopia, Andrdoscopia y Láser en la Universidad Autónoma del Estado de México.",
+  "addresses": [
+    {
+      "full": "Avenida Luis Hidalgo Monroy 343,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita domiciliaria Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pilar-arroyo-tenorio/ginecologo/iztapalapa#address-id=19097&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:54.939Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__pilar_arroyo_tenorio.webp"
+}

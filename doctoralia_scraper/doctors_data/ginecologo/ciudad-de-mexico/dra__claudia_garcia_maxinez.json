@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Claudia Garcia Maxinez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 167,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/115968/11596818ef8a559d253b723ccaea5441_220_square.jpg",
+  "about": "La visita al ginecólogo debe de realizarse en un ambiente de cordialidad y respeto siempre prestando atención a lo que la paciente necesita, brindamos una atención de calidad a un precio accesible",
+  "addresses": [
+    {
+      "full": "Calle Escuela Industrial # 2 esquina Avenida Rio Blanco Colonia Industrial,"
+    },
+    {
+      "full": "Calle Escuela Industrial # 2 esquina Avenida Rio Blanco Colonia Industrial,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-garcia-maxinez/ginecologo/gustavo-a-madero#address-id=82303&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:35.803Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_garcia_maxinez.webp"
+}

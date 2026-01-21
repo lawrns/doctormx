@@ -1,0 +1,36 @@
+{
+  "name": "Dra. Araceli Rivera Vázquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/66f22e14/66f22e14-2b88-4860-a6d0-4523f639aaa8_small_square.jpg",
+  "about": "Soy Médico egresada de la BUAP de médico general con cédula 11745212. Especialista en Ginecología y Obstetricia egresada de la UNAM con cédula 14950090. Abordo: embarazo de alto y bajo riesgo, problemas de piso pélvico, incontinencia urinaria, menopausia, ovario poliquístico, quistes de ovario, miomas uterinos,, etc.",
+  "addresses": [
+    {
+      "full": "Calle campo matillas 52,"
+    },
+    {
+      "full": "Calle 14 sur ,"
+    },
+    {
+      "full": "Calle campo matillas 52,"
+    },
+    {
+      "full": "Calle 14 sur ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/araceli-rivera-vazquez-2/ginecologo/puebla#address-id=573919&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:55.338Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__araceli_rivera_v_zquez.webp"
+}

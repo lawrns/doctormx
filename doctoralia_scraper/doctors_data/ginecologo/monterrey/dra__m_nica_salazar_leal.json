@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Salazar Leal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae61e1/ae61e1b56bc818f7a49924ab9be54bbd_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Mónica Salazar Leal, gineco-obstetra con subespecialidad en Medicina Materno Fetal. Me gradué de la Facultad de Medicina de la Universidad Autónoma de Nuevo León (2006-2012) y realicé mi especialidad en Ginecología y Obstetricia en el Hospital General de Saltillo, donde fui nombrada jefe de residentes (2014-2018). Posteriormente, me especialicé en Medicina Materno Fetal en el Hospital Universitario Dr. José Eleuterio González (2019-2021), y estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Mi principal interés está en los embarazos de alto riesgo y en el ultrasonido para la detección temprana de patologías en los bebés. Mi objetivo es brindar información, tranquilidad y orientación a las mujeres durante el embarazo, además de prevenir e identificar enfermedades a tiempo para su manejo oportuno. Aunque me especializo en embarazos complicados, también estoy capacitada para atender a la mujer en cada etapa de su vida. ¡Será un placer ser tu especialista de confianza!",
+  "addresses": [
+    {
+      "full": "Dr. Fernando Guajardo 155,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-salazar-leal/ginecologo/nuevo-leon#address-id=378821&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:26.824Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__m_nica_salazar_leal.webp"
+}

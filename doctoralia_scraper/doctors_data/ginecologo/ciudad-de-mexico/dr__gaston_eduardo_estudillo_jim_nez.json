@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Gaston Eduardo Estudillo Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4cc9ed/4cc9ed682837e53d26fb7966068e8f91_220_square.jpg",
+  "about": "Médico materno Fetal con alta especialidad en Cirugía Fetal, único en el país avalado por la NaFTNet. Así como alta especialidad en ecografía cardiaca fetal por la Universidad autónoma de Querétaro Director y Fundador de Fetalvita Institute (centro de diagnostico materno fetal, genético y neonatal )",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Av. Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Medicina materno fetal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gaston-eduardo-estudillo-jimenez/ginecologo/benito-juarez#address-id=423347&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:12.788Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gaston_eduardo_estudillo_jim_nez.webp"
+}

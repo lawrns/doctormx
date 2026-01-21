@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Maria De Los Angeles Lemus Roman",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/916a70/916a70b97352d7562c83821db2ddb397_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Reforma 438 Col. San Miguel,"
+    },
+    {
+      "full": "Calle Reforma 438 Col. San Miguel,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-los-angeles-lemus-roman/ginecologo/comalcalco#address-id=128695&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:37.345Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_de_los_angeles_lemus_roman.webp"
+}

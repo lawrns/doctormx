@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Juan José Gerardo Jiménez Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/81a951/81a9510f906d0cd780d2a95b8cc929f9_220_square.jpg",
+  "about": "Hola! Soy especialista en ginecologia y obstetricia por la Universidad Nacional Autónoma de México (UNAM) egresado de la Unidad Médica de Alta Especialidad (UMAE) Hospital de Ginecologia y Obstetricia No. 3 Centro Médico Nacional La Raza. Cuento con una amplia experiencia en salud de la mujer en cada etapa de su vida: niñez, adolescencia, etapa reproductiva, menopausia y climaterio. Estoy a sus órdenes en Córdoba y Coscomatepec Veracruz, otorgando siempre una atenciòn de calidez y calidad en cada consulta y procedimiento, con el objetivo de acompañarlas en el cuidado integral de su salud. No dude en agendar su cita.",
+  "addresses": [
+    {
+      "full": "Avenida 17 calle 22 A 2203,"
+    },
+    {
+      "full": "Avenida Miguel Lerdo de Tejada no. 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-gerardo-jimenez-ruiz-2/ginecologo/coscomatepec#address-id=610235&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:55:03.604Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__juan_jos__gerardo_jim_nez_ruiz.webp"
+}

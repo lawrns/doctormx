@@ -1,0 +1,31 @@
+{
+  "name": "Maria Araceli Martinez Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tarascos 3469,"
+    },
+    {
+      "full": "Pablo Neruda 3148,"
+    },
+    {
+      "full": "Tarascos 3469,"
+    },
+    {
+      "full": "Pablo Neruda 3148,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-araceli-martinez-mendoza/ginecologo/guadalajara#address-id=195013&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:46.883Z",
+  "localPhotoPath": null
+}

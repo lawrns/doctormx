@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elizabeth Díaz Villalobos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c51bbf/c51bbf8911a54a45dff0d734574996bd_220_square.jpg",
+  "about": "La Uroginecoobstetricia es la rama de la medicina que se centra en el cuidado de la mujer en todas sus etapas de la vida. Al acudir a su consulta, recibirá una atención integral y especializada con calidad profesional, en un ambiente de cordialidad y respeto. Uno de mis objetivos como especialista es el de fomentar el autocuidado de mis pacientes, practicar la humanización del parto y lactancia materna, así como promover la salud uroginecológica en todos sus aspectos. Cuento con 10 años de experiencia en el área, trabajando en el medio privado e institucional con la atención de un gran número de pacientes satisfechos.",
+  "addresses": [
+    {
+      "full": "Bernardo de Balbuena 91 int 104,"
+    },
+    {
+      "full": "Bernardo de Balbuena 91 int 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-diaz-villalobos/ginecologo/guadalajara#address-id=83925&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:24.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__elizabeth_d_az_villalobos.webp"
+}

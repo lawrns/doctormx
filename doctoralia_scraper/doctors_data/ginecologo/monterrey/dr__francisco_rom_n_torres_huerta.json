@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Francisco Román Torres Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8c9c1/c8c9c1917b291b03c1a6f5321c4258b4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Pino Suarez 640,"
+    },
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Pino Suarez 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-roman-torres-huerta-2/ginecologo/monterrey#address-id=339164&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:21.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__francisco_rom_n_torres_huerta.webp"
+}

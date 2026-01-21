@@ -1,0 +1,23 @@
+{
+  "name": "Dra. Krisia Mirén Espinosa Valencia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ef63e10f/ef63e10f-ff01-444c-831d-09a8c74201c7_small_square.jpg",
+  "about": "Salud femenina libre de estigmas y violencia",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/krisia-miren-espinosa-valencia/medico-general/nuevo-leon#address-id=487120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:52.938Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__krisia_mir_n_espinosa_valencia.webp"
+}

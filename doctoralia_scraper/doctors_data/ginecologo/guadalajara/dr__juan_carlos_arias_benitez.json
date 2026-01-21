@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Carlos Arias Benitez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mar de Marmara 1979,"
+    },
+    {
+      "full": "Mar de Marmara 1979,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-arias-benitez/ginecologo/guadalajara#address-id=44329&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:27.017Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_carlos_arias_benitez.webp"
+}

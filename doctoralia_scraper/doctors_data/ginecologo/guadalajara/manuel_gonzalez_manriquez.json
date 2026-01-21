@@ -1,0 +1,25 @@
+{
+  "name": "Manuel Gonzalez Manriquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan De La Barrera 5190,"
+    },
+    {
+      "full": "Juan De La Barrera 5190,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-gonzalez-manriquez/ginecologo/san-pedro-tlaquepaque#address-id=161161&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:11.120Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Norma Angelica Guerrero Barrientos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 572,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e50061/e50061c00c6cd2f78d99d81685dba4b3_220_square.jpg",
+  "about": "Ejercer éticamente mi profesión aplicando todos los conocimientos adquiridos a lo largo de mi carrera de una forma responsablemente y honestamente hacia mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Nexxus 104, Col. Parque Industrial Nexxus,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Displasia cervical",
+      "price": ""
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": ""
+    },
+    {
+      "name": "Rejuvenecimiento genital femenino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-angelica-guerrero-barrientos/ginecologo/ciudad-general-escobedo#address-id=412250&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:43.206Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/norma_angelica_guerrero_barrientos.webp"
+}

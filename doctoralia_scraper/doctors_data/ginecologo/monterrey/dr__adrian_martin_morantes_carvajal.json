@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Adrian Martin Morantes Carvajal",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Arteaga 454,"
+    },
+    {
+      "full": "Arteaga 454,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-martin-morantes-carvajal-2/ginecologo/monterrey#address-id=73880&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:05.571Z",
+  "localPhotoPath": null
+}

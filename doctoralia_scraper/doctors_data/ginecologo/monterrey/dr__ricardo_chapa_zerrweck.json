@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Chapa Zerrweck",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Roberto J Cantu 300 3,64710 Pio X,"
+    },
+    {
+      "full": "Roberto J Cantu 300 3,64710 Pio X,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-chapa-zerrweck/ginecologo/monterrey#address-id=474244&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:02.146Z",
+  "localPhotoPath": null
+}

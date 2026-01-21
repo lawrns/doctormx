@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Roberto Alejandro Carlos Romero Y Lomas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1b234e/1b234ebd5a029f3af2ca1267a125c2e5_220_square.jpg",
+  "about": "SOY EL DR ROBERTO ALEJANDRO CARLOS ROMERO Y LOMAS ME FORME COMO MEDICO EN LA UNAM EN LA FACULTAD DE MEDICINA POSTERIORMENTE HIOCE MI POSTGRADO EN LA ESPECIALIDAD GINECOOBSTETRICIA EN EL HOSPITAL 20 DE NOVIEMBRE ISSSTE TRABAJE 1 AÑO EN EEUU HACIENDO UN DIPLOMADO EN COLPOSPCIA Y PATOLOGIA CERVICAL ESTUVE COMO MEDICO DE BASE EN EL SERVICIO DE GINECOLOBSTETRICA EN EL HOSPITAL IGNACIO ZARAGOZA DUARNTE 15 AÑOS DONDE TUVE UN ENTRENAMIENTO DE GINECOLOGOA ONOCOLOGICA Y AHI MISMO ORGANICE LA CLINICA DE GINECOLOGOA ONCOLOGICA A PART ESTUVE COMO PROFESOR DE LA ESPECIALIDAD DURANTE 18 AÑOS EN LA UNAM EN PREGADO Y POSTGRADO A PARTIR DEL ANO 2000 ME HE DEDICADO A LA PRACTICA PROFESIONAL A NIVEL PARTICULAR.",
+  "addresses": [
+    {
+      "full": "ACOXPA 430,"
+    },
+    {
+      "full": "ACOXPA 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-alejandro-carlos-romero-y-lomas/ginecologo-medico-general/coyoacan#address-id=78807&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:47.211Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__roberto_alejandro_carlos_romero_y_lomas.webp"
+}

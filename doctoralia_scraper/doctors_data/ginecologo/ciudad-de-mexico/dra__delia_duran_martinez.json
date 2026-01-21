@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Delia Duran Martinez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 52,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fca04d/fca04d31f52b4fb674da6120e9ae7fbb_220_square.jpg",
+  "about": "Egresada de la carrera de Medicina , de la Escuela Superior de Medicina , del IPN. Posgrado en Ginecologia y Obstetricia en el Hospital de la Mujer de la Secretaría de Salud, avalada por la UNAM. Especialista en Colposcopia con diplomado realizado en el Instituto Nacional de Cancerologia. Certificada por The American Board of Laser Surgery. Certificacion vigente por el Consejo Mexicano de Ginecologia y Obstetricia.",
+  "addresses": [
+    {
+      "full": "UXMAL 30.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/delia-duran-martinez/ginecologo/benito-juarez#address-id=566235&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:27.459Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__delia_duran_martinez.webp"
+}

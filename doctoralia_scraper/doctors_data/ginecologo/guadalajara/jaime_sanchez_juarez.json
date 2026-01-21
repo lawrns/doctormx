@@ -1,0 +1,25 @@
+{
+  "name": "Jaime Sanchez Juarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan De Dios Robledo 678,"
+    },
+    {
+      "full": "Juan De Dios Robledo 678,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-sanchez-juarez/ginecologo/guadalajara#address-id=217592&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:12.432Z",
+  "localPhotoPath": null
+}

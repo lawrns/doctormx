@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Meraz Rios Luis Angel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/122758/12275826758701c665119bdf3c5b3842_220_square.jpg",
+  "about": "EGRESADO DE: UNIVERSIDAD AUTÓNOMA DE GUADALAJARA HOSPITAL DE GINECOLOGÍA Y OBSTETRICIA NO. 2 CENTRO MÉDICO NACIONAL IMSS MÉXICO, D.F.",
+  "addresses": [
+    {
+      "full": "El Rosario No. 679 A,"
+    },
+    {
+      "full": "El Rosario No. 679 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/meraz-rios-luis-angel-2/ginecologo/guadalajara#address-id=54613&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:20.433Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__meraz_rios_luis_angel.webp"
+}

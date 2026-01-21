@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Vania Estefania Desachy Garcia",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5d4e9957/5d4e9957-758d-4546-9b9d-7910eeb83433_small_square.jpg",
+  "about": "!Hola! :) Soy la Dra.Vania Desachy, ginecóloga y obstetra. Para agendar cita médica favor de marcar o enviar mensaje vía whats app, para corroborar espacio en la agenda.Te cuento acerca de mi formación. Estudié la Licenciatura en Médico Cirujano en la Universidad Anáhuac México Norte. Posteriormente realicé la especialidad médica en Ginecología y Obstetricia en el Hospital de la Mujer de la Ciudad de México, avalada por la Universidad Nacional Autónoma de México.Curse una alta especialidad en Colposcopia y patología del tracto genital inferior en el Hospital Regional \"1º de Octubre\"; y un Diplomado en Ginecología Endocrinológica, ambos avalados por la U.N.A.M. y realicé un diplomado de Ultrasonido con especialidad en Ginecología y Obstetricia certificado por la Universidad La Salle. Cuento también con un master en menopausia por el Instituto Nacional de Perinatología.Certificación vigente por el Colegio Mexicano de Especialistas en Ginecología y Obstetricia.Me especializo en:Consulta ginecológica generalPapanicolaou y colposcopiaTratamiento y dudas sobre virus del papiloma humano y otras ITS.Planificación familiar (DIU, implantes, anticoncepción hormonal)Control prenatalUltrasonido ginecológico y obstétricoCuento con un enfoque cálido, respetuoso y basado en evidencia científica actualizada. Estoy comprometida con brindar atención personalizada, resolviendo todas tus dudas con claridad y empatía.Agenda tu cita en línea o escríbeme directamente por WhatsApp. Estoy aquí para apoyarte.",
+  "addresses": [
+    {
+      "full": "Monterrey 70,"
+    },
+    {
+      "full": "Monterrey 70,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vania-estefania-desachy-garcia/ginecologo/cuauhtemoc2#address-id=536187&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:50.461Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vania_estefania_desachy_garcia.webp"
+}

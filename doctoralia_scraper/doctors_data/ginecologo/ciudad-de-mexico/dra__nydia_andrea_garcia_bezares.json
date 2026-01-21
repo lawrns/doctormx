@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nydia Andrea Garcia Bezares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4ea7f139/4ea7f139-e784-44c0-b576-a7b55884cd61_small_square.jpg",
+  "about": "Hola. Soy la Dra. Nydia Andrea García Bezares. Ginecóloga y obstetra con Alta especialidad en Peri- postmenopausia y osteoporosis. Como médico mi vocación es ayudarte, por eso en la primera consulta nos enfocaremos a entender y atender tu problema y en cómo solucionarlo así como a analizar juntas las herramientas que tenemos a nuestro alcance para conseguirlo resolviendo todas las dudas que tengas al respecto. Soy Ginecóloga y Obstetra egresada del Hospital Regional Lic. Adolfo López Mateos , con título avalado por la Universidad Nacional Autónoma de México y con certificación vigente por el Consejo Mexicano de Ginecología y Obstetricia. Cuento con alta especialidad en Peri-posmenopausia y Osteoporosis en el Instituto Nacional de Perinatología y diplomado en Colposcopia y patología de tracto genital inferior. Mi objetivo es brindar atención personalizada y de calidad en un entorno seguro, de respeto; con el más alto nivel de profesionalismo. Te invito a reservar una cita conmigo. Será un placer ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nydia-andrea-garcia-bezares-2/ginecologo/ciudad-de-mexico#address-id=362098&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:21.590Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nydia_andrea_garcia_bezares.webp"
+}

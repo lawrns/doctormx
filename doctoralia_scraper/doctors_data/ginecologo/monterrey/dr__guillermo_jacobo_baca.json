@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Jacobo Baca",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0ac89c/0ac89c2315d58e924ae0d9fca1be2c7e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-jacobo-baca/ginecologo/monterrey#address-id=19813&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:26.305Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__guillermo_jacobo_baca.webp"
+}

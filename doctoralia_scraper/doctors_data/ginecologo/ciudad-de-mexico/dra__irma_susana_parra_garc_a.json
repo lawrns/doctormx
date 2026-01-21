@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Irma Susana Parra García",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/65c07b/65c07bb38eb02a2086aa7ab41e435537_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Viveros De Uman 28,"
+    },
+    {
+      "full": "Viveros De Uman 28,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-susana-parra-garcia/ginecologo/tlalnepantla-de-baz#address-id=6968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:52.428Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__irma_susana_parra_garc_a.webp"
+}

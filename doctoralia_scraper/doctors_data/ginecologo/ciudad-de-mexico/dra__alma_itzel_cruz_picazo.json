@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Alma Itzel Cruz Picazo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb654c/bb654cde727f0f583045eae118c4b98c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Coyoacan,"
+    },
+    {
+      "full": "Coyoacan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-itzel-cruz-picazo/ginecologo/coyoacan#address-id=365454&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:08.739Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alma_itzel_cruz_picazo.webp"
+}

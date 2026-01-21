@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Madrigal Ibarra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 358,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d8543a/d8543a019657b8b4563c3ed49f24d367_220_square.jpg",
+  "about": "Al margen de mi formación médica, destaco el nivel de compromiso con el que asumo mis tareas, la vocación que me motiva y mi trato humano y cordial para con los pacientes. Me preocupa el bienestar físico y mental de mis pacientes, les dedico la atención necesaria para resolver su enfermedad y/o condición. Evito al máximo el sufrimiento, siendo lo más positiva hacia ellas. Recomiendo medicamentos que tengan la calidad adecuada y buen precio.",
+  "addresses": [
+    {
+      "full": "Quebec 631,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-madrigal-ibarra/ginecologo/guadalajara#address-id=138217&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:56.899Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_madrigal_ibarra.webp"
+}

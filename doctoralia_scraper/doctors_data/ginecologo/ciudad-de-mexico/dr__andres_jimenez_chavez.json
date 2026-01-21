@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Andres Jimenez Chavez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Juan N Alvarez 40 A,"
+    },
+    {
+      "full": "Juan N Alvarez 40 A,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-jimenez-chavez/ginecologo/iguala#address-id=102006&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:48.583Z",
+  "localPhotoPath": null
+}

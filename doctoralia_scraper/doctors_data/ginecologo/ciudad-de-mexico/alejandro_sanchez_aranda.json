@@ -1,0 +1,31 @@
+{
+  "name": "Alejandro Sanchez Aranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca 22,"
+    },
+    {
+      "full": "726, Torre III, Séptimo Piso, Puente de Piedra 150,"
+    },
+    {
+      "full": "Vialidad de la Barranca 22,"
+    },
+    {
+      "full": "726, Torre III, Séptimo Piso, Puente de Piedra 150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-sanchez-aranda-2/ginecologo/huixquilucan#address-id=87560&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:44.181Z",
+  "localPhotoPath": null
+}

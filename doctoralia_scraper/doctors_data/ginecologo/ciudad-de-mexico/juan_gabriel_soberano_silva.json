@@ -1,0 +1,25 @@
+{
+  "name": "Juan Gabriel Soberano Silva",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "M18 L1 Calle Hunahpu,249,Sm 529 Fracc Galaxia Itzales,,"
+    },
+    {
+      "full": "M18 L1 Calle Hunahpu,249,Sm 529 Fracc Galaxia Itzales,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-gabriel-soberano-silva/ginecologo/benito-juarez#address-id=357820&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:58.155Z",
+  "localPhotoPath": null
+}

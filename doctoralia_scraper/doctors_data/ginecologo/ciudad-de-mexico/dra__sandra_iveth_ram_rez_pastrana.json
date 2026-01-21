@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sandra Iveth Ramírez Pastrana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/450255/4502552b5cf7533e54b0c34338db1b85_220_square.jpg",
+  "about": "Soy la doctora Sandra Ramírez Pastrana. Como mujer entiendo la ansiedad que genera ir a una consulta o atravesar por síntomas difíciles. Como médico tengo el compromiso de escuchar tus inquietudes, hacerte sentir en confianza, resolver todas tus dudas y buscar la mejor solución pensada para ti de forma individual. Sobre mi preparación: realice la especialidad en Ginecología y Obstetricia, en el Hospital General de México \"Dr. Eduardo Liceaga\", avalada por la Universidad Nacional Autónoma de México. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia. Tengo un diplomado en cirugía laparoscópica e histeroscopia y otro en Colposcopia y patología de tracto genital inferior.",
+  "addresses": [
+    {
+      "full": "Av. Río Mixcoac 25, Piso 11-B, Crédito Constructor, Benito Juárez,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Laparoscopia quirúrgica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sandra-iveth-ramirez-pastrana/ginecologo/benito-juarez#address-id=409948&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:43.598Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sandra_iveth_ram_rez_pastrana.webp"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Joseph Arturo Rosas Córdova",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 195,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b983f433/b983f433-e8fb-4908-9fc5-c7bf744ed7d5_small_square.jpg",
+  "about": "Hola, soy el Dr. Joseph Rosas, especialista en Ginecología-Obstetricia, Cirugía de mi invasión Colposcopista, y cuento con una alta especialidad en cirugía ginecológica de mínima invasión. con estudios en la Universidad Justo Sierra y la Universidad Autónoma del Estado de México. Trabajo en medicina privada e institucional certificado por el consejo mexicano de Ginecología-Obstetricia, miembro activo del Colegio Médico del Hospital Ángeles México y del colegio medico del hospital Star medica luna pack. Me especializo cirugía laparoscópica pare el tratamiento de miomas quistes endometriosis, así como cirugías de alto riesgo en el embarazo especialmente relacionados con el Virus de Papiloma Humano. Mis pasiones incluyen la actualización médica, la lectura, la música y la pintura, áreas que considero fundamentales para mejorar mi práctica quirúrgica. Será un placer ser tu especialista de confianza. ¡Te invito a agendar una cita conmigo!",
+  "addresses": [
+    {
+      "full": "HOSPITAL STAR MÉDICA LUNA PARC. Av. 1Ro De Mayo, Lote 34, Mz. C-34-C, Centro Urbano,,"
+    },
+    {
+      "full": "Av Hidalgo 74,"
+    },
+    {
+      "full": "Cto Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joseph-arturo-rosas-cordova-2/ginecologo/naucalpan#address-id=548737&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:37.243Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__joseph_arturo_rosas_c_rdova.webp"
+}

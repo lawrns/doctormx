@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Raúl Barrientos Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 139,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b8628/4b8628fd7b81d677f03c155e970f017b_220_square.jpg",
+  "about": "- PREGUNTE POR LOS PAQUETES DE PARTO O CESAREA - PAQUETES GINECOLOGICOS DE PAPANICOLAOU Y COLPOSCOPIA",
+  "addresses": [
+    {
+      "full": "Av. Sor Juana Inés de la Cruz 280 , Fracc. Industrial San Lorenzo,"
+    },
+    {
+      "full": "Calle 22 no.83 COL EL SOL CD NEZA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-barrientos-mendoza/ginecologo/texcoco#address-id=149334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:48.281Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ra_l_barrientos_mendoza.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Iván Torres Vega",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Hola! soy el Dr. Iván Torres Vega, Médico Cirujano y Partero egresado de la Universidad Autónoma de Nuevo León, especialista en Ginecología y Obstetricia por el Hospital Universitario \"Dr. José E. González\" en 2018. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, en Educación Continua siempre, asistiendo a múltiples Simposios, Diplomados y Congresos para brindarte la consulta y atención que te mereces. Estoy comprometido con tu salud, tratando de prevenir, diagnosticar oportunamente y/o curar los padecimientos ginecológicos; así como cuidar tu embarazo desde su planeación, concepción, control prenatal y nacimiento para llegar a un desenlace feliz. Acude siempre con un Especialista Certificado!",
+  "addresses": [
+    {
+      "full": "15 de Mayo 1822,"
+    },
+    {
+      "full": "15 de Mayo 1822,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cirugía de la enfermedad inflamatoria pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-torres-vega/ginecologo/nuevo-leon#address-id=136509&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:18.840Z",
+  "localPhotoPath": null
+}

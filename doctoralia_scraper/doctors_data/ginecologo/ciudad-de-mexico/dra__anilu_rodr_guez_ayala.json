@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Anilu Rodríguez Ayala",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/09c05b/09c05b7aa3103f757396a49771b0492a_220_square.jpg",
+  "about": "Mi nombre es Anilú Rodríguez Ayala, nacida en la ciudad de Chilpancingo, Guerrero. Actualmente tengo 33 años de edad. Dentro de mi formación académica, puedo destacar lo siguiente. Soy cirujano general egresado de la UNAM. Dentro de los mejores promedios de mi generación.Realice la especialidad de Ginecología y Obstetricia en el instituto mexicano del seguro social. UMAE 23, Ignacio Morones Prieto, obteniendo el tercer lugar de mi generación. Hice la subespecialidad en Biología de la reproducción humana la cuál realicé en el Hospital Juárez de México , egresando con mención honorífica. Alta especialidad en Ginecología endoscopica.",
+  "addresses": [
+    {
+      "full": "Hospital Ángeles Lindavista,"
+    },
+    {
+      "full": "Hospital Ángeles Lindavista,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anilu-rodriguez-ayala/ginecologo/ciudad-de-mexico#address-id=451968&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:46.061Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__anilu_rodr_guez_ayala.webp"
+}

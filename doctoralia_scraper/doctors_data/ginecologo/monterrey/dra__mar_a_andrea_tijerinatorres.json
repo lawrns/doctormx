@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María Andrea TijerinaTorres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/23821b/23821b7e4e9bb866789d625910ac601d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Cto. Frida Kahlo 180, Valle Oriente,,"
+    },
+    {
+      "full": "Av. Cto. Frida Kahlo 180, Valle Oriente,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-andrea-tijerinatorres/ginecologo/san-pedro-garza-garcia#address-id=477541&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:00.178Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_andrea_tijerinatorres.webp"
+}

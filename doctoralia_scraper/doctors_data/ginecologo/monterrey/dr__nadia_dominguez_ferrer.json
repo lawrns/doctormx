@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Nadia Dominguez Ferrer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cba9b/9cba9b00296ef980ce71eb42a92db922_220_square.jpg",
+  "about": "Hola, bienvenida a mi perfil, te cuento un poco sobre mí, soy originaria de la Ciudad de Xalapa, Veracruz, llegué a Monterrey en el 2002 para iniciar mi carrera como Médico Cirujano en el Tecnológico de Monterrey la cual concluí en 2009 con Mención honorífica. Durante la carrera tuve la oportunidad de realizar rotaciones en diferentes Hospitales a nivel regional, nacional e Internacional ya que nuestro último año de la carrera podías realizar rotaciones en Baylor Collage en la ciudad de Houston, Texas y en Hospital de la Santa Creu y Sant Pau en Barcelona. Durante estas rotaciones me di cuenta que mi pasión era la ginecología y obstetricia, nada como una mujer para entender a otra mujer; así que decidí aplicar para realizar la residencia en el Programa multicéntrico de residencias médicas que ofrece el Tecnológico de Monterrey de marzo 2009 a marzo 2013. Después de graduarme fui a la Ciudad de México a realizar un diplomado de Colpocopia Diagnóstica y Terapéutica avalado por la UNAM y actualmente me encuentro realizando una maestría en reproducción humana. Sin duda la actualización continúa es una parte muy importante para dar una atención de calidad a nuestras pacientes. Siéntete con la tranquilidad que en mi consulta encontrarás un lugar donde serás atendida con calidad y calidez humana. Para mi lo más importante es que cuentes con la información suficiente sobre tu padecimiento para que juntas podamos tomar la mejor decisión sobre tu tratamiento.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nadia-dominguez-ferrer/ginecologo/nuevo-leon#address-id=325365&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:14.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__nadia_dominguez_ferrer.webp"
+}

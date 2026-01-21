@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Erika Sumano Ziga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b97c6/0b97c67efe0e274270a77b2369097a42_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "temístocles 210,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "temístocles 210,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    },
+    {
+      "name": "Biopsia intraoperatoria",
+      "price": ""
+    },
+    {
+      "name": "Biopsia trucut de mama",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-sumano-ziga/ginecologo-medico-general/ciudad-de-mexico#address-id=350763&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:25.060Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_sumano_ziga.webp"
+}

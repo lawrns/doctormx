@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge A. Aguilar Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 100,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae0b37/ae0b37707ef0279bf9becd87cb446790_220_square.jpg",
+  "about": "Originario de la ciudad de Chihuahua, me encuentro en la ciudad de Monterrey desde 2009, cursando carrera y especialidad en el ITESM. Toda mi formación me ha dado las bases para poder ofrecer una atención de calidad, con calidez y amabilidad en todo momento. Me gusta pensar que puedo lograr un impacto en mi paciente, y ayudarla a resolver sus inquietudes. Mi objetivo es ofrecer la atención que me gustaría para mi familia o para mí. Busco generar un vínculo de confianza y adecuada comunicación con mis pacientes, que se sientan seguras en todo momento y que vean la consulta como un espacio libre de juicios.",
+  "addresses": [
+    {
+      "full": "Esq. con Av. Paseo de los Leones, Av. Valle de Cumbres 8001, Valle de Cumbres,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-a-aguilar-castillo/ginecologo/garcia",
+  "scrapedAt": "2026-01-21T03:39:10.424Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jorge_a__aguilar_castillo.webp"
+}

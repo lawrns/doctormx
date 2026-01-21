@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jose Manuel Cervantes Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 9,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Guamuchil 2 - San Rafael,"
+    },
+    {
+      "full": "Calle Guamuchil 2 - San Rafael,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-cervantes-estrada/ginecologo/tlalnepantla-de-baz#address-id=62808&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:04.179Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Isabel Guadalupe Leyva Reséndiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 167,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/86161116/86161116-303c-4754-a809-1e2592fe4225_small_square.jpg",
+  "about": "Soy ginecóloga y obstetra con especialidad en Medicina Materno Fetal, me desempeño realizando estudios de ultrasonido avanzado durante el embarazo, durante el primer trimestre entre la semana 11 a 14 y durante el segundo trimestre entre la semana 20 a 24, así como durante el tercer trimestre para vigilar crecimiento fetal y estructuras fetales.",
+  "addresses": [
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    },
+    {
+      "full": "CEDPRE LINDAVISTA Avenida Montevideo 303, consultorio 511,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Ultrasonido 3D",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido estructural",
+      "price": "• $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isabel-guadalupe-leyva-resendiz/ginecologo/ciudad-de-mexico#address-id=499632&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:56.233Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__isabel_guadalupe_leyva_res_ndiz.webp"
+}

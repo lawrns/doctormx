@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Karla Idalia Hernández Hernández",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 213,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f390d/4f390d843b492f174cb791f0dcc2a6d4.jpg",
+  "about": "Soy Karla Hernández, médica especialista en ginecología y obstetricia, cirugia ginecológica, colposcopia, climaterio y menopausia. Me siento profundamente afortunada de poder acompañar mujeres en una de las etapas mas significativas de su vida: el embarazo y nacimiento de sus bebés. Mi vocación es brindar un cuidado integral y humano, basado en la confianza y el respeto por cada mujer. Además, trabajo constantemente para derribar mitos sobre el Virus de Papiloma Humano y para normalizar el climaterio y la menopausia, fases naturales del ciclo de vida femenino que merecen ser vividas con bienestar y compresión.Mi objetivo es empoderar a las mujeres con conocimeinto, ofreciéndoles el apoyo necesario para que se sientan seguras y acompañadas en cada etapa de su vida.",
+  "addresses": [
+    {
+      "full": "Fernando Leal Novelo 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-idalia-hernandez-hernandez/ginecologo/naucalpan-de-juarez2#address-id=28466&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:40.393Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_idalia_hern_ndez_hern_ndez.webp"
+}

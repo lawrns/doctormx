@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Corina Sánchez Jaimes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 649,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f8130283/f8130283-445f-4f68-ac85-6a138d953d4e_small_square.jpg",
+  "about": "Soy médico gineco-obstetra que ofrece una atención integral de calidad, con el más alto nivel de profesionalismo, respeto y empatía, con el objetivo de brindar información clara y entendible, en un ambiente cómodo y de confianza. Soy egresada de la especialidad del Hospital General de México avalada por la Universidad Nacional Autónoma de México, con certificación por el Colegio de Especialista en Ginecología y Obstetricia, cuento con posgrado en Colposcopía y Patología del Tracto Genital Inferior en el Hospital General de México. Además cuento con diplomado en cirugía Laparoscopica e Histeroscopía que son técnicas de Cirugía de Mínima Invasión. Actualmente curso el diplomado de uso de láser de co2 en tracto genital inferior y ginecología regenerativa. Estoy comprometida con mi profesión por lo que me mantengo en actualización continua para ofrecer tratamientos con los últimos avances tecnológicos y el mejor para cada una de mis pacientes. Para TRATAMIENTOS QUIRÚRGICOS ACEPTO todas las ASEGURADORAS ajustándome a sus tabuladores.",
+  "addresses": [
+    {
+      "full": "Calle de Durango 290,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,350"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/corina-sanchez-jaimes/ginecologo/cuauhtemoc2#address-id=334755&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:30.000Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__corina_s_nchez_jaimes.webp"
+}

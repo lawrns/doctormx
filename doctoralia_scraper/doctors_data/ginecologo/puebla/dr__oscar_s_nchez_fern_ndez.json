@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Oscar Sánchez Fernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 149,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/40f6a6/40f6a63de95b52445301b115a701e642_220_square.jpg",
+  "about": "Soy el Dr. Oscar Sánchez Fernández, médico Ginecoobstetra, colposcopista; especialista en enfermedades de la mujer con más de dos decadas de experiencia institucional y en medio privado. Egresado de la Benemérita Universidad Autónoma de Puebla como médico cirujano y partero. Hospital Universitario de Puebla cono médico especialista en Ginecología y Obstetricia. Médico certificado y recertificado por el Consejo Méxicano de Ginecología y Obstetricia. Miembro activo del Colegio de Ginecologos y obstetras del estado de Puebla. Miembro activo del colegio de Colposcopía de Puebla. Miembro activo de la Federación méxicana de Ginecología y Obstetricia. Miembro activo de la Federación Latinoamericana de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Calle 11 Oriente 1828 - 305,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-sanchez-fernandez/ginecologo/puebla#address-id=344804&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:13.930Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__oscar_s_nchez_fern_ndez.webp"
+}

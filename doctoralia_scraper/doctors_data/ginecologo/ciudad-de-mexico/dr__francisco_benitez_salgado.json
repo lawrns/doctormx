@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Francisco Benitez Salgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 16,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/86a21eab/86a21eab-be4a-4328-b22a-17b08d137d5d_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. De Las Torres 18-1,"
+    },
+    {
+      "full": "Av. De Las Torres 22,"
+    },
+    {
+      "full": "San Lorenzo 12,"
+    },
+    {
+      "full": "Av. De Las Torres 18-1,"
+    },
+    {
+      "full": "Av. De Las Torres 22,"
+    },
+    {
+      "full": "San Lorenzo 12,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-benitez-salgado/ginecologo/naucalpan-de-juarez#address-id=226644&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:37:55.899Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_benitez_salgado.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Guillermo Castellanos Barroso",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 333,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64df0b/64df0b6d172b6da68bf715760d5b1264_220_square.jpg",
+  "about": "Certificado por el Consejo de Ginecología/Obstetricia: 5355 Certificación Biología de la Reproducción Humana: 166 Padre de dos hijas, mi motivación día a día. Mi formación profesional de la Licenciatura en Medicina en esta Ciudad, Puebla. Especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología, líder Nacional en manejo de la mujer embarazada, continuando con la sub-especialidad en Biología de la Reproducción Humana (Fertilidad, Endocrinologia Reproductiva, Cirugia minima invasión), realice una rotación en uno de los mejores Hospitales de Norteamerica, Cleveland Clinic Departamento de Endometriosis,Fertilidad y Cirugia laparoscopica. En el trayecto de mi vida profesional he identificado dos pasiones importantes, la familia y el acompañamiento desde planear el embarazo por Fertilidad o simplemente estar presente en el evento mas increible de la vida, el nacimiento. Para ello he buscado la fuente de preparación más óptima a través del parto humanizado. He participado en la preparación de educadores de parto y doulas a través de diplomados, talleres en Universidades como La Salle y Anáhuac. En el ámbito académico, cuento con Maestría en Ciencias de la Salud, con mas de 8 publicaciones nacional e Internacionales, convencido de la importancia de la investigacíón y actualización constante en medicina ofrece los mejores resultados en nuestras pacientes. Quedo de Ustedes Me pueden encontrar en PROCREA Puebla The Art of Giving Life, un Centro de Fertilidad que representa el sueño de poder ofrecer nuestros servicios de la más alta calidad de Atención a la Mujer , respaldados por toda la trayectoria de éxito de la Clínica PROCREA méxico. Actualmente innovando con nuevo proyecto ofreciendo servicios de Ginecología y Obstetricia Integral en el Hospital mas importante de la Ciudad de Puebla HOSPITAL ANGELES PUEBLA.",
+  "addresses": [
+    {
+      "full": "Paseo Opera · 4 Escala Medica Sonata Town Center,"
+    },
+    {
+      "full": "Av. Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-castellanos-barroso/ginecologo/puebla#address-id=5486&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:22.724Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__guillermo_castellanos_barroso.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Javier Hernandez Izquierdo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Plan De San Luis 1761,"
+    },
+    {
+      "full": "Plan De San Luis 1761,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-hernandez-izquierdo/ginecologo/guadalajara#address-id=157679&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:08.215Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Haide Romero Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2134f8/2134f879b2b293a77b60dc6a0fa38c43_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "ALVARO OBREGON NUMERO 74 DESPACHO 403,"
+    },
+    {
+      "full": "ALVARO OBREGON NUMERO 74 DESPACHO 403,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/haide-romero-contreras/ginecologo/cuauhtemoc#address-id=134559&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:31.611Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__haide_romero_contreras.webp"
+}

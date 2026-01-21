@@ -1,0 +1,46 @@
+{
+  "name": "Marina Solares Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 223,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/10a574/10a574d2cac7164540200a417bbf27b2_220_square.jpg",
+  "about": "Soy Marina Solares Sánchez, especialista en Ginecología y Obstetricia en Venustiano Carranza. Soy egresada de la Universidad Nacional Autónoma de México y me he enfocado en la atención de pacientes adultos, así como en embarazos de alto riesgo y miomas uterinos. Me considero una profesional respetuosa y comprometida con el bienestar de mis pacientes. Siempre explico detalladamente los tratamientos y procedimientos que realizo, incluso aquellos que pueden parecer obvios. Me enorgullece generar empatía y confianza con mis pacientes, y brindarles un trato cordial y amable. Tengo años de experiencia en mi campo y me mantengo actualizada en los avances médicos y tecnológicos para ofrecer el mejor servicio posible. Me apasiona mi trabajo y siempre busco mejorar para satisfacer las necesidades de mis pacientes. Agradezco la confianza que mis pacientes depositan en mí, y me comprometo a seguir brindando una atención de calidad y calidez humana.",
+  "addresses": [
+    {
+      "full": "Calzada Ignacio Zaragoza 66,"
+    },
+    {
+      "full": "Calzada Ignacio Zaragoza 66,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marina-solares-sanchez/ginecologo/venustiano-carranza2#address-id=35308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:52.599Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/marina_solares_s_nchez.webp"
+}

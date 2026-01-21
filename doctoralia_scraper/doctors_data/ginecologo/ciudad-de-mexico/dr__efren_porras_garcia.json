@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Efren Porras Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/efren-porras-garcia/ginecologo/miguel-hidalgo#address-id=18706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:23.403Z",
+  "localPhotoPath": null
+}

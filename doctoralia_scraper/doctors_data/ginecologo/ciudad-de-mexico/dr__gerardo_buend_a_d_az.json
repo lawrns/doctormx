@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Gerardo Buendía Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/13bcdd33/13bcdd33-190b-4b09-a4e1-871a57c25ec4_small_square.jpg",
+  "about": "Médico General egresado de la Facultad de Medicina de la Universidad Nacional Autónoma de México (UNAM). Médico Especialista en Ginecología y Obstetricia y Subespecialista en Biología de la Reproducción Humana por el Instituto Nacional de Perinatología y la Facultad de Medicina de la UNAM. Me dedico a resolver problemas de Salud Femenina y Reproductiva. Ayudo a las parejas con problemas, a conseguir el embarazo que tanto desean. Y cuando la vida reproductiva finaliza, ayudo a las mujeres a vivir un Climaterio sin molestias.",
+  "addresses": [
+    {
+      "full": "Calle Lago Zurich 219-402-A,"
+    },
+    {
+      "full": "Calle Lago Zurich 219-402-A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-buendia-diaz/ginecologo/miguel-hidalgo#address-id=224891&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:03.432Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_buend_a_d_az.webp"
+}

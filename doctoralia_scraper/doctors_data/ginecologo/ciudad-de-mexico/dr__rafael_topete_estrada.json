@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Rafael Topete Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/91772c/91772c119c16b71adf0086a8b33db221_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Santa Teresa 1055, Consultorio 615,"
+    },
+    {
+      "full": "Camino A Santa Teresa 1055, Consultorio 615,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-topete-estrada-3/ginecologo/magdalena-contreras#address-id=580394&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:10.316Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rafael_topete_estrada.webp"
+}

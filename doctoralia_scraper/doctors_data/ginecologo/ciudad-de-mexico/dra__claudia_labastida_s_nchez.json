@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Claudia Labastida Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 24,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9faca1/9faca11a28ef7921d87e6fdab82eaefb_220_square.jpg",
+  "about": "Mi tarea es ser el \"instrumento\" una intermediaria que restablezca tu salud; en base a la formación académica, ética y profesional que tengo. Ya que me considero comprometida con mis pacientes, para su correcto diagnóstico y dar el mejor tratamiento médico o quirúrgico. En algunas ocasiones requeriremos de apoyo de otras especialidades; de acuerdo a la enfermedad que presentes, esto con el fin de establecer una medicina multidisciplinaria para tu beneficio y salud. Llevo contigo de la mano el control prenatal de tu embarazo; esta hermosa etapa llena de magia, cambios físicos, pero sobre todos cambios en la mente, alma y corazón. Para llevar a cabo una adecuada evolución de tu embarazo y desarrollo de tu bebé. Aquí se te pesará, se tomará la presión arterial, se solicitarán estudios de laboratorio y se vigilará el crecimiento de tu bebé. Se solicitarán algunos estudios extra, cuando tal vez lo requieras; de acuerdo a tu estado de salud. Y finalmente llegar a la resolución de tu embarazo; siempre priorizando lo mejor para nuestro binomio (bebé/mamá).",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    },
+    {
+      "full": "Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-labastida-sanchez/ginecologo/miguel-hidalgo#address-id=19474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:44.288Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_labastida_s_nchez.webp"
+}

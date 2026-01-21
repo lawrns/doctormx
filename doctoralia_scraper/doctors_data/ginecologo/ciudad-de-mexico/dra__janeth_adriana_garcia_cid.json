@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Janeth Adriana Garcia Cid",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 69,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/809674ec/809674ec-9a8c-425b-8992-11e585e910fa_small_square.jpg",
+  "about": "Hola, soy la Dra. Janeth Adriana García Cid, realicé la especialidad de Ginecología y Obstetricia en el Hospital General de México avalada por la Universidad Nacional Autónoma de México, al egreso de la especialidad, durante casi dos años me encontré como médico adscrito al servicio de Medicina Materno Fetal en CMN La Raza, en donde descubrí lo importante que es que todas las mujeres tengan acceso a una atención especializada, sobre todo aquellos embarazos de alto riesgo, para poder obtener los mejores resultados tanto para la mamá como para el bebé y es así como se despertó en mi una pasión por esta rama de la ginecología y obstetricia, así que tome la decisión de realizar la sub especialidad en Medicina Materno fetal en uno de los mejores hospitales del país, en el Instituto nacional de Perinatología, avalada por la Universidad Nacional Autónoma de México. Estoy para acompañarte en esta esta etapa tan maravillosa que es el embarazo, cuidando lo que más amas, con los conocimientos más actualizados y sobre todo con un enfoque humanístico.",
+  "addresses": [
+    {
+      "full": "Calzada De Guadalupe 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/janeth-adriana-garcia-cid-2/ginecologo/tlalpan#address-id=530895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:23.516Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__janeth_adriana_garcia_cid.webp"
+}

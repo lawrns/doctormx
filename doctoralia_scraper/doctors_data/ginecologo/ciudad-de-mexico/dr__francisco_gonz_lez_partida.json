@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco González Partida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb7051/cb7051c48753e5434783c21bffcbbf61_220_square.jpg",
+  "about": "LAPAROSCOPIA, ULTRASONIDO, COLPOSCOPIA TRATAMIENTO DE PAPILOMA,",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": "• $900"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• $900"
+    },
+    {
+      "name": "Ultrasonido transvaginal",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-gonzalez-partida/ginecologo/magdalena-contreras2#address-id=442378&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:22.856Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_gonz_lez_partida.webp"
+}

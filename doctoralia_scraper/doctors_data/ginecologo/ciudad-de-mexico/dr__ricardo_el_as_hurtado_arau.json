@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Elías Hurtado Arau",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e5b001/e5b001e69a30d17553f7998288ea25c9_220_square.jpg",
+  "about": "¡Hola! Mucho gusto, soy Médico Cirujano con especialización en obesidad, egresado del Instituto de Ciencias y Nutrición de Barcelona, España. También soy especialista en Ginecología y Obstetricia, egresado de la Universidad Autónoma del Estado de México, así como con estudios en Endocrinología Ginecológica, avalados por la Asociación Mexicana de Endocrinología Ginecológica y la Universidad de las Américas Puebla. Soy una persona altamente empática y con un marcado sentido humano que aspira a un continuo crecimiento profesional, manteniéndome en educación continua a través de congresos, diplomados y cursos, siendo tanto docente como alumno. Mi pasión, determinación, perseverancia y capacidad de resiliencia definen mi compromiso por evolucionar en mi carrera y ofrecer servicios médicos de alta calidad, con un enfoque cálido y humano, con el fin de poder ayudarte en tu salud y en el manejo de tu enfermedad. Actualmente, estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia y pertenezco a la Asociación Mexicana de Endocrinología Ginecológica, al Colegio Mexicano de Urología Ginecológica, al American College of Obstetrics and Gynecologists y a la International Urogynecological Association.",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-elias-hurtado-arau/ginecologo-especialista-en-obesidad-y-delgadez/ciudad-de-mexico#address-id=532061&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:50.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_el_as_hurtado_arau.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Verónica Sepúlveda Mancillas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 705,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/93704c/93704c39251bb9dc7db1d0f8d508a5ed.jpg",
+  "about": "LA CON SULTA INCLUYE ULTRASONIDO Y REVICION",
+  "addresses": [
+    {
+      "full": "Av. Pino Suarez 640 norte, Consultorio 501, Colonia Centro Monterrey,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/veronica-sepulveda-mancillas/ginecologo/nuevo-leon#address-id=359927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:21.902Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ver_nica_sep_lveda_mancillas.webp"
+}

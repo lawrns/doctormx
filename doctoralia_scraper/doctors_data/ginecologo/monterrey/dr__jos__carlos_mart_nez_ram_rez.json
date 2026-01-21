@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Carlos Martínez Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fc8826/fc88266b6dbf95fb81ea6a8a222bf606_220_square.jpg",
+  "about": "Médico Especialista en Ginecología y Obstetricia Certificado por el Consejo Mexicano de Ginecología y Obstetricia Junior Fellow in Practice ACOG ( Consejo Americano de Ginecología y Obstetricia ) Sabemos que el ambiente relacionado a la Ginecología y Obstetricia abarca los momentos mas representativos y lamentablemente en ocasiones los mas difíciles en la mujer, esto incluye desde sus primeras menstruaciones, el inicio de la actividad sexual, la búsqueda y la concepción del embarazo, el nacimiento de sus hijos y la menopausia. Por otro lado, desafortunadamente en ocasiones el diagnóstico de enfermedades como cáncer mama, cáncer de cervix, cáncer de ovario. Es por esto que es importante realizar un análisis detallado y personalizado de cada una de las pacientes para poder brindar el mejor servicio siempre basado en la empatía y en el compromiso de lograr el bienestar de la paciente.",
+  "addresses": [
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    },
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-martinez-ramirez/ginecologo/san-pedro-garza-garcia#address-id=27849&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:54.999Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__carlos_mart_nez_ram_rez.webp"
+}

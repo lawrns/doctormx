@@ -1,0 +1,135 @@
+{
+  "name": "Dra. Myrna Rebeca Sánchez García",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/692e3ce8/692e3ce8-709e-4898-a875-0ee2cf3adb9c_large.jpg",
+  "about": "Sobre míDurante mi formación académica siempre tuve inquietud de hacer una especialidad quirúrgica y Gineco-obstetricia combina esa posibilidad, resolver padecimientos de manera inmediata mediante cirugía o un tratamiento médico en consulta. Ofrezco en el consultorio un sitio seguro y de confianza para quienes buscan asesoría médica a fin de mejorar su salud y tomar la mejor decisión sobre su padecimiento, conociendo ampliamente sus opciones de tratamiento.¿Por qué elegirme a mí?Tengo 15 años de experiencia en medicina y 9 años como especialista de mi área.Principales áreas de tratamientoMi expertise inició en el tratamiento y vigilancia de pacientes con virus de papiloma humano, posteriormente láser ginecológico con mejoras funcionales, regenerativas y estéticas del tracto genital. Actualmente con intención de mejorar la recuperación post-quirúrgica de mis pacientes incursioné y me mantengo actualizada en el área de cirugía de mínima invasión, además ofrezco diagnóstico y tratamiento certero por medio de estudios no invasivos como la histeroscopia.El área obstétrica me permite asesorar a la mujer con deseo de embarazo, desde su control prenatal hasta su resolución de manera respetada y conjunta.Otros serviciosMe acompaño de un grupo de colegas para que de forma multidisciplinaria atendamos tu caso de manera integral y honesta, así que no dudes preguntar ante cualquier situación de salud tuya o de algún familiar, te guiaré con los colegas correspondientes para que cuentes con la mejor asesoría disponible.",
+  "addresses": [
+    {
+      "full": "Prolongación Boulevard La Libertad 1113 A,"
+    },
+    {
+      "full": "Del Maestro 2107,"
+    },
+    {
+      "full": "Calle de Compostela 5324,"
+    },
+    {
+      "full": "Calle 39 202,"
+    },
+    {
+      "full": "Periférico Ecológico 3507,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": "• Desde $4,000"
+    },
+    {
+      "name": "Ablación endometrial",
+      "price": "• Desde $15,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/myrna-rebeca-sanchez-garcia/ginecologo/san-andres-cholula#address-id=588145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:28.955Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__myrna_rebeca_s_nchez_garc_a.webp"
+}

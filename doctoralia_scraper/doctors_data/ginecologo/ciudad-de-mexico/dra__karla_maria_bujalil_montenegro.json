@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Karla Maria Bujalil Montenegro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 91,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d8ae897b/d8ae897b-be28-404f-97f2-eb061959e590_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Misioneros No.5 Col. Ciudad Satelite,"
+    },
+    {
+      "full": "Circuito Misioneros No.5 Col. Ciudad Satelite,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-maria-bujalil-montenegro/ginecologo/naucalpan-de-juarez#address-id=117888&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:25.101Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_maria_bujalil_montenegro.webp"
+}

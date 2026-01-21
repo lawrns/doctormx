@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Alan Villavicencio Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 97,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/268add/268adda9f0970d987865476099fee268_220_square.jpg",
+  "about": "Realice mi formación como Médico Cirujano en la Escuela Superior de Medicina del Instituto Politécnico Nacional, posteriormente me forme como Médico Especialista en Ginecología y Obstetricia en el Hospital Materno Infantil ISSEMYM avalado por la Universidad Autónoma del Estado de México, queriendo ampliar mis horizontes de conocimiento y formación, realice la Sub Especialidad en Biología de la Reproducción Humana en el Hospital Juárez de México avalada por la Universidad Nacional Autónoma de México. Todos estos años de preparación me han permitido conocer las necesidades de mis pacientes para brindarles la mejor atención.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-villavicencio-delgado/ginecologo/cuauhtemoc2#address-id=402572&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:28.756Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alan_villavicencio_delgado.webp"
+}

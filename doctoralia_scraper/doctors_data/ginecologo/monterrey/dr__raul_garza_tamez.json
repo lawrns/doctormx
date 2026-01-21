@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Raul Garza Tamez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 309,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/61b6a8/61b6a8b2b788489484fc3e857141e8b1_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 (Consultorio 404),"
+    },
+    {
+      "full": "Benito Juárez 12001, Col. Santa Cruz (Consultorio 53),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $750"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $750"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Ultrasonido doppler",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido genético",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $750"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $750"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-garza-tamez/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:16.441Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__raul_garza_tamez.webp"
+}

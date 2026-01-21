@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Lidia Estela Chávez Buendía",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/76acd50f/76acd50f-f1e6-47cf-bb47-ff2f76bf2ba9_small_square.jpg",
+  "about": "Soy La Dra. Lidia Estela Chávez Buendía, especialista en Ginecología y Obstetricia con una Alta especialidad en Colposcopia y Patología del Tracto genital inferior, es un grado de posgrado en el cual estudiamos principalmente todo lo relacionado con el Virus del Papiloma Humano, su diagnóstico y tratamiento, sin embargo podemos hacer el estudio y tratamiento de diferentes patologías del tracto genital inferior.Cuento con un diplomado de atención integral de la Mujer en la menopausia, este diplomado me proporciona herramientas para poder ayudar a las mujeres que se encuentren en esta etapa del climaterio (pre menopausia) o menopausia, poder resolver todas sus dudas e inquietudes, y poder hacer el seguimiento de esta etapa de la mujerComo ginecóloga, me apasiona poder ayudar a la mujer en cada etapa de su vida, desde la adolescencia, etapa reproductiva, climaterio, menopausia y postmenopausia. Desde la orientación sobre cuidados higiénicos íntimos en cada etapa de la vida, la orientación sobre una adecuada planificación familiar, el seguimiento del embarazo para que este sea lo más sano posible, el seguimiento posterior al embarazo, y en la etapa de la menopausia con todos los cambios con los cuales una puede cursar. Algo que me diferencia es que mi tratamiento se lleva de forma integral, siempre teniendo un trato personalizado, y sentiras la confianza para poder decirme todos tus malestares y podamos buscar el mejor manejo individualizadoActualmente me encuentro en AURAFEM HEALTH CARE, si deseas saber mas a cerca de los diferentes servicios que llevo a cabo, te invito a visitar mi perfil, y también las redes sociales de AURAFEM. Nos vemos pronto en consulta! Lindo día :)",
+  "addresses": [
+    {
+      "full": "Cantú 11, Piso 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $699"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• $5,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $899"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $999"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lidia-estela-chavez-buendia/ginecologo/miguel-hidalgo#address-id=593487&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:57.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lidia_estela_ch_vez_buend_a.webp"
+}

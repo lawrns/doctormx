@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Carolina Garmendia Gallardo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2d913817/2d913817-ad19-430e-984a-c26c6c839fcf_small_square.jpg",
+  "about": "En mi consulta combino la medicina basada en evidencia científica junto a un cuidado humano y cercano. Mi meta es darte la información y las herramientas para que te sientas apoyada y así puedas tomar las mejores decisiones sobre tu salud en cada etapa de tu vida.Ambas trabajamos en equipo para tu bienestar.",
+  "addresses": [
+    {
+      "full": "Tuxpan 54,"
+    },
+    {
+      "full": "Tuxpan 54,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-garmendia-gallardo/ginecologo/ciudad-de-mexico#address-id=592518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:52.411Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_garmendia_gallardo.webp"
+}

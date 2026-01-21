@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Montserrat Del Castillo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 169,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/ec15620e/ec15620e-e52b-4b4d-a57e-ec3dc5b5e06b_large.jpg",
+  "about": "Para mi es importante brindarte un espacio de seguridad y confianza , darte un trato de calidad y humano. Al no contar con colaboradores siempre te atenderé personalmente y tu consulta tendrá una duración de 1 hrs. Sobre todo en el check up ginecológico donde realizamos papanicolau, colposcopia, ultrasonido, y revisión mamaria, esto con el fin de detectar enfermedades oportunamente y así poder salvar tu vida .",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/montserrat-del-castillo/ginecologo/benito-juarez#address-id=477917&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:52.053Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__montserrat_del_castillo.webp"
+}

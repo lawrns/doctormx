@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ismael Pérez Bautista",
+  "specialty": "Médico general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/014b25/014b253537d0388f36ba093488060b9a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Oaxaca 69, 4o piso, Colonia Roma Norte.,"
+    },
+    {
+      "full": "Calle Oaxaca 69, 4o piso, Colonia Roma Norte.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ismael-perez-bautista/medico-general-ginecologo/ciudad-de-mexico#address-id=396626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:40.509Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ismael_p_rez_bautista.webp"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Lic. Mayte Cruz Castillejos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff62c4/ff62c4bafeff2bf3def1ca68521d1ccb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "ROMULO ESCOBAR 142, INDUSTRIAL , GUSTAVO A. MADERO , DF , C.P.07800,"
+    },
+    {
+      "full": "ROMULO ESCOBAR 142, ,"
+    },
+    {
+      "full": "ROMULO ESCOBAR 142, INDUSTRIAL , GUSTAVO A. MADERO , DF , C.P.07800,"
+    },
+    {
+      "full": "ROMULO ESCOBAR 142, ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayte-cruz-castillejos/ginecologo/gustavo-a-madero#address-id=111633&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:16.964Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/lic__mayte_cruz_castillejos.webp"
+}

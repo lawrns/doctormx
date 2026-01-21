@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Samantha García Bahena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/8f268c98/8f268c98-bad9-4e02-b483-640d2651e338_large.jpg",
+  "about": "Hola! Soy la Dra. Samantha García Bahena Iniciando con un poco de mi trayectoria académica realice la licenciatura de medicina en la universidad de Celaya avalada por el instituto politécnico nacional, posteriormente realice la especialidad de ginecología y obstetricia en el Hospital General de Occidente avalado por la Universidad de Guadalajara y posteriormente realice un diplomado en Climaterio, menopausia y osteoporosis avalado por la universidad de Sinaloa, cuento con certificación por el consejo mexicano de ginecología y obstetricia A.C, así como también realice la subespecialidad en Medicina Materno Fetal en el Hospital Civil Nuevo Juan I. Menchaca. Mi enfoque se centra en brindar una atención integral y personalizada, poniendo énfasis en la comunicación abierta y el apoyo emocional, mi objetivo es ofrecer un entorno seguro y comprensivo, donde te sientas escuchada y apoyada en cada paso del camino en todas las etapas de la vida.",
+  "addresses": [
+    {
+      "full": "Calle Luis Pérez Verdía 325,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samantha-garcia-bahena/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:36.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__samantha_garc_a_bahena.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Juan Carlos Villegas De Loza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rosario Castellanos 2317, Col. Jardines De La Cruz, ,"
+    },
+    {
+      "full": "Rosario Castellanos 2317, Col. Jardines De La Cruz, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-villegas-de-loza/ginecologo/guadalajara#address-id=355730&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:01.399Z",
+  "localPhotoPath": null
+}

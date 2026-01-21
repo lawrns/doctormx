@@ -1,0 +1,25 @@
+{
+  "name": "Victoria Marchese",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vasco De Quiroga 4299 Piso 14, Santa Fe, Alvaro Obregon,"
+    },
+    {
+      "full": "Av. Vasco De Quiroga 4299 Piso 14, Santa Fe, Alvaro Obregon,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victoria-marchese/ginecologo/alvaro-obregon#address-id=107417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:21.518Z",
+  "localPhotoPath": null
+}

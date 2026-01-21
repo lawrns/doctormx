@@ -1,0 +1,43 @@
+{
+  "name": "Dra. América Tania Ortiz Lima",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 526,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/45703a/45703a1b50ead2b3c272e25283ed8d3d_220_square.jpg",
+  "about": "Crecí rodeada de mujeres dedicadas y con grandes espíritus por lo que elegir un camino en el que puedo acompañar, ayudar, guiar y aprender de otras mujeres mientras soy testigo de las diferentes transiciones que se presentan a lo largo de su vida como es el nacimiento, su desarrollo , la felicidad de convertirse en madre y también los cambios que se dan con la edad. Representa para mi un gran reto, pero al mismo tiempo grandes alegrias. Inicie mi desarrollo profesional en la Escuela superior de Medicina del Instituto Politécnico Nacional, de la cual obtuve grandes enseñanzas, amigos entrañables y la posibilidad de tener maestros brillantes. Decidí realizar mi especialidad en el Hospital de Ginecologia y Obstetricia No 4 \"Luis Castelazo Ayala\", IMSS- UMAE, cuna de grandes ginecólogos. Avalada por la UNAM. Así mismo al ir desarrollándome en la practica medica me cuenta de la importancia de adquirir conocimientos que mejoren la calidad de la consulta y beneficien a mis pacientes por lo que curse con Diplomados en Ultrasonido Ginecologico y Obstétrico en \"AMUSEM\" Avalado por la Universidad La Salle y Diplomado en Colposcopia y Patología del tracto genital inferior en el Hospital General de México, Avalado Por la Universidad Autónoma de México.",
+  "addresses": [
+    {
+      "full": "Manzanillo 83 5to Piso Despacho 502, Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/america-tania-ortiz-lima/ginecologo/ciudad-de-mexico#address-id=334766&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:19.967Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__am_rica_tania_ortiz_lima.webp"
+}

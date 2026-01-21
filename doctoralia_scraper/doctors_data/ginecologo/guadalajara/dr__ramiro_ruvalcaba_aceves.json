@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Ramiro Ruvalcaba Aceves",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c47b04/c47b040541f8c9466afc987b60e2bd89_220_square.jpg",
+  "about": "El Dr. Ramiro Ruvalcaba es egresado de la Universidad de Guadalajara, ginecólogo y obstetra, con subespecialidades en colposcopía: papiloma humano, laparoscopía: pacientes con esterilidad, quistes, etc., endoscopia ginecológica, terapia hormonal por bioidénticas para menopausia y síndrome climaterio. El Dr. Ramiro es miembro de la Sociedad de Ginecología y Obstetricia de Guadalajara, miembro de la American Society for Colposcopy and Cervical Pathology, miembro colegiado de la Asociación Médica de Jalisco, Colegio Médico A.C., miembro de la Federación Mexicana de Asociaciones de Ginecología y Obstetricia. Su experiencia en embarazos, problemas de esterilidad y trastornos hormonales muestran su profesionalismo y credibilidad, dando como resutado su lema “confianza en base a experiencia”.",
+  "addresses": [
+    {
+      "full": "Av. Empresarios #150, Int. 2, Centro Médico Puerta de Hierro, Torre Elite, Puerta de Hierro, 45116 Guadalajara, Jal., Mexico,"
+    },
+    {
+      "full": "Av. Empresarios #150 (Planta Baja Int. 2 Centro Médico Puerta de Hierro),"
+    },
+    {
+      "full": "Av. Empresarios #150, Int. 2, Centro Médico Puerta de Hierro, Torre Elite, Puerta de Hierro, 45116 Guadalajara, Jal., Mexico,"
+    },
+    {
+      "full": "Av. Empresarios #150 (Planta Baja Int. 2 Centro Médico Puerta de Hierro),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramiro-ruvalcaba-aceves/ginecologo/guadalajara#address-id=91943&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:59.959Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ramiro_ruvalcaba_aceves.webp"
+}

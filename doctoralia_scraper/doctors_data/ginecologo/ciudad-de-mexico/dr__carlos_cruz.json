@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Carlos Cruz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/59cc85/59cc859b83285f50b56c816bee0d988c_220_square.jpg",
+  "about": "Hola, soy el Dr Carlos Cruz. Médico Gineco obstetra egresado del hospital de gineco obstetricia no. 4 “Luis Castelazo Ayala” Con amplia experiencia en enfermedades de la mujer en cada una de sus etapas. Para lograr una mejor calidad de vida.",
+  "addresses": [
+    {
+      "full": "Cañaverales 222, coapa ,"
+    },
+    {
+      "full": "Cañaverales 222, coapa ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-cruz-2/ginecologo/ciudad-de-mexico#address-id=548914&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:55.256Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_cruz.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mario López Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 638,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d627aa/d627aa4b65dab0e517938ad8ceba68ce_220_square.jpg",
+  "about": "Soy un Médico que cuenta con veinte años de experiencia en el desempeño del área de la Ginecología y Obstetricia. Desarrollada tanto en el ámbito privado, asi como en área Institucional. Así como también amplio conocimiento y desarrollo en Colposcopia y Patología del tracto genital inferior. Con el objetivo de detectar lesiones provocadas por Virus Papiloma Humano. Me esfuerzo en dar una atención de calidad y con calidez a mis pacientes. Y en mi consultorio cuento con los equipos que me permiten diagnosticar y tratar eficazmente a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Juarez 307,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-lopez-franco/ginecologo/tlaquepaque",
+  "scrapedAt": "2026-01-21T03:22:46.634Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__mario_l_pez_franco.webp"
+}

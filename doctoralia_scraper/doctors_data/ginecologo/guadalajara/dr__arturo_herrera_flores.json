@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Arturo Herrera Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 630,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/69df83bb/69df83bb-1401-4704-9559-5eef4ba64a93_small_square.jpg",
+  "about": "Soy Médico Ginecólogo con su especialidad en Medicina Materno-fetal, es decir, el encargado de revisar el bienestar del bebé y la mamá durante todo el embarazo. Tú y tu bebé estarán bajo el cuidado más calificado para que solo te ocupes de disfrutar tu embarazo. Formó parte de un equipo de Profesionales para estar a tu cuidado las 24 horas del día.",
+  "addresses": [
+    {
+      "full": "Lerdo de tejada 2344 (Esquina con Ruiz de alarcon, contraesquina santo coyote),"
+    },
+    {
+      "full": "Avenida Copérnico 3815,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    },
+    {
+      "name": "Ecografía",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-herrera-flores/ginecologo/guadalajara#address-id=390862&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:19.974Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__arturo_herrera_flores.webp"
+}

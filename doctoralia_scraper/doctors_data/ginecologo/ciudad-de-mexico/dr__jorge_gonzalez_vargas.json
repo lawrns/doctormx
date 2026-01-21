@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Gonzalez Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/914138e7/914138e7-dbda-43b5-82bf-1c1714b5e79b_small_square.jpg",
+  "about": "GINECOOBSTETRA con 20 años de experiencias en el manejo de embarazos así como de patologías ginecológicas, Hormónas Bioidénticas y con un amplio dominio de la laparoscópia e histeroscopica lo cual nos ha permitido optimizar tiempos de estancia hospitalaria y de recuperación. Implementamos técnicas para el manejo del VPH generando respuestas satisfactorias. En GINECOLOGIA INTEGRAL nos interesa brindarles atención personalizada, en un ambiente agradable y cordial, realizamos estudios con tecnología de punta logrando obtener mejores resultados benéficos a su salud. La visita al GINECÓLOGO es un imponderable que no pueden dejar pasar.-El consultorio se encuentra arriba del banco santander piso 7 consultorio 704",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 617,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-gonzalez-vargas/ginecologo/miguel-hidalgo#address-id=19180&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:17.587Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jorge_gonzalez_vargas.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Perla Gómez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 644,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/18ecf8/18ecf8d18cf96084f643cde585cbee6b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EDIFICIO CARE MEDICAL HUB, BOLIVIA #103, BALCONES DE GALERIAS,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/perla-gomez-torres/ginecologo/nuevo-leon#address-id=373657&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:20.936Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__perla_g_mez_torres.webp"
+}

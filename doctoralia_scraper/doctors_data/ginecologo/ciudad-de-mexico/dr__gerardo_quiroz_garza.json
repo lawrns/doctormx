@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Gerardo Quiroz Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 339,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/00baa3/00baa3c54b99313f226896970ded9560_220_square.jpg",
+  "about": "Doctor Gerardo Quiroz Gineco-Obstetra / Uroginecólogo. Gineco-Obstetra por el Hospital Militar, uroginecólogo y especialista en cuidado y reconstrucción de piso pélvico femenino por el Instituto Nacional de Perinatología. Ha atendido más de dos mil partos humanizados con uno de los porcentajes más bajos de cesáreas en México y la mayor calidad de vida para la madre antes, durante y después del parto. Su formación única, en las dos instituciones más reconocidas y exigentes de nuestro país, así como su amplia experiencia y sensibilidad, lo colocan como el mejor especialista para atender un parto humanizado. Ofrece a sus pacientes tiempo y empatía para entender sus necesidades, preferencias y para resolver sus dudas; además de un gran respeto por los procesos emocionales y naturales de la mujer. Los embarazos bajo su seguimiento se desarrollan con seguridad para el bebé y la madre, quien mantiene una alta calidad de vida gracias a un un seguimiento muy cercano a fin de prevenir daños a su piso pélvico, como la incontinencia urinaria que frecuentemente es provocada por un parto que no fue correctamente atendido. Por su acento en el bienestar también después del parto, muchas mujeres los han buscado para resolver sus problemas de incontinencia urinaria, a quienes ofrece tratamientos de alta especialidad a fin de que mantengan una vida más cómoda, segura y satisfactoria. Su experiencia es contundente: Alrededor de 4,000 pacientes atendidos; 2,000 partos humanizados; 1,500 intervenciones quirúrgicas y 9,000 tratamientos varios.",
+  "addresses": [
+    {
+      "full": "Calle de Durango 290, 5º piso, 507.,"
+    },
+    {
+      "full": "Prolongación paseo de la Reforma 19,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $2,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $2,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-quiroz-garza/ginecologo/ciudad-de-mexico#address-id=134838&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:52.536Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_quiroz_garza.webp"
+}

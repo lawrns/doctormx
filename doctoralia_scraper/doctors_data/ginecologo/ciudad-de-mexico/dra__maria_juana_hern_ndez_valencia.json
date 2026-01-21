@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Maria Juana Hernández Valencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 377,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2223ea/2223ea0d12828a516cfc45ae00a20e82_220_square.jpg",
+  "about": "Dra. María Juana Hernández Valencia, Especialista en Ginecología y Obstetricia, con 25 años de experiencia. Certificación de la Especialidad vigente y Actualización con Cursos de Obstetricia, Ginecología, Colposcopia y Laparoscopia. Se cuenta con el equipamiento necesario en consultorio para poder brindar una consulta integral.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59 Consultorio 535, Col Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-juana-hernandez-valencia/ginecologo/cuauhtemoc2#address-id=72536&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:39.494Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_juana_hern_ndez_valencia.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sara Patricia Peña Lizola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 257,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/150814/15081402f432257ddb7480dcb01c350e_220_square.jpg",
+  "about": "Soy ginecóloga con especialidad en Biología de la Reproducción; como mujer y madre, comprendo las inquietudes que experimentamos al acudir a la consulta de ginecología, obstetricia o infertilidad, por lo que te brindo atención médica especializada y certificada en un ambiente de respeto, empatía y profesionalismo. No esperes más para iniciar el cuidado de tu salud, acude a consulta hoy!",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-patricia-pena-lizola/ginecologo/nuevo-leon#address-id=23739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:29.409Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__sara_patricia_pe_a_lizola.webp"
+}

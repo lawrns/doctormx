@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ivonne Gabriela Hernández Moreno",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/5087757b/5087757b-d6fb-4a76-9ce8-e7ce81fd725d_large.jpg",
+  "about": "Hola, soy la Dra. Ivonne Hdz de Alcantara. Esta pagina es para ayudarlas a cuidarse ofreciéndoles los mejores tips y Servicios de Ginecología!",
+  "addresses": [
+    {
+      "full": "Avenida Prolongación Francisco I. Madero 6060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivonne-gabriela-hernandez-moreno-3/ginecologo/nuevo-leon#address-id=365127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:29.089Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ivonne_gabriela_hern_ndez_moreno.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Minerva Itzel Mar Montero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/508934/5089341885b2aa3f992335a5c9b78058_220_square.jpg",
+  "about": "Soy Gineco-obstetra y madre, dedicada a la atención de parto natural, en hospital, en casa en agua, vertical. Confío en la fisiología de nuestro cuerpo, y en la capacidad natural de cada mujer para parir, si una mujer se siente protegida, respetada, comprendida, sabrá hacer lo correcto, y no necesitará intervenciones médicas. Mi trabajo consiste en acompañar y vigilar que los procesos fisiológicos sean saludables, y utilizar la tecnología solo cuando sea necesario. Mi experiencia propia, y como Ginecologa acompañando parejas en el parto ha sido maravillosa y me parece fundamental trabajar para la humanización del nacimiento, para fomentar el apego temprano madre e hijo, la lactancia materna y una crianza amorosa y respetuosa.",
+  "addresses": [
+    {
+      "full": "Fernando Montes de Oca 62 Condesa,"
+    },
+    {
+      "full": "Fernando Montes de Oca 62 Condesa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/minerva-itzel-mar-montero/ginecologo/cuauhtemoc#address-id=94919&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:22.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__minerva_itzel_mar_montero.webp"
+}

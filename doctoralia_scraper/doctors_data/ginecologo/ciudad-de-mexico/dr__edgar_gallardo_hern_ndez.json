@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Edgar Gallardo Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da61bd/da61bd3032d20d495edff28aa9150008_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cerro del Chiquihuite 145,"
+    },
+    {
+      "full": "Cerro del Chiquihuite 145,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $950"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $850"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $750"
+    },
+    {
+      "name": "Crioterapia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-gallardo-hernandez/ginecologo/coyoacan#address-id=113181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:52.015Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_gallardo_hern_ndez.webp"
+}

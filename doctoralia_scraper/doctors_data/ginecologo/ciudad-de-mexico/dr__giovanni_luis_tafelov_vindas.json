@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Giovanni Luis Tafelov Vindas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 836,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d3c4a/3d3c4a296feb4962d8daf11929cac457.jpg",
+  "about": "NOMBRE: GIOVANNI LUIS TAFELOV VINDAS FECHA DE NACIMIENTO: 16 DE MAYO 1979 ESTADO CIVIL: CASADO DATOS ACADÉMICOS Instituciones en las que cursó sus estudios Institución Lugar Fecha de Inicio Fecha de Término Primaria Escuela primaria de la Ciudad de México 19851991 Secundaria o equivalente Escuela Secundaria y Preparatoria de la Ciudad de México 19911994 Preparatoria o equivalente Escuela Secundaria y Preparatoria de la Ciudad de México 19941997 Institución Lugar Disciplina, Título o Grado Promedio General Fecha Inicio Fecha Término Estudios profesionales o equivalentes no concluidos Escuela Médico Militar Médico Cirujano ----- 19981999 Estudios profesionales o equivalentes concluidos Escuela de Medicina Westhill Institute Médico Cirujano 9.38 Jefe de grupo por 6 años 19992005 Posgrado concluido Hospital de Gineco Obstetricia #3 Centro Médico Nacional La Raza Ginecología y Obstetricia 9.31 Jefe de residentes por 4 años 20052009 DIPLOMADO: Colposcopía y estudio del tracto genital inferior. Hospital Juárez de México. Duración 6 meses. Inicio 01/03/2011, término 31/08/11 CURSO DE ALTA ESPECIALIDAD: Laparoscopía Ginecológica e Histeroscopía de consultorio. Hospital Juárez de México. Duración 10 meses. Inicio 01/03/12, término 31/12/12 (DIPLOMA EN TRÁMITE) Experiencia laboral Institución Fecha de inicio Fecha de término Turno IMSS, HGZ 194: 28/04/2009 al 31/12/2012 ISEM, HOSPITAL GENERAL NAUCALPAN: 01/05/2009 a1 16/03/2010 HOSPITAL CENTRO QUIRURGICO SATELITE: 01/06/2010 a1 01/08/2010 PRÁCTICA PRIVADA Médicos Especialistas y Asociados: 15/08/2010 al 15/09/2011 Ginecólogo Titular Clínica Florida Satélite: 15/09/2011 a1 31/03/2013 Consultorio de Ginecología en Hospital Rio de la Loza: 01/04/2013 a 01/10/2016 Consultorio Privado GYO Satélite del 01/10/16 a la fecha",
+  "addresses": [
+    {
+      "full": "Circuito Médicos 24, 2o piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/giovanni-luis-tafelov-vindas/ginecologo/naucalpan-de-juarez2#address-id=85555&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:47.546Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__giovanni_luis_tafelov_vindas.webp"
+}

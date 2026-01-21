@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Elvira Bautista Suárez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1098b5/1098b5ea51b6770b6bb9c7e9d8c285dc_220_square.jpg",
+  "about": "Me gusta acompañar a mis pacientes paso a paso en sus tratamientos y en cada una de las etapas de la vida de las mujeres, ofreciendo un trato humano, respetuoso y profesional.Mi objetivo profesional es transformar tu consulta ginecológica en un espacio seguro para ti.",
+  "addresses": [
+    {
+      "full": "Cali 692, Lindavista, Gustavo A. Madero,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elvira-bautista-suarez/ginecologo/ciudad-de-mexico#address-id=596118&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:12.912Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elvira_bautista_su_rez.webp"
+}

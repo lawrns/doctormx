@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Araceli Rosales Rosales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 161,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90487a/90487a54014ccf244ff4318cd970d88c_220_square.jpg",
+  "about": "Soy Gineco-Obstetra; con subespecialidad en Oncología Ginecológica y Colposcopia, por vocación y por pasión. Mi mayor anhelo es que el mundo tenga mejor calidad de vida y de salud. Mi objetivo es prevenir el cáncer, infecciones, dolor en mis pacientes, y enfermedades ginecológicas, acompañarlas en su embarazo y llegar a un termino feliz. Me pongo a sus ordenes!",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Doctor Atl 140,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-araceli-rosales-rosales/ginecologo/guadalajara#address-id=570774&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:56.065Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_araceli_rosales_rosales.webp"
+}

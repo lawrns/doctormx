@@ -1,0 +1,30 @@
+{
+  "name": "Dr. José Alberto Villasenor Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bed925/bed9255df8a0282a9518dff0e8784b97_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 50,"
+    },
+    {
+      "full": "Durango 50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-villasenor-perez-3/ginecologo/cuauhtemoc#address-id=26543&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:22.868Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__alberto_villasenor_p_rez.webp"
+}

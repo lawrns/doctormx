@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Miguel Antonio Ambas Arguelles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bfd9a2/bfd9a27b7e2873c450aa403df79646c6_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo 208,"
+    },
+    {
+      "full": "Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-antonio-ambas-arguelles/ginecologo/miguel-hidalgo#address-id=114&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:26.558Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_antonio_ambas_arguelles.webp"
+}

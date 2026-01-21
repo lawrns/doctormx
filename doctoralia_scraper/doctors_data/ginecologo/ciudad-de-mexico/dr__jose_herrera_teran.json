@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jose Herrera Teran",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/a72f56a8/a72f56a8-94e2-4393-977e-e0c6b62a6572_large.jpg",
+  "about": "Hola! Soy el doctor José Herrera T. Especialista en Ginecología y Obstetricia por la Universidad Nacional Autónoma de México (UNAM) cuento con Alta Especialidad en Cirugía de Mínima Invasión realizada en el Hospital Español de la Ciudad de México, Avalado por la Universidad La Salle.Cuento con diplomado en Colposcopia y patología del tracto genital inferior avalado por la Universidad Nacional Autónoma de México (UNAM) y el Colegio Mexicano de Ginecólogos dedicados a la Colposcopia (COMEGIC)",
+  "addresses": [
+    {
+      "full": "Calle Tehuantepec 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-herrera-teran/ginecologo/cuauhtemoc2#address-id=616121&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:29.086Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_herrera_teran.webp"
+}

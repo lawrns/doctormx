@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Susana Valencia Santoyo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a4ddbf/a4ddbf67aa6d9becbaee0187abac31b0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Victoriano Salado Alvarez 220 (casi esquina Avenida Mexico),"
+    },
+    {
+      "full": "Victoriano Salado Alvarez 220 (casi esquina Avenida Mexico),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-valencia-santoyo/ginecologo/guadalajara#address-id=85047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:32.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__susana_valencia_santoyo.webp"
+}

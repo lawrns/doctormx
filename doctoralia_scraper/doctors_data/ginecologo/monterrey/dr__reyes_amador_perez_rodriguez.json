@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Reyes Amador Perez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2485,"
+    },
+    {
+      "full": "Av. Hidalgo 2480 PTE,"
+    },
+    {
+      "full": "Belisario Domínguez 2485,"
+    },
+    {
+      "full": "Av. Hidalgo 2480 PTE,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/reyes-amador-perez-rodriguez-3/ginecologo/monterrey#address-id=580490&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:47.051Z",
+  "localPhotoPath": null
+}

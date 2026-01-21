@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Itzel Yumien Gudiño Serratos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Guadalajara 1 ,"
+    },
+    {
+      "full": "Guadalajara 1 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-yumien-gudino-serratos/ginecologo/guadalajara#address-id=496617&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:46.041Z",
+  "localPhotoPath": null
+}

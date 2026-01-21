@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Pablo Saúl Nuño Dávalos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c8a71e/c8a71e0e9340ea198eab2cff8fb1fe66_220_square.jpg",
+  "about": "Hola, soy el Dr Pablo Saul Nuño, Ginecólogo egresado de la facultad de medicina de la Universidad de Guadalajara y egresado de la especialidad del Centro Médico de Occidente. Certificado por el Consejo Mexicano De Ginecología y Obstetricia El objetivo principal de mi práctica privada es ofrecer atención médica especializada de alta calidad y con gran sentido ético, enfocado en el la calidad de atención a la paciente y apoyado en un grupo multidisciplinario para una atención integral además ejerzo mi profesión en en le sector salud dentro del Instituto Mexicano del Seguro Social lo que contribuye a la continua actualización y enseñanza dentro de la práctica Ginecológica.",
+  "addresses": [
+    {
+      "full": "Circunvalación División del Norte, No 70. Segunda planta, consultorio 3. Esta es mi ubicacion de google https://goo.gl/maps/b5KpSrjok19Hr3Ea9,"
+    },
+    {
+      "full": "Circunvalación División del Norte, No 70. Segunda planta, consultorio 3. Esta es mi ubicacion de google https://goo.gl/maps/b5KpSrjok19Hr3Ea9,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pablo-saul-nuno-davalos/ginecologo/guadalajara#address-id=150732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:00.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__pablo_sa_l_nu_o_d_valos.webp"
+}

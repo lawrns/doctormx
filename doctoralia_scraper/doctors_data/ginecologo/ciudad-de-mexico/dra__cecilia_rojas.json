@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cecilia Rojas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e7688714/e7688714-be11-4371-b89d-0670778519a4_small_square.jpg",
+  "about": "Hola! Soy Ginecóloga egresada de Hospital Ángeles México, hospital privado de excelencia. Realice diplomado de colposcopia en Hospital Gea González aprendiendo de los mejores porque mi mayor interés es acompañarte en cada etapa de tu vida de manera actualizada y con evidencia en la ciencia. Mis pilares siempre serán que tu te sientas con la confianza de ser atendida con mucha paz y confort durante la atención médica.",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-rojas-3/ginecologo/ciudad-de-mexico#address-id=583285&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:23.024Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cecilia_rojas.webp"
+}

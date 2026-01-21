@@ -1,0 +1,25 @@
+{
+  "name": "Eugenio Ramon Tovar Rengel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Privada Corpus Christi 2320,"
+    },
+    {
+      "full": "Privada Corpus Christi 2320,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eugenio-ramon-tovar-rengel-2/ginecologo/monterrey#address-id=75739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:16.171Z",
+  "localPhotoPath": null
+}

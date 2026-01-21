@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Osvaldo Miranda Araujo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/285cf5/285cf5b36a5fd27886f2f7bb7aaefe97_220_square.jpg",
+  "about": "¿Tu embarazo es de alto riesgo? ¡Acude a mí consulta! Médico especialista en ginecología, medicina materno fetal, obstetricia con experiencia de 15 años en control de embarazo de alto riesgo en centro de tercer nivel.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Desde $1,750"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/osvaldo-miranda-araujo-3/ginecologo/benito-juarez#address-id=334779&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:38.167Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__osvaldo_miranda_araujo.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Alan Barrera Garza",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 De Mayo Pte 1822,"
+    },
+    {
+      "full": "15 De Mayo Pte 1822,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-barrera-garza/ginecologo/monterrey#address-id=159095&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:45.991Z",
+  "localPhotoPath": null
+}

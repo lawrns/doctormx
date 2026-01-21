@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Abel Guzmán Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d3d248/d3d248ca6a7459ae83512c3d23567fca_220_square.jpg",
+  "about": "Realicé mis estudios como Médico Cirujano y Partero en la Facultad de Medicina de la UANL, durante la cual tuve la oportunidad de realizar dos rotaciones internacionales en el servicio de Obstetricia del Hospital Sanitas “La Moraleja”, Madrid, España y en Klinicka bolnica Dubrava, Zagreb, Croacia. Continué mi formación como especialista en Ginecología y Obstetricia en el Hospital Universitario, UANL. Realizando una rotación internacional en la Clínica de Insuficiencia Placentaria en el Hospital Sant Pau, Barcelona, España. Posteriormente, cursé la subespecialidad en Medicina Materno Fetal en el Hospital Universitario, UANL. Cabe resaltar que durante la especialidad y subespecialidad, tuve la distinción de ser Jefe de Residentes, además de recibir premio de Residente Distinguido durante ambos posgrados. Certificado por el Consejo Mexicano se Ginecología y Obstetricia. Además, realicé un Posgrado en Medicina Materno Fetal en Medicina Fetal Barcelona, Universidad de Barcelona. Uno de los centros más reconocidos en el ámbito del diagnóstico y tratamiento prenatal a nivel Mundial. Actualmente me desempeño como Profesor de Ginecología y Obstetricia en el Hospital Universitario, UANL. Continuamente en actualización mediante congresos y simposios Nacionales e Internacionales, además de investigador y subinvestigador en múltiples estudios clínicos y farmacéuticos.",
+  "addresses": [
+    {
+      "full": "Licenciado José Benítez 1816,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-abel-guzman-ochoa/ginecologo/nuevo-leon",
+  "scrapedAt": "2026-01-21T03:39:14.063Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_abel_guzm_n_ochoa.webp"
+}

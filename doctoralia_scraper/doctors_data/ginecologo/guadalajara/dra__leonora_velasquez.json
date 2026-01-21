@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Leonora Velasquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "4, Av. Cvln. Division del Nte. 813, Jardines Alcalde, 44298 Guadalajara, Jal., Mexico,"
+    },
+    {
+      "full": "4, Av. Cvln. Division del Nte. 813, Jardines Alcalde, 44298 Guadalajara, Jal., Mexico,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leonora-velasquez/ginecologo/guadalajara#address-id=152733&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:09.582Z",
+  "localPhotoPath": null
+}

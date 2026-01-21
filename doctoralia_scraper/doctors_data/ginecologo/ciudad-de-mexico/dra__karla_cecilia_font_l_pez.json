@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Karla Cecilia Font López",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b021b/0b021bac9c92b08768ab74fe17a0d047_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Durango 50, Cuauhtémoc, Col. Roma,"
+    },
+    {
+      "full": "Durango 50, Cuauhtémoc, Col. Roma,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-cecilia-font-lopez/ginecologo/ciudad-de-mexico#address-id=98406&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:21.094Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_cecilia_font_l_pez.webp"
+}

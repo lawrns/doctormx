@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Fernando Desales González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 140,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/5e42ad82/5e42ad82-d8d6-4b26-91ee-7eb31501e9ad_large.jpg",
+  "about": "Medico general egresado por la Universidad Autónoma \"Benito Juárez\" de Oaxaca Médico especialista en Ginecología y Obstetricia egresado del Hospital General de México \"Dr. Eduardo Liceaga\" UNAM. Alta Especialidad en Cirugía Laparoscópica (mínima invasión) por el Hospital General Dr. Manuel Gea González. UNAM. Colposcopía y patología del tracto genital inferior por el Hospital General de México \"Dr. Eduardo Liceaga\" UNAM. Mi amor por la Obstetricia me llevo a realizar esta hermosa especialidad, con un gusto por la Ginecología como área Clínica y quirúrgica, mi deseo es ser parte de los momentos trascendentales en la vida de una mujer. además de realiza Cirugía estética ginecológica y funcional.",
+  "addresses": [
+    {
+      "full": "Av, Universidad 1080,"
+    },
+    {
+      "full": "Avenida Río Churubusco 188,"
+    },
+    {
+      "full": "Calle Sanatorio Durango 290,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-desales-gonzalez/ginecologo/cuauhtemoc2#address-id=361879&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:48.494Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_desales_gonz_lez.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Carolina Villanueva",
+  "specialty": "Especialista en Medicina Integrada",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dcf108/dcf10818cf10ad96d7a7c48438a315ad_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Bosques de África,"
+    },
+    {
+      "full": "Bosques de África 8 Bosques de Aragón,"
+    },
+    {
+      "full": "Bosques de África,"
+    },
+    {
+      "full": "Bosques de África 8 Bosques de Aragón,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-villanueva/especialista-en-medicina-integrada/nezahualcoyotl#address-id=383551&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:43.308Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_villanueva.webp"
+}

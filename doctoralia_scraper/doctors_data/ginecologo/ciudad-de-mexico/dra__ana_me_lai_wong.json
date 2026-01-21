@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Ana Me Lai Wong",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd de los continentes76 Valle Dorado Tlalnepantla Estado de México,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Paseo del Convento de Santa Mónica,"
+    },
+    {
+      "full": "Blvd de los continentes76 Valle Dorado Tlalnepantla Estado de México,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Paseo del Convento de Santa Mónica,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-me-lai-wong/ginecologo/tlalnepantla-de-baz",
+  "scrapedAt": "2026-01-21T02:55:29.259Z",
+  "localPhotoPath": null
+}

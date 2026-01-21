@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Roberto Luna Bartolini",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 136,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b40227/b40227dbb3793a3abc8a87af2e7606e4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo No. 208, Col. Escandón,"
+    },
+    {
+      "full": "Agrarismo No. 208, Col. Escandón,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roberto-luna-bartolini/ginecologo/ciudad-de-mexico#address-id=108023&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:25.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__roberto_luna_bartolini.webp"
+}

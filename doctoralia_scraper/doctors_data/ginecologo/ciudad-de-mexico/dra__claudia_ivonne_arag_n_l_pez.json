@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Claudia Ivonne Aragón López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 261,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e7864/0e78640f89a62b04d5e74280cdeb309b.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Montevideo 303,"
+    },
+    {
+      "full": "Av. Bordo de Xochiaca N°3, Av. Ciudad Jdn. 2B, Bicentenario, 57205 Nezahualcóyotl, Méx.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-ivonne-aragon-lopez/ginecologo/nezahualcoyotl#address-id=471540&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:17.055Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__claudia_ivonne_arag_n_l_pez.webp"
+}

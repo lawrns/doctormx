@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Julio Octavio Villalobos Romero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 367,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea7ff7/ea7ff705573f1adefaf39ae4bf2fb4e8_220_square.jpg",
+  "about": "La infertilidad es una enfermedad cada vez más frecuente. En la actualidad gracias a la variedad de tratamiento con los que contamos la mayoría de las parejas que presentan esta condición pueden concebir un embarazo. No dejes pasar más tiempo, da ese primer paso para buscar ayudar y lograr ese embarazo tan deseado. Siempre te hablaremos con la verdad y buscaremos la mejor opción para lograr excelentes resultados. Acércate a nosotros y te aseguro que no te vas a arrepentir.",
+  "addresses": [
+    {
+      "full": "Avenida España 1854,"
+    },
+    {
+      "full": "AV. LOPEZ MATEOS 3561,"
+    },
+    {
+      "full": "Avenida España 1854,"
+    },
+    {
+      "full": "AV. LOPEZ MATEOS 3561,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/julio-octavio-villalobos-romero/ginecologo/guadalajara#address-id=430926&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:10.078Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__julio_octavio_villalobos_romero.webp"
+}

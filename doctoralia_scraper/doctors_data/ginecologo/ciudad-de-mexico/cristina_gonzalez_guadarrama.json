@@ -1,0 +1,25 @@
+{
+  "name": "Cristina Gonzalez Guadarrama",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quintana roo no. 81-2, Roma,"
+    },
+    {
+      "full": "Quintana roo no. 81-2, Roma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristina-gonzalez-guadarrama/ginecologo/cuauhtemoc#address-id=111324&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:59.485Z",
+  "localPhotoPath": null
+}

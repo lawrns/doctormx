@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Citlali Pérez Morales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 321,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/c2e66309/c2e66309-3794-4b30-86ed-e8ebfc6a5412_large.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, certificada por el Consejo Mexicano de Ginecología y Obstetricia, con diplomado en Colposcopía y Patología del Tracto Genital Inferior. Mi objetivo es mejorar la salud y bienestar de la mujer, así como atender los padecimientos ginecológico y obstétricos de cualquier etapa de su vida de una manera integral, buscando la tranquilidad y seguridad de mis pacientes, y resolviendo todas sus dudas dentro de un ambiente cálido y de confianza.",
+  "addresses": [
+    {
+      "full": "Consultorio 200 B - Blvrd 14 Sur 4302 Jardines de San Manuel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ablación cervical",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/citlali-perez-morales/ginecologo/puebla#address-id=413664&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:11.159Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__citlali_p_rez_morales.webp"
+}

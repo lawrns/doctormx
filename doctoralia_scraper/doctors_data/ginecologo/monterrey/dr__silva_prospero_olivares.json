@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Silva Prospero Olivares",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sor Juana Ines De La Cruz 106,"
+    },
+    {
+      "full": "Sor Juana Ines De La Cruz 106,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silva-prospero-olivares/ginecologo/san-nicolas-de-los-garza#address-id=72654&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:04.574Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Dr. Francisco Villa Villagrana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/72bbc9/72bbc96e87f9fbcb68662edb06b26c43_220_square.jpg",
+  "about": "Medico especialista en ginecologia y obstetricia medico materno fetal ultrasonido gnecologico",
+  "addresses": [
+    {
+      "full": "Jorullo 1405-4 Colonia Independencia ,"
+    },
+    {
+      "full": "Jorullo 1405-4 Col. Independencia,"
+    },
+    {
+      "full": "Jorullo 1405-4 Colonia Independencia ,"
+    },
+    {
+      "full": "Jorullo 1405-4 Col. Independencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-villa-villagrana/ginecologo/guadalajara#address-id=570234&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:46.945Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__francisco_villa_villagrana.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. German Vazquez Salas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 135,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0e264c/0e264cbbd50d04d1302cbe77718056a4_220_square.jpg",
+  "about": "Medico Especialista comprometido con su profesión y sobre todo con las pacientes, brindando los conocimientos y la experiencia adquirida en el ejercicio diario de mi profesión. Comprometido a ofrecer, atención medica de calidad, con buen trato, con empatía, para resolver sus problemas de salud",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo Mz 62 Lt.65,"
+    },
+    {
+      "full": "Avenida Miguel Hidalgo Mz 62 Lt.65,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-vazquez-salas/ginecologo/ecatepec-de-morelos#address-id=360409&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:58.852Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__german_vazquez_salas.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Juan Serrano Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/27d3b7/27d3b73792ecfd97e1003c0eb533093b_220_square.jpg",
+  "about": "SOY ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA EGRESADO EN EL AÑO 2013 CON AVAL UNIVERSITARIO POR PARTE DE LA UNIVERSIDAD AUTONOMA DEL ESTADO DE MEXICO, ACTUALMENTE LABORO EN UN HOSPITAL DEL IMSS DE TERCER NIVEL Y EN LA MEDICINA PRIVADA.",
+  "addresses": [
+    {
+      "full": "av. azcapotzalco 555 1er piso,"
+    },
+    {
+      "full": "av. azcapotzalco 555 1er piso,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-serrano-rodriguez/ginecologo/ciudad-de-mexico#address-id=343845&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:06.991Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_serrano_rodriguez.webp"
+}

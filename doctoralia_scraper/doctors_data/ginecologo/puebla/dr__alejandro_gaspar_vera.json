@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Gaspar Vera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f7ab0/4f7ab0252ef06027a2c66d2a92ba56ff_220_square.jpg",
+  "about": "¡Hola!, soy el Dr. Alejandro Gaspar Vera, cuento con la Especialidad en Ginecología y Obstetricia y Subespecialidad en Medicina Materno Fetal. Tuve mi formación en Ginecología y Obstetricia en el hospital “Luis Castelazo Ayala” Gineco 4 y cómo subespecialista en Medicina Materno Fetal (Perinatología) en el Instituto Nacional de Perinatología, en donde obtuve experiencia en el manejo y cuidado del embarazo de bajo y de alto riesgo. También cuento con un Posgrado en Ecocardiografía Fetal Avanzada avalado por el Hospital Clinico de Barcelona y Universidad de Barcelona. Actualmente me encuentro en el Hospital Angeles de la ciudad de Puebla y cuento con la experiencia en la practica privada desde el 2017. La salud materna y fetal son mi prioridad y para ello cuento con la experiencia, disponibilidad, capacidad e infraestructura adecuada para brindarte la seguridad y confianza en una de las etapas más importantes de las mujeres; en UMAFET te ayudaremos a cuidar juntos lo que más amas.",
+  "addresses": [
+    {
+      "full": "Avenida Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": "• $2,300"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $2,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-gaspar-vera/ginecologo/puebla#address-id=592549&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:48.349Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejandro_gaspar_vera.webp"
+}

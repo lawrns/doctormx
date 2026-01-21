@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Ana Eugenia Reséndiz Rossetti",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 195,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5e191f/5e191f832a3240427d57476c17e444db_220_square.jpg",
+  "about": "Soy la Dra. Ana Reséndiz, realicé la carrera de Médico Cirujano en el TEC de Monterrey y posteriormente la especialidad-subespecialidad en Ginecología, Obstetricia y Fertilidad por el Instituto Nacional de Perinatología. Juntos elegiremos la forma para mejorar tu salud y calidad de vida. Me dedico a ayudar a mujeres en búsqueda de chequeo ginecológico, métodos anticonceptivos, consulta para embarazos normales hasta de alto riesgo, y problemas para lograr un bebé. La ética, humanismo y empatía son pilares fundamentales dentro de mi consulta, necesarios para formar una adecuada relación médico-paciente. Será un placer y privilegio atenderte y en conjunto lograr procesos y soluciones que cumplan cada uno de los objetivos planteados contribuyendo a una mejor calidad de vida. Cuento con amplia experiencia en fertilidad y embarazos de alto riesgo, juntos elegiremos el mejor tratamiento para mejorar tu salud y calidad de vida. Ten la seguridad que siempre estaré abierta para escucharte y conocer tus necesidades. Acude a consulta y recibe la mejor atención con la mejor tecnología será un placer ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 601, Nápoles, Benito Juárez. CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-eugenia-resendiz-rossetti/ginecologo/benito-juarez",
+  "scrapedAt": "2026-01-21T02:40:44.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_eugenia_res_ndiz_rossetti.webp"
+}

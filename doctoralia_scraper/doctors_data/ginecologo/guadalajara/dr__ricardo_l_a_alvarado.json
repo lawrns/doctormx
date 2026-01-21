@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Lúa-Alvarado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 717,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1973b6da/1973b6da-2ea1-4422-a839-d3e8977252f7_small_square.jpg",
+  "about": "Dr. Ricardo Lúa-AlvaradoGinecólogo certificado | Experto en Cirugía Mínimamente Invasiva, Cirugía Robótica y Manejo Integral del VPH.El Dr. Ricardo Lúa-Alvarado es un ginecólogo y obstetra certificado con más de 22 años de experiencia, especializado en cirugía ginecológica avanzada con enfoque en mínima invasión y cirugía robótica. A lo largo de su trayectoria ha atendido a miles de pacientes y realizado más de 1,500 cirugías exitosas en miomas uterinos, tumores de ovario, endometriosis, patologías cervicales y reconstrucción genital, logrando recuperaciones más rápidas, con menos dolor y mejores resultados funcionales y estéticos.Es pionero en cirugía robótica ginecológica en Guadalajara, certificado en Houston, Texas, y actualmente más del 90% de sus procedimientos quirúrgicos los realiza mediante técnicas laparoscópicas, histeroscópicas o robóticas de alta precisión. Se distingue por su manejo experto de casos complejos y su capacidad para resolver problemas ginecológicos con la menor intervención posible.Áreas de especialidadDiagnóstico y tratamiento integral de enfermedades asociadas al Virus del Papiloma Humano (VPH)Cirugía robótica y laparoscópica de alta complejidad (miomas, tumores de ovario, endometriosis)Histeroscopía diagnóstica y quirúrgica para pólipos, adherencias y sangrado uterino anormalGinecología bio-regenerativa y gineco-estética funcional con tecnología láserManejo integral de menopausia y climaterio con terapias personalizadasFormación y distincionesMención Honorífica en la Especialidad de Ginecología y ObstetriciaMaestría en Investigación ClínicaCertificación internacional en Cirugía Robótica GinecológicaDiplomados en cirugía laparoscópica avanzada, histeroscopía, colposcopía, endocrinología ginecológica, fertilidad, menopausia y gestión en saludAfiliaciones internacionalesMiembro activo de:American Association of Gynecologic Laparoscopists (AAGL)American Society of Colposcopy and Cervical Pathology (ASCCP)American College of Obstetricians and Gynecologists (ACOG)International Multidisciplinary HPV CongressFederación Mexicana de Ginecología y Obstetricia (FEMECOG)Asociación Jalisciense de Endoscopía GinecológicaDocencia y conferenciasProfesor titular de más de 10 generaciones de diplomados en colposcopía, patología genital inferior y láser ginecológico en GineMed Academics.Exprofesor titular de la especialidad en el Hospital Regional Valentín Gómez Farías del ISSSTE y expresidente del Colegio de Colposcopía y Patología Genital Inferior de Occidente.Conferencista internacional con más de 200 ponencias en México, Estados Unidos, Centroamérica y Europa, abordando temas como VPH, anticoncepción, salud hormonal y cirugía mínimamente invasiva.Su compromiso: integrar tecnología de vanguardia, precisión quirúrgica y un trato humano y empático para ofrecer a cada paciente un tratamiento seguro, efectivo y personalizado.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-lua-alvarado/ginecologo/guadalajara#address-id=33506&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:58.111Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ricardo_l_a_alvarado.webp"
+}

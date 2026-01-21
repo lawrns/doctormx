@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María del Carmen Martínez Chiñas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/09ebdf/09ebdf866efd8209670cd83d5239938c_220_square.jpg",
+  "about": "Mi formación en medicina la realice en la Facultad de Medicina de Ciudad Universitaria de la UNAM posteriormente realice mi especialidad en el Hospital de Ginecoobstetricia No. 3 del Centro Médico Nacional La Raza, enfocándose mi formación en la atención de embarazo de alto riesgo, patología mamaria y cirugía ginecológica. Cuento con certificación ante el Consejo Mexicano de Ginecología y Obstetricia (CONACEM) y formo parte del Colegio Médico del Hospital Ángeles de México A.C. y de la Sociedad de Beneficencia Española del Hospital Español, parte de mi actividad profesional la desarrollo en el ámbito privado contando con credenciales en los principales hospitales del país; así como a nivel institucional en tercer nivel de atención en el Hospital de Ginecología No. 4 y apoyando a la formación de futuros médicos ginecólogos. El objetivo de tener mi práctica privada es ofrecerle a usted atención médica especializada de alta calidad y con gran sentido ético y humano basándome en conocimiento actualizado y siguiendo las directrices que marcan las guías de atención clínicas internacionales. La consulta con usted se vuelve un espacio de confidencia donde tratamos cada aspecto de su salud y personal del cual tenga problema y/o duda buscando aclarar todo y dándole una solución a su problema, brindando en todo momento el tiempo necesario y un trato humano.",
+  "addresses": [
+    {
+      "full": "Tepic 139, Roma Sur, Ciudad de México, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-martinez-chinas/ginecologo-sexologo/cuauhtemoc2#address-id=102238&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:11.496Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_del_carmen_mart_nez_chi_as.webp"
+}

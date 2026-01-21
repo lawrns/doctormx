@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alfonso Murillo Uribe",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9a07b8/9a07b852b4e1722d58566b257b684a62_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital Angeles México Agrarismo 208 - Torre A, Consultorio 606,"
+    },
+    {
+      "full": "Hospital Angeles México Agrarismo 208 - Torre A, Consultorio 606,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Detección oportuna de cáncer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-murillo-uribe/ginecologo/miguel-hidalgo#address-id=12713&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:16.268Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfonso_murillo_uribe.webp"
+}

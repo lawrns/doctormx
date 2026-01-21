@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Edsel Yecid Cortes Cortes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/01ccf1/01ccf16ef5b237b611fda60186760f9b_220_square.jpg",
+  "about": "Soy el Dr. Edsel Cortés, ginecólogo obstetra con formación en Medicina Materno Fetal. Me dedico a ofrecer un acompañamiento integral y personalizado a cada mujer, desde el cuidado ginecológico preventivo hasta el seguimiento avanzado del embarazo y sus posibles complicaciones.Mi compromiso es combinar la ciencia más actual con un trato cálido y humano, para garantizar atención segura, diagnósticos oportunos y decisiones compartidas.Entre mis principales áreas de interés se encuentran:Control prenatal de bajo y alto riesgoUltrasonido obstétrico estructural y DopplerDiagnóstico y manejo de complicaciones en el embarazoSalud ginecológica integral y prevenciónCreo firmemente que cada paciente merece ser escuchada, comprendida y acompañada con respeto, profesionalismo y empatía en todas las etapas de su vida.",
+  "addresses": [
+    {
+      "full": "Calle Niños Héroes De Chapultepec 83,"
+    },
+    {
+      "full": "Calle 3 Sur,"
+    },
+    {
+      "full": "Privada de las Ramblas 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edsel-yecid-cortes-cortes/ginecologo/huamuxtitlan#address-id=598358&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:38.186Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__edsel_yecid_cortes_cortes.webp"
+}

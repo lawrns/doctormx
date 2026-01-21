@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Zabdy Shirel H. Lascurain",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 280,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/9254c006/9254c006-99b8-4b0c-9abb-47414990f93d_large.jpg",
+  "about": "*Egresada de la UNAM como médico cirujano. *Egresada de la UMAE 23 de Monterrey, NL, como ginecologa obstetra *Certificada por el Consejo Mexicano de Ginecologia y Obstetricia. *Diplomado en ginecologia estetica y regenerativa. *Diplomado en ginecologia estetica con LASER CO2 y HIFU. *Diplomado en colposcopia ginecologica. *Comprometida con la salud femenina y en crear un ambiente de confianza y confort para mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Alemán 386,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zabdy-shirel-h-lascurain/ginecologo/nuevo-leon#address-id=436957&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:49.161Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__zabdy_shirel_h__lascurain.webp"
+}

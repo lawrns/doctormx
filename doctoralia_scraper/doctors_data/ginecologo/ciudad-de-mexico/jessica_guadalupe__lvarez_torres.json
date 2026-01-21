@@ -1,0 +1,38 @@
+{
+  "name": "Jessica Guadalupe Álvarez Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f6dacb/f6dacb74c11f133eb6af578623204d66_220_square.jpg",
+  "about": "Realicé mis estudios de medicina general y de la especialidad de ginecología y obstetricia, en hospitales públicos de la Secretaría de Salud Federal y de la Ciudad de México, lo cual me permitió atender un gran número de pacientes, esta práctica reforzó mi formación académica, y me permite actualmente brindar a mis pacientes una atención de alta calidad, con un enfoque indivualizado, orientado a ofrecer la mejor opción a su padecimiento ya sea mediante manejo médico o quirúrgico. Además de tratar, realizó consultas con la finalidad de prevenir el desarrollo de algunas enfermedades, que de no detectarse a tiempo pueden desencadenar graves problemas, como es el caso del cáncer cervicouterino o de mama. Esto mediante la realización de diversos estudios como son ultrasonidos, colposcopias y toma de estudios para papanicolaou. Realizó diagnósticos y tratamientos de diversas enfermedades de transmisión sexual. Ofrezco información y colocación de métodos de planificación familiar. La vigilancia y atención en la resolución del embarazo, es una de las actividades que más disfruto de mi profesión, el poder acompañar a mis pacientes y sus familias, en esta etapa maravillosa y única, es una enorme satisfacción. Actualmente cuento con un equipo de especialistas y subespecialistas que colaboran conmigo y estamos listos para brindarte una atención integral. Conoce mas de mis servicios agendando una cita, juntas encontraremos la mejor opción para resolver el motivo de tu consulta.",
+  "addresses": [
+    {
+      "full": "Avenida Montevideo 303,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-guadalupe-alvarez-torres/ginecologo/ciudad-de-mexico#address-id=366852&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:07.542Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/jessica_guadalupe__lvarez_torres.webp"
+}

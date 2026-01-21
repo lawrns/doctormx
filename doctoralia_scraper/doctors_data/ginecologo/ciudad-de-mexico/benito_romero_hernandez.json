@@ -1,0 +1,31 @@
+{
+  "name": "Benito Romero Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. S03,"
+    },
+    {
+      "full": "Avenida Lomas Verdes 825, Int 6, Primer Nivel.,"
+    },
+    {
+      "full": "Camino Santa Teresa, 1055 Cons. S03,"
+    },
+    {
+      "full": "Avenida Lomas Verdes 825, Int 6, Primer Nivel.,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benito-romero-hernandez-2/ginecologo/ciudad-de-mexico#address-id=339478&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:42.548Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Emilio Nava Uribe",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70b537/70b5376afca1bbb40e63d2e7b025ccb3_220_square.jpg",
+  "about": "La vida me fue guiando hacia la medicina, con la guía de mi papá, fui escogiendo actividades y áreas que me hacían feliz y ademas en las que era muy bueno, hasta que un día me vi en la Licenciatura en Medicina y posteriormente Ginecología. Ejercí por varios años antes de que alguien le pareciera candidato para jefaturas y de ahí en adelante llevo 6 años en puestos directivos y casi un año como Sub Director Medico en el HMI Inguarán que me recibió por primera vez como ginecólogo.",
+  "addresses": [
+    {
+      "full": "Nte. 56 3819,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emilio-nava-uribe/ginecologo/gustavo-a-madero#address-id=610500&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:22.991Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__emilio_nava_uribe.webp"
+}

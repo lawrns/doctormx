@@ -1,0 +1,43 @@
+{
+  "name": "Eréndira Kunhardt",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 291,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f1469c/f1469c8f45edcb2c11ef7617c4340e5d.jpg",
+  "about": "Con más de 25 años dedicados a la urología ginecológica de alto nivel, me he formado con rigor en la UNAM y he perfeccionado mi práctica en instituciones de prestigio como el Hospital de Alta Especialidad Dr. Luis Castelazo Ayala y el Hospital Ángeles del Pedregal. Pero más allá de mi experiencia técnica, lo que realmente me llena y motiva es el vínculo que construyo con mis pacientes: escucharte con calma, acompañarte con empatía y explicarte cada paso para que te sientas comprendida y segura.Mis pacientes me valoran por esa combinación única de calidez humana y excelencia profesional",
+  "addresses": [
+    {
+      "full": "Camino Santa Teresa 1055. Col. Heroes de Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $2,400"
+    },
+    {
+      "name": "Primera visita Urología",
+      "price": "• Desde $2,400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $2,400"
+    },
+    {
+      "name": "Visitas sucesivas Urología",
+      "price": "• Desde $2,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erendira-kunhardt-2/ginecologo-urologo/magdalena-contreras#address-id=253515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:43.014Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/er_ndira_kunhardt.webp"
+}

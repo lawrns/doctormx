@@ -1,0 +1,25 @@
+{
+  "name": "Manuel Ramirez Granados",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Valencia no. 46 piso-3, Insurgentes mixcoac,"
+    },
+    {
+      "full": "Valencia no. 46 piso-3, Insurgentes mixcoac,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-ramirez-granados/ginecologo/benito-juarez#address-id=133678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:47.926Z",
+  "localPhotoPath": null
+}

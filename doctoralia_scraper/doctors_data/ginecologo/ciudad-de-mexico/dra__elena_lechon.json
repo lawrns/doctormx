@@ -1,0 +1,37 @@
+{
+  "name": "Dra. Elena Lechon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4f6cd0/4f6cd027123347cc127c95a4586d2017_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Juan Escutia S/N,"
+    },
+    {
+      "full": "Av. Prisciliano Sánchez Sur 117,"
+    },
+    {
+      "full": "Av. Juarez 34,"
+    },
+    {
+      "full": "Av. Juan Escutia S/N,"
+    },
+    {
+      "full": "Av. Prisciliano Sánchez Sur 117,"
+    },
+    {
+      "full": "Av. Juarez 34,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elena-lechon/ginecologo/ciudad-de-mexico#address-id=351912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:27.666Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elena_lechon.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Dr. José Daniel Esmeralda Carvajal",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2be73d/2be73d2eaa2caef1003038a2935d4870_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 2425 Col. Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo 2425 Col. Obispado,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-daniel-esmeralda-carvajal/ginecologo/monterrey#address-id=148041&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:32.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jos__daniel_esmeralda_carvajal.webp"
+}

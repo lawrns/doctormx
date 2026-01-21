@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Yeni Lovera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 58,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06979fb3/06979fb3-2734-46c0-be82-d4925a9c953e_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Santa Margarita 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yeni-lovera/ginecologo/benito-juarez#address-id=531502&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:48.261Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yeni_lovera.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Clara Bella Casas Vizcaíno",
+  "specialty": "Médico general",
+  "rating": 0,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/288f0e/288f0e3af063d677712e3110e8af3877_220_square.jpg",
+  "about": "Brindamos Atención Integral a cada una de nuestras pacientes, explicándole detalladamente de acuerdo a sus síntomas y el examen físico realizado la patología que presenta de forma que lo pueda entender. Tenemos gran experiencia en el manejo de Infecciones Vaginales, Infecciones por VPH , Lesiones del Cérvix, así como Trastornos durante la Menopausia. La Atención durante el Embarazo y el Parto es y será siempre nuestra satisfacción, ayudar a tener una gestación satisfactoria con un Parto Feliz, con un seguimiento del embarazo continuo, completo y constante",
+  "addresses": [
+    {
+      "full": "Baja California 177, consultorio # 103, entre Manzanillo y Tlacotalpan, Roma Sur.,"
+    },
+    {
+      "full": "Baja California 177, consultorio # 103, entre Manzanillo y Tlacotalpan, Roma Sur.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Medicina General",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Medicina General",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/clara-bella-casas-vizcaino/medico-general-ginecologo/cuauhtemoc2#address-id=118439&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:33.226Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__clara_bella_casas_vizca_no.webp"
+}

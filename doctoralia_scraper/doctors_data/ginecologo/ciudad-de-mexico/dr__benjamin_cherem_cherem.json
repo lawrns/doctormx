@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Benjamin Cherem Cherem",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 140,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/79b32c4d/79b32c4d-5ae2-43c3-8fcf-1ef0b83f9a4d_small_square.jpg",
+  "about": "Soy especialista en ginecología y obstetricia con más de 20 años de experiencia, tanto en medicina institucional como privada. Recertificado por el Consejo Mexicano de Ginecología y Obstetricia. Dentro de mis mayores satisfacciones es estar involucrado con los primeros instantes de la vida humana, cuidar, escuchar y acompañar a mis pacientes. Mi misión es la prevención, diagnóstico y tratamiento oportuno en las enfermedades de la mujer. Mi profesión le da amplio sentido a mi vida ¡ Agenda tu check up a tiempo !",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca 240 Hacienda de las Palmas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Genotipificación del Virus del Papiloma Humano",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/benjamin-cherem-cherem/ginecologo/huixquilucan#address-id=418221&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:27.206Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__benjamin_cherem_cherem.webp"
+}

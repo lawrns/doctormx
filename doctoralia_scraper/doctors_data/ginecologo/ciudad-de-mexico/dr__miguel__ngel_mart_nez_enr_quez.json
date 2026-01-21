@@ -1,0 +1,127 @@
+{
+  "name": "Dr. Miguel Ángel Martínez Enríquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 284,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/02394faf/02394faf-ef97-44fb-b8d2-44c8fa42dce6_small_square.jpg",
+  "about": "Sé que es difícil para una pareja iniciar el diagnóstico y tratamiento enfocado a la infertilidad, así que, permíteme ayudarte. Egresado de la Universidad Veracruzana en medicina general, realicé mi especialidad de Ginecoobstetricia en el hospital de ginecopediatria # 71, complementando mi formación con un diplomado en colposcopia y un curso en oncología ginecológica, con enfoque a la patología mamaria, pero por necesidad de mis pacientes e inquietud personal tuve oportunidad de realizar la subespecialidad en Biología de la Reproducción Humana. Actualmente me desempeño en medio particular en el grupo Ángeles, médica Smart, así como en provincia en las ciudades de Tuxpan y Poza Rica. Es necesario enfocar el tratamiento al origen del problema, y de manera integral, lograr el balance en la mujer que le permita recuperar su salud.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59,"
+    },
+    {
+      "full": "Calzada de la Viga 1655,"
+    },
+    {
+      "full": "Álvaro Obregón 23,"
+    },
+    {
+      "full": "Avenida 10 310, cazones, poza rica de Hidalgo, Veracruz, Mexico,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": "• Desde $4,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Terapia de hormonas bioidénticas",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Tratamiento de la esterilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-martinez-enriquez/ginecologo/veracruz#address-id=9650&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:29.035Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel__ngel_mart_nez_enr_quez.webp"
+}

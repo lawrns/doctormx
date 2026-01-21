@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Javier Joaquín López Bárcena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Vialidad De La Barranca, S/N 285,"
+    },
+    {
+      "full": "Periferico Sur 3697 (Torre Angeles Cons. 837),"
+    },
+    {
+      "full": "Cam Sta Teresa 1055,"
+    },
+    {
+      "full": "Avenida Vialidad De La Barranca, S/N 285,"
+    },
+    {
+      "full": "Periferico Sur 3697 (Torre Angeles Cons. 837),"
+    },
+    {
+      "full": "Cam Sta Teresa 1055,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-joaquin-lopez-barcena/ginecologo/ciudad-de-mexico#address-id=66959&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:49.026Z",
+  "localPhotoPath": null
+}

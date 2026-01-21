@@ -1,0 +1,46 @@
+{
+  "name": "Lucía Alejandra Román Tijerina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/103955/1039556b3fa13a80c776bdd28136950d_220_square.jpg",
+  "about": "Contamos con la especialidad en Ginecología y Obstetricia y con la subespecialidad en Biología de la Reproducción. Sentimos una especial empatía por nuestras pacientes y disfrutamos de poderles ofrecer un servicio de calidad, en donde ellas se sientan en confianza, donde no queden dudas y no tengan miedo de preguntar, en un ambiente agradable y sabiendo que cada caso es diferente e importante. Nuestra práctica incluye cada etapa de la mujer, desde los cambios en la adolescencia, pasando por el embarazo y una atención especial en casos de infertilidad y la etapa de la menopausia. Nuestros estudios de medicina general, los realizamos en la Facultad de Medicina de la Universidad Autónoma de Nuevo León, con rotaciones y prácticas en diferentes países por medio de programas de Intercambio estudiantil en Hospitales Universitarios en Budapest, Hungría; Novi Sad, Yugoslavia y en Valladolid, España. Nuestro desempeño nos colocó en los primeros lugares de la generación y el reconocimiento de recibir la Carta al Mérito otorgada por la Secretaría de Salud por el trabajo realizado en el servicio social. Continuamos los estudios de Especialidad en Ginecología y Obstetricia en el Hospital Universitario de la UANL, con rotaciones en el Hospital Vall d’ Hebron de la Universidad Autónoma de Barcelona. Posteriormente realizamos la subespecialidad en Biología de la Reproducción, en la misma institución, recibiendo la distinción de la Jefatura de Residentes y el Nombramiento al Estudiante de Posgrado Distinguido en el Programa de Especialización en Biología de la Reproducción. Además del interés en nuestras pacientes, nos seguimos preparando, formando parte de investigaciones clínicas para su publicación en revistas médicas.",
+  "addresses": [
+    {
+      "full": "Doctors Hospital Consultorio 812,"
+    },
+    {
+      "full": "Doctors Hospital Consultorio 812,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-alejandra-roman-tijerina/ginecologo/monterrey#address-id=94289&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:11.816Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/luc_a_alejandra_rom_n_tijerina.webp"
+}

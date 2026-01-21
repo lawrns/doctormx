@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mayela Diamantina Cruz Gutiérrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/703206/703206027030c7d1688eb0ecfa048f52_220_square.jpg",
+  "about": "Soy médico ginecológico, me gusta crear un ambiente de confianza en el consultorio y poder resolver las dudas que puedan tener las pacientes",
+  "addresses": [
+    {
+      "full": "Ecuador 2331,"
+    },
+    {
+      "full": "Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayela-diamantina-cruz-gutierrez/ginecologo/nuevo-leon#address-id=510539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:38.063Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mayela_diamantina_cruz_guti_rrez.webp"
+}

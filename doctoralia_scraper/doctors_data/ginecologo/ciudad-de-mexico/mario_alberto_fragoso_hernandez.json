@@ -1,0 +1,31 @@
+{
+  "name": "Mario Alberto Fragoso Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Paseo Alexander Von Humbold 88,"
+    },
+    {
+      "full": "Adolfo López Mateos 49,"
+    },
+    {
+      "full": "Paseo Alexander Von Humbold 88,"
+    },
+    {
+      "full": "Adolfo López Mateos 49,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alberto-fragoso-hernandez/ginecologo/naucalpan-de-juarez#address-id=190132&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:52.803Z",
+  "localPhotoPath": null
+}

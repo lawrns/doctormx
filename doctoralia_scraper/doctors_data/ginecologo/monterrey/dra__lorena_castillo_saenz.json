@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Lorena Castillo Saenz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Profesora de pre y postgrado en servicio Ginecología de Hospital Universitario en Monterrey. Profesora de curso de endoscopia ginecologica en mismo hospital. Profesora en curso en linea y presencial de ENARM Participación como subinvestigadora en diversos estudios de investigación.",
+  "addresses": [
+    {
+      "full": "Jose Benitez #2704, Col. Obispado,"
+    },
+    {
+      "full": "Jose Benitez #2704, Col. Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-castillo-saenz-2/ginecologo/nuevo-leon#address-id=141380&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:51.175Z",
+  "localPhotoPath": null
+}

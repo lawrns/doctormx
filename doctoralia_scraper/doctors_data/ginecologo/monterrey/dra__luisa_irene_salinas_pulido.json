@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Luisa Irene Salinas Pulido",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 199,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2fc935/2fc9357a78a5ffb37f1754a42877cafe_220_square.jpg",
+  "about": "Soy la Dra. Luisa Irene Salinas Pulido, profesional especializada en Ginecología Oncológica, Obstetricia, Senología y Colposcopia. Los pacientes que confían en mí reciben atención médica de alta calidad, con un enfoque personalizado y humano, porque su bienestar es mi prioridad. Formación Académica y Experiencia Profesional: Formación Académica: Médico Cirujano y Partero. Especialidad en Ginecología y Obstetricia. Subespecialidad en Ginecología Oncológica. Postgrado en Oncología Quirúrgica Reconstructiva de Mama en Milán, Italia. Áreas de Especialización: Obstetricia: Brindando cuidados prenatales, manejo de partos y atención integral antes, durante y después del embarazo. Ginecología Oncológica: Diagnóstico y tratamiento especializado de cáncer ginecológico. Senología: Estudio y tratamiento de enfermedades mamarias. Colposcopia: Diagnóstico y tratamiento preciso de patologías del cuello uterino y vagina. Oncología Quirúrgica Reconstructiva de Mama: Procedimientos reconstructivos tras cirugías oncológicas mamarias. Experiencia Profesional: Amplia trayectoria trabajando en el Centro Médico de La Mujer Constitución, donde colaboro con un equipo comprometido con la atención médica integral y de calidad. Filosofía y Atención al Paciente: Mi enfoque es brindar una atención personalizada, respetuosa y empática, porque comprendo la importancia de la salud y bienestar femenino en todas las etapas de la vida. Me esfuerzo por mantenerme actualizada con los últimos avances médicos y tecnológicos para ofrecer a mis pacientes el mejor tratamiento posible. Contacto: Dirección: Constitución 1881, Monterrey, Centro Médico de La Mujer Constitución, primer piso, consultorio 117.",
+  "addresses": [
+    {
+      "full": "Av Constitucion 1881 pte interior 117 Colonia Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $4,000"
+    },
+    {
+      "name": "Crioterapia",
+      "price": "• Desde $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisa-irene-salinas-pulido/ginecologo/nuevo-leon#address-id=72212&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:04.308Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__luisa_irene_salinas_pulido.webp"
+}

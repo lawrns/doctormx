@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Román Ortega Díaz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154-342,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154-342,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roman-ortega-diaz/ginecologo/cuajimalpa-de-morelos#address-id=97396&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:13.874Z",
+  "localPhotoPath": null
+}

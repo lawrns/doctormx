@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Mario Carlos Morales Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 257,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/64b778/64b778fc44a836fc1f5ca638e9b49b61_220_square.jpg",
+  "about": "Cuando la paciente llega por primera vez al consultorio, le doy el tiempo necesario para que explique su padecimiento, me gusta crear el ambiente adecuado para que se sienta en confianza, dado que es importante crear empatía, que tienes que ganar en muy poco tiempo. Cada procedimiento que realizo, le explico previamente con un dibujo, esquema o video. En el momento de la exploración soy muy cuidadoso de evitar instrumental inadecuado, y siempre explico paso a paso el procedimiento a realizar. Siempre propongo como tratamientos del más inocuo o sencillo al más complejo e individualizo cada caso. Considero que es importante explicar a la paciente con lujo de detalle su patología o afección, basándonos en sus estudios y literatura reciente. Si se considera el realizar una cirugía, detallo el procedimiento a realizar y las opciones. Trato a cada paciente como si fuera un familiar mío, con todo respecto. Y prácticamente no utilizo bata (una costumbre muy arraigada).",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-carlos-morales-velazquez/ginecologo/cuauhtemoc2#address-id=133918&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:00.873Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mario_carlos_morales_vel_zquez.webp"
+}

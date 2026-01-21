@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gabriel Edgar Villagómez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f131d/6f131d0dca5d5c4c16d776a02bcddba8_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    },
+    {
+      "full": "Constitución 1881 Col Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriel-edgar-villagomez-martinez/ginecologo/monterrey#address-id=7616&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:44.551Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__gabriel_edgar_villag_mez_mart_nez.webp"
+}

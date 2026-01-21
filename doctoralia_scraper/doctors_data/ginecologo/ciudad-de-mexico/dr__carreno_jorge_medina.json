@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Carreno Jorge Medina",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pase De Las Americas 825 Piso 2,"
+    },
+    {
+      "full": "Pase De Las Americas 825 Piso 2,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carreno-jorge-medina/ginecologo/ciudad-de-mexico#address-id=60928&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:17:13.681Z",
+  "localPhotoPath": null
+}

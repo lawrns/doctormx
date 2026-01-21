@@ -1,0 +1,38 @@
+{
+  "name": "Eloisa Angela Ramos Soberanes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e7eb90/e7eb90ef762d83942a7a35ad98353165_220_square.jpg",
+  "about": "Soy médico especialista en Ginecología y Obstetricia, me especializo en Enfermedades del tracto genital inferior como el Virus del Papiloma Humano así como en el área de Climaterio. Me interesa mantenerme en actualización continua para brindar a mis pacientes una atención de calidad, así como también proporcionarles un ambiente de confianza y empatía, explicando a detalle su pedecimiento, el plan a seguir y resolviendo sus dudas.",
+  "addresses": [
+    {
+      "full": "Tehuantepec 251, Roma Sur, Ciudad de Mexico, CDMX, México,"
+    },
+    {
+      "full": "Tehuantepec 251, Roma Sur, Ciudad de Mexico, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eloisa-angela-ramos-soberanes/ginecologo/cuauhtemoc2#address-id=414746&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:40.402Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/eloisa_angela_ramos_soberanes.webp"
+}

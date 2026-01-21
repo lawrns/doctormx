@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Eunice Avellaneda Atriano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 328,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/afcd9b/afcd9bfccb9a2cd9f74738319b24fa54.jpg",
+  "about": "Especialista en Ginecología y Obstetricia, la atención incluye una visión integral del paciente donde me esmero en explicar el diagnóstico y la importancia del tratamiento a tiempo.",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial no. 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Consulta de Urgencia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eunice-avellaneda-atriano/ginecologo/naucalpan-de-juarez2#address-id=120240&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:46.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__eunice_avellaneda_atriano.webp"
+}

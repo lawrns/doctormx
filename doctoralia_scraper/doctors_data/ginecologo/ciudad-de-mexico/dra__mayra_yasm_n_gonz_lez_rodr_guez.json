@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Mayra Yasmín González Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a8a0cd/a8a0cd96a3533148336ef4eaa14af417_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. de la Hortencia 72, Hab los Reyes Ixtacala 2da Secc, 54090 Tlalnepantla de Baz, Méx.,"
+    },
+    {
+      "full": "C. de la Hortencia 72, Hab los Reyes Ixtacala 2da Secc, 54090 Tlalnepantla de Baz, Méx.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mayra-yasmin-gonzalez-rodriguez/ginecologo/tlalnepantla-de-baz2#address-id=412244&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:16.810Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mayra_yasm_n_gonz_lez_rodr_guez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Octavio Ulises Hernández Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3fd18/e3fd1891ed5c263548feac1863ff5cc2_220_square.jpg",
+  "about": "Egresado de la Facultad de Medicina, UNAM. Especialista en Ginecología y Obstetricia en Hospital PEMEX. Colposcopía en INCAN",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa #430, Colonia Ex Hacienda Coapa, CDMX, Consultorio 255,"
+    },
+    {
+      "full": "Calzada Acoxpa #430, Colonia Ex Hacienda Coapa, CDMX, Consultorio 255,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-ulises-hernandez-hernandez/ginecologo/tlalpan#address-id=137876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:09.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__octavio_ulises_hern_ndez_hern_ndez.webp"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Dr. Rubén Muraira Heredia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cf0e16/cf0e16424be4e5ca7db0de4f9673f899_220_square.jpg",
+  "about": "",
+  "addresses": [],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-muraira-heredia/ginecologo/ciudad-de-mexico#address-id=349005&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:28.978Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__rub_n_muraira_heredia.webp"
+}

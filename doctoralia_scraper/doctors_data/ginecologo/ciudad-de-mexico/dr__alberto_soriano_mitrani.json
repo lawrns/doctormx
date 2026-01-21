@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alberto Soriano Mitrani",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/40b78934/40b78934-4a72-4856-b49e-8db649800281_small_square.jpg",
+  "about": "Soy Ginecólogo y Obstetra egresado de la UNAM, además cuento con una licenciatura en ciencias biológicas avalada por la universidad de Jerusalem. Actualmente atiendo consultas en el Hospital Ángeles Lomas entre semana y domingos en el Hospital Español. Me especializo en temas de embarazo y parto, también atiendo todo lo relacionado con la Menopausia. Saca cita conmigo en Gine&co",
+  "addresses": [
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Análisis de orina",
+      "price": ""
+    },
+    {
+      "name": "Análisis de sangre",
+      "price": ""
+    },
+    {
+      "name": "Constancia médica de salud",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Control de hipertensión arterial",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-soriano-mitrani/medico-general/huixquilucan#address-id=485073&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:28.091Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alberto_soriano_mitrani.webp"
+}

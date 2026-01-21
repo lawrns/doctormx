@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Beatriz Monroy Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 401,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ca5121/ca5121180e7ce931b0ea6ce41cd146f4_220_square.jpg",
+  "about": "Soy médico egresado del IPN, especialista en Ginecología y Obstetricia y segunda especialidad en Medicina Materno Fetal, comprometida con el bienestar de la salud femenina, control de embarazo y diagnóstico prenatal.",
+  "addresses": [
+    {
+      "full": "Tepic 139, Despacho 804, Colonia Roma Sur,"
+    },
+    {
+      "full": "Tepic 139, Despacho 804, Colonia Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/beatriz-monroy-castillo-2/ginecologo/ciudad-de-mexico#address-id=325671&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:47.960Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__beatriz_monroy_castillo.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Amairani Yaneiri Mercado Rivera",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/db5e6254/db5e6254-361e-448e-acb4-d4814262f1ea_small_square.jpg",
+  "about": "Dra. Amairani Yaneiri Mercado RiveraSoy ginecóloga y obstetra, apasionada por mi profesión, me gusta ayudar a las mujeres en el control de embarazo, etapa reproductiva y asesorarlas en todos los temas relacionados a la salud femenina de manera integral, acompañamiento en interrupción legal del embarazo. Lo importante es respetar tu decisión y tu cuerpo.Cuento con mi formación profesional en :Especialidad en Ginecología y obstetricia, avalada por la UNAM. Egresada del Hospital de la mujer, Ciudad de México.Certificada por el Consejo Mexicano de Ginecología y Obstetricia.Médica cirujana y partera. avalada por el Instituto Politécnico Nacional, Escuela superior de Medicina.Diplomado en colposcopia y patología de tracto genital inferior. Avalada por La Salle.Diplomado en Endocrinología Ginecología avalado por la UNAM.Cursos actualizados: BLS/ ACLS/ ALSOCP. 11786521 CP Especialidad 14054457Actualmente me encuentro trabajando en sector publico Imss bienestar, así como práctica privada en Centro medico Dalinde y consulta privada. Me encantaría formar parte de tu salud integral.",
+  "addresses": [
+    {
+      "full": "Santa Margarita 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amairani-yaneiri-mercado-rivera/ginecologo/benito-juarez#address-id=583184&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:56.657Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__amairani_yaneiri_mercado_rivera.webp"
+}

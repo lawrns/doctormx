@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Rendón Molina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/edc4b4/edc4b4ff628a2492ea42778ecdcfa682_220_square.jpg",
+  "about": "Médico egresado de la Universidad Panamericana. Especialista en Ginecología y Obstetricia, subespecialista en Urología Ginecológica por la UNAM y el Instituto Nacional de Perinatología. Con más de 6 años de experiencia en la especialidad, Fellow del Colegio Americano de Obstetras y Ginecólogos actualmente Vice-Chair de la Sección México. Doy seguimiento a embarazo normal y de alto riesgo. Miembro de la Academia Internacional de Cirugía Pélvica y la Sociedad Internacional de Continencia. Experto en el manejo de incontinencia urinaria, y descenso o caída de vejiga, útero y/o recto.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Avenida Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Desde $18,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-rendon-molina/ginecologo/ciudad-de-mexico#address-id=136780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:23.259Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alejandro_rend_n_molina.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Meruhelin Leger Vargas",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Viveros De Uman 28 Viveros Del Valle,"
+    },
+    {
+      "full": "Pafnuncio Padilla 43 Piso 2 Ciudad Satelite,"
+    },
+    {
+      "full": "Viveros De Uman 28 Viveros Del Valle,"
+    },
+    {
+      "full": "Pafnuncio Padilla 43 Piso 2 Ciudad Satelite,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/meruhelin-leger-vargas-2/ginecologo/tlalnepantla-de-baz#address-id=124734&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:27.613Z",
+  "localPhotoPath": null
+}

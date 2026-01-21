@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Martínez González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9a37bd48/9a37bd48-705d-4851-bf42-10753a022255_small_square.jpg",
+  "about": "Hola! Soy la Dra. Brenda Martínez, ginecóloga con alta especialidad en laparoscopiaEstoy aquí para ayudarte a disfrutar de una salud plena en todas las etapas de tu vida. Brindándote el beneficio de cirugías de mínima invasión con la mejor tecnología y tecnicas de vanguardia, recuperación más rápida, menos dolor y mejores resultados quirurgicos.Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Doctor Roberto J. Cantú 300,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-martinez-gonzalez/ginecologo/nuevo-leon#address-id=618084&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:44.318Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__brenda_mart_nez_gonz_lez.webp"
+}

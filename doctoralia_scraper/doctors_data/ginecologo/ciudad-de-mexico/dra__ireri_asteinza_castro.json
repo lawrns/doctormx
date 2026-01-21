@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ireri Asteinza Castro",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/456dbb06/456dbb06-5b05-4f44-9ba2-5349efebec89_large.jpg",
+  "about": "Especialista en ginecologia y obstetricia, posgrado en medicina estetica, ultrasonografista y colposcopista",
+  "addresses": [
+    {
+      "full": "Hospital Angeles del Pedregal 1055,"
+    },
+    {
+      "full": "Camino Santa Teresa 1055. Col. Heroes de Padierna,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ireri-asteinza-castro-2/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:59:55.547Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ireri_asteinza_castro.webp"
+}

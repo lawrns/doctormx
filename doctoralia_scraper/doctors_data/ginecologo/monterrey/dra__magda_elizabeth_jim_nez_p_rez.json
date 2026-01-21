@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Magda Elizabeth Jiménez Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 286,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/041fc4/041fc4255143202f2a7f0c653cccee0e_220_square.jpg",
+  "about": "La mujer presenta desafíos únicos durante las diferentes etapas de su vida, es un gusto para mi brindar atención especializada a la niña, adolescente y mujer y contribuir a su bienestar físico, emocional y social. Es una prioridad en la consulta orientarte y resolver tus dudas, siempre en un ambiente de confianza, logrando mejorar tu calidad de vida. Nací en Monterrey, Nuevo León, orgullosamente egresada de la Universidad Autónoma de Nuevo León con el grado de Médico Cirujano y Partero y especialista en Ginecología y Obstetricia egresada del Instituto Tecnológico y de Estudios Superiores de Monterrey. Certificada por el Consejo Mexicano de Ginecología y Obstetricia, A.C. y certificada por la American Hearth Association en el curso de Soporte Cardiovascular Avanzado ACLS.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $850"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación de cerclaje de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/magda-elizabeth-jimenez-perez-2/ginecologo/general-escobedo#address-id=27374&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:02.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__magda_elizabeth_jim_nez_p_rez.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Hector Escobedo Chavez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a919a8/a919a87dde2713d4f30ff91a1b4dddb6_220_square.jpg",
+  "about": "Atencion en ginecologia y obstetricia, primero conociendo a la paciente para poder brindar un mejor servicio, cada paciente es distinta, cada paciente presenta diversas situaciones que se relacionan ya sea con su embarazo o su padecimiento. A su vez el poder explicar a la paciente que sucede con su cuerpo, ya que una paciente que esta bien informada es una paciente que tiene menor tendencia a tener algun tipo de complicación. A mi parecer no hay pregunta que este de mas, o que no valga la pena realizar, estando al pendiente de mis pacientes en todo momento, porque el compromiso que uno adquiere es el llevar a una resolución sin perder tiempo, e intentando obtener los mejores resultados en favor de la paciente.",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-escobedo-chavez/ginecologo/nuevo-leon#address-id=23732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:26.832Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__hector_escobedo_chavez.webp"
+}

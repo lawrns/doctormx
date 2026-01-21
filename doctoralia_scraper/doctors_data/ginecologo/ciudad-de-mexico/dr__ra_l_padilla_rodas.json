@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Raúl Padilla Rodas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/571087/5710874451df6b323149908c49fa9cc1_220_square.jpg",
+  "about": "Hola, soy el Dr. Raúl Padilla Rodas. Como ginecólogo y obstetra, he tenido el privilegio de cuidar de la salud de muchas mujeres durante años. Entiendo que visitar al ginecólogo puede generar algunas dudas o preocupaciones, por eso me esfuerzo en crear un ambiente cálido y seguro donde puedas expresar tus inquietudes libremente. Mi objetivo es brindarte una atención personalizada, basada en la evidencia científica más actualizada y con un enfoque en la prevención. ¡Te invito a agendar una cita conmigo!",
+  "addresses": [
+    {
+      "full": "Avenida Gustavo Baz Prada #309,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-padilla-rodas/ginecologo/tlalnepantla-de-baz2#address-id=403439&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:02.713Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ra_l_padilla_rodas.webp"
+}

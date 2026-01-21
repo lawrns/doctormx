@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Miriam Guadalupe Fernández López",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 163,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2dd3e344/2dd3e344-52b2-499d-bcc6-828e7258def1_small_square.jpg",
+  "about": "Bienvenida! Soy la Dra Fernández Ginecóloga y Obstetra en Puebla. Mi formacion acadèmica fue en Universidad Popular Autonòma del Estado de Puebla. La especialidad en ginecologia y Obstetricia està avalada por la Benemérita Universidad Autónoma del Estado de Puebla y el Instituto Mexicano del seguro social. Cuento con certificación vigente del Consejo Mexicano de Ginecología y Obstetricia. Asì como diplomado en Colposcopia y Càncer en la Mujer. Tambièn Histeroscopia Diagnòstica y Terapèutica. Y sigo preparandome para brindarte la atenciòn que te mereces, siempre es un gusto poderte acompañar en las distintas etapas de tu vida. Ofreciéndote un consulta de calidad y calidez. Nos vemos pronto!",
+  "addresses": [
+    {
+      "full": "14 sur 4302,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $990"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $990"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $990"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $250"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $2,999"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-guadalupe-fernandez-lopez/ginecologo/puebla#address-id=404474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:44.976Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__miriam_guadalupe_fern_ndez_l_pez.webp"
+}

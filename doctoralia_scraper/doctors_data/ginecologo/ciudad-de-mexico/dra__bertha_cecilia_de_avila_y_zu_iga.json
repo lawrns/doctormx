@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Bertha Cecilia De Avila Y Zuñiga",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan, 10, Cons. 406,"
+    },
+    {
+      "full": "Tuxpan, 10, Cons. 406,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bertha-cecilia-de-avila-y-zuniga/ginecologo/cuauhtemoc#address-id=76959&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:40.575Z",
+  "localPhotoPath": null
+}

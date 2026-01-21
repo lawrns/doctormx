@@ -1,0 +1,34 @@
+{
+  "name": "Dra. Laura Escobar Del Barco",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Leibnitz 14-701 Colonia Anzures, Miguiel Hidalgo, Ciudad de México,"
+    },
+    {
+      "full": "Leibnitz 14-701 Colonia Anzures, Miguiel Hidalgo, Ciudad de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-escobar-del-barco/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T03:00:02.592Z",
+  "localPhotoPath": null
+}

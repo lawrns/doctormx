@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Felipe Cerón Bárcenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0194e5/0194e54cdd6a519c75dcaeadd21fcb65_220_square.jpg",
+  "about": "El Doctor Felipe Cerón Bárcenas se formó en la Universidad Nacional Autónomo de México como Médico Cirujano, especializándose en Ginecología y Obstetricia y posteriormente en la subespecialidad de Medicina Materno Fetal. Adicionalmente cuenta con un posgrado en Cardiología Fetal por la Universidad de Barcelona, siempre buscando desarrollar y mejorar de manera continua sus habilidades médicas, analíticas e interpersonales en beneficio de las pacientes. Se mantiene en constante actualización de protocolos con la finalidad de brindar la mejor atención, además de seguir mejorando su amplia capacitación en diferentes campos de su especialidad.",
+  "addresses": [
+    {
+      "full": "Calle Árbol del Fuego 80, El Rosario,"
+    },
+    {
+      "full": "Avenida 5 101B, Col. Granjas San Antonio,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/felipe-ceron-barcenas/ginecologo/coyoacan#address-id=561222&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:35.659Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__felipe_cer_n_b_rcenas.webp"
+}

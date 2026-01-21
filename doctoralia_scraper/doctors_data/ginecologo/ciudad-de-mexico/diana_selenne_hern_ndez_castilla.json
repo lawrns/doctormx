@@ -1,0 +1,66 @@
+{
+  "name": "Diana Selenne Hernández Castilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 906,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0bb347/0bb347483a4f3f83d227a5f421f44be0.jpg",
+  "about": "Actualmente soy un medico especializado en Ginecologia y obstetricia, egresada de CMN La Raza, con especialización en colposcopia y enfermedades de tracto ginecólogo, en el Hospital General de México, así mismo menopausia y climaterio que realice en en INPER y finalmente Endocrinología ginecóloga para mantenerme siempre actualizada para ofrecerle lo mejor a los pacientes, con actualizaciones constantes, Amo mi profesión. Tengo un gran compromiso con las pacientes en todas sus etapas de la vida y el embarazo",
+  "addresses": [
+    {
+      "full": "Oriente 114 numero 2650,"
+    },
+    {
+      "full": "Calz. de la Viga 1174,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-selenne-hernandez-castilla/ginecologo/iztapalapa#address-id=487600&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:52.404Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/diana_selenne_hern_ndez_castilla.webp"
+}

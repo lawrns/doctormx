@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alberto Bañuelos Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 60,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/06e0a58c/06e0a58c-50a2-4eb0-a86b-11105e4f8d5c_small_square.jpg",
+  "about": "Mi enfoque principal es cuidar de tu salud en la consulta y que te sientas en este espacio de completa confianza en el que sientas la libertad de resolver tus dudas y tener la tranquilidad que estas en las mejores manos con la actualización constante del conocimiento. Soy medico Especialista en Ginecología y Obstetricia por la Universidad de Guadalajara Con certificación del Consejo Mexicano de Ginecología y Obstetricia. Diplomado en Climaterio y Osteoporosis por la Universidad de Sinaloa. Diplomado en Ultrasonido Obstétrico por la Universidad de Queretaro.",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2520,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-banuelos-pena/ginecologo/guadalajara#address-id=537388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:51.291Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alberto_ba_uelos_pe_a.webp"
+}

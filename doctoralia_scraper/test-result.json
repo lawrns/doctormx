@@ -1,0 +1,62 @@
+{
+  "name": "Diana Selenne Hernández Castilla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 906,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0bb347/0bb347483a4f3f83d227a5f421f44be0.jpg",
+  "about": "Actualmente soy un medico especializado en Ginecologia y obstetricia, egresada de CMN La Raza, con especialización en colposcopia y enfermedades de tracto ginecólogo, en el Hospital General de México, así mismo  menopausia y climaterio que realice en en INPER y finalmente  Endocrinología ginecóloga para mantenerme siempre actualizada para ofrecerle lo mejor a los pacientes, con actualizaciones constantes, Amo mi profesión. Tengo un gran compromiso con las pacientes en todas sus etapas de la vida y  el embarazo",
+  "addresses": [
+    {
+      "full": "Calz. de la Viga 1174, El Triunfo, Iztapalapa 09430"
+    },
+    {
+      "full": "Oriente 114 numero 2650, Bramadero Ramos Millán, Ciudad de México 08000"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Revisión de embarazo (Primera vez)",
+      "price": "• Desde $1,300"
+    }
+  ],
+  "insurance": [],
+  "education": [
+    "Endocrino Ginecologia y Andrologia (AMMR | Asociación Mexicana de Medicina de la Reproducción) (Enero-Julio 2020)",
+    "Climaterio y Menopausia (Instituto Nacional de Perinatologia “Isidro Espinoza de los Reyes ” ) (Marzo - Septiembre 2019)",
+    "Colposcopia y patología del tracto genital inferior  (Hospital general de México “Dr. Eduardo Liceaga) (Septiembre 2018 – Febrero 2019:  )",
+    "Certificado como Ginecobstetra ante el CONACEM / Colegio de Mexicano de Ginecología  y Obstetricia A.C. (Marzo 2018-Marzo 2023)",
+    "Especialidad médica en Ginecología y Obstetricia.  (Centro Médico Nacional La Raza. Unidad Médica de Alta Especialidad. Hospital de Ginecobstetricia 03 “Dr. Víctor Manuel Espinoza de los Reyes Sánchez”.) (Marzo 2014- 2018)",
+    "Licenciatura en Médico Cirujano-Partero (Escuela Superior de Medicina del IPN.) (Enero 2007- 2014 )",
+    "Bachillerato general y Técnico en enfermería  (Centro de estudios científicos y tecnológicos núm. 6 Miguel Othón de Mendizábal del IPN) (2003-2006 )"
+  ],
+  "languages": [
+    "Español",
+    "Francés"
+  ],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-selenne-hernandez-castilla/ginecologo/iztapalapa",
+  "scrapedAt": "2026-01-19T23:00:39.428Z"
+}

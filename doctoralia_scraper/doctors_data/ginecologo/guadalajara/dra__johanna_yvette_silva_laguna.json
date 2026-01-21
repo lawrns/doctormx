@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Johanna Yvette Silva Laguna",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 558,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e4e373/e4e3730a36bce45c37f290181839994d_220_square.jpg",
+  "about": "Preocupados por la Mujer actual, en el beneficio y soluciones de trastornos ginecológicos y obstétricos. Apoyo integral. Chequeos rutinatios: como papanicolau, informacion de autoexploración mamaria, control prenatal e identificación oportuna de factores de riesgo. Pacientes de alto riesgo tanto ginecológicos como obstetricos.",
+  "addresses": [
+    {
+      "full": "Calle Tarascos 3422,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $23,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/johanna-yvette-silva-laguna/ginecologo/guadalajara#address-id=115117&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:09.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__johanna_yvette_silva_laguna.webp"
+}

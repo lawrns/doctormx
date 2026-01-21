@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Alfonso Sosa Guillaumin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Miguel Hgo Y Costilla 1828,"
+    },
+    {
+      "full": "Calle Miguel Hgo Y Costilla 1828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-sosa-guillaumin/ginecologo/monterrey#address-id=46847&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:31.880Z",
+  "localPhotoPath": null
+}

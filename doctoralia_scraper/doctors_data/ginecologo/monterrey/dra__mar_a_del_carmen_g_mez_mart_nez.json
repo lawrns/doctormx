@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María del Carmen Gámez Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 219,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1137bc/1137bce522f581dfe758aef1ec93f3a5_220_square.jpg",
+  "about": "ACTUALMENTE SOY ESPECIALISTA EN GINECOBSTETRICIA",
+  "addresses": [
+    {
+      "full": "Avenida Rodrigo Gómez 1172,"
+    },
+    {
+      "full": "Avenida Rodrigo Gómez 1172,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-gamez-martinez/ginecologo/nuevo-leon#address-id=94238&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:14.904Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__mar_a_del_carmen_g_mez_mart_nez.webp"
+}

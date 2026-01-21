@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Guillermo Palestino Rojas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 230,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d311263c/d311263c-2164-4072-9a54-7ff45e7171bb_small_square.jpg",
+  "about": "Hola soy el Dr. Guillermo Palestino, Ginecólogo y Materno Fetal, realice mis estudios de medicina y ginecología/obstetricia en la Secretaría de Marina, posteriormente realice la segunda especialidad en Medicina Materno Fetal en el Instituto Nacional de Perinatología.",
+  "addresses": [
+    {
+      "full": "Avenida Sauzales 222,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-palestino-rojas-2/ginecologo/coyoacan#address-id=419563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:02.226Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_palestino_rojas.webp"
+}

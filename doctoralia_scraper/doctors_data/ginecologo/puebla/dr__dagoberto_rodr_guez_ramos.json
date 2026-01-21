@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Dagoberto Rodríguez Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f2e78/5f2e7840c4a12eba2e1fadb732b6c93e_220_square.jpg",
+  "about": "Soy especialista en ginecología y obstetricia, con diplomados en colposcopia diagnóstica y quirúrgica y en urología ginecológica, me gusta brindarle la mejor atención y calidad a mis pacientes. Estoy certificado de manera vigente por el consejo mexicano de ginecología y obstetricia, para mantenerme actualizado y brindarte lo mas actual en diagnósticos y tratamientos. Tengo la experiencia de mas de 18 años de ejercicio profesional, tanto en instituciones publicas, como en la medicina privada de manera ininterrumpida, lo que me permite integrar una visión hospitalaria y clínica de manera global en relación a tu problema. Además esto me ha permitido desarrollarme dentro de la gestión médica hospitalaria, y ser parte del grupo de médicos especialistas en el curso de posgrado de residentes de la especialidad en el HRRB, primero como profesor titular y ahora como profesor adjunto desde 2008. Soy egresado de la especialidad en Ginecología y Obstetricia del Centro Medico de Alta Especialidad, UMAE # 3, \"La Raza\" UNAM.",
+  "addresses": [
+    {
+      "full": "Calle Sur 5, Número 30, entre Oriente 2 y Colon,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dagoberto-rodriguez-ramos/ginecologo/veracruz#address-id=400627&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:42.724Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__dagoberto_rodr_guez_ramos.webp"
+}

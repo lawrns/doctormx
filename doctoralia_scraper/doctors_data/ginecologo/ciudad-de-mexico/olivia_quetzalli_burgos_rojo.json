@@ -1,0 +1,43 @@
+{
+  "name": "Olivia Quetzalli Burgos Rojo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 273,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/707b66/707b66c19aced7abc6d190a384a94a8e_220_square.jpg",
+  "about": "Soy la Dra. Olivia Burgos especialista en Ginecología y Obstetricia y será un placer atenderte",
+  "addresses": [
+    {
+      "full": "Cali 705,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olivia-quetzalli-burgos-rojo/ginecologo/ciudad-de-mexico#address-id=362198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:25.166Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/olivia_quetzalli_burgos_rojo.webp"
+}

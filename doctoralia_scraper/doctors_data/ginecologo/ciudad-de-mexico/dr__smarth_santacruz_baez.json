@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Smarth Santacruz Baez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 186,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7623f4/7623f4b5b7dd13e3ec3fb6881eaf83c4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Zacatecas 44 interior 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• Desde $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/smarth-santacruz-baez/ginecologo/cuauhtemoc2#address-id=117856&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:54.409Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__smarth_santacruz_baez.webp"
+}

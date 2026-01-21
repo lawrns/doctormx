@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Sylvia Janeth Elizondo Guajardo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 64,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d01d939c/d01d939c-ef03-4cc8-ab5c-94b9323641ff_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo de los Leones, Av. Valle de Cumbres 8001, Valle de Cumbres,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $900"
+    },
+    {
+      "name": "Toma de papanicolaou base liquida",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $900"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": "• $3,000"
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": "• $4,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sylvia-janeth-elizondo-guajardo-2/ginecologo/nuevo-leon#address-id=514255&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:58.267Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__sylvia_janeth_elizondo_guajardo.webp"
+}

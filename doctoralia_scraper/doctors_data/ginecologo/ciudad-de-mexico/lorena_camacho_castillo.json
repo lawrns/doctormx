@@ -1,0 +1,31 @@
+{
+  "name": "Lorena Camacho Castillo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Salvador Díaz Mirón 374,"
+    },
+    {
+      "full": "Joaquin Garcia Icazbalceta 96,"
+    },
+    {
+      "full": "Salvador Díaz Mirón 374,"
+    },
+    {
+      "full": "Joaquin Garcia Icazbalceta 96,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lorena-camacho-castillo/ginecologo/ciudad-de-mexico#address-id=200589&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:17.950Z",
+  "localPhotoPath": null
+}

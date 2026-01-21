@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Olga Lidia Villegas Canales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/41090b/41090b5177deb9ef2b34a982bff0d429.jpg",
+  "about": "GINECOLOGIA. OBSTETRICIA. Biología de la Reproducción Humana 25 años de experiencia Recertificacion ACTUAL",
+  "addresses": [
+    {
+      "full": "Privada Ignacio Zaragoza 16-G.. TEC 100 HOSPITAL H+ TORRE MEDICA 3 CONSULTORIO 512 PISO 5,"
+    },
+    {
+      "full": "Los reyes,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/olga-lidia-villegas-canales/ginecologo/santiago-de-queretaro#address-id=337351&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:33.774Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__olga_lidia_villegas_canales.webp"
+}

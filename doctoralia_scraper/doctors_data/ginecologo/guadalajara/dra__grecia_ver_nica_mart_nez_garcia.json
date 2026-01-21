@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Grecia Verónica Martínez Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 257,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/908b5cf5/908b5cf5-efc0-4f61-a2e6-8eebf8bd2cf1_small_square.jpg",
+  "about": "Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "Av. Lopez Mateos Sur#1450, local 22-A, Plaza las villas,"
+    },
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/grecia-veronica-martinez-garcia/ginecologo/tlajomulco-de-zuniga#address-id=549780&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:29.525Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__grecia_ver_nica_mart_nez_garcia.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Mónica Viridiana Mejía Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/693a5b/693a5b37c842aa214f7a204ac3fbb2ce_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia Diagnostica",
+      "price": "• $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/monica-viridiana-mejia-vargas-2/ginecologo/naucalpan-de-juarez2#address-id=459815&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:42.860Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__m_nica_viridiana_mej_a_vargas.webp"
+}

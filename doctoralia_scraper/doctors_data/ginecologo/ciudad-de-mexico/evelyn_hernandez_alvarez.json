@@ -1,0 +1,25 @@
+{
+  "name": "Evelyn Hernandez Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Minas Palacio,112,San Rafael Chamapa,,"
+    },
+    {
+      "full": "Minas Palacio,112,San Rafael Chamapa,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/evelyn-hernandez-alvarez/ginecologo/naucalpan-de-juarez#address-id=355541&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:23.738Z",
+  "localPhotoPath": null
+}

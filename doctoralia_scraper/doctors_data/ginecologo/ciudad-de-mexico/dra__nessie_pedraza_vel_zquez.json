@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Nessie Pedraza Velázquez",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 2 - 602,"
+    },
+    {
+      "full": "Tuxpan 2 - 602,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nessie-pedraza-velazquez/ginecologo/cuauhtemoc#address-id=106765&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:36.374Z",
+  "localPhotoPath": null
+}

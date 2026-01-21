@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jacobo Salazar García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1074,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1734b9/1734b9cf1e0c3175ebdc3ccb43912e5e_220_square.jpg",
+  "about": "Mi principal objetivo es que pierdas el miedo de ir con el médico, especialmente con el ginecólogo, que tengas la confianza y libertad de aclarar todas tus dudas, así como tener la seguridad de estar siendo atendida y tratada con la mejor tecnología y avances médicos. Así mismo que lleves de tu embarazo una experiencia inolvidable y única. Para poder lograr todo esto, me enfoque en crear un espacio de ti y para ti, en el cual te puedas sentir lo más cómoda y tranquila posible (que ya verás, después de tu primer consulta así será), ven y conoce mis instalaciones, será un placer atenderte.",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911 Piso 12 Consultorio 4 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $599"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jacobo-salazar-garcia/ginecologo/zapopan#address-id=383146&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:40.715Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jacobo_salazar_garc_a.webp"
+}

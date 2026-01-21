@@ -1,0 +1,25 @@
+{
+  "name": "Lina Martinez Macedo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Venistiano Carranza 306 3,"
+    },
+    {
+      "full": "Venistiano Carranza 306 3,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lina-martinez-macedo/ginecologo/san-francisco-del-rincon#address-id=124515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:13:24.333Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Karina Gallegos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b5d84b/b5d84bc82f254066740e5baadabb8046_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Karina Gallegos, ginecólogo dedicado a brindar atención integral y personalizada a mis pacientes. Mi enfoque se centra en la salud reproductiva y el bienestar ginecológico de las mujeres en todas las etapas de la vida. Con una sólida formación médica y años de experiencia, me esfuerzo por ofrecer un ambiente acogedor y comprensivo en mi consultorio.",
+  "addresses": [
+    {
+      "full": "Matanzas 1013, Residencial Zacatenco, Ciudad de México, CDMX, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-gallegos/ginecologo/gustavo-a-madero#address-id=433828&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:48.310Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karina_gallegos.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alicia Mendez Barajas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/045935fe/045935fe-5b66-45af-8a2d-f6e70ce07650_small_square.jpg",
+  "about": "Soy Ginecóloga con más de 20 años de experiencia, Acompaño a las mujeres en todas las etapas de su vida. Quiero ayudarte a tener una excelente Salud Ginecológica.Realizo LA DETECCION Y TRATAMIENTO PARA EL VIRUS DEL PAPILOMA HUMANO.ATENCION PARA LA ANTICONCEPCION.CONTROL DEL EMBARAZOMENOPAUSIATOMA DE PAPANICOLAOU.COLPOSCOPIABIOPSIA DE CERVIX.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 1677 Consultorio 701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alicia-mendez-barajas/ginecologo/ciudad-de-mexico#address-id=492655&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:53.569Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alicia_mendez_barajas.webp"
+}

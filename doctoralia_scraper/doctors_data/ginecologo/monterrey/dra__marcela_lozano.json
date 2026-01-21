@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Marcela Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 85,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/55575c/55575cb9eca89756ba0052eb75868742_220_square.jpg",
+  "about": "A nosotras como mujeres, en ocasiones nos es difícil hacer preguntas o ir a revisión médica, ya sea por falta de tiempo o por miedo a algún diagnóstico desagradable, pero recuerda que siempre es mejor una revisión a tiempo, hay que enfocarnos en la prevención o en tratamientos tempranos. Como Ginecóloga, mi especialidad me permite acompañar integralmente a mis pacientes en cada etapa de su vida. Te invito a darte el tiempo para acudir a una cita médica.",
+  "addresses": [
+    {
+      "full": "Avenida Casa Bella 151,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-lozano/ginecologo/san-nicolas-de-los-garza#address-id=22284&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:28.089Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marcela_lozano.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Gonzalo Hernández Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 574,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2081530c/2081530c-d90d-4c02-b616-39d324dd3bed_small_square.jpg",
+  "about": "\"Donde hay amor por la medicina, hay amor por la humanidad\" Hola soy el Dr. Gonzalo Hernández Martínez especialista en Ginecología y Obstetricia, certificado por el Consejo Mexicano de Ginecología y Obstetricia 2024-2028. Soy profesor titular de médicos residentes de Ginecología y Obstetricia desde hace 5 años, lo que me permite estar en constante actualización. Cuento con un diplomado en patología del tracto genital inferior, colposcopia y androscopia, en la prevención del cáncer cervicouterino . Brindo atención para las enfermedades propias de la mujer, para un diagnóstico oportuno, tratamiento y seguimiento. Si estas embarazada, te ofrezco un buen seguimiento de tu embarazo, en busca de factores de riesgo que puedan complicar tu salud y la de tu bebé. Reserva tu cita, estoy para servirte",
+  "addresses": [
+    {
+      "full": "Avenida Gales No 19,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-hernandez-martinez/ginecologo/veracruz#address-id=256670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:03.729Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__gonzalo_hern_ndez_mart_nez.webp"
+}

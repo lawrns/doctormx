@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Yanet Huerta Reyero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/86315a/86315aa66dc96af78c7f1c12091a74a3_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ticoman 128 colonia linda vista ,"
+    },
+    {
+      "full": "Av. Ticoman, 128,"
+    },
+    {
+      "full": "Ticoman 128 colonia linda vista ,"
+    },
+    {
+      "full": "Av. Ticoman, 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yanet-huerta-reyero/ginecologo/gustavo-a-madero#address-id=76728&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:22.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__yanet_huerta_reyero.webp"
+}

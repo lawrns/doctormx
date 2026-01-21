@@ -1,0 +1,27 @@
+{
+  "name": "Dr. Brian Omar Jiménez Anica",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fd04f87f/fd04f87f-5a55-4dfa-9ca2-4aa948c72d7d_small_square.jpg",
+  "about": "Hola soy el Dr. Brian Omar Jiménez Anica, especialista en Ginecología y Obstetricia en la Ciudad de Orizaba, Veracruz certificado por el Consejo Mexicano de Ginecología y Obstetricia, mi principal compromiso es con la salud de la mujer en las diferentes etapas de su vida. En el área de Obstetricia brindo un trato humano y cercano en cada momento del embarazo y la resolución del mismo atendiendo todas las dudas y haciendo de este una experiencia única para los padres. En el área de Ginecología damos la atención a las principales patologías como miomatosis uterina, sangrado uterinos anormales, lesiones a ováricas como quistes o patologías asociadas a tracto genital, además ofrecemos cirugía de mínima invasión ( Laparoscópica) a si como Colposcopia y Ultrasonido. Además contamos con vacunas VPH y métodos anticonceptivos.¡ Sera un gusto atenderles !",
+  "addresses": [
+    {
+      "full": "Oriente 6 2204, centro, orizaba, veracruz., Mexico,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brian-omar-jimenez-anica/ginecologo/veracruz",
+  "scrapedAt": "2026-01-21T03:52:04.864Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__brian_omar_jim_nez_anica.webp"
+}

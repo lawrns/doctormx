@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Keyla Rochin Quintero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 190,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/180e54/180e549f26302edf33ea58eef3fa3279_220_square.jpg",
+  "about": "Soy la Dra. Keyla Rochin Quintero, especialista en Ginecología de la ciudad de Tehuacán. Me enorgullece brindar un ambiente cómodo y agradable para mis pacientes en cada consulta. Siempre me esfuerzo por explicar con detalle los tratamientos y procedimientos, y aclarar todas las dudas de manera clara y comprensible. Me aseguro de tener un enfoque personalizado para cada paciente, respetando sus necesidades individuales. Me apasiona mi trabajo y me dedico a ofrecer la mejor atención posible a mis pacientes. Agradezco a todos los pacientes que han confiado en mí para su atención médica y me enorgullece ser reconocida como una excelente ginecóloga y médico profesional.",
+  "addresses": [
+    {
+      "full": "Heroes de La Independencia 525,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/keyla-rochin-quintero/ginecologo/tehuacan",
+  "scrapedAt": "2026-01-21T03:53:47.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__keyla_rochin_quintero.webp"
+}

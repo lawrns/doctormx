@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nelly Regina Collazo Araico",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e2b00/8e2b00c3870eb60336c512fc6a32f44d_220_square.jpg",
+  "about": "Especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología 2006-2010 Sub especialidad en Urología Ginecológica en el Instituto Nacional de Perinatología 2010-2012 Medico Adscrito en Ginecología y Obstetricia Hospital Materno Infantil Atizapán ISEM 2013-2014 Jefe de Ginecología y Obstetricia Hospital Materno Infantil Atizapán ISEM 2014-2017 Jefe de Ginecología y Obstetricia Hospital General Tultitlán ISEM 2017-2022 Médico Adscrito en Ginecología y Obstetricia Hospital Regional de Alta Especialidad Zumpango 2018-2024 Asistente Dirección Hospital General de Cuautitlán 2023 a la fecha",
+  "addresses": [
+    {
+      "full": "Clínica La Florida, calle Rosas #45, La Florida Naucalpan de Juárez Estado de México,"
+    },
+    {
+      "full": "Clínica La Florida, calle Rosas #45, La Florida Naucalpan de Juárez Estado de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nelly-regina-collazo-araico/ginecologo/naucalpan-de-juarez#address-id=359081&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:59.300Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nelly_regina_collazo_araico.webp"
+}

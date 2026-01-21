@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Gemma K. Bahena Hernández",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a2218b/a2218b98133bfe84a4bebbdd611757d0_220_square.jpg",
+  "about": "Especialista en el cuidado integral de la mujer en todas las etapas de la vida.",
+  "addresses": [
+    {
+      "full": "Cerrada de Chiapas 416-lt 1,"
+    },
+    {
+      "full": "Av la Colmena 81,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gemma-k-bahena-hernandez/ginecologo/atizapan-de-zaragoza#address-id=615518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:40.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gemma_k__bahena_hern_ndez.webp"
+}

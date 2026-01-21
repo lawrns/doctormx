@@ -1,0 +1,31 @@
+{
+  "name": "Miguel Tingon Chang Chiu",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Pablo Neruda 3265,"
+    },
+    {
+      "full": "Blvd. Pta. De Hierro 5150,"
+    },
+    {
+      "full": "Pablo Neruda 3265,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-tingon-chang-chiu/ginecologo/zapopan#address-id=186585&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:18.635Z",
+  "localPhotoPath": null
+}

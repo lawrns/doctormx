@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Gustavo Rojo Padilla",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Heriberto Jara 53 12,"
+    },
+    {
+      "full": "Acueducto Río Hondo 28,"
+    },
+    {
+      "full": "Heriberto Jara 53,"
+    },
+    {
+      "full": "España 400,"
+    },
+    {
+      "full": "Calle Heriberto Jara 53 12,"
+    },
+    {
+      "full": "Acueducto Río Hondo 28,"
+    },
+    {
+      "full": "Heriberto Jara 53,"
+    },
+    {
+      "full": "España 400,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-rojo-padilla-2/ginecologo/la-piedad#address-id=337633&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:48.964Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Gabriela Gutiérrez Colín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b26eaa/b26eaa85f1c1f377f89681397a8fc122_220_square.jpg",
+  "about": "LA CONSULTA GINECOLOGICA ES PARTE FUNDAMENTALEN LA VIDA DE TODA MUJER. EN ELLA PODREMOS ORIENTAR ACERCA DE LOS PRINCIPALES PUNTOS A VIGILAR EN CADA UNA. ELEGIR LOS ESTUDIOS PREVENTIVOS TALES COMO VACUNACION, PAPANICOLAOU, CONSEJERIA DE PLANIFICACION FAMILIAR, ETC.ASI COMO PARA DIAGNOSTICOS ESPECIFICOS COMO COLPOSCOPIA, TOMA DE BIOPSIAS, SOLICITUD DE ESTUDIOS DE RADIOLOGIA E IMAGEN, ETC. PARA PODER OTORGAR LAS OPCIONES DE TRATAMIENTO MAS EFECTIVAS EN CADA CASO . ADEMAS DE SER ESCENCIAL EN LOS CASOS DE EMBARAZO , MEJORANDO ASI EL PRONOSTICO Y BIENESTAR DE MADRE E HIJO DESDE LA GESTACION.",
+  "addresses": [
+    {
+      "full": "ECUADOR 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-gabriela-gutierrez-colin/ginecologo/nuevo-leon#address-id=53364&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:26.343Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__martha_gabriela_guti_rrez_col_n.webp"
+}

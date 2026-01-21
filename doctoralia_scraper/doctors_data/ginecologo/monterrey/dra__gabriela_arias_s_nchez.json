@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Gabriela Arias Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1ea641/1ea6419490f53830e3bd0cfd01acf70a_220_square.jpg",
+  "about": "Doctora Ginecóloga-Obstetra con mas de 12 años de experiencia en hospitales de 3er. nivel (Especialidad Ginecológica) y por el momento en IMSS, UMAE No. 23 (GINE).",
+  "addresses": [
+    {
+      "full": "Paseo de las Américas 2101, Contry Sol,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-arias-sanchez/ginecologo/nuevo-leon#address-id=421058&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:14.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__gabriela_arias_s_nchez.webp"
+}

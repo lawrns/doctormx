@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Dudley Díaz Argüello",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/73e7db/73e7db902c3ad6ec30dedec3767c7341_220_square.jpg",
+  "about": "Soy un profesionista comprometido con la salud y bienestar de las pacientes Ginecológicas con 25 años de experiencia en manejo de cirugia de mínima invasión (laparoscopia), embarazo de alto riesgo y climaterio. En el área docente profesor de pre y postgrado; con una enorme pasión y respeto por mi trabajo, así como, un trato cálido , humano, empatizo, solidario y consciente de las necesidades de la mujer contemporánea. Miembro de diferentes asociaciones medicas nacionales e internacionales así como certificación del Colegio Mexicano de Ginecologia y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154-336,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154-336,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": ""
+    },
+    {
+      "name": "Cirugía Robótica Ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dudley-diaz-arguello/ginecologo/cuajimalpa-de-morelos#address-id=109342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:04.969Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__dudley_d_az_arg_ello.webp"
+}

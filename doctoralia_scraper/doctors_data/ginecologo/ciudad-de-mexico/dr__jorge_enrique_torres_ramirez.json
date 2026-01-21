@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jorge Enrique Torres Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 143,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5beae2/5beae25a4fe41341746e1df83d4c05c8_220_square.jpg",
+  "about": "Soy el Dr. Jorge Enrique Torres Ramírez, originario de la ciudad de México, egresado de la Facultad de Medicina de la U.N.A.M y de los mejores Hospitales Escuela en la rama publica para la especialidad y Sub-Especialidad como el Hospital General de México y Hospital Juárez de México, Soy Ginecólogo especializado en ginecología endocrina, reproducción asistida y cirugía ginecológica. A lo largo de mi carrera, he sido Staff, Coordinador, Director y Maestro de Cursos y diplomados de Adiestramiento en el Postgrado de Biología de Reproducción Humana, me he dedicado a acompañar a cientos de parejas en su búsqueda por concebir, brindando un enfoque humano, honesto, integral, actualizado y con los más altos estándares de calidad. Mi formación académica incluye posgrados y certificaciones de nivel internacional, además de ser miembro activo de diversas asociaciones médicas, lo que me permite ofrecerte las soluciones más innovadoras y eficaces. Con más de 1500 procedimientos en promedio de Reproducción Asistida, mi compromiso es estar a tu lado en cada paso de este proceso. Entiendo lo sensible y delicado que puede ser enfrentar problemas de Fertilidad, Ginecológicos y Obstétricos, por eso, en cada consulta me enfoco en brindarte una atención personalizada, discreta y humana. Juntos, encontraremos la mejor solución para tu caso, utilizando técnicas apropiadas para garantizar tu bienestar y seguridad. Tengo además adiestramientos en Ultrasonido, Gerencia y Dirección Hospitalaria y actualmente realizo un Diplomado en Cirugía Laparoscópica y Robótica. Principales áreas de tratamiento • Reproducción asistida, de baja y alta complejidad • Control y Resolución de Embarazo de Alto Y Bajo Riesgo, Parto, Cesárea. • Tratamiento de miomatosis (Miomectomía abierta y Laparoscópica a costos accesibles), adenomiosis y endometriosis • Climaterio y Menopausia • Problemas endocrinos Ginecológicos, Irregularidades menstruales, sangrado uterino anormal, disfuncional, Ovario Poliquistico entre otros .",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 674,"
+    },
+    {
+      "full": "Oriente 157 #3736,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-enrique-torres-ramirez-2/ginecologo/victoria-de-durango#address-id=506947&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:51.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jorge_enrique_torres_ramirez.webp"
+}

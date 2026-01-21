@@ -1,0 +1,46 @@
+{
+  "name": "Karina Navalon García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96beb4/96beb40a64e7ce9bc8b3be0cd991e90e_220_square.jpg",
+  "about": "Ginecóloga oncóloga egresado de Hospital Luis Castelazo Ayala",
+  "addresses": [
+    {
+      "full": "Av río consulado 858 col arenal consultorio 308,"
+    },
+    {
+      "full": "Av río consulado 858 col arenal consultorio 308,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-navalon-garcia/ginecologo/ciudad-de-mexico#address-id=416209&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:21.286Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/karina_navalon_garc_a.webp"
+}

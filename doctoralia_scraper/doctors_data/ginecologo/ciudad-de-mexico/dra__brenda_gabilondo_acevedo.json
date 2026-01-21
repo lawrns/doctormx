@@ -1,0 +1,48 @@
+{
+  "name": "Dra. Brenda Gabilondo Acevedo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/295ed7/295ed7bfa93c26b6169caf1c3d480711_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "207, Torre II, Segundo Piso, Puente de Piedra 150,"
+    },
+    {
+      "full": "Puente de Piedra,"
+    },
+    {
+      "full": "207, Torre II, Segundo Piso, Puente de Piedra 150,"
+    },
+    {
+      "full": "Puente de Piedra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-gabilondo-acevedo/ginecologo/tlalpan#address-id=33705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:12.360Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__brenda_gabilondo_acevedo.webp"
+}

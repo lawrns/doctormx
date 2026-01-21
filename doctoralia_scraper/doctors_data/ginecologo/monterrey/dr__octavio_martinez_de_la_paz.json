@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Octavio Martinez De La Paz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/743f2e/743f2e019e1fd65cbd239ce7597a3c1b_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Constitucion 1881 PTE,"
+    },
+    {
+      "full": "Av.Constitucion 1881 PTE,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Electrocoagulación, criocoagulación, termocoagulación de cérvix",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/octavio-martinez-de-la-paz/ginecologo/monterrey#address-id=73824&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:52.503Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__octavio_martinez_de_la_paz.webp"
+}

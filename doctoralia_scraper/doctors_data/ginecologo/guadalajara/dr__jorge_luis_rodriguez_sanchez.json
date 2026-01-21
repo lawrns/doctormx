@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Jorge Luis Rodriguez Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1d2f4e/1d2f4e22a8d874e447d8d4139f076259_220_square.jpg",
+  "about": "ESTUDIOS ESPECIALIZADOS: ULTRASONIDO 3D y 4D ULTRASONIDO DE PRIMER TRIMESTRE (11-13.6 semanas de gestación) (Calculo de riesgo para Sx Down y otros síndromes, preeclampsia, parto prematuro, restricción de crecimiento y ultrasonido anatómico para detección de anomalías congénitas.) *Posibilidad de toma de marcadores bioquímicos ULTRASONIDO ESTRUCTURAL SEGUNDO TRIMESTRE (18 - 23 semanas de gestación) Momento ideal para realizar una evaluación anatómica para descartar anomalías estructurales y/o defectos congénitos, ya que a estas semanas la mayoría de los órganos están desarrollados y es factible en manos expertas las detección oportuna. Ademas en caso de no haber realizado ultrasonido de primer trimestre, es el momento oportuno para la búsqueda de marcadores ultrasonográficos para la detección de anomalías cromosómicas (Sx Down, Sx Edwards, etc). Se puede llevar acabo calculo de riesgo para preeclampsia, parto prematuro, y restricción de crecimiento. ULTRASONIDO DOPPLER Estudio utilizado para valorar la hemodinamia placentaria y fetal, indicado especialmente en pacientes con enfermedades de base como ; hipertensión, diabetes mellitus, alteraciones renales, hipotiroideas, lupus eritematoso sistemáticos, etc. A su vez en fetos con alteraciones del crecimiento. CURVA DE CRECIMIENTO Estudio indicado para valorar el crecimiento del feto, para descartar principalmente alteraciones en su crecimiento y desarrollo. BARIATRIA CLINICA Sabemos que a la mujer embarazada le preocupa la ganancia de peso excesiva en el embarazo, por ello te ayudamos con un plan de alimentación, donde lo principal es la nutrición adecuada de tu bebe para que tenga el mejor desarrollo posible, ayudándote a ti a no tener una ganancia excesiva de peso, sin poner en riesgo a ninguno de los dos. Lo principal es entender que los extremos en el peso otorgan riesgos para ti y tu bebe.",
+  "addresses": [
+    {
+      "full": "Prenatalia. Av. Unión 163, esquina con Lopez Cotilla (TORRE UNION) Oficina 607,"
+    },
+    {
+      "full": "Av. Unión #163 (Torre Unión) Oficina 607,"
+    },
+    {
+      "full": "Prenatalia. Av. Unión 163, esquina con Lopez Cotilla (TORRE UNION) Oficina 607,"
+    },
+    {
+      "full": "Av. Unión #163 (Torre Unión) Oficina 607,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-luis-rodriguez-sanchez/ginecologo/guadalajara#address-id=15945&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:02.682Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jorge_luis_rodriguez_sanchez.webp"
+}

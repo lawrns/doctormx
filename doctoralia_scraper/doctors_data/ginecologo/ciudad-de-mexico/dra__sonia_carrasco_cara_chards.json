@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Sonia Carrasco Cara Chards",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4128037c/4128037c-9ccc-42f3-ae8b-3078cdde9735_small_square.jpg",
+  "about": "Médico Cirujano: Facultad de Medicina, Ciudad Universitaria, UNAM.Especialidad Ginecología y Obstetricia: Hospital General de México \"Dr. Eduardo Liceaga\". Cirugía Endoscópica Ginecológica: Hospital General de México \"Dr. Eduardo Liceaga\". Avalado por la UNAMColposcopía: Avalado por Universidad La Salle.Ginecología Endocrinológica: Hospital 1ro de Octubre, ISSSTE. Avalado por la UNAM",
+  "addresses": [
+    {
+      "full": "Calzada del Hueso 331,"
+    },
+    {
+      "full": "Calzada del Hueso 331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sonia-carrasco-cara-chards-2/ginecologo/ciudad-de-mexico#address-id=595586&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:12.884Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sonia_carrasco_cara_chards.webp"
+}

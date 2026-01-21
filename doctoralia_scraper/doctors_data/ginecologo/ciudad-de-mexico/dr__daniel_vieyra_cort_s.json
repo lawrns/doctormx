@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Daniel Vieyra Cortés",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 130,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fc63019f/fc63019f-5123-4c99-a327-f6a2c0b54f3b_small_square.jpg",
+  "about": "¡Hola! Soy el Dr. Daniel Vieyra, Médico Cirujano con especialidad en en Ginecología y Obstetricia, sub-especialización en Biología de la Reproducción Humana, Cirugía de Mínima Invasión y Cirugía Robótica avaladas por la UNAM. Mi formación me permite brindar atención integral a mujeres de todas las edades y principalmente pacientes con miomas y problemas de fertilidad. Acompañándolas con un diagnósticos y tratamientos acertados, encontrando la mejor opción para su caso. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Av. Universidad 1080,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,850"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "Cirugía Robótica Ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-vieyra-cortes/ginecologo/magdalena-contreras2#address-id=424641&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:43.910Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__daniel_vieyra_cort_s.webp"
+}

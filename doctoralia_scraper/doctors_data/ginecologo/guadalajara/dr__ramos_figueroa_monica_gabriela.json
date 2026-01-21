@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ramos Figueroa Monica Gabriela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Ninos Heroes 2640 4,"
+    },
+    {
+      "full": "Ave. Ninos Heroes 2640 4,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramos-figueroa-monica-gabriela/ginecologo/guadalajara#address-id=66943&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:14.205Z",
+  "localPhotoPath": null
+}

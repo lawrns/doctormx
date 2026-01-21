@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Juan Rivero corona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e0e056/e0e056a5169d80dbccd5476c8f4c258f_220_square.jpg",
+  "about": "Soy el Dr. Juan Rivero Corona, Ginecólogo y Obstetra en CDMX y Pachuca, Hidalgo, Sub-Especialista en Biología de la Reproducción Humana y Alta Especialidad en Cirugia Endoscopica Ginecologica, Egresado de Hospital Juarez de México, Actualmente Laboro en UMAE Hospital de Gineco Obstetricia No. 3, Centro Medico Nacional La Raza A través de mi carrera profesional he realizado múltiples estudios de posgrado en diferentes áreas de la Ginecología, como en Cirugía Endoscópica Ginecológica, donde la Laparoscopia e Histeroscopía son el pilar en la resolución y tratamiento de múltiples padecimientos ginecológicos mediante cirugía de mínima invasión como lo son la Miomatosis Uterina, Endometriosis, etc. Además de Colposcopia, Ginecología Estética y Ultrasonido Ginecológico, complementándolo con Ultrasonido Doppler Materno-Fetal para el diagnóstico oportuno de padecimientos obstétricos y fetales de nuestras pacientes. Actualmente mi ejercicio profesional aborda diferentes tópicos como el Embarazo y Control Prenatal, así como la Infertilidad y Reproducción Asistida, junto con la atención integral de la paciente durante el Climaterio y Menopausia, no sin antes mencionar los múltiples padecimientos de la Ginecología Endócrina como lo son el Síndrome de Ovario Poliquistico entre otros, lo antes mencionado se aborda de una manera integral con la más alta calidad y excelencia. Certificado por el Consejo Mexicano de Ginecología y Obstetricia Sociedad Europea de Reproducción Humana y Embriología Sociedad Americana de Medicina Reproductiva Asociación Americana de Ginecólogos Laparoscopistas Sociedad Internacional de Ginecología Endócrina Sociedad Española de Ginecología Estética Regenerativa Funcional",
+  "addresses": [
+    {
+      "full": "Calle Riobamba 639,"
+    },
+    {
+      "full": "Calle Riobamba 776,"
+    },
+    {
+      "full": "Calle Riobamba 639,"
+    },
+    {
+      "full": "Calle Riobamba 776,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-rivero-corona/ginecologo/ciudad-de-mexico#address-id=427656&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:36.064Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_rivero_corona.webp"
+}

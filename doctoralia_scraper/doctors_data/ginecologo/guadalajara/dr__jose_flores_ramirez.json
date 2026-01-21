@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Flores Ramirez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4a2bb9/4a2bb92bb3ed2cc363bc6976cebdb9b0_220_square.jpg",
+  "about": "EXCELENTE DIA, SOY EL DR JOSE FLORES RAMIREZ, GINECO-OBSTETRA Y MEDICO MATERNO FETAL, ME DEDICO A LLEVAR EL CONTROL PRENATAL DE SU EMBARAZO TANTO DE BAJO COMO DE ALTO RIESGO, ASI MISMO, REVISO TAMBIEN A PACIENTES QUE LLEVEN SU CONTROL PRENATAL CON OTRO MEDICO Y REQUIERAN REVISAR CON MAYOR DETALLE A SU BEBE, MEDIANTE EL ULTRASONIDO (QUE ES MUY SEGURO) ENFOCANDOME EN: CRECIMIENTO Y DESAROLLO FETAL, BUSCANDO CUALQUIER MALFORMACION MAYOR O MENOR, TAMBIEN BUSCO DATOS DE ULTRASONIDO (MARCADORES) QUE INCREMENTAN LA PROBABILIDAD DE SINDROMES (COMO EL DOWN, EDWARDS, PATAU, TURNER Y OTROS MAS, CON EL ULTRASONIDO), SI SE REQUIERE EVALUO LA OXIGENACION DE SU BEBE MEDIANTE EL ULTRASONIDO DOPPLER SIEMPRE LE HAGO VARIAS TOMAS EN 3D Y 4D EN ALTA DEFINICION AL FINAL DE LA CONSULTA, LE ENTREGO UN DVD CON EL ESTUDIO, TODAS LAS IMAGENES DIGITALES EN CD, FOTOS IMPRESAS A COLOR Y SU REPORTE DE ULTRASONIDO. Y EL REPORTE LO ENVIO DIGITAL A SU MEDICO TRATANTE",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-flores-ramirez/ginecologo/zapopan#address-id=13987&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:35.763Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jose_flores_ramirez.webp"
+}

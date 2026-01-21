@@ -1,0 +1,25 @@
+{
+  "name": "Ramiro Ornelas Ponce",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gelati no. 29 desp-403, San miguel chapultepec,"
+    },
+    {
+      "full": "Gelati no. 29 desp-403, San miguel chapultepec,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramiro-ornelas-ponce/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-21T03:05:56.590Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana María Núñez Villegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1079,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6231a0/6231a0361a18e82232ad016504cc9ab0_220_square.jpg",
+  "about": "Egresada del Hospital Civil Nuevo de Guadalajara, certificada por el Consejo Mexicano de Ginecología y Obstetricia y perteneciente al Colegio Americano de Ginecología y Obstetricia Gineco-obstetra dedicada en alma y cuerpo a mejorar la salud de las mujeres. Sé la dificultad que conlleva acudir a las revisiones anuales, a los papanicolaous, la incomodidad que se siente al tener una irregularidad menstrual o el miedo a tener malas noticias. Soy un médico que busca ganar la confianza con información veraz y actualizada. Mi experiencia en Hospitales públicos me ha enseñado a que todo se puede solucionar. Mi experiencia en el ámbito privado me inculcó que cada una de nosotras somos distintas y queremos ser parte de las soluciones a nuestros problemas.",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-nunez-villegas/ginecologo/zapopan#address-id=349684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:40.195Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__ana_mar_a_n__ez_villegas.webp"
+}

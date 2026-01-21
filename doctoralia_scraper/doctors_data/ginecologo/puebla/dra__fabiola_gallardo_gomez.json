@@ -1,0 +1,58 @@
+{
+  "name": "Dra. Fabiola Gallardo Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 20,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d6d47/3d6d47fa5e7c7dd735717180e97f8128_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Fabiola Gallardo Gómez, ginecóloga y obstetra con especialización en Biología de la Reproducción. Me gradué de la Benemérita Universidad Autónoma de Puebla, mi estado natal. Mi formación incluye una especialidad en Ginecología y Obstetricia en el Instituto Nacional de Perinatología, seguida de una subespecialidad en Biología de la Reproducción en el Hospital Español. Creo firmemente en la importancia de escuchar a mis pacientes y trabajar en conjunto para diseñar el mejor plan de tratamiento para cada situación. Me apasiona ayudar a las mujeres a mantener una buena salud reproductiva y a tratar cualquier problema de salud femenina que puedan enfrentar. Estoy emocionada de conocerte y de poder acompañarte en tu viaje hacia la salud y el bienestar. No dudes en contactarme para programar una consulta. ¡Estoy aquí para ayudarte!",
+  "addresses": [
+    {
+      "full": "Avenida Kepler 2143,"
+    },
+    {
+      "full": "Avenida Homero 655,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fabiola-gallardo-gomez/ginecologo/puebla#address-id=521552&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:07.828Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__fabiola_gallardo_gomez.webp"
+}

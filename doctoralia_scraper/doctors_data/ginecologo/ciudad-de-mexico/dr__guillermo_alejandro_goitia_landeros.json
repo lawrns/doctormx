@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Guillermo Alejandro Goitia Landeros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/45db0a/45db0a9a20251f46ed86b408bb71690f_220_square.jpg",
+  "about": "Soy un especialista en reproducción humana: entusiasta, comprometido al 200%, sincero, humano y resolutivo.",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20,"
+    },
+    {
+      "full": "Tlacotalpan 96,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-alejandro-goitia-landeros/ginecologo/cuauhtemoc2",
+  "scrapedAt": "2026-01-21T02:44:11.602Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_alejandro_goitia_landeros.webp"
+}

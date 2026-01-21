@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Rafael Arguelles Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "EXPERTO EN HISTERECTOMIA VAGINAL. TECNICA CLASICA MODIFICADA POR EL DR RAFAEL ARGUELLES MARTINEZ UNICO EN SU ESPECIALIDAD",
+  "addresses": [
+    {
+      "full": "Calle Pestalozzi 1204,"
+    },
+    {
+      "full": "Calle Pestalozzi 1204,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Histerectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-arguelles-martinez/ginecologo/ciudad-de-mexico#address-id=39791&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:53.613Z",
+  "localPhotoPath": null
+}

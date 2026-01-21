@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Miguel Cruz García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/2d6ca8bd/2d6ca8bd-2698-48c8-86df-b065eb73f121_small_square.jpg",
+  "about": "Soy el Dr. Carlos Miguel Cruz, orgullosamente egresado de la Universidad Nacional Autónoma de México, realizando mi especialidad en el hospital de gineco obstetricia 4 “Luis Castelazo Ayala”. Mi enfoque es brindar atención personalizada y de alta calidad a mujeres de todas las edades. otorgando una consulta de alta especialidad en planificación familiar, cuidado prenatal y salud menstrual, entre otros servicios. Así mismo estoy para apoyarte en el seguimiento de tu embarazo, creando del mismo una experiencia maravillosa, y altamente capacitado para otorgarte un trato amigable, y humanizado durante el parto, o cesárea. Si estás buscando un lugar donde te sientas cómoda y atendida, no dudes en contactarme para programar una cita. Con enfoque en: Obstetricia.Cirugía Ginecológica.Interrupción legal del embarazo.Ultrasonido.Menopausia y postmenopausia.Parto/Cesárea Humanizada.",
+  "addresses": [
+    {
+      "full": "Avenida sauzales 222,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-miguel-cruz-garcia-2/ginecologo/tlalpan#address-id=562789&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:35.786Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_miguel_cruz_garc_a.webp"
+}

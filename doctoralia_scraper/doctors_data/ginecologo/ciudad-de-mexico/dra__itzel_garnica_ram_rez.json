@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Itzel Garnica Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Hola, soy Médico Cirujano egresada de la Universidad Nacional Autónoma de México, realice una especialidad en Ginecología y Obstetrica que curse en los hospitales de la secretaría de Salud de la Ciudad de México avalada por la Universidad Nacional Autónoma de México, cuento con una alta especialidad en peri y postmenopausia que realice en el Hospital Regional 1° Octubre ISSSTE avalada por la Universidad Nacional Autónoma de México y tengo un diplomado en Gineco endocrinología que avalado por la Asociación Mexica de médicina de la Reproducción y la Universidad Nacional Autónoma de México.",
+  "addresses": [
+    {
+      "full": "Calle Lázaro Cárdenas 117,"
+    },
+    {
+      "full": "Calle Lázaro Cárdenas 117,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/itzel-garnica-ramirez/ginecologo-medico-general/xochimilco#address-id=372651&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:07.140Z",
+  "localPhotoPath": null
+}

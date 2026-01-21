@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raúl Urzúa Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/117d0a/117d0a9509c1c395804cdd98c85516f7_220_square.jpg",
+  "about": "Hola! Mi nombre es Raul Urzua Diaz, Médico cirujano y parte egresado de la Universidad de Guadalajara, con especialidad en Ginecología y Obstetricia, tengo basta experiencia que estoy dispuesto a compartir contigo para atenderte a ti y cuidar de tu salud de la mejor maneara posible.",
+  "addresses": [
+    {
+      "full": "Calle General Eulogio Parra 3012,"
+    },
+    {
+      "full": "Calle General Eulogio Parra 3012,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico",
+      "price": "• $800"
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Exploración Mamaria",
+      "price": "• $800"
+    },
+    {
+      "name": "Síndrome de Ovario Poliquístico ( SOP )",
+      "price": ""
+    },
+    {
+      "name": "Tumor de mamas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-urzua-diaz/ginecologo/guadalajara#address-id=469679&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:21.729Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ra_l_urz_a_d_az.webp"
+}

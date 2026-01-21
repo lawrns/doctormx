@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Antonio Jiménez Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c222dc/c222dc6d88822c5744939872ec8b21bb_220_square.jpg",
+  "about": "- CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA - FELLOW OF AMERICAN COLLEGE OF OBSTETRICIANS AND GYNECOLOGIST - MIEMBRO DEL COLEGIO AMERICANO DE COLPOSCOPIA Y PATOLOGIA CERVICAL - MIEMBRO ACTIVO DEL COLEGIO DE MÉDICOS GINECO- OBSTETRAS DEL ESTADO DE JALISCO, A. C. - PROFESOR TITULAR DEL DIPLOMADO DE COLPOSCOPIA Y PATOLOGIA CERVICAL DEL TRACTO GENITAL INFERIOR DE LA UNIVERSIDAD DE GUADALAJARA - MIEMBRO ACTIVO DEL COLEGIO DE COLPOSCOPISTAS DE JALISCO A. C.",
+  "addresses": [
+    {
+      "full": "EULOGIO PARRA 3022,"
+    },
+    {
+      "full": "EULOGIO PARRA 3022,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/antonio-jimenez-rodriguez/ginecologo/guadalajara#address-id=118479&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:05.123Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__antonio_jim_nez_rodr_guez.webp"
+}

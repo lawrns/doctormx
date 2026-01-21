@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jesus Javier Rodriguez Fernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/54dd94/54dd94e4c18056f96e351cd3945f38a7_220_square.jpg",
+  "about": "Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Batallon De San Patricio 112, piso 10 consultorio 14,"
+    },
+    {
+      "full": "Batallon De San Patricio 112, piso 10 consultorio 14,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-javier-rodriguez-fernandez/ginecologo/san-pedro-garza-garcia#address-id=106205&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:22.416Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jesus_javier_rodriguez_fernandez.webp"
+}

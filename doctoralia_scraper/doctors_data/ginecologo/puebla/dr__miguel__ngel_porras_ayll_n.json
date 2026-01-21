@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Ángel Porras Ayllón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 71,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/95b31e/95b31e2fa4f996455a3578c3464f1031_220_square.jpg",
+  "about": "Soy el Dr. Miguel Ángel Porras Ayllón, Ginecólogo Colposcopista, con estudios realizados en la UNAM y BUAP. Me dedico a atender a pacientes adultos y adolescentes en temas relacionados con el embarazo de alto riesgo, colposcopia y tratamiento de virus del papiloma humano, criocirugía, Electrocirugía, ultrasonido obstétrico básico. Mi prioridad es brindar una atención personalizada y de calidad a cada paciente que me visita. Me esmero en explicar de manera clara y detallada los tratamientos y estudios que se requieren, siempre con un trato amable y respetuoso. Mis pacientes me han calificado como un excelente ginecólogo, destacando mi puntualidad, dedicación y acierto en el diagnóstico y tratamiento. Me esfuerzo por estar actualizado en las últimas técnicas y avances en mi especialidad, para poder brindar la mejor atención posible. Mi consultorio se encuentra en una ubicación de fácil acceso y cuenta con estacionamiento, instalaciones adecuadas y amplias para mayor comodidad de mis pacientes.",
+  "addresses": [
+    {
+      "full": "2 Sur 509,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-porras-ayllon-2/ginecologo/tehuacan#address-id=340033&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:19.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__miguel__ngel_porras_ayll_n.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. María del Carmen Pérez Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dc5913/dc5913cfdc5aec39d6c0e7f9fe71e148_220_square.jpg",
+  "about": "Dra. María del Carmen Pérez Reyes, especialista en Ginecología y Obstetricia egresada del IPN, perteneciente al grupo Ángeles desde hace 20 años. Diagnóstico Integral para la Mujer. Estamos en el Hospital Ángeles México",
+  "addresses": [
+    {
+      "full": "Calle Agrarismo 208,"
+    },
+    {
+      "full": "Calle Agrarismo 208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Toma de papanicolaou base liquida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-perez-reyes-2/ginecologo/miguel-hidalgo#address-id=347163&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:54.703Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_del_carmen_p_rez_reyes.webp"
+}

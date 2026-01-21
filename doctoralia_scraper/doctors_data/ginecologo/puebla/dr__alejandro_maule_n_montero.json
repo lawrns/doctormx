@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Mauleón Montero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3fcdd4c0/3fcdd4c0-55b5-4d67-b493-0a13a15ecaff_small_square.jpg",
+  "about": "Soy el Dr. Alejandro Mauleón Monter, ginecólogo con una trayectoria de más de 25 años, dedicado al cuidado integral de la salud de la mujer. Especialista en colposcopia y diagnóstico de lesiones cervicales y vúlvares, ofrezco una atención profesional, cálida y personalizada, basada en la confianza y el respeto.Mi enfoque humano y comprometido ha hecho que cientos de pacientes lo reconozcan por brindar un trato amable, confiable y seguro, generando un espacio de atención médica donde las mujeres se sienten escuchadas y bien cuidadas. Como médico gineco-obstetra y colposcopista atiendo a parejas de mis pacientes y realizamos un estudio llamado Peneoscopia ó Androscopia.Áreas de especialidad:Colposcopia y detección oportuna de lesiones cervicales y vúlvaresControl ginecológico integralPrevención del cáncer cérvico-uterinoSalud sexual y reproductivaManejo de patologías ginecológicasAtención de Partos y cesareasAtención basada en la experiencia, la confianza y el respeto por cada paciente",
+  "addresses": [
+    {
+      "full": "Av 11 Ote,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,350"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-mauleon-montero/ginecologo/puebla#address-id=587213&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:44.983Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__alejandro_maule_n_montero.webp"
+}

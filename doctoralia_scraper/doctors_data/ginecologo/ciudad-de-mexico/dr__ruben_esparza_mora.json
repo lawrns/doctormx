@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Ruben Esparza Mora",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "EJE CENTRAL LAZARO CARDENAS 1083,"
+    },
+    {
+      "full": "Eje Central Lazaro Cardenas 1083,"
+    },
+    {
+      "full": "Av. Div. Del Nte. 2555,"
+    },
+    {
+      "full": "EJE CENTRAL LAZARO CARDENAS 1083,"
+    },
+    {
+      "full": "Eje Central Lazaro Cardenas 1083,"
+    },
+    {
+      "full": "Av. Div. Del Nte. 2555,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ruben-esparza-mora/ginecologo/ciudad-de-mexico#address-id=174716&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:51.502Z",
+  "localPhotoPath": null
+}

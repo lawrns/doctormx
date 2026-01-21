@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Luz Ma Bravo Marin",
+  "specialty": "Médico general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Plan De S/n Luis 1761,"
+    },
+    {
+      "full": "Plan De San Luis 1761,"
+    },
+    {
+      "full": "Calle Plan De S/n Luis 1761,"
+    },
+    {
+      "full": "Plan De San Luis 1761,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-ma-bravo-marin/medico-general-sexologo/guadalajara#address-id=408274&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:58.179Z",
+  "localPhotoPath": null
+}

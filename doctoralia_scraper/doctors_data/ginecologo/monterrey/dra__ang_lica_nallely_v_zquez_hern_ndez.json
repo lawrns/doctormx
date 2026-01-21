@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Angélica Nallely Vázquez Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 554,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3c61fe/3c61fe19da70ca9e92ad446528b94d82_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Serafín Peña 214,"
+    },
+    {
+      "full": "Mar Rojo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": ""
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": ""
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angelica-nallely-vazquez-hernandez/ginecologo/nuevo-leon#address-id=137218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:38.511Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ang_lica_nallely_v_zquez_hern_ndez.webp"
+}

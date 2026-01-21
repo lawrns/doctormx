@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Vania Andrea Ramírez González",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3938a/b3938a15992897ce1ab3312cf31a0b78_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Vania Ramírez, ginecóloga, obstetra, especialista en laparoscopia. Tengo un diplomado en Climaterio y Menopausia, me apasiona acompañarte en cada etapa de tu vida. Además, soy experta en sexualidad, brindando atención integral para tu bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación Jorge Álvarez del Castillo 1161,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vania-andrea-ramirez-gonzalez/ginecologo/guadalajara#address-id=596809&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:18.658Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__vania_andrea_ram_rez_gonz_lez.webp"
+}

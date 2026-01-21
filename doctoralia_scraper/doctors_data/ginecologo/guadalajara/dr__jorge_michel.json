@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Michel",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/478bb15c/478bb15c-e37a-4345-bb42-253071f9b31f_small_square.jpg",
+  "about": "Dr. Jorge Michel ginecólogo especialista en fertilidad. Acompaña a sus pacientes con un trato humano, sencillo y cercano, explicando cada paso de forma clara. Su compromiso es brindar confianza y apoyo en el camino hacia lograr un embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Pablo Neruda 2828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• $2,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-michel-2/ginecologo/guadalajara#address-id=595523&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:05.954Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jorge_michel.webp"
+}

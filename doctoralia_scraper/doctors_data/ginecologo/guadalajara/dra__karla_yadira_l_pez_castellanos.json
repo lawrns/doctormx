@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Karla Yadira López Castellanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 436,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/036707/036707c6fb635b1fe2e1ba01554f1a64_220_square.jpg",
+  "about": "1 de cada 6 parejas en México puede tener problemas de Infertilidad, por ello es importante ofrecer orientación y tratamiento oportuno para lograr un embarazo. Mi equipo y yo esta estamos comprometidos con la salud reproductiva de la mujer por lo que ofrecemos múltiples tratamientos. Nuestra consulta de primera vez en infertilidad se enfoca en ambos integrantes de la pareja e incluye: Consulta de primer contacto (Historia Clínica)Ultrasonido vaginal para valorar útero y ovarios.Ultrasonido 3D de cavidad uterina (si fuera necesaria)Espermiograma (para valorar la calidad del semen)Consulta de resultados y prueba de transferencia",
+  "addresses": [
+    {
+      "full": "Av. Cuauhtémoc 1160,"
+    },
+    {
+      "full": "Av. Cuauhtémoc 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $900"
+    },
+    {
+      "name": "Medicina Materno-Fetal",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-yadira-lopez-castellanos/ginecologo/zapopan#address-id=31484&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:56.567Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__karla_yadira_l_pez_castellanos.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Hector Murillo Bargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/360e41/360e41cd2e988347447d3446ad61461f_220_square.jpg",
+  "about": "Médico Ginecólogo-Obstetra con Subespecialidad en Medicina Materno-Fetal. Actualmente la Medicina Materno-Fetal se encarga del diagnóstico y tratamiento del embarazo de ALTO RIESGO de manera INTEGRAL, siendo la piedra angular la detección de enfermedades maternas y fetales de manera oportuna para su adecuado seguimiento y tratamiento. Asimismo el diagnóstico temprano y oportuno de ciertas anomalías fetales como el Síndrome de Down (entre otros) y malformaciones estructurales mediante el uso del ULTRASONIDO. Contamos con equipo de vanguardia y tecnología de punta para brindar el mejor servicio, además de la preparación académica y certificaciones tanto nacionales como internacionales para la realización de estudios de ALTA ESPECIALIDAD, como lo son el TAMIZAJE GENETICO de las 11-14 semanas, el ULTRASONIDO ESTRUCTURAL del segundo trimestre entre las semanas 18-24, el estudio 3D-4D y el DOPPLER MULTIVASCULAR materno-fetal. Todo lo anterior realizado con CALIDAD Y CALIDEZ, para brindar siempre la confianza y la seguridad en el control prenatal HUMANIZADO así como la ATENCION DE PARTO EN AGUA Y CESAREA HUMANIZADA, además de cualquier otro tipo de alteraciones en la SALUD FEMENINA EN TODAS LAS ETAPAS DE SU VIDA.",
+  "addresses": [
+    {
+      "full": "Domingo Sarmiento 2822-18,"
+    },
+    {
+      "full": "Domingo Sarmiento 2822-18,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-murillo-bargas/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:26:41.006Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__hector_murillo_bargas.webp"
+}

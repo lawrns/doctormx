@@ -1,0 +1,20 @@
+{
+  "name": "doctoralia-scraper",
+  "version": "1.0.0",
+  "description": "Scraper for doctoralia.com.mx doctors",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "discover": "node discover.js",
+    "scrape": "node scrape.js",
+    "scrape-continuous": "node scrape-continuous.js",
+    "scrape-now": "node scrape-immediate.js",
+    "scrape-fixed": "node scrape-fixed.js",
+    "scrape-pai-resume": "node scrape-pai-resume.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0",
+    "sharp": "^0.33.0",
+    "p-limit": "^5.0.0"
+  }
+}

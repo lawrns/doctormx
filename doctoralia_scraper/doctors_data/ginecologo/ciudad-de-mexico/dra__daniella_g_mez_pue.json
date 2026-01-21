@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Daniella Gómez Pue",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Carlos Graef Fernández 154-335,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154-335,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniella-gomez-pue/ginecologo-ginecologo-oncologico/-#address-id=137106&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:24.925Z",
+  "localPhotoPath": null
+}

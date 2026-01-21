@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Mario Martinez Reveles",
+  "specialty": "Ginecólogo",
+  "rating": 2.5,
+  "reviewCount": 1,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be6549/be6549c15dc28f43ee95fe9077dd26e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cerrada Potrero 2 -,"
+    },
+    {
+      "full": "Cerrada Potrero 2 -,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-martinez-reveles/ginecologo/teotihuacan#address-id=96291&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:02:00.008Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__mario_martinez_reveles.webp"
+}

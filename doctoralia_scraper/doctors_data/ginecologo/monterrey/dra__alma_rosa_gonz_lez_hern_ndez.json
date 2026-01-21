@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma Rosa González Hernández",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/487c14/487c144b17a80e18e6130652641301fd_220_square.jpg",
+  "about": "Soy la Doctora Alma González especialista en Ginecología y Obstetricia; realice mi especialidad en el Hospital Universitario “Dr. José E. González” avalada por la UANL, posteriormente realice una subespecialidad en Medicina Materno Fetal en el Hospital Ginequito, avalada por la UDEM, donde recibí entrenamiento en embarazo de alto riesgo y diagnóstico prenatal.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Hidalgo #1828 Consultorio 404-4,"
+    },
+    {
+      "full": "Av. Miguel Hidalgo #1828 Consultorio 404-4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-rosa-gonzalez-hernandez/ginecologo/nuevo-leon#address-id=418313&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:34.155Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__alma_rosa_gonz_lez_hern_ndez.webp"
+}

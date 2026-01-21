@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Alfredo Moreno Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 622,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/982e08/982e08e226ef2766243c6e458486bd67_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Revolucion No. 343,,"
+    },
+    {
+      "full": "Av. Revolución 343,"
+    },
+    {
+      "full": "Revolucion No. 343,,"
+    },
+    {
+      "full": "Av. Revolución 343,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-moreno-rodriguez/ginecologo/miguel-hidalgo#address-id=1369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:24.958Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfredo_moreno_rodriguez.webp"
+}

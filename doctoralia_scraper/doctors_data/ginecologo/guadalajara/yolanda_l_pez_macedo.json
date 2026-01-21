@@ -1,0 +1,43 @@
+{
+  "name": "Yolanda López Macedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 207,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a0d66/6a0d66bddf291f8ee19acde985667b28_220_square.jpg",
+  "about": "ACTUALMENTE SOY LA PRESIDENTA DEL COLEGIO DE MEDICOS GINECO-OBSTETRAS DEL ESTADO DE JALISCO 2022 31 AÑOS EXPERIENCIA CONSULTA CON COLPOSCOPIA DIAGNOSTICA Y TRATAMIENTOS AMBULATORIOS DISPLASIAS VPH APLICACION DE VACUNAS PARA VPH APLICACION DE DIU MIRENA IMPLANTES ANTICONCEPTIVOS EN GENERAL TRATO DESDE JOVENES HASTA LA TERCERA EDAD Y CONTROL DE TU EMBARAZO Y TAMBIEN ALTO GRDO ATENDIENTO PARTO O CESAREA ESTOY A TUS ORDENES LAS 24 HRS DEL DIA EN MI CELULAR. PARA CUALQUIER DUDA NO IMPORTA LA HORA LLAMA Y TE RESPONDERE >ACUDE A TU CITA PARA PREVENIR CUALQUIER ENFERMEDAD O CANCER Y EVITAR EMBARAZOS NO DESEADOS",
+  "addresses": [
+    {
+      "full": "López Mateos Norte 567 (esquina Manuel Acuña) (Circunvalación Guevara),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yolanda-lopez-macedo/ginecologo/guadalajara#address-id=85982&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:59.531Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/yolanda_l_pez_macedo.webp"
+}

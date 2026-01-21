@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alejandro Rodriguez Partida",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00bdf3d0/00bdf3d0-4fb8-412d-96d7-243ecb4a80ac_small_square.jpg",
+  "about": "Soy el Dr. Alejandro Rodríguez Partida, médico especialista en Ginecología y Obstetricia. Cursé la carrera de Medicina en la Universidad de Guadalajara y realicé la especialidad en Ginecología y Obstetricia avalada por la Universidad Autónoma del Estado de Hidalgo.Cuento con experiencia en la atención integral de la salud femenina, desde el cuidado preventivo y consultas ginecológicas de rutina hasta el acompañamiento del embarazo, parto y posparto.Mi práctica se centra en ofrecer una atención médica de calidad, con calidez humana y un enfoque personalizado para cada paciente. Me mantengo en constante actualización académica y clínica para brindar tratamientos basados en la evidencia y las guías médicas más recientes.Atiendo padecimientos como trastornos menstruales, anticoncepción, control prenatal, climaterio y menopausia, así como la resolución quirúrgica y obstétrica cuando es necesario. Mi compromiso es escuchar, orientar y acompañar a cada paciente en las distintas etapas de su vida reproductiva y ginecológica.",
+  "addresses": [
+    {
+      "full": "Boulevard Puerta de Hierro 5150,"
+    },
+    {
+      "full": "Miguel Hidalgo 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-rodriguez-partida/ginecologo/zapopan#address-id=597269&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:40.126Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alejandro_rodriguez_partida.webp"
+}

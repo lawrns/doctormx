@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Talina Ramirez Caro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/16ff03/16ff03e8cba049157bcf99e83711da2e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tepic 139,"
+    },
+    {
+      "full": "Tepic 139,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/talina-ramirez-caro/ginecologo/cuauhtemoc2#address-id=94826&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:15.624Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__talina_ramirez_caro.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Dalia Unzueta Corrales",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 505,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8fb9ef/8fb9ef1f87eeefd50177c00147e6c3ed_220_square.jpg",
+  "about": "Especialista con mas de 5 años de experiencia. Avalada por el consejo Mexicano de ginecología y obstetricia. Mi número de colegiado: 8864. Medico especialista egresada de la Universidad Nacional Autónoma de Mexico- Centro Medico Nacional La Raza. Gineco-obstetra siempre interesada en el manejo integral de la mujer en todas las etapas de su vida. Brindando un trato amable, respetuoso, con calidad, calidez y sobre todo empático. Estamos a sus ordenes en 3 ubicaciones. Colonia Lindavista, colonia Roma o Tlahuac, con la finalidad de otorgarles un mejor servicio en algunos de nuestros consultorios contamos con rastreo ultrasonografico de asi ameritarlo sin costo adicional, siempre tratando de brindarles una atención de calidad.",
+  "addresses": [
+    {
+      "full": "calle Lindavista 114,"
+    },
+    {
+      "full": "Calle Manuel M. López 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dalia-unzueta-corrales/ginecologo/tlahuac#address-id=116171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:05.232Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__dalia_unzueta_corrales.webp"
+}

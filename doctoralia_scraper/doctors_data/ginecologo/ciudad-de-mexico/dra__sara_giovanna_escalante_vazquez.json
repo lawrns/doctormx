@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Sara Giovanna Escalante Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bc8deee7/bc8deee7-752c-4823-aadd-524df304fbfd_small_square.jpg",
+  "about": "Colposcopía, Cirugía Láser Regenerativa, Cirugía Laparoscópica, Histeroscopia, Endocrinología Ginecológica, Infertilidad",
+  "addresses": [
+    {
+      "full": "Calle Río Tacámbaro 56,"
+    },
+    {
+      "full": "Calle Río Tacámbaro 56,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-giovanna-escalante-vazquez/ginecologo/ciudad-de-mexico#address-id=562146&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:55.373Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sara_giovanna_escalante_vazquez.webp"
+}

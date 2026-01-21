@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Jaime Jasso Ramos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7468e1/7468e11278e8bc1a71dc975cfa91ed4d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "TUXPAN No 8 INT 701,"
+    },
+    {
+      "full": "TUXPAN No 8 INT 701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-jaime-jasso-ramos/ginecologo/cuauhtemoc#address-id=93071&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:59.059Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_jaime_jasso_ramos.webp"
+}

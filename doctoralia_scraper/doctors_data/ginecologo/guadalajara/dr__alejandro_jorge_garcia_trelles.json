@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alejandro Jorge Garcia Trelles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aurelio L. Gallardo 131,"
+    },
+    {
+      "full": "Aurelio L. Gallardo 131,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-jorge-garcia-trelles/ginecologo/guadalajara#address-id=73719&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:14.321Z",
+  "localPhotoPath": null
+}

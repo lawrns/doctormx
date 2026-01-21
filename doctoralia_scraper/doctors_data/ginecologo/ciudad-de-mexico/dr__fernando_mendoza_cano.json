@@ -1,0 +1,35 @@
+{
+  "name": "Dr. Fernando Mendoza Cano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 574,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7926b8/7926b80573157ef411145db07d946ac6_220_square.jpg",
+  "about": "Hola soy el Dr Fernando Mendoza Cano, ginecólogo obstetra colposcopista. Me apasiona la medicina por que puedo ayudar a miles de personas pero en especial a las mujeres, ser ginecólogo me permite cuidar de su salud y ser participe en uno de los momentos más importantes e inolvidable para sus vidas, que es el dar a luz a un nuevo ser. Admiro a cada una de las mujeres, por eso mi compromiso es estar con ellas en cada una de las etapas de su vida y crear conciencia para cuidarse y prevenir distintas enfermedades. En cada consulta brindo una atención humana, servicial y especializada, respondiendo todas tus dudas y dándote un buen seguimiento.",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-mendoza-cano/ginecologo/tlalnepantla-de-baz2#address-id=434002&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:18.043Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_mendoza_cano.webp"
+}

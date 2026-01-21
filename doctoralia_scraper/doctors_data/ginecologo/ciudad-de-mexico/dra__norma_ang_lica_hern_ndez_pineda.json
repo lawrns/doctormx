@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Angélica Hernández Pineda",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/55f23601/55f23601-ce69-4f40-9922-b557544c5189_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Bamba No. 639 ,Lindavista,Ciudad de Mexico.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta para adolescente",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-angelica-hernandez-pineda/ginecologo/ciudad-de-mexico#address-id=123938&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:36.430Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__norma_ang_lica_hern_ndez_pineda.webp"
+}

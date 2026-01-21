@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Norma Patricia Ramos Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 370,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae9a4a/ae9a4aec2511d730aaa8a6e5f65413ad_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Torre de Especialidades del Hospital Ángeles, Calle Tarascos 3473,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-patricia-ramos-gonzalez-2/ginecologo/guadalajara#address-id=184099&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:52.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_patricia_ramos_gonzalez.webp"
+}

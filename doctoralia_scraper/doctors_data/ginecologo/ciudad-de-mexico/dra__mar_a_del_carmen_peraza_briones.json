@@ -1,0 +1,46 @@
+{
+  "name": "Dra. María del Carmen Peraza Briones",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b528d/0b528dcc0ab9532c70a333b6aacf82b9_220_square.jpg",
+  "about": "Soy especialista en ginecología y biología de la reproducción me considero un médico altamente capacitado en la salud femenina y la reproducción humana. Como profesional tengo un título de médico y he completado una residencia en obstetricia y ginecología, también he realizado una subespecialidad en biología de la reproducción. Como especialista en ginecología y biología de la reproducción incluye : Conocimientos avanzados en anatomía y fisiología femenina, incluyendo el sistema reproductivo y la gestación. Experiencia en el diagnóstico y tratamiento de trastornos ginecológicos, como enfermedades de transmisión sexual, infecciones vaginales, trastornos menstruales y problemas de fertilidad. Habilidad para realizar exámenes pélvicos y mamarios, y interpretar los resultados de pruebas de diagnóstico, como ecografías, análisis de sangre, pruebas de imagen y biopsias. Conocimiento y experiencia en técnicas de reproducción asistida, incluyendo inseminación artificial, fecundación in vitro, transferencia de embriones y diagnóstico genético preimplantacional. Habilidad para asesorar a las pacientes sobre métodos anticonceptivos y opciones de planificación familiar. Excelentes habilidades comunicativas y de escucha activa, ya que el especialista debe ser capaz de discutir temas sensibles con las pacientes y proporcionar un apoyo emocional adecuado. Compromiso con la ética médica y la confidencialidad, y respeto por los derechos de las pacientes en la toma de decisiones en cuanto a su salud y reproducción. Capacidad para realizar y analizar exámenes ginecológicos, como pruebas de Papanicolaou, ecografías transvaginales y mamografías. Conocimientos en técnicas de fertilización asistida y en el manejo de medicamentos para estimular la ovulación y la maduración de los óvulos. Habilidad para interpretar resultados de análisis de sangre y otras pruebas diagnósticas, y determinar el mejor tratamiento para cada paciente. Habilidad para asesorar a las pacientes sobre métodos anticonceptivos y prevenir enfermedades de transmisión sexual. Capacidad para realizar cirugías ginecológicas, incluyendo la extirpación de tumores y quistes ováricos, la histerectomía y la cirugía laparoscópica. Habilidad para trabajar en equipo con otros profesionales médicos En resumen, soy una especialista en ginecología y biología de la reproducción una profesional médico altamente capacitado y con experiencia en el cuidado de la salud femenina y la reproducción humana, que puede proporcionar una atención integral y personalizada a sus pacientes.",
+  "addresses": [
+    {
+      "full": "Santo Tomás 634-16,"
+    },
+    {
+      "full": "Santo Tomás 634-16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de los quistes y de los tumores complejos",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $400"
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-peraza-briones/ginecologo/coyoacan#address-id=101054&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:45.890Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_del_carmen_peraza_briones.webp"
+}

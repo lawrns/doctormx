@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Norma Sharey Vázquez Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 136,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/447bac/447baca9cd9c7eb2fb4f936372c3e06a.jpg",
+  "about": "Ginecología y obstetricia. Subespecialista en Biología de la Reproducción Humana. Cirugía ginecológica mínima invasión. (Laparoscopia e histeroscopia)",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Avenida Pablo Neruda 2828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-sharey-vazquez-jimenez/ginecologo/guadalajara#address-id=623715&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:10.535Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_sharey_v_zquez_jim_nez.webp"
+}

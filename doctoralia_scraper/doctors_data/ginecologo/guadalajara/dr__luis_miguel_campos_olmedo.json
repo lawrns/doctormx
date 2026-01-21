@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Luis Miguel Campos Olmedo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 561,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ebc567/ebc567cb5b1ad396d9ecbf88a79799ad.jpg",
+  "about": "Soy gran apasionado por mi profesión, me gusta hacer una práctica ágil, seria pero cálida a la vez, siguiendo protocolos nacionales e internacionales. Entrenado en los mejores centros médicos a nivel nacional, colaboro y trabajo con uno de los mejores grupos de reproducción humana a nivel internacional y de México. \"Emprendamos este proyecto juntos\" \"MI GRAN FORTALEZA ES ESTAR MUY CERCA DE TI, CONTACTO DIRECTO\"",
+  "addresses": [
+    {
+      "full": "avenida montaña monarca 331,"
+    },
+    {
+      "full": "Av. Prado Norte 135,"
+    },
+    {
+      "full": "Plaza fusión galerías Ottawa 1568,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Endoscopia ginecológica",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Estudio para el embrión (PGS)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-miguel-campos-olmedo/ginecologo/morelia#address-id=383090&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:33.638Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__luis_miguel_campos_olmedo.webp"
+}

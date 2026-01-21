@@ -1,0 +1,25 @@
+{
+  "name": "Alfredo Venancio Abad",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Bernardino 100,"
+    },
+    {
+      "full": "San Bernardino 100,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfredo-venancio-abad/ginecologo/xochimilco#address-id=125446&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:05:16.343Z",
+  "localPhotoPath": null
+}

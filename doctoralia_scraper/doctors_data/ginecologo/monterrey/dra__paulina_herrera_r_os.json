@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Paulina Herrera Ríos",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 517,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a86f7f/a86f7fdec39d21e0b652ab0ee6a2b7ee_220_square.jpg",
+  "about": "Hospital Ángeles Valle Oriente, Torre de Especialidades médicas, piso 11, consultorio 1104. La Dra. Nydia Paulina Herrera Ríos es egresada de la especialidad de Ginecología y Obstetricia de la Universidad Autónoma de Nuevo León (UANL) y posteriormente realizó un fellowship en Mastología en el Tecnológico de Monterrey (ITESM). Durante su entrenamiento participó en más de 150 cirugías en pacientes con cáncer de mama y así mismo realizó diversos trabajos en congresos nacionales e internacionales. Es miembro activo de la Asociación Mexicana de Mastología y actualmente es Directora de la Unidad de Especialidades Médicas para la Detección y Diagnóstico de Cáncer en la Mujer (UNEME DEDICAM), de la Secretaría de Salud del Estado de Nuevo León.",
+  "addresses": [
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    },
+    {
+      "full": "Avenida Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paulina-herrera-rios/ginecologo/san-pedro-garza-garcia#address-id=23829&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:03.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__paulina_herrera_r_os.webp"
+}

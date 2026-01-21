@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Francisco Alfredo Arroyo Méndez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494b8c/494b8cd40a38809bbac92ea7b387d89e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. San Fernando 27,"
+    },
+    {
+      "full": "Av. San Fernando 27,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-alfredo-arroyo-mendez/ginecologo/tlalpan#address-id=588883&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:21.689Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__francisco_alfredo_arroyo_m_ndez.webp"
+}

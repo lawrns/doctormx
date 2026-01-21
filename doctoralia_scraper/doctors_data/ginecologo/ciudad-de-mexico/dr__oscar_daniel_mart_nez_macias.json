@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Oscar Daniel Martínez Macias",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periferico Sur 1055,"
+    },
+    {
+      "full": "Periferico Sur 1055,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-daniel-martinez-macias/ginecologo/magdalena-contreras#address-id=123312&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:08:05.518Z",
+  "localPhotoPath": null
+}

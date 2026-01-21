@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jonathan García Tinoco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 713,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/726431/726431f10e35b6dd87b17316d095259f_220_square.jpg",
+  "about": "Dr. Jonathan García Tinoco especialista en el área de Ginecología. Con sub especialidades en Colposcopia, urología Ginecológica y Cirugía Gineco - Estética",
+  "addresses": [
+    {
+      "full": "Avenida Niño Obrero 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ginecología estética",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonathan-garcia-tinoco/ginecologo/guadalajara#address-id=121037&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:49.382Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jonathan_garc_a_tinoco.webp"
+}

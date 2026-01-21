@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Minerva García de la Paz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 48,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/257d80/257d80cedcaf120605f938e07345f8c9_220_square.jpg",
+  "about": "Hola queridas pacientes. Es un placer atenderles y resolver todas sus dudas. Muchas gracias por la confianza y me dará mucho gusto saludarlas siempre que acudan a visitarme. Un abrazo con cariño.",
+  "addresses": [
+    {
+      "full": "Circuito Medicos #29, interior 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/minerva-garcia-de-la-paz/ginecologo/naucalpan-de-juarez2#address-id=112504&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:44.881Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__minerva_garc_a_de_la_paz.webp"
+}

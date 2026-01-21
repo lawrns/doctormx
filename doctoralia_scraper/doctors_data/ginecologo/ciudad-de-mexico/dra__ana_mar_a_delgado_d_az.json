@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ana María Delgado Díaz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e57378/e57378cb7fbeb5158499d7e9c543f21a_220_square.jpg",
+  "about": "Egresada de la Facultad de Medicina CU Universidad Nacional Autónoma de México con Mención Honorífica. Especialidad en Ginecología y Obstetricia en el Hospital General de México. Diplomado en Colposcopia del Tracto Genital Inferior. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Amplia experiencia en Diagnóstico y Control Prenatal, Métodos de Planificación familiar, Atención de Parto y Cesárea, Infecciones de la mujer, Menopausia, Infección por Virus del Papiloma y su tratamiento, Sangrados Anormales, Miomatosis Uterina y su tratamiento médico y quirúrgico, etcétera.",
+  "addresses": [
+    {
+      "full": "Durango #64 esquina con Mérida (5 piso consultorio 507),"
+    },
+    {
+      "full": "Durango 50,"
+    },
+    {
+      "full": "Durango #64 esquina con Mérida (5 piso consultorio 507),"
+    },
+    {
+      "full": "Durango 50,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-delgado-diaz/ginecologo/cuauhtemoc#address-id=26508&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:03.353Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_mar_a_delgado_d_az.webp"
+}

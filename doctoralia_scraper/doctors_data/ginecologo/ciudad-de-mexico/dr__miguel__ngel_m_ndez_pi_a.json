@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel Méndez Piña",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f18147/f18147958ab44a65e36b73f2dcc1c6da_220_square.jpg",
+  "about": "Soy Miguel Ángel Méndez Piña Medico materno fetal y ginecólogo obstetra Estudie la licenciatura de médico cirujano en la Universidad Juárez Autónoma de Tabasco (UJAT) Realicé la especialidad de ginecología y obstetricia y subespecialidad en medicina materno fetal en Instituto Nacional de Perinatología (INPer) Te invito a conocer este espacio donde les otorgaré información para pacientes relacionada con la ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Tuxpan 6,"
+    },
+    {
+      "full": "Tuxpan 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-mendez-pina/ginecologo/ciudad-de-mexico#address-id=449523&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:35.474Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel__ngel_m_ndez_pi_a.webp"
+}

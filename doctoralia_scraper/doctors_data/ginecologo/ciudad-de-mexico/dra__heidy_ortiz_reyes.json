@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Heidy Ortiz Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c10a36/c10a36270665efd3e099feec5d5b980f_220_square.jpg",
+  "about": "Soy ginecóloga con Curso de alta especialidad en Endoscopía Ginecológica, lo que significa cirugía laparoscópica para resolver patologías del útero y anexos, así como histeroscopía tanto diagnóstica como quirúrgica, este tipo de cirugía es de mínima invasión lo que representa un beneficio es cuestión de tiempo de recuperación entre otros. También me dedico a la Reproducción Asistida, ayudando a parejas que tienen problemas para lograr el embarazo, se realiza una evaluación integral del caso y se brinda toda la asesoría , diagnóstico y manejo. Estoy para servirte.",
+  "addresses": [
+    {
+      "full": "Quintana Roo 127. Colonia Hipódromo,"
+    },
+    {
+      "full": "Quintana Roo 127. Colonia Hipódromo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heidy-ortiz-reyes/ginecologo/ciudad-de-mexico#address-id=124362&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:35.070Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__heidy_ortiz_reyes.webp"
+}

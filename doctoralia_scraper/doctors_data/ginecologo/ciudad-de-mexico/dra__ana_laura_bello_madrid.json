@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Ana Laura Bello Madrid",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/616a9d/616a9d85fb9fb22520312970989c9e5f_220_square.jpg",
+  "about": "Médico Gineco Obstetra con experiencia en atención de parto humanizado, parto en agua, diplomado en colposcopía avanzada del tracto genital inferior femenino.",
+  "addresses": [
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-laura-bello-madrid/ginecologo/gustavo-a-madero#address-id=345297&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:08.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_laura_bello_madrid.webp"
+}

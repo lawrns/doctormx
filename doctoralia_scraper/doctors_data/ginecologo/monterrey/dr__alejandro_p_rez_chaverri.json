@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Pérez Chaverri",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 113,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b195a9/b195a90cded5259420b6b693999dc467_220_square.jpg",
+  "about": "Soy el Dr. Alejandro Pérez Chaverri, Especialista en Gineco-Obstetricia, realicé la carrera de Médico cirujano y partero en la Universidad Autónoma de Nuevo León, y la especialidad de Ginecología en la Universidad Autónoma de Tamaulipas, donde fuí jefe de residentes y tuve diferentes rotaciones dentro y fuera del País. Realicé un diplomado en ultrasonido y doppler gineco-obstétrico avalado por el Instituto Mexicanod de Diagnóstico por Imagen (IMDI). Estoy certificado por el Consejo Mexicano de Ginecología y Obstetrica. Me especializo en el control prenatal de bajo y alto riesgo, dandote la mejor asesoria para que tengas un embarazo sano. Realizó ultrasonografía básica y de tamizaje para cromosomopatías en el primer trimestre (11-14 GENÉTICO) así como para tamizaje para malformaciones durante la semana 20-24 (Ultrasonido ANATÓMICO O ESTRUCTURAL), siendo certificado por la Fetal Medicine Foundation (FMF ID: 155599). Durante mi formación en la residencia me certifiqué para evaluación de Doppler fetal y de arterias uterinas. Tengo preparación para realizar ultrasonido de tamizaje ginecológico para valoración de tumores de ovario, síndrome de ovario poliquístico, malformaciones del útero, miomas, endometriosis, pólipos etc. Realizo ultrasonido especializado ginecológico, para la evaluación de patologías especificas como tumores de ovarios, endometriosis profunda, basandome en guías internacionales de la ISUOG, IOTA, IETA. Con sistematización específica para mejor diagnóstico. Constantemente me estoy actualizando, llevando a cabo cursos y diplomados de ultrasonografía avanzada tanto en el ambito obstétrico (embarazo) como en el ginecológico. De una manera sistemática, puntual realizó mis evaluaciones constantes para brindarte la mejor atención. Estoy comprometido en la salud de mis pacientes, con trato digno y ético. Pro-Parto y pro-lactancia, con la mejor disposición y flexibilidad para su atención.",
+  "addresses": [
+    {
+      "full": "Miguel Aleman #6063, Col. Las Americas,"
+    },
+    {
+      "full": "Miguel Aleman #6063, Col. Las Americas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-perez-chaverri/ginecologo/nuevo-leon#address-id=325297&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:29.614Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alejandro_p_rez_chaverri.webp"
+}

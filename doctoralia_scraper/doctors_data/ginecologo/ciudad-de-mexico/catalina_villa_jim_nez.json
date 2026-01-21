@@ -1,0 +1,46 @@
+{
+  "name": "Catalina Villa Jiménez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3e5d3f/3e5d3fc84383a3cd4cf5979732286426_220_square.jpg",
+  "about": "¡Hola!, ¿qué tal?... Soy la Dra. Katy, Bióloga de la Reproducción y Ginecóloga. Tengo una clínica de reproducción en donde ofrecemos las mejores opciones en tratamientos de fertilidad para parejas. En clínica Horizontes sabemos lo importante que es otorgar el correcto diagnóstico para dar el tratamiento adecuado para cada una de las parejas que nos visitan. Es por ello que nuestro personal se encuentra en capacitación constante, para así poderte brindar las mejores opciones en tratamientos de fertilidad, contamos con equipo profesional y 100% confidencial. Creo firmemente que si una madre en verdad desea serlo, es porque tiene una misión pendiente y sólo con este argumento, luchará hasta alcanzarlo. Estoy... ¡esperando por ti!",
+  "addresses": [
+    {
+      "full": "Prolongacion Paseo de la Reforma 19,"
+    },
+    {
+      "full": "Prolongacion Paseo de la Reforma 19,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/catalina-villa-jimenez/ginecologo/metepec#address-id=397382&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:57.157Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/catalina_villa_jim_nez.webp"
+}

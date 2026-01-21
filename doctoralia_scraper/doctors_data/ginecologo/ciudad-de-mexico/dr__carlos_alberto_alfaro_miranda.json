@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Alberto Alfaro Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/014897/01489708393ae6b33a456bbb628cce8a_220_square.jpg",
+  "about": "Soy el Dr. Carlos Alfaro, especialista en Ginecología y Obstetricia, egresado del Hospital Central Norte de PEMEX uno de los hospitales más importantes en la formación de médicos especialistas. Estoy certificado por el Consejo Mexicano de Ginecología y Obstetricia, además de contar con un curso de alta especialidad en Endoscopia Ginecológica. Mi formación me permite ayudar a mis pacientes con un diagnóstico mínimamente invasivo, así como ofrecer tratamientos quirúrgicos de mínima invasión para prácticamente todas las patologías ginecológicas, brindando siempre atención de calidad y actualizada. Brindaré mi apoyo a cada paciente desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que mejore y se recupere. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto atenderte!",
+  "addresses": [
+    {
+      "full": "Federico T de La Chica 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-alfaro-miranda-3/ginecologo/naucalpan-de-juarez2#address-id=420284&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:08.266Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_alberto_alfaro_miranda.webp"
+}

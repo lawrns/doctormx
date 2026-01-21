@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Mario Alberto Garza Garza",
+  "specialty": "Médico general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8106b5/8106b507e125dd4052005396148eeb10_220_square.jpg",
+  "about": "Maestría en Ciencias Colposcopía",
+  "addresses": [
+    {
+      "full": "Av Alfonso Reyes 351, Sin Nombre de Col 37,"
+    },
+    {
+      "full": "Av Alfonso Reyes 351, Sin Nombre de Col 37,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mario-alberto-garza-garza/medico-general-ginecologo/nuevo-leon#address-id=259334&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:03.823Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mario_alberto_garza_garza.webp"
+}

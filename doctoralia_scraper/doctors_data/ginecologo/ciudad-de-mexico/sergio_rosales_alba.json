@@ -1,0 +1,25 @@
+{
+  "name": "Sergio Rosales Alba",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rancho el palmar no. 11, Sta. cecilia,,"
+    },
+    {
+      "full": "Rancho el palmar no. 11, Sta. cecilia,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-rosales-alba/ginecologo/tlahuac#address-id=111434&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:57.088Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/sergio_rosales_alba.webp"
+}

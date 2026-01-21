@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Luis Carpio Pertierra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 46,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e3310f/e3310f1196906b518eef16428a3402da_220_square.jpg",
+  "about": "Me gusta que te sientas como en casa y que salgas con todas tus dudas despejadas. Igualmente, ofrezco varios canales de comunicación permanentes en donde me podrán encontrar todo el tiempo. Mi razón de ser eres tú. Tengo mas de 20 años trabajando buscando un equilibrio lógico entre las opciones terapéuticas más actuales buscando que sea lo más costo-eficiente posible.",
+  "addresses": [
+    {
+      "full": "Av. Vialidad de la Barranca S/N P.B. 40,"
+    },
+    {
+      "full": "Av. Vialidad de la Barranca S/N P.B. 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Conización de cuello uterino",
+      "price": "• $9,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-luis-carpio-pertierra-2/ginecologo/huixquilucan#address-id=118067&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:14.634Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_luis_carpio_pertierra.webp"
+}

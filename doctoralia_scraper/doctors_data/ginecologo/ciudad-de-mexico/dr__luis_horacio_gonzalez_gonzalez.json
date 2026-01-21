@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Luis Horacio Gonzalez Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bd35f8/bd35f8b5ddcc84033c3a9d8f9d995127_220_square.jpg",
+  "about": "Soy Médico con experiencia de 33 años en ejercer mi Especialidad en Ginecología y Obstetricia y Sub-especialidad en Perinatología (Embarazo de Alto Riesgo). Tengo un entrenamiento en Colposcopía con 17 años de experiencia en tratar pacientes mujeres y hombres con lesiones por Infección de Virus de Papiloma Humano. Realizo ANDROSCOPIA (estudio de la pareja masculina) y estudio de Genotipificación para detección de Infección por Virus de Papiloma Humano en mujeres y hombres. Realizamos tratamiento LASER (vaporización de lesiones por Infección de Virus de Papiloma Humano) en mujeres y hombres. Realizo Tensado Vaginal Laser (Rejuvenecimiento vaginal y tratamiento Laser para Incontinencia Urinaria",
+  "addresses": [
+    {
+      "full": "Calle Riobamba 639,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-horacio-gonzalez-gonzalez-2/ginecologo/gustavo-a-madero#address-id=522297&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:28.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luis_horacio_gonzalez_gonzalez.webp"
+}

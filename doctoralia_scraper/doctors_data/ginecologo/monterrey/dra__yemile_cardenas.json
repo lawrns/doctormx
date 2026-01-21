@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Yemile Cardenas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 124,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90f61d/90f61d2481d28a55f9218b9df9d1d6fa_220_square.jpg",
+  "about": "Soy la Dra. Yemile Cárdenas, especializada en Ginecología y Obstetricia en Nuevo León. Me gradué de la UANL y continúe mi formación en la UNAM. Me especializo en el manejo de embarazos, virus del VPH, sangrados uterinos, síndrome de ovario poliquístico y planificación familiar, brindando a mis pacientes una atención integral y personalizada. Me dedico a explicar detalladamente cada tratamiento y procedimiento a mis pacientes, ofreciendo precios accesibles y una atención amable y empática. Busco crear un ambiente de confianza y comodidad en mi consultorio, donde mis pacientes puedan sentirse seguras y bien atendidas. Agradezco las opiniones positivas de mis pacientes, las cuales me motivan a seguir ofreciendo un servicio de calidad y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Av. Constitución #1965, Colonia Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/yemile-cardenas/ginecologo/nuevo-leon#address-id=450876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:27.063Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__yemile_cardenas.webp"
+}

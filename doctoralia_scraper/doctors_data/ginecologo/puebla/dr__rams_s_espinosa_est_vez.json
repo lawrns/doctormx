@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ramsés Espinosa Estévez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a0fb1bb/5a0fb1bb-ea56-4f51-a436-d13df01a431b_small_square.jpg",
+  "about": "Estudié la licenciatura de médico cirujano en la Universidad Popular del Estado de Puebla (UPAEP), posteriormente me especialicé en Ginecología y obstetricia en el Hospital de la Mujer de la Ciudad de México (Avalada por la UNAM). Estoy en continua actualización para brindarle el mejor servicio a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Reforma Sur #208,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $499"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $25"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramses-espinosa-estevez/medico-general/huamantla",
+  "scrapedAt": "2026-01-21T03:53:43.183Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__rams_s_espinosa_est_vez.webp"
+}

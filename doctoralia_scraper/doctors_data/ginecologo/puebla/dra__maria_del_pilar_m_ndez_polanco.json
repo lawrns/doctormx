@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Maria del Pilar Méndez Polanco",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/df846a/df846a65cb508b535b2b845562658b34_220_square.jpg",
+  "about": "Soy ginecóloga y obstetra con 25 años de experiencia en mi área. Especialista en Ginecología Estética, Regenerativa y funcional . Te acompaño por tu largo camino como mujer de manera cercana y profesional",
+  "addresses": [
+    {
+      "full": "Avenida Kepler 2143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-pilar-mendez-polanco/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:06.520Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__maria_del_pilar_m_ndez_polanco.webp"
+}

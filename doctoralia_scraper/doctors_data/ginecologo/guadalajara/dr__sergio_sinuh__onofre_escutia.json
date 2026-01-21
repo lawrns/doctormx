@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Sergio Sinuhé Onofre Escutia",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 35,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5dbb8a4d/5dbb8a4d-9c88-4b47-a3bc-6cd0b1c6c29e_small_square.jpg",
+  "about": "Soy el Dr Sergio Sinuhé Onofre Escutia, especialista en Ginecología Obstetricia y Subespecialiesta en Ginecología Oncológica, así como en la área de la Colposcopía y Virus del Papiloma Humano. Experto en diagnostico y tratamiento en lesiones benignas, premalignas y malignas de la mama y del campo de la Ginecología.",
+  "addresses": [
+    {
+      "full": "Av Moctezuma 4529,"
+    },
+    {
+      "full": "Av. Belisario Domínguez 288, Oblatos,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-sinuhe-onofre-escutia/ginecologo-oncologico-ginecologo/guadalajara#address-id=562326&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:36.133Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__sergio_sinuh__onofre_escutia.webp"
+}

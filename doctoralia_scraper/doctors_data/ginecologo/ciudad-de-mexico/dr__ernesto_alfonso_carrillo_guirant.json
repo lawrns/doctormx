@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ernesto Alfonso Carrillo Guirant",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 507,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/41ff11/41ff117bcd09200131633a9e16dadb0b_220_square.jpg",
+  "about": "LA CONSULTA CONSISTE EN UNA CHARLA REALIZANDO UNA HISTORIA CLÍNICA CON LOS ANTECEDENTES MAS IMPORTANTES DEL PARA OBTENER LA INFORMACIÓN NECESARIA PARA DAR CON UN DIAGNOSTICO CERTERO DEL PADECIMIENTO; LA ATENCIÓN ES PERSONALIZADA, URGENCIAS 24 HRS PUDIENDO SER LOCALIZABLES POR CELULAR, WHATSAPP, CORREO ELECTRÓNICO.",
+  "addresses": [
+    {
+      "full": "Av. Bordo de Xochiaca N°3 Lt. A2-2B, Ciudad Jardín Bicentenario,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-alfonso-carrillo-guirant/ginecologo/nezahualcoyotl#address-id=10905&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:22.620Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ernesto_alfonso_carrillo_guirant.webp"
+}

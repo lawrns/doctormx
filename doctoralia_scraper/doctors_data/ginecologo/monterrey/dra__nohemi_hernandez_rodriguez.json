@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Nohemi Hernandez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/eaf339/eaf339c1a0145b073a6b6a2969c2acc3_220_square.jpg",
+  "about": "Hola! Bienvenida a tu atención ginecológica integral Soy la Dra Nohemí Hernández Rodríguez Especialista en Ginecología y Obstetricia, UDEM. Estoy comprometida a brindarte una atención especializada, de calidad y humanizada.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 1828,"
+    },
+    {
+      "full": "Murcia 530,"
+    },
+    {
+      "full": "Miguel Hidalgo 1828,"
+    },
+    {
+      "full": "Murcia 530,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $3,500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Exploración Mamaria",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nohemi-hernandez-rodriguez/ginecologo/san-nicolas-de-los-garza#address-id=439325&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:06.806Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__nohemi_hernandez_rodriguez.webp"
+}

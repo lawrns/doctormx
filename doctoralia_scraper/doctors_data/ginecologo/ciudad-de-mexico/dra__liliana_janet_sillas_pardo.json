@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Liliana Janet Sillas Pardo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c68b90/c68b90c50ffa5fca2c4de67f36311f6f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 10,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Ultrasonido (semana 11 a 14)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-janet-sillas-pardo/ginecologo/cuauhtemoc2#address-id=509662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:13.888Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__liliana_janet_sillas_pardo.webp"
+}

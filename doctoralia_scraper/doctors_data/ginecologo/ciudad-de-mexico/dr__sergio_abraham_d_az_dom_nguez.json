@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Sergio Abraham Díaz Domínguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bd8fe5d7/bd8fe5d7-574b-41eb-abab-069fb8fef886_small_square.jpg",
+  "about": "Hola, soy el Dr. Sergio Abraham Díaz, me formé como médico general en la ciudad de Puebla en la BUAP, realicé mi Internado de programo en el Hospital General de Cholula. Posteriormente realicé mi especialidad en la Ciudad de México, en el Hospital de Gineco-Obstetricia 3, CMN La Raza, avalado por la UNAM.Estoy formado como colposcopista, avalado por la Universidad La SalleActualmente doy consulta en el BRIYAM Medical Center, ubicado en Roma Sur, Ciudad de México",
+  "addresses": [
+    {
+      "full": "Av Monterrey 243 piso 5 Col Roma Sur,"
+    },
+    {
+      "full": "Av Monterrey 243 piso 5 Col Roma Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-abraham-diaz-dominguez/ginecologo/ciudad-de-mexico#address-id=595092&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:59.971Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__sergio_abraham_d_az_dom_nguez.webp"
+}

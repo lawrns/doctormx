@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Oscar Arturo Barrios Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 182,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e773ad/e773adcdbf05bbe1a1c8e05bd1962b57_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia (BUAP) Diplomado de láser en tracto genital inferior. Miembro activo de la Sociedad Latinoamericana de Ginecología Estética y Funcional. Adiestramiento Quirúrgico en Técnicas Quirúrgicas para el Manejo de la Hemorragia Obstétrica \"TEQUIAV\".",
+  "addresses": [
+    {
+      "full": "Centro Médico Christus Muguerza, Avenida 7 Poniente 705 Centro Histórico de Puebla.,"
+    },
+    {
+      "full": "Calle 2 norte 304, san,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/oscar-arturo-barrios-hernandez/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:51:57.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__oscar_arturo_barrios_hern_ndez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Adrian Cuica Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7b5b3d/7b5b3d02c7baf52e9d898dcb9233bb71_220_square.jpg",
+  "about": "Puntos fuertes: - Control prenatal de embarazos de bajo y de alto riesgo. - Atención responsable y profesional del parto y de la cesárea. - Cirugía ginecológica. - Detección oportuna y tratamiento de lesiones precancerosas del cuello uterino. - Revisión ginecológica anual (toma de papanicolaou, colposcopía, exploración de mama e interpretación de estudios, como la mastografía y el ultrasonido de mama).",
+  "addresses": [
+    {
+      "full": "Periférico Sur 5246 (hospital Sedna, consultorio 720),"
+    },
+    {
+      "full": "Periférico Sur 5246 (hospital Sedna, consultorio 720),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/adrian-cuica-flores/ginecologo/coyoacan#address-id=70587&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:12.399Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__adrian_cuica_flores.webp"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Dra. María de Lourdes Hernández Durán",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29 (Hospital Dalinde Cons. 406),"
+    },
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29 (Hospital Dalinde Cons. 406),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-hernandez-duran/ginecologo/ciudad-de-mexico#address-id=337169&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:00.184Z",
+  "localPhotoPath": null
+}

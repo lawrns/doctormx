@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jesus Artemio Arellano Meza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hospital MIG Río Bamba No. 781 Consultorio #6,"
+    },
+    {
+      "full": "Hospital MIG Río Bamba No. 781 Consultorio #6,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-artemio-arellano-meza/ginecologo/gustavo-a-madero#address-id=86198&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:21.210Z",
+  "localPhotoPath": null
+}

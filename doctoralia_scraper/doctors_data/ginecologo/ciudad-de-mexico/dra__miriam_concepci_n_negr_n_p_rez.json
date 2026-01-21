@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Miriam Concepción Negrín Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Anillo Periferico 3697,"
+    },
+    {
+      "full": "Anillo Periferico 3697,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-concepcion-negrin-perez/ginecologo/ciudad-de-mexico#address-id=58565&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:27.272Z",
+  "localPhotoPath": null
+}

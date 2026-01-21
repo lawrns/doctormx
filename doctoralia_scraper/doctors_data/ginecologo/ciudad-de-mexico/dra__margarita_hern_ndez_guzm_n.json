@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Margarita Hernández Guzmán",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 39,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/1e01a07e/1e01a07e-4c7f-49cb-b091-b01de64ad895_small_square.jpg",
+  "about": "Me gradué de la Universidad Nacional Autónoma de México (UNAM) además soy ginecóloga y obstetra por la Benemerita Universidad Autónoma de Puebla (BUAP) certificada por el Consejo Mexicano de Ginecología y Obstetricia Realice la actualización en las siguientes áreas :Diplomado de Ginecología Endocrinológica 2024 por la Asociación Mexicana de Especialización de Médicos Ginecólogos Endocrinólogos , avalado por la UNAM Diplomado de Capacitación en Colposcopia y Patologia del tracto genital y del complejo ano perineal. Por el Centro de Docencia e Investigación en patología del tracto genital y Colposcopia SC , avalado por la UNAMComprometida en tu atención y constante actualización en el tratamiento en la patología de la mujer en las diferentes etapas de su vida",
+  "addresses": [
+    {
+      "full": "Cali 692,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/margarita-hernandez-guzman/ginecologo/gustavo-a-madero#address-id=587168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:40.315Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__margarita_hern_ndez_guzm_n.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Ma. Guadalupe Jimenez Iñiguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Washington 1988,"
+    },
+    {
+      "full": "Av. Federalistas 325,"
+    },
+    {
+      "full": "Av. Washington 1988,"
+    },
+    {
+      "full": "Av. Federalistas 325,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-guadalupe-jimenez-iniguez/ginecologo/guadalajara#address-id=197377&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:52.788Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Luz Juárez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Egresada del Instituto Nacional de Perinatología Adscrito a la Clínica de Medicina Materno Fetal Hospital Angeles Lomas",
+  "addresses": [
+    {
+      "full": "Homero 1804, Int. 602, Col. Los Morales, Polanco, México, D.F.,"
+    },
+    {
+      "full": "Homero 1804, Int. 602, Col. Los Morales, Polanco, México, D.F.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    },
+    {
+      "name": "Doble y triple marcador de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-juarez-garcia/ginecologo/ciudad-de-mexico#address-id=34827&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:08.403Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Andrés Rosero Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 216,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b004e5/b004e50f1aa6048a4e45b19d4fcef518_220_square.jpg",
+  "about": "Hola! Soy el Dr. Andrés Rosero Flores, especialista en Ginecologia y Obstetricia, con Sub Especialidad en Medicina Materno Fetal y Reproducción Humana. Cuento con una especialidad en Ecocardiografía fetal realizada en la Universidad de Barcelona. Quiero ofrecerte la mejor experiencia en una atención perinatal integral, cuidando a tu bebé desde el momento de la concepción hasta su nacimiento.",
+  "addresses": [
+    {
+      "full": "Av. Río Churubusco 601,"
+    },
+    {
+      "full": "Hernán Cortes 5,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido avanzado del tercer trimestre",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ecocardiografia fetal avanzada",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Ultrasonido avanzado de primer trimestre (semanas 11 a 14)",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido avanzado de segundo trimestre (semanas 18 a 24)",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Ultrasonido avanzado del tercer trimestre",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-rosero-flores/ginecologo/morelos#address-id=452256&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:24.607Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__andr_s_rosero_flores.webp"
+}

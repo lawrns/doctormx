@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Rojas Camarillo",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Jorge Mza 653 Lt 2 Of313, Col. Pedregal Santa Ursula, ,"
+    },
+    {
+      "full": "San Jorge Mza 653 Lt 2 Of313, Col. Pedregal Santa Ursula, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-rojas-camarillo/ginecologo/coyoacan#address-id=356147&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:42.373Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ana Carina Vazquez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 774,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b22d72/b22d7215b9ac61034299d7f7c9df39f7_220_square.jpg",
+  "about": "Estudié la carrera de médica cirujana y partera en la FacMed De la Benemérita Universidad Autónoma de Puebla. Realicé mi especialidad en el Hospital de Gineco Obstetricia No.4 “Luis Castelazo Ayala” del IMSS, considerado de los mejores hospitales de Latinoamérica en su rama obteniendo el título de Especialista avalado por la Universidad Nacional Autónoma de México. Cuento además con alta especialidad en Colposcopia y Patología del tracto genital inferior, posgrado realizado en el Hospital Regional “Lic. Adolfo López Mateos” del ISSSTE con aval universitario de la UNAM. Así como diplomado en Endocrinología ginecológica avalado por la Asociación Mexicana de Endocrinología Ginecológica y la UDLAP. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Comprometida con la salud y bienestar de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Av. Toluca, número 506, Colonia Olivar de los padres, Álvaro Obregón, C.P. 01780,"
+    },
+    {
+      "full": "Av. Montevideo, número 303, interior 506, Colonia Lindavista Sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $750"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-carina-vazquez-martinez/ginecologo/gustavo-a-madero#address-id=379607&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:38.691Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_carina_vazquez_martinez.webp"
+}

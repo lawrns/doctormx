@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Eduardo Noé Nava Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 254,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ff884c/ff884c6f7d0288b9d31d82e3b22bc3b3_220_square.jpg",
+  "about": "Médico Materno Fetal con más de 10 años de experiencia. Realizo en mi consultorio ecografías especializadas del embarazo para la detección de patologías fetales así como predicción por ecografía de las principales patologías que pudieran complicar el embarazo. Dichas ecografías son: la ecografía genética o del primer trimestre, ecografía anatómica, ecografía de crecimiento fetal, ecografía Doppler y ecografía 5D. Además realizamos el control prenatal en pacientes embarazadas clasificadas como de bajo o alto riesgo, así como la atención del nacimiento ya sea por parto o Cesárea. Resumen Curriculum Vitae: -Ginecología y Obstetricia. UMAE#23 (UDEM) -Medicina Materno Fetal. Instituto Nacional de Perinatología (UNAM) -Jefe de Enseñanza e investigación. HRMI 2018-Actual -Profesor Catedrático de la especialidad de Ginecología y Obstetricia (Tecnológico de Monterrey-SSNL). 2016-Actual -Profesor Titular de la subespecialidad de Medicina Materno Fetal (UDEM-SSNL). 2022-Actual -Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Vigencia 2021-2026 -Certificado por el Consejo Mexicano de Medicina Materno Fetal. Vigencia 2021-2026 -Certificado por la Fetal Medicine Foundation. Vigente -Socio Activo del Colegio de Ginecología y Obstetricia de Monterrey. Vigente -Miembro Federado de la Federación Mexicana de Ginecología y Obstetricia. Vigente -Autor de trabajos de Investigación nacionales e internacionales.",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez no 2602,"
+    },
+    {
+      "full": "Belisario Domínguez no 2602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ecografía anatómica y genética",
+      "price": ""
+    },
+    {
+      "name": "Ecografía Convencional en 5D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eduardo-noe-nava-guerrero-2/ginecologo/nuevo-leon#address-id=496701&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:10.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__eduardo_no__nava_guerrero.webp"
+}

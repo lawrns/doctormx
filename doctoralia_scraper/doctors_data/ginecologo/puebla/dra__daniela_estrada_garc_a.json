@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Daniela Estrada García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fc871e/fc871ea691d7fe8c203a1fe0222c7c89_220_square.jpg",
+  "about": "Bienvenida a mi perfil! Soy la Dra. Daniela Estrada especialista en Ginecología y Obstetricia, subespecialista en Biología de la Reproducción Humana, por la Universidad del Technion del Centro Médico Hillel Yaffe en la ciudad de Hadera, Israel, el país con mas tratamientos de fertilidad per capita. Tengo amplia experiencia en ciclos de infertilidad con mas de 450 ciclos por año. Estoy recertificada por el Consejo Mexicano de Ginecología y Obstetricia 2022. Tengo el diplomado en Colposcopía y Alteraciones del Tracto Genital Inferior por la Universidad UPAEP. He asistido a diversos cursos y congresos internacionales en Infertilidad y Técnicas de Reproducción Asistida/IVF, por la Sociedad Europea de Reproducción Humana y Embriología. Cuento con diversas publicaciones de artículos científicos, y colaboraciones con revistas médicas. Mi formación me ha permitido prepararme para poder resolver condiciones médicas desde la adolescencia hasta la menopausia. Mi misión es ayudar a las parejas a cumplir el sueño de lograr el embarazo, te invito a agendar una cita conmigo, juntas resolveremos dudas y te ayudare a alcanzar el objetivo de tu vida.",
+  "addresses": [
+    {
+      "full": "Paseo Opera 4, Lomas de Angelopolis, San Andres Cholula,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-estrada-garcia/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:51.831Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__daniela_estrada_garc_a.webp"
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Dr. Andrés Iván Morales Cervantes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 142,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e9ab92/e9ab928d374c129b5d0f0cdee8ce5109.jpg",
+  "about": "Cuando uno se dedica a lo que más le gusta nunca es considerado como trabajo, es por eso que me apasiona ayudarte como mi paciente ver cómo juntos logramos un buen estado de salud ginecológica en ti. Una de las ventajas de esta especialidad es poder ver cómo se forma y se desarrolla una nueva vida casi desde cero y la mayoría de las veces tener el privilegio de estar presente en esa primera respiración que realiza un recién nacido en su vida… es por eso que siempre busco que mi atención hacia mis pacientes siempre sea de vanguardia con calidez y en un ambiente ameno. Además de mi especialidad en ginecología y obstetricia me he continuado preparando para brindarte una mejor atención con diplomados en cirugía mínimamente invasiva, ultrasonido ginecoobtetrico, colposcopia y patología del tracto genital inferior, ligadura de arterias hioogastricas ( técnica para control de hemorragia) y múltiples congresos. ¿ Te consideras sana? Entonces lo adecuado es que una vez al año por lo menos, te realices tu check up ginecológico el cual consta se exploración mamaria, ultrasonido pélvico o endovaginal, Papanicolaou y colposcopia. Muchos padecimientos que se detectan en este check up no producen síntomas hasta que están muy avanzados como es el caso de los tumores de ovario o el cáncer cervicouterino",
+  "addresses": [
+    {
+      "full": "Av Insurgentes 20,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Cono cervical",
+      "price": "• Desde $3,500"
+    },
+    {
+      "name": "Electrocauterización",
+      "price": "• Desde $3,000"
+    },
+    {
+      "name": "Remoción de verrugas por VPH",
+      "price": "• Desde $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andres-ivan-morales-cervantes/ginecologo/ecatepec-de-morelos#address-id=521936&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:34.431Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__andr_s_iv_n_morales_cervantes.webp"
+}

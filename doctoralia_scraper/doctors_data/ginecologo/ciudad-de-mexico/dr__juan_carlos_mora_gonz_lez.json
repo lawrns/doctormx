@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Mora González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 62,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ba2617/ba2617fadc20323922b56287e1ad9a04_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia y subespecialista en Medicina Materno Fetal con Diplomado en Colposcopía y Patología del tracto genital inferior. Certificado por el Consejo Mexicano de Ginecología y obstetricia, A.C. (2018-2023) Jefe de la Unidad de Valoración Materno Fetal, Coyoacán Enfocado en la vigilancia del bienestar del binomio maternofetal, diagnóstico prenatal de malformaciones por ultrasonido. *** PARA AGENDAR CITA, LLAMAR DIRECTAMENTE AL: 5537077720 *** Si requiere un horario especial, puede comunicarse para verificar disponibilidad y solicitar la consulta al médico.",
+  "addresses": [
+    {
+      "full": "Al Estadio Azteca 179,"
+    },
+    {
+      "full": "Al Estadio Azteca 179,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-mora-gonzalez/ginecologo/coyoacan#address-id=1375&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:04.779Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_carlos_mora_gonz_lez.webp"
+}

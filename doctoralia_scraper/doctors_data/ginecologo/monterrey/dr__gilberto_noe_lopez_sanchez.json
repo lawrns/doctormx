@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gilberto Noe Lopez Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Libertad 200,"
+    },
+    {
+      "full": "Av. Cuauhtemoc 198,"
+    },
+    {
+      "full": "Perimetral Nte. 416 A,"
+    },
+    {
+      "full": "Libertad 200,"
+    },
+    {
+      "full": "Av. Cuauhtemoc 198,"
+    },
+    {
+      "full": "Perimetral Nte. 416 A,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $60"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gilberto-noe-lopez-sanchez/ginecologo/nuevo-leon#address-id=224441&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:33.563Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Jorge Humberto Gomez Leon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ant. Carr. A Chapala 6175,"
+    },
+    {
+      "full": "Av. Guadalupe 5243,"
+    },
+    {
+      "full": "Ant. Carr. A Chapala 6175,"
+    },
+    {
+      "full": "Av. Guadalupe 5243,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-humberto-gomez-leon/ginecologo/san-pedro-tlaquepaque#address-id=214075&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:56.083Z",
+  "localPhotoPath": null
+}

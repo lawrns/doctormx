@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Jose Maria Cortinas Escobar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/25bb87/25bb877a318a06b3586f14a246ccc047_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Porfirio Diaz 511,"
+    },
+    {
+      "full": "Porfirio Diaz 511,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-maria-cortinas-escobar/ginecologo/monterrey#address-id=48935&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:29.937Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jose_maria_cortinas_escobar.webp"
+}

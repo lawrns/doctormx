@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Erika Arahi Fernández Armenta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 220,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aeaf2e/aeaf2ef6653ffb717c7a5fb40dbe2364_220_square.jpg",
+  "about": "SOY ERIKA AMO MI PROFESION. TAMBIEN MUJER, ESPOSA, HIJA, MADRE Y ESO ES MUY IMPORTANTE SE y CONOZCO POR EXPERIENCIA LAS ETAPAS Y CAMBIOS QUE TIENE NUESTRO CUERPO. DIA A DIA CON MIS PACIENTES, PROCURO REALIZAR LAS EXPLORACIONES CON MUCHO CUIDADO. EXPLICO CADA PROCEDIMIENTO Y DUDAS EN CADA CITA Y NOS MANTENEMOS EN CONTACTO EN CASO DE SURGIR NUEVAS INQUIETUDES. LO MAS IMPORTANTE ES, QUE TE SIENTAS COMODA Y JUNTAS ENCONTAREMOS LA SOLUCIÓN. Profesional de Posgrado: Hospital Ángeles Lomas, obtuve el título de Especialista en Ginecología y Obstetricia, curso que fue avalado por UNAM egresando el año 2010 Colegio Mexicano de especialistas en ginecología y obstetricia ALGUNOS DE MIS CURSOS Colegio Mexicano de especialistas en ginecología y obstetricia “Endoscopía en ginecología, laparoscopia e histeroscopia” Noviembre del 2007 SIAP “Jornada en reproducción humana Marzo y Noviembre del 2012 COMEGO Producciones científicas: 3 intervenciones en la revista GINECO INSN 1870-7327 indexada en INBIOMED, LATINDEX Y PERIDICA. Hospital general de Naucalpan “Curso de Ligadura de arterias hipogástricas y hemorragia obstétrica” Octubre 2012 Tecnológico de Ecatepec CURSO ALSO Para urgencias obstétricas Noviembre 2013",
+  "addresses": [
+    {
+      "full": "Calz. Ticomán 128,"
+    },
+    {
+      "full": "Calz. Ticomán 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-arahi-fernandez-armenta-2/ginecologo/gustavo-a-madero#address-id=32608&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:29.617Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_arahi_fern_ndez_armenta.webp"
+}

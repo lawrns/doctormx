@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Eunice Omaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 500,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/48f531/48f5314c13467f3331cf2a813b789e3d_220_square.jpg",
+  "about": "Médico cirujano egresada a la Universidad Nacional Autónoma de México. Especialista en Ginecología y Obstetricia en el Hospital General de México, avalado por la Universidad Nacional Autónoma de México. Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Diplomado en Colposcopía y Patología del Tracto Genital Inferior, avalado por el Hospital General de México. Siempre busco dar un trato empático y humano a cada una de mis pacientes, que sepan que soy un médico que las acompaña en todo momento.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59, Roma Sur, Cuauhtémoc, 06760 Ciudad de México Torre de consultorios platino, quinto piso, consultorio 1502,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Cono cervical",
+      "price": "• $8,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eunice-omana/ginecologo/ciudad-de-mexico#address-id=445860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:24.445Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__eunice_oma_a.webp"
+}

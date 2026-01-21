@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Valeria Alatorre Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b63b28b5/b63b28b5-4a4c-4af3-a1f3-d9f04482a14a_small_square.jpg",
+  "about": "Soy la Dra. Valeria Alatorre Estrada, Especialista en Gineco-Obstetricia, Ginecología Estetica y Colposcopia. Mi profesión me permite brindar atención integral a mujeres en diferentes etapas de la vida, ofreciendo atención médica profesional, ética y sin prejuicios. Estoy para atender todas tus dudas, padecimientos e inquietudes sobre tu salud ginecologica.",
+  "addresses": [
+    {
+      "full": "Av. Manuel Acuña 2493. Colonia Ladrón de Guevara. Guadalajara Jalisco.,"
+    },
+    {
+      "full": "Av. Manuel Acuña 2493. Colonia Ladrón de Guevara. Guadalajara Jalisco.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valeria-alatorre-estrada/ginecologo/guadalajara#address-id=411828&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:32.521Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__valeria_alatorre_estrada.webp"
+}

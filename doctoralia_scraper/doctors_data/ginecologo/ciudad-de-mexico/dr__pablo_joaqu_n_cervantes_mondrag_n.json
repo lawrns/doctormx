@@ -1,0 +1,104 @@
+{
+  "name": "Dr. Pablo Joaquín Cervantes Mondragón",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ce9c9/2ce9c9e8444c18ac53b52ab060257c05_220_square.jpg",
+  "about": "Soy médico ginecólogo-obstetra, biólogo de la reproducción y cirujano de mínima invasión que ama su profesión, mi interés siempre ha estado en el bienestar de mis pacientes. Mi pasión es acompañar a las parejas en su ilusión de ser padres y ayudarlas a tener un control prenatal exitoso. Realice la carrera de médico cirujano en la Universidad la Salle, posteriormente cursé la especialidad de Ginecología y Obstetricia avalada por la UNAM, decidí realizar la subespecialidad en Biología de la Reproducción Humana ya que me apasiona ayudar a mis pacientes con enfermedades que las aquejan durante toda su vida reproductiva, posteriormente tuve la oportunidad de realizar una estancia en uno de los centros de reproducción asistida mas importantes a nivel mundial en la ciudad de Nueva York. Me di cuenta que necesitaba completar mi formación académica y decidí realizar mi segunda subespecialidad en cirugía de mínima invasión, ya que muchas enfermedades que aquejan a las mujeres necesitan técnicas quirúrgicas especializadas para resolver de la mejor manera el problema y poder tener una recuperación mas rápida. Actualmente brindo tratamientos ginecológicos-obstétricos de la más alta calidad. Considero una de las mayores satisfacciones en mi vida poder mejor la calidad de vida de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Boulevard Bernardo Quintana Arrioja 9670,"
+    },
+    {
+      "full": "Camino a Sta. Teresa 1055,"
+    },
+    {
+      "full": "Viaducto Río Becerra 97,"
+    },
+    {
+      "full": "Senda de La Inspiración no. 22,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pablo-joaquin-cervantes-mondragon-2/ginecologo/queretaro",
+  "scrapedAt": "2026-01-21T02:57:41.032Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__pablo_joaqu_n_cervantes_mondrag_n.webp"
+}

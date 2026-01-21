@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Carla Ortíz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 74,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/814d94/814d94919400b683f06b07def9dda92a_220_square.jpg",
+  "about": "Soy Ginecóloga Obstetra, especializada en patología en tracto genital inferior, una de mis especialidades es la prevención, diagnóstico y tratamiento del Virus de Papiloma Humano, cuento con tecnología avanzada para realizar el tratamiento de una forma rápida, eficaz y no invasiva. Cuento con el servicio de rejuvenecimiento vaginal que se realiza con tecnología láser, así como una alternativa de tratamiento NO quirúrgico, para tratar la incontinencia urinaria de esfuerzo. Se realizan pruebas rápidas de detección de enfermedades de transmisión sexual, con resultado dentro de la consulta, y cuento con servicio de mastografías por electroimpedancia las cuales no generan dolor, ni radiación, se puede realizar a cualquier edad, que tengan antecedente familiar de cáncer de mama.",
+  "addresses": [
+    {
+      "full": "Calle 4, #20, Colonia Espartaco, Coyoacán, CDMX,"
+    },
+    {
+      "full": "Calle 4, #20, Colonia Espartaco, Coyoacán, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carla-ortiz/ginecologo/coyoacan#address-id=337354&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:17.669Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carla_ort_z.webp"
+}

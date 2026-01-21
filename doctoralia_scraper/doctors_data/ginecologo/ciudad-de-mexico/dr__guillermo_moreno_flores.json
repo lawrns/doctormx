@@ -1,0 +1,135 @@
+{
+  "name": "Dr. Guillermo Moreno Flores",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/97003129/97003129-5c3f-4f54-a486-f5fd77491c0a_small_square.jpg",
+  "about": "Soy el Dr. Guillermo Moreno Flores, realice mi especialidad en ginecología por el Instituto Nacional de Perinatología, posteriormente la subespecialidad en Ginecología Oncológica por el Instituto Nacional de Cancerología. He dedicado mi profesión al cuidado integral de la salud femenina, con un compromiso permanente hacia la actualización médica y la excelencia clínica.Cuento con una Alta Especialidad en el tratamiento de tumores mamarios, además de diplomados en colposcopía y cirugía laparoscópica, que complementan mi formación quirúrgica y diagnóstica. Asimismo, obtuve la Maestría en Ciencias Médicas por la UNAM, impulsado por mi interés en la investigación oncológica en la mujer.Mi práctica profesional se enfoca en el cáncer cervicouterino, cáncer de mama, cáncer de endometrio (útero), cáncer de ovario y cáncer de vulva, así como lesiones premalignas del cuello uterino (cérvix) y el virus del papiloma humano (VPH), sangrado uterino anormal, enfermedades mamarias y otras enfermedades ginecológicas.Me distingo por brindar una atención personalizada, empática y basada en evidencia científica, ofreciendo tratamientos adaptados a las necesidades de cada paciente, de acuerdo con las guías nacionales e internacionales más actualizadas.Mi objetivo es proporcionar un servicio médico de excelencia, donde la confianza, la comunicación y el seguimiento de la paciente sean siempre la prioridad. Tu salud es lo mas importante para mi.",
+  "addresses": [
+    {
+      "full": "Prolongación Paseo de la Reforma No.19, Paseo de las Lomas, Ciudad de México, CDMX, México,"
+    },
+    {
+      "full": "Periferico Sur 5246, Torre 2, Piso 9, Pedregal de Carrasco,"
+    },
+    {
+      "full": "Cto Plaza Esmeralda Manzana 002, Bosque Esmeralda, 52937 Cdad. López Mateos, Méx,"
+    },
+    {
+      "full": "Emiliano Zapata SN, San Agustín Mextepec,"
+    },
+    {
+      "full": "Av. Lic. Benito Juárez García 341, La Purísima,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta Ginecología Oncológica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $7,500"
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": "• $7,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-moreno-flores-2/ginecologo-oncologico-ginecologo/metepec#address-id=506996&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:14.147Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_moreno_flores.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Cruz Gordillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 61,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c628c101/c628c101-4446-48cf-af82-e1f1128bb96b_small_square.jpg",
+  "about": "Medico Gineco- Obstetra con adiestramiento en embarazos complicados y no complicados, cuento con un diplomado en colposcopia y cáncer en la mujer, un diplomado en planificación familiar, diplomado de Ginecología endócrina y diplomado en menopausia y climaterio. Esto con el compromiso de servir a todas mis pacientes con empatía, calidad, calidez y sobre todo con tratamientos actualizados y sofisticados que hoy en día prevalecen, para preservar la salud e integridad de todas.",
+  "addresses": [
+    {
+      "full": "Av 7 Pte 705, Centro histórico de Puebla, 72000 Heroica Puebla de Zaragoza, Pue. Centro medico UPAEP consultorio 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-cruz-gordillo/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:49.497Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__alejandra_cruz_gordillo.webp"
+}

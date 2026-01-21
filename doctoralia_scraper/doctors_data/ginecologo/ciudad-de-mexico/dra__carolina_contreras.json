@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carolina Contreras",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a52670a4/a52670a4-42aa-4f83-b5c4-ca8923002d8b_small_square.jpg",
+  "about": "Ginecologia y Obstetricia: Control prenatal, Cirugia Obstetrica y Ginecologica,Transtornos hormonales enfocados a Menopausia así a la Incontinencia Urinaria de Esfuerzo, Tensado Vaginal tratamiento en consultorio con laser CO2 y HIFU",
+  "addresses": [
+    {
+      "full": "Tepic 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $6,400"
+    },
+    {
+      "name": "Incontinencia urinaria",
+      "price": ""
+    },
+    {
+      "name": "Láser Co2 para tensado vaginal (monalisa)",
+      "price": ""
+    },
+    {
+      "name": "Toma de Papanicolau",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-contreras-2/ginecologo/ciudad-de-mexico#address-id=562127&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:11.317Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_contreras.webp"
+}

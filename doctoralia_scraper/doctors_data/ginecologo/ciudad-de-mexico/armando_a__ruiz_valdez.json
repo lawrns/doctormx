@@ -1,0 +1,25 @@
+{
+  "name": "Armando A. Ruiz Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e133cac3/e133cac3-cbdb-459c-8967-a1b0a427bf7a_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Agrarismo (Hosp. Angeles Mexico), 208, Torre B, Cons. 855,"
+    },
+    {
+      "full": "Agrarismo (Hosp. Angeles Mexico), 208, Torre B, Cons. 855,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-a-ruiz-valdez/ginecologo/miguel-hidalgo#address-id=78628&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:14.148Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/armando_a__ruiz_valdez.webp"
+}

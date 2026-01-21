@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jesús Manuel Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 104,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/9b20a512/9b20a512-393c-4cb3-886f-a0ba30beaa4c_small_square.jpg",
+  "about": "Soy el Dr. Jesús Manuel Muñoz, ginecólogo en Nuevo León. Me especializo en el tratamiento de afecciones ginecológicas así como cuidado del embarazo. Mi objetivo principal es proporcionar a mis pacientes el mejor cuidado médico posible y garantizar que comprendan completamente su afección y el tratamiento recomendado. Me enorgullece trabajar en estrecha colaboración con mis pacientes para asegurarme de que reciban la atención individualizada y personalizada que necesitan. Además de mi trabajo como médico, también disfruto de actividades artísticas, deportivas y de pasar tiempo con mi familia y amigos.",
+  "addresses": [
+    {
+      "full": "C. Mariano Matamoros 1640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jesus-manuel-munoz/ginecologo/nuevo-leon#address-id=482320&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:52.550Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jes_s_manuel_mu_oz.webp"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Dr. Miguel Chang Chiu",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puerta De Hierro 5150 A,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Puerta De Hierro 5150 A,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-chang-chiu/ginecologo/guadalajara#address-id=14015&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:32.204Z",
+  "localPhotoPath": null
+}

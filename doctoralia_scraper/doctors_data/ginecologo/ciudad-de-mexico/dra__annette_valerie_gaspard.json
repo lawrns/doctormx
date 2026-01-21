@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Annette Valerie Gaspard",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 282,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4b0ee4/4b0ee407b095f1a08402ce7f6d026f25.jpg",
+  "about": "Soy la Dra. Annette Gaspard Sub Especialista en Medicina Materno-Fetal que es una segunda especialización dentro de la especialidad de Ginecología y Obstetricia que se encarga de la salud fetal. Ademas me especializo en el manejo del embarazo de alto riesgo ya sea por condición maternas preexistentes o adquiridas durante el embarazo. ( Diabetes pre y gestacional, enfermedades tiroides, antecedente de perdidas del embarazo, cérvix corto, incompetencia ístmico cervical, embarazadas con cáncer entre otras enfermedades y fetos con alteraciones estructurales, alteraciones en sus genes. Todo esto con la finalidad de poder brindar una atención de alta calidad ,completa e individualiza en todos aquellas pacientes embarazadas. Que estudios o pruebas realiza un medico materno fetal? Diagnostico Prenatal-Mediante ultrasonidos especializados 3D y 4D -Ultrasonido Genético (11-13.6 sdg). Primer trimestre -Ultrasonido Estructural o Morfológico (18-22 sdg) . Segundo Trimestre -Ultrasonido Tercer Trimestre con Flujometría Doppler. PRUEBAS DE VIGILANCIA BIENESTAR DE FETAL -Vigilancia Fetal con Ultrasonido Doppler -Perfil Biofísico -Prueba Sin Estrés Pruebas de Diagnóstico prenatal Avanzado Invasivas. -Biopsia de vellosidades coriales (BVC) -Amniocentesis -Cordocentesis Pruebas de Diagnóstico prenatal Avanzado No Invasivas. -Duo Test es el estudios Bioquímicos del Primer Trimestre donde se mide en sangre de mama los niveles de (β-hCG) y (PAPP-A). -ADN fetal en sangre materna e mide en sangre de mama los niveles de ADN de bebe Ambos estudios ayudan a mejorar el rendimiento de detección de enfermedades de los cromosomas como complementos al USG génetico del primer trimestre",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055-S, Heroes de Padierna, Héroes de Padierna, La Magdalena Contreras,"
+    },
+    {
+      "full": "Avenida Acueducto 95,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/annette-valerie-gaspard/ginecologo/morelia",
+  "scrapedAt": "2026-01-21T02:43:58.718Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__annette_valerie_gaspard.webp"
+}

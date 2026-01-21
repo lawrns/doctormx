@@ -1,0 +1,25 @@
+{
+  "name": "Karen Calderon De La Barca Naranjo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 249,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/828f2e/828f2ee6dcd606ee1f50983d35b53164_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Mirador 63 C 27, Col. Fuentes De Tepepan, ,"
+    },
+    {
+      "full": "Mirador 63 C 27, Col. Fuentes De Tepepan, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-calderon-de-la-barca-naranjo/ginecologo/tlalpan#address-id=357550&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:24.590Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/karen_calderon_de_la_barca_naranjo.webp"
+}

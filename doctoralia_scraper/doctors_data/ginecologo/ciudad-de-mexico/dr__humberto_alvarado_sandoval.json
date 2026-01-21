@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Humberto Alvarado Sandoval",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/73f78a6e/73f78a6e-1993-466e-ab0d-eb26a824b926_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Luis Potosí 143,"
+    },
+    {
+      "full": "San Luis Potosí 143,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/humberto-alvarado-sandoval/ginecologo/cuauhtemoc2#address-id=220263&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:07.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__humberto_alvarado_sandoval.webp"
+}

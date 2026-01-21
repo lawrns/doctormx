@@ -1,0 +1,48 @@
+{
+  "name": "Dra. María Irene Romero Valdez",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Álvaro Obregón 748,"
+    },
+    {
+      "full": "Alvaro Obregon 748, Zona Centro,"
+    },
+    {
+      "full": "Obregón 748,"
+    },
+    {
+      "full": "Obregon 748,"
+    },
+    {
+      "full": "Avenida Álvaro Obregón 748,"
+    },
+    {
+      "full": "Alvaro Obregon 748, Zona Centro,"
+    },
+    {
+      "full": "Obregón 748,"
+    },
+    {
+      "full": "Obregon 748,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-irene-romero-valdez-4/ginecologo/ensenada#address-id=623345&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:18.019Z",
+  "localPhotoPath": null
+}

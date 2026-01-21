@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Abril Del Carmen Isaias Preciado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Bamba 639, Lindavista,"
+    },
+    {
+      "full": "Rio Bamba 639, Lindavista,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abril-del-carmen-isaias-preciado/ginecologo/gustavo-a-madero",
+  "scrapedAt": "2026-01-21T03:05:59.738Z",
+  "localPhotoPath": null
+}

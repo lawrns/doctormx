@@ -1,0 +1,96 @@
+{
+  "name": "Dr. Noel Ponce González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70619a/70619a4efabd1eb4618adf616853749b_220_square.jpg",
+  "about": "Medico especialista en Ginecología y obstétrica , atención a enfermedades del aparato reproductor femenino , atención a mujeres adolecentes y adultas de cualquier edad . * Atención integral en un consultorio perfectamente equipado con tecnología de punta para la solución de la mayoría de los problemas y necesidades de salud femenina , todo para que dentro de la misma visita ofrecerte soluciones inmediatas . Cirugía en los mejores Hospitales certificados de la ciudad . Convenio con todas la aseguradoras Tratamiento con cirugía laparoscópica que ofrece mínima invasión, mucho menos dolor post operatorio y recuperación mucho mas rápida y la ventaja estética de cicatrices milimétricas. \" Me empeño en una atención cálida , amable y respetuosa con cada una de mis pacientes. Procuro una atención especializada con calidad científica , ética y profesionalismo. Veinte años de ejercicio profesional y miles de pacientes satisfechas me respaldan . Ejerzo la medicina privada e institucional ambas con equilibrio ético y humanístico \"",
+  "addresses": [
+    {
+      "full": "Av Convento de Santa Mónica 119 consultorio 32,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Enrique Sada Murguerza 17 (Cto. Centro Comercial, CD Satelite),"
+    },
+    {
+      "full": "Tlacotalpan 59,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Av Convento de Santa Mónica 119 consultorio 32,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Enrique Sada Murguerza 17 (Cto. Centro Comercial, CD Satelite),"
+    },
+    {
+      "full": "Tlacotalpan 59,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Histerectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/noel-ponce-gonzalez/ginecologo/tlalnepantla-de-baz#address-id=967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:02.582Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__noel_ponce_gonz_lez.webp"
+}

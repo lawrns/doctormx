@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Ana Maria Olmedo Villegas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Merida No. 170, Col. Roma Norte, Cons. 123 170,"
+    },
+    {
+      "full": "Merida No. 170, Col. Roma Norte, Cons. 123 170,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-olmedo-villegas/ginecologo/cuauhtemoc#address-id=124465&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:45.762Z",
+  "localPhotoPath": null
+}

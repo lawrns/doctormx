@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Velia Teresa Hernández Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 193,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5f45d0/5f45d0e9876781697a84211d68b53f62_220_square.jpg",
+  "about": "Facultad de Medicina UANL Especialidad Ginecología y Obstetricia SSNL Subespecialidad en Perinatología Hospital Universitario Especialista Embarazo de Alto Riesgo Te brindamos una atención personalizada para ti y tu futuro bebe, además de tratar situaciones de alto y bajo riesgo, para que disfrutes tu embarazo; sin dejar a un lado la calidez y comprensión que necesitas. Nos especializamos en realizar ultrasonidos para darte tranquilidad, ya sea para descartar alteraciones como malformaciones fetales o si ya las detectamos darles seguimiento. ULTRASONIDO DEL PRIMER TRIMESTRE TRANSLUCENCIA NUCAL ULTRASONIDO ANATÓMICO FETAL ULTRASONIDO DOPPLER LONGITUD CERVICAL Sin problemas de estacionamiento, confortables instalaciones, que haran de tu primera visita con tu Ginecologa, sea lo menos estresante posible, llamanos.........o agenda tu cita, será un placer atenderte....... CITAS: 80 57 58 64 Visitanos en Facebook: Ginecologa Dra. Velia Hernández",
+  "addresses": [
+    {
+      "full": "Av. nexxus #104 (CENTRO MÉDICO HOSPITARIA ),"
+    },
+    {
+      "full": "Av. nexxus #104 (CENTRO MÉDICO HOSPITARIA ),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/velia-teresa-hernandez-flores/ginecologo/general-escobedo#address-id=87126&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:26.700Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__velia_teresa_hern_ndez_flores.webp"
+}

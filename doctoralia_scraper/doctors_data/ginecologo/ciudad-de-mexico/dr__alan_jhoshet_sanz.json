@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Alan Jhoshet Sanz",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ec19c8/ec19c8ec2910e6f47dcb4014f8a2e823_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Vicente Guerrero 155,"
+    },
+    {
+      "full": "Calle Rosa No 9,"
+    },
+    {
+      "full": "Tepic 113,"
+    },
+    {
+      "full": "Avenida Vicente Guerrero 155,"
+    },
+    {
+      "full": "Calle Rosa No 9,"
+    },
+    {
+      "full": "Tepic 113,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama por marcaje",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alan-jhoshet-sanz/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=449352&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:47.129Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alan_jhoshet_sanz.webp"
+}

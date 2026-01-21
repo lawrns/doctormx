@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Andrea Elizabeth Hernández Rangel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 393,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3ca6c0/3ca6c07f40392b2d625587c999498b0c_220_square.jpg",
+  "about": "¡Hola! Soy la Dra. Andrea Hernández Rangel Ginecóloga especialista en Ginecología y Obstetricia, estoy aquí para atender tus dudas e inquietudes acerca de tu salud femenina Ofrezco servicios desde: -Control prenatal -Embarazo de alto riesgo -Papanicolau -Parto/Cesáreas -Ultrasonido Obstétrico - Aplicación vacuna VPH Y mucho más... Mi profesionalismo y pasión por el bienestar de la mujer es lo primordial Porque lo más importante es tu salud íntima y tu plenitud, agenda una consulta hoy mismo, contáctame por via telefono o agenda tu cita en el calendario.",
+  "addresses": [
+    {
+      "full": "Perif. Ecológico 3507, Reserva Territorial Atlixcáyotl Torre 1 piso 15 consultorio 1501,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $900"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Segunda opinión médica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/andrea-elizabeth-hernandez-rangel/ginecologo/puebla#address-id=390505&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:12.150Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__andrea_elizabeth_hern_ndez_rangel.webp"
+}

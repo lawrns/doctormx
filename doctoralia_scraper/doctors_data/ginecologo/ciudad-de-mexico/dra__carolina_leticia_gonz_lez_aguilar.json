@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Carolina Leticia González Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 168,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bcd68e/bcd68e06c36bf78e0fb1a207d96fbdae_220_square.jpg",
+  "about": "Soy la Doctora Carolina González Aguilar, egresada de la Facultad de Medicina de la UNAM, realicé la especialidad de Ginecología y Obstetricia en la Secretaría de Salud de la CDMX, posteriormente el diplomado en Colposcopia y Patología del Tracto Genital Inferior en el Hospital General de México. Mi especialidad me brinda la oportunidad de atender a la mujer en las diferentes etapas de la vida, en un ambiente de respeto, confianza y calidez. Cuento con un amplia experiencia en atención ginecológica, planificación familiar, detección oportuna de cáncer cérvicouterino, cáncer de mama, parto humanizado, siempre defendiendo los derechos reproductivos y sexuales de la mujer.",
+  "addresses": [
+    {
+      "full": "Avenida Melchor Ocampo 318,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-leticia-gonzalez-aguilar/ginecologo/coyoacan#address-id=521747&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:36.807Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_leticia_gonz_lez_aguilar.webp"
+}

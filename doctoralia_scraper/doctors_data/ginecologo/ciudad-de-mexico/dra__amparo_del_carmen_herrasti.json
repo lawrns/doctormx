@@ -1,0 +1,60 @@
+{
+  "name": "Dra. Amparo del Carmen Herrasti",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b06b6e/b06b6e9f43d8e674a1ac93ba4e691291_220_square.jpg",
+  "about": "Al llegar se realiza la historia clínica e interrogatorio detallado a la paciente para conocer sus antecedentes posteriormente se pregunta el motivo de la consulta para que la paciente nos de detalles de su problema Luego realizamos la exploración física que tambien incluye la revisión con ultrasonido vaginal",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Ángel de Quevedo 881,"
+    },
+    {
+      "full": "Av. Miguel Angel De Quevedo 881,"
+    },
+    {
+      "full": "Avenida Miguel Ángel de Quevedo 881,"
+    },
+    {
+      "full": "Av. Miguel Angel De Quevedo 881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $4,200"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/amparo-del-carmen-herrasti/ginecologo/coyoacan#address-id=345114&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:18.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__amparo_del_carmen_herrasti.webp"
+}

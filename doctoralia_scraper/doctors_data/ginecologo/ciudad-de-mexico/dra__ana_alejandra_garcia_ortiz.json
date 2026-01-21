@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Ana Alejandra Garcia Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ab934d/ab934da71dbc306f47579e10a346ec15_220_square.jpg",
+  "about": "Egresada de la Universidad la Salle como Médico Cirujano y por la Universidad Autónoma Nacional de México con la especialidad de Gineco Obstetra.",
+  "addresses": [
+    {
+      "full": "Río Consulado 1448 Col. Vallejo,"
+    },
+    {
+      "full": "Río Consulado 1448 Col. Vallejo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-alejandra-garcia-ortiz/ginecologo/gustavo-a-madero#address-id=364120&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:40.124Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_alejandra_garcia_ortiz.webp"
+}

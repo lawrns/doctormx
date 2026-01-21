@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Héctor Eduardo Díaz García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f14bc6/f14bc63e11d00ff3578006976cb1f2bc_220_square.jpg",
+  "about": "El Centro Especializado en Diagnóstico por Imagen y Tratamiento (CEDIT) es una clínica comprometida con el bienestar de sus pacientes ofreciendo servicios de calidad con costos accesibles desde hace 13 años. Fue fundada el 6 de enero de 2006 por el Dr. Héctor Eduardo Díaz García y su esposa la Dra. Ma. Jovita Arriaga Ruíz, a quienes siempre les ha apasionado la Medicina y se han dedicado con ímpetu a la creación y crecimiento de la clínica CEDIT. La cual surgió con la intención de ofrecer todos los servicios que un hospital puede tener pero con costos bajos. Por lo cual, en un inicio los servicios que se ofrecían eran: consultas generales, control de peso y paquetes de colposcopia. Sin embargo, con el paso del tiempo y gracias al aumento en el número de pacientes, la clínica se expandió y se añadió el servicio de hospitalización y cirugías. Actualmente la clínica se encuentra en el primer lugar en nacimientos del municipio de Iztacalco.",
+  "addresses": [
+    {
+      "full": "Av. Javier Rojo Gómez 489,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $300"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-eduardo-diaz-garcia/ginecologo/iztacalco#address-id=372040&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T00:36:07.227Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__h_ctor_eduardo_d_az_garc_a.webp"
+}

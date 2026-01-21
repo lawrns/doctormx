@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Lucia Daniela García Montes",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 153,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5f0b75d4/5f0b75d4-54fc-4c59-b6ee-b842a32bcbdc_small_square.jpg",
+  "about": "Sobre mí Soy la Dra. Lucia García, egresada de la Unidad Médica de Alta Especialidad (UMAE) Hospital de Gineco Obstetricia No. 3, del Centro Médico Nacional La Raza. Mi enfoque consiste en cuidar a mis pacientes en todas sus etapas de la vida desde la perspectiva medica y humana, considerando factores tanto fisiológicos como sociales y emocionales que pueden estar desempeñando un papel relevante en la salud reproductiva; cabe señalar, que es un placer el poder acompañar a mis pacientes en el proceso de dar vida y presenciar el nacimiento de lo más importante para nosotras. Adicionalmente, me apasiona la busqueda de la verdad por lo que cuento con Maestría en Ciencias Médicas, Odontológicas y de la Salud, así como, publicaciones y premios a nivel nacional e internacional. ¿Por qué elegirme a mí? Al elegirme como tu ginecologa 24/7, recibirás un trato personalizado, con empatía y humanismo en la cual te daré un diagnóstico certero, teniendo la seguridad de que pondré empeño en usar todo lo que he aprendido a lo largo de los años para encontrar la mejor solución. Principales áreas de tratamiento Preservar la salud en cada etapa de la vida de la paciente Vigilancia y posterior atención del embarazo Atención, cuidado y vigilancia durante la menopausia Mi consulta y mi equipo Cuidamos cada detalle para alcanzar los mejores resultados, inmediatamente que agendes tu cita médica recibirás un mensaje de WhatsApp confirmando el horario y ubicación disponible, todo nuestro equipo agradece tu confianza y empatía, ofrecemos una disculpa de ante mano ya que una desventaja de ofrecer las 4 ubicaciones es no poder brindarte el horario escogido; sin embargo, te daremos múltiples opciones para que tu experiencia sea inigualable ¡Muchas gracias! Otros servicios Embarazo de alto riesgo Métodos de planificación familiar Irregularidades en el periodo menstrual Más sobre mí Cédula Profesional: 10973928 Cédula Ginecología y Obstetricia: 14608930 N° Certificado por el CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA, A.C.: 14868",
+  "addresses": [
+    {
+      "full": "Apatzcalli Mz 34 Lt 8, Barrio Curtidores municipio Chimalhuacan, Estado de México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,850"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": "• $2,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lucia-daniela-garcia-montes/ginecologo/miguel-hidalgo#address-id=510447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:51.276Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lucia_daniela_garc_a_montes.webp"
+}

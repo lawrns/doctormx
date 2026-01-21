@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Alberto Bañuelos Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra 2520,"
+    },
+    {
+      "full": "Justo Sierra 2520,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alberto-banuelos-franco/ginecologo/guadalajara#address-id=139553&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:30.756Z",
+  "localPhotoPath": null
+}

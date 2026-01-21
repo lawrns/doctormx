@@ -1,0 +1,62 @@
+{
+  "name": "Dra. Daniela Zapata",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 700,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da3dd5/da3dd5abac80ea160e687fbdfd8734e3.jpg",
+  "about": "Soy egresada de la carrera de medicina en la Universidad Autónoma de Nuevo León y después hice mi especialidad en Ginecología y Obstetricia en el Instituto Tecnológico de Estudios Superiores de Monterrey, graduándome en el año 2011. Trabajé en la Unidad Médica de Alta Especialidad de Ginecología y Obstetricia No. 23 del Instituto Mexicano del Seguro Social durante 6 años, para posteriormente dedicarme de manera exclusiva a la medicina privada. En el año 2019, me especialicé en Colposcopia por la Universidad de Puebla, por lo que soy experta en el tema de la infección por el Virus de Papiloma Humano, así como todas sus repercusiones en la mujer. Después me especialicé en Ginecología Regenerativa Funcional y Estética en el año 2020-2021 por la Universidad de Ayacucho en Venezuela y por la Universidad Tech de España. Actualmente tengo privilegios en todos los hospitales de Monterrey y su área metropolitana así como trabajar con la mayoría de los seguros de gastos médicos mayores. Tengo mi consultorio en el Centro Médico Hospitaria en General Escobedo, Nuevo León.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "Avenida Raúl Salinas Lozano 1101,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Crioterapia",
+      "price": ""
+    },
+    {
+      "name": "Electrocauterización",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $910"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $910"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $910"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-zapata/ginecologo/general-escobedo#address-id=609515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:35.603Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__daniela_zapata.webp"
+}

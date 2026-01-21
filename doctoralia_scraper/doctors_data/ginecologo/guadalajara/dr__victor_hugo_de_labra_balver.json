@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Victor Hugo De Labra Balver",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 98,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f0746a/f0746a3d450e6ec81506e813240d3893_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911 Residencial Poniente,"
+    },
+    {
+      "full": "Av. Central Guillermo Gonzalez Camarena 911 Residencial Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": ""
+    },
+    {
+      "name": "TRATAMIENTO DE INCONTINENCIA URINARIA CON LASER CO2",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victor-hugo-de-labra-balver/ginecologo/zapopan#address-id=433670&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:33.234Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__victor_hugo_de_labra_balver.webp"
+}

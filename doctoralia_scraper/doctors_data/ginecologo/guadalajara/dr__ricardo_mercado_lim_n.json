@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Mercado Limón",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Empresarios 150,"
+    },
+    {
+      "full": "Avenida Empresarios 150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-mercado-limon/ginecologo-oncologico/zapopan#address-id=567019&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:28.146Z",
+  "localPhotoPath": null
+}

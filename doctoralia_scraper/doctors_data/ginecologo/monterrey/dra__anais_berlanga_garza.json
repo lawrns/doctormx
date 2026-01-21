@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Anais Berlanga Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1244,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c3a7b1/c3a7b1d241853a8dd5bd784aaa917c59.jpg",
+  "about": "Egresé de la carrera como Médico Cirujano y Partero en la UANL, cursé mi especialidad en Ginecología y Obstetricia y posteriormente una subespecialidad en Medicina Materno Fetal / Perinatología / Embarazo de alto riesgo, en el Hospital Universitario \"Dr. José Eleuterio González\". Cursando la especialidad recibí nombramiento de estudiante de postgrado distinguido siendo jefe de residentes. Certificada para realizar los ultrasonidos especializados en el embarazo, manejo de la complicaciones y riesgos de este. Me encuentro certificada por Consejo Mexicano de Ginecología y Obstetricia y Medicina Materno Fetal; certificaciones internacionales por Fetal Medicine Foudantion (Inglaterra). Miembro del Colegio de Medicina Materno fetal de Monterrey. Comprometida con la actualización y educación continua. Será un honor atenderte y ser tu especialista.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus, Joyas de Anahuac,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/anais-berlanga-garza/ginecologo/general-escobedo#address-id=363436&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:58.712Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__anais_berlanga_garza.webp"
+}

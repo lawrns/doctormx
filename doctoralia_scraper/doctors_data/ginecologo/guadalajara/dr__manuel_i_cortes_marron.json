@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Manuel I Cortes Marron",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 117,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Justo Sierra Num 2150,"
+    },
+    {
+      "full": "Justo Sierra Num 2150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-i-cortes-marron/ginecologo/guadalajara#address-id=42585&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:33.751Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__manuel_i_cortes_marron.webp"
+}

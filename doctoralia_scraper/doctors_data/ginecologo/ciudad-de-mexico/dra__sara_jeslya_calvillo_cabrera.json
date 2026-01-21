@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Sara Jeslya Calvillo Cabrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 256,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/207a1f/207a1fb6010c79faa66ab588d88d6a4e_220_square.jpg",
+  "about": "Dra Sara Calvillo Cabrera -Médica cirujana egresada de la mejor universidad Ciudad Universitaria C.U de la UNAM gracias a ella pude tener una excelente preparación como médico general - Realice la residencia médica para graduarme como ESPECIALISTA en GINECOLOGÍA Y OBSTETRICIA (la cual me apasiona enormemente), logrando contar con una excelente preparacion, así como atender muchos partos, cesáreas y fortaleciendo mi preparación académica y quirúrgica en el Honorable Hospital de la Mujer de la Cdmx Al terminar la especialidad realicé: - Una alta especialidad en Cirugía Ginecológica de Mínima invasión en el Hospital Juarez Centro, misma que me ha permitido tratar a mis pacientes en cirugías reduciendo riesgos y obteniendo mayores beneficios, reflejados en su recuperación - Ademas de contar con amplia preparación para manejo de pacientes con endometriosis, dolor pélvico crónico y o infertilidad, así como control prenatal para mis pacientes embarazadas - Cuento con cursos, congresos, preparación y adiestramiento en patología del tracto inferior y lesiones por Virus del Papiloma Humano, en el Hospital General de México - He participado en investigación con protocolos de estudio, así como en congresos, cursos y ponencias - 100% una médica, ginecológa y amiga que apoya a otras mujeres, creo en el empoderamiento femenino y que juntas somos más fuertes. - Me encanta la enseñanza y me encanta participar en la formación de nuevos médicos y residentes, aportando parte de los conocimientos con los que cuento - Gracias a mis pacientes que han confiado en mi y en mi trabajo, quienes me conocen saben cuánto amo mi trabajo y mi profesión ©️ Dra Sara Calvillo Cabrera Ginecología, obstetricia y cirugía mínima invasión Cp especialidad 12528578 Cp médico General 8733260",
+  "addresses": [
+    {
+      "full": "Yurécuaro 78,"
+    },
+    {
+      "full": "Avenida Baja California 210, 402,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sara-jeslya-calvillo-cabrera/ginecologo/ciudad-de-mexico#address-id=445632&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:21.487Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sara_jeslya_calvillo_cabrera.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gustavo González Nicolás",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ecec0e/ecec0e2af498623452fc664a81ff69cb_220_square.jpg",
+  "about": "Sobre mí Egresado como Médico Cirujano de la Facultad de Medicina de la Universidad Autónoma del Estado de Hidalgo. Ginecología y Obstetricia en el Hospital Español de México. Cirugía de Mínima Invasión en Ginecología en el Hospital Español de México. Principales áreas de tratamiento Control de la paciente obstétrica: En donde a partir de la primer consulta por embarazo se lleva a cabo un control prenatal cuidando la salud de la mamá y el bebé por llegar. Patología ginecológica: Se valora cualquier alteración o enfermedad del aparato reproductor femenino, desde sangrados anormales, quistes, endometriosis, infecciones, menopausia, etc. De igual manera se realiza prevención de cancer cervicouterino y mama. Tratamientos quirúrgicos por cirugía de mínima invasión: Por medio de pequeños instrumentos quirúrgicos se realizan cirugías ginecológicas, mejorando los resultados de las mismas a corto, mediano y largo plazo.",
+  "addresses": [
+    {
+      "full": "Colina de Las Ortigas 64-2,"
+    },
+    {
+      "full": "Colina de Las Ortigas 64-2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-gonzalez-nicolas/ginecologo/naucalpan#address-id=495003&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:02.258Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gustavo_gonz_lez_nicol_s.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Sergio Arturo Lopez Rivera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Titulado de la carrera de Médico Cirujano en la Facultad de Medicina de la Universidad Autónoma de San Luis Potosí, Posteriormente curso de la especialidad de Ginecología y Obstetricia en el Hospital Universitario de la UANL y la subespecialidad de Perinatología en la misma institución esta última con galardon de estudiante disteinguido de posgrado.",
+  "addresses": [
+    {
+      "full": "DOCTORS HOSPITAL Calle Ecuador 2331, Balcones de Galerías,,"
+    },
+    {
+      "full": "Aztlan 8703. San Bernabé ,"
+    },
+    {
+      "full": "DOCTORS HOSPITAL Calle Ecuador 2331, Balcones de Galerías,,"
+    },
+    {
+      "full": "Aztlan 8703. San Bernabé ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-arturo-lopez-rivera/ginecologo/monterrey#address-id=15923&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:45.650Z",
+  "localPhotoPath": null
+}

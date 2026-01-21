@@ -1,0 +1,36 @@
+{
+  "name": "Dra. Rosalia García Ruíz",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36884a/36884afc49f39040fcf21de1f6d1e2d2_220_square.jpg",
+  "about": "Egresada del hospital Centro Medico ABC, con mas de 10 años de experiencia en el manejo de la salud de la mujer en todas la etapas de su vida. Inicio de su vida sexual, Embarazo, parto, así como los diferentes padecimientos como miomatosis, endometriosis. Cuento con los estudios para el manejo de enfermedades de transmisión sexual como virus del papiloma humano. Y finalmente en la culminación de su vida reproductiva como es Menoapausia y Climaterio",
+  "addresses": [
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    },
+    {
+      "full": "Av. División del Norte 3398 Coyoacán, El Rosario,"
+    },
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    },
+    {
+      "full": "Av. División del Norte 3398 Coyoacán, El Rosario,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosalia-garcia-ruiz-3/ginecologo/ciudad-de-mexico#address-id=339181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:44.936Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rosalia_garc_a_ru_z.webp"
+}

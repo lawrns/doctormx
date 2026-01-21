@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raúl Vaca Carmona",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2ccae8/2ccae8ada736dd3a228363b70fae40f6_220_square.jpg",
+  "about": "Embarazos de alto riesgo, colposcopia, control de embarazo y métodos anticonceptivos, enfermedades de la mujer con más de 18 años de experiencia",
+  "addresses": [
+    {
+      "full": "Av. México 2472 col. Ladrón de Guevara,"
+    },
+    {
+      "full": "Av. México 2472 col. Ladrón de Guevara,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-vaca-carmona/ginecologo/guadalajara#address-id=12409&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:03.262Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__ra_l_vaca_carmona.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Pons Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9cbaac/9cbaac6f469b61ffdd13588a3a517fd6_220_square.jpg",
+  "about": "Medico egresado de la facultad Ignacio A. Santos del ITESM campus Monterrey. Egresado de la especialidad en Ginecología y Obstetricia del Hospital San José-ITESM Egresado como Subespecialista en Medicina Reproductiva como Biólogo de la Reproducción del Hospital Universitario Dr. José E. González de la UANL",
+  "addresses": [
+    {
+      "full": "Independencia 331, esq. con Zuazua. ,"
+    },
+    {
+      "full": "Independencia 331, esq. con Zuazua. ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Fertilización in vitro (FIV)",
+      "price": ""
+    },
+    {
+      "name": "Inseminación artificial",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-pons-munoz/ginecologo/guadalupe#address-id=53039&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:57.244Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__guillermo_pons_mu_oz.webp"
+}

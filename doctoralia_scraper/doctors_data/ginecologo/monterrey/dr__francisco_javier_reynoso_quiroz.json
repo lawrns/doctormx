@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Francisco Javier Reynoso Quiroz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 19,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b2e306/b2e3065edf5d65ee2c6e557a9b5e52af_220_square.jpg",
+  "about": "Médico Adscrito al Servicio de Ginecología y Obstetricia del Hospital General de Zona número 67 del IMSS. Médico Adscrito al Servicio de Ginecología y Obstetricia del Hospital General de Cerralvo SSNL. Actualmente trabajando con UROEXPERT Trayectoria académica: • Internado de Pregrado realizado en Hospital General de Cancún en Quintana Roo. 1 de julio del 2000 al 30 de junio del 2001. • Servicio Social realizado en la localidad de Tecajec en Yecapixtla Morelos. 1 de agosto del 2001 al 31 de julio del 2002. • Examen Profesional por conocimientos generales los días 24 y 25 de enero del 2002. • Toma de protesta el día 25 de enero del 2002. • Especialización en Acupuntura Humana del 2002 al 2004. • “RECONOCIMIENTO A LA EXCELENCIA “, por excelencia académica, casco de Sto. Tomas 29 de julio 1998. • Primer lugar en el segundo concurso estudiantil “PREMIO AL MERITO SAMUEL HAHNEMANN” 1999. • Asesor estudiante de enero de 1999 a julio de 1999. • Becario por desempeño académico de TELMEX de 1997 a diciembre del 2001. • Especialidad en Ginecología y Obstetricia. Hospital Regional Tlalnepantla ISSEMYM. Universidad Autónoma del Estado de México. Toluca Estado de México. Marzo del 2009 – febrero de 2013. • Certificado por CONSEJO MEXICANO DE GINECOLOGÍA Y OBSTETRICIA, A.C. 09 mayo 2014. • Subespecialista en Urología Ginecológica IMSS, UMAE # 23, 2013-2015, avalado por UNAM. • Diplomado de ultrasonido en área Ginecológica y la obstetricia y el doppler gineco-obstétrico. Del 30 de junio del2018 al 08 de diciembre del 2018. Instituto Mexicano de Diagnóstico por Imagen. Universidad Autónoma de Guerrero. Cédula Profesional: 3975756 Cédula de Especialidad: 8404784 Cédula de Subespecialidad: En tramite. Especialista en: Ginecología y Obstetricia Urología Ginecológica Enfermedades que Atiende: • Control prenatal • Embarazos complicados • Amenaza de aborto • Ultrasonido obstétrico y ginecológico • Papanicolaou • Colposcopia • Manejo de prolapso órganos pélvicos (cistocele, rectocele, prolapso uterino) • Incontinencia urinaria de esfuerzo, urgencia, mixta • Prolapso de cúpula • Cistitis intersticial • Biopsia de endometrio • Displasias • Cesárea • Histerectomía • Partos",
+  "addresses": [
+    {
+      "full": "Centro Médico Ave, Dr. Fernando Guajardo 155, Col. los doctores, 65710,"
+    },
+    {
+      "full": "Centro Médico Ave, Dr. Fernando Guajardo 155, Col. los doctores, 65710,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de fístula genitourinaria",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-javier-reynoso-quiroz/ginecologo/nuevo-leon#address-id=123994&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:47.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__francisco_javier_reynoso_quiroz.webp"
+}

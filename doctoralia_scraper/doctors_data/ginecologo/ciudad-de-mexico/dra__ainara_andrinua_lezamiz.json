@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Ainara Andrinua Lezamiz",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 109,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e189ee/e189eebcbde05a8a51861dcaede3c87f_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Prueba de Papanicolaou",
+      "price": "• $500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ainara-andrinua-lezamiz/ginecologo/ciudad-de-mexico#address-id=121784&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:44.742Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ainara_andrinua_lezamiz.webp"
+}

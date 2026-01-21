@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jaime Eduardo Del Ángel Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb4b6a/cb4b6a8fd9148849803aacf57b48be63_220_square.jpg",
+  "about": "Hola! bienvenidos a mi perfil! Soy el Doctor Jaime Eduardo del Ángel Ramos y será un gusto atenderte, explicarte a detalle todas las dudas que tengas, en un ambiente de confianza, empatía hacia ti y hacia tu familia, con total profesionalismo. En seguida, te cuento un poco sobre mí: - Estudié la carrera de Médico Cirujano Partero en la Universidad Autónoma de Nuevo León. - Posteriormente, realicé la especialidad de Ginecología y Obstetricia en el Hospital Universitario “Dr. José Eleuterio González” (UANL). - Continué mi preparación académica, realizando la Sub-especialidad en Medicina Materno Fetal en Hospital Ginequito, Avalado por la Universidad de Monterrey (UDEM). - Realicé de manera presencial, una Formación Avanzada en Medicina Fetal en el Hospital Vall d´Hberon en la ciudad de Barcelona, España. Así como también, he realizado constantemente diferentes cursos de actualización y me encuentro certificado por el Consejo Mexicano de Ginecología y Obstetricia. Será un placer atenderte y resolver todas tus dudas!",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    },
+    {
+      "full": "Boulevard Acapulco 2209,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Ultrasonido genético",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $700"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-eduardo-del-angel-ramos/ginecologo/nuevo-leon#address-id=618648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:55.133Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jaime_eduardo_del__ngel_ramos.webp"
+}

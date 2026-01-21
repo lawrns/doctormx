@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Trujillo Marin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 94,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4db394/4db3943b70c01e5d0304e77dc93316dd_220_square.jpg",
+  "about": "Soy el Dr. Juan Trujillo Marín, especialista en Ginecología y Obstetricia con subespecialidad en Medicina Materno Fetal. Con más de 15 años de experiencia, he tenido el privilegio de acompañar a numerosas madres en sus momentos más importantes, especialmente aquellas con condiciones como diabetes, hipertensión y embarazos por fertilización in vitro. Mi formación complementaria en Medicina Fetal me permite ofrecer una atención médica de alta calidad, garantizando diagnósticos precisos y efectivos. Mi compromiso es brindarte atención médica especializada, personalizada y cercana. Me tomo el tiempo necesario para explicarte cada aspecto de tu salud, responder a todas tus preguntas y asegurarme de que te sientas tranquila y en confianza durante todo el proceso. La puntualidad y un trato amable son pilares en mi práctica, lo que me enorgullece saber que mis pacientes valoran profundamente. Me encantaría acompañarte en tu viaje de maternidad, ayudándote a disfrutar esta etapa de manera segura y tranquila. Mi enfoque está en garantizar una experiencia positiva, centrándome en tus necesidades y preocupaciones individuales. Siempre estoy disponible para apoyarte en tu proceso de recuperación o en el bello sueño de ser madre.",
+  "addresses": [
+    {
+      "full": "Periférico Boulevard Manuel Ávila Camacho 59,"
+    },
+    {
+      "full": "Periférico Boulevard Manuel Ávila Camacho 59,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-trujillo-marin-2/ginecologo/tlalnepantla-de-baz2#address-id=435893&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:29.349Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_trujillo_marin.webp"
+}

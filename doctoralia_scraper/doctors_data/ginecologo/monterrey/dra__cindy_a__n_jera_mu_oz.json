@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Cindy A. Nájera Muñoz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84f33c/84f33ce1519d9c457ddd71d4433b777e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1910 cons 606,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1910 cons 606,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cindy-a-najera-munoz/ginecologo-ginecologo-oncologico/nuevo-leon#address-id=137602&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:34.873Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__cindy_a__n_jera_mu_oz.webp"
+}

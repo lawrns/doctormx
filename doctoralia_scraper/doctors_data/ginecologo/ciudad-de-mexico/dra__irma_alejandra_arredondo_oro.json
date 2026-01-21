@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Irma Alejandra Arredondo Oro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 51,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1a3f50/1a3f5077e5046c92769cdadc767e5aac_220_square.jpg",
+  "about": "Médico Ginecólogo y Obstetra con Alta Especialidad en Infertilidad y Reproducción Asistida y Diplomado en Colposcopia y Patología Vulvovaginal Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Con calidad humana y experiencia en diferentes temas como: control prenatal, embarazo de alto riesgo, atención del parto humanizado, cesárea humanizada, anticoncepción, sangrado uterino anormal, síndrome de ovario poliquístico, ultrasonido ginecológico, vacunación, climaterio y menopausia. Además de abordaje de la pareja infertil y los diferentes manejos (Inducción de la ovulación, Inseminación artificial, fertilización in vitro, histeroscopia, etc) ¿Tienes alguna pregunta? Contáctame y con gusto puedo ayudarte.",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 28,"
+    },
+    {
+      "full": "Acueducto Río Hondo 28,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irma-alejandra-arredondo-oro/ginecologo/ciudad-de-mexico#address-id=423631&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:54.220Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__irma_alejandra_arredondo_oro.webp"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Matute Leopoldo Vazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Frida Kahlo 180 Cons 308,"
+    },
+    {
+      "full": "Frida Kahlo 108,"
+    },
+    {
+      "full": "Frida Kahlo 180 Cons 308,"
+    },
+    {
+      "full": "Frida Kahlo 108,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/matute-leopoldo-vazquez/ginecologo/san-pedro-garza-garcia#address-id=58447&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:49.069Z",
+  "localPhotoPath": null
+}

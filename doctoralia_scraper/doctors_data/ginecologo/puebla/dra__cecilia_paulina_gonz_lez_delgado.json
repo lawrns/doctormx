@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cecilia Paulina González Delgado",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 580,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec06ab2d/ec06ab2d-c069-4b8e-8040-444c5973b660_small_square.jpg",
+  "about": "Hola que tal! será un placer para mi conocerte y brindarte mis servicios, te cuento un poco sobre mi, soy médico egresado por parte de la UNAM, Especialista Certificado por el Consejo Mexicano de Ginecología y Obstetricia, posgraduada del Instituto Nacional de Perinatología INPerIER con Alta Especialidad en Perimenopausia y Osteoporosis por la misma Institución. Estoy calificada para el manejo del de embarazo de alto riesgo, brindándoles un óptimo seguimiento perinatal en situaciones especiales como embarazo adolescente, madres con edad materna avanzada, bebés con malformaciones o defectos genéticos, gemelares o múltiples, madres con con patologías preexistentes como: Diabetes Mellitus, enfermedades tiroideas, epilepsia, hipertensión, enfermedades renales, sanguíneas, cáncer etc.Mi pasión? Mi subespecialidad! brindar el manejo correcto y adecuado a las mujeres justo en su transición hormonal, la etapa de la Perimenopausia los síntomas de Climaterio, así como en las patologías propias de la edad: osteoporosis, hipotiroidismo, diabetes mellitus y síndrome metabólico; mi objetivo es mantener a la paciente en un estado de salud, vivir plena y placenteramente esta etapa de la vida y permitirle llegar a la senectud sana; el manejo de cada caso es individualizado e integral. Facultada para manejar infecciones del complejo vulvo - perineal generadas por Virus del Papiloma Humano, mediante manejos conservadores y quirúrgicos, profilaxis (prevención: vacunación) y chequeos rutinarios.",
+  "addresses": [
+    {
+      "full": "Atlixcáyotl 3248 Interior 111D, Ex Hacienda, San Martinito, Tlaxcalancingo, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de valoración",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Menopausia y Climaterio",
+      "price": "• $800"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-paulina-gonzalez-delgado/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:41.756Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__cecilia_paulina_gonz_lez_delgado.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ernesto Peimbert Puente",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 118,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/788d9f/788d9f218b7d57db499c6e6fa3e5925c_220_square.jpg",
+  "about": "UNIVERSIDAD AUTONOMA DE GUADALAJARA HOSPITAL ESPAÑOL DE MEXICO HOSPITAL 1o OCTUBRE ISSSTE HOSPITAL STAR MEDICA LOMAS VERDES SOCIO TITULAR COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA CERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA MIEMBRO ACTIVO DEL COLEGIO MEXICANO DE GINECOLOGIA Y OBSTETRICIA PRESIDENTE DEL COLEGIO DE GINECOLOGOS Y OBSTETRAS DR ALFONSO ALVAREZ BRAVO DEL HOSPITAL ESPAÑOL DE MÉXICO PRESIDENTE HONORARIO DEL CONSEJO MÉDICO HOSPITAL STAR MEDICA LOMAS VERDES JEFE DEL SERVICIO DE GINECO OBSTETRICIA DEL HOSPITAL STAR MEDICA LOMAS VERDES PROFESOR DE LA CATEDRA DE GINECOLOGIA Y OBSTETRICIA DE MEDICOS INTERNOS DE UNIVERSIDAD DEL VALLE DE MÉXICO.",
+  "addresses": [
+    {
+      "full": "Avenida Lomas Verdes 2165,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-peimbert-puente/ginecologo/naucalpan-de-juarez2#address-id=85595&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:20.429Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ernesto_peimbert_puente.webp"
+}

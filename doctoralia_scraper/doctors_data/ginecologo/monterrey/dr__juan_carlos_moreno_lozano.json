@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Juan Carlos Moreno Lozano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "15 De Mayo 1822 PTE,"
+    },
+    {
+      "full": "15 De Mayo 1822 PTE,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-moreno-lozano-2/ginecologo-medico-general/monterrey#address-id=42413&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:56.191Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Brenda Lisset Briones Bernal",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/cb0be1/cb0be1dceade2d11c0d657470c2902b7_220_square.jpg",
+  "about": "Hola! Soy la Dra. Brenda Briones Me gradué de Médico Cirujano y Partero en la Universidad Autónoma de Nuevo León. Posteriormente realicé la especialidad en Ginecología y Obstetricia en el Hospital Universitario “Dr. José E. González” avalada por la Universidad Autónoma de Nuevo León. Finalmente terminé la subespecialidad de Medicina Materno Fetal, (Embarazo Alto Riesgo y Ecografía de Alta Especialidad) en el Hospital Ginequito avalada por la Universidad de Monterrey, con rotación en Hospital Vall d’Hebron & Hospital Clinic de Barcelona, España. Actualmente soy la Jefa del Servicio de Ginecologia y Obstetricia del Hospital Metropolitano de Secretaria de Salud de Nuevo León. Me encanta tratar a la mujer en todas sus etapas, pero en definitiva, me apasiona su etapa más expresiva, la maternidad, y por mucho ver las diferentes etapas de crecimiento y desarrollo de su ser más preciado, su bebé. Sin duda, el embarazo puede cursar con enfermedades maternas propias o no de la gestación, pero juntas, tú y yo, de la mano, podemos prevenirlas, controlarlas o tratarlas, es mi finalidad. Lo más importante para mí es darte tranquilidad, explicándote detalle a detalle cada duda, por que sé, que de esa manera, todo cursará positivamente a una pronta recuperación. Amo y disfruto lo que hago, comparto la felicidad con una pareja que tiene un nuevo nacimiento, doy empatia a la adolescente que va por primera vez a su consulta ginecológica y doy confort a las molestias en la etapa final reproductiva como lo es, la menopausia. Gracias por su confianza en mi y por poner en mis manos, lo más preciado para ustedes, su salud y bienestar.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1881,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-lisset-briones-bernal/ginecologo/nuevo-leon#address-id=392693&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:49.602Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/brenda_lisset_briones_bernal.webp"
+}

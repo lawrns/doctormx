@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Manuel Mota González",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "30 anos de experiencia en la especialidad de Ginecologia. Con expertise en Ciorugia de Minima Invasion entrenado en Estados Unidos en cirugia laparoscopica giencologica compleja. Ofreciendo esta opcion de tratamiento moderno e innovador con la mas alta calidad y resultados.",
+  "addresses": [
+    {
+      "full": "Enrique Pestalozzi 1204 (esquina Matias Romero, Segundo Piso Consultorio 202),"
+    },
+    {
+      "full": "Enrique Pestalozzi 1204 (esquina Matias Romero, Segundo Piso Consultorio 202),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-mota-gonzalez/ginecologo/benito-juarez#address-id=88568&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:12.293Z",
+  "localPhotoPath": null
+}

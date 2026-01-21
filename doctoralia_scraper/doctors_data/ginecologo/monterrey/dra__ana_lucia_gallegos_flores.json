@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Lucia Gallegos Flores",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 32,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0110f6/0110f6a8820faebb0a6331d0b0783138_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro Medico HOSPITARIA,"
+    },
+    {
+      "full": "Centro Medico HOSPITARIA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $9,500"
+    },
+    {
+      "name": "Cesárea",
+      "price": "• $12,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-lucia-gallegos-flores/ginecologo/general-escobedo#address-id=86895&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:16.408Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__ana_lucia_gallegos_flores.webp"
+}

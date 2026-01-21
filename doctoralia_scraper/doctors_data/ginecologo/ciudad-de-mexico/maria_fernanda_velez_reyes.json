@@ -1,0 +1,25 @@
+{
+  "name": "Maria Fernanda Velez Reyes",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Oceano Pacifico 100 Edif 5B Dep4, Col. Lomas Lindas, ,"
+    },
+    {
+      "full": "Oceano Pacifico 100 Edif 5B Dep4, Col. Lomas Lindas, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-velez-reyes/ginecologo/atizapan-de-zaragoza#address-id=355799&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:38.723Z",
+  "localPhotoPath": null
+}

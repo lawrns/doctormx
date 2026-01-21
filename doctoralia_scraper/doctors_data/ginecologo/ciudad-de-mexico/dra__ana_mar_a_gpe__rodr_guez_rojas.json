@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana María Gpe. Rodríguez Rojas",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 399,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2bc026/2bc02663c7778efb3065760badfa7a56_220_square.jpg",
+  "about": "Actualmente soy Médica Especializada en Ginecología y Obstetricia, Endometriosis, además de realizar cirugía Laparoscópica con estudios en consultorios de ultrasonido, colposcopía e histeroscopia.",
+  "addresses": [
+    {
+      "full": "Tlacotalpan 59-710,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-gpe-rodriguez-rojas-2/ginecologo/cuauhtemoc2#address-id=137800&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:43:32.246Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_mar_a_gpe__rodr_guez_rojas.webp"
+}

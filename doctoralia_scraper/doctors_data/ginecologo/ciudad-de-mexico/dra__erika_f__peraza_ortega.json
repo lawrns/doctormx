@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Erika F. Peraza Ortega",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/652d447d/652d447d-006e-499b-b737-7747f25f071f_small_square.jpg",
+  "about": "Soy la Dra. Erika Peraza, un poco de mí:Egresada de la Universidad Anáhuac México Norte. Realicé la especialidad de Ginecología y Obstetricia en el Hospital Angeles Lomas, avalada por la UNAM. Cirugía Endoscópica Ginecológica, con el compromiso de ofrecer cirugía de mínima invasión con máxima precisión.Porque entender lo que pasa en tu cuerpo también es parte de sentirte bien.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca s/n, Hacienda de las Palmas,"
+    },
+    {
+      "full": "Puente de Piedra 150, Col. Toriello Guerra Tlalpan.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-f-peraza-ortega/ginecologo/ciudad-de-mexico#address-id=585426&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:15.588Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_f__peraza_ortega.webp"
+}

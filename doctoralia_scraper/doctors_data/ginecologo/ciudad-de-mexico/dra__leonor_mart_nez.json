@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Leonor Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 84,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/90987c30/90987c30-7bac-44a1-8375-def36ec47fd9_large.jpg",
+  "about": "Sobre mí Hola, soy Leonor Martínez Médico especialista en Ginecología y Obstetricia con Subespecialidad en Biología de la Reproducción Humana y Diplomado de Colposcopia y Patología del tracto genital inferior. ¿Por qué elegirme a mí? Me caracteriza mi profesionalismo, empatía y humanismo, me gusta estar actualizada para brindarte una atención médica certera, de calidad y que te sientas en confianza. Principales áreas de tratamiento Me enfoco en el diagnóstico y tratamiento de la páreja con infertilidad brindando tratamientos de baja y alta complejidad Trastornos ginecoendócrinos como Síndrome de Ovario Poliquístico Menopausia Osteoporosis Cirugía ginecológica de mínima invasión Otros servicios Coito programado Inseminación intrauterina Fetilización in vitro Biopsia testicular Histeroscopia Cirugía ginecológica de minima invasión Papanicolaou y Colposcopia Cono, esferolisis Vacuna VPH",
+  "addresses": [
+    {
+      "full": "Avenida Sor Juana Inés de La Cruz 289,"
+    },
+    {
+      "full": "Avellana,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leonor-martinez/medico-general/tecamac#address-id=568200&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:06.803Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__leonor_mart_nez.webp"
+}

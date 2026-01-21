@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Martha Ivette Mejia Chavez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 63,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/144396a5/144396a5-a869-45b7-a03e-b9dca364cdbf_small_square.jpg",
+  "about": "Soy la Doctora Martha Ivette Mejía Chávez, especialista en Ginecología y Obstetricia; realicé mis estudios universitarios en la Facultad de Medicina en Ciudad Universitaria, me especialicé como ginecóloga obstetra en el hospital de PEMEX avalado por la Univerdidad Nacional Autónoma de México.Tengo diolomados en colposcopia, adiestramiento en ultrasonido obstétrico y doppler fetal por el hospital Luis Castelazo Ayala. Laboró a su vez en el Hospital de alta especialidad Gineco 4 del IMSS.Estoy contenta de poder ayudarte a atender problemas femeninos y lo relacionado al embarazo.",
+  "addresses": [
+    {
+      "full": "Bugambilia 159,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-ivette-mejia-chavez-3/ginecologo/nezahualcoyotl#address-id=597063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:13.913Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_ivette_mejia_chavez.webp"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Miroslava Senet Vidales Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31b534/31b534f1c0541783d6b82f0493747468_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Lerdo de Tejada 535,"
+    },
+    {
+      "full": "Ave. Lerdo de Tejada 535,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miroslava-senet-vidales-hernandez/ginecologo/san-nicolas-de-los-garza#address-id=15068&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:27.367Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__miroslava_senet_vidales_hernandez.webp"
+}

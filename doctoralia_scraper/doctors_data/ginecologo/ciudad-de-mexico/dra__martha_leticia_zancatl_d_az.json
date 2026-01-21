@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Martha Leticia Zancatl Díaz",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 228,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a6a54c46/a6a54c46-90fc-4394-a23c-e4494645d4c9_small_square.jpg",
+  "about": "Soy la Dra. Martha Leticia Zancatl Díaz, Ginecóloga especializada en cirugía de mínima invasión y colposcopia certificada por el Consejo Mexicano de Ginecología y Obstetricia. Especialista en: - Obstetricia - Laparoscopia - Histeroscopia - Colposcopia Tengo especial interés en resolver todas las cuestiones ginecológicas que necesites, ofreciéndote un trato digno y personalizado todo el tiempo. Te espero. ¡Agenda tu cita por Doctoralia !COFEPRIS: 2309042002A00102",
+  "addresses": [
+    {
+      "full": "Avenida División del Norte 3395,"
+    },
+    {
+      "full": "Calzada Acoxpa 430,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-leticia-zancatl-diaz/ginecologo/tlalpan#address-id=607307&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:25.642Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_leticia_zancatl_d_az.webp"
+}

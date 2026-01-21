@@ -1,0 +1,52 @@
+{
+  "name": "Zulema Yazmin Morales Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 48,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/548f41/548f41293a54b75926510712bc61019c_220_square.jpg",
+  "about": "Espero que su primer consulta siempre sea una experiencia agradable que la haga regresar con nosotros. Donde se le brinde la confianza de platicarnos el motivo de su consulta y en la cual queden aclaradas todas sus dudas para así poder ayudarla en su padecimiento. Permítame conocerle para poder brindarle mi ayuda con mis conocimientos y experiencia. Tengo 22 años de experiencia en la ginecología y obstetricia con especialidad en Climaterio y menopausia y hormonas bioidénticas como parte de la terapia de reemplazo hormonal. Y 15 años de experiencia usando hormonas bioidénticas. Diplomado en Salud Sexual . Con los cuales he aprendido a brindarles una mayor ayuda en los diferentes temas y padecimientos de una manera individual , y en pareja.",
+  "addresses": [
+    {
+      "full": "Hidalgo 1828 101,"
+    },
+    {
+      "full": "Av. Hidalgo 1828 poniente (Interior 203, 2° piso) (Centro Medico de la Mujer),"
+    },
+    {
+      "full": "Hidalgo 1828 101,"
+    },
+    {
+      "full": "Av. Hidalgo 1828 poniente (Interior 203, 2° piso) (Centro Medico de la Mujer),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zulema-yazmin-morales-rodriguez/ginecologo/monterrey#address-id=578946&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:01.630Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/zulema_yazmin_morales_rodriguez.webp"
+}

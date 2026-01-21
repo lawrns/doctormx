@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gumersindo Ruiz Rueda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0bedc/a0bedccbd2fecac0f569d74fa3c358e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Sor Juana Ins De La Cruz 337,"
+    },
+    {
+      "full": "Av. Sor Juana Ins De La Cruz 337,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gumersindo-ruiz-rueda/ginecologo/nezahualcoyotl#address-id=222584&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:16:11.090Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gumersindo_ruiz_rueda.webp"
+}

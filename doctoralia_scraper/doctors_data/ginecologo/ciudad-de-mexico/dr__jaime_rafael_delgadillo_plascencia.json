@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jaime Rafael Delgadillo Plascencia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/76064d/76064d2e7027ba97deb6de9a31493a19_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Fundidora de Monterrey 185 depto 3,"
+    },
+    {
+      "full": "Fundidora de Monterrey 185 depto 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-rafael-delgadillo-plascencia/ginecologo/gustavo-a-madero#address-id=151338&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:24.935Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jaime_rafael_delgadillo_plascencia.webp"
+}

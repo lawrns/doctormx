@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Victorina Bañuelos Ulloa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 251,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c20880/c20880339753f6a27867d0339f20a326_220_square.jpg",
+  "about": "Mi formación médica con experiencia de 30 años, hace que mi compromiso hacia al paciente sea integral brindando en cada paciente calidad en la atención la cual es personalizada en tiempo y espacio.",
+  "addresses": [
+    {
+      "full": "Mar Marmara 2001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/victorina-banuelos-ulloa/ginecologo/guadalajara#address-id=47905&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:48.783Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__victorina_ba_uelos_ulloa.webp"
+}

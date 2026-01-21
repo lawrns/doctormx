@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Francisco Ramírez Carrillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/356174/3561740cbd37b123ed53b2712ac91f76_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Hidalgo No. 1911 Int. 14,"
+    },
+    {
+      "full": "Colomos No. 2110. 1er piso, Consultorio 128 Colonia Ayuntamiento,"
+    },
+    {
+      "full": "Av. Hidalgo No. 1911 Int. 14,"
+    },
+    {
+      "full": "Colomos No. 2110. 1er piso, Consultorio 128 Colonia Ayuntamiento,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-ramirez-carrillo/ginecologo/guadalajara#address-id=101869&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:37.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__francisco_ram_rez_carrillo.webp"
+}

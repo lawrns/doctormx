@@ -1,0 +1,43 @@
+{
+  "name": "Melina Trujillo Quiroz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1305,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a2d3fd/a2d3fd7e03e3da11355262cc3e9b0185.jpg",
+  "about": "Soy Ginecóloga con 9 años de experiencia, he realizado mi formación en instituciones educativas – hospitalarias en México, en DEXEUS MUJER (España) y el Instituto Universitario de Infertilidad (España), esto me ha permitido actualizarme en múltiples áreas de mi especialidad, con esto he adquirido las habilidades quirúrgicas y conocimientos que me fortalecen para acompañar a mis pacientes en las diferentes etapas de su vida, ofreciéndoles una atención integrad en las áreas de Obstetricia, Ginecología y Medicina de la Reproducción. Mi principal compromiso es ofrecer un tratamiento médico de alta calidad a través del trabajo en equipo y las más avanzadas tecnologías. En mi consulta he desarrollado un programa de revisión ginecológica adaptada a la mujer actual, con asistencia y diagnósticos ágiles, rápidos, cómodos y fiables. Puedo ofrecerte atención dirigida a las siguientes áreas de la ginecología y obstetricia;  Ginecología Cosmética y Bioregenerativa  Menopausia  Suelo Pélvico (Uroginecología)  Mastología  Riesgo Oncológico  Ginecología de la Infancia y de la Adolescencia  Patología del Tracto Genital Inferior  Anticoncepción  Endoscopía Ginecológica  Diagnóstico Ginecológico por la Imagen.  Ultrasonido ginecológico, ultrasonido obstétrico y ultrasonido de mama  Embarazo de alto riesgo  Obesidad y Alteraciones Hormonales  MEDICINA ANTI ENVEJECIMIENTO Y LONGEVIDAD Al acudir a mi consulta conocerás una versión de la ginecología totalmente diferente y tratamientos innovadores.",
+  "addresses": [
+    {
+      "full": "Guty Cárdenas 65 Col. Guadalupe Inn Álvaro Obregón,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $2,100"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $250"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/melina-trujillo-quiroz/ginecologo/ciudad-de-mexico#address-id=361043&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:48.325Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/melina_trujillo_quiroz.webp"
+}

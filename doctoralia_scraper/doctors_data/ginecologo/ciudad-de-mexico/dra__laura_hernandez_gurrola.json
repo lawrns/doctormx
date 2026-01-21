@@ -1,0 +1,64 @@
+{
+  "name": "Dra. Laura Hernandez Gurrola",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/805782/80578220d3c80c500ab916677354423c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALZADA ACOXPA NO. 430 270 A,"
+    },
+    {
+      "full": "José María Vigil 2929 . Col. Lomas De Providencia. ,"
+    },
+    {
+      "full": "Arbol Del Fuego 80,"
+    },
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    },
+    {
+      "full": "CALZADA ACOXPA NO. 430 270 A,"
+    },
+    {
+      "full": "José María Vigil 2929 . Col. Lomas De Providencia. ,"
+    },
+    {
+      "full": "Arbol Del Fuego 80,"
+    },
+    {
+      "full": "Agrarismo 208 (Hospital Angeles México, 1er Piso Torre A),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-hernandez-gurrola-3/ginecologo/ciudad-de-mexico#address-id=367977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:13.289Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__laura_hernandez_gurrola.webp"
+}

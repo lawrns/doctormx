@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Brenda Yareli Ramirez Eugenio",
+  "specialty": "Ginecóloga",
+  "rating": 4.5,
+  "reviewCount": 20,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/eddbb776/eddbb776-be49-4e6f-a2bb-6b6b790515bd_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Tehuantepec 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-yareli-ramirez-eugenio-2/ginecologo/cuauhtemoc2#address-id=614100&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:13.631Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__brenda_yareli_ramirez_eugenio.webp"
+}

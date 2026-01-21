@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Graciela Elizabeth De la Torre Alvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 70,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/3831a8a8/3831a8a8-8c73-4cbd-b550-1ad5cb9cc143_small_square.jpg",
+  "about": "Egresada por la Universidad de Guadalajara, obteniendo mi grado de especialidad en Ginecóloga y Obstetricia en el Hospital General de Occidente(Zoquipan), mi principal objetivo es brindarte una atención medica integral en todas las etapas de la mujer, ofreciéndote la constante actualizaciones medicas que surgen día con día, esto con la finalidad de dar la mejor solución.",
+  "addresses": [
+    {
+      "full": "Andres Teran 1125 Colonia Chapultepec Country,"
+    },
+    {
+      "full": "PASEO DE LOS TILOS 3218,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Ablación cervical",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/graciela-elizabeth-de-la-torre-alvarez/ginecologo/guadalajara#address-id=548017&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:31.620Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__graciela_elizabeth_de_la_torre_alvarez.webp"
+}

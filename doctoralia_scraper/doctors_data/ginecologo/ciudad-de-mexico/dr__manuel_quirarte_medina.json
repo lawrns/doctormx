@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Manuel Quirarte Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/00baa3/00baa3c54b99313f226896970ded9560_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cozumel no. 90 Col. Roma Norte,"
+    },
+    {
+      "full": "Cozumel no. 90 Col. Roma Norte,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-quirarte-medina/ginecologo/ciudad-de-mexico#address-id=87834&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:59:25.961Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_quirarte_medina.webp"
+}

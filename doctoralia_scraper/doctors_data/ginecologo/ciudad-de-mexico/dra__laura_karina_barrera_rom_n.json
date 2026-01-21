@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura Karina Barrera Román",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 34,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/256690/2566908c850ab3c7615e602dec00531e_220_square.jpg",
+  "about": "La Dra. Laura Karina Barrera Roman, médica especialista en Ginecología y Obstetricia es egresada del Hospital General de México (quien se encuentra en el ranking del Global Health Intelligence, como uno de los mejores Hospitales de Latinoamérica, para realizar una especialidad médica). La Dra. Laura se encuentra certificada por el Consejo Mexicano de Ginecología. Su cédula profesional está avalada por la Universidad Nacional Autónoma de México (UNAM).",
+  "addresses": [
+    {
+      "full": "Sucursal Azcapotzalco / Av. Aquiles Serdán 523, Tierra Nueva.,"
+    },
+    {
+      "full": "Sucursal Azcapotzalco / Av. Aquiles Serdán 523, Tierra Nueva.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-karina-barrera-roman/ginecologo/azcapotzalco#address-id=437931&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:42.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__laura_karina_barrera_rom_n.webp"
+}

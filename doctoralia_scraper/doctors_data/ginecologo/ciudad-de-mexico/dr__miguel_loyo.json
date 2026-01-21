@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Miguel Loyo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 494,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/807876/807876e25e050f420499d94008de2413.jpg",
+  "about": "*PARA SOLICITAR CITA FAVOR DE RESERVAR POR INTERNET Y NOSOTROS NOS COMUNICAREMOS A LA BREVEDAD * GRACIAS Misión: Ofrecer atención integral de la más alta calidad en ginecología y obstetricia, a mujeres de cualquier edad que así lo requieran y soliciten, respetando en todo momento el valor humano de cada una de ellas Visión: Ser el equipo de ginecólogos con el trato más humano y profesional, propiciando la prevención y el tratamiento oportuno de nuestras pacientes. ¿Qué es la ginecología? La ginecología subespecialidad médico-quirúrgica que centra su quehacer en la prevención, diagnóstico y tratamiento de las enfermedades del sistema reproductor femenino.El médico ginecólogo es quien cuida de la salud de la mujer a lo largo de toda su vida reproductiva. ¿Qué es la obstetricia? La obstetricia es la rama de la medicina que se encarga del cuidado integral de la madre y el hijo durante la embarazo, el parto y el puerperio. La consulta médica desde el inicio de la historia ha sido considerada como el pilar de la relación médico-paciente. Sin embargo en algunas ocasiones la tecnificación, la perdida del humanismo y falta de integración médico- paciente, ha ocasionado la pérdida de la relación biopsicosocial. Por lo tanto objetivo de la consulta es solucionar, aclarar y explicar las causas fisiopatológicas de forma sencilla y que al salir comprendas el diagnostico. El tratamiento deberá de ser explicado de forma amplia ya que en la mayoría de los casos hay múltiples esquemas para una misma enfermedad , sin embargo siempre hay uno mas indicado y mi meta es que sepas por que se eligió. En la consulta quiero recordarte que puedes hacer cualquier pregunta y tomarte el tiempo necesario.",
+  "addresses": [
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    },
+    {
+      "full": "Viaducto Río Becerra 97, COLONIA NAPOLES,"
+    },
+    {
+      "full": "Boulevard Bernardo Quintana 9670,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,201"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-loyo/ginecologo/queretaro",
+  "scrapedAt": "2026-01-21T03:04:06.886Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__miguel_loyo.webp"
+}

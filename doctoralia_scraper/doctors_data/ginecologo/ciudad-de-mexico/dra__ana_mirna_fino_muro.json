@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Ana Mirna Fino Muro",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0c12a6c0/0c12a6c0-0341-4208-bc48-3799176c25e2_small_square.jpg",
+  "about": "Soy médica especialista en ginecología y obstetricia, mi compromiso con mis pacientes es vigilar su salud, brindando una atencíón humana con enfoque en cada una de las necesidades que les han llevado a buscar un especialista. Me encuentro en actualización constante en compromiso con la salud de mis pacientes.",
+  "addresses": [
+    {
+      "full": "Cascada 405,"
+    },
+    {
+      "full": "Avenida Tetiz 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-mirna-fino-muro-3/ginecologo/alvaro-obregon#address-id=594977&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:39.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_mirna_fino_muro.webp"
+}

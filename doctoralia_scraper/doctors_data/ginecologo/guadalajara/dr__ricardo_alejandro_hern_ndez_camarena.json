@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ricardo Alejandro Hernández Camarena",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Quebec 631 Col. Prados de Providencia,"
+    },
+    {
+      "full": "Quebec 631 Col. Prados de Providencia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-alejandro-hernandez-camarena/ginecologo/guadalajara#address-id=104549&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:29.716Z",
+  "localPhotoPath": null
+}

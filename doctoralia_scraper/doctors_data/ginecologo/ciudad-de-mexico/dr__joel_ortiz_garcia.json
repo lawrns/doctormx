@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Joel Ortiz Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/98622b/98622bb3de7d15df0c3dfb1426760940_220_square.jpg",
+  "about": "Médico gineco-obstetra con alta especialidad en cirugía endoscópica ginecológica.",
+  "addresses": [
+    {
+      "full": "Avenida Tlahuac 6468,"
+    },
+    {
+      "full": "Mérida 255,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $4,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/joel-ortiz-garcia-3/ginecologo/tlahuac#address-id=437505&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:23.193Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__joel_ortiz_garcia.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Dagoberto Garcia Mejia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bfb69d/bfb69d0f23719772d12e3dc51b98f33a_220_square.jpg",
+  "about": "Ginecólogo y Obstetra con Maestría en Ginecología, egresado de la Universidad de Guadalajara, con 15 años como adscrito al Hospital del ISSSTE enfocado a la mejora continúa e innovador en técnicas de mínima invasión endoscopica. Nuestro Hospital, atiende la especialidad de forma integral ya que cuenta con medicina perinatal, reproducción, clínica de displasias, corrección de piso pélvico, bienestar y rejuvenecimiento en el climaterio. Lomas Providencia es una Institución certificada, así como los médicos que participan en tu salud, en un lugar privilegiado en la Ciudad de Guadalajara.",
+  "addresses": [
+    {
+      "full": "Victoria 1515 Col. Providencia,"
+    },
+    {
+      "full": "Victoria 1515 Col. Providencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dagoberto-garcia-mejia/ginecologo/guadalajara#address-id=15648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:11.907Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__dagoberto_garcia_mejia.webp"
+}

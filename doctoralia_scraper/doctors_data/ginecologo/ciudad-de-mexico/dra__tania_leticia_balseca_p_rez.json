@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Tania Leticia Balseca Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8bd530/8bd5306e84e04891cc4fae090e88fea1_220_square.jpg",
+  "about": "Soy la Dra. Tania Leticia Balseca Pérez, ginecóloga comprometida con la salud integral de la mujer. Con formación en la UNAM (2012) y especialidad en ginecología-obstetricia, ofrezco atención profesional, humana y personalizada en mi consultorio en Arboledas. Mi práctica abarca desde controles ginecológicos de rutina, planificación familiar, seguimiento del embarazo, hasta procedimientos especializados como colposcopias, laparoscopías y atención en climaterio y menopausia. Brindo diagnóstico y tratamiento integral para distintas etapas de la vida reproductiva y ginecológica: embarazo, partos, salud hormonal, prevención del cáncer cérvico-uterino,y cuidado en etapas de transición como la menopausia. Me distingo por ofrecer un trato cercano, empático y respetuoso: escucho con atención tus inquietudes, explico con claridad tus opciones y te acompaño en cada etapa con profesionalismo y calidez. Mi objetivo es que cada paciente se sienta segura, informada y confiada.Si buscas una ginecóloga dedicada, experta y con un enfoque humano y profesional para acompañarte en tu salud femenina, será un honor atenderte.",
+  "addresses": [
+    {
+      "full": "Calzada de los Jinetes no. 56,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-leticia-balseca-perez/ginecologo/tlalnepantla-de-baz2#address-id=614344&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:32.227Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__tania_leticia_balseca_p_rez.webp"
+}

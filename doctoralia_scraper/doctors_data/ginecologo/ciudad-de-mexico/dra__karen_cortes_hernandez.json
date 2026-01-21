@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karen Cortes Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5b4ca6/5b4ca6d2fba0c4351113b610548e74a2_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-cortes-hernandez/ginecologo/gustavo-a-madero#address-id=2786&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:59.380Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karen_cortes_hernandez.webp"
+}

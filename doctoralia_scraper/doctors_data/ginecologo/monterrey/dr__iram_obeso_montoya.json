@@ -1,0 +1,58 @@
+{
+  "name": "Dr. Iram Obeso Montoya",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5d3dc0/5d3dc05d9e41d824c66b9eeb6a0aa243_220_square.jpg",
+  "about": "Amplia Experiencia en Diagnostico y Tratamientos de Infertilidad Evaluación completa de Fertilidad en Pareja Valoración integral de la pareja con esterilidadEstimulación Ovárica e Inseminación IntrauterinaTécnicas de Reproducción Asistida: Fertilización In-Vitro (FIV), Inyección Intracitoplásmatica de Espermatozoides (ICSI)Donación de Óvulos - Banco de Óvulos y EspermatozoidesCirugía Reproductiva incluyendo Microcirugía, Histeroscopía y Laparoscopía.",
+  "addresses": [
+    {
+      "full": "Av. Hidalgo 1828 Pte,"
+    },
+    {
+      "full": "Hidalgo 1842 Pte.,"
+    },
+    {
+      "full": "HIDALGO 1828,"
+    },
+    {
+      "full": "Av. Hidalgo 1828 Pte,"
+    },
+    {
+      "full": "Hidalgo 1842 Pte.,"
+    },
+    {
+      "full": "HIDALGO 1828,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Extirpación de pólipos cervicales, vaginales y vulvares",
+      "price": ""
+    },
+    {
+      "name": "Extracción cerclaje de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Extracción cuerpo extraño por histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iram-obeso-montoya/ginecologo/monterrey#address-id=353047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:22.499Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__iram_obeso_montoya.webp"
+}

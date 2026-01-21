@@ -1,0 +1,96 @@
+{
+  "name": "Dr. Edgar Alain Becerra Marquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 262,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/00cb8448/00cb8448-4bf9-4009-ab88-c92e33df007a_small_square.jpg",
+  "about": "Sobre mí Soy Alain Becerra, estudie la especialidad en Ginecologia y Obstetricia, y la especialidad en Urología Ginecológica, asi como entrenamientos en estética genital y funcional. Mi filosofía de atención es tener al paciente en el centro, ofrecer servicios de excelencia medica con trato humano y con resultados de calidad. Soy un apasionado de la medicina y junto con un equipo de profesionales en la salud puedo atender todas las patologías. Mi atención es en hospitales de calidad con costos accesibles. En el consultorio tengo instalaciones con alta tecnología para que tengas mayor tranquilidad y seguridad. Pongo a tu servicio la experiencia de 14 años como médico. Con gusto te ofrezco asesoría médica completa para resolver tus dudas, y restablecer tú salud. ¿Por qué elegirme a mí? Soy un médico con una amplia experiencia y actualización permanente. Principales áreas de tratamiento Soy un apasionado de la Medicina Funcional que beneficie a la mujer para equilibrar su cuerpo y obtener una salud que la lleve a la plenitud y felicidad total. He ayudado a muchas familiar y pacientes con problemas de tipo HORMONAL como el síndrome de ovarios poliquisticos, o alteraciones por ENDOMETRIOSIS. Tumores o quistes en los ovarios. También les ofrezco una forma segura y accesible para resolver un EMBARAZO DE ALTO RIESGO. Mi consulta y mi equipo Soy un apasionado de la medicina y junto con un equipo de profesionales en la salud puedo atender todas las patologías o alteraciones que estes enfrentando. Mi atención es SIEMPRE en hospitales de calidad con costos accesibles. En el consultorio tengo instalaciones con alta tecnología para que tengas mayor tranquilidad y seguridad. Otros servicios a) MEDICINA FUNCIONAL Síndrome de ovarios poliquisticos Endometriosis Climaterio y menopausia Vejiga caída Infecciones Alteraciones hormonales Quistes en los ovarios, vagina, vulva, uretra. Miomatosis uterina Embarazo ectopico Tumores de mama b) RECUPERANDO LA SALUD Cirugia vaginal reconstructiva y funcional Endoscopia - laparoscopia Colposcopia Histeroscopia Control prenatal y anticoncepción; colocación y retiro de DIU (dispositivos encarnados), retiro de chip (implante hormonal) Cirugia anti-incontinencia laser, tratamientos no invasivos. Cirugia estetica genital, como labioplastia, relleno de labios y armonización vulvar. c) EMBARAZO RESPETADO Parto humanizado Cesarea humanizada Lactancia respetada Embarazo de ALTO RIESGO Más sobre mí Pongo a tu servicio la experiencia de 15 años como médico. Con gusto te ofrezco asesoría médica completa para resolver tus dudas, y restablecer tú salud.",
+  "addresses": [
+    {
+      "full": "Av. Universidad 1080, Consultorio 5000,"
+    },
+    {
+      "full": "Av. de la Herradura, Manzana 030, Col. Country Club,"
+    },
+    {
+      "full": "Av Tecnológico 725,"
+    },
+    {
+      "full": "Federico T de La Chica 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-alain-becerra-marquez/ginecologo/naucalpan-de-juarez2#address-id=507436&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:14.683Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__edgar_alain_becerra_marquez.webp"
+}

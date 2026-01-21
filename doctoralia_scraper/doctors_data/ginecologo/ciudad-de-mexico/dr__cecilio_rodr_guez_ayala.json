@@ -1,0 +1,54 @@
+{
+  "name": "Dr. Cecilio Rodríguez Ayala",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 183,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/5a5050d1/5a5050d1-0a6e-44a8-a865-4ecc046ae9c7_small_square.jpg",
+  "about": "¡Hola qué tal! Soy Cecilio Rodríguez Ayala, ginecólogo especializado en urología ginecológica. Mi enfoque se centra en tratar las condiciones que afectan la función de los órganos pélvicos femeninos, como la incontinencia urinaria y prolapso, entre otras. Al abordar dos áreas del cuerpo que, aunque distintas, están estrechamente relacionadas, puedo ofrecer un enfoque multidisciplinario que me permite desarrollar tratamientos completos y personalizados. Este enfoque integral me permite tratar a mis pacientes desde una perspectiva más amplia, mejorando no solo su salud física, sino también su calidad de vida. Mi objetivo es brindar opciones y soluciones efectivas que aborden sus necesidades de manera holística, ayudando a restaurar su bienestar y confianza.",
+  "addresses": [
+    {
+      "full": "Durango 290,"
+    },
+    {
+      "full": "Naranjo 121 Col. Santa María la Ribera entre Díaz Miron y Alzate,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilio-rodriguez-ayala/ginecologo/cuauhtemoc2#address-id=466705&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:22.740Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__cecilio_rodr_guez_ayala.webp"
+}

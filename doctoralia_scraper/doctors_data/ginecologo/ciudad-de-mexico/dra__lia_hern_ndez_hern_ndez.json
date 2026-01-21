@@ -1,0 +1,27 @@
+{
+  "name": "Dra. Lia Hernández Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 254,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/307796/3077960b2083923ee7a58fbf59419dae_220_square.jpg",
+  "about": "Soy la Dra Lia Hernández, especialista en Ginecología Materno-Fetal, comprometido con el bienestar integral de la mujer durante el embarazo. Como profesional, me enorgullece ofrecer un enfoque personalizado y compasivo para cada paciente, reconociendo la Mi objetivo es brindarte el apoyo necesario a lo largo de tu embarazo, asegurando un ambiente de confianza donde puedas expresar tus inquietudes y recibir la información que necesitas para tomar decisiones informadas sobre tu salud y la de tu bebé.",
+  "addresses": [
+    {
+      "full": "Calzada la Viga 1174, Piso 10, dentro del Hospital MAC La Viga, El triunfo, Iztapala, 09430, Ciudad de México, CDMX.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lia-hernandez-hernandez-3/ginecologo/iztapalapa#address-id=624062&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:14.341Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__lia_hern_ndez_hern_ndez.webp"
+}

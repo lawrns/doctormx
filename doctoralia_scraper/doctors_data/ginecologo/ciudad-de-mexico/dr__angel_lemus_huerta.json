@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Angel Lemus Huerta",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 102,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c94515/c9451564f1bf7cefbb253e81f6380167_220_square.jpg",
+  "about": "Que tal soy el Dr Angel Lemus Huerta especialista en Ginecología y Obstetricia, y cuento con la subespecialidad en Biología de la Reproducción Humana ambas realizadas en el Instituto Nacional de Perinatología. Cuento también con entrenamiento en cirugía laparoscopica reproductiva y ginecológica el cual lo realice en el Hospital Juárez de México, soy miembro de la Sociedad de Medicina de la Reproducción en México y de la sociedad de Médicos del Hospital Ángeles del Pedregal.",
+  "addresses": [
+    {
+      "full": "Avenida Acueducto 95,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparoscopia quirúrgica",
+      "price": ""
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-lemus-huerta-3/ginecologo/magdalena-contreras#address-id=421087&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:30.252Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__angel_lemus_huerta.webp"
+}

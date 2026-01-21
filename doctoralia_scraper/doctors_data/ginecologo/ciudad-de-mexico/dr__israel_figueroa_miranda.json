@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Israel Figueroa Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2598f1/2598f1d3fb337c5267dd9749c08ce344_220_square.jpg",
+  "about": "Soy un medico apasionado por su profesión por lo que darte una atención médica en ginecología y obstetricia de calidad y seguridad con el mas sentido humano en cada momento importante de tu salud y la de tu bebe es nuestro mayor objetivo. Tenemos la capacidad de atenderte y prevenir las enfermedades que se presentan en las mujeres de cualquier edad, en un ambiente de tranquilidad, confianza y cordialidad que mereces. Siempre manteniendo la atención ginecológica y obstétrica con tecnología de punta. Mis habilidades y destrezas las fui desarrollando en la maxima casa de estudios (UNAM) con la especialidad en el Hospital General de Mexico, las cuales incluyen cirugia de minima invasión (histeroscopia diagnostica y quirurgica, histerectomia, miomectomia, tumerectomia anexial y embarazo ectopico por laparoscopia); cirugia pelvica y vaginal; vigilancia, control y atención del embarazo, parto y puerperio; trastornos menstruales, hemorragia uterina anormal, manejo de climaterio, cirugia LASER, rejuvenecimiento o tensado vaginal; colposcopia y manejo de hormonas bioidenticas son algunas de ellas.",
+  "addresses": [
+    {
+      "full": "Tepic 126 (Piso 4, Consultorio 8),"
+    },
+    {
+      "full": "Tepic 126 (Piso 4, Consultorio 8),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anexectomía",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/israel-figueroa-miranda/ginecologo/cuauhtemoc#address-id=113329&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:50.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__israel_figueroa_miranda.webp"
+}

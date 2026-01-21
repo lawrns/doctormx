@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Thalía Nataly Meza",
+  "specialty": "Médico general",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/c84687da/c84687da-d19c-4161-b28d-83b08fd9e54d_small_square.jpg",
+  "about": "Somos una red de clínicas para la mujer con presencia en el Estado de México y Ciudad de México. Nuestro modelo de atención está centrado en el paciente y le brinda todo lo que necesita desde un solo lugar.",
+  "addresses": [
+    {
+      "full": "Plaza Punto MAQ 3er piso. Av Miguel Ángel de Quevedo 1144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/thalia-nataly-meza/medico-general-ginecologo/coyoacan#address-id=540440&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:09.579Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__thal_a_nataly_meza.webp"
+}

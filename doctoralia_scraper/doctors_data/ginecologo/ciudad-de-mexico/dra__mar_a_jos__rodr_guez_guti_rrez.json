@@ -1,0 +1,73 @@
+{
+  "name": "Dra. María José Rodríguez Gutiérrez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 392,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c941f6/c941f6298b909b9b2d9729590631c5b6_220_square.jpg",
+  "about": "Soy medico especialista en Ginecología y Obstetricia, con más de trece años de experiencia en la zona, originaria de la ciudad de Torreón Coahuila, egresada del Hospital Juárez del México. Colaborando por más de 8 años en Hospital San Rafael Cuautitlán Izcalli como Secretario del comité de morbimortalidad Materna Fetal, 4 años en Hospital Elipse en el área de Ginecología y obstetricia. Gracias a la confianza de mis pacientes, hacemos una mejor experiencia en la atención de parto/cesárea humanizado y respetado. La consulta Ginecológica hacemos que nuestras pacientes se sientan seguras, escuchadas resolviendo cada una de sus dudas. En salud reproductiva contamos con todos los métodos de planificación familiar.I am an Obstetrics and Gynecology physician with more than 13 years of experience. I am from Torreón, Coahuila, México and graduated from Hospital Juárez de México. I have collaborated at Hospital San Rafael Cuautitlán Izcalli for more than 8 years as Committee Secretary for Fetal-Maternal Morbidity and Mortality, and I have also worked at Hospital Ellipse in OB/GYN for 4 years. Because of the trust of my patients, my team and I strive to make the childbirth experience better through respect and humanity. Our practice ensures that patients feel safe and heard, with all their questions and doubts being addressed. In Reproductive Health, we provide all available contraceptive methods.",
+  "addresses": [
+    {
+      "full": "Av Mario Colin, San Lorenzo, 54033 Tlalnepantla de Baz, Méx.,"
+    },
+    {
+      "full": "Av. José López Portillo 86, San Francisco Chilpan, 54944 Buenavista, Méx.,"
+    },
+    {
+      "full": "Calle Sinaloa 11,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-jose-rodriguez-gutierrez-2/ginecologo/cuautitlan-izcalli#address-id=416662&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:46.156Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_jos__rodr_guez_guti_rrez.webp"
+}

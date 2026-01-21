@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Carlos Alberto Hernandez Nieto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bb1491/bb1491b8b88754e63a747be00abb1632_220_square.jpg",
+  "about": "Ginecólogo y Obstetra con sub-especialidad en Endocrinología Reproductiva e Infertilidad. Mis mayores intereses se enfocan en el abordaje y tratamiento de la pareja infértil y casos difíciles de infertilidad, experto en tecnología y técnicas de reproducción asistida, endocrinología reproductiva, genética reproductiva y cirugía ginecológica de mínima invasión. Con amplia experiencia en uno de los centros más reconocidos de Estados Unidos y el Mundo, Reproductive Medicine Associates of New York (RMA of NY), la división de medicina reproductiva de Mount Sinai Health system. Actualmente formo parte del cuerpo médico de RMA of NY y RMA of NY-México y soy director del área de investigación clínica. Además, soy Investigador y miembro del sistema nacional de investigadores (nivel SNI -1) CONACYT y miembro de Iberoamerican Research Network in Obstetris, Gynecology and Translational Medicine. También parte del cuerpo académico de Icahn School of Medicine at Mount Sinai Hospital y Profesor asociado de la especialidad en ginecología y obstetricia, en el Instituto Tecnológico de Estudios Superiores de Monterrey – Tec Salud.",
+  "addresses": [
+    {
+      "full": "Prolongación Paseo de la Reforma # 2693 – Torre B – piso 10°,"
+    },
+    {
+      "full": "Prolongación Paseo de la Reforma # 2693 – Torre B – piso 10°,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora de malformaciones uterinas",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-hernandez-nieto/ginecologo/miguel-hidalgo#address-id=15455&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:55.145Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_alberto_hernandez_nieto.webp"
+}

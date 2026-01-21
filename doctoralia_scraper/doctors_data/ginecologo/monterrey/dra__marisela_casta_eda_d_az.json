@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Marisela Castañeda Díaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f9b580/f9b5803946d7361eeddfb62df925c09d_220_square.jpg",
+  "about": "Ginecóloga y Obstetra con Subespecialidad en Biología de la Reproducción, Endoscopía Ginecológica.",
+  "addresses": [
+    {
+      "full": "Ave. Constitución Pte.1881,"
+    },
+    {
+      "full": "Calle Inglaterra 208, Local C Planta Baja, Fracc. Pedregal de LindaVista, 2o. Sector, Guadalupe, Nuevo León,"
+    },
+    {
+      "full": "Ave. Constitución Pte.1881,"
+    },
+    {
+      "full": "Calle Inglaterra 208, Local C Planta Baja, Fracc. Pedregal de LindaVista, 2o. Sector, Guadalupe, Nuevo León,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisela-castaneda-diaz/ginecologo/nuevo-leon#address-id=119695&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:10.678Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marisela_casta_eda_d_az.webp"
+}

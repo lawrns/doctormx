@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Manuel Enciso Meraz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1145,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a5ad9b/a5ad9b1ab4b268a88a61c671e325356f.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Manuel J. Clouthier 669 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-manuel-enciso-meraz/ginecologo/zapopan#address-id=154425&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:19.652Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__juan_manuel_enciso_meraz.webp"
+}

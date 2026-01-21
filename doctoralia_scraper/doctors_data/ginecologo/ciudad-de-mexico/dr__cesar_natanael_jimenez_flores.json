@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Cesar Natanael Jimenez Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99078f/99078f414958140922ebd76ba6dcad83_220_square.jpg",
+  "about": "Ginecólogo con amplia experiencia en el campo, destacando en control prenatal, cirugía ginecológica, rejuvenecimiento vaginal y tratamientos estéticos",
+  "addresses": [
+    {
+      "full": "Cuajimalpa de Morelos,"
+    },
+    {
+      "full": "Olivar del conde,"
+    },
+    {
+      "full": "Cuajimalpa de Morelos,"
+    },
+    {
+      "full": "Olivar del conde,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cesar-natanael-jimenez-flores/ginecologo-medico-general/ciudad-de-mexico#address-id=423564&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:11.676Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__cesar_natanael_jimenez_flores.webp"
+}

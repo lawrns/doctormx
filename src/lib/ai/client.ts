@@ -4,6 +4,7 @@
  */
 
 import { AI_CONFIG } from './config';
+import { createClient } from '@/lib/supabase/server';
 import type {
   PreConsultaMessage,
   TranscriptionSegment,
@@ -237,25 +238,23 @@ export async function auditAIOperation(params: {
   status: 'success' | 'error';
   error?: string;
 }): Promise<void> {
-  // TODO: Guardar en Supabase tabla ai_audit_logs
-  // Por ahora solo log en consola
-  console.log('[AI AUDIT]', {
-    ...params,
-    timestamp: new Date().toISOString(),
-  });
+  const supabase = await createClient();
 
-  // En producción esto iría a la DB:
-  // await supabase.from('ai_audit_logs').insert({
-  //   operation: params.operation,
-  //   user_id: params.userId,
-  //   user_type: params.userType,
-  //   input: params.input,
-  //   output: params.output,
-  //   model: AI_CONFIG.openai.model,
-  //   tokens: params.tokens,
-  //   cost: params.cost,
-  //   latency_ms: params.latencyMs,
-  //   status: params.status,
-  //   error: params.error,
-  // });
+  try {
+    await supabase.from('ai_audit_logs').insert({
+      operation: params.operation,
+      user_id: params.userId === 'anonymous' ? null : params.userId,
+      user_type: params.userType,
+      input: params.input,
+      output: params.output,
+      model: AI_CONFIG.openai.model,
+      tokens: params.tokens,
+      cost: params.cost,
+      latency_ms: params.latencyMs,
+      status: params.status,
+      error: params.error,
+    });
+  } catch (error) {
+    console.error('Error logging AI operation to DB:', error);
+  }
 }

@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Carlos Emiro Moran Villota",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0c12a6c0/0c12a6c0-0341-4208-bc48-3799176c25e2_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Rio Magdalena 289,"
+    },
+    {
+      "full": "Puente De Piedra 150,"
+    },
+    {
+      "full": "Av. Rio Magdalena 289,"
+    },
+    {
+      "full": "Puente De Piedra 150,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-emiro-moran-villota/ginecologo/ciudad-de-mexico#address-id=241063&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:19.553Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_emiro_moran_villota.webp"
+}

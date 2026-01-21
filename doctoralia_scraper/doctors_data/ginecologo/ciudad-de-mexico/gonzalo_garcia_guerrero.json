@@ -1,0 +1,31 @@
+{
+  "name": "Gonzalo Garcia Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Perif. Blvd. Manuel Ávila Camacho S/N,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    },
+    {
+      "full": "Perif. Blvd. Manuel Ávila Camacho S/N,"
+    },
+    {
+      "full": "Av. Industria Militar 1057,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gonzalo-garcia-guerrero/ginecologo/miguel-hidalgo#address-id=223845&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:16:45.928Z",
+  "localPhotoPath": null
+}

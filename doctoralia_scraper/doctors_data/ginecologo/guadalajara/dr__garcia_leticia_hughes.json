@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Garcia Leticia Hughes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 117,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/38870de9/38870de9-581d-4888-8169-e780041a216e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Justo Sierra 2064 1,"
+    },
+    {
+      "full": "Calle Justo Sierra 2064 1,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/garcia-leticia-hughes/ginecologo/guadalajara#address-id=58546&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:19.434Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__garcia_leticia_hughes.webp"
+}

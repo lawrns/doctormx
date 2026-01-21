@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Fernanda Moreno Bonilla",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Egresada cómo médico cirujano de la universidad Anáhuac México Norte. Ginecología y obstetricia en el hospital Español de México. Certificada por el Consejo Mexicano de ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Eugenio Sue 355,"
+    },
+    {
+      "full": "Eugenio Sue 355,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernanda-moreno-bonilla/ginecologo/miguel-hidalgo#address-id=578136&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:27.303Z",
+  "localPhotoPath": null
+}

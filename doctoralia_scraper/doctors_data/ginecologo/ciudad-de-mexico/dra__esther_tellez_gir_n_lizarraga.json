@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Esther Tellez Girón Lizarraga",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8674c0/8674c0427ee498b8156acd80006e9583_220_square.jpg",
+  "about": "Somos un grupo de doctoras especialistas, dirigidas a la prevención y manejo de enfermedades ginecológicas, seguimiento obstétrico y manejo de infertilidad, altamente calificadas. Buscamos otorgar a nuestros pacientes atención de calidad realizando prevención, detección temprana y tratamiento integral. Estamos dirigidos a la prevención y manejo de enfermedades ginecológicas, seguimiento obstétrico y manejo de infertilidad, por médicos especialistas altamente calificados",
+  "addresses": [
+    {
+      "full": "Bosques de los Continentes 134,"
+    },
+    {
+      "full": "Bosques de los Continentes 134,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esther-tellez-giron-lizarraga/ginecologo/nezahualcoyotl#address-id=22470&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:27.574Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__esther_tellez_gir_n_lizarraga.webp"
+}

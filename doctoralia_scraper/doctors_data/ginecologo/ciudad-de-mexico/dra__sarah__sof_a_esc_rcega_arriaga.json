@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Sarahí Sofía Escárcega Arriaga",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/e9200cb1/e9200cb1-1e7d-4264-8b8e-fed936262166_small_square.jpg",
+  "about": "Ginecóloga y Obstetra",
+  "addresses": [
+    {
+      "full": "San Ángel Inn,"
+    },
+    {
+      "full": "San Ángel Inn,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Desde $60"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,200"
+    },
+    {
+      "name": "Aspiracion Manual Endouterina AMEU",
+      "price": "• Desde $22"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sarahi-sofia-escarcega-arriaga/ginecologo/ciudad-de-mexico#address-id=550802&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:56.714Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sarah__sof_a_esc_rcega_arriaga.webp"
+}

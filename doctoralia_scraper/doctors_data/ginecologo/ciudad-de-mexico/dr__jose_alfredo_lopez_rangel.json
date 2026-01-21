@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jose Alfredo Lopez Rangel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 201,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b2e56/6b2e562bc21856491168597aaf1f7617_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente De Piedra 150 torre2 consultorio 220,"
+    },
+    {
+      "full": "Puente De Piedra 150 torre2 consultorio 220,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfredo-lopez-rangel-2/ginecologo/tlalpan#address-id=69188&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:54:41.149Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_alfredo_lopez_rangel.webp"
+}

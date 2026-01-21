@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Jorge Alejandro Oliva Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 353,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/50ea7b/50ea7b5fa383b2b1f5b11b2279b5a2ff_220_square.jpg",
+  "about": "Soy médico certificado en la especialidad de Ginecología-Obstetricia en el Hospital Adolfo López Mateos del D.F. Ademas realice la Sub-Especialidad en Medicina Materno Fetal. Egresado de la Universidad Nacional Autónoma de México (UNAM). Cuento con la experiencia de más de 25 años , actualmente Medico Adscrito del Servicio de Medicina Materno Fetal del Hospital Regional Dr. Valentín Gómez Farias del ISSSTE, Medico Adscrito del Servicio de Medicina Materno Fetal del Hospital Civil Nuevo Juan I. Menchaca, además de realizar diplomado en Laparoscopia Ginecología Básico y Avanzado de la Universidad Autónoma de Sinaloa (UAS), con Maestría en Gestión Directiva de Salud por la Universidad del Valle de México(UVM). Soy Miembro activo de la Colegio de Medicos Gineco-Obstetras del Estado de Jalisco asi como de la Sociedad de Medicina Materno Fetal del Estado de Jalisco. La Medicina Materno Fetal, adquiere como relevancia al feto como paciente, este concepto implica considerar al feto como una persona individual. El cómo tratarlo para identificar la presencia de posibles defectos congénitos, así como alteraciones del crecimiento fetal tanto por exceso como por defecto, sobre todo en la primera mitad de la gestación. En aras de informar a la paciente de dicha situación para su mejor seguimiento y definir una mejor decisión. Contamos en la unidad con las mejores instalaciones, con excelente atención y servicio personalizado y el equipo de ultrasonido diagnóstico de alta gama para su mejor atención y detección oportuna de patología fetal.",
+  "addresses": [
+    {
+      "full": "Av. Chapalita #1373,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-alejandro-oliva-trujillo/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:41.603Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jorge_alejandro_oliva_trujillo.webp"
+}

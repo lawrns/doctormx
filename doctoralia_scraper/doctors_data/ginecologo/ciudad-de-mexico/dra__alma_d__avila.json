@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Alma D. Avila",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6b1f30/6b1f30654eccfe0e2bfa0b9154ac6d4f_220_square.jpg",
+  "about": "La Dra. Alma Delia es ampliamente reconocida por su trayectoria en el campo de la especialidad en Ginecología y Obstetricia a nivel nacional. Su alta preparación y formación actual en los instituciones más importantes en el país como Centro Médico Nacional \"La Raza\" del IMSS y el Hospital 20 de Noviembre del ISSSTE, respaldan su labor como médico altamente capacitado, con experiencia y calidad humana al tratar a cada una de sus pacientes.",
+  "addresses": [
+    {
+      "full": "Querétaro 144, Torre 2, Consultorio 213,"
+    },
+    {
+      "full": "Querétaro 144, Torre 2, Consultorio 213,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-d-avila/ginecologo/ciudad-de-mexico#address-id=615593&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:12.002Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alma_d__avila.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Miguel Ángel Arrieta Casas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e8c829/e8c829fcce120b70c67718fd39d9d737_220_square.jpg",
+  "about": "Otorgó consulta especializada a la mujer en sus diferentes etapas de la vida; apoyado de tecnologia de vanguardia que nos permite un adecuado seguimiento, al momento que se decida cursar una de las etapas de mayor plenitud como es el Embarazo. Control de Embarazo normal o con alguna enfermedad agregada. Detección de Alteraciones Cromosómicas ( Síndrome de Down con muestras de sangre en Mamá y análisis en tiempo real de bebé en primeros 3 meses de embarazo) Vigilancia del crecimiento de bebé ( ultrasonido 2D que nos dice en que peso aproximado se encuentra bebé , de acuerdo al peso debería tener) Vigilancia de estado de oxigenación en bebé ( Ultrasonido Doppler HD tanto básico como avanzado, según las necesidades.) Estudio anatómico de bebé; en base a la semana de embarazo en la cual se encuentre. Cariotipo fetal ( útil cuando existen hallazgos que pudieran indicarnos alteración cromosómica y necesitemos 100% de seguridad en el diagnostico - estudio realizado por medio de amniocentesis) Ultrasonido 3D y 4D para reafirmar este vinculo entre bebé y futuros padres. Asesoría en caso de que bebé requiera atención en los diversos centros de Alta Especialidad del Pais o bien llegue a requerir alguna intervención quirúrgica aun dentro de Mamá)",
+  "addresses": [
+    {
+      "full": "Av. Gral. Eulogio Parra 2975 (Interior 5),"
+    },
+    {
+      "full": "Av. Gral. Eulogio Parra 2975 (Interior 5),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-arrieta-casas/ginecologo/guadalajara#address-id=134361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:12.895Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__miguel__ngel_arrieta_casas.webp"
+}

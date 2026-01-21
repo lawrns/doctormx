@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Irene Concepcion Choy Gomez",
+  "specialty": "Médico general",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes Sur, 214,"
+    },
+    {
+      "full": "Calle Norte 70 A,"
+    },
+    {
+      "full": "Ave. Insurgentes 216 5,"
+    },
+    {
+      "full": "Insurgentes Sur, 214,"
+    },
+    {
+      "full": "Calle Norte 70 A,"
+    },
+    {
+      "full": "Ave. Insurgentes 216 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/irene-concepcion-choy-gomez-3/medico-general/ciudad-de-mexico#address-id=67626&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:35.707Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Miriam Eugenia Guillen Reveles",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 453,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f5c1d4/f5c1d4f9ae117d1330a28ce1c7436969_220_square.jpg",
+  "about": "Dra. Especializada en el tratamiento en síndrome de ovario poliquístico como sus consecuencias: acné hormonal, obesidad hormonal e infertilidad así como otros tratamientos asociados a la endocrinología ginecológica, así mismo cuento con amplia experiencia en el manejo de virus de papiloma humano y sus consecuencias.",
+  "addresses": [
+    {
+      "full": "Boulevard Manuel Ávila Camacho 59,"
+    },
+    {
+      "full": "Calle 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Paquete ginecológico",
+      "price": "• $2,400"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• Desde $4,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $5,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Valoración ginecologica y/o obstétrica",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miriam-eugenia-guillen-reveles/ginecologo/tlalnepantla-de-baz2#address-id=436145&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:40:56.838Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__miriam_eugenia_guillen_reveles.webp"
+}

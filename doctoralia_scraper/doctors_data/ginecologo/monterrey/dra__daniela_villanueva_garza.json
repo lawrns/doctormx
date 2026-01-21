@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Daniela Villanueva Garza",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 134,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/7a06ed9f/7a06ed9f-7038-4239-8f8d-43cec51078f9_small_square.jpg",
+  "about": "Especialista en Ginecología, Obstetricia y Colposcopía en Monterrey, Nuevo León. Certificada por el Consejo Mexicano de Ginecología y Obstetricia.Tengo una gran pasión por la medicina obstétrica y cirugía ginecológica. Disfruto mucho mi trabajo. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. Te invito a agendar tu cita conmigo. ¡Será un placer ser tu especialista!",
+  "addresses": [
+    {
+      "full": "Terranova 240, Vista Hermosa, 64620 Monterrey, N.L.,"
+    },
+    {
+      "full": "Benito Juárez 12001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,650"
+    },
+    {
+      "name": "Colocación de DIU T de Plata",
+      "price": "• $3,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Control del embarazo",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniela-villanueva-garza/ginecologo/nuevo-leon#address-id=493323&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:19.204Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__daniela_villanueva_garza.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Samantha Andrea Miramontes Pérez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 922,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2cb5e2/2cb5e2fd991f36f6bdd674329a375648_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av de La Paz 21, San Ángel,"
+    },
+    {
+      "full": "Av de La Paz 21, San Ángel,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Atención del cáncer en la mujer",
+      "price": ""
+    },
+    {
+      "name": "Atención pacientes con cáncer",
+      "price": ""
+    },
+    {
+      "name": "Biopsia con marcaje con arpón",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/samantha-andrea-miramontes-perez/ginecologo-ginecologo-oncologico/ciudad-de-mexico#address-id=493853&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:07:40.108Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__samantha_andrea_miramontes_p_rez.webp"
+}

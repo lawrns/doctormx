@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Cecilia Berenice Mejía Medina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 40,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d9961/9d99614f06d9d5511899ca1c29655a36_220_square.jpg",
+  "about": "Soy un médico que trabaja día a día, en donde lo más importante para mí es el bienestar de mi paciente, ayudarle de la mejor forma y de la manera más honesta para lograr, mantener y equilibrar su salud.",
+  "addresses": [
+    {
+      "full": "Santander n 15,"
+    },
+    {
+      "full": "Santander n 15,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $999"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cecilia-berenice-mejia-medina/ginecologo/ciudad-de-mexico#address-id=417048&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:34.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__cecilia_berenice_mej_a_medina.webp"
+}

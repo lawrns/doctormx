@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Luis Daniel García Betancourt",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 66,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/69631e/69631e42f06fbd540f9d24e44c628e31_220_square.jpg",
+  "about": "Soy graduado de la carrera de Médico Cirujano por la Universidad Autónoma de Guadalajara, Realicé mi especialidad en el Hospital General de Occidente Zoquipan con título en Ginecología y Obstetricia por la Universidad de Guadalajara Actualmente certificado por el Consejo Mexicano de Ginecología y Obstetricia Realice un diplomado en Climaterio Menopausia y Osteoporosis avalado por la Universidad de Sinaloa Realice el Curso Teórico Practico de Entrenamiento de Laparoscopia Ginecológica avalado por la Escuela de Medicina de la Pontifica Universidad Católica de Chile Actualmente me dedico a la consulta privada en la ciudad de Zapopan Entre los padecimientos a tratar realizo: revisión de rutina ginecológica completa incluyendo exploración de mamas pelvis y vagina. Ultrasonido pélvico y vaginal. De la misma forma realizo toma de papanicolaou y colposcopia, biopsias cervicales y endometriales. Control del embarazo, vigilancia y atención de partos y cesáreas. Detección y abordaje de sangrados uterinos anormales y tumoraciones ováricas y en caso de ser necesario intervenciones quirúrgicas como histerectomías y/o retiro de ovarios. Revisión detección y tratamiento en pacientes en climaterio menopausia y osteoporosis. Abordaje de mínima invasión mediante técnicas de endoscopía ginecológica",
+  "addresses": [
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Ramon Corona 177,"
+    },
+    {
+      "full": "Avenida Central Guillermo Gonzalez Camarena 911,"
+    },
+    {
+      "full": "Ramon Corona 177,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $3,850"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Atención de parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "IMPLANTE SUBDERMICO",
+      "price": "• Desde $3,000"
+    },
+    {
+      "name": "OVARIO POLIQUISTICO",
+      "price": ""
+    },
+    {
+      "name": "Retiro de DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-daniel-garcia-betancourt/ginecologo/zapopan#address-id=471077&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:00.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__luis_daniel_garc_a_betancourt.webp"
+}

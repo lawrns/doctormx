@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jocelyn Rodríguez Arredondo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 31,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/065e72/065e723322c144009e7c37e61d0718cb_220_square.jpg",
+  "about": "Soy especialista en atención de NACIMIENTO HUMANIZADO, educación en LACTANCIA MATERNA y PSICOLOGIA PERINATAL. Permíteme acompañarte en el momento más importante: la llegada de tu bebé.",
+  "addresses": [
+    {
+      "full": "Dr. Roberto J. Cantú 300, Col. Los Doctores,"
+    },
+    {
+      "full": "Dr. Roberto J. Cantú 300, Col. Los Doctores,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jocelyn-rodriguez-arredondo/ginecologo/nuevo-leon#address-id=20617&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:22.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__jocelyn_rodr_guez_arredondo.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Armando Ortiz Mondragón",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15cfd1/15cfd13d40270de71204581ff8e20bf7_220_square.jpg",
+  "about": "Cirugía de mínima invasión.",
+  "addresses": [
+    {
+      "full": "Calle otatli mzn 167 lote 39 barrio hojalateros ,"
+    },
+    {
+      "full": "Calle otatli mzn 167 lote 39 barrio hojalateros ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/armando-ortiz-mondragon/ginecologo/chimalhuacan#address-id=441912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:45.175Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__armando_ortiz_mondrag_n.webp"
+}

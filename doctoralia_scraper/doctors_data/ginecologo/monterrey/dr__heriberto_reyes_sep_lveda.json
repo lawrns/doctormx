@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Heriberto Reyes Sepúlveda",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 17,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96b4c6/96b4c65d1fb067c9f223e57627f3c14a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Centro médico Conchita. 15 de mayo 1822 pte. 4° piso consultorio 2,"
+    },
+    {
+      "full": "Centro médico Conchita. 15 de mayo 1822 pte. 4° piso consultorio 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/heriberto-reyes-sepulveda/ginecologo/monterrey#address-id=68048&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:11.082Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__heriberto_reyes_sep_lveda.webp"
+}

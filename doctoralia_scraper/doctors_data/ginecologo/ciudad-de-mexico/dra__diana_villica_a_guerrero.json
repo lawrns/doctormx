@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Diana Villicaña Guerrero",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/518858f5/518858f5-b63b-40c3-b2ec-92015c4b9a0f_small_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia formada en la UNAM. Cuento con adiestramiento en cirugía laparoscópica (mínima invasión) y en Colposcopía y patología del tracto genital inferior.Me dedico al cuidado integral de la salud de la mujer, desde la atención y seguimiento del embarazo hasta la prevención y tratamiento de enfermedades ginecológicas, siempre con un enfoque humano y actualizado.Mi principal interés es ofrecer a mis pacientes opciones modernas y seguras, como la cirugía de mínima invasión, que permite procedimientos menos dolorosos, con menor riesgo y una recuperación más rápida.Mi compromiso es acompañarte en cada etapa de tu vida con confianza, cercanía y profesionalismo.",
+  "addresses": [
+    {
+      "full": "Durango 33,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/diana-villicana-guerrero/ginecologo/cuauhtemoc2#address-id=542963&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:02.951Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__diana_villica_a_guerrero.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Emanuel Sánchez Avalos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0eb2e1/0eb2e1d98ffb3ddc7038aa9bb124b13a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Naciones Unidas 5522,"
+    },
+    {
+      "full": "Naciones Unidas 5522,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/emanuel-sanchez-avalos/ginecologo/zapopan#address-id=135579&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:03.119Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__emanuel_s_nchez_avalos.webp"
+}

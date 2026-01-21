@@ -1,0 +1,25 @@
+{
+  "name": "Teresa Gonzalez Baños",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Eje 7 Municipio Libre, 191 Bis,"
+    },
+    {
+      "full": "Eje 7 Municipio Libre, 191 Bis,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresa-gonzalez-banos/ginecologo/benito-juarez#address-id=78227&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:57.180Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aide I. Manny Zitle",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 438,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/573134/5731340711599d73a9f102149f8e86de.jpg",
+  "about": "HOLA SOY LA DRA. AIDÉ MANNY ZITLE SOY MÉDICO GENERAL FORMADA EN LA FACULTAD DE MEDICINA DE LA BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA ESPECIALISTA EN GINECOLOGÍA Y OBSTETRICIA, REALIZADA EN ISSSTE CIUDAD DE MÉXICO, CURSO AVALADO POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO . SUBESPECIALISTA EN GINECOLOGÍA ONCOLÓGICA, REALIZADA EN EL HOSPITAL JUÁREZ DE MÉXICO, CURSO AVALADO POR LA UNIVERSIDAD NACIONAL DE MÉXICO. DIPLOMADO EN COLPOSCOPIA Y PATOLOGÍA DEL TRACTO GENITAL INFERIOR, REALIZADO EN EL HOSPITAL JUÁREZ DE MÉXICO Y CURSO AVALADO POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO. CUENTO CON UN DIPLOMADO EN CIRUGÍA LAPAROSCÓPICA AVANZADA REALIZADO EN EL HOSPITAL JUÁREZ DE MÉXICO AVALADO POR LA UNIVERSIDAD NACIONAL DE MÉXICO",
+  "addresses": [
+    {
+      "full": "Priv. de las Ramblas 4, Reserva Territorial Atlixcáyotl, Corredor Comercial Desarrollo Atlixcayotl, Puebla, Puebla.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aide-i-manny-zitle/ginecologo-oncologico-ginecologo/puebla#address-id=397861&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:07.517Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__aide_i__manny_zitle.webp"
+}

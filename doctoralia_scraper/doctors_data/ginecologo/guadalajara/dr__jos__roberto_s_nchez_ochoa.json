@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Roberto Sánchez Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f057e2/f057e2e0bb3071be909f044226196280_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Alcalde #2170,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-roberto-sanchez-ochoa/ginecologo/guadalajara#address-id=24607&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:03.268Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jos__roberto_s_nchez_ochoa.webp"
+}

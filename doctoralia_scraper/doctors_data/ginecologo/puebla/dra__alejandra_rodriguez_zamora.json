@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Alejandra Rodriguez Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 45,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b228f3f4/b228f3f4-2ddb-4cb1-b75a-d40bf9f6d21d_small_square.jpg",
+  "about": "Somos una red de clínicas para la mujer con presencia en el Estado de México y Ciudad de México. Nuestro modelo de atención está centrado en el paciente y le brinda todo lo que necesita desde un solo lugar.",
+  "addresses": [
+    {
+      "full": "Av. Juárez, C. 23 Sur 2301, Zona Esmeralda, 72090 Puebla, Pue.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-rodriguez-zamora/ginecologo/puebla#address-id=540391&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:54:34.422Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__alejandra_rodriguez_zamora.webp"
+}

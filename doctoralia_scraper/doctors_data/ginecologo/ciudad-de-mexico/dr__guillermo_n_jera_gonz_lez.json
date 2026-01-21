@@ -1,0 +1,69 @@
+{
+  "name": "Dr. Guillermo Nájera González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 296,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a877e6/a877e6faab4304226133b33f130548e3_220_square.jpg",
+  "about": "GINECOLOGO, OBSTETRA, EGRESADO DE CMN SIGLO XXI --IMSS CON MENCIÓN HONORÍFICA, PREMIO NACIONAL QUIRURGICO POR LOS RESULTADOS EN PACIENTES EMBARAZADAS CON PLACENTA PREVIA, GINECÓLOGO CERTIFICADO, MÁS DE 15 AÑOS DE EXPERIENCIA SUB ESPECIALISTA EN GINECOLOGÍA ENDOSCOPICA (LAPAROSCOPIA E HISTEROSCOPIA), ESTOY DEDICADO A MANTENER ÍNTEGRA LA EXPRESIÓN PERSONAL Y FEMENINA EN CADA MUJER CONSERVANDO SU SALUD GINECOLÓGICA, PORQUE LA SALUD NO SÓLO SE SIENTE, TAMBIÉN SE VE Y SE EXPRESA. PONGO LO ULTIMO EN AVANCES TECNOLÓGICOS MÉDICOS AL SERVICIO DE TU SALUD, EN UN SOLO LUGAR Y EN CÓMODAS INSTALACIONES Y CON UN TRATO HUMANIZADO DE TODO MI EQUPO, ASÍ MISMO USO TÉCNICAS QUIRÚRGICAS AVANZADAS DE MÍNIMA INVASION, CIRUGÍA LAPAROSCOPICA, HISTEROSCOPIA, PARA QUE EN CASO DE REQUERIRLAS TENGAN UNA RECUPERACIÓN CON EL MÍNIMO DOLOR Y CON UNA RÁPIDA INTEGRACIÓN LAS ACTIVIDADES SOCIALES. ME CONSIDERO UN BUEN AMIGO, LEAL Y RESPETUOSO CON MIS COLABORADORES Y CONSIENTE DE LAS JERARQUÍAS. SOY HONESTO CONMIGO MISMO, CON MIS HIJOS Y CON MI FAMILIA ASÍ COMO CON MIS PACIENTES TAL Y COMO LO APRENDI DE Mí PADRE Y DE MIS MAESTROS. PONDRÉ TODOS MIS CONOCIMIENTOS, HABILIDADES Y ATENCIÓN CONTIGO, ASÍ COMO TODA LA TECNOLOGÍA MÉDICA A MI ALCANCE. ME DARÁ MUCHO GUSTO PODER SERVIRTE. “SERVIR ES UN HONOR Y LA GRATITUD ES UN PRIVILEGIO\".",
+  "addresses": [
+    {
+      "full": "STAR MEDICA LUNA PARC CONSULTORIO 1012 PISO 10,"
+    },
+    {
+      "full": "STAR MEDICA TLALNEPANTLA,"
+    },
+    {
+      "full": "Río Bamba, 639 ( Magdalena de las Salinas),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-najera-gonzalez/ginecologo/tlalnepantla-de-baz2#address-id=378077&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:04.884Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_n_jera_gonz_lez.webp"
+}

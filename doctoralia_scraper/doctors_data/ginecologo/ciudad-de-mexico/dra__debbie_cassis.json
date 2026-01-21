@@ -1,0 +1,42 @@
+{
+  "name": "Dra. Debbie Cassis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/988d29/988d29a40436062cabae86781e9f56f3_140_square.jpg",
+  "about": "Soy la Dra. Debbie Cassis, fundadora y Directora Médica de Hestia Fertility, la única clínica de fertilidad en México operada 100% por mujeres. Mi formación en Medicina, Ginecología y Reproducción Asistida me permite ofrecer un enfoque transparente y personalizado para ayudar a mis pacientes a cumplir su sueño de formar una familia. En Hestia, brindamos esperanza y acompañamiento en cada paso del camino.",
+  "addresses": [
+    {
+      "full": "Acueducto Río Hondo 3,"
+    },
+    {
+      "full": "Acueducto Río Hondo 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,700"
+    },
+    {
+      "name": "Consulta de infertilidad",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Diagnóstico de fertilidad",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Tratamientos de Reproducción Asistida e Infertilidad",
+      "price": "• Desde $75,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/debbie-cassis/ginecologo/ciudad-de-mexico#address-id=550390&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T01:05:18.452Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__debbie_cassis.webp"
+}

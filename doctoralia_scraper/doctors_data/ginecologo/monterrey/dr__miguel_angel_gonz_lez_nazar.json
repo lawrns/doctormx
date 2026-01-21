@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Miguel Angel González Nazar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 534,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/878595/8785955f77ffd88cb78f0e7b00789257_220_square.jpg",
+  "about": "Hola, me presento, soy el Dr. Miguel Ángel González Nazar y voy a platicar un poco acerca de mi experiencia profesional. Soy egresado de la carrera de Médico Cirujano y Partero por la UANL con mención honorífica, posteriormente decidí especializarme en el cuidado de la salud de la mujer en todas las etapas de su vida, desde la juventud hasta la menopausia, egresando de la especialidad en Ginecología y Obstetricia como Jefe de Residentes del Hospital Christus Muguerza Conchita, avalado por la UDEM. Al terminar quise complementar aún más mis estudios, con una subespecialidad en Medicina Materno Fetal en Hospital Ginequito, también avalado por la UDEM, para poder atender mejor a mis pacientes embarazadas, llevando el control prenatal desde bajo y alto riesgo, detectando malformaciones fetales y llevando a cabo el seguimiento de la salud tanto de la madre como de su bebé de una manera más integral. Además de mi formación como subespecialista, el interés por la docencia me llevó a hacer una Maestría en Educación Basada en Competencias en la Universidad del Valle De México, ya que imparto clases a residentes de la especialidad en Ginecología y Obstetricia, coordino médicos internos, y también nos invitan como profesor ponente en algunas conferencias y simposios. Sin más espero que esta información sirva para que conozcan un poco de mi formación, y que tenga la confianza que se atenderá de la manera mas profesional y humana posible.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo 1910 Poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Ultrasonido anatómico",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Ultrasonido doppler bienestar fetal",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Ultrasonido genético",
+      "price": "• Desde $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/miguel-angel-gonzalez-nazar/ginecologo/nuevo-leon#address-id=400168&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:18.150Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__miguel_angel_gonz_lez_nazar.webp"
+}

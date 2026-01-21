@@ -1,0 +1,25 @@
+{
+  "name": "Luis J. Antonio Matias",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jalapa no. 99-a, Roma,"
+    },
+    {
+      "full": "Jalapa no. 99-a, Roma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-j-antonio-matias/ginecologo/cuauhtemoc#address-id=111407&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:12:03.660Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dra. Marisol Garcia Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 50,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6a45a8/6a45a8371e6c1425f67910249ea0ecf2_220_square.jpg",
+  "about": "Hola, te platico sobre mi formación médica-académica: Estudié la carrera de Médico Cirujano en el Tecnológico de Monterrey graduándome con Mención Honorífica. Hice la especialidad en Ginecología y Obstetricia en el Programa Multicéntrico de Residencias Médicas del Tecnológico de Monterrey- Secretaría de Salud de Nuevo León. Soy Ginecóloga Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Realicé una Rotación Internacional en Cirugía Ginecológica de Mínima Invasión en Baylor College of Medicine y otra Rotación Internacional en Ginecología Oncológica en McMaster University. Decidí realizar una Alta Especialidad en Cirugía Oncológica de la Mama avalada por la UNAM en la Fundación de Cáncer de Mama, FUCAM A.C.Estoy calificada para diagnosticar y tratar enfermedades mamarias, tanto benignas como malignas, y brindar la mejor consejería sobre ese tema. He participado en la realización de artículos científicos que abordan aspectos del cáncer de mama, pues es un tema que me apasiona. Mi objetivo es brindarte una atención ginecológica especializada y de alta calidad. Continuamente participo en congresos nacionales e internacionales para tomar decisiones médicas siempre respaldadas de la mejor evidencia científica y la más actualizada.",
+  "addresses": [
+    {
+      "full": "Avenida Constitución 1965,"
+    },
+    {
+      "full": "Avenida Nogalar Sur 412,"
+    },
+    {
+      "full": "Paseo de los Leones 1001,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisol-garcia-garcia/ginecologo/nuevo-leon#address-id=580082&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:54.086Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marisol_garcia_garcia.webp"
+}

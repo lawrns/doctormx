@@ -1,0 +1,44 @@
+{
+  "name": "Dr. Ricardo Jauregui Tejeda",
+  "specialty": "Ginecólogo",
+  "rating": 3,
+  "reviewCount": 6,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "Sobre mí Medico Especialista en Ginecologia y Obstetricia, con subespecialidad en Endoscopia Ginecologica, alta especialidad en ginecologia estetica, amplia experiencia de mas de 20 años en miomas, cirugia laparoscopica, laser en incontinencia urinaria y cervical en lesiones por VPH. ¿Por qué elegirme a mí? Amplia experiencia de mas de 20 años, profesor del consejo mexicano de ginecologia y obstetricia, miembro de las principales colegios medicos del pais, subespecialista con maestria y doctorado, alta especialidad en estetica vaginal. diplomado en bioetica. Principales áreas de tratamiento Cirugia Laparoscopica Ginecologica, minima invasión, recuperacion inmediata Cirugia vaginal reconstructiva, para prolapso de organos pelvicos o incontinencia urinaria Colposcopia y tratamiento especializado con laser para pacientes con virus del papiloma REJUVENECIMIENTO VAGINAL-TENSADO VAGINAL CON HIFU Embarazo de alto riesgo Mi consulta y mi equipo te atendemos en forma segura, confortable en nuestras 2 direcciones de clinica londres de grupo angeles y centro medico dalinde Otros servicios Cirugia Laparoscopica Rejuvenecimiento vaginal Cirugia ginecologica vaginal y abdominal Tratamiento de virus del papiloma humano con laser Tensado vaginal Cirugia para incontinencia urinaria con laser y HIFU Más sobre mí amplia experiencia, 100% etico, en convenio con las principales aseguradoras del pais,",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Frontera 74,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Frontera 74,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Rejuvenecimiento vaginal con láser",
+      "price": "• $3,500"
+    },
+    {
+      "name": "TRATAMIENTO DE INCONTINENCIA URINARIA CON LASER CO2",
+      "price": "• Desde $4,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-jauregui-tejeda/ginecologo/cuauhtemoc2#address-id=531444&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:04.374Z",
+  "localPhotoPath": null
+}

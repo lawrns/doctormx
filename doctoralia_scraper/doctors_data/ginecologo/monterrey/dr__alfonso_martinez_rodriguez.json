@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Alfonso Martinez Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5fc645/5fc645c7cef3d0ed5209f7eabe9b29ab_220_square.jpg",
+  "about": "Entregado a mi profesión y mi familia, con una de las mejores formaciones en el pais; basado en la honradez y la empatía a mis pacientes que son lo mas importante para sus seres queridos.",
+  "addresses": [
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    },
+    {
+      "full": "Río de la Plata 206 Ote.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-martinez-rodriguez/ginecologo/san-pedro-garza-garcia#address-id=27819&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:20.075Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alfonso_martinez_rodriguez.webp"
+}

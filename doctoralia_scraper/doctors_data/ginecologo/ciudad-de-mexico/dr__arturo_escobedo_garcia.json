@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Arturo Escobedo Garcia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/861596/86159663f963a86231bf8a67577a6885_220_square.jpg",
+  "about": "El método de consulta basado de primera instancia en entender las necesidades de las pacientes, preocupado por escuchar sus solicitudes mediante un análisis previo y durante la consulta, se brinda atención personalizada que me permita ofrecerle la solución optima a su tratamiento. Dirigido a pacientes preocupadas por su salud preventiva o apoyo a seguimiento o detecciones tempranas de enfermedades ginecio-obstetricas. Avalado por la Comisión Mexicana de Ginecología y Obstetricia, jubilado del Hospital de la Mujer, avalado por más de 27 años de experiencia, Profesor en la Universidad Nacional Autónoma de México y del Instituto Politécnico Nacional, asistente y ponente de Cursos en Madrid, Brasil, Chile entre otros, invitado especial por reconocimientos de laboratorios Bayer.",
+  "addresses": [
+    {
+      "full": "Avenida universidad 1093 Despacho 102,"
+    },
+    {
+      "full": "Avenida universidad 1093 Despacho 102,"
+    },
+    {
+      "full": "Avenida universidad 1093 Despacho 102,"
+    },
+    {
+      "full": "Avenida universidad 1093 Despacho 102,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-escobedo-garcia/ginecologo/benito-juarez#address-id=86043&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:11.982Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__arturo_escobedo_garcia.webp"
+}

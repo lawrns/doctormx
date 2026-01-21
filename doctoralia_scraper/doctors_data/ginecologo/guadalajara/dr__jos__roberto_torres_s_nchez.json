@@ -1,0 +1,46 @@
+{
+  "name": "Dr. José Roberto Torres Sánchez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70c242/70c24293bd0570d88efc02085ed46a69_220_square.jpg",
+  "about": "Originario de la ciudad de Guadalajara Jalisco. Ginecólogo y Obstetra, con ejercicio activo en la medicina privada e institucional. Mi objetivo es cuidar la salud de la mujer en las diferentes etapas de su vida, a través de un servicio especializado, de calidad, integral, humano y con perspectiva de ética.",
+  "addresses": [
+    {
+      "full": "Avenida Circunvalación División del Nte. #29,"
+    },
+    {
+      "full": "Avenida Circunvalación División del Nte. #29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-roberto-torres-sanchez/ginecologo/guadalajara#address-id=413713&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:56.242Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jos__roberto_torres_s_nchez.webp"
+}

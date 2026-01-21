@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Carlos Guerrero Cantú",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Porfirio Diaz 109,"
+    },
+    {
+      "full": "Calle Aramberri 1209,"
+    },
+    {
+      "full": "Porfirio Diaz 109,"
+    },
+    {
+      "full": "Calle Aramberri 1209,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-guerrero-cantu-2/ginecologo/monterrey#address-id=62207&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:38.849Z",
+  "localPhotoPath": null
+}

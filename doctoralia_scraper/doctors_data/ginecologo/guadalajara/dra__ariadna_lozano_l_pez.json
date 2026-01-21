@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ariadna Lozano López",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 246,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/b990f114/b990f114-659c-407d-90b6-d0096a28053a_small_square.jpg",
+  "about": "Mi nombre es Ariadna Lozano López y soy médico cirujano y partero egresada de la Universidad Autónoma de Sinaloa. Me especialicé en ginecología y obstetricia en el Benemérito Hospital Civil de Guadalajara \"Fray Antonio Alcalde\", atendiendo a pacientes adultos y niños a partir de 13 años. Ademas, realice un Sub Especialidad en Medicina Materno Fetal donde atiendo embarazos de alto riesgo y realizo estudios de tamizaje de 1er trimestre, estructurales, estudios doppler, valoración cardiaca fetal y de neurosonografia fetal. Mi enfoque principal es el embarazo, brindando atención integral y personalizada a las mujeres durante todas las etapas de este proceso. Me apasiona mi trabajo y me considero una profesional comprometida y dedicada a mis pacientes. Mi objetivo es proporcionar una consulta de calidad y con mucha empatía, donde te puedas sentir segura y cómoda al compartir sus inquietudes y necesidades de atención médica. Me esfuerzo por brindar la mejor atención médica posible, respetando las necesidades y deseos de mis pacientes. Mi consultorio se encuentra en la ciudad de Zapopan y estoy disponible para atender a mis pacientes en persona y también a través de consultas en línea. Si está buscando un ginecólogo confiable y experimentado, no dude en ponerse en contacto conmigo.",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2934,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariadna-lozano-lopez/ginecologo/zapopan#address-id=505888&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:58.168Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__ariadna_lozano_l_pez.webp"
+}

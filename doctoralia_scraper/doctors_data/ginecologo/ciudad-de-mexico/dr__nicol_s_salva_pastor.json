@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Nicolás Salva Pastor",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/beaa5fe1/beaa5fe1-cf23-4c38-83ef-4ad15500edb0_small_square.jpg",
+  "about": "Ginecología y obstetricia, Certificado por el Consejo Mexicano de Ginecología y Obstetricia Climaterio y Menopausia SOP, Preeclampsia, Vitamina D Hospital Ángeles Clínica Londres",
+  "addresses": [
+    {
+      "full": "Frontera 74,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nicolas-salva-pastor/ginecologo/cuauhtemoc2#address-id=549471&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:11.235Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__nicol_s_salva_pastor.webp"
+}

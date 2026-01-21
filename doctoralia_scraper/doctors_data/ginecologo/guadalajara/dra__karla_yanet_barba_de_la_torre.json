@@ -1,0 +1,50 @@
+{
+  "name": "Dra. Karla Yanet Barba de la Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/395005/395005fe92a823ec2f881c97e93f630e_220_square.jpg",
+  "about": "La Dra. Karla Barba es una ginecóloga y obstetra con enfoque de sub-especialidad en los problemas relacionados a infertilidad, reproducción asistida, fertilización in vitro y estudio de la pareja infertil.",
+  "addresses": [
+    {
+      "full": "Victoria 1515 Col. Providencia,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    },
+    {
+      "full": "Victoria 1515 Col. Providencia,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. Alcalde #2170,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-yanet-barba-de-la-torre/ginecologo/guadalajara#address-id=14023&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:01.354Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__karla_yanet_barba_de_la_torre.webp"
+}

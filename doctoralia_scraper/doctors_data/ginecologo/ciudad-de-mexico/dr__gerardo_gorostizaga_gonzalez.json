@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Gerardo Gorostizaga Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a6867bc2/a6867bc2-109f-4e97-a8cb-03b16d1fb0e9_small_square.jpg",
+  "about": "MEDICO ESPECIALISTA EN GINECOLOGIA Y OBSTETRICIA EGRESADO DE LA UNIVERSIDAD LA SALLE CDMX.",
+  "addresses": [
+    {
+      "full": "Ejército Nacional 617 Cons 203,"
+    },
+    {
+      "full": "Ejército Nacional 617 Cons 203,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gerardo-gorostizaga-gonzalez-3/ginecologo/ciudad-de-mexico#address-id=44912&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:25.104Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gerardo_gorostizaga_gonzalez.webp"
+}

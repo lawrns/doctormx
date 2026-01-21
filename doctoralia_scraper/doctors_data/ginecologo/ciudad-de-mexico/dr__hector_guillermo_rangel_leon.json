@@ -1,0 +1,34 @@
+{
+  "name": "Dr. Hector Guillermo Rangel Leon",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/740f1f/740f1f7dff1f3133059c7cd851fc1a27_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cacama 20,"
+    },
+    {
+      "full": "Cacama 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-guillermo-rangel-leon/ginecologo/ciudad-de-mexico#address-id=337279&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:32.468Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__hector_guillermo_rangel_leon.webp"
+}

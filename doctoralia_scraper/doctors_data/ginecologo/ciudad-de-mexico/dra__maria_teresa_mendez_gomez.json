@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Maria Teresa Mendez Gomez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/908211/908211a7f7dc807789786c9aa79f5602_220_square.jpg",
+  "about": "Cirujano, Ginecoobstetra. Especialidad en Hospital General de México. Diplomado en Laparoscopia en hospital ABC e IMSS . Diplomado en Ultrasonido nevel I. . Diplomado en Colposcopia Diagnostico y Tratamiento oportuno. En patología Cervical .en Hospital General de México. Cryocirugia , . Cirugía Lasser en consultorio. No convenio con aseguradoras. Cirugía Mayor en Hospitales Angeles, Español, Star Medica, Sedna, Dalinde.",
+  "addresses": [
+    {
+      "full": "MEDELLIN 190 104,"
+    },
+    {
+      "full": "MANZANILLO 100 INT 501 entre Tlaxcala y Tepic,"
+    },
+    {
+      "full": "MEDELLIN 190 104,"
+    },
+    {
+      "full": "MANZANILLO 100 INT 501 entre Tlaxcala y Tepic,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-mendez-gomez-2/ginecologo/cuauhtemoc#address-id=82084&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:56.755Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_teresa_mendez_gomez.webp"
+}

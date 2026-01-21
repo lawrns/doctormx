@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Claudia Rivera Estrada",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ea364b/ea364b820854bd5fba14326ba5ecbad6_220_square.jpg",
+  "about": "Cédula Profesional 6401686 Cédula de Especialidad 6097900 Certificada por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/claudia-rivera-estrada/ginecologo/nuevo-leon#address-id=23815&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:49.071Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__claudia_rivera_estrada.webp"
+}

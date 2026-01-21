@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Héctor Vicente Espinosa Peralta",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Aztecas Y 5 De Mayo 3,"
+    },
+    {
+      "full": "C. Venturina 28,"
+    },
+    {
+      "full": "5 de mayo # 3 Centro de Iztapalapa PB ,"
+    },
+    {
+      "full": "Av. Vialidad De La Barranca S/N,"
+    },
+    {
+      "full": "Aztecas Y 5 De Mayo 3,"
+    },
+    {
+      "full": "C. Venturina 28,"
+    },
+    {
+      "full": "5 de mayo # 3 Centro de Iztapalapa PB ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-vicente-espinosa-peralta/ginecologo/ciudad-de-mexico#address-id=337155&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:00.293Z",
+  "localPhotoPath": null
+}

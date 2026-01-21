@@ -1,0 +1,30 @@
+{
+  "name": "Ángel Regino Guerra de la Garza Evia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Batallón San Patricio 112,"
+    },
+    {
+      "full": "Batallón San Patricio 112,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-regino-guerra-de-la-garza-evia/ginecologo/san-pedro-garza-garcia#address-id=10099&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:46:07.955Z",
+  "localPhotoPath": null
+}

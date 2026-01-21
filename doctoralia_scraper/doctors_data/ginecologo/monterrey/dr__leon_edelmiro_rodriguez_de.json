@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Leon Edelmiro Rodriguez De",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 6,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Rio Jordan 2365,"
+    },
+    {
+      "full": "Rio Jordan 2365,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/leon-edelmiro-rodriguez-de/ginecologo/monterrey#address-id=44865&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:10.975Z",
+  "localPhotoPath": null
+}

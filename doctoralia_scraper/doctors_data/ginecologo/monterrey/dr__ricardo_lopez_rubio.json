@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ricardo Lopez Rubio",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Sub especialidad en Medicina Materno Fetal Atención de embarazo de Alto Riesgo Diagnostico prenatal Ultrasonido Genético o Tamizaje de primer trimestre Ultrasonido Anatómico o Estructural",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 Poniente-Consultorio 404-4, Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 Poniente-Consultorio 404-4, Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-lopez-rubio/ginecologo/nuevo-leon#address-id=411374&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:09.154Z",
+  "localPhotoPath": null
+}

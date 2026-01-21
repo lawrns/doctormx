@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Salvador Espino y Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 286,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7d3b12/7d3b12d3d66d87eb8af4d4a1f339e419_220_square.jpg",
+  "about": "Mi campo de experiencia abarca la medicina fetal y el cuidado del embarazo del alto riesgo. Actualmente también soy Médico Especialista en el Instituto Nacional de Perinatología. Coordino el grupo de atención e investigación en muerte fetal y soy investigador nivel C del SII y nivel I del SNI con líneas de investigación en muerte fetal, preeclampsia y hemorragia posparto. Mi proyecto de doctorado en ciencias lo desarrollé con el equipo de trabajo del laboratorio de inmunobioquímica de la Dra. Guadalupe Estrada en la línea de preeclampsia y disfunción endotelial y mi proyecto de maestría en educación con el equipo del Dr. Enrique Gómez Sánchez sobre estrategias educativas en competencias procedimentales. Fui director de enseñanza en en el Instituto Nacional de Medicina Genómica.",
+  "addresses": [
+    {
+      "full": "Av. Ejército Nacional Mexicano 613,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    },
+    {
+      "name": "Cirugía fetal",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-espino-y-sosa/ginecologo/miguel-hidalgo",
+  "scrapedAt": "2026-01-21T02:44:01.372Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__salvador_espino_y_sosa.webp"
+}

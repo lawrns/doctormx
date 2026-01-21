@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Garcia Rayo",
+  "specialty": "Ginecóloga",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/30b05579/30b05579-c4af-4601-867d-8116c32b2fd0_small_square.jpg",
+  "about": "Soy Medico Especialista en Ginecología y Obstetricia con Alta especialidad en Menopausia, Osteoporosis y desórdenes endocrinos de origen ginecologico así como diplomado en colposcopia y patología del tracto genital femenino Estoy a tus órdenes para el tratamiento y seguimiento de todas las etapas de desarrollo de la mujer Me encuentro en el Centro Médico Coyoacán consultorio 404 D",
+  "addresses": [
+    {
+      "full": "Calz. de las Bombas 128, El Parque Coyoacan,"
+    },
+    {
+      "full": "Calz. de las Bombas 128, El Parque Coyoacan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-garcia-rayo/ginecologo/coyoacan#address-id=588218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:49.536Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__gabriela_garcia_rayo.webp"
+}

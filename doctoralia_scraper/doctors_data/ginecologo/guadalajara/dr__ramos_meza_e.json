@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Ramos Meza E",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Dgl Golfo De Cortes 3000,"
+    },
+    {
+      "full": "Dgl Golfo De Cortes 3000,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ramos-meza-e/ginecologo/guadalajara#address-id=44903&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:33:44.533Z",
+  "localPhotoPath": null
+}

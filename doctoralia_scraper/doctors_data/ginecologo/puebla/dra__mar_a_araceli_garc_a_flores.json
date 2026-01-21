@@ -1,0 +1,66 @@
+{
+  "name": "Dra. María Araceli García Flores",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 81,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/15f596cf/15f596cf-7293-45ff-8d71-42045cc1949e_small_square.jpg",
+  "about": "La medicina preventiva es importante realizarla para una calidad de vida adecuada en el embarazo,, aún más para detectar en forma oportuna las complicaciones y ofrecer de inmediato su manejo y tratamiento. Al laborar 32 años a nivel institucional nos da amplia experiencia para resolver complicaciones de las diversas patologías de la ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Privada 12 A Sur,"
+    },
+    {
+      "full": "Av. Kepler 2143 Hospital Angeles. Torre 1, 6mo.piso consultorio 690,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-araceli-garcia-flores/ginecologo/puebla#address-id=124900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:37.822Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__mar_a_araceli_garc_a_flores.webp"
+}

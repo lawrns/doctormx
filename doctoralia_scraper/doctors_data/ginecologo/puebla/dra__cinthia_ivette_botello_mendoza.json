@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cinthia Ivette Botello Mendoza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 574,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/5da18003/5da18003-4420-49fa-a03a-f7601a61aebc_large.jpg",
+  "about": "Miembro del Colegio Mexicano de Ginecología y Obstetricia (COMEGO) Miembro de la Asociación Mexicana de Medicina Reproductiva (AMMR)",
+  "addresses": [
+    {
+      "full": "Avenida 7 Poniente 705 Consultorio 111 Colonia Centro,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cinthia-ivette-botello-mendoza/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:52:04.864Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__cinthia_ivette_botello_mendoza.webp"
+}

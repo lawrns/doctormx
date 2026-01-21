@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Dionisio Acosta Vega",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 9,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Cam Sta Teresa 1055 8,"
+    },
+    {
+      "full": "Calle Cam Sta Teresa 1055 8,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dionisio-acosta-vega-2/ginecologo/ciudad-de-mexico#address-id=42566&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:48.907Z",
+  "localPhotoPath": null
+}

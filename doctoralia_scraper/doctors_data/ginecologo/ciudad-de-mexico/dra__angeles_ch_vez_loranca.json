@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Angeles Chávez Loranca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/0904f1cd/0904f1cd-1a2c-4b3b-b0c8-47c8abf075c9_small_square.jpg",
+  "about": "Hola soy Angeles ginecobstetra, es decir realizo atencion del cuidado de la mujer en todas las etapas de su vida, ir a una ginecologa es para que hablemos sin tabus de diversos temas: salud mentrual, sexual, higiene íntima, tratamiento de VPH, check up, anticoncepción, dolor en tu menstruacion, sangrados abundantes, problemas hormonales, sindrome de ovario poliquistico, infecciones, embarazo y nacimiento respetado/humanizado, menopausia y climaterio. Estudie la carrera de Medicina en la UPAEP en el estado de Puebla y posteriormente la especialida en Ginecología y Obstetricia aqui en la Ciudad de México en un hospital con enfoque humanizado avalado por la Universidad La Salle. Tengo un Diplomado en Ginecologia Endocrina.",
+  "addresses": [
+    {
+      "full": "PEDREGAL 51,"
+    },
+    {
+      "full": "PEDREGAL 51,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,450"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,450"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angeles-chavez-loranca/ginecologo/ciudad-de-mexico#address-id=402739&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:13.636Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__angeles_ch_vez_loranca.webp"
+}

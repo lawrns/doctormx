@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Teresa Guerrero Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 0,
+  "reviewCount": 14,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af0f3c/af0f3ce1254ee9a396237c4892c8ed0d_220_square.jpg",
+  "about": "Soy una profesional de la salud experta en trastornos de la mujer con enfoque de género aplicado a la atención integral de las mujeres. Encontrarás un trato respetuoso y en confianza donde puedes resolver dudas respecto a tu salud y detectar oportunamente cualquier alteración. Soy ginecóloga certificada por el Consejo Mexicano de Ginecología y Obstetricia y por el American College of Obstetricians and Gynecologists Experta en trastornos ginecológicos, hormonales y de la salud del tracto genital femeninoAtención a la pareja",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 476,"
+    },
+    {
+      "full": "Avenida Insurgentes Sur 476,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/teresa-guerrero-martinez/ginecologo/cuauhtemoc2#address-id=116939&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:45.290Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__teresa_guerrero_mart_nez.webp"
+}

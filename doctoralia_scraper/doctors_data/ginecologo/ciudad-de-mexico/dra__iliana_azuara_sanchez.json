@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Iliana Azuara Sanchez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tepic, 139 - 306,"
+    },
+    {
+      "full": "Tepic, 139 - 306,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/iliana-azuara-sanchez/ginecologo/cuauhtemoc#address-id=76706&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:25.372Z",
+  "localPhotoPath": null
+}

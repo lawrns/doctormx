@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Edgar Bonfante Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Circuito Misioneros 5,"
+    },
+    {
+      "full": "Circuito Misioneros 5,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-bonfante-ramirez/ginecologo/naucalpan-de-juarez#address-id=2026&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:55.206Z",
+  "localPhotoPath": null
+}

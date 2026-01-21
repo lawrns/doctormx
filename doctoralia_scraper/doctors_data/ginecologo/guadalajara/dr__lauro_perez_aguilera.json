@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Lauro Perez Aguilera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Circ. 2394,"
+    },
+    {
+      "full": "Av. Circunvalación Oblatos 2208,"
+    },
+    {
+      "full": "Av Circ. 2394,"
+    },
+    {
+      "full": "Av. Circunvalación Oblatos 2208,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lauro-perez-aguilera/ginecologo/guadalajara#address-id=202074&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:26.809Z",
+  "localPhotoPath": null
+}

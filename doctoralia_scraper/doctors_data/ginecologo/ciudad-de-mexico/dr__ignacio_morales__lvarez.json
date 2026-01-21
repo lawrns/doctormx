@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ignacio Morales Álvarez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c6f800/c6f8000ff34fe21ea8fe6ff6c7397724_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tuxpan 29 consultorio 305,"
+    },
+    {
+      "full": "Tuxpan 29 consultorio 305,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ignacio-morales-alvarez/ginecologo/cuauhtemoc#address-id=97009&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:09.755Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ignacio_morales__lvarez.webp"
+}

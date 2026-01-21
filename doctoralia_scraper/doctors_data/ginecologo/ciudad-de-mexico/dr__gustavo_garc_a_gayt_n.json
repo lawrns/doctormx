@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Gustavo García Gaytán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "https://pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/fc47e640/fc47e640-656b-4cb5-9768-415a08f5d714_small_square.jpg",
+  "about": "\"Lo más importante en mi profesión es el binomio materno-fetal, así como la salud integral de la mujer.\"",
+  "addresses": [
+    {
+      "full": "Union 251,"
+    },
+    {
+      "full": "Union 251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-garcia-gaytan-2/ginecologo/ciudad-de-mexico#address-id=572863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:30.355Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gustavo_garc_a_gayt_n.webp"
+}

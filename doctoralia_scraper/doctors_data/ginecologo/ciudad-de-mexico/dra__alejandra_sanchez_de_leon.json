@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Alejandra Sanchez de Leon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sur 132 (Consultorios Abc), 118, Cons. 102,"
+    },
+    {
+      "full": "Sur 132 (Consultorios Abc), 118, Cons. 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-sanchez-de-leon/ginecologo/alvaro-obregon#address-id=75555&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:55.187Z",
+  "localPhotoPath": null
+}

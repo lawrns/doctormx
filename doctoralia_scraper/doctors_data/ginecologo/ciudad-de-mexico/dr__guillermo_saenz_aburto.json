@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Guillermo Saenz Aburto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Camino A Sta. Teresa (Hospital Angeles del Pedregal), 1055-950, Torre Angeles,"
+    },
+    {
+      "full": "Camino A Sta. Teresa (Hospital Angeles del Pedregal), 1055-950, Torre Angeles,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-saenz-aburto/ginecologo/magdalena-contreras",
+  "scrapedAt": "2026-01-21T03:00:04.999Z",
+  "localPhotoPath": null
+}

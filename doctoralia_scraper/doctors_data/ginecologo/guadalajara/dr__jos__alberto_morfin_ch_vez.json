@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Alberto Morfin Chávez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 517,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e43e38/e43e38162798779598f0abdf4203c521.jpg",
+  "about": "Promedio sobresaliente en la carrera de Medico Cirujano y Partero, Generación 2008-2013 11vo lugar a nivel nacional para la Especialidad de Ginecología y Obstetricia en 2014 Ponente en Congresos Estatales y Nacionales de Ginecología y Obstetricia y Medicina Materno Fetal",
+  "addresses": [
+    {
+      "full": "Avenida Niño Obrero 1556,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alberto-morfin-chavez/ginecologo/guadalajara#address-id=397990&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:01.519Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__jos__alberto_morfin_ch_vez.webp"
+}

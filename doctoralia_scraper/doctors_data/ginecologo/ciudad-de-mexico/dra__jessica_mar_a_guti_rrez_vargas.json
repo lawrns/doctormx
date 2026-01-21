@@ -1,0 +1,55 @@
+{
+  "name": "Dra. Jessica María Gutiérrez Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 106,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7206ea/7206ea12c512de642b823651149c00cf_220_square.jpg",
+  "about": "Comprometida en el bienestar de mis pacientes, ofreciendo atención integral ginecológica y atención obstétrica humanizada, me actualizo constantemente para dar atención médica y quirúrgica de vanguardia. Brindo consulta con ambiente de confianza, seguridad y confidencialidad. Con experiencia de mas de 15 años como especialista. ¡Sera un gusto atenderte! Certificada por el Consejo Mexicano de Ginecología y Obstetricia. Miembro Colegiado Titular del Consejo Mexicano de Especialistas en Ginecología y Obstetricia A.C. Diplomado en Colposcopia y Patología del Tracto Genital Inferior Diplomado Prevención de la Mortalidad Materna. Anáhuac Maestría en Administración de Hospitales y Salud Pública. IESAP Profesor Titular del curso de Especialización en Ginecología y Obstetricia. UNAM",
+  "addresses": [
+    {
+      "full": "Cdad. Universitaria 189,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-maria-gutierrez-vargas/ginecologo/nezahualcoyotl#address-id=491927&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:36.749Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__jessica_mar_a_guti_rrez_vargas.webp"
+}

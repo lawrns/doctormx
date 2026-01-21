@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Daniel Abundis",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bba31ccc/bba31ccc-d1c7-4193-8fa8-8cd7a65084e4_small_square.jpg",
+  "about": "Soy médico especialista y certificado en Ginecología y Obstetricia, con enfoque en fertilidad y salud reproductiva así como detección oportuna y tratamiento del Virus de Papiloma Humano. Me caracterizo por ofrecer una atención cercana, clara y basada en evidencia, buscando que cada paciente se sienta escuchada y en confianza desde la primera consulta.Mi objetivo es acompañarte con empatía y honestidad, explicando cada opción de forma sencilla para que puedas tomar decisiones informadas sobre tu salud.",
+  "addresses": [
+    {
+      "full": "Calle Luis Pérez Verdía 325,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/daniel-abundis/ginecologo/guadalajara",
+  "scrapedAt": "2026-01-21T03:22:36.854Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__daniel_abundis.webp"
+}

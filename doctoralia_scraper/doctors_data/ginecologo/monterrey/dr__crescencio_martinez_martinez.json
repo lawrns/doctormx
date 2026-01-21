@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Crescencio Martinez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a9df5b/a9df5bd9a974407ac6b56cbce98eb0c3_220_square.jpg",
+  "about": "Me dedico al embarazo de alto y muy alto riesgo por mi especialización en Medicina critica en obstetricia.",
+  "addresses": [
+    {
+      "full": "av. prol. Francisco I. Madero 6060, libertad,"
+    },
+    {
+      "full": "av. prol. Francisco I. Madero 6060, libertad,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/crescencio-martinez-martinez/ginecologo/guadalupe#address-id=491308&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:41.608Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__crescencio_martinez_martinez.webp"
+}

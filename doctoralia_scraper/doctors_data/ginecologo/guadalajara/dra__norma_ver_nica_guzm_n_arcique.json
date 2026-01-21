@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Norma Verónica Guzmán Arcique",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 609,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9c4b7f/9c4b7f7a377f013d51925d41061a1008_220_square.jpg",
+  "about": "MEDICO GINECO OBSTETRA ESPECIALISTA SIEMPRE EN CONSTANTE ACTUALIZACION PARA TU MEJOR ATENCION. IMPLEMENTANDO NUEVAS TECNICAS DE MEDICINA ALTERNANTIVA HOMONAS BIOIDENTICAS ,MEDICINA FUNCIONAL ORTOMOLECULAR,SUEROTERAPIA OZONOTERAPIA.",
+  "addresses": [
+    {
+      "full": "Herrera y Cairo 1125,"
+    },
+    {
+      "full": "Herrera y Cairo 1125,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Tratamiento de condilomas vulvares, vaginales o perianales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/norma-veronica-guzman-arcique/ginecologo/guadalajara#address-id=112924&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:44.049Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__norma_ver_nica_guzm_n_arcique.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luciano Coquis González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3b45a9/3b45a93519ecf98e7676bc6da0d3ad03_220_square.jpg",
+  "about": "Soy especialista en Ginecología y Obstetricia de la Universidad de la Fuerza Aérea Mexicana, con Diplomado en Medicina Reproductiva, Ultrasonido y Colposcopia.",
+  "addresses": [
+    {
+      "full": "Circuito Plaza Esmeralda,"
+    },
+    {
+      "full": "Circuito Plaza Esmeralda,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luciano-coquis-gonzalez/ginecologo/atizapan-de-zaragoza#address-id=434233&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:35.796Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__luciano_coquis_gonz_lez.webp"
+}

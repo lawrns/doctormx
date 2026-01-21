@@ -1,0 +1,89 @@
+{
+  "name": "Dr. José Antonio Reséndiz Matamoros",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 512,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2289d4/2289d4cb39518c8d94ac43b6717b0df3.jpg",
+  "about": "En la consulta te explicaré pasó a paso cada duda y procedimiento hasta que todo quede claro. Soy un médico comprometido con su profesión. El objetivo es que salgas satisfecha del consultorio.",
+  "addresses": [
+    {
+      "full": "Hospitales Antara Unidad Tecámac,"
+    },
+    {
+      "full": "Av. Bordo de Xochiaca N°3, Av. Ciudad Jdn. 2B, Bicentenario, 57205 Nezahualcóyotl, Méx.,"
+    },
+    {
+      "full": "GRUPO MEDICO QUIRÚRGICO B&V,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-antonio-resendiz-matamoros/ginecologo/teotihuacan#address-id=10901&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:56.920Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__antonio_res_ndiz_matamoros.webp"
+}

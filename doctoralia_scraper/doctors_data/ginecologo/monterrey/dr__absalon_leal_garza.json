@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Absalon Leal Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 314,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/225831/225831b2f3f7f3836a800e67e6297722.jpg",
+  "about": "El Dr. Leal es Especialista en ginecología y obstetricia y tiene más de 15 años en experiencia en cirugía de mínima invasión y reproducción asistida.",
+  "addresses": [
+    {
+      "full": "Carr. Nacional 6501 Int C-511 Col La Estanzuela,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Desde $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/absalon-leal-garza-2/ginecologo/nuevo-leon#address-id=386483&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:26.555Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__absalon_leal_garza.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jose Miguel Minguer Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d509a7/d509a7c9b5cc77cdd6ed4841867d9f38_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Acoxpa 430 (Hospital Angeles Acoxpa consultorio 365),"
+    },
+    {
+      "full": "Acoxpa 430 (Hospital Angeles Acoxpa consultorio 365),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Histeroscopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por histeroscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-miguel-minguer-rodriguez/ginecologo/tlalpan#address-id=79850&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:48.517Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jose_miguel_minguer_rodriguez.webp"
+}

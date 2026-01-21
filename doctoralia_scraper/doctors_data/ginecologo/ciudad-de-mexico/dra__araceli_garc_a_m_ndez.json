@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Araceli García Méndez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 78,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9154b7/9154b76c7c1a2ceddc0f7028257968d9_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. del Taller 33-1,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/araceli-garcia-mendez-2/ginecologo/venustiano-carranza2#address-id=436708&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:33.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__araceli_garc_a_m_ndez.webp"
+}

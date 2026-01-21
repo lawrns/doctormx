@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Carlos Alberto Servin Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 65,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99050a/99050a9db7f52093e84f3c64b33ac4a4_220_square.jpg",
+  "about": "Certificado por el Colegio Mexicano de Especialistas en Ginecología y Obstetricia AC. COMEGO. Certificado por la Sociedad Mexicana de Oncología. SMeO. Qué es un ginecólogo Oncólogo?? Es el médico que terminó su preparación como Ginecólogo y Obstetra, y realizó una subespecialidad en Oncologia, enfocándose en las patologías de la mujer, como.. Cáncer de mama Cáncer cervico uterino Cáncer de ovario Cáncer de endometrioDetección, tratamiento y tipificacion de VPH Virus de Papiloma Humano, Manejo de lesiones con LASER CO2.Especializado en el diagnóstico y tratamiento integral de cáncer ginecológico, con amplia experiencia en cirugía de mínima invasión y cirugía robótica Da Vinci. Su práctica se centra en ofrecer tratamientos precisos, seguros y con una recuperación más rápida, priorizando siempre la calidad de vida de cada paciente. Combina tecnología avanzada con un enfoque humano, brindando atención personalizada desde la prevención hasta el seguimiento oncológico, con resultados óptimos y cuidado especializado en cada etapa del tratamiento.",
+  "addresses": [
+    {
+      "full": "Calle Tehuantepec #251,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-alberto-servin-hernandez/ginecologo-ginecologo-oncologico/cuauhtemoc2#address-id=258813&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:56.473Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_alberto_servin_hernandez.webp"
+}

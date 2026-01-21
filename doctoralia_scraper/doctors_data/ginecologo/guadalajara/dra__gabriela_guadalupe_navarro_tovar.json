@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Gabriela Guadalupe Navarro Tovar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e29085/e29085e23d5452067b95542fdcfe464e_220_square.jpg",
+  "about": "Especialista en el manejo integral de la mujer , en las diferentes etapas de la vida, medicina funcional, cirugía ginecológica, medicina sexual y atención obstétrica . MI Objetivo no es solo curar y solucionar las diversas patologías sino identificar y ayudar a modificar los factores y causas de las afecciones de la mujer.Soy la Dra. Gabriela Guadalupe Navarro Tovar, especializada en Ginecología y Obstetricia por la UDG en 2004, y también soy Médico Cirujano y Partero por la misma universidad. Ofrezco atención médica a adultos y niños de cualquier edad, y cuento con experiencia en el manejo de casos de Ovarios Poliquísticos, Perimenopausia y Virus del Papiloma Humano (VPH). Me esfuerzo por brindar una atención excelente y minuciosa a mis pacientes, ofreciendo opciones innovadoras y alternativas de tratamiento. Mi objetivo es asegurar la comodidad y satisfacción de mis pacientes, aclarando todas sus dudas y preocupaciones durante las consultas. Mi consultorio cuenta con excelentes instalaciones y precios justos. Recomiendo ampliamente mis servicios como Ginecóloga y estoy segura de que encontrarás en mi una excelente opción para tu atención médica.",
+  "addresses": [
+    {
+      "full": "Calle José María Heredia 2960, Prados Providencia,"
+    },
+    {
+      "full": "Calle José María Heredia 2960, Prados Providencia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gabriela-guadalupe-navarro-tovar-2/ginecologo/guadalajara#address-id=95576&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:27.490Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__gabriela_guadalupe_navarro_tovar.webp"
+}

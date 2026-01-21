@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Luisa Fernanda Rivas Penilla",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 88,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8833c812/8833c812-db4f-4cc0-bd88-c7932a294c39_small_square.jpg",
+  "about": "Hola, soy la Dra. Luisa Fernanda Rivas Penilla, sub especialista en Urología Ginecológica, aparte de ver pacientes embarazadas y en general a las pacientes que buscan realizarse su chequeo ginecológico; me especializo en aquellas pacientes que tienen disfunciones del piso pélvico. ¿Qué es esto? Es cuando se presentan diagnósticos como la incontinencia urinaria (pérdida de orina), el prolapso de órganos pélvicos ( conocido como vejiga o matriz caída), problemas de dolor en el área genital, vejiga hiperactiva, vejiga dolorosa y problemas vulvares, entre otras cosas.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "San Alberto 417,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luisa-fernanda-rivas-penilla/ginecologo/general-escobedo#address-id=502652&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:20.687Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__luisa_fernanda_rivas_penilla.webp"
+}

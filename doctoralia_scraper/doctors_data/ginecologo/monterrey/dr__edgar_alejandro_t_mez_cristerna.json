@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Edgar Alejandro Támez Cristerna",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 584,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1259cb/1259cb39987e7ab75a4c6127bbb461c3_220_square.jpg",
+  "about": "Sabemos lo importante que es para los padres el poder asergurarse del bienestar de sus bebes, por eso ofrecemos el control prenatal más completo, ya sea para embarazos de bajo o alto riesgo. Ofrecemos los estudios de imagen necesarios para descartar malformaciones y para predecir el riesgo de enfermedades cromosomicas (como Sindrome de Down) y de complicaciones en el embarazo. Contamos con el equipo que actualmente ofrece la mejor resolución disponible, tanto para hacer un diagnostico certero, como para que las futuros papás puedan ver una imagen mas realista de su bebe. Tratamos también patología ginecologica, como sangrados anormales, lesiones vulvares, detección de vph, check up ginecologico, estudio de infertilidad y menopausia y planificación familiar",
+  "addresses": [
+    {
+      "full": "Ecuador 2331 (Doctors Hospital consultorio 1128),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/edgar-alejandro-tamez-cristerna/ginecologo/nuevo-leon#address-id=88398&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:24.055Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__edgar_alejandro_t_mez_cristerna.webp"
+}

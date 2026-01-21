@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Erika Ruth Carrasco Blancas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/068b62/068b629b5480ca734b3253b382d26ed7_220_square.jpg",
+  "about": "Soy la Dra. Erika Ruth Carrasco Blancas, especialista en Ginecología y Obstetricia, con posgrado en Medicina Materno Fetal. Mis estudios los realicé en instituciones de salud de renombre y prestigio en la ciudad de México; avalados por la Facultad de Medicina, de la Universidad Nacional Autónoma de México. Me he especializado en el manejo, control y resolución de embarazos de bajo y alto riesgo. Como médico materno fetal estoy enfocada en la atención médica de vanguardia a todas las mujeres embarazadas, utilizando equipos de última generación para realizar los estudios necesarios y brindar un diagnóstico preciso. Ofrezco a los ginecoobstetras y a sus pacientes todas las pruebas diagnósticas y terapias disponibles antes del parto con la finalidad de llevar una vigilancia adecuada del embarazo y detectar oportunamente posibles complicaciones. Mi enfoque profesional se basa en brindar una atención personalizada, ética y de calidad a mis pacientes, estableciendo una comunicación asertiva, abierta y transparente para resolver todas las dudas e inquietudes que puedan tener. Me apasiona mi trabajo y mi compromiso siempre es el seguimiento constante y el acompañamiento durante su embarazo.",
+  "addresses": [
+    {
+      "full": "Avenida Ejército Nacional 613-903,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/erika-ruth-carrasco-blancas/ginecologo/miguel-hidalgo-mexico#address-id=97839&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:43.317Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__erika_ruth_carrasco_blancas.webp"
+}

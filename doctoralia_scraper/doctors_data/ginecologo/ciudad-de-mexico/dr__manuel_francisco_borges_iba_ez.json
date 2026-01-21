@@ -1,0 +1,72 @@
+{
+  "name": "Dr. Manuel Francisco Borges Ibañez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/4fe3dd/4fe3dda1c346b8ebfc3eb9158e74aa6f_220_square.jpg",
+  "about": "Médico especialista en patologia ginecoobstetrica e infertilidad. Horarios flexibles Usg incluido Experiencia de mas de 20 años en casos de dificil diagnostico y tratamiento. Estudio de la parela infertil Atencion de niñas adolscentes y adultos.",
+  "addresses": [
+    {
+      "full": "CALZADA DEL HUESO 331. ESQ. HACIENDA DE CORLOME COL. FLORESTA COYOACAN,"
+    },
+    {
+      "full": "Calzada . del Hueso 331. Esq. Hacienda de Corlome.Col. Floresta Coyoacan,"
+    },
+    {
+      "full": "CALZADA DEL HUESO 331. ESQ. HACIENDA DE CORLOME COL. FLORESTA COYOACAN,"
+    },
+    {
+      "full": "Calzada . del Hueso 331. Esq. Hacienda de Corlome.Col. Floresta Coyoacan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-francisco-borges-ibanez/ginecologo/tlalpan#address-id=90577&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:26.349Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_francisco_borges_iba_ez.webp"
+}

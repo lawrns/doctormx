@@ -1,0 +1,56 @@
+{
+  "name": "Valeria Ventura Quintana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 284,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/779adb/779adb270f214e28b134c711d2e43e59_220_square.jpg",
+  "about": "Mi nombre es Valeria Ventura Quintana, soy médico especialista en Ginecología y Obstetricia, subespecialista en Biología de la Reproducción Humana. Mi trabajo está enfocado al cuidado, prevención y salud de la mujer en todas sus etapas. En el caso de la consulta de fertilidad, ofrezco atención personalizada a las parejas para lograr el objetivo que compartimos. Certificaciones y experiencia avalan mi práctica, siempre con calidad humana.",
+  "addresses": [
+    {
+      "full": "Benjamin Franklin 235, 2do piso, consultorio 105,"
+    },
+    {
+      "full": "Rancho Vista Hermosa 245, Coapa, Campestre Coyoacán,,"
+    },
+    {
+      "full": "Benjamin Franklin 235, 2do piso, consultorio 105,"
+    },
+    {
+      "full": "Rancho Vista Hermosa 245, Coapa, Campestre Coyoacán,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/valeria-ventura-quintana-2/ginecologo/coyoacan#address-id=387383&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:27.198Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/valeria_ventura_quintana.webp"
+}

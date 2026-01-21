@@ -1,0 +1,43 @@
+{
+  "name": "Ana Lucía Polanco Sosa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 384,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/84ee04/84ee040c4ff584a328f2bd4b633275c2_220_square.jpg",
+  "about": "Hola soy la Dra. Ana Lucía Polanco Sosa soy egresada de la Facultad de Medicina de la Universidad Autónoma de Nuevo León y estoy especializada en Ginecología y Obstetricia realizando mi entrenamiento en el Hospital Universitario Dr. José Eleuterio González. Cuento con diplomados en Ultrasonido obstétrico y ginecológico avalado por la Universidad Autónoma de Nuevo León y por el Hospital Ginequito, Realice un diplomado en Colposcopía y patología vulvovaginal impartido por la AME. Cuento con un curso internacional en láser en patologías del tracto genital inferior y ginecología estética funcional avalado por The American Board of Laser Surgery y SOLAGEF. Para mi lo más importante son mis pacientes ya que cada caso es único. Haré todo lo posible para que te sientas cómoda y en confianza escuchando tus molestias y explicandote todo para que no queden dudas",
+  "addresses": [
+    {
+      "full": "Calle Ecuador No 2331, Balcones de Galerias,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-lucia-polanco-sosa/ginecologo/nuevo-leon#address-id=404749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:09.335Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/ana_luc_a_polanco_sosa.webp"
+}

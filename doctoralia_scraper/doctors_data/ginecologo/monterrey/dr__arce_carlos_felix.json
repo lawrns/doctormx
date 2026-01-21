@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Arce Carlos Felix",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 4,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Roberto Cantu Piso 5 300 No. 5,"
+    },
+    {
+      "full": "Dr. Cantu 300,"
+    },
+    {
+      "full": "Roberto Cantu Piso 5 300 No. 5,"
+    },
+    {
+      "full": "Dr. Cantu 300,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arce-carlos-felix/ginecologo/monterrey#address-id=48863&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:45.024Z",
+  "localPhotoPath": null
+}

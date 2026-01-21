@@ -1,0 +1,50 @@
+{
+  "name": "Ingridd Aguilar Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 506,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/400530/400530c61efd98ffd8d0a88235131054_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 674,"
+    },
+    {
+      "full": "Oriente 157 número 3736,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ingridd-aguilar-navarro/ginecologo/gustavo-a-madero#address-id=102265&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:41.653Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/ingridd_aguilar_navarro.webp"
+}

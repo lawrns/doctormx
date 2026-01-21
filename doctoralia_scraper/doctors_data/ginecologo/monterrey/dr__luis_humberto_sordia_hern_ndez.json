@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Humberto Sordia Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/815fae/815faee1130df4d70025a365949a226c_220_square.jpg",
+  "about": "Te ofrecemos atención medica altamente especializada con una formación medica integral que incluye la especialización, con titulo Universitario, en Ginecología y Obstetricia, y también en Biología de la Reproducción Humana, otorgados por la Universidad Autónoma de Nuevo León. Así mismo cuento con estudios de doctorado realizados en la Universidad Autónoma de Barcelona en España con Titulo Universitario de Doctorado y una preparación postdoctoral en el Programa de Reproducción Asistida del hospital Vall d´ Hebron de la Universidad Autónoma de Barcelona en España Esto me ha permitido la asistencia a congresos internacionales en donde también he podido presentar los resultados de nuestros trabajos de investigación. Dichos congresos fueron en Canadá, Estados Unidos de Norteamerica, España, Italia, Grecia, Alemania, Francia, Malasia, Sudáfrica, Colombia, Portugal,por lo que la experiencia aprendida en dichos lugares la pongo a tu servicio. He publicado trabajos de investigación en las revistas mas prestigiosas del mundo, he publicado libros de ginecología y he participado como autor de diferentes capítulos de libros relacionados con la infertilidad.",
+  "addresses": [
+    {
+      "full": "Doctors Hospital Ecuador 2331 Colonia Balcones de Galerias Consultorio 831.,"
+    },
+    {
+      "full": "Doctors Hospital Ecuador 2331 Colonia Balcones de Galerias Consultorio 831.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-humberto-sordia-hernandez/ginecologo/monterrey#address-id=91411&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:05.142Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__luis_humberto_sordia_hern_ndez.webp"
+}

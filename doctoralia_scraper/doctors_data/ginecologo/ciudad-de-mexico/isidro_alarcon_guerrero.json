@@ -1,0 +1,25 @@
+{
+  "name": "Isidro Alarcon Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Chilpancingo no. 116 piso 4, Roma,"
+    },
+    {
+      "full": "Chilpancingo no. 116 piso 4, Roma,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isidro-alarcon-guerrero/ginecologo/cuauhtemoc#address-id=110743&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:11:24.943Z",
+  "localPhotoPath": null
+}

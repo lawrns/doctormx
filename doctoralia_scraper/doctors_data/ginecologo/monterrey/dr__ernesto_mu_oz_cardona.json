@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Ernesto Muñoz Cardona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c64c63/c64c6312eb6f2b8c488f0672244e041d_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "guadalajara 1003 mitras sur,"
+    },
+    {
+      "full": "guadalajara 1003 mitras sur,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ernesto-munoz-cardona/ginecologo/monterrey#address-id=86794&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:25.810Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ernesto_mu_oz_cardona.webp"
+}

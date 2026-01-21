@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Gregorio Bandala Mendez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 454,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/849ba1/849ba1378870f29c10e3c4e34df1ebc4_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave 6A 77,"
+    },
+    {
+      "full": "Ave 6A 77,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gregorio-bandala-mendez/ginecologo/tapachula#address-id=128902&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:15:17.005Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gregorio_bandala_mendez.webp"
+}

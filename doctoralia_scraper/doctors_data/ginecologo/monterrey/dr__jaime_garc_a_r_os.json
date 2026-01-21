@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Jaime García Ríos",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/814e8f/814e8f6e80ec1660128d7c9a1fc1e35f_220_square.jpg",
+  "about": "Especializado Ginecólogo Obstetra Certificado, Salud Integral Ginecológica 24 años de experiencia. 2 direcciones Obispado y Centro Médico Hospitaria",
+  "addresses": [
+    {
+      "full": "Belisario Domínguez 2501 ,"
+    },
+    {
+      "full": "Belisario Domínguez 2501 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jaime-garcia-rios-2/ginecologo/nuevo-leon#address-id=494784&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:41.571Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__jaime_garc_a_r_os.webp"
+}

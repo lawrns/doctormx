@@ -1,0 +1,48 @@
+{
+  "name": "Dr. Nestor Alejandro Zarate Diaz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "JUAN SALVADOR AGRAZ 40 4°PISO,"
+    },
+    {
+      "full": "Calle Tuxpan número 6 piso 7,"
+    },
+    {
+      "full": "JUAN SALVADOR AGRAZ 40 4°PISO,"
+    },
+    {
+      "full": "Calle Tuxpan número 6 piso 7,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nestor-alejandro-zarate-diaz-2/ginecologo/cuauhtemoc#address-id=77731&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:57:19.338Z",
+  "localPhotoPath": null
+}

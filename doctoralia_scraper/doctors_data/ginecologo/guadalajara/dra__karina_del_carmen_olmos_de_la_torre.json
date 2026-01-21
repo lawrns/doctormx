@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karina del Carmen Olmos de la Torre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 75,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/45aafa/45aafac4243d831e6a3c19f3eca8b736_220_square.jpg",
+  "about": "Me encanta mi profesión y trato de brindar la mayor confianza y comodidad a mis pacientes, la consulta Ginecológica consiste en una revisión completa que se orienta desde la historia clínica a detectar factores de riesgo para algún trastorno gineco-obstetrico, se complementa con un ultrasonido para detectar anormalidades pélvicas como tumores uterinos u ovaricos , así como la realización de colposcopia para detección de Lesiones por Virus de Papiloma Humano y de encontrarse se brinda tratamiento para prevenir el desarrollo del cancer cervico uterino. Me interesa mucho formar una relación de confianza en donde las pacientes se puedan expresar y resolver sus dudas. La consulta de mis pacientes embarazadas comienza incluso antes de la gestación, con la consulta preconcepcional, que consiste valoración integral dando orientacion para elegir el mejor momento. en cada consulta se valora el crecimiento del feto, orientación materna sobre los cambios que semana a semana ocurren en el crecimiento de su bebe, así como medidas de prevención y tamizaje de embarazo de alto riesgo.",
+  "addresses": [
+    {
+      "full": "Cuautitlan 462,"
+    },
+    {
+      "full": "Cuautitlan 462,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karina-del-carmen-olmos-de-la-torre/ginecologo/zapopan#address-id=82106&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:48.629Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__karina_del_carmen_olmos_de_la_torre.webp"
+}

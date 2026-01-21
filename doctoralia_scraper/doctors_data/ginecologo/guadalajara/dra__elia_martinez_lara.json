@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Elia Martinez Lara",
+  "specialty": "Ginecólogo",
+  "rating": 4.5,
+  "reviewCount": 9,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/132b8a/132b8ae73218c26ea1f91a558928cef4_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. 18 de Marzo # 2029,"
+    },
+    {
+      "full": "Av. 18 de Marzo # 2029,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $550"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elia-martinez-lara/ginecologo/zapopan#address-id=84873&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:42.747Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__elia_martinez_lara.webp"
+}

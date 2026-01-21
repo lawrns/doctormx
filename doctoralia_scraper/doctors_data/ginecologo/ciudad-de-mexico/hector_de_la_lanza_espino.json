@@ -1,0 +1,25 @@
+{
+  "name": "Hector De La Lanza Espino",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tenayo no. 36, Tepeyac insurgentes,"
+    },
+    {
+      "full": "Tenayo no. 36, Tepeyac insurgentes,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hector-de-la-lanza-espino/ginecologo/gustavo-a-madero#address-id=111417&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:26.275Z",
+  "localPhotoPath": null
+}

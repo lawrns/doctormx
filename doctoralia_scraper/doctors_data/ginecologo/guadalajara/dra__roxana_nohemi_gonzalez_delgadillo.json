@@ -1,0 +1,38 @@
+{
+  "name": "Dra. Roxana Nohemi Gonzalez Delgadillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 22,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b22093/b22093dca6476e94c7b9fffae14861b2_220_square.jpg",
+  "about": "Medicina general avalado por Universidad Autónoma de Guadalajara,. Especialidad en Ginecología y Obstetricia en el Hospital Civil Nuevo Juan I. Menchaca- avalado por Universidad de Guadalajara. Adiestramiento en Colposcopia en Hospital Civil Nuevo. Diplomado en Ultrasonido Obstetrico con enfoque en Salud Perinatal. Avalado por la Universidad Cuauhtemoc Certificada por el Colegio Mexicano de Ginecologia y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Av. Ludwig Van Beethoven 5151Col. la Estancia,"
+    },
+    {
+      "full": "Av. Ludwig Van Beethoven 5151Col. la Estancia,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    },
+    {
+      "name": "Valoración ginecologica y/o obstétrica",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roxana-nohemi-gonzalez-delgadillo/ginecologo/zapopan#address-id=372817&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:27:04.746Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__roxana_nohemi_gonzalez_delgadillo.webp"
+}

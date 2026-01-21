@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Karla Osiris Peña Peláez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 25,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5c7f78/5c7f78e71cadf70dc130d52d3c809794_220_square.jpg",
+  "about": "Universidad La Salle, Facultad Mexicana de medicina. Instituto Nacional de Perimatologia (especialista en Ginecología y Obstetricia, subespecialidad en Biología de la Reproducción Humana) Estudio de parejas con Infertilidad Tratamientos de Reproducción de Baja y Alta complejidad en base al diagnóstico previo Atención a paciente con Oclusión Tubaria Bilateral, Vasectomía Pacientes que no cuentan con pareja. Selección de sexo y estudio de embriones para pacientes con historia de cromosomopatía Banco de Óvulos y Espermatozoides Todos las consultas y tratamientos son realizados con seguimiento y supervisión de mi parte",
+  "addresses": [
+    {
+      "full": "Frontera 74 int 315,"
+    },
+    {
+      "full": "Frontera 74 int 315,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karla-osiris-pena-pelaez/ginecologo/cuauhtemoc2#address-id=95372&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:31.812Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__karla_osiris_pe_a_pel_ez.webp"
+}

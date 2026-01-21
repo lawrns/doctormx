@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Vilma Conde Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0cdb8/a0cdb8433a3c3de09af94410279abb53_220_square.jpg",
+  "about": "hola soy la doctora Vilma Conde Hernández , con 20 años de experiencia en la especialidad de Ginecología y obstetricia mi cimento es la prevención ya sea antes durante y después del embarazo para la paciente su pronta recuperación física y para el bebe que sea sano y con excelente desarrollo físico y mental. para la mujer en general la prevención de enfermedades que afectan su calidad de vida",
+  "addresses": [
+    {
+      "full": "Camino A Sta. Teresa (Hosp. Angeles del Pedrregal), 1055 Cons. 955,"
+    },
+    {
+      "full": "Camino A Sta. Teresa (Hosp. Angeles del Pedrregal), 1055 Cons. 955,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vilma-conde-hernandez/ginecologo/tlalpan#address-id=75480&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:11.453Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__vilma_conde_hernandez.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Fermín Barba González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 42,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/276b63/276b63366e56392081bee7e2ebeab254_220_square.jpg",
+  "about": "Soy egresado de la carrera de Medicina por la Universidad Anáhuac y cuento con una especialización en Ginecología y Obstetricia, con formación en el Hospital Español de México, avalada por la Universidad Nacional Autónoma de México (UNAM). Mi compromiso es brindar atención integral y de calidad a la salud de la mujer en todas sus etapas: desde la adolescencia hasta la menopausia y beyond.Mi filosofía de atención se basa en escucharte, acompañarte y brindarte información clara y confiable para que puedas tomar decisiones seguras sobre tu salud. Creo que cada mujer merece sentirse tranquila, segura y empoderada en cada consulta, y por eso me esfuerzo en ofrecer un trato humano, respetuoso y personalizado.He participado como ponente en diversos congresos especializados y soy docente en la carrera de Medicina en la Universidad Anáhuac, lo que me permite mantenerme actualizado y transmitir conocimientos basados en evidencia.Cuento con entrenamiento avanzado en cirugía de mínima invasión, lo que me permite ofrecer procedimientos seguros, efectivos y con menor tiempo de recuperación. Para mí, tu bienestar y tu confianza son lo más importante.Si buscas un especialista comprometido con tu salud y bienestar, no dudes en contactarme. Estoy aquí para acompañarte en cada etapa y resolver todas tus dudas con profesionalismo y cariño.",
+  "addresses": [
+    {
+      "full": "Cto Centro Comercial 20,"
+    },
+    {
+      "full": "Boulevard Miguel de Cervantes Saavedra 161,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fermin-barba-gonzalez/ginecologo/miguel-hidalgo#address-id=613762&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:33.328Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ferm_n_barba_gonz_lez.webp"
+}

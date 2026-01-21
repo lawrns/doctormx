@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando López Martínez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0bfe05/0bfe05518f7a6c29067759c02afe158f_220_square.jpg",
+  "about": "20 años de experiencia en el ejercicio de la ginecología y obstetricia. Primera consulta: Historia clínica, revisión ginecóloga, realización de ultrasonido, revisión de mamas.",
+  "addresses": [
+    {
+      "full": "Azcapotzalco Papalotl 9 ,"
+    },
+    {
+      "full": "Azcapotzalco Papalotl 9 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $400"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-lopez-martinez/ginecologo/tlalpan#address-id=117646&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:07.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_l_pez_mart_nez.webp"
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Enrique Miramontes García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 244,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/cff36c33/cff36c33-9006-4319-b5b1-05f42e7a21fe_large.jpg",
+  "about": "Sobre mí Hola, qué tal, me presento! Soy el Dr. Enrique Miramontes García Médico Especialista en Ginecología y Obstetricia Cuento con diplomados en Colposcopia y Patología Cervical además de Terapia Hormonal y Osteoporosis Decidí estudiar esta especialidad porque me apasiona todo lo que tiene que ver con el cuidado de la mujer en todas sus etapas de la vida, acompañarlas y orientarlas en sus embarazos Espero este contenido te ayude a resolver todas tus dudas y te guste, este espacio es para ti el cual lo hago con mucho cariño, respeto y PROFESIONALISMO!!! Bienvenidos a este tu espacio y recuerda siempre hacer tus valoraciones ginecológicas, de embarazo y tu salud sexual Citas y urgencias: 3313114805 ¿Por qué elegirme a mí? Excelente trato, te acompaño en todas las etapas de tu vida como mujer, Tengo diplomado en colposcopia y patología genital inferior además de otro diplomado en terapia de reemplazo hormonal y osteoporosis Principales áreas de tratamiento Ginecología y obstetricia Colposcopia y Patología Genital Inferior Terapia de Reemplazo Hormonal y Osteoporosis Mi consulta y mi equipo Contamos con equipo de última generación para un adecuada exploración y cuidado de tu salud Otros servicios Revisión de mamas Ultrasonido pélvico y/o Transvaginal Papanicolaou y Colposcopia Control del Embarazo Control y manejo del Virus de Papiloma Humano Infecciones vaginales Sangrados Uterinos Anormales Dolor pélvico crónico Métodos de planificación familiar Incontinencia urinaria Perimenopausia y menopausia",
+  "addresses": [
+    {
+      "full": "Sierra Morena 26,"
+    },
+    {
+      "full": "Avenida Belisario Domínguez 479,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/enrique-miramontes-garcia/ginecologo/guadalajara#address-id=576160&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:29.493Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__enrique_miramontes_garc_a.webp"
+}

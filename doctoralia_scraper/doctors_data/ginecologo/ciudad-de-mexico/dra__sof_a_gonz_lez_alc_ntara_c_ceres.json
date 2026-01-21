@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Sofía González-Alcántara Cáceres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/030225/030225aac4e2a3a1952d1e18117f12a3_220_square.jpg",
+  "about": "La Dra. Sofía González - Alcántara Cáceres es especialista en Ginecología y Obstetricia. Títulos: Médico Cirujano (ITESM, University of Miami) Especialidad en Ginecología y Obstetricia (UANL) Uroginecología (Hospital Español) Certificada por el Consejo Mexicano de Ginecología y Obstetricia Miembro de American Academy of Anti Aging Medicine Miembro de la Asociación Mexicana para el Estudio del Climaterio Cursos relevantes: - Cimaterio y Menopausia - Universidad de Barcelona - PHS - Preeclampsia - Eclampsia, Hemorragia pos parto y sepsis obstétrica con aval del Colegio Mexicano de medicina Crítica A.C. - Curso Práctico de Ultrasonido Obstétrico - Obesidad en el Embaraz",
+  "addresses": [
+    {
+      "full": "Av Carlos Graef Fernandez 154,"
+    },
+    {
+      "full": "Av Lázaro Cárdenas 2660,"
+    },
+    {
+      "full": "Av Carlos Graef Fernandez 154,"
+    },
+    {
+      "full": "Av Lázaro Cárdenas 2660,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sofia-gonzalez-alcantara-caceres/ginecologo/san-pedro-garza-garcia#address-id=404860&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:17.372Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__sof_a_gonz_lez_alc_ntara_c_ceres.webp"
+}

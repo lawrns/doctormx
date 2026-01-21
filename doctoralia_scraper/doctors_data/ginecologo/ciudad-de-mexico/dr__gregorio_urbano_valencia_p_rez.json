@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Gregorio Urbano Valencia Pérez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/03c66f/03c66f3370054396474998089ea4f846_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Sabino 120 ,"
+    },
+    {
+      "full": "Calle Sabino 120 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gregorio-urbano-valencia-perez/ginecologo/cuauhtemoc#address-id=99900&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:15.062Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__gregorio_urbano_valencia_p_rez.webp"
+}

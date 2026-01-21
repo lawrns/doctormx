@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ivonne Santos Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6b34f/e6b34f6edaac1cbd53bb0e08f350a856_220_square.jpg",
+  "about": "Especialidad en Ginecologia y Obstetricia Hospital Regional \"Lic. Adolfo López Mateos\" Diplomado en Colposcopia Hospital Regional \"Lic. Adolfo López Mateos\" Certificación vigente Consejo Mexicano de Ginecología y Obstetricia, A.C.",
+  "addresses": [
+    {
+      "full": "(Hospital Cami Consultorio 203) Calzada Ignacio Zaragoza 185 Venustiano Carranza Jardin Balbuena, 15900 Ciudad de Mexic,"
+    },
+    {
+      "full": "Calzada Gral. Ignacio Zaragoza 189,"
+    },
+    {
+      "full": "(Hospital Cami Consultorio 203) Calzada Ignacio Zaragoza 185 Venustiano Carranza Jardin Balbuena, 15900 Ciudad de Mexic,"
+    },
+    {
+      "full": "Calzada Gral. Ignacio Zaragoza 189,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea con histerectomia postparto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía conservadora parcial de prolapso uterino",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de incontinencia urinaria femenina por vía vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivonne-santos-lopez/ginecologo/venustiano-carranza#address-id=25474&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:16.301Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ivonne_santos_lopez.webp"
+}

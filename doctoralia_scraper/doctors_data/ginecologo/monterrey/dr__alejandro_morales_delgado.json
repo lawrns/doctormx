@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Alejandro Morales Delgado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 222,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8e8aee/8e8aeefb1176620276834cd22e289131_220_square.jpg",
+  "about": "Como médico especialista certificado en Gineco-Obstetricia, mi objetivo es ofrecer los mejores servicios médicos para mis pacientes. Proporcionar una excelente atención médica, puedo garantizarle que su salud está en buenas manos.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 2425,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-morales-delgado/ginecologo/nuevo-leon#address-id=22319&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:37.485Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alejandro_morales_delgado.webp"
+}

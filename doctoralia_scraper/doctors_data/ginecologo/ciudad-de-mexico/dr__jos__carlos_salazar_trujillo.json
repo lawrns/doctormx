@@ -1,0 +1,66 @@
+{
+  "name": "Dr. José Carlos Salazar Trujillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d908c9/d908c9bd0959a528d2a94571be796ee3_220_square.jpg",
+  "about": "Hola soy el Dr. José Carlos Salazar Trujillo Ginecólogo, Obstetra y Especialista en Reproducción AsistidaSoy ginecólogo y obstetra con subespecialidad en Biología de la Reproducción Humana. Me dedico a acompañar a mujeres en todas las etapas de su vida reproductiva: desde la adolescencia hasta la menopausia, pasando por el embarazo, parto y tratamientos de fertilidad.Me apasiona brindar una atención médica integral, basada en evidencia, pero también cercana y humana. Creo firmemente en la importancia de escuchar con atención, explicar con claridad y acompañar con empatía.Trabajo con técnicas de vanguardia para abordar desde los retos de fertilidad más complejos, hasta los cuidados ginecológicos y obstétricos de cada día. Atiendo desde consultas rutinarias hasta embarazos de alto riesgo, desequilibrios hormonales, trastornos menstruales, control prenatal, planificación familiar y menopausia.Formación AcadémicaMédico Cirujano – Universidad Nacional Autónoma de México (UNAM)Especialidad en Ginecología y Obstetricia – Hospital EspañolSubespecialidad en Biología de la Reproducción Humana – Hospital EspañolCursos y actualizaciones constantes en reproducción asistida y ginecología en México, Europa y Estados UnidosExperiencia ProfesionalGinecólogo y especialista en fertilidad en HisparepConsultorio privado en Hospital Español y Santa FeMás de 10 años de experiencia clínica en ginecología, obstetricia y reproducciónParticipación activa en congresos nacionales e internacionalesTrabajo interdisciplinario con biólogos de la reproducción, genetistas, psicólogos y nutricionistas Áreas de atenciónReproducción AsistidaFertilización in vitro (FIV)Inseminación artificialOvodonación y tratamientos con donantesPreservación de la fertilidad (mujeres y hombres)Baja reserva ovárica / falla ovárica precozFallos de implantación y abortos recurrentesEndometriosis e infertilidadGestación subrogadaAtención a parejas del mismo sexo y pacientes solterosConsulta ginecológica integralControl del embarazo y partoEmbarazos de alto riesgoIrregularidades menstrualesSíndrome de ovario poliquístico (SOP)Infecciones vaginales, VPH y papanicolaouMiomas, quistes y endometriosisMenopausia y climaterioAnticoncepción y planificación familiarColocación de DIU y métodos anticonceptivos ¿Por qué agendar conmigo?Atención profesional, humana y ética Explicaciones claras, sin prisas ni juiciosAcompañamiento integral en cada etapa de tu salud reproductivaAlto nivel de actualización médica Trato cálido y empático: cada paciente es única",
+  "addresses": [
+    {
+      "full": "Ejército Nacional Mexicano 617,"
+    },
+    {
+      "full": "Vasco de Quiroga 4299,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de andrología",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-carlos-salazar-trujillo/ginecologo/cuajimalpa-de-morelos#address-id=580648&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:10.722Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__carlos_salazar_trujillo.webp"
+}

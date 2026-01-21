@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Ismerai Pérez Bravo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 89,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/d5373342/d5373342-3e03-427b-8974-768c29b04e6d_small_square.jpg",
+  "about": "Médico egresada de la Universidad Benemérita Autónoma de Puebla, Facultad de medicina con especialidad en Ginecología y Obstetricia, certificada por el Consejo Mexicano de Ginecología y obstetricia. Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "Justo Sierra No. 2620,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ismerai-perez-bravo/ginecologo/guadalajara#address-id=568361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:25:07.765Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__ismerai_p_rez_bravo.webp"
+}

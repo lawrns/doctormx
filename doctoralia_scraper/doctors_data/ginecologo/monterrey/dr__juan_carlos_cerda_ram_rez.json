@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Carlos Cerda Ramírez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 172,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/53add5/53add524218798c267d75653be991df9_220_square.jpg",
+  "about": "Con mas de 15 años de experiencia obtenida por una practica medica tanto publica como privada atendemos de una manera profesional y responsable las enfermedades propias de la mujer durante todas sus etapas, incluyendo la etapa mas especial para muchas que es el embarazo. Seria un placer poder atenderlas",
+  "addresses": [
+    {
+      "full": "Otomie 206,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-cerda-ramirez/ginecologo/nuevo-leon#address-id=94515&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:08.741Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_carlos_cerda_ram_rez.webp"
+}

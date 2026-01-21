@@ -1,0 +1,98 @@
+{
+  "name": "Prof. Juan Carlos Castillo Marin Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 33,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2036da/2036dada18600dfc306bcb6c5ec9e3b0_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Haciendas del Valle 7120, Hospital Angeles Chihuahua.,"
+    },
+    {
+      "full": "Av. Felix Cuevas 540,"
+    },
+    {
+      "full": "Rio de la Magdalena 289,"
+    },
+    {
+      "full": "Avenida Haciendas del Valle 7120, Hospital Angeles Chihuahua.,"
+    },
+    {
+      "full": "Av. Felix Cuevas 540,"
+    },
+    {
+      "full": "Rio de la Magdalena 289,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-castillo-marin-ruiz/ginecologo/chihuahua#address-id=7621&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:43.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/prof__juan_carlos_castillo_marin_ruiz.webp"
+}

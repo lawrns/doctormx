@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Alfonso Suástegui Navarro",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9f1e29/9f1e29ce79d87240e0730a0276782e6d_220_square.jpg",
+  "about": "Apasionado de la medicina reproductiva, el Dr. Alfonso Suástegui es Ginecólogo y Obstetra especializado en Fertilidad Humana que está siempre en la búsqueda de los tratamientos médicos y quirúrgicos más actualizados para brindar a las personas con problemas de fertilidad una atención médica integral, cálida y excepcional. Titulado con excelencia académica de la Facultad de Medicina de la Universidad de Guadalajara, Especialidad en Ginecología y Obstetricia en el Nuevo Hospital Civil de Guadalajara avalado por la Universidad de Guadalajara, subespecialidad en Medicina de la Reproducción Humana y formación especializada en Cirugía Laparoscópica y de Mínima Invasión en el IRCAD, instituto de renombre mundial, ubicada en Estrasburgo, Francia. Miembro activo de sociedades nacionales e internacionales tales como: -AMMR (Asociación Mexicana de Medicina de la Reproducción) -ASRM (American Society for Reproductive Medicine) -ESHRE (European Society of Human Reproduction and Embryology) -AAGL (American Association for Gynecologic Laparoscopy)",
+  "addresses": [
+    {
+      "full": "Avenida Ignacio L Vallarta 3030,"
+    },
+    {
+      "full": "Avenida Ignacio L Vallarta 3030,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-suastegui-navarro-2/ginecologo/guadalajara#address-id=451335&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:50.341Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__alfonso_su_stegui_navarro.webp"
+}

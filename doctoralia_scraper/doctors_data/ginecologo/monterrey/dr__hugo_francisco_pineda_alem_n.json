@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Hugo Francisco Pineda Alemán",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 450,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/acf063/acf063a5eba0d6ea9c0843f6b7297067_220_square.jpg",
+  "about": "Ginecologo y Obstetra en ejercicio activo dedicado a la medicina privada e institucional con formación academica de 15 años en instituciones publicas, privadas y del extranjero en el Maternal Fetal Care del Methodist Hospital de San Antonio Texas. Con suma de miles de estudios y horas de adiestramiento en Ecografía Ginecologica y Obstetrica de alta especialidad, avalado por 3 de las mas prestigiosas universidades del pais. Certificado por el Consejo Mexicano de Ginecología y Obstetricia.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1828, Colonia Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• Desde $14,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hugo-francisco-pineda-aleman/ginecologo/nuevo-leon#address-id=404582&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:17.848Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__hugo_francisco_pineda_alem_n.webp"
+}

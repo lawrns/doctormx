@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation'
 import DoctorLayout from '@/components/DoctorLayout'
 import { AppointmentCardCompact, EmptyState } from '@/components'
 import Link from 'next/link'
+import { Calendar } from 'lucide-react'
 
 export default async function DoctorDashboard() {
   const { user, profile, supabase } = await requireRole('doctor')
@@ -286,11 +287,7 @@ export default async function DoctorDashboard() {
               <EmptyState
                 title="No tienes consultas programadas"
                 description="Las citas aparecerán aquí cuando los pacientes reserven contigo."
-                icon={
-                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                }
+                icon={Calendar}
               />
             )}
           </div>

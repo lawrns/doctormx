@@ -1,0 +1,43 @@
+{
+  "name": "Dr. José Manuel Huerta Hentschel",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 221,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f8ff8e/f8ff8eb70f912845f811c8fa5d98b58f.jpg",
+  "about": "Soy Médico Ginecólogo y Obstetra del Hospital Ángeles del Pedregal, siempre enfocado en ofrecer atención de la más alta calidad y con sentido humano para la prevención y el tratamiento oportuno con la finalidad de cuidar la salud y bienestar de todas mis pacientes. Tengo una Subespecialidad en Cirugía Reproductiva e Infertilidad en el Woman´s Hospital of Texas de Houston con amplia experiencia en cirugía de mínima invasión y un Diplomado en Colposcopía y Tracto Genital Inferior: Hospital Angeles México. Para mi siempre será un placer atenderte y resolver todas tus dudas. Agenda tu cita.",
+  "addresses": [
+    {
+      "full": "Periferico Sur 3697,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-huerta-hentschel/ginecologo/ciudad-de-mexico",
+  "scrapedAt": "2026-01-21T02:40:47.726Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jos__manuel_huerta_hentschel.webp"
+}

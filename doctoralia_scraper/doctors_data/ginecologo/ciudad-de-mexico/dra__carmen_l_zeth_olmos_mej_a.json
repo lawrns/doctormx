@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Carmen Lízeth Olmos Mejía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c832ae/c832ae0136c24564dd4b0aabf07f585e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Empresa 91 local A2 ,"
+    },
+    {
+      "full": "Empresa 91 local A2 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carmen-lizeth-olmos-mejia/ginecologo/benito-juarez#address-id=90210&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:40.118Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carmen_l_zeth_olmos_mej_a.webp"
+}

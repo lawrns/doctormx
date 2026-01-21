@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Elena Aguilar Segovia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 261,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/7425ab/7425abee597fdb7329083684842706b5.jpg",
+  "about": "Sobre mí ¡Hola! Soy Elena Aguilar, Ginecóloga y Obstetra con una subespecialidad en Biología de la Reproducción Humana. Me apasiona mi trabajo, por ello para mi es importante acompañar a mis pacientes con un trato amable y respetuoso. Te brindaré mi apoyo desde el diagnóstico, pasando por todo el proceso de tratamiento hasta que recuperes tu salud y/o cumplas tu sueño de ser madre. Puedes sentir la tranquilidad de que tu salud estará en manos expertas. ¡Será un gusto ser tu especialista de confianza! ¿Por qué elegirme a mí? Mi objetivo siempre será lograr el adecuado diagnostico y tratamiento de mis pacientes brindando una atención honesta y empatíca. Fui jefa de residentes de la sub especialidad de Biologia de la reproducción humana en el Hospital Juarez De México. Y Directora medica en dos centros de reproducción asitida. Principales áreas de tratamiento Infertilidad y tratamientos de reproducción asistida. Ginecologia endocrina, menopausia y osteoporosis. Ultrasonido 3D y cirugía de mínima invasión. Mi consulta y mi equipo Recibira su consulta en un consultorio cálido y personalizado para la atención femenina, equipado con las nueva tecnología y comodidad. El trabajo en equipo es muy importante para mi por la parte de cirugía endoscopia y mínima invasión el Dr. Eduardo Luna Ramirez forma parte d emisión equipo y en el área de medicina materno fetal y cirugía fetal el Dr. Juan Carlos De Leon contribuye a mis diagnostico prenatales complementarios. Otros servicios Fertilización invitro Inseminación intrauterina Coito programado Biopsia Testicular Histeroscopia de consultorio y quirófano. Diagnostico y tratamiento de tracto inferior (colposcopia y papanicolaou). Ultrasonido 3D de utero y ovarios. Ultrasonido 3D y 4D Obstétrico. Histeroscopia de consultorio y quirófano. Cirugía de mínima invasión (Miomectomia, quiste de ovario y salpingectomia). Más sobre mí Un trato honesto, empatizo, responsable y a la vanguardia es lo mas importante de mi atención medica.",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elena-aguilar-segovia/ginecologo/tlalnepantla-de-baz2#address-id=463235&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:14.625Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elena_aguilar_segovia.webp"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Sergio Campos Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tamaulipas 255,"
+    },
+    {
+      "full": "Tamaulipas 255,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-campos-hernandez/ginecologo/ecatepec-de-morelos",
+  "scrapedAt": "2026-01-21T03:13:08.741Z",
+  "localPhotoPath": null
+}

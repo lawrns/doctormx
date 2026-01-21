@@ -1,0 +1,31 @@
+{
+  "name": "Maria Del Carmen Abud Luna",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aguascalientes 177,"
+    },
+    {
+      "full": "C. Ignacio Allende 25,"
+    },
+    {
+      "full": "Aguascalientes 177,"
+    },
+    {
+      "full": "C. Ignacio Allende 25,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-del-carmen-abud-luna/ginecologo/ciudad-de-mexico#address-id=193992&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:06:21.834Z",
+  "localPhotoPath": null
+}

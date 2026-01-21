@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Raul Segura Cordova",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 77,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b318f5/b318f5d79f52b0e91db01b4399d67cb0_220_square.jpg",
+  "about": "Médico especialista, certificado por el Consejo Mexicano de Ginecología y Obstetricia, así como miembro Federado del Colegio de especialistas. Experto en ofrecer un servicio de CALIDAD Y DE VANGUARDIA en el ámbito del cuidado integral de la mujer con el PRINCIPAL interés de la salud femenina. Una cita ginecológica debe ser cómoda, confidencial y respetuosa. Es un espacio seguro para hablar sobre salud sexual, reproductivo, realizar exámenes y recibir orientación. TU BIENESTAR ES NUESTRA PRIORIDAD",
+  "addresses": [
+    {
+      "full": "Tuxpan 29,"
+    },
+    {
+      "full": "Tuxpan 29,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de andrología",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $900"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-segura-cordova/ginecologo/cuauhtemoc2#address-id=503176&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:54.758Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__raul_segura_cordova.webp"
+}

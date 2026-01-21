@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ariella Eleanor Perrotin Fortuno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b26056/b260560caa440633712be19871231296_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CALLE TENANCALCO # 9 ,"
+    },
+    {
+      "full": "CALLE TENANCALCO # 9 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $750"
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ariella-eleanor-perrotin-fortuno/ginecologo/tlalpan#address-id=104100&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:23.655Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ariella_eleanor_perrotin_fortuno.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Patricia Romero Vaca",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 13,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Soy la Dra. Patricia Romero, realice la especialidad de Ginecología y Obstetricia en el Instituto Nacional de Perinatología \"Isidro Espinosa de los Reyes\" y la sub especialidad en Medicina Materno Fetal en el Hospital General de México \"Dr. Eduardo Liceaga\".",
+  "addresses": [
+    {
+      "full": "Tuxpan,"
+    },
+    {
+      "full": "Tuxpan,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal de embarazo múltiple",
+      "price": ""
+    },
+    {
+      "name": "Embarazo de alto riesgo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-romero-vaca/ginecologo/ciudad-de-mexico#address-id=470885&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:09.171Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Ana María Cortés Hernández",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 252,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9d5e24/9d5e248104c5f33dd5094b0bb41de512_220_square.jpg",
+  "about": "Mi nombre es Ana María Cortés Hernández, Ginecóloga con alta especialidad en Obstetricia y Colposcopía. Mis servicios trascienden el ámbito médico, tratan a las pacientes con respeto y confianza, para que se puedan sentir cómodas y juntas solucionemos cualquier preocupación que ellas puedan tener. Desde asesoría en anticoncepción, enfermedades de transmisión sexual y heridas pre-cancerígenas, hasta cirugía obstétrica y tratamientos de cuidado especializado, mi mayor fortaleza es atender con mucha atención a cada paciente de forma particular, para convertirme en su médico de cabecera. MIS TÍTULOS Y CÉDULAS PROFESIONALES: 1. MÉDICO CIRUJANO Y PARTERO: Benemérita Universidad Autónoma de Puebla Expedido en año 1990 Cédula profesional: 15265632. ESPECIALIDAD EN GINECOLOGÍA Y OBSTETRICIA: Benemérita Universidad Autónoma de Puebla Expedido en año 2000 Cédula de especialidad: 3223402",
+  "addresses": [
+    {
+      "full": "(Hospital Puebla) Privada de las Ramblas #4 consultorio 618,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-maria-cortes-hernandez/ginecologo/puebla",
+  "scrapedAt": "2026-01-21T03:53:05.190Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__ana_mar_a_cort_s_hern_ndez.webp"
+}

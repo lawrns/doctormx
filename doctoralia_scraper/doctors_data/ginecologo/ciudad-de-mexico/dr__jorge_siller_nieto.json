@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Jorge Siller Nieto",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle General, C. Gobernador Gregorio V. Gelati 29, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX,"
+    },
+    {
+      "full": "Calle General, C. Gobernador Gregorio V. Gelati 29, San Miguel Chapultepec I Secc, Miguel Hidalgo, 11850 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-siller-nieto/ginecologo/ciudad-de-mexico#address-id=516003&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:01:09.390Z",
+  "localPhotoPath": null
+}

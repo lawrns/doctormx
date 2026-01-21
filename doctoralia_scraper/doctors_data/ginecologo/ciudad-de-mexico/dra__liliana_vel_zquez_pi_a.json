@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Liliana Velázquez Piña",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a22cbb/a22cbbbcb223488a3859620613d29eab_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. de los Insurgentes Sur 1524,"
+    },
+    {
+      "full": "Av. de los Insurgentes Sur 1524,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-velazquez-pina/ginecologo/ciudad-de-mexico#address-id=416876&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:56:44.415Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__liliana_vel_zquez_pi_a.webp"
+}

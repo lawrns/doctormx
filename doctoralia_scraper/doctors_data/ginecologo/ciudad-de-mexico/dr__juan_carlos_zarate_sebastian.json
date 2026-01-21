@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Juan Carlos Zarate Sebastian",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f28355/f28355266d570cf102894ab5c4d9a615_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Insurgentes 180. ENTRE JUÁREZ Y NUEVO MÉXICO ,"
+    },
+    {
+      "full": "Insurgentes 180. ENTRE JUÁREZ Y NUEVO MÉXICO ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-carlos-zarate-sebastian/ginecologo/amecameca#address-id=82218&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:16.304Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_carlos_zarate_sebastian.webp"
+}

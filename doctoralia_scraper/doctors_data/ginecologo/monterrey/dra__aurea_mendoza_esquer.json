@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Aurea Mendoza Esquer",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 5,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0fbfdf/0fbfdf808bc6c8c27bd826b9949b6c80_220_square.jpg",
+  "about": "32 años de experiencia.",
+  "addresses": [
+    {
+      "full": "Av. Pablo De La Garza 1822,"
+    },
+    {
+      "full": "Avenida Universidad 308,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $650"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $650"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $650"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aurea-mendoza-esquer/ginecologo/san-nicolas-de-los-garza#address-id=616129&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:47.534Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__aurea_mendoza_esquer.webp"
+}

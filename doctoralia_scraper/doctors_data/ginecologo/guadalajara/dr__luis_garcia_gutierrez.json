@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Luis Garcia Gutierrez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Especialidad en Gineco-obstetricia, CMNO IMSS Guadalajara Adiestramiento en Ecografia CMNO IMSS Guadalajara Adiestramiento en Clinica de Displasias I. Jalisciense del Cancer Adiestramiento de Patología Mamaria HGR 46 IMSS Recertificado por el Consejo Mexicano de Ginecología y Obstetricia",
+  "addresses": [
+    {
+      "full": "BARLOVENTO 2417,"
+    },
+    {
+      "full": "BARLOVENTO 2417,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luis-garcia-gutierrez/ginecologo/guadalajara#address-id=79814&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:31.626Z",
+  "localPhotoPath": null
+}

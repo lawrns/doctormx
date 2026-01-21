@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Raquel Guerra Ortiz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Zahuatlan 232, Hab la Romana, ,"
+    },
+    {
+      "full": "Calle Zahuatlan 232, Hab la Romana, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raquel-guerra-ortiz/ginecologo/tlalnepantla-de-baz#address-id=154338&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:55.017Z",
+  "localPhotoPath": null
+}

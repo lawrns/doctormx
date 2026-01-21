@@ -1,0 +1,202 @@
+{
+  "name": "Dr. Dino Renzo Viacava Parodi",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 8,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/be0b8d/be0b8d69d7b14b10d4b4ce41a9f3aba9_220_square.jpg",
+  "about": "EL DR. VIACAVA TIENE VARIOS AÑOS EJERCIENDO EN MEXICO. ESTA CALIFICADO Y CERTIFICADO EN SU ESPECIALIDAD. CUENTA CON LA CERTIFICACION DEL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA. DURANTE SU FORMACION Y LABOR ASISTENCIAL ESTUVO EN MULTIPLES CENTROS RECONOCIDOS COMO LA UNIVERSIDAD COMPLUTENSE DE MADRID, UNIVERSIDAD DE MONTERREY, UNIVERSIDAD DE NUEVO LEON, UNIVERSIDAD LA SALLE, HOSPITAL NACIONAL REFERENCIAL DEL SEGURO SOCIAL DEL PERU \"E. REBAGLIATI\", Y VARIOS CENTROS MAS RECONOCIDOS INTERNACIONALMENTE. ACTUALMENTE ATIENDE EN LA MAYOR PARTE DE HOSPITALES CERTIFICADOS DE MONTERREY COMO SAN JOSE, HOSPITARIA, GINEQUITO, MUGUERZA, CONCHITA, DOCTORS HOSPITAL, OCA, Y VARIOS MAS. TAMBIEN TRABAJA EN EL HOSPITAL MATERNO INFANTIL DE ALTA ESPECIALIDAD DE LA SECRETARIA DE SALUD DE NUEVO LEON.",
+  "addresses": [
+    {
+      "full": "Avda. Morenita Mía 2501. Local 5. Plaza Morenita. (cerca a cruz con Sendero) San Nicolás de los Garza. Nuevo León. ,"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    },
+    {
+      "full": "15 De Mayo Poniente 1822,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Avda. Miguel Hidalgo y Costilla 2525 poniente,"
+    },
+    {
+      "full": "Avda. Morenita Mía 2501. Local 5. Plaza Morenita. (cerca a cruz con Sendero) San Nicolás de los Garza. Nuevo León. ,"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    },
+    {
+      "full": "15 De Mayo Poniente 1822,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1842 pte,"
+    },
+    {
+      "full": "Calle Ecuador 2331,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Avda. Miguel Hidalgo y Costilla 2525 poniente,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Agrandamiento del punto G",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dino-renzo-viacava-parodi/ginecologo/san-nicolas-de-los-garza#address-id=2160&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:52.117Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__dino_renzo_viacava_parodi.webp"
+}

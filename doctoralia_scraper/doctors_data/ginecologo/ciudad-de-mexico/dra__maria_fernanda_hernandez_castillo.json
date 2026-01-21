@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Maria Fernanda Hernandez Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 375,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3f86b8/3f86b899d012573758c351339bd7e08c_220_square.jpg",
+  "about": "Hola soy la Dra. María Fernanda, Ginecóloga y Obstetra egresada del Hospital Gea González de CDMX, realice una Alta Especialidad en Cirugía oncológica de la mama en la Fundación de Cáncer de Mama FUCAM A.C., me he preparado en Colposcopía y Patología del tracto genital inferior, para ofrecerte una atención ginecológica integral, de calidad, con perspectiva de género, sin tabús. Mi objetivo es brindar una atención especializada e integral de la salud de la mujer desde una perspectiva feminista, humana y sobre todo empática en todas las etapas de la vida. Permíteme ayudar a cuidar y mejorar tu salud intima.",
+  "addresses": [
+    {
+      "full": "Avenida Homero 1425,"
+    },
+    {
+      "full": "Cerrada Perpetua 40,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Atención de climaterio y menopausia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Biópsia quirúrgica de mama",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-hernandez-castillo/ginecologo/miguel-hidalgo#address-id=443684&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:47:15.514Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_fernanda_hernandez_castillo.webp"
+}

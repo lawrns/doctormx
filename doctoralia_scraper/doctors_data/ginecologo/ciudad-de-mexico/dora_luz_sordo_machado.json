@@ -1,0 +1,37 @@
+{
+  "name": "Dora Luz Sordo Machado",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Perif. Sur 4338,"
+    },
+    {
+      "full": "Av. Rio Mayo 303,"
+    },
+    {
+      "full": "Montiel 206,"
+    },
+    {
+      "full": "Perif. Sur 4338,"
+    },
+    {
+      "full": "Av. Rio Mayo 303,"
+    },
+    {
+      "full": "Montiel 206,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/dora-luz-sordo-machado/ginecologo/ciudad-de-mexico#address-id=234904&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:08:48.666Z",
+  "localPhotoPath": null
+}

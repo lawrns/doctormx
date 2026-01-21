@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Jiménez Góngora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 249,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/828f2e/828f2ee6dcd606ee1f50983d35b53164_220_square.jpg",
+  "about": "¿Por qué elegirme a mí? La mejor atención obstétrica y ginecológica al sur de la Ciudad de México con enfoque humano, ético, igualitario y cálido. Medicina actual con 20 años de experiencia. Principales áreas de tratamiento Alto riesgo obstétrico, control prenatal Placenta previa, acretismo placentario Miomatosis uterina. Hemorragia uterina anormal, dismenorrea, endometriosis, Otros servicios Detección y tratamiento de ETS síndrome de ovario poliquistico",
+  "addresses": [
+    {
+      "full": "Calz México-Xochimilco 118,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-jimenez-gongora/ginecologo/tlalpan#address-id=68998&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:29.447Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ricardo_jim_nez_g_ngora.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Guadalupe Ruíz Santana",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 449,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d44017/d44017c1a6ba5e188a1f2f5e2875ff1e.jpg",
+  "about": "Soy una ginecóloga comprometida contigo, mi paciente para ofrecerte la mejor solución y tratamiento para tu problema",
+  "addresses": [
+    {
+      "full": "Avenida del Parque 35,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Climaterio y menopausia",
+      "price": "• $800"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $800"
+    },
+    {
+      "name": "Infecciones de Transmisión Sexual",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-ruiz-santana/ginecologo/guadalajara#address-id=384773&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:23:48.692Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__mar_a_guadalupe_ru_z_santana.webp"
+}

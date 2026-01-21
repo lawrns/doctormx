@@ -1,0 +1,84 @@
+{
+  "name": "Dra. Ana Cristina Ramírez Echeverría",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 82,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/605c0c/605c0c5dab46267aab840a863dcf20e3_220_square.jpg",
+  "about": "Servicios: Consulta ginecológica, seguimiento anual con papanicolaou y revisión mamariaConsulta para inicio y seguimiento de métodos anticonceptivosConsultas de control y seguimiento de embarazo con ultrasonidoConsulta por trastornos de fertilidad (dificultad para lograr embarazo y tratamiento)Consulta por menopausia y climaterio La Dra. Ana Cristina Ramírez es ginecóloga y obstetra, se especializa en todos los padecimientos de la mujer, control de embarazo, problemas asociados a la menopausia y problemas de fertilidad. Ella estudio la carrera de médico cirujano en la Universidad Nacional Autónoma de México, y realizo su especialidad en Ginecología y Obstetricia en el Hospital de la Mujer del Distrito Federal, esto la preparó para tratar a pacientes con todo tipo de problemas ginecológicos y embarazos de alto riesgo. Posteriormente realizó una Maestría en Reproducción Asistida avalada por la Universidad Rey Juan Carlos en Madrid, España, dandole las herramientas para ayudar a parejas que tienen dificultades para lograr embarazarse.",
+  "addresses": [
+    {
+      "full": "Avenida Árbol del Fuego 80 ,"
+    },
+    {
+      "full": "Calzada de las Bombas 624,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    },
+    {
+      "full": "Boulevar de los Continentes 11,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido ginecológico",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Consulta con ultrasonido",
+      "price": ""
+    },
+    {
+      "name": "Prueba de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-cristina-ramirez-echeverria/ginecologo/coyoacan#address-id=536194&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:04.834Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_cristina_ram_rez_echeverr_a.webp"
+}

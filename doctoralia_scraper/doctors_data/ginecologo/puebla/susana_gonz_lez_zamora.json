@@ -1,0 +1,66 @@
+{
+  "name": "Susana González Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 133,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0b34ba/0b34baaff95f6c4768ee22179db66778_220_square.jpg",
+  "about": "Soy Ginecoobstreta con diplomado en Colposcopia y Láser del tracto genital inferior y Ginecóloga Láser Cosmética y Quirúrgica , realice mis estudios y mi especialización en este bello estado de Puebla, he tenido la dicha de trabajar ya por un poco más de 20 años en la secretaria de Salud como medico adscrita en el servicio de Ginecología y Obstetricia. En el ámbito publico como privado; tengo una filosofía basada en el respeto, trato humano y profesional hacia a la mujer, donde la atención es personalizada y adecuada a la edad de cada paciente, ya que cada etapa de la vida requiere una atención diferente. A lo largo de mi vida profesional he estado en constante actualización profesional, de mis ultimas actualizaciones están: certificada por el Colegio Mexicano de Ginecología y Obstetricia, Diplomado de Láser del tracto genital inferior, miembro del Colegio Médico de Colposcopia del Estado de Puebla, del que fui Presidenta.",
+  "addresses": [
+    {
+      "full": "Av. Kepler 2143, Reserva Territorial Atlixcáyotl,"
+    },
+    {
+      "full": "Privada de las Ramblas 4, CONSULTORIO 1104,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susana-gonzalez-zamora/ginecologo/puebla#address-id=6748&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:53:58.417Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/susana_gonz_lez_zamora.webp"
+}

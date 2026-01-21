@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Isabel Flores Alcala",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Avenida Terranova 1153,44647 Lomas De Providencia,"
+    },
+    {
+      "full": "Avenida Terranova 1153,44647 Lomas De Providencia,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/isabel-flores-alcala/ginecologo/guadalajara#address-id=474143&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:01.871Z",
+  "localPhotoPath": null
+}

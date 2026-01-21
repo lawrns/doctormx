@@ -1,0 +1,81 @@
+{
+  "name": "Dra. Carolina Aguirre Sanchez",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 128,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/de093bd8/de093bd8-3bb1-4cd6-a2e2-9a601d1cb4fe_small_square.jpg",
+  "about": "Soy la Dra. Carolina Aguirre Sánchez, uroginecóloga y ginecóloga-obstetra certificada, especializada en la salud íntima de la mujer, piso pélvico, embarazo y atención ginecológica integral.Mi prioridad es brindarte una consulta cercana, profesional y basada en evidencia, donde te sientas escuchada, segura y con la confianza de hablar abiertamente desde el primer momento.Me formé en la UNAM y realicé mi especialidad y subespecialidad en la UMAE No. 4 “Luis Castelazo Ayala”. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia.Te acompaño en temas como incontinencia urinaria, piso pélvico, control prenatal, salud sexual, colposcopía y cirugía laparoscópica, siempre buscando el plan de cuidado que mejor se adapte a ti.Mi objetivo es que tu experiencia médica sea clara, cómoda y de calidad. cuidado para ti.Agenda tu cita y da el siguiente paso para sentirte mejor.",
+  "addresses": [
+    {
+      "full": "Calzada Acoxpa 430,"
+    },
+    {
+      "full": "Circuito Centro Comercial 20,"
+    },
+    {
+      "full": "Avenida Patriotismo 67,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Borrado de cicatrices",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": "• $1,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carolina-aguirre-sanchez/ginecologo/naucalpan-de-juarez2#address-id=378561&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:26.716Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__carolina_aguirre_sanchez.webp"
+}

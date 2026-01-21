@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Berenice Canela",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 215,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5121db/5121db633ebfd44d70c920208eb112e3_220_square.jpg",
+  "about": "Egresada de la Facultad de Medicina de la UNAM. Especialista en Ginecología y Obstetricia, con más de 10 años de experiencia. Desde pequeña con interés por ejercer la medicina, disfruto mucho de la profesión. Me gusta ejercer con profesionalismo, ética y empatía.",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes Sur 4050,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $850"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $850"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $850"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $850"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $850"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/berenice-canela/ginecologo/tlalpan#address-id=503499&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:47.282Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__berenice_canela.webp"
+}

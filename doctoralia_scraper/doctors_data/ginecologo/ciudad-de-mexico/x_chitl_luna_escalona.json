@@ -1,0 +1,46 @@
+{
+  "name": "Xóchitl Luna Escalona",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/dbd2d5/dbd2d54c9a68cbac8c219c0ce5ab05c9_220_square.jpg",
+  "about": "Hola !!!! . Será un gusto me regales tu confianza para atenderte ! : soy ginecóloga con sub especialidad en Oncólogia ( especialista en el cáncer y la mujer ) .Realice multiples diplomados como : Colposcopia y patologia del tracto inferior , Cirugía Laparoscopica y ultrasonido ginecológico...asi como diversos cursos en atencion obstetrica de urgencia y cirugia compleja ginecologica. Hagamos equipo !!!",
+  "addresses": [
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    },
+    {
+      "full": "Av Sor Juana Inés de La Cruz 280,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/xochitl-luna-escalona/ginecologo-oncologico-ginecologo/tlalnepantla-de-baz#address-id=573342&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:26.698Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/x_chitl_luna_escalona.webp"
+}

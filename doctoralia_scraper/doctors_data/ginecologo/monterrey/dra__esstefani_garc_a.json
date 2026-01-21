@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Esstefani García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 29,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b3a3cf/b3a3cfa549c8bb6cb71b96ed96285169.jpg",
+  "about": "Mi nombre es Esstefani Judith García Cantú, soy Ginecóloga Obstetra con Alta especialidad en cirugía mínima invasiva. Estoy plenamente convencida en contribuir en cuidar la salud de la mujer en todas las etapas de su vida. Además busco ofrecerte los tratamientos más actualizados y de mejor beneficio para tu salud. Me pongo a tus órdenes para atenderte con un gran trato profesional.",
+  "addresses": [
+    {
+      "full": "Padre Mier Poniente 1561, Colonia Maria Luisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cérvix",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de endometrio",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/esstefani-garcia/ginecologo/nuevo-leon#address-id=502704&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:04.731Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__esstefani_garc_a.webp"
+}

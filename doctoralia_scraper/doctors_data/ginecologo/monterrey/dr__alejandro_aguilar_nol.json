@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Alejandro Aguilar Nol",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/15b126/15b12618298feaba374878d3bae2fd9a_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Ave. Nexxus 100 (PARQUE IND. Y DE NEGOCIOS NEXXUS),"
+    },
+    {
+      "full": "Ave. Nexxus 100 (PARQUE IND. Y DE NEGOCIOS NEXXUS),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandro-aguilar-nol/ginecologo/general-escobedo#address-id=27073&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:58.427Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__alejandro_aguilar_nol.webp"
+}

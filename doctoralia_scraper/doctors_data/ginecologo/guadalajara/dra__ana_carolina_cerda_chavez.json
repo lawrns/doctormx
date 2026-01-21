@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Ana Carolina Cerda Chavez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/490cf4/490cf42e97deb9091879500e4d7f6267_220_square.jpg",
+  "about": "Mi especialidad ginecologia y obstetricia, Adiestramiento en Endoscopia Ginecologica y de Minima Invacion, Me gusta llevar de la mano a todas mis pacientes, resolviendo todas sus dudas para poder brindales un mejor servicio",
+  "addresses": [
+    {
+      "full": "PRADOS PROVIDENCIA,"
+    },
+    {
+      "full": "PRADOS PROVIDENCIA,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-carolina-cerda-chavez/ginecologo/guadalajara#address-id=373643&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:28:35.284Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__ana_carolina_cerda_chavez.webp"
+}

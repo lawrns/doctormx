@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Cytlalic Zazueta",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 38,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/bb108202/bb108202-74e0-4514-a42c-b0c4645d71b5_small_square.jpg",
+  "about": "Hola. Soy la Dra Cytlalic, especialista en ginecología y obstetrícia.Certificada por el Colegio Mexicano de Ginecología y Obstetrícia.Cuento con diplomado en colposcopia y patologia vulvar, endocrinologia ginecologica y menopausia.Con gusto puedo realizarte una valoracion ginecologica o llevar el control de tu embarazo.",
+  "addresses": [
+    {
+      "full": "Ecuador 2231, Balcones de Galerías, Monterrey, Nuevo León, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cytlalic-zazueta/ginecologo/nuevo-leon#address-id=587361&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:28.058Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__cytlalic_zazueta.webp"
+}

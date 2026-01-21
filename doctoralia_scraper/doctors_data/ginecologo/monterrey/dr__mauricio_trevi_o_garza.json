@@ -1,0 +1,23 @@
+{
+  "name": "Dr. Mauricio Treviño Garza",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1b2849/1b2849e8605f68b09c1e00844c11d9ee_220_square.jpg",
+  "about": "EL DOCTOR MAURICIO TREVIÑO, MIEMBRO DEL CONSEJO DE GINECOLOGIA Y OBSTETRICIA. CUENTA CON 15 AÑOS DE EXPERIENCIA EN MANEJO DE CIRUGIA DE MINIMA INVASION ADEMAS DE MANEJO DE TERAPIA HORMONAL DE REMPLAZO BIOIDENTICA.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-trevino-garza/ginecologo/nuevo-leon#address-id=441448&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:15.668Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mauricio_trevi_o_garza.webp"
+}

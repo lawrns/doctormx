@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Ricardo Niño de Rivera Licon",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 107,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/4e00e057/4e00e057-fa27-41b4-a11d-7c9b709213f6_small_square.jpg",
+  "about": "Ginecologo Oncólogo egresado del Hospital de Oncología de Centro Médico Nacional Siglo XXI. Ginecólogo Obstetra formado en la Unidad Médica de Alta Especialidad #23 en Monterrey Nuevo León, avalado por la Universidad de Monterrey. Experto en patología oncológica, ginecológica y mamaria, menopausia. Entregado totalmente a tratar a la mujer con calidad y calidez.",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Hidalgo y Costilla #1910,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-nino-de-rivera-licon-2/ginecologo-oncologico-ginecologo/nuevo-leon#address-id=403388&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:16.086Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ricardo_ni_o_de_rivera_licon.webp"
+}

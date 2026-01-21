@@ -1,0 +1,50 @@
+{
+  "name": "Dr. Efraín Pérez Peña",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/99e64c/99e64c945f1152e26e847402caee85ab_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. empresarios 150 (PB 6),"
+    },
+    {
+      "full": "Av Empresarios 150 PB 6,"
+    },
+    {
+      "full": "Av. Empresarios 150,"
+    },
+    {
+      "full": "Av. empresarios 150 (PB 6),"
+    },
+    {
+      "full": "Av Empresarios 150 PB 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/efrain-perez-pena/ginecologo/guadalajara#address-id=13930&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:30:20.556Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__efra_n_p_rez_pe_a.webp"
+}

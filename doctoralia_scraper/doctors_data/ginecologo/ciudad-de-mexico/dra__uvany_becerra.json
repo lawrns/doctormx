@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Uvany Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c792e5/c792e53f7f56b933ebbbf637f0338a1f_220_square.jpg",
+  "about": "+MSL terapia hormonal bioidéntica +Certificación por Congreso Mexicano de Ginecología y obstetricia +Balance hormonal por escuela de médicina estética y rejuvenecimiento. -Revalidación por la UNAM-SEP -Curso en Ginecología infantojuvenil -Atención a la emergencia obstétrica -Curso de perinatología -Ecografía ginecológica y de mama -Médico especialista en Ginecología y obstetricia -Salud pública -Médico cirujano general",
+  "addresses": [
+    {
+      "full": "Calle de Durango,"
+    },
+    {
+      "full": "Calle de Durango,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/uvany-becerra/ginecologo/ciudad-de-mexico#address-id=335231&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:06.377Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__uvany_becerra.webp"
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Alfonso Valdés Domínguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 245,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5b41d4/5b41d4372980dd1998ccd13f685f80f5.jpg",
+  "about": "MEDICINA FACULTAD DE MEDICINA DE LA UNAM GINECOLOGIA HOSPITAL DR. MANUEL GEA GONZALEZ CIRUGIA LAPAROSCOPICA EN EL HOSPITAL DR. MANUEL GEA GONZALEZ COORDINADOR DEL MODULO DE CIRUGIA LAPAROSCOPICA DEL HOSPITAL GINECO 4 IMSS PROFESOR TITULAR DEL CURSO DE ALTA ESPECIALIDAD EN MEDICINA DE CIRUGIA LAPAROSCOPICA DE LA UNAM MIEMBRO DEL COMEGO MIEMBRO DE LA AAGL MEDALLA GABINO BARREADA AL MERITO UNIVERSITARIO DE LA UNAM, POR ESPECIALIDAD MEDICA.",
+  "addresses": [
+    {
+      "full": "AV. LAZARO CARDENAS NO. 440,"
+    },
+    {
+      "full": "Puente de Piedra 150,"
+    },
+    {
+      "full": "CARRETERA MEXICO VERACRUZ # 440,,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,300"
+    },
+    {
+      "name": "Ampliación de vulva",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alfonso-valdes-dominguez/ginecologo/xalapa#address-id=79364&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:26.158Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__alfonso_vald_s_dom_nguez.webp"
+}

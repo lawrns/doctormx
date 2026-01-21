@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Pablo Arturo Sánchez Tijerina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 428,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ead66b/ead66bdd9f3363529792bd671c9c68a8_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle 13 sur 1905, Central Gineco-Obstétrica, S.A. de C.V.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/pablo-arturo-sanchez-tijerina/ginecologo/puebla#address-id=129180&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:36.520Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dr__pablo_arturo_s_nchez_tijerina.webp"
+}

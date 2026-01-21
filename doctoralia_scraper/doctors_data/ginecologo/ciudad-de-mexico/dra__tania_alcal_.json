@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Tania Alcalá",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 23,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5319b0/5319b0c31c9b8e16ce60f8552aa56e33_220_square.jpg",
+  "about": "Hola, soy la Dra. Tania Alcalá. Soy formada y egresada del Hospital de Alta Especialidad No. 4, Luis Castelazo Ayala. Cuento con experiencia en embarazos de alto riesgo y patologías femeninas en cada etapa de la vida. Otros servicios: Ultrasonido ginecológico y obstétrico Papanicolaou Infecciones de transmisión sexual",
+  "addresses": [
+    {
+      "full": "Avenida Cuitláhuac #3573,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,100"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/tania-alcala/ginecologo/azcapotzalco#address-id=572599&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:45.321Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__tania_alcal_.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Lilia Gomez Becerra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 15,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70eb31/70eb311270ce3a173010489c99396873_220_square.jpg",
+  "about": "Soy Dra. Lilia Gómez Becerra, especialista en ginecología y obstetricia en Guadalajara ademas del manejo de medicina regenerativa actualizada en diferentes opciones de tratamiento alternativo. Ofrezco atención médica a adultos y niños de cualquier edad. Mi especialidad se enfoca en el diagnóstico oportuno y tratamiento de cambios precancerosos en órganos femeninos, además de la atención del binomio materno fetal en el embarazo y acompañamiento durante esta hermosa etapa hasta el nacimiento. Me enorgullece contar con gran profesionalismo, experiencia, calidad humana y empatía hacia mis pacientes. Me esfuerzo por ofrecer una atención personalizada, explicando detalladamente los diagnósticos y tratamientos, generando confianza en el trato. Me encanta estar actualizada con todo tipo de tratamientos y tengo una trayectoria de 13 años en el campo de la ginecología y la obstetricia. Espero poder servirles en todo lo que necesiten y brindarles la mejor atención médica posible resolviendo sus dudas de la forma mas clara y sincera.",
+  "addresses": [
+    {
+      "full": "Calle Sol 2714, Col Jardines del Bosque,"
+    },
+    {
+      "full": "Calle Sol 2714, Col Jardines del Bosque,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lilia-gomez-becerra/ginecologo/guadalajara#address-id=477518&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:31.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__lilia_gomez_becerra.webp"
+}

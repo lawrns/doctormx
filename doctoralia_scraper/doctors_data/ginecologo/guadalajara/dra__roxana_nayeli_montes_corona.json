@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Roxana Nayeli Montes Corona",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 398,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ae2d64/ae2d64479239e7a93a81a550fc72b4a6_220_square.jpg",
+  "about": "Médico egresada de la Universidad de Guadalajara. Su labor es brindar atención integral con respeto, eficiencia, calidez, en un ambiente de confort para el diagnóstico y tratamiento de su enfermedad, con el compromiso de una actualización constante en conocimientos y habilidades.",
+  "addresses": [
+    {
+      "full": "GINEMED EXPO / Calle Turquesa 3283 Col. Villa La Victoria,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $900"
+    },
+    {
+      "name": "Consulta ginecológica",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    },
+    {
+      "name": "Control de embarazo",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/roxana-nayeli-montes-corona/ginecologo/guadalajara#address-id=522437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:24:35.600Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dra__roxana_nayeli_montes_corona.webp"
+}

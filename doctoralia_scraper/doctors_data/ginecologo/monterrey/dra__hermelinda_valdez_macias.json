@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Hermelinda Valdez Macias",
+  "specialty": "Ginecólogo",
+  "rating": 3.5,
+  "reviewCount": 26,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Av. Pino Suarez 640,"
+    },
+    {
+      "full": "José María Pino Suárez 645,"
+    },
+    {
+      "full": "Av. Pino Suarez 640,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/hermelinda-valdez-macias/ginecologo/monterrey#address-id=19566&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:44:29.491Z",
+  "localPhotoPath": null
+}

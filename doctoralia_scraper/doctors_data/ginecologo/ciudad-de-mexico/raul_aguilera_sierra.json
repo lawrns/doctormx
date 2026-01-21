@@ -1,0 +1,31 @@
+{
+  "name": "Raul Aguilera Sierra",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Ma. Izazaga 38,"
+    },
+    {
+      "full": "Av. Javier Rojo Gomez 66,"
+    },
+    {
+      "full": "Jose Ma. Izazaga 38,"
+    },
+    {
+      "full": "Av. Javier Rojo Gomez 66,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/raul-aguilera-sierra/ginecologo/ciudad-de-mexico#address-id=179450&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:10:20.148Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Marlene Zamora",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 637,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bddd99/bddd99643506a56e12f3ec69d3f3f742_220_square.jpg",
+  "about": "Sobre mí Me dedico a ayudar a mujeres, en todas las etapas de la vida. Siempre me estoy actualizando para ofrecerles la mejor atención. Mi expertis es en técnicas de reproducción asistida y cirugía reproductiva. Tendrás una atención personalizada y cálida sin perder lo profesional. Me encanta aprender de ustedes pues nos convertimos en una red de mujeres apoyando mujeres. Para mi es muy satisfactorio ser parte de tu historia reproductiva. ¿Por qué elegirme a mí? Atención personalizada, cálida. Profesional. Y con las opciones más actuales. En cada cita realizo una evaluación integral ginecologica sin olvidar los aspectos generales de la salud física y mental. Principales áreas de tratamiento Fertilización in vitro Miomatosis uterina y malformaciones uterinas Endometriosis Síndrome de ovarios poliquisticos Virus de papiloma humano. Embarazo Aborto de repetición Endocrinóloga reproductiva Mi consulta y mi equipo Me dedico a la atención se la mujer de forma privada desde hace 15 años, y me encuentro en 2 grandes instituciones con gran prestigio como el Hospital Español y Hospital Angeles Universidad. Y los tratamientos de reproducción asistida los realizo en una clínica certificada con excelentes embriologos. Pues el trabajo en equipo es muy importante. Mi asistente personal tiene mas de 12 años conmigo, y los colegas parte de mi equipo quirugico anestesiologo, ayudantes tienen esos 15 años conmigo y eso hace que podamos trabajar en equipo para el bien de la paciente, para ofrecer resultados positivos y mejorar la salud de las mujeres. Otros servicios Histeroscopia Laparoscopia Vacuna contra el virus del papiloma humano Vacuna contra herpes zóster. Embarazo Atención de parto Pólipos endometriales Trastornos menstruales Métodos anticonceptivos Menopausia Osteoporosis Más sobre mí Siempre acudo a congresos, en línea, on demand y presenciales, así como nacionales e internacionales. Eso es muy importante.portante en la medicina actual para ofrecer atención de calidad.",
+  "addresses": [
+    {
+      "full": "Avenida Universidad 1080,"
+    },
+    {
+      "full": "Ejercito Nacional 613 701,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marlene-zamora/ginecologo/miguel-hidalgo#address-id=19513&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:59.307Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marlene_zamora.webp"
+}

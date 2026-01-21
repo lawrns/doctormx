@@ -1,0 +1,43 @@
+{
+  "name": "Alma Edith García Franco",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 255,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/935c59/935c59a730aaea28c9af4aa4e4f2ff9c_220_square.jpg",
+  "about": "MÉDICO CIRUJANO POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO. MÉDICO ESPECIALISTA EN GINECOLOGÍA Y OBSTETRICIA POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO Y HOSPITAL \"DR. MANUEL GEA GONZÁLEZ\". DIPLOMADO EN DISPLASIA CERVICAL Y PATOLOGÍA DEL TRATO GENITAL INFERIOR POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO Y HOSPITAL \"DR. MANUEL GEA GONZÁLEZ\". ENTRENAMIENTO TÉCNICAS QUIRÚRGICAS AVANZADAS PARA LA PREVENCIÓN Y CONTROL DE LA HEMORRAGIA OBSTERICA POR OSLS INTERNACIONAL. ENTRENAMIENTO EN LIGADURA DE ARTERIAS HIPOGÁSTRICAS POR OSLS INTERNACIONAL. DIPLOMADO EN GERENCIA Y ADMINISTRACIÓN DE HOSPITALES POR LA UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO.",
+  "addresses": [
+    {
+      "full": "Calz Acoxpa 430, Coapa, Ex-Hacienda Coapa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alma-edith-garcia-franco/ginecologo/tlalpan#address-id=328057&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:39.993Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/alma_edith_garc_a_franco.webp"
+}

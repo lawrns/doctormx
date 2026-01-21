@@ -1,0 +1,124 @@
+{
+  "name": "Dr. José Alfredo Ruíz Piña",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "CIRCUITO JURISTAS 39 B,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    },
+    {
+      "full": "CIRCUITO JURISTAS 39 B,"
+    },
+    {
+      "full": "Paseo Alexander von Humboldt 88,"
+    },
+    {
+      "full": "Av. Lomas Verdes 2165,"
+    },
+    {
+      "full": "Av. 1ro. de Mayo, Lote 34, Mz. C-34-C,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Miomectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Monitorización materno-fetal",
+      "price": ""
+    },
+    {
+      "name": "Quistectomía de ovario por laparoscopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-alfredo-ruiz-pina/ginecologo/naucalpan-de-juarez#address-id=7967&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:59:34.927Z",
+  "localPhotoPath": null
+}

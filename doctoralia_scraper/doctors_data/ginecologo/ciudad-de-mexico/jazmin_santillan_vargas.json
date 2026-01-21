@@ -1,0 +1,25 @@
+{
+  "name": "Jazmin Santillan Vargas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 378,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/67eafe/67eafec777c927a2b6991db65fe54493_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "San Raul Mza 912 Lt 4, Col. Pedregal De Santa Ursula Coapa, ,"
+    },
+    {
+      "full": "San Raul Mza 912 Lt 4, Col. Pedregal De Santa Ursula Coapa, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jazmin-santillan-vargas/ginecologo/coyoacan#address-id=355731&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:15:06.151Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/jazmin_santillan_vargas.webp"
+}

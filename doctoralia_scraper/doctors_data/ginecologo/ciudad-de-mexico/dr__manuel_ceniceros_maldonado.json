@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Manuel Ceniceros Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/53b9c2/53b9c2b01a3e2bb69f71c897e71d284b_220_square.jpg",
+  "about": "Licenciatura Medicina General. Universidad Nacional Autónoma de México. 1980 a 1985. Residencia o Especialidad. Ginecólogo. Obstetra. Hospital Regional 1 de Octubre ISSSTE. Cd de Mexico. 1997 a 1990. Jefe del servicio de Colposcopia. 1990 a 1996. Hospital Gonzalo Castañeda ISSSTE. CD de Mexico. Consultorio Particular desde 1985 a la fecha.",
+  "addresses": [
+    {
+      "full": "Paseo Alexander Von Humboldt 12 - Pb 4,"
+    },
+    {
+      "full": "Paseo Alexander Von Humboldt 12 - Pb 4,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/manuel-ceniceros-maldonado/ginecologo-medico-general/ciudad-de-mexico#address-id=97082&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:32.447Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__manuel_ceniceros_maldonado.webp"
+}

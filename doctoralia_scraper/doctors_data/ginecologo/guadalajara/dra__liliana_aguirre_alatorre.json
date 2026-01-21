@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Liliana Aguirre Alatorre",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Monte Albán #1665,"
+    },
+    {
+      "full": "Monte Albán #1665,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/liliana-aguirre-alatorre/ginecologo/guadalajara#address-id=148097&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:31:09.606Z",
+  "localPhotoPath": null
+}

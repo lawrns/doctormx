@@ -1,0 +1,43 @@
+{
+  "name": "Lizzeth De La Cruz Reyes",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/36db43/36db4352ce09cc6788a8a3d2d3dd3328_220_square.jpg",
+  "about": "Realice mi formación profesional en la UNAM como.medico general, decidí especializarme en ginecología y obstetricia para ayudar a las mujeres como yo con su salud. Al terminar mi especialidad decidí completar mi formación con un diplomado en colposcopia y otro en ultrasonido para así dar una atención integral a mis pacientes. Actualmente además de la consulta privada, soy médico adscrito al IMSS en el Hospital de Ginecología Obstetricia de la Raza donde se realizan procedimientos de alta complejidad, además de ser centro de referencia de otras unidades medicas y parte de la formación de médicos residentes por lo cual.estoy en constante actulización. Mi objetivo como médico es brindarte una atención de calidad y calidez para mejorar tu salud y la de las mujeres a tu lado.",
+  "addresses": [
+    {
+      "full": "Calzada de San Agustín 2,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": ""
+    },
+    {
+      "name": "Cono cervical",
+      "price": "• $8,500"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $850"
+    },
+    {
+      "name": "Crioterapia",
+      "price": "• $6,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/lizzeth-de-la-cruz-reyes/ginecologo/naucalpan-de-juarez2#address-id=411108&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:42:54.153Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/lizzeth_de_la_cruz_reyes.webp"
+}

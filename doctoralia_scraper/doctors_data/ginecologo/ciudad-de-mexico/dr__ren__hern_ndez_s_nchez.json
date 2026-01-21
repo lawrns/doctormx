@@ -1,0 +1,43 @@
+{
+  "name": "Dr. René Hernández Sánchez",
+  "specialty": "Urología Ginecológica",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/3413db5a/3413db5a-7660-4538-91ba-78561f8f19f8_large.jpg",
+  "about": "Especialidad. Urología Ginecológica. Universidad del Ejercito y fuerza Aérea. 2023Especialidad. Ginecología y Obstetricia. Universidad del Ejercito y fuerza Aérea. 2019Licenciatura. Médico Cirujano. Universidad del Ejercito y fuerza Aérea. 2013Certificado. Primer Proctor en la Especialidad de Urología Ginecológica en Todo el País En Plataforma de Cirugía Robótica Davinci. 2025Certificado. Primer Urólogo Ginecólogo en Todo el País en Plataforma de Cirugía Robótica Davinci. 2024Recerticación de Examen de Consejo de Ginecología y Obstetricia Aprobado Ante el Consejo Mexicano De Ginecología y Obstetricia, A. C. 2024Examen de Consejo de Urología Ginecológica y Cirugía Reconstructiva de Piso Pélvico Aprobado Ante el Consejo Mexicano de Ginecología y Obstetricia, A. C. 2023Examen de Consejo de Ginecología y Obstetricia Aprobado Ante el Consejo Mexicano de Ginecología y Obstetricia. A. C. 2019",
+  "addresses": [
+    {
+      "full": "Circuito Centro Comercial 20,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rene-hernandez-sanchez-2/urologia-ginecologica-ginecologo/naucalpan-de-juarez2#address-id=618732&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:48.094Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__ren__hern_ndez_s_nchez.webp"
+}

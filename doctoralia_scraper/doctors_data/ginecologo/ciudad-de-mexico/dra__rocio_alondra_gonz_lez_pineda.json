@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rocio Alondra González Pineda",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bdceb4/bdceb4b2cd9220fea56c5549f10cc50c_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av observatorio 354, Col. 16 de Septiembre. Miguel Hidalgo,"
+    },
+    {
+      "full": "Av observatorio 354, Col. 16 de Septiembre. Miguel Hidalgo,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $600"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rocio-alondra-gonzalez-pineda/ginecologo/ciudad-de-mexico#address-id=391520&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:58.072Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rocio_alondra_gonz_lez_pineda.webp"
+}

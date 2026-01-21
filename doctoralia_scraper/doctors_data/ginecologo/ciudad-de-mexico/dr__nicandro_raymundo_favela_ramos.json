@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Nicandro Raymundo Favela Ramos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/8d52cd/8d52cddea9679625c95ea9ef0769d81c_220_square.jpg",
+  "about": "Me enfoco en ofrecer atención de calidad, constantemente me mantengo adquiriendo nuevo conocimiento, para ofrecer manejos actualizados en beneficio de mis pacientes, individualizando y dando el tiempo necesario para aclarar cualquier duda.",
+  "addresses": [
+    {
+      "full": "Calzada de las bombas No. 128,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• $600"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Desde $600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nicandro-raymundo-favela-ramos/ginecologo/ciudad-de-mexico#address-id=570836&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:47.216Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__nicandro_raymundo_favela_ramos.webp"
+}

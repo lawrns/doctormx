@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Albertina Cuéllar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 87,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1b6020/1b6020e65246a7d3cef1a59bb781deb5_220_square.jpg",
+  "about": "Mi nombre es Albertina Yaneth Cuéllar Fernández, me dicen Bettina. Me gradué de la Universidad de Monterrey de Medico Cirujano y Partero y realice la especialidad en el Hospital General de Saltillo con aval academico por la Universidad Nacional Autonoma de México. Cuento con un diplomado en Colposcopia y Patología del Tracto Genital Inferior con aval por la UNAM. Realice un diplomado en Medicina Funcional y manejo de Sd Ovario Poliquistico y Tiroides. Cuento con un Master en Menopausia. Cuento con un diplomado en Nutrición y Salud Menstrual Me gusta mucho que mi especialidad es muy versatil y puedo acompañar y empoderar a mujeres en sus diferentes etapas de la vida, como en el descubrimiento de su sexualidad, durante su embarazo y puerperio y en las etapas posteriores a la edad fértil.",
+  "addresses": [
+    {
+      "full": "Bosques de Canadá 108,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/albertina-cuellar/ginecologo/san-pedro-garza-garcia#address-id=372685&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:42.136Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__albertina_cu_llar.webp"
+}

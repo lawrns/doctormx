@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Helen Rosario Nery Llanos",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2f208b/2f208b90131444c79ad32bdaf4fa9b2e_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Calle Cordillera De Los Andes 949 Las Puentes Sector 11,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "San Nicolas ,"
+    },
+    {
+      "full": "Calle Cordillera De Los Andes 949 Las Puentes Sector 11,"
+    },
+    {
+      "full": "Avenida Nexxus 104,"
+    },
+    {
+      "full": "San Nicolas ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/helen-rosario-nery-llanos/ginecologo/monterrey#address-id=27236&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:43:24.072Z",
+  "localPhotoPath": null
+}

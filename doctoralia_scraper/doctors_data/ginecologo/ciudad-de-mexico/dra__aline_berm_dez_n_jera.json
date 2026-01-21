@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Aline Bermúdez Nájera",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 109,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/bf3f34/bf3f34ff4219c73d7c769da110f76794_220_square.jpg",
+  "about": "Soy la Dra Aline Bermúdez Najera Medico Cirujano por la Universidad Nacional Autonoma de México, con posgrado en Ginecología y Obstetricia que realice en la Secretaria de Salud del Estado de México y egresada de la Universidad Nacional Autonoma del Estado de México. Avalada por el Consejo Mexicano de Ginecología y Obstetricia y Diplomada en: -Ultrasonido Medico y Diagnóstico por Universidad La Salle y avalada por la Academia Mexicana de Medicos Militares-Colposcopia y patología del tracto genital inferior, realizada en el Hospital Regional Adolfo Lopez Mateos del ISSSTE.Me apasiona mi trabajo, por lo que mi objetivo es brindarte una atencion de calidad, profesional, empatica y sin prejuicios; acompañarte en tu proceso de diagnóstico, asi como en tu tratamiento, brindándote la confianza de resolver tus dudas y haciéndote sentir segura en todo momento. Sea cual sea tu etapa de la vida, tu salud estara en manos expertas, con instalaciones adecuadas y limpias, así como equipo que hara mas eficiente tu diagnostico y tratamiento. Sera un placer atenderte y ser tu aliada para prevenir y cuidar tu salud femenina.",
+  "addresses": [
+    {
+      "full": "Avenida Doctor Gustavo Baz 309,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $4,800"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,200"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/aline-bermudez-najera/ginecologo/tlalnepantla-de-baz2#address-id=583929&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:08.184Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__aline_berm_dez_n_jera.webp"
+}

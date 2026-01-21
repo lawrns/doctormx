@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Kathia Araceli Gómez Arellano",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 47,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/a0dcd8c3/a0dcd8c3-5d8b-46aa-bae9-68fa70722e6e_small_square.jpg",
+  "about": "Soy la Dra. Kathia Gómez, ginecóloga comprometida con acompañar a las mujeres en cada etapa de su vida, desde la adolescencia hasta la maternidad y más allá. Especialista en salud femenina, ofrezco atención personalizada en planificación familiar, control prenatal, manejo de desórdenes hormonales y procedimientos ginecológicos innovadores. Mi objetivo es que cada consulta sea una oportunidad para transformar tu salud y bienestar. ¡Juntas podemos cuidar tu cuerpo y fortalecer tu confianza!",
+  "addresses": [
+    {
+      "full": "Calle Liverpool 109,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Check up ginecológico plus",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/kathia-araceli-gomez-arellano/ginecologo/cuauhtemoc2#address-id=345563&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:50.334Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__kathia_araceli_g_mez_arellano.webp"
+}

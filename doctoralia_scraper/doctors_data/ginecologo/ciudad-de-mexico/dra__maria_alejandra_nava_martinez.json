@@ -1,0 +1,39 @@
+{
+  "name": "Dra. Maria Alejandra Nava Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/1338b0/1338b0cde5ab01dcb81ca22dce0034d9_220_square.jpg",
+  "about": "Cuando decidí dedicarme a la Ginecología y Obstetricia, lo hice pensando en lo que yo esperaría de la atención medica como paciente,. Siendo especialista de la salud femenina, me dí cuenta que somos una de las pocas especialidades que vemos a la misma paciente durante el largo de su vida, lo ADOLESCENCIA, EDAD FERTIL y la etapa más especial que es el EMBARAZO, así como la transición a la etapa de CLIMATERIO, sin olvidar la PREVENCION, todo eso, en una sola paciente, por lo que cada etapa, amerita calidad y calidez, de acuerdo a las distintas necesidades. Por lo que ese es el compromiso que, junto con mi equipo, tengo para cada una de mis pacientes, ofrecerles la mejor experiencia en atención médica, para cada etapa de la vida.",
+  "addresses": [],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-alejandra-nava-martinez/ginecologo/ciudad-de-mexico#address-id=30513&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:09.790Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__maria_alejandra_nava_martinez.webp"
+}

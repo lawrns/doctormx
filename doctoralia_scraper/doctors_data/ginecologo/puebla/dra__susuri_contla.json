@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Susuri Contla",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 235,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/d1163a/d1163a13f13f3ce7c49ac7d8a2418981_220_square.jpg",
+  "about": "Especialista en Ginecología y Obstetricia, Cirugia Ginecológica, Cirugía Laparoscópica (mínima invasión), Colposcopia, Enfermedad del Tracto Genital Inferior. Soy medico Certificado por el Consejo Mexicano de Ginecología y Obstetricia Miembro Titular del Colegio Mexicano de Especialistas en Ginecología y Obstetricia. Cuento con amplia experiencia, profesionalismo y constante actualización. Soy un profesional ético, confiable y amable.",
+  "addresses": [
+    {
+      "full": "Blvrd 14 Sur num 4302, Piso 1 Consultorio Num. 180 Jardines de San Manuel, Puebla,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Anexectomía por laparoscopia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/susuri-contla/ginecologo/puebla#address-id=256749&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:52:22.274Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__susuri_contla.webp"
+}

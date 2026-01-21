@@ -1,0 +1,25 @@
+{
+  "name": "Maria Fernanda Del Pino Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 820,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6f65f8/6f65f8be4073ac875081131a43d9e8b0_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C A Las Rocas,113,Prados Vallarta,,"
+    },
+    {
+      "full": "C A Las Rocas,113,Prados Vallarta,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-fernanda-del-pino-herrera/ginecologo/zapopan#address-id=358406&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:34:06.252Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/maria_fernanda_del_pino_herrera.webp"
+}

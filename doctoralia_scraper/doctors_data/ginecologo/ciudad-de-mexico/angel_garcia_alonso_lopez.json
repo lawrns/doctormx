@@ -1,0 +1,25 @@
+{
+  "name": "Angel Garcia Alonso Lopez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 287,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/494b8c/494b8cd40a38809bbac92ea7b387d89e_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Puente de Piedra #150 Cons. 813 y 814,"
+    },
+    {
+      "full": "Puente de Piedra #150 Cons. 813 y 814,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/angel-garcia-alonso-lopez/ginecologo/tlalpan",
+  "scrapedAt": "2026-01-21T03:06:10.104Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/angel_garcia_alonso_lopez.webp"
+}

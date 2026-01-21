@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Jessica Pérez González",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 18,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6c7ee2/6c7ee222c42f3e201a775b699bcc1e41_220_square.jpg",
+  "about": "Soy la Dra. Jessica Pérez González, especialista en Ginecología y Obstetricia y Subespecialista en Biología de la reproducción. Realicé la especialidad en el hospital Christus Muguerza , avalada por la Universidad de Monterrey. Realicé la subespecialidad en el centro de fertilidad IECH, avalada por la Universidad Autónoma de México.",
+  "addresses": [
+    {
+      "full": "C. Ecuador 2331,"
+    },
+    {
+      "full": "C. Ecuador 2331,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Consulta Obstétrica",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jessica-perez-gonzalez/ginecologo/nuevo-leon#address-id=455027&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:50.603Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__jessica_p_rez_gonz_lez.webp"
+}

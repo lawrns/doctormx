@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Nadia Paola Navidad Vázquez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 0,
+  "reviewCount": 24,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Soy especialista en el manejo de pacientes con diagnóstico de cáncer ginecológico, con más de 10 años de experiencia en el diagnóstico y tratamiento del cáncer en la mujer.",
+  "addresses": [
+    {
+      "full": "Cuauhtémoc Num 6,"
+    },
+    {
+      "full": "Cuauhtémoc Num 6,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nadia-paola-navidad-vazquez/ginecologo-oncologico-ginecologo/azcapotzalco#address-id=20778&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:41.487Z",
+  "localPhotoPath": null
+}

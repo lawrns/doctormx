@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Martha Patricia Garduño Hernandez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 463,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a0bedc/a0bedccbd2fecac0f569d74fa3c358e3_140_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av.Las Torres No.66,"
+    },
+    {
+      "full": "Av.Las Torres No.66,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/martha-patricia-garduno-hernandez/ginecologo/tlalpan#address-id=115565&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:52.464Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__martha_patricia_gardu_o_hernandez.webp"
+}

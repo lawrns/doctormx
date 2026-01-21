@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Juan Ariel Garcia Gonzalez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1016,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/114491/114491a1b2f5eff0692ab3f0ac1651b1.jpg",
+  "about": "Ginecologo Obstetra - Sub especialidad en Medicina Materno Fetal. Atención de control prenatal y embarazo con alto riesgo. Ecografía avanzada: diagnostico fetal y materno. Ecografía 4D y HD live.",
+  "addresses": [
+    {
+      "full": "Avenida Nexxus,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $700"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $700"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-ariel-garcia-gonzalez/ginecologo/general-escobedo#address-id=363268&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:23.174Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__juan_ariel_garcia_gonzalez.webp"
+}

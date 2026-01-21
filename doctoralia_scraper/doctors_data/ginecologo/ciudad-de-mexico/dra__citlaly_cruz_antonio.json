@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Citlaly Cruz Antonio",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da8c60/da8c60aeb7e82622546d9c947d0d8a11_220_square.jpg",
+  "about": "Hola soy la Dra Citlaly Cruz, ginecóloga- obstetra colposcopista. El ser ginecóloga me da la satisfacción de poder cuidar a la mujer en sus diferentes etapas de la vida, como es el embarazo, una etapa muy representativa y muy linda que uno como mujer puede tener y contar con un ginecologo de confianza y con los mejores conocimientos es fundamental. El ser colposcopista me hace ayudar a miles de mujeres a la detección oportuna del cáncer, ayudarlas a asalir adelante y evitar que pasen por una situación difícil. En cada consulta podrás encontrar en mi confianza, honestidad y respeto, será un placer atenderte :)",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 2, Circuito Centro Comercial CD Satélite,"
+    },
+    {
+      "full": "Pafnuncio Padilla 2, Circuito Centro Comercial CD Satélite,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $550"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $550"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $550"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $700"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $30,990"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/citlaly-cruz-antonio/ginecologo/naucalapan#address-id=325699&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:33.841Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__citlaly_cruz_antonio.webp"
+}

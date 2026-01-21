@@ -1,0 +1,35 @@
+{
+  "name": "Dra. Marisol Zazocoteco Villanueva",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 12,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/6542cf/6542cfdce563d93483baa68f34038743.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av Lázaro Cárdenas 401,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Urología Ginecológica",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marisol-zazocoteco-villanueva/ginecologo/san-pedro-garza-garcia#address-id=481359&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:49.572Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__marisol_zazocoteco_villanueva.webp"
+}

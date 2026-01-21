@@ -1,0 +1,25 @@
+{
+  "name": "Luevano Dagoberto Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Sertoma 107,"
+    },
+    {
+      "full": "Sertoma 107,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luevano-dagoberto-valdez/ginecologo/monterrey#address-id=72280&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:45.970Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,72 @@
+{
+  "name": "Dra. Ma. Eréndira Ortiz Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70c402/70c40270fee9df9e9bd4a738c9c514f1_220_square.jpg",
+  "about": "Ginecóloga Obstetra certificada por el Consejo Mexicano de Ginecología y Obstetricia. Miembro del Colegio Americano de Ginecología y Obstetricia y de la Asociación Americana de Laparoscopía.",
+  "addresses": [
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154 consultorio 330,"
+    },
+    {
+      "full": "Av. Carlos Fernández Graef 154,"
+    },
+    {
+      "full": "Carlos Graef Fernández 154 consultorio 330,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anexectomía",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ma-erendira-ortiz-ruiz/ginecologo/cuajimalpa-de-morelos#address-id=7047&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:59.002Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ma__er_ndira_ortiz_ruiz.webp"
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Ana Luisa Morín Herrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 90,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3146dc/3146dcf495664a3efc7bf2bb91683467_220_square.jpg",
+  "about": "Médico de profesión, ginecóloga por vocación con mas de 20 años de experiencia, egresada de la Universidad Autónoma de Coahuila, formada en Instituto Mexicano del Seguro Social, practica privada e institucional, certificada por el Consejo Mexicano de Ginecología y Obstetricia, miembro activo de la Federación Mexicana de Colegios de Obstetricia y Ginecología A.C y del Colegio de Ginecología y Obstetricia de Saltillo A.C., Diplomado en Colposcopia y cáncer en la mujer avalado por la UAdeG, Diplomado en Implicaciones Legales del Ejercicio de la Medicina avalado por UAC. Diplomado de Ultrasonido Obstétrico impartido por Medicina Fetal México.",
+  "addresses": [
+    {
+      "full": "Puerto Angel 72,"
+    },
+    {
+      "full": "Boulevard Venustiano Carranza 6075,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ana-luisa-morin-herrera-2/ginecologo/coahuila#address-id=624003&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:32.492Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__ana_luisa_mor_n_herrera.webp"
+}

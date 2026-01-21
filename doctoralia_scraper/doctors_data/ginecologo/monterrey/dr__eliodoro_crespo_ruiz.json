@@ -1,0 +1,25 @@
+{
+  "name": "Dr. Eliodoro Crespo Ruiz",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Hidalgo, 2532 Pte. 103-A, Bishop,,"
+    },
+    {
+      "full": "Hidalgo, 2532 Pte. 103-A, Bishop,,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eliodoro-crespo-ruiz/ginecologo/monterrey#address-id=125654&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:08.617Z",
+  "localPhotoPath": null
+}

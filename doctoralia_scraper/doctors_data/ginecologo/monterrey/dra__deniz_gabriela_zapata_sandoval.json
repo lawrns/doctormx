@@ -1,0 +1,52 @@
+{
+  "name": "Dra. Deniz Gabriela Zapata Sandoval",
+  "specialty": "Médico general",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "Ginecóloga y Obstetra Hospital Universitario \"Dr. José Eleuterio González\" Universidad Autónoma de Nuevo León Certificada por el Consejo Mexicano de Ginecología y Obstetricia Experta en salud sexual y reproductiva, actualmente cursando Máster en Sexología Clínica Salud Integral con perspectiva de género, libre de prejuicios Feminista",
+  "addresses": [
+    {
+      "full": "Padre Mier 1561 poniente, planta baja.,"
+    },
+    {
+      "full": "Padre Mier 1561 Plant baja. Colonia María Luisa,"
+    },
+    {
+      "full": "Padre Mier 1561 poniente, planta baja.,"
+    },
+    {
+      "full": "Padre Mier 1561 Plant baja. Colonia María Luisa,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/deniz-gabriela-zapata-sandoval/medico-general/nuevo-leon#address-id=579262&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:45:45.407Z",
+  "localPhotoPath": null
+}

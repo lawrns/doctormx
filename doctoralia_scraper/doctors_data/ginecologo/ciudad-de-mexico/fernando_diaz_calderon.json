@@ -1,0 +1,25 @@
+{
+  "name": "Fernando Diaz Calderon",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Yacatas no. 515, Narvarte,"
+    },
+    {
+      "full": "Yacatas no. 515, Narvarte,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-diaz-calderon/ginecologo/benito-juarez#address-id=113677&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:09:33.657Z",
+  "localPhotoPath": null
+}

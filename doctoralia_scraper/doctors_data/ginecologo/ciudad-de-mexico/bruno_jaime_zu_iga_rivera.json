@@ -1,0 +1,25 @@
+{
+  "name": "Bruno Jaime Zuñiga Rivera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Aquiles Serdan Mza149 Lt 7 B, Col. Ampliacion Miguel Hidalgo, ,"
+    },
+    {
+      "full": "Aquiles Serdan Mza149 Lt 7 B, Col. Ampliacion Miguel Hidalgo, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bruno-jaime-zuniga-rivera/ginecologo/tlalpan#address-id=357181&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:14:03.152Z",
+  "localPhotoPath": null
+}

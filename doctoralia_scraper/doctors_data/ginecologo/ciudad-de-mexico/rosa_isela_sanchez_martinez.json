@@ -1,0 +1,37 @@
+{
+  "name": "Rosa Isela Sanchez Martinez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "5 De Febrero 4,"
+    },
+    {
+      "full": "Av. Hidalgo 99 A,"
+    },
+    {
+      "full": "Av. Alcanfores 60,"
+    },
+    {
+      "full": "5 De Febrero 4,"
+    },
+    {
+      "full": "Av. Hidalgo 99 A,"
+    },
+    {
+      "full": "Av. Alcanfores 60,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-isela-sanchez-martinez/ginecologo/tlalnepantla-de-baz#address-id=175658&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:18:12.964Z",
+  "localPhotoPath": null
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Dr. Rafael Sanchez Peña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/af4cea/af4cead04a9ac3db3487c56af908cb60_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Paseo de la Arboleda 2444,"
+    },
+    {
+      "full": "AV. arboledas #2444,"
+    },
+    {
+      "full": "Av. Paseo de la Arboleda 2444,"
+    },
+    {
+      "full": "AV. arboledas #2444,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Laparascopia diagnóstica con biopsia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rafael-sanchez-pena/ginecologo/guadalajara#address-id=14678&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:32.554Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__rafael_sanchez_pe_a.webp"
+}

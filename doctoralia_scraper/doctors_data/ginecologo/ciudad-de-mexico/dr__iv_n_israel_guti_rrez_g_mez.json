@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Iván Israel Gutiérrez Gómez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 83,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/39118c/39118c9fd8dbb0248213172afb1e0a07_220_square.jpg",
+  "about": "Soy el Dr. Iván Israel Gutiérrez Gómez, ginecólogo-obstetra con subespecialidad en Medicina Materno-Fetal, enfocado en brindar una atención de alta calidad y personalizada para la salud materna y fetal. Mis certificaciones nacionales e internacionales respaldan mi compromiso con la excelencia en la evaluación, diagnóstico y tratamiento de condiciones complejas en el embarazo, garantizando un cuidado actualizado y seguro para cada paciente.",
+  "addresses": [
+    {
+      "full": "Hospital Español Av. Ejército Nacional Mexicano 613, Torre Antonino Fernández, Piso 6 consultorio 605,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $5,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $2,200"
+    },
+    {
+      "name": "ADN fetal libre (NIPT)",
+      "price": "• $11,000"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vellosidades coriales",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ivan-israel-gutierrez-gomez/ginecologo/miguel-hidalgo#address-id=432267&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:40.398Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__iv_n_israel_guti_rrez_g_mez.webp"
+}

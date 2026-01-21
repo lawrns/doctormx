@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Rosa Laura Cortés Salvio",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/08bbbb/08bbbb88bcaa942e40b40171e2bd4f5a_220_square.jpg",
+  "about": "Soy médico especialista en ginecología y obstetricia con sub especialidad en medicina materno fetal, me dedicó a la atención de la mujer en todas las etapas de su vida. A demás de la atención del embarazo con un enfoque mas profundo, ya que me especializo en detección de problemas en el embarazo , en llevar el control prenatal en embarazos normales y en mamás con enfermedades, detectar malformaciones fetales y evaluar riesgos para sindromes por ejemplo el síndrome de Down, además de realizar pruebas para el diagnóstico de estos ( amniocentesis ), detectar riesgos para preeclampsia, parto prematuro y dar seguimiento y tratamiento preventivo. Así como a resolver el embarazo ya sea por Parto normal o cesárea. Especialista en ginecología y obstetricia formada en el Hospital materno infantil ISSEMYM Toluca, avalada por la Universidad autónoma del estado de México. Especialista en Medicina Materno fetal formada en el Instituto Nacional de perinatología \"Isidro Espinosa de los Reyes\" avalada por la UNAM. Médico adscrito al servicio de Medicina Materno Fetal en el Hospital Materno Perinatal Mónica Pretelini Sáenz . Profesor titular de la especialidad de Ginecología y obstetricia",
+  "addresses": [
+    {
+      "full": "Gustavo Baz prada 309 Tlalnepantla estado de México CP 54060,"
+    },
+    {
+      "full": "Gustavo Baz prada 309 Tlalnepantla estado de México CP 54060,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta en línea",
+      "price": "• Desde $400"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": "• Desde $1,600"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rosa-laura-cortes-salvio/ginecologo/tlalnepantla-de-baz2#address-id=408437&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:57.085Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__rosa_laura_cort_s_salvio.webp"
+}

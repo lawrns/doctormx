@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Javier Sánchez Mejía",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/da1d9a/da1d9ab88bcc3078064a73080066e6f4_220_square.jpg",
+  "about": "Soy ginecólogo obstetra con alta especialidad en cirugía de mínima invasión ginecológica. Me enfoco en brindar una atención cálida, personalizada y basada en evidencia. Acompaño a mis pacientes en todas las etapas de su vida, desde el control del embarazo —incluyendo embarazos de alto riesgo— hasta el climaterio y la menopausia. Estoy aquí para escucharte y ayudarte a cuidar tu salud con confianza y cercanía.",
+  "addresses": [
+    {
+      "full": "Pasaje Interlomas 16 3,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-sanchez-mejia/ginecologo/naucalpan-de-juarez#address-id=574885&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:47.364Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__javier_s_nchez_mej_a.webp"
+}

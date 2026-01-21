@@ -1,0 +1,39 @@
+{
+  "name": "Dr. Karen Josefina Perez Valdez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 457,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/ec77322a/ec77322a-b8fd-4021-906d-908b11cf760f_small_square.jpg",
+  "about": "Soy la Dra. Karen Josefina Pérez Valdez, ginecóloga y obstetra con formación en la Facultad de Medicina UNAM y especialización en la Unidad Médica de Alta Especialidad No. 4 \"Luis Castelazo Ayala\" del IMSS. Cuento con diplomados en Colposcopia y Histeroscopia para ofrecer un diagnóstico y tratamiento avanzado en la salud femenina. Mi práctica se centra en la obstetricia, el seguimiento integral del embarazo y en el tratamiento de afecciones ginecológicas como miomas uterinos, endometriosis y trastornos hormonales. Me esfuerzo por brindar un trato humano y cercano, asegurando la comodidad y confianza de mis pacientes en cada consulta.",
+  "addresses": [
+    {
+      "full": "Avenida División del Norte 3395,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,800"
+    },
+    {
+      "name": "Check up avanzado",
+      "price": "• $1,799"
+    },
+    {
+      "name": "Control prenatal",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/karen-josefina-perez-valdez/ginecologo/coyoacan#address-id=478653&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:28.302Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__karen_josefina_perez_valdez.webp"
+}

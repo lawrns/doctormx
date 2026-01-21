@@ -1,0 +1,37 @@
+{
+  "name": "Sergio Garcia Velazquez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Nayarit Nte. 36,"
+    },
+    {
+      "full": "Av. Niños Héroes 48 C,"
+    },
+    {
+      "full": "Prol. Nuevo Leon 65,"
+    },
+    {
+      "full": "Nayarit Nte. 36,"
+    },
+    {
+      "full": "Av. Niños Héroes 48 C,"
+    },
+    {
+      "full": "Prol. Nuevo Leon 65,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/sergio-garcia-velazquez/ginecologo/milpa-alta",
+  "scrapedAt": "2026-01-21T03:13:08.578Z",
+  "localPhotoPath": null
+}

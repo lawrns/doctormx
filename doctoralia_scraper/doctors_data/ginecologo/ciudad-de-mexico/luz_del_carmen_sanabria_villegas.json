@@ -1,0 +1,74 @@
+{
+  "name": "Luz del Carmen Sanabria Villegas",
+  "specialty": "Ginecólogo",
+  "rating": 4,
+  "reviewCount": 78,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Gral Ignacio Zaragoza 829,"
+    },
+    {
+      "full": "Prol. Paseo Usumacinta 2085 ,"
+    },
+    {
+      "full": "Prol. Paseo Usumacinta 2085 ,"
+    },
+    {
+      "full": "Gral Ignacio Zaragoza 829,"
+    },
+    {
+      "full": "Prol. Paseo Usumacinta 2085 ,"
+    },
+    {
+      "full": "Prol. Paseo Usumacinta 2085 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Colocación del DIU",
+      "price": ""
+    },
+    {
+      "name": "Ultrasonido obstétrico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/luz-del-carmen-sanabria-villegas-2/ginecologo/villahermosa#address-id=94442&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:55:39.161Z",
+  "localPhotoPath": null
+}

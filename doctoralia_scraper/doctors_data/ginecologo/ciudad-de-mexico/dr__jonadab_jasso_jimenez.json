@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Jonadab Jasso Jimenez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 233,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/161f04/161f042ac29091781a77b8b911157369_220_square.jpg",
+  "about": "Comprometido con ofrecer la mejor atención médica, con calidad y calidez en lo que respecta a la Salud de la Mujer. Brindo una consulta médica con ambiente de confianza y confidencialidad. Me apoyo del mejor equipo médico y tecnológico de vanguardia para otorgar una consulta médica integral y para la realización de cirugías (Cirugía de mínima invasión Laparoscopia, Histeroscopia, Colposcopia, Ultrasonido). Profesor e investigador activo en el Sistema de Salud para la formación de nuevos médicos Especialistas. Experiencia profesional de más de 10 años como Especialista Certificado por el Consejo Mexicano de Ginecología y Obstetricia Especialización en Ginecología y Obstetricia Diplomado en Colposcopia y Patología de Tracto Genital Inferior Diplomado en Laparoscopia en Ginecología Diplomado en Histeroscopia de consultorio Diplomado en Histeroscopia Quirúrgica Profesor adjunto del curso de Especialización en Ginecología y Obstetricia UNAM",
+  "addresses": [
+    {
+      "full": "Calz. de la Viga 1174,"
+    },
+    {
+      "full": "Av. Bordo de Xochiaca N°3, Av. Ciudad Jdn. 2B, Bicentenario, 57205 Nezahualcóyotl, Méx.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jonadab-jasso-jimenez/ginecologo/iztapalapa#address-id=548537&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:38.248Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__jonadab_jasso_jimenez.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Eira Juarez Guerrero",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 116,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/910c86/910c86fa7a57f002eacd17fbd0da4fdb_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Periférico Ecológico 3507, Tlaxcalancingo, Puebla, México,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Citología cérvico-vaginal",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Revisión Ginecológica anual",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Tratamiento para síndrome de ovario poliqístico",
+      "price": "• Desde $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/eira-juarez-guerrero/ginecologo/puebla#address-id=411676&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:53:20.500Z",
+  "localPhotoPath": "doctors_data/ginecologo/puebla/dra__eira_juarez_guerrero.webp"
+}

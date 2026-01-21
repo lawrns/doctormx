@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Laura García Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 142,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e6eac5/e6eac579d4a666ff2437c3c6fa8c704a_220_square.jpg",
+  "about": "Especialidad en Ginecología y Obstetricia con más de 25 años de experiencia ,atendiendo a todas las aseguradoras, tarjetas de descuento, consulta privada y clientes en diferentes modalidades de seguro médico.",
+  "addresses": [
+    {
+      "full": "Montecito 38,"
+    },
+    {
+      "full": "Montecito 38,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-garcia-moreno-2/ginecologo/benito-juarez#address-id=387654&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:54.927Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__laura_garc_a_moreno.webp"
+}

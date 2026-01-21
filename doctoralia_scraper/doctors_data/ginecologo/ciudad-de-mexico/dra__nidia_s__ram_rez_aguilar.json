@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Nidia S. Ramírez Aguilar",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 612,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0efe52/0efe52768f6edbe761be6d288dd4abd8_220_square.jpg",
+  "about": "Médico General egresado de Facultad de Medicina UNAM Ginecologia y Obstetricia Facultad de Medicina UNAM Diplomado en Medicina Estética Universidad Autónoma de Guerrero Diplomado de colposcopia en Hospital General de Mexico Diplomado en Ginecologia Laser, Estetica y Funcional en Universidad de Zacatecas Diplomado en Terapia Hormonal y Medicina Funcional en Universidad de Zacatecas",
+  "addresses": [
+    {
+      "full": "Avenida Insurgentes no 20, Fraccionamiento Las Americas, Las Americas Ecatepec de Morelos, Edo de Mexco. Plaza Paseo Ventura. HOSPITAL MediMAC CONSULT 36,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/nidia-s-ramirez-aguilar/ginecologo-medico-estetico/ecatepec-de-morelos#address-id=369205&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:48:58.080Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__nidia_s__ram_rez_aguilar.webp"
+}

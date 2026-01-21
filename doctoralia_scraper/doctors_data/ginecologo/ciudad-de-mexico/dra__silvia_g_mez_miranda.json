@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Silvia Gómez Miranda",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 43,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f3ec0d/f3ec0dfec145ad34eec36fb50bfde52f_220_square.jpg",
+  "about": "Médico cirujano lasallista, con formación e inspiración cristiana católica, con valores sólidos desde mi educación básica: multicultural, con enfoque humanístico, con visión integral del paciente, como ente biológico, psicológico y social. Con la aplicación de los principios bioéticos para la atención del paciente, con el fin de brindar una atención de calidad e individualizada, con evidencia científica actualizada, con experiencia en la investigación clínica y la docencia, con desempeño adecuado en el campo clínico y quirúrgico, para el adecuado abordaje y manejo de las patologías gineco obstétricas más frecuentes, en un ambiente cálido y de confianza Experiencia en Secretaría de Salud desde pregrado, en los estados de Baja California Sur, Chiapas, Ciudad de México y Puebla. Médico especialista en Ginecología y Obstetricia, posgrado realizado el Hospital de La Mujer, de la Ciudad de México, por parte de la Universidad Nacional Autónoma de México, con diplomado en endocrinología ginecológica. Actualmente con atención integral e individualizada de manera privada, en distintas ubicaciones para el alcance del paciente",
+  "addresses": [
+    {
+      "full": "Av. Insurgentes Sur 933,"
+    },
+    {
+      "full": "Av. Insurgentes Sur 933,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Desde $2,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,599"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-gomez-miranda/ginecologo/benito-juarez#address-id=469620&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:36.191Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__silvia_g_mez_miranda.webp"
+}

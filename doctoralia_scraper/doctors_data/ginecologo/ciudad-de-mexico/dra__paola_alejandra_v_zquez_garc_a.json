@@ -1,0 +1,25 @@
+{
+  "name": "Dra. Paola Alejandra Vázquez García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 3,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/70f868/70f8686ba4f257091499d3f694656777_220_square.jpg",
+  "about": "Soy la Doctora Paola Alejandra Vazquez Garcia Máster en Climaterio y menopausia por la Universidad a distancia de Madrid, y diplomado en Ultrasonografia Obstetricia por la Universidad La Salle, Certificada por el Consejo Mexicano de Ginecólogia y Obstetricia, Medico adscrito al Hospital de Alta Especialidad Centro Medico Nacional La Raza. Correo Electronico: miginecologadeconfianza@gmail.com",
+  "addresses": [
+    {
+      "full": "Av Gustavo Baz # 116 Primer piso Col. Bosques de Echegaray,"
+    },
+    {
+      "full": "Av Gustavo Baz # 116 Primer piso Col. Bosques de Echegaray,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/paola-alejandra-vazquez-garcia/ginecologo/naucalpan-de-juarez2#address-id=346001&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:46.337Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__paola_alejandra_v_zquez_garc_a.webp"
+}

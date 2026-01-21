@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Gustavo Castillejo Torres",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 30,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/32b4fd/32b4fdb74e68706e37444448a63024fb_220_square.jpg",
+  "about": "La atención brindada es por un Especialista en Ginecología y Obstetricia con Subespecialidad en Medicina Materno Fetal abordando de forma general, especifica y secuenciada en cada valoración de acuerdo al trimestre de embarazo. Primer Trimestre: Identificación de riesgo para cromosomopatías como Síndrome Down, tamizaje para detección de Preeclampsia. Segundo Trimestre: Ultrasonido estructural, morfológico o Nivel II. Detección de riesgo de parto prematuro mediante medición de longitud cervical. Tamizaje para Diabetes gestacional. Tercer trimestre: Pruebas de bienestar Fetal e identificación de Restricción de crecimiento intrauterino. Durante la atención prenatal se ofrece: Historia clínica Exploración física Resolución de dudas Interpretación de estudios de laboratorio Reporte por escrito del ultrasonido e imágenes en CD. Contamos con equipo de ultrasonido con alta calidad de imagen ofreciendo los siguientes tipos de estudio: Ultrasonido 3D, 4D, HD liveUltrasonido DopplerUltrasonido Vaginal",
+  "addresses": [
+    {
+      "full": "Juan De Dios Robledo 678,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/gustavo-castillejo-torres/ginecologo/guadalajara#address-id=3225&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:26:07.770Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__gustavo_castillejo_torres.webp"
+}

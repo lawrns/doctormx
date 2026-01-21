@@ -1,0 +1,25 @@
+{
+  "name": "Dr. José Manuel Chong Rodriguez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Jose Maria Velazco, 110, Desp. 102,"
+    },
+    {
+      "full": "Jose Maria Velazco, 110, Desp. 102,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jose-manuel-chong-rodriguez/ginecologo/benito-juarez#address-id=76742&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:39.068Z",
+  "localPhotoPath": null
+}

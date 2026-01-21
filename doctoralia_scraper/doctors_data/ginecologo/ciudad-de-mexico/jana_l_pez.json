@@ -1,0 +1,46 @@
+{
+  "name": "Jana López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/25ab03/25ab037c2c29a5d00b12fc6a0895f9c5_220_square.jpg",
+  "about": "* En la MEDICINA MATERNO FETAL son precisamente los fetos nuestros pacientes. * Un médico materno fetal es un ginecológo que ha recibido 2 años de entrenamiento adicional para realizar pruebas de diagnóstico prenatal. *Toda pareja embarazada merece tener la tranquilidad de que todo se encuentra en órden con la formación y desarrollo de su bebé (valorar la probabilidad de síndromes, descartar malformaciones) a través de una explicación detallada y al mismo tiempo sencilla. .",
+  "addresses": [
+    {
+      "full": "Homero 1804-602,"
+    },
+    {
+      "full": "Homero 1804-602,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Amniocentesis precoz (menos de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Amniocentesis tardía (más de 20 semanas)",
+      "price": ""
+    },
+    {
+      "name": "Cariotipo en Líquido Amniotico",
+      "price": ""
+    },
+    {
+      "name": "Test Prenatal No Invasivo",
+      "price": ""
+    },
+    {
+      "name": "Test Prenatal No Invasivo Harmony™",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jana-lopez/ginecologo/miguel-hidalgo#address-id=20898&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:54:55.518Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/jana_l_pez.webp"
+}

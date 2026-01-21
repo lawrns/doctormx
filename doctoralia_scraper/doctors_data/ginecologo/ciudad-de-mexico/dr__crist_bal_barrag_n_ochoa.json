@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Cristóbal Barragán Ochoa",
+  "specialty": "Urología Ginecológica",
+  "rating": 5,
+  "reviewCount": 89,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8ca8b848/8ca8b848-7b67-448e-b8ce-9f49fb2873e7_small_square.jpg",
+  "about": "En cuanto a mi formación profesional, soy egresado de la Escuela Medico Naval donde curse la licenciatura como Medico Cirujano Naval de las SEMAR, posteriormente realice la especialidad en Ginecologia y Obstetricia en el Hospital General Naval de Alta Especialidad con Aval académico de la Universidad Naval de la SEMAR. Segunda especialidad en urologia ginecologica en el Centro Medico Nacional 20 de Noviembre ISSSTE y Hospital Universitario de Monterrey NL, con el aval acadademico de la universidad autonoma de Nuevo León Mexico. Estancia en Hospital Overlo Pereira Colombia intercambio de conocimiento en la unidad de piso pelvico, rehabilitacion, urologia funcional y ginecologia estetica. Curso internacional de laser en patologia de tracto genital inferior y ginecologia estetica y funcional en la unidad estetica de venezuela con el aval academico de American Board of Laser Surgery Recognized and International Course in Aesthetic and Laser Gynecology. Curso Curso de aplicación de hormonas bioidenticas ( Pellet) avalado por el 3 Med Health, SRL.Age Manegement And Cosmetic Medicine Estancia en la unidad de urodinamia y urologia funcional de uropelvic expert en monterrey NL. Estancia en la unidad de mielomeningocele de monterrey NL. Posteriormente realice múltiples cursos como colposcopia y patología del tracto genital de la mujer así como ultrasonido obstetrico entre otros cursos. Estar siempre a la vanguardia a beneficio de nuestros pacientes, ofreciéndoles una atención cálida y amable, utilizando de manera racional, consensuada los tratamientos médicos y quirúrgicos que existen para las diferentes enfermedades ginecológicas, explicando siempre con un lenguaje comprensible. Finalmente en todas tus consultas primeramente se realiza una entrevista medica con la finalidad de conocer tu historial medico, es importante revisar de preferencia estudios previos que te hallan hecho, posteriormente se realizaran los estudios necesarios de acuerdo a tu problema por el que acudes. Al termino de la consulta se aclaran todas tus dudas y plan de tratamiento a seguir. ******En caso de reservar alguna cita favor de agendar y el area de recepcion se comunicara con usted*****",
+  "addresses": [
+    {
+      "full": "Calz Acoxpa 430, Coapa, Ex-Hacienda Coapa, Tlalpan, 14308 Ciudad de México, CDMX,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• Desde $1,200"
+    },
+    {
+      "name": "Consulta por incontinencia urinaria",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/cristobal-barragan-ochoa/urologia-ginecologica-ginecologo/tlalpan#address-id=420174&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:19.074Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__crist_bal_barrag_n_ochoa.webp"
+}

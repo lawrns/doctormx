@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Auria Viridiana Avendaño Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 175,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/400567ef/400567ef-c92d-451a-91b7-94bf0f1de144_small_square.jpg",
+  "about": "Somos expertos en el tratamiento de las lesiones por VPH, lesiones precursoras de cáncer del cuello uterino, entrenamiento en el extranjero para tratar parejas con VPH, androscopia (penescopia), anoscopia de alta resolución, electrocirugía, Infecciones de transmisión sexual ( chlamydia trachomatis, herpes, molusco contagioso), lesiones precursoras de cáncer en vulva y vagina), infecciones vaginales. Embarazo con condilomatosis genital Contamos con Prueba Molecular para VPH Contamos con Equipo de Electrocirugía",
+  "addresses": [
+    {
+      "full": "Avenida Cuauhtémoc 1040 piso 9, consultorio 958,"
+    },
+    {
+      "full": "Avenida Montevideo 303,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,400"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Androscopia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/auria-viridiana-avendano-perez/ginecologo/gustavo-a-madero#address-id=363287&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:54.651Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__auria_viridiana_avenda_o_perez.webp"
+}

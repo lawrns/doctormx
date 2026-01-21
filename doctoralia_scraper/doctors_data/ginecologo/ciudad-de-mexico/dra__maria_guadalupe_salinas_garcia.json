@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Maria Guadalupe Salinas Garcia",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Tlaxcala Mz. 74 Lt. 19,"
+    },
+    {
+      "full": "Sierra Nte. De Puebla S/N,"
+    },
+    {
+      "full": "Tlaxcala Mz. 74 Lt. 19,"
+    },
+    {
+      "full": "Sierra Nte. De Puebla S/N,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-guadalupe-salinas-garcia/ginecologo/ecatepec-de-morelos#address-id=192105&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:03:15.517Z",
+  "localPhotoPath": null
+}

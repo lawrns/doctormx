@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Salvador Calvillo Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 26,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/e85d56/e85d5612219c1878fb09eb396d066d20_220_square.jpg",
+  "about": "¡Hola soy el Dr. Salvador Calvillo, tu ginecólogo y obstetra de confianza! Cuento con 20 años de experiencia profesional y soy director del Instituto de Diagnostico Integral de la Mujer (IDIM) en el Centro Médico Monterrey, justo enfrente del Muguerza Alta Especialidad. En IDIM sabemos lo importante que es tu salud, por lo tanto nos especializamos en tu cuidado, diagnóstico, tratamiento y prevención, con instalaciones cómodas y seguras con la mejor tecnología para que te sientas tranquila en todo momento.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 2480 col. Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 2480 col. Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asesoría de métodos de planificación familiar",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $4,000"
+    },
+    {
+      "name": "Colocación de implante subdérmico",
+      "price": "• $3,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/salvador-calvillo-moreno/ginecologo/nuevo-leon#address-id=454886&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:43.160Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__salvador_calvillo_moreno.webp"
+}

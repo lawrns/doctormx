@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María Teresa Salas Magaña",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/8c2bcc5a/8c2bcc5a-5fbf-4c77-a439-555e91a54b17_small_square.jpg",
+  "about": "Hola!, soy la Dra. Maria Salas, médico especialista en ginecología y obstetricia. Mi compromiso como ginecóloga y obstetra es brindarte una atención humanizada, indivualizada y de alta calidad con la finalidad de cuidar de tu salud femenina en las diferentes etapas de tu vida. Mi formación como médico cirujana la realice en la Universidad Autónoma Metropolitana y la especialidad en ginecología y obstetricia la realicé en la UMAE HGO No.3 del CMN La Raza, avalada por la Universidad Nacional Autónoma de México. Al igual me encuentro certificada por el Consejo Mexicano de Ginecología y Obstetricia. También cuento con un diplomado en Colposcopia avalado por la Universidad La Salle.",
+  "addresses": [
+    {
+      "full": "Av. Miguel Ángel de Quevedo 1144,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $950"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $700"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-teresa-salas-magana/ginecologo/coyoacan#address-id=579208&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:21.490Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_teresa_salas_maga_a.webp"
+}

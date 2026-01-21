@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Bernardo Almaguer Lavín",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/31e7c8/31e7c8f03ee595c2cb2952979bcbd58b_220_square.jpg",
+  "about": "En la consulta se brinda aproximadamente 1 hora de atención dirigida a establecer una empatía médico - paciente, trato cálido y respetuoso, para atender tus dudas, padecimientos, o llevar tu control de embarazo de la mejor manera. Soy Médico que cursó la carrera de medicina en la Universidad Autónoma de Nuevo León, posteriormente realicé la especialidad de Ginecología y Obstetricia en el Hospital Universitario Dr. José Eleuterio González. Soy certificado por el Consejo de Ginecología y Obstetricia y actualmente me desempeño en mi práctica diaria en hospital público y privados, pudiendo recibir el nacimiento de tu bebé en el hospital de tu elección.",
+  "addresses": [
+    {
+      "full": "Fco. G. Sada 2925, Col. Chepevera,"
+    },
+    {
+      "full": "Fco. G. Sada 2925, Col. Chepevera,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bernardo-almaguer-lavin/ginecologo-medico-general/nuevo-leon#address-id=61975&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:15.869Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__bernardo_almaguer_lav_n.webp"
+}

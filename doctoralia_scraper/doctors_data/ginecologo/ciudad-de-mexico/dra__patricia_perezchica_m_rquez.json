@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Patricia Perezchica Márquez",
+  "specialty": "Ginecólogo Oncólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/90a9df/90a9df5fc6d210bd260f24d54a34e22c_220_square.jpg",
+  "about": "Ginecóloga Obstetra con subespecialidad en Oncología ginecológica.",
+  "addresses": [
+    {
+      "full": "Avenida Miguel Ángel de Quevedo 1144,"
+    },
+    {
+      "full": "Puente de Piedra 150, Toriello Guerra,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/patricia-perezchica-marquez/ginecologo-oncologico-ginecologo/ciudad-de-mexico#address-id=568107&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:42.860Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__patricia_perezchica_m_rquez.webp"
+}

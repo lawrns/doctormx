@@ -1,0 +1,42 @@
+{
+  "name": "Dr. Ricardo Ibarra Patiño",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 158,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/f64787/f6478756442ebe02237a7864e4b42c11_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla #1910 Col Obispado,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla #1910 Col Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de mama con aguja tru-cut",
+      "price": ""
+    },
+    {
+      "name": "Colposcopia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/ricardo-ibarra-patino/ginecologo/nuevo-leon#address-id=66459&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:41:17.616Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__ricardo_ibarra_pati_o.webp"
+}

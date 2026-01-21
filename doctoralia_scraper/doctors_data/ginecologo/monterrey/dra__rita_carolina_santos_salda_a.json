@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Rita Carolina Santos Saldaña",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 757,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/96da15/96da15eb46603168aca33bacea6c887f_220_square.jpg",
+  "about": "La Dra. Rita Santos se especializa en la atención integral de los padecimientos relacionados con la mujer, con el más alto grado de profesionalismo, apegado a las mejores prácticas médicas y a los conocimientos científicos más actualizados, con gran empatía y compromiso, para procurar el bienestar de la mujer y de su hijo en gestación. A pesar de ser especialista en el área de la Obstetricia también examina pacientes desde la adolescencia hasta la menopausia Mi consultorio ofrece la tecnología y técnicas avanzadas para la prevención, detección y tratamiento de las enfermedades ginecológicas y obstétricas. Cuento con la certificación del Consejo de Ginecología y Obstetricia y la subespecialidad en Colposcopía. Los principales servicios con los que cuenta el consultorio con: - CONTROL PRENATAL Y SEGUIMIENTO DEL EMBARAZO Brindo una atención empática, cálida y especializada durante su embarazo, en búsqueda de los mejores resultados al momento del nacimiento. Pregunte por nuestros paquetes de control prenatal. - PARTO Y CESÁREA HUMANIZADO Atención personalizada, cálida, empática al momento del acompañamiento del trabajo de parto o cesárea, así como su atención y posteriores visitas durante su internamiento. Siempre respetando los derechos de los padres y los niños en el momento del nacimiento y considerando los valores de la mujer, sus creencias, y sentimientos respetando su dignidad y autonomía durante el proceso de dar a luz. - CHECK UP GINECOLÓGICO NORMAL Consulta anual de la paciente sana Papanicolaou (Citología cervical) Revisión de enfermedades de transmisión sexual Ultrasonido Pélvico/Vaginal Exploración de mama Examen de orina - CHECK UP GINECOLÓGICO PLUS Es el servicio de Check Up normal + Colposcopía Donde se visualizan lesiones precursoras de cáncer cervicouterino *También puede preguntar por vacunación para VPH",
+  "addresses": [
+    {
+      "full": "Pino Suarez 640,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/rita-carolina-santos-saldana/ginecologo/nuevo-leon#address-id=446621&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:19.280Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__rita_carolina_santos_salda_a.webp"
+}

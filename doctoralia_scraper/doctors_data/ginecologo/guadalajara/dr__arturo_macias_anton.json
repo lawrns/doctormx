@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Arturo Macias Anton",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 427,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/f86e193c/f86e193c-52c9-4b42-a100-d8f68739abb1_small_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Luis Perez Verdia 475,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/arturo-macias-anton/ginecologo/guadalajara#address-id=123246&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:22:52.339Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__arturo_macias_anton.webp"
+}

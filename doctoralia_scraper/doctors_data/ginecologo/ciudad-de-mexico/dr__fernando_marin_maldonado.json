@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Fernando Marin Maldonado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 11,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/73c86a/73c86a176d26d401e9a73d472c74d0b9_220_square.jpg",
+  "about": "SOCIO ACTIVO DEL COLEGIO DE GINECOLOGIA Y OSTETRICIA DE MORELOS AC SOCIO DE LA FEDERACION MEXICANA DE ASOCIACIONES DE GINECOLOGIA Y OBSTETRICIA A.C. RECERTIFICADO POR EL CONSEJO MEXICANO DE GINECOLOGIA Y OBSTETRICIA INTEGRANTE DE LA FEDERACION LATINOAMERICANA DE SOCIEDADES DE OBSTETRICIA Y GINECOLOGIA - F.L.A.S.O.G. REPUBLICA ORIENTAL DE URUGUAY MIEMBRO DEL COLEGIO DE MEDICOS CIRUJANOS DEL EDO. DE MOR AC FELLOW OF THE AMERICAN COLLEGE OF OBSTETRICIANS AND GYNECOLOGISTS MIEMBRO DEL COLEGIO DE COLPOSCOPIA Y PATOLOGIA CERVICAL DEL ESTADO DE MORELOS AC PRESIDENTE FUNDADOR Y SOCIO ACTIVO DEL COLEGIO DE ENDOSCOPIA GINECOLÓGICA DE MORELOS AC",
+  "addresses": [
+    {
+      "full": "Cuauhtémoc 203 (Consultorio 304),"
+    },
+    {
+      "full": "Cuauhtémoc 203 (Consultorio 304),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $600"
+    },
+    {
+      "name": "Colposcopia",
+      "price": "• $900"
+    },
+    {
+      "name": "Ultrasonido 4D",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Ultrasonido estructural del segundo trimestre",
+      "price": "• $1,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/fernando-marin-maldonado/ginecologo/morelos#address-id=63341&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:44.271Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__fernando_marin_maldonado.webp"
+}

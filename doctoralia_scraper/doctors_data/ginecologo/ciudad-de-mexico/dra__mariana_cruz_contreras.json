@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Mariana Cruz Contreras",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://platform.docplanner.com/img/general/doctor/doctor-default_220_square.jpg",
+  "about": "Soy la Dra. Mariana Cruz Contreras. Especialista en ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Vialidad de la Barranca S/N. Col. Valle de las palmas,"
+    },
+    {
+      "full": "Vialidad de la Barranca S/N. Col. Valle de las palmas,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mariana-cruz-contreras/ginecologo/huixquilucan#address-id=568376&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:00.267Z",
+  "localPhotoPath": null
+}

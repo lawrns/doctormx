@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Marcela Santiago Aguirre",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 21,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/251fd3/251fd3630c69d7ea20553e182032e78b_220_square.jpg",
+  "about": "Ginecologa- obstetra- colposcopista Especialista en la atención de la mujer de una forma integral, certificada por el consejo de ginecología y obstetricia.",
+  "addresses": [
+    {
+      "full": "Camino Sta. Teresa 1055-S,"
+    },
+    {
+      "full": "Camino Sta. Teresa 1055-S,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $950"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Retiro de dispositivo DIU",
+      "price": ""
+    },
+    {
+      "name": "Vacuna virus del papiloma humano",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/marcela-santiago-aguirre/ginecologo/ciudad-de-mexico#address-id=486784&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:52:22.470Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__marcela_santiago_aguirre.webp"
+}

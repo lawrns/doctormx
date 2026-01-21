@@ -1,0 +1,37 @@
+{
+  "name": "Jorge Miguel Maxemin Servin",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "C. Francisco I Madero 629,"
+    },
+    {
+      "full": "Golfo De Cortes 3000,"
+    },
+    {
+      "full": "Pablo Casals 640,"
+    },
+    {
+      "full": "C. Francisco I Madero 629,"
+    },
+    {
+      "full": "Golfo De Cortes 3000,"
+    },
+    {
+      "full": "Pablo Casals 640,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/jorge-miguel-maxemin-servin/ginecologo/guadalajara#address-id=213735&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:32:14.237Z",
+  "localPhotoPath": null
+}

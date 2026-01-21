@@ -1,0 +1,66 @@
+{
+  "name": "Bernardett Orizaba Chavez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1022,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/aa0b50/aa0b5084c5aa1aae353d51fc64cfb224_220_square.jpg",
+  "about": "Me dedico a proporcionar atención personalizada a las mujeres en edad reproductiva brindando atención cálida con visión humanista preservando la salud de la mujer en todas las etapas de la vida.",
+  "addresses": [
+    {
+      "full": "av rio bamba 6392do piso cons 220, col magdalena de las salinas, del GAM, cd de mexico cp 07760,"
+    },
+    {
+      "full": "SOR JUANA INES DE LA CRUZ 280 PISO 8, CONSULTORIO 821, COL INDUSTRIAL SAN LORENZO, TLALNEPANTLA DE BAZ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": ""
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/bernardett-orizaba-chavez-2/ginecologo/gustavo-a-madero#address-id=353205&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:46:05.475Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/bernardett_orizaba_chavez.webp"
+}

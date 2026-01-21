@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Laura Minerva Fernández Sierra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 716,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/fae404/fae404b2485ec50de8fa11931d92f8bd_220_square.jpg",
+  "about": "GINECÓLOGO CON SUB ESPECIALIDAD EN MEDICINA MATERNO FETAL. ESPECIALISTA EN EMBARAZO DE ALTO RIESGO. REALIZACIÓN DE ULTRASONIDO ANATÓMICO Y DE TRANSLUCENCIA NUCAL, ASÍ COMO ECO DOPPLER EN EMBARAZO. Medicina (ITESM, Campus Mty), Ginecología y Obstetricia ( UANL) , Medicina Materno Fetal ( UDEM) Como mujer y mamá, me identifico con mis pacientes y se que existen un montón de retos que enfrentamos diariamente, situaciones que no entendemos y que son muy importantes, por lo que yo veo mi labor como médico el ayudar a despejar dudas, mitigar la angustia, y dar tratamiento cuando así lo requieran las personas. Me especializo en ver embarazos de alto riesgo, así como también realizar ultrasonido para detección temprana de patologías del bebé y de la madre, sin embargo estoy preparada para ver a la mujer en todas las etapas de su vida, desde la infancia temprana, adolescencia, vida adulta y menopausia. Mi consulta incluye interrogatorio, exploración y ultrasonido. Trabajo con casi todas las aseguradoras.",
+  "addresses": [
+    {
+      "full": "Miguel Hidalgo y Costilla 1910 Poniente,"
+    },
+    {
+      "full": "Miguel Hidalgo y Costilla 1828 - Colonia Nuevo Obispado,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• Desde $900"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $900"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $800"
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/laura-minerva-fernandez-sierra/ginecologo/nuevo-leon#address-id=1178&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:40:37.217Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__laura_minerva_fern_ndez_sierra.webp"
+}

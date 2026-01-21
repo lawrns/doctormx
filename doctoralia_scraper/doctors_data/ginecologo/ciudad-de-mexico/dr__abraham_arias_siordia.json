@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Abraham Arias Siordia",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 7,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/ede55b/ede55b5de7c0cb5205d9c2755decd126_220_square.jpg",
+  "about": "Egresado de Licenciatura de Medicina por la Universidad de Guadalajara. Realice la especialidad de Ginecología y Obstetricia en la UMAE de Ginecología y Obstetricia #4 \"Luis Castelazo Ayala\" del Instituto Mexicano del Seguro Social, con título avalado por la Universidad Nacional Autónoma de México. Diplomado de Colposcopia y tracto genital inferior por parte del Hospital Regional \"Adolfo López Mateos\" del ISSSTE Maestría en administración de los servicios de salud por el Instituto Universitario Veracruzano",
+  "addresses": [
+    {
+      "full": "Tuxpan 16,"
+    },
+    {
+      "full": "Tuxpan 16,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/abraham-arias-siordia/ginecologo/ciudad-de-mexico#address-id=394135&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:53:05.065Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__abraham_arias_siordia.webp"
+}

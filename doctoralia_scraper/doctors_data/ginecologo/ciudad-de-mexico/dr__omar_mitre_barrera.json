@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Omar Mitre Barrera",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 243,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/header_image/648f3f09/648f3f09-6bab-4ebb-8311-c5ed623de97d_large.jpg",
+  "about": "Soy el Doctor Omar Mitre , Ginecólogo y Obstetra Certificado, entusiasta en la Cirugía de Mínima Invasión, promedio un mínimo de 100 cirugías por año, doy ponencias en diferentes foros, actualmente ejerciendo mi práctica privada en Hospital Ángeles Interlomas y Star Médica Lomas Verdes, Las enfermedades que más comúnmente solemos resolver son: Miomas, quistes, endometriosis, embarazo ectópico, pólipos, infertilidad, prolapsos de órganos pélvicos, incontinencia urinaria, embarazo complicado, entre otros",
+  "addresses": [
+    {
+      "full": "Avenida Lomas Verdes 2165,"
+    },
+    {
+      "full": "Hospital Angeles Lomas Avenida vialidad de la barranca S/N Torre de especialidades, piso 11 consultorio 1160,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• $8,000"
+    },
+    {
+      "name": "Consulta de control prenatal",
+      "price": "• $2,000"
+    },
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $2,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/omar-mitre-barrera/ginecologo/huixquilucan#address-id=443369&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:41:01.099Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__omar_mitre_barrera.webp"
+}

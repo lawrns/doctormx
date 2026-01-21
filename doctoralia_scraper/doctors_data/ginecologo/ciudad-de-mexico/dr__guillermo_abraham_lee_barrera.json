@@ -1,0 +1,66 @@
+{
+  "name": "Dr. Guillermo Abraham Lee Barrera",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/334d9c/334d9ce9a364777346c194a1d61208cd_220_square.jpg",
+  "about": "¡Hola! Soy el Dr. Guillermo Abraham Lee Barrera. Mi área de experiencia son la infertilidad, las enfermedades hormonales de la Mujer, dolor pélvico de larga evolución, menstruaciones dolorosas o anormales, menopausia y climaterio, otorgando información, consejo y tratamiento. Todo esto con un enfoque ético y humano. Soy Médico Cirujano por la Universidad Autónoma de San Luis Potosí. Especialidad en Ginecología y Obstetricia por la Universidad Autónoma de San Luis Potosí - Hospital Central Dr. Ignacio Morones Prieto. Subespecialidad en Biología de la Reproducción Humana por la Universidad Nacional Autónoma de México - Hospital Juárez de México. Certificado por el Consejo Mexicano de Ginecología y Obstetricia. Miembro de la International Society of Gynecological Endocrinology. Estamos para servirte.",
+  "addresses": [
+    {
+      "full": "Calle Bajío No. 70,"
+    },
+    {
+      "full": "Av Sonora 119-int 202,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $800"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,100"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $800"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $800"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/guillermo-abraham-lee-barrera/ginecologo/cuauhtemoc2#address-id=616637&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:43.961Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__guillermo_abraham_lee_barrera.webp"
+}

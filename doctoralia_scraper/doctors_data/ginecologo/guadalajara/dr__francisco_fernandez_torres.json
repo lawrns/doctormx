@@ -1,0 +1,30 @@
+{
+  "name": "Dr. Francisco Fernandez Torres",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/a512ee/a512ee304e195ef1841ffcadfad039c5_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "manuel acuña 1868 ,"
+    },
+    {
+      "full": "manuel acuña 1868 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $400"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/francisco-fernandez-torres/ginecologo/guadalajara#address-id=82022&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:29:00.162Z",
+  "localPhotoPath": "doctors_data/ginecologo/guadalajara/dr__francisco_fernandez_torres.webp"
+}

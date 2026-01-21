@@ -1,0 +1,43 @@
+{
+  "name": "Dr. Mauricio Enrique Montemayor Bolado",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 367,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3967a3/3967a3ee976d27d3dd8105cd9e1bf59a.jpg",
+  "about": "Sobre mí Ginecólogo Obstetra, con especialidad en ginecología estética y funcional Principales áreas de tratamiento Obstetricia Ginecologia en menopausia Ginecología láser Mi consulta y mi equipo He creado un espacio seguro para ti, desde que agendas tu cita. Un lugar sin críticas ni tabúes Otros servicios Salud íntima y reproductiva",
+  "addresses": [
+    {
+      "full": "Serafín Peña 214,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Manejo de atrofia genital con Laser Co2 Fraccionado",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/mauricio-enrique-montemayor-bolado/ginecologo/nuevo-leon#address-id=32765&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:41.164Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dr__mauricio_enrique_montemayor_bolado.webp"
+}

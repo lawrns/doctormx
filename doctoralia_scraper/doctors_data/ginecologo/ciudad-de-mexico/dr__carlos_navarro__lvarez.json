@@ -1,0 +1,38 @@
+{
+  "name": "Dr. Carlos Navarro Álvarez",
+  "specialty": "Ginecólogo",
+  "rating": null,
+  "reviewCount": 0,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/3d7e2b/3d7e2b2a98f77bc69d14052490ff6a82_220_square.jpg",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Pafnuncio Padilla 43 (3er Piso),"
+    },
+    {
+      "full": "Pafnuncio Padilla 43 (3er Piso),"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/carlos-navarro-alvarez/ginecologo/naucalpan-de-juarez2#address-id=139036&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:12.391Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__carlos_navarro__lvarez.webp"
+}

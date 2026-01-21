@@ -1,0 +1,46 @@
+{
+  "name": "Dra. Celia Navéjar Tijerina",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 10,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/c0727f/c0727f5f8648937c026fd5aebe509c86_220_square.jpg",
+  "about": "Como mujer conozco las necesidades de mis pacientes, me encanta poder establecer un vinculo con cada familia que me confía el cuidado de su embarazo. El nacimiento humanizado es mi área de interés y disfruto compartir momentos tan importantes en la vida como la llegada de un hijo. Mi segunda pasión es la cirugía mínimamente invasiva, hice un Master en Endoscopia Ginecológica en la Universidad Autónoma de Barcelona, por lo que puedo ofrecer tratamiento con mínima invasión en la mayoría de los casos en los que se requiere una cirugía ginecológica. Certificada por el Consejo Mexicano de Ginecología y Obstetricia Profesora de Ginecología en la Facultad de Medicina de la UANL",
+  "addresses": [
+    {
+      "full": "Frida Kahlo 180,"
+    },
+    {
+      "full": "Frida Kahlo 180,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Cirugía de endometriosis pélvica",
+      "price": ""
+    },
+    {
+      "name": "Control prenatal",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/celia-navejar-tijerina/ginecologo/san-pedro-garza-garcia#address-id=33554&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:42:23.673Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__celia_nav_jar_tijerina.webp"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Zhulin Aguilar Velazquez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Av. Lago de Guadalupe Lote 4 Manzana 209 ,"
+    },
+    {
+      "full": "Av. Lago de Guadalupe Lote 4 Manzana 209 ,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/zhulin-aguilar-velazquez/ginecologo/atizapan-de-zaragoza#address-id=26793&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:58:59.492Z",
+  "localPhotoPath": null
+}

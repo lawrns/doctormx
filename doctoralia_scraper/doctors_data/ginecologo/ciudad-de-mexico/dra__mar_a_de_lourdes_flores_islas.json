@@ -1,0 +1,43 @@
+{
+  "name": "Dra. María de Lourdes Flores Islas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 44,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/757490/757490d3fae22dd28d846749b6d0585c_220_square.jpg",
+  "about": "Estudié la licenciatura en la facultad de medicina de la UNAM, realicé mis estudios de especialidad en ginecología en del Instituto Nacional de Perinatología en donde también realice la subespecialidad en biología de la reproducción. Cuento con más de veinte años de experiencia dedicada a temas de ginecología y reproducción humana. He ayudado a muchas parejas a lograr el sueño de ser padres y he ayudado a muchas mujeres con temas ginecológicos y prenatales. Tengo una Maestría en Gestión Sanitaria obtenida con mención honorífica, y mi ultima actualización en temas de reproducción la realice en 2023 en España en el grupo UR. Soy miembro activo en el Colegio Mexicano de Especialistas en Ginecología y Obstetricia. He colaborado en más de 2,000 fecundaciones In Vitro y más de 1,500 cirugías reproductivas de manera exitosa. Miembro activo de la Sociedad Europea de la Reproducción Humana.",
+  "addresses": [
+    {
+      "full": "Managua 730,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/maria-de-lourdes-flores-islas/ginecologo/gustavo-a-madero#address-id=110747&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:20.309Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__mar_a_de_lourdes_flores_islas.webp"
+}

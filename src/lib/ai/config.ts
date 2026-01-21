@@ -35,9 +35,9 @@ export const AI_CONFIG = {
 
   // Features flags (enable/disable por feature)
   features: {
-    preConsulta: process.env.NEXT_PUBLIC_AI_PRECONSULTA === 'true',
-    transcription: process.env.NEXT_PUBLIC_AI_TRANSCRIPTION === 'true',
-    followUp: process.env.NEXT_PUBLIC_AI_FOLLOWUP === 'true',
+    preConsulta: process.env.NEXT_PUBLIC_AI_PRECONSULTA === 'true' || true,
+    transcription: process.env.NEXT_PUBLIC_AI_TRANSCRIPTION === 'true' || true,
+    followUp: process.env.NEXT_PUBLIC_AI_FOLLOWUP === 'true' || true,
     prescriptionAssist: false, // Fase 2
     smartMatching: false, // Fase 2
   },

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Vilma Esthela González Castillo",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 837,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/5eedb3/5eedb330a20a7d798027ab4b4b6f98d0_220_square.jpg",
+  "about": "Soy la Dra. Vilma González. Realicé mis estudios de Médico Cirujano en la Universidad Autónoma de Tamaulipas. Y posteriormente la especialidad en Ginecología y Obstetricia en el Hospital Universitario “Dr. José E. González” de la Universidad Autónoma de Nuevo León. Me interese mucho en la prevención de enfermedades de la mujer por lo que concluí el diplomado en Colposcopia y Cáncer en la Mujer. Lo más importante para mí es informar y dar tranquilidad a mis pacientes así sea una consulta de primera vez de una adolescente, como la consulta prenatal de el primer o tercer embarazo, la prevención de enfermedades o la menopausia. Amo mi profesión ya que me permite ayudar a las mujeres en diferentes situaciones y edades. Incluso a familias. La alegría de un nacimiento, la pareja que logra ese anhelado embarazo, el tratamiento adecuado a una enfermedad ginecológica o aliviar la angustia de una mujer en la menopausia. Son algunas cosas que me llenan de satisfacción en mi profesión. Gracias por confiar en mi y poner en mis manos su salud e inquietudes.",
+  "addresses": [
+    {
+      "full": "Av. Pino Suarez 640 norte,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Aclaramiento genital",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Aplicación de Kyleena",
+      "price": "• Desde $6,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/vilma-esthela-gonzalez-castillo/ginecologo/nuevo-leon#address-id=32691&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:39:58.387Z",
+  "localPhotoPath": "doctors_data/ginecologo/monterrey/dra__vilma_esthela_gonz_lez_castillo.webp"
+}

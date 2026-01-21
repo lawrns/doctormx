@@ -1,0 +1,31 @@
+{
+  "name": "Dra. Silvia Marcela Caballero Carrillo",
+  "specialty": "Ginecóloga",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//pixel-p3.s3.us-east-1.amazonaws.com/doctor/avatar/63ab4a8d/63ab4a8d-4700-4522-8be9-90b7f693ed44_small_square.jpg",
+  "about": "Soy la Dra. Silvia Caballero, ginecóloga enfocada en el cuidado integral de la salud de la mujer. Mi objetivo es acompañarte con una atención cercana, profesional y empática en cada etapa de tu vida, desde la adolescencia hasta la maternidad y la menopausia. Me caracteriza escuchar a cada paciente, brindar información clara y ofrecer diagnósticos y tratamientos basados en la medicina actual. Busco crear un espacio de confianza donde te sientas segura, tranquila y acompañada en el cuidado preventivo y en las decisiones importantes para tu bienestar.",
+  "addresses": [
+    {
+      "full": "Periferico Sur 5550,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de ginecología",
+      "price": "• $950"
+    },
+    {
+      "name": "Seguimiento del embarazo",
+      "price": "• Desde $920"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/silvia-marcela-caballero-carrillo/ginecologo/coyoacan#address-id=620313&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:18.476Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__silvia_marcela_caballero_carrillo.webp"
+}

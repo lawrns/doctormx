@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Juan José Solano Perez",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 93,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/0429d9/0429d971a8818d1be4298457f63a912b_220_square.jpg",
+  "about": "Hola, soy especialista en GINECOLOGIA y OBSTETRICIA con ALTA ESPECIALIDAD en DIAGNOSTICO Y TRATAMIENTO DE TUMORES MAMARIOS (MASTOLOGIA), CIRUGIA ONCOPLÁSTICA de la mamá y RADIOTERAPIA INTRAOPERATORIA. Especialista con DIPLOMADO en COLPOSCOPIA y cirugía de mínima invasión (HISTEROSCOPIA -LAPAROSCOPIA.) Desde hace 8 años practico de forma constante cirugías en mama por tumores malignos y benignos. En ese lapso de tiempo he tenido la fortuna de tratar a más de 1000 mujeres con Cáncer de mama mediante cirugía con excelentes resultados, dentro de los procedimientos realizados: CIRUGIA PRESERVADORA DE MAMA, Mastectomia, ganglio centinela, Mastectomia radical, Mastectomia preservadora de piel y pezon, reconstrucción mamaria inmediata y tardía. Si tu problema es una bolita en el seno, un estudio de imagen con sospecha de malignidad y necesitas BIOPSIAS, sin duda alguna podré ayudarte. Check up, alteración menstrual, sangrados excesivos o dolorosos, infecciones frecuentes, alteraciones urinarias, tumores genitourinarios, infección por VIRUS DEL PAPILOMA, MIOMAS uterinos, SANGRADO POSMENOPAUSICO, control de embarazo, cualquier patología ginecológica con gusto puedo resolver tus dudas y tratar el padecimiento.",
+  "addresses": [
+    {
+      "full": "Calz. la Viga 1174,"
+    },
+    {
+      "full": "Tehuantepec 251 Colonia Roma Sur, Ciudad de México,"
+    },
+    {
+      "full": "Av. Universidad 1080, Xoco.,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": ""
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera consulta en adolescente",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta de primera vez",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,200"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• $4,300"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/juan-jose-solano-perez/ginecologo/iztapalapa#address-id=563943&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:49:33.300Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__juan_jos__solano_perez.webp"
+}

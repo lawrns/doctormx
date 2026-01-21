@@ -1,0 +1,89 @@
+{
+  "name": "Dr. Germán Gabriel Palacios López",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/b85375/b85375bbf4f1c1091bec6f0f5bfb6e66_220_square.jpg",
+  "about": "¡Soy tu Dr. Germán Palacios! Soy Médico Cirujano Militar, especialista en Ginecología y Obstetricia con sub especialidad en Biología de la Reproducción Humana, especialista en Endoscopia Ginecológica y Maestro en Ciencias de la Salud (Investigación clínica). Me forme en la Escuela Médico Militar, México, DF, de 2003 a 2009, para posteriormente realizar mi residencia rotatoria de postgrado en el Hospital Central Militar de 2009 a 2010. Realice la residencia de Ginecología y Obstetricia de 2013 al 2017 en el Hospital Militar de Especialidades de la Mujer y Neonatología (Hospital de Alta Especialidad de la Secretaria de la Defensa Nacional) en donde fui Jefe de Residentes, para posteriormente la sub-especialidad de Biología de la Reproducción en el Hospital Ángeles Pedregal, curso avalado por la U.N.A.M del 2018 al 2020, donde tuve oportunidad de realizar una rotación en el C.H.R. en Nueva York, un centro privado de referencia a nivel mundial de pacientes con problemas de infertilidad. Finalmente en el extranjero, tuve la oportunidad de realizar el Master en Endoscopia Ginecológica junto con la Formación Avanzada en técnicas de Reproducción Asistida, en el hospital Vall D' Hebron, hospital de referencia de 3er. nivel en Barcelona, España, curso avalado por la Universidad Autónoma de Barcelona del 2021 al 2022. Cuento ademas con formación como investigador, pues realicé una Maestría en Ciencias de la Salud en el I.P.N. y un diplomado en métodos de investigación avalado por la U.N.A.M., con los cuales he realizado diversas publicaciones sobre temas de mis especialidades, a nivel nacional e internacional, es decir estoy actualizado con los conocimientos científicos válidos y aportando nuevo conocimiento en el área médica. Tengo la certificación del Consejo Mexicano de Ginecología y Obstetricia (tanto como Ginecólogo, como biólogo de la reproducción). Puedo realizar la mayoría de las cirugías ginecológicas u obstétricas que lo ameritan, siempre basado en criterios médicos y ética profesional. Mi orgullo es atenderle con la mayor calidad y calidez humana que se merece, basados en criterios médicos actualizados y ética profesional, tomando en conjunto las mejores decisiones para su salud. ¡Espero verte pronto en el consultorio!",
+  "addresses": [
+    {
+      "full": "Av. Lomas Verdes 2165 piso 9 consultorio 912,"
+    },
+    {
+      "full": "Cto Centro Comercial,"
+    },
+    {
+      "full": "Camino a Santa Teresa 1055,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Anexectomía",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• Desde $1,800"
+    },
+    {
+      "name": "Consulta subsecuente",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• Desde $1,600"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Consulta de Reproducción Asistida",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Consulta en línea",
+      "price": "• $700"
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,500"
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Reproducción Asistida",
+      "price": "• $1,500"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/german-gabriel-palacios-lopez/ginecologo/magdalena-contreras2#address-id=561171&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:38.670Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__germ_n_gabriel_palacios_l_pez.webp"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Dr. Javier Palacios Ochoa",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 79,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/2a686a/2a686a0300bd53227cfe5fcd68034bba_220_square.jpg",
+  "about": "Soy Especialista en Ginecología y Obstetricia, graduado como médico de la Escuela Medico Militar y de especialista en Ginecología y Obstetricia en la Escuela Militar de Graduados de Sanidad, Certificado por el Consejo Mexicano de Ginecología y Obstetricia, con Entrenamiento en Ultrasonidos Obstétricos y Ginecológicos y Colposcopia y Patología del Tracto Genital Inferior, tengo experiencia en mi especialidad por haber sido jefe y subjefe del servicio de Ginecología en diferentes Hospitales Militares, me mantengo actualizado en mi especialidad al ser Socio Activo de la Sociedad Internacional de Ultrasonido en Ginecología y Obstetricia, he tomado diferentes cursos en la Fetal Medicine Foundation y en Medicina Fetal Barcelona. Actualmente soy profesor adjunto de un Diplomado de Ultrasonido Obstétrico y Ginecológico en Medica Capacitación. Me define mi ética y honestidad, así como mi trato cálido y de respecto a mis pacientes.",
+  "addresses": [
+    {
+      "full": "Placita Roja Circuito Circunvalación Oriente 131,"
+    },
+    {
+      "full": "Placita Roja Circuito Circunvalación Oriente 131,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $1,000"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de cuello uterino",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/javier-palacios-ochoa-2/ginecologo/naucalpan-de-juarez2#address-id=258177&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:51:22.285Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dr__javier_palacios_ochoa.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Elizabeth Cadena Rosas",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 310,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/858437/858437501748f2db5fa6ef2c9c0bfef5_220_square.jpg",
+  "about": "Mi pasión es brindarte oportunidades de salud con un compromiso hacia la prevención, diagnóstico y tratamiento oportuno. Sosteniendo la fé que me mueve al defender la vida como Médico Especialista en las diferentes etapas de tú vida, impulsada por el compromiso hacia la equidad y la ética profesional.",
+  "addresses": [
+    {
+      "full": "Circuito circunvalacion poniente no 36K,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta de primera vez",
+      "price": ""
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Anticonceptivos",
+      "price": "• Servicio gratuito"
+    },
+    {
+      "name": "Asesoría en Lactancia Materna",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/elizabeth-cadena-rosas/ginecologo/naucalpan-de-juarez2#address-id=81169&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:44:50.660Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__elizabeth_cadena_rosas.webp"
+}

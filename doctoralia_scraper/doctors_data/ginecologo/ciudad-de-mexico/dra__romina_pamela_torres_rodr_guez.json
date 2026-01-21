@@ -1,0 +1,30 @@
+{
+  "name": "Dra. Romina Pamela Torres Rodríguez",
+  "specialty": "Ginecólogo",
+  "rating": 1,
+  "reviewCount": 2,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Lorenzo boturini 77,"
+    },
+    {
+      "full": "Lorenzo boturini 77,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/romina-pamela-torres-rodriguez/ginecologo/cuauhtemoc#address-id=563725&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:04:24.680Z",
+  "localPhotoPath": null
+}

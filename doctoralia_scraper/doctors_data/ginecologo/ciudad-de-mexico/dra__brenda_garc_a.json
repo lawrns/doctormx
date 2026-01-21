@@ -1,0 +1,66 @@
+{
+  "name": "Dra. Brenda García",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 274,
+  "photoUrl": "https://s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/879d7c/879d7cc8f155a35c7548ae2982c7bc9b_220_square.jpg",
+  "about": "Siempre he vivido rodeada de mujeres, por lo que decidí realizar la especialidad en Ginecología y Obstetricia en el Hospital de la Mujer de la ciudad de México en donde obtuve bases fuertes para iniciar mi vida laboral como ginecóloga y obstetra.Cursé un máster en Climaterio y Menopausia por la Universidad Internacional Menéndez Pelayo de Madrid junto con la Asociación Mexicana para el Estudio del Climaterio (AMEC). Así mismo me formé en ultrasonido médico diagnóstico por la Asociación Mexicana de Ultrasonido en Medicina (AMUSEM) y en colposcopia por el Hospital General de México.La adolescencia es otra etapa que me apasiona, así que decidí estudiar un programa en sexualidad en infancias y adolescencias, el cual me ha ayudado a acompañar de una manera integral a las mujeres en esta etapa. Estoy certificada por el Consejo Mexicano de Ginecología y Obstetricia y me encuentro en contínua formación para seguir aprendiendo y poder brindarles a mis pacientes un espacio seguro donde se sientan acompañadas y cuidadas desde la adolescencia hasta la menopausia.",
+  "addresses": [
+    {
+      "full": "Avenida División del Norte 3395 Consultorio 316,"
+    },
+    {
+      "full": "Avenida División del Norte 3395,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Consulta subsecuente",
+      "price": "• $1,300"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• $2,100"
+    },
+    {
+      "name": "Control hormonal",
+      "price": ""
+    },
+    {
+      "name": "Anticoncepción",
+      "price": ""
+    },
+    {
+      "name": "Primera visita Ginecología y Obstetricia",
+      "price": "• $800"
+    },
+    {
+      "name": "Visitas sucesivas Ginecología y Obstetricia",
+      "price": ""
+    },
+    {
+      "name": "Asistencia y control al parto",
+      "price": ""
+    },
+    {
+      "name": "Biopsia de vulva",
+      "price": ""
+    },
+    {
+      "name": "Cesárea",
+      "price": ""
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/brenda-garcia-9/ginecologo/ciudad-de-mexico#address-id=82539&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:50:46.256Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__brenda_garc_a.webp"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Dra. Alejandra Ortiz Moreno",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 146,
+  "photoUrl": "//s3.us-east-1.amazonaws.com/doctoralia.com.mx/doctor/9e93c1/9e93c11d0b34f1c05b8843fb5b12b20a_220_square.jpg",
+  "about": "Soy Alejandra Ortiz médico cirujano o egresado de la UNAM por la Facultad de Estudios Superiores Iztacala, especialista en ginecología y obstetricia, por la UNAM y el Hospital de la Mujer, cuento con diplomado en endocrinologia Ginecológica por la Universidad de las Américas de Puebla y soy miembro activo de la Asociación Mexicana de Endocrinología Ginecológica y el Colegio Mexicano de Ginecología, Soy Colposcopista avalada por la universidad la Salle y ultrasonografista avalado por la Academia Mexicana de Médicos Militares. Mi consulta tiene un enfoque humanista y no pesocentrista, siempre brindando a mis pacientes un espacio seguro para su confort y su cuidado. Mi compromiso es darte una atención integral de calidad, donde encuentres las herramientas que necesitas para llevar tu salud femenina y metabólica a su máximo potencial, acompañarte en cada etapa importante de tu vida, siempre sintiéndote en confianza.",
+  "addresses": [
+    {
+      "full": "Calle Rio Bamba 700,"
+    }
+  ],
+  "services": [
+    {
+      "name": "Visita Ginecología y Obstetricia",
+      "price": "• Desde $1,000"
+    },
+    {
+      "name": "Aplicación de vacuna vph",
+      "price": "• Desde $4,000"
+    },
+    {
+      "name": "Cesárea humanizada",
+      "price": "• Desde $35,000"
+    },
+    {
+      "name": "Check up ginecológico",
+      "price": "• Desde $1,400"
+    },
+    {
+      "name": "Colocación de DIU Mirena",
+      "price": "• Desde $5,000"
+    }
+  ],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alejandra-ortiz-moreno/ginecologo/gustavo-a-madero#address-id=448253&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T02:45:41.005Z",
+  "localPhotoPath": "doctors_data/ginecologo/ciudad-de-mexico/dra__alejandra_ortiz_moreno.webp"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Dr. Alvaro Torra",
+  "specialty": "Ginecólogo",
+  "rating": 5,
+  "reviewCount": 1,
+  "photoUrl": "//platform.docplanner.com/img/general/doctor/doctor-default-80-80.png?1981952613",
+  "about": "",
+  "addresses": [
+    {
+      "full": "Cir Ingenieros 15,53070 Morelos,"
+    },
+    {
+      "full": "Circuito Ingenieros 15,53100 Ciudad Satelite,"
+    },
+    {
+      "full": "Circuito Ingenieros 15, Cd. Satelite, ,"
+    },
+    {
+      "full": "Cir Ingenieros 15,53070 Morelos,"
+    },
+    {
+      "full": "Circuito Ingenieros 15,53100 Ciudad Satelite,"
+    },
+    {
+      "full": "Circuito Ingenieros 15, Cd. Satelite, ,"
+    }
+  ],
+  "services": [],
+  "insurance": [
+    "Aseguradoras"
+  ],
+  "education": [],
+  "languages": [],
+  "profileUrl": "https://www.doctoralia.com.mx/alvaro-torra/ginecologo/naucalpan-de-juarez#address-id=153985&is-online-only=false&filters%5Bspecializations%5D%5B%5D=30",
+  "scrapedAt": "2026-01-21T03:00:43.785Z",
+  "localPhotoPath": null
+}
