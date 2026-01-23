@@ -47,7 +47,7 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrb
 const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
 
 // Environment variable for OpenAI API key - REQUIRED
-const openaiKey = process.env.OPENAI_API_KEY;
+const openaiKey = process.env.OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
 
 // Validate required environment variables
 if (!openaiKey) {

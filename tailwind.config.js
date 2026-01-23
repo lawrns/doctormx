@@ -1,81 +1,33 @@
 /** @type {import('tailwindcss').Config} */
+const designSystem = require('./src/styles/design-system.ts');
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        "brand-jade": {
-          50: "#E9F5F4",
-          100: "#D4EBE9",
-          200: "#A9D7D3",
-          300: "#7EC3BD",
-          400: "#53AFA7",
-          500: "#26A69A", // primary
-          600: "#1F8A80",
-          700: "#196E66",
-          800: "#12534D",
-          900: "#0A3733"
-        },
-        "brand-sky": {
-          50: "#F0F9FF",
-          100: "#E0F2FE",
-          200: "#BAE6FD",
-          300: "#7DD3FC",
-          400: "#38BDF8",
-          500: "#0EA5E9",
-          600: "#0284C7", // link + icon highlight
-          700: "#0369A1",
-          800: "#075985",
-          900: "#0C4A6E"
-        },
-        "brand-sun": {
-          50: "#FFF8E1",
-          100: "#FFECB3",
-          200: "#FFE082",
-          300: "#FFD54F",
-          400: "#FFCA28",
-          500: "#FFB300", // secondary CTAs
-          600: "#FFA000",
-          700: "#FF8F00",
-          800: "#FF6F00",
-          900: "#FF5722"
-        },
-        // New optimization colors
-        teal: { 
-          50: '#E6F7F6', 
-          500: '#12866C', 
-          600: '#0BA3C7' 
-        },
-        mint: { 
-          10: '#E6FAEC', 
-          20: '#D6F5E1' 
-        },
-        emerald: { 
-          500: '#34C759',
-          900: '#08683F' 
-        },
-        "brand-charcoal": "#263238", // base text
-        "brand-night": "#0D1A24", // dark theme background
+        // Import unified design system colors
+        primary: designSystem.colors.primary,
+        secondary: designSystem.colors.secondary,
+        accent: designSystem.colors.accent,
+        neutral: designSystem.colors.neutral,
+        semantic: designSystem.colors.semantic,
+        background: designSystem.colors.background,
+        text: designSystem.colors.text,
+        border: designSystem.colors.border,
+        mexico: designSystem.colors.mexico,
+        
+        // Keep legacy brand colors for backward compatibility
+        "brand-jade": designSystem.colors.primary,
+        "brand-sky": designSystem.colors.secondary,
+        "brand-sun": designSystem.colors.accent,
+        "brand-charcoal": designSystem.colors.text.primary,
+        "brand-night": designSystem.colors.neutral[900],
       },
-      fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
-        heading: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
-        display: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
-        body: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
-      },
-      fontSize: {
-        xs: ['0.75rem', { lineHeight: '1rem' }],
-        sm: ['0.875rem', { lineHeight: '1.25rem' }],
-        base: ['1rem', { lineHeight: '1.5rem' }],
-        lg: ['1.125rem', { lineHeight: '1.75rem' }],
-        xl: ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1' }],
-        '6xl': ['3.75rem', { lineHeight: '1' }],
-      },
+      fontFamily: designSystem.typography.fontFamily,
+      fontSize: designSystem.typography.fontSize,
+      fontWeight: designSystem.typography.fontWeight,
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-in-out',
@@ -118,29 +70,13 @@ module.exports = {
         'cta-gradient': 'linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))',
         'teal-gradient': 'linear-gradient(90deg, #0BA3C7 0%, #12866C 100%)',
       },
-      boxShadow: {
-        'brand': '0 4px 14px 0 rgba(38, 166, 154, 0.2)',
-        'brand-hover': '0 6px 20px 0 rgba(38, 166, 154, 0.3)',
-        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        'subtle': '0 2px 6px rgba(0, 0, 0, 0.06)',
-      },
+      boxShadow: designSystem.shadows,
+      spacing: designSystem.spacing,
       maxWidth: {
         prose: '58ch',
       },
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-      },
     },
-    screens: {
-      'xs': '475px',
-      'sm': '576px',  // Updated to match optimization brief
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
+    screens: designSystem.breakpoints,
   },
   plugins: [
     function ({ addUtilities, addBase }) {

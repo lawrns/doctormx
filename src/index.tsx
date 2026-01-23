@@ -21,6 +21,33 @@ import SimpleErrorBoundary from './components/SimpleErrorBoundary';
 import './env-check';
 import './i18n/config'; // Initialize i18n
 
+// Debug: Log all environment variables that Vite is loading
+console.log('[DEBUG] Vite environment variables:', import.meta.env);
+console.log('[DEBUG] Available env keys:', Object.keys(import.meta.env));
+console.log('[DEBUG] VITE_OPENAI_API_KEY:', import.meta.env.VITE_OPENAI_API_KEY);
+
+// Simple validation at startup - defer full validation until needed
+const criticalEnvVars = ['VITE_OPENAI_API_KEY', 'VITE_SUPABASE_URL', 'VITE_SUPABASE_ANON_KEY'];
+const missingCritical = criticalEnvVars.filter(key => !import.meta.env[key]);
+
+if (missingCritical.length > 0) {
+  console.error('[STARTUP ERROR] Missing critical environment variables:', missingCritical);
+  // Show user-friendly error
+  document.body.innerHTML = `
+    <div style="padding: 20px; background: #fee; border: 1px solid #f00; margin: 20px; border-radius: 8px; font-family: sans-serif;">
+      <h2>Configuration Error</h2>
+      <p>Missing required environment variables: <strong>${missingCritical.join(', ')}</strong></p>
+      <p>Please ensure your .env.local file contains these variables with valid values.</p>
+      <details style="margin-top: 10px;">
+        <summary>Debug Info</summary>
+        <pre>Available keys: ${Object.keys(import.meta.env).join(', ')}</pre>
+      </details>
+    </div>
+  `;
+} else {
+  console.log('[ENV] All critical environment variables are present');
+}
+
 // Create a client
 const queryClient = new QueryClient({
   defaultOptions: {

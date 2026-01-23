@@ -1,37 +1,276 @@
-/* Accessibility-focused CSS */
+/* Enhanced accessibility styles for DoctorMX */
 
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Screen reader text that becomes visible on focus */
+.sr-only-focusable:focus,
+.sr-only:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: #000;
+  color: #fff;
+  z-index: 9999;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  @apply bg-primary-600 text-white;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
   }
   
   /* Allow opacity animations for improved user experience */
   .allow-opacity-animation {
     transition: opacity 0.3s ease-in-out !important;
   }
+  
+  .fade-in,
+  .slide-up,
+  .hover-lift {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
-/* Improved focus styles */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #2d3748;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --border-color: #2d3748;
+    --focus-color: #3182ce;
+  }
+  
+  * {
+    border-color: var(--border-color) !important;
+    box-shadow: none !important;
+  }
+  
+  .btn,
+  button {
+    border: 2px solid currentColor !important;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+  }
+  
+  .btn-primary {
+    background-color: var(--text-primary) !important;
+    color: var(--bg-primary) !important;
+  }
+  
+  img {
+    filter: contrast(1.3) brightness(1.1);
+  }
+  
+  .card {
+    border: 2px solid var(--border-color) !important;
+  }
+  
+  .medical-card,
+  .consultation-card,
+  .prescription-card {
+    border: 3px solid #000000 !important;
+    background-color: #ffffff !important;
+  }
+  
+  .medical-text {
+    color: #000000 !important;
+    font-weight: 600 !important;
+  }
+}
+
+/* Enhanced focus styles */
 :focus-visible {
-  outline: 2px solid #2563eb !important;
-  outline-offset: 2px;
+  @apply outline-2 outline-primary-600 outline-offset-2;
+  border-radius: 0.25rem;
 }
 
 /* Provide visible focus states that maintain brand identity */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-brand-jade-500 focus:ring-offset-2;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+.btn:focus-visible {
+  @apply outline-2 outline-white outline-offset-2;
+  box-shadow: 0 0 0 6px theme('colors.primary.500' / 50%);
+}
+
+/* Input focus styles */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  @apply outline-2 outline-primary-600 outline-offset-2;
+  box-shadow: 0 0 0 3px theme('colors.primary.600' / 20%);
+}
+
+/* Link focus styles */
+a:focus-visible {
+  @apply outline-2 outline-primary-600 outline-offset-2;
+  border-radius: 0.25rem;
+  text-decoration: underline;
 }
 
 /* Improved contrast for specific text/background combinations */
 .high-contrast {
-  @apply text-brand-charcoal;
+  @apply text-text-primary;
 }
 
 /* For buttons and interactive elements that need proper sizing */
 .min-hit-area {
   min-width: 44px;
   min-height: 44px;
+}
+
+/* Medical accessibility enhancements */
+.medical-alert {
+  @apply border-l-4 border-semantic-error bg-red-50 p-4 rounded-lg;
+}
+
+.medical-info {
+  @apply border-l-4 border-semantic-info bg-blue-50 p-4 rounded-lg;
+}
+
+.medical-success {
+  @apply border-l-4 border-semantic-success bg-green-50 p-4 rounded-lg;
+}
+
+/* Touch target sizing for mobile accessibility */
+@media (max-width: 768px) {
+  button,
+  input,
+  select,
+  textarea,
+  a[role="button"],
+  [role="button"],
+  [tabindex="0"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Ensure adequate spacing between touch targets */
+  .btn + .btn,
+  button + button {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Color blind friendly patterns */
+.success-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    theme('colors.semantic.success' / 10%) 2px,
+    theme('colors.semantic.success' / 10%) 4px
+  );
+}
+
+.error-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    theme('colors.semantic.error' / 10%) 2px,
+    theme('colors.semantic.error' / 10%) 4px
+  );
+}
+
+.warning-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    theme('colors.semantic.warning' / 10%) 2px,
+    theme('colors.semantic.warning' / 10%) 4px
+  );
+}
+
+/* Loading state accessibility */
+.loading-content {
+  position: relative;
+}
+
+.loading-content::after {
+  content: "Cargando...";
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading-spinner {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Form validation accessibility */
+.field-error {
+  @apply text-semantic-error text-sm mt-1;
+}
+
+.field-error::before {
+  content: "⚠ ";
+  font-weight: bold;
+}
+
+/* Mexican cultural accessibility considerations */
+.lang-es {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Ensure proper text spacing for Spanish content */
+.lang-es p,
+.lang-es li {
+  line-height: 1.6;
+  word-spacing: 0.1em;
 }

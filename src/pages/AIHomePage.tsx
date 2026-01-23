@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import SEO from '../core/components/SEO';
 import Button from '../components/ui/Button';
+import { TrustBar, DoctorCredentials, PatientTestimonials, FloatingWhatsAppButton, StickyMobileCTA } from '../components/ui';
 import { useTheme } from '../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 
@@ -150,6 +151,7 @@ function AIHomePage() {
         <span className="ml-4">📞 Cruz Roja: 065</span>
       </div>
       
+      
       <main className="bg-gradient-to-br from-[#D0F0EF] via-white to-slate-50 min-h-screen overflow-x-hidden">
         {/* Enhanced Hero Section */}
         <section className="relative py-12 md:py-20 overflow-hidden">
@@ -163,9 +165,9 @@ function AIHomePage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight"
                   >
-                    Encuentra al médico adecuado,
+                    Consulta Médica en Línea –
                     <br />
-                    <span className="text-[#006D77]">fácilmente</span>
+                    <span className="text-[#006D77]">Rápida y Confiable</span>
                   </motion.h1>
                   <motion.p 
                     initial={{ opacity: 0, y: 20 }}
@@ -173,34 +175,26 @@ function AIHomePage() {
                     transition={{ delay: 0.2 }}
                     className="text-lg leading-7 text-neutral-700 max-w-lg"
                   >
-                    Dr. Simeon, tu médico virtual disponible 24/7. 
-                    Consultas gratuitas con IA médica certificada.
+                    <span className="font-semibold text-[#006D77]">Médicos Mexicanos Certificados</span> | 
+                    <span className="font-semibold text-[#006D77]">Atención 24/7</span> | 
+                    <span className="font-semibold text-[#006D77]">Primera Consulta Gratis</span>
                   </motion.p>
                 </div>
                 
-                {/* Trust Badges */}
+                {/* Urgency Indicator */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="flex flex-wrap gap-3"
+                  className="urgency-pulse flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 px-4 py-2 rounded-xl text-sm font-medium inline-flex"
                 >
-                  <div className="flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                    <Shield className="w-4 h-4" />
-                    Médicos Certificados
-                  </div>
-                  <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                    <Clock className="w-4 h-4" />
-                    Consulta 24/7
-                  </div>
-                  <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                    <MessageSquare className="w-4 h-4" />
-                    {todayConsults.toLocaleString()} consultas hoy
-                  </div>
-                  <div className="flex items-center gap-2 bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                    <Users className="w-4 h-4" />
-                    {onlineDoctors} doctores en línea
-                  </div>
+                  <motion.div
+                    animate={{ opacity: [1, 0.5, 1] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                    className="w-3 h-3 bg-red-500 rounded-full"
+                  />
+                  <Users className="w-4 h-4" />
+                  <span className="font-semibold">{onlineDoctors} médicos disponibles ahora</span>
                 </motion.div>
 
                 {/* Enhanced Trust Indicators with improved layout */}
@@ -244,49 +238,30 @@ function AIHomePage() {
                   </div>
                 </motion.div>
                 
-                {/* Enhanced CTA Section with WhatsApp Integration */}
+                {/* Optimized Single CTA */}
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                   className="space-y-4"
                 >
-                  <div className="space-y-3">
-                    {/* Primary CTA - AI Doctor */}
-                    <Link 
-                      to="/doctor"
-                      className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 sm:px-8 py-4 text-lg sm:text-xl font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
-                      aria-label="Iniciar consulta médica gratuita"
+                  {/* Primary CTA - Optimized for conversion */}
+                  <Link 
+                    to="/doctor"
+                    className="w-full cta-primary text-white px-8 py-5 text-xl font-bold rounded-xl shadow-xl group inline-flex items-center justify-center min-h-[60px] hover:text-white"
+                    aria-label="Consulta gratis ahora - Médicos mexicanos certificados"
+                    style={{ color: 'white' }}
+                  >
+                    <MessageSquare className="w-7 h-7 mr-3 group-hover:scale-110 transition-transform" />
+                    Consulta Gratis Ahora
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                      className="ml-3"
                     >
-                      <MessageSquare className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Hablar con un Doctor Ahora
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    
-                    {/* Secondary CTA - Human Doctors */}
-                    <Link 
-                      to="/consultation/instant"
-                      className="w-full bg-gradient-to-r from-[#007B8A] to-[#006D77] hover:from-[#006D77] hover:to-[#005B66] text-white px-4 sm:px-6 py-3 text-base sm:text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center border-2 border-white/20"
-                      aria-label="Consulta instantánea con doctor real"
-                    >
-                      <Video className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" />
-                      Consulta Instantánea con Doctor Real - $50 MXN
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    
-                    {/* Tertiary CTA - WhatsApp */}
-                    <a 
-                      href="https://wa.me/+525512345678?text=Hola%20Dr.%20Simeon%2C%20necesito%20ayuda%20médica"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white px-4 sm:px-6 py-2.5 text-sm sm:text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] group inline-flex items-center justify-center"
-                      aria-label="Consultar por WhatsApp"
-                    >
-                      <Phone className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      WhatsApp Directo
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
+                      <ArrowRight className="w-6 h-6" />
+                    </motion.div>
+                  </Link>
                   
                   {/* Medical Credentials */}
                   <div className="border-l-4 border-[#006D77] pl-4 bg-[#D0F0EF]/30 p-3 sm:p-4 rounded">
@@ -532,43 +507,8 @@ function AIHomePage() {
           </div>
         </section>
 
-        {/* Testimonials Carousel */}
-        <section className="py-12 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-gray-900">Lo que dicen nuestros pacientes</h2>
-            </div>
-            <div className="relative">
-              <motion.div
-                key={currentMessage % MEXICAN_TESTIMONIALS.length}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className="bg-gradient-to-br from-[#D0F0EF] to-white p-8 rounded-2xl shadow-lg border border-[#006D77]/20"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex text-yellow-400">
-                    {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-current" />)}
-                  </div>
-                  <img src="/Doctorlogo.png" alt="DoctorMX" className="h-8 opacity-50" />
-                </div>
-                <p className="text-lg text-gray-700 mb-6 italic">
-                  "{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].text}"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-[#006D77] rounded-full flex items-center justify-center text-white font-semibold">
-                    {MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                  <div className="ml-4">
-                    <p className="font-semibold text-gray-900">{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].name}</p>
-                    <p className="text-sm text-gray-600">{MEXICAN_TESTIMONIALS[currentMessage % MEXICAN_TESTIMONIALS.length].location}</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+        {/* Patient Testimonials */}
+        <PatientTestimonials />
 
         {/* Enhanced Trust Metrics Section */}
         <section className="py-16 bg-white">
@@ -642,6 +582,21 @@ function AIHomePage() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Doctor Credentials Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-extrabold text-gray-900 mb-4 tracking-tight">
+                Conoce a tu Doctor
+              </h2>
+              <p className="text-lg leading-7 text-neutral-700">
+                Dr. Simeon está respaldado por médicos certificados con experiencia en México
+              </p>
+            </div>
+            <DoctorCredentials />
           </div>
         </section>
 
@@ -742,37 +697,14 @@ function AIHomePage() {
 
 
 
-        {/* Simple Final CTA */}
-        <section className="bg-gradient-to-r from-[#006D77] to-[#007B8A] text-white py-12 mb-16 md:mb-0">
-          <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold mb-4">
-              ¿Listo para empezar?
-            </h2>
-            <p className="text-lg text-[#D0F0EF] mb-6">
-              Habla con Dr. Simeon ahora mismo
-            </p>
-            <Link 
-              to="/doctor"
-              className="bg-white text-[#006D77] hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] inline-flex items-center justify-center"
-            >
-              <MessageSquare className="w-5 h-5 mr-2" />
-              Comenzar consulta gratuita
-            </Link>
-          </div>
-        </section>
 
       </main>
 
-      {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-lg md:hidden z-50">
-        <Link 
-          to="/doctor"
-          className="w-full bg-gradient-to-r from-[#006D77] to-[#007B8A] hover:from-[#005B66] hover:to-[#006D77] text-white px-6 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 group inline-flex items-center justify-center"
-        >
-          <MessageSquare className="w-5 h-5 mr-2" />
-          Hablar con Dr. Simeon
-        </Link>
-      </div>
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsAppButton />
+      
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCTA />
       
       {/* Onboarding for new users */}
       <Onboarding />

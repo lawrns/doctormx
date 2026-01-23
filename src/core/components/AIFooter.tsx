@@ -5,49 +5,6 @@ function AIFooter() {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Doctor CTA Section */}
-        <div className="py-8 border-b border-gray-800">
-          <div className="bg-gradient-to-r from-[#006D77] to-[#00A8B5] rounded-2xl p-8 text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex justify-center mb-4">
-                <div className="bg-white/20 p-3 rounded-full">
-                  <UserPlus className="w-8 h-8 text-white" />
-                </div>
-              </div>
-              <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-2">
-                <Sparkles className="w-6 h-6" />
-                ¿Eres médico? Únete a DoctorMX
-                <Sparkles className="w-6 h-6" />
-              </h2>
-              <p className="text-lg mb-6 text-white/90">
-                Forma parte de la red de telemedicina más grande de México. 
-                Atiende pacientes desde cualquier lugar y aumenta tus ingresos.
-              </p>
-              <Link 
-                to="/connect" 
-                className="inline-flex items-center gap-2 bg-white text-[#006D77] px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
-              >
-                <UserPlus className="w-5 h-5" />
-                Registrarme como Doctor
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>Proceso 100% digital</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>Verificación rápida</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-400" />
-                  <span>Pagos seguros</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Main footer content */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -92,12 +49,6 @@ function AIFooter() {
               <li>
                 <Link to="/lab-testing" className="text-gray-300 hover:text-[#006D77] transition-colors text-sm">
                   Exámenes a Domicilio
-                </Link>
-              </li>
-              <li>
-                <Link to="/connect" className="inline-flex items-center gap-1 text-[#00A8B5] hover:text-[#006D77] transition-colors text-sm font-semibold">
-                  <UserPlus className="w-4 h-4" />
-                  Únete como Doctor
                 </Link>
               </li>
             </ul>

@@ -26,15 +26,38 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
+      },
+      output: {
+        // Manual chunks for better code splitting
+        manualChunks: {
+          // React core
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          // UI libraries
+          'ui-vendor': ['framer-motion', 'lucide-react', 'recharts'],
+          // Data and state management
+          'data-vendor': ['@tanstack/react-query', '@supabase/supabase-js', '@xstate/react'],
+          // AI and medical logic
+          'ai-vendor': ['openai', 'crypto-js'],
+          // Utilities
+          'utils-vendor': ['date-fns', 'dompurify', 'i18next']
+        },
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop() : 'chunk';
+          return `assets/js/${facadeModuleId}-[hash].js`;
+        }
       }
     },
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true
     },
-    // Ensure these files get copied to the build directory
-    assetsInlineLimit: 0,
-    copyPublicDir: true
+    // Optimize asset handling
+    assetsInlineLimit: 4096, // 4kb - inline small assets
+    copyPublicDir: true,
+    // Split CSS
+    cssCodeSplit: true,
+    // Chunk size warnings
+    chunkSizeWarningLimit: 500
   },
   optimizeDeps: {
     include: [
@@ -46,7 +69,12 @@ export default defineConfig({
       'recharts'
     ]
   },
-  define: {
-    'process.env': {}
+  server: {
+    port: 5173,
+    host: true,
+    strictPort: true // Ensure it always uses port 5173
+  },
+  preview: {
+    port: 5173
   }
 });

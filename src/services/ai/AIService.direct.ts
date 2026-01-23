@@ -94,7 +94,7 @@ const getOpenAIInstance = (): OpenAI | null => {
     return null;
   }
   
-  console.log("Creating OpenAI instance with key: ", apiKey.substring(0, 10) + "...");
+  // Do not log API keys for security reasons
   
   // In production, prevent direct OpenAI API calls to avoid CORS and security issues
   // The deployment environment should use Netlify functions instead

@@ -1,4 +1,4 @@
-/* Custom UI elements for DoctorMX */
+/* Custom UI elements for DoctorMX - Using unified design system */
 
 /* Base styling */
 html {
@@ -6,17 +6,13 @@ html {
 }
 
 body {
-  background-color: #FFFAF5;
-  color: #44403C;
-  font-family: 'Nunito', sans-serif;
+  @apply bg-background-warm text-text-primary font-sans;
   font-size: 18px;
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #10526A;
+  @apply font-heading font-semibold text-text-medical;
 }
 
 /* Custom Form Elements */
@@ -29,212 +25,136 @@ input[type="tel"],
 input[type="url"],
 textarea,
 select {
-  background-color: #FFFAF5;
-  border: 1px solid #E8E4E0;
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  transition: all 0.2s ease;
-  font-family: 'Nunito', sans-serif;
-  font-size: 16px;
-  width: 100%;
+  @apply bg-background-warm border border-border-light rounded-lg px-4 py-3 transition-all duration-300 font-sans w-full min-h-[44px];
+  font-size: 16px; /* Prevent zoom on iOS */
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: #1A8AB0;
-  box-shadow: 0 0 0 3px rgba(26, 138, 176, 0.15);
-  outline: none;
+  @apply border-border-focus outline-none;
+  box-shadow: 0 0 0 3px theme('colors.border.focus' / 15%);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: #B7B0A9;
+  @apply text-text-tertiary;
 }
 
 /* Custom Radio Buttons */
 input[type="radio"] {
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border: 2px solid #1A8AB0;
-  border-radius: 50%;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-right: 8px;
+  @apply appearance-none w-6 h-6 border-2 border-primary-500 rounded-full outline-none relative cursor-pointer transition-all duration-200 mr-2 min-w-[24px];
 }
 
 input[type="radio"]:checked {
-  border-color: #1A8AB0;
-  background-color: #FFFFFF;
+  @apply border-primary-500 bg-background-primary;
 }
 
 input[type="radio"]:checked::after {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
-  background-color: #1A8AB0;
-  border-radius: 50%;
-  transition: all 0.2s ease;
+  @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-primary-500 rounded-full transition-all duration-200;
 }
 
 input[type="radio"]:hover:not(:checked) {
-  border-color: #156E8D;
+  @apply border-primary-600;
 }
 
 /* Custom Checkboxes */
 input[type="checkbox"] {
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border: 2px solid #1A8AB0;
-  border-radius: 6px;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-right: 8px;
+  @apply appearance-none w-6 h-6 border-2 border-primary-500 rounded-md outline-none relative cursor-pointer transition-all duration-200 mr-2 min-w-[24px];
 }
 
 input[type="checkbox"]:checked {
-  border-color: #1A8AB0;
-  background-color: #1A8AB0;
+  @apply border-primary-500 bg-primary-500;
 }
 
 input[type="checkbox"]:checked::after {
   content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  @apply absolute top-1/2 left-1/2 border-b-2 border-r-2 border-white transition-all duration-200;
   transform: translate(-50%, -50%) rotate(45deg);
   width: 6px;
   height: 12px;
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
   margin-top: -2px;
 }
 
 input[type="checkbox"]:hover:not(:checked) {
-  border-color: #156E8D;
+  @apply border-primary-600;
 }
 
 /* Buttons */
 .btn {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 0.75rem 1.5rem;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  @apply font-heading font-semibold rounded-lg px-6 py-3 transition-all duration-200 inline-flex items-center justify-center cursor-pointer min-h-[44px] min-w-[44px];
 }
 
 .btn-primary {
-  background-color: #1A8AB0;
-  color: white;
-  border: none;
+  @apply bg-primary-500 text-white border-none;
 }
 
 .btn-primary:hover {
-  background-color: #156E8D;
-  transform: translateY(-1px);
+  @apply bg-primary-600 transform -translate-y-0.5;
 }
 
 .btn-secondary {
-  background-color: #F26E50;
-  color: white;
-  border: none;
+  @apply bg-accent-500 text-white border-none;
 }
 
 .btn-secondary:hover {
-  background-color: #c25840;
-  transform: translateY(-1px);
+  @apply bg-accent-600 transform -translate-y-0.5;
 }
 
 .btn-outline {
-  background-color: transparent;
-  border: 2px solid #1A8AB0;
-  color: #1A8AB0;
+  @apply bg-transparent border-2 border-primary-500 text-primary-500;
 }
 
 .btn-outline:hover {
-  background-color: rgba(26, 138, 176, 0.1);
+  @apply bg-primary-50;
 }
 
 /* Cards and Containers */
 .card {
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition: all 0.3s ease;
+  @apply rounded-xl bg-background-primary shadow-card overflow-hidden transition-all duration-300;
 }
 
 .card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  @apply shadow-cardHover transform -translate-y-1;
 }
 
 .medication-card {
-  border-radius: 12px;
-  background-color: white;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  border-left: 4px solid #1A8AB0;
-  transition: all 0.3s ease;
+  @apply rounded-xl bg-background-primary shadow-card overflow-hidden border-l-4 border-primary-500 transition-all duration-300;
 }
 
 .medication-card:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  @apply shadow-cardHover;
 }
 
 .medication-header {
-  background-color: rgba(26, 138, 176, 0.1);
-  border-bottom: 1px solid rgba(26, 138, 176, 0.2);
-  padding: 0.75rem 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #10526A;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @apply bg-primary-50 border-b border-primary-200 px-4 py-3 font-heading font-semibold text-text-medical flex items-center justify-between;
 }
 
 .medication-body {
-  padding: 1rem;
+  @apply p-4;
 }
 
 .medication-field {
-  margin-bottom: 1rem;
+  @apply mb-4;
 }
 
 .medication-field label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #57534E;
+  @apply block font-semibold mb-2 text-text-secondary;
 }
 
 /* Hover Effects */
 .hover-lift {
-  transition: transform 0.2s ease;
+  @apply transition-transform duration-200;
 }
 
 .hover-lift:hover {
-  transform: translateY(-2px);
+  @apply transform -translate-y-1;
 }
 
 /* Animations */
 .fade-in {
-  animation: fadeIn 0.3s ease-in-out;
+  @apply animate-[fadeIn_0.3s_ease-in-out];
 }
 
 @keyframes fadeIn {
@@ -279,36 +199,122 @@ input[type="checkbox"]:hover:not(:checked) {
 
 /* Improved Spacing */
 .section {
-  margin-bottom: 2rem;
+  @apply mb-8;
 }
 
 .section-title {
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
-  position: relative;
-  display: inline-block;
+  @apply mb-6 text-2xl relative inline-block;
 }
 
 .section-title::after {
   content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 40px;
-  height: 4px;
-  background-color: #1A8AB0;
-  border-radius: 2px;
+  @apply absolute -bottom-2 left-0 w-10 h-1 bg-primary-500 rounded-sm;
 }
 
 /* Responsive Grid */
 .form-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
+  @apply grid grid-cols-1 gap-4;
 }
 
 @media (min-width: 640px) {
   .form-grid {
-    grid-template-columns: repeat(2, 1fr);
+    @apply grid-cols-2;
+  }
+}
+
+/* Enhanced CTA Animations */
+.cta-primary {
+  @apply relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.cta-primary:hover {
+  @apply transform -translate-y-1 shadow-2xl;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-primary:hover::before {
+  left: 100%;
+}
+
+.cta-secondary {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.cta-secondary:hover {
+  @apply transform -translate-y-0.5 shadow-lg;
+}
+
+.whatsapp-btn {
+  @apply relative overflow-hidden transition-all duration-300;
+  background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+}
+
+.whatsapp-btn:hover {
+  @apply transform -translate-y-1 shadow-xl;
+  background: linear-gradient(135deg, #20BA5A 0%, #1DA851 100%);
+}
+
+.whatsapp-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.whatsapp-btn:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Pulse animation for urgency */
+.urgency-pulse {
+  animation: urgencyPulse 2s infinite;
+}
+
+@keyframes urgencyPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+}
+
+/* Floating animation */
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Safe area for mobile devices */
+@supports (padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
   }
 }

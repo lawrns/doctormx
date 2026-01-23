@@ -5,14 +5,14 @@ import DoctorLayout from './core/components/DoctorLayout';
 import SplashScreen from './core/components/SplashScreen';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Import directly instead of lazy loading to test
-import AIHomePage from './pages/AIHomePage';
-import AIDoctorPage from './features/ai-doctor/pages/AIDoctorPage';
-import AnalysisPage from './features/ai-analysis/AnalysisPage';
-import ImageAnalysisPage from './features/ai-image-analysis/ImageAnalysisPage';
-import AdvancedImageAnalysisPage from './pages/ai-image-analysis/AdvancedImageAnalysisPage';
-import LabTestingPage from './pages/LabTestingPageSimple';
-import DoctorConnectPage from './pages/DoctorConnectPage';
+// Lazy load all pages for better performance
+const AIHomePage = React.lazy(() => import('./pages/AIHomePage'));
+const AIDoctorPage = React.lazy(() => import('./features/ai-doctor/pages/AIDoctorPage'));
+const AnalysisPage = React.lazy(() => import('./features/ai-analysis/AnalysisPage'));
+const ImageAnalysisPage = React.lazy(() => import('./features/ai-image-analysis/ImageAnalysisPage'));
+const AdvancedImageAnalysisPage = React.lazy(() => import('./pages/ai-image-analysis/AdvancedImageAnalysisPage'));
+const LabTestingPage = React.lazy(() => import('./pages/LabTestingPageSimple'));
+const DoctorConnectPage = React.lazy(() => import('./pages/DoctorConnectPage'));
 
 // Auth pages
 const LoginPage = React.lazy(() => import('./pages/auth/LoginPage'));

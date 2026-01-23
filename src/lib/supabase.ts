@@ -1,8 +1,16 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Get Supabase credentials from environment variables with fallback to the provided credentials
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://oxlbametpfubwnrmrbsv.supabase.co';
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94bGJhbWV0cGZ1Ynducm1yYnN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA2MjAxNjQsImV4cCI6MjA1NjE5NjE2NH0.H2_4ueekh5HVvdXBw7OX_EKWEO26kehXBRfd5HJvjgA';
+// Get Supabase credentials from environment variables
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
+const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+
+// Validate that credentials are provided
+if (!supabaseUrl || !supabaseKey) {
+  console.error(
+    'Missing Supabase credentials. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.'
+  );
+  // Don't throw - let the app load but log the error
+}
 
 // Global variable to store the Supabase instance
 let supabaseInstance: SupabaseClient | null = null;

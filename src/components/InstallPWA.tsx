@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Download } from 'lucide-react';
+import { Download, X, Smartphone, Wifi, Share } from 'lucide-react';
 
-const InstallPWA: React.FC = () => {
+interface BeforeInstallPromptEvent extends Event {
+  prompt(): Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
+
+interface InstallPWAProps {
+  className?: string;
+  showBanner?: boolean;
+}
+
+/**
+ * Enhanced PWA Install component optimized for Mexican mobile users
+ * 
+ * Features:
+ * - Network-aware installation
+ * - Mexican Spanish localization
+ * - 3G network optimization
+ * - Cultural context awareness
+ */
+const InstallPWA: React.FC<InstallPWAProps> = ({ className = '', showBanner = true }) => {
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [isInstallable, setIsInstallable] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
+  const [showBannerPrompt, setShowBannerPrompt] = useState(false);
+  const [isInstalled, setIsInstalled] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [networkType, setNetworkType] = useState<string>('unknown');
 
   useEffect(() => {
     // Check if the device is iOS

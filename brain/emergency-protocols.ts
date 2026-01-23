@@ -47,6 +47,10 @@ export interface ChestPainProtocol {
  */
 export class EmergencyDetection {
 
+  // Emergency confidence threshold - STANDARDIZED across all services
+  public static readonly EMERGENCY_CONFIDENCE_THRESHOLD = 0.85;
+  public static readonly URGENT_CONFIDENCE_THRESHOLD = 0.70;
+  
   // IMMEDIATE 911 KEYWORDS - Life-threatening symptoms
   private static readonly IMMEDIATE_EMERGENCY_KEYWORDS = [
     // Respiratory emergencies
