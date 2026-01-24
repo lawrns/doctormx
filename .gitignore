@@ -42,3 +42,9 @@ next-env.d.ts
 
 # Local Netlify folder
 .netlify
+
+# Scraper files with potential secrets
+doctoralia_scraper/*.html
+doctoralia_scraper/page-source.html
+doctoralia_scraper/real-page-source.html
+doctoralia_scraper/test-page-source.html
